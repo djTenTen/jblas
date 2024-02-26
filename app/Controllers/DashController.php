@@ -7,6 +7,8 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class DashController extends BaseController{
 
+    use ResponseTraite;
+
     public function dashboard(){
 
         echo view('includes/Header');
