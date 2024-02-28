@@ -1,0 +1,333 @@
+CRITICAL - 2024-02-27 10:05:55 --> ErrorException: Undefined variable $ddd
+in APPPATH\Controllers\HomeController.php on line 72.
+ 1 APPPATH\Controllers\HomeController.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ddd', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Controllers\\HomeController.php', 72)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\HomeController->posthome()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 10:06:12 --> ErrorException: Undefined variable $ddd
+in APPPATH\Controllers\HomeController.php on line 72.
+ 1 APPPATH\Controllers\HomeController.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ddd', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Controllers\\HomeController.php', 72)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\HomeController->posthome()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 11:13:42 --> Error: Class "App\Models\AuthModel" not found
+in APPPATH\Controllers\AuthController.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\AuthController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 11:14:16 --> ErrorException: Undefined array key "emaail"
+in APPPATH\Models\AuthModel.php on line 24.
+ 1 APPPATH\Models\AuthModel.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "emaail"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\AuthModel.php', 24)
+ 2 APPPATH\Controllers\AuthController.php(38): App\Models\AuthModel->authenticate([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 12:16:46 --> ErrorException: Undefined variable $schemename
+in APPPATH\Controllers\HomeController.php on line 38.
+ 1 APPPATH\Controllers\HomeController.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $schemename', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Controllers\\HomeController.php', 38)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\HomeController->homepage()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 12:24:10 --> ErrorException: Attempt to read property "un" on null
+in APPPATH\Controllers\AuthController.php on line 32.
+ 1 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "un" on null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Controllers\\AuthController.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 12:25:18 --> ErrorException: Undefined variable $reqdata
+in APPPATH\Controllers\AuthController.php on line 29.
+ 1 APPPATH\Controllers\AuthController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reqdata', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Controllers\\AuthController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 12:25:26 --> ErrorException: Undefined variable $reqdata
+in APPPATH\Controllers\AuthController.php on line 29.
+ 1 APPPATH\Controllers\AuthController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reqdata', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Controllers\\AuthController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 14:38:45 --> ErrorException: Trait "App\Controllers\ResponseTraite" not found
+in APPPATH\Controllers\DashController.php on line 8.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-02-27 14:39:13 --> ErrorException: Trait "App\Controllers\ResponseTraite" not found
+in APPPATH\Controllers\DashController.php on line 8.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-02-27 14:39:14 --> ErrorException: Trait "App\Controllers\ResponseTraite" not found
+in APPPATH\Controllers\DashController.php on line 8.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-02-27 14:39:14 --> ErrorException: Trait "App\Controllers\ResponseTraite" not found
+in APPPATH\Controllers\DashController.php on line 8.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2024-02-27 15:00:56 --> mysqli_sql_exception: Table 'as.users' doesn't exist in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\AuthModel.php(27): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\AuthController.php(32): App\Models\AuthModel->authenticate(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-02-27 15:00:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'as.users' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:', [...], false)
+ 2 APPPATH\Models\AuthModel.php(27): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\AuthController.php(32): App\Models\AuthModel->authenticate([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 15:00:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'as.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `users`
+WHERE `email` = \'myemail@gmail.com\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `users`
+WHERE `email` = \'myemail@gmail.com\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:', [...], false)
+ 4 APPPATH\Models\AuthModel.php(27): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\AuthController.php(32): App\Models\AuthModel->authenticate([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 15:00:56 --> [Caused by] mysqli_sql_exception: Table 'as.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `users`
+WHERE `email` = \'myemail@gmail.com\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `users`
+WHERE `email` = \'myemail@gmail.com\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `users`
+WHERE `email` = \'myemail@gmail.com\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:', [...], false)
+ 5 APPPATH\Models\AuthModel.php(27): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\AuthController.php(32): App\Models\AuthModel->authenticate([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-02-27 15:01:35 --> mysqli_sql_exception: Unknown column 'password' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\AuthModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\AuthController.php(32): App\Models\AuthModel->authenticate(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-02-27 15:01:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'password' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_users`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 2 APPPATH\Models\AuthModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\AuthController.php(32): App\Models\AuthModel->authenticate([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 15:01:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'password' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_users`
+WHERE `email` = \'myemail@gmail.com\'
+AND `password` = \'password\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_users`
+WHERE `email` = \'myemail@gmail.com\'
+AND `password` = \'password\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_users`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 4 APPPATH\Models\AuthModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\AuthController.php(32): App\Models\AuthModel->authenticate([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 15:01:35 --> [Caused by] mysqli_sql_exception: Unknown column 'password' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `tbl_users`
+WHERE `email` = \'myemail@gmail.com\'
+AND `password` = \'password\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_users`
+WHERE `email` = \'myemail@gmail.com\'
+AND `password` = \'password\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_users`
+WHERE `email` = \'myemail@gmail.com\'
+AND `password` = \'password\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_users`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 5 APPPATH\Models\AuthModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\AuthController.php(32): App\Models\AuthModel->authenticate([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-02-27 15:01:40 --> mysqli_sql_exception: Unknown column 'password' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\AuthModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\AuthController.php(32): App\Models\AuthModel->authenticate(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-02-27 15:01:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'password' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_users`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 2 APPPATH\Models\AuthModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\AuthController.php(32): App\Models\AuthModel->authenticate([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 15:01:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'password' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_users`
+WHERE `email` = \'myemail@gmail.com\'
+AND `password` = \'password\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_users`
+WHERE `email` = \'myemail@gmail.com\'
+AND `password` = \'password\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_users`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 4 APPPATH\Models\AuthModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\AuthController.php(32): App\Models\AuthModel->authenticate([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 15:01:40 --> [Caused by] mysqli_sql_exception: Unknown column 'password' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `tbl_users`
+WHERE `email` = \'myemail@gmail.com\'
+AND `password` = \'password\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_users`
+WHERE `email` = \'myemail@gmail.com\'
+AND `password` = \'password\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_users`
+WHERE `email` = \'myemail@gmail.com\'
+AND `password` = \'password\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_users`
+WHERE `email` = :email:
+AND `password` = :password:', [...], false)
+ 5 APPPATH\Models\AuthModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\AuthController.php(32): App\Models\AuthModel->authenticate([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 15:02:15 --> ErrorException: Undefined array key "id"
+in APPPATH\Models\AuthModel.php on line 37.
+ 1 APPPATH\Models\AuthModel.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\AuthModel.php', 37)
+ 2 APPPATH\Controllers\AuthController.php(32): App\Models\AuthModel->authenticate([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 21:36:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "chapter1/AddChapter1.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('chapter1/AddChapter1.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter1/AddChapter1', [], true)
+ 3 APPPATH\Controllers\ChapterController.php(31): view('chapter1/AddChapter1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->addchapter1()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 22:21:53 --> ErrorException: Undefined property: App\Controllers\ChapterController::$authModel
+in APPPATH\Controllers\ChapterController.php on line 56.
+ 1 APPPATH\Controllers\ChapterController.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\ChapterController::$authModel', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 56)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->savechapter1()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 23:05:51 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\ChapterController.php(85): CodeIgniter\Model->__call('viewchapter2', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewchapter2()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 23:07:30 --> ErrorException: Undefined variable $chptr1
+in APPPATH\Views\chapter2\ViewChapter2.php on line 24.
+ 1 APPPATH\Views\chapter2\ViewChapter2.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $chptr1', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\chapter2\\ViewChapter2.php', 24)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\chapter2\\ViewChapter2.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter2/ViewChapter2', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(87): view('chapter2/ViewChapter2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewchapter2()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 23:08:23 --> ErrorException: Undefined array key "c1ID"
+in APPPATH\Views\chapter2\ViewChapter2.php on line 26.
+ 1 APPPATH\Views\chapter2\ViewChapter2.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "c1ID"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\chapter2\\ViewChapter2.php', 26)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\chapter2\\ViewChapter2.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter2/ViewChapter2', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(87): view('chapter2/ViewChapter2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewchapter2()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-27 23:08:29 --> ErrorException: Undefined array key "c1ID"
+in APPPATH\Views\chapter2\ViewChapter2.php on line 26.
+ 1 APPPATH\Views\chapter2\ViewChapter2.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "c1ID"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\chapter2\\ViewChapter2.php', 26)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\chapter2\\ViewChapter2.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter2/ViewChapter2', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(87): view('chapter2/ViewChapter2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewchapter2()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()

@@ -1,1 +1,0 @@
-export const apiserver = 'http://localhost/jblas/';

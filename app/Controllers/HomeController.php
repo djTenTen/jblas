@@ -5,73 +5,57 @@ use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\HTTP\ResponseInterface;
 
 use \App\Models\HomeModel;
-
+use \App\Models\AuthModel;
 
 class HomeController extends BaseController{
 
-    use ResponseTrait;
-
     protected $homeModel;
-    protected $crypt;
+    protected $userdata;
+    protected $scheme = 'information_schema.SCHEMATA';
+    protected $schemename = 'SCHEMA_NAME';
+    protected $dbname = 'as';
+
 
     public function __construct(){
 
+        \Config\Services::session();
         $this->homeModel = new HomeModel();
-        $this->crypt = \Config\Services::encrypter();
 
     }
 
     public function homepage(){
-        
-        $res = $this->homeModel->getuser();
-        $arr = [];
-        foreach($res as $row){
-            $data = [
-                'id' => $row['id'],
-                'name' => $row['name']
-            ];
 
-            array_push($arr, $data);
+        $db = \Config\Database::connect('default'); 
+        try { $db->connect('default'); } catch (\Throwable $th) { return view("errors/error500"); }
+
+        $res = $db->table($this->scheme)->select($this->schemename)->where($this->schemename, $this->dbname)->get();
+        if($res->getNumRows() > 0){
+            if(session()->get('authentication')){
+                return redirect()->to(site_url('dashboard')); 
+            }else{
+                $page = 'login';
+                $data['title'] = 'Login';
+                return view('index/'.$page, $data);
+            }
+        }else{
+            return redirect()->to(site_url('error500'));
         }
 
-        return json_encode($arr);
 
     }
 
-    public function posthome(){
-
-
-        $rawData = $this->request->getBody();
-        $reqdata = json_decode($rawData);
-
-        $req = [
-            'name' => $reqdata->un,
-            'password' => $reqdata->pss
-        ];
-
-        $dd = 'data from codeigniter';
-
-        $edd = $this->crypt->encrypt($dd);
-
-
-        // $res = $this->homeModel->getuser();
-        // $arr = [];
-        // foreach($res as $row){
-        //     $data = [
-        //         'id' => $row['id'],
-        //         'name' => $row['name']
-        //     ];
-
-        //     array_push($arr, $data);
-        // }
+    public function auth(){
 
 
 
-        if($this->homeModel->auth($req)){
-            return $this->respond(['message' =>$edd], 201);
-        }else{
-            return $this->respond(['message' =>'Error'], 404);
-        }
+    }
+
+
+    public function getpost(){
+
+
+        return $this->userdata;
+
 
     }
 

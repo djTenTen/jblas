@@ -7,5 +7,22 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'HomeController::homepage');
 $routes->get('/login', 'HomeController::homepage');
-$routes->post('/authenticate', 'HomeController::posthome');
+$routes->post('/authenticate', 'AuthController::auth');
+$routes->get('/dashboard', 'DashController::dashboard');
 
+// Chapter1
+$routes->get('/chapter1/view', 'ChapterController::viewchapter1');
+$routes->get('/chapter1/add', 'ChapterController::addchapter1');
+$routes->post('/chapter1/save', 'ChapterController::savechapter1');
+
+
+// Chapter2
+$routes->get('/chapter2/view', 'ChapterController::viewchapter2');
+$routes->get('/chapter2/add', 'ChapterController::addchapter2');
+$routes->post('/chapter2/save', 'ChapterController::savechapter2');
+
+
+// Chapter3
+$routes->get('/chapter3/view', 'ChapterController::viewchapter3');
+$routes->get('/chapter3/add', 'ChapterController::addchapter3');
+$routes->post('/chapter3/save', 'ChapterController::savechapter3');
