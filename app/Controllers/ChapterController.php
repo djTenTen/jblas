@@ -19,7 +19,11 @@ class ChapterController extends BaseController{
 
     }
     
-    // Chapter 1
+    /**
+        ----------------------------------------------------------
+        Chapter 1 area
+        ----------------------------------------------------------
+    */
     public function viewchapter1(){
 
         // main content
@@ -75,7 +79,11 @@ class ChapterController extends BaseController{
 
 
 
-    // Chapter 2
+    /**
+        ----------------------------------------------------------
+        Chapter 2 area
+        ----------------------------------------------------------
+    */
     public function viewchapter2(){
 
         // main content
@@ -126,7 +134,11 @@ class ChapterController extends BaseController{
 
 
 
-    // Chapter 2
+    /**
+        ----------------------------------------------------------
+        Chapter 3 area
+        ----------------------------------------------------------
+    */
     public function viewchapter3(){
 
         // main content
