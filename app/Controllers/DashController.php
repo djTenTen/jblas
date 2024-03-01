@@ -9,9 +9,12 @@ class DashController extends BaseController{
 
     public function dashboard(){
 
-        //echo view('includes/Header');
+        $data['title'] = 'Dashboard';
+
+        echo view('includes/Header', $data);
         echo view('dashboard/Dashboard');
-        //echo view('includes/Footer');
+        echo view('includes/Footer');
+        
         
     }
 

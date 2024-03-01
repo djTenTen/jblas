@@ -31,8 +31,10 @@ class ChapterController extends BaseController{
         $data['title'] = 'Chapter 1 Management';
         $state = 'active';
         $data['chptr1'] = $this->chapterModel->viewchapter1($state);
-    
+
+        echo view('includes/Header', $data);
         echo view('chapter1/'.$page, $data);
+        echo view('includes/Footer');
 
     }
 
@@ -46,7 +48,9 @@ class ChapterController extends BaseController{
         $state = 'active';
         $data['chptr1'] = $this->chapterModel->viewchapter1($state);
     
+        echo view('includes/Header', $data);
         echo view('chapter1/'.$page, $data);
+        echo view('includes/Footer');
 
     }
 
@@ -56,7 +60,9 @@ class ChapterController extends BaseController{
 
         $page = 'AddChapter1';
         $data['title'] = 'Chapter 1 Management';
+        echo view('includes/Header', $data);
         echo view('chapter1/'.$page, $data);
+        echo view('includes/Footer');
 
     }
 
@@ -137,7 +143,9 @@ class ChapterController extends BaseController{
         $state = 'active';
         $data['chptr2'] = $this->chapterModel->viewchapter2($state);
     
+        echo view('includes/Header', $data);
         echo view('chapter2/'.$page, $data);
+        echo view('includes/Footer');
 
     }
 
@@ -145,7 +153,9 @@ class ChapterController extends BaseController{
 
         $page = 'AddChapter2';
         $data['title'] = 'Chapter 2 Management';
+        echo view('includes/Header', $data);
         echo view('chapter2/'.$page, $data);
+        echo view('includes/Footer');
 
     }
 
@@ -192,7 +202,9 @@ class ChapterController extends BaseController{
         $state = 'active';
         $data['chptr3'] = $this->chapterModel->viewchapter3($state);
     
+        echo view('includes/Header', $data);
         echo view('chapter3/'.$page, $data);
+        echo view('includes/Footer');
 
     }
 
@@ -200,7 +212,9 @@ class ChapterController extends BaseController{
 
         $page = 'AddChapter3';
         $data['title'] = 'Chapter 3 Management';
+        echo view('includes/Header', $data);
         echo view('chapter3/'.$page, $data);
+        echo view('includes/Footer');
 
     }
 
