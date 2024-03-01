@@ -7,8 +7,11 @@ use CodeIgniter\Model;
 class ChapterModel extends Model{
    
 
-    protected $tblc1 = "tbl_c1_detailed_procedure";
-    protected $tblc2 = "tbl_c2_planning";
+    protected $tblc1 = "tbl_c1_planning";
+    protected $tblc1s = "tbl_c1_sections";
+    protected $tblc1sf = "tbl_c1_section_fields";
+
+    protected $tblc2 = "tbl_c2_detailed_procedure";
     protected $tblc3 = "tbl_c3_conclusion";
     protected $time,$date;
 
@@ -45,6 +48,38 @@ class ChapterModel extends Model{
         }else{
             return false;
         }
+
+    }
+
+    public function savemanagechapter($req){
+
+        foreach($req['q'] as $i => $val){
+
+            $data = [
+                'c1ID' => $req['cID'],
+                'questions' => $req['q'][$i]
+            ];
+
+            $this->db->table($this->tblc1s)->insert($data);
+
+            $last = $this->db->insertID();
+
+            foreach($req['f'] as $i => $val){
+
+                $fields = [
+                    'c1_section' => $last,
+                    'fields' => $req['f'][$i],
+                    'd_value' => $req['dv'][$i]
+                ];
+
+                $this->db->table($this->tblc1sf)->insert($fields);
+
+            }
+            
+            
+        }
+
+        return true;
 
     }
 

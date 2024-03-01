@@ -29,6 +29,7 @@
                 <td><?= $row['status']?></td>
                 <td><?= $row['added_on']?></td>
                 <td><button type="submit">action</button></td>
+                <td><a href="manage/<?= $row['c1ID']?>">Manage</a></td>
             </tr>
             <?php }?>
         </tbody>

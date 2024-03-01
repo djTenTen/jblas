@@ -36,6 +36,22 @@ class ChapterController extends BaseController{
 
     }
 
+
+    public function managechapter($chapterID){
+
+        // main content
+        $page = 'Items1';
+        $data['title'] = 'Chapter 1 Management';
+        $data['cID'] = $chapterID;
+        $state = 'active';
+        $data['chptr1'] = $this->chapterModel->viewchapter1($state);
+    
+        echo view('chapter1/'.$page, $data);
+
+    }
+
+    
+
     public function addchapter1(){
 
         $page = 'AddChapter1';
@@ -72,6 +88,35 @@ class ChapterController extends BaseController{
 
     }
 
+
+
+    public function savemanagechapter($chapterID){
+
+        // $validationRules = [
+        //     'code' => 'required',
+        //     'title' => 'required'
+        // ];
+        // if (!$this->validate($validationRules)) {
+        //     return 'error';
+        // }
+
+        $req = [
+            'q' => $this->request->getPost('questions'),
+            'cID' => $chapterID,
+            'f' => $this->request->getPost('fields'),
+            'dv' => $this->request->getPost('d-values')
+        ];
+
+        $res = $this->chapterModel->savemanagechapter($req);
+
+        if($res){
+            return redirect()->to(site_url('chapter1/view'));
+        }else{
+            return 'error';
+        }
+
+
+    }
 
 
 
