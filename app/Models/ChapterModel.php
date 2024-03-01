@@ -34,6 +34,13 @@ class ChapterModel extends Model{
 
     }
 
+    public function getChapter1($cID){
+
+        $query = $this->db->table($this->tblc1)->where('c1ID', $cID)->select('title')->get();
+        return $query->getRowArray();
+
+    }
+
     public function savechapter1($req){
 
         $data = [

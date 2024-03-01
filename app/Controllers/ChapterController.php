@@ -46,7 +46,7 @@ class ChapterController extends BaseController{
         $data['title'] = 'Chapter 1 Management';
         $data['cID'] = $chapterID;
         $state = 'active';
-        $data['chptr1'] = $this->chapterModel->viewchapter1($state);
+        $data['chptr1'] = $this->chapterModel->getChapter1($chapterID);
     
         echo view('includes/Header', $data);
         echo view('chapter1/'.$page, $data);

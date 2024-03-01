@@ -2,20 +2,10 @@
 
 
   
-    <h1>Chapter 1 Items</h1>
+    <h1>Manage Chapter 1 - <?= $chptr1['title']?></h1>
     
     <form action="./save/<?= $cID?>" method="post">
 
-        <label for="">
-            Chapter:
-            <select name="" id="">
-                <option value="">Select Chapter</option>
-                <?php foreach($chptr1 as $row){?>
-                    <option value=""><?= $row['code'].' - '.$row['title'];?></option>
-                <?php }?>
-            </select>
-
-        </label>
         <br>
 
         <div id="questions">
