@@ -44,7 +44,7 @@ class ChapterModel extends Model{
     public function savechapter1($req){
 
         $data = [
-            'code' => $req['code'],
+            'code' => strtoupper($req['code']),
             'title' => $req['title'],
             'status' => 'Active',
             'added_on' => $this->date.' '.$this->time

@@ -1,8 +1,43 @@
+<main>
+    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+        <div class="container-xl px-4">
+            <div class="page-header-content pt-4">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-auto mt-4">
+                        <h1 class="page-header-title">
+                            <div class="page-header-icon"><i data-feather="activity"></i></div>
+                            Manage Chapter 1 - <?= $chptr1['title']?>
+                        </h1>
+                        <div class="page-header-subtitle">Example dashboard overview and content summary</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-xl px-4 mt-n10">
+        <div class="card mb-4">
+            
+            <div class="card-header">Chapter 1 - <?= $chptr1['title']?></div>
+            
+            <div class="card-body">
+
+
+
+                
+            </div>
+        </div>
+        
+    </div>
+    
+</main>
+
+
 <div class="container">
 
 
   
-    <h1>Manage Chapter 1 - <?= $chptr1['title']?></h1>
+    <h1></h1>
     
     <form action="./save/<?= $cID?>" method="post">
 

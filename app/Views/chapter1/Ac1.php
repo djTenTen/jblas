@@ -6,7 +6,7 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            Auditing System
+                            <?= $title?>
                         </h1>
                         <div class="page-header-subtitle">Example dashboard overview and content summary</div>
                     </div>
@@ -23,7 +23,7 @@
 
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-            <div class="card-header">Page Header Overlap</div>
+            <div class="card-header"><?= $header?></div>
             <div class="card-body">
                <!-- Contents Here -->
             </div>

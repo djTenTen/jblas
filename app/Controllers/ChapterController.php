@@ -40,17 +40,15 @@ class ChapterController extends BaseController{
     }
 
 
-    public function managechapter1($chapterID){
+    public function manageac1($head){
 
         // main content
-        $page = 'Items1';
+  
         $data['title'] = 'Chapter 1 Management';
-        $data['cID'] = $chapterID;
-        $state = 'active';
-        $data['chptr1'] = $this->chapterModel->getChapter1( $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$chapterID)));
+        $data['header'] = $head;
     
         echo view('includes/Header', $data);
-        echo view('chapter1/'.$page, $data);
+        echo view('chapter1/ac1', $data);
         echo view('includes/Footer');
 
     }
@@ -86,7 +84,7 @@ class ChapterController extends BaseController{
         $res = $this->chapterModel->savechapter1($req);
 
         if($res){
-            return redirect()->to(site_url('chapter1/view'));
+            return redirect()->to(site_url('auditsystem/chapter1/view'));
         }else{
             return 'error';
         }
