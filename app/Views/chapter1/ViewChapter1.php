@@ -59,7 +59,6 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Code</th>
                             <th>Title</th>
                             <th>Status</th>
@@ -69,7 +68,6 @@
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>ID</th>
                             <th>Code</th>
                             <th>Title</th>
                             <th>Status</th>
