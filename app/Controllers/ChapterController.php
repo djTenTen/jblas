@@ -47,9 +47,38 @@ class ChapterController extends BaseController{
         $data['title'] = 'Chapter 1 Management';
         $data['header'] = $head;
     
+        $data['ac1'] = $this->chapterModel->getac1();
+        
         echo view('includes/Header', $data);
         echo view('chapter1/ac1', $data);
         echo view('includes/Footer');
+
+    }
+
+    public function addac1($head){
+
+        $validationRules = [
+            'question' => 'required',
+            'yesno' => 'required',
+            'comment' => 'required'
+        ];
+        if (!$this->validate($validationRules)) {
+            return 'error';
+        }
+
+        $req = [
+            'question' => $this->request->getPost('question'),
+            'yesno' => $this->request->getPost('yesno'),
+            'comment' => $this->request->getPost('comment')
+        ];
+
+        $res = $this->chapterModel->saveac1($req);
+
+        if($res){
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac1/'.$head));
+        }else{
+            return 'error';
+        }
 
     }
 

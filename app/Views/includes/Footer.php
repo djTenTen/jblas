@@ -23,7 +23,8 @@
     <script src="<?= base_url()?>js/datatables/datatables-simple-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
     <script src="<?= base_url()?>js/litepicker.js"></script>
-
+    <script src="https://unpkg.com/easymde/dist/easymde.min.js" crossorigin="anonymous"></script>
+    <script src="<?= base_url()?>js/markdown.js"></script>
     
 
 </body>

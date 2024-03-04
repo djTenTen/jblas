@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ChapterModel extends Model{
    
 
-    protected $tblc1 = "tbl_c1_planning";
+    protected $tblc1ac1 = "tbl_c1_ac1";
     protected $tblc1s = "tbl_c1_sections";
     protected $tblc1sf = "tbl_c1_section_fields";
 
@@ -40,6 +40,34 @@ class ChapterModel extends Model{
         return $query->getRowArray();
 
     }
+
+    public function saveac1($req){
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'code' => 'ac1',
+                'question' => $req['question'][$i],
+                'yesno' => $req['yesno'][$i],
+                'comment' => $req['comment'][$i],
+                'status' => 'Active',
+                'added_on' => $this->date.' '.$this->time
+            ];
+
+            $this->db->table($this->tblc1ac1)->insert($data);
+
+        }
+
+        return true;
+    }
+
+    public function getac1(){
+
+        $query =  $this->db->table($this->tblc1ac1)->get();
+        return $query->getResultArray();
+
+    }
+
 
     public function savechapter1($req){
 
