@@ -27,14 +27,14 @@ class ChapterController extends BaseController{
     public function viewchapter1(){
 
         // main content
-        $page = 'ViewChapter1';
         $data['title'] = 'Chapter 1 Management';
         $state = 'active';
         $data['chptr1'] = $this->chapterModel->viewchapter1($state);
 
         echo view('includes/Header', $data);
-        echo view('chapter1/'.$page, $data);
+        echo view('chapter1/ViewChapter1', $data);
         echo view('includes/Footer');
+        
 
     }
 

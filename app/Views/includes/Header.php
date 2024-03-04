@@ -7,8 +7,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
+    <link href="<?= base_url()?>css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="<?= base_url()?>assets/img/favicon.png" />
     <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
 
@@ -22,49 +22,11 @@
         <!-- * * Tip * * You can use text or an image for your navbar brand.-->
         <!-- * * * * * * When using an image, we recommend the SVG format.-->
         <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
-        <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="index.html">SB Admin Pro</a>
-        <!-- Navbar Search Input-->
-        <!-- * * Note: * * Visible only on and above the lg breakpoint-->
-        <form class="form-inline me-auto d-none d-lg-block me-3">
-            <div class="input-group input-group-joined input-group-solid">
-                <input class="form-control pe-0" type="search" placeholder="Search" aria-label="Search" />
-                <div class="input-group-text"><i data-feather="search"></i></div>
-            </div>
-        </form>
+        <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="auditsystem">ApplAud Software Solutions - Auditing System</a>
+       
         <!-- Navbar Items-->
         <ul class="navbar-nav align-items-center ms-auto">
-            <!-- Documentation Dropdown-->
-            <li class="nav-item dropdown no-caret d-none d-md-block me-3">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="fw-500">Documentation</div>
-                    <i class="fas fa-chevron-right dropdown-arrow"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-end py-0 me-sm-n15 me-lg-0 o-hidden animated--fade-in-up" aria-labelledby="navbarDropdownDocs">
-                    <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro" target="_blank">
-                        <div class="icon-stack bg-primary-soft text-primary me-4"><i data-feather="book"></i></div>
-                        <div>
-                            <div class="small text-gray-500">Documentation</div>
-                            Usage instructions and reference
-                        </div>
-                    </a>
-                    <div class="dropdown-divider m-0"></div>
-                    <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro/components" target="_blank">
-                        <div class="icon-stack bg-primary-soft text-primary me-4"><i data-feather="code"></i></div>
-                        <div>
-                            <div class="small text-gray-500">Components</div>
-                            Code snippets and reference
-                        </div>
-                    </a>
-                    <div class="dropdown-divider m-0"></div>
-                    <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro/changelog" target="_blank">
-                        <div class="icon-stack bg-primary-soft text-primary me-4"><i data-feather="file-text"></i></div>
-                        <div>
-                            <div class="small text-gray-500">Changelog</div>
-                            Updates and changes
-                        </div>
-                    </a>
-                </div>
-            </li>
+           
             <!-- Navbar Search Dropdown-->
             <!-- * * Note: * * Visible only below the lg breakpoint-->
             <li class="nav-item dropdown no-caret me-3 d-lg-none">
@@ -231,26 +193,25 @@
                             </nav>
                         </div>
                         <!-- Sidenav Heading (Custom)-->
-                        <div class="sidenav-menu-heading">Custom</div>
+                        <div class="sidenav-menu-heading">System</div>
                         <!-- Sidenav Accordion (Pages)-->
                         <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="nav-link-icon"><i data-feather="grid"></i></div>
-                            Pages
+                            Settings
                             <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapsePages" data-bs-parent="#accordionSidenav">
                             <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
                                 <!-- Nested Sidenav Accordion (Pages -> Account)-->
                                 <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
-                                    Account
+                                    Chapter 1
                                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                 </a>
                                 <div class="collapse" id="pagesCollapseAccount" data-bs-parent="#accordionSidenavPagesMenu">
                                     <nav class="sidenav-menu-nested nav">
-                                        <a class="nav-link" href="account-profile.html">Profile</a>
-                                        <a class="nav-link" href="account-billing.html">Billing</a>
-                                        <a class="nav-link" href="account-security.html">Security</a>
-                                        <a class="nav-link" href="account-notifications.html">Notifications</a>
+                                        <a class="nav-link" href="auditsystem/chapter1/view">View</a>
+                                        <a class="nav-link" href="auditsystem/chapter1/add">Add</a>
+                                        <a class="nav-link" href="account-security.html">Manage</a>
                                     </nav>
                                 </div>
                                 <!-- Nested Sidenav Accordion (Pages -> Authentication)-->
