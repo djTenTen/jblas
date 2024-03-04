@@ -10,12 +10,6 @@
                         </h1>
                         <div class="page-header-subtitle">Example dashboard overview and content summary</div>
                     </div>
-                    <div class="col-12 col-xl-auto mt-4">
-                        <div class="input-group input-group-joined border-0" style="width: 16.5rem">
-                            <span class="input-group-text"><i class="text-primary" data-feather="calendar"></i></span>
-                            <input class="form-control ps-0 pointer" id="litepickerRangePlugin" placeholder="Select date range..." />
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -27,6 +21,41 @@
             <div class="card-header">Chapter 1 Files </div>
             
             <div class="card-body">
+
+                <button class="btn btn-primary m-2" type="button" data-bs-toggle="modal" data-bs-target="#modaladdchapter">Add Chapter</button>
+                <div class="modal fade " id="modaladdchapter" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Add Chapter</h5>
+                                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="save" method="post">
+                                    <div class="mb-3">
+                                        <label for="code">Code:</label>
+                                        <input class="form-control" id="code" type="text" placeholder="AC1" name="code">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="title">Title</label>
+                                        <input class="form-control" id="title" type="text" placeholder="Your File Title" name="title">
+                                    </div>
+                       
+                                
+                            </div>
+                            
+                            <div class="modal-footer">
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                </form>
+                                <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
@@ -57,8 +86,7 @@
                                 <td><?php if($row['status'] == 'active'){echo '<div class="badge bg-success text-white rounded-pill">'.ucfirst($row['status']).'</div>';}else{echo '<div class="badge bg-success text-white rounded-pill">'.ucfirst($row['status']).'</div>';} ?></td>
                                 <td><?= $row['added_on']?></td>
                                 <td>
-                                    <button type="submit">action</button>
-                                    <a href="manage/<?= $row['c1ID']?>">Manage</a>
+                                    <a href="<?= base_url()?>auditsystem/chapter1/manage/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($row['c1ID']))?>" class="btn btn-primary btn-sm">Manage</a>
                                 </td>
                             </tr>
                         <?php }?>

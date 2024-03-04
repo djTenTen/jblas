@@ -30,6 +30,7 @@ class ChapterController extends BaseController{
         $data['title'] = 'Chapter 1 Management';
         $state = 'active';
         $data['chptr1'] = $this->chapterModel->viewchapter1($state);
+        $data['crypt'] = $this->crypt;
 
         echo view('includes/Header', $data);
         echo view('chapter1/ViewChapter1', $data);
@@ -39,14 +40,14 @@ class ChapterController extends BaseController{
     }
 
 
-    public function managechapter($chapterID){
+    public function managechapter1($chapterID){
 
         // main content
         $page = 'Items1';
         $data['title'] = 'Chapter 1 Management';
         $data['cID'] = $chapterID;
         $state = 'active';
-        $data['chptr1'] = $this->chapterModel->getChapter1($chapterID);
+        $data['chptr1'] = $this->chapterModel->getChapter1( $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$chapterID)));
     
         echo view('includes/Header', $data);
         echo view('chapter1/'.$page, $data);

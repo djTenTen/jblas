@@ -14,11 +14,12 @@ $routes->get('/dashboard', 'DashController::dashboard');
 $routes->get('/auditsystem', 'DashController::auditsystem');
 // Chapter1
 $routes->get('/auditsystem/chapter1/view', 'ChapterController::viewchapter1');
+$routes->get('/auditsystem/chapter1/add', 'ChapterController::addchapter1');
+$routes->get('/auditsystem/chapter1/manage/(:any)', 'ChapterController::managechapter1/$1');
 
-$routes->get('/chapter1/add', 'ChapterController::addchapter1');
 $routes->post('/chapter1/save', 'ChapterController::savechapter1');
 $routes->get('/chapter1/items/view', 'ChapterController::viewchapter1items');
-$routes->get('/chapter1/manage/(:any)', 'ChapterController::managechapter/$1');
+
 $routes->post('/chapter1/manage/save/(:any)', 'ChapterController::savemanagechapter/$1');
 
 // Chapter2
