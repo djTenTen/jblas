@@ -9,7 +9,7 @@
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
                             <?= $title?>
                         </h1>
-                        <div class="page-header-subtitle">Example dashboard overview and content summary</div>
+                        <div class="page-header-subtitle"><?= $header?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -24,7 +24,6 @@
 
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-            <div class="card-header"><?= $header?></div>
             <div class="card-body">
                
                 <h4>PERMANENT FILE CHECKLIST</h4>
@@ -191,7 +190,7 @@
 
 
                 <br><br>
-                
+
                 <h6>I have reviewed / updated the permanent file and consider that it is adequate.</h6>
 
                 <h6>Signed:			Date:	</h6>
