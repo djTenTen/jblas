@@ -10,7 +10,6 @@ class ChapterController extends BaseController{
 
     protected $chapterModel;
 
-
     public function __construct(){
 
         \Config\Services::session();
@@ -59,7 +58,9 @@ class ChapterController extends BaseController{
             'yesno' => 'required'
         ];
         if (!$this->validate($validationRules)) {
-            return 'error';
+
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac1/'.$head));
         }
 
         $req = [
@@ -71,9 +72,11 @@ class ChapterController extends BaseController{
         $res = $this->chapterModel->saveac1($req);
 
         if($res){
+            session()->setFlashdata('success_registration','success_registration');
             return redirect()->to(site_url('auditsystem/chapter1/manage/ac1/'.$head));
         }else{
-            return 'error';
+            session()->setFlashdata('failed_registration','failed_registration');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac1/'.$head));
         }
 
     }

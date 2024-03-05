@@ -22,11 +22,15 @@
                         <div class="col-lg-5">
                             <!-- Basic login form-->
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <?php 
-                                    if (session()->get('access_denied')) {
-                                        echo session()->get('access_denied');
-                                    }
-                                ?>
+                                <?php if (session()->get('access_denied')) { ?>
+                                    <div class="alert alert-danger alert-icon" role="alert">
+                                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        <div class="alert-icon-content">
+                                            <h6 class="alert-heading">Access Denied</h6>
+                                            Invalid email or password, Please try again.
+                                        </div>
+                                    </div>
+                                 <?php  }?>
                                 <div class="card-header justify-content-center"><h3 class="fw-light my-4">Login</h3></div>
                                 <div class="card-body">
                                     <!-- Login form-->

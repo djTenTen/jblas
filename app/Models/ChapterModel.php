@@ -42,7 +42,7 @@ class ChapterModel extends Model{
 
             $data = [
                 'code' => 'ac1',
-                'tpye' => 'table',
+                'type' => 'table',
                 'question' => $req['question'][$i],
                 'yesno' => $req['yesno'][$i],
                 'comment' => $req['comment'][$i],
