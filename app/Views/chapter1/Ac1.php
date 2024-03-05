@@ -69,12 +69,6 @@
                             </tr>
                         </thead>
                         <tbody id="tbody">
-                            <tr>    
-                                <td><textarea class="form-control" cols="30" rows="3" name="question[]" required></textarea></td>
-                                <td><input class="form-control" type="text" name="yesno[]" value="YES"></td>
-                                <td><textarea class="form-control" cols="30" rows="3" name="comment[]">None</textarea></td>
-                                <td><button class="btn btn-danger remove" type="button" data-action="remove">remove</button></td>
-                            </tr>
                         </tbody>
                     </table>
 
@@ -83,6 +77,88 @@
                     <button type="submit" class="btn btn-success">Save</button>
 
                 </form>
+
+                <br><br>
+
+                <p>Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement: 					</p>
+                <h6>Those Charged With Governance and Management:</h6>
+                <p>PSA 260 / 265 requires different matters to be communicated separately to those charged with governance and to management.  Where those charged with governance and management are the same individuals (for example, all matters are dealt with solely by the directors of the company), it is not necessary for these matters to be communicated twice.</p>
+                <p>[EITHER]</p>
+                <p>The Directors are actively involved in the day-to-day operations of the entity and are therefore considered to be both management and those charged with governance. </p>
+                <p>Name of Informed Management: ……………………………… </p>
+                <p>Justification of why they can be considered Informed Management:
+                    ……………………………………………………………………………………………………………………………………………………………………………………………………………………
+                </p>
+                <p>Informed management is a “Member of management (or senior employee) of the entity relevant to the engagement who has the authority and capability to make independent management judgments and decisions in relation to non-audit / additional services on the basis of information provided by the firm”
+                Our primary contact (if different from Informed Management) for the audit will be: …………………………………………………………………………………………………………
+                </p>
+                <p>[OR]</p>
+                <p>The Directors are not actively involved in the day-to-day operations of the entity and are therefore considered to be those charged with governance. </p>
+                <p>Management of the entity has been delegated to ………………………………………….</p>
+                <p>Our primary contact of those charged with governance will be……………………………………….</p>
+                <p>Our primary contact within the management team will be……………………………………………</p>
+                <p>Name of Informed Management: ……………………………… </p>
+                <p>Justification of why they can be considered Informed Management:
+                ……………………………………………………………………………………………………………………………………………………………………………………………………………………
+                </p>
+                <p>Communication of certain matters will be required with both those charged with governance AND management. The following documents will evidence this dual communication:</p>
+                <ul>
+                    <li>Letter of engagement</li>
+                    <li>Preliminary planning procedures</li>
+                    <li>Planning letter</li>
+                    <li>Letter of representation</li>
+                    <li>Management letter</li>
+                </ul>
+
+                <h4>ENGAGEMENT QUALITY REVIEW:</h4>
+                <p>An EQR needs to be undertaken on all audits where:</p>
+                <ul>
+                    <li>The firm’s criteria for a review has been met;</li>
+                    <li>The A.E.P. deems it necessary for a review to be undertaken; or</li>
+                    <li>It is required as a safeguard against threats which have been identified to the firm’s objectivity and independence.  It should be considered on all assignments where non-audit services have been provided.</li>
+                </ul>
+                <p><i>Note that it is necessary for the EQR to be appointed.  The A.E.P. should avoid excessive consultation with the EQR during the assignment, as this may lead to the reviewer’s ability to perform an objective review being impaired.  Where excessive consultation has taken place, the EQR will need to be replaced.</i></p>
+                <ul>
+                    <li>No EQR needs to be performed.</li>
+                    <li>It is necessary for an EQR to be performed and this will be performed by</li>
+                    <li>Where the EQR is undertaken by an external reviewer the name of the organisation which they work for</li>
+                </ul>
+
+                <table class="table">
+                    <tr>
+                        <td> REASON FOR EQR (If an EQR review was performed in the previous period, but is not being performed in the current period, this decision must also be justified.)  
+                            <textarea class="form-control" cols="30" rows="3" name="question[]" required></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h6>SCOPE OF EQR (PSA 220.20):</h6>
+                            <ul>
+                                <li>Discussion of significant matters with the A.E.P.;</li>
+                                <li>Review of the financial statements and the proposed auditor’s report;</li>
+                                <li>Review of selected audit documentation relating to the significant judgments the engagement team made and the conclusions it reached; and </li>
+                                <li>Evaluation of the conclusions reached in formulating the auditor’s report and consideration of whether the proposed report is appropriate.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+
+                <h6>Authority to accept appointment:</h6>
+                <p>Having completed the checklist I *do / *do not consider that there are any perceived threats to our independence, integrity and objectivity, and believe that we *can accept / *can accept with the stated safeguards / *cannot accept this appointment.</p>
+                <p>Where necessary, adequate consultation has been undertaken and documented at 				.</p>
+                <p>
+                    Signature:	
+                    (A.E.P.)
+
+                    Date:	
+                </p>        
+                <p>If appropriate:</p>
+                <p>
+                    Signature:	
+                    (EQR) 
+
+                    Date:	
+                </p>
             </div>
         </div>
     </div>

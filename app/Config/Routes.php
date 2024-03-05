@@ -16,3 +16,4 @@ $routes->get('/auditsystem', 'DashController::auditsystem');
 $routes->get('/auditsystem/chapter1/view', 'ChapterController::viewchapter1');
 $routes->get('/auditsystem/chapter1/manage/ac1/(:any)', 'ChapterController::manageac1/$1');
 $routes->post('/auditsystem/chapter1/manage/ac1/save/(:any)', 'ChapterController::addac1/$1');
+$routes->get('/auditsystem/chapter1/manage/ac2/(:any)', 'ChapterController::manageac2/$1');

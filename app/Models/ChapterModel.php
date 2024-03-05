@@ -27,12 +27,6 @@ class ChapterModel extends Model{
 
 
     // chapter 1
-    public function viewchapter1($state){
-
-        $query = $this->db->table($this->tblc1)->get();
-        return $query->getResultArray();
-
-    }
 
     public function getChapter1($cID){
 

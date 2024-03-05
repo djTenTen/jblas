@@ -28,9 +28,6 @@ class ChapterController extends BaseController{
 
         // main content
         $data['title'] = 'Chapter 1 Management';
-        $state = 'active';
-        $data['chptr1'] = $this->chapterModel->viewchapter1($state);
-        $data['crypt'] = $this->crypt;
 
         echo view('includes/Header', $data);
         echo view('chapter1/ViewChapter1', $data);
@@ -54,6 +51,24 @@ class ChapterController extends BaseController{
         echo view('includes/Footer');
 
     }
+
+
+    public function manageac2($head){
+
+        // main content
+  
+        $data['title'] = 'Chapter 1 Management';
+        $data['header'] = $head;
+    
+        //$data['ac1'] = $this->chapterModel->getac1();
+        
+        echo view('includes/Header', $data);
+        echo view('chapter1/ac2', $data);
+        echo view('includes/Footer');
+
+    }
+
+
 
     public function addac1($head){
 
