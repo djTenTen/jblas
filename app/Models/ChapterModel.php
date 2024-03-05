@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ChapterModel extends Model{
    
 
-    protected $tblc1ac1 = "tbl_c1_ac1";
+    protected $tblc1 = "tbl_c1";
     protected $tblc1s = "tbl_c1_sections";
     protected $tblc1sf = "tbl_c1_section_fields";
 
@@ -28,12 +28,13 @@ class ChapterModel extends Model{
 
     // chapter 1
 
-    public function getChapter1($cID){
+    public function getac1(){
 
-        $query = $this->db->table($this->tblc1)->where('c1ID', $cID)->select('title')->get();
-        return $query->getRowArray();
+        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac1', 'type' => 'table'))->get();
+        return $query->getResultArray();
 
     }
+
 
     public function saveac1($req){
 
@@ -41,6 +42,7 @@ class ChapterModel extends Model{
 
             $data = [
                 'code' => 'ac1',
+                'tpye' => 'table',
                 'question' => $req['question'][$i],
                 'yesno' => $req['yesno'][$i],
                 'comment' => $req['comment'][$i],
@@ -48,64 +50,43 @@ class ChapterModel extends Model{
                 'added_on' => $this->date.' '.$this->time
             ];
 
-            $this->db->table($this->tblc1ac1)->insert($data);
+            $this->db->table($this->tblc1)->insert($data);
 
         }
 
         return true;
     }
 
-    public function getac1(){
 
-        $query =  $this->db->table($this->tblc1ac1)->get();
+
+
+    public function getac2(){
+
+        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac2', 'type' => 'table'))->get();
         return $query->getResultArray();
 
     }
 
 
-    public function savechapter1($req){
+    public function saveac2($req){
 
-        $data = [
-            'code' => strtoupper($req['code']),
-            'title' => $req['title'],
-            'status' => 'Active',
-            'added_on' => $this->date.' '.$this->time
-        ];
-
-        if($this->db->table($this->tblc1)->insert($data)){
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-
-    public function savemanagechapter($req){
-
-        foreach($req['q'] as $i => $val){
+        foreach($req['question'] as $i => $val){
 
             $data = [
-                'c1ID' => $req['cID'],
-                'questions' => $req['q'][$i]
+                'code' => 'ac2',
+                'type' => 'table',
+                'question' => $req['question'][$i],
+                'corptax' => $req['corptax'][$i],
+                'statutory' => $req['statutory'][$i],
+                'accountancy' => $req['accountancy'][$i],
+                'other' => $req['other'][$i],
+                'totalcu' => $req['totalcu'][$i],
+                'status' => 'Active',
+                'added_on' => $this->date.' '.$this->time
             ];
 
-            $this->db->table($this->tblc1s)->insert($data);
+            $this->db->table($this->tblc1)->insert($data);
 
-            $last = $this->db->insertID();
-
-            foreach($req['f'] as $i => $val){
-
-                $fields = [
-                    'c1_section' => $last,
-                    'fields' => $req['f'][$i],
-                    'd_value' => $req['dv'][$i]
-                ];
-
-                $this->db->table($this->tblc1sf)->insert($fields);
-
-            }
-            
-            
         }
 
         return true;
@@ -115,69 +96,15 @@ class ChapterModel extends Model{
 
 
 
+    
 
 
 
 
+    
 
 
 
 
-    // chapter 2
-    public function viewchapter2($state){
-
-        $query = $this->db->table($this->tblc2)->get();
-        return $query->getResultArray();
-
-    }
-
-    public function savechapter2($req){
-
-        $data = [
-            'code' => $req['code'],
-            'title' => $req['title'],
-            'status' => 'Active',
-            'added_on' => $this->date.' '.$this->time
-        ];
-
-        if($this->db->table($this->tblc2)->insert($data)){
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-
-
-
-
-
-
-
-
-    // chapter 2
-    public function viewchapter3($state){
-
-        $query = $this->db->table($this->tblc3)->get();
-        return $query->getResultArray();
-
-    }
-
-    public function savechapter3($req){
-
-        $data = [
-            'code' => $req['code'],
-            'title' => $req['title'],
-            'status' => 'Active',
-            'added_on' => $this->date.' '.$this->time
-        ];
-
-        if($this->db->table($this->tblc3)->insert($data)){
-            return true;
-        }else{
-            return false;
-        }
-
-    }
 
 }

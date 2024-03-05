@@ -51,31 +51,11 @@ class ChapterController extends BaseController{
         echo view('includes/Footer');
 
     }
-
-
-    public function manageac2($head){
-
-        // main content
-  
-        $data['title'] = 'Chapter 1 Management';
-        $data['header'] = $head;
-    
-        //$data['ac1'] = $this->chapterModel->getac1();
-        
-        echo view('includes/Header', $data);
-        echo view('chapter1/ac2', $data);
-        echo view('includes/Footer');
-
-    }
-
-
-
     public function addac1($head){
 
         $validationRules = [
             'question' => 'required',
-            'yesno' => 'required',
-            'comment' => 'required'
+            'yesno' => 'required'
         ];
         if (!$this->validate($validationRules)) {
             return 'error';
@@ -97,6 +77,57 @@ class ChapterController extends BaseController{
 
     }
 
+
+
+
+    public function manageac2($head){
+
+        // main content
+  
+        $data['title'] = 'Chapter 1 Management';
+        $data['header'] = $head;
+    
+        $data['ac2'] = $this->chapterModel->getac2();
+        
+        echo view('includes/Header', $data);
+        echo view('chapter1/ac2', $data);
+        echo view('includes/Footer');
+
+    }
+
+
+
+    
+
+
+    public function addac2($head){
+
+        $validationRules = [
+            'question' => 'required',
+        ];
+        if (!$this->validate($validationRules)) {
+            return 'error';
+        }
+
+        $req = [
+            'question' => $this->request->getPost('question'),
+            'corptax' => $this->request->getPost('corptax'),
+            'statutory' => $this->request->getPost('statutory'),
+            'accountancy' => $this->request->getPost('accountancy'),
+            'other' => $this->request->getPost('other'),
+            'totalcu' => $this->request->getPost('totalcu')
+        ];
+
+        $res = $this->chapterModel->saveac2($req);
+
+        if($res){
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac2/'.$head));
+        }else{
+            return 'error';
+        }
+
+
+    }
     
 
     public function addchapter1(){

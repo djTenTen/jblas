@@ -47,10 +47,10 @@
                     </thead>
                     <tbody>
                         <?php foreach($ac1 as $r){?>
-                            <tr>
-                                <td><textarea class="form-control" cols="30" rows="3" name="question[]" required><?= $r['question']?></textarea></td>
-                                <td><input class="form-control" type="text" name="yesno[]" value="<?= $r['yesno']?>"></td>
-                                <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
+                            <tr class="text-center">
+                                <td><?= $r['question']?></td>
+                                <td><?= $r['yesno']?></td>
+                                <td><?= $r['comment']?></td>
                                 <td><?php if($r['status'] == 'Active'){echo '<span class="badge badge-success">'.$r['status'].'</span>';}else{echo '<span class="badge badge-success">'.$r['status'].'</span>';}?></td>
                                 <td><?= $r['status']?></td>
                             </tr>
