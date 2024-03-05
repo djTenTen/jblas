@@ -1,3 +1,4 @@
+<?php \Config\Services::session(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +22,11 @@
                         <div class="col-lg-5">
                             <!-- Basic login form-->
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <?php 
+                                    if (session()->get('access_denied')) {
+                                        echo session()->get('access_denied');
+                                    }
+                                ?>
                                 <div class="card-header justify-content-center"><h3 class="fw-light my-4">Login</h3></div>
                                 <div class="card-body">
                                     <!-- Login form-->

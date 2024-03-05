@@ -30,7 +30,19 @@ class AuthController extends BaseController{
         ];
 
         if (!$this->validate($validationRules)) {
-            return 'error';
+            session()->setFlashdata('access_denied',
+            '<div class="alert alert-danger alert-icon" role="alert">
+                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="alert-icon-aside">
+                    <i class="far fa-flag"></i>
+                </div>
+                <div class="alert-icon-content">
+                    <h6 class="alert-heading">Access Denied</h6>
+                    Invalid email or password, Please try again.
+                </div>
+            </div>');
+
+            return redirect()->to(site_url());
         }
 
         $req = [
@@ -43,7 +55,20 @@ class AuthController extends BaseController{
         if(!empty($res)){
             return redirect()->to(site_url('dashboard'));
         }else{
-            return 'error';
+
+            session()->setFlashdata('access_denied',
+            '<div class="alert alert-danger alert-icon" role="alert">
+                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="alert-icon-aside">
+                    <i class="far fa-flag"></i>
+                </div>
+                <div class="alert-icon-content">
+                    <h6 class="alert-heading">Access Denied</h6>
+                    Invalid email or password, Please try again.
+                </div>
+            </div>');
+            return redirect()->to(site_url());
+
         }
 
     }
