@@ -26,9 +26,326 @@
         <div class="card">
             <div class="card-header"><?= $header?></div>
             <div class="card-body">
-               <!-- Contents Here -->
+               
+                <h4>PERMANENT FILE CHECKLIST</h4>
+                <p>Objective: This form is to be used to ensure the permanent file contains sufficient background information about the client. </p>
+                <p>This is a mandatory form.  Any “no” answers indicate a deficiency on the permanent file and a comment should be made as to how this will be addressed.</p>
+                <p>Per PSA 315, para A128c, “Disclosures in the financial statements of smaller entities may be less detailed or less complex (e.g., some financial reporting frameworks allow smaller entities to provide fewer disclosures in the financial statements). However, this does not relieve the auditor of the responsibility to obtain an understanding of the entity and its environment, including internal control, as it relates to disclosures.”</p>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Question</th>
+                            <th>Yes/No</th>
+                            <th>Comments</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <td colspan="5"><h3>General Matters</h3></td>
+                        </tr>
+                        <?php foreach($ac3genmat as $r1){?>
+                            <tr>
+                                <td><?= $r1['question']?></td>
+                                <td><?= $r1['yesno']?></td>
+                                <td><?= $r1['comment']?></td>
+                                <td><?= $r1['status']?></td>
+                                <td></td>
+                            </tr>
+                        <?php }?>
+                        <tr class="text-center">
+                            <td colspan="5"><h3>Documents and Correspondence of a Permanent Nature</h3></td>
+                        </tr>
+                        <?php foreach($ac3doccors as $r2){?>
+                            <tr>
+                                <td><?= $r2['question']?></td>
+                                <td><?= $r2['yesno']?></td>
+                                <td><?= $r2['comment']?></td>
+                                <td><?= $r2['status']?></td>
+                                <td></td>
+                            </tr>
+                        <?php }?>
+                        <tr class="text-center">
+                            <td colspan="5"><h3>Statutory Matters</h3></td>
+                        </tr>
+                        <?php foreach($ac3statutory as $r3){?>
+                            <tr>
+                                <td><?= $r3['question']?></td>
+                                <td><?= $r3['yesno']?></td>
+                                <td><?= $r3['comment']?></td>
+                                <td><?= $r3['status']?></td>
+                                <td></td>
+                            </tr>
+                        <?php }?>
+
+                        <tr class="text-center">
+                            <td colspan="5"><h3>The Accounting System</h3></td>
+                        </tr>
+                        <?php foreach($ac3accsys as $r4){?>
+                            <tr>
+                                <td><?= $r4['question']?></td>
+                                <td><?= $r4['yesno']?></td>
+                                <td><?= $r4['comment']?></td>
+                                <td><?= $r4['status']?></td>
+                                <td></td>
+                            </tr>
+                        <?php }?>
+                       
+                    </tbody>
+                </table>
+
+                <br><br>
+
+
+                <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savegenmat/<?= $header?>" method="post">
+                    <h3>General Matters</h3>
+                   <table class="table table-sm table-hover">
+                       <thead>
+                           <tr>
+                               <th>Question</th>
+                               <th>Yes/No</th>
+                               <th>Comments</th>
+                               <th>Action</th>
+                           </tr>
+                       </thead>
+                       <tbody id="tbody">
+                       </tbody>
+                   </table>
+
+                   <button class="btn btn-primary float-right" type="button" data-action="add-field" id="add-field">Add Field</button>
+
+                   <button type="submit" class="btn btn-success">Save</button>
+
+               </form>
+
+                <hr>
+
+               <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savedoccors/<?= $header?>" method="post">
+                    <h3>Documents and Correspondence of a Permanent Nature</h3>
+                   <table class="table table-sm table-hover">
+                       <thead>
+                           <tr>
+                               <th>Question</th>
+                               <th>Yes/No</th>
+                               <th>Comments</th>
+                               <th>Action</th>
+                           </tr>
+                       </thead>
+                       <tbody id="tbody2">
+                       </tbody>
+                   </table>
+
+                   <button class="btn btn-primary float-right" type="button" data-action="add-field2" id="add-field2">Add Field</button>
+
+                   <button type="submit" class="btn btn-success">Save</button>
+
+               </form>
+
+                <hr>
+
+                <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savestatutory/<?= $header?>" method="post">
+                    <h3> Statutory Matters</h3>
+                    <table class="table table-sm table-hover">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Yes/No</th>
+                                <th>Comments</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody3">
+                        </tbody>
+                    </table>
+
+                    <button class="btn btn-primary float-right" type="button" data-action="add-field3" id="add-field3">Add Field</button>
+
+                    <button type="submit" class="btn btn-success">Save</button>
+
+                </form>
+
+                <hr>
+
+                <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savedaccsys/<?= $header?>" method="post">
+                    <h3>The Accounting System</h3>
+                    <table class="table table-sm table-hover">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Yes/No</th>
+                                <th>Comments</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody4">
+                        </tbody>
+                    </table>
+
+                    <button class="btn btn-primary float-right" type="button" data-action="add-field4" id="add-field4">Add Field</button>
+
+                    <button type="submit" class="btn btn-success">Save</button>
+
+                </form>
+
+
+                <br><br>
+                
+                <h6>I have reviewed / updated the permanent file and consider that it is adequate.</h6>
+
+                <h6>Signed:			Date:	</h6>
+                <h6>I have reviewed the permanent file and consider that it is adequate.</h6>
+                <h6>Signed:			Date:	</h6>
+
+
+
+
+
+
+
+
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
         </div>
     </div>
     
 </main>
+
+
+<script>
+    $(document).ready(function () {
+
+        var rowIdx = 0;
+
+        $('#add-field').on('click', function () {
+            // Adding a row inside the tbody.
+            $('#tbody').append(`<tr>
+                <td><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
+                <td><input class="form-control" type="text" name="yesno[]" value="YES"></td>
+                <td><textarea class="form-control" cols="30" rows="3" name="comment[]">None</textarea></td>
+                <td><button class="btn btn-danger remove" type="button" data-action="remove">remove</button></td>
+            </tr>`);
+        });
+
+        $('#tbody').on('click', '.remove', function () {
+            var child = $(this).closest('tr').nextAll();
+            child.each(function () {
+            var id = $(this).attr('id');
+            var idx = $(this).children('.row-index').children('p');
+            var dig = parseInt(id.substring(1));
+            idx.html(`Row ${dig - 1}`);
+            $(this).attr('id', `R${dig - 1}`);
+            });
+            $(this).closest('tr').remove();
+            rowIdx--;
+        });
+
+        $('#add-field2').on('click', function () {
+            // Adding a row inside the tbody.
+            $('#tbody2').append(`<tr>
+                <td><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
+                <td><input class="form-control" type="text" name="yesno[]" value="YES"></td>
+                <td><textarea class="form-control" cols="30" rows="3" name="comment[]">None</textarea></td>
+                <td><button class="btn btn-danger remove2" type="button" data-action="remove2">remove</button></td>
+            </tr>`);
+        });
+
+        $('#tbody2').on('click', '.remove2', function () {
+            var child = $(this).closest('tr').nextAll();
+            child.each(function () {
+            var id = $(this).attr('id');
+            var idx = $(this).children('.row-index').children('p');
+            var dig = parseInt(id.substring(1));
+            idx.html(`Row ${dig - 1}`);
+            $(this).attr('id', `R${dig - 1}`);
+            });
+            $(this).closest('tr').remove();
+            rowIdx--;
+        });
+
+
+
+
+        
+        $('#add-field3').on('click', function () {
+            // Adding a row inside the tbody.
+            $('#tbody3').append(`<tr>
+                <td><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
+                <td><input class="form-control" type="text" name="yesno[]" value="YES"></td>
+                <td><textarea class="form-control" cols="30" rows="3" name="comment[]">None</textarea></td>
+                <td><button class="btn btn-danger remove3" type="button" data-action="remove3">remove</button></td>
+            </tr>`);
+        });
+
+        $('#tbody3').on('click', '.remove3', function () {
+            var child = $(this).closest('tr').nextAll();
+            child.each(function () {
+            var id = $(this).attr('id');
+            var idx = $(this).children('.row-index').children('p');
+            var dig = parseInt(id.substring(1));
+            idx.html(`Row ${dig - 1}`);
+            $(this).attr('id', `R${dig - 1}`);
+            });
+            $(this).closest('tr').remove();
+            rowIdx--;
+        });
+
+
+
+
+
+
+        $('#add-field4').on('click', function () {
+            // Adding a row inside the tbody.
+            $('#tbody4').append(`<tr>
+                <td><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
+                <td><input class="form-control" type="text" name="yesno[]" value="YES"></td>
+                <td><textarea class="form-control" cols="30" rows="3" name="comment[]">None</textarea></td>
+                <td><button class="btn btn-danger remove4" type="button" data-action="remove4">remove</button></td>
+            </tr>`);
+        });
+
+        $('#tbody4').on('click', '.remove4', function () {
+            var child = $(this).closest('tr').nextAll();
+            child.each(function () {
+            var id = $(this).attr('id');
+            var idx = $(this).children('.row-index').children('p');
+            var dig = parseInt(id.substring(1));
+            idx.html(`Row ${dig - 1}`);
+            $(this).attr('id', `R${dig - 1}`);
+            });
+            $(this).closest('tr').remove();
+            rowIdx--;
+        });
+
+
+    });
+</script>

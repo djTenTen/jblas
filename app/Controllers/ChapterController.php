@@ -37,6 +37,7 @@ class ChapterController extends BaseController{
     }
 
 
+
     public function manageac1($head){
 
         // main content
@@ -95,11 +96,6 @@ class ChapterController extends BaseController{
 
     }
 
-
-
-    
-
-
     public function addac2($head){
 
         $validationRules = [
@@ -130,197 +126,101 @@ class ChapterController extends BaseController{
     }
     
 
-    public function addchapter1(){
 
-        $page = 'AddChapter1';
+
+
+    public function manageac3($head){
+
+         // main content
+  
         $data['title'] = 'Chapter 1 Management';
-        echo view('includes/Header', $data);
-        echo view('chapter1/'.$page, $data);
-        echo view('includes/Footer');
-
-    }
-
-
-    public function savechapter1(){
-
-        $validationRules = [
-            'code' => 'required',
-            'title' => 'required'
-        ];
-        if (!$this->validate($validationRules)) {
-            return 'error';
-        }
-
-        $req = [
-            'code' => $this->request->getPost('code'),
-            'title' => $this->request->getPost('title')
-        ];
-
-        $res = $this->chapterModel->savechapter1($req);
-
-        if($res){
-            return redirect()->to(site_url('auditsystem/chapter1/view'));
-        }else{
-            return 'error';
-        }
-
-        
-
-    }
-
-
-
-    public function savemanagechapter($chapterID){
-
-        // $validationRules = [
-        //     'code' => 'required',
-        //     'title' => 'required'
-        // ];
-        // if (!$this->validate($validationRules)) {
-        //     return 'error';
-        // }
-
-        $req = [
-            'q' => $this->request->getPost('questions'),
-            'cID' => $chapterID,
-            'f' => $this->request->getPost('fields'),
-            'dv' => $this->request->getPost('d-values')
-        ];
-
-        $res = $this->chapterModel->savemanagechapter($req);
-
-        if($res){
-            return redirect()->to(site_url('chapter1/view'));
-        }else{
-            return 'error';
-        }
-
-
-    }
-
-
-
-
-
-
-
-    /**
-        ----------------------------------------------------------
-        Chapter 2 area
-        ----------------------------------------------------------
-    */
-    public function viewchapter2(){
-
-        // main content
-        $page = 'ViewChapter2';
-        $data['title'] = 'Chapter 2 Management';
-        $state = 'active';
-        $data['chptr2'] = $this->chapterModel->viewchapter2($state);
+        $data['header'] = $head;
     
+        $data['ac3genmat'] = $this->chapterModel->getac3genmat();
+        $data['ac3doccors'] = $this->chapterModel->getac3doccors();
+        $data['ac3statutory'] = $this->chapterModel->getac3statutory();
+        $data['ac3accsys'] = $this->chapterModel->getac3accsys();
+
+        
         echo view('includes/Header', $data);
-        echo view('chapter2/'.$page, $data);
+        echo view('chapter1/ac3', $data);
         echo view('includes/Footer');
 
     }
 
-    public function addchapter2(){
-
-        $page = 'AddChapter2';
-        $data['title'] = 'Chapter 2 Management';
-        echo view('includes/Header', $data);
-        echo view('chapter2/'.$page, $data);
-        echo view('includes/Footer');
-
-    }
-
-
-    public function savechapter2(){
-
-        $validationRules = [
-            'code' => 'required',
-            'title' => 'required'
-        ];
-        if (!$this->validate($validationRules)) {
-            return 'error';
-        }
+    public function addac3genmat($head){
 
         $req = [
-            'code' => $this->request->getPost('code'),
-            'title' => $this->request->getPost('title')
+            'question' => $this->request->getPost('question'),
+            'yesno' => $this->request->getPost('yesno'),
+            'comment' => $this->request->getPost('comment')
         ];
 
-        $res = $this->chapterModel->savechapter2($req);
+        $res = $this->chapterModel->saveac3genmat($req);
 
         if($res){
-            return redirect()->to(site_url('chapter2/view'));
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
         }else{
             return 'error';
         }
-
         
-
     }
 
 
 
-    /**
-        ----------------------------------------------------------
-        Chapter 3 area
-        ----------------------------------------------------------
-    */
-    public function viewchapter3(){
-
-        // main content
-        $page = 'ViewChapter3';
-        $data['title'] = 'Chapter 3 Management';
-        $state = 'active';
-        $data['chptr3'] = $this->chapterModel->viewchapter3($state);
-    
-        echo view('includes/Header', $data);
-        echo view('chapter3/'.$page, $data);
-        echo view('includes/Footer');
-
-    }
-
-    public function addchapter3(){
-
-        $page = 'AddChapter3';
-        $data['title'] = 'Chapter 3 Management';
-        echo view('includes/Header', $data);
-        echo view('chapter3/'.$page, $data);
-        echo view('includes/Footer');
-
-    }
-
-
-    public function savechapter3(){
-
-        $validationRules = [
-            'code' => 'required',
-            'title' => 'required'
-        ];
-        if (!$this->validate($validationRules)) {
-            return 'error';
-        }
+    public function addac3doccors($head){
 
         $req = [
-            'code' => $this->request->getPost('code'),
-            'title' => $this->request->getPost('title')
+            'question' => $this->request->getPost('question'),
+            'yesno' => $this->request->getPost('yesno'),
+            'comment' => $this->request->getPost('comment')
         ];
 
-        $res = $this->chapterModel->savechapter3($req);
+        $res = $this->chapterModel->saveac3doccors($req);
 
         if($res){
-            return redirect()->to(site_url('chapter3/view'));
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
         }else{
             return 'error';
         }
-
         
-
     }
 
+    public function addac3statutory($head){
 
+        $req = [
+            'question' => $this->request->getPost('question'),
+            'yesno' => $this->request->getPost('yesno'),
+            'comment' => $this->request->getPost('comment')
+        ];
+
+        $res = $this->chapterModel->saveac3statutory($req);
+
+        if($res){
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
+        }else{
+            return 'error';
+        }
+        
+    }
+
+    public function addac3accsys($head){
+
+        $req = [
+            'question' => $this->request->getPost('question'),
+            'yesno' => $this->request->getPost('yesno'),
+            'comment' => $this->request->getPost('comment')
+        ];
+
+        $res = $this->chapterModel->saveac3accsys($req);
+
+        if($res){
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
+        }else{
+            return 'error';
+        }
+        
+    }
 
 
 

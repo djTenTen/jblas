@@ -96,6 +96,135 @@ class ChapterModel extends Model{
 
 
 
+
+
+
+    public function getac3genmat(){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'genmat'))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function saveac3genmat($req){
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'code' => 'ac3',
+                'type' => 'table',
+                'question' => $req['question'][$i],
+                'yesno' => $req['yesno'][$i],
+                'comment' => $req['comment'][$i],
+                'other' => 'genmat',
+                'status' => 'Active',
+                'added_on' => $this->date.' '.$this->time
+            ];
+
+            $this->db->table($this->tblc1)->insert($data);
+
+        }
+
+        return true;
+
+    }
+
+
+    public function getac3doccors(){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'doccors'))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function saveac3doccors($req){
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'code' => 'ac3',
+                'type' => 'table',
+                'question' => $req['question'][$i],
+                'yesno' => $req['yesno'][$i],
+                'comment' => $req['comment'][$i],
+                'other' => 'doccors',
+                'status' => 'Active',
+                'added_on' => $this->date.' '.$this->time
+            ];
+
+            $this->db->table($this->tblc1)->insert($data);
+
+        }
+        
+        return true;
+
+    }
+
+
+    public function getac3statutory(){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'statutory'))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function saveac3statutory($req){
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'code' => 'ac3',
+                'type' => 'table',
+                'question' => $req['question'][$i],
+                'yesno' => $req['yesno'][$i],
+                'comment' => $req['comment'][$i],
+                'other' => 'statutory',
+                'status' => 'Active',
+                'added_on' => $this->date.' '.$this->time
+            ];
+
+            $this->db->table($this->tblc1)->insert($data);
+
+        }
+        
+        return true;
+
+    }
+
+
+    public function getac3accsys(){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'accsys'))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function saveac3accsys($req){
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'code' => 'ac3',
+                'type' => 'table',
+                'question' => $req['question'][$i],
+                'yesno' => $req['yesno'][$i],
+                'comment' => $req['comment'][$i],
+                'other' => 'accsys',
+                'status' => 'Active',
+                'added_on' => $this->date.' '.$this->time
+            ];
+
+            $this->db->table($this->tblc1)->insert($data);
+
+        }
+        
+        return true;
+
+    }
+
+
+
+
     
 
 
