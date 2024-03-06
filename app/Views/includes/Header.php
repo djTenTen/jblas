@@ -196,14 +196,21 @@
                             </nav>
                         </div>
 
-                        <div class="sidenav-menu-heading">Client</div>
+                        <div class="sidenav-menu-heading">Custumer Management</div>
+                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseClient" aria-expanded="false" aria-controls="collapseClient">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Client Management
+                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseClient" data-bs-parent="#accordionSidenav">
+                            <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                                <a class="nav-link" href="<?= base_url()?>auditsystem/clients/view">Clients</a>
+                                <a class="nav-link" href="<?= base_url()?>auditsystem/clients/view">Tenants</a>
+                            </nav>
+                        </div>
 
-                            
 
-
-                        <!-- Sidenav Heading (Custom)-->
                         <div class="sidenav-menu-heading">System</div>
-                        <!-- Sidenav Accordion (Pages)-->
                         <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="nav-link-icon"><i data-feather="grid"></i></div>
                             Settings
@@ -225,6 +232,12 @@
                                
                             </nav>
                         </div>
+
+
+
+                        <div class="sidenav-menu-heading">User Management</div>
+
+                        
                     </div>
                 </div>
                 <!-- Sidenav Footer-->

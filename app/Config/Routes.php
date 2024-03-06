@@ -16,3 +16,8 @@ $routes->get('/auditsystem', 'DashController::auditsystem');
 $routes->get('/auditsystem/chapter1/view', 'ChapterController::viewchapter1');
 $routes->get('/auditsystem/chapter1/manage/(:any)/(:any)/(:any)', 'ChapterController::managechapter1/$1/$2/$3');
 $routes->post('/auditsystem/chapter1/manage/save/(:any)/(:any)/(:any)', 'ChapterController::addchaper1/$1/$2/$3');
+
+
+// Client Management
+$routes->get('/auditsystem/clients/view', 'ClientController::viewclient');
+$routes->get('/auditsystem/clients/defaults/(:any)', 'ClientController::clientdefaults/$1');
