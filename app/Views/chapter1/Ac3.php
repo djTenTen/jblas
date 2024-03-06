@@ -79,7 +79,7 @@
                                 <td><?= $r1['question']?></td>
                                 <td><?= $r1['yesno']?></td>
                                 <td><?= $r1['comment']?></td>
-                                <td><?= $r1['status']?></td>
+                                <td><?php if($r1['status'] == 'Active'){echo '<span class="badge bg-success">'.$r1['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r1['status'].'</span>';}?></td>>
                                 <td></td>
                             </tr>
                         <?php }?>
@@ -91,7 +91,7 @@
                                 <td><?= $r2['question']?></td>
                                 <td><?= $r2['yesno']?></td>
                                 <td><?= $r2['comment']?></td>
-                                <td><?= $r2['status']?></td>
+                                <td><?php if($r2['status'] == 'Active'){echo '<span class="badge bg-success">'.$r2['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r2['status'].'</span>';}?></td>
                                 <td></td>
                             </tr>
                         <?php }?>
@@ -103,7 +103,7 @@
                                 <td><?= $r3['question']?></td>
                                 <td><?= $r3['yesno']?></td>
                                 <td><?= $r3['comment']?></td>
-                                <td><?= $r3['status']?></td>
+                                <td><?php if($r3['status'] == 'Active'){echo '<span class="badge bg-success">'.$r3['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r3['status'].'</span>';}?></td>
                                 <td></td>
                             </tr>
                         <?php }?>
@@ -116,7 +116,7 @@
                                 <td><?= $r4['question']?></td>
                                 <td><?= $r4['yesno']?></td>
                                 <td><?= $r4['comment']?></td>
-                                <td><?= $r4['status']?></td>
+                                <td><?php if($r4['status'] == 'Active'){echo '<span class="badge bg-success">'.$r4['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r4['status'].'</span>';}?></td>
                                 <td></td>
                             </tr>
                         <?php }?>

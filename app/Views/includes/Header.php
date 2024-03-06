@@ -154,6 +154,7 @@
             </li>
         </ul>
     </nav>
+
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sidenav shadow-right sidenav-light">
@@ -194,6 +195,12 @@
                                 <a class="nav-link" href="dashboard-3.html">Affiliate</a>
                             </nav>
                         </div>
+
+                        <div class="sidenav-menu-heading">Client</div>
+
+                            
+
+
                         <!-- Sidenav Heading (Custom)-->
                         <div class="sidenav-menu-heading">System</div>
                         <!-- Sidenav Accordion (Pages)-->

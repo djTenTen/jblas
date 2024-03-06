@@ -106,7 +106,7 @@
                             <td><?= $r['accountancy']?></td>
                             <td><?= $r['other']?></td>
                             <td><?= $r['totalcu']?></td>
-                            <td><?php if($r['status'] === 'Active'){echo '<span class="badge badge-success">'.$r['status'].'</span>';}else{echo '<span class="badge badge-success">'.$r['status'].'</span>';}?></td>
+                            <td><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
                             <td></td>
                         </tr>
                     <?php }?>

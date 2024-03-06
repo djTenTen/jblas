@@ -83,8 +83,8 @@
                                 <td><?= $r['question']?></td>
                                 <td><?= $r['yesno']?></td>
                                 <td><?= $r['comment']?></td>
-                                <td><?php if($r['status'] == 'Active'){echo '<span class="badge badge-success">'.$r['status'].'</span>';}else{echo '<span class="badge badge-success">'.$r['status'].'</span>';}?></td>
-                                <td><?= $r['status']?></td>
+                                <td><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
+                                <td></td>
                             </tr>
                         <?php }?>
                     </tbody>
