@@ -127,7 +127,7 @@
                 <br><br>
 
 
-                <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savegenmat/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/chapter1/manage/save/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <h3>General Matters</h3>
                    <table class="table table-sm table-hover">
                        <thead>
@@ -142,15 +142,15 @@
                        </tbody>
                    </table>
 
-                   <button class="btn btn-primary float-right" type="button" data-action="add-field" id="add-field">Add Field</button>
+                   <button class="btn btn-primary btn-sm float-right" type="button" data-action="add-field" id="add-field">Add Field</button>
 
-                   <button type="submit" class="btn btn-success">Save</button>
+                   <button type="submit" class="btn btn-sm btn-success">Save</button>
 
                </form>
 
                 <hr>
 
-               <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savedoccors/<?= $header?>/<?= $c1tID?>" method="post">
+               <form action="<?= base_url()?>auditsystem/chapter1/manage/save/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <h3>Documents and Correspondence of a Permanent Nature</h3>
                    <table class="table table-sm table-hover">
                        <thead>
@@ -165,15 +165,15 @@
                        </tbody>
                    </table>
 
-                   <button class="btn btn-primary float-right" type="button" data-action="add-field2" id="add-field2">Add Field</button>
+                   <button class="btn btn-primary btn-sm float-right" type="button" data-action="add-field2" id="add-field2">Add Field</button>
 
-                   <button type="submit" class="btn btn-success">Save</button>
+                   <button type="submit" class="btn btn-sm btn-success">Save</button>
 
                </form>
 
                 <hr>
 
-                <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savestatutory/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/chapter1/manage/save/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <h3> Statutory Matters</h3>
                     <table class="table table-sm table-hover">
                         <thead>
@@ -188,15 +188,15 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary float-right" type="button" data-action="add-field3" id="add-field3">Add Field</button>
+                    <button class="btn btn-primary btn-sm float-right" type="button" data-action="add-field3" id="add-field3">Add Field</button>
 
-                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="submit" class="btn btn-sm btn-success">Save</button>
 
                 </form>
 
                 <hr>
 
-                <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savedaccsys/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/chapter1/manage/save/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <h3>The Accounting System</h3>
                     <table class="table table-sm table-hover">
                         <thead>
@@ -211,9 +211,9 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary float-right" type="button" data-action="add-field4" id="add-field4">Add Field</button>
+                    <button class="btn btn-primary btn-sm float-right" type="button" data-action="add-field4" id="add-field4">Add Field</button>
 
-                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="submit" class="btn btn-sm btn-success">Save</button>
 
                 </form>
 
@@ -256,8 +256,7 @@
 
 
 
-
-
+                           
 
 
 
@@ -276,7 +275,7 @@
         $('#add-field').on('click', function () {
             // Adding a row inside the tbody.
             $('#tbody').append(`<tr>
-                <td><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
+                <td><input type="hidden" name="part[]" value="genmat"><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
                 <td><input class="form-control" type="text" name="yesno[]" value="YES"></td>
                 <td><textarea class="form-control" cols="30" rows="3" name="comment[]">None</textarea></td>
                 <td><button class="btn btn-danger remove" type="button" data-action="remove">remove</button></td>
@@ -299,13 +298,13 @@
         $('#add-field2').on('click', function () {
             // Adding a row inside the tbody.
             $('#tbody2').append(`<tr>
-                <td><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
+                <td><input type="hidden" name="part[]" value="doccors"><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
                 <td><input class="form-control" type="text" name="yesno[]" value="YES"></td>
                 <td><textarea class="form-control" cols="30" rows="3" name="comment[]">None</textarea></td>
                 <td><button class="btn btn-danger remove2" type="button" data-action="remove2">remove</button></td>
             </tr>`);
         });
-
+        
         $('#tbody2').on('click', '.remove2', function () {
             var child = $(this).closest('tr').nextAll();
             child.each(function () {
@@ -326,7 +325,7 @@
         $('#add-field3').on('click', function () {
             // Adding a row inside the tbody.
             $('#tbody3').append(`<tr>
-                <td><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
+                <td><input type="hidden" name="part[]" value="statutory"><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
                 <td><input class="form-control" type="text" name="yesno[]" value="YES"></td>
                 <td><textarea class="form-control" cols="30" rows="3" name="comment[]">None</textarea></td>
                 <td><button class="btn btn-danger remove3" type="button" data-action="remove3">remove</button></td>
@@ -354,7 +353,7 @@
         $('#add-field4').on('click', function () {
             // Adding a row inside the tbody.
             $('#tbody4').append(`<tr>
-                <td><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
+                <td><input type="hidden" name="part[]" value="accsys"><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
                 <td><input class="form-control" type="text" name="yesno[]" value="YES"></td>
                 <td><textarea class="form-control" cols="30" rows="3" name="comment[]">None</textarea></td>
                 <td><button class="btn btn-danger remove4" type="button" data-action="remove4">remove</button></td>

@@ -94,13 +94,10 @@ class ChapterController extends BaseController{
                     'code' => $code,
                     'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
                 ];
-
                 $res = $this->chapterModel->savechapter1($req);
-
-                break;
+            break;
 
             case 'AC2':
-
                 $req = [
                     'question' => $this->request->getPost('question'),
                     'corptax' => $this->request->getPost('corptax'),
@@ -111,10 +108,22 @@ class ChapterController extends BaseController{
                     'code' => $code,
                     'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
                 ];
+                $res = $this->chapterModel->savechapter1($req);
+            break;
+
+            case 'AC3':
+                $req = [
+                    'question' => $this->request->getPost('question'),
+                    'yesno' => $this->request->getPost('yesno'),
+                    'comment' => $this->request->getPost('comment'),
+                    'part' => $this->request->getPost('part'),
+                    'code' => $code,
+                    'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+                ];
         
                 $res = $this->chapterModel->savechapter1($req);
         
-                break;
+            break;
             
             default:
                 # code...
@@ -151,68 +160,8 @@ class ChapterController extends BaseController{
 
 
 
-    public function addac1($head,$c1tID){
-
-        $validationRules = [
-            'question' => 'required',
-            'yesno' => 'required'
-        ];
-        if (!$this->validate($validationRules)) {
-
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter1/manage/ac1/'.$head));
-        }
-
-        $req = [
-            'cititleID' => $this->cryptdecrypt(str_ireplace(str_ireplace(['~','$'],['/','+'],$c1tID))),
-            'question' => $this->request->getPost('question'),
-            'yesno' => $this->request->getPost('yesno'),
-            'comment' => $this->request->getPost('comment')
-        ];
-
-        $res = $this->chapterModel->saveac1($req);
-
-        if($res){
-            session()->setFlashdata('success_registration','success_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/manage/ac1/'.$head));
-        }else{
-            session()->setFlashdata('failed_registration','failed_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/manage/ac1/'.$head));
-        }
-
-    }
-
-    public function addac2($head){
-
-        $validationRules = [
-            'question' => 'required',
-        ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter1/manage/ac1/'.$head));
-        }
-
-        $req = [
-            'question' => $this->request->getPost('question'),
-            'corptax' => $this->request->getPost('corptax'),
-            'statutory' => $this->request->getPost('statutory'),
-            'accountancy' => $this->request->getPost('accountancy'),
-            'other' => $this->request->getPost('other'),
-            'totalcu' => $this->request->getPost('totalcu')
-        ];
-
-        $res = $this->chapterModel->saveac2($req);
-
-        if($res){
-            session()->setFlashdata('success_registration','success_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/manage/ac2/'.$head));
-        }else{
-            session()->setFlashdata('failed_registration','failed_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/manage/ac2/'.$head));
-        }
-
-
-    }
+   
+    
     
     public function addac3genmat($head){
 

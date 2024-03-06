@@ -84,18 +84,22 @@ class ChapterModel extends Model{
             break;
 
             case 'AC3':
-                $data = [
-                    'code' => 'ac3',
-                    'type' => 'table',
-                    'question' => $req['question'][$i],
-                    'yesno' => $req['yesno'][$i],
-                    'comment' => $req['comment'][$i],
-                    'other' => 'genmat',
-                    'status' => 'Active',
-                    'added_on' => $this->date.' '.$this->time
-                ];
-    
-                $this->db->table($this->tblc1)->insert($data);
+                foreach($req['question'] as $i => $val){
+                    $data = [
+                        'code' => $req['code'],
+                        'c1tID' => $req['c1tID'],
+                        'type' => 'table',
+                        'question' => $req['question'][$i],
+                        'yesno' => $req['yesno'][$i],
+                        'comment' => $req['comment'][$i],
+                        'other' => $req['part'][$i],
+                        'status' => 'Active',
+                        'added_on' => $this->date.' '.$this->time
+                    ];
+        
+                    $this->db->table($this->tblc1)->insert($data);
+                }
+                return true;
             break;
             
             default:
@@ -131,17 +135,7 @@ class ChapterModel extends Model{
 
     }
 
-    public function saveac3genmat($req){
 
-        foreach($req['question'] as $i => $val){
-
-            
-
-        }
-
-        return true;
-
-    }
 
 
     public function getac3doccors(){
@@ -151,28 +145,7 @@ class ChapterModel extends Model{
 
     }
 
-    public function saveac3doccors($req){
 
-        foreach($req['question'] as $i => $val){
-
-            $data = [
-                'code' => 'ac3',
-                'type' => 'table',
-                'question' => $req['question'][$i],
-                'yesno' => $req['yesno'][$i],
-                'comment' => $req['comment'][$i],
-                'other' => 'doccors',
-                'status' => 'Active',
-                'added_on' => $this->date.' '.$this->time
-            ];
-
-            $this->db->table($this->tblc1)->insert($data);
-
-        }
-        
-        return true;
-
-    }
 
 
     public function getac3statutory(){
@@ -182,28 +155,7 @@ class ChapterModel extends Model{
 
     }
 
-    public function saveac3statutory($req){
-
-        foreach($req['question'] as $i => $val){
-
-            $data = [
-                'code' => 'ac3',
-                'type' => 'table',
-                'question' => $req['question'][$i],
-                'yesno' => $req['yesno'][$i],
-                'comment' => $req['comment'][$i],
-                'other' => 'statutory',
-                'status' => 'Active',
-                'added_on' => $this->date.' '.$this->time
-            ];
-
-            $this->db->table($this->tblc1)->insert($data);
-
-        }
-        
-        return true;
-
-    }
+    
 
 
     public function getac3accsys(){
@@ -213,28 +165,7 @@ class ChapterModel extends Model{
 
     }
 
-    public function saveac3accsys($req){
-
-        foreach($req['question'] as $i => $val){
-
-            $data = [
-                'code' => 'ac3',
-                'type' => 'table',
-                'question' => $req['question'][$i],
-                'yesno' => $req['yesno'][$i],
-                'comment' => $req['comment'][$i],
-                'other' => 'accsys',
-                'status' => 'Active',
-                'added_on' => $this->date.' '.$this->time
-            ];
-
-            $this->db->table($this->tblc1)->insert($data);
-
-        }
-        
-        return true;
-
-    }
+    
 
 
 
