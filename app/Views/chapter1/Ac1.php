@@ -106,7 +106,7 @@
 
                     <button class="btn btn-primary btn-sm float-right" type="button" data-action="add-field" id="add-field">Add Field</button>
 
-                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="submit" class="btn btn-success btn-sm">Save</button>
 
                 </form>
 

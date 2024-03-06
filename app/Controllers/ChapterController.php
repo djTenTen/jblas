@@ -31,8 +31,7 @@ class ChapterController extends BaseController{
         echo view('includes/Header', $data);
         echo view('chapter1/ViewChapter1', $data);
         echo view('includes/Footer');
-        
-
+    
     }
 
 
@@ -105,7 +104,8 @@ class ChapterController extends BaseController{
             'question' => 'required',
         ];
         if (!$this->validate($validationRules)) {
-            return 'error';
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac1/'.$head));
         }
 
         $req = [
@@ -120,9 +120,11 @@ class ChapterController extends BaseController{
         $res = $this->chapterModel->saveac2($req);
 
         if($res){
+            session()->setFlashdata('success_registration','success_registration');
             return redirect()->to(site_url('auditsystem/chapter1/manage/ac2/'.$head));
         }else{
-            return 'error';
+            session()->setFlashdata('failed_registration','failed_registration');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac2/'.$head));
         }
 
 
@@ -153,6 +155,14 @@ class ChapterController extends BaseController{
 
     public function addac3genmat($head){
 
+        $validationRules = [
+            'question' => 'required',
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
+        }
+
         $req = [
             'question' => $this->request->getPost('question'),
             'yesno' => $this->request->getPost('yesno'),
@@ -162,9 +172,12 @@ class ChapterController extends BaseController{
         $res = $this->chapterModel->saveac3genmat($req);
 
         if($res){
+            session()->setFlashdata('success_registration','success_registration');
             return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
         }else{
-            return 'error';
+
+            session()->setFlashdata('failed_registration','failed_registration');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
         }
         
     }
@@ -172,6 +185,15 @@ class ChapterController extends BaseController{
 
 
     public function addac3doccors($head){
+
+
+        $validationRules = [
+            'question' => 'required',
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
+        }
 
         $req = [
             'question' => $this->request->getPost('question'),
@@ -182,14 +204,24 @@ class ChapterController extends BaseController{
         $res = $this->chapterModel->saveac3doccors($req);
 
         if($res){
+            session()->setFlashdata('success_registration','success_registration');
             return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
         }else{
-            return 'error';
+            session()->setFlashdata('failed_registration','failed_registration');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
         }
         
     }
 
     public function addac3statutory($head){
+
+        $validationRules = [
+            'question' => 'required',
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
+        }
 
         $req = [
             'question' => $this->request->getPost('question'),
@@ -200,14 +232,24 @@ class ChapterController extends BaseController{
         $res = $this->chapterModel->saveac3statutory($req);
 
         if($res){
+            session()->setFlashdata('success_registration','success_registration');
             return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
         }else{
-            return 'error';
+            session()->setFlashdata('failed_registration','failed_registration');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
         }
         
     }
 
     public function addac3accsys($head){
+
+        $validationRules = [
+            'question' => 'required',
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
+        }
 
         $req = [
             'question' => $this->request->getPost('question'),
@@ -218,9 +260,11 @@ class ChapterController extends BaseController{
         $res = $this->chapterModel->saveac3accsys($req);
 
         if($res){
+            session()->setFlashdata('success_registration','success_registration');
             return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
         }else{
-            return 'error';
+            session()->setFlashdata('failed_registration','failed_registration');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/ac3/'.$head));
         }
         
     }
