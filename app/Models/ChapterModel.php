@@ -8,9 +8,11 @@ class ChapterModel extends Model{
    
 
     protected $tblc1 = "tbl_c1";
+    protected $tblc1t = "tbl_c1_titles";
+
+
     protected $tblc1s = "tbl_c1_sections";
     protected $tblc1sf = "tbl_c1_section_fields";
-
     protected $tblc2 = "tbl_c2_detailed_procedure";
     protected $tblc3 = "tbl_c3_conclusion";
     protected $time,$date;
@@ -28,72 +30,95 @@ class ChapterModel extends Model{
 
     // chapter 1
 
-    public function getac1(){
+    public function getc1(){
 
-        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac1', 'type' => 'table'))->get();
+        $query =  $this->db->table($this->tblc1t)->get();
         return $query->getResultArray();
 
     }
 
+    public function savechapter1($req){
 
-    public function saveac1($req){
+        switch ($req['code']) {
+            case 'AC1':
+                foreach($req['question'] as $i => $val){
 
-        foreach($req['question'] as $i => $val){
+                    $data = [
+                        'code' => $req['code'],
+                        'c1tID' => $req['c1tID'],
+                        'type' => 'table',
+                        'question' => $req['question'][$i],
+                        'yesno' => $req['yesno'][$i],
+                        'comment' => $req['comment'][$i],
+                        'status' => 'Active',
+                        'added_on' => $this->date.' '.$this->time
+                    ];
+        
+                    $this->db->table($this->tblc1)->insert($data);
+        
+                }
+                return true;
+            break;
 
-            $data = [
-                'code' => 'ac1',
-                'type' => 'table',
-                'question' => $req['question'][$i],
-                'yesno' => $req['yesno'][$i],
-                'comment' => $req['comment'][$i],
-                'status' => 'Active',
-                'added_on' => $this->date.' '.$this->time
-            ];
+            case 'AC2':
+                foreach($req['question'] as $i => $val){
 
-            $this->db->table($this->tblc1)->insert($data);
+                    $data = [
+                        'code' => $req['code'],
+                        'c1tID' => $req['c1tID'],
+                        'type' => 'table',
+                        'question' => $req['question'][$i],
+                        'corptax' => $req['corptax'][$i],
+                        'statutory' => $req['statutory'][$i],
+                        'accountancy' => $req['accountancy'][$i],
+                        'other' => $req['other'][$i],
+                        'totalcu' => $req['totalcu'][$i],
+                        'status' => 'Active',
+                        'added_on' => $this->date.' '.$this->time
+                    ];
+        
+                    $this->db->table($this->tblc1)->insert($data);
+        
+                }
+                return true;
+            break;
 
+            case 'AC3':
+                $data = [
+                    'code' => 'ac3',
+                    'type' => 'table',
+                    'question' => $req['question'][$i],
+                    'yesno' => $req['yesno'][$i],
+                    'comment' => $req['comment'][$i],
+                    'other' => 'genmat',
+                    'status' => 'Active',
+                    'added_on' => $this->date.' '.$this->time
+                ];
+    
+                $this->db->table($this->tblc1)->insert($data);
+            break;
+            
+            default:
+                # code...
+                break;
         }
+        
 
-        return true;
     }
 
+    public function getac1($c1tID){
 
-
-
-    public function getac2(){
-
-        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac2', 'type' => 'table'))->get();
+        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac1', 'type' => 'table', 'c1tID' => $c1tID))->get();
         return $query->getResultArray();
 
     }
 
+    public function getac2($c1tID){
 
-    public function saveac2($req){
-
-        foreach($req['question'] as $i => $val){
-
-            $data = [
-                'code' => 'ac2',
-                'type' => 'table',
-                'question' => $req['question'][$i],
-                'corptax' => $req['corptax'][$i],
-                'statutory' => $req['statutory'][$i],
-                'accountancy' => $req['accountancy'][$i],
-                'other' => $req['other'][$i],
-                'totalcu' => $req['totalcu'][$i],
-                'status' => 'Active',
-                'added_on' => $this->date.' '.$this->time
-            ];
-
-            $this->db->table($this->tblc1)->insert($data);
-
-        }
-
-        return true;
+        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac2', 'type' => 'table', 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
 
     }
-
-
 
 
 
@@ -110,18 +135,7 @@ class ChapterModel extends Model{
 
         foreach($req['question'] as $i => $val){
 
-            $data = [
-                'code' => 'ac3',
-                'type' => 'table',
-                'question' => $req['question'][$i],
-                'yesno' => $req['yesno'][$i],
-                'comment' => $req['comment'][$i],
-                'other' => 'genmat',
-                'status' => 'Active',
-                'added_on' => $this->date.' '.$this->time
-            ];
-
-            $this->db->table($this->tblc1)->insert($data);
+            
 
         }
 

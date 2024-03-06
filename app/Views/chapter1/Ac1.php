@@ -89,7 +89,7 @@
                         <?php }?>
                     </tbody>
                 </table>
-                <form action="<?= base_url()?>auditsystem/chapter1/manage/ac1/save/<?= $header?>" method="post">
+                <form action="<?= base_url()?>auditsystem/chapter1/manage/save/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                    
                     <table class="table table-sm table-hover">
                         <thead>

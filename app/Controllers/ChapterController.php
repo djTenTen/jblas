@@ -28,29 +28,130 @@ class ChapterController extends BaseController{
         // main content
         $data['title'] = 'Chapter 1 Management';
 
+        $data['c1'] = $this->chapterModel->getc1();
+
         echo view('includes/Header', $data);
         echo view('chapter1/ViewChapter1', $data);
         echo view('includes/Footer');
     
     }
 
+    public function managechapter1($code,$head,$c1tID){
 
-
-    public function manageac1($head){
-
-        // main content
-  
         $data['title'] = 'Chapter 1 Management';
         $data['header'] = $head;
-    
-        $data['ac1'] = $this->chapterModel->getac1();
-        
-        echo view('includes/Header', $data);
-        echo view('chapter1/ac1', $data);
-        echo view('includes/Footer');
+        $data['c1tID'] = $c1tID;
+        $data['code'] = $code;
+
+        switch ($code) {
+            case 'AC1':
+                $data['ac1'] = $this->chapterModel->getac1($this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)));
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac1', $data);
+                echo view('includes/Footer');
+                break;
+            
+            case 'AC2':
+                $data['ac2'] = $this->chapterModel->getac2($this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)));
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac2', $data);
+                echo view('includes/Footer');
+                break;
+            case 'AC3':
+                $data['ac3genmat'] = $this->chapterModel->getac3genmat();
+                $data['ac3doccors'] = $this->chapterModel->getac3doccors();
+                $data['ac3statutory'] = $this->chapterModel->getac3statutory();
+                $data['ac3accsys'] = $this->chapterModel->getac3accsys();
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac3', $data);
+                echo view('includes/Footer');
+                break;
+
+            default:
+                # code...
+                break;
+
+        }
 
     }
-    public function addac1($head){
+
+    public function addchaper1($code,$head,$c1tID){
+
+        $validationRules = [
+            'question' => 'required'
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
+        switch ($code) {
+            case 'AC1':
+                $req = [
+                    'question' => $this->request->getPost('question'),
+                    'yesno' => $this->request->getPost('yesno'),
+                    'comment' => $this->request->getPost('comment'),
+                    'code' => $code,
+                    'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+                ];
+
+                $res = $this->chapterModel->savechapter1($req);
+
+                break;
+
+            case 'AC2':
+
+                $req = [
+                    'question' => $this->request->getPost('question'),
+                    'corptax' => $this->request->getPost('corptax'),
+                    'statutory' => $this->request->getPost('statutory'),
+                    'accountancy' => $this->request->getPost('accountancy'),
+                    'other' => $this->request->getPost('other'),
+                    'totalcu' => $this->request->getPost('totalcu'),
+                    'code' => $code,
+                    'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+                ];
+        
+                $res = $this->chapterModel->savechapter1($req);
+        
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+
+        if($res){
+            session()->setFlashdata('success_registration','success_registration');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }else{
+            session()->setFlashdata('failed_registration','failed_registration');
+            return redirect()->to(site_url('auditsystem/chapter1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function addac1($head,$c1tID){
 
         $validationRules = [
             'question' => 'required',
@@ -63,6 +164,7 @@ class ChapterController extends BaseController{
         }
 
         $req = [
+            'cititleID' => $this->cryptdecrypt(str_ireplace(str_ireplace(['~','$'],['/','+'],$c1tID))),
             'question' => $this->request->getPost('question'),
             'yesno' => $this->request->getPost('yesno'),
             'comment' => $this->request->getPost('comment')
@@ -77,24 +179,6 @@ class ChapterController extends BaseController{
             session()->setFlashdata('failed_registration','failed_registration');
             return redirect()->to(site_url('auditsystem/chapter1/manage/ac1/'.$head));
         }
-
-    }
-
-
-
-
-    public function manageac2($head){
-
-        // main content
-  
-        $data['title'] = 'Chapter 1 Management';
-        $data['header'] = $head;
-    
-        $data['ac2'] = $this->chapterModel->getac2();
-        
-        echo view('includes/Header', $data);
-        echo view('chapter1/ac2', $data);
-        echo view('includes/Footer');
 
     }
 
@@ -130,29 +214,6 @@ class ChapterController extends BaseController{
 
     }
     
-
-
-
-
-    public function manageac3($head){
-
-         // main content
-  
-        $data['title'] = 'Chapter 1 Management';
-        $data['header'] = $head;
-    
-        $data['ac3genmat'] = $this->chapterModel->getac3genmat();
-        $data['ac3doccors'] = $this->chapterModel->getac3doccors();
-        $data['ac3statutory'] = $this->chapterModel->getac3statutory();
-        $data['ac3accsys'] = $this->chapterModel->getac3accsys();
-
-        
-        echo view('includes/Header', $data);
-        echo view('chapter1/ac3', $data);
-        echo view('includes/Footer');
-
-    }
-
     public function addac3genmat($head){
 
         $validationRules = [
@@ -181,8 +242,6 @@ class ChapterController extends BaseController{
         }
         
     }
-
-
 
     public function addac3doccors($head){
 

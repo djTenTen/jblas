@@ -114,7 +114,7 @@
             </table>
 
 
-            <form action="<?= base_url()?>auditsystem/chapter1/manage/ac2/save/<?= $header?>" method="post">
+            <form action="<?= base_url()?>auditsystem/chapter1/manage/save/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                 <table class="table table-hover">
                     <thead>
                         <tr>

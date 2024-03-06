@@ -127,7 +127,7 @@
                 <br><br>
 
 
-                <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savegenmat/<?= $header?>" method="post">
+                <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savegenmat/<?= $header?>/<?= $c1tID?>" method="post">
                     <h3>General Matters</h3>
                    <table class="table table-sm table-hover">
                        <thead>
@@ -150,7 +150,7 @@
 
                 <hr>
 
-               <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savedoccors/<?= $header?>" method="post">
+               <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savedoccors/<?= $header?>/<?= $c1tID?>" method="post">
                     <h3>Documents and Correspondence of a Permanent Nature</h3>
                    <table class="table table-sm table-hover">
                        <thead>
@@ -173,7 +173,7 @@
 
                 <hr>
 
-                <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savestatutory/<?= $header?>" method="post">
+                <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savestatutory/<?= $header?>/<?= $c1tID?>" method="post">
                     <h3> Statutory Matters</h3>
                     <table class="table table-sm table-hover">
                         <thead>
@@ -196,7 +196,7 @@
 
                 <hr>
 
-                <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savedaccsys/<?= $header?>" method="post">
+                <form action="<?= base_url()?>auditsystem/chapter1/manage/ac3/savedaccsys/<?= $header?>/<?= $c1tID?>" method="post">
                     <h3>The Accounting System</h3>
                     <table class="table table-sm table-hover">
                         <thead>
