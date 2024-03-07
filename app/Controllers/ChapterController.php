@@ -86,6 +86,14 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break;
 
+            case 'AC6':
+        
+                $data['ac6'] = $this->chapterModel->getac6($dc1tID);
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac6', $data);
+                echo view('includes/Footer');
+                break;
+
             default:
             
                 # code...
@@ -152,7 +160,30 @@ class ChapterController extends BaseController{
                 ];
                 $res = $this->chapterModel->savechapter1($req);
                 break;
-            
+
+            case 'AC5':
+                // $req = [
+                //     'question' => $this->request->getPost('question'),
+                //     'comment' => $this->request->getPost('comment'),
+                //     'code' => $code,
+                //     'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+                // ];
+                // $res = $this->chapterModel->savechapter1($req);
+                break;
+
+
+            case 'AC6':
+                $req = [
+                    'question' => $this->request->getPost('question'),
+                    'planning' => $this->request->getPost('planning'),
+                    'finalization' => $this->request->getPost('finalization'),
+                    'reference' => $this->request->getPost('reference'),
+                    'code' => $code,
+                    'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+                ];
+                $res = $this->chapterModel->savechapter1($req);
+                break;
+    
             default:
                 # code...
                 break;
