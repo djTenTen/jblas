@@ -78,6 +78,14 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break;
 
+            case 'AC5':
+            
+                //$data['ac4'] = $this->chapterModel->getac4($dc1tID);
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac5', $data);
+                echo view('includes/Footer');
+                break;
+
             default:
             
                 # code...
