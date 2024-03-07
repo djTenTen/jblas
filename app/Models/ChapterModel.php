@@ -37,6 +37,55 @@ class ChapterModel extends Model{
 
     }
 
+    public function getac1($c1tID){
+
+        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac1', 'type' => 'table', 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getac2($c1tID){
+
+        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac2', 'type' => 'table', 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getac3genmat($c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'genmat', 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+    public function getac3doccors($c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'doccors', 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+    public function getac3statutory($c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'statutory', 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+    public function getac3accsys($c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'accsys', 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getac4($c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac4', 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+
+
+
+
     public function savechapter1($req){
 
         switch ($req['code']) {
@@ -101,6 +150,24 @@ class ChapterModel extends Model{
                 }
                 return true;
             break;
+
+            case 'AC4':
+                foreach($req['question'] as $i => $val){
+                    $data = [
+                        'code' => $req['code'],
+                        'c1tID' => $req['c1tID'],
+                        'type' => 'table',
+                        'question' => $req['question'][$i],
+                        'comment' => $req['comment'][$i],
+                        'status' => 'Active',
+                        'added_on' => $this->date.' '.$this->time
+                    ];
+        
+                    $this->db->table($this->tblc1)->insert($data);
+                }
+                return true;
+            break;
+
             
             default:
                 # code...
@@ -110,60 +177,7 @@ class ChapterModel extends Model{
 
     }
 
-    public function getac1($c1tID){
-
-        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac1', 'type' => 'table', 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    public function getac2($c1tID){
-
-        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac2', 'type' => 'table', 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-
-
-
-
-
-    public function getac3genmat(){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'genmat'))->get();
-        return $query->getResultArray();
-
-    }
-
-
-
-
-    public function getac3doccors(){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'doccors'))->get();
-        return $query->getResultArray();
-
-    }
-
-
-
-
-    public function getac3statutory(){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'statutory'))->get();
-        return $query->getResultArray();
-
-    }
-
     
-
-
-    public function getac3accsys(){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'accsys'))->get();
-        return $query->getResultArray();
-
-    }
 
     
 

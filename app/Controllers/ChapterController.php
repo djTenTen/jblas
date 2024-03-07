@@ -43,33 +43,45 @@ class ChapterController extends BaseController{
         $data['c1tID'] = $c1tID;
         $data['code'] = $code;
 
+        $dc1tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID));
+
         switch ($code) {
             case 'AC1':
-                $data['ac1'] = $this->chapterModel->getac1($this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)));
+                $data['ac1'] = $this->chapterModel->getac1($dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac1', $data);
                 echo view('includes/Footer');
                 break;
             
             case 'AC2':
-                $data['ac2'] = $this->chapterModel->getac2($this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)));
+                $data['ac2'] = $this->chapterModel->getac2($dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac2', $data);
                 echo view('includes/Footer');
                 break;
+
             case 'AC3':
-                $data['ac3genmat'] = $this->chapterModel->getac3genmat();
-                $data['ac3doccors'] = $this->chapterModel->getac3doccors();
-                $data['ac3statutory'] = $this->chapterModel->getac3statutory();
-                $data['ac3accsys'] = $this->chapterModel->getac3accsys();
+                $data['ac3genmat'] = $this->chapterModel->getac3genmat($dc1tID);
+                $data['ac3doccors'] = $this->chapterModel->getac3doccors($dc1tID);
+                $data['ac3statutory'] = $this->chapterModel->getac3statutory($dc1tID);
+                $data['ac3accsys'] = $this->chapterModel->getac3accsys($dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac3', $data);
                 echo view('includes/Footer');
                 break;
 
-            default:
-                # code...
+            case 'AC4':
+                
+                $data['ac4'] = $this->chapterModel->getac4($dc1tID);
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac4', $data);
+                echo view('includes/Footer');
                 break;
+
+            default:
+            
+                # code...
+            break;
 
         }
 
@@ -95,7 +107,7 @@ class ChapterController extends BaseController{
                     'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
                 ];
                 $res = $this->chapterModel->savechapter1($req);
-            break;
+                break;
 
             case 'AC2':
                 $req = [
@@ -109,7 +121,7 @@ class ChapterController extends BaseController{
                     'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
                 ];
                 $res = $this->chapterModel->savechapter1($req);
-            break;
+                break;
 
             case 'AC3':
                 $req = [
@@ -120,10 +132,18 @@ class ChapterController extends BaseController{
                     'code' => $code,
                     'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
                 ];
-        
                 $res = $this->chapterModel->savechapter1($req);
-        
-            break;
+                break;
+
+            case 'AC4':
+                $req = [
+                    'question' => $this->request->getPost('question'),
+                    'comment' => $this->request->getPost('comment'),
+                    'code' => $code,
+                    'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+                ];
+                $res = $this->chapterModel->savechapter1($req);
+                break;
             
             default:
                 # code...
