@@ -42,7 +42,7 @@
                                 <td><?= $r['code']?></td>
                                 <td><?= $r['title']?></td>
                                 <td>
-                                    <a href="<?= base_url()?>auditsystem/chapter1/manage/<?= $r['code']?>/<?= $r['title']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID'])); ?>" class="btn btn-primary btn-sm">Manage</a>
+                                    <a target="_blank" href="<?= base_url()?>auditsystem/chapter1/manage/<?= $r['code']?>/<?= $r['title']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID'])); ?>" class="btn btn-primary btn-sm">Manage</a>
                                 </td>
                             </tr>
                         <?php }?>

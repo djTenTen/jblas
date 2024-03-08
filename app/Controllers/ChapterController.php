@@ -71,7 +71,6 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC4':
-                
                 $data['ac4'] = $this->chapterModel->getac4($dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac4', $data);
@@ -79,7 +78,6 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC5':
-            
                 //$data['ac4'] = $this->chapterModel->getac4($dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac5', $data);
@@ -87,7 +85,6 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC6':
-        
                 $data['ac6'] = $this->chapterModel->getac6($dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac6', $data);
@@ -95,10 +92,16 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC7':
-    
-                $data['ac6'] = $this->chapterModel->getac6($dc1tID);
+                //$data['ac6'] = $this->chapterModel->getac6($dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac7', $data);
+                echo view('includes/Footer');
+                break;
+
+            case 'AC8':
+                //$data['ac6'] = $this->chapterModel->getac6($dc1tID);
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac8', $data);
                 echo view('includes/Footer');
                 break;
 
