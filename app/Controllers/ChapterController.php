@@ -111,15 +111,48 @@ class ChapterController extends BaseController{
                 echo view('chapter1/ac9', $data);
                 echo view('includes/Footer');
                 break;
+                
+            case 'AC10-Tangibles':
+            case 'AC10-PPE':
+            case 'AC10-Investments':
+            case 'AC10-Inventory':
+            case 'AC10-Trade Receivables':
+            case 'AC10-Other Receivables':
+            case 'AC10-Bank and Cash':
+            case 'AC10-Trade Payables':
+            case 'AC10-Other Payables':
+            case 'AC10-Provisions':
+            case 'AC10-Revenue':
+            case 'AC10-Costs':
+            case 'AC10-Payroll':
+                //$data['ac6'] = $this->chapterModel->getac6($dc1tID);
+                $s = explode('-', $code);
+                $data ['sheet'] = $s[1];
+                $data['code'] = $s[0];
+                echo view('includes/Header', $data);
+                echo view('chapter1/Ac10', $data);
+                echo view('includes/Footer');
+                break;
+            case 'AC10-Summary':
+                //$data['ac6'] = $this->chapterModel->getac6($dc1tID);
+                $s = explode('-', $code);
+                $data ['sheet'] = $s[1];
+                $data['code'] = $s[0];
+                echo view('includes/Header', $data);
+                echo view('chapter1/Ac10-Summary', $data);
+                echo view('includes/Footer');
+                break;
+    
+
 
             default:
-            
                 # code...
             break;
 
         }
 
     }
+
 
     public function addchaper1($code,$head,$c1tID){
 
