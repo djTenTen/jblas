@@ -43,9 +43,9 @@
                                 <td><?= $r['title']?></td>
                                 <td>
                                     <?php if($r['code'] == "AC10"){?>
-                                        <a target="_blank" href="<?= base_url()?>auditsystem/chapter1/manage/<?= $r['code']?>-Tangibles/<?= $r['title']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID'])); ?>" class="btn btn-primary btn-sm">Manage</a>
+                                        <a target="_blank" href="<?= base_url()?>auditsystem/c1/manage/<?= $r['code']?>-Tangibles/<?= $r['title']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID'])); ?>" class="btn btn-primary btn-sm">Manage</a>
                                     <?php }else{ ?>
-                                        <a target="_blank" href="<?= base_url()?>auditsystem/chapter1/manage/<?= $r['code']?>/<?= $r['title']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID'])); ?>" class="btn btn-primary btn-sm">Manage</a>
+                                        <a target="_blank" href="<?= base_url()?>auditsystem/c1/manage/<?= $r['code']?>/<?= $r['title']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID'])); ?>" class="btn btn-primary btn-sm">Manage</a>
                                     <?php }?>
                                 </td>
                             </tr>

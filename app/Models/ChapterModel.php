@@ -28,8 +28,12 @@ class ChapterModel extends Model{
     }
 
 
-    // chapter 1
 
+    /**
+        ----------------------------------------------------------
+        CHAPTER 1 FUNCTIONS
+        ----------------------------------------------------------
+    */
     public function getc1(){
 
         $query =  $this->db->table($this->tblc1t)->get();
@@ -37,12 +41,14 @@ class ChapterModel extends Model{
 
     }
 
-    public function getac1($c1tID){
 
-        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac1', 'type' => 'table', 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
 
-    }
+
+
+
+
+
+
 
     public function getac2($c1tID){
 
@@ -92,29 +98,16 @@ class ChapterModel extends Model{
 
 
 
-
+    
+    /**
+        ----------------------------------------------------------
+        SAVING CHAPTER 1 FUNCTIONS
+        ----------------------------------------------------------
+    */
     public function savechapter1($req){
 
         switch ($req['code']) {
-            case 'AC1':
-                foreach($req['question'] as $i => $val){
 
-                    $data = [
-                        'code' => $req['code'],
-                        'c1tID' => $req['c1tID'],
-                        'type' => 'table',
-                        'question' => $req['question'][$i],
-                        'yesno' => $req['yesno'][$i],
-                        'comment' => $req['comment'][$i],
-                        'status' => 'Active',
-                        'added_on' => $this->date.' '.$this->time
-                    ];
-        
-                    $this->db->table($this->tblc1)->insert($data);
-        
-                }
-                return true;
-            break;
 
             case 'AC2':
                 foreach($req['question'] as $i => $val){
@@ -221,6 +214,16 @@ class ChapterModel extends Model{
         
 
     }
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        DISABLING AND ENABLING CHAPTER 1 FUNCTIONS
+        ----------------------------------------------------------
+    */
 
     
 

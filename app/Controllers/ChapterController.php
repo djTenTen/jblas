@@ -9,6 +9,7 @@ use \App\Models\ChapterModel;
 class ChapterController extends BaseController{
 
     protected $chapterModel;
+    protected $crypt;
 
     public function __construct(){
 
@@ -17,6 +18,16 @@ class ChapterController extends BaseController{
         $this->crypt = \Config\Services::encrypter();
 
     }
+
+    /**
+        ----------------------------------------------------------
+        AJAX FUNCTIONS
+        ----------------------------------------------------------
+    */
+    
+
+
+
     
     /**
         ----------------------------------------------------------
@@ -46,13 +57,7 @@ class ChapterController extends BaseController{
         $dc1tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID));
 
         switch ($code) {
-            case 'AC1':
-                $data['ac1'] = $this->chapterModel->getac1($dc1tID);
-                echo view('includes/Header', $data);
-                echo view('chapter1/ac1', $data);
-                echo view('includes/Footer');
-                break;
-            
+
             case 'AC2':
                 $data['ac2'] = $this->chapterModel->getac2($dc1tID);
                 echo view('includes/Header', $data);
@@ -159,15 +164,14 @@ class ChapterController extends BaseController{
 
     }
 
-
-    public function addchaper1($code,$head,$c1tID){
+    public function addchapter1($code,$head,$c1tID){
 
         $validationRules = [
             'question' => 'required'
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
         }
 
         switch ($code) {
@@ -248,14 +252,82 @@ class ChapterController extends BaseController{
 
         if($res){
             session()->setFlashdata('success_registration','success_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
         }else{
             session()->setFlashdata('failed_registration','failed_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
         }
 
     }
 
+
+    public function updatechapter1($code,$head,$c1tID,$c1ID){
+
+        $validationRules = [
+            'question' => 'required'
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
+        switch ($code) {
+
+            case 'AC1':
+                $req = [
+                    'question' => $this->request->getPost('question'),
+                    'yesno' => $this->request->getPost('yesno'),
+                    'comment' => $this->request->getPost('comment'),
+                    'code' => $code,
+                    'c1ID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1ID))
+                ];
+                $res = $this->chapterModel->updatechapter1($req);
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
+    }
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+    
 
 
 

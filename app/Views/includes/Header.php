@@ -225,7 +225,7 @@
                                 </a>
                                 <div class="collapse" id="pagesCollapseAccount" data-bs-parent="#accordionSidenavPagesMenu">
                                     <nav class="sidenav-menu-nested nav">
-                                        <a class="nav-link" href="<?= base_url()?>auditsystem/chapter1/view">Chapter 1</a>
+                                        <a class="nav-link" href="<?= base_url()?>auditsystem/c1/view">Chapter 1</a>
                                     </nav>
                                 </div>
                                 <!-- Nested Sidenav Accordion (Pages -> Authentication)-->
