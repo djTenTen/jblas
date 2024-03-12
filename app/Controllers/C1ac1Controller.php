@@ -38,12 +38,12 @@ class C1ac1Controller extends BaseController{
         Chapter 1 AC1 VIEW FUNCTIONS
         ----------------------------------------------------------
     */
-    public function viewac1($code,$head,$c1tID){
+    public function viewac1($head,$c1tID){
 
         $data['title'] = 'Chapter 1 Management';
         $data['header'] = $head;
         $data['c1tID'] = $c1tID;
-        $data['code'] = $code;
+        $data['code'] = 'AC1';
 
         $dc1tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID));
 
@@ -67,118 +67,115 @@ class C1ac1Controller extends BaseController{
         Chapter 1 AC1 POST FUNCTIONS
         ----------------------------------------------------------
     */
-    public function addac1questions($code,$head,$c1tID){
+    public function addac1questions($head,$c1tID){
 
         $validationRules = [
             'question' => 'required'
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/AC1/'.$head.'/'.$c1tID));
         }
 
         $req = [
             'question' => $this->request->getPost('question'),
             'yesno' => $this->request->getPost('yesno'),
             'comment' => $this->request->getPost('comment'),
-            'code' => $code,
+            'code' => 'AC1',
             'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
         ];
         $res = $this->ac1model->saveac1questions($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/AC1/'.$head.'/'.$c1tID));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/AC1/'.$head.'/'.$c1tID));
         }
 
     }
 
-    public function updateac1questions($code,$head,$c1tID,$c1ID){
+    public function updateac1questions($head,$c1tID,$c1ID){
 
         $validationRules = [
             'question' => 'required'
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/AC1/'.$head.'/'.$c1tID));
         }
 
         $req = [
             'question' => $this->request->getPost('question'),
             'yesno' => $this->request->getPost('yesno'),
             'comment' => $this->request->getPost('comment'),
-            'code' => $code,
             'c1ID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1ID))
         ];
         $res = $this->ac1model->updateac1questions($req);
         
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/AC1/'.$head.'/'.$c1tID));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/AC1/'.$head.'/'.$c1tID));
         }
 
 
     }
 
 
-    public function activeinactiveac1($code,$head,$c1tID,$c1ID){
+    public function activeinactiveac1($head,$c1tID,$c1ID){
 
         $req = [
-            'code' => $code,
+            'code' => 'AC1',
             'c1ID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1ID))
         ];
         $res = $this->ac1model->activeinactiveac1($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/AC1/'.$head.'/'.$c1tID));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/AC1/'.$head.'/'.$c1tID));
         }
 
     }
 
-    public function updatenameap($code,$head,$c1tID,$c1ID){
+    public function updatenameap($head,$c1tID,$c1ID){
         
         $req = [
             'nameap' => $this->request->getPost('nameap'),
-            'code' => $code,
             'c1ID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1ID))
         ];
         $res = $this->ac1model->updatenameap($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/AC1/'.$head.'/'.$c1tID));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/AC1/'.$head.'/'.$c1tID));
         }
 
     }
 
-    public function updateeqr($code,$head,$c1tID,$c1ID){
+    public function updateeqr($head,$c1tID,$c1ID){
         
         $req = [
             'eqr' => $this->request->getPost('eqr'),
-            'code' => $code,
             'c1ID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1ID))
         ];
         $res = $this->ac1model->updateeqr($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/AC1/'.$head.'/'.$c1tID));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/AC1/'.$head.'/'.$c1tID));
         }
 
     }

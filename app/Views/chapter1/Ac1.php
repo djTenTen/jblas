@@ -91,19 +91,20 @@
                                 <td class="text-center"><?= $r['comment']?></td>
                                 <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
                                 <td class="text-center">
-    
-                                    <button class="btn btn-primary btn-icon btn-sm load-data" type="button" data-bs-toggle="modal" data-bs-target="#modaledit" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" title="Edit" ><i class="fas fa-edit"></i></button>
-                                    <?php if($r['status'] == 'Active'){?>
-                                        <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
-                                    <?php }else{?>
-                                        <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
-                                    <?php }?>
+
+                                        <button class="btn btn-primary btn-icon btn-sm load-data" type="button" data-bs-toggle="modal" data-bs-target="#modaledit" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" title="Edit" ><i class="fas fa-edit"></i></button>
+                                        <?php if($r['status'] == 'Active'){?>
+                                            <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
+                                        <?php }else{?>
+                                            <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
+                                        <?php }?>
+                                 
                                 </td>
                             </tr>
                         <?php }?>
                     </tbody>
                 </table>
-                <form action="<?= base_url()?>auditsystem/c1/manage/save/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/c1/manage/save/AC1/<?= $header?>/<?= $c1tID?>" method="post">
                    
                     <table class="table table-sm table-hover">
                         <thead>
@@ -128,7 +129,7 @@
 
                 <div class="mb-3 col-6">
                     <label class="small mb-1" for="nameap">Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement:</label>
-                    <form action="<?= base_url()?>auditsystem/c1/nameap/update/<?= $code?>/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($nap['acID']))?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/c1/nameap/update/AC1/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($nap['acID']))?>" method="post">
                         <input type="text" class="form-control" id="nameap" name="nameap" value="<?= $nap['question']?>">
                     </form>
         
@@ -174,12 +175,12 @@
                 <ul>
                     <li>No EQR needs to be performed.</li>
                     <li>It is necessary for an EQR to be performed and this will be performed by 
-                        <form action="<?= base_url()?>auditsystem/c1/eqr/update/<?= $code?>/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($eqr1['acID']))?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/c1/eqr/update/AC1/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($eqr1['acID']))?>" method="post">
                             <input type="text" class="form-control" id="eqr" name="eqr" value="<?= $eqr1['question']?>">
                         </form>
                     </li>
                     <li>Where the EQR is undertaken by an external reviewer the name of the organisation which they work for
-                        <form action="<?= base_url()?>auditsystem/c1/eqr/update/<?= $code?>/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($eqr2['acID']))?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/c1/eqr/update/AC1/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($eqr2['acID']))?>" method="post">
                             <input type="text" class="form-control" id="eqr" name="eqr" value="<?= $eqr2['question']?>">
                         </form>
                     </li>
@@ -188,8 +189,8 @@
                 <table class="table">
                     <tr>
                         <td> REASON FOR EQR (If an EQR review was performed in the previous period, but is not being performed in the current period, this decision must also be justified.)  
-                        <form action="<?= base_url()?>auditsystem/c1/eqr/update/<?= $code?>/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($eqrr['acID']))?>" method="post">
-                            <textarea class="form-control" cols="30" rows="3" name="eqr[]" required><?= $eqrr['question']?></textarea>
+                        <form action="<?= base_url()?>auditsystem/c1/eqr/update/AC1/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($eqrr['acID']))?>" method="post">
+                            <textarea class="form-control" cols="30" rows="3" name="eqr" required><?= $eqrr['question']?></textarea>
                             <button type="submit" class="btn btn-sm btn-icon btn-success float-end"><i class="fas fa-file-alt"></i></button>
                         </form>
                         </td>
@@ -264,14 +265,17 @@
 
 <!-- Modal ACTIVE-->
 <div class="modal fade" id="modealactive" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h3>Are you sure to Disable this content?</h3>
+                <div class="msgconfirm">
+
+                </div>
+                
             </div>
             <div class="modal-footer">
                 <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
@@ -290,8 +294,16 @@
     $(document).ready(function () {
 
         $(".active-data").on("click", function() {
+            var status = $(this).data('status');
             var acID = $(this).data('ac-id');
-                $('#myactiveform').attr('action', "<?= base_url('auditsystem/c1/manage/activeinactive/')?><?= $code?>/<?= $header?>/<?= $c1tID?>/" + acID);
+                $('#myactiveform').attr('action', "<?= base_url('auditsystem/c1/manage/activeinactive/')?>AC1/<?= $header?>/<?= $c1tID?>/" + acID);
+                if (status == 'Active') {
+                    $('.msgconfirm').html(`<h3>Are you sure to Disable this content?</h3>`);
+                }else{
+                    $('.msgconfirm').html(`<h3>Are you sure to Enable this content?</h3>`);
+                }
+
+                
         });
 
     
@@ -342,7 +354,7 @@
                     $(".yesno").val(data.yesno);
                     $(".comment").val(data.comment);
 
-                    $('#myform').attr('action', "<?= base_url('auditsystem/c1/manage/update/')?><?= $code?>/<?= $header?>/<?= $c1tID?>/" + acID);
+                    $('#myform').attr('action', "<?= base_url('auditsystem/c1/manage/update/')?>AC1/<?= $header?>/<?= $c1tID?>/" + acID);
 
                 },
                 error: function() {

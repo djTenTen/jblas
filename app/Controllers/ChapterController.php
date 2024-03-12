@@ -5,30 +5,25 @@ use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\HTTP\ResponseInterface;
 
 use \App\Models\ChapterModel;
-
+use \App\Models\C1ac1Model;
+use \App\Models\C1ac2Model;
 class ChapterController extends BaseController{
 
     protected $chapterModel;
+    protected $ac1model;
+    protected $ac2model;
     protected $crypt;
 
     public function __construct(){
 
         \Config\Services::session();
         $this->chapterModel = new ChapterModel();
+        $this->ac1model = new C1ac1Model();
+        $this->ac2model = new C1ac2Model();
         $this->crypt = \Config\Services::encrypter();
 
     }
 
-    /**
-        ----------------------------------------------------------
-        AJAX FUNCTIONS
-        ----------------------------------------------------------
-    */
-    
-
-
-
-    
     /**
         ----------------------------------------------------------
         Chapter 1 area
@@ -57,9 +52,23 @@ class ChapterController extends BaseController{
         $dc1tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID));
 
         switch ($code) {
+            case 'AC1':
 
+                $data['ac1'] = $this->ac1model->getac1($dc1tID);
+                $data['nap'] = $this->ac1model->getnameap($dc1tID);
+                $data['eqr1'] = $this->ac1model->geteqr1($dc1tID);
+                $data['eqr2'] = $this->ac1model->geteqr2($dc1tID);
+                $data['eqrr'] = $this->ac1model->geteqrreason($dc1tID);
+
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac1', $data);
+                echo view('includes/Footer');
+                break;
+            
             case 'AC2':
-                $data['ac2'] = $this->chapterModel->getac2($dc1tID);
+
+                $data['ac2'] = $this->ac2model->getac2($dc1tID);
+                $data['aep'] = $this->ac2model->getaep($dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac2', $data);
                 echo view('includes/Footer');
@@ -166,39 +175,9 @@ class ChapterController extends BaseController{
 
     public function addchapter1($code,$head,$c1tID){
 
-        $validationRules = [
-            'question' => 'required'
-        ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
-        }
+
 
         switch ($code) {
-            case 'AC1':
-                $req = [
-                    'question' => $this->request->getPost('question'),
-                    'yesno' => $this->request->getPost('yesno'),
-                    'comment' => $this->request->getPost('comment'),
-                    'code' => $code,
-                    'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
-                ];
-                $res = $this->chapterModel->savechapter1($req);
-                break;
-
-            case 'AC2':
-                $req = [
-                    'question' => $this->request->getPost('question'),
-                    'corptax' => $this->request->getPost('corptax'),
-                    'statutory' => $this->request->getPost('statutory'),
-                    'accountancy' => $this->request->getPost('accountancy'),
-                    'other' => $this->request->getPost('other'),
-                    'totalcu' => $this->request->getPost('totalcu'),
-                    'code' => $code,
-                    'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
-                ];
-                $res = $this->chapterModel->savechapter1($req);
-                break;
 
             case 'AC3':
                 $req = [
@@ -302,7 +281,33 @@ class ChapterController extends BaseController{
 
 
 
-    
+    public function activeinactivechapter1($code,$head,$c1tID,$c1ID){
+
+        switch ($code) {
+
+            case 'AC1':
+                $req = [
+                    'code' => $code,
+                    'c1ID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1ID))
+                ];
+                $res = $this->chapterModel->activeinactivechapter1($req);
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
+    }
 
 
 

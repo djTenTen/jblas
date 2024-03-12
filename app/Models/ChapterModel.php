@@ -50,13 +50,7 @@ class ChapterModel extends Model{
 
 
 
-    public function getac2($c1tID){
-
-        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac2', 'type' => 'table', 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-
+    
     public function getac3genmat($c1tID){
 
         $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'genmat', 'c1tID' => $c1tID))->get();
@@ -110,26 +104,7 @@ class ChapterModel extends Model{
 
 
             case 'AC2':
-                foreach($req['question'] as $i => $val){
-
-                    $data = [
-                        'code' => $req['code'],
-                        'c1tID' => $req['c1tID'],
-                        'type' => 'table',
-                        'question' => $req['question'][$i],
-                        'corptax' => $req['corptax'][$i],
-                        'statutory' => $req['statutory'][$i],
-                        'accountancy' => $req['accountancy'][$i],
-                        'other' => $req['other'][$i],
-                        'totalcu' => $req['totalcu'][$i],
-                        'status' => 'Active',
-                        'added_on' => $this->date.' '.$this->time
-                    ];
-        
-                    $this->db->table($this->tblc1)->insert($data);
-        
-                }
-                return true;
+                
             break;
 
             case 'AC3':

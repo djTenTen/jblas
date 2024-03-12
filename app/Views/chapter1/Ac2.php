@@ -1,4 +1,4 @@
-
+<?php  $crypt = \Config\Services::encrypter();?>
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -43,6 +43,15 @@
                     </div>
                 </div>
             <?php  }?>
+            <?php if (session()->get('success_update')) { ?>
+                <div class="alert alert-success alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Success Update</h6>
+                        Contents has been successfully updated.
+                    </div>
+                </div>
+            <?php  }?>
             <?php if (session()->get('failed_registration')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -84,7 +93,7 @@
             N.B. Audit related non-audit services (for example, a separate report to a regulator, (e.g. that on client money handled by a solicitor)) should still be treated as a non-audit service, but it is not necessary for safeguards to be put in place, as threats to independence are insignificant
             </p>
 
-            <table class="table table-hover">
+            <table class="table table-hover table-bordered">
                 <thead>
                     <tr>
                         <th>Non-audit service to be provided:</th>
@@ -94,27 +103,36 @@
                         <th>Other (specify)</th>
                         <th>Total CU</th>
                         <th>Status</th>
-                        <th>Action</th>
+                        <th style="width: 7%;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach($ac2 as $r){?>
-                        <tr class="text-center">
+                        <tr >
                             <td><?= $r['question']?></td>
-                            <td><?= $r['corptax']?></td>
-                            <td><?= $r['statutory']?></td>
-                            <td><?= $r['accountancy']?></td>
-                            <td><?= $r['other']?></td>
-                            <td><?= $r['totalcu']?></td>
-                            <td><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
-                            <td></td>
+                            <td class="text-center"><?= $r['corptax']?></td>
+                            <td class="text-center"><?= $r['statutory']?></td>
+                            <td class="text-center"><?= $r['accountancy']?></td>
+                            <td class="text-center"><?= $r['other']?></td>
+                            <td class="text-center"><?= $r['totalcu']?></td>
+                            <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
+                            <td class="text-center">
+                                
+                                <button class="btn btn-primary btn-icon btn-sm load-data" type="button" data-bs-toggle="modal" data-bs-target="#modaledit" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" title="Edit" ><i class="fas fa-edit"></i></button>
+                                <?php if($r['status'] == 'Active'){?>
+                                    <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
+                                <?php }else{?>
+                                    <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
+                                <?php }?>
+                                
+                            </td>
                         </tr>
                     <?php }?>
                 </tbody>
             </table>
 
 
-            <form action="<?= base_url()?>auditsystem/chapter1/manage/save/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+            <form action="<?= base_url()?>auditsystem/c1/manage/save/AC2/<?= $header?>/<?= $c1tID?>" method="post">
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -134,8 +152,8 @@
                 </table>
 
                 
-                <button class="btn btn-primary float-right" type="button" data-action="add-field" id="add-field">Add Field</button>
-                <button type="submit" class="btn btn-success">Save</button>
+                <button class="btn btn-primary float-right btn-sm" type="button" data-action="add-field" id="add-field">Add Field</button>
+                <button type="submit" class="btn btn-success btn-sm">Save</button>
 
             </form>
 
@@ -154,7 +172,11 @@
             <div class="container border-dark">
 
                 <h6>***(Where appropriate): Documentation by the A.E.P. of how the self interest threat has been reduced to an acceptable level / details of communication with the Ethics Partner / Details of which services (audit or non-audit) will not be provided:</h6>
-                <textarea class="form-control" cols="30" rows="3" name="question[]"></textarea>     
+                <form action="<?= base_url()?>auditsystem/c1/aep/update/AC2/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($aep['acID']))?>" method="post">
+                    <textarea class="form-control" cols="30" rows="3" name="eap" required><?= $aep['question']?></textarea>
+                    <button type="submit" class="btn btn-sm btn-icon btn-success float-end"><i class="fas fa-file-alt"></i></button>
+                </form>
+                
 
             </div>
 
@@ -214,45 +236,153 @@
 
             </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
         </div>
     </div>
     
 </main>
 
+<!-- Modal EDIT-->
+<div class="modal fade" id="modaledit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Edit Field</h5>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+            <form id="myform" action="" method="post">
+
+                <div class="loading">
+                
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" type="submit">Save changes</button>
+                <?= form_close();?>
+
+                <div class="inactive">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal ACTIVE-->
+<div class="modal fade" id="modealactive" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="msgconfirm">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
+                <form id="myactiveform" action="" method="post">
+                    <button class="btn btn-primary" type="submit">Confirm</button>
+                <?= form_close();?>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <script>
     $(document).ready(function () {
+
+        $(".active-data").on("click", function() {
+            var status = $(this).data('status');
+            var acID = $(this).data('ac-id');
+                $('#myactiveform').attr('action', "<?= base_url('auditsystem/c1/manage/activeinactive/')?>AC2/<?= $header?>/<?= $c1tID?>/" + acID);
+                if (status == 'Active') {
+                    $('.msgconfirm').html(`<h3>Are you sure to Disable this content?</h3>`);
+                }else{
+                    $('.msgconfirm').html(`<h3>Are you sure to Enable this content?</h3>`);
+                }       
+        });
+
+
+        $(".load-data").on("click", function() {
+            // Show the modal
+            var acID = $(this).data('ac-id');
+
+            $(".loading").html(`
+                <div class="spinner-grow text-muted"></div>
+                <div class="spinner-grow text-primary"></div>
+                <div class="spinner-grow text-success"></div>
+                <div class="spinner-grow text-info"></div>
+                <div class="spinner-grow text-warning"></div>
+                <div class="spinner-grow text-danger"></div>
+                <div class="spinner-grow text-secondary"></div>
+                <div class="spinner-grow text-dark"></div>
+                <div class="spinner-grow text-light"></div>
+                <h3>Loading...</h3>
+            `);
+            // Fetch data using AJAX
+			$.ajax({
+                url: "<?= base_url('auditsystem/chapter1/ac2/edit/')?>" + acID,  // Replace with your actual data endpoint URL
+                method: "GET",
+                dataType: 'json',
+                success: function(data) {
+
+                    $(".loading").html(`
+                        <div class="mb-3">
+                            <label class="small mb-1" for="question">Question:</label>
+                            <textarea class="form-control question" id="question" cols="30" rows="5" name="question"></textarea>
+                        </div>
+                        <div class="row gx-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="corptax">Corporation Tax:</label>
+                                <input class="form-control corptax" id="corptax" type="text" name="corptax"/>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="statutory">Statutory:</label>
+                                <input class="form-control statutory" id="statutory" type="text" name="statutory"/>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="accountancy">Accountancy:</label>
+                                <input class="form-control accountancy" id="accountancy" type="text" name="accountancy"/>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="other">Other:</label>
+                                <textarea class="form-control other" id="other" cols="30" rows="5" name="other"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="totalcu">Total CU:</label>
+                                <input class="form-control totalcu" id="totalcu" type="text" name="totalcu"/>
+                            </div>
+                        </div>
+                    `);
+
+                    $(".question").val(data.question);
+                    $(".corptax").val(data.corptax);
+                    $(".statutory").val(data.statutory);
+                    $(".accountancy").val(data.accountancy);
+                    $(".other").val(data.other);
+                    $(".totalcu").val(data.totalcu);
+
+                    $('#myform').attr('action', "<?= base_url('auditsystem/c1/manage/update/')?>AC2/<?= $header?>/<?= $c1tID?>/" + acID);
+
+                },
+                error: function() {
+                    // Handle error if the data fetch fails
+                    $(".loading").html("Error loading data");
+                }
+
+            });
+
+        });
+
 
         var rowIdx = 0;
 
@@ -265,7 +395,7 @@
                             <td><input class="form-control" type="text" name="accountancy[]"></td>
                             <td><input class="form-control" type="text" name="other[]"></td>
                             <td><input class="form-control" type="text" name="totalcu[]"></td>
-                            <td><button class="btn btn-danger remove" type="button" data-action="remove">remove</button></td>
+                            <td><button class="btn btn-danger btn-sm btn-icon remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
                         </tr>`);
         });
 
