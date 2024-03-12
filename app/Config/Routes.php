@@ -31,6 +31,12 @@ $routes->post('/auditsystem/c1/aep/update/AC2/(:any)/(:any)/(:any)', 'C1ac2Contr
 $routes->post('/auditsystem/c1/manage/save/AC3/(:any)/(:any)', 'C1ac3Controller::addac3questions/$1/$2');
 $routes->post('/auditsystem/c1/manage/update/AC3/(:any)/(:any)/(:any)', 'C1ac3Controller::updateac3questions/$1/$2/$3');
 $routes->post('/auditsystem/c1/manage/activeinactive/AC3/(:any)/(:any)/(:any)', 'C1ac3Controller::activeinactiveac3/$1/$2/$3');
+//CHAPTER 1 AC4 ROUTES
+$routes->post('/auditsystem/c1/manage/save/AC4/(:any)/(:any)', 'C1ac4Controller::addac4questions/$1/$2');
+$routes->post('/auditsystem/c1/manage/update/AC4/(:any)/(:any)/(:any)', 'C1ac4Controller::updateac4questions/$1/$2/$3');
+$routes->post('/auditsystem/c1/manage/activeinactive/AC4/(:any)/(:any)/(:any)', 'C1ac4Controller::activeinactiveac4/$1/$2/$3');
+$routes->post('/auditsystem/c1/ppr/update/AC4/(:any)/(:any)/(:any)', 'C1ac4Controller::updateppr/$1/$2/$3');
+
 
 // Client Management
 $routes->get('/auditsystem/clients/view', 'ClientController::viewclient');
@@ -57,3 +63,5 @@ $routes->get('/auditsystem/clients/defaults/(:any)', 'ClientController::clientde
 $routes->get('/auditsystem/c1/ac1/edit/(:any)', 'C1ac1Controller::editac1question/$1');
 $routes->get('/auditsystem/c1/ac2/edit/(:any)', 'C1ac2Controller::editac2question/$1');
 $routes->get('/auditsystem/c1/ac3/edit/(:any)', 'C1ac3Controller::editac3question/$1');
+$routes->get('/auditsystem/c1/ac4/edit/(:any)', 'C1ac4Controller::editac4question/$1');
+

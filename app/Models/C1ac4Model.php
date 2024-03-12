@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class C1ac3Model extends Model{
+class C1ac4Model extends Model{
    
 
     protected $tblc1 = "tbl_c1";
@@ -26,13 +26,12 @@ class C1ac3Model extends Model{
         Chapter 1 AC1 AJAX FUNCTIONS
         ----------------------------------------------------------
     */
-    public function editac3question($c1ID){
+    public function editac4question($c1ID){
 
         $query = $this->db->table($this->tblc1)->where('acID', $c1ID)->get();
         $r = $query->getRowArray();
         $data = [
             'question' => $r['question'],
-            'yesno' => $r['yesno'],
             'comment' => $r['comment']
         ];
         
@@ -48,34 +47,22 @@ class C1ac3Model extends Model{
         ----------------------------------------------------------
     */
 
-    public function getac3genmat($c1tID){
+    public function getac4($c1tID){
 
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'genmat', 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-    public function getac3doccors($c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'doccors', 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-    public function getac3statutory($c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'statutory', 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-    public function getac3accsys($c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac3', 'other' => 'accsys', 'c1tID' => $c1tID))->get();
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac4', 'c1tID' => $c1tID))->get();
         return $query->getResultArray();
 
     }
 
-    public function getaep($c1tID){
+    public function getppr1($c1tID){
 
-        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac2', 'type' => 'aep', 'c1tID' => $c1tID))->get();
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'ppr1', 'code' => 'ac4', 'c1tID' => $c1tID))->get();
+        return $query->getRowArray();
+
+    }
+    public function getppr2($c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'ppr2', 'code' => 'ac4', 'c1tID' => $c1tID))->get();
         return $query->getRowArray();
 
     }
@@ -90,7 +77,7 @@ class C1ac3Model extends Model{
         Chapter 1 AC2 POST FUNCTIONS
         ----------------------------------------------------------
     */
-    public function saveac3questions($req){
+    public function saveac4questions($req){
 
         foreach($req['question'] as $i => $val){
 
@@ -99,9 +86,7 @@ class C1ac3Model extends Model{
                 'c1tID' => $req['c1tID'],
                 'type' => 'table',
                 'question' => $req['question'][$i],
-                'yesno' => $req['yesno'][$i],
                 'comment' => $req['comment'][$i],
-                'other' => $req['part'][$i],
                 'status' => 'Active',
                 'added_on' => $this->date.' '.$this->time
             ];
@@ -112,11 +97,10 @@ class C1ac3Model extends Model{
 
     }
 
-    public function updateac3questions($req){
+    public function updateac4questions($req){
 
         $data = [
             'question' => $req['question'],
-            'yesno' => $req['yesno'],
             'comment' => $req['comment'],
             'updated_on' => $this->date.' '.$this->time
         ];
@@ -128,7 +112,7 @@ class C1ac3Model extends Model{
         
     }
 
-    public function activeinactiveac3($req){
+    public function activeinactiveac4($req){
 
         $query = $this->db->table($this->tblc1)->where('acID', $req['c1ID'])->get();
         $r = $query->getRowArray();
@@ -149,6 +133,25 @@ class C1ac3Model extends Model{
         }
 
     }
+
+
+
+    public function updateppr($req){
+
+        $data = [
+            'question' => $req['ppr'],
+            'updated_on' => $this->date.' '.$this->time
+        ];
+
+        if($this->db->table($this->tblc1)->where('acID', $req['c1ID'])->update($data)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+
 
 
     

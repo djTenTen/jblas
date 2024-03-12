@@ -8,6 +8,7 @@ use \App\Models\ChapterModel;
 use \App\Models\C1ac1Model;
 use \App\Models\C1ac2Model;
 use \App\Models\C1ac3Model;
+use \App\Models\C1ac4Model;
 
 class ChapterController extends BaseController{
 
@@ -15,6 +16,7 @@ class ChapterController extends BaseController{
     protected $ac1model;
     protected $ac2model;
     protected $ac3model;
+    protected $ac4model;
     protected $crypt;
 
     public function __construct(){
@@ -24,6 +26,7 @@ class ChapterController extends BaseController{
         $this->ac1model = new C1ac1Model();
         $this->ac2model = new C1ac2Model();
         $this->ac3model = new C1ac3Model();
+        $this->ac4model = new C1ac4Model();
         $this->crypt = \Config\Services::encrypter();
 
     }
@@ -90,7 +93,11 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC4':
-                $data['ac4'] = $this->chapterModel->getac4($dc1tID);
+
+                $data['ac4'] = $this->ac4model->getac4($dc1tID);
+                $data['ppr1'] = $this->ac4model->getppr1($dc1tID);
+                $data['ppr2'] = $this->ac4model->getppr2($dc1tID);
+                
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac4', $data);
                 echo view('includes/Footer');
@@ -189,13 +196,7 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC4':
-                $req = [
-                    'question' => $this->request->getPost('question'),
-                    'comment' => $this->request->getPost('comment'),
-                    'code' => $code,
-                    'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
-                ];
-                $res = $this->chapterModel->savechapter1($req);
+               
                 break;
 
             case 'AC5':

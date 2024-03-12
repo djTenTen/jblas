@@ -53,13 +53,7 @@ class ChapterModel extends Model{
     
     
 
-    public function getac4($c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac4', 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-
+    
     public function getac6($c1tID){
 
         $query = $this->db->table($this->tblc1)->where(array('type' => 'table', 'code' => 'ac6', 'c1tID' => $c1tID))->get();
@@ -89,20 +83,7 @@ class ChapterModel extends Model{
             break;
 
             case 'AC4':
-                foreach($req['question'] as $i => $val){
-                    $data = [
-                        'code' => $req['code'],
-                        'c1tID' => $req['c1tID'],
-                        'type' => 'table',
-                        'question' => $req['question'][$i],
-                        'comment' => $req['comment'][$i],
-                        'status' => 'Active',
-                        'added_on' => $this->date.' '.$this->time
-                    ];
-        
-                    $this->db->table($this->tblc1)->insert($data);
-                }
-                return true;
+                
             break;
 
 
