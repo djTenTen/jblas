@@ -327,7 +327,7 @@
             `);
             // Fetch data using AJAX
 			$.ajax({
-                url: "<?= base_url('auditsystem/chapter1/ac1/edit/')?>" + acID,  // Replace with your actual data endpoint URL
+                url: "<?= base_url('auditsystem/c1/ac1/edit/')?>" + acID,  // Replace with your actual data endpoint URL
                 method: "GET",
                 dataType: 'json',
                 success: function(data) {

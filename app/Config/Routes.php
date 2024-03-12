@@ -27,10 +27,10 @@ $routes->post('/auditsystem/c1/manage/save/AC2/(:any)/(:any)', 'C1ac2Controller:
 $routes->post('/auditsystem/c1/manage/activeinactive/AC2/(:any)/(:any)/(:any)', 'C1ac2Controller::activeinactiveac2/$1/$2/$3');
 $routes->post('/auditsystem/c1/manage/update/AC2/(:any)/(:any)/(:any)', 'C1ac2Controller::updateac2questions/$1/$2/$3');
 $routes->post('/auditsystem/c1/aep/update/AC2/(:any)/(:any)/(:any)', 'C1ac2Controller::updateaep/$1/$2/$3');
-
-
-
-
+//CHAPTER 1 AC3 ROUTES
+$routes->post('/auditsystem/c1/manage/save/AC3/(:any)/(:any)', 'C1ac3Controller::addac3questions/$1/$2');
+$routes->post('/auditsystem/c1/manage/update/AC3/(:any)/(:any)/(:any)', 'C1ac3Controller::updateac3questions/$1/$2/$3');
+$routes->post('/auditsystem/c1/manage/activeinactive/AC3/(:any)/(:any)/(:any)', 'C1ac3Controller::activeinactiveac3/$1/$2/$3');
 
 // Client Management
 $routes->get('/auditsystem/clients/view', 'ClientController::viewclient');
@@ -54,5 +54,6 @@ $routes->get('/auditsystem/clients/defaults/(:any)', 'ClientController::clientde
 
 //AJAX REQUEST
 // Chapter 1
-$routes->get('/auditsystem/chapter1/ac1/edit/(:any)', 'C1ac1Controller::editac1question/$1');
-$routes->get('/auditsystem/chapter1/ac2/edit/(:any)', 'C1ac2Controller::editac2question/$1');
+$routes->get('/auditsystem/c1/ac1/edit/(:any)', 'C1ac1Controller::editac1question/$1');
+$routes->get('/auditsystem/c1/ac2/edit/(:any)', 'C1ac2Controller::editac2question/$1');
+$routes->get('/auditsystem/c1/ac3/edit/(:any)', 'C1ac3Controller::editac3question/$1');

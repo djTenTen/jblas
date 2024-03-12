@@ -7,11 +7,14 @@ use CodeIgniter\HTTP\ResponseInterface;
 use \App\Models\ChapterModel;
 use \App\Models\C1ac1Model;
 use \App\Models\C1ac2Model;
+use \App\Models\C1ac3Model;
+
 class ChapterController extends BaseController{
 
     protected $chapterModel;
     protected $ac1model;
     protected $ac2model;
+    protected $ac3model;
     protected $crypt;
 
     public function __construct(){
@@ -20,6 +23,7 @@ class ChapterController extends BaseController{
         $this->chapterModel = new ChapterModel();
         $this->ac1model = new C1ac1Model();
         $this->ac2model = new C1ac2Model();
+        $this->ac3model = new C1ac3Model();
         $this->crypt = \Config\Services::encrypter();
 
     }
@@ -75,10 +79,11 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC3':
-                $data['ac3genmat'] = $this->chapterModel->getac3genmat($dc1tID);
-                $data['ac3doccors'] = $this->chapterModel->getac3doccors($dc1tID);
-                $data['ac3statutory'] = $this->chapterModel->getac3statutory($dc1tID);
-                $data['ac3accsys'] = $this->chapterModel->getac3accsys($dc1tID);
+
+                $data['ac3genmat'] = $this->ac3model->getac3genmat($dc1tID);
+                $data['ac3doccors'] = $this->ac3model->getac3doccors($dc1tID);
+                $data['ac3statutory'] = $this->ac3model->getac3statutory($dc1tID);
+                $data['ac3accsys'] = $this->ac3model->getac3accsys($dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac3', $data);
                 echo view('includes/Footer');
@@ -180,15 +185,7 @@ class ChapterController extends BaseController{
         switch ($code) {
 
             case 'AC3':
-                $req = [
-                    'question' => $this->request->getPost('question'),
-                    'yesno' => $this->request->getPost('yesno'),
-                    'comment' => $this->request->getPost('comment'),
-                    'part' => $this->request->getPost('part'),
-                    'code' => $code,
-                    'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
-                ];
-                $res = $this->chapterModel->savechapter1($req);
+                
                 break;
 
             case 'AC4':
