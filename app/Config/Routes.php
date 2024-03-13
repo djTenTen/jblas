@@ -38,26 +38,19 @@ $routes->post('/auditsystem/c1/manage/activeinactive/AC4/(:any)/(:any)/(:any)', 
 $routes->post('/auditsystem/c1/ppr/update/AC4/(:any)/(:any)/(:any)', 'C1ac4Controller::updateppr/$1/$2/$3');
 //CHAPTER 1 AC5 ROUTES
 $routes->post('/auditsystem/c1/res/update/AC5/(:any)/(:any)/(:any)', 'C1ac5Controller::updateres/$1/$2/$3');
+//CHAPTER 1 AC6 ROUTES
+$routes->post('/auditsystem/c1/manage/save/AC6/(:any)/(:any)', 'C1ac6Controller::addac6questions/$1/$2');
+$routes->post('/auditsystem/c1/manage/update/AC6/(:any)/(:any)/(:any)', 'C1ac6Controller::updateac6questions/$1/$2/$3');
+$routes->post('/auditsystem/c1/manage/activeinactive/AC6/(:any)/(:any)/(:any)', 'C1ac6Controller::activeinactiveac6/$1/$2/$3');
+$routes->post('/auditsystem/c1/section/update/AC6/(:any)/(:any)/(:any)', 'C1ac6Controller::udpatesection/$1/$2/$3');
+$routes->post('/auditsystem/c1/section3/save/AC6/(:any)/(:any)', 'C1ac6Controller::savesection3/$1/$2');
+$routes->post('/auditsystem/c1/section3/update/AC6/(:any)/(:any)/(:any)', 'C1ac6Controller::udpatesection3/$1/$2/$3');
+
+
 
 // Client Management
 $routes->get('/auditsystem/clients/view', 'ClientController::viewclient');
 $routes->get('/auditsystem/clients/defaults/(:any)', 'ClientController::clientdefaults/$1');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //AJAX REQUEST
 // Chapter 1
@@ -65,4 +58,5 @@ $routes->get('/auditsystem/c1/ac1/edit/(:any)', 'C1ac1Controller::editac1questio
 $routes->get('/auditsystem/c1/ac2/edit/(:any)', 'C1ac2Controller::editac2question/$1');
 $routes->get('/auditsystem/c1/ac3/edit/(:any)', 'C1ac3Controller::editac3question/$1');
 $routes->get('/auditsystem/c1/ac4/edit/(:any)', 'C1ac4Controller::editac4question/$1');
-
+$routes->get('/auditsystem/c1/ac6/edit/(:any)', 'C1ac6Controller::editac6question/$1');
+$routes->get('/auditsystem/c1/ac6/edit2/(:any)', 'C1ac6Controller::editacsection3/$1');

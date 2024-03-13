@@ -10,6 +10,7 @@ use \App\Models\C1ac2Model;
 use \App\Models\C1ac3Model;
 use \App\Models\C1ac4Model;
 use \App\Models\C1ac5Model;
+use \App\Models\C1ac6Model;
 
 class ChapterController extends BaseController{
 
@@ -19,6 +20,7 @@ class ChapterController extends BaseController{
     protected $ac3model;
     protected $ac4model;
     protected $ac5model;
+    protected $ac6model;
     protected $crypt;
 
     public function __construct(){
@@ -30,6 +32,7 @@ class ChapterController extends BaseController{
         $this->ac3model = new C1ac3Model();
         $this->ac4model = new C1ac4Model();
         $this->ac5model = new C1ac5Model();
+        $this->ac6model = new C1ac6Model();
         $this->crypt = \Config\Services::encrypter();
 
     }
@@ -109,7 +112,11 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC6':
-                $data['ac6'] = $this->chapterModel->getac6($dc1tID);
+                $data['ac6'] = $this->ac6model->getac6($dc1tID);
+                $data['s1'] = $this->ac6model->gets1($dc1tID);
+                $data['s2a'] = $this->ac6model->gets2a($dc1tID);
+                $data['s2b'] = $this->ac6model->gets2b($dc1tID);
+                $data['s3'] = $this->ac6model->gets3($dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac6', $data);
                 echo view('includes/Footer');
@@ -183,121 +190,14 @@ class ChapterController extends BaseController{
 
     }
 
-    public function addchapter1($code,$head,$c1tID){
+}
 
 
-
-        switch ($code) {
-
-           
-            case 'AC5':
-                // $req = [
-                //     'question' => $this->request->getPost('question'),
-                //     'comment' => $this->request->getPost('comment'),
-                //     'code' => $code,
-                //     'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
-                // ];
-                // $res = $this->chapterModel->savechapter1($req);
-                break;
-
-
-            case 'AC6':
-                $req = [
-                    'question' => $this->request->getPost('question'),
-                    'planning' => $this->request->getPost('planning'),
-                    'finalization' => $this->request->getPost('finalization'),
-                    'reference' => $this->request->getPost('reference'),
-                    'code' => $code,
-                    'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
-                ];
-                $res = $this->chapterModel->savechapter1($req);
-                break;
     
-            default:
-                # code...
-                break;
-        }
-
-        if($res){
-            session()->setFlashdata('success_registration','success_registration');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
-        }else{
-            session()->setFlashdata('failed_registration','failed_registration');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
-        }
-
-    }
-
-
-    public function updatechapter1($code,$head,$c1tID,$c1ID){
-
-        $validationRules = [
-            'question' => 'required'
-        ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
-        }
-
-        switch ($code) {
-
-            case 'AC1':
-                $req = [
-                    'question' => $this->request->getPost('question'),
-                    'yesno' => $this->request->getPost('yesno'),
-                    'comment' => $this->request->getPost('comment'),
-                    'code' => $code,
-                    'c1ID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1ID))
-                ];
-                $res = $this->chapterModel->updatechapter1($req);
-                break;
-            
-            default:
-                # code...
-                break;
-        }
-
-
-        if($res){
-            session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
-        }else{
-            session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
-        }
-
-    }
 
 
 
-    public function activeinactivechapter1($code,$head,$c1tID,$c1ID){
-
-        switch ($code) {
-
-            case 'AC1':
-                $req = [
-                    'code' => $code,
-                    'c1ID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1ID))
-                ];
-                $res = $this->chapterModel->activeinactivechapter1($req);
-                break;
-            
-            default:
-                # code...
-                break;
-        }
-
-
-        if($res){
-            session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
-        }else{
-            session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
-        }
-
-    }
-
+  
 
 
     
@@ -327,4 +227,4 @@ class ChapterController extends BaseController{
 
 
 
-}
+
