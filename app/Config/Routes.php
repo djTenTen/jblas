@@ -45,7 +45,9 @@ $routes->post('/auditsystem/c1/manage/activeinactive/AC6/(:any)/(:any)/(:any)', 
 $routes->post('/auditsystem/c1/section/update/AC6/(:any)/(:any)/(:any)', 'C1ac6Controller::udpatesection/$1/$2/$3');
 $routes->post('/auditsystem/c1/section3/save/AC6/(:any)/(:any)', 'C1ac6Controller::savesection3/$1/$2');
 $routes->post('/auditsystem/c1/section3/update/AC6/(:any)/(:any)/(:any)', 'C1ac6Controller::udpatesection3/$1/$2/$3');
-
+//CHAPTER 1 AC7 ROUTES
+$routes->post('/auditsystem/c1/s1/update/AC7/(:any)/(:any)', 'C1ac7Controller::updates1/$1/$2');
+$routes->post('/auditsystem/c1/s2/update/AC7/(:any)/(:any)', 'C1ac7Controller::updates2/$1/$2');
 
 
 // Client Management
