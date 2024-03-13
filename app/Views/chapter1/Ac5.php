@@ -1,4 +1,4 @@
-
+<?php  $crypt = \Config\Services::encrypter();?>
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -25,8 +25,16 @@
 
     <div class="container-xl px-4 mt-n10">
         <div class="card">
+            <?php if (session()->get('success_update')) { ?>
+                <div class="alert alert-success alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Success Update</h6>
+                        Contents has been successfully updated.
+                    </div>
+                </div>
+            <?php  }?>
     
-
             <div class="card-body">
                
                 <h4>PRELIMINARY ANALYTICAL PROCEDURES</h4>
@@ -39,10 +47,17 @@
                 </ul>
 
                 <h4>Results:</h4>
-                <textarea class="form-control" cols="30" rows="20" name="question[]"></textarea>
+                <form action="<?= base_url()?>auditsystem/c1/res/update/AC5/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($res['acID']))?>" method="post">
+                    <textarea class="form-control" cols="30" rows="20" name="res" required><?= $res['question']?></textarea>
+                    <button type="submit" class="btn btn-sm btn-icon btn-success float-end"><i class="fas fa-file-alt"></i></button>
+                </form>
 
                 <h4>Conclusion:</h4>
-                <textarea class="form-control" cols="30" rows="20" name="question[]"></textarea>
+                <form action="<?= base_url()?>auditsystem/c1/res/update/AC5/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($con['acID']))?>" method="post">
+                    <textarea class="form-control" cols="30" rows="20" name="res" required><?= $con['question']?></textarea>
+                    <button type="submit" class="btn btn-sm btn-icon btn-success float-end"><i class="fas fa-file-alt"></i></button>
+                </form>
+    
 
 
 

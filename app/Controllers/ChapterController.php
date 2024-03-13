@@ -9,6 +9,7 @@ use \App\Models\C1ac1Model;
 use \App\Models\C1ac2Model;
 use \App\Models\C1ac3Model;
 use \App\Models\C1ac4Model;
+use \App\Models\C1ac5Model;
 
 class ChapterController extends BaseController{
 
@@ -17,6 +18,7 @@ class ChapterController extends BaseController{
     protected $ac2model;
     protected $ac3model;
     protected $ac4model;
+    protected $ac5model;
     protected $crypt;
 
     public function __construct(){
@@ -27,6 +29,7 @@ class ChapterController extends BaseController{
         $this->ac2model = new C1ac2Model();
         $this->ac3model = new C1ac3Model();
         $this->ac4model = new C1ac4Model();
+        $this->ac5model = new C1ac5Model();
         $this->crypt = \Config\Services::encrypter();
 
     }
@@ -60,20 +63,17 @@ class ChapterController extends BaseController{
 
         switch ($code) {
             case 'AC1':
-
                 $data['ac1'] = $this->ac1model->getac1($dc1tID);
                 $data['nap'] = $this->ac1model->getnameap($dc1tID);
                 $data['eqr1'] = $this->ac1model->geteqr1($dc1tID);
                 $data['eqr2'] = $this->ac1model->geteqr2($dc1tID);
                 $data['eqrr'] = $this->ac1model->geteqrreason($dc1tID);
-
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac1', $data);
                 echo view('includes/Footer');
                 break;
             
             case 'AC2':
-
                 $data['ac2'] = $this->ac2model->getac2($dc1tID);
                 $data['aep'] = $this->ac2model->getaep($dc1tID);
                 echo view('includes/Header', $data);
@@ -82,7 +82,6 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC3':
-
                 $data['ac3genmat'] = $this->ac3model->getac3genmat($dc1tID);
                 $data['ac3doccors'] = $this->ac3model->getac3doccors($dc1tID);
                 $data['ac3statutory'] = $this->ac3model->getac3statutory($dc1tID);
@@ -93,18 +92,17 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC4':
-
                 $data['ac4'] = $this->ac4model->getac4($dc1tID);
                 $data['ppr1'] = $this->ac4model->getppr1($dc1tID);
                 $data['ppr2'] = $this->ac4model->getppr2($dc1tID);
-                
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac4', $data);
                 echo view('includes/Footer');
                 break;
 
             case 'AC5':
-                //$data['ac4'] = $this->chapterModel->getac4($dc1tID);
+                $data['res'] = $this->ac5model->getresult($dc1tID);
+                $data['con'] = $this->ac5model->getconclusion($dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac5', $data);
                 echo view('includes/Footer');
@@ -191,14 +189,7 @@ class ChapterController extends BaseController{
 
         switch ($code) {
 
-            case 'AC3':
-                
-                break;
-
-            case 'AC4':
-               
-                break;
-
+           
             case 'AC5':
                 // $req = [
                 //     'question' => $this->request->getPost('question'),

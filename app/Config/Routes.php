@@ -36,7 +36,8 @@ $routes->post('/auditsystem/c1/manage/save/AC4/(:any)/(:any)', 'C1ac4Controller:
 $routes->post('/auditsystem/c1/manage/update/AC4/(:any)/(:any)/(:any)', 'C1ac4Controller::updateac4questions/$1/$2/$3');
 $routes->post('/auditsystem/c1/manage/activeinactive/AC4/(:any)/(:any)/(:any)', 'C1ac4Controller::activeinactiveac4/$1/$2/$3');
 $routes->post('/auditsystem/c1/ppr/update/AC4/(:any)/(:any)/(:any)', 'C1ac4Controller::updateppr/$1/$2/$3');
-
+//CHAPTER 1 AC5 ROUTES
+$routes->post('/auditsystem/c1/res/update/AC5/(:any)/(:any)/(:any)', 'C1ac5Controller::updateres/$1/$2/$3');
 
 // Client Management
 $routes->get('/auditsystem/clients/view', 'ClientController::viewclient');
