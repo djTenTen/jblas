@@ -48,6 +48,8 @@ $routes->post('/auditsystem/c1/section3/update/AC6/(:any)/(:any)/(:any)', 'C1ac6
 //CHAPTER 1 AC7 ROUTES
 $routes->post('/auditsystem/c1/s1/update/AC7/(:any)/(:any)', 'C1ac7Controller::updates1/$1/$2');
 $routes->post('/auditsystem/c1/s2/update/AC7/(:any)/(:any)', 'C1ac7Controller::updates2/$1/$2');
+//CHAPTER 1 AC8 ROUTES
+$routes->post('/auditsystem/c1/manage/update/AC8/(:any)/(:any)', 'C1ac8Controller::updateac8questions/$1/$2');
 
 
 // Client Management

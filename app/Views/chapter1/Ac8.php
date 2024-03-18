@@ -1,4 +1,4 @@
-
+<?php  $crypt = \Config\Services::encrypter();?>
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -24,6 +24,16 @@
 
     <div class="container-xl px-4 mt-n10">
         <div class="card">
+
+            <?php if (session()->get('success_update')) { ?>
+                <div class="alert alert-success alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Success Update</h6>
+                        Contents has been successfully updated.
+                    </div>
+                </div>
+            <?php  }?>
             
             <div class="card-body">
               
@@ -34,6 +44,8 @@
 
             <h4>OVERALL MATERIALITY</h4>
 
+            
+            <form action="<?= base_url()?>auditsystem/c1/manage/update/AC8/<?= $header?>/<?= $c1tID?>" method="post">
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -48,46 +60,102 @@
                 <tbody>
                     <tr>
                         <td>Revenue</td>
-                        <td><input type="number" class="form-control"></td>
-                        <td><input type="number" class="form-control"></td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($revp['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control revp" name="question[]" value="<?= $revp['question']?>">
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($revf['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control revf" name="question[]" value="<?= $revf['question']?>">
+                        </td>
                         <td>1%</td>
-                        <td><input type="number" class="form-control" readonly></td>
-                        <td><input type="number" class="form-control" readonly></td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($revpr['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control revpr" name="question[]" value="<?= $revpr['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($revfr['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control revfr" name="question[]" value="<?= $revfr['question']?>" readonly>
+                        </td>
                     </tr>
                     <tr>
                         <td>Profit Before Tax 2</td>
-                        <td><input type="number" class="form-control"></td>
-                        <td><input type="number" class="form-control"></td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prop['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control prop" name="question[]" value="<?= $prop['question']?>">
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prof['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control prof" name="question[]" value="<?= $prof['question']?>">
+                        </td>
                         <td>10%</td>
-                        <td><input type="number" class="form-control" readonly></td>
-                        <td><input type="number" class="form-control" readonly></td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($propr['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control propr" name="question[]" value="<?= $propr['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($profr['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control profr" name="question[]" value="<?= $profr['question']?>" readonly>
+                        </td>
                     </tr>
                     <tr>
                         <td>Gross Assets</td>
-                        <td><input type="number" class="form-control"></td>
-                        <td><input type="number" class="form-control"></td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($grop['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control grop" name="question[]" value="<?= $grop['question']?>">
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($grof['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control grof" name="question[]" value="<?= $grof['question']?>">
+                        </td>
                         <td>2%</td>
-                        <td><input type="number" class="form-control" readonly></td>
-                        <td><input type="number" class="form-control" readonly></td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($gropr['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control gropr" name="question[]" value="<?= $gropr['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($grofr['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control grofr" name="question[]" value="<?= $grofr['question']?>" readonly>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="4">Select the most appropriate benchmark for this entity</td>
                         <td>
-                            <select name="" id="" class="form-control">
-                                <option value="" selected>Select from Planning</option>
-                                <option value="Revenue">Revenue</option>
-                                <option value="Profit Before Tax">Profit Before Tax</option>
-                                <option value="Gross Assets">Gross Assets</option>
-                                <option value="Something Else">Something Else</option>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pcu['acID']))?>" name="acid[]">
+                            <select name="question[]" id="" class="form-control form-select pcu">
+                                <option value="<?= $pcu['question']?>" selected>
+                                <?php
+                                    switch ($pcu['question']) {
+                                        case 'r':echo 'Revenue';break;
+                                        case 'pbt':echo 'Profit Before Tax';break;
+                                        case 'ga':echo 'Gross Assets';break;
+                                        case 'se':echo 'Something Else';break;
+                                        default:echo 'Select from Planning';break;
+                                    }
+                                ?></option>
+                                <option value="r">Revenue</option>
+                                <option value="pbt">Profit Before Tax</option>
+                                <option value="ga">Gross Assets</option>
+                                <option value="se">Something Else</option>
                             </select>
                         </td>
                         <td>
-                            <select name="" id="" class="form-control">
-                                <option value="" selected>Select from Finalisation</option>
-                                <option value="Revenue">Revenue</option>
-                                <option value="Profit Before Tax">Profit Before Tax</option>
-                                <option value="Gross Assets">Gross Assets</option>
-                                <option value="Something Else">Something Else</option>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($fcu['acID']))?>" name="acid[]">
+                            <select name="question[]" id="" class="form-control form-select fcu">
+                                <option value="<?= $fcu['question']?>" selected>
+                                <?php
+                                    switch ($fcu['question']) {
+                                        case 'r':echo 'Revenue';break;
+                                        case 'pbt':echo 'Profit Before Tax';break;
+                                        case 'ga':echo 'Gross Assets';break;
+                                        case 'se':echo 'Something Else';break;
+                                        default:echo 'Select from Planning';break;
+                                    }
+                                ?></option>
+                                <option value="r">Revenue</option>
+                                <option value="pbt">Profit Before Tax</option>
+                                <option value="ga">Gross Assets</option>
+                                <option value="se">Something Else</option>
                             </select>
                         </td>
                     </tr>
@@ -96,47 +164,95 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td colspan="6"> <textarea class="form-control" cols="30" rows="5" name="question[]"></textarea></td>
+                        <td colspan="6"> 
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($justn45['acID']))?>" name="acid[]">
+                            <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $justn45['question']?></textarea>
+                        </td>
                     </tr>
 
                     <tr>
                         <td colspan="4"><h6>Initial suggested Materiality Level:</h6></td>
-                        <td><input type="number" class="form-control" readonly></td>
-                        <td><input type="number" class="form-control" readonly></td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pcur['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control pcur" name="question[]" value="<?= $pcur['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($fcur['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control fcur" name="question[]" value="<?= $fcur['question']?>" readonly>
+                        </td>
                     </tr>
+
                     <tr>
                         <td colspan="4"><p>If any adjustments are required to initial materiality level, detail these here (Note 6) :</p></td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td colspan="4"><p>A.<input type="text" class="form-control"></p></td>
-                        <td><input type="number" class="form-control"></td>
-                        <td><input type="number" class="form-control"></td>
+                        <td colspan="4">
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($adja['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control adja" name="question[]" value="<?= $adja['question']?>" >
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($adjap['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control adjap" name="question[]" value="<?= $adjap['question']?>" >
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($adjaf['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control adjaf" name="question[]" value="<?= $adjaf['question']?>" >
+                        </td>
+                        
                     </tr>
                     <tr>
-                        <td colspan="4"><p>B. <input type="text" class="form-control"></p></td>
-                        <td><input type="number" class="form-control"></td>
-                        <td><input type="number" class="form-control"></td>
+                        <td colspan="4">
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($adjb['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control adjb" name="question[]" value="<?= $adjb['question']?>" >
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($adjbp['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control adjbp" name="question[]" value="<?= $adjbp['question']?>" >
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($adjbf['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control adjbf" name="question[]" value="<?= $adjbf['question']?>" >
+                        </td>
                     </tr>
                     <tr>
-                        <td colspan="4"><p>C. <input type="text" class="form-control"></p></td>
-                        <td><input type="number" class="form-control"></td>
-                        <td><input type="number" class="form-control"></td>
+                        <td colspan="4">
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($adjc['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control adjc" name="question[]" value="<?= $adjc['question']?>" >
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($adjcp['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control adjcp" name="question[]" value="<?= $adjcp['question']?>" >
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($adjcf['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control adjcf" name="question[]" value="<?= $adjcf['question']?>" >
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="6"><p>NB: adjustments need to be mutiplied by the appropriate benchmark percentage</p></td>      
                     </tr>
                     <tr>
                         <td colspan="4"><h6>Assessed Overall Materiality</h6></td>
-                        <td><input type="number" class="form-control" readonly></td>
-                        <td><input type="number" class="form-control" readonly></td>     
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($aomp['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control aomp" name="question[]" value="<?= $aomp['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($aomf['acID']))?>" name="acid[]">
+                            <input type="number" class="form-control aomf" name="question[]" value="<?= $aomf['question']?>" readonly>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="4"><p>Materiality Level for previous period (for information only):</p></td>
-                        <td><input type="number" class="form-control"></td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($mlpinfo['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control mlpinfo" name="question[]" value="<?= $mlpinfo['question']?>" >
+                        </td>
                         <td></td> 
                     </tr>
+
                     <tr>
                         <td colspan="6"><h6>Conclusion at planning stage</h6></td>
                     </tr>
@@ -144,32 +260,37 @@
                         <td colspan="6"><p>The overall materiality level calculated above is deemed to be appropriate because:</p></td>
                     </tr>
                     <tr>
-                        <td colspan="6"> <textarea class="form-control" cols="30" rows="5" name="question[]"></textarea></td>
+                        <td colspan="6"> 
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($conplst['acID']))?>" name="acid[]">
+                            <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $conplst['question']?></textarea>
+                        </td>
                     </tr>
 
                     <tr>
                         <td colspan="6">
                             <h6>Conclusion at finalisation stage</h6>
                             <p>Document reasons for any revision to the materiality assessed at planning stage and the impact on the audit procedures undertaken:</p>
-                            <textarea class="form-control" cols="30" rows="5" name="question[]"></textarea>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($confnst['acID']))?>" name="acid[]">
+                            <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $confnst['question']?></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="6"><h4>PERFORMANCE MATERIALITY</h4></td>
                     </tr>
+
                     <tr>
                         <td colspan="4">Select Overall Inherent Risk (Low / Medium / High):</td>
                         <td>
-                            <select name="" id="" class="form-control">
-                                <option value="" selected>Select Inherent</option>
+                            <select name="" id="" class="form-control form-select oirp">
+                                <option value="<?= $oirp['question']?>" selected><?= $oirp['question']?></option>
                                 <option value="Low">Low</option>
                                 <option value="Medium">Medium</option>
                                 <option value="High">High</option>
                             </select>
                         </td>
                         <td>
-                            <select name="" id="" class="form-control">
-                                <option value="" selected>Select Inherent</option>
+                            <select name="" id="" class="form-control form-select oirf">
+                                <option value="<?= $oirf['question']?>" selected><?= $oirf['question']?></option>
                                 <option value="Low">Low</option>
                                 <option value="Medium">Medium</option>
                                 <option value="High">High</option>
@@ -178,38 +299,68 @@
                     </tr>
                     <tr>
                         <td colspan="4">Performance Materiality Percentage (Note 7):</td>
-                        <td><input type="number" class="form-control" readonly></td>
-                        <td><input type="number" class="form-control" readonly></td> 
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pmpp['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control pmpp" name="question[]" value="<?= $pmpp['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pmpf['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control pmpf" name="question[]" value="<?= $pmpf['question']?>" readonly>
+                        </td>
                     </tr>
 
                     <tr>
                         <td colspan="4">Assessed Performance Materiality</td>
-                        <td><input type="number" class="form-control" readonly></td>
-                        <td><input type="number" class="form-control" readonly></td> 
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($apmp['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control apmp" name="question[]" value="<?= $apmp['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($apmf['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control apmf" name="question[]" value="<?= $apmf['question']?>" readonly>
+                        </td>
                     </tr>
 
                     <tr>
                         <td colspan="6">
                             <h6>Conclusion at planning stage</h6>
                             <p>The performance materiality level calculated above is deemed to be appropriate because:</p>
-                            <textarea class="form-control" cols="30" rows="5" name="question[]"></textarea>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($conplst2['acID']))?>" name="acid[]">
+                            <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $conplst2['question']?></textarea>
                         </td>
                     </tr>
 
                     <tr>
-                        <td colspan="6"><h4>PERFORMANCE MATERIALITY</h4></td>
+                        <td colspan="6">
+                            <h6>Conclusion at finalisation stage</h6>
+                            <p>Document reasons for any revision to the perfomance materiality assessed at planning stage and the impact on the audit procedures undertaken:</p>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($confnst2['acID']))?>" name="acid[]">
+                            <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $confnst2['question']?></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6"><h4>CLEARLY TRIVIAL</h4></td>
                     </tr>
                     <tr>
                         <td colspan="3">Level at which errors are considered trivial (Note 8)</td>
                         <td>1%</td>
-                        <td><input type="number" class="form-control"></td>
-                        <td><input type="number" class="form-control"></td> 
-                    </tr>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ctp['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control ctp" name="question[]" value="<?= $ctp['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ctf['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control ctf" name="question[]" value="<?= $ctf['question']?>" readonly>
+                        </td>
+                    </tr>rsp
 
                     <tr>
                         <td colspan="6">
                             <h6>Document reasons for any revision to the suggested percentage </h6>
-                            <textarea class="form-control" cols="30" rows="5" name="question[]"></textarea>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($rsp['acID']))?>" name="acid[]">
+                            <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $rsp['question']?></textarea>
+                 
                         </td>
                     </tr>
 
@@ -236,32 +387,74 @@
                     <tr>
                         <td colspan="3">Related party transactions and Remuneration of key management</td>
                         <td>5%</td>
-                        <td><input type="number" class="form-control" readonly></td>
-                        <td><input type="number" class="form-control" readonly></td> 
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($rptp['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control rptp" name="question[]" value="<?= $rptp['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($rptf['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control rptf" name="question[]" value="<?= $rptf['question']?>" readonly>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="3">Accounting estimates</td>
-                        <td></td>
-                        <td><input type="number" class="form-control" readonly></td>
-                        <td><input type="number" class="form-control" readonly></td> 
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($aest['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control aest" name="question[]" value="<?= $aest['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($aestp['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control aestp" name="question[]" value="<?= $aestp['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($aestf['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control aestf" name="question[]" value="<?= $aestf['question']?>" readonly>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="3">[Insert transactions, balances, disclosures or accounting estimates]</td>
-                        <td><input type="number" class="form-control"></td>
-                        <td><input type="number" class="form-control" readonly></td>
-                        <td><input type="number" class="form-control" readonly></td> 
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($itbd1['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control itbd1" name="question[]" value="<?= $itbd1['question']?>" >
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($itbd1p['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control itbd1p" name="question[]" value="<?= $itbd1p['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($itbd1f['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control itbd1f" name="question[]" value="<?= $itbd1f['question']?>" readonly>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="3">[Insert transactions, balances, disclosures or accounting estimates]</td>
-                        <td><input type="number" class="form-control"></td>
-                        <td><input type="number" class="form-control" readonly></td>
-                        <td><input type="number" class="form-control" readonly></td> 
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($itbd2['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control itbd2" name="question[]" value="<?= $itbd2['question']?>" >
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($itbd2p['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control itbd2p" name="question[]" value="<?= $itbd2p['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($itbd2f['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control itbd2f" name="question[]" value="<?= $itbd2f['question']?>" readonly>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="3">[Insert transactions, balances, disclosures or accounting estimates]</td>
-                        <td><input type="number" class="form-control"></td>
-                        <td><input type="number" class="form-control" readonly></td>
-                        <td><input type="number" class="form-control" readonly></td> 
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($itbd3['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control itbd3" name="question[]" value="<?= $itbd3['question']?>" >
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($itbd3p['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control itbd3p" name="question[]" value="<?= $itbd3p['question']?>" readonly>
+                        </td>
+                        <td>
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($itbd3f['acID']))?>" name="acid[]">
+                            <input type="text" class="form-control itbd3f" name="question[]" value="<?= $itbd3f['question']?>" readonly>
+                        </td>
                     </tr>
 
                     <tr>
@@ -295,7 +488,15 @@
                 </tbody>
             </table>
 
-            
+            <div class="container">
+                <div class="col-3 float-end">
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success  btn-block">Save</button>
+                    </div>
+                </div>
+            </div>
+           
+            </form>
             
 
             </div>
@@ -303,3 +504,203 @@
     </div>
     
 </main>
+
+
+
+<script>
+    $(document).ready(function () {
+        var revpr,revfr,propr,profr,gropr,grofr;
+
+        $(".revp").on("change", function() {
+            var revp = $(".revp").val();
+            revpr = Math.round(revp * 0.01);
+            $('.revpr').attr('value',  revpr);
+        });
+        $(".revf").on("change", function() {
+            var revf = $(".revf").val();
+            revfr = Math.round(revf * 0.01);
+            $('.revfr').attr('value',  revfr);
+        });
+        $(".prop").on("change", function() {
+            var prop = $(".prop").val();
+            propr = Math.round(prop * 0.10);
+            $('.propr').attr('value',  propr);
+        });
+        $(".prof").on("change", function() {
+            var prof = $(".prof").val();
+            profr = Math.round(prof * 0.10);
+            $('.profr').attr('value',  profr);
+        });
+        $(".grop").on("change", function() {
+            var grop = $(".grop").val();
+            gropr = Math.round(grop * 0.02);
+            $('.gropr').attr('value',  gropr);
+        });
+        $(".grof").on("change", function() {
+            var grof = $(".grof").val();
+            grofr = Math.round(grof * 0.02);
+            $('.grofr').attr('value',  grofr);
+        });
+
+        $(".pcu, .fcu").on("change", function() {
+            var pcu = $(".pcu").val();
+            var fcu = $(".pcu").val();
+
+            var adjap = $(".adjap").val();
+            var adjbp = $(".adjbp").val();
+            var adjcp = $(".adjcp").val();   
+
+            var adjaf = $(".adjaf").val();
+            var adjbf = $(".adjbf").val();
+            var adjcf = $(".adjcf").val();   
+
+            if(pcu == 'r'){
+                $('.pcur').attr('value',  revpr);
+                $('.aomp').attr('value', revpr + parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
+                var aomp = $(".aomp").val();
+                $('.ctp').attr('value',  Math.round(aomp * .01));
+            }else if(pcu == 'pbt'){
+                $('.pcur').attr('value',  propr); 
+                $('.aomp').attr('value', propr + parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
+                var aomp = $(".aomp").val();
+                $('.ctp').attr('value',  Math.round(aomp * .01));
+            }else if(pcu == 'ga'){
+                $('.pcur').attr('value',  gropr); 
+                $('.aomp').attr('value', gropr + parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
+                var aomp = $(".aomp").val();
+                $('.ctp').attr('value',  Math.round(aomp * .01));
+            }else if(pcu == 'se'){
+                $('.pcur').attr('value',  0); 
+                $('.aomp').attr('value', parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
+                var aomp = $(".aomp").val();
+                $('.ctp').attr('value',  Math.round(aomp * .01));
+            }
+
+            if(fcu == 'r'){
+                $('.fcur').attr('value',  revfr);
+                
+                $('.aomf').attr('value', revfr + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
+                var aomf = $(".aomf").val();
+                $('.ctf').attr('value',  Math.round(aomf * .01));
+                
+            }else if(fcu == 'pbt'){
+                $('.fcur').attr('value',  profr); 
+                $('.aomf').attr('value', profr + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
+                var aomf = $(".aomf").val();
+            }else if(fcu == 'ga'){
+                $('.fcur').attr('value',  grofr); 
+                $('.aomf').attr('value', grofr + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
+                var aomf = $(".aomf").val();
+                $('.ctf').attr('value',  Math.round(aomf * .01));
+            }else if(fcu == 'se'){
+                $('.pcur').attr('value',  0); 
+                $('.aomf').attr('value', parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
+                var aomf = $(".aomf").val();
+            }
+
+        });
+
+
+        $(".adjap, .adjbp, .adjcp").on("change", function() {
+            var pcur = $(".pcur").val();
+            var adjap = $(".adjap").val();
+            var adjbp = $(".adjbp").val();
+            var adjcp = $(".adjcp").val();   
+            $('.aomp').attr('value', parseInt(pcur) + parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
+            var aomp = $(".aomp").val();
+            $('.ctp').attr('value',  Math.round(aomp * .01));
+        });
+
+        $(".adjaf, .adjbf, .adjcf").on("change", function() {
+            var fcur = $(".fcur").val();
+            var adjaf = $(".adjaf").val();
+            var adjbf = $(".adjbf").val();
+            var adjcf = $(".adjcf").val();   
+            $('.aomf').attr('value', parseInt(fcur) + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
+            var aomf = $(".aomf").val();
+            $('.ctf').attr('value',  Math.round(aomf * .01));
+        });
+
+
+        $(".oirp").on("change", function() {
+            var oirp = $(".oirp").val();
+            var aomp = $(".aomp").val();
+
+            if(oirp == 'Low'){
+                $('.pmpp').attr('value',  '75%');
+                $('.apmp').attr('value',  Math.round(aomp * .75));
+                $('.aest').attr('value', '35.5%');
+                $('.aestp').attr('value', Math.round(aomp * 0.375));
+                $('.rptp').attr('value', Math.round(aomp * 0.05));
+
+
+            }else if(oirp == 'Medium'){
+                $('.pmpp').attr('value',  '62.5%');
+                $('.apmp').attr('value',  Math.round(aomp * .625));
+                $('.aest').attr('value', '31.3%');
+                $('.aestp').attr('value', Math.round(aomp * 0.313));
+                $('.rptp').attr('value', Math.round(aomp * 0.05));
+
+            }else if(oirp == 'High'){
+                $('.pmpp').attr('value',  '50%');
+                $('.apmp').attr('value',  Math.round(aomp * .50));
+                $('.aest').attr('value',  '25%');
+                $('.aestp').attr('value', Math.round(aomp * 0.25));
+                $('.rptp').attr('value', Math.round(aomp * 0.05));
+            }
+
+        });
+
+        $(".oirf").on("change", function() {
+            var oirf = $(".oirf").val();
+            var aomf = $(".aomf").val();
+            if(oirf == 'Low'){
+                $('.pmpf').attr('value',  '75%');
+                $('.apmf').attr('value',  Math.round(aomf * .75));
+                $('.aestf').attr('value', Math.round(aomf * 0.375));
+                $('.rptf').attr('value', Math.round(aomf * 0.05));
+
+            }else if(oirf == 'Medium'){
+                $('.pmpf').attr('value',  '62.5%');
+                $('.apmf').attr('value',  Math.round(aomf * .625));
+                $('.aestf').attr('value', Math.round(aomf * 0.313));
+                $('.rptf').attr('value', Math.round(aomf * 0.05));
+
+            }else if(oirf == 'High'){
+                $('.pmpf').attr('value',  '50%');
+                $('.apmf').attr('value',  Math.round(aomf * .50));
+                $('.aestf').attr('value', Math.round(aomf * 0.25));
+                $('.rptf').attr('value', Math.round(aomf * 0.05));
+            }
+            
+        });
+
+        $(".itbd1").on("change", function() {
+            var itbd1 = $(".itbd1").val();
+            var aomp = $(".aomp").val();
+            var aomf = $(".aomf").val();
+            var dec = parseFloat(itbd1) / 100;
+            $('.itbd1p').attr('value',  aomp * dec);
+            $('.itbd1f').attr('value',  aomf * dec);
+        });
+
+        $(".itbd2").on("change", function() {
+            var itbd2 = $(".itbd2").val();
+            var aomp = $(".aomp").val();
+            var aomf = $(".aomf").val();
+            var dec = parseFloat(itbd2) / 100;
+            $('.itbd2p').attr('value',  aomp * dec);
+            $('.itbd2f').attr('value',  aomf * dec);
+        });
+
+        $(".itbd3").on("change", function() {
+            var itbd3 = $(".itbd3").val();
+            var aomp = $(".aomp").val();
+            var aomf = $(".aomf").val();
+            var dec = parseFloat(itbd3) / 100;
+            $('.itbd3p').attr('value',  aomp * dec);
+            $('.itbd3f').attr('value',  aomf * dec);
+        });
+
+    });
+</script>
