@@ -281,7 +281,8 @@
                     <tr>
                         <td colspan="4">Select Overall Inherent Risk (Low / Medium / High):</td>
                         <td>
-                            <select name="" id="" class="form-control form-select oirp">
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oirp['acID']))?>" name="acid[]">
+                            <select name="question[]" id="" class="form-control form-select oirp">
                                 <option value="<?= $oirp['question']?>" selected><?= $oirp['question']?></option>
                                 <option value="Low">Low</option>
                                 <option value="Medium">Medium</option>
@@ -289,7 +290,8 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" id="" class="form-control form-select oirf">
+                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oirf['acID']))?>" name="acid[]">
+                            <select name="question[]" id="" class="form-control form-select oirf">
                                 <option value="<?= $oirf['question']?>" selected><?= $oirf['question']?></option>
                                 <option value="Low">Low</option>
                                 <option value="Medium">Medium</option>
@@ -509,64 +511,55 @@
 
 <script>
     $(document).ready(function () {
-        var revpr,revfr,propr,profr,gropr,grofr;
 
         $(".revp").on("change", function() {
             var revp = $(".revp").val();
-            revpr = Math.round(revp * 0.01);
-            $('.revpr').attr('value',  revpr);
+            $('.revpr').attr('value', Math.round(revp * 0.01));
         });
         $(".revf").on("change", function() {
             var revf = $(".revf").val();
-            revfr = Math.round(revf * 0.01);
-            $('.revfr').attr('value',  revfr);
+            $('.revfr').attr('value',  Math.round(revf * 0.01));
         });
         $(".prop").on("change", function() {
             var prop = $(".prop").val();
-            propr = Math.round(prop * 0.10);
-            $('.propr').attr('value',  propr);
+            $('.propr').attr('value',  Math.round(prop * 0.10));
         });
         $(".prof").on("change", function() {
             var prof = $(".prof").val();
-            profr = Math.round(prof * 0.10);
-            $('.profr').attr('value',  profr);
+            $('.profr').attr('value',  Math.round(prof * 0.10));
         });
         $(".grop").on("change", function() {
             var grop = $(".grop").val();
-            gropr = Math.round(grop * 0.02);
-            $('.gropr').attr('value',  gropr);
+            $('.gropr').attr('value',  Math.round(grop * 0.02));
         });
         $(".grof").on("change", function() {
             var grof = $(".grof").val();
-            grofr = Math.round(grof * 0.02);
-            $('.grofr').attr('value',  grofr);
+            $('.grofr').attr('value',  Math.round(grof * 0.02));
         });
 
-        $(".pcu, .fcu").on("change", function() {
-            var pcu = $(".pcu").val();
-            var fcu = $(".pcu").val();
+        $(".pcu").on("change", function() {
 
+            var pcu = $(".pcu").val();
             var adjap = $(".adjap").val();
             var adjbp = $(".adjbp").val();
             var adjcp = $(".adjcp").val();   
 
-            var adjaf = $(".adjaf").val();
-            var adjbf = $(".adjbf").val();
-            var adjcf = $(".adjcf").val();   
-
             if(pcu == 'r'){
+                var revpr = $(".revpr").val();  
                 $('.pcur').attr('value',  revpr);
-                $('.aomp').attr('value', revpr + parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
+                $('.aomp').attr('value', parseInt(revpr) + parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
                 var aomp = $(".aomp").val();
                 $('.ctp').attr('value',  Math.round(aomp * .01));
             }else if(pcu == 'pbt'){
+                var propr = $(".propr").val();  
                 $('.pcur').attr('value',  propr); 
-                $('.aomp').attr('value', propr + parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
+                $('.aomp').attr('value', parseInt(propr) + parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
                 var aomp = $(".aomp").val();
                 $('.ctp').attr('value',  Math.round(aomp * .01));
             }else if(pcu == 'ga'){
+                var gropr = $(".gropr").val();  
                 $('.pcur').attr('value',  gropr); 
-                $('.aomp').attr('value', gropr + parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
+                $('.aomp').attr('value', parseInt(gropr) + parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
                 var aomp = $(".aomp").val();
                 $('.ctp').attr('value',  Math.round(aomp * .01));
             }else if(pcu == 'se'){
@@ -576,24 +569,35 @@
                 $('.ctp').attr('value',  Math.round(aomp * .01));
             }
 
+        });
+
+
+        $(".fcu").on("change", function() {
+            var fcu = $(".fcu").val();
+            var adjaf = $(".adjaf").val();
+            var adjbf = $(".adjbf").val();
+            var adjcf = $(".adjcf").val();   
+
             if(fcu == 'r'){
+                var revfr = $(".revfr").val();  
                 $('.fcur').attr('value',  revfr);
-                
-                $('.aomf').attr('value', revfr + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
+                $('.aomf').attr('value', parseInt(revfr) + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
                 var aomf = $(".aomf").val();
                 $('.ctf').attr('value',  Math.round(aomf * .01));
                 
             }else if(fcu == 'pbt'){
+                var profr = $(".profr").val();  
                 $('.fcur').attr('value',  profr); 
-                $('.aomf').attr('value', profr + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
+                $('.aomf').attr('value', parseInt(profr) + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
                 var aomf = $(".aomf").val();
             }else if(fcu == 'ga'){
+                var grofr = $(".grofr").val();  
                 $('.fcur').attr('value',  grofr); 
-                $('.aomf').attr('value', grofr + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
+                $('.aomf').attr('value', parseInt(grofr) + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
                 var aomf = $(".aomf").val();
                 $('.ctf').attr('value',  Math.round(aomf * .01));
             }else if(fcu == 'se'){
-                $('.pcur').attr('value',  0); 
+                $('.fcur').attr('value',  0); 
                 $('.aomf').attr('value', parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
                 var aomf = $(".aomf").val();
             }

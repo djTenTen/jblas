@@ -13,6 +13,7 @@ use \App\Models\C1ac5Model;
 use \App\Models\C1ac6Model;
 use \App\Models\C1ac7Model;
 use \App\Models\C1ac8Model;
+use \App\Models\C1ac9Model;
 
 class ChapterController extends BaseController{
 
@@ -25,6 +26,7 @@ class ChapterController extends BaseController{
     protected $ac6model;
     protected $ac7model;
     protected $ac8model;
+    protected $ac9model;
     
     protected $crypt;
 
@@ -40,6 +42,7 @@ class ChapterController extends BaseController{
         $this->ac6model = new C1ac6Model();
         $this->ac7model = new C1ac7Model();
         $this->ac8model = new C1ac8Model();
+        $this->ac9model = new C1ac9Model();
         $this->crypt = \Config\Services::encrypter();
 
     }
@@ -130,8 +133,6 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC7':
-                // Bank And Cash
-
                 $rowdata = [
                     'bc1','bc2','bc3','bc4','bc5','bc6','bcgen','bce1','bce2','bce3','bcro1','bcro2','bcro3','bcc1','bcc2','bcc3','bcva1','bcva2','bcva3','bcpd1','bcpd2','bcpd3',
                     'tr1','tr2','tr3','tr4','tr5','tr6','trgen','tre1','tre2','tre3','trro1','trro2','trro3','trc1','trc2','trc3','trva1','trva2','trva3','trpd1','trpd2','trpd3',
@@ -149,38 +150,40 @@ class ChapterController extends BaseController{
                     'pr1','pr2','pr3','pr4','pr5','pr6','prgen','pre1','pre2','pre3','prro1','prro2','prro3','prc1','prc2','prc3','prva1','prva2','prva3','prpd1','prpd2','prpd3',
                     'oa1','oa2','oa3','oa4','oa5','oa6','oagen','oae1','oae2','oae3','oaro1','oaro2','oaro3','oac1','oac2','oac3','oava1','oava2','oava3','oapd1','oapd2','oapd3'
                 ];
-
                 foreach($rowdata as $row){
-                    $data[$row] = $this->ac7model->getac7data($dc1tID, $row);
+                    $data[$row] = $this->ac7model->getac9data($dc1tID, $row);
                 }
-
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac7', $data);
                 echo view('includes/Footer');
                 break;
 
             case 'AC8':
-                //$data['ac6'] = $this->chapterModel->getac6($dc1tID);
-
                 $rowdata = [
                     'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
-                    'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2','trivialp','trivialf',
-                    'rsp','rptrkmp','rptrkmf','confnst','ae','aep','aef','ctp','ctf','aest','aestp','aestf','rptp','rptf',
+                    'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
+                    'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
                     'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc'
                 ];
-
                 foreach($rowdata as $row){
                     $data[$row] = $this->ac8model->getac8data($dc1tID, $row);
                 }
-
-
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac8', $data);
                 echo view('includes/Footer');
                 break;
 
             case 'AC9':
-                //$data['ac6'] = $this->chapterModel->getac6($dc1tID);
+
+                $rowdata = [
+                    'coss','aop1','aop2','bipa','bibo','sffpa','sosdd','klar','rpi','soae','aa1','aa2','frfa','orr','tsr','cppm','ic','af','ccm','agm',
+                    'bcl','iic','rc','t2r','pv','vfi','av','lo'
+                ];
+
+                foreach($rowdata as $row){
+                    $data[$row] = $this->ac9model->getac9data($dc1tID, $row);
+                }
+    
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac9', $data);
                 echo view('includes/Footer');

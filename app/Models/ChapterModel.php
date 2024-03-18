@@ -28,7 +28,6 @@ class ChapterModel extends Model{
     }
 
 
-
     /**
         ----------------------------------------------------------
         CHAPTER 1 FUNCTIONS
@@ -57,75 +56,6 @@ class ChapterModel extends Model{
    
 
 
-    
-    /**
-        ----------------------------------------------------------
-        SAVING CHAPTER 1 FUNCTIONS
-        ----------------------------------------------------------
-    */
-    public function savechapter1($req){
-
-        switch ($req['code']) {
-
-
-            case 'AC2':
-                
-            break;
-
-            case 'AC3':
-                
-            break;
-
-            case 'AC4':
-                
-            break;
-
-
-            case 'AC5':
-                // foreach($req['question'] as $i => $val){
-                //     $data = [
-                //         'code' => $req['code'],
-                //         'c1tID' => $req['c1tID'],
-                //         'type' => 'table',
-                //         'question' => $req['question'][$i],
-                //         'comment' => $req['comment'][$i],
-                //         'status' => 'Active',
-                //         'added_on' => $this->date.' '.$this->time
-                //     ];
-        
-                //     $this->db->table($this->tblc1)->insert($data);
-                // }
-                return true;
-            break;
-
-
-            case 'AC6':
-                
-                return true;
-            break;
-
-            
-            default:
-                # code...
-                break;
-        }
-        
-
-    }
-
-
-
-
-
-    /**
-        ----------------------------------------------------------
-        DISABLING AND ENABLING CHAPTER 1 FUNCTIONS
-        ----------------------------------------------------------
-    */
-
-    
-
-    
 
 
 
