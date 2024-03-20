@@ -54,6 +54,14 @@ $routes->post('/auditsystem/c1/manage/update/AC8/(:any)/(:any)', 'C1ac8Controlle
 $routes->post('/auditsystem/c1/section1/update/AC9/(:any)/(:any)', 'C1ac9Controller::updatesec1ac9/$1/$2');
 $routes->post('/auditsystem/c1/section2/update/AC9/(:any)/(:any)', 'C1ac9Controller::updatesec2ac9/$1/$2');
 $routes->post('/auditsystem/c1/section3/update/AC9/(:any)/(:any)', 'C1ac9Controller::updatesec3ac9/$1/$2');
+//CHAPTER 1 AC10 ROUTES
+$routes->post('/auditsystem/c1/section1/save/AC10/(:any)/(:any)/(:any)', 'C1ac10Controller::saves1ac10/$1/$2/$3');
+$routes->post('/auditsystem/c1/section2/save/AC10/(:any)/(:any)/(:any)', 'C1ac10Controller::saves2ac10/$1/$2/$3');
+$routes->post('/auditsystem/c1/cusection/save/AC10/(:any)/(:any)/(:any)', 'C1ac10Controller::updatecusection/$1/$2/$3');
+$routes->post('/auditsystem/c1/summary/save/AC10/(:any)/(:any)/(:any)', 'C1ac10Controller::savesummary/$1/$2/$3');
+
+
+
 // Client Management
 $routes->get('/auditsystem/clients/view', 'ClientController::viewclient');
 $routes->get('/auditsystem/clients/defaults/(:any)', 'ClientController::clientdefaults/$1');

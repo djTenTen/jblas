@@ -14,6 +14,7 @@ use \App\Models\C1ac6Model;
 use \App\Models\C1ac7Model;
 use \App\Models\C1ac8Model;
 use \App\Models\C1ac9Model;
+use \App\Models\C1ac10Model;
 
 class ChapterController extends BaseController{
 
@@ -27,6 +28,7 @@ class ChapterController extends BaseController{
     protected $ac7model;
     protected $ac8model;
     protected $ac9model;
+    protected $ac10model;
     
     protected $crypt;
 
@@ -43,6 +45,7 @@ class ChapterController extends BaseController{
         $this->ac7model = new C1ac7Model();
         $this->ac8model = new C1ac8Model();
         $this->ac9model = new C1ac9Model();
+        $this->ac10model = new C1ac10Model();
         $this->crypt = \Config\Services::encrypter();
 
     }
@@ -151,7 +154,7 @@ class ChapterController extends BaseController{
                     'oa1','oa2','oa3','oa4','oa5','oa6','oagen','oae1','oae2','oae3','oaro1','oaro2','oaro3','oac1','oac2','oac3','oava1','oava2','oava3','oapd1','oapd2','oapd3'
                 ];
                 foreach($rowdata as $row){
-                    $data[$row] = $this->ac7model->getac9data($dc1tID, $row);
+                    $data[$row] = $this->ac7model->getac7data($dc1tID, $row);
                 }
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac7', $data);
@@ -202,19 +205,61 @@ class ChapterController extends BaseController{
             case 'AC10-Revenue':
             case 'AC10-Costs':
             case 'AC10-Payroll':
-                //$data['ac6'] = $this->chapterModel->getac6($dc1tID);
+
+                
                 $s = explode('-', $code);
                 $data ['sheet'] = $s[1];
                 $data['code'] = $s[0];
+
+                $data['cu'] = $this->ac10model->getac10cu($dc1tID,$s[1].'cu');
+                $data['ac10s1'] = $this->ac10model->getac10s1data($dc1tID,$s[1]);
+                $data['ac10s2'] = $this->ac10model->getac10s2data($dc1tID,$s[1]);
                 echo view('includes/Header', $data);
                 echo view('chapter1/Ac10', $data);
                 echo view('includes/Footer');
                 break;
             case 'AC10-Summary':
-                //$data['ac6'] = $this->chapterModel->getac6($dc1tID);
                 $s = explode('-', $code);
                 $data ['sheet'] = $s[1];
                 $data['code'] = $s[0];
+
+                $data['nmk_tgb'] = $this->ac10model->getdatacount($dc1tID,'Tangibles');
+                $data['nmk_ppe'] = $this->ac10model->getdatacount($dc1tID,'PPE');
+                $data['nmk_invmt'] = $this->ac10model->getdatacount($dc1tID,'Investments');
+                $data['nmk_invtr'] = $this->ac10model->getdatacount($dc1tID,'Inventory');
+                $data['nmk_tr'] = $this->ac10model->getdatacount($dc1tID,'Trade Receivables');
+                $data['nmk_or'] = $this->ac10model->getdatacount($dc1tID,'Other Receivables');
+                $data['nmk_bac'] = $this->ac10model->getdatacount($dc1tID,'Bank and Cash');
+                $data['nmk_tp'] = $this->ac10model->getdatacount($dc1tID,'Trade Payables');
+                $data['nmk_op'] = $this->ac10model->getdatacount($dc1tID,'Other Payables');
+                $data['nmk_prov'] = $this->ac10model->getdatacount($dc1tID,'Provisions');
+                $data['nmk_rev'] = $this->ac10model->getdatacount($dc1tID,'Revenue');
+                $data['nmk_cst'] = $this->ac10model->getdatacount($dc1tID,'Costs');
+                $data['nmk_pr'] = $this->ac10model->getdatacount($dc1tID,'Payroll');
+                
+                $data['vop_tgb'] = $this->ac10model->getsumation($dc1tID,'Tangibles');
+                $data['vop_ppe'] = $this->ac10model->getsumation($dc1tID,'PPE');
+                $data['vop_invmt'] = $this->ac10model->getsumation($dc1tID,'Investments');
+                $data['vop_invtr'] = $this->ac10model->getsumation($dc1tID,'Inventory');
+                $data['vop_tr'] = $this->ac10model->getsumation($dc1tID,'Trade Receivables');
+                $data['vop_or'] = $this->ac10model->getsumation($dc1tID,'Other Receivables');
+                $data['vop_bac'] = $this->ac10model->getsumation($dc1tID,'Bank and Cash');
+                $data['vop_tp'] = $this->ac10model->getsumation($dc1tID,'Trade Payables');
+                $data['vop_op'] = $this->ac10model->getsumation($dc1tID,'Other Payables');
+                $data['vop_prov'] = $this->ac10model->getsumation($dc1tID,'Provisions');
+                $data['vop_rev'] = $this->ac10model->getsumation($dc1tID,'Revenue');
+                $data['vop_cst'] = $this->ac10model->getsumation($dc1tID,'Costs');
+                $data['vop_pr'] = $this->ac10model->getsumation($dc1tID,'Payroll');
+                
+                $data['mat'] = $this->ac10model->getsummarydata($dc1tID,'material');
+
+                $rowdata = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
+
+                foreach($rowdata as $row){
+                    $rdata = $this->ac10model->getsummarydata($dc1tID, $row);
+                    $data[$row] = json_decode($rdata['question'], true);
+                }
+
                 echo view('includes/Header', $data);
                 echo view('chapter1/Ac10-Summary', $data);
                 echo view('includes/Footer');
@@ -222,6 +267,7 @@ class ChapterController extends BaseController{
 
             case 'AC11':
                 //$data['ac6'] = $this->chapterModel->getac6($dc1tID);
+                
                 echo view('includes/Header', $data);
                 echo view('chapter1/Ac11', $data);
                 echo view('includes/Footer');
