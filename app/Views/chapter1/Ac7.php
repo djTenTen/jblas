@@ -79,55 +79,41 @@
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bc1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $bc1['yesno']?>">
+                            <input type="hidden" value="bacdata" name="part">
+                            <input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $bacdata['y1']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bc2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $bc2['yesno']?>">
+                            <input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $bacdata['y2']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bc3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $bc3['yesno']?>">
+                            <input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $bacdata['y3']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bc4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $bc4['yesno']?>">
+                            <input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $bacdata['y4']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bc5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $bc5['yesno']?>">
+                            <input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $bacdata['y5']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bc6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $bc6['yesno']?>">
+                            <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $bacdata['y6']?>">
                         </td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -144,89 +130,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bcgen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $bcgen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bce1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bce1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bce2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bce2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bce3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bce3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $bacdata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $bacdata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $bacdata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $bacdata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bcro1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bcro1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bcro2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bcro2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bcro3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bcro3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $bacdata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $bacdata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $bacdata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bcc1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bcc1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bcc2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bcc2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bcc3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bcc3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $bacdata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $bacdata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $bacdata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bcva1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bcva1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bcva2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bcva2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bcva3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bcva3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $bacdata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $bacdata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $bacdata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bcpd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bcpd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bcpd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bcpd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($bcpd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $bcpd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $bacdata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $bacdata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $bacdata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -242,10 +176,8 @@
                     </tbody>
                     </form>
                 </table>
-            
-                <br>
-                <br>
 
+                <br><br>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE RECEIVABLES:</h6>
                 <table class="table table-bordered">
@@ -254,57 +186,44 @@
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tr1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tr1['yesno']?>">
+                            <input type="hidden" value="trdata" name="part">
+                            <input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $trdata['y1']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tr2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tr2['yesno']?>">
+                            <input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $trdata['y2']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tr3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tr3['yesno']?>">
+                            <input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $trdata['y3']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tr4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tr4['yesno']?>">
+                            <input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $trdata['y4']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tr5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tr5['yesno']?>">
+                            <input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $trdata['y5']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tr6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tr6['yesno']?>">
+                            <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $trdata['y6']?>">
                         </td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -318,89 +237,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($trgen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $trgen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tre1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tre1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tre2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tre2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tre3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tre3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $trdata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $trdata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $trdata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $trdata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($trro1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $trro1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($trro2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $trro2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($trro3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $trro3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $trdata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $trdata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $trdata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($trc1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $trc1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($trc2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $trc2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($trc3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $trc3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $trdata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $trdata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $trdata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($trva1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $trva1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($trva2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $trva2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($trva3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $trva3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $trdata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $trdata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $trdata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($trpd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $trpd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($trpd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $trpd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($trpd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $trpd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $trdata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $trdata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $trdata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -426,57 +293,44 @@
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($or1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $or1['yesno']?>">
+                            <input type="hidden" value="ordata" name="part">
+                            <input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $ordata['y1']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($or2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $or2['yesno']?>">
+                            <input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $ordata['y2']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($or3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $or3['yesno']?>">
+                            <input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $ordata['y3']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($or4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $or4['yesno']?>">
+                            <input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $ordata['y4']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($or5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $or5['yesno']?>">
+                            <input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $ordata['y5']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($or6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $or6['yesno']?>">
+                            <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $ordata['y6']?>">
                         </td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -490,89 +344,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($orgen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $orgen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ore1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ore1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ore2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ore2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ore3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ore3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $ordata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $ordata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $ordata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $ordata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($orro1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $orro1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($orro2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $orro2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($orro3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $orro3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $ordata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $ordata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $ordata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($orc1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $orc1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($orc2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $orc2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($orc3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $orc3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $ordata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $ordata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $ordata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($orva1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $orva1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($orva2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $orva2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($orva3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $orva3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $ordata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $ordata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $ordata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($orpd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $orpd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($orpd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $orpd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($orpd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $orpd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $ordata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $ordata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $ordata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -588,6 +390,7 @@
                     </tbody>
                     </form>
                 </table>
+
                 <br><br>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVENTORIES:</h6>
@@ -597,58 +400,44 @@
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inv1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $inv1['yesno']?>">
+                            <input type="hidden" value="invtrdata" name="part">
+                            <input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $invtrdata['y1']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inv2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $inv2['yesno']?>">
+                            <input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $invtrdata['y2']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inv3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $inv3['yesno']?>">
+                            <input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $invtrdata['y3']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inv4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $inv4['yesno']?>">
+                            <input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $invtrdata['y4']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inv5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $inv5['yesno']?>">
+                            <input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $invtrdata['y5']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inv6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $inv6['yesno']?>">
+                            <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $invtrdata['y6']?>">
                         </td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
-
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -662,89 +451,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invgen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $invgen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inve1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $inve1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inve2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $inve2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inve3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $inve3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $invtrdata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $invtrdata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $invtrdata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $invtrdata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invro1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invro1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invro2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invro2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invro3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invro3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $invtrdata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $invtrdata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $invtrdata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invc1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invc1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invc2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invc2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invc3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invc3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $invtrdata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $invtrdata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $invtrdata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invva1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invva1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invva2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invva2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invva3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invva3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $invtrdata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $invtrdata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $invtrdata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invpd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invpd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invpd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invpd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invpd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invpd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $invtrdata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $invtrdata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $invtrdata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -762,9 +499,7 @@
                 </table>
 
 
-                <br>
-                <br>
-
+                <br><br>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVESTMENTS:</h6>
                 <table class="table table-bordered">
@@ -773,57 +508,44 @@
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invst1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $invst1['yesno']?>">
+                            <input type="hidden" value="invmtdata" name="part">
+                            <input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $invmtdata['y1']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invst2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $invst2['yesno']?>">
+                            <input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $invmtdata['y2']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invst3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $invst3['yesno']?>">
+                            <input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $invmtdata['y3']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invst4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $invst4['yesno']?>">
+                            <input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $invmtdata['y4']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invst5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $invst5['yesno']?>">
+                            <input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $invmtdata['y5']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invst6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $invst6['yesno']?>">
+                            <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $invmtdata['y6']?>">
                         </td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -837,89 +559,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invstgen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $invstgen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invste1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invste1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invste2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invste2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invste3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invste3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $invmtdata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $invmtdata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $invmtdata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $invmtdata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invstro1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invstro1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invstro2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invstro2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invstro3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invstro3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $invmtdata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $invmtdata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $invmtdata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invstc1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invstc1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invstc2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invstc2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invstc3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invstc3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $invmtdata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $invmtdata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $invmtdata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invstva1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invstva1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invstva2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invstva2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invstva3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invstva3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $invmtdata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $invmtdata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $invmtdata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invstpd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invstpd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invstpd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invstpd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($invstpd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $invstpd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $invmtdata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $invmtdata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $invmtdata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -936,8 +606,7 @@
                     </form>
                 </table>
 
-                <br>
-                <br>
+                <br><br>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROPERTY, PLANT AND EQUIPMENT:</h6>
                 <table class="table table-bordered">
@@ -946,58 +615,44 @@
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppe1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $ppe1['yesno']?>">
+                            <input type="hidden" value="ppedata" name="part">
+                            <input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $ppedata['y1']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppe2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $ppe2['yesno']?>">
+                            <input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $ppedata['y2']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppe3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $ppe3['yesno']?>">
+                            <input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $ppedata['y3']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppe4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $ppe4['yesno']?>">
+                            <input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $ppedata['y4']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppe5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $ppe5['yesno']?>">
+                            <input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $ppedata['y5']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppe6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $ppe6['yesno']?>">
+                            <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $ppedata['y6']?>">
                         </td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
-
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -1011,89 +666,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppegen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $ppegen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppee1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppee1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppee2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppee2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppee3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppee3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $ppedata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $ppedata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $ppedata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $ppedata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppero1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppero1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppero2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppero2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppero3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppero3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $ppedata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $ppedata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $ppedata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppec1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppec1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppec2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppec2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppec3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppec3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $ppedata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $ppedata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $ppedata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppeva1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppeva1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppeva2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppeva2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppeva3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppeva3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $ppedata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $ppedata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $ppedata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppepd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppepd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppepd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppepd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ppepd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ppepd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $ppedata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $ppedata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $ppedata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -1109,6 +712,7 @@
                     </tbody>
                     </form>
                 </table>
+
 
                 <br><br>
 
@@ -1119,57 +723,44 @@
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inca1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $inca1['yesno']?>">
+                            <input type="hidden" value="incadata" name="part">
+                            <input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $incadata['y1']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inca2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $inca2['yesno']?>">
+                            <input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $incadata['y2']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inca3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $inca3['yesno']?>">
+                            <input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $incadata['y3']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inca4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $inca4['yesno']?>">
+                            <input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $incadata['y4']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inca5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $inca5['yesno']?>">
+                            <input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $incadata['y5']?>">
                         </td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($inca6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $inca6['yesno']?>">
+                            <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $incadata['y6']?>">
                         </td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -1183,89 +774,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incagen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $incagen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incae1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incae1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incae2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incae2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incae3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incae3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $incadata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $incadata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $incadata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $incadata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incaro1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incaro1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incaro2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incaro2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incaro3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incaro3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $incadata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $incadata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $incadata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incac1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incac1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incac2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incac2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incac3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incac3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $incadata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $incadata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $incadata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incava1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incava1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incava2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incava2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incava3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incava3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $incadata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $incadata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $incadata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incapd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incapd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incapd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incapd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($incapd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $incapd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $incadata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $incadata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $incadata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -1291,58 +830,32 @@
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tp1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tp1['yesno']?>">
-                        </td>
+                        <td><input type="hidden" value="tpdata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $tpdata['y1']?>"></td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tp2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tp2['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $tpdata['y2']?>"></td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tp3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tp3['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $tpdata['y3']?>"></td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tp4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tp4['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $tpdata['y4']?>"></td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tp5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tp5['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $tpdata['y5']?>"></td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tp6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tp6['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $tpdata['y6']?>"></td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -1356,89 +869,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tpgen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $tpgen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tpe1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tpe1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tpe2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tpe2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tpe3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tpe3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $tpdata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $tpdata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $tpdata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $tpdata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tpro1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tpro1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tpro2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tpro2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tpro3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tpro3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $tpdata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $tpdata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $tpdata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tpc1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tpc1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tpc2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tpc2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tpc3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tpc3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $tpdata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $tpdata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $tpdata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tpva1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tpva1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tpva2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tpva2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tpva3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tpva3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $tpdata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $tpdata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $tpdata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tppd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tppd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tppd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tppd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tppd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $tppd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $tpdata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $tpdata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $tpdata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -1464,58 +925,32 @@
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($op1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $op1['yesno']?>">
-                        </td>
+                        <td><input type="hidden" value="opdata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $opdata['y1']?>"></td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($op2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $op2['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $opdata['y2']?>"></td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($op3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $op3['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $opdata['y3']?>"></td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($op4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $op4['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $opdata['y4']?>"></td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($op5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $op5['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $opdata['y5']?>"></td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($op6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $op6['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $opdata['y6']?>"></td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -1529,89 +964,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($opgen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $opgen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ope1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ope1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ope2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ope2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ope3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $ope3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $opdata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $opdata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $opdata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $opdata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($opro1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $opro1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($opro2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $opro2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($opro3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $opro3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $opdata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $opdata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $opdata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($opc1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $opc1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($opc2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $opc2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($opc3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $opc3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $opdata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $opdata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $opdata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($opva1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $opva1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($opva2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $opva2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($opva3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $opva3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $opdata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $opdata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $opdata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oppd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oppd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oppd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oppd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oppd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oppd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $opdata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $opdata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $opdata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -1636,58 +1019,32 @@
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tax1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tax1['yesno']?>">
-                        </td>
+                        <td><input type="hidden" value="taxdata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $taxdata['y1']?>"></td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tax2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tax2['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $taxdata['y2']?>"></td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tax3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tax3['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $taxdata['y3']?>"></td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tax4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tax4['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $taxdata['y4']?>"></td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tax5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tax5['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $taxdata['y5']?>"></td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($tax6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $tax6['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $taxdata['y6']?>"></td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -1701,89 +1058,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxgen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $taxgen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxe1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxe1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxe2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxe2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxe3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxe3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $taxdata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $taxdata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $taxdata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $taxdata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxro1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxro1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxro2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxro2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxro3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxro3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $taxdata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $taxdata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $taxdata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxc1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxc1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxc2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxc2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxc3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxc3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $taxdata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $taxdata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $taxdata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxva1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxva1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxva2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxva2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxva3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxva3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $taxdata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $taxdata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $taxdata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxpd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxpd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxpd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxpd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($taxpd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $taxpd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $taxdata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $taxdata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $taxdata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -1809,58 +1114,32 @@
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pfl1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $pfl1['yesno']?>">
-                        </td>
+                        <td><input type="hidden" value="provdata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $provdata['y1']?>"></td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pfl2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $pfl2['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $provdata['y2']?>"></td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pfl3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $pfl3['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $provdata['y3']?>"></td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pfl4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $pfl4['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $provdata['y4']?>"></td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pfl5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $pfl5['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $provdata['y5']?>"></td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pfl6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $pfl6['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $provdata['y6']?>"></td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -1874,89 +1153,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pflgen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $pflgen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pfle1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pfle1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pfle2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pfle2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pfle3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pfle3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $provdata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $provdata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $provdata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $provdata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pflro1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pflro1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pflro2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pflro2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pflro3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pflro3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $provdata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $provdata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $provdata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pflc1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pflc1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pflc2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pflc2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pflc3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pflc3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $provdata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $provdata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $provdata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pflva1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pflva1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pflva2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pflva2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pflva3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pflva3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $provdata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $provdata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $provdata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pflpd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pflpd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pflpd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pflpd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pflpd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pflpd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $provdata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $provdata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $provdata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -1972,6 +1199,7 @@
                     </tbody>
                     </form>
                 </table>
+                
 
                 <br><br>
 
@@ -1981,59 +1209,32 @@
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roi1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $roi1['yesno']?>">
-                        </td>
+                        <td><input type="hidden" value="roidata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $roidata['y1']?>"></td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roi2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $roi2['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $roidata['y2']?>"></td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roi3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $roi3['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $roidata['y3']?>"></td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roi4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $roi4['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $roidata['y4']?>"></td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roi5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $roi5['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $roidata['y5']?>"></td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roi6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $roi6['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $roidata['y6']?>"></td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
-
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -2047,89 +1248,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roigen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $roigen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roie1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roie1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roie2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roie2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roie3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roie3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $roidata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $roidata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $roidata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $roidata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roiro1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roiro1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roiro2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roiro2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roiro3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roiro3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $roidata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $roidata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $roidata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roic1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roic1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roic2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roic2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roic3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roic3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $roidata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $roidata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $roidata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roiva1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roiva1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roiva2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roiva2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roiva3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roiva3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $roidata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $roidata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $roidata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roipd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roipd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roipd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roipd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($roipd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $roipd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $roidata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $roidata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $roidata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -2154,58 +1303,32 @@
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoe1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $dcoe1['yesno']?>">
-                        </td>
+                        <td><input type="hidden" value="dcodata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $dcodata['y1']?>"></td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoe2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $dcoe2['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $dcodata['y2']?>"></td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoe3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $dcoe3['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $dcodata['y3']?>"></td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoe4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $dcoe4['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $dcodata['y4']?>"></td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoe5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $dcoe5['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $dcodata['y5']?>"></td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoe6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $dcoe6['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $dcodata['y6']?>"></td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -2219,89 +1342,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoegen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $dcoegen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoee1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoee1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoee2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoee2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoee3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoee3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $dcodata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $dcodata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $dcodata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $dcodata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoero1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoero1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoero2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoero2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoero3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoero3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $dcodata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $dcodata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $dcodata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoec1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoec1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoec2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoec2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoec3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoec3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $dcodata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $dcodata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $dcodata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoeva1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoeva1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoeva2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoeva2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoeva3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoeva3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $dcodata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $dcodata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $dcodata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoepd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoepd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoepd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoepd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($dcoepd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $dcoepd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $dcodata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $dcodata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $dcodata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -2317,7 +1388,6 @@
                     </tbody>
                     </form>
                 </table>
-
 
                 <br><br>
 
@@ -2327,58 +1397,32 @@
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pr1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $pr1['yesno']?>">
-                        </td>
+                        <td><input type="hidden" value="prdata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $prdata['y1']?>"></td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pr2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $pr2['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $prdata['y2']?>"></td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pr3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $pr3['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $prdata['y3']?>"></td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pr4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $pr4['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $prdata['y4']?>"></td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pr5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $pr5['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $prdata['y5']?>"></td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pr6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $pr6['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $prdata['y6']?>"></td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -2392,89 +1436,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prgen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $prgen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pre1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pre1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pre2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pre2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($pre3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $pre3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $prdata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $prdata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $prdata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $prdata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prro1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $prro1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prro2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $prro2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prro3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $prro3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $prdata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $prdata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $prdata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prc1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $prc1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prc2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $prc2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prc3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $prc3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $prdata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $prdata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $prdata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prva1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $prva1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prva2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $prva2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prva3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $prva3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $prdata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $prdata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $prdata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prpd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $prpd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prpd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $prpd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($prpd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $prpd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $prdata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $prdata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $prdata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -2494,64 +1486,38 @@
 
                 <br><br>
 
-                <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – [OTHER AREA]:</h6>
+                <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER AREA:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/s1/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oa1['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $oa1['yesno']?>">
-                        </td>
+                        <td><input type="hidden" value="oadata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $oadata['y1']?>"></td>
                     </tr>
                     <tr>
                         <td>2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oa2['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $oa2['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y2" placeholder="Yer or No" value="<?= $oadata['y2']?>"></td>
                     </tr>
                     <tr>
                         <td>3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oa3['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $oa3['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y3" placeholder="Yer or No" value="<?= $oadata['y3']?>"></td>
                     </tr>
                     <tr>
                         <td>4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oa4['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $oa4['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y4" placeholder="Yer or No" value="<?= $oadata['y4']?>"></td>
                     </tr>
                     <tr>
                         <td>5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oa5['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $oa5['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y5" placeholder="Yer or No" value="<?= $oadata['y5']?>"></td>
                     </tr>
                     <tr>
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                        <td>
-                            <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oa6['acID']))?>" name="acid[]">
-                            <input class="form-control" type="text" name="yesno[]" placeholder="Yer or No" value="<?= $oa6['yesno']?>">
-                        </td>
+                        <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $oadata['y6']?>"></td>
                     </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                            </div>
-                        </td>
-                    </tr>
-                    </form>
+                   
                 </table>
 
+                <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
             
                 <table class="table table-bordered">
@@ -2565,89 +1531,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <form action="<?= base_url()?>auditsystem/c1/s2/update/AC7/<?= $header?>/<?= $c1tID?>" method="post">
-                        <tr>
-                            <td rowspan="5">
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oagen['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="30" name="question[]"><?= $oagen['question']?></textarea>
-                            </td>
-                            <td>Existence</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oae1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oae1['question']?></textarea>
-                            </td>
 
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oae2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oae2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oae3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oae3['question']?></textarea>
-                            </td>
+                        <tr>
+                            <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $oadata['gen']?></textarea></td>
+                            <td>Existence</td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e1"><?= $oadata['e1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e2"><?= $oadata['e2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="e3"><?= $oadata['e3']?></textarea></td>
                         </tr>
                         <tr>
                             <td>Rights / Obligations</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oaro1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oaro1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oaro2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oaro2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oaro3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oaro3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro1"><?= $oadata['ro1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro2"><?= $oadata['ro2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="ro3"><?= $oadata['ro3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Completeness</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oac1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oac1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oac2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oac2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oac3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oac3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c1"><?= $oadata['c1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c2"><?= $oadata['c2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="c3"><?= $oadata['c3']?></textarea></td>
                         </tr>
                         <tr>
-                            
                             <td>Valuation / Allocation</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oava1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oava1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oava2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oava2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oava3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oava3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va1"><?= $oadata['va1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va2"><?= $oadata['va2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="va3"><?= $oadata['va3']?></textarea></td>
                         </tr>
                         <tr>
-                           
                             <td>Presentation and Disclosure</td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oapd1['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oapd1['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oapd2['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oapd2['question']?></textarea>
-                            </td>
-                            <td>
-                                <input type="hidden" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($oapd3['acID']))?>" name="acid[]">
-                                <textarea class="form-control" cols="30" rows="3" name="question[]"><?= $oapd3['question']?></textarea>
-                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd1"><?= $oadata['pd1']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $oadata['pd2']?></textarea></td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $oadata['pd3']?></textarea></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -2663,6 +1577,8 @@
                     </tbody>
                     </form>
                 </table>
+
+
             </div>
         </div>
     </div>

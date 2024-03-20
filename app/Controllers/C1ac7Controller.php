@@ -67,11 +67,43 @@ class C1ac7Controller extends BaseController{
 
     public function updates1($head,$c1tID){
 
-        $req = [
-            'acid' => $this->request->getPost('acid'),
-            'yesno' => $this->request->getPost('yesno')
+        $genyn = [
+            'y1' => $this->request->getPost('y1'),
+            'y2' => $this->request->getPost('y2'),
+            'y3' => $this->request->getPost('y3'),
+            'y4' => $this->request->getPost('y4'),
+            'y5' => $this->request->getPost('y5'),
+            'y6' => $this->request->getPost('y6'),
+            'gen' => $this->request->getPost('gen'),
+            'e1' => $this->request->getPost('e1'),
+            'e2' => $this->request->getPost('e2'),
+            'e3' => $this->request->getPost('e3'),
+            'ro1' => $this->request->getPost('ro1'),
+            'ro2' => $this->request->getPost('ro2'),
+            'ro3' => $this->request->getPost('ro3'),
+            'c1' => $this->request->getPost('c1'),
+            'c2' => $this->request->getPost('c2'),
+            'c3' => $this->request->getPost('c3'),
+            'va1' => $this->request->getPost('va1'),
+            'va2' => $this->request->getPost('va2'),
+            'va3' => $this->request->getPost('va3'),
+            'pd1' => $this->request->getPost('pd1'),
+            'pd2' => $this->request->getPost('pd2'),
+            'pd3' => $this->request->getPost('pd3'),
         ];
-        $res = $this->ac7model->updates1($req);
+
+        $req = [
+            'genyn' => json_encode($genyn),
+        ];
+
+        $ref = [
+            'part' => $this->request->getPost('part'),
+            'code' => 'AC7',
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+        ];
+
+
+        $res = $this->ac7model->updates1($req,$ref);
         
         if($res){
             session()->setFlashdata('success_update','success_update');

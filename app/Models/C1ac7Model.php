@@ -50,17 +50,34 @@ class C1ac7Model extends Model{
         ----------------------------------------------------------
     */
 
-    public function updates1($req){
+    public function updates1($req,$ref){
 
-        foreach($req['yesno'] as $i => $val){
+        $this->db->table($this->tblc1)->where(array('type' => $ref['part'], 'code' => 'ac7','c1tID' => $ref['c1tID']))->delete();
 
-            $dacid = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$req['acid'][$i]));
+        foreach ($req as $r => $val){
+
             $data = [
-                'yesno' => $req['yesno'][$i],
+                'question' => $val,
+                'type' =>  $ref['part'],
+                'code' =>  $ref['code'],
+                'c1tID' => $ref['c1tID'],
+                'updated_on' => $this->date.' '.$this->time
             ];
-            $this->db->table($this->tblc1)->where('acID', $dacid)->update($data);
+
+            $this->db->table($this->tblc1)->insert($data);
 
         }
+        
+
+        // foreach($req['yesno'] as $i => $val){
+
+        //     $dacid = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$req['acid'][$i]));
+        //     $data = [yesno
+        //         'yesno' => $req['yesno'],
+        //     ];
+        //     $this->db->table($this->tblc1)->where('acID', $dacid)->update($data);
+
+        // }
 
         return true;
     }

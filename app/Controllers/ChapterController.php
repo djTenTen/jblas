@@ -136,25 +136,16 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC7':
+
+                
                 $rowdata = [
-                    'bc1','bc2','bc3','bc4','bc5','bc6','bcgen','bce1','bce2','bce3','bcro1','bcro2','bcro3','bcc1','bcc2','bcc3','bcva1','bcva2','bcva3','bcpd1','bcpd2','bcpd3',
-                    'tr1','tr2','tr3','tr4','tr5','tr6','trgen','tre1','tre2','tre3','trro1','trro2','trro3','trc1','trc2','trc3','trva1','trva2','trva3','trpd1','trpd2','trpd3',
-                    'or1','or2','or3','or4','or5','or6','orgen','ore1','ore2','ore3','orro1','orro2','orro3','orc1','orc2','orc3','orva1','orva2','orva3','orpd1','orpd2','orpd3',
-                    'inv1','inv2','inv3','inv4','inv5','inv6','invgen','inve1','inve2','inve3','invro1','invro2','invro3','invc1','invc2','invc3','invva1','invva2','invva3','invpd1','invpd2','invpd3',
-                    'invst1','invst2','invst3','invst4','invst5','invst6','invstgen','invste1','invste2','invste3','invstro1','invstro2','invstro3','invstc1','invstc2','invstc3','invstva1','invstva2','invstva3','invstpd1','invstpd2','invstpd3',
-                    'ppe1','ppe2','ppe3','ppe4','ppe5','ppe6','ppegen','ppee1','ppee2','ppee3','ppero1','ppero2','ppero3','ppec1','ppec2','ppec3','ppeva1','ppeva2','ppeva3','ppepd1','ppepd2','ppepd3',
-                    'inca1','inca2','inca3','inca4','inca5','inca6','incagen','incae1','incae2','incae3','incaro1','incaro2','incaro3','incac1','incac2','incac3','incava1','incava2','incava3','incapd1','incapd2','incapd3',
-                    'tp1','tp2','tp3','tp4','tp5','tp6','tpgen','tpe1','tpe2','tpe3','tpro1','tpro2','tpro3','tpc1','tpc2','tpc3','tpva1','tpva2','tpva3','tppd1','tppd2','tppd3',
-                    'op1','op2','op3','op4','op5','op6','opgen','ope1','ope2','ope3','opro1','opro2','opro3','opc1','opc2','opc3','opva1','opva2','opva3','oppd1','oppd2','oppd3',
-                    'tax1','tax2','tax3','tax4','tax5','tax6','taxgen','taxe1','taxe2','taxe3','taxro1','taxro2','taxro3','taxc1','taxc2','taxc3','taxva1','taxva2','taxva3','taxpd1','taxpd2','taxpd3',
-                    'pfl1','pfl2','pfl3','pfl4','pfl5','pfl6','pflgen','pfle1','pfle2','pfle3','pflro1','pflro2','pflro3','pflc1','pflc2','pflc3','pflva1','pflva2','pflva3','pflpd1','pflpd2','pflpd3',
-                    'roi1','roi2','roi3','roi4','roi5','roi6','roigen','roie1','roie2','roie3','roiro1','roiro2','roiro3','roic1','roic2','roic3','roiva1','roiva2','roiva3','roipd1','roipd2','roipd3',
-                    'dcoe1','dcoe2','dcoe3','dcoe4','dcoe5','dcoe6','dcoegen','dcoee1','dcoee2','dcoee3','dcoero1','dcoero2','dcoero3','dcoec1','dcoec2','dcoec3','dcoeva1','dcoeva2','dcoeva3','dcoepd1','dcoepd2','dcoepd3',
-                    'pr1','pr2','pr3','pr4','pr5','pr6','prgen','pre1','pre2','pre3','prro1','prro2','prro3','prc1','prc2','prc3','prva1','prva2','prva3','prpd1','prpd2','prpd3',
-                    'oa1','oa2','oa3','oa4','oa5','oa6','oagen','oae1','oae2','oae3','oaro1','oaro2','oaro3','oac1','oac2','oac3','oava1','oava2','oava3','oapd1','oapd2','oapd3'
+                    'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
+                    'roidata','dcodata','prdata','oadata'
                 ];
+
                 foreach($rowdata as $row){
-                    $data[$row] = $this->ac7model->getac7data($dc1tID, $row);
+                    $rdata = $this->ac7model->getac7data($dc1tID, $row);
+                    $data[$row] = json_decode($rdata['question'], true);
                 }
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac7', $data);
