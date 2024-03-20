@@ -15,7 +15,7 @@ use \App\Models\C1ac7Model;
 use \App\Models\C1ac8Model;
 use \App\Models\C1ac9Model;
 use \App\Models\C1ac10Model;
-
+use \App\Models\C1ac11Model;
 class ChapterController extends BaseController{
 
     protected $chapterModel;
@@ -29,7 +29,8 @@ class ChapterController extends BaseController{
     protected $ac8model;
     protected $ac9model;
     protected $ac10model;
-    
+    protected $ac11model;
+
     protected $crypt;
 
     public function __construct(){
@@ -46,7 +47,9 @@ class ChapterController extends BaseController{
         $this->ac8model = new C1ac8Model();
         $this->ac9model = new C1ac9Model();
         $this->ac10model = new C1ac10Model();
+        $this->ac11model = new C1ac11Model();
         $this->crypt = \Config\Services::encrypter();
+        
 
     }
 
@@ -257,7 +260,9 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC11':
-                //$data['ac6'] = $this->chapterModel->getac6($dc1tID);
+
+                $rdata = $this->ac11model->getac11data($dc1tID);
+                $data['ac11'] = json_decode($rdata['question'], true);
                 
                 echo view('includes/Header', $data);
                 echo view('chapter1/Ac11', $data);
