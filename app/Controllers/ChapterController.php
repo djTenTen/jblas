@@ -16,6 +16,8 @@ use \App\Models\C1ac8Model;
 use \App\Models\C1ac9Model;
 use \App\Models\C1ac10Model;
 use \App\Models\C1ac11Model;
+use \App\Models\C2B2Model;
+
 class ChapterController extends BaseController{
 
     protected $chapterModel;
@@ -29,7 +31,7 @@ class ChapterController extends BaseController{
     protected $ac8model;
     protected $ac9model;
     protected $ac10model;
-    protected $ac11model;
+    protected $c2b2model;
 
     protected $crypt;
 
@@ -48,6 +50,8 @@ class ChapterController extends BaseController{
         $this->ac9model = new C1ac9Model();
         $this->ac10model = new C1ac10Model();
         $this->ac11model = new C1ac11Model();
+        $this->c2b2model = new C2B2Model();
+        
         $this->crypt = \Config\Services::encrypter();
         
 
@@ -277,6 +281,85 @@ class ChapterController extends BaseController{
         }
 
     }
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        Chapter 2 area
+        ----------------------------------------------------------
+    */
+    public function viewchapter2(){
+
+        // main content
+        $data['title'] = 'Chapter 2 Management';
+
+        $data['c2'] = $this->chapterModel->getc2();
+
+        echo view('includes/Header', $data);
+        echo view('chapter2/ViewChapter2', $data);
+        echo view('includes/Footer');
+    
+    }
+
+    public function managechapter2($code,$head,$c2tID){
+
+        $data['title'] = $code. ' - Chapter 2 Management';
+        $data['header'] = $head;
+        $data['c2tID'] = $c2tID;
+        $data['code'] = $code;
+
+        $dc2tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c2tID));
+
+        switch ($code) {
+
+            case '2.1 B2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+
+                echo view('includes/Header', $data);
+                echo view('chapter2/21B2', $data);
+                echo view('includes/Footer');
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 

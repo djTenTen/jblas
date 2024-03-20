@@ -10,12 +10,18 @@ $routes->get('/login', 'HomeController::homepage');
 $routes->post('/authenticate', 'AuthController::auth');
 $routes->get('/dashboard', 'DashController::dashboard');
 
+
 //Audit System
 $routes->get('/auditsystem', 'DashController::auditsystem');
+
+/**
+    ----------------------------------------------------------
+    CHAPTER 1 AREA
+    ----------------------------------------------------------
+*/
 // CHAPTER 1 VIEWS
 $routes->get('/auditsystem/c1/view', 'ChapterController::viewchapter1');
 $routes->get('/auditsystem/c1/manage/(:any)/(:any)/(:any)', 'ChapterController::managechapter1/$1/$2/$3');
-
 // CHAPTER 1 AC1 ROUTES
 $routes->post('/auditsystem/c1/manage/save/AC1/(:any)/(:any)', 'C1ac1Controller::addac1questions/$1/$2');
 $routes->post('/auditsystem/c1/manage/update/AC1/(:any)/(:any)/(:any)', 'C1ac1Controller::updateac1questions/$1/$2/$3');
@@ -75,3 +81,15 @@ $routes->get('/auditsystem/c1/ac3/edit/(:any)', 'C1ac3Controller::editac3questio
 $routes->get('/auditsystem/c1/ac4/edit/(:any)', 'C1ac4Controller::editac4question/$1');
 $routes->get('/auditsystem/c1/ac6/edit/(:any)', 'C1ac6Controller::editac6question/$1');
 $routes->get('/auditsystem/c1/ac6/edit2/(:any)', 'C1ac6Controller::editacsection3/$1');
+
+
+
+/**
+    ----------------------------------------------------------
+    CHAPTER 2 AREA
+    ----------------------------------------------------------
+*/
+// CHAPTER 2 VIEWS
+$routes->get('/auditsystem/c2/view', 'ChapterController::viewchapter2');
+$routes->get('/auditsystem/c2/manage/(:any)/(:any)/(:any)', 'ChapterController::managechapter2/$1/$2/$3');
+$routes->post('/auditsystem/c2/manage/save/(:any)/(:any)/(:any)', 'C2B2Controller::savequestions/$1/$2/$3');
