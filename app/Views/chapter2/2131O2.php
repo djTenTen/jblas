@@ -146,19 +146,6 @@ $(document).ready(function () {
 });
 </script>
 
-<h6>Tests of detail</h6>
-<p>21.	Check the accuracy of the analysis of revenue noted on the lead schedule by agreeing to nominal ledger analysis and test a sample of entries in the nominal ledger accounts to underlying invoices to confirm appropriate allocation .<strong>(P)</strong></p>
-<p>22.	List and perform any additional tests considered necessary.</p>
-<ul>
-    <li>selling prices;</li>
-    <li>treatment of discounts;</li>
-    <li>casts and extensions. <strong>(O, C, A)</strong></li>
-</ul>
-
-
-<p>6.	Revisit the risk assessment, materiality calculation and assignment plan and update as appropriate where matters have been identified during the assignment.</p>
-
-<p>8.	Ensure that the conclusion is appropriate. <strong>(P)</strong></p>
 
 
 
