@@ -147,19 +147,6 @@ $(document).ready(function () {
 </script>
 
 
-<p>22.	If, during the audit work, there is any suspicion that a document may not be authentic, or has been altered, consider confirming the contents of the document directly with the third party from whom the document originated. <strong>(E, R&O, C)</strong></p>
-
-
-<p>23.	List and perform any additional tests considered necessary.</p>
-
-<p>15.	Review:</p>
-<ul>
-    <li>shareholder and board minutes; </li>
-    <li>correspondence and invoices received from solicitors;</li>
-    <li>correspondence from regulatory authorities; to identify whether there are any ongoing matters which may lead to additional provisions or contingent liabilities. <strong> (C)</strong></li>
-    <li></li>
-</ul>
-
 
 
 
