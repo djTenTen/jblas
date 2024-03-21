@@ -74,6 +74,7 @@
                                 <th>Extent</th>
                                 <th>Reference</th>
                                 <th>Initials/Date</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -84,7 +85,14 @@
                                     <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"><?= $r['extent']?></textarea></td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="initials[]"><?= $r['initials']?></textarea></td>
-                                    <td></td>
+                                    <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
+                                    <td>
+                                        <?php if($r['status'] == 'Active'){?>
+                                            <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
+                                        <?php }else{?>
+                                            <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
+                                        <?php }?>
+                                    </td>
                                 </tr>
                             <?php }?>
                         </tbody>
@@ -104,6 +112,16 @@
 <script>
 $(document).ready(function () {
 
+    $(".active-data").on("click", function() {
+        var status = $(this).data('status');
+        var acID = $(this).data('ac-id');
+            $('#myactiveform').attr('action', "<?= base_url('auditsystem/c2/manage/activeinactive/')?><?= $code?>/<?= $header?>/<?= $c2tID?>/" + acID);
+            if (status == 'Active') {
+                $('.msgconfirm').html(`<h3>Are you sure to Disable this content?</h3>`);
+            }else{
+                $('.msgconfirm').html(`<h3>Are you sure to Enable this content?</h3>`);
+            } 
+    });
     
     $('#add-field').on('click', function () {
         // Adding a row inside the tbody.

@@ -58,6 +58,23 @@ class C2B2Controller extends BaseController{
 
     }
 
+    public function activeinactiveac2($code,$head,$c2tID,$c2ID){
+
+        $req = [
+            'code' => $code,
+            'c2ID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c2ID))
+        ];
+        $res = $this->c2b2model->activeinactiveac2($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c2/manage/'.$code.'/'.$head.'/'.$c2tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c2/manage/'.$code.'/'.$head.'/'.$c2tID));
+        }
+
+    }
 
 
 

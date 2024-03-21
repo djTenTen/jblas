@@ -93,3 +93,4 @@ $routes->get('/auditsystem/c1/ac6/edit2/(:any)', 'C1ac6Controller::editacsection
 $routes->get('/auditsystem/c2/view', 'ChapterController::viewchapter2');
 $routes->get('/auditsystem/c2/manage/(:any)/(:any)/(:any)', 'ChapterController::managechapter2/$1/$2/$3');
 $routes->post('/auditsystem/c2/manage/save/(:any)/(:any)/(:any)', 'C2B2Controller::savequestions/$1/$2/$3');
+$routes->post('/auditsystem/c2/manage/activeinactive/(:any)/(:any)/(:any)/(:any)', 'C2B2Controller::activeinactiveac2/$1/$2/$3/$4');

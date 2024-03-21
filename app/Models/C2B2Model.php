@@ -61,6 +61,28 @@ class C2B2Model extends Model{
         return true;
     }
 
+    public function activeinactiveac2($req){
+
+        $query = $this->db->table($this->tblc2)->where('acID', $req['c2ID'])->get();
+        $r = $query->getRowArray();
+        $stat = '';
+        if($r['status'] == 'Active'){
+            $stat = 'Inactive';
+        }else{
+            $stat = 'Active';
+        }
+        $data = [
+            'status' => $stat,
+            'updated_on' => $this->date.' '.$this->time
+        ];
+        if($this->db->table($this->tblc2)->where('acID', $req['c2ID'])->update($data)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
 
     
 
