@@ -145,29 +145,6 @@ $(document).ready(function () {
 });
 </script>
 
-<p>21.	List and perform any additional tests considered necessary.</p>
-
-
-
-<p>17.	Consider whether all circumstances leading to timing differences have been considered, for example:</p>
-<ul>
-    <li>Revaluations and fair value adjustments;</li>
-    <li>Capital allowances ‘v’ depreciation;</li>
-    <li>Interest and royalties paid and received;</li>
-    <li>General provisions;</li>
-    <li>Pension contribution ‘v’ pension costs;</li>
-    <li>Share-based payments;</li>
-    <li>Losses carried forward; and</li>
-    <li>Other timing differences.<strong> (C, V)</strong></li>
-</ul>
-
-
-<p>4.	Revisit the risk assessment, materiality calculation and assignment plan and update as appropriate where matters have been identified during the assignment.</p>
-
-<p>6.	Ensure that where a separate tax review is going to be performed, matters from other sections of the audit working papers (for example, relating to employment or sales taxes / duties) which require special consideration from a taxation perspective have been specifically drawn to the attention of the individual performing the tax review.</p>
-
-
-<p></p>
 
 
 
