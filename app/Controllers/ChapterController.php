@@ -395,6 +395,93 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break;
 
+            case '2.6 H2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/26H2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.7 I2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/27I2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.8 J2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/28J2', $data);
+                echo view('includes/Footer');
+                break;
+                
+            case '2.9 K2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/29K2', $data);
+                echo view('includes/Footer');
+                break;
+            
+            case '2.10 L2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/210L2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.11 M2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/211M2', $data);
+                echo view('includes/Footer');
+                break;
+
+
+            case '2.12 N2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/212N2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.13.1 O2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/2131O2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.13.2 O2-1':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/2132O21', $data);
+                echo view('includes/Footer');
+                break;
+            
+            case '2.14 P2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/214P2', $data);
+                echo view('includes/Footer');
+                break;
+
+                
+
+
+
+
+
             default:
                 # code...
                 break;
