@@ -17,6 +17,7 @@ use \App\Models\C1ac9Model;
 use \App\Models\C1ac10Model;
 use \App\Models\C1ac11Model;
 use \App\Models\C2B2Model;
+use \App\Models\C2E21Model;
 
 class ChapterController extends BaseController{
 
@@ -32,6 +33,7 @@ class ChapterController extends BaseController{
     protected $ac9model;
     protected $ac10model;
     protected $c2b2model;
+    protected $c2e21model;
 
     protected $crypt;
 
@@ -51,6 +53,7 @@ class ChapterController extends BaseController{
         $this->ac10model = new C1ac10Model();
         $this->ac11model = new C1ac11Model();
         $this->c2b2model = new C2B2Model();
+        $this->c2e21model = new C2E21Model();
         
         $this->crypt = \Config\Services::encrypter();
         
@@ -324,7 +327,67 @@ class ChapterController extends BaseController{
                 echo view('chapter2/21B2', $data);
                 echo view('includes/Footer');
                 break;
+
+            case '2.2.1 C2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+
+                echo view('includes/Header', $data);
+                echo view('chapter2/221C2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.2.2 C2-1':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/222C21', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.3 D2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/23D2', $data);
+                echo view('includes/Footer');
+                break;
             
+            case '2.4.1 E2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/241E2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.4.2 E2-1':
+
+                $data['aicpppa'] = $this->c2e21model->getquestionsaicpppa($code,$dc2tID);
+                $data['rcicp'] = $this->c2e21model->getquestionsrcicp($code,$dc2tID);
+                
+                echo view('includes/Header', $data);
+                echo view('chapter2/242E21', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.4.3 E2-2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/243E22', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.4.5 E2-4':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/245E24', $data);
+                echo view('includes/Footer');
+                break;
+    
+
             default:
                 # code...
                 break;
