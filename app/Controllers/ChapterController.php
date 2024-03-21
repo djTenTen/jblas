@@ -387,6 +387,13 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break;
     
+            case '2.5 F2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter2/25F2', $data);
+                echo view('includes/Footer');
+                break;
 
             default:
                 # code...
