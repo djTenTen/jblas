@@ -97,3 +97,13 @@ $routes->post('/auditsystem/c2/manage/activeinactive/(:any)/(:any)/(:any)/(:any)
 $routes->post('/auditsystem/c2/aicpppa/save/(:any)/(:any)/(:any)', 'C2E21Controller::saveaicpppa/$1/$2/$3');
 $routes->post('/auditsystem/c2/rcicp/save/(:any)/(:any)/(:any)', 'C2E21Controller::savercicp/$1/$2/$3');
 
+
+
+/**
+    ----------------------------------------------------------
+    CHAPTER 3 AREA
+    ----------------------------------------------------------
+*/
+// CHAPTER 2 VIEWS
+$routes->get('/auditsystem/c3/view', 'ChapterController::viewchapter3');
+

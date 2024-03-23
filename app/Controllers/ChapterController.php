@@ -573,6 +573,32 @@ class ChapterController extends BaseController{
 
 
 
+    /**
+        ----------------------------------------------------------
+        Chapter 3 area
+        ----------------------------------------------------------
+    */
+    public function viewchapter3(){
+
+        // main content
+        $data['title'] = 'Chapter 2 Management';
+
+        $data['c3'] = $this->chapterModel->getc3();
+
+        echo view('includes/Header', $data);
+        echo view('chapter3/ViewChapter3', $data);
+        echo view('includes/Footer');
+    
+    }
+
+
+
+
+
+
+
+
+
 
 
 

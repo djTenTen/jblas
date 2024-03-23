@@ -8,6 +8,7 @@ class ChapterModel extends Model{
    
     protected $tblc1t = "tbl_c1_titles";
     protected $tblc2t = "tbl_c2_titles";
+    protected $tblc3t = "tbl_c3_titles";
 
     protected $time,$date;
 
@@ -37,7 +38,7 @@ class ChapterModel extends Model{
 
 
 
-     /**
+    /**
         ----------------------------------------------------------
         CHAPTER 2 FUNCTIONS
         ----------------------------------------------------------
@@ -45,6 +46,21 @@ class ChapterModel extends Model{
     public function getc2(){
 
         $query =  $this->db->table($this->tblc2t)->get();
+        return $query->getResultArray();
+
+    }
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        CHAPTER 3 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function getc3(){
+
+        $query =  $this->db->table($this->tblc3t)->get();
         return $query->getResultArray();
 
     }

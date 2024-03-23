@@ -227,7 +227,7 @@
                                     <nav class="sidenav-menu-nested nav">
                                         <a class="nav-link" href="<?= base_url()?>auditsystem/c1/view">Chapter 1</a>
                                         <a class="nav-link" href="<?= base_url()?>auditsystem/c2/view">Chapter 2</a>
-                                        <a class="nav-link" href="<?= base_url()?>auditsystem/c13/view">Chapter 3</a>
+                                        <a class="nav-link" href="<?= base_url()?>auditsystem/c3/view">Chapter 3</a>
                                     </nav>
                                 </div>
                                 <!-- Nested Sidenav Accordion (Pages -> Authentication)-->
