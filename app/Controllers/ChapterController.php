@@ -18,6 +18,7 @@ use \App\Models\C1ac10Model;
 use \App\Models\C1ac11Model;
 use \App\Models\C2B2Model;
 use \App\Models\C2E21Model;
+use \App\Models\C331Aa1Model;
 
 class ChapterController extends BaseController{
 
@@ -34,6 +35,7 @@ class ChapterController extends BaseController{
     protected $ac10model;
     protected $c2b2model;
     protected $c2e21model;
+    protected $c331aa1model;
 
     protected $crypt;
 
@@ -54,6 +56,7 @@ class ChapterController extends BaseController{
         $this->ac11model = new C1ac11Model();
         $this->c2b2model = new C2B2Model();
         $this->c2e21model = new C2E21Model();
+        $this->c331aa1model = new C331Aa1Model();
         
         $this->crypt = \Config\Services::encrypter();
         
@@ -591,7 +594,225 @@ class ChapterController extends BaseController{
     
     }
 
+    public function managechapter3($code,$head,$c3tID){
 
+        $data['title'] = $code. ' - Chapter 3 Management';
+        $data['header'] = $head;
+        $data['c3tID'] = $c3tID;
+        $data['code'] = $code;
+
+        $dc3tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID));
+
+        switch ($code) {
+
+            case '3.1 Aa1':
+
+                $data['dataplanning'] = $this->c331aa1model->getquestionsdataplanning($code,$dc3tID);
+                $data['datapaf'] = $this->c331aa1model->getquestionsdataaf($code,$dc3tID);
+
+                $rdata = $this->c331aa1model->gets3($code, $dc3tID);
+                $data['s3'] = json_decode($rdata['question'], true);
+                
+                echo view('includes/Header', $data);
+                echo view('chapter3/31Aa1', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.2 Aa2':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/32Aa2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.3 Aa3a':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/33Aa3a', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.4 Aa3b':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/34Aa3b', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.5 Aa4':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/35Aa4', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.6.1 Aa5a':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/361Aa5a', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.6.2 Aa5b':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3.6.2 Aa5b', $data);
+                echo view('includes/Footer');
+                break;  
+
+            case '3.7 Aa7':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/37Aa7', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.8 Aa10':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/38Aa10', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.9':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/39', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.10 Aa11':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/310Aa11', $data);
+                echo view('includes/Footer');
+                break;   
+
+            case '3.11':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/311', $data);
+                echo view('includes/Footer');
+                break;   
+
+            case '3.12':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/312', $data);
+                echo view('includes/Footer');
+                break;   
+
+            case '3.13 Ab1':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/313Ab1', $data);
+                echo view('includes/Footer');
+                break;   
+
+            case '3.14 Ab3':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/314Ab3', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15 Ab4':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/315Ab4', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.1 Ab4a':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3151Ab4a', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.2 Ab4b':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3152Ab4b', $data);
+                echo view('includes/Footer');
+                break; 
+
+
+            case '3.15.3 Ab4c':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3153Ab4c', $data);
+                echo view('includes/Footer');
+                break; 
+
+
+            case '3.15.4 Ab4d':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3154Ab4d', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.5 Ab4e':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3155Ab4e', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.6 Ab4f':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3156Ab4f', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.7 Ab4g':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3157Ab4g', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.8 Ab4h':
+
+                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3158Ab4h', $data);
+                echo view('includes/Footer');
+                break; 
+
+
+
+            default:
+                # code...
+                break;
+        }
+
+
+    }
 
 
 
