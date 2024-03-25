@@ -333,12 +333,60 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AA5b FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function saveaa5b($code,$head,$c3tID){
+
+        $validationRules = [
+            'reference' => 'required'
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+        $req = [
+            'reference' => $this->request->getPost('reference'),
+            'issue' => $this->request->getPost('issue'),
+            'comment' => $this->request->getPost('comment'),
+            'recommendation' => $this->request->getPost('recommendation'),
+            'yesno' => $this->request->getPost('yesno'),
+            'result' => $this->request->getPost('result'),
+            'code' => $code,
+            'part' => $this->request->getPost('part'),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+        ];
+
+        $res = $this->c3model->saveaa5b($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+    }
+
+
+
+
+
+
     
-    
-
-
-
-
 
 
 

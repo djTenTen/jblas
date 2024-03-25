@@ -399,8 +399,50 @@ class Chapter3Model extends Model{
 
 
 
+    /**
+        ----------------------------------------------------------
+        AA5b FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getaa5b($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'aa5b', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    /** 
+        POST FUNCTIONS
+    */
+    public function saveaa5b($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
+        foreach($req['reference'] as $i => $val){
+
+            $data = [
+                'reference' => $req['reference'][$i],
+                'issue' => $req['issue'][$i],
+                'comment' => $req['comment'][$i],
+                'recommendation' => $req['recommendation'][$i],
+                'yesno' => $req['yesno'][$i],
+                'result' => $req['result'][$i],
+                'type' =>  $req['part'],
+                'code' =>  $req['code'],
+                'c3tID' => $req['c3tID'],
+                'status' => 'Active',
+                'updated_on' => $this->date.' '.$this->time
+            ];
+            $this->db->table($this->tblc3)->insert($data);
+            
+        }
+
+        return true;
 
 
+    }
 
     
 
