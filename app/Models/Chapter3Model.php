@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class C331Aa1Model extends Model{
+class Chapter3Model extends Model{
    
     protected $tblc3 = "tbl_c3";
     protected $crypt;
@@ -21,25 +21,61 @@ class C331Aa1Model extends Model{
 
     /**
         ----------------------------------------------------------
-        Chapter 2 GET FUNCTIONS
+        GENERAL FUNCTIONS
         ----------------------------------------------------------
     */
+    public function acin($req){
 
-    public function getquestionsdataplanning($code,$c3tID){
+        $query = $this->db->table($this->tblc3)->where('acID', $req['c3ID'])->get();
+        $r = $query->getRowArray();
+        $stat = '';
+        if($r['status'] == 'Active'){
+            $stat = 'Inactive';
+        }else{
+            $stat = 'Active';
+        }
+        $data = [
+            'status' => $stat,
+            'updated_on' => $this->date.' '.$this->time
+        ];
+        if($this->db->table($this->tblc3)->where('acID', $req['c3ID'])->update($data)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+
+
+
+
+
+
+
+    
+    /**
+        ----------------------------------------------------------
+        AA1 FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getaa1pl($code,$c3tID){
 
         $query = $this->db->table($this->tblc3)->where(array('type' => 'planning', 'code' => $code, 'c3tID' => $c3tID))->get();
         return $query->getResultArray();
 
     }
 
-    public function getquestionsdataaf($code,$c3tID){
+    public function getaa1af($code,$c3tID){
 
         $query = $this->db->table($this->tblc3)->where(array('type' => 'audit finalisation', 'code' => $code, 'c3tID' => $c3tID))->get();
         return $query->getResultArray();
 
     }
 
-    public function gets3($code,$c3tID){
+    public function getaa1s3($code,$c3tID){
 
         $query = $this->db->table($this->tblc3)->where(array('type' => 'section3', 'code' => $code, 'c3tID' => $c3tID))->get();
         return $query->getRowArray();
@@ -47,11 +83,8 @@ class C331Aa1Model extends Model{
     }
    
    
-   
     /**
-        ----------------------------------------------------------
-        Chapter 2 POST FUNCTIONS
-        ----------------------------------------------------------
+        POST FUNCTIONS
     */
     public function savequestions($req){
 
@@ -76,7 +109,7 @@ class C331Aa1Model extends Model{
         return true;
     }
 
-    public function savesection3($req){
+    public function saveaa1s3($req){
 
         $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
 
@@ -97,21 +130,50 @@ class C331Aa1Model extends Model{
 
     }
 
-    public function activeinactiveac3($req){
+    
 
-        $query = $this->db->table($this->tblc3)->where('acID', $req['c3ID'])->get();
-        $r = $query->getRowArray();
-        $stat = '';
-        if($r['status'] == 'Active'){
-            $stat = 'Inactive';
-        }else{
-            $stat = 'Active';
-        }
+
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AA2 FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+
+    public function getaa2data($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'aa2', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getRowArray();
+
+    }
+
+   
+    /**
+        POST FUNCTIONS
+    */
+    public function saveaa2($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
         $data = [
-            'status' => $stat,
+            'question' => $req['aa2'],
+            'type' =>  $req['part'],
+            'code' =>  $req['code'],
+            'c3tID' => $req['c3tID'],
+            'status' => 'Active',
             'updated_on' => $this->date.' '.$this->time
         ];
-        if($this->db->table($this->tblc3)->where('acID', $req['c3ID'])->update($data)){
+
+        if($this->db->table($this->tblc3)->insert($data)){
             return true;
         }else{
             return false;
@@ -120,20 +182,19 @@ class C331Aa1Model extends Model{
     }
 
 
-    
-
-    
-
-
-
-    
-
-    
 
 
 
 
-    
+
+
+
+
+
+
+
+
+
 
 
 

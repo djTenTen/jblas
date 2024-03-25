@@ -65,7 +65,7 @@
             <div class="card-body">
                 
                 <h4>AUDIT CONTROL RECORD</h4>
-                <form action="<?= base_url()?>auditsystem/c3/manage/save/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/c3/saveplaf/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
 
                     <table class="table table-sm table-bordered table-hover">
                         <thead>
@@ -79,7 +79,7 @@
                         </thead>
                         <tbody id="tbody">
                             <input type="hidden" value="planning" name="part">
-                            <?php foreach($dataplanning as $r){?>
+                            <?php foreach($datapl as $r){?>
                                 <tr>
                                     <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"><?= $r['question']?></textarea></td>
                                     <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"><?= $r['extent']?></textarea></td>
@@ -146,7 +146,7 @@
                 <h6>4.	Pre-sign off completion by Audit Engagement Partner</h6>
 
 
-                <form action="<?= base_url()?>auditsystem/c3/manage/save/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/c3/saveplaf/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
 
                     <table class="table table-sm table-bordered table-hover">
                         <thead>
@@ -160,7 +160,7 @@
                         </thead>
                         <tbody id="tbody1">
                             <input type="hidden" value="audit finalisation" name="part">
-                            <?php foreach($datapaf as $r){?>
+                            <?php foreach($dataaf as $r){?>
                                 <tr>
                                     <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"><?= $r['question']?></textarea></td>
                                     <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"><?= $r['extent']?></textarea></td>
@@ -214,7 +214,7 @@
                 <h6>Any YES answers should be fully explained along with the safeguards, which will enable us to accept the re-appointment.</h6>
                 <h6>Significant issues must be discussed with the Ethics Partner and details of the discussion should be documented on file.</h6>
 
-                <form action="<?= base_url()?>auditsystem/c3/manage/saves3/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/c3/saves3/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
                 <table class="table table-sm table-bordered">
                     <thead>
                         <tr>
@@ -273,7 +273,7 @@ $(document).ready(function () {
     $(".active-data").on("click", function() {
         var status = $(this).data('status');
         var acID = $(this).data('ac-id');
-            $('#myactiveform').attr('action', "<?= base_url('auditsystem/c3/manage/activeinactive/')?><?= $code?>/<?= $header?>/<?= $c3tID?>/" + acID);
+            $('#myactiveform').attr('action', "<?= base_url('auditsystem/c3/activeinactive/')?><?= $code?>/<?= $header?>/<?= $c3tID?>/" + acID);
             if (status == 'Active') {
                 $('.msgconfirm').html(`<h3>Are you sure to Disable this content?</h3>`);
             }else{

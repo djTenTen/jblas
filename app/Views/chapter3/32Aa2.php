@@ -72,7 +72,7 @@
                 <p>If information has been included elsewhere on the audit file (for example, Subsequent Events Review, or the ISA Compliance Critical Issues Memorandum), it does not need to be repeated.  Where appropriate, details of suggested improvements should be outlined.</p>
                 
 
-                <form action="<?= base_url()?>auditsystem/c3/save/Aa2/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/c3/saveaa2/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
                 
                     <h6>Problems encountered during the audit (regarding audit tests):</h6>
                     <textarea class="form-control" cols="30" rows="15" name="rat" required><?= $aa2['rat']?></textarea>

@@ -5,6 +5,8 @@ use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\HTTP\ResponseInterface;
 
 use \App\Models\ChapterModel;
+use \App\Models\Chapter3Model;
+
 use \App\Models\C1ac1Model;
 use \App\Models\C1ac2Model;
 use \App\Models\C1ac3Model;
@@ -18,12 +20,13 @@ use \App\Models\C1ac10Model;
 use \App\Models\C1ac11Model;
 use \App\Models\C2B2Model;
 use \App\Models\C2E21Model;
-use \App\Models\C331Aa1Model;
 use \App\Models\C332Aa2Model;
 
 class ChapterController extends BaseController{
 
     protected $chapterModel;
+    protected $c3model;
+
     protected $ac1model;
     protected $ac2model;
     protected $ac3model;
@@ -36,7 +39,7 @@ class ChapterController extends BaseController{
     protected $ac10model;
     protected $c2b2model;
     protected $c2e21model;
-    protected $c331aa1model;
+
     protected $c332aa2model;
 
     protected $crypt;
@@ -45,6 +48,8 @@ class ChapterController extends BaseController{
 
         \Config\Services::session();
         $this->chapterModel = new ChapterModel();
+        $this->c3model = new Chapter3Model();
+
         $this->ac1model = new C1ac1Model();
         $this->ac2model = new C1ac2Model();
         $this->ac3model = new C1ac3Model();
@@ -58,7 +63,7 @@ class ChapterController extends BaseController{
         $this->ac11model = new C1ac11Model();
         $this->c2b2model = new C2B2Model();
         $this->c2e21model = new C2E21Model();
-        $this->c331aa1model = new C331Aa1Model();
+
         $this->c332aa2model = new C332Aa2Model();
         $this->crypt = \Config\Services::encrypter();
         
@@ -609,10 +614,9 @@ class ChapterController extends BaseController{
 
             case '3.1 Aa1':
 
-                $data['dataplanning'] = $this->c331aa1model->getquestionsdataplanning($code,$dc3tID);
-                $data['datapaf'] = $this->c331aa1model->getquestionsdataaf($code,$dc3tID);
-
-                $rdata = $this->c331aa1model->gets3($code, $dc3tID);
+                $data['datapl'] = $this->c3model->getaa1pl($code,$dc3tID);
+                $data['dataaf'] = $this->c3model->getaa1af($code,$dc3tID);
+                $rdata = $this->c3model->getaa1s3($code, $dc3tID);
                 $data['s3'] = json_decode($rdata['question'], true);
                 
                 echo view('includes/Header', $data);
@@ -622,7 +626,7 @@ class ChapterController extends BaseController{
 
             case '3.2 Aa2':
 
-                $rdata = $this->c332aa2model->getaa2data($code,$dc3tID);
+                $rdata = $this->c3model->getaa2data($code, $dc3tID);
                 $data['aa2'] = json_decode($rdata['question'], true);
 
                 echo view('includes/Header', $data);
