@@ -273,7 +273,7 @@ $(document).ready(function () {
     $(".active-data").on("click", function() {
         var status = $(this).data('status');
         var acID = $(this).data('ac-id');
-            $('#myactiveform').attr('action', "<?= base_url('auditsystem/c2/manage/activeinactive/')?><?= $code?>/<?= $header?>/<?= $c3tID?>/" + acID);
+            $('#myactiveform').attr('action', "<?= base_url('auditsystem/c3/manage/activeinactive/')?><?= $code?>/<?= $header?>/<?= $c3tID?>/" + acID);
             if (status == 'Active') {
                 $('.msgconfirm').html(`<h3>Are you sure to Disable this content?</h3>`);
             }else{

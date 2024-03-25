@@ -111,7 +111,7 @@ class C331Aa1Model extends Model{
             'status' => $stat,
             'updated_on' => $this->date.' '.$this->time
         ];
-        if($this->db->table($this->tblc2)->where('acID', $req['c3ID'])->update($data)){
+        if($this->db->table($this->tblc3)->where('acID', $req['c3ID'])->update($data)){
             return true;
         }else{
             return false;

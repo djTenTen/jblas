@@ -1,0 +1,463 @@
+INFO - 2024-03-25 10:45:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-25 10:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:45:30 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-3.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:45:30 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-2.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:45:30 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-4.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:45:30 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-5.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:45:30 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-1.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:45:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:45:50 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Models\C2B2Model.php on line 69.
+ 1 APPPATH\Models\C2B2Model.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Models\\C2B2Model.php', 69)
+ 2 APPPATH\Controllers\C2B2Controller.php(67): App\Models\C2B2Model->activeinactiveac2([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\C2B2Controller->activeinactiveac2('3.1 Aa1', 'Audit Control Record', 'bc44d4c63b702c5e1b66c2533eb313f3514783dd0fa8e55435340ad751668043fbb5e7867d7c61565ede26b1144566e4a25cd2ef1cfa6030f03300bb62fcb5966M2rQyapDyyRhZZrPEmarsy1', 'd0abbfb87462786bcb6c9c6568a29ad9ff747e8cf1562de2cd8d269325d40df14d1a07050fc6a6b47477929040073ee35a94988b0e5d0df2d8d0eef6c0ff662bXdguNm617aQ643rJclYQyO6EGGQ=')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\C2B2Controller))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-25 10:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:45:54 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-2.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:45:54 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-3.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:45:54 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-4.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:45:54 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-1.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:45:54 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-5.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:46:03 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Models\C2B2Model.php on line 69.
+ 1 APPPATH\Models\C2B2Model.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Models\\C2B2Model.php', 69)
+ 2 APPPATH\Controllers\C2B2Controller.php(67): App\Models\C2B2Model->activeinactiveac2([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\C2B2Controller->activeinactiveac2('3.1 Aa1', 'Audit Control Record', 'bc44d4c63b702c5e1b66c2533eb313f3514783dd0fa8e55435340ad751668043fbb5e7867d7c61565ede26b1144566e4a25cd2ef1cfa6030f03300bb62fcb5966M2rQyapDyyRhZZrPEmarsy1', '662e10a7bc34e2f89ed6d8d3f77e2b0af0a176d57f8ec915871818f9c56abb5bf29e12cd2a3f7afbf078f65fb78c8e34ff90c91410f1f482605f2762225d8be5xkzq90g67eQVVy6CMB2dgmZqj2M=')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\C2B2Controller))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-25 10:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:46:13 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-3.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:46:13 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-2.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:46:13 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-1.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:46:13 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-4.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:46:13 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-5.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:46:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:46:21 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Models\C2B2Model.php on line 69.
+ 1 APPPATH\Models\C2B2Model.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Models\\C2B2Model.php', 69)
+ 2 APPPATH\Controllers\C2B2Controller.php(67): App\Models\C2B2Model->activeinactiveac2([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\C2B2Controller->activeinactiveac2('3.1 Aa1', 'Audit Control Record', 'bc44d4c63b702c5e1b66c2533eb313f3514783dd0fa8e55435340ad751668043fbb5e7867d7c61565ede26b1144566e4a25cd2ef1cfa6030f03300bb62fcb5966M2rQyapDyyRhZZrPEmarsy1', '87c9791e2c7ffad0015e5f9c65c622cdf6932c568c00d34c3ca92424ac661f806ac9368ef89001ddd1eee83b30c629b0ae52dc01ccdaf87706a54245f9899294Q6pBPRuRsI22yPXwhGcPJ0VATvE=')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\C2B2Controller))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-25 10:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:46:50 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-2.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:46:50 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-3.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:46:50 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-5.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:46:50 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-1.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:46:50 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-4.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-25 10:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:39 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-2.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:39 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-3.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:39 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-5.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:39 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-1.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:39 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-4.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:44 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(839): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\C331Aa1Model.php(114): CodeIgniter\Model->__get('tblc2')
+ 4 APPPATH\Controllers\C331Aa1Controller.php(101): App\Models\C331Aa1Model->activeinactiveac3([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\C331Aa1Controller->activeinactiveac3('3.1 Aa1', 'Audit Control Record', 'bc44d4c63b702c5e1b66c2533eb313f3514783dd0fa8e55435340ad751668043fbb5e7867d7c61565ede26b1144566e4a25cd2ef1cfa6030f03300bb62fcb5966M2rQyapDyyRhZZrPEmarsy1', 'bb777a0d312d568e1498b7e5a2735534220a3f1692f72c0579482b1de0023ed80d2fa52cf49225cbce103e3e4974d5d72b9c8da9beebc581932b08d429d6e979P22efdXyA6kHRv6PujsaXiRlOfU=')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\C331Aa1Controller))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-25 10:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:47 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-2.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:47 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-3.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:47 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-4.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:47 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-1.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:47 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-5.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-25 10:48:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:59 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-3.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:59 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-2.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:59 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-5.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:59 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-1.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:48:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:48:59 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-4.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:49:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-25 10:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-25 10:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:49:04 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-3.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:49:04 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-2.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:49:04 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-4.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:49:04 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-5.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:49:04 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-1.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-25 10:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-25 10:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:49:09 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-2.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:49:09 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-3.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:49:09 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-5.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:49:09 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-1.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:49:09 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(604): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.1 Aa1', 'Audit Control Record', 'assets', 'img', 'illustrations', 'profiles', 'profile-4.png')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-25 10:49:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-25 10:49:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-25 10:49:35 --> ErrorException: Undefined variable $dc2tID
+in APPPATH\Controllers\ChapterController.php on line 623.
+ 1 APPPATH\Controllers\ChapterController.php(623): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dc2tID', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 623)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.2 Aa2', 'Proforma Points Forward', 'c0924ad65d55446abdbacf14dbc74cbcd071bf34dfbac1a69425c7eefc5ecea0bed1cbb2e83bd5ba6d66e73605e201de3e6e6712b2a5dc57025992bffa03d08fo6h~KhvHFHPM6vYUTeZFtAYg')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
