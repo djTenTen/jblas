@@ -20,7 +20,6 @@ use \App\Models\C1ac10Model;
 use \App\Models\C1ac11Model;
 use \App\Models\C2B2Model;
 use \App\Models\C2E21Model;
-use \App\Models\C332Aa2Model;
 
 class ChapterController extends BaseController{
 
@@ -39,8 +38,6 @@ class ChapterController extends BaseController{
     protected $ac10model;
     protected $c2b2model;
     protected $c2e21model;
-
-    protected $c332aa2model;
 
     protected $crypt;
 
@@ -64,7 +61,6 @@ class ChapterController extends BaseController{
         $this->c2b2model = new C2B2Model();
         $this->c2e21model = new C2E21Model();
 
-        $this->c332aa2model = new C332Aa2Model();
         $this->crypt = \Config\Services::encrypter();
         
 
@@ -636,7 +632,12 @@ class ChapterController extends BaseController{
 
             case '3.3 Aa3a':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc2tID);
+                $data['cr'] = $this->c3model->getaa3acr($code,$dc3tID);
+                $data['dc'] = $this->c3model->getaa3adc($code,$dc3tID);
+                $data['faf'] = $this->c3model->getaa3afaf($code,$dc3tID);
+                $data['ir'] = $this->c3model->getaa3air($code,$dc3tID);
+                
+                
                 echo view('includes/Header', $data);
                 echo view('chapter3/33Aa3a', $data);
                 echo view('includes/Footer');

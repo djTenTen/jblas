@@ -189,6 +189,116 @@ class Chapter3Model extends Model{
 
 
 
+    /**
+        ----------------------------------------------------------
+        AA2 FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getaa3acr($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'cr', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa3adc($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'dc', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa3afaf($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'faf', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa3air($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'ir', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getRowArray();
+
+    }
+
+
+    /** 
+        POST FUNCTIONS
+    */
+    public function saveaa3a($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'question' => $req['question'][$i],
+                'reference' => $req['comment'][$i],
+                'type' =>  $req['part'],
+                'code' =>  $req['code'],
+                'c3tID' => $req['c3tID'],
+                'status' => 'Active',
+                'updated_on' => $this->date.' '.$this->time
+            ];
+            $this->db->table($this->tblc3)->insert($data);
+            
+        }
+
+        return true;
+
+    }
+
+    public function saveaa3afaf($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'question' => $req['question'][$i],
+                'extent' => $req['extent'][$i],
+                'reference' => $req['reference'][$i],
+                'type' =>  $req['part'],
+                'code' =>  $req['code'],
+                'c3tID' => $req['c3tID'],
+                'status' => 'Active',
+                'updated_on' => $this->date.' '.$this->time
+            ];
+            $this->db->table($this->tblc3)->insert($data);
+            
+        }
+
+        return true;
+
+    }
+
+    public function saveaa3air($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => 'ir', 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
+        $data = [
+            'question' => $req['ir'],
+            'type' =>  $req['part'],
+            'code' =>  $req['code'],
+            'c3tID' => $req['c3tID'],
+            'status' => 'Active',
+            'updated_on' => $this->date.' '.$this->time
+        ];
+
+        if($this->db->table($this->tblc3)->insert($data)){
+            return true;
+        }else{
+            return false;
+        }
+
+
+    }
+    
+
+   
 
 
 
@@ -196,6 +306,8 @@ class Chapter3Model extends Model{
 
 
 
+
+    
 
 
 

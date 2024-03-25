@@ -114,67 +114,6 @@
 
 
 
-<script>
-$(document).ready(function () {
-
-    $(".active-data").on("click", function() {
-        var status = $(this).data('status');
-        var acID = $(this).data('ac-id');
-            $('#myactiveform').attr('action', "<?= base_url('auditsystem/c3/manage/activeinactive/')?><?= $code?>/<?= $header?>/<?= $c3tID?>/" + acID);
-            if (status == 'Active') {
-                $('.msgconfirm').html(`<h3>Are you sure to Disable this content?</h3>`);
-            }else{
-                $('.msgconfirm').html(`<h3>Are you sure to Enable this content?</h3>`);
-            } 
-    });
-    
-    $('#add-field').on('click', function () {
-        // Adding a row inside the tbody.
-        $('#tbody').append(`
-        <tr>
-            <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
-            <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"></textarea></td>
-            <td><textarea class="form-control" cols="30" rows="3" name="reference[]"></textarea></td>
-            <td></td>
-            <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-        </tr>`);
-    });
-
-    $('#tbody').on('click', 'button.remove', function () {
-        $(this).closest('tr').remove();
-    });
-
-    $('#add-field1').on('click', function () {
-        // Adding a row inside the tbody.
-        $('#tbody1').append(`
-        <tr>
-            <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
-            <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"></textarea></td>
-            <td><textarea class="form-control" cols="30" rows="3" name="reference[]"></textarea></td>
-            <td></td>
-            <td><button class="btn btn-danger btn-icon btn-sm remove1" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-        </tr>`);
-    });
-
-    $('#tbody1').on('click', 'button.remove1', function () {
-        $(this).closest('tr').remove();
-    });
-
-
-
-});
-</script>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
