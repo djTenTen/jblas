@@ -290,8 +290,6 @@ $(document).ready(function () {
 
 
 
-<p>14.	Ensure that an appropriate paragraph is included in the letter of representation.</p>
-
 
 
 

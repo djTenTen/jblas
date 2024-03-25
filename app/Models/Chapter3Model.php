@@ -191,7 +191,7 @@ class Chapter3Model extends Model{
 
     /**
         ----------------------------------------------------------
-        AA2 FUNCTIONS
+        AA3a FUNCTIONS
         ----------------------------------------------------------
 
         GET FUNCTIONS
@@ -296,6 +296,101 @@ class Chapter3Model extends Model{
 
 
     }
+
+
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AA3b FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getaa3bp1($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'p1', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa3bp2($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'p2', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa3bp3($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'p3', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa3bp4($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'p4', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getRowArray();
+
+    }
+
+
+    /** 
+        POST FUNCTIONS
+    */
+    public function saveaa3b($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'question' => $req['question'][$i],
+                'reference' => $req['reference'][$i],
+                'type' =>  $req['part'],
+                'code' =>  $req['code'],
+                'c3tID' => $req['c3tID'],
+                'status' => 'Active',
+                'updated_on' => $this->date.' '.$this->time
+            ];
+            $this->db->table($this->tblc3)->insert($data);
+            
+        }
+
+        return true;
+
+    }
+
+    public function saveaa3bp4($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => 'p4', 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
+        $data = [
+            'question' => $req['p4'],
+            'type' =>  $req['part'],
+            'code' =>  $req['code'],
+            'c3tID' => $req['c3tID'],
+            'status' => 'Active',
+            'updated_on' => $this->date.' '.$this->time
+        ];
+
+        if($this->db->table($this->tblc3)->insert($data)){
+            return true;
+        }else{
+            return false;
+        }
+
+
+    }
+
+
     
 
    
