@@ -104,9 +104,14 @@ $routes->post('/auditsystem/c2/rcicp/save/(:any)/(:any)/(:any)', 'C2E21Controlle
     CHAPTER 3 AREA
     ----------------------------------------------------------
 */
-// CHAPTER 2 VIEWS
+// CHAPTER 3 VIEWS
+//aa1
 $routes->get('/auditsystem/c3/view', 'ChapterController::viewchapter3');
 $routes->get('/auditsystem/c3/manage/(:any)/(:any)/(:any)', 'ChapterController::managechapter3/$1/$2/$3');
 $routes->post('/auditsystem/c3/manage/save/(:any)/(:any)/(:any)', 'C331Aa1Controller::savequestions/$1/$2/$3');
 $routes->post('/auditsystem/c3/manage/activeinactive/(:any)/(:any)/(:any)/(:any)', 'C331Aa1Controller::activeinactiveac3/$1/$2/$3/$4');
 $routes->post('/auditsystem/c3/manage/saves3/(:any)/(:any)/(:any)', 'C331Aa1Controller::savesection3/$1/$2/$3');
+//aa2
+$routes->post('/auditsystem/c3/save/Aa2/(:any)/(:any)/(:any)', 'C332Aa2Controller::saveaa2/$1/$2/$3');
+
+
