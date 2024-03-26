@@ -503,6 +503,74 @@ class Chapter3Controller extends BaseController{
 
 
 
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AA10 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function saveaa11($code,$head,$c3tID){
+
+        $req = [
+            'reference' => $this->request->getPost('reference'),
+            'desc' => $this->request->getPost('desc'),
+            'drps' => $this->request->getPost('drps'),
+            'crps' => $this->request->getPost('crps'),
+            'drfp' => $this->request->getPost('drfp'),
+            'crfp' => $this->request->getPost('crfp'),
+            'yesno' => $this->request->getPost('yesno'),
+            'code' => $code,
+            'part' => $this->request->getPost('part'),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+        ];
+
+        $res = $this->c3model->saveaa11($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+    }
+
+    public function saveaa11ue($code,$head,$c3tID){
+
+        $aa11 = [
+            'cta' => $this->request->getPost('cta'),
+            'fpm' => $this->request->getPost('fpm'),
+            'fma' => $this->request->getPost('fma')
+        ];
+
+        $req = [
+            'aa11' => json_encode($aa11),
+            'code' => $code,
+            'part' => 'aa11ue',
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+        ];
+
+        $res = $this->c3model->saveaa11ue($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+    }
+    
+
+
     
 
 

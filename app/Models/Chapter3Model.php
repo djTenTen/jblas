@@ -609,9 +609,111 @@ class Chapter3Model extends Model{
 
     }
 
-    
-    
 
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AA11 FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getaa11aef($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'aef', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa11aej($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'aej', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa11ee($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'ee', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa11de($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'de', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa11ue($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'aa11ue', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getRowArray();
+
+    }
+    /** 
+        POST FUNCTIONS
+    */
+    public function saveaa11($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
+        foreach($req['reference'] as $i => $val){
+
+            $data = [
+                'reference' => $req['reference'][$i],
+                'initials' => $req['desc'][$i],
+                'drps' => $req['drps'][$i],
+                'crps' => $req['crps'][$i],
+                'drfp' => $req['drfp'][$i],
+                'crfp' => $req['crfp'][$i],
+                'yesno' => $req['yesno'][$i],
+                'type' =>  $req['part'],
+                'code' =>  $req['code'],
+                'c3tID' => $req['c3tID'],
+                'status' => 'Active',
+                'updated_on' => $this->date.' '.$this->time
+            ];
+    
+            $this->db->table($this->tblc3)->insert($data);
+
+        }
+
+       return true;
+
+    }
+    
+    public function saveaa11ue($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
+        $data = [
+            'question' => $req['aa11'],
+            'type' =>  $req['part'],
+            'code' =>  $req['code'],
+            'c3tID' => $req['c3tID'],
+            'status' => 'Active',
+            'updated_on' => $this->date.' '.$this->time
+        ];
+
+        if($this->db->table($this->tblc3)->insert($data)){
+            return true;
+        }else{
+            return false;
+        }
+
+
+    }
+    
+    
     
 
 
