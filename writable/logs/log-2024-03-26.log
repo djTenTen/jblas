@@ -259,3 +259,113 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
 INFO - 2024-03-26 13:53:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 13:55:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 13:55:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "chapter3/313Ab1.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('chapter3/313Ab1.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter3/313Ab1', [], true)
+ 3 APPPATH\Controllers\ChapterController.php(756): view('chapter3/313Ab1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.13 Ab1', 'Critical review of the Financial Statements', '9f810f92355648e2784cc8983a5eed3cdebdd76ec20163a1a008d5a926e629dc9861119887df767e935b65541cb57977d54318894427af8aaf444e0111c5b896Y5QsXq41TvWHJ2DMxSGW9A~J')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 13:55:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 13:59:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 13:59:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 13:59:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:15:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:15:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:18:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 14:18:47 --> TypeError: Cannot access offset of type string on string
+in APPPATH\Views\chapter3\313Ab1.php on line 66.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter3/313Ab1', [], true)
+ 4 APPPATH\Controllers\ChapterController.php(756): view('chapter3/313Ab1', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.13 Ab1', 'Critical review of the Financial Statements', '9f810f92355648e2784cc8983a5eed3cdebdd76ec20163a1a008d5a926e629dc9861119887df767e935b65541cb57977d54318894427af8aaf444e0111c5b896Y5QsXq41TvWHJ2DMxSGW9A~J')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 14:19:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:19:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:20:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:20:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:21:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 14:21:09 --> ErrorException: Undefined variable $c2tID
+in APPPATH\Views\chapter3\313Ab1.php on line 104.
+ 1 APPPATH\Views\chapter3\313Ab1.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $c2tID', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter3\\313Ab1.php', 104)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter3\\313Ab1.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter3/313Ab1', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(756): view('chapter3/313Ab1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.13 Ab1', 'Critical review of the Financial Statements', '9f810f92355648e2784cc8983a5eed3cdebdd76ec20163a1a008d5a926e629dc9861119887df767e935b65541cb57977d54318894427af8aaf444e0111c5b896Y5QsXq41TvWHJ2DMxSGW9A~J')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 14:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 14:21:31 --> mysqli_sql_exception: Operand should contain 1 column(s) in D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `tb...', 0)
+#1 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 D:\dhay\xampp\htdocs\jblas\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 D:\dhay\xampp\htdocs\jblas\app\Models\Chapter3Model.php(757): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 D:\dhay\xampp\htdocs\jblas\app\Controllers\Chapter3Controller.php(597): App\Models\Chapter3Model->saveab1(Array)
+#6 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\Chapter3Controller->saveab1('3.13 Ab1', 'Critical review...', '9f810f92355648e...')
+#7 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter3Controller))
+#8 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\dhay\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-03-26 14:21:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Operand should contain 1 column(s)
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_c3` (`question`, `yesno`, `comment`, `type`, `code`, `c3tID`, `status`, `updated_on`) VALUES (:question:, :yesno:, :comment:, :type:, :code:, :c3tID:, :status:, :updated_on:)', [...], false)
+ 2 APPPATH\Models\Chapter3Model.php(757): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Chapter3Controller.php(597): App\Models\Chapter3Model->saveab1([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter3Controller->saveab1('3.13 Ab1', 'Critical review of the Financial Statements', '9f810f92355648e2784cc8983a5eed3cdebdd76ec20163a1a008d5a926e629dc9861119887df767e935b65541cb57977d54318894427af8aaf444e0111c5b896Y5QsXq41TvWHJ2DMxSGW9A~J')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter3Controller))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-26 14:21:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Operand should contain 1 column(s)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_c3` (`question`, `yesno`, `comment`, `type`, `code`, `c3tID`, `status`, `updated_on`) VALUES ((\'1\',\'2\'), (\'2\',\'2\'), (\'23\',\'2\'), \'ab1\', \'3.13 Ab1\', \'57\', \'Active\', \'2024-03-26 14:21:31\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_c3` (`question`, `yesno`, `comment`, `type`, `code`, `c3tID`, `status`, `updated_on`) VALUES ((\'1\',\'2\'), (\'2\',\'2\'), (\'23\',\'2\'), \'ab1\', \'3.13 Ab1\', \'57\', \'Active\', \'2024-03-26 14:21:31\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_c3` (`question`, `yesno`, `comment`, `type`, `code`, `c3tID`, `status`, `updated_on`) VALUES (:question:, :yesno:, :comment:, :type:, :code:, :c3tID:, :status:, :updated_on:)', [...], false)
+ 4 APPPATH\Models\Chapter3Model.php(757): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Chapter3Controller.php(597): App\Models\Chapter3Model->saveab1([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter3Controller->saveab1('3.13 Ab1', 'Critical review of the Financial Statements', '9f810f92355648e2784cc8983a5eed3cdebdd76ec20163a1a008d5a926e629dc9861119887df767e935b65541cb57977d54318894427af8aaf444e0111c5b896Y5QsXq41TvWHJ2DMxSGW9A~J')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter3Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-26 14:21:31 --> [Caused by] mysqli_sql_exception: Operand should contain 1 column(s)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `tbl_c3` (`question`, `yesno`, `comment`, `type`, `code`, `c3tID`, `status`, `updated_on`) VALUES ((\'1\',\'2\'), (\'2\',\'2\'), (\'23\',\'2\'), \'ab1\', \'3.13 Ab1\', \'57\', \'Active\', \'2024-03-26 14:21:31\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_c3` (`question`, `yesno`, `comment`, `type`, `code`, `c3tID`, `status`, `updated_on`) VALUES ((\'1\',\'2\'), (\'2\',\'2\'), (\'23\',\'2\'), \'ab1\', \'3.13 Ab1\', \'57\', \'Active\', \'2024-03-26 14:21:31\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_c3` (`question`, `yesno`, `comment`, `type`, `code`, `c3tID`, `status`, `updated_on`) VALUES ((\'1\',\'2\'), (\'2\',\'2\'), (\'23\',\'2\'), \'ab1\', \'3.13 Ab1\', \'57\', \'Active\', \'2024-03-26 14:21:31\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_c3` (`question`, `yesno`, `comment`, `type`, `code`, `c3tID`, `status`, `updated_on`) VALUES (:question:, :yesno:, :comment:, :type:, :code:, :c3tID:, :status:, :updated_on:)', [...], false)
+ 5 APPPATH\Models\Chapter3Model.php(757): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Chapter3Controller.php(597): App\Models\Chapter3Model->saveab1([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter3Controller->saveab1('3.13 Ab1', 'Critical review of the Financial Statements', '9f810f92355648e2784cc8983a5eed3cdebdd76ec20163a1a008d5a926e629dc9861119887df767e935b65541cb57977d54318894427af8aaf444e0111c5b896Y5QsXq41TvWHJ2DMxSGW9A~J')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter3Controller))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 14:21:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:21:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:23:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:28:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 14:29:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -659,7 +659,7 @@ class ChapterController extends BaseController{
 
             case '3.5 Aa4':
 
-               // $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+
                 echo view('includes/Header', $data);
                 echo view('chapter3/35Aa4', $data);
                 echo view('includes/Footer');
@@ -667,7 +667,7 @@ class ChapterController extends BaseController{
 
             case '3.6.1 Aa5a':
 
-                //$data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+
                 echo view('includes/Header', $data);
                 echo view('chapter3/361Aa5a', $data);
                 echo view('includes/Footer');
@@ -711,7 +711,7 @@ class ChapterController extends BaseController{
 
             case '3.9':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+            
                 echo view('includes/Header', $data);
                 echo view('chapter3/39', $data);
                 echo view('includes/Footer');
@@ -735,7 +735,7 @@ class ChapterController extends BaseController{
 
             case '3.11':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+                
                 echo view('includes/Header', $data);
                 echo view('chapter3/311', $data);
                 echo view('includes/Footer');
@@ -743,7 +743,7 @@ class ChapterController extends BaseController{
 
             case '3.12':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+                
                 echo view('includes/Header', $data);
                 echo view('chapter3/312', $data);
                 echo view('includes/Footer');
@@ -751,7 +751,7 @@ class ChapterController extends BaseController{
 
             case '3.13 Ab1':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+                $data['ab1'] = $this->c3model->getab1($code,$dc3tID);
                 echo view('includes/Header', $data);
                 echo view('chapter3/313Ab1', $data);
                 echo view('includes/Footer');
@@ -759,7 +759,7 @@ class ChapterController extends BaseController{
 
             case '3.14 Ab3':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+               
                 echo view('includes/Header', $data);
                 echo view('chapter3/314Ab3', $data);
                 echo view('includes/Footer');
@@ -767,7 +767,7 @@ class ChapterController extends BaseController{
 
             case '3.15 Ab4':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+               
                 echo view('includes/Header', $data);
                 echo view('chapter3/315Ab4', $data);
                 echo view('includes/Footer');
@@ -775,7 +775,7 @@ class ChapterController extends BaseController{
 
             case '3.15.1 Ab4a':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+               
                 echo view('includes/Header', $data);
                 echo view('chapter3/3151Ab4a', $data);
                 echo view('includes/Footer');
@@ -783,7 +783,7 @@ class ChapterController extends BaseController{
 
             case '3.15.2 Ab4b':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+               
                 echo view('includes/Header', $data);
                 echo view('chapter3/3152Ab4b', $data);
                 echo view('includes/Footer');
@@ -792,7 +792,7 @@ class ChapterController extends BaseController{
 
             case '3.15.3 Ab4c':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+               
                 echo view('includes/Header', $data);
                 echo view('chapter3/3153Ab4c', $data);
                 echo view('includes/Footer');
@@ -801,7 +801,7 @@ class ChapterController extends BaseController{
 
             case '3.15.4 Ab4d':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+               
                 echo view('includes/Header', $data);
                 echo view('chapter3/3154Ab4d', $data);
                 echo view('includes/Footer');
@@ -809,7 +809,7 @@ class ChapterController extends BaseController{
 
             case '3.15.5 Ab4e':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+               
                 echo view('includes/Header', $data);
                 echo view('chapter3/3155Ab4e', $data);
                 echo view('includes/Footer');
@@ -817,7 +817,7 @@ class ChapterController extends BaseController{
 
             case '3.15.6 Ab4f':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+               
                 echo view('includes/Header', $data);
                 echo view('chapter3/3156Ab4f', $data);
                 echo view('includes/Footer');
@@ -825,7 +825,7 @@ class ChapterController extends BaseController{
 
             case '3.15.7 Ab4g':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+               
                 echo view('includes/Header', $data);
                 echo view('chapter3/3157Ab4g', $data);
                 echo view('includes/Footer');
@@ -833,7 +833,7 @@ class ChapterController extends BaseController{
 
             case '3.15.8 Ab4h':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+               
                 echo view('includes/Header', $data);
                 echo view('chapter3/3158Ab4h', $data);
                 echo view('includes/Footer');

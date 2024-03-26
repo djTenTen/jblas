@@ -512,7 +512,7 @@ class Chapter3Controller extends BaseController{
 
     /**
         ----------------------------------------------------------
-        AA10 FUNCTIONS
+        AA11 FUNCTIONS
         ----------------------------------------------------------
     */
     public function saveaa11($code,$head,$c3tID){
@@ -571,8 +571,44 @@ class Chapter3Controller extends BaseController{
     
 
 
-    
 
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AB1 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function saveab1($code,$head,$c3tID){
+
+        $req = [
+            'question' => $this->request->getPost('question'),
+            'yesno' => $this->request->getPost('yesno'),
+            'comment' => $this->request->getPost('comment'),
+            'code' => $code,
+            'part' => 'ab1',
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+        ];
+
+        $res = $this->c3model->saveab1($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+    }
+
+
+    
+    
 
     
 
