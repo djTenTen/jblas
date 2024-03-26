@@ -392,7 +392,7 @@ class Chapter3Controller extends BaseController{
 
     /**
         ----------------------------------------------------------
-        AA5b FUNCTIONS
+        AA7 FUNCTIONS
         ----------------------------------------------------------
     */
     public function saveaa7isa($code,$head,$c3tID){
@@ -427,8 +427,6 @@ class Chapter3Controller extends BaseController{
         }
 
     }
-
-
 
     public function saveaa7aep($code,$head,$c3tID){
 
@@ -465,10 +463,50 @@ class Chapter3Controller extends BaseController{
 
 
 
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AA10 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function saveaa10($code,$head,$c3tID){
+
+        $aa10 = [
+            'sum' => $this->request->getPost('sum'),
+            'comp' => $this->request->getPost('comp'),
+            'exp' => $this->request->getPost('exp')
+        ];
+
+        $req = [
+            'aa10' => json_encode($aa10),
+            'code' => $code,
+            'part' => 'aa10',
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+        ];
+
+        $res = $this->c3model->saveaa10($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+    }
+
+
+
     
 
 
-
+    
 
 
     

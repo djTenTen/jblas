@@ -563,6 +563,52 @@ class Chapter3Model extends Model{
 
 
 
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AA10 FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getaa10($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'aa10', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getRowArray();
+
+    }
+
+    /** 
+        POST FUNCTIONS
+    */
+    public function saveaa10($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
+        $data = [
+            'question' => $req['aa10'],
+            'type' =>  $req['part'],
+            'code' =>  $req['code'],
+            'c3tID' => $req['c3tID'],
+            'status' => 'Active',
+            'updated_on' => $this->date.' '.$this->time
+        ];
+
+        if($this->db->table($this->tblc3)->insert($data)){
+            return true;
+        }else{
+            return false;
+        }
+
+
+    }
+
     
     
 
