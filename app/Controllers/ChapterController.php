@@ -36,6 +36,7 @@ class ChapterController extends BaseController{
     protected $ac8model;
     protected $ac9model;
     protected $ac10model;
+    protected $ac11model;
     protected $c2b2model;
     protected $c2e21model;
 
@@ -683,7 +684,16 @@ class ChapterController extends BaseController{
 
             case '3.7 Aa7':
 
-                $data['qdata'] = $this->c2b2model->getquestionsdata($code,$dc3tID);
+                $data['aa7'] = $this->c3model->getaa7isa($code,$dc3tID);
+                $data['cons'] = $this->c3model->getaa7consultation($code,$dc3tID);
+                $data['inc'] = $this->c3model->getaa7inconsistencies($code,$dc3tID);
+                $data['ref'] = $this->c3model->getaa7refusal($code,$dc3tID);
+                $data['dep'] = $this->c3model->getaa7departures($code,$dc3tID);
+                $data['oth'] = $this->c3model->getaa7other($code,$dc3tID);
+
+                $rdata = $this->c3model->getaa7aep($code,$dc3tID);
+                $data['aep'] = json_decode($rdata['question'], true);
+                
                 echo view('includes/Header', $data);
                 echo view('chapter3/37Aa7', $data);
                 echo view('includes/Footer');

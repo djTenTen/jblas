@@ -386,6 +386,91 @@ class Chapter3Controller extends BaseController{
 
 
 
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AA5b FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function saveaa7isa($code,$head,$c3tID){
+
+        $validationRules = [
+            'reference' => 'required'
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+        $req = [
+            'reference' => $this->request->getPost('reference'),
+            'issue' => $this->request->getPost('issue'),
+            'comment' => $this->request->getPost('comment'),
+            'recommendation' => $this->request->getPost('recommendation'),
+            'result' => $this->request->getPost('result'),
+            'code' => $code,
+            'part' => $this->request->getPost('part'),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+        ];
+
+        $res = $this->c3model->saveaa7isa($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+    }
+
+
+
+    public function saveaa7aep($code,$head,$c3tID){
+
+        $aep = [
+            'ch1' => $this->request->getPost('ch1'),
+            'ch2' => $this->request->getPost('ch2'),
+            'dev1' => $this->request->getPost('dev1'),
+            'dev2' => $this->request->getPost('dev2'),
+            'fut1' => $this->request->getPost('fut1'),
+            'fut2' => $this->request->getPost('fut2'),
+            'cst1' => $this->request->getPost('cst1'),
+            'cst2' => $this->request->getPost('cst2')
+        ];
+
+        $req = [
+            'aep' => json_encode($aep),
+            'code' => $code,
+            'part' => 'aep',
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+        ];
+
+        $res = $this->c3model->saveaa7aep($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+    }
+
+
+
+
+    
+
+
+
+
+
     
 
 

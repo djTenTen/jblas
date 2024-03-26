@@ -8,6 +8,7 @@ class Chapter3Model extends Model{
    
     protected $tblc3 = "tbl_c3";
     protected $crypt;
+    protected $time,$date;
 
     public function __construct(){
 
@@ -444,9 +445,128 @@ class Chapter3Model extends Model{
 
     }
 
+
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AA5b FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getaa7isa($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'isa315', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa7consultation($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'consultation', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa7inconsistencies($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'inconsistencies', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa7refusal($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'refusal', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa7departures($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'departures', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa7other($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'other', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa7aep($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'aep', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getRowArray();
+
+    }
+    /** 
+        POST FUNCTIONS
+    */
+    public function saveaa7isa($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
+        foreach($req['reference'] as $i => $val){
+
+            $data = [
+                'reference' => $req['reference'][$i],
+                'issue' => $req['issue'][$i],
+                'comment' => $req['comment'][$i],
+                'recommendation' => $req['recommendation'][$i],
+                'result' => $req['result'][$i],
+                'type' =>  $req['part'],
+                'code' =>  $req['code'],
+                'c3tID' => $req['c3tID'],
+                'status' => 'Active',
+                'updated_on' => $this->date.' '.$this->time
+            ];
+            $this->db->table($this->tblc3)->insert($data);
+            
+        }
+
+        return true;
+
+
+    }
+
+    public function saveaa7aep($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
+        $data = [
+            'question' => $req['aep'],
+            'type' =>  $req['part'],
+            'code' =>  $req['code'],
+            'c3tID' => $req['c3tID'],
+            'status' => 'Active',
+            'updated_on' => $this->date.' '.$this->time
+        ];
+
+        if($this->db->table($this->tblc3)->insert($data)){
+            return true;
+        }else{
+            return false;
+        }
+
+
+    }
+
+
+
+    
     
 
-
+    
 
 
 }
