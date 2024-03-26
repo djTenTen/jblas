@@ -759,7 +759,8 @@ class ChapterController extends BaseController{
 
             case '3.14 Ab3':
 
-               
+                $rdata = $this->c3model->getab3($code,$dc3tID);
+                $data['ab3'] = json_decode($rdata['question'], true);
                 echo view('includes/Header', $data);
                 echo view('chapter3/314Ab3', $data);
                 echo view('includes/Footer');
