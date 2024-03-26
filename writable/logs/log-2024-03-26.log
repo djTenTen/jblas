@@ -248,3 +248,14 @@ INFO - 2024-03-26 13:25:53 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-03-26 13:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-03-26 13:30:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-03-26 13:30:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 13:52:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 13:52:12 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "chapter3/312.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('chapter3/312.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter3/312', [], true)
+ 3 APPPATH\Controllers\ChapterController.php(748): view('chapter3/312', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.12', 'Statement of Directors_ Responsibilities', '096c206d9742cc6d6d6e2e3fb661bdeb9bc13aa4189012f6a9b85c7d9f07e75aa0efd4fcecb7a6b33120556e40ae863e28de4d349fc1a76b0b75c185d6c0059cufObRBlJ9xrfH$eVjgrq0WQ~')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 13:53:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
