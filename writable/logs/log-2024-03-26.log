@@ -405,3 +405,209 @@ INFO - 2024-03-26 19:08:17 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-03-26 19:08:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-03-26 19:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-03-26 19:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 19:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 19:11:22 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "chapter3/315Ab4.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('chapter3/315Ab4.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter3/315Ab4', [], true)
+ 3 APPPATH\Controllers\ChapterController.php(773): view('chapter3/315Ab4', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.15 Ab4', 'IFRS Corporate Disclosure Checklist', '3c7fd13d89421fe449f16a72822b2a106cc6121ddccb9a2ee13292673bba31c52d0086970213c30924a78efa310de43160aa8cd20cbb01024c2b47ca712b133aU13h5ra5sSePxF75DDSHCczx')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 19:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 19:32:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 19:32:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 19:36:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 19:38:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 19:50:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 19:55:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 19:55:11 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "chapter3/3151Ab4a.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('chapter3/3151Ab4a.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter3/3151Ab4a', [], true)
+ 3 APPPATH\Controllers\ChapterController.php(781): view('chapter3/3151Ab4a', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.15.1 Ab4a', 'Supplementary - Mineral Resources (IFRS 6)', 'a15d481d777e8b85669db6c8e61c6a4f6260c43cb88df522ae98dc8bf941c1a9f7dd023e9a1ae8ee107d8eddcc86de33d5d921a7e710873aa334618bd5105c9e75PICchcXd6JYNlFEPj5KeW~')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 19:55:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:03:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:03:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:03:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 20:03:25 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(608): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('checklist', '3.15 Ab4', 'IFRS Corporate Disclosure Checklist', '00c9bd5d9241b2bafaa1115a7400c9f7b3db8e6f5a181d0622117134e079239036aa89c650690d0e6474e61cd915b2c4d1e010ed3e6b46d6d2fbd0aa19c6fcefDBeZ9pCSaXfOA$CZ4$A~0s0f')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 20:13:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 20:13:11 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(608): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('checklist', '3.15 Ab4', 'IFRS Corporate Disclosure Checklist', '00c9bd5d9241b2bafaa1115a7400c9f7b3db8e6f5a181d0622117134e079239036aa89c650690d0e6474e61cd915b2c4d1e010ed3e6b46d6d2fbd0aa19c6fcefDBeZ9pCSaXfOA$CZ4$A~0s0f')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 20:13:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 20:13:37 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ChapterController.php(608): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('checklist', '3.15 Ab4', 'IFRS Corporate Disclosure Checklist', '00c9bd5d9241b2bafaa1115a7400c9f7b3db8e6f5a181d0622117134e079239036aa89c650690d0e6474e61cd915b2c4d1e010ed3e6b46d6d2fbd0aa19c6fcefDBeZ9pCSaXfOA$CZ4$A~0s0f')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 20:13:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:23:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 20:23:26 --> ErrorException: Undefined variable $title
+in APPPATH\Views\includes\Header.php on line 6.
+ 1 APPPATH\Views\includes\Header.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\includes\\Header.php', 6)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\includes\\Header.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('includes/Header', [], true)
+ 5 APPPATH\Controllers\Chapter3Controller.php(684): view('includes/Header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter3Controller->viewab4('checklist', '3.15 Ab4', 'IFRS Corporate Disclosure Checklist', 'f81b13eaea4fe8bbf258be2ca4dabdf45f136403003d27fcaf9a22dc4b1508382849ccd7bc17791c272b9d7651b9508fb8108f78c8ebe8db4909069ba410c3d7q57hVsBUh2ExE72RaIURjs7x')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter3Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 20:24:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:31:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 20:31:00 --> ErrorException: Undefined variable $c1tID
+in APPPATH\Views\chapter3\315Ab4_checklist.php on line 50.
+ 1 APPPATH\Views\chapter3\315Ab4_checklist.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $c1tID', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter3\\315Ab4_checklist.php', 50)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter3\\315Ab4_checklist.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter3/315Ab4_checklist', [], true)
+ 5 APPPATH\Controllers\Chapter3Controller.php(689): view('chapter3/315Ab4_checklist', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter3Controller->viewab4('checklist', '3.15 Ab4', 'IFRS Corporate Disclosure Checklist', 'f81b13eaea4fe8bbf258be2ca4dabdf45f136403003d27fcaf9a22dc4b1508382849ccd7bc17791c272b9d7651b9508fb8108f78c8ebe8db4909069ba410c3d7q57hVsBUh2ExE72RaIURjs7x')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter3Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 20:31:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:31:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:32:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:32:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:33:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 20:33:00 --> ErrorException: Undefined variable $c1tID
+in APPPATH\Views\chapter3\315Ab4_section.php on line 50.
+ 1 APPPATH\Views\chapter3\315Ab4_section.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $c1tID', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter3\\315Ab4_section.php', 50)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter3\\315Ab4_section.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter3/315Ab4_section', [], true)
+ 5 APPPATH\Controllers\Chapter3Controller.php(693): view('chapter3/315Ab4_section', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter3Controller->viewab4('section1', '3.15 Ab4', 'IFRS Corporate Disclosure Checklist', 'f81b13eaea4fe8bbf258be2ca4dabdf45f136403003d27fcaf9a22dc4b1508382849ccd7bc17791c272b9d7651b9508fb8108f78c8ebe8db4909069ba410c3d7q57hVsBUh2ExE72RaIURjs7x')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter3Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 20:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:35:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:35:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:35:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:35:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:35:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:36:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:36:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:51:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:51:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:51:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:51:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:51:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:51:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:51:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:51:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 20:51:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:02:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:03:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:06:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:06:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 21:07:23 --> ErrorException: Undefined variable $sheet
+in APPPATH\Views\chapter3\315Ab4_section.php on line 65.
+ 1 APPPATH\Views\chapter3\315Ab4_section.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sheet', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter3\\315Ab4_section.php', 65)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter3\\315Ab4_section.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter3/315Ab4_section', [], true)
+ 5 APPPATH\Controllers\Chapter3Controller.php(708): view('chapter3/315Ab4_section', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter3Controller->viewab4('section1', '3.15 Ab4', 'IFRS Corporate Disclosure Checklist', 'f81b13eaea4fe8bbf258be2ca4dabdf45f136403003d27fcaf9a22dc4b1508382849ccd7bc17791c272b9d7651b9508fb8108f78c8ebe8db4909069ba410c3d7q57hVsBUh2ExE72RaIURjs7x')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter3Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 21:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:41:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:42:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:42:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 21:42:05 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "chapter3/315Ab4.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('chapter3/315Ab4.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter3/315Ab4', [], true)
+ 3 APPPATH\Controllers\ChapterController.php(773): view('chapter3/315Ab4', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.15 Ab4', 'IFRS Corporate Disclosure Checklist', 'f81b13eaea4fe8bbf258be2ca4dabdf45f136403003d27fcaf9a22dc4b1508382849ccd7bc17791c272b9d7651b9508fb8108f78c8ebe8db4909069ba410c3d7q57hVsBUh2ExE72RaIURjs7x')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 21:42:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:43:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:43:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:43:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:50:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:50:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:57:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 21:57:34 --> ErrorException: Array to string conversion
+in APPPATH\Views\chapter3\315Ab4_section.php on line 65.
+ 1 APPPATH\Views\chapter3\315Ab4_section.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter3\\315Ab4_section.php', 65)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter3\\315Ab4_section.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter3/315Ab4_section', [], true)
+ 5 APPPATH\Controllers\Chapter3Controller.php(708): view('chapter3/315Ab4_section', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter3Controller->viewab4('section1', '3.15 Ab4', 'IFRS Corporate Disclosure Checklist', 'f81b13eaea4fe8bbf258be2ca4dabdf45f136403003d27fcaf9a22dc4b1508382849ccd7bc17791c272b9d7651b9508fb8108f78c8ebe8db4909069ba410c3d7q57hVsBUh2ExE72RaIURjs7x')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter3Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-26 21:58:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:01:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:01:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:01:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:02:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:02:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:02:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:02:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:02:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:02:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:02:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:02:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:05:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:05:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

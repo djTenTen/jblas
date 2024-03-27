@@ -615,7 +615,7 @@ class Chapter3Controller extends BaseController{
 
 
 
-     /**
+    /**
         ----------------------------------------------------------
         AB3 FUNCTIONS
         ----------------------------------------------------------
@@ -658,6 +658,134 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AB4 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function viewab4($sheet,$code,$head,$c3tID){
+
+        $dc3tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID));
+
+        switch ($sheet) {
+            case 'checklist':$data['sectiontitle'] = 'CORPORATE DISCLOSURE CHECKLIST (IFRS)';break;
+            case 'section1':$data['sectiontitle'] = 'Format of the Annual Report and Generic Information';break;
+            case 'section2':$data['sectiontitle'] = 'Directors Report (Review of the Business) ~ Best Practice Disclosures';break;
+            case 'section3':$data['sectiontitle'] = 'Directors Report ~ Best Practice Disclosures';break;
+            case 'section4':$data['sectiontitle'] = 'Statement of Comprehensive Income (SCI) and Related Notes';break;
+            case 'section5':$data['sectiontitle'] = 'Statement of Changes in Equity';break;
+            case 'section6':$data['sectiontitle'] = 'Statement of Financial Position and Related Notes';break;
+            case 'section7':$data['sectiontitle'] = 'Statement of Cash Flows';break;
+            case 'section8':$data['sectiontitle'] = 'Accounting Policies and Estimation Techniques';break;
+            case 'section9':$data['sectiontitle'] = 'Notes and Other Disclosures';break;
+        }
+        $data['title'] = $code. ' - Chapter 3 Management';
+        $data['header'] = $head;
+        $data['section'] = $sheet;
+        $data['c3tID'] = $c3tID;
+        $data['code'] = $code;
+
+        
+        if($sheet == "checklist"){
+
+            $rdata = $this->c3model->getab4checklist($sheet,$code,$dc3tID);
+            $data['sec'] = json_decode($rdata['question'], true);
+
+            echo view('includes/Header', $data);
+            echo view('chapter3/315Ab4_checklist', $data);
+            echo view('includes/Footer');
+        }else{
+            $data['sec'] = $this->c3model->getab4($sheet,$code,$dc3tID);
+
+            echo view('includes/Header', $data);
+            echo view('chapter3/315Ab4_section', $data);
+            echo view('includes/Footer');
+        }
+        
+
+    }
+
+    public function saveab4($code,$head,$c3tID){
+
+        $validationRules = [
+            'question' => 'required'
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+        $req = [
+            'reference' => $this->request->getPost('reference'),
+            'num' => $this->request->getPost('num'),
+            'question' => $this->request->getPost('question'),
+            'yesno' => $this->request->getPost('yesno'),
+            'comment' => $this->request->getPost('comment'),
+            'code' => $code,
+            'part' => $this->request->getPost('part'),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+        ];
+
+        $res = $this->c3model->saveab4($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c3/manageab4/'.$this->request->getPost('part').'/'.$code.'/'.$head.'/'.$c3tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c3/manageab4/'.$this->request->getPost('part').'/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+    }
+
+    public function saveab4checklist($code,$head,$c3tID){
+
+        $chlst = [
+            'y1' => $this->request->getPost('y1'),
+            'y2' => $this->request->getPost('y2'),
+            'y3' => $this->request->getPost('y3'),
+            'y4' => $this->request->getPost('y4'),
+            'y5' => $this->request->getPost('y5'),
+            'y6' => $this->request->getPost('y6'),
+            'y7' => $this->request->getPost('y7'),
+            'y8' => $this->request->getPost('y8'),
+            'y9' => $this->request->getPost('y9'),
+            'y10' => $this->request->getPost('y10'),
+            'y11' => $this->request->getPost('y11'),
+            'y12' => $this->request->getPost('y12'),
+            'y13' => $this->request->getPost('y13'),
+            'y14' => $this->request->getPost('y14'),
+            'y15' => $this->request->getPost('y15'),
+            'y16' => $this->request->getPost('y16')
+        ];
+
+        $req = [
+            'chlst' => json_encode($chlst),
+            'code' => $code,
+            'part' => $this->request->getPost('part'),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+        ];
+
+        $res = $this->c3model->saveab4checklist($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c3/manageab4/'.$this->request->getPost('part').'/'.$code.'/'.$head.'/'.$c3tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c3/manageab4/'.$this->request->getPost('part').'/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+    }
 
     
     
