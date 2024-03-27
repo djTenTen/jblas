@@ -45,6 +45,14 @@
             <?php  }?>
 
             <div class="card-body">
+
+                <nav class="nav nav-borders">
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Unadjusted')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageaa11/un/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Unadjusted Errors</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Adjusments')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageaa11/ad/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Adjustments Made</a>
+                </nav>
+                <hr class="mt-0 mb-4" />
+                <br>
+
                 
                 <h4>SUMMARY OF UNADJUSTED ERRORS</h4>
                 <p>If, during the assignment, either the aggregate of accumulated misstatements approaches performance materiality, or the nature of identified misstatements indicate that other misstatements may exist which would lead to accumulated misstatements exceeding performance materiality, it shall be determined whether the overall audit strategy and audit plan need to be revised.</p>
@@ -56,7 +64,7 @@
                 
                 
                 <form action="<?= base_url()?>auditsystem/c3/saveaa11ue/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
-                    
+                    <input type="hidden" name="part" value="aa11ue">
                     <table class="table">
                         <tr>
                             <td>Clearly Trivial per Ac13</td>
@@ -78,7 +86,7 @@
                 </form>
 
 
-                <form action="<?= base_url()?>auditsystem/c3/saveaa11/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/c3/saveaa11un/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
                     <input type="hidden" name="part" value="aef">
                     <table class="table table-bordered table-sm">
                         <thead>
@@ -141,7 +149,7 @@
                 </form>
 
 
-                <form action="<?= base_url()?>auditsystem/c3/saveaa11/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/c3/saveaa11un/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
                     <input type="hidden" name="part" value="aej">
                     <table class="table table-bordered table-sm">
                         <thead>
@@ -180,7 +188,7 @@
                 </form>
 
 
-                <form action="<?= base_url()?>auditsystem/c3/saveaa11/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/c3/saveaa11un/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
                     <input type="hidden" name="part" value="ee">
                     <table class="table table-bordered table-sm">
                         <thead>
@@ -219,7 +227,7 @@
                 </form>
 
 
-                <form action="<?= base_url()?>auditsystem/c3/saveaa11/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/c3/saveaa11un/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
                     <input type="hidden" name="part" value="de">
                     <table class="table table-bordered table-sm">
                         <thead>

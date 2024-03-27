@@ -659,7 +659,6 @@ class ChapterController extends BaseController{
 
             case '3.5 Aa4':
 
-
                 echo view('includes/Header', $data);
                 echo view('chapter3/35Aa4', $data);
                 echo view('includes/Footer');
@@ -718,15 +717,6 @@ class ChapterController extends BaseController{
                 break;
 
             case '3.10 Aa11':
-
-                $data['aef'] = $this->c3model->getaa11aef($code,$dc3tID);
-                $data['aej'] = $this->c3model->getaa11aej($code,$dc3tID);
-                $data['ee'] = $this->c3model->getaa11ee($code,$dc3tID);
-                $data['de'] = $this->c3model->getaa11de($code,$dc3tID);
-                $rdata = $this->c3model->getaa11ue($code,$dc3tID);
-                $data['ue'] = json_decode($rdata['question'], true);
-
-
                 
                 echo view('includes/Header', $data);
                 echo view('chapter3/310Aa11', $data);

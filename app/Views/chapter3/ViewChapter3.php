@@ -42,7 +42,9 @@
                                 <td><?= $r['code']?></td>
                                 <td><?= $r['title']?></td>
                                 <td>
-                                    <?php if($r['code'] == '3.15 Ab4'){?>
+                                    <?php if($r['code'] == '3.10 Aa11'){?>
+                                        <a target="_blank" href="<?= base_url()?>auditsystem/c3/manageaa11/un/<?= $r['code']?>/<?= $r['title']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID'])); ?>" class="btn btn-primary btn-sm">Manage</a>
+                                    <?php }elseif($r['code'] == '3.15 Ab4'){?>
                                         <a target="_blank" href="<?= base_url()?>auditsystem/c3/manageab4/checklist/<?= $r['code']?>/<?= $r['title']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID'])); ?>" class="btn btn-primary btn-sm">Manage</a>
                                     <?php }else{?>
                                         <a target="_blank" href="<?= base_url()?>auditsystem/c3/manage/<?= $r['code']?>/<?= $r['title']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID'])); ?>" class="btn btn-primary btn-sm">Manage</a>

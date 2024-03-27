@@ -515,7 +515,51 @@ class Chapter3Controller extends BaseController{
         AA11 FUNCTIONS
         ----------------------------------------------------------
     */
-    public function saveaa11($code,$head,$c3tID){
+
+    public function viewa11($sheet,$code,$head,$c3tID){
+
+        $dc3tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID));
+
+        switch ($sheet) {
+            case 'un':$data['sectiontitle'] = "SUMMARY OF UNADJUSTED ERRORS";break;
+            case 'ad':$data['sectiontitle'] = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";break;
+        }
+
+        $data['title'] = $code. ' - Chapter 3 Management';
+        $data['header'] = $head;
+        $data['section'] = $sheet;
+        $data['c3tID'] = $c3tID;
+        $data['code'] = $code;
+
+        
+        if($sheet == "un"){
+
+            // $rdata = $this->c3model->getab4checklist($sheet,$code,$dc3tID);
+            // $data['sec'] = json_decode($rdata['question'], true);
+
+            $data['aef'] = $this->c3model->getaa11p2('aef',$code,$dc3tID);
+            $data['aej'] = $this->c3model->getaa11p2('aej',$code,$dc3tID);
+            $data['ee'] = $this->c3model->getaa11p2('ee',$code,$dc3tID);
+            $data['de'] = $this->c3model->getaa11p2('de',$code,$dc3tID);
+            $rdata = $this->c3model->getaa11p1('aa11ue',$code,$dc3tID);
+            $data['ue'] = json_decode($rdata['question'], true);    
+
+            echo view('includes/Header', $data);
+            echo view('chapter3/310Aa11_un', $data);
+            echo view('includes/Footer');
+        }else{
+
+            $data['ad'] = $this->c3model->getaa11p2('ad',$code,$dc3tID);
+            $rdata = $this->c3model->getaa11p1('aa11uead',$code,$dc3tID);
+            $data['ue'] = json_decode($rdata['question'], true);    
+            
+            echo view('includes/Header', $data);
+            echo view('chapter3/310Aa11_ad', $data);
+            echo view('includes/Footer');
+        }
+
+    }
+    public function saveaa11un($code,$head,$c3tID){
 
         $req = [
             'reference' => $this->request->getPost('reference'),
@@ -530,17 +574,44 @@ class Chapter3Controller extends BaseController{
             'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
         ];
 
-        $res = $this->c3model->saveaa11($req);
+        $res = $this->c3model->saveaa11un($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+            return redirect()->to(site_url('auditsystem/c3/manageaa11/un/'.$code.'/'.$head.'/'.$c3tID));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+            return redirect()->to(site_url('auditsystem/c3/manageaa11/un/'.$code.'/'.$head.'/'.$c3tID));
         }
 
     }
+
+    public function saveaa11ad($code,$head,$c3tID){
+
+        $req = [
+            'reference' => $this->request->getPost('reference'),
+            'desc' => $this->request->getPost('desc'),
+            'drps' => $this->request->getPost('drps'),
+            'crps' => $this->request->getPost('crps'),
+            'drfp' => $this->request->getPost('drfp'),
+            'crfp' => $this->request->getPost('crfp'),
+            'code' => $code,
+            'part' => 'ad',
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+        ];
+
+        $res = $this->c3model->saveaa11ad($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c3/manageaa11/ad/'.$code.'/'.$head.'/'.$c3tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c3/manageaa11/ad/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+    }
+    
 
     public function saveaa11ue($code,$head,$c3tID){
 
@@ -553,7 +624,7 @@ class Chapter3Controller extends BaseController{
         $req = [
             'aa11' => json_encode($aa11),
             'code' => $code,
-            'part' => 'aa11ue',
+            'part' => $this->request->getPost('part'),
             'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
         ];
 
@@ -561,13 +632,42 @@ class Chapter3Controller extends BaseController{
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+            return redirect()->to(site_url('auditsystem/c3/manageaa11/un/'.$code.'/'.$head.'/'.$c3tID));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+            return redirect()->to(site_url('auditsystem/c3/manageaa11/un/'.$code.'/'.$head.'/'.$c3tID));
         }
 
     }
+
+    public function saveaa11uead($code,$head,$c3tID){
+
+        $aa11 = [
+            'pl' => $this->request->getPost('pl'),
+            'na' => $this->request->getPost('na'),
+            'pl2' => $this->request->getPost('pl2')
+        ];
+
+        $req = [
+            'aa11' => json_encode($aa11),
+            'code' => $code,
+            'part' => $this->request->getPost('part'),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+        ];
+
+        $res = $this->c3model->saveaa11ue($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c3/manageaa11/ad/'.$code.'/'.$head.'/'.$c3tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c3/manageaa11/ad/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+    }
+
+    
     
 
 
