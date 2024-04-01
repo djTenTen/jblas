@@ -903,9 +903,54 @@ class Chapter3Model extends Model{
 
 
 
-    
-    
 
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AB3 FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getab4a($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'ab4a', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+    /** 
+        POST FUNCTIONS
+    */
+    public function saveab4a($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
+        foreach($req['question'] as $i => $val){
+            $data = [
+                'reference' => $req['reference'][$i],
+                'extent' => $req['num'][$i],
+                'question' => $req['question'][$i],
+                'yesno' => $req['yesno'][$i],
+                'comment' => $req['comment'][$i],
+                'type' =>  $req['part'],
+                'code' =>  $req['code'],
+                'c3tID' => $req['c3tID'],
+                'status' => 'Active',
+                'updated_on' => $this->date.' '.$this->time
+            ];
+            $this->db->table($this->tblc3)->insert($data);
+        }
+        
+        return true;
+       
+      
+    }
+
+    
+    
 
 
 
