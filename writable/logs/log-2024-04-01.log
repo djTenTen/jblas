@@ -128,3 +128,71 @@ INFO - 2024-04-01 09:33:58 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-04-01 09:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-01 09:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-01 09:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 09:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-01 09:39:44 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "chapter3/3152Ab4b.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('chapter3/3152Ab4b.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter3/3152Ab4b', [], true)
+ 3 APPPATH\Controllers\ChapterController.php(779): view('chapter3/3152Ab4b', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter3('3.15.2 Ab4b', 'Supplementary - Defined Benefit Pension Plan', 'ad59e8d0c6f7d288e9aa0c09136b6b89b2727fbba981f1787b03d5623eb21f1f10ef5460165d37e0636b877c4e007735365a64a129a2f76d0ce6c29e3bb7b0c2$yfn5urpRJg9KlgiE~avsE7o')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-01 09:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 09:44:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 09:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 09:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-01 09:44:13 --> ErrorException: Undefined variable $sectiontitle
+in APPPATH\Views\chapter3\315Ab4_section.php on line 69.
+ 1 APPPATH\Views\chapter3\315Ab4_section.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sectiontitle', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter3\\315Ab4_section.php', 69)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter3\\315Ab4_section.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter3/315Ab4_section', [], true)
+ 5 APPPATH\Controllers\Chapter3Controller.php(810): view('chapter3/315Ab4_section', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter3Controller->viewab4('ab4b', '3.15.2 Ab4b', 'Supplementary - Defined Benefit Pension Plan', 'ad59e8d0c6f7d288e9aa0c09136b6b89b2727fbba981f1787b03d5623eb21f1f10ef5460165d37e0636b877c4e007735365a64a129a2f76d0ce6c29e3bb7b0c2$yfn5urpRJg9KlgiE~avsE7o')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter3Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-01 09:44:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 09:44:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 09:44:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-01 09:44:48 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Chapter3Controller.php(925): CodeIgniter\Model->__call('saveab4a', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter3Controller->saveab4a('3.15.2 Ab4b', 'Supplementary - Defined Benefit Pension Plan', 'ad59e8d0c6f7d288e9aa0c09136b6b89b2727fbba981f1787b03d5623eb21f1f10ef5460165d37e0636b877c4e007735365a64a129a2f76d0ce6c29e3bb7b0c2$yfn5urpRJg9KlgiE~avsE7o')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter3Controller))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-01 09:44:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 09:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 09:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 09:45:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-01 09:45:25 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Chapter3Controller.php(925): CodeIgniter\Model->__call('saveab4a', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter3Controller->saveab4a('3.15.2 Ab4b', 'Supplementary - Defined Benefit Pension Plan', 'ad59e8d0c6f7d288e9aa0c09136b6b89b2727fbba981f1787b03d5623eb21f1f10ef5460165d37e0636b877c4e007735365a64a129a2f76d0ce6c29e3bb7b0c2$yfn5urpRJg9KlgiE~avsE7o')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter3Controller))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-01 09:45:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 09:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-01 09:45:30 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Chapter3Controller.php(925): CodeIgniter\Model->__call('saveab4a', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter3Controller->saveab4a('3.15.2 Ab4b', 'Supplementary - Defined Benefit Pension Plan', 'ad59e8d0c6f7d288e9aa0c09136b6b89b2727fbba981f1787b03d5623eb21f1f10ef5460165d37e0636b877c4e007735365a64a129a2f76d0ce6c29e3bb7b0c2$yfn5urpRJg9KlgiE~avsE7o')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter3Controller))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-01 09:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 09:46:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 09:46:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 09:46:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 10:25:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 10:25:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-01 10:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

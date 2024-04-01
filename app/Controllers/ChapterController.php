@@ -774,7 +774,7 @@ class ChapterController extends BaseController{
 
             case '3.15.2 Ab4b':
 
-               
+                $data['ab4b'] = $this->c3model->getab4b($code,$dc3tID);
                 echo view('includes/Header', $data);
                 echo view('chapter3/3152Ab4b', $data);
                 echo view('includes/Footer');
