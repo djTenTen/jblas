@@ -92,48 +92,9 @@
             <p>N.B. Complete multiple sheets if more than four different types of non-audit service are provided
             N.B. Audit related non-audit services (for example, a separate report to a regulator, (e.g. that on client money handled by a solicitor)) should still be treated as a non-audit service, but it is not necessary for safeguards to be put in place, as threats to independence are insignificant
             </p>
-
-            <table class="table table-hover table-bordered">
-                <thead>
-                    <tr>
-                        <th>Non-audit service to be provided:</th>
-                        <th>Corporation tax</th>
-                        <th>Statutoryservices</th>
-                        <th>Accountancy(including preparation of financial statements)</th>
-                        <th>Other (specify)</th>
-                        <th>Total CU</th>
-                        <th>Status</th>
-                        <th style="width: 7%;">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($ac2 as $r){?>
-                        <tr >
-                            <td><?= $r['question']?></td>
-                            <td class="text-center"><?= $r['corptax']?></td>
-                            <td class="text-center"><?= $r['statutory']?></td>
-                            <td class="text-center"><?= $r['accountancy']?></td>
-                            <td class="text-center"><?= $r['other']?></td>
-                            <td class="text-center"><?= $r['totalcu']?></td>
-                            <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
-                            <td class="text-center">
-                                
-                                <button class="btn btn-primary btn-icon btn-sm load-data" type="button" data-bs-toggle="modal" data-bs-target="#modaledit" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" title="Edit" ><i class="fas fa-edit"></i></button>
-                                <?php if($r['status'] == 'Active'){?>
-                                    <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
-                                <?php }else{?>
-                                    <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
-                                <?php }?>
-                                
-                            </td>
-                        </tr>
-                    <?php }?>
-                </tbody>
-            </table>
-
-
-            <form action="<?= base_url()?>auditsystem/c1/manage/save/AC2/<?= $header?>/<?= $c1tID?>" method="post">
-                <table class="table table-hover">
+            <form action="<?= base_url()?>auditsystem/c1/saveac2/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+            <input type="hidden" name="part" value="pans">
+                <table class="table table-hover table-bordered">
                     <thead>
                         <tr>
                             <th>Non-audit service to be provided:</th>
@@ -142,22 +103,36 @@
                             <th>Accountancy(including preparation of financial statements)</th>
                             <th>Other (specify)</th>
                             <th>Total CU</th>
+                            <th>Status</th>
+                            <th style="width: 7%;">Action</th>
                         </tr>
                     </thead>
-                    <tbody id="tbody">
-                       
+                    <tbody class="tbody">
+                        <?php foreach($ac2 as $r){?>
+                            <tr >
+                                <td><textarea class="form-control" cols="30" rows="3" name="question[]"><?= $r['question']?></textarea></td>
+                                <td><input class="form-control" type="text" name="corptax[]" value="<?= $r['corptax']?>"></td>
+                                <td><input class="form-control" type="text" name="statutory[]" value="<?= $r['statutory']?>"></td>
+                                <td><input class="form-control" type="text" name="accountancy[]" value="<?= $r['accountancy']?>" ></td>
+                                <td><input class="form-control" type="text" name="other[]" value="<?= $r['other']?>"></td>
+                                <td><input class="form-control" type="text" name="totalcu[]" value="<?= $r['totalcu']?>"></td>
+                                <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
+                                <td class="text-center">
+                                    <button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button>
+                                    <?php if($r['status'] == 'Active'){?>
+                                        <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
+                                    <?php }else{?>
+                                        <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
+                                    <?php }?>
+                                </td>
+                            </tr>
+                        <?php }?>
                     </tbody>
-
-
                 </table>
-
-                
-                <button class="btn btn-primary float-right btn-sm" type="button" data-action="add-field" id="add-field">Add Field</button>
-                <button type="submit" class="btn btn-success btn-sm">Save</button>
-
+                <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
+                <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
             </form>
-
-
+            
             <br><br>
 
             <h4>Section 3 – Consideration of Self Interest Threat Arising from Substantial Fees from Non Audit Services</h4>
@@ -172,9 +147,10 @@
             <div class="container border-dark">
 
                 <h6>***(Where appropriate): Documentation by the A.E.P. of how the self interest threat has been reduced to an acceptable level / details of communication with the Ethics Partner / Details of which services (audit or non-audit) will not be provided:</h6>
-                <form action="<?= base_url()?>auditsystem/c1/aep/update/AC2/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($aep['acID']))?>" method="post">
+                <form action="<?= base_url()?>auditsystem/c1/saveac2aep/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                    <input type="hidden" name="part" value="ac2aep">
                     <textarea class="form-control" cols="30" rows="3" name="eap" required><?= $aep['question']?></textarea>
-                    <button type="submit" class="btn btn-sm btn-icon btn-success float-end"><i class="fas fa-file-alt"></i></button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
                 </form>
                 
 
@@ -249,113 +225,36 @@
         $(".active-data").on("click", function() {
             var status = $(this).data('status');
             var acID = $(this).data('ac-id');
-                $('#myactiveform').attr('action', "<?= base_url('auditsystem/c1/manage/activeinactive/')?>AC2/<?= $header?>/<?= $c1tID?>/" + acID);
+                $('#myactiveform').attr('action', "<?= base_url('auditsystem/c1/activeinactive/')?><?= $code?>/<?= $header?>/<?= $c1tID?>/" + acID);
                 if (status == 'Active') {
                     $('.msgconfirm').html(`<h3>Are you sure to Disable this content?</h3>`);
                 }else{
                     $('.msgconfirm').html(`<h3>Are you sure to Enable this content?</h3>`);
-                }       
-        });
-
-
-        $(".load-data").on("click", function() {
-            // Show the modal
-            var acID = $(this).data('ac-id');
-
-            $(".loading").html(`
-                <div class="spinner-grow text-muted"></div>
-                <div class="spinner-grow text-primary"></div>
-                <div class="spinner-grow text-success"></div>
-                <div class="spinner-grow text-info"></div>
-                <div class="spinner-grow text-warning"></div>
-                <div class="spinner-grow text-danger"></div>
-                <div class="spinner-grow text-secondary"></div>
-                <div class="spinner-grow text-dark"></div>
-                <div class="spinner-grow text-light"></div>
-                <h3>Loading...</h3>
-            `);
-            // Fetch data using AJAX
-			$.ajax({
-                url: "<?= base_url('auditsystem/c1/ac2/edit/')?>" + acID,  // Replace with your actual data endpoint URL
-                method: "GET",
-                dataType: 'json',
-                success: function(data) {
-
-                    $(".loading").html(`
-                        <div class="mb-3">
-                            <label class="small mb-1" for="question">Question:</label>
-                            <textarea class="form-control question" id="question" cols="30" rows="5" name="question"></textarea>
-                        </div>
-                        <div class="row gx-3 mb-3">
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="corptax">Corporation Tax:</label>
-                                <input class="form-control corptax" id="corptax" type="text" name="corptax"/>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="statutory">Statutory:</label>
-                                <input class="form-control statutory" id="statutory" type="text" name="statutory"/>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="accountancy">Accountancy:</label>
-                                <input class="form-control accountancy" id="accountancy" type="text" name="accountancy"/>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="other">Other:</label>
-                                <textarea class="form-control other" id="other" cols="30" rows="5" name="other"></textarea>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="totalcu">Total CU:</label>
-                                <input class="form-control totalcu" id="totalcu" type="text" name="totalcu"/>
-                            </div>
-                        </div>
-                    `);
-
-                    $(".question").val(data.question);
-                    $(".corptax").val(data.corptax);
-                    $(".statutory").val(data.statutory);
-                    $(".accountancy").val(data.accountancy);
-                    $(".other").val(data.other);
-                    $(".totalcu").val(data.totalcu);
-
-                    $('#myform').attr('action', "<?= base_url('auditsystem/c1/manage/update/')?>AC2/<?= $header?>/<?= $c1tID?>/" + acID);
-
-                },
-                error: function() {
-                    // Handle error if the data fetch fails
-                    $(".loading").html("Error loading data");
                 }
-
-            });
-
         });
 
 
-        var rowIdx = 0;
-
-        $('#add-field').on('click', function () {
-            // Adding a row inside the tbody.
-            $('#tbody').append(` <tr>
-                            <td><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
-                            <td><input class="form-control" type="text" name="corptax[]"></td>
-                            <td><input class="form-control" type="text" name="statutory[]"></td>
-                            <td><input class="form-control" type="text" name="accountancy[]"></td>
-                            <td><input class="form-control" type="text" name="other[]"></td>
-                            <td><input class="form-control" type="text" name="totalcu[]"></td>
-                            <td><button class="btn btn-danger btn-sm btn-icon remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-                        </tr>`);
+        $('.add-field').on('click', function () {
+        // Adding a row inside the tbody.
+        var form = $(this).closest('form');
+        var tbody = form.find('tbody');
+        tbody.append(`
+        <tr>
+            <td><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
+            <td><input class="form-control" type="text" name="corptax[]"></td>
+            <td><input class="form-control" type="text" name="statutory[]"></td>
+            <td><input class="form-control" type="text" name="accountancy[]"></td>
+            <td><input class="form-control" type="text" name="other[]"></td>
+            <td><input class="form-control" type="text" name="totalcu[]"></td>
+            <td></td>
+            <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
+        </tr>`);
         });
 
-        $('#tbody').on('click', '.remove', function () {
-            var child = $(this).closest('tr').nextAll();
-            child.each(function () {
-            var id = $(this).attr('id');
-            var idx = $(this).children('.row-index').children('p');
-            var dig = parseInt(id.substring(1));
-            idx.html(`Row ${dig - 1}`);
-            $(this).attr('id', `R${dig - 1}`);
-            });
+        $('.tbody').on('click', 'button.remove', function () {
             $(this).closest('tr').remove();
-            rowIdx--;
         });
+
+
     });
 </script>

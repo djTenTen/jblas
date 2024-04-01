@@ -8,8 +8,6 @@ use \App\Models\ChapterModel;
 use \App\Models\Chapter1Model;
 use \App\Models\Chapter3Model;
 
-use \App\Models\C1ac1Model;
-use \App\Models\C1ac2Model;
 use \App\Models\C1ac3Model;
 use \App\Models\C1ac4Model;
 use \App\Models\C1ac5Model;
@@ -28,7 +26,7 @@ class ChapterController extends BaseController{
     protected $c1model;
     protected $c3model;
 
-    protected $ac2model;
+
     protected $ac3model;
     protected $ac4model;
     protected $ac5model;
@@ -50,7 +48,7 @@ class ChapterController extends BaseController{
         $this->c1model = new Chapter1Model();
         $this->c3model = new Chapter3Model();
 
-        $this->ac2model = new C1ac2Model();
+
         $this->ac3model = new C1ac3Model();
         $this->ac4model = new C1ac4Model();
         $this->ac5model = new C1ac5Model();
@@ -108,8 +106,8 @@ class ChapterController extends BaseController{
                 break;
             
             case 'AC2':
-                $data['ac2'] = $this->ac2model->getac2($dc1tID);
-                $data['aep'] = $this->ac2model->getaep($dc1tID);
+                $data['ac2'] = $this->c1model->getac2($code,$dc1tID);
+                $data['aep'] = $this->c1model->getac2aep($code,$dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac2', $data);
                 echo view('includes/Footer');

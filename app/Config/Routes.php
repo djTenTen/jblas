@@ -24,11 +24,15 @@ $routes->get('/auditsystem/c1/view', 'ChapterController::viewchapter1');
 $routes->get('/auditsystem/c1/manage/(:any)/(:any)/(:any)', 'ChapterController::managechapter1/$1/$2/$3');
 // CHAPTER 1 AC1 ROUTES
 $routes->post('/auditsystem/c1/saveac1/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac1/$1/$2/$3');
-$routes->post('/auditsystem/c1/saveeqr/(:any)/(:any)/(:any)', 'Chapter1Controller::saveeqr/$1/$2/$3');
+$routes->post('/auditsystem/c1/saveac1eqr/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac1eqr/$1/$2/$3');
 $routes->post('/auditsystem/c1/activeinactive/(:any)/(:any)/(:any)/(:any)', 'Chapter1Controller::acin/$1/$2/$3/$4');
 //CHAPTER 1 AC2 ROUTES
-$routes->post('/auditsystem/c1/manage/save/AC2/(:any)/(:any)', 'C1ac2Controller::addac2questions/$1/$2');
-$routes->post('/auditsystem/c1/manage/activeinactive/AC2/(:any)/(:any)/(:any)', 'C1ac2Controller::activeinactiveac2/$1/$2/$3');
+$routes->post('/auditsystem/c1/saveac2/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac2/$1/$2/$3');
+$routes->post('/auditsystem/c1/saveac2aep/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac2aep/$1/$2/$3');
+
+
+
+
 $routes->post('/auditsystem/c1/manage/update/AC2/(:any)/(:any)/(:any)', 'C1ac2Controller::updateac2questions/$1/$2/$3');
 $routes->post('/auditsystem/c1/aep/update/AC2/(:any)/(:any)/(:any)', 'C1ac2Controller::updateaep/$1/$2/$3');
 

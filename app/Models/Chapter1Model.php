@@ -119,6 +119,123 @@ class Chapter1Model extends Model{
             return false;
         }
     }
+
+
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AC1 FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getac2($code,$c1tID){
+
+        $query =  $this->db->table($this->tblc1)->where(array('code' => $code, 'type' => 'pans', 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getac2aep($code,$c1tID){
+
+        $query =  $this->db->table($this->tblc1)->where(array('code' => $code, 'type' => 'ac2aep', 'c1tID' => $c1tID))->get();
+        return $query->getRowArray();
+
+    }
+    /** 
+        POST FUNCTIONS
+    */
+    public function saveac2($req){
+
+        $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'question' => $req['question'][$i],
+                'corptax' => $req['corptax'][$i],
+                'statutory' => $req['statutory'][$i],
+                'accountancy' => $req['accountancy'][$i],
+                'other' => $req['other'][$i],
+                'totalcu' => $req['totalcu'][$i],
+                'code' => $req['code'],
+                'c1tID' => $req['c1tID'],
+                'type' => $req['part'],
+                'status' => 'Active',
+                'added_on' => $this->date.' '.$this->time
+            ];
+
+            $this->db->table($this->tblc1)->insert($data);
+
+        }
+
+        return true;
+
+    }
+
+    public function saveac2aep($req){
+
+        $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
+
+        $data = [
+            'question' => $req['eap'],
+            'type' =>  $req['part'],
+            'code' =>  $req['code'],
+            'c1tID' => $req['c1tID'],
+            'status' => 'Active',
+            'updated_on' => $this->date.' '.$this->time
+        ];
+    
+        if($this->db->table($this->tblc1)->insert($data)){
+            return true;
+        }else{
+            return false;
+        }
+        
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 

@@ -120,7 +120,7 @@
 
                 <div class="mb-3 col-6">
                     <label class="small mb-1" for="nameap">Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement:</label>
-                    <form action="<?= base_url()?>auditsystem/c1/saveeqr/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/c1/saveac1eqr/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                         <input type="hidden" name="part" value="eqr">
                         <input type="text" class="form-control" id="nameap" name="nameap" value="<?= $eqr['nameap']?>">
                     
