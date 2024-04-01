@@ -144,3 +144,45 @@ $routes->post('/auditsystem/c3/saveab4/(:any)/(:any)/(:any)', 'Chapter3Controlle
 $routes->post('/auditsystem/c3/saveab4checklist/(:any)/(:any)/(:any)', 'Chapter3Controller::saveab4checklist/$1/$2/$3');
 //ab4a
 $routes->post('/auditsystem/c3/saveab4a/(:any)/(:any)/(:any)', 'Chapter3Controller::saveab4a/$1/$2/$3');
+
+/**
+    ----------------------------------------------------------
+    CHAPTER 4 AREA
+    ----------------------------------------------------------
+*/
+$routes->get('/auditsystem/c4/view', 'ChapterController::viewchapter4');
+
+
+
+
+
+
+
+
+
+
+
+/**
+    ----------------------------------------------------------
+    CHAPTER 5 AREA
+    ----------------------------------------------------------
+*/
+$routes->get('/auditsystem/c5/view', 'ChapterController::viewchapter5');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

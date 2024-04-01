@@ -9,6 +9,8 @@ class ChapterModel extends Model{
     protected $tblc1t = "tbl_c1_titles";
     protected $tblc2t = "tbl_c2_titles";
     protected $tblc3t = "tbl_c3_titles";
+    protected $tblc4t = "tbl_c4_titles";
+    protected $tblc5t = "tbl_c5_titles";
 
     protected $time,$date;
 
@@ -65,6 +67,47 @@ class ChapterModel extends Model{
 
     }
 
+
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        CHAPTER 4 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function getc4(){
+
+        $query =  $this->db->table($this->tblc4t)->get();
+        return $query->getResultArray();
+
+    }
+
+
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        CHAPTER 5 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function getc5(){
+
+        $query =  $this->db->table($this->tblc5t)->get();
+        return $query->getResultArray();
+
+    }
 
 
 

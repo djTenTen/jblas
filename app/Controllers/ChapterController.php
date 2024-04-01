@@ -849,6 +849,60 @@ class ChapterController extends BaseController{
 
 
 
+     /**
+        ----------------------------------------------------------
+        Chapter 4 area
+        ----------------------------------------------------------
+    */
+    public function viewchapter4(){
+
+        // main content
+        $data['title'] = 'Proforma Documents Management';
+
+        $data['c4'] = $this->chapterModel->getc4();
+
+        echo view('includes/Header', $data);
+        echo view('chapter4/ViewChapter4', $data);
+        echo view('includes/Footer');
+    
+    }
+
+
+
+
+
+
+
+
+
+
+    /** 
+        ----------------------------------------------------------
+        Chapter 4 area
+        ----------------------------------------------------------
+    */
+    public function viewchapter5(){
+
+        // main content
+        $data['title'] = 'Proforma Dividers Management';
+
+        $data['c5'] = $this->chapterModel->getc5();
+
+        echo view('includes/Header', $data);
+        echo view('chapter5/ViewChapter5', $data);
+        echo view('includes/Footer');
+    
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 

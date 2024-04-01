@@ -228,6 +228,8 @@
                                         <a class="nav-link" href="<?= base_url()?>auditsystem/c1/view">Chapter 1</a>
                                         <a class="nav-link" href="<?= base_url()?>auditsystem/c2/view">Chapter 2</a>
                                         <a class="nav-link" href="<?= base_url()?>auditsystem/c3/view">Chapter 3</a>
+                                        <a class="nav-link" href="<?= base_url()?>auditsystem/c4/view">Prof Documents</a>
+                                        <a class="nav-link" href="<?= base_url()?>auditsystem/c5/view">Prof Dividers</a>
                                     </nav>
                                 </div>
                                 <!-- Nested Sidenav Accordion (Pages -> Authentication)-->
