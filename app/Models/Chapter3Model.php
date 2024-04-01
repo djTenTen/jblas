@@ -1006,6 +1006,31 @@ class Chapter3Model extends Model{
 
 
 
+
+
+
+
+     /**
+        ----------------------------------------------------------
+        AB4b FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getab4d($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'ab4d', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+    /** 
+        POST FUNCTIONS
+    */
+
+
+
+
+
     
     
 
