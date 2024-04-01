@@ -5,6 +5,7 @@ use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\HTTP\ResponseInterface;
 
 use \App\Models\ChapterModel;
+use \App\Models\Chapter1Model;
 use \App\Models\Chapter3Model;
 
 use \App\Models\C1ac1Model;
@@ -24,9 +25,9 @@ use \App\Models\C2E21Model;
 class ChapterController extends BaseController{
 
     protected $chapterModel;
+    protected $c1model;
     protected $c3model;
 
-    protected $ac1model;
     protected $ac2model;
     protected $ac3model;
     protected $ac4model;
@@ -46,9 +47,9 @@ class ChapterController extends BaseController{
 
         \Config\Services::session();
         $this->chapterModel = new ChapterModel();
+        $this->c1model = new Chapter1Model();
         $this->c3model = new Chapter3Model();
 
-        $this->ac1model = new C1ac1Model();
         $this->ac2model = new C1ac2Model();
         $this->ac3model = new C1ac3Model();
         $this->ac4model = new C1ac4Model();
@@ -96,11 +97,11 @@ class ChapterController extends BaseController{
 
         switch ($code) {
             case 'AC1':
-                $data['ac1'] = $this->ac1model->getac1($dc1tID);
-                $data['nap'] = $this->ac1model->getnameap($dc1tID);
-                $data['eqr1'] = $this->ac1model->geteqr1($dc1tID);
-                $data['eqr2'] = $this->ac1model->geteqr2($dc1tID);
-                $data['eqrr'] = $this->ac1model->geteqrreason($dc1tID);
+                $data['ac1'] = $this->c1model->getac1($code,$dc1tID);
+
+                $rdata = $this->c1model->getac1eqr($code,$dc1tID);
+                $data['eqr'] = json_decode($rdata['question'], true);
+
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac1', $data);
                 echo view('includes/Footer');

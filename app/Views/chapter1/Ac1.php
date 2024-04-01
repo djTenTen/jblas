@@ -72,7 +72,10 @@
                 <h6>Any YES answers should be fully explained along with the safeguards, which will enable us to accept / continue with the appointment. </h6>
 
                 <h6>Significant issues must be discussed with the <span class="text-danger">Ethics Partner</span> and details of the discussion documented on file.</h6>
-
+                
+                
+                <form action="<?= base_url()?>auditsystem/c1/saveac1/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <input type="hidden" name="part" value="cacf">
                 <table class="table table-hover table-sm table-bordered">
                     <thead>
                         <tr>
@@ -83,55 +86,44 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="tbody">
                         <?php foreach($ac1 as $r){?>
-                            <tr >
-                                <td><?= $r['question']?></td>
-                                <td class="text-center"><?= $r['yesno']?></td>
-                                <td class="text-center"><?= $r['comment']?></td>
+                            <tr>
+                                <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"><?= $r['question']?></textarea></td>
+                                <td><input class="form-control" type="text" name="yesno[]" value="<?= $r['yesno']?>"></td>
+                                <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
                                 <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
                                 <td class="text-center">
 
-                                    <button class="btn btn-primary btn-icon btn-sm load-data" type="button" data-bs-toggle="modal" data-bs-target="#modaledit" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" title="Edit" ><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button>
                                     <?php if($r['status'] == 'Active'){?>
                                         <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
                                     <?php }else{?>
                                         <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
                                     <?php }?>
-                                 
+                                    
                                 </td>
                             </tr>
                         <?php }?>
                     </tbody>
                 </table>
-                <form action="<?= base_url()?>auditsystem/c1/manage/save/AC1/<?= $header?>/<?= $c1tID?>" method="post">
-                   
-                    <table class="table table-sm table-hover">
-                        <thead>
-                            <tr>
-                                <th>Question</th>
-                                <th>Yes/No</th>
-                                <th>Comments</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody">
-                        </tbody>
-                    </table>
-
-                    <button class="btn btn-primary btn-sm float-right" type="button" data-action="add-field" id="add-field">Add Field</button>
-
-                    <button type="submit" class="btn btn-success btn-sm">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
 
                 </form>
+                  
+
+                    
+                
 
                 <br><br>
 
                 <div class="mb-3 col-6">
                     <label class="small mb-1" for="nameap">Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement:</label>
-                    <form action="<?= base_url()?>auditsystem/c1/nameap/update/AC1/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($nap['acID']))?>" method="post">
-                        <input type="text" class="form-control" id="nameap" name="nameap" value="<?= $nap['question']?>">
-                    </form>
+                    <form action="<?= base_url()?>auditsystem/c1/saveeqr/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                        <input type="hidden" name="part" value="eqr">
+                        <input type="text" class="form-control" id="nameap" name="nameap" value="<?= $eqr['nameap']?>">
+                    
         
                 </div>
             
@@ -175,23 +167,18 @@
                 <ul>
                     <li>No EQR needs to be performed.</li>
                     <li>It is necessary for an EQR to be performed and this will be performed by 
-                        <form action="<?= base_url()?>auditsystem/c1/eqr/update/AC1/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($eqr1['acID']))?>" method="post">
-                            <input type="text" class="form-control" id="eqr" name="eqr" value="<?= $eqr1['question']?>">
-                        </form>
+                        <input type="text" class="form-control" id="eqr" name="eqr1" value="<?= $eqr['eqr1']?>">
                     </li>
                     <li>Where the EQR is undertaken by an external reviewer the name of the organisation which they work for
-                        <form action="<?= base_url()?>auditsystem/c1/eqr/update/AC1/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($eqr2['acID']))?>" method="post">
-                            <input type="text" class="form-control" id="eqr" name="eqr" value="<?= $eqr2['question']?>">
-                        </form>
+                        <input type="text" class="form-control" id="eqr" name="eqr2" value="<?= $eqr['eqr2']?>">
                     </li>
                 </ul>
 
                 <table class="table">
                     <tr>
                         <td> REASON FOR EQR (If an EQR review was performed in the previous period, but is not being performed in the current period, this decision must also be justified.)  
-                        <form action="<?= base_url()?>auditsystem/c1/eqr/update/AC1/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($eqrr['acID']))?>" method="post">
-                            <textarea class="form-control" cols="30" rows="3" name="eqr" required><?= $eqrr['question']?></textarea>
-                            <button type="submit" class="btn btn-sm btn-icon btn-success float-end"><i class="fas fa-file-alt"></i></button>
+                            <textarea class="form-control" cols="30" rows="3" name="eqrr" required><?= $eqr['eqrr']?></textarea>
+                            <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
                         </form>
                         </td>
                     </tr>
@@ -239,7 +226,7 @@
         $(".active-data").on("click", function() {
             var status = $(this).data('status');
             var acID = $(this).data('ac-id');
-                $('#myactiveform').attr('action', "<?= base_url('auditsystem/c1/manage/activeinactive/')?>AC1/<?= $header?>/<?= $c1tID?>/" + acID);
+                $('#myactiveform').attr('action', "<?= base_url('auditsystem/c1/activeinactive/')?><?= $code?>/<?= $header?>/<?= $c1tID?>/" + acID);
                 if (status == 'Active') {
                     $('.msgconfirm').html(`<h3>Are you sure to Disable this content?</h3>`);
                 }else{
@@ -249,91 +236,23 @@
                 
         });
 
-    
 
-
-        $(".load-data").on("click", function() {
-            // Show the modal
-            var acID = $(this).data('ac-id');
-
-            $(".loading").html(`
-                <div class="spinner-grow text-muted"></div>
-                <div class="spinner-grow text-primary"></div>
-                <div class="spinner-grow text-success"></div>
-                <div class="spinner-grow text-info"></div>
-                <div class="spinner-grow text-warning"></div>
-                <div class="spinner-grow text-danger"></div>
-                <div class="spinner-grow text-secondary"></div>
-                <div class="spinner-grow text-dark"></div>
-                <div class="spinner-grow text-light"></div>
-                <h3>Loading...</h3>
-            `);
-            // Fetch data using AJAX
-			$.ajax({
-                url: "<?= base_url('auditsystem/c1/ac1/edit/')?>" + acID,  // Replace with your actual data endpoint URL
-                method: "GET",
-                dataType: 'json',
-                success: function(data) {
-
-                    $(".loading").html(`
-                        <div class="mb-3">
-                            <label class="small mb-1" for="question">Question:</label>
-                            <textarea class="form-control question" id="question" cols="30" rows="5" name="question"></textarea>
-                        </div>
-                        <div class="row gx-3 mb-3">
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="yesno">Yes No:</label>
-                                <input class="form-control yesno" id="yesno" type="text" placeholder="Yes or No" name="yesno" />
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="comment">Comment:</label>
-                                <textarea class="form-control comment" id="comment" cols="30" rows="5" name="comment"></textarea>
-                            </div>
-                        </div>
-                    `);
-
-                    $(".question").val(data.question);
-                    $(".yesno").val(data.yesno);
-                    $(".comment").val(data.comment);
-
-                    $('#myform').attr('action', "<?= base_url('auditsystem/c1/manage/update/')?>AC1/<?= $header?>/<?= $c1tID?>/" + acID);
-
-                },
-                error: function() {
-                    // Handle error if the data fetch fails
-                    $(".loading").html("Error loading data");
-                }
-
-            });
-
+        $('.add-field').on('click', function () {
+        // Adding a row inside the tbody.
+        var form = $(this).closest('form');
+        var tbody = form.find('tbody');
+        tbody.append(`
+        <tr>
+            <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
+            <td><input class="form-control" type="text" name="yesno[]" value="YES"></td>
+            <td><textarea class="form-control" cols="30" rows="3" name="comment[]">None</textarea></td>
+            <td></td>
+            <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
+        </tr>`);
         });
 
-
-
-        var rowIdx = 0;
-
-        $('#add-field').on('click', function () {
-            // Adding a row inside the tbody.
-            $('#tbody').append(`<tr>
-                <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
-                <td><input class="form-control" type="text" name="yesno[]" value="YES"></td>
-                <td><textarea class="form-control" cols="30" rows="3" name="comment[]">None</textarea></td>
-                <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-            </tr>`);
-        });
-
-        $('#tbody').on('click', '.remove', function () {
-            var child = $(this).closest('tr').nextAll();
-            child.each(function () {
-            var id = $(this).attr('id');
-            var idx = $(this).children('.row-index').children('p');
-            var dig = parseInt(id.substring(1));
-            idx.html(`Row ${dig - 1}`);
-            $(this).attr('id', `R${dig - 1}`);
-            });
+        $('.tbody').on('click', 'button.remove', function () {
             $(this).closest('tr').remove();
-            rowIdx--;
         });
 
     });

@@ -23,16 +23,25 @@ $routes->get('/auditsystem', 'DashController::auditsystem');
 $routes->get('/auditsystem/c1/view', 'ChapterController::viewchapter1');
 $routes->get('/auditsystem/c1/manage/(:any)/(:any)/(:any)', 'ChapterController::managechapter1/$1/$2/$3');
 // CHAPTER 1 AC1 ROUTES
-$routes->post('/auditsystem/c1/manage/save/AC1/(:any)/(:any)', 'C1ac1Controller::addac1questions/$1/$2');
-$routes->post('/auditsystem/c1/manage/update/AC1/(:any)/(:any)/(:any)', 'C1ac1Controller::updateac1questions/$1/$2/$3');
-$routes->post('/auditsystem/c1/manage/activeinactive/AC1/(:any)/(:any)/(:any)', 'C1ac1Controller::activeinactiveac1/$1/$2/$3');
-$routes->post('/auditsystem/c1/nameap/update/AC1/(:any)/(:any)/(:any)', 'C1ac1Controller::updatenameap/$1/$2/$3');
-$routes->post('/auditsystem/c1/eqr/update/AC1/(:any)/(:any)/(:any)', 'C1ac1Controller::updateeqr/$1/$2/$3');
+$routes->post('/auditsystem/c1/saveac1/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac1/$1/$2/$3');
+$routes->post('/auditsystem/c1/saveeqr/(:any)/(:any)/(:any)', 'Chapter1Controller::saveeqr/$1/$2/$3');
+$routes->post('/auditsystem/c1/activeinactive/(:any)/(:any)/(:any)/(:any)', 'Chapter1Controller::acin/$1/$2/$3/$4');
 //CHAPTER 1 AC2 ROUTES
 $routes->post('/auditsystem/c1/manage/save/AC2/(:any)/(:any)', 'C1ac2Controller::addac2questions/$1/$2');
 $routes->post('/auditsystem/c1/manage/activeinactive/AC2/(:any)/(:any)/(:any)', 'C1ac2Controller::activeinactiveac2/$1/$2/$3');
 $routes->post('/auditsystem/c1/manage/update/AC2/(:any)/(:any)/(:any)', 'C1ac2Controller::updateac2questions/$1/$2/$3');
 $routes->post('/auditsystem/c1/aep/update/AC2/(:any)/(:any)/(:any)', 'C1ac2Controller::updateaep/$1/$2/$3');
+
+
+
+
+
+
+
+
+
+
+
 //CHAPTER 1 AC3 ROUTES
 $routes->post('/auditsystem/c1/manage/save/AC3/(:any)/(:any)', 'C1ac3Controller::addac3questions/$1/$2');
 $routes->post('/auditsystem/c1/manage/update/AC3/(:any)/(:any)/(:any)', 'C1ac3Controller::updateac3questions/$1/$2/$3');
@@ -75,7 +84,6 @@ $routes->get('/auditsystem/clients/defaults/(:any)', 'ClientController::clientde
 
 //AJAX REQUEST
 // Chapter 1
-$routes->get('/auditsystem/c1/ac1/edit/(:any)', 'C1ac1Controller::editac1question/$1');
 $routes->get('/auditsystem/c1/ac2/edit/(:any)', 'C1ac2Controller::editac2question/$1');
 $routes->get('/auditsystem/c1/ac3/edit/(:any)', 'C1ac3Controller::editac3question/$1');
 $routes->get('/auditsystem/c1/ac4/edit/(:any)', 'C1ac4Controller::editac4question/$1');
