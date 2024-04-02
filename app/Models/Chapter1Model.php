@@ -213,7 +213,7 @@ class Chapter1Model extends Model{
 
     /**
         ----------------------------------------------------------
-        AC1 FUNCTIONS
+        AC3 FUNCTIONS
         ----------------------------------------------------------
 
         GET FUNCTIONS
@@ -281,6 +281,79 @@ class Chapter1Model extends Model{
 
 
 
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AC4 FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getac4ppr($code,$c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'ppr', 'code' => $code, 'c1tID' => $c1tID))->get();
+        return $query->getRowArray();
+
+    }
+    public function getac4($code,$c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'ac4sod', 'code' => $code, 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    /** 
+        POST FUNCTIONS
+    */
+    public function saveac4ppr($req){
+
+        $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
+
+        $data = [
+            'question' => $req['ppr'],
+            'type' =>  $req['part'],
+            'code' =>  $req['code'],
+            'c1tID' => $req['c1tID'],
+            'status' => 'Active',
+            'updated_on' => $this->date.' '.$this->time
+        ];
+    
+        if($this->db->table($this->tblc1)->insert($data)){
+            return true;
+        }else{
+            return false;
+        }
+        
+
+    }
+
+    
+    public function saveac4($req){
+
+        $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'question' => $req['question'][$i],
+                'comment' => $req['comment'][$i],
+                'code' => $req['code'],
+                'c1tID' => $req['c1tID'],
+                'type' => $req['part'],
+                'status' => 'Active',
+                'added_on' => $this->date.' '.$this->time
+            ];
+
+            $this->db->table($this->tblc1)->insert($data);
+        }
+        return true;
+
+    }
 
 
 

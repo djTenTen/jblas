@@ -9,7 +9,7 @@ use \App\Models\Chapter1Model;
 use \App\Models\Chapter3Model;
 
 
-use \App\Models\C1ac4Model;
+
 use \App\Models\C1ac5Model;
 use \App\Models\C1ac6Model;
 use \App\Models\C1ac7Model;
@@ -26,8 +26,8 @@ class ChapterController extends BaseController{
     protected $c1model;
     protected $c3model;
 
-    
-    protected $ac4model;
+
+
     protected $ac5model;
     protected $ac6model;
     protected $ac7model;
@@ -47,7 +47,7 @@ class ChapterController extends BaseController{
         $this->c1model = new Chapter1Model();
         $this->c3model = new Chapter3Model();
 
-        $this->ac4model = new C1ac4Model();
+
         $this->ac5model = new C1ac5Model();
         $this->ac6model = new C1ac6Model();
         $this->ac7model = new C1ac7Model();
@@ -121,9 +121,11 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC4':
-                $data['ac4'] = $this->ac4model->getac4($dc1tID);
-                $data['ppr1'] = $this->ac4model->getppr1($dc1tID);
-                $data['ppr2'] = $this->ac4model->getppr2($dc1tID);
+
+                $data['ac4'] = $this->c1model->getac4($code,$dc1tID);
+                $rdata = $this->c1model->getac4ppr($code,$dc1tID);
+                $data['ppr'] = json_decode($rdata['question'], true);
+
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac4', $data);
                 echo view('includes/Footer');
