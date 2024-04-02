@@ -13,7 +13,6 @@ $routes->get('/dashboard', 'DashController::dashboard');
 
 //Audit System
 $routes->get('/auditsystem', 'DashController::auditsystem');
-
 /**
     ----------------------------------------------------------
     CHAPTER 1 AREA
@@ -53,22 +52,6 @@ $routes->post('/auditsystem/c1/saveac10s2/(:any)/(:any)/(:any)/(:any)', 'Chapter
 $routes->post('/auditsystem/c1/saveac10summ/(:any)/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac10summ/$1/$2/$3/$4');
 //CHAPTER 1 AC11 ROUTES
 $routes->post('/auditsystem/c1/saveac11/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac11/$1/$2/$3');
-
-
-// Client Management
-$routes->get('/auditsystem/clients/view', 'ClientController::viewclient');
-$routes->get('/auditsystem/clients/defaults/(:any)', 'ClientController::clientdefaults/$1');
-
-//AJAX REQUEST
-// Chapter 1
-$routes->get('/auditsystem/c1/ac2/edit/(:any)', 'C1ac2Controller::editac2question/$1');
-$routes->get('/auditsystem/c1/ac3/edit/(:any)', 'C1ac3Controller::editac3question/$1');
-$routes->get('/auditsystem/c1/ac4/edit/(:any)', 'C1ac4Controller::editac4question/$1');
-$routes->get('/auditsystem/c1/ac6/edit/(:any)', 'C1ac6Controller::editac6question/$1');
-$routes->get('/auditsystem/c1/ac6/edit2/(:any)', 'C1ac6Controller::editacsection3/$1');
-
-
-
 /**
     ----------------------------------------------------------
     CHAPTER 2 AREA
@@ -77,13 +60,10 @@ $routes->get('/auditsystem/c1/ac6/edit2/(:any)', 'C1ac6Controller::editacsection
 // CHAPTER 2 VIEWS
 $routes->get('/auditsystem/c2/view', 'ChapterController::viewchapter2');
 $routes->get('/auditsystem/c2/manage/(:any)/(:any)/(:any)', 'ChapterController::managechapter2/$1/$2/$3');
-$routes->post('/auditsystem/c2/manage/save/(:any)/(:any)/(:any)', 'C2B2Controller::savequestions/$1/$2/$3');
-$routes->post('/auditsystem/c2/manage/activeinactive/(:any)/(:any)/(:any)/(:any)', 'C2B2Controller::activeinactiveac2/$1/$2/$3/$4');
-$routes->post('/auditsystem/c2/aicpppa/save/(:any)/(:any)/(:any)', 'C2E21Controller::saveaicpppa/$1/$2/$3');
-$routes->post('/auditsystem/c2/rcicp/save/(:any)/(:any)/(:any)', 'C2E21Controller::savercicp/$1/$2/$3');
-
-
-
+$routes->post('/auditsystem/c2/manage/save/(:any)/(:any)/(:any)', 'Chapter2Controller::savequestions/$1/$2/$3');
+$routes->post('/auditsystem/c2/manage/activeinactive/(:any)/(:any)/(:any)/(:any)', 'Chapter2Controller::acin/$1/$2/$3/$4');
+$routes->post('/auditsystem/c2/aicpppa/save/(:any)/(:any)/(:any)', 'Chapter2Controller::saveaicpppa/$1/$2/$3');
+$routes->post('/auditsystem/c2/rcicp/save/(:any)/(:any)/(:any)', 'Chapter2Controller::savercicp/$1/$2/$3');
 /**
     ----------------------------------------------------------
     CHAPTER 3 AREA
@@ -159,7 +139,9 @@ $routes->get('/auditsystem/c5/view', 'ChapterController::viewchapter5');
 
 
 
-
+// Client Management
+$routes->get('/auditsystem/clients/view', 'ClientController::viewclient');
+$routes->get('/auditsystem/clients/defaults/(:any)', 'ClientController::clientdefaults/$1');
 
 
 
