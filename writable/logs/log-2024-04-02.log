@@ -332,3 +332,56 @@ INFO - 2024-04-02 16:02:56 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-04-02 16:02:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-02 16:03:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-02 16:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:05:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:08:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:13:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:26:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:27:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:27:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 16:27:16 --> ErrorException: Undefined array key "genyn"
+in APPPATH\Models\Chapter1Model.php on line 624.
+ 1 APPPATH\Models\Chapter1Model.php(624): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "genyn"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Models\\Chapter1Model.php', 624)
+ 2 APPPATH\Controllers\Chapter1Controller.php(601): App\Models\Chapter1Model->saveac9([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter1Controller->saveac9('AC9', 'Assignment Plan', '2fe601b3f8ceb0f48b377025eda5b678d6c80d84b40db2e7cdcb757d05e260ac7f275c0c0500e7e228be43ac9d1a14750cc1fe9fbe62224478189f4d7d2086effHNw$mwEFblb3SB$0yMb8cI=')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter1Controller))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 16:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:27:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:27:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:29:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 16:29:58 --> ErrorException: Undefined variable $aop1
+in APPPATH\Views\chapter1\Ac9.php on line 66.
+ 1 APPPATH\Views\chapter1\Ac9.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $aop1', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter1\\Ac9.php', 66)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter1\\Ac9.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter1/ac9', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(181): view('chapter1/ac9', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter1('AC9', 'Assignment Plan', '2fe601b3f8ceb0f48b377025eda5b678d6c80d84b40db2e7cdcb757d05e260ac7f275c0c0500e7e228be43ac9d1a14750cc1fe9fbe62224478189f4d7d2086effHNw$mwEFblb3SB$0yMb8cI=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 16:31:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 16:31:25 --> ErrorException: Undefined variable $cppm
+in APPPATH\Views\chapter1\Ac9.php on line 197.
+ 1 APPPATH\Views\chapter1\Ac9.php(197): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cppm', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter1\\Ac9.php', 197)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\chapter1\\Ac9.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter1/ac9', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(181): view('chapter1/ac9', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter1('AC9', 'Assignment Plan', '2fe601b3f8ceb0f48b377025eda5b678d6c80d84b40db2e7cdcb757d05e260ac7f275c0c0500e7e228be43ac9d1a14750cc1fe9fbe62224478189f4d7d2086effHNw$mwEFblb3SB$0yMb8cI=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 16:32:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:33:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:33:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:33:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:38:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:38:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:39:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:39:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

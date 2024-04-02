@@ -9,7 +9,6 @@ use \App\Models\Chapter1Model;
 use \App\Models\Chapter3Model;
 
 
-use \App\Models\C1ac9Model;
 use \App\Models\C1ac10Model;
 use \App\Models\C1ac11Model;
 use \App\Models\C2B2Model;
@@ -22,7 +21,6 @@ class ChapterController extends BaseController{
     protected $c3model;
 
 
-    protected $ac9model;
     protected $ac10model;
     protected $ac11model;
     protected $c2b2model;
@@ -38,7 +36,6 @@ class ChapterController extends BaseController{
         $this->c3model = new Chapter3Model();
 
 
-        $this->ac9model = new C1ac9Model();
         $this->ac10model = new C1ac10Model();
         $this->ac11model = new C1ac11Model();
         $this->c2b2model = new C2B2Model();
@@ -169,14 +166,8 @@ class ChapterController extends BaseController{
 
             case 'AC9':
 
-                $rowdata = [
-                    'coss','aop1','aop2','bipa','bibo','sffpa','sosdd','klar','rpi','soae','aa1','aa2','frfa','orr','tsr','cppm','ic','af','ccm','agm',
-                    'bcl','iic','rc','t2r','pv','vfi','av','lo'
-                ];
-
-                foreach($rowdata as $row){
-                    $data[$row] = $this->ac9model->getac9data($dc1tID, $row);
-                }
+                $rdata = $this->c1model->getac9data($code,$dc1tID);
+                $data['ac9'] = json_decode($rdata['question'], true);
     
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac9', $data);

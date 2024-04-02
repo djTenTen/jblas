@@ -44,13 +44,12 @@ $routes->post('/auditsystem/c1/saveac6s3/(:any)/(:any)/(:any)', 'Chapter1Control
 $routes->post('/auditsystem/c1/saveac7/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac7/$1/$2/$3');
 //CHAPTER 1 AC8 ROUTES
 $routes->post('/auditsystem/c1/saveac8/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac8/$1/$2/$3');
-
-
-
-
-
 //CHAPTER 1 AC9 ROUTES
-$routes->post('/auditsystem/c1/section1/update/AC9/(:any)/(:any)', 'C1ac9Controller::updatesec1ac9/$1/$2');
+$routes->post('/auditsystem/c1/saveac9/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac9/$1/$2/$3');
+
+
+
+
 $routes->post('/auditsystem/c1/section2/update/AC9/(:any)/(:any)', 'C1ac9Controller::updatesec2ac9/$1/$2');
 $routes->post('/auditsystem/c1/section3/update/AC9/(:any)/(:any)', 'C1ac9Controller::updatesec3ac9/$1/$2');
 //CHAPTER 1 AC10 ROUTES

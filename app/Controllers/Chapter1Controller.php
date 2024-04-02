@@ -536,6 +536,84 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AC9 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function saveac9($code,$head,$c1tID){
+
+        $ac9 = [
+            'coss' => $this->request->getPost('coss'),
+            'aop1' => $this->request->getPost('aop1'),
+            'aop2' => $this->request->getPost('aop2'),
+            'bipa' => $this->request->getPost('bipa'),
+            'bibo' => $this->request->getPost('bibo'),
+            'sffpa' => $this->request->getPost('sffpa'),
+            'sosdd' => $this->request->getPost('sosdd'),
+            'klar' => $this->request->getPost('klar'),
+            'rpi' => $this->request->getPost('rpi'),
+            'soae' => $this->request->getPost('soae'),
+            'aa1' => $this->request->getPost('aa1'),
+            'aa2' => $this->request->getPost('aa2'),
+            'frfa' => $this->request->getPost('frfa'),
+            'orr' => $this->request->getPost('orr'),
+            'tsr' => $this->request->getPost('tsr'),
+            'cppm' => $this->request->getPost('cppm'),
+            'ic' => $this->request->getPost('ic'),
+            'af' => $this->request->getPost('af'),
+            'ccm' => $this->request->getPost('ccm'),
+            'agm' => $this->request->getPost('agm'),
+            'bcl1' => $this->request->getPost('bcl1'),
+            'bcl2' => $this->request->getPost('bcl2'),
+            'iic1' => $this->request->getPost('iic1'),
+            'iic2' => $this->request->getPost('iic2'),
+            'rc1' => $this->request->getPost('rc1'),
+            'rc2' => $this->request->getPost('rc2'),
+            't2r1' => $this->request->getPost('t2r1'),
+            't2r2' => $this->request->getPost('t2r2'),
+            'pv1' => $this->request->getPost('pv1'),
+            'pv2' => $this->request->getPost('pv2'),
+            'vfi1' => $this->request->getPost('vfi1'),
+            'vfi2' => $this->request->getPost('vfi2'),
+            'av1' => $this->request->getPost('av1'),
+            'av2' => $this->request->getPost('av2'),
+            'lo1' => $this->request->getPost('lo1'),
+            'lo2' => $this->request->getPost('lo2')
+        ];
+
+        $req = [
+            'ac9' => json_encode($ac9),
+            'code' => $code,
+            'part' => $this->request->getPost('part'),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+        ];
+        
+        $res = $this->c1model->saveac9($req);
+        
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
+
+    }
+
+
+    
+
     
 
 
