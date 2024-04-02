@@ -71,7 +71,7 @@
                <p>Where transaction testing is to be undertaken select the approximate number of transactions from the drop down. This together with the risk level entered will calculate the appropriate sample size, again based on the information on the reference table below.</p>
 
                <div class="table-responsive">
-                    <form action="<?= base_url()?>auditsystem/c1/summary/save/AC10/<?= $sheet?>/<?= $header?>/<?= $c1tID?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/c1/saveac10summ/<?= $code?>/<?= $sheet?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <table class="table table-bordered table-sm" style="width: 2500px;">
                         <thead>
                             <tr class="text-center">

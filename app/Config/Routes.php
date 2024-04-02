@@ -46,17 +46,14 @@ $routes->post('/auditsystem/c1/saveac7/(:any)/(:any)/(:any)', 'Chapter1Controlle
 $routes->post('/auditsystem/c1/saveac8/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac8/$1/$2/$3');
 //CHAPTER 1 AC9 ROUTES
 $routes->post('/auditsystem/c1/saveac9/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac9/$1/$2/$3');
-
-
-
-
-$routes->post('/auditsystem/c1/section2/update/AC9/(:any)/(:any)', 'C1ac9Controller::updatesec2ac9/$1/$2');
-$routes->post('/auditsystem/c1/section3/update/AC9/(:any)/(:any)', 'C1ac9Controller::updatesec3ac9/$1/$2');
 //CHAPTER 1 AC10 ROUTES
-$routes->post('/auditsystem/c1/section1/save/AC10/(:any)/(:any)/(:any)', 'C1ac10Controller::saves1ac10/$1/$2/$3');
-$routes->post('/auditsystem/c1/section2/save/AC10/(:any)/(:any)/(:any)', 'C1ac10Controller::saves2ac10/$1/$2/$3');
-$routes->post('/auditsystem/c1/cusection/save/AC10/(:any)/(:any)/(:any)', 'C1ac10Controller::updatecusection/$1/$2/$3');
-$routes->post('/auditsystem/c1/summary/save/AC10/(:any)/(:any)/(:any)', 'C1ac10Controller::savesummary/$1/$2/$3');
+$routes->post('/auditsystem/c1/saveac10cu/(:any)/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac10cu/$1/$2/$3/$4');
+$routes->post('/auditsystem/c1/saveac10s1/(:any)/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac10s1/$1/$2/$3/$4');
+$routes->post('/auditsystem/c1/saveac10s2/(:any)/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac10s2/$1/$2/$3/$4');
+$routes->post('/auditsystem/c1/saveac10summ/(:any)/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac10summ/$1/$2/$3/$4');
+
+
+
 //CHAPTER 1 AC11 ROUTES
 $routes->post('/auditsystem/c1/manage/update/AC11/(:any)/(:any)', 'C1ac11Controller::updateac11/$1/$2');
 

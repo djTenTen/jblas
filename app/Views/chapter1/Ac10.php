@@ -72,26 +72,26 @@
             <div class="card-body">
 
                 <nav class="nav nav-borders">
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Tangibles')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-Tangibles/<?= $header?>/<?= $c1tID; ?>">Tangibles</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'PPE')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-PPE/<?= $header?>/<?= $c1tID; ?>">PPE</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Investments')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-Investments/<?= $header?>/<?= $c1tID; ?>">Investments</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Inventory')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-Inventory/<?= $header?>/<?= $c1tID; ?>">Inventory</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Trade%20Receivables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-Trade Receivables/<?= $header?>/<?= $c1tID; ?>">Trade Receivables</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Other%20Receivables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-Other Receivables/<?= $header?>/<?= $c1tID; ?>">Other Receivables</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Bank%20and%20Cash')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-Bank and Cash/<?= $header?>/<?= $c1tID; ?>">Bank and Cash</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Trade%20Payables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-Trade Payables/<?= $header?>/<?= $c1tID; ?>">Trade Payables</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Other%20Payables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-Other Payables/<?= $header?>/<?= $c1tID; ?>">Other Payables</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Provisions')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-Provisions/<?= $header?>/<?= $c1tID; ?>">Provisions</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Revenue')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-Revenue/<?= $header?>/<?= $c1tID; ?>">Revenue</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Costs')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-Costs/<?= $header?>/<?= $c1tID; ?>">Costs</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Payroll')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-Payroll/<?= $header?>/<?= $c1tID; ?>">Payroll</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Summary')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/AC10-Summary/<?= $header?>/<?= $c1tID; ?>">Summary</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Tangibles')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Tangibles/<?= $header?>/<?= $c1tID; ?>">Tangibles</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'PPE')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-PPE/<?= $header?>/<?= $c1tID; ?>">PPE</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Investments')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Investments/<?= $header?>/<?= $c1tID; ?>">Investments</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Inventory')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Inventory/<?= $header?>/<?= $c1tID; ?>">Inventory</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Trade%20Receivables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Trade Receivables/<?= $header?>/<?= $c1tID; ?>">Trade Receivables</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Other%20Receivables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Other Receivables/<?= $header?>/<?= $c1tID; ?>">Other Receivables</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Bank%20and%20Cash')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Bank and Cash/<?= $header?>/<?= $c1tID; ?>">Bank and Cash</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Trade%20Payables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Trade Payables/<?= $header?>/<?= $c1tID; ?>">Trade Payables</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Other%20Payables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Other Payables/<?= $header?>/<?= $c1tID; ?>">Other Payables</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Provisions')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Provisions/<?= $header?>/<?= $c1tID; ?>">Provisions</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Revenue')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Revenue/<?= $header?>/<?= $c1tID; ?>">Revenue</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Costs')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Costs/<?= $header?>/<?= $c1tID; ?>">Costs</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Payroll')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Payroll/<?= $header?>/<?= $c1tID; ?>">Payroll</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Summary')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Summary/<?= $header?>/<?= $c1tID; ?>">Summary</a>
                 </nav>
                 <hr class="mt-0 mb-4" />
                 <br>
 
                 <div class="table-responsive">
-                    <form action="<?= base_url()?>auditsystem/c1/cusection/save/AC10/<?= $sheet?>/<?= $header?>/<?= $c1tID?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/c1/saveac10cu/<?= $code?>/<?= $sheet?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <table class="table table-bordered table-sm">
                         <thead>
                             <tr>
@@ -116,7 +116,7 @@
                     </table> 
                     </form>
 
-                    <form action="<?= base_url()?>auditsystem/c1/section1/save/AC10/<?= $sheet?>/<?= $header?>/<?= $c1tID?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/c1/saveac10s1/<?= $code?>/<?= $sheet?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <table class="table table-bordered table-sm">
                         <thead> 
                             <tr>
@@ -154,7 +154,7 @@
                     </form>
 
 
-                    <form action="<?= base_url()?>auditsystem/c1/section2/save/AC10/<?= $sheet?>/<?= $header?>/<?= $c1tID?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/c1/saveac10s2/<?= $code?>/<?= $sheet?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <table class="table table-bordered table-sm">
                         <thead>
                             <tr>

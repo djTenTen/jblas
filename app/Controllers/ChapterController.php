@@ -9,7 +9,7 @@ use \App\Models\Chapter1Model;
 use \App\Models\Chapter3Model;
 
 
-use \App\Models\C1ac10Model;
+
 use \App\Models\C1ac11Model;
 use \App\Models\C2B2Model;
 use \App\Models\C2E21Model;
@@ -21,7 +21,6 @@ class ChapterController extends BaseController{
     protected $c3model;
 
 
-    protected $ac10model;
     protected $ac11model;
     protected $c2b2model;
     protected $c2e21model;
@@ -35,8 +34,6 @@ class ChapterController extends BaseController{
         $this->c1model = new Chapter1Model();
         $this->c3model = new Chapter3Model();
 
-
-        $this->ac10model = new C1ac10Model();
         $this->ac11model = new C1ac11Model();
         $this->c2b2model = new C2B2Model();
         $this->c2e21model = new C2E21Model();
@@ -192,53 +189,53 @@ class ChapterController extends BaseController{
                 $s = explode('-', $code);
                 $data ['sheet'] = $s[1];
                 $data['code'] = $s[0];
+                $data['cu'] = $this->c1model->getac10cu($dc1tID,$s[1].'cu');
+                $data['ac10s1'] = $this->c1model->getac10s1data($dc1tID,$s[1]);
+                $data['ac10s2'] = $this->c1model->getac10s2data($dc1tID,$s[1]);
 
-                $data['cu'] = $this->ac10model->getac10cu($dc1tID,$s[1].'cu');
-                $data['ac10s1'] = $this->ac10model->getac10s1data($dc1tID,$s[1]);
-                $data['ac10s2'] = $this->ac10model->getac10s2data($dc1tID,$s[1]);
                 echo view('includes/Header', $data);
                 echo view('chapter1/Ac10', $data);
                 echo view('includes/Footer');
                 break;
             case 'AC10-Summary':
+                
                 $s = explode('-', $code);
                 $data ['sheet'] = $s[1];
                 $data['code'] = $s[0];
-
-                $data['nmk_tgb'] = $this->ac10model->getdatacount($dc1tID,'Tangibles');
-                $data['nmk_ppe'] = $this->ac10model->getdatacount($dc1tID,'PPE');
-                $data['nmk_invmt'] = $this->ac10model->getdatacount($dc1tID,'Investments');
-                $data['nmk_invtr'] = $this->ac10model->getdatacount($dc1tID,'Inventory');
-                $data['nmk_tr'] = $this->ac10model->getdatacount($dc1tID,'Trade Receivables');
-                $data['nmk_or'] = $this->ac10model->getdatacount($dc1tID,'Other Receivables');
-                $data['nmk_bac'] = $this->ac10model->getdatacount($dc1tID,'Bank and Cash');
-                $data['nmk_tp'] = $this->ac10model->getdatacount($dc1tID,'Trade Payables');
-                $data['nmk_op'] = $this->ac10model->getdatacount($dc1tID,'Other Payables');
-                $data['nmk_prov'] = $this->ac10model->getdatacount($dc1tID,'Provisions');
-                $data['nmk_rev'] = $this->ac10model->getdatacount($dc1tID,'Revenue');
-                $data['nmk_cst'] = $this->ac10model->getdatacount($dc1tID,'Costs');
-                $data['nmk_pr'] = $this->ac10model->getdatacount($dc1tID,'Payroll');
+                $data['nmk_tgb'] = $this->c1model->getdatacount($dc1tID,'Tangibles');
+                $data['nmk_ppe'] = $this->c1model->getdatacount($dc1tID,'PPE');
+                $data['nmk_invmt'] = $this->c1model->getdatacount($dc1tID,'Investments');
+                $data['nmk_invtr'] = $this->c1model->getdatacount($dc1tID,'Inventory');
+                $data['nmk_tr'] = $this->c1model->getdatacount($dc1tID,'Trade Receivables');
+                $data['nmk_or'] = $this->c1model->getdatacount($dc1tID,'Other Receivables');
+                $data['nmk_bac'] = $this->c1model->getdatacount($dc1tID,'Bank and Cash');
+                $data['nmk_tp'] = $this->c1model->getdatacount($dc1tID,'Trade Payables');
+                $data['nmk_op'] = $this->c1model->getdatacount($dc1tID,'Other Payables');
+                $data['nmk_prov'] = $this->c1model->getdatacount($dc1tID,'Provisions');
+                $data['nmk_rev'] = $this->c1model->getdatacount($dc1tID,'Revenue');
+                $data['nmk_cst'] = $this->c1model->getdatacount($dc1tID,'Costs');
+                $data['nmk_pr'] = $this->c1model->getdatacount($dc1tID,'Payroll');
                 
-                $data['vop_tgb'] = $this->ac10model->getsumation($dc1tID,'Tangibles');
-                $data['vop_ppe'] = $this->ac10model->getsumation($dc1tID,'PPE');
-                $data['vop_invmt'] = $this->ac10model->getsumation($dc1tID,'Investments');
-                $data['vop_invtr'] = $this->ac10model->getsumation($dc1tID,'Inventory');
-                $data['vop_tr'] = $this->ac10model->getsumation($dc1tID,'Trade Receivables');
-                $data['vop_or'] = $this->ac10model->getsumation($dc1tID,'Other Receivables');
-                $data['vop_bac'] = $this->ac10model->getsumation($dc1tID,'Bank and Cash');
-                $data['vop_tp'] = $this->ac10model->getsumation($dc1tID,'Trade Payables');
-                $data['vop_op'] = $this->ac10model->getsumation($dc1tID,'Other Payables');
-                $data['vop_prov'] = $this->ac10model->getsumation($dc1tID,'Provisions');
-                $data['vop_rev'] = $this->ac10model->getsumation($dc1tID,'Revenue');
-                $data['vop_cst'] = $this->ac10model->getsumation($dc1tID,'Costs');
-                $data['vop_pr'] = $this->ac10model->getsumation($dc1tID,'Payroll');
+                $data['vop_tgb'] = $this->c1model->getsumation($dc1tID,'Tangibles');
+                $data['vop_ppe'] = $this->c1model->getsumation($dc1tID,'PPE');
+                $data['vop_invmt'] = $this->c1model->getsumation($dc1tID,'Investments');
+                $data['vop_invtr'] = $this->c1model->getsumation($dc1tID,'Inventory');
+                $data['vop_tr'] = $this->c1model->getsumation($dc1tID,'Trade Receivables');
+                $data['vop_or'] = $this->c1model->getsumation($dc1tID,'Other Receivables');
+                $data['vop_bac'] = $this->c1model->getsumation($dc1tID,'Bank and Cash');
+                $data['vop_tp'] = $this->c1model->getsumation($dc1tID,'Trade Payables');
+                $data['vop_op'] = $this->c1model->getsumation($dc1tID,'Other Payables');
+                $data['vop_prov'] = $this->c1model->getsumation($dc1tID,'Provisions');
+                $data['vop_rev'] = $this->c1model->getsumation($dc1tID,'Revenue');
+                $data['vop_cst'] = $this->c1model->getsumation($dc1tID,'Costs');
+                $data['vop_pr'] = $this->c1model->getsumation($dc1tID,'Payroll');
                 
-                $data['mat'] = $this->ac10model->getsummarydata($dc1tID,'material');
+                $data['mat'] = $this->c1model->getsummarydata($dc1tID,'material');
 
                 $rowdata = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
 
                 foreach($rowdata as $row){
-                    $rdata = $this->ac10model->getsummarydata($dc1tID, $row);
+                    $rdata = $this->c1model->getsummarydata($dc1tID, $row);
                     $data[$row] = json_decode($rdata['question'], true);
                 }
 
