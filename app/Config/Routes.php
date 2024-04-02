@@ -34,25 +34,25 @@ $routes->post('/auditsystem/c1/saveac3/(:any)/(:any)/(:any)', 'Chapter1Controlle
 //CHAPTER 1 AC4 ROUTES
 $routes->post('/auditsystem/c1/saveac4ppr/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac4ppr/$1/$2/$3');
 $routes->post('/auditsystem/c1/saveac4/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac4/$1/$2/$3');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //CHAPTER 1 AC5 ROUTES
-$routes->post('/auditsystem/c1/res/update/AC5/(:any)/(:any)/(:any)', 'C1ac5Controller::updateres/$1/$2/$3');
+$routes->post('/auditsystem/c1/saveac5/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac5/$1/$2/$3');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //CHAPTER 1 AC6 ROUTES
 $routes->post('/auditsystem/c1/manage/save/AC6/(:any)/(:any)', 'C1ac6Controller::addac6questions/$1/$2');
 $routes->post('/auditsystem/c1/manage/update/AC6/(:any)/(:any)/(:any)', 'C1ac6Controller::updateac6questions/$1/$2/$3');

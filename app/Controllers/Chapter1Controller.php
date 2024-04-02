@@ -298,4 +298,90 @@ class Chapter1Controller extends BaseController{
 
 
 
+
+
+
+    /**
+        ----------------------------------------------------------
+        AC5 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function saveac5($code,$head,$c1tID){
+
+        $rc = [
+            'res' => $this->request->getPost('res'),
+            'con' => $this->request->getPost('con')
+        ];
+
+        $req = [
+            'rescon' => json_encode($rc),
+            'code' => $code,
+            'part' => $this->request->getPost('part'),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+        ];
+        $res = $this->c1model->saveac5($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -132,8 +132,10 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC5':
-                $data['res'] = $this->ac5model->getresult($dc1tID);
-                $data['con'] = $this->ac5model->getconclusion($dc1tID);
+
+                $rdata = $this->c1model->getac5($code,$dc1tID);
+                $data['rc'] = json_decode($rdata['question'], true);
+                
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac5', $data);
                 echo view('includes/Footer');

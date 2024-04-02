@@ -331,8 +331,6 @@ class Chapter1Model extends Model{
         
 
     }
-
-    
     public function saveac4($req){
 
         $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
@@ -357,6 +355,50 @@ class Chapter1Model extends Model{
 
 
 
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AC5 FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getac5($code,$c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'rescon', 'code' => $code, 'c1tID' => $c1tID))->get();
+        return $query->getRowArray();
+
+    }
+
+    /**     
+        POST FUNCTIONS
+    */
+    public function saveac5($req){
+
+        $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
+
+        $data = [
+            'question' => $req['rescon'],
+            'type' =>  $req['part'],
+            'code' =>  $req['code'],
+            'c1tID' => $req['c1tID'],
+            'status' => 'Active',
+            'updated_on' => $this->date.' '.$this->time
+        ];
+
+        if($this->db->table($this->tblc1)->insert($data)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 
 
 

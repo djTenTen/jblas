@@ -45,29 +45,15 @@
                     <li>To ensure that risks identified are transferred to the risk assessment and into the audit approach / work programmes as required and are cross referenced to indicate this.</li>
                     <li>Where a parent company produces consolidated financial statements, consideration must be given to the parent company figures and the consolidated figures.</li>
                 </ul>
-
-                <h4>Results:</h4>
-                <form action="<?= base_url()?>auditsystem/c1/res/update/AC5/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($res['acID']))?>" method="post">
-                    <textarea class="form-control" cols="30" rows="20" name="res" required><?= $res['question']?></textarea>
-                    <button type="submit" class="btn btn-sm btn-icon btn-success float-end"><i class="fas fa-file-alt"></i></button>
+                <form action="<?= base_url()?>auditsystem/c1/saveac5/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                    <input type="hidden" name="part" value="rescon">
+                    <h4>Results:</h4>
+                        <textarea class="form-control" cols="30" rows="20" name="res" required><?= $rc['res']?></textarea>
+                    <h4>Conclusion:</h4>
+                        <textarea class="form-control" cols="30" rows="20" name="con" required><?= $rc['con']?></textarea>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
                 </form>
-
-                <h4>Conclusion:</h4>
-                <form action="<?= base_url()?>auditsystem/c1/res/update/AC5/<?= $header?>/<?= $c1tID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($con['acID']))?>" method="post">
-                    <textarea class="form-control" cols="30" rows="20" name="res" required><?= $con['question']?></textarea>
-                    <button type="submit" class="btn btn-sm btn-icon btn-success float-end"><i class="fas fa-file-alt"></i></button>
-                </form>
-    
-
-
-
-
-
-
-
-
-
-
+                
             </div>
         </div>
     </div>
