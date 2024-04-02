@@ -839,6 +839,89 @@ class ChapterController extends BaseController{
     
     }
 
+    public function managechapter4($code,$head,$c4tID){
+
+        $data['title'] = $code. ' - Chapter 3 Management';
+        $data['header'] = $head;
+        $data['c4tID'] = $c4tID;
+        $data['code'] = $code;
+
+        $dc4tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c4tID));
+
+        switch ($code) {
+            case '1.1 PAF A2-1':
+                echo view('includes/Header', $data);
+                echo view('chapter4/11pafa21', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '1.2 PAF A2-1':
+                echo view('includes/Header', $data);
+                echo view('chapter4/12pafa21', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2':
+                echo view('includes/Header', $data);
+                echo view('chapter4/2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3':
+                echo view('includes/Header', $data);
+                echo view('chapter4/3', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '4':
+                echo view('includes/Header', $data);
+                echo view('chapter4/4', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '5':
+                echo view('includes/Header', $data);
+                echo view('chapter4/5', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '6.1':
+                echo view('includes/Header', $data);
+                echo view('chapter4/6.1', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '6.2':
+                echo view('includes/Header', $data);
+                echo view('chapter4/6.2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '7':
+                echo view('includes/Header', $data);
+                echo view('chapter4/7', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '8':
+                echo view('includes/Header', $data);
+                echo view('chapter4/8', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '9':
+                echo view('includes/Header', $data);
+                echo view('chapter4/9', $data);
+                echo view('includes/Footer');
+                break;
+            default:
+                # code...
+                break;
+        }
+
+
+    }
+
 
 
 

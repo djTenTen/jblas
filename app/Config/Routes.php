@@ -116,8 +116,7 @@ $routes->post('/auditsystem/c3/saveab4a/(:any)/(:any)/(:any)', 'Chapter3Controll
     ----------------------------------------------------------
 */
 $routes->get('/auditsystem/c4/view', 'ChapterController::viewchapter4');
-
-
+$routes->get('/auditsystem/c4/manage/(:any)/(:any)/(:any)', 'ChapterController::managechapter4/$1/$2/$3');
 
 
 
