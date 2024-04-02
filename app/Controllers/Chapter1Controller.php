@@ -625,7 +625,6 @@ class Chapter1Controller extends BaseController{
         AC10 FUNCTIONS
         ----------------------------------------------------------
     */
-    
     public function saveac10summ($code,$sheet,$head,$c1tID){
 
         $tgb = [
@@ -957,6 +956,84 @@ class Chapter1Controller extends BaseController{
             session()->setFlashdata('failed_registration','failed_registration');
             return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'-'.$sheet.'/'.$head.'/'.$c1tID));
         }
+
+    }
+
+
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AC11 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function saveac11($code,$head,$c1tID){
+
+        $ac11 = [
+            'datem' => $this->request->getPost('datem'),
+            'ape1' => $this->request->getPost('ape1'),
+            'ape2' => $this->request->getPost('ape2'),
+            'ape3' => $this->request->getPost('ape3'),
+            'ieqr1' => $this->request->getPost('ieqr1'),
+            'ieqr2' => $this->request->getPost('ieqr2'),
+            'ieqr3' => $this->request->getPost('ieqr3'),
+            'mngr1' => $this->request->getPost('mngr1'),
+            'mngr2' => $this->request->getPost('mngr2'),
+            'mngr3' => $this->request->getPost('mngr3'),
+            'sup1' => $this->request->getPost('sup1'),
+            'sup2' => $this->request->getPost('sup2'),
+            'sup3' => $this->request->getPost('sup3'),
+            'sr1' => $this->request->getPost('sr1'),
+            'sr2' => $this->request->getPost('sr2'),
+            'sr3' => $this->request->getPost('sr3'),
+            'jra1' => $this->request->getPost('jra1'),
+            'jra2' => $this->request->getPost('jra2'),
+            'jra3' => $this->request->getPost('jra3'),
+            'jrb1' => $this->request->getPost('jrb1'),
+            'jrb2' => $this->request->getPost('jrb2'),
+            'jrb3' => $this->request->getPost('jrb3'),
+            'dcfrrt1' => $this->request->getPost('dcfrrt1'),
+            'dcfrrt2' => $this->request->getPost('dcfrrt2'),
+            'dcfrrt3' => $this->request->getPost('dcfrrt3'),
+            'dcfrrt4' => $this->request->getPost('dcfrrt4'),
+            'dcfrrt5' => $this->request->getPost('dcfrrt5'),
+            'dcfrrt6' => $this->request->getPost('dcfrrt6'),
+            'dcfrrt7' => $this->request->getPost('dcfrrt7'),
+            'dcfrrt8' => $this->request->getPost('dcfrrt8'),
+            'dcfrrt9' => $this->request->getPost('dcfrrt9'),
+            'sacb1' => $this->request->getPost('sacb1'),
+            'sacb2' => $this->request->getPost('sacb2'),
+            'sacb3' => $this->request->getPost('sacb3'),
+            'sacb4' => $this->request->getPost('sacb4'),
+            'sacb5' => $this->request->getPost('sacb5'),
+            'sacb6' => $this->request->getPost('sacb6'),
+            'sacb7' => $this->request->getPost('sacb7'),
+            'sacb8' => $this->request->getPost('sacb8'),
+            'sacb9' => $this->request->getPost('sacb9'),
+        ];
+
+        $req = [
+            'ac11' => json_encode($ac11),
+            'code' => $code,
+            'part' => 'ac11data',
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+        ];
+        $res = $this->c1model->saveac11($req);
+        
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
 
     }
 

@@ -51,11 +51,8 @@ $routes->post('/auditsystem/c1/saveac10cu/(:any)/(:any)/(:any)/(:any)', 'Chapter
 $routes->post('/auditsystem/c1/saveac10s1/(:any)/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac10s1/$1/$2/$3/$4');
 $routes->post('/auditsystem/c1/saveac10s2/(:any)/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac10s2/$1/$2/$3/$4');
 $routes->post('/auditsystem/c1/saveac10summ/(:any)/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac10summ/$1/$2/$3/$4');
-
-
-
 //CHAPTER 1 AC11 ROUTES
-$routes->post('/auditsystem/c1/manage/update/AC11/(:any)/(:any)', 'C1ac11Controller::updateac11/$1/$2');
+$routes->post('/auditsystem/c1/saveac11/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac11/$1/$2/$3');
 
 
 // Client Management

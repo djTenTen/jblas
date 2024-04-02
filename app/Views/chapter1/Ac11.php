@@ -24,12 +24,20 @@
 
     <div class="container-xl px-4 mt-n10">
         <div class="card">
- 
+            <?php if (session()->get('success_update')) { ?>
+                <div class="alert alert-success alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Success Update</h6>
+                        Contents has been successfully updated.
+                    </div>
+                </div>
+            <?php  }?>
             <div class="card-body">
                <h4>TEAM DISCUSSIONS AND BRIEFING MEETING</h4>
                <h6>Objective:</h6>
                <p>To document a team discussion covering fraud and risk as required by PSA 240, 315 and 550 and to demonstrate that an adequate staff briefing has occurred.</p>
-               <form action="<?= base_url()?>auditsystem/c1/manage/update/AC11/<?= $header?>/<?= $c1tID?>" method="post">
+               <form action="<?= base_url()?>auditsystem/c1/saveac11/<?=$code?>/<?= $header?>/<?= $c1tID?>" method="post">
                 <label for="">
                     Date of the meeting: <input type="date" class="form-control" name="datem" value="<?= $ac11['datem']?>" required>
                 </label>
