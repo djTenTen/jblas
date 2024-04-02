@@ -31,6 +31,33 @@
                                         </div>
                                     </div>
                                  <?php  }?>
+                                 <?php if (session()->get('accountnotexist')) { ?>
+                                    <div class="alert alert-danger alert-icon" role="alert">
+                                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        <div class="alert-icon-content">
+                                            <h6 class="alert-heading">Account does not Exist</h6>
+                                            the account you have been using does not exist
+                                        </div>
+                                    </div>
+                                 <?php  }?>
+                                 <?php if (session()->get('accountinactive')) { ?>
+                                    <div class="alert alert-danger alert-icon" role="alert">
+                                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        <div class="alert-icon-content">
+                                            <h6 class="alert-heading">Account Inactive</h6>
+                                            Your account is inactive, PLease contact your administrator for further actions.
+                                        </div>
+                                    </div>
+                                 <?php  }?>
+                                 <?php if (session()->get('accountunverified')) { ?>
+                                    <div class="alert alert-danger alert-icon" role="alert">
+                                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        <div class="alert-icon-content">
+                                            <h6 class="alert-heading">Account Unverified</h6>
+                                            Your account is not yet verified, Please wait until it verifies or contact the administrator for further actions
+                                        </div>
+                                    </div>
+                                 <?php  }?>
                                 <div class="card-header justify-content-center"><h3 class="fw-light my-4">Login</h3></div>
                                 <div class="card-body">
                                     <!-- Login form-->

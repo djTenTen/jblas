@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
 
 </head>
 <body class="nav-fixed">
-    
+
     <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
         <!-- Sidenav Toggle Button-->
         <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i data-feather="menu"></i></button>
@@ -137,8 +138,8 @@
                     <h6 class="dropdown-header d-flex align-items-center">
                         <img class="dropdown-user-img" src="<?= base_url()?>assets/img/illustrations/profiles/profile-1.png" />
                         <div class="dropdown-user-details">
-                            <div class="dropdown-user-details-name">Valerie Luna</div>
-                            <div class="dropdown-user-details-email">vluna@aol.com</div>
+                            <div class="dropdown-user-details-name"><?= session()->get('name') ?></div>
+                            <div class="dropdown-user-details-email"><?= session()->get('email') ?></div>
                         </div>
                     </h6>
                     <div class="dropdown-divider"></div>
@@ -146,14 +147,38 @@
                         <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                         Account
                     </a>
-                    <a class="dropdown-item" href="#!">
+                    <a class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#logoutmodal" >
                         <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
                         Logout
                     </a>
+
                 </div>
             </li>
         </ul>
     </nav>
+
+    <!-- Modal Logout-->
+    <div class="modal fade" id="logoutmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <h3>Are you sure to log out your session?</h3>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
+                    <form id="myactiveform" action="<?= base_url('logout')?>" method="post">
+                        <button class="btn btn-primary" type="submit">Confirm</button>
+                    <?= form_close();?>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
@@ -248,7 +273,7 @@
                 <div class="sidenav-footer">
                     <div class="sidenav-footer-content">
                         <div class="sidenav-footer-subtitle">Logged in as:</div>
-                        <div class="sidenav-footer-title">Valerie Luna</div>
+                        <div class="sidenav-footer-title"><?= session()->get('name') ?></div>
                     </div>
                 </div>
             </nav>

@@ -11,7 +11,6 @@ class AuthController extends BaseController{
 
     protected $authModel;
     protected $crypt;
-    protected $userdata;
 
     public function __construct(){
 
@@ -41,7 +40,34 @@ class AuthController extends BaseController{
 
         $res = $this->authModel->authenticate($req);
 
+        switch ($res) {
+            case 'usernotexist':
+                session()->setFlashdata('accountnotexist','accountnotexist');
+                return redirect()->to(site_url());
+            break;
+            case 'userinactive':
+                session()->setFlashdata('accountinactive','accountinactive');
+                return redirect()->to(site_url());
+            break;
+            case 'userunverified':
+                session()->setFlashdata('accountunverified','accountunverified');
+                return redirect()->to(site_url());
+            break;
+            case 'wrongpassword':
+                session()->setFlashdata('access_denied','access_denied');
+                return redirect()->to(site_url());
+            break;
+        }
+
         if(!empty($res)){
+            $user_data = [
+                'authentication' => true,
+                'userID' => $this->crypt->encrypt($res['userID']),
+                'name' => $res['name'],
+                'email' => $res['email']
+            ];
+            session()->set($user_data);
+
             return redirect()->to(site_url('dashboard'));
         }else{
 
@@ -49,6 +75,13 @@ class AuthController extends BaseController{
             return redirect()->to(site_url());
 
         }
+
+    }
+
+    public function logout(){
+
+        session_destroy();
+        return redirect()->to(site_url());
 
     }
 

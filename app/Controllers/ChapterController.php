@@ -849,6 +849,7 @@ class ChapterController extends BaseController{
         $dc4tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c4tID));
 
         switch ($code) {
+            
             case '1.1 PAF A2-1':
                 echo view('includes/Header', $data);
                 echo view('chapter4/11pafa21', $data);

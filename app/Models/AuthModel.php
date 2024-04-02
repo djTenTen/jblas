@@ -4,10 +4,12 @@ use CodeIgniter\Model;
 class AuthModel extends  Model {
 
     protected $tbluser = "tbl_users";
+    protected $crypt;
 
     public function __construct(){
 
         $this->db = \Config\Database::connect('default'); 
+        $this->crypt = \Config\Services::encrypter();
 
     }
 
@@ -16,28 +18,32 @@ class AuthModel extends  Model {
         $email = $req['email'];
         $pass = $req['password'];
 
-        $user = $this->db->table($this->tbluser)->where('email', $email)->get();
-
+        $q = "select * from {$this->tbluser} where BINARY email = ?"; 
+        $user = $this->db->query($q, $email);
+        $ud = $user->getRowArray();
         if($user->getNumRows() >= 0 && $user->getNumRows() <= 1){
-            
-            $userpass = $this->db->table($this->tbluser)->where( array ('email' => $email, 'pass' => $pass))->get();
-
-            if($userpass->getNumRows() >= 0 && $userpass->getNumRows() <= 1){
-                $res = $userpass->getRowArray();
-                if(isset($res)){
-                    $arr = [
-                        'userID' => $res['userID'],
-                        'name' => $res['name']
-                    ];
-
-                    return $arr;
+            $ud = $user->getRowArray();
+            $dpss = $this->crypt->decrypt($ud['pass']);
+            if($ud['verified'] == "Yes"){
+                if($ud['status'] == "Active"){
+                    if($pass == $dpss){
+                        $arr = [
+                            'userID' => $ud['userID'],
+                            'name' => $ud['name'],
+                            'email' => $ud['email']
+                        ];
+                        return $arr;
+                    }else{
+                        return 'wrongpassword';
+                    }
+                }else{
+                    return 'userinactive';
                 }
             }else{
-                return false;
+                return 'userunverified';
             }
-        
         }else{
-            return false;
+            return 'usernotexist';
         }
 
 
