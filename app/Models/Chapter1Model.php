@@ -516,11 +516,42 @@ class Chapter1Model extends Model{
 
 
 
+    /**
+        ----------------------------------------------------------
+        AC6 FUNCTIONS
+        ----------------------------------------------------------
 
+        GET FUNCTIONS
+    */
+    public function getac7($code,$c1tID,$part){
 
+        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => $code, 'c1tID' => $c1tID))->get();
+        return $query->getRowArray();
 
+    }
 
+    /**     
+        POST FUNCTIONS
+    */
+    public function saveac7($req){
 
+        $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'],'c1tID' => $req['c1tID']))->delete();
+
+        $data = [
+            'question' => $req['genyn'],
+            'type' =>  $req['part'],
+            'code' =>  $req['code'],
+            'c1tID' => $req['c1tID'],
+            'updated_on' => $this->date.' '.$this->time
+        ];
+
+        if($this->db->table($this->tblc1)->insert($data)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 
 
 

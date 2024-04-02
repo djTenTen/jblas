@@ -445,6 +445,64 @@ class Chapter1Controller extends BaseController{
 
 
 
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AC7 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function saveac7($code,$head,$c1tID){
+
+        $genyn = [
+            'y1' => $this->request->getPost('y1'),
+            'y2' => $this->request->getPost('y2'),
+            'y3' => $this->request->getPost('y3'),
+            'y4' => $this->request->getPost('y4'),
+            'y5' => $this->request->getPost('y5'),
+            'y6' => $this->request->getPost('y6'),
+            'gen' => $this->request->getPost('gen'),
+            'e1' => $this->request->getPost('e1'),
+            'e2' => $this->request->getPost('e2'),
+            'e3' => $this->request->getPost('e3'),
+            'ro1' => $this->request->getPost('ro1'),
+            'ro2' => $this->request->getPost('ro2'),
+            'ro3' => $this->request->getPost('ro3'),
+            'c1' => $this->request->getPost('c1'),
+            'c2' => $this->request->getPost('c2'),
+            'c3' => $this->request->getPost('c3'),
+            'va1' => $this->request->getPost('va1'),
+            'va2' => $this->request->getPost('va2'),
+            'va3' => $this->request->getPost('va3'),
+            'pd1' => $this->request->getPost('pd1'),
+            'pd2' => $this->request->getPost('pd2'),
+            'pd3' => $this->request->getPost('pd3'),
+        ];
+
+        $req = [
+            'genyn' => json_encode($genyn),
+            'part' => $this->request->getPost('part'),
+            'code' => $code,
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+        ];
+
+        $res = $this->c1model->saveac7($req);
+        
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/AC7/'.$head.'/'.$c1tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/AC7/'.$head.'/'.$c1tID));
+        }
+
+    }
+    
+
     
 
 
@@ -455,7 +513,7 @@ class Chapter1Controller extends BaseController{
 
 
 
-
+    
 
 
 
