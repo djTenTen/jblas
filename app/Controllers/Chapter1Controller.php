@@ -340,6 +340,116 @@ class Chapter1Controller extends BaseController{
 
 
 
+    /**
+        ----------------------------------------------------------
+        AC6 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function saveac6ra($code,$head,$c1tID){
+
+        $validationRules = [
+            'question' => 'required'
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
+        $req = [
+            'question' => $this->request->getPost('question'),
+            'planning' => $this->request->getPost('planning'),
+            'finalization' => $this->request->getPost('finalization'),
+            'reference' => $this->request->getPost('reference'),
+            'code' => $code,
+            'part' => $this->request->getPost('part'),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+        ];
+
+        $res = $this->c1model->saveac6ra($req);
+
+        if($res){
+            session()->setFlashdata('success_registration','success_registration');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }else{
+            session()->setFlashdata('failed_registration','failed_registration');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
+    }
+    public function saveac6s12($code,$head,$c1tID){
+
+        $s = [
+            's1' => $this->request->getPost('s1'),
+            's2a' => $this->request->getPost('s2a'),
+            's2b' => $this->request->getPost('s2b')
+        ];
+
+        $req = [
+            'section' => json_encode($s),
+            'code' => $code,
+            'part' => $this->request->getPost('part'),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+        ];
+        $res = $this->c1model->saveac6s12($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
+    }
+    public function saveac6s3($code,$head,$c1tID){
+
+        $validationRules = [
+            'financialstatement' => 'required',
+            'descriptioncontrol' => 'required',
+            'controleffective' => 'required',
+            'controlimplemented' => 'required',
+            'assesed' => 'required',
+            'crosstesting' => 'required',
+            'reliancecontrol' => 'required'
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/c1/manage/AC6/'.$head.'/'.$c1tID));
+        }
+
+        $req = [
+            'financialstatement' => $this->request->getPost('financialstatement'),
+            'descriptioncontrol' => $this->request->getPost('descriptioncontrol'),
+            'controleffective' => $this->request->getPost('controleffective'),
+            'controlimplemented' => $this->request->getPost('controlimplemented'),
+            'assesed' => $this->request->getPost('assesed'),
+            'crosstesting' => $this->request->getPost('crosstesting'),
+            'reliancecontrol' => $this->request->getPost('reliancecontrol'),
+            'code' => $code,
+            'part' => $this->request->getPost('part'),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+        ];
+
+        $res = $this->c1model->saveac6s3($req);
+
+        if($res){
+            session()->setFlashdata('success_registration','success_registration');
+            return redirect()->to(site_url('auditsystem/c1/manage/AC6/'.$head.'/'.$c1tID));
+        }else{
+            session()->setFlashdata('failed_registration','failed_registration');
+            return redirect()->to(site_url('auditsystem/c1/manage/AC6/'.$head.'/'.$c1tID));
+        }
+
+    }
+    
+
+
+
+    
+
+
+
+
 
 
 

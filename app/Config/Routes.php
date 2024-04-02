@@ -36,30 +36,33 @@ $routes->post('/auditsystem/c1/saveac4ppr/(:any)/(:any)/(:any)', 'Chapter1Contro
 $routes->post('/auditsystem/c1/saveac4/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac4/$1/$2/$3');
 //CHAPTER 1 AC5 ROUTES
 $routes->post('/auditsystem/c1/saveac5/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac5/$1/$2/$3');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //CHAPTER 1 AC6 ROUTES
+$routes->post('/auditsystem/c1/saveac6ra/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac6ra/$1/$2/$3');
+$routes->post('/auditsystem/c1/saveac6s12/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac6s12/$1/$2/$3');
+$routes->post('/auditsystem/c1/saveac6s3/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac6s3/$1/$2/$3');
+
+
+
+
+
+
+
+
+
+
+
+
+
 $routes->post('/auditsystem/c1/manage/save/AC6/(:any)/(:any)', 'C1ac6Controller::addac6questions/$1/$2');
 $routes->post('/auditsystem/c1/manage/update/AC6/(:any)/(:any)/(:any)', 'C1ac6Controller::updateac6questions/$1/$2/$3');
 $routes->post('/auditsystem/c1/manage/activeinactive/AC6/(:any)/(:any)/(:any)', 'C1ac6Controller::activeinactiveac6/$1/$2/$3');
 $routes->post('/auditsystem/c1/section/update/AC6/(:any)/(:any)/(:any)', 'C1ac6Controller::udpatesection/$1/$2/$3');
 $routes->post('/auditsystem/c1/section3/save/AC6/(:any)/(:any)', 'C1ac6Controller::savesection3/$1/$2');
 $routes->post('/auditsystem/c1/section3/update/AC6/(:any)/(:any)/(:any)', 'C1ac6Controller::udpatesection3/$1/$2/$3');
+
+
+
+
 //CHAPTER 1 AC7 ROUTES
 $routes->post('/auditsystem/c1/s1/update/AC7/(:any)/(:any)', 'C1ac7Controller::updates1/$1/$2');
 $routes->post('/auditsystem/c1/s2/update/AC7/(:any)/(:any)', 'C1ac7Controller::updates2/$1/$2');

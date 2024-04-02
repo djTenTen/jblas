@@ -402,8 +402,114 @@ class Chapter1Model extends Model{
 
 
 
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AC6 FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getac6($code,$c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'ac6ra', 'code' => $code, 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+    public function gets12($code,$c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'ac6s12', 'code' => $code, 'c1tID' => $c1tID))->get();
+        return $query->getRowArray();
+
+    }
+    public function gets3($code,$c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'ac6s3', 'code' => $code, 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    /**     
+        POST FUNCTIONS
+    */
+    public function saveac6ra($req){
+
+        $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'question' => $req['question'][$i],
+                'planning' => $req['planning'][$i],
+                'finalization' => $req['finalization'][$i],
+                'reference' => $req['reference'][$i],
+                'code' => $req['code'],
+                'c1tID' => $req['c1tID'],
+                'type' => $req['part'],
+                'status' => 'Active',
+                'added_on' => $this->date.' '.$this->time
+            ];
+
+            $this->db->table($this->tblc1)->insert($data);
+        }
+        return true;
+
+    }
+    public function saveac6s12($req){
+
+        $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
+
+        $data = [
+            'question' => $req['section'],
+            'type' =>  $req['part'],
+            'code' =>  $req['code'],
+            'c1tID' => $req['c1tID'],
+            'status' => 'Active',
+            'updated_on' => $this->date.' '.$this->time
+        ];
+
+        if($this->db->table($this->tblc1)->insert($data)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+    public function saveac6s3($req){
+
+        $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
+
+        foreach($req['financialstatement'] as $i => $val){
+
+            $data = [
+                'finstate' => $req['financialstatement'][$i],
+                'desc' => $req['descriptioncontrol'][$i],
+                'controleffect' => $req['controleffective'][$i],
+                'implemented' => $req['controlimplemented'][$i],
+                'assessed' => $req['assesed'][$i],
+                'reference' => $req['crosstesting'][$i],
+                'reliance' => $req['reliancecontrol'][$i],
+                'code' => $req['code'],
+                'c1tID' => $req['c1tID'],
+                'type' => $req['part'],
+                'status' => 'Active',
+                'added_on' => $this->date.' '.$this->time
+            ];
+
+            $this->db->table($this->tblc1)->insert($data);
+        }
+        return true;
+
+    }
     
 
+    
 
 
 

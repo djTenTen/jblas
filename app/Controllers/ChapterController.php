@@ -10,8 +10,6 @@ use \App\Models\Chapter3Model;
 
 
 
-use \App\Models\C1ac5Model;
-use \App\Models\C1ac6Model;
 use \App\Models\C1ac7Model;
 use \App\Models\C1ac8Model;
 use \App\Models\C1ac9Model;
@@ -28,8 +26,7 @@ class ChapterController extends BaseController{
 
 
 
-    protected $ac5model;
-    protected $ac6model;
+
     protected $ac7model;
     protected $ac8model;
     protected $ac9model;
@@ -48,8 +45,7 @@ class ChapterController extends BaseController{
         $this->c3model = new Chapter3Model();
 
 
-        $this->ac5model = new C1ac5Model();
-        $this->ac6model = new C1ac6Model();
+
         $this->ac7model = new C1ac7Model();
         $this->ac8model = new C1ac8Model();
         $this->ac9model = new C1ac9Model();
@@ -135,18 +131,18 @@ class ChapterController extends BaseController{
 
                 $rdata = $this->c1model->getac5($code,$dc1tID);
                 $data['rc'] = json_decode($rdata['question'], true);
-                
+
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac5', $data);
                 echo view('includes/Footer');
                 break;
 
             case 'AC6':
-                $data['ac6'] = $this->ac6model->getac6($dc1tID);
-                $data['s1'] = $this->ac6model->gets1($dc1tID);
-                $data['s2a'] = $this->ac6model->gets2a($dc1tID);
-                $data['s2b'] = $this->ac6model->gets2b($dc1tID);
-                $data['s3'] = $this->ac6model->gets3($dc1tID);
+                $data['ac6'] = $this->c1model->getac6($code,$dc1tID);
+                $rdata = $this->c1model->gets12($code,$dc1tID);
+                $data['s'] = json_decode($rdata['question'], true);
+                $data['s3'] = $this->c1model->gets3($code,$dc1tID);
+
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac6', $data);
                 echo view('includes/Footer');
