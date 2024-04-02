@@ -189,3 +189,146 @@ INFO - 2024-04-02 14:41:08 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-04-02 14:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-02 14:43:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-02 14:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 14:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 14:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 14:54:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 14:54:05 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(839): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\Chapter1Model.php(586): CodeIgniter\Model->__get('crypt')
+ 4 APPPATH\Controllers\Chapter1Controller.php(525): App\Models\Chapter1Model->saveac8([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter1Controller->saveac8('AC8', 'Assessment of Materiality', 'ab45c64f594a6afee38a3566e4c341901e670434b510bd820e900da1ac3dbd4ac564c0267161d611e2bdc1b4e7a2c000f3b2ead776d8887634594179a7840464YYwu6jgsOwpcdWL7tepCkso=')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter1Controller))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 14:54:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 14:54:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 14:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 14:54:19 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(839): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\Chapter1Model.php(586): CodeIgniter\Model->__get('crypt')
+ 4 APPPATH\Controllers\Chapter1Controller.php(525): App\Models\Chapter1Model->saveac8([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter1Controller->saveac8('AC8', 'Assessment of Materiality', 'ab45c64f594a6afee38a3566e4c341901e670434b510bd820e900da1ac3dbd4ac564c0267161d611e2bdc1b4e7a2c000f3b2ead776d8887634594179a7840464YYwu6jgsOwpcdWL7tepCkso=')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter1Controller))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 14:54:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 14:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 14:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 14:57:05 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(839): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\Chapter1Model.php(586): CodeIgniter\Model->__get('crypt')
+ 4 APPPATH\Controllers\Chapter1Controller.php(525): App\Models\Chapter1Model->saveac8([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter1Controller->saveac8('AC8', 'Assessment of Materiality', 'ab45c64f594a6afee38a3566e4c341901e670434b510bd820e900da1ac3dbd4ac564c0267161d611e2bdc1b4e7a2c000f3b2ead776d8887634594179a7840464YYwu6jgsOwpcdWL7tepCkso=')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter1Controller))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 14:57:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 15:01:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 15:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 15:01:24 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(839): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\Chapter1Model.php(586): CodeIgniter\Model->__get('crypt')
+ 4 APPPATH\Controllers\Chapter1Controller.php(525): App\Models\Chapter1Model->saveac8([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter1Controller->saveac8('AC8', 'Assessment of Materiality', 'ab45c64f594a6afee38a3566e4c341901e670434b510bd820e900da1ac3dbd4ac564c0267161d611e2bdc1b4e7a2c000f3b2ead776d8887634594179a7840464YYwu6jgsOwpcdWL7tepCkso=')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter1Controller))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 15:02:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 15:03:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 15:52:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 15:52:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 15:52:24 --> ParseError: syntax error, unexpected token ";"
+in APPPATH\Views\chapter1\Ac8.php on line 48.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter1/ac8', [], true)
+ 3 APPPATH\Controllers\ChapterController.php(166): view('chapter1/ac8', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter1('AC8', 'Assessment of Materiality', 'ab45c64f594a6afee38a3566e4c341901e670434b510bd820e900da1ac3dbd4ac564c0267161d611e2bdc1b4e7a2c000f3b2ead776d8887634594179a7840464YYwu6jgsOwpcdWL7tepCkso=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 15:52:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 15:52:25 --> ParseError: syntax error, unexpected token ";"
+in APPPATH\Views\chapter1\Ac8.php on line 48.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter1/ac8', [], true)
+ 3 APPPATH\Controllers\ChapterController.php(166): view('chapter1/ac8', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter1('AC8', 'Assessment of Materiality', 'ab45c64f594a6afee38a3566e4c341901e670434b510bd820e900da1ac3dbd4ac564c0267161d611e2bdc1b4e7a2c000f3b2ead776d8887634594179a7840464YYwu6jgsOwpcdWL7tepCkso=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 15:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 15:52:26 --> ParseError: syntax error, unexpected token ";"
+in APPPATH\Views\chapter1\Ac8.php on line 48.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter1/ac8', [], true)
+ 3 APPPATH\Controllers\ChapterController.php(166): view('chapter1/ac8', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter1('AC8', 'Assessment of Materiality', 'ab45c64f594a6afee38a3566e4c341901e670434b510bd820e900da1ac3dbd4ac564c0267161d611e2bdc1b4e7a2c000f3b2ead776d8887634594179a7840464YYwu6jgsOwpcdWL7tepCkso=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 15:52:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 15:52:29 --> ParseError: syntax error, unexpected token ";"
+in APPPATH\Views\chapter1\Ac8.php on line 48.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('chapter1/ac8', [], true)
+ 3 APPPATH\Controllers\ChapterController.php(166): view('chapter1/ac8', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->managechapter1('AC8', 'Assessment of Materiality', 'ab45c64f594a6afee38a3566e4c341901e670434b510bd820e900da1ac3dbd4ac564c0267161d611e2bdc1b4e7a2c000f3b2ead776d8887634594179a7840464YYwu6jgsOwpcdWL7tepCkso=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 15:52:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 15:52:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 15:52:54 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(839): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\Chapter1Model.php(586): CodeIgniter\Model->__get('crypt')
+ 4 APPPATH\Controllers\Chapter1Controller.php(525): App\Models\Chapter1Model->saveac8([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter1Controller->saveac8('AC8', 'Assessment of Materiality', 'ab45c64f594a6afee38a3566e4c341901e670434b510bd820e900da1ac3dbd4ac564c0267161d611e2bdc1b4e7a2c000f3b2ead776d8887634594179a7840464YYwu6jgsOwpcdWL7tepCkso=')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter1Controller))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 15:53:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 15:53:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 15:55:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 15:58:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 15:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 15:59:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:01:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:01:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 16:01:12 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(839): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\Chapter1Model.php(586): CodeIgniter\Model->__get('crypt')
+ 4 APPPATH\Controllers\Chapter1Controller.php(526): App\Models\Chapter1Model->saveac8([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter1Controller->saveac8('AC8', 'Assessment of Materiality', 'ab45c64f594a6afee38a3566e4c341901e670434b510bd820e900da1ac3dbd4ac564c0267161d611e2bdc1b4e7a2c000f3b2ead776d8887634594179a7840464YYwu6jgsOwpcdWL7tepCkso=')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter1Controller))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 16:01:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-02 16:01:19 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(839): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\Chapter1Model.php(586): CodeIgniter\Model->__get('crypt')
+ 4 APPPATH\Controllers\Chapter1Controller.php(526): App\Models\Chapter1Model->saveac8([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Chapter1Controller->saveac8('AC8', 'Assessment of Materiality', 'ab45c64f594a6afee38a3566e4c341901e670434b510bd820e900da1ac3dbd4ac564c0267161d611e2bdc1b4e7a2c000f3b2ead776d8887634594179a7840464YYwu6jgsOwpcdWL7tepCkso=')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Chapter1Controller))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-02 16:02:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:02:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:03:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 16:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

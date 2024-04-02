@@ -414,7 +414,7 @@ class Chapter1Controller extends BaseController{
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/c1/manage/AC6/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
         }
 
         $req = [
@@ -434,10 +434,10 @@ class Chapter1Controller extends BaseController{
 
         if($res){
             session()->setFlashdata('success_registration','success_registration');
-            return redirect()->to(site_url('auditsystem/c1/manage/AC6/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
         }else{
             session()->setFlashdata('failed_registration','failed_registration');
-            return redirect()->to(site_url('auditsystem/c1/manage/AC6/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
         }
 
     }
@@ -494,21 +494,54 @@ class Chapter1Controller extends BaseController{
         
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/AC7/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/AC7/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
         }
 
     }
-    
+
+
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AC8 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function saveac8($code,$head,$c1tID){
+
+        $req = [
+            'question' => $this->request->getPost('question'),
+            'acid' => $this->request->getPost('acid')
+        ];
+
+        $res = $this->c1model->saveac8($req);
+        
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
+
+    }
 
     
 
 
 
 
-
+    
 
 
 

@@ -8,11 +8,12 @@ class Chapter1Model extends Model{
 
     protected $tblc1 = "tbl_c1";
     protected $time,$date;
+    protected $crypt;
 
     public function __construct(){
 
         $this->db = \Config\Database::connect('default'); 
-
+        $this->crypt = \Config\Services::encrypter();
         date_default_timezone_set("Asia/Singapore"); 
         $this->time = date("H:i:s");
         $this->date = date("Y-m-d");
@@ -518,7 +519,7 @@ class Chapter1Model extends Model{
 
     /**
         ----------------------------------------------------------
-        AC6 FUNCTIONS
+        AC7 FUNCTIONS
         ----------------------------------------------------------
 
         GET FUNCTIONS
@@ -554,6 +555,46 @@ class Chapter1Model extends Model{
     }
 
 
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AC8 FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getac8($code,$c1tID,$part){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => $code, 'c1tID' => $c1tID))->get();
+        return $query->getRowArray();
+
+    }
+
+    /**     
+        POST FUNCTIONS
+    */
+    public function saveac8($req){
+
+        foreach($req['question'] as $i => $val){
+
+            $dacid = $this->crypt->decrypt($req['acid'][$i]);
+            $data = [
+                'question' => $req['question'][$i],
+                'updated_on' => $this->date.' '.$this->time
+            ];
+            $this->db->table($this->tblc1)->where('acID', $dacid)->update($data);
+
+        }
+
+        return true;
+    }
 
 
 
