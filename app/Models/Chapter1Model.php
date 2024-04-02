@@ -211,6 +211,85 @@ class Chapter1Model extends Model{
 
 
 
+    /**
+        ----------------------------------------------------------
+        AC1 FUNCTIONS
+        ----------------------------------------------------------
+
+        GET FUNCTIONS
+    */
+    public function getac3genmat($code,$c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'genmat', 'code' => $code, 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+    public function getac3doccors($code,$c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'doccors', 'code' => $code, 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+    public function getac3statutory($code,$c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'statutory', 'code' => $code, 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+    public function getac3accsys($code,$c1tID){
+
+        $query = $this->db->table($this->tblc1)->where(array('type' => 'accsys', 'code' => $code, 'c1tID' => $c1tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaep($code,$c1tID){
+
+        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac2', 'type' => $code, 'c1tID' => $c1tID))->get();
+        return $query->getRowArray();
+
+    }
+
+    /** 
+        POST FUNCTIONS
+    */
+    public function saveac3($req){
+
+        $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'question' => $req['question'][$i],
+                'yesno' => $req['yesno'][$i],
+                'comment' => $req['comment'][$i],
+                'code' => $req['code'],
+                'c1tID' => $req['c1tID'],
+                'type' => $req['part'],
+                'status' => 'Active',
+                'added_on' => $this->date.' '.$this->time
+            ];
+
+            $this->db->table($this->tblc1)->insert($data);
+
+        }
+
+        return true;
+
+    }
+
+
+
+
+
+
+
+
+
+
+    
+
+
 
 
 

@@ -8,7 +8,7 @@ use \App\Models\ChapterModel;
 use \App\Models\Chapter1Model;
 use \App\Models\Chapter3Model;
 
-use \App\Models\C1ac3Model;
+
 use \App\Models\C1ac4Model;
 use \App\Models\C1ac5Model;
 use \App\Models\C1ac6Model;
@@ -26,8 +26,7 @@ class ChapterController extends BaseController{
     protected $c1model;
     protected $c3model;
 
-
-    protected $ac3model;
+    
     protected $ac4model;
     protected $ac5model;
     protected $ac6model;
@@ -48,8 +47,6 @@ class ChapterController extends BaseController{
         $this->c1model = new Chapter1Model();
         $this->c3model = new Chapter3Model();
 
-
-        $this->ac3model = new C1ac3Model();
         $this->ac4model = new C1ac4Model();
         $this->ac5model = new C1ac5Model();
         $this->ac6model = new C1ac6Model();
@@ -114,10 +111,10 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC3':
-                $data['ac3genmat'] = $this->ac3model->getac3genmat($dc1tID);
-                $data['ac3doccors'] = $this->ac3model->getac3doccors($dc1tID);
-                $data['ac3statutory'] = $this->ac3model->getac3statutory($dc1tID);
-                $data['ac3accsys'] = $this->ac3model->getac3accsys($dc1tID);
+                $data['ac3genmat'] = $this->c1model->getac3genmat($code,$dc1tID);
+                $data['ac3doccors'] = $this->c1model->getac3doccors($code,$dc1tID);
+                $data['ac3statutory'] = $this->c1model->getac3statutory($code,$dc1tID);
+                $data['ac3accsys'] = $this->c1model->getac3accsys($code,$dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac3', $data);
                 echo view('includes/Footer');

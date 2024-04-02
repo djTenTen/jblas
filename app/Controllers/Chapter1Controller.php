@@ -123,7 +123,7 @@ class Chapter1Controller extends BaseController{
 
     /**
         ----------------------------------------------------------
-        AC1 FUNCTIONS
+        AC2 FUNCTIONS
         ----------------------------------------------------------
     */
     public function saveac2($code,$head,$c1tID){
@@ -179,6 +179,50 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        AC3 FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function saveac3($code,$head,$c1tID){
+
+        $validationRules = [
+            'question' => 'required'
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
+        $req = [
+            'question' => $this->request->getPost('question'),
+            'yesno' => $this->request->getPost('yesno'),
+            'comment' => $this->request->getPost('comment'),
+            'code' => $code,
+            'part' => $this->request->getPost('part'),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+        ];
+
+        $res = $this->c1model->saveac3($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+        }
+
+    }
 
 
     
