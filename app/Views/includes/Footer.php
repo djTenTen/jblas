@@ -55,13 +55,12 @@
                     <div class="msgconfirm">
 
                     </div>
-                    
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
                     <form id="myactiveform" action="" method="post">
                         <button class="btn btn-primary" type="submit">Confirm</button>
-                    <?= form_close();?>
+                    </form>
                 </div>
             </div>
         </div>

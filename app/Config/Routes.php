@@ -21,13 +21,14 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('/auditsystem/firms', 'FirmsController::viewfirms');
     $routes->post('/auditsystem/firms/verify/(:any)', 'FirmsController::verifyfirm/$1');
     
-
-
-
-
-
-
-
+    // Position Management
+    $routes->get('/auditsystem/position', 'PositionController::viewposition');
+    $routes->post('/auditsystem/position/save', 'PositionController::addposition');
+    $routes->get('/auditsystem/position/edit/(:any)', 'PositionController::editposition/$1');
+    $routes->post('/auditsystem/position/update/(:any)', 'PositionController::updateposition/$1');
+    $routes->post('/auditsystem/position/acin/(:any)', 'PositionController::acin/$1');
+    
+    
 
 
 

@@ -172,9 +172,9 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
-                    <form id="myactiveform" action="<?= base_url('logout')?>" method="post">
+                    <form action="<?= base_url('logout')?>" method="post">
                         <button class="btn btn-primary" type="submit">Confirm</button>
-                    <?= form_close();?>
+                    </form>
                 </div>
             </div>
         </div>
@@ -205,7 +205,12 @@
                         <!-- Sidenav Menu Heading (Core)-->
                         <div class="sidenav-menu-heading">Core</div>
                         <!-- Sidenav Accordion (Dashboard)-->
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                        <a class="nav-link" href="<?= base_url('auditsystem')?>">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Dashboards
+                        </a>
+
+                        <!-- <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Dashboards
                             <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -219,9 +224,9 @@
                                 <a class="nav-link" href="dashboard-2.html">Multipurpose</a>
                                 <a class="nav-link" href="dashboard-3.html">Affiliate</a>
                             </nav>
-                        </div>
+                        </div> -->
 
-                        <div class="sidenav-menu-heading">Client</div>
+                        <div class="sidenav-menu-heading">Managements</div>
                        
                             
                         <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseClient" aria-expanded="false" aria-controls="collapseClient">
@@ -232,14 +237,26 @@
                         <div class="collapse" id="collapseClient" data-bs-parent="#accordionSidenav">
                             <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
                                 <a class="nav-link" href="<?= base_url()?>auditsystem/clients/view">Clients</a>
-                                <a class="nav-link" href="<?= base_url()?>auditsystem/clients/view">Auditing</a>
+                                <a class="nav-link" href="<?= base_url()?>auditsystem/clients/view">Set Defaults</a>
+                            </nav>
+                        </div>
+
+                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseAuditor" aria-expanded="false" aria-controls="collapseAuditor">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Auditor Management
+                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseAuditor" data-bs-parent="#accordionSidenav">
+                            <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                                <a class="nav-link" href="<?= base_url()?>auditsystem/clients/view">Auditor</a>
                             </nav>
                         </div>
 
 
                         <div class="sidenav-menu-heading">System</div>
 
-                         <a class="nav-link" href="<?= base_url('auditsystem/firms')?>">
+
+                        <a class="nav-link" href="<?= base_url('auditsystem/firms')?>">
                             <div class="nav-link-icon"><i data-feather="filter"></i></div>
                             Firms
                         </a>
@@ -265,8 +282,10 @@
                                         <a class="nav-link" href="<?= base_url()?>auditsystem/c5/view">Prof Dividers</a>
                                     </nav>
                                 </div>
-                                <!-- Nested Sidenav Accordion (Pages -> Authentication)-->
-                               
+                                <a class="nav-link" href="<?= base_url('auditsystem/position')?>">
+                                    <div class="nav-link-icon"><i data-feather="filter"></i></div>
+                                    Position
+                                </a>
                             </nav>
                         </div>
 
