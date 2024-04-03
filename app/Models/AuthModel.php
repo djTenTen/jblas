@@ -4,6 +4,7 @@ use CodeIgniter\Model;
 class AuthModel extends  Model {
 
     protected $tbluser = "tbl_users";
+    protected $tblfirm = "tbl_firm";
     protected $crypt;
 
     public function __construct(){
@@ -18,10 +19,9 @@ class AuthModel extends  Model {
         $email = $req['email'];
         $pass = $req['password'];
 
-        $q = "select * from {$this->tbluser} where BINARY email = ?"; 
+        $q = "select * from {$this->tbluser} as tu,{$this->tblfirm} as tf where BINARY email = ? and tu.firm = tf.firmID"; 
         $user = $this->db->query($q, $email);
-        $ud = $user->getRowArray();
-        if($user->getNumRows() >= 0 && $user->getNumRows() <= 1){
+        if($user->getNumRows() == 1){
             $ud = $user->getRowArray();
             $dpss = $this->crypt->decrypt($ud['pass']);
             if($ud['verified'] == "Yes"){
@@ -30,7 +30,8 @@ class AuthModel extends  Model {
                         $arr = [
                             'userID' => $ud['userID'],
                             'name' => $ud['name'],
-                            'email' => $ud['email']
+                            'email' => $ud['email'],
+                            'firm' => $ud['firm']
                         ];
                         return $arr;
                     }else{

@@ -25,7 +25,7 @@
         <!-- * * Tip * * You can use text or an image for your navbar brand.-->
         <!-- * * * * * * When using an image, we recommend the SVG format.-->
         <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
-        <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="auditsystem">ApplAud Software Solutions - Auditing System</a>
+        <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="auditsystem">ApplAud - <?= session()->get('firm')?></a>
        
         <!-- Navbar Items-->
         <ul class="navbar-nav align-items-center ms-auto">
@@ -156,7 +156,7 @@
             </li>
         </ul>
     </nav>
-
+    
     <!-- Modal Logout-->
     <div class="modal fade" id="logoutmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -221,7 +221,9 @@
                             </nav>
                         </div>
 
-                        <div class="sidenav-menu-heading">Custumer Management</div>
+                        <div class="sidenav-menu-heading">Client</div>
+                       
+                            
                         <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseClient" aria-expanded="false" aria-controls="collapseClient">
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Client Management
@@ -230,12 +232,18 @@
                         <div class="collapse" id="collapseClient" data-bs-parent="#accordionSidenav">
                             <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
                                 <a class="nav-link" href="<?= base_url()?>auditsystem/clients/view">Clients</a>
-                                <a class="nav-link" href="<?= base_url()?>auditsystem/clients/view">Tenants</a>
+                                <a class="nav-link" href="<?= base_url()?>auditsystem/clients/view">Auditing</a>
                             </nav>
                         </div>
 
 
                         <div class="sidenav-menu-heading">System</div>
+
+                         <a class="nav-link" href="<?= base_url('auditsystem/firms')?>">
+                            <div class="nav-link-icon"><i data-feather="filter"></i></div>
+                            Firms
+                        </a>
+
                         <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="nav-link-icon"><i data-feather="grid"></i></div>
                             Settings

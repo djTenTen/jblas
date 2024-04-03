@@ -38,6 +38,7 @@ class AuthController extends BaseController{
             'password' => $this->request->getPost('password')
         ];
 
+        
         $res = $this->authModel->authenticate($req);
 
         switch ($res) {
@@ -64,7 +65,8 @@ class AuthController extends BaseController{
                 'authentication' => true,
                 'userID' => $this->crypt->encrypt($res['userID']),
                 'name' => $res['name'],
-                'email' => $res['email']
+                'email' => $res['email'],
+                'firm' => $res['firm']
             ];
             session()->set($user_data);
 

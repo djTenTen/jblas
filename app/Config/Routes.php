@@ -9,11 +9,37 @@ $routes->get('/', 'HomeController::homepage');
 $routes->get('/login', 'HomeController::homepage');
 $routes->post('/authenticate', 'AuthController::auth');
 $routes->post('/logout', 'AuthController::logout');
+$routes->get('/register', 'UserController::register');
+$routes->post('/signup', 'UserController::signup');
 
 $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('/dashboard', 'DashController::dashboard');
     //Audit System
     $routes->get('/auditsystem', 'DashController::auditsystem');
+
+    // auditinf firm management
+    $routes->get('/auditsystem/firms', 'FirmsController::viewfirms');
+    $routes->post('/auditsystem/firms/verify/(:any)', 'FirmsController::verifyfirm/$1');
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     /**
         ----------------------------------------------------------
         CHAPTER 1 AREA
@@ -127,7 +153,7 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('/auditsystem/clients/defaults/(:any)', 'ClientController::clientdefaults/$1');
 
 
-    
+
 
 });
 
