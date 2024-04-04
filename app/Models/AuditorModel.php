@@ -4,12 +4,12 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ClientModel extends Model{
+class AuditorModel extends Model{
    
 
-    protected $tblc = "tbl_clients";
+    protected $tblu = "tbl_users";
     protected $tblf = "tbl_firm";
-    protected $tblc1t = "tbl_c1_titles";
+    protected $tblp = "tbl_position";
     protected $time,$date;
 
     public function __construct(){
@@ -22,90 +22,69 @@ class ClientModel extends Model{
 
     }
 
-    public function editclient($cID){
+    public function editauditor($duID){
 
-        $query = $this->db->table($this->tblc)->where('cID', $cID)->get();
+        $query = $this->db->table($this->tblu)->where('userID', $duID)->get();
         $r = $query->getRowArray();
         $data = [
             'name' => $r['name'],
-            'org' => $r['org'],
             'email' => $r['email'],
+            'type' =>  $r['type']
         ];
         return json_encode($data);
-    }
-
-    public function getclients($fID){
-
-        $query = $this->db->query("select *, tc.status
-        from {$this->tblc} as tc, {$this->tblf} as tf
-        where tc.fID = tf.firmID
-        and tc.fID = {$fID}");
-        return $query->getResultArray();
-
-    }
-
-    public function getc1(){
-
-        $query =  $this->db->table($this->tblc1t)->get();
-        return $query->getResultArray();
-
-    }
-
-
-    public function getclientname($cID){
-
-        $query = $this->db->table($this->tblc)->where('cID',$cID)->get();
-        return $query->getRowArray();
-
-    }
     
+    }
 
-    public function saveclient($req){
+    public function getauditor($fID,$uID){
 
-        $res1 = $this->db->table($this->tblc)->where('email', $req['email'])->get()->getNumRows();
-        $res2 = $this->db->table($this->tblc)->where('name', $req['name'])->get()->getNumRows();
+        $query = $this->db->query("select *, tu.status, tp.position
+        from {$this->tblu} as tu, {$this->tblf} as tf, {$this->tblp} as tp
+        where tu.firm = tf.firmID
+        and tu.position = tp.posID
+        and tu.firm = {$fID}
+        and tu.type != 'Admin'
+        and tu.userID != {$uID}");
+        return $query->getResultArray();
 
-        if($res1 >= 1 or $res2 >= 1){
+    }
 
+    public function saveauditor($req){
+
+        $res1 = $this->db->table($this->tblu)->where('email', $req['email'])->get()->getNumRows();
+
+        if($res1 >= 1){
             return 'exist';
-
         }else{
-
             $data = [
                 'name' => ucfirst($req['name']),
-                'org' => ucfirst($req['org']),
                 'email' => $req['email'],
-                'fID' => $req['fID'],
+                'pass' => $req['pass'],
+                'type' => $req['type'],
+                'firm' => $req['fID'],
+                'position' => $req['pos'],
                 'status' => 'Active',
+                'verified' => 'No',
                 'added_on' => $this->date.' '.$this->time,
             ];
-
-            if($this->db->table($this->tblc)->insert($data)){
-
+            if($this->db->table($this->tblu)->insert($data)){
                 return 'registered';
-
             }else{
-
                 return 'failed';
-
             }
-
-
         }
-        
 
     }
 
-    public function updateclient($req){
+    public function updateauditor($req){
 
         $data = [
             'name' => $req['name'],
-            'org' => $req['org'],
             'email' => $req['email'],
+            'type' => $req['type'],
             'updated_on' => $this->date.' '.$this->time
         ];
 
-        if($this->db->table($this->tblc)->where('cID', $req['cID'])->update($data)){
+        if($this->db->table($this->tblu)->where('userID', $req['uID'])->update($data)){
             return 'updated';
         }else{
             return 'failed';
@@ -115,9 +94,10 @@ class ClientModel extends Model{
 
 
 
-    public function acin($dcID){
 
-        $query = $this->db->table($this->tblc)->where('cID', $dcID)->get();
+    public function acin($duID){
+
+        $query = $this->db->table($this->tblu)->where('userID', $duID)->get();
         $r = $query->getRowArray();
         $stat = '';
         if($r['status'] == 'Active'){
@@ -129,7 +109,7 @@ class ClientModel extends Model{
             'status' => $stat,
             'updated_on' => $this->date.' '.$this->time
         ];
-        if($this->db->table($this->tblc)->where('cID', $dcID)->update($data)){
+        if($this->db->table($this->tblu)->where('userID', $duID)->update($data)){
             return true;
         }else{
             return false;

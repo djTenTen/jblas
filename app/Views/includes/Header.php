@@ -256,7 +256,7 @@
                         <?php if(session()->get('allowed')->aud == "Yes"){?>
                         <div class="collapse" id="collapseAuditor" data-bs-parent="#accordionSidenav">
                             <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                <a class="nav-link" href="<?= base_url()?>auditsystem/clients/view">Auditor</a>
+                                <a class="nav-link" href="<?= base_url()?>auditsystem/auditor">Auditor</a>
                             </nav>
                         </div>
                         <?php }?>

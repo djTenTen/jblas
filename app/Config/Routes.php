@@ -35,16 +35,13 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('/auditsystem/client/edit/(:any)', 'ClientController::editclient/$1');
     $routes->post('/auditsystem/client/update/(:any)', 'ClientController::updateclient/$1');
     $routes->post('/auditsystem/client/acin/(:any)', 'ClientController::acin/$1');
-    // Client Management
-    // $routes->get('/auditsystem/clients/view', 'ClientController::viewclient');
-    // $routes->get('/auditsystem/clients/defaults/(:any)', 'ClientController::clientdefaults/$1');
-
-
-
-
-
-
-
+    // Auditor Management
+    $routes->get('/auditsystem/auditor', 'AuditorController::viewauditor');
+    $routes->post('/auditsystem/auditor/save', 'AuditorController::addauditor');
+    $routes->get('/auditsystem/auditor/edit/(:any)', 'AuditorController::editauditor/$1');
+    $routes->post('/auditsystem/auditor/update/(:any)', 'AuditorController::updateauditor/$1');
+    $routes->post('/auditsystem/auditor/acin/(:any)', 'AuditorController::acin/$1');
+    
 
 
     

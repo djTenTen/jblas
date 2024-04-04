@@ -62,9 +62,9 @@
             <?php  }?>
 
             <div class="card-body">
-
+            <?php if(session()->get('allowed')->add == "Yes"){?>
             <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addclient">Add Client</button>
-            
+            <?php  }?>
             <table class="table table-hover" id="datatablesSimple">
                 <thead>
                     <tr>
@@ -85,11 +85,15 @@
                             <td><?= $r['email']?></td>
                             <td><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>                            
                             <td>
-                                <button class="btn btn-primary btn-icon btn-sm get-data" title="Edit" type="button" data-bs-toggle="modal" data-bs-target="#edit"  data-name="<?= $r['name']?>" data-cid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>"><i class="fas fa-edit"></i></button>
-                                <?php if($r['status'] == 'Active'){?>
-                                    <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-name="<?= $r['name']?>" data-cid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
-                                <?php }else{?>
-                                    <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-name="<?= $r['name']?>" data-cid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
+                                <?php if(session()->get('allowed')->edit == "Yes"){?>
+                                    <button class="btn btn-primary btn-icon btn-sm get-data" title="Edit" type="button" data-bs-toggle="modal" data-bs-target="#edit"  data-name="<?= $r['name']?>" data-cid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>"><i class="fas fa-edit"></i></button>
+                                <?php }?>
+                                <?php if(session()->get('allowed')->acin == "Yes"){?>
+                                    <?php if($r['status'] == 'Active'){?>
+                                        <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-name="<?= $r['name']?>" data-cid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
+                                    <?php }else{?>
+                                        <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-name="<?= $r['name']?>" data-cid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
+                                    <?php }?>
                                 <?php }?>
                             </td>
                         </tr>
@@ -147,7 +151,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Register a Client</h5>
+                <h5 class="modal-title" id="exampleModalCenterTitle">Edit a Client</h5>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
