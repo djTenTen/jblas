@@ -28,9 +28,16 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('/auditsystem/position/update/(:any)', 'PositionController::updateposition/$1');
     $routes->post('/auditsystem/position/acin/(:any)', 'PositionController::acin/$1');
     
-    
 
-
+    // Client Management
+    $routes->get('/auditsystem/client', 'ClientController::viewclient');
+    $routes->post('/auditsystem/client/save', 'ClientController::addclient');
+    $routes->get('/auditsystem/client/edit/(:any)', 'ClientController::editclient/$1');
+    $routes->post('/auditsystem/client/update/(:any)', 'ClientController::updateclient/$1');
+    $routes->post('/auditsystem/client/acin/(:any)', 'ClientController::acin/$1');
+    // Client Management
+    // $routes->get('/auditsystem/clients/view', 'ClientController::viewclient');
+    // $routes->get('/auditsystem/clients/defaults/(:any)', 'ClientController::clientdefaults/$1');
 
 
 
@@ -149,9 +156,7 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
         ----------------------------------------------------------
     */
     $routes->get('/auditsystem/c5/view', 'ChapterController::viewchapter5');
-    // Client Management
-    $routes->get('/auditsystem/clients/view', 'ClientController::viewclient');
-    $routes->get('/auditsystem/clients/defaults/(:any)', 'ClientController::clientdefaults/$1');
+
 
 
 

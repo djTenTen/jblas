@@ -42,6 +42,7 @@ class UserModel extends  Model {
                 'firm'  => $insertedId,
                 'email' => $req['email'],
                 'pass'  => $req['pass'],
+                'position'  => 3,
                 'type'  => 'Auditing Firm',
                 'verified'  => 'No',
                 'status'    => 'Active',

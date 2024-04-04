@@ -205,11 +205,12 @@
                         <!-- Sidenav Menu Heading (Core)-->
                         <div class="sidenav-menu-heading">Core</div>
                         <!-- Sidenav Accordion (Dashboard)-->
+                        <?php if(session()->get('allowed')->dash == "Yes"){?>
                         <a class="nav-link" href="<?= base_url('auditsystem')?>">
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Dashboards
                         </a>
-
+                        <?php }?>
                         <!-- <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Dashboards
@@ -227,68 +228,77 @@
                         </div> -->
 
                         <div class="sidenav-menu-heading">Managements</div>
-                       
-                            
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseClient" aria-expanded="false" aria-controls="collapseClient">
-                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
-                            Client Management
-                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseClient" data-bs-parent="#accordionSidenav">
-                            <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                <a class="nav-link" href="<?= base_url()?>auditsystem/clients/view">Clients</a>
-                                <a class="nav-link" href="<?= base_url()?>auditsystem/clients/view">Set Defaults</a>
-                            </nav>
-                        </div>
-
+ 
+                        <?php if(session()->get('allowed')->clm == "Yes"){?>
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseClient" aria-expanded="false" aria-controls="collapseClient">
+                                <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                                Client Management
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseClient" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                                <?php if(session()->get('allowed')->cl == "Yes"){?>
+                                    <a class="nav-link" href="<?= base_url()?>auditsystem/client">Clients</a>
+                                <?php }?>
+                                <?php if(session()->get('allowed')->sd == "Yes"){?>
+                                    <a class="nav-link" href="<?= base_url()?>auditsystem/myauditors">Set Defaults</a>
+                                <?php }?>
+                                </nav>
+                            </div>
+                        <?php }?>
+                        <?php if(session()->get('allowed')->audm == "Yes"){?>
                         <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseAuditor" aria-expanded="false" aria-controls="collapseAuditor">
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Auditor Management
                             <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
+                        <?php }?>
+                        <?php if(session()->get('allowed')->aud == "Yes"){?>
                         <div class="collapse" id="collapseAuditor" data-bs-parent="#accordionSidenav">
                             <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
                                 <a class="nav-link" href="<?= base_url()?>auditsystem/clients/view">Auditor</a>
                             </nav>
                         </div>
+                        <?php }?>
 
 
-                        <div class="sidenav-menu-heading">System</div>
+                        <?php if(session()->get('allowed')->sett == "Yes"){?>
+                            <div class="sidenav-menu-heading">System</div>
 
-
-                        <a class="nav-link" href="<?= base_url('auditsystem/firms')?>">
-                            <div class="nav-link-icon"><i data-feather="filter"></i></div>
-                            Firms
-                        </a>
-
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                            <div class="nav-link-icon"><i data-feather="grid"></i></div>
-                            Settings
-                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapsePages" data-bs-parent="#accordionSidenav">
-                            <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
-                                <!-- Nested Sidenav Accordion (Pages -> Account)-->
-                                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
-                                    HAT Audit
-                                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseAccount" data-bs-parent="#accordionSidenavPagesMenu">
-                                    <nav class="sidenav-menu-nested nav">
-                                        <a class="nav-link" href="<?= base_url()?>auditsystem/c1/view">Chapter 1</a>
-                                        <a class="nav-link" href="<?= base_url()?>auditsystem/c2/view">Chapter 2</a>
-                                        <a class="nav-link" href="<?= base_url()?>auditsystem/c3/view">Chapter 3</a>
-                                        <a class="nav-link" href="<?= base_url()?>auditsystem/c4/view">Prof Documents</a>
-                                        <a class="nav-link" href="<?= base_url()?>auditsystem/c5/view">Prof Dividers</a>
-                                    </nav>
-                                </div>
-                                <a class="nav-link" href="<?= base_url('auditsystem/position')?>">
-                                    <div class="nav-link-icon"><i data-feather="filter"></i></div>
-                                    Position
-                                </a>
-                            </nav>
-                        </div>
-
+                            <?php if(session()->get('allowed')->frm == "Yes"){?>
+                            <a class="nav-link" href="<?= base_url('auditsystem/firms')?>">
+                                <div class="nav-link-icon"><i data-feather="filter"></i></div>
+                                Firms
+                            </a>
+                            <?php }?>
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                Settings
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
+                                    <!-- Nested Sidenav Accordion (Pages -> Account)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
+                                        HAT Audit
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAccount" data-bs-parent="#accordionSidenavPagesMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="<?= base_url()?>auditsystem/c1/view">Chapter 1</a>
+                                            <a class="nav-link" href="<?= base_url()?>auditsystem/c2/view">Chapter 2</a>
+                                            <a class="nav-link" href="<?= base_url()?>auditsystem/c3/view">Chapter 3</a>
+                                            <a class="nav-link" href="<?= base_url()?>auditsystem/c4/view">Prof Documents</a>
+                                            <a class="nav-link" href="<?= base_url()?>auditsystem/c5/view">Prof Dividers</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link" href="<?= base_url('auditsystem/position')?>">
+                                        <div class="nav-link-icon"><i data-feather="filter"></i></div>
+                                        Position
+                                    </a>
+                                </nav>
+                            </div>
+                        <?php }?>
 
 
                         <div class="sidenav-menu-heading">User Management</div>

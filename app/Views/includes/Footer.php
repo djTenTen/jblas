@@ -13,36 +13,6 @@
         </div>
     </div>    
 
-
-    <!-- Modal EDIT-->
-    <div class="modal fade" id="modaledit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Edit Field</h5>
-                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                <form id="myform" action="" method="post">
-
-                    <div class="loading">
-                    
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
-                    <button class="btn btn-primary" type="submit">Save changes</button>
-                    <?= form_close();?>
-
-                    <div class="inactive">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Modal ACTIVE-->
     <div class="modal fade" id="modealactive" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

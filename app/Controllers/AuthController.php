@@ -66,7 +66,11 @@ class AuthController extends BaseController{
                 'userID' => $this->crypt->encrypt($res['userID']),
                 'name' => $res['name'],
                 'email' => $res['email'],
-                'firm' => $res['firm']
+                'firm' => $res['firm'],
+                'firmID' => $this->crypt->encrypt($res['firmID']),
+                'pos' => $res['pos'],
+                'posID' => $this->crypt->encrypt($res['posID']),
+                'allowed' => $res['allowed'],
             ];
             session()->set($user_data);
 
