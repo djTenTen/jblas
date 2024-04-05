@@ -10,6 +10,8 @@ class ClientModel extends Model{
     protected $tblc = "tbl_clients";
     protected $tblf = "tbl_firm";
     protected $tblc1t = "tbl_c1_titles";
+    protected $tblc2t = "tbl_c2_titles";
+    protected $tblc3t = "tbl_c3_titles";
     protected $time,$date;
 
     public function __construct(){
@@ -46,16 +48,22 @@ class ClientModel extends Model{
 
     public function getc1(){
 
-        $query =  $this->db->table($this->tblc1t)->get();
+        $query = $this->db->table($this->tblc1t)->get();
         return $query->getResultArray();
 
     }
 
+    public function getc2(){
 
-    public function getclientname($cID){
+        $query = $this->db->table($this->tblc2t)->get();
+        return $query->getResultArray();
 
-        $query = $this->db->table($this->tblc)->where('cID',$cID)->get();
-        return $query->getRowArray();
+    }
+
+    public function getc3(){
+
+        $query = $this->db->table($this->tblc3t)->get();
+        return $query->getResultArray();
 
     }
     

@@ -241,7 +241,7 @@
                                     <a class="nav-link" href="<?= base_url()?>auditsystem/client">Clients</a>
                                 <?php }?>
                                 <?php if(session()->get('allowed')->sd == "Yes"){?>
-                                    <a class="nav-link" href="<?= base_url()?>auditsystem/myauditors">Set Defaults</a>
+                                    <a class="nav-link" href="<?= base_url()?>auditsystem/client/set">Set Defaults</a>
                                 <?php }?>
                                 </nav>
                             </div>

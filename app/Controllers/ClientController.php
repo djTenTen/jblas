@@ -26,6 +26,20 @@ class ClientController extends BaseController{
 
     }
 
+    public function viewfiles($cID,$name){
+
+        $data['title'] = 'HAT Audit Files for '. $name;
+
+        $data['c1'] = $this->cmodel->getc1();
+        $data['c2'] = $this->cmodel->getc2();
+        $data['c3'] = $this->cmodel->getc3();
+
+        echo view('includes/Header', $data);
+        echo view('client/ViewFiles', $data);
+        echo view('includes/Footer');
+
+    }
+
     public function viewclient(){
 
         $fID = $this->crypt->decrypt(session()->get('firmID'));
@@ -40,12 +54,13 @@ class ClientController extends BaseController{
     
     }
 
-    public function clientdefaults($cID){
+    public function viewclientset(){
 
-        $data['title'] = 'Client Default Management';
-        $res = $this->cmodel->getclientname($this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)));
-        $data['header'] = $res['name'];
-        $data['c1'] = $this->cmodel->getc1();
+        $fID = $this->crypt->decrypt(session()->get('firmID'));
+        // main content
+        $data['title'] = 'Client Management Set Defaults';
+
+        $data['client'] = $this->cmodel->getclients($fID);
 
         echo view('includes/Header', $data);
         echo view('client/ClientDefaults', $data);
