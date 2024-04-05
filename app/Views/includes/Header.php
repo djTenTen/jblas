@@ -302,7 +302,12 @@
 
 
                         <div class="sidenav-menu-heading">User Management</div>
-
+                        <?php if(session()->get('allowed')->sett == "Yes"){?>
+                            <a class="nav-link" href="<?= base_url('auditsystem/user')?>">
+                                <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                                Users
+                            </a>
+                        <?php }?>
                         
                     </div>
                 </div>

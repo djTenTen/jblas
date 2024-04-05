@@ -27,8 +27,6 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('/auditsystem/position/edit/(:any)', 'PositionController::editposition/$1');
     $routes->post('/auditsystem/position/update/(:any)', 'PositionController::updateposition/$1');
     $routes->post('/auditsystem/position/acin/(:any)', 'PositionController::acin/$1');
-    
-
     // Client Management
     $routes->get('/auditsystem/client', 'ClientController::viewclient');
     $routes->post('/auditsystem/client/save', 'ClientController::addclient');
@@ -41,9 +39,13 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('/auditsystem/auditor/edit/(:any)', 'AuditorController::editauditor/$1');
     $routes->post('/auditsystem/auditor/update/(:any)', 'AuditorController::updateauditor/$1');
     $routes->post('/auditsystem/auditor/acin/(:any)', 'AuditorController::acin/$1');
-    
-
-
+    // User Management
+    $routes->get('/auditsystem/user', 'UserController::viewusers');
+    $routes->post('/auditsystem/user/save', 'UserController::adduser');
+    $routes->get('/auditsystem/user/edit/(:any)', 'UserController::edituser/$1');
+    $routes->post('/auditsystem/user/update/(:any)', 'UserController::udpateuser/$1');
+    $routes->post('/auditsystem/user/find', 'UserController::findfirm');
+    $routes->post('/auditsystem/user/acin/(:any)', 'UserController::acin/$1');
     
     /**
         ----------------------------------------------------------

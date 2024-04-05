@@ -7,6 +7,8 @@ use CodeIgniter\HTTP\ResponseInterface;
 use \App\Models\UserModel;
 
 class UserController extends BaseController{
+    
+    use ResponseTrait;
 
     protected $usermodel;
     protected $crypt;
@@ -20,12 +22,34 @@ class UserController extends BaseController{
     }
 
 
-
     public function register(){
 
         $data['title'] = 'Sign-up';
 
-        echo view('users/signup', $data);
+        echo view('users/Signup', $data);
+
+    }
+
+    public function viewusers(){
+
+        $uID = $this->crypt->decrypt(session()->get('userID'));
+
+        $data['title'] = 'User Management';
+
+        $data['usr'] = $this->usermodel->getusers($uID);
+        $data['pos'] = $this->usermodel->getposition();
+        $data['firm'] = $this->usermodel->getfirm();
+        
+        echo view('includes/Header', $data);
+        echo view('users/Users', $data);    
+        echo view('includes/Footer');
+
+    }
+
+    public function edituser($uID){
+
+        $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
+        return $this->usermodel->edituser($duID);
 
     }
 
@@ -68,6 +92,101 @@ class UserController extends BaseController{
             session()->setFlashdata('passnotmatch','passnotmatch');
             return redirect()->to(site_url('register'));
         }
+
+    }
+    public function adduser(){
+        
+        $validationRules = [
+            'name' => 'required',
+            'email' => 'required',
+            'type' => 'required',
+            'pos' => 'required',
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/user'));
+        }
+
+        $req = [
+            'name' => $this->request->getPost('name'),
+            'email' => $this->request->getPost('email'),
+            'pass' => $this->crypt->encrypt('password'),
+            'firm' => $this->crypt->decrypt($this->request->getPost('firm')),
+            'type' => $this->request->getPost('type'),
+            'pos' => $this->crypt->decrypt($this->request->getPost('pos'))
+        ];
+
+        $res = $this->usermodel->adduser($req);
+
+        if($res == 'exist'){
+            session()->setFlashdata('exist','exist');
+            return redirect()->to(site_url('auditsystem/user'));
+        }else if($res == "added"){
+            session()->setFlashdata('added','added');
+            return redirect()->to(site_url('auditsystem/user'));
+        }else{
+            session()->setFlashdata('failed','failed');
+            return redirect()->to(site_url('auditsystem/user'));
+        }
+
+    }
+    public function udpateuser($uID){
+
+        $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
+
+        $validationRules = [
+            'name' => 'required',
+            'email' => 'required',
+            'type' => 'required',
+            'pos' => 'required',
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/user'));
+        }
+
+        $req = [
+            'name' => $this->request->getPost('name'),
+            'email' => $this->request->getPost('email'),
+            'type' => $this->request->getPost('type'),
+            'pos' => $this->crypt->decrypt($this->request->getPost('pos')),
+            'uID' => $duID,
+        ];
+
+        $res = $this->usermodel->udpateuser($req);
+
+        if($res == "updated"){
+            session()->setFlashdata('updated','updated');
+            return redirect()->to(site_url('auditsystem/user'));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/user'));
+        }
+
+
+
+
+        
+    }
+
+
+
+
+    public function acin($uID){
+
+        $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
+
+        $res = $this->usermodel->acin($duID);
+
+        if($res){
+            session()->setFlashdata('updated','updated');
+            return redirect()->to(site_url('auditsystem/user'));
+        }else{
+            session()->setFlashdata('failed','failed');
+            return redirect()->to(site_url('auditsystem/user'));
+        }
+
+
 
     }
 
