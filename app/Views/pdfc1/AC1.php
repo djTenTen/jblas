@@ -9,7 +9,7 @@ $pdf->setPrintFooter(false);
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
-$pdf->SetTitle('AC1');
+$pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
