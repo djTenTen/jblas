@@ -1003,7 +1003,7 @@ class ChapterController extends BaseController{
             case 'AC2':
                 $data['ac2'] = $this->c1model->getac2($code,$dc1tID);
                 $data['aep'] = $this->c1model->getac2aep($code,$dc1tID);
-                 echo view('pdfc1/AC2', $data);
+                echo view('pdfc1/AC2', $data);
                 break;
 
             case 'AC3':
@@ -1011,9 +1011,8 @@ class ChapterController extends BaseController{
                 $data['ac3doccors'] = $this->c1model->getac3doccors($code,$dc1tID);
                 $data['ac3statutory'] = $this->c1model->getac3statutory($code,$dc1tID);
                 $data['ac3accsys'] = $this->c1model->getac3accsys($code,$dc1tID);
-                echo view('includes/Header', $data);
-                echo view('chapter1/ac3', $data);
-                echo view('includes/Footer');
+                
+                echo view('pdfc1/AC3', $data);
                 break;
 
             case 'AC4':

@@ -22,9 +22,9 @@ $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
+$pdf->setPrintHeader(false);
 // set margins
-$pdf->SetMargins(25,20,15);   
+$pdf->SetMargins(25,15,15);  
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
 //$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
 $pdf->SetHeaderMargin(0);   
