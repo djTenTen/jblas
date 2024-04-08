@@ -1027,10 +1027,7 @@ class ChapterController extends BaseController{
 
                 $rdata = $this->c1model->getac5($code,$dc1tID);
                 $data['rc'] = json_decode($rdata['question'], true);
-
-                echo view('includes/Header', $data);
-                echo view('chapter1/ac5', $data);
-                echo view('includes/Footer');
+                echo view('pdfc1/AC5', $data);
                 break;
 
             case 'AC6':
