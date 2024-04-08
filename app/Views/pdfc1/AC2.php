@@ -67,8 +67,37 @@ $html =  "
         p,li{
             text-align: justify;
         }
+        .bb{
+            border-bottom: 1px solid black;
+        }
     </style>
 ";
+
+$html .= '
+<table>
+    <tr>
+        <td style="width: 60%;">
+            <table>
+                <tr><td class="bb">Client:</td></tr>
+                <tr><td></td></tr>
+                <tr><td class="bb">Period:</td></tr>
+            </table>
+        </td>
+        <td style="width: 40%;">
+            <table border="1">
+                <tr>
+                    <td>Prepared by: <br></td>
+                    <td>Date: <br></td>
+                </tr>
+                <tr>
+                    <td>Reviewed by: <br></td>
+                    <td>Date: <br></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+';
 
 
 $html .= '
