@@ -35,6 +35,9 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('/auditsystem/client/acin/(:any)', 'ClientController::acin/$1');
     $routes->get('/auditsystem/client/set', 'ClientController::viewclientset');
     $routes->get('/auditsystem/client/files/(:any)/(:any)', 'ClientController::viewfiles/$1/$2');
+
+    // viewing of chapter files
+    $routes->get('/auditsystem/chapter1/view/(:any)/(:any)', 'ChapterController::viewc1pdf/$1/$2');
     
     
     // Auditor Management

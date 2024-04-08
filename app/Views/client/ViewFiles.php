@@ -82,7 +82,7 @@
                             <td><?= $r['code']?></td>
                             <td><?= $r['title']?></td>
                             <td>
-                                <button class="btn btn-primary btn-icon btn-sm get-data" title="View"><i class="fas fa-eye"></i></button>
+                                <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
                             </td>
                         </tr>
                     <?php }?>

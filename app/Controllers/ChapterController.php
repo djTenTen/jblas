@@ -975,6 +975,238 @@ class ChapterController extends BaseController{
 
 
 
+
+
+
+    /** 
+        ----------------------------------------------------------
+        PDF Chapter 1 area
+        ----------------------------------------------------------
+    */
+    public function viewc1pdf($code,$c1tID){
+
+        $data['title'] = $code;
+        $data['c1tID'] = $c1tID;
+        $data['code'] = $code;
+
+        $dc1tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID));
+
+        switch ($code) {
+            case 'AC1':
+
+                $data['ac1'] = $this->c1model->getac1($code,$dc1tID);
+                $rdata = $this->c1model->getac1eqr($code,$dc1tID);
+                $data['eqr'] = json_decode($rdata['question'], true);
+                echo view('pdfc1/AC1', $data);
+                break;
+            
+            case 'AC2':
+                $data['ac2'] = $this->c1model->getac2($code,$dc1tID);
+                $data['aep'] = $this->c1model->getac2aep($code,$dc1tID);
+                 echo view('pdfc1/AC2', $data);
+                break;
+
+            case 'AC3':
+                $data['ac3genmat'] = $this->c1model->getac3genmat($code,$dc1tID);
+                $data['ac3doccors'] = $this->c1model->getac3doccors($code,$dc1tID);
+                $data['ac3statutory'] = $this->c1model->getac3statutory($code,$dc1tID);
+                $data['ac3accsys'] = $this->c1model->getac3accsys($code,$dc1tID);
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac3', $data);
+                echo view('includes/Footer');
+                break;
+
+            case 'AC4':
+
+                $data['ac4'] = $this->c1model->getac4($code,$dc1tID);
+                $rdata = $this->c1model->getac4ppr($code,$dc1tID);
+                $data['ppr'] = json_decode($rdata['question'], true);
+
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac4', $data);
+                echo view('includes/Footer');
+                break;
+
+            case 'AC5':
+
+                $rdata = $this->c1model->getac5($code,$dc1tID);
+                $data['rc'] = json_decode($rdata['question'], true);
+
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac5', $data);
+                echo view('includes/Footer');
+                break;
+
+            case 'AC6':
+                $data['ac6'] = $this->c1model->getac6($code,$dc1tID);
+                $rdata = $this->c1model->gets12($code,$dc1tID);
+                $data['s'] = json_decode($rdata['question'], true);
+                $data['s3'] = $this->c1model->gets3($code,$dc1tID);
+
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac6', $data);
+                echo view('includes/Footer');
+                break;
+
+            case 'AC7':
+                $rowdata = [
+                    'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
+                    'roidata','dcodata','prdata','oadata'
+                ];
+                foreach($rowdata as $row){
+                    $rdata = $this->c1model->getac7($code,$dc1tID, $row);
+                    $data[$row] = json_decode($rdata['question'], true);
+                }
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac7', $data);
+                echo view('includes/Footer');
+                break;
+
+            case 'AC8':
+                $rowdata = [
+                    'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
+                    'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
+                    'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
+                    'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc'
+                ];
+                foreach($rowdata as $row){
+                    $data[$row] = $this->c1model->getac8($code,$dc1tID,$row);
+                }
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac8', $data);
+                echo view('includes/Footer');
+                break;
+
+            case 'AC9':
+
+                $rdata = $this->c1model->getac9data($code,$dc1tID);
+                $data['ac9'] = json_decode($rdata['question'], true);
+    
+                echo view('includes/Header', $data);
+                echo view('chapter1/ac9', $data);
+                echo view('includes/Footer');
+                break;
+                
+            case 'AC10-Tangibles':
+            case 'AC10-PPE':
+            case 'AC10-Investments':
+            case 'AC10-Inventory':
+            case 'AC10-Trade Receivables':
+            case 'AC10-Other Receivables':
+            case 'AC10-Bank and Cash':
+            case 'AC10-Trade Payables':
+            case 'AC10-Other Payables':
+            case 'AC10-Provisions':
+            case 'AC10-Revenue':
+            case 'AC10-Costs':
+            case 'AC10-Payroll':
+
+                
+                $s = explode('-', $code);
+                $data ['sheet'] = $s[1];
+                $data['code'] = $s[0];
+                $data['cu'] = $this->c1model->getac10cu($dc1tID,$s[1].'cu');
+                $data['ac10s1'] = $this->c1model->getac10s1data($dc1tID,$s[1]);
+                $data['ac10s2'] = $this->c1model->getac10s2data($dc1tID,$s[1]);
+
+                echo view('includes/Header', $data);
+                echo view('chapter1/Ac10', $data);
+                echo view('includes/Footer');
+                break;
+            case 'AC10-Summary':
+                
+                $s = explode('-', $code);
+                $data ['sheet'] = $s[1];
+                $data['code'] = $s[0];
+                $data['nmk_tgb'] = $this->c1model->getdatacount($dc1tID,'Tangibles');
+                $data['nmk_ppe'] = $this->c1model->getdatacount($dc1tID,'PPE');
+                $data['nmk_invmt'] = $this->c1model->getdatacount($dc1tID,'Investments');
+                $data['nmk_invtr'] = $this->c1model->getdatacount($dc1tID,'Inventory');
+                $data['nmk_tr'] = $this->c1model->getdatacount($dc1tID,'Trade Receivables');
+                $data['nmk_or'] = $this->c1model->getdatacount($dc1tID,'Other Receivables');
+                $data['nmk_bac'] = $this->c1model->getdatacount($dc1tID,'Bank and Cash');
+                $data['nmk_tp'] = $this->c1model->getdatacount($dc1tID,'Trade Payables');
+                $data['nmk_op'] = $this->c1model->getdatacount($dc1tID,'Other Payables');
+                $data['nmk_prov'] = $this->c1model->getdatacount($dc1tID,'Provisions');
+                $data['nmk_rev'] = $this->c1model->getdatacount($dc1tID,'Revenue');
+                $data['nmk_cst'] = $this->c1model->getdatacount($dc1tID,'Costs');
+                $data['nmk_pr'] = $this->c1model->getdatacount($dc1tID,'Payroll');
+                
+                $data['vop_tgb'] = $this->c1model->getsumation($dc1tID,'Tangibles');
+                $data['vop_ppe'] = $this->c1model->getsumation($dc1tID,'PPE');
+                $data['vop_invmt'] = $this->c1model->getsumation($dc1tID,'Investments');
+                $data['vop_invtr'] = $this->c1model->getsumation($dc1tID,'Inventory');
+                $data['vop_tr'] = $this->c1model->getsumation($dc1tID,'Trade Receivables');
+                $data['vop_or'] = $this->c1model->getsumation($dc1tID,'Other Receivables');
+                $data['vop_bac'] = $this->c1model->getsumation($dc1tID,'Bank and Cash');
+                $data['vop_tp'] = $this->c1model->getsumation($dc1tID,'Trade Payables');
+                $data['vop_op'] = $this->c1model->getsumation($dc1tID,'Other Payables');
+                $data['vop_prov'] = $this->c1model->getsumation($dc1tID,'Provisions');
+                $data['vop_rev'] = $this->c1model->getsumation($dc1tID,'Revenue');
+                $data['vop_cst'] = $this->c1model->getsumation($dc1tID,'Costs');
+                $data['vop_pr'] = $this->c1model->getsumation($dc1tID,'Payroll');
+                
+                $data['mat'] = $this->c1model->getsummarydata($dc1tID,'material');
+
+                $rowdata = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
+
+                foreach($rowdata as $row){
+                    $rdata = $this->c1model->getsummarydata($dc1tID, $row);
+                    $data[$row] = json_decode($rdata['question'], true);
+                }
+
+                echo view('includes/Header', $data);
+                echo view('chapter1/Ac10-Summary', $data);
+                echo view('includes/Footer');
+                break;
+
+            case 'AC11':
+
+                $rdata = $this->c1model->getac11data($code,$dc1tID);
+                $data['ac11'] = json_decode($rdata['question'], true);
+                
+                echo view('includes/Header', $data);
+                echo view('chapter1/Ac11', $data);
+                echo view('includes/Footer');
+                break;
+
+
+            default:
+                # code...
+            break;
+
+        }
+
+    }
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
