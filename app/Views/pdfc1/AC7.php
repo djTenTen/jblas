@@ -57,6 +57,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -66,6 +70,7 @@ $html =  "
         }
         p,li{
             text-align: justify;
+
         }
         .bb{
             border-bottom: 1px solid black;
@@ -147,6 +152,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -249,6 +258,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -352,6 +365,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -456,6 +473,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -560,6 +581,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -665,6 +690,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -768,6 +797,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -872,6 +905,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -975,6 +1012,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -1080,6 +1121,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -1185,6 +1230,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -1290,6 +1339,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -1394,6 +1447,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -1498,6 +1555,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -1603,6 +1664,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;

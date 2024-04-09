@@ -55,8 +55,12 @@ $pdf->AddPage('P');
 
 $html =  "
     <style>
-        *{
+         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -128,8 +132,12 @@ $pdf->AddPage('L');
 
 $html =  "
     <style>
-        *{
+         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -186,8 +194,12 @@ $pdf->AddPage('P');
 
 $html =  "
     <style>
-        *{
+         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -209,8 +221,12 @@ $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->SetXY(50, 205); // Set the position to (50, 160) pixels
 $html =  "
     <style>
-        *{
+         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -239,8 +255,12 @@ $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('P');
 $html =  "
     <style>
-        *{
+         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;

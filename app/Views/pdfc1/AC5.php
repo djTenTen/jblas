@@ -57,6 +57,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;

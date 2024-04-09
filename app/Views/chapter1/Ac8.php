@@ -414,7 +414,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="3">[Insert transactions, balances, disclosures or accounting estimates]</td>
+                        <td colspan="3">
+                            <input type="hidden" value="<?= $crypt->encrypt($itbdae1['acID'])?>" name="acid[]">
+                            <input type="text" class="form-control" name="question[]" value="<?= $itbdae1['question']?>">
+                        </td>
                         <td>
                             <input type="hidden" value="<?= $crypt->encrypt($itbd1['acID'])?>" name="acid[]">
                             <input type="text" class="form-control itbd1" name="question[]" value="<?= $itbd1['question']?>" >
@@ -429,7 +432,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="3">[Insert transactions, balances, disclosures or accounting estimates]</td>
+                        <td colspan="3">
+                            <input type="hidden" value="<?= $crypt->encrypt($itbdae2['acID'])?>" name="acid[]">
+                            <input type="text" class="form-control" name="question[]" value="<?= $itbdae2['question']?>">
+                        </td>
                         <td>
                             <input type="hidden" value="<?= $crypt->encrypt($itbd2['acID'])?>" name="acid[]">
                             <input type="text" class="form-control itbd2" name="question[]" value="<?= $itbd2['question']?>" >
@@ -444,7 +450,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="3">[Insert transactions, balances, disclosures or accounting estimates]</td>
+                        <td colspan="3">
+                            <input type="hidden" value="<?= $crypt->encrypt($itbdae3['acID'])?>" name="acid[]">
+                            <input type="text" class="form-control" name="question[]" value="<?= $itbdae3['question']?>">
+                        </td>
                         <td>
                             <input type="hidden" value="<?= $crypt->encrypt($itbd3['acID'])?>" name="acid[]">
                             <input type="text" class="form-control itbd3" name="question[]" value="<?= $itbd3['question']?>" >

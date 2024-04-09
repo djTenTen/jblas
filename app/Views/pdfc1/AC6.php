@@ -57,6 +57,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -158,6 +162,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -206,6 +214,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -257,6 +269,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -330,6 +346,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
@@ -365,6 +385,35 @@ $html .= '
     </ul>
     <p>NB: this requirement exists irrespective of whether the overall control environment has been deemed to be ineffective in section 2b above. </p>
 ';
+
+$pdf->writeHTML($html, true, false,'J', false, '');
+
+$pdf->AddPage('L');
+
+$html =  "
+    <style>
+        *{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
+        }
+        .cent{
+            text-align: center;
+        }
+        .bo{
+            border: 1px solid black;
+        }
+        p,li{
+            text-align: justify;
+        }
+        .bb{
+            border-bottom: 1px solid black;
+            
+        }
+    </style>
+";
 
 $html .= '
     <table border="1">
@@ -423,6 +472,10 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
         }
         .cent{
             text-align: center;
