@@ -13,7 +13,7 @@ $routes->get('/register', 'UserController::register');
 $routes->post('/signup', 'UserController::signup');
 
 $routes->group('', ['filter' => 'auth'], function ($routes) {
-    $routes->get('/dashboard', 'DashController::dashboard');
+    //$routes->get('/dashboard', 'DashController::dashboard');
     //Audit System
     $routes->get('/auditsystem', 'DashController::auditsystem');
 
