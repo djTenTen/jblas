@@ -82,7 +82,30 @@
                             <td><?= $r['code']?></td>
                             <td><?= $r['title']?></td>
                             <td>
-                                <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                <?php if( $r['code'] == 'AC10'){?>
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary btn-icon btn-sm" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-eye"></i></button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-Tangibles/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">Tangibles</a>
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-PPE/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">PPE</a>
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-Investments/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">Investments</a>
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-Inventory/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">Inventory</a>
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-Trade Receivables/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">Trade Receivables</a>
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-Other Receivables/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">Other Receivables</a>
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-Bank and Cash/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">Bank and Cash</a>
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-Trade Payables/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">Trade Payables</a>
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-Other Payables/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">Other Payables</a>
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-Provisions/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">Provisions</a>
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-Revenue/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">Revenue</a>
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-Costs/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">Costs</a>
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-Payroll/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">Payroll</a>
+                                            <a target="_blank"class="dropdown-item" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>-Summary/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>">Summary</a>
+                                        </div>
+                                    </div>
+                                <?php }else{?>
+                                    <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/chapter1/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                <?php }?>
+
                             </td>
                         </tr>
                     <?php }?>

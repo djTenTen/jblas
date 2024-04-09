@@ -1093,10 +1093,7 @@ class ChapterController extends BaseController{
                 $data['cu'] = $this->c1model->getac10cu($dc1tID,$s[1].'cu');
                 $data['ac10s1'] = $this->c1model->getac10s1data($dc1tID,$s[1]);
                 $data['ac10s2'] = $this->c1model->getac10s2data($dc1tID,$s[1]);
-
-                echo view('includes/Header', $data);
-                echo view('chapter1/Ac10', $data);
-                echo view('includes/Footer');
+                echo view('pdfc1/AC10', $data);
                 break;
             case 'AC10-Summary':
                 
@@ -1140,9 +1137,7 @@ class ChapterController extends BaseController{
                     $data[$row] = json_decode($rdata['question'], true);
                 }
 
-                echo view('includes/Header', $data);
-                echo view('chapter1/Ac10-Summary', $data);
-                echo view('includes/Footer');
+                echo view('pdfc1/AC10Summ', $data);
                 break;
 
             case 'AC11':
