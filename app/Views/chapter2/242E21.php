@@ -122,7 +122,7 @@
                             <?php foreach($rcicp as $r1){?>
                                 <tr>
                                     <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"><?= $r1['question']?></textarea></td>
-                                    <td><textarea class="form-control question" id="question" cols="30" rows="5" name="yesno[]"><?= $r1['reference']?></textarea></td>
+                                    <td><textarea class="form-control question" id="question" cols="30" rows="5" name="yesno[]"><?= $r1['yesno']?></textarea></td>
                                     <td><textarea class="form-control question" id="question" cols="30" rows="5" name="comment[]"><?= $r1['reference']?></textarea></td>
                                     <td class="text-center"><?php if($r1['status'] == 'Active'){echo '<span class="badge bg-success">'.$r1['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r1['status'].'</span>';}?></td>
                                     <td>

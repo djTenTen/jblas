@@ -1222,9 +1222,7 @@ class ChapterController extends BaseController{
                 $data['aicpppa'] = $this->c2model->getquestionsaicpppa($code,$dc2tID);
                 $data['rcicp'] = $this->c2model->getquestionsrcicp($code,$dc2tID);
                 
-                echo view('includes/Header', $data);
-                echo view('chapter2/242E21', $data);
-                echo view('includes/Footer');
+                echo view('pdfc2/E2-1', $data);
                 break;
 
             case '2.4.3 E2-2':
