@@ -117,7 +117,9 @@
                             <td><input class="form-check-input" id="add" type="checkbox" name="add" value="Yes"/></td>
                             <td><?= $r['code']?></td>
                             <td><?= $r['title']?></td>
-                            <td><button class="btn btn-primary btn-icon btn-sm get-data" title="View"><i class="fas fa-eye"></i></button></td>
+                            <td>
+                                <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/chapter2/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                            </td>
                         </tr>
                     <?php }?>
                     <tr>

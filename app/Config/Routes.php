@@ -38,6 +38,7 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
 
     // viewing of chapter files
     $routes->get('/auditsystem/chapter1/view/(:any)/(:any)', 'ChapterController::viewc1pdf/$1/$2');
+    $routes->get('/auditsystem/chapter2/view/(:any)/(:any)', 'ChapterController::viewc2pdf/$1/$2');
     
     
     // Auditor Management
