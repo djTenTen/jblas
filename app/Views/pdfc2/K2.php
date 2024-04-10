@@ -60,7 +60,7 @@ $html =  "
             font-size: 14px;
         }
         h3{
-            font-size: 15px;
+            font-size: 16px;
         }
         .cent{
             text-align: center;

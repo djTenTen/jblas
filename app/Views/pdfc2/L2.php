@@ -104,7 +104,9 @@ $html .= '
 </table>
 ';
 
-$html .= '<h3>INVENTORIES</h3>';
+$html .= '<h3>PROVISIONS, CONTINGENCIES AND FINANCIAL COMMITMENTS</h3>
+<p><i>Audit work on deferred taxation is included in the J audit programme. It should also be noted that deferred tax provisions cannot be discounted.</i></p>
+';
 
 $html .= '
 <table>
@@ -114,7 +116,7 @@ $html .= '
             <th style="width: 60%;"><b>Audit Test</b></th>
             <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
             <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
-            <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
+            <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
         </tr>
     </thead>
     <tbody>';
