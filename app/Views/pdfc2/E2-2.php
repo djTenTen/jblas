@@ -104,26 +104,31 @@ $html .= '
 </table>
 ';
 
-$html .= '<h3>INVENTORY APPENDIX 1 – INVENTORY COUNT PLANNING</h3>';
+$html .= '<h3>INVENTORY APPENDIX 2 – TESTS AT INVENTORY COUNT</h3>';
+$html .= '<p><b>N.B. If inventory count is solely undertaken by a 3rd party, this does not negate the need to carry out audit procedures identical to that carried out if the client had undertaken the procedures.  Consideration should be given as to the integrity and independence of the 3rd party.</b></p>';
 
 $html .= '
 <table>
     <thead>
         <tr>
             <th style="width: 6%;"></th>
-            <th style="width: 60%;"><b>Audit Tests – Attendance at Inventory Count – Planning Procedures Prior to Attending </b></th>
-            <th class="cent bo" style="width: 36%;"><b>Comments/Reference</b></th>
+            <th style="width: 60%;"><b>Existence/Completeness</b></th>
+            <th class="cent bo" style="width: 12%;"><b>Yes/No/<br>N/A</b></th>
+            <th class="cent bo" style="width: 12%;"><b>Ref.</b></th>
+            <th class="cent bo" style="width: 12%;"><b>Completed by</b></th>
         </tr>
     </thead>
     <tbody>';
     $count = 0;
-    foreach($aicpppa as $r){
+    foreach($qdata as $r){
         $count ++;
         $html .= '
         <tr>
             <td style="width: 6%;">'.$count.'.<br></td>
             <td style="width: 60%;">'.$r['question'].'<br></td>
-            <td class="cent bo" style="width: 36%;">'.$r['reference'].'</td>
+            <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+            <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+            <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
         </tr>
         ';
     }
@@ -132,66 +137,10 @@ $html .= '
     </tbody>
 </table>
 ';
-
-
-$pdf->writeHTML($html, true, false,'J', false, '');
-$pdf->AddPage();
-$html =  "
-    <style>
-        *{
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 13px;
-        }
-        h3{
-            font-size: 15px;
-        }
-        .cent{
-            text-align: center;
-        }
-        .bo{
-            border: 1px solid black;
-        }
-        p,li{
-            text-align: justify;
-        }
-        .bb{
-            border-bottom: 1px solid black;
-            
-        }
-    </style>
-";
     
-$html .= '
-    <center><p><b>Review of client’s inventory count procedures</b></p></center>
-    <p>This review should be completed before attending the client’s inventory count in conjunction with a copy of the client’s inventory count instructions.  Section 1 deals with overall controls, and sections 2 to 4 with inventory count instructions and procedures, section 5 covers inventory counts performed by independent inventory counters and section 6 covers clients that operate a cyclical inventory count system.</p>
-';
-
-$html .= '
-<table>
-    <thead>
-        <tr>
-            <th style="width: 66%;"><b>Do the inventory count procedures cover:</b></th>
-            <th class="cent bo" style="width: 18%;"><b>Yes/No/N/A</b></th>
-            <th class="cent bo" style="width: 18%;"><b>Comments/<br>Reference</b></th>
-        </tr>
-    </thead>
-    <tbody>';
-    foreach($rcicp as $r){
+    
 
 
-        $html .= '
-        <tr>
-            <td style="width: 66%;">'.$r['question'].'<br></td>
-            <td class="cent bo" style="width: 18%;">'.$r['yesno'].'</td>
-            <td class="cent bo" style="width: 18%;">'.$r['reference'].'</td>
-        </tr>
-        ';
-    }
-
-$html .= '
-    </tbody>
-</table>
-';
 
 
 
