@@ -1392,6 +1392,263 @@ class ChapterController extends BaseController{
 
 
 
+    /** 
+        ----------------------------------------------------------
+        PDF Chapter 2 area
+        ----------------------------------------------------------
+    */
+    public function viewc3pdf($code,$c3tID){
+
+        $data['title'] = $code;
+        $data['c3tID'] = $c3tID;
+        $data['code'] = $code;
+
+        $dc3tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID));
+
+        switch ($code) {
+
+            case '3.1 Aa1':
+
+                $data['datapl'] = $this->c3model->getaa1pl($code,$dc3tID);
+                $data['dataaf'] = $this->c3model->getaa1af($code,$dc3tID);
+                $rdata = $this->c3model->getaa1s3($code, $dc3tID);
+                $data['s3'] = json_decode($rdata['question'], true);
+                echo view('pdfc3/AA1', $data);
+                break;
+
+            case '3.2 Aa2':
+
+                $rdata = $this->c3model->getaa2data($code, $dc3tID);
+                $data['aa2'] = json_decode($rdata['question'], true);
+
+                echo view('includes/Header', $data);
+                echo view('chapter3/32Aa2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.3 Aa3a':
+
+                $data['cr'] = $this->c3model->getaa3acr($code,$dc3tID);
+                $data['dc'] = $this->c3model->getaa3adc($code,$dc3tID);
+                $data['faf'] = $this->c3model->getaa3afaf($code,$dc3tID);
+                $data['ir'] = $this->c3model->getaa3air($code,$dc3tID);
+                
+                echo view('includes/Header', $data);
+                echo view('chapter3/33Aa3a', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.4 Aa3b':
+
+                $data['bp1'] = $this->c3model->getaa3bp1($code,$dc3tID);
+                $data['bp2'] = $this->c3model->getaa3bp2($code,$dc3tID);
+                $data['bp3'] = $this->c3model->getaa3bp3($code,$dc3tID);
+
+                $rdata = $this->c3model->getaa3bp4($code,$dc3tID);
+                $data['bp4'] = json_decode($rdata['question'], true);
+                
+                echo view('includes/Header', $data);
+                echo view('chapter3/34Aa3b', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.5 Aa4':
+
+                echo view('includes/Header', $data);
+                echo view('chapter3/35Aa4', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.6.1 Aa5a':
+
+
+                echo view('includes/Header', $data);
+                echo view('chapter3/361Aa5a', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.6.2 Aa5b':
+
+                $data['aa5b'] = $this->c3model->getaa5b($code,$dc3tID);
+
+                echo view('includes/Header', $data);
+                echo view('chapter3/362Aa5b', $data);
+                echo view('includes/Footer');
+                break;  
+
+            case '3.7 Aa7':
+
+                $data['aa7'] = $this->c3model->getaa7isa($code,$dc3tID);
+                $data['cons'] = $this->c3model->getaa7consultation($code,$dc3tID);
+                $data['inc'] = $this->c3model->getaa7inconsistencies($code,$dc3tID);
+                $data['ref'] = $this->c3model->getaa7refusal($code,$dc3tID);
+                $data['dep'] = $this->c3model->getaa7departures($code,$dc3tID);
+                $data['oth'] = $this->c3model->getaa7other($code,$dc3tID);
+
+                $rdata = $this->c3model->getaa7aep($code,$dc3tID);
+                $data['aep'] = json_decode($rdata['question'], true);
+                
+                echo view('includes/Header', $data);
+                echo view('chapter3/37Aa7', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.8 Aa10':
+
+                $rdata = $this->c3model->getaa10($code,$dc3tID);
+                $data['aa10'] = json_decode($rdata['question'], true);
+
+                echo view('includes/Header', $data);
+                echo view('chapter3/38Aa10', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.9':
+
+            
+                echo view('includes/Header', $data);
+                echo view('chapter3/39', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.10 Aa11':
+                
+                echo view('includes/Header', $data);
+                echo view('chapter3/310Aa11', $data);
+                echo view('includes/Footer');
+                break;   
+
+            case '3.11':
+
+                
+                echo view('includes/Header', $data);
+                echo view('chapter3/311', $data);
+                echo view('includes/Footer');
+                break;   
+
+            case '3.12':
+
+                
+                echo view('includes/Header', $data);
+                echo view('chapter3/312', $data);
+                echo view('includes/Footer');
+                break;   
+
+            case '3.13 Ab1':
+
+                $data['ab1'] = $this->c3model->getab1($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/313Ab1', $data);
+                echo view('includes/Footer');
+                break;   
+
+            case '3.14 Ab3':
+
+                $rdata = $this->c3model->getab3($code,$dc3tID);
+                $data['ab3'] = json_decode($rdata['question'], true);
+                echo view('includes/Header', $data);
+                echo view('chapter3/314Ab3', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15 Ab4':
+
+               
+                echo view('includes/Header', $data);
+                echo view('chapter3/315Ab4', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.1 Ab4a':
+                
+                $data['ab4a'] = $this->c3model->getab4a($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3151Ab4a', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.2 Ab4b':
+
+                $data['ab4b'] = $this->c3model->getab4b($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3152Ab4b', $data);
+                echo view('includes/Footer');
+                break; 
+
+
+            case '3.15.3 Ab4c':
+
+                $data['ab4c'] = $this->c3model->getab4c($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3153Ab4c', $data);
+                echo view('includes/Footer');
+                break; 
+
+
+            case '3.15.4 Ab4d':
+
+                $data['ab4d'] = $this->c3model->getab4d($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3154Ab4d', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.5 Ab4e':
+
+                $data['ab4e'] = $this->c3model->getab4e($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3155Ab4e', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.6 Ab4f':
+
+                $data['ab4f'] = $this->c3model->getab4f($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3156Ab4f', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.7 Ab4g':
+
+                $data['ab4g'] = $this->c3model->getab4g($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3157Ab4g', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.8 Ab4h':
+
+                $data['ab4h'] = $this->c3model->getab4h($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('chapter3/3158Ab4h', $data);
+                echo view('includes/Footer');
+                break; 
+
+
+
+            default:
+                # code...
+                break;
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
