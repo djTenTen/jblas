@@ -23671,3 +23671,1455 @@ WARNING - 2024-04-10 13:28:51 --> [DEPRECATED] Required parameter $k follows opt
 10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
 11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-10 13:30:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-04-10 13:30:24 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 1998.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:30:24 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2024.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:30:24 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2040.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:30:24 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2060.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:30:24 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2077.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:30:24 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2093.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:30:24 --> [DEPRECATED] Required parameter $tagvspaces follows optional parameter $default_css in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 1139.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:30:24 --> [DEPRECATED] Required parameter $k follows optional parameter $points in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 2488.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-10 13:30:24 --> ErrorException: Undefined array key "cols"
+in APPPATH\Libraries\tcpdf\tcpdf.php on line 16992.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(16992): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cols"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php', 16992)
+ 2 APPPATH\Libraries\tcpdf\tcpdf.php(17263): TCPDF->getHtmlDomArray('<table><tr><td style="width: 50%;">&nbsp; <table><tr><td class="bb">Client:<marker style="font-size:0"/></td></tr><tr><td><marker style="font-size:0"/></td></tr><tr><td class="bb">Period:<marker style="font-size:0"/></td></tr></table></td><td style="width: 50%;">&nbsp; <table border="1"><tr><td>Programme prepared by:<br><marker style="font-size:0"/></td><td>Date:<br><marker style="font-size:0"/></td></tr><tr><td>A.E.P. review at completion:<br><marker style="font-size:0"/></td><td>Date:<br><marker style="font-size:0"/></td></tr></table></td></tr></table><h3>PROVISIONS, CONTINGENCIES AND FINANCIAL COMMITMENTS</h3><p><i>Audit work on deferred taxation is included in the J audit programme. It should also be noted that deferred tax provisions cannot be discounted.</i></p><table><thead><tr><th style="width: 6%;"><marker style="font-size:0"/></th><th style="width: 60%;"><b>Audit Test</b><marker style="font-size:0"/></th><th class="cent bo" style="width: 12%;"><b>Extent</b><marker style="font-size:0"/></th><th class="cent bo" style="width: 12%;"><b>Reference</b><marker style="font-size:0"/></th><th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b><marker style="font-size:0"/></th></tr></thead><tr><td style="width: 6%;">1.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>1. In respect of any material accounting estimates from the prior period, review how they have been utilised in the current period to determine their reasonableness.</p><p><i>If this work has been undertaken in other sections of the file a summary schedule should be produced to allow an overall conclusion to be reached.</i></p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">2.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>2. Ensure that Appendix 1.7 (Accounting Estimates) has been completed and concluded.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">3.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>3. List and perform any additional tests considered necessary.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">4.<br><marker style="font-size:0"/></td><td style="width: 60%;"><h6>LAW AND REGULATION</h6><p>4. Obtain details of the law and regulations which:</p><ul><li> are central to the continuing operation of the entity; or</li><li> would lead to a material financial penalty if not complied with; or</li><li> are a contractual or licensing arrangement which is of critical importance to the entity; or</li><li> otherwise could have a material effect on the operation of the entity.</li></ul><p>Ensure that the permanent file has also been updated with these details.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">5.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>5. Discuss with management procedures for compliance with relevant law and regulations. Ensure the permanent file has also been updated with these details.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">6.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>6. Review the following for evidence of non-compliance with law and regulations:</p><ul><li> correspondence with legal advisors and regulatory bodies;</li><li> correspondence with government bodies (including taxation authorities);</li><li> shareholder and board minutes; and</li><li> reports commissioned from experts.</li></ul><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">7.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>7. Consider the entity’s knowledge of employment law. Are there procedures in place to adequately consider areas such as the following, where legislation covers the relevant areas:</p><ul><li>data protection, surveillance and privacy at work;</li><li>discrimination (covering age (including retirement); disability, race, religion, sex and sexual orientation);</li><li>discipline and grievance procedures;</li><li>employee status;</li><li>equal pay;</li><li>fixed-term working;</li><li>flexible working, parental rights and family-friendly procedures;</li><li>maternity, paternity, shared parental and adoption leave and pay;</li><li>minimum and living wage;</li><li>part time working;</li><li>recruitment and selection;</li><li>redundancy;</li><li>terms and conditions of employment;</li><li>trade union recognition and industrial action;</li><li>whistleblowing;</li><li>work based pension;</li><li>working time regulations;</li><li>wrongful dismissal; and</li><li>any other employment laws relevant to the entity?</li></ul><p><i>NB: The above represents a selection of employment law applicable around the world, whereas not all of these will be covered by legislation in each jurisdiction.</i></p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">8.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>8. Where necessary, has the entity undertaken a health and safety risk assessment, which is up to date?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">9.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>9. Where necessary, has the entity undertaken a fire risk assessment, which is up to date?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">10.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>10. Document all areas of non-compliance, ensure that these have been adequately assessed in the L Section of the file and if appropriate, considered in the going concern review. <strong>(P)</strong></p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">11.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>11. List and perform any additional tests considered necessary.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">12.<br><marker style="font-size:0"/></td><td style="width: 60%;"><h6>FRAUD AND ERROR/h6> <p>12. Review the following for potential signs of fraud and error (this work might also identify non-compliance with law and regulation or undisclosed related party transactions):</p><ul><li>investigations by government departments;</li><li>payment of fines or penalties;</li><li>adverse media comment;</li><li>lavish lifestyles or extensive and potentially unnecessary foreign travel by senior management;</li><li>aggressive tax management by the entity whether deemed to be tax evasion or avoidance;</li><li>aggressive earnings management;</li><li>(other than where they represent part of an authorised remuneration package) assets used for private benefit;</li><li>complex group structures, including offshore entities where ownership cannot be identified</li><li>long delays in production of accounting records or financial statements;</li><li>unauthorised transactions or inadequately recorded transactions;</li><li>computer problems or other system problems which mean that an adequate audit trail is not given;</li><li>a poor control environment and lack of segregation of duties;</li><li>management refusal to provide information;</li><li>unusual accounting treatments not in accordance with accounting policies adopted by the entity;</li><li>payments for unspecified services and payments made for goods / services not received / required;</li><li>sales (including the disposal of fixed assets) or purchases at prices significantly above or below the market price;</li><li>payment in cash where this appears to be inappropriate;</li><li>transactions which have no apparent purpose or economic sense;</li><li>unusual related party transactions;</li><li>transactions with tax havens, high-risk and non-cooperative jurisdictions (as categorised by FATF) or third countries where the transaction did not originate;</li><li>sales commissions or agents fees that appear excessive, are undertaken on a split commission basis or are paid before the underlying transaction occurs;</li><li>unexpected balances and reversal of transactions after the period-end; and</li><li>unusual investments of funds</li></ul><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">13.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>13. If, during the audit work, there is any suspicion that a document may not be authentic, or has been altered, consider confirming the contents of the document directly with the third party from whom the document originated. <strong>(E, R&O, C)</strong></p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">14.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>14. Document all areas of concern, ensure that these have been brought to the attention of the A.E.P. and consider whether these concerns could impact on the audit opinion or whether they draw into question the integrity of senior management and thus whether we should continue to act for the client.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">15.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>15. List and perform any additional tests considered necessary.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">16.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>16. Through discussions with the management ensure that all service organisation that process financial information have been identified.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">17.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>17. Ensure that a full list of service organisations used by the entity is noted on the permanent file. This should include (where appropriate):-</p><ul><li>Payroll bureau;</li><li>Outsourced bookkeeper;</li><li>Accountants involved in the production of the financial statements;</li><li>Accountants involved in preparing tax and deferred tax computations;</li><li>Accountants involved in tax compliance work;</li><li>Third parties who hold and distribute stock on behalf of the entity;</li><li>Professional inventory counters;</li><li>Investment custodians; and</li><li>Investment managers.</li></ul><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">18.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>18. Where the service organisation is also the audit practice ensure that adequate consideration has been given to the ethical impact of the non-audit services provided.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">19.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>19. Obtain a copy of the letters of engagement between the entity and the service organisation, and ensure the following are documented and understood:-</p><ul><li> The terms of the contract;</li><li> The respective responsibilities of the client and the service organisation;</li><li> The respective responsibilities of the client and the service organisation;</li><li> What information is to be provided to and by the service organisation the timeframe for production; and</li><li> There are appropriate indemnity clauses to cover a performance failure by the service organisation.</li></ul><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">20.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>20. Ensure that the service organization is able to provide a continuing service to the client, and that where appropriate contingency plans are in place if it is not possible for the service to continue, for whatever reason (for example, data loss, fire or liquidation).</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">21.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>21. Ensure the permanent file documents the controls that operate regarding the provision of information to, and the receipt of information from, the service organisation (i.e. how is it ensured that accurate information passes between the two entities and that information is transferred by an authorised person).</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">22.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p><i>Many service organisation provide a ‘Type 2’ report (as defined in ISA 402). These ‘Type 2’ reports are also sometimes produced by a service organisation’s internal auditors. They include information on the description, design and operating effectiveness of internal controls. Organisations may alternatively provide a ‘Type 1’ report which cover just the description and design of internal controls.&nbsp;</i></p><p>22. Review these documents where available and update the PAF regarding the controls operated within the service organisation</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">23.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>23. Review the audit approach regarding the work of service organisations to determine whether any reliance is to be placed on their internal controls or whether a purely substantive approach will be adopted.&nbsp;</p><p><i>For some audit assertions, for example ownership of shares is it unlikely that adequate assurance will be gained via a purely substantive approach. &nbsp;</i></p><p>Update the planning documentation as necessary and where controls are to be relied upon complete tests 25 and 26.&nbsp;</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">24.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>24. Due to client confidentiality it is unlikely that most service organisations will give third party auditors direct access to their accounting systems and controls. Thus it will only be possible to place reliance on a service organisation’s controls through placing reliance on either an internal or external auditors. Review the Type 2 Report to determine which controls it gives an opinion on, then determine for which audit assertions reliance can be placed.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">25.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>25. Ensure that the tests on this audit programme relating to reliance on another auditor or an internal auditor are completed.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">26.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>26. List and perform any additional tests considered necessary.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">27.<br><marker style="font-size:0"/></td><td style="width: 60%;"><h6>USING THE WORK OF AN EXPERT (ISA 620)</h6><p>27. Ensure that all financial information which has been provided by an expert has been identified, and that the terms of the contract, and the extent of responsibilities of both the client and the expert are understood.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">28.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>28. Assess the competency and independence of the expert (for example, recognised professional qualifications, experience of the expert or membership of a recognised trade or professional body).</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">29.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>29. Review the assumptions used, and the basis on which the expert’s work has been performed to identify any matters which are either inconsistent with:</p><ul><li>prior periods, or</li><li>information provided by any counterparty; or</li><li>information provide by other experts; or</li><li>information provided by the client; or</li><li>are inconsistent with the auditor’s general knowledge of the client, or other audit evidence.</li></ul><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">30.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>30. Where the expert’s work involves the use of source data that is significant to the work of the expert, consider the relevance, completeness and accuracy of the source data.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">31.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>31. Ensure that the basis on which the expert’s work has been performed complies with the entity’s accounting policy.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">32.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>32. Ensure that the expert’s work has been performed on a timely basis.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">33.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>33. List and perform any additional tests considered necessary to enable the auditor to conclude that the expert’s work provides sufficient, appropriate audit evidence in the area.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">34.<br><marker style="font-size:0"/></td><td style="width: 60%;"><h6>CONSIDERING THE WORK OF INTERNAL AUDIT (ISA 610)</h6><p>34. If not already documented on the file, document which auditors we are placing reliance on, whether they are internal or external to the organisation and why we are placing reliance on them.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">35.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>35. Ensure that confirmation has been obtained from the other audit firm that they are independent of the audit client.&nbsp;</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">36.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>36. For the current year, have we reviewed their working papers and found them to be reliable? If not when was the last time that we reviewed them and has an appropriate audit questionnaire been sent in the current year?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">37.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>37. Have any problems with the work of another auditor or internal audit been identified in prior years?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">38.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>38. Has the work on which we are seeking to rely been performed in accordance with ISA or equivalent guidance (such as a Type 2 Report)?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">39.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>39. Is the other auditor independent from the entity?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">40.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>40. Are there any external quality control procedures?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">41.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>41. List and perform any tests considered necessary to comply with the requirements of the above ISA’s.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr></table><p><b>Assertion key:</b><br>E = Existence;<br>R&O = Rights and Obligations;<br>C = Completeness;<br>V = Accuracy, Valuation and Allocation;<br>P = Presentation;<br>O = Occurrence;<br>A = Accuracy;<br>CO = Cut-off;<br>CL = Classification.<br></p>')
+ 3 APPPATH\Views\pdfc2\N2.php(162): TCPDF->writeHTML('
+    <style>
+        *{
+            font-family: \'Times New Roman\', Times, serif;
+            font-size: 14px;
+        }
+        h3{
+            font-size: 16px;
+        }
+        .cent{
+            text-align: center;
+        }
+        .bo{
+            border: 1px solid black;
+        }
+        p,li{
+            text-align: justify;
+        }
+        .bb{
+            border-bottom: 1px solid black;
+            
+        }
+    </style>
+
+<table>
+    <tr>
+        <td style="width: 50%;">
+            <table>
+                <tr><td class="bb">Client:</td></tr>
+                <tr><td></td></tr>
+                <tr><td class="bb">Period:</td></tr>
+            </table>
+        </td>
+        <td style="width: 50%;">
+            <table border="1">
+                <tr>
+                    <td>Programme prepared by: <br></td>
+                    <td>Date: <br></td>
+                </tr>
+                <tr>
+                    <td>A.E.P. review at completion:<br></td>
+                    <td>Date: <br></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<h3>PROVISIONS, CONTINGENCIES AND FINANCIAL COMMITMENTS</h3>
+<p><i>Audit work on deferred taxation is included in the J audit programme. It should also be noted that deferred tax provisions cannot be discounted.</i></p>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width: 6%;"></th>
+            <th style="width: 60%;"><b>Audit Test</b></th>
+            <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+            <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+            <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="width: 6%;">1.<br></td>
+            <td style="width: 60%;"><p>1.	In respect of any material accounting estimates from the prior period, review how they have been utilised in the current period to determine their reasonableness.</p>
+<p><i>If this work has been undertaken in other sections of the file a summary schedule should be produced to allow an overall conclusion to be reached.</i></p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">2.<br></td>
+            <td style="width: 60%;"><p>2.	Ensure that Appendix 1.7 (Accounting Estimates) has been completed and concluded.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">3.<br></td>
+            <td style="width: 60%;"><p>3.	List and perform any additional tests considered necessary.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">4.<br></td>
+            <td style="width: 60%;"><h6>LAW AND REGULATION</h6>
+<p>4.	Obtain details of the law and regulations which:</p>
+<ul>
+    <li>	are central to the continuing operation of the entity; or</li>
+    <li>	would lead to a material financial penalty if not complied with; or</li>
+    <li>	are a contractual or licensing arrangement which is of critical importance to the entity; or</li>
+    <li>	otherwise could have a material effect on the operation of the entity.</li>
+</ul>
+<p>Ensure that the permanent file has also been updated with these details.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">5.<br></td>
+            <td style="width: 60%;"><p>5.	Discuss with management procedures for compliance with relevant law and regulations.  Ensure the permanent file has also been updated with these details.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">6.<br></td>
+            <td style="width: 60%;"><p>6.	Review the following for evidence of non-compliance with law and regulations:</p>
+<ul>
+    <li>	correspondence with legal advisors and regulatory bodies;</li>
+    <li>	correspondence with government bodies (including taxation authorities);</li>
+    <li>	shareholder and board minutes; and</li>
+    <li>	reports commissioned from experts.</li>
+</ul><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">7.<br></td>
+            <td style="width: 60%;"><p>7.	Consider the entity’s knowledge of employment law. Are there procedures in place to adequately consider areas such as the following, where legislation covers the relevant areas:</p>
+<ul>
+    <li>data protection, surveillance and privacy at work;</li>
+    <li>discrimination (covering age (including retirement); disability, race, religion, sex and sexual orientation);</li>
+    <li>discipline and grievance procedures;</li>
+    <li>employee status;</li>
+    <li>equal pay;</li>
+    <li>fixed-term working;</li>
+    <li>flexible working, parental rights and family-friendly procedures;</li>
+    <li>maternity, paternity, shared parental and adoption leave and pay;</li>
+    <li>minimum and living wage;</li>
+    <li>part time working;</li>
+    <li>recruitment and selection;</li>
+    <li>redundancy;</li>
+    <li>terms and conditions of employment;</li>
+    <li>trade union recognition and industrial action;</li>
+    <li>whistleblowing;</li>
+    <li>work based pension;</li>
+    <li>working time regulations;</li>
+    <li>wrongful dismissal; and</li>
+    <li>any other employment laws relevant to the entity?</li>
+</ul>
+<p><i>NB: The above represents a selection of employment law applicable around the world, whereas not all of these will be covered by legislation in each jurisdiction.</i></p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">8.<br></td>
+            <td style="width: 60%;"><p>8.	Where necessary, has the entity undertaken a health and safety risk assessment, which is up to date?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">9.<br></td>
+            <td style="width: 60%;"><p>9.	Where necessary, has the entity undertaken a fire risk assessment, which is up to date?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">10.<br></td>
+            <td style="width: 60%;"><p>10.	Document all areas of non-compliance, ensure that these have been adequately assessed in the L Section of the file and if appropriate, considered in the going concern review.  <strong>(P)</strong></p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">11.<br></td>
+            <td style="width: 60%;"><p>11.	List and perform any additional tests considered necessary.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">12.<br></td>
+            <td style="width: 60%;"><h6>FRAUD AND ERROR/h6>
+<p>12.	Review the following for potential signs of fraud and error (this work might also identify non-compliance with law and regulation or undisclosed related party transactions):</p>
+<ul>
+    <li>investigations by government departments;</li>
+    <li>payment of fines or penalties;</li>
+    <li>adverse media comment;</li>
+    <li>lavish lifestyles or extensive and potentially unnecessary foreign travel by senior management;</li>
+    <li>aggressive tax management by the entity whether deemed to be tax evasion or avoidance;</li>
+    <li>aggressive earnings management;</li>
+    <li>(other than where they represent part of an authorised remuneration package) assets used for private benefit;</li>
+    <li>complex group structures, including offshore entities where ownership cannot be identified</li>
+    <li>long delays in production of accounting records or financial statements;</li>
+    <li>unauthorised transactions or inadequately recorded transactions;</li>
+    <li>computer problems or other system problems which mean that an adequate audit trail is not given;</li>
+    <li>a poor control environment and lack of segregation of duties;</li>
+    <li>management refusal to provide information;</li>
+    <li>unusual accounting treatments not in accordance with accounting policies adopted by the entity;</li>
+    <li>payments for unspecified services and payments made for goods / services not received / required;</li>
+    <li>sales (including the disposal of fixed assets) or purchases at prices significantly above or below the market price;</li>
+    <li>payment in cash where this appears to be inappropriate;</li>
+    <li>transactions which have no apparent purpose or economic sense;</li>
+    <li>unusual related party transactions; </li>
+    <li>transactions with tax havens, high-risk and non-cooperative jurisdictions (as categorised by FATF) or third countries where the transaction did not originate;</li>
+    <li>sales commissions or agents fees that appear excessive, are undertaken on a split commission basis or are paid before the underlying transaction occurs;</li>
+    <li>unexpected balances and reversal of transactions after the period-end; and</li>
+    <li>unusual investments of funds</li>
+</ul><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">13.<br></td>
+            <td style="width: 60%;"><p>13.	If, during the audit work, there is any suspicion that a document may not be authentic, or has been altered, consider confirming the contents of the document directly with the third party from whom the document originated. <strong>(E, R&O, C)</strong></p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">14.<br></td>
+            <td style="width: 60%;"><p>14.	Document all areas of concern, ensure that these have been brought to the attention of the A.E.P. and consider whether these concerns could impact on the audit opinion or whether they draw into question the integrity of senior management and thus whether we should continue to act for the client.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">15.<br></td>
+            <td style="width: 60%;"><p>15.	List and perform any additional tests considered necessary.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">16.<br></td>
+            <td style="width: 60%;"><p>16.	Through discussions with the management ensure that all service organisation that process financial information have been identified.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">17.<br></td>
+            <td style="width: 60%;"><p>17.	Ensure that a full list of service organisations used by the entity is noted on the permanent file.  This should include (where appropriate):-</p>
+<ul>
+    <li>Payroll bureau;</li>
+    <li>Outsourced bookkeeper;</li>
+    <li>Accountants involved in the production of the financial statements;</li>
+    <li>Accountants involved in preparing tax and deferred tax computations;</li>
+    <li>Accountants involved in tax compliance work;</li>
+    <li>Third parties who hold and distribute stock on behalf of the entity;</li>
+    <li>Professional inventory counters;</li>
+    <li>Investment custodians; and</li>
+    <li>Investment managers.</li>
+</ul><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">18.<br></td>
+            <td style="width: 60%;"><p>18.	Where the service organisation is also the audit practice ensure that adequate consideration has been given to the ethical impact of the non-audit services provided.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">19.<br></td>
+            <td style="width: 60%;"><p>19.	Obtain a copy of the letters of engagement between the entity and the service organisation, and ensure the following are documented and understood:-</p>
+<ul>
+    <li>	The terms of the contract;</li>
+    <li>	The respective responsibilities of the client and the service organisation;</li>
+    <li>	The respective responsibilities of the client and the service organisation;</li>
+    <li>	What information is to be provided to and by the service organisation the timeframe for production; and</li>
+    <li>	There are appropriate indemnity clauses to cover a performance failure by the service organisation.</li>
+</ul><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">20.<br></td>
+            <td style="width: 60%;"><p>20.	Ensure that the service organization is able to provide a continuing service to the client, and that where appropriate contingency plans are in place if it is not possible for the service to continue, for whatever reason (for example, data loss, fire or liquidation).</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">21.<br></td>
+            <td style="width: 60%;"><p>21.	Ensure the permanent file documents the controls that operate regarding the provision of information to, and the receipt of information from, the service organisation (i.e. how is it ensured that accurate information passes between the two entities and that information is transferred by an authorised person).</p>
+<br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">22.<br></td>
+            <td style="width: 60%;"><p><i>Many service organisation provide a ‘Type 2’ report (as defined in ISA 402). These ‘Type 2’ reports are also sometimes produced by a service organisation’s internal auditors. They include information on the description, design and operating effectiveness of internal controls.  Organisations may alternatively provide a ‘Type 1’ report which cover just the description and design of internal controls. </i></p>
+<p>22.	Review these documents where available and update the PAF regarding the controls operated within the service organisation</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">23.<br></td>
+            <td style="width: 60%;"><p>23.	Review the audit approach regarding the work of service organisations to determine whether any reliance is to be placed on their internal controls or whether a purely substantive approach will be adopted. </p>
+<p><i>For some audit assertions, for example ownership of shares is it unlikely that adequate assurance will be gained via a purely substantive approach.  </i></p>
+<p>Update the planning documentation as necessary and where controls are to be relied upon complete tests 25 and 26. </p>
+<br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">24.<br></td>
+            <td style="width: 60%;"><p>24.	Due to client confidentiality it is unlikely that most service organisations will give third party auditors direct access to their accounting systems and controls. Thus it will only be possible to place reliance on a service organisation’s controls through placing reliance on either an internal or external auditors.  Review the Type 2 Report to determine which controls it gives an opinion on, then determine for which audit assertions reliance can be placed.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">25.<br></td>
+            <td style="width: 60%;"><p>25.	Ensure that the tests on this audit programme relating to reliance on another auditor or an internal auditor are completed.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">26.<br></td>
+            <td style="width: 60%;"><p>26.	List and perform any additional tests considered necessary.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">27.<br></td>
+            <td style="width: 60%;"><h6>USING THE WORK OF AN EXPERT (ISA 620)</h6>
+<p>27.	Ensure that all financial information which has been provided by an expert has been identified, and that the terms of the contract, and the extent of responsibilities of both the client and the expert are understood.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">28.<br></td>
+            <td style="width: 60%;"><p>28.	Assess the competency and independence of the expert (for example, recognised professional qualifications, experience of the expert or membership of a recognised trade or professional body).</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">29.<br></td>
+            <td style="width: 60%;"><p>29.	Review the assumptions used, and the basis on which the expert’s work has been performed to identify any matters which are either inconsistent with:</p>
+<ul>
+    <li>prior periods, or</li>
+    <li>information provided by any counterparty; or</li>
+    <li>information provide by other experts; or</li>
+    <li>information provided by the client; or </li>
+    <li>are inconsistent with the auditor’s general knowledge of the client, or other audit evidence.</li>
+</ul><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">30.<br></td>
+            <td style="width: 60%;"><p>30.	Where the expert’s work involves the use of source data that is significant to the work of the expert, consider the relevance, completeness and accuracy of the source data.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">31.<br></td>
+            <td style="width: 60%;"><p>31.	Ensure that the basis on which the expert’s work has been performed complies with the entity’s accounting policy.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">32.<br></td>
+            <td style="width: 60%;"><p>32.	Ensure that the expert’s work has been performed on a timely basis.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">33.<br></td>
+            <td style="width: 60%;"><p>33.	List and perform any additional tests considered necessary to enable the auditor to conclude that the expert’s work provides sufficient, appropriate audit evidence in the area.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">34.<br></td>
+            <td style="width: 60%;"><h6>CONSIDERING THE WORK OF INTERNAL AUDIT (ISA 610)</h6>
+<p>34.	If not already documented on the file, document which auditors we are placing reliance on, whether they are internal or external to the organisation and why we are placing reliance on them.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">35.<br></td>
+            <td style="width: 60%;"><p>35.	Ensure that confirmation has been obtained from the other audit firm that they are independent of the audit client. </p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">36.<br></td>
+            <td style="width: 60%;"><p>36.	For the current year, have we reviewed their working papers and found them to be reliable?  If not when was the last time that we reviewed them and has an appropriate audit questionnaire been sent in the current year?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">37.<br></td>
+            <td style="width: 60%;"><p>37.	Have any problems with the work of another auditor or internal audit been identified in prior years?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">38.<br></td>
+            <td style="width: 60%;"><p>38.	Has the work on which we are seeking to rely been performed in accordance with ISA or equivalent guidance (such as a Type 2 Report)?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">39.<br></td>
+            <td style="width: 60%;"><p>39.	Is the other auditor independent from the entity?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">40.<br></td>
+            <td style="width: 60%;"><p>40.	Are there any external quality control procedures?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">41.<br></td>
+            <td style="width: 60%;"><p>41.	List and perform any tests considered necessary to comply with the requirements of the above ISA’s.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+    </tbody>
+</table>
+<p><b>Assertion key:</b><br>
+E = Existence;<br>
+R&O = Rights and Obligations;<br>
+C = Completeness;<br>
+V = Accuracy, Valuation and Allocation;<br>
+P = Presentation;<br>
+O = Occurrence;<br>
+A = Accuracy;<br>
+CO = Cut-off;<br>
+CL = Classification.<br>
+</p>
+', true, false, 'J', false, '')
+ 4 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 7 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-10 13:32:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-04-10 13:32:03 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 1998.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:03 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2024.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:03 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2040.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:03 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2060.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:03 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2077.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:03 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2093.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:03 --> [DEPRECATED] Required parameter $tagvspaces follows optional parameter $default_css in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 1139.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:03 --> [DEPRECATED] Required parameter $k follows optional parameter $points in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 2488.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-10 13:32:03 --> ErrorException: Undefined array key "cols"
+in APPPATH\Libraries\tcpdf\tcpdf.php on line 16992.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(16992): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cols"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php', 16992)
+ 2 APPPATH\Libraries\tcpdf\tcpdf.php(17263): TCPDF->getHtmlDomArray('<table><tr><td style="width: 50%;">&nbsp; <table><tr><td class="bb">Client:<marker style="font-size:0"/></td></tr><tr><td><marker style="font-size:0"/></td></tr><tr><td class="bb">Period:<marker style="font-size:0"/></td></tr></table></td><td style="width: 50%;">&nbsp; <table border="1"><tr><td>Programme prepared by:<br><marker style="font-size:0"/></td><td>Date:<br><marker style="font-size:0"/></td></tr><tr><td>A.E.P. review at completion:<br><marker style="font-size:0"/></td><td>Date:<br><marker style="font-size:0"/></td></tr></table></td></tr></table><h3>OTHER AUDIT AREAS INCLUDING:</h3><p><i>Audit work on deferred taxation is included in the J audit programme. It should also be noted that deferred tax provisions cannot be discounted.</i></p><ul><li><b>ACCOUNTING ESTIMATES</b></li><li><b>LAW AND REGULATION</b></li><li><b>FRAUD AND ERROR</b></li><li><b>SERVICE ORGANISATION</b></li><li><b>AUDIT EXPERTS</b></li><li><b>RELIANCE ON OTHER AUDITORS AND INTERNAL AUDITORS</b></li></ul><table><thead><tr><th style="width: 6%;"><marker style="font-size:0"/></th><th style="width: 60%;"><b>ACCOUNTING ESTIMATES</b><marker style="font-size:0"/></th><th class="cent bo" style="width: 12%;"><b>Extent</b><marker style="font-size:0"/></th><th class="cent bo" style="width: 12%;"><b>Reference</b><marker style="font-size:0"/></th><th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b><marker style="font-size:0"/></th></tr></thead><tr><td style="width: 6%;">1.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>1. In respect of any material accounting estimates from the prior period, review how they have been utilised in the current period to determine their reasonableness.</p><p><i>If this work has been undertaken in other sections of the file a summary schedule should be produced to allow an overall conclusion to be reached.</i></p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">2.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>2. Ensure that Appendix 1.7 (Accounting Estimates) has been completed and concluded.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">3.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>3. List and perform any additional tests considered necessary.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">4.<br><marker style="font-size:0"/></td><td style="width: 60%;"><h6>LAW AND REGULATION</h6><p>4. Obtain details of the law and regulations which:</p><ul><li> are central to the continuing operation of the entity; or</li><li> would lead to a material financial penalty if not complied with; or</li><li> are a contractual or licensing arrangement which is of critical importance to the entity; or</li><li> otherwise could have a material effect on the operation of the entity.</li></ul><p>Ensure that the permanent file has also been updated with these details.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">5.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>5. Discuss with management procedures for compliance with relevant law and regulations. Ensure the permanent file has also been updated with these details.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">6.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>6. Review the following for evidence of non-compliance with law and regulations:</p><ul><li> correspondence with legal advisors and regulatory bodies;</li><li> correspondence with government bodies (including taxation authorities);</li><li> shareholder and board minutes; and</li><li> reports commissioned from experts.</li></ul><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">7.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>7. Consider the entity’s knowledge of employment law. Are there procedures in place to adequately consider areas such as the following, where legislation covers the relevant areas:</p><ul><li>data protection, surveillance and privacy at work;</li><li>discrimination (covering age (including retirement); disability, race, religion, sex and sexual orientation);</li><li>discipline and grievance procedures;</li><li>employee status;</li><li>equal pay;</li><li>fixed-term working;</li><li>flexible working, parental rights and family-friendly procedures;</li><li>maternity, paternity, shared parental and adoption leave and pay;</li><li>minimum and living wage;</li><li>part time working;</li><li>recruitment and selection;</li><li>redundancy;</li><li>terms and conditions of employment;</li><li>trade union recognition and industrial action;</li><li>whistleblowing;</li><li>work based pension;</li><li>working time regulations;</li><li>wrongful dismissal; and</li><li>any other employment laws relevant to the entity?</li></ul><p><i>NB: The above represents a selection of employment law applicable around the world, whereas not all of these will be covered by legislation in each jurisdiction.</i></p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">8.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>8. Where necessary, has the entity undertaken a health and safety risk assessment, which is up to date?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">9.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>9. Where necessary, has the entity undertaken a fire risk assessment, which is up to date?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">10.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>10. Document all areas of non-compliance, ensure that these have been adequately assessed in the L Section of the file and if appropriate, considered in the going concern review. <strong>(P)</strong></p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">11.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>11. List and perform any additional tests considered necessary.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">12.<br><marker style="font-size:0"/></td><td style="width: 60%;"><h6>FRAUD AND ERROR/h6> <p>12. Review the following for potential signs of fraud and error (this work might also identify non-compliance with law and regulation or undisclosed related party transactions):</p><ul><li>investigations by government departments;</li><li>payment of fines or penalties;</li><li>adverse media comment;</li><li>lavish lifestyles or extensive and potentially unnecessary foreign travel by senior management;</li><li>aggressive tax management by the entity whether deemed to be tax evasion or avoidance;</li><li>aggressive earnings management;</li><li>(other than where they represent part of an authorised remuneration package) assets used for private benefit;</li><li>complex group structures, including offshore entities where ownership cannot be identified</li><li>long delays in production of accounting records or financial statements;</li><li>unauthorised transactions or inadequately recorded transactions;</li><li>computer problems or other system problems which mean that an adequate audit trail is not given;</li><li>a poor control environment and lack of segregation of duties;</li><li>management refusal to provide information;</li><li>unusual accounting treatments not in accordance with accounting policies adopted by the entity;</li><li>payments for unspecified services and payments made for goods / services not received / required;</li><li>sales (including the disposal of fixed assets) or purchases at prices significantly above or below the market price;</li><li>payment in cash where this appears to be inappropriate;</li><li>transactions which have no apparent purpose or economic sense;</li><li>unusual related party transactions;</li><li>transactions with tax havens, high-risk and non-cooperative jurisdictions (as categorised by FATF) or third countries where the transaction did not originate;</li><li>sales commissions or agents fees that appear excessive, are undertaken on a split commission basis or are paid before the underlying transaction occurs;</li><li>unexpected balances and reversal of transactions after the period-end; and</li><li>unusual investments of funds</li></ul><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">13.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>13. If, during the audit work, there is any suspicion that a document may not be authentic, or has been altered, consider confirming the contents of the document directly with the third party from whom the document originated. <strong>(E, R&O, C)</strong></p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">14.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>14. Document all areas of concern, ensure that these have been brought to the attention of the A.E.P. and consider whether these concerns could impact on the audit opinion or whether they draw into question the integrity of senior management and thus whether we should continue to act for the client.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">15.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>15. List and perform any additional tests considered necessary.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">16.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>16. Through discussions with the management ensure that all service organisation that process financial information have been identified.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">17.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>17. Ensure that a full list of service organisations used by the entity is noted on the permanent file. This should include (where appropriate):-</p><ul><li>Payroll bureau;</li><li>Outsourced bookkeeper;</li><li>Accountants involved in the production of the financial statements;</li><li>Accountants involved in preparing tax and deferred tax computations;</li><li>Accountants involved in tax compliance work;</li><li>Third parties who hold and distribute stock on behalf of the entity;</li><li>Professional inventory counters;</li><li>Investment custodians; and</li><li>Investment managers.</li></ul><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">18.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>18. Where the service organisation is also the audit practice ensure that adequate consideration has been given to the ethical impact of the non-audit services provided.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">19.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>19. Obtain a copy of the letters of engagement between the entity and the service organisation, and ensure the following are documented and understood:-</p><ul><li> The terms of the contract;</li><li> The respective responsibilities of the client and the service organisation;</li><li> The respective responsibilities of the client and the service organisation;</li><li> What information is to be provided to and by the service organisation the timeframe for production; and</li><li> There are appropriate indemnity clauses to cover a performance failure by the service organisation.</li></ul><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">20.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>20. Ensure that the service organization is able to provide a continuing service to the client, and that where appropriate contingency plans are in place if it is not possible for the service to continue, for whatever reason (for example, data loss, fire or liquidation).</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">21.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>21. Ensure the permanent file documents the controls that operate regarding the provision of information to, and the receipt of information from, the service organisation (i.e. how is it ensured that accurate information passes between the two entities and that information is transferred by an authorised person).</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">22.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p><i>Many service organisation provide a ‘Type 2’ report (as defined in ISA 402). These ‘Type 2’ reports are also sometimes produced by a service organisation’s internal auditors. They include information on the description, design and operating effectiveness of internal controls. Organisations may alternatively provide a ‘Type 1’ report which cover just the description and design of internal controls.&nbsp;</i></p><p>22. Review these documents where available and update the PAF regarding the controls operated within the service organisation</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">23.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>23. Review the audit approach regarding the work of service organisations to determine whether any reliance is to be placed on their internal controls or whether a purely substantive approach will be adopted.&nbsp;</p><p><i>For some audit assertions, for example ownership of shares is it unlikely that adequate assurance will be gained via a purely substantive approach. &nbsp;</i></p><p>Update the planning documentation as necessary and where controls are to be relied upon complete tests 25 and 26.&nbsp;</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">24.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>24. Due to client confidentiality it is unlikely that most service organisations will give third party auditors direct access to their accounting systems and controls. Thus it will only be possible to place reliance on a service organisation’s controls through placing reliance on either an internal or external auditors. Review the Type 2 Report to determine which controls it gives an opinion on, then determine for which audit assertions reliance can be placed.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">25.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>25. Ensure that the tests on this audit programme relating to reliance on another auditor or an internal auditor are completed.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">26.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>26. List and perform any additional tests considered necessary.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">27.<br><marker style="font-size:0"/></td><td style="width: 60%;"><h6>USING THE WORK OF AN EXPERT (ISA 620)</h6><p>27. Ensure that all financial information which has been provided by an expert has been identified, and that the terms of the contract, and the extent of responsibilities of both the client and the expert are understood.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">28.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>28. Assess the competency and independence of the expert (for example, recognised professional qualifications, experience of the expert or membership of a recognised trade or professional body).</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">29.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>29. Review the assumptions used, and the basis on which the expert’s work has been performed to identify any matters which are either inconsistent with:</p><ul><li>prior periods, or</li><li>information provided by any counterparty; or</li><li>information provide by other experts; or</li><li>information provided by the client; or</li><li>are inconsistent with the auditor’s general knowledge of the client, or other audit evidence.</li></ul><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">30.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>30. Where the expert’s work involves the use of source data that is significant to the work of the expert, consider the relevance, completeness and accuracy of the source data.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">31.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>31. Ensure that the basis on which the expert’s work has been performed complies with the entity’s accounting policy.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">32.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>32. Ensure that the expert’s work has been performed on a timely basis.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">33.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>33. List and perform any additional tests considered necessary to enable the auditor to conclude that the expert’s work provides sufficient, appropriate audit evidence in the area.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">34.<br><marker style="font-size:0"/></td><td style="width: 60%;"><h6>CONSIDERING THE WORK OF INTERNAL AUDIT (ISA 610)</h6><p>34. If not already documented on the file, document which auditors we are placing reliance on, whether they are internal or external to the organisation and why we are placing reliance on them.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">35.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>35. Ensure that confirmation has been obtained from the other audit firm that they are independent of the audit client.&nbsp;</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">36.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>36. For the current year, have we reviewed their working papers and found them to be reliable? If not when was the last time that we reviewed them and has an appropriate audit questionnaire been sent in the current year?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">37.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>37. Have any problems with the work of another auditor or internal audit been identified in prior years?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">38.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>38. Has the work on which we are seeking to rely been performed in accordance with ISA or equivalent guidance (such as a Type 2 Report)?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">39.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>39. Is the other auditor independent from the entity?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">40.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>40. Are there any external quality control procedures?</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr><tr><td style="width: 6%;">41.<br><marker style="font-size:0"/></td><td style="width: 60%;"><p>41. List and perform any tests considered necessary to comply with the requirements of the above ISA’s.</p><br><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td><td class="cent bo" style="width: 12%;"><marker style="font-size:0"/></td></tr></table><p><b>Assertion key:</b><br>E = Existence;<br>R&O = Rights and Obligations;<br>C = Completeness;<br>V = Accuracy, Valuation and Allocation;<br>P = Presentation;<br>O = Occurrence;<br>A = Accuracy;<br>CO = Cut-off;<br>CL = Classification.<br></p>')
+ 3 APPPATH\Views\pdfc2\N2.php(170): TCPDF->writeHTML('
+    <style>
+        *{
+            font-family: \'Times New Roman\', Times, serif;
+            font-size: 14px;
+        }
+        h3{
+            font-size: 16px;
+        }
+        .cent{
+            text-align: center;
+        }
+        .bo{
+            border: 1px solid black;
+        }
+        p,li{
+            text-align: justify;
+        }
+        .bb{
+            border-bottom: 1px solid black;
+            
+        }
+    </style>
+
+<table>
+    <tr>
+        <td style="width: 50%;">
+            <table>
+                <tr><td class="bb">Client:</td></tr>
+                <tr><td></td></tr>
+                <tr><td class="bb">Period:</td></tr>
+            </table>
+        </td>
+        <td style="width: 50%;">
+            <table border="1">
+                <tr>
+                    <td>Programme prepared by: <br></td>
+                    <td>Date: <br></td>
+                </tr>
+                <tr>
+                    <td>A.E.P. review at completion:<br></td>
+                    <td>Date: <br></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<h3>OTHER AUDIT AREAS INCLUDING:</h3>
+<p><i>Audit work on deferred taxation is included in the J audit programme. It should also be noted that deferred tax provisions cannot be discounted.</i></p>
+<ul>
+    <li><b>ACCOUNTING ESTIMATES</b></li>
+    <li><b>LAW AND REGULATION</b></li>
+    <li><b>FRAUD AND ERROR</b></li>
+    <li><b>SERVICE ORGANISATION</b></li>
+    <li><b>AUDIT EXPERTS</b></li>
+    <li><b>RELIANCE ON OTHER AUDITORS AND INTERNAL AUDITORS</b></li>
+</ul>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width: 6%;"></th>
+            <th style="width: 60%;"><b>ACCOUNTING ESTIMATES</b></th>
+            <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+            <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+            <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="width: 6%;">1.<br></td>
+            <td style="width: 60%;"><p>1.	In respect of any material accounting estimates from the prior period, review how they have been utilised in the current period to determine their reasonableness.</p>
+<p><i>If this work has been undertaken in other sections of the file a summary schedule should be produced to allow an overall conclusion to be reached.</i></p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">2.<br></td>
+            <td style="width: 60%;"><p>2.	Ensure that Appendix 1.7 (Accounting Estimates) has been completed and concluded.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">3.<br></td>
+            <td style="width: 60%;"><p>3.	List and perform any additional tests considered necessary.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">4.<br></td>
+            <td style="width: 60%;"><h6>LAW AND REGULATION</h6>
+<p>4.	Obtain details of the law and regulations which:</p>
+<ul>
+    <li>	are central to the continuing operation of the entity; or</li>
+    <li>	would lead to a material financial penalty if not complied with; or</li>
+    <li>	are a contractual or licensing arrangement which is of critical importance to the entity; or</li>
+    <li>	otherwise could have a material effect on the operation of the entity.</li>
+</ul>
+<p>Ensure that the permanent file has also been updated with these details.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">5.<br></td>
+            <td style="width: 60%;"><p>5.	Discuss with management procedures for compliance with relevant law and regulations.  Ensure the permanent file has also been updated with these details.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">6.<br></td>
+            <td style="width: 60%;"><p>6.	Review the following for evidence of non-compliance with law and regulations:</p>
+<ul>
+    <li>	correspondence with legal advisors and regulatory bodies;</li>
+    <li>	correspondence with government bodies (including taxation authorities);</li>
+    <li>	shareholder and board minutes; and</li>
+    <li>	reports commissioned from experts.</li>
+</ul><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">7.<br></td>
+            <td style="width: 60%;"><p>7.	Consider the entity’s knowledge of employment law. Are there procedures in place to adequately consider areas such as the following, where legislation covers the relevant areas:</p>
+<ul>
+    <li>data protection, surveillance and privacy at work;</li>
+    <li>discrimination (covering age (including retirement); disability, race, religion, sex and sexual orientation);</li>
+    <li>discipline and grievance procedures;</li>
+    <li>employee status;</li>
+    <li>equal pay;</li>
+    <li>fixed-term working;</li>
+    <li>flexible working, parental rights and family-friendly procedures;</li>
+    <li>maternity, paternity, shared parental and adoption leave and pay;</li>
+    <li>minimum and living wage;</li>
+    <li>part time working;</li>
+    <li>recruitment and selection;</li>
+    <li>redundancy;</li>
+    <li>terms and conditions of employment;</li>
+    <li>trade union recognition and industrial action;</li>
+    <li>whistleblowing;</li>
+    <li>work based pension;</li>
+    <li>working time regulations;</li>
+    <li>wrongful dismissal; and</li>
+    <li>any other employment laws relevant to the entity?</li>
+</ul>
+<p><i>NB: The above represents a selection of employment law applicable around the world, whereas not all of these will be covered by legislation in each jurisdiction.</i></p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">8.<br></td>
+            <td style="width: 60%;"><p>8.	Where necessary, has the entity undertaken a health and safety risk assessment, which is up to date?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">9.<br></td>
+            <td style="width: 60%;"><p>9.	Where necessary, has the entity undertaken a fire risk assessment, which is up to date?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">10.<br></td>
+            <td style="width: 60%;"><p>10.	Document all areas of non-compliance, ensure that these have been adequately assessed in the L Section of the file and if appropriate, considered in the going concern review.  <strong>(P)</strong></p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">11.<br></td>
+            <td style="width: 60%;"><p>11.	List and perform any additional tests considered necessary.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">12.<br></td>
+            <td style="width: 60%;"><h6>FRAUD AND ERROR/h6>
+<p>12.	Review the following for potential signs of fraud and error (this work might also identify non-compliance with law and regulation or undisclosed related party transactions):</p>
+<ul>
+    <li>investigations by government departments;</li>
+    <li>payment of fines or penalties;</li>
+    <li>adverse media comment;</li>
+    <li>lavish lifestyles or extensive and potentially unnecessary foreign travel by senior management;</li>
+    <li>aggressive tax management by the entity whether deemed to be tax evasion or avoidance;</li>
+    <li>aggressive earnings management;</li>
+    <li>(other than where they represent part of an authorised remuneration package) assets used for private benefit;</li>
+    <li>complex group structures, including offshore entities where ownership cannot be identified</li>
+    <li>long delays in production of accounting records or financial statements;</li>
+    <li>unauthorised transactions or inadequately recorded transactions;</li>
+    <li>computer problems or other system problems which mean that an adequate audit trail is not given;</li>
+    <li>a poor control environment and lack of segregation of duties;</li>
+    <li>management refusal to provide information;</li>
+    <li>unusual accounting treatments not in accordance with accounting policies adopted by the entity;</li>
+    <li>payments for unspecified services and payments made for goods / services not received / required;</li>
+    <li>sales (including the disposal of fixed assets) or purchases at prices significantly above or below the market price;</li>
+    <li>payment in cash where this appears to be inappropriate;</li>
+    <li>transactions which have no apparent purpose or economic sense;</li>
+    <li>unusual related party transactions; </li>
+    <li>transactions with tax havens, high-risk and non-cooperative jurisdictions (as categorised by FATF) or third countries where the transaction did not originate;</li>
+    <li>sales commissions or agents fees that appear excessive, are undertaken on a split commission basis or are paid before the underlying transaction occurs;</li>
+    <li>unexpected balances and reversal of transactions after the period-end; and</li>
+    <li>unusual investments of funds</li>
+</ul><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">13.<br></td>
+            <td style="width: 60%;"><p>13.	If, during the audit work, there is any suspicion that a document may not be authentic, or has been altered, consider confirming the contents of the document directly with the third party from whom the document originated. <strong>(E, R&O, C)</strong></p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">14.<br></td>
+            <td style="width: 60%;"><p>14.	Document all areas of concern, ensure that these have been brought to the attention of the A.E.P. and consider whether these concerns could impact on the audit opinion or whether they draw into question the integrity of senior management and thus whether we should continue to act for the client.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">15.<br></td>
+            <td style="width: 60%;"><p>15.	List and perform any additional tests considered necessary.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">16.<br></td>
+            <td style="width: 60%;"><p>16.	Through discussions with the management ensure that all service organisation that process financial information have been identified.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">17.<br></td>
+            <td style="width: 60%;"><p>17.	Ensure that a full list of service organisations used by the entity is noted on the permanent file.  This should include (where appropriate):-</p>
+<ul>
+    <li>Payroll bureau;</li>
+    <li>Outsourced bookkeeper;</li>
+    <li>Accountants involved in the production of the financial statements;</li>
+    <li>Accountants involved in preparing tax and deferred tax computations;</li>
+    <li>Accountants involved in tax compliance work;</li>
+    <li>Third parties who hold and distribute stock on behalf of the entity;</li>
+    <li>Professional inventory counters;</li>
+    <li>Investment custodians; and</li>
+    <li>Investment managers.</li>
+</ul><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">18.<br></td>
+            <td style="width: 60%;"><p>18.	Where the service organisation is also the audit practice ensure that adequate consideration has been given to the ethical impact of the non-audit services provided.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">19.<br></td>
+            <td style="width: 60%;"><p>19.	Obtain a copy of the letters of engagement between the entity and the service organisation, and ensure the following are documented and understood:-</p>
+<ul>
+    <li>	The terms of the contract;</li>
+    <li>	The respective responsibilities of the client and the service organisation;</li>
+    <li>	The respective responsibilities of the client and the service organisation;</li>
+    <li>	What information is to be provided to and by the service organisation the timeframe for production; and</li>
+    <li>	There are appropriate indemnity clauses to cover a performance failure by the service organisation.</li>
+</ul><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">20.<br></td>
+            <td style="width: 60%;"><p>20.	Ensure that the service organization is able to provide a continuing service to the client, and that where appropriate contingency plans are in place if it is not possible for the service to continue, for whatever reason (for example, data loss, fire or liquidation).</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">21.<br></td>
+            <td style="width: 60%;"><p>21.	Ensure the permanent file documents the controls that operate regarding the provision of information to, and the receipt of information from, the service organisation (i.e. how is it ensured that accurate information passes between the two entities and that information is transferred by an authorised person).</p>
+<br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">22.<br></td>
+            <td style="width: 60%;"><p><i>Many service organisation provide a ‘Type 2’ report (as defined in ISA 402). These ‘Type 2’ reports are also sometimes produced by a service organisation’s internal auditors. They include information on the description, design and operating effectiveness of internal controls.  Organisations may alternatively provide a ‘Type 1’ report which cover just the description and design of internal controls. </i></p>
+<p>22.	Review these documents where available and update the PAF regarding the controls operated within the service organisation</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">23.<br></td>
+            <td style="width: 60%;"><p>23.	Review the audit approach regarding the work of service organisations to determine whether any reliance is to be placed on their internal controls or whether a purely substantive approach will be adopted. </p>
+<p><i>For some audit assertions, for example ownership of shares is it unlikely that adequate assurance will be gained via a purely substantive approach.  </i></p>
+<p>Update the planning documentation as necessary and where controls are to be relied upon complete tests 25 and 26. </p>
+<br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">24.<br></td>
+            <td style="width: 60%;"><p>24.	Due to client confidentiality it is unlikely that most service organisations will give third party auditors direct access to their accounting systems and controls. Thus it will only be possible to place reliance on a service organisation’s controls through placing reliance on either an internal or external auditors.  Review the Type 2 Report to determine which controls it gives an opinion on, then determine for which audit assertions reliance can be placed.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">25.<br></td>
+            <td style="width: 60%;"><p>25.	Ensure that the tests on this audit programme relating to reliance on another auditor or an internal auditor are completed.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">26.<br></td>
+            <td style="width: 60%;"><p>26.	List and perform any additional tests considered necessary.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">27.<br></td>
+            <td style="width: 60%;"><h6>USING THE WORK OF AN EXPERT (ISA 620)</h6>
+<p>27.	Ensure that all financial information which has been provided by an expert has been identified, and that the terms of the contract, and the extent of responsibilities of both the client and the expert are understood.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">28.<br></td>
+            <td style="width: 60%;"><p>28.	Assess the competency and independence of the expert (for example, recognised professional qualifications, experience of the expert or membership of a recognised trade or professional body).</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">29.<br></td>
+            <td style="width: 60%;"><p>29.	Review the assumptions used, and the basis on which the expert’s work has been performed to identify any matters which are either inconsistent with:</p>
+<ul>
+    <li>prior periods, or</li>
+    <li>information provided by any counterparty; or</li>
+    <li>information provide by other experts; or</li>
+    <li>information provided by the client; or </li>
+    <li>are inconsistent with the auditor’s general knowledge of the client, or other audit evidence.</li>
+</ul><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">30.<br></td>
+            <td style="width: 60%;"><p>30.	Where the expert’s work involves the use of source data that is significant to the work of the expert, consider the relevance, completeness and accuracy of the source data.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">31.<br></td>
+            <td style="width: 60%;"><p>31.	Ensure that the basis on which the expert’s work has been performed complies with the entity’s accounting policy.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">32.<br></td>
+            <td style="width: 60%;"><p>32.	Ensure that the expert’s work has been performed on a timely basis.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">33.<br></td>
+            <td style="width: 60%;"><p>33.	List and perform any additional tests considered necessary to enable the auditor to conclude that the expert’s work provides sufficient, appropriate audit evidence in the area.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">34.<br></td>
+            <td style="width: 60%;"><h6>CONSIDERING THE WORK OF INTERNAL AUDIT (ISA 610)</h6>
+<p>34.	If not already documented on the file, document which auditors we are placing reliance on, whether they are internal or external to the organisation and why we are placing reliance on them.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">35.<br></td>
+            <td style="width: 60%;"><p>35.	Ensure that confirmation has been obtained from the other audit firm that they are independent of the audit client. </p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">36.<br></td>
+            <td style="width: 60%;"><p>36.	For the current year, have we reviewed their working papers and found them to be reliable?  If not when was the last time that we reviewed them and has an appropriate audit questionnaire been sent in the current year?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">37.<br></td>
+            <td style="width: 60%;"><p>37.	Have any problems with the work of another auditor or internal audit been identified in prior years?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">38.<br></td>
+            <td style="width: 60%;"><p>38.	Has the work on which we are seeking to rely been performed in accordance with ISA or equivalent guidance (such as a Type 2 Report)?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">39.<br></td>
+            <td style="width: 60%;"><p>39.	Is the other auditor independent from the entity?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">40.<br></td>
+            <td style="width: 60%;"><p>40.	Are there any external quality control procedures?</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width: 6%;">41.<br></td>
+            <td style="width: 60%;"><p>41.	List and perform any tests considered necessary to comply with the requirements of the above ISA’s.</p><br></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+            <td class="cent bo" style="width: 12%;"></td>
+        </tr>
+        
+    </tbody>
+</table>
+<p><b>Assertion key:</b><br>
+E = Existence;<br>
+R&O = Rights and Obligations;<br>
+C = Completeness;<br>
+V = Accuracy, Valuation and Allocation;<br>
+P = Presentation;<br>
+O = Occurrence;<br>
+A = Accuracy;<br>
+CO = Cut-off;<br>
+CL = Classification.<br>
+</p>
+', true, false, 'J', false, '')
+ 4 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 7 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-10 13:32:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-04-10 13:32:43 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 1998.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:43 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2024.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:43 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2040.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:43 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2060.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:43 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2077.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:43 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2093.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:43 --> [DEPRECATED] Required parameter $tagvspaces follows optional parameter $default_css in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 1139.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:32:43 --> [DEPRECATED] Required parameter $k follows optional parameter $points in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 2488.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-10 13:33:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-10 13:39:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-10 13:39:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-10 13:40:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-04-10 13:40:05 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 1998.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:40:05 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2024.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:40:05 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2040.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:40:05 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2060.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:40:05 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2077.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:40:05 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2093.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:40:05 --> [DEPRECATED] Required parameter $tagvspaces follows optional parameter $default_css in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 1139.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-10 13:40:05 --> [DEPRECATED] Required parameter $k follows optional parameter $points in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 2488.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc2\N2.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc2\\N2.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc2/N2', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1292): view('pdfc2/N2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf('2.12 N2', 'af466fb47bb55fbaddfc4d3e625b20d54f2fb5bac7689ec49dca0c923815a98d7ad43346d36035a02cb79433c3aa001aa8b458a1e924993646a0ff9f53d9814dJITOqdraW4ol~rw5oL2MlLQC')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-10 13:41:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
