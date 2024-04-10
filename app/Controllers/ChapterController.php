@@ -1295,9 +1295,7 @@ class ChapterController extends BaseController{
             case '2.13.1 O2':
 
                 $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
-                echo view('includes/Header', $data);
-                echo view('chapter2/2131O2', $data);
-                echo view('includes/Footer');
+                echo view('pdfc2/O2', $data);
                 break;
 
             case '2.13.2 O2-1':
