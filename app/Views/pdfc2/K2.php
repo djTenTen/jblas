@@ -104,18 +104,18 @@ $html .= '
 </table>
 ';
 
-$html .= '<h3>INVENTORY APPENDIX 2 – TESTS AT INVENTORY COUNT</h3>';
-$html .= '<p><b>N.B. If inventory count is solely undertaken by a 3rd party, this does not negate the need to carry out audit procedures identical to that carried out if the client had undertaken the procedures.  Consideration should be given as to the integrity and independence of the 3rd party.</b></p>';
-
+$html .= '<h3>TRANSACTIONS WITH RELATED PARTIES</h3>
+<p>NB: Tests covering directors’ remuneration, key management* compensation (KMC) and the identification of key management are noted on the R2 audit programme.</p>
+';
 $html .= '
 <table>
     <thead>
         <tr>
             <th style="width: 6%;"></th>
-            <th style="width: 60%;"><b>Existence/Completeness</b></th>
-            <th class="cent bo" style="width: 12%;"><b>Yes/No/<br>N/A</b></th>
-            <th class="cent bo" style="width: 12%;"><b>Ref.</b></th>
-            <th class="cent bo" style="width: 12%;"><b>Completed by</b></th>
+            <th style="width: 60%;"><b>Audit Test</b></th>
+            <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+            <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+            <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
         </tr>
     </thead>
     <tbody>';
@@ -136,6 +136,17 @@ $html .= '
 $html .= '
     </tbody>
 </table>
+<p><b>Assertion key:</b><br>
+E = Existence;<br>
+R&O = Rights and Obligations;<br>
+C = Completeness;<br>
+V = Accuracy, Valuation and Allocation;<br>
+P = Presentation;<br>
+O = Occurrence;<br>
+A = Accuracy;<br>
+CO = Cut-off;<br>
+CL = Classification.<br>
+</p>
 ';
     
     

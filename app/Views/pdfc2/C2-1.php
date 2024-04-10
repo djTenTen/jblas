@@ -57,7 +57,7 @@ $html =  "
     <style>
         *{
             font-family: 'Times New Roman', Times, serif;
-            font-size: 13px;
+            font-size: 14px;
         }
         h3{
             font-size: 15px;
