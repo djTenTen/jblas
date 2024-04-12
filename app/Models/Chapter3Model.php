@@ -328,9 +328,16 @@ class Chapter3Model extends Model{
 
     }
 
-    public function getaa3bp3($code,$c3tID){
+    public function getaa3bp3a($code,$c3tID){
 
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'p3', 'code' => $code, 'c3tID' => $c3tID))->get();
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'p3a', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getaa3bp3b($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'p3b', 'code' => $code, 'c3tID' => $c3tID))->get();
         return $query->getResultArray();
 
     }

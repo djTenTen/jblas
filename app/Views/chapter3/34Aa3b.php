@@ -71,13 +71,14 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody id="tbody">
+                        <tbody class="tbody">
                             <?php foreach($bp1 as $r){?>
                                 <tr>
                                     <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"><?= $r['question']?></textarea></td>
                                     <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
                                     <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
                                     <td>
+                                        <button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button>
                                         <?php if($r['status'] == 'Active'){?>
                                             <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
                                         <?php }else{?>
@@ -89,14 +90,11 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field">Add Field</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
                     <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
                 </form>
-
                 <br>
-                <h6>Part 3a – The Auditor’s Assessment ~ Specific Concerns:</h6>
-                <h6><i>Completion of this section is optional unless potential issues regarding the going concern presumption have been identified in Parts 1 or 2 above.</i></h6>
-               
+                <h6>Part 2 – The Auditor’s Assessment ~ General Considerations:</h6>
                 <form action="<?= base_url()?>auditsystem/c3/saveaa3b/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
                     <input type="hidden" value="p2" name="part">
                     <table class="table table-hover table-sm table-bordered">
@@ -108,13 +106,14 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody id="tbody2">
+                        <tbody class="tbody">
                             <?php foreach($bp2 as $r){?>
                                 <tr>
                                     <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"><?= $r['question']?></textarea></td>
                                     <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
                                     <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
                                     <td>
+                                        <button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button>
                                         <?php if($r['status'] == 'Active'){?>
                                             <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
                                         <?php }else{?>
@@ -126,15 +125,16 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field2" id="add-field2">Add Field</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
                     <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
                 </form>
 
                 <br>
-                <h6>Part 3b – The Auditor’s Assessment ~ Disclosure considerations:</h6>
+                <h6>Part 3a – The Auditor’s Assessment ~ Specific Concerns:</h6>
+                <h6><i>Completion of this section is optional unless potential issues regarding the going concern presumption have been identified in Parts 1 or 2 above.</i></h6>
                
                 <form action="<?= base_url()?>auditsystem/c3/saveaa3b/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
-                    <input type="hidden" value="p3" name="part">
+                    <input type="hidden" value="p3a" name="part">
                     <table class="table table-hover table-sm table-bordered">
                         <thead>
                             <tr>
@@ -144,13 +144,14 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody id="tbody3">
-                            <?php foreach($bp3 as $r){?>
+                        <tbody class="tbody">
+                            <?php foreach($bp3a as $r){?>
                                 <tr>
                                     <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"><?= $r['question']?></textarea></td>
                                     <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
                                     <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
                                     <td>
+                                        <button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button>
                                         <?php if($r['status'] == 'Active'){?>
                                             <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
                                         <?php }else{?>
@@ -162,7 +163,44 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field3" id="add-field3">Add Field</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                </form>
+
+                <br>
+                <h6>Part 3b – The Auditor’s Assessment ~ Disclosure considerations:</h6>
+               
+                <form action="<?= base_url()?>auditsystem/c3/saveaa3b/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                    <input type="hidden" value="p3b" name="part">
+                    <table class="table table-hover table-sm table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Values</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <?php foreach($bp3b as $r){?>
+                                <tr>
+                                    <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"><?= $r['question']?></textarea></td>
+                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
+                                    <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
+                                    <td>
+                                        <button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button>
+                                        <?php if($r['status'] == 'Active'){?>
+                                            <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
+                                        <?php }else{?>
+                                            <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
+                                        <?php }?>
+                                    </td>
+                                </tr>
+                            <?php }?>
+                        </tbody>
+                    </table>
+
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
                     <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
                 </form>
 
@@ -214,9 +252,12 @@ $(document).ready(function () {
             } 
     });
     
-    $('#add-field').on('click', function () {
+
+    $('.add-field').on('click', function () {
         // Adding a row inside the tbody.
-        $('#tbody').append(`
+        var form = $(this).closest('form');
+        var tbody = form.find('tbody');
+        tbody.append(`
         <tr>
             <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
             <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"></textarea></td>
@@ -225,38 +266,54 @@ $(document).ready(function () {
         </tr>`);
     });
 
-    $('#tbody').on('click', 'button.remove', function () {
+    $('.tbody').on('click', 'button.remove', function () {
         $(this).closest('tr').remove();
     });
 
 
-    $('#add-field2').on('click', function () {
-        // Adding a row inside the tbody.
-        $('#tbody2').append(`
-        <tr>
-            <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
-            <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"></textarea></td>
-            <td></td>
-            <td><button class="btn btn-danger btn-icon btn-sm remove2" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-        </tr>`);
-    });
+    // $('#add-field').on('click', function () {
+    //     // Adding a row inside the tbody.
+    //     $('#tbody').append(`
+    //     <tr>
+    //         <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
+    //         <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"></textarea></td>
+    //         <td></td>
+    //         <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
+    //     </tr>`);
+    // });
 
-    $('#tbody2').on('click', 'button.remove2', function () {
-        $(this).closest('tr').remove();
-    });
+    // $('#tbody').on('click', 'button.remove', function () {
+    //     $(this).closest('tr').remove();
+    // });
+
+
+    // $('#add-field2').on('click', function () {
+    //     // Adding a row inside the tbody.
+    //     $('#tbody2').append(`
+    //     <tr>
+    //         <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
+    //         <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"></textarea></td>
+    //         <td></td>
+    //         <td><button class="btn btn-danger btn-icon btn-sm remove2" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
+    //     </tr>`);
+    // });
+
+    // $('#tbody2').on('click', 'button.remove2', function () {
+    //     $(this).closest('tr').remove();
+    // });
 
 
 
-    $('#add-field3').on('click', function () {
-        // Adding a row inside the tbody.
-        $('#tbody3').append(`
-        <tr>
-            <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
-            <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"></textarea></td>
-            <td></td>
-            <td><button class="btn btn-danger btn-icon btn-sm remove3" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-        </tr>`);
-    });
+    // $('#add-field3').on('click', function () {
+    //     // Adding a row inside the tbody.
+    //     $('#tbody3').append(`
+    //     <tr>
+    //         <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
+    //         <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"></textarea></td>
+    //         <td></td>
+    //         <td><button class="btn btn-danger btn-icon btn-sm remove3" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
+    //     </tr>`);
+    // });
 
     $('#tbody3').on('click', 'button.remove3', function () {
         $(this).closest('tr').remove();

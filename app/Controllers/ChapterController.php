@@ -619,7 +619,8 @@ class ChapterController extends BaseController{
 
                 $data['bp1'] = $this->c3model->getaa3bp1($code,$dc3tID);
                 $data['bp2'] = $this->c3model->getaa3bp2($code,$dc3tID);
-                $data['bp3'] = $this->c3model->getaa3bp3($code,$dc3tID);
+                $data['bp3a'] = $this->c3model->getaa3bp3a($code,$dc3tID);
+                $data['bp3b'] = $this->c3model->getaa3bp3b($code,$dc3tID);
 
                 $rdata = $this->c3model->getaa3bp4($code,$dc3tID);
                 $data['bp4'] = json_decode($rdata['question'], true);
@@ -1437,7 +1438,8 @@ class ChapterController extends BaseController{
 
                 $data['bp1'] = $this->c3model->getaa3bp1($code,$dc3tID);
                 $data['bp2'] = $this->c3model->getaa3bp2($code,$dc3tID);
-                $data['bp3'] = $this->c3model->getaa3bp3($code,$dc3tID);
+                $data['bp3a'] = $this->c3model->getaa3bp3a($code,$dc3tID);
+                $data['bp3b'] = $this->c3model->getaa3bp3b($code,$dc3tID);
 
                 $rdata = $this->c3model->getaa3bp4($code,$dc3tID);
                 $data['bp4'] = json_decode($rdata['question'], true);

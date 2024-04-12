@@ -16,7 +16,8 @@ class App extends BaseConfig
      *
      *    http://example.com/
      */
-    public string $baseURL = 'http://192.168.0.34/jblas';
+    public string $baseURL = 'http://192.168.0.34/jblas'; //Home
+    //public string $baseURL = 'http://192.168.1.117/jblas'; // Office
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
