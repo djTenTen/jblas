@@ -656,6 +656,7 @@ class ChapterController extends BaseController{
 
             case '3.7 Aa7':
 
+                $data['aepapp'] = $this->c3model->getaa7aepapp($code,$dc3tID);
                 $data['aa7'] = $this->c3model->getaa7isa($code,$dc3tID);
                 $data['cons'] = $this->c3model->getaa7consultation($code,$dc3tID);
                 $data['inc'] = $this->c3model->getaa7inconsistencies($code,$dc3tID);
@@ -1467,6 +1468,7 @@ class ChapterController extends BaseController{
 
             case '3.7 Aa7':
 
+                $data['aepapp'] = $this->c3model->getaa7aepapp($code,$dc3tID);
                 $data['aa7'] = $this->c3model->getaa7isa($code,$dc3tID);
                 $data['cons'] = $this->c3model->getaa7consultation($code,$dc3tID);
                 $data['inc'] = $this->c3model->getaa7inconsistencies($code,$dc3tID);

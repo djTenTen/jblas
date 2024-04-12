@@ -56,8 +56,11 @@
 
 
                 <h6>Summary and Impact of Changes Made to Audit Planning After the Date of the A.E.P’s Approval:</h6>
-                <textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"></textarea>
-                 
+                <form action="<?= base_url()?>auditsystem/c3/saveaa7aepapp/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                    <input type="hidden" name="part" value="aepapp">
+                    <textarea class="form-control reference" id="reference" cols="30" rows="5" name="question"><?= $aepapp['question']?></textarea>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                </form>
                 <p>I approve the above changes to the planning, and consider that these changes have been adequately integrated into the audit approach.</p>
 
                 <h6>I have considered the requirements of ISA 315 and specifically, the definition of a significant risk being, “an identified and assessed risk of material misstatement that, in the auditor’s judgment, requires special audit consideration”.</h6>

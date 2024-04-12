@@ -427,6 +427,26 @@ class Chapter3Controller extends BaseController{
         }
 
     }
+    
+    public function saveaa7aepapp($code,$head,$c3tID){
+        
+        $req = [
+            'aep' => $this->request->getPost('question'),
+            'code' => $code,
+            'part' => 'aepapp',
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+        ];
+
+        $res = $this->c3model->saveaa7aepapp($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+        }
+    }
 
     public function saveaa7aep($code,$head,$c3tID){
 

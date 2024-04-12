@@ -516,6 +516,12 @@ class Chapter3Model extends Model{
         return $query->getRowArray();
 
     }
+    public function getaa7aepapp($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'aepapp', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getRowArray();
+
+    }
     /** 
         POST FUNCTIONS
     */
@@ -542,6 +548,28 @@ class Chapter3Model extends Model{
         }
 
         return true;
+
+
+    }
+
+    public function saveaa7aepapp($req){
+
+        $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+
+        $data = [
+            'question' => $req['aep'],
+            'type' =>  $req['part'],
+            'code' =>  $req['code'],
+            'c3tID' => $req['c3tID'],
+            'status' => 'Active',
+            'updated_on' => $this->date.' '.$this->time
+        ];
+
+        if($this->db->table($this->tblc3)->insert($data)){
+            return true;
+        }else{
+            return false;
+        }
 
 
     }
