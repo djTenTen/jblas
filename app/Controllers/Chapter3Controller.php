@@ -564,6 +564,9 @@ class Chapter3Controller extends BaseController{
             $rdata = $this->c3model->getaa11p1('aa11ue',$code,$dc3tID);
             $data['ue'] = json_decode($rdata['question'], true);    
 
+            $rdata2 = $this->c3model->getaa11con('con',$code,$dc3tID);
+            $data['con'] = json_decode($rdata2['question'], true);   
+
             echo view('includes/Header', $data);
             echo view('chapter3/310Aa11_un', $data);
             echo view('includes/Footer');
@@ -632,7 +635,6 @@ class Chapter3Controller extends BaseController{
 
     }
     
-
     public function saveaa11ue($code,$head,$c3tID){
 
         $aa11 = [
@@ -649,6 +651,86 @@ class Chapter3Controller extends BaseController{
         ];
 
         $res = $this->c3model->saveaa11ue($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c3/manageaa11/un/'.$code.'/'.$head.'/'.$c3tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c3/manageaa11/un/'.$code.'/'.$head.'/'.$c3tID));
+        }
+
+    }
+
+    public function saveaa11con($code,$head,$c3tID){
+
+        $aa11con = [
+            'bdr1' => $this->request->getPost('bdr1'),
+            'bcr1' => $this->request->getPost('bcr1'),
+            'bdr2' => $this->request->getPost('bdr2'),
+            'bcr2' => $this->request->getPost('bcr2'),
+            'cdr1' => $this->request->getPost('cdr1'),
+            'ccr1' => $this->request->getPost('ccr1'),
+            'cdr2' => $this->request->getPost('cdr2'),
+            'ccr2' => $this->request->getPost('ccr2'),
+            'ddr1' => $this->request->getPost('ddr1'),
+            'dcr1' => $this->request->getPost('dcr1'),
+            'ddr2' => $this->request->getPost('ddr2'),
+            'dcr2' => $this->request->getPost('dcr2'),
+            'edr1' => $this->request->getPost('edr1'),
+            'ecr1' => $this->request->getPost('ecr1'),
+            'edr2' => $this->request->getPost('edr2'),
+            'ecr2' => $this->request->getPost('ecr2'),
+            'fdr1' => $this->request->getPost('fdr1'),
+            'fcr1' => $this->request->getPost('fcr1'),
+            'fdr2' => $this->request->getPost('fdr2'),
+            'fcr2' => $this->request->getPost('fcr2'),
+            'hdr1' => $this->request->getPost('hdr1'),
+            'hcr1' => $this->request->getPost('hcr1'),
+            'hdr2' => $this->request->getPost('hdr2'),
+            'hcr2' => $this->request->getPost('hcr2'),
+            'idr1' => $this->request->getPost('idr1'),
+            'icr1' => $this->request->getPost('icr1'),
+            'idr2' => $this->request->getPost('idr2'),
+            'icr2' => $this->request->getPost('icr2'),
+            'jdr1' => $this->request->getPost('jdr1'),
+            'jcr1' => $this->request->getPost('jcr1'),
+            'jdr2' => $this->request->getPost('jdr2'),
+            'jcr2' => $this->request->getPost('jcr2'),
+            'ldr1' => $this->request->getPost('ldr1'),
+            'lcr1' => $this->request->getPost('lcr1'),
+            'ldr2' => $this->request->getPost('ldr2'),
+            'lcr2' => $this->request->getPost('lcr2'),
+            'mdr1' => $this->request->getPost('mdr1'),
+            'mcr1' => $this->request->getPost('mcr1'),
+            'mdr2' => $this->request->getPost('mdr2'),
+            'mcr2' => $this->request->getPost('mcr2'),
+            'odr1' => $this->request->getPost('odr1'),
+            'ocr1' => $this->request->getPost('ocr1'),
+            'odr2' => $this->request->getPost('odr2'),
+            'ocr2' => $this->request->getPost('ocr2'),
+            'pdr1' => $this->request->getPost('pdr1'),
+            'pcr1' => $this->request->getPost('pcr1'),
+            'pdr2' => $this->request->getPost('pdr2'),
+            'pcr2' => $this->request->getPost('pcr2'),
+            'qdr1' => $this->request->getPost('qdr1'),
+            'qcr1' => $this->request->getPost('qcr1'),
+            'qdr2' => $this->request->getPost('qdr2'),
+            'qcr2' => $this->request->getPost('qcr2'),
+            'rdr1' => $this->request->getPost('rdr1'),
+            'rcr1' => $this->request->getPost('rcr1'),
+            'rdr2' => $this->request->getPost('rdr2'),
+            'rcr2' => $this->request->getPost('rcr2'),
+        ];
+
+        $req = [
+            'aa11' => json_encode($aa11con),
+            'code' => $code,
+            'part' => $this->request->getPost('part'),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+        ];
+
+        $res = $this->c3model->saveaa11con($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');

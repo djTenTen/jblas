@@ -278,7 +278,171 @@
 
                 </form>
                 
-                
+                <br><br>
+                <form action="<?= base_url()?>auditsystem/c3/saveaa11con/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                    <input type="hidden" name="part" value="con">
+                    <table class="table table-bordered table-sm" id="myTable">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th colspan="4">Potential Effect on the Financial Statements</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th colspan="2">Performance Statements</th>
+                                <th colspan="2">S\'ment of Fin. Position</th>
+                            </tr>
+                            <tr>
+                                <th>WP Ref.</th>
+                                <th>Details</th>
+                                <th>Dr</th>
+                                <th>Cr</th>
+                                <th>Dr</th>
+                                <th>Cr</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>B DIV</td>
+                                <td>Intangibles and goodwill</td>
+                                <td><input type="text" class="form-control" name="bdr1" value="<?= $con['bdr1']?>"></td>
+                                <td><input type="text" class="form-control" name="bcr1" value="<?= $con['bcr1']?>"></td>
+                                <td><input type="text" class="form-control" name="bdr2" value="<?= $con['bdr2']?>"></td>
+                                <td><input type="text" class="form-control" name="bcr2" value="<?= $con['bcr2']?>"></td>
+                            </tr>
+                            <tr>
+                                <td>C DIV</td>
+                                <td>Property, plant and equipment</td>
+                                <td><input type="text" class="form-control" name="cdr1" value="<?= $con['cdr1']?>"></td>
+                                <td><input type="text" class="form-control" name="ccr1" value="<?= $con['ccr1']?>"></td>
+                                <td><input type="text" class="form-control" name="cdr2" value="<?= $con['cdr2']?>"></td>
+                                <td><input type="text" class="form-control" name="ccr2" value="<?= $con['ccr2']?>"></td>
+                            </tr>
+                            <tr>
+                                <td>D/G DIV</td>
+                                <td>Investments</td>
+                                <td><input type="text" class="form-control" name="ddr1" value="<?= $con['ddr1']?>"></td>
+                                <td><input type="text" class="form-control" name="dcr1" value="<?= $con['dcr1']?>"></td>
+                                <td><input type="text" class="form-control" name="ddr2" value="<?= $con['ddr2']?>"></td>
+                                <td><input type="text" class="form-control" name="dcr2" value="<?= $con['dcr2']?>"></td>
+                            </tr>
+                            <tr>
+                                <td>E DIV</td>
+                                <td>Inventories</td>
+                                <td><input type="text" class="form-control" name="edr1" value="<?= $con['edr1']?>"></td>
+                                <td><input type="text" class="form-control" name="ecr1" value="<?= $con['ecr1']?>"></td>
+                                <td><input type="text" class="form-control" name="edr2" value="<?= $con['edr2']?>"></td>
+                                <td><input type="text" class="form-control" name="ecr2" value="<?= $con['ecr2']?>"></td>
+                            </tr>
+                            <tr>
+                                <td>F DIV</td>
+                                <td>Receivables</td>
+                                <td><input type="text" class="form-control" name="fdr1" value="<?= $con['fdr1']?>"></td>
+                                <td><input type="text" class="form-control" name="fcr1" value="<?= $con['fcr1']?>"></td>
+                                <td><input type="text" class="form-control" name="fdr2" value="<?= $con['fdr2']?>"></td>
+                                <td><input type="text" class="form-control" name="fcr2" value="<?= $con['fcr2']?>"></td>
+                            </tr>
+                            <tr>
+                                <td>H DIV</td>
+                                <td>Cash at bank and in hand</td>
+                                <td><input type="text" class="form-control" name="hdr1" value="<?= $con['hdr1']?>"></td>
+                                <td><input type="text" class="form-control" name="hcr1" value="<?= $con['hcr1']?>"></td>
+                                <td><input type="text" class="form-control" name="hdr2" value="<?= $con['hdr2']?>"></td>
+                                <td><input type="text" class="form-control" name="hcr2" value="<?= $con['hcr2']?>"></td>
+                            </tr>
+                            <tr>
+                                <td>I DIV</td>
+                                <td>Payables</td>
+                                <td><input type="text" class="form-control" name="idr1" value="<?= $con['idr1']?>"></td>
+                                <td><input type="text" class="form-control" name="icr1" value="<?= $con['icr1']?>"></td>
+                                <td><input type="text" class="form-control" name="idr2" value="<?= $con['idr2']?>"></td>
+                                <td><input type="text" class="form-control" name="icr2" value="<?= $con['icr2']?>"></td>
+                            </tr>
+                            <tr>
+                                <td>J DIV</td>
+                                <td>Taxation</td>
+                                <td><input type="text" class="form-control" name="jdr1" value="<?= $con['jdr1']?>"></td>
+                                <td><input type="text" class="form-control" name="jcr1" value="<?= $con['jcr1']?>"></td>
+                                <td><input type="text" class="form-control" name="jdr2" value="<?= $con['jdr2']?>"></td>
+                                <td><input type="text" class="form-control" name="jcr2" value="<?= $con['jcr2']?>"></td>
+                            </tr>
+                            <tr>
+                                <td>L DIV</td>
+                                <td>Provisions</td>
+                                <td><input type="text" class="form-control" name="ldr1" value="<?= $con['ldr1']?>"></td>
+                                <td><input type="text" class="form-control" name="lcr1" value="<?= $con['lcr1']?>"></td>
+                                <td><input type="text" class="form-control" name="ldr2" value="<?= $con['ldr2']?>"></td>
+                                <td><input type="text" class="form-control" name="lcr2" value="<?= $con['lcr2']?>"></td>
+                            </tr>
+                            <tr>
+                                <td>M DIV</td>
+                                <td>Equity</td>
+                                <td><input type="text" class="form-control" name="mdr1" value="<?= $con['mdr1']?>"></td>
+                                <td><input type="text" class="form-control" name="mcr1" value="<?= $con['mcr1']?>"></td>
+                                <td><input type="text" class="form-control" name="mdr2" value="<?= $con['mdr2']?>"></td>
+                                <td><input type="text" class="form-control" name="mcr2" value="<?= $con['mcr2']?>"></td>
+                            </tr>
+                            <tr>
+                                <td>O DIV</td>
+                                <td>Revenue</td>
+                                <td><input type="text" class="form-control" name="odr1" value="<?= $con['odr1']?>"></td>
+                                <td><input type="text" class="form-control" name="ocr1" value="<?= $con['ocr1']?>"></td>
+                                <td><input type="text" class="form-control" name="odr2" value="<?= $con['odr2']?>"></td>
+                                <td><input type="text" class="form-control" name="ocr2" value="<?= $con['ocr2']?>"></td>
+                            </tr>
+                            <tr>
+                                <td>P DIV</td>
+                                <td>Direct costs</td>
+                                <td><input type="text" class="form-control" name="pdr1" value="<?= $con['pdr1']?>"></td>
+                                <td><input type="text" class="form-control" name="pcr1" value="<?= $con['pcr1']?>"></td>
+                                <td><input type="text" class="form-control" name="pdr2" value="<?= $con['pdr2']?>"></td>
+                                <td><input type="text" class="form-control" name="pcr2" value="<?= $con['pcr2']?>"></td>
+                            </tr>
+                            <tr>
+                                <td>Q DIV</td>
+                                <td>Other income and gains</td>
+                                <td><input type="text" class="form-control" name="qdr1" value="<?= $con['qdr1']?>"></td>
+                                <td><input type="text" class="form-control" name="qcr1" value="<?= $con['qcr1']?>"></td>
+                                <td><input type="text" class="form-control" name="qdr2" value="<?= $con['qdr2']?>"></td>
+                                <td><input type="text" class="form-control" name="qcr2" value="<?= $con['qcr2']?>"></td>
+                            </tr>
+                            <tr>
+                                <td>R DIV</td>
+                                <td>Other expenditure and losses</td>
+                                <td><input type="text" class="form-control" name="rdr1" value="<?= $con['rdr1']?>"></td>
+                                <td><input type="text" class="form-control" name="rcr1" value="<?= $con['rcr1']?>"></td>
+                                <td><input type="text" class="form-control" name="rdr2" value="<?= $con['rdr2']?>"></td>
+                                <td><input type="text" class="form-control" name="rcr2" value="<?= $con['rcr2']?>"></td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                    <table class="table table-bordered table-sm">
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">Total Effect of Unadjusted Errors</td>
+                                <td><input type="text" class="form-control conc3" value="" readonly></td>
+                                <td><input type="text" class="form-control conc4" value="" readonly></td>
+                                <td><input type="text" class="form-control conc5" value="" readonly></td>
+                                <td><input type="text" class="form-control conc6" value="" readonly></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                </form>
+
+
+
+
+
+
+
+
+
             </div>
         </div>
     </div>
@@ -286,6 +450,72 @@
 </main>
 <script>
 $(document).ready(function () {
+
+    var totalColumn3 = 0;
+    var totalColumn4 = 0;
+    var totalColumn5 = 0;
+    var totalColumn6 = 0;
+
+    $('#myTable tr').each(function() {
+
+        // Find input elements in columns 3, 4, 5, and 6 within the current row
+        var inputs = $(this).find('td:nth-child(3) input, td:nth-child(4) input, td:nth-child(5) input, td:nth-child(6) input');
+        // Iterate over the input elements and accumulate their values for each column
+        inputs.each(function() {
+
+            console.log(inputs);
+            var value = parseFloat($(this).val()) || 0;
+            if ($(this).closest('td').index() === 2) { // Column 3
+                totalColumn3 += value;
+            } else if ($(this).closest('td').index() === 3) { // Column 4
+                totalColumn4 += value;
+            } else if ($(this).closest('td').index() === 4) { // Column 5
+                totalColumn5 += value;
+            } else if ($(this).closest('td').index() === 5) { // Column 6
+                totalColumn6 += value;
+            }
+        });
+
+        $('.conc3').attr('value', totalColumn3);
+        $('.conc4').attr('value', totalColumn4);
+        $('.conc5').attr('value', totalColumn5);
+        $('.conc6').attr('value', totalColumn6);
+    });
+
+    $('#myTable').on('change', function() {
+
+        var totalColumn3 = 0;
+        var totalColumn4 = 0;
+        var totalColumn5 = 0;
+        var totalColumn6 = 0;
+
+        $('#myTable tr').each(function() {
+
+            // Find input elements in columns 3, 4, 5, and 6 within the current row
+            var inputs = $(this).find('td:nth-child(3) input, td:nth-child(4) input, td:nth-child(5) input, td:nth-child(6) input');
+            // Iterate over the input elements and accumulate their values for each column
+            inputs.each(function() {
+
+                console.log(inputs);
+                var value = parseFloat($(this).val()) || 0;
+                if ($(this).closest('td').index() === 2) { // Column 3
+                    totalColumn3 += value;
+                } else if ($(this).closest('td').index() === 3) { // Column 4
+                    totalColumn4 += value;
+                } else if ($(this).closest('td').index() === 4) { // Column 5
+                    totalColumn5 += value;
+                } else if ($(this).closest('td').index() === 5) { // Column 6
+                    totalColumn6 += value;
+                }
+            });
+
+            $('.conc3').attr('value', totalColumn3);
+            $('.conc4').attr('value', totalColumn4);
+            $('.conc5').attr('value', totalColumn5);
+            $('.conc6').attr('value', totalColumn6);
+        });
+    });
+    
 
     $('.drps').on('change', function () {
         // Adding a row inside the tbody.

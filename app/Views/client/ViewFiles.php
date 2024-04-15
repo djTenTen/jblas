@@ -131,7 +131,17 @@
                             <td><?= $r['code']?></td>
                             <td><?= $r['title']?></td>
                             <td>
-                                <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/chapter3/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                <?php if($r['code'] == '3.10 Aa11'){?>
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary btn-icon btn-sm" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-eye"></i></button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter3/view/')?><?= $r['code']?>-un/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>">Unadjusted Errors</a>
+                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter3/view/')?><?= $r['code']?>-ad/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>">Adjusted Mades</a>
+                                        </div>
+                                    </div>
+                                <?php }else{?>
+                                    <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/chapter3/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                            <?php }?>
                             </td>
                         </tr>
                     <?php }?>

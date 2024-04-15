@@ -1496,9 +1496,32 @@ class ChapterController extends BaseController{
                 echo view('pdfc3/39', $data);
                 break;
 
-            case '3.10 Aa11':
+            case '3.10 Aa11-un':
+
+                $s = explode('-', $code);
+
+                $data['aef'] = $this->c3model->getaa11p2('aef',$s[0],$dc3tID);
+                $data['aej'] = $this->c3model->getaa11p2('aej',$s[0],$dc3tID);
+                $data['ee'] = $this->c3model->getaa11p2('ee',$s[0],$dc3tID);
+                $data['de'] = $this->c3model->getaa11p2('de',$s[0],$dc3tID);
+    
+                $rdata = $this->c3model->getaa11p1('aa11ue',$s[0],$dc3tID);
+                $data['ue'] = json_decode($rdata['question'], true);
+
+                $rdata2 = $this->c3model->getaa11con('con',$s[0],$dc3tID);
+                $data['con'] = json_decode($rdata2['question'], true);    
+
+                echo view('pdfc3/AA11-un', $data);
+
+            case '3.10 Aa11-ad':
+
+                $s = explode('-', $code);
+                $data['ad'] = $this->c3model->getaa11p2('ad',$s[0],$dc3tID);
+                $rdata = $this->c3model->getaa11p1('aa11uead',$s[0],$dc3tID);
+                $data['ue'] = json_decode($rdata['question'], true);   
                 
-                echo view('pdfc3/AA11', $data);
+                $s = explode('-', $code);
+                echo view('pdfc3/AA11-ad', $data);
                 break;   
 
             case '3.11':

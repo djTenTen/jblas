@@ -140,6 +140,7 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('/auditsystem/c3/saveaa11un/(:any)/(:any)/(:any)', 'Chapter3Controller::saveaa11un/$1/$2/$3');
     $routes->post('/auditsystem/c3/saveaa11ad/(:any)/(:any)/(:any)', 'Chapter3Controller::saveaa11ad/$1/$2/$3');
     $routes->post('/auditsystem/c3/saveaa11ue/(:any)/(:any)/(:any)', 'Chapter3Controller::saveaa11ue/$1/$2/$3');
+    $routes->post('/auditsystem/c3/saveaa11con/(:any)/(:any)/(:any)', 'Chapter3Controller::saveaa11con/$1/$2/$3');
     $routes->post('/auditsystem/c3/saveaa11uead/(:any)/(:any)/(:any)', 'Chapter3Controller::saveaa11uead/$1/$2/$3');
     //ab1
     $routes->post('/auditsystem/c3/saveab1/(:any)/(:any)/(:any)', 'Chapter3Controller::saveab1/$1/$2/$3');
