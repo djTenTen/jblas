@@ -111,8 +111,8 @@ $html .= '
 
 
 $html .= '
-<p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) <br>
-    ~ Additional Disclosures for an Entity Involved in Exploration for and Evaluation of Mineral Resources
+<p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)<br>
+~ Additional Disclosures for an Entity with a Defined Benefit Pension Plan(s) (including those Accounted for on a Defined Contribution Basis)
    </b></p>
 ';
 
@@ -128,7 +128,7 @@ $html .= '
         </thead>
         <tbody>
             ';
-        foreach($ab4a as $r){
+        foreach($ab4b as $r){
             $html .= '
             <tr>
                 <td style="width: 13%;">'.$r['reference'].'</td>
