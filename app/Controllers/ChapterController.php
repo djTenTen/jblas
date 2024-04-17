@@ -731,7 +731,6 @@ class ChapterController extends BaseController{
                 break; 
 
             case '3.15 Ab4':
-
                
                 echo view('includes/Header', $data);
                 echo view('chapter3/315Ab4', $data);
@@ -1551,7 +1550,18 @@ class ChapterController extends BaseController{
 
             case '3.15 Ab4':
 
-               
+                $rdata = $this->c3model->getab4checklist('checklist',$code,$dc3tID);
+                $data['sec'] = json_decode($rdata['question'], true);
+
+                $data['sec1'] = $this->c3model->getab4('section1',$code,$dc3tID);
+                $data['sec2'] = $this->c3model->getab4('section2',$code,$dc3tID);
+                $data['sec3'] = $this->c3model->getab4('section3',$code,$dc3tID);
+                $data['sec4'] = $this->c3model->getab4('section4',$code,$dc3tID);
+                $data['sec5'] = $this->c3model->getab4('section5',$code,$dc3tID);
+                $data['sec6'] = $this->c3model->getab4('section6',$code,$dc3tID);
+                $data['sec7'] = $this->c3model->getab4('section7',$code,$dc3tID);
+                $data['sec8'] = $this->c3model->getab4('section8',$code,$dc3tID);
+                $data['sec9'] = $this->c3model->getab4('section9',$code,$dc3tID);
                 echo view('pdfc3/AB4', $data);
                 break; 
 
