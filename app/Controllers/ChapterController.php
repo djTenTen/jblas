@@ -1632,6 +1632,15 @@ class ChapterController extends BaseController{
 
 
 
+    
+
+
+
+
+
+
+
+
 
 
 
@@ -1870,6 +1879,289 @@ class ChapterController extends BaseController{
 
 
 
+
+
+
+
+
+        /**
+        ----------------------------------------------------------
+        Chapter 2 area
+        ----------------------------------------------------------
+    */
+    public function c2setvalues($code,$c2tID,$cID,$name){
+
+        $data['title'] = $code. ' - Chapter 1 Management';
+        $data['name'] = $name;
+        $data['cID'] = $cID;
+        $data['c2tID'] = $c2tID;
+        $data['code'] = $code;
+
+        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dc2tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c2tID));
+
+        switch ($code) {
+
+            case '2.1 B2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/21B2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.2.1 C2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/221C2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.2.2 C2-1':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/222C21', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.3 D2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/23D2', $data);
+                echo view('includes/Footer');
+                break;
+            
+            case '2.4.1 E2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/241E2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.4.2 E2-1':
+
+                $data['aicpppa'] = $this->cvmodel->getquestionsaicpppa($code,$dc2tID,$dcID);
+                $data['rcicp'] = $this->cvmodel->getquestionsrcicp($code,$dc2tID,$dcID);
+                
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/242E21', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.4.3 E2-2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/243E22', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.4.4 E2-3':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/243E23', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.4.5 E2-4':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/245E24', $data);
+                echo view('includes/Footer');
+                break;
+    
+            case '2.5 F2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/25F2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.6 H2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/26H2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.7 I2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/27I2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.8 J2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/28J2', $data);
+                echo view('includes/Footer');
+                break;
+                
+            case '2.9 K2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/29K2', $data);
+                echo view('includes/Footer');
+                break;
+            
+            case '2.10 L2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/210L2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.11 M2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/211M2', $data);
+                echo view('includes/Footer');
+                break;
+
+
+            case '2.12 N2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/212N2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.13.1 O2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/2131O2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.13.2 O2-1':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/2132O21', $data);
+                echo view('includes/Footer');
+                break;
+            
+            case '2.14 P2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/214P2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '2.15 Q2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/215Q2', $data);
+                echo view('includes/Footer');
+                break;  
+
+            case '2.16 R2-1':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/216R21', $data);
+                echo view('includes/Footer');
+                break;  
+
+            case '2.17 R2-2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/217R22', $data);
+                echo view('includes/Footer');
+                break;  
+
+            case '2.18.1 S2-1':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/2181S21', $data);
+                echo view('includes/Footer');
+                break;  
+
+            case '2.18.2 S2-2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/2182S22', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '2.18.3 S2-3':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/2183S23', $data);
+                echo view('includes/Footer');
+                break;  
+
+            case '2.18.4 S2-4':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/2184S24', $data);
+                echo view('includes/Footer');
+                break; 
+                
+            case '2.19.1 U2-1':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/2191U21', $data);
+                echo view('includes/Footer');
+                break;   
+
+            case '2.19.2 U2-2':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/2192U22', $data);
+                echo view('includes/Footer');
+                break; 
+            
+            case '2.19.3 U2-3':
+
+                $data['qdata'] = $this->cvmodel->getquestionsdata($code,$dc2tID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter2/2193U23', $data);
+                echo view('includes/Footer');
+                break;   
+                        
+            default:
+                # code...
+                break;
+        }
+
+
+    }
+
+
+
+
+
+
+
+    
 
 
 

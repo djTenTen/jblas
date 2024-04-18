@@ -990,14 +990,147 @@ class ChapterValuesController extends BaseController{
         
         if($res){
             session()->setFlashdata('success_update','success_update');
-             return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-             return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function savequestions($code,$c2tID,$cID,$name){
+
+        $req = [
+            'extent' => $this->request->getPost('extent'),
+            'reference' => $this->request->getPost('reference'),
+            'initials' => $this->request->getPost('initials'),
+            'acid' => $this->request->getPost('acid'),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c2tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
+        ];
+
+        $res = $this->cvmodel->savequestions($req);
+
+        if($res){
+            session()->setFlashdata('success_registration','success_registration');
+            return redirect()->to(site_url('auditsystem/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
+        }else{
+            session()->setFlashdata('failed_registration','failed_registration');
+            return redirect()->to(site_url('auditsystem/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
+        }
+
+
+    }
+
+    public function saveaicpppa($code,$head,$c2tID){
+
+        $validationRules = [
+            'question' => 'required'
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/c2/manage/'.$code.'/'.$head.'/'.$c2tID));
+        }
+
+        $req = [
+            'question' => $this->request->getPost('question'),
+            'comment' => $this->request->getPost('comment'),
+            'code' => $code,
+            'part' => 'aicpppa',
+            'c2tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c2tID))
+        ];
+
+        $res = $this->cvmodel->saveaicpppa($req);
+
+        if($res){
+            session()->setFlashdata('success_registration','success_registration');
+            return redirect()->to(site_url('auditsystem/c2/manage/'.$code.'/'.$head.'/'.$c2tID));
+        }else{
+            session()->setFlashdata('failed_registration','failed_registration');
+            return redirect()->to(site_url('auditsystem/c2/manage/'.$code.'/'.$head.'/'.$c2tID));
+        }
+
+
+    }
+
+
+
+    public function savercicp($code,$head,$c2tID){
+
+        $validationRules = [
+            'question' => 'required'
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/c2/manage/'.$code.'/'.$head.'/'.$c2tID));
+        }
+
+        $req = [
+            'question' => $this->request->getPost('question'),
+            'extent' => $this->request->getPost('yesno'),
+            'comment' => $this->request->getPost('comment'),
+            'code' => $code,
+            'part' => 'rcicp',
+            'c2tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c2tID))
+        ];
+
+        $res = $this->cvmodel->savercicp($req);
+
+        if($res){
+            session()->setFlashdata('success_registration','success_registration');
+            return redirect()->to(site_url('auditsystem/c2/manage/'.$code.'/'.$head.'/'.$c2tID));
+        }else{
+            session()->setFlashdata('failed_registration','failed_registration');
+            return redirect()->to(site_url('auditsystem/c2/manage/'.$code.'/'.$head.'/'.$c2tID));
+        }
+
+
+    }
+
+    public function acin($code,$head,$c2tID,$c2ID){
+
+        $req = [
+            'code' => $code,
+            'c2ID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c2ID))
+        ];
+        $res = $this->cvmodel->acin($req);
+
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/c2/manage/'.$code.'/'.$head.'/'.$c2tID));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/c2/manage/'.$code.'/'.$head.'/'.$c2tID));
+        }
+
+    }
+
 
     
 

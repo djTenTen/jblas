@@ -80,7 +80,7 @@
                                 <td><?= $r['code']?></td>
                                 <td><?= $r['title']?></td>
                                 <td>
-                                    <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/chapter2/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                    <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/chapter2/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                 </td>
                             </tr>
                         <?php }?>

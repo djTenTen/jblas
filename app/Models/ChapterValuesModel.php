@@ -891,6 +891,176 @@ class ChapterValuesModel extends Model{
         }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+        ----------------------------------------------------------
+        Chapter 2 GET FUNCTIONS
+        ----------------------------------------------------------
+    */
+
+    public function getquestionsdata($code,$c2tID,$dcID){
+
+        $where = [
+            'type' => $code,
+            'code' => $code,
+            'c2tID' => $c2tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc2d)->where($where)->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getquestionsaicpppa($code,$c2tID,$dcID){
+
+        $where = [
+            'type' => 'aicpppa',
+            'code' => $code,
+            'c2tID' => $c2tID,
+            'clientID' => $dcID,
+        ];
+
+        $query = $this->db->table($this->tblc2d)->where($where)->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getquestionsrcicp($code,$c2tID,$dcID){
+
+        $where = [
+            'type' => 'rcicp',
+            'code' => $code,
+            'c2tID' => $c2tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc2d)->where($where)->get();
+        return $query->getResultArray();
+
+    }
+   
+   
+    /**
+        ----------------------------------------------------------
+        Chapter 2 POST FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function savequestions($req){
+
+        foreach($req['extent'] as $i => $val){
+            $dacid = $this->crypt->decrypt($req['acid'][$i]);
+            $data = [
+                'extent' => $req['extent'][$i],
+                'reference' => $req['reference'][$i],
+                'initials' => $req['initials'][$i],
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
+            ];
+            $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
+        }
+
+        return true;
+    }
+
+    public function saveaicpppa($req){
+
+        $this->db->table($this->tblc2d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c2tID' => $req['c2tID']))->delete();
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'question' => $req['question'][$i],
+                'reference' => $req['comment'][$i],
+                'type' =>  $req['part'],
+                'code' =>  $req['code'],
+                'c2tID' => $req['c2tID'],
+                'status' => 'Active',
+                'updated_on' => $this->date.' '.$this->time
+            ];
+            $this->db->table($this->tblc2d)->insert($data);
+            
+        }
+
+        return true;
+    }
+
+    public function savercicp($req){
+
+        $this->db->table($this->tblc2d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c2tID' => $req['c2tID']))->delete();
+
+        foreach($req['question'] as $i => $val){
+
+            $data = [
+                'question' => $req['question'][$i],
+                'extent' => $req['extent'][$i],
+                'reference' => $req['comment'][$i],
+                'type' =>  $req['part'],
+                'code' =>  $req['code'],
+                'c2tID' => $req['c2tID'],
+                'status' => 'Active',
+                'updated_on' => $this->date.' '.$this->time
+            ];
+            $this->db->table($this->tblc2d)->insert($data);
+            
+        }
+
+        return true;
+    }
+
+    public function acin($req){
+
+        $query = $this->db->table($this->tblc2d)->where('acID', $req['c2ID'])->get();
+        $r = $query->getRowArray();
+        $stat = '';
+        if($r['status'] == 'Active'){
+            $stat = 'Inactive';
+        }else{
+            $stat = 'Active';
+        }
+        $data = [
+            'status' => $stat,
+            'updated_on' => $this->date.' '.$this->time
+        ];
+        if($this->db->table($this->tblc2d)->where('acID', $req['c2ID'])->update($data)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
     
 
     
