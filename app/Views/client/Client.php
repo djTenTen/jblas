@@ -60,46 +60,49 @@
                     </div>
                 </div>
             <?php  }?>
+           
 
             <div class="card-body">
-            <?php if(session()->get('allowed')->add == "Yes"){?>
-            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addclient">Add Client</button>
-            <?php  }?>
-            <table class="table table-hover" id="datatablesSimple">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Organization</th>
-                        <th>Firm</th>
-                        <th>Email</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($client as $r){?>
+                <?php if(session()->get('allowed')->add == "Yes"){?>
+                <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addclient">Add Client</button>
+                <?php  }?>
+                <table class="table table-hover" id="datatablesSimple">
+                    <thead>
                         <tr>
-                            <td><?= $r['name']?></td>
-                            <td><?= $r['org']?></td>
-                            <th><?= $r['firm']?></th>
-                            <td><?= $r['email']?></td>
-                            <td><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>                            
-                            <td>
-                                <?php if(session()->get('allowed')->edit == "Yes"){?>
-                                    <button class="btn btn-primary btn-icon btn-sm get-data" title="Edit" type="button" data-bs-toggle="modal" data-bs-target="#edit"  data-name="<?= $r['name']?>" data-cid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>"><i class="fas fa-edit"></i></button>
-                                <?php }?>
-                                <?php if(session()->get('allowed')->acin == "Yes"){?>
-                                    <?php if($r['status'] == 'Active'){?>
-                                        <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-name="<?= $r['name']?>" data-cid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
-                                    <?php }else{?>
-                                        <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-name="<?= $r['name']?>" data-cid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
-                                    <?php }?>
-                                <?php }?>
-                            </td>
+                            <th>Name</th>
+                            <th>Organization</th>
+                            <th>Org. Type</th>
+                            <th>Industry</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
-                    <?php }?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php foreach($client as $r){?>
+                            <tr>
+                                <td><?= $r['name']?></td>
+                                <td><?= $r['org']?></td>
+                                <td><?= $r['orgtype']?></td>
+                                <td><?= $r['industry']?></td>
+                                <td><?= $r['email']?></td>
+                                <td><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>                            
+                                <td>
+                                    <?php if(session()->get('allowed')->edit == "Yes"){?>
+                                        <button class="btn btn-primary btn-icon btn-sm get-data" title="Edit" type="button" data-bs-toggle="modal" data-bs-target="#edit"  data-name="<?= $r['name']?>" data-cid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>"><i class="fas fa-edit"></i></button>
+                                    <?php }?>
+                                    <?php if(session()->get('allowed')->acin == "Yes"){?>
+                                        <?php if($r['status'] == 'Active'){?>
+                                            <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-name="<?= $r['name']?>" data-cid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
+                                        <?php }else{?>
+                                            <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-name="<?= $r['name']?>" data-cid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
+                                        <?php }?>
+                                    <?php }?>
+                                </td>
+                            </tr>
+                        <?php }?>
+                    </tbody>
+                </table>
 
 
             </div>
@@ -123,18 +126,72 @@
 
                     <div class="mb-3">
                         <label class="small mb-1" for="name">Name:</label>
-                        <input class="form-control" id="name" type="text" name="name" placeholder="Enter Name" />
+                        <input class="form-control" id="name" type="text" name="name" placeholder="Enter Name" required/>
                     </div>
-                    <!-- Form Group (email address)            -->
                     <div class="mb-3">
                         <label class="small mb-1" for="org">Organization</label>
-                        <input class="form-control" id="org" type="text" name="org" placeholder="Enter Organization" />
+                        <input class="form-control" id="org" type="text" name="org" placeholder="Enter Organization" required/>
+                    </div>
+                    <div class="row gx-3">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="small mb-1" for="contact">Contact Number:</label>
+                                <input class="form-control" id="contact" type="text" name="contact" placeholder="Enter Contact Number" required/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="small mb-1" for="email">Email</label>
+                                <input class="form-control" id="email" type="email" name="email" aria-describedby="emailHelp" placeholder="Enter Email" required/>
+                            </div>
+                        </div>
                     </div>
                     <div class="mb-3">
-                        <label class="small mb-1" for="email">Email</label>
-                        <input class="form-control" id="email" type="email" name="email" aria-describedby="emailHelp" placeholder="Enter Email" />
+                        <label class="small mb-1" for="address">Address:</label>
+                        <input class="form-control" id="address" type="text" name="address" placeholder="Enter Address" required/>
                     </div>
-                
+                    <div class="row gx-3">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="small mb-1" for="industry">Industry:</label>
+                                <select name="industry" id="industry" class="form-control form-select" required>
+                                    <option value="" selected>Select Industry</option>
+                                    <option value="Technology">Technology</option>
+                                    <option value="Finance">Finance</option>
+                                    <option value="Accounting">Accounting</option>
+                                    <option value="Retail">Retail</option>
+                                    <option value="Manufacturing">Manufacturing</option>
+                                    <option value="Hospitality and Tourism">Hospitality and Tourism</option>
+                                    <option value="Real Estate">Real Estate</option>
+                                    <option value="Energy">Energy</option>
+                                    <option value="Transportation and Logistics">Transportation and Logistics</option>
+                                    <option value="Media and Entertainment">Media and Entertainment</option>
+                                    <option value="Food and Beverage">Food and Beverage</option>
+                                    <option value="Automotive">Automotive</option>
+                                    <option value="Construction">Construction</option>
+                                    <option value="Telecommunications">Telecommunications</option>
+                                    <option value="Pharmaceuticals">Pharmaceuticals</option>
+                                    <option value="Agriculture">Agriculture</option>
+                                    <option value="Biotechnology">Biotechnology</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Professional Services">Professional Services</option>
+                                    <option value="Environmental Services">Environmental Services</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="small mb-1" for="orgtype">Organization Type:</label>
+                                <select name="orgtype" id="orgtype" class="form-control form-select" required>
+                                    <option value="" selected>Select Type</option>
+                                    <option value="Company">Company</option>
+                                    <option value="Partnership">Partnership</option>
+                                    <option value="Sole Proprietorship">Sole Proprietorship</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
             </div>
             <div class="modal-footer">
                     <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
@@ -186,7 +243,6 @@ $(document).ready(function () {
     });
 
     $(".get-data").on("click", function() {
-        var name = $(this).data('name');
         var cid = $(this).data('cid');
         $('#editform').attr('action', "<?= base_url('auditsystem/client/update/')?>" + cid);
 
@@ -211,20 +267,72 @@ $(document).ready(function () {
 
                 $("#editform").html(`
                 <div class="mb-3">
-                        <label class="small mb-1" for="name">Name:</label>
-                        <input class="form-control name" id="name" type="text" name="name" placeholder="Enter Name" />
+                    <label class="small mb-1" for="name">Name:</label>
+                    <input class="form-control" id="name" type="text" name="name" placeholder="Enter Name" value="`+ data.name +`" required/>
                 </div>
                 <div class="mb-3">
                     <label class="small mb-1" for="org">Organization</label>
-                    <input class="form-control org" id="org" type="text" name="org" placeholder="Enter Organization" />
+                    <input class="form-control" id="org" type="text" name="org" placeholder="Enter Organization" value="`+ data.org +`" required/>
+                </div>
+                <div class="row gx-3">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="small mb-1" for="contact">Contact Number:</label>
+                            <input class="form-control" id="contact" type="text" name="contact" placeholder="Enter Contact Number" value="`+ data.contact +`" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="small mb-1" for="email">Email</label>
+                            <input class="form-control" id="email" type="email" name="email" aria-describedby="emailHelp" placeholder="Enter Email" value="`+ data.email +`" required/>
+                        </div>
+                    </div>
                 </div>
                 <div class="mb-3">
-                    <label class="small mb-1" for="email">Email</label>
-                    <input class="form-control email" id="email" type="email" name="email" aria-describedby="emailHelp" placeholder="Enter Email" />
+                    <label class="small mb-1" for="address">Address:</label>
+                    <input class="form-control" id="address" type="text" name="address" placeholder="Enter Address" value="`+ data.address +`" required/>
+                </div>
+                <div class="row gx-3">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="small mb-1" for="industry">Industry:</label>
+                            <select name="industry" id="industry" class="form-control form-select" required>
+                                <option value="`+ data.industry +`" selected>`+ data.industry +`</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Accounting">Accounting</option>
+                                <option value="Retail">Retail</option>
+                                <option value="Manufacturing">Manufacturing</option>
+                                <option value="Hospitality and Tourism">Hospitality and Tourism</option>
+                                <option value="Real Estate">Real Estate</option>
+                                <option value="Energy">Energy</option>
+                                <option value="Transportation and Logistics">Transportation and Logistics</option>
+                                <option value="Media and Entertainment">Media and Entertainment</option>
+                                <option value="Food and Beverage">Food and Beverage</option>
+                                <option value="Automotive">Automotive</option>
+                                <option value="Construction">Construction</option>
+                                <option value="Telecommunications">Telecommunications</option>
+                                <option value="Pharmaceuticals">Pharmaceuticals</option>
+                                <option value="Agriculture">Agriculture</option>
+                                <option value="Biotechnology">Biotechnology</option>
+                                <option value="Education">Education</option>
+                                <option value="Professional Services">Professional Services</option>
+                                <option value="Environmental Services">Environmental Services</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="small mb-1" for="orgtype">Organization Type:</label>
+                            <select name="orgtype" id="orgtype" class="form-control form-select" required>
+                                <option value="`+ data.orgtype +`" selected>`+ data.orgtype +`</option>
+                                <option value="Company">Company</option>
+                                <option value="Partnership">Partnership</option>
+                                <option value="Sole Proprietorship">Sole Proprietorship</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>`);
-                $('.name').attr('value', data.name);
-                $('.org').attr('value', data.org);
-                $('.email').attr('value', data.email);
 
             },
             error: function() {

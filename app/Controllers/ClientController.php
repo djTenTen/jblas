@@ -26,9 +26,18 @@ class ClientController extends BaseController{
 
     }
 
+    public function getdefaultfiles($cID){
+
+        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        return $this->cmodel->getdefaultfiles($dcID);
+
+    }
+
     public function viewfiles($cID,$name){
 
         $data['title'] = 'HAT Audit Files for '. $name;
+        $data['cID'] = $cID;
+        $data['name'] = $name;
 
         $data['c1'] = $this->cmodel->getc1();
         $data['c2'] = $this->cmodel->getc2();
@@ -36,6 +45,25 @@ class ClientController extends BaseController{
 
         echo view('includes/Header', $data);
         echo view('client/ViewFiles', $data);
+        echo view('includes/Footer');
+
+    }
+
+
+    public function getfiles($cID,$name){
+
+        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+
+        $data['title'] = 'Files of '. $name;
+        $data['cID'] = $cID;
+        $data['name'] = $name;
+
+        $data['c1'] = $this->cmodel->getc1values($dcID);
+        $data['c2'] = $this->cmodel->getc2values($dcID);
+        $data['c3'] = $this->cmodel->getc3values($dcID);
+
+        echo view('includes/Header', $data);
+        echo view('client/ViewFilesValues', $data);
         echo view('includes/Footer');
 
     }
@@ -68,6 +96,7 @@ class ClientController extends BaseController{
 
     }
 
+
     public function addclient(){
 
         $validationRules = [
@@ -84,6 +113,10 @@ class ClientController extends BaseController{
             'name' => $this->request->getPost('name'),
             'org' => $this->request->getPost('org'),
             'email' => $this->request->getPost('email'),
+            'contact' => $this->request->getPost('contact'),
+            'address' => $this->request->getPost('address'),
+            'orgtype' => $this->request->getPost('orgtype'),
+            'industry' => $this->request->getPost('industry'),
             'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
 
@@ -121,7 +154,12 @@ class ClientController extends BaseController{
             'name' => $this->request->getPost('name'),
             'org' => $this->request->getPost('org'),
             'email' => $this->request->getPost('email'),
+            'contact' => $this->request->getPost('contact'),
+            'address' => $this->request->getPost('address'),
+            'orgtype' => $this->request->getPost('orgtype'),
+            'industry' => $this->request->getPost('industry'),
             'cID' =>  $dcID,
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
 
         $res = $this->cmodel->updateclient($req);
@@ -136,7 +174,29 @@ class ClientController extends BaseController{
 
     }
 
+    public function setfiles($cID){
 
+        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+
+        $req = [
+            'c1' => $this->request->getPost('c1'),
+            'c2' => $this->request->getPost('c2'),
+            'c3' => $this->request->getPost('c3'),
+            'clientID' => $dcID,
+            'firmID' => $this->crypt->decrypt(session()->get('firmID')),
+        ];
+
+        $res = $this->cmodel->setfiles($req);
+
+        if($res == "files_added"){
+            session()->setFlashdata('files_added','files_added');
+            return redirect()->to(site_url('auditsystem/client/set'));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/client/set'));
+        }
+        
+    }
 
     public function acin($cID){
 

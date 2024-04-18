@@ -35,12 +35,9 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('/auditsystem/client/acin/(:any)', 'ClientController::acin/$1');
     $routes->get('/auditsystem/client/set', 'ClientController::viewclientset');
     $routes->get('/auditsystem/client/files/(:any)/(:any)', 'ClientController::viewfiles/$1/$2');
-
-    // viewing of chapter files
-    $routes->get('/auditsystem/chapter1/view/(:any)/(:any)', 'ChapterController::viewc1pdf/$1/$2');
-    $routes->get('/auditsystem/chapter2/view/(:any)/(:any)', 'ChapterController::viewc2pdf/$1/$2');
-    $routes->get('/auditsystem/chapter3/view/(:any)/(:any)', 'ChapterController::viewc3pdf/$1/$2');
-    
+    $routes->post('/auditsystem/client/setfiles/(:any)', 'ClientController::setfiles/$1');
+    $routes->get('/auditsystem/client/defaultfiles/(:any)/', 'ClientController::getdefaultfiles/$1');
+    $routes->get('/auditsystem/client/getfiles/(:any)/(:any)', 'ClientController::getfiles/$1/$2');
     // Auditor Management
     $routes->get('/auditsystem/auditor', 'AuditorController::viewauditor');
     $routes->post('/auditsystem/auditor/save', 'AuditorController::addauditor');
@@ -54,6 +51,19 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('/auditsystem/user/update/(:any)', 'UserController::udpateuser/$1');
     $routes->post('/auditsystem/user/find', 'UserController::findfirm');
     $routes->post('/auditsystem/user/acin/(:any)', 'UserController::acin/$1');
+
+
+    
+    // viewing of chapter files
+    $routes->get('/auditsystem/chapter1/view/(:any)/(:any)', 'ChapterController::viewc1pdf/$1/$2');
+    $routes->get('/auditsystem/chapter2/view/(:any)/(:any)', 'ChapterController::viewc2pdf/$1/$2');
+    $routes->get('/auditsystem/chapter3/view/(:any)/(:any)', 'ChapterController::viewc3pdf/$1/$2');
+    // Setting values of chapter files
+    $routes->get('/auditsystem/chapter1/setvalues/(:any)/(:any)/(:any)/(:any)', 'ChapterController::c1setvalues/$1/$2/$3/$4');
+    $routes->get('/auditsystem/chapter2/setvalues/(:any)/(:any)/(:any)/(:any)', 'ChapterController::c2setvalues/$1/$2/$3/$4');
+    $routes->get('/auditsystem/chapter3/setvalues/(:any)/(:any)/(:any)/(:any)', 'ChapterController::c3setvalues/$1/$2/$3/$4');
+    
+    
     
     /**
         ----------------------------------------------------------
