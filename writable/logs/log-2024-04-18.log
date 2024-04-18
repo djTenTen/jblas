@@ -3992,3 +3992,486 @@ INFO - 2024-04-18 21:04:01 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-04-18 21:04:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-18 21:05:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-18 21:05:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:14:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:14:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-04-18 21:14:44 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 1998.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1095): view('pdfc1/AC10', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Tangibles', '3ac7cfccfa82be0928469a55234551d6c658fd2dc167652d15b9da07a4533e876f92d8a193363ef4d753bfd8f56c37cc9318c0da4a1cb40db42e8af0e5d9ae1a68VVsHSEypd10TDccdpQm9sb', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:14:44 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2024.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1095): view('pdfc1/AC10', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Tangibles', '3ac7cfccfa82be0928469a55234551d6c658fd2dc167652d15b9da07a4533e876f92d8a193363ef4d753bfd8f56c37cc9318c0da4a1cb40db42e8af0e5d9ae1a68VVsHSEypd10TDccdpQm9sb', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:14:44 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2040.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1095): view('pdfc1/AC10', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Tangibles', '3ac7cfccfa82be0928469a55234551d6c658fd2dc167652d15b9da07a4533e876f92d8a193363ef4d753bfd8f56c37cc9318c0da4a1cb40db42e8af0e5d9ae1a68VVsHSEypd10TDccdpQm9sb', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:14:44 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2060.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1095): view('pdfc1/AC10', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Tangibles', '3ac7cfccfa82be0928469a55234551d6c658fd2dc167652d15b9da07a4533e876f92d8a193363ef4d753bfd8f56c37cc9318c0da4a1cb40db42e8af0e5d9ae1a68VVsHSEypd10TDccdpQm9sb', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:14:44 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2077.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1095): view('pdfc1/AC10', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Tangibles', '3ac7cfccfa82be0928469a55234551d6c658fd2dc167652d15b9da07a4533e876f92d8a193363ef4d753bfd8f56c37cc9318c0da4a1cb40db42e8af0e5d9ae1a68VVsHSEypd10TDccdpQm9sb', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:14:44 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2093.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1095): view('pdfc1/AC10', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Tangibles', '3ac7cfccfa82be0928469a55234551d6c658fd2dc167652d15b9da07a4533e876f92d8a193363ef4d753bfd8f56c37cc9318c0da4a1cb40db42e8af0e5d9ae1a68VVsHSEypd10TDccdpQm9sb', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:14:44 --> [DEPRECATED] Required parameter $tagvspaces follows optional parameter $default_css in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 1139.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1095): view('pdfc1/AC10', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Tangibles', '3ac7cfccfa82be0928469a55234551d6c658fd2dc167652d15b9da07a4533e876f92d8a193363ef4d753bfd8f56c37cc9318c0da4a1cb40db42e8af0e5d9ae1a68VVsHSEypd10TDccdpQm9sb', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:14:44 --> [DEPRECATED] Required parameter $k follows optional parameter $points in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 2488.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1095): view('pdfc1/AC10', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Tangibles', '3ac7cfccfa82be0928469a55234551d6c658fd2dc167652d15b9da07a4533e876f92d8a193363ef4d753bfd8f56c37cc9318c0da4a1cb40db42e8af0e5d9ae1a68VVsHSEypd10TDccdpQm9sb', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 21:15:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-04-18 21:15:04 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 1998.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10Summ.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10Summ.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10Summ', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1139): view('pdfc1/AC10Summ', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Summary', '16b9b713fbeebfcb345d5d80130ebea9c59cfd5cc298472dda06d8c36d06863c1e14a6ed0aaf90016edbed9e63e5410ece600d0dfc9bcd3044b3912f0e9a06ca4ejTGUhou1CWaWPsoa1uWOZR', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:15:04 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2024.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10Summ.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10Summ.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10Summ', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1139): view('pdfc1/AC10Summ', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Summary', '16b9b713fbeebfcb345d5d80130ebea9c59cfd5cc298472dda06d8c36d06863c1e14a6ed0aaf90016edbed9e63e5410ece600d0dfc9bcd3044b3912f0e9a06ca4ejTGUhou1CWaWPsoa1uWOZR', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:15:04 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2040.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10Summ.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10Summ.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10Summ', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1139): view('pdfc1/AC10Summ', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Summary', '16b9b713fbeebfcb345d5d80130ebea9c59cfd5cc298472dda06d8c36d06863c1e14a6ed0aaf90016edbed9e63e5410ece600d0dfc9bcd3044b3912f0e9a06ca4ejTGUhou1CWaWPsoa1uWOZR', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:15:04 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2060.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10Summ.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10Summ.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10Summ', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1139): view('pdfc1/AC10Summ', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Summary', '16b9b713fbeebfcb345d5d80130ebea9c59cfd5cc298472dda06d8c36d06863c1e14a6ed0aaf90016edbed9e63e5410ece600d0dfc9bcd3044b3912f0e9a06ca4ejTGUhou1CWaWPsoa1uWOZR', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:15:04 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2077.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10Summ.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10Summ.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10Summ', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1139): view('pdfc1/AC10Summ', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Summary', '16b9b713fbeebfcb345d5d80130ebea9c59cfd5cc298472dda06d8c36d06863c1e14a6ed0aaf90016edbed9e63e5410ece600d0dfc9bcd3044b3912f0e9a06ca4ejTGUhou1CWaWPsoa1uWOZR', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:15:04 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2093.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10Summ.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10Summ.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10Summ', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1139): view('pdfc1/AC10Summ', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Summary', '16b9b713fbeebfcb345d5d80130ebea9c59cfd5cc298472dda06d8c36d06863c1e14a6ed0aaf90016edbed9e63e5410ece600d0dfc9bcd3044b3912f0e9a06ca4ejTGUhou1CWaWPsoa1uWOZR', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:15:04 --> [DEPRECATED] Required parameter $tagvspaces follows optional parameter $default_css in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 1139.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10Summ.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10Summ.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10Summ', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1139): view('pdfc1/AC10Summ', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Summary', '16b9b713fbeebfcb345d5d80130ebea9c59cfd5cc298472dda06d8c36d06863c1e14a6ed0aaf90016edbed9e63e5410ece600d0dfc9bcd3044b3912f0e9a06ca4ejTGUhou1CWaWPsoa1uWOZR', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 21:15:04 --> [DEPRECATED] Required parameter $k follows optional parameter $points in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 2488.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC10Summ.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC10Summ.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC10Summ', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1139): view('pdfc1/AC10Summ', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC10-Summary', '16b9b713fbeebfcb345d5d80130ebea9c59cfd5cc298472dda06d8c36d06863c1e14a6ed0aaf90016edbed9e63e5410ece600d0dfc9bcd3044b3912f0e9a06ca4ejTGUhou1CWaWPsoa1uWOZR', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 21:16:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 21:16:51 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter1\Ac10-Summary.php on line 12.
+ 1 APPPATH\Views\client\chapter1\Ac10-Summary.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10-Summary.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10-Summary.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter1/Ac10-Summary', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(1847): view('client/chapter1/Ac10-Summary', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues('AC10-Summary', '4894dfe03ab85f9ea771ece916f34b1db80f7eac89f3b6589d7d610f8410aaa7bfa1da0dde44192f06b7ca594e0e249cdc74a9bee22cdbf999a03e398915da46t4ncdPI68A4usXARTAZCMkM8', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 21:16:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 21:16:59 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter1\Ac10.php on line 12.
+ 1 APPPATH\Views\client\chapter1\Ac10.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter1/Ac10', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(1801): view('client/chapter1/Ac10', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues('AC10-Tangibles', '2cd850ffe2b8a9b2aba50b262d845cdb70b67761f48c80c50f7378c4c7388fb5e0c52c3db5dcf250cebbaae192b0ccdc1795fbf5cbae5ab7c826b4e4ac418a56w5muAIsnncCeOWIXlnVF8TSa', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 21:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 21:18:09 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter1\Ac10.php on line 49.
+ 1 APPPATH\Views\client\chapter1\Ac10.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10.php', 49)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter1/Ac10', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(1801): view('client/chapter1/Ac10', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues('AC10-Tangibles', '2cd850ffe2b8a9b2aba50b262d845cdb70b67761f48c80c50f7378c4c7388fb5e0c52c3db5dcf250cebbaae192b0ccdc1795fbf5cbae5ab7c826b4e4ac418a56w5muAIsnncCeOWIXlnVF8TSa', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 21:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 21:21:12 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter1\Ac10.php on line 93.
+ 1 APPPATH\Views\client\chapter1\Ac10.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10.php', 93)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter1/Ac10', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(1801): view('client/chapter1/Ac10', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues('AC10-Tangibles', '2cd850ffe2b8a9b2aba50b262d845cdb70b67761f48c80c50f7378c4c7388fb5e0c52c3db5dcf250cebbaae192b0ccdc1795fbf5cbae5ab7c826b4e4ac418a56w5muAIsnncCeOWIXlnVF8TSa', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 21:21:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 21:21:21 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter1\Ac10.php on line 131.
+ 1 APPPATH\Views\client\chapter1\Ac10.php(131): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10.php', 131)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter1/Ac10', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(1801): view('client/chapter1/Ac10', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues('AC10-Tangibles', '2cd850ffe2b8a9b2aba50b262d845cdb70b67761f48c80c50f7378c4c7388fb5e0c52c3db5dcf250cebbaae192b0ccdc1795fbf5cbae5ab7c826b4e4ac418a56w5muAIsnncCeOWIXlnVF8TSa', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 21:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:21:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:21:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:21:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:21:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:21:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:21:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:21:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:23:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:23:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:29:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:29:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:29:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:29:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:29:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:32:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:32:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:32:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:32:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:32:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:32:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:32:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:32:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:32:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:39:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:39:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:39:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:39:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 21:40:47 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ClientController.php(31): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles('undefined')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 21:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 21:41:04 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ClientController.php(31): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles('undefined')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 21:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:45:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:45:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 21:46:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 21:46:53 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter1\Ac10-Summary.php on line 12.
+ 1 APPPATH\Views\client\chapter1\Ac10-Summary.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10-Summary.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10-Summary.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter1/Ac10-Summary', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(1847): view('client/chapter1/Ac10-Summary', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues('AC10-Summary', '2cd850ffe2b8a9b2aba50b262d845cdb70b67761f48c80c50f7378c4c7388fb5e0c52c3db5dcf250cebbaae192b0ccdc1795fbf5cbae5ab7c826b4e4ac418a56w5muAIsnncCeOWIXlnVF8TSa', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 21:47:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 21:47:50 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter1\Ac10-Summary.php on line 74.
+ 1 APPPATH\Views\client\chapter1\Ac10-Summary.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10-Summary.php', 74)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac10-Summary.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter1/Ac10-Summary', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(1847): view('client/chapter1/Ac10-Summary', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues('AC10-Summary', '2cd850ffe2b8a9b2aba50b262d845cdb70b67761f48c80c50f7378c4c7388fb5e0c52c3db5dcf250cebbaae192b0ccdc1795fbf5cbae5ab7c826b4e4ac418a56w5muAIsnncCeOWIXlnVF8TSa', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 21:48:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 22:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 22:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 22:01:57 --> ErrorException: Undefined array key "uID"
+in APPPATH\Models\ChapterValuesModel.php on line 739.
+ 1 APPPATH\Models\ChapterValuesModel.php(739): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "uID"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Models\\ChapterValuesModel.php', 739)
+ 2 APPPATH\Controllers\ChapterValuesController.php(824): App\Models\ChapterValuesModel->saveac10summ([...], [...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterValuesController->saveac10summ('AC10', 'Summary', '2cd850ffe2b8a9b2aba50b262d845cdb70b67761f48c80c50f7378c4c7388fb5e0c52c3db5dcf250cebbaae192b0ccdc1795fbf5cbae5ab7c826b4e4ac418a56w5muAIsnncCeOWIXlnVF8TSa', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterValuesController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 22:02:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-18 22:02:27 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'material' at line 6 in D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_cli...', 0)
+#1 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_cli...')
+#2 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_cli...')
+#3 D:\dhay\xampp\htdocs\jblas\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_cli...', Array, false)
+#4 D:\dhay\xampp\htdocs\jblas\app\Models\ChapterValuesModel.php(758): CodeIgniter\Database\BaseBuilder->update('question', 'some material ')
+#5 D:\dhay\xampp\htdocs\jblas\app\Controllers\ChapterValuesController.php(824): App\Models\ChapterValuesModel->saveac10summ(Array, Array)
+#6 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\ChapterValuesController->saveac10summ('AC10', 'Summary', '2cd850ffe2b8a9b...', '51973964fdb198b...', 'DJ metal works')
+#7 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterValuesController))
+#8 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\dhay\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-04-18 22:02:27 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'material' at line 6
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_dfiles_c1` SET `question` = :question:
+WHERE `type` = :type:
+AND `code` = :code:
+AND `c1tID` = :c1tID:
+AND `clientID` = :clientID:
+AND some material ', [...], false)
+ 2 APPPATH\Models\ChapterValuesModel.php(758): CodeIgniter\Database\BaseBuilder->update('question', 'some material ')
+ 3 APPPATH\Controllers\ChapterValuesController.php(824): App\Models\ChapterValuesModel->saveac10summ([...], [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterValuesController->saveac10summ('AC10', 'Summary', '2cd850ffe2b8a9b2aba50b262d845cdb70b67761f48c80c50f7378c4c7388fb5e0c52c3db5dcf250cebbaae192b0ccdc1795fbf5cbae5ab7c826b4e4ac418a56w5muAIsnncCeOWIXlnVF8TSa', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterValuesController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-18 22:02:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'material' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_dfiles_c1` SET `question` = \'\'
+WHERE `type` = \'materialdata\'
+AND `code` = \'AC10\'
+AND `c1tID` = \'10\'
+AND `clientID` = \'5\'
+AND some material ')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_dfiles_c1` SET `question` = \'\'
+WHERE `type` = \'materialdata\'
+AND `code` = \'AC10\'
+AND `c1tID` = \'10\'
+AND `clientID` = \'5\'
+AND some material ')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_dfiles_c1` SET `question` = :question:
+WHERE `type` = :type:
+AND `code` = :code:
+AND `c1tID` = :c1tID:
+AND `clientID` = :clientID:
+AND some material ', [...], false)
+ 4 APPPATH\Models\ChapterValuesModel.php(758): CodeIgniter\Database\BaseBuilder->update('question', 'some material ')
+ 5 APPPATH\Controllers\ChapterValuesController.php(824): App\Models\ChapterValuesModel->saveac10summ([...], [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterValuesController->saveac10summ('AC10', 'Summary', '2cd850ffe2b8a9b2aba50b262d845cdb70b67761f48c80c50f7378c4c7388fb5e0c52c3db5dcf250cebbaae192b0ccdc1795fbf5cbae5ab7c826b4e4ac418a56w5muAIsnncCeOWIXlnVF8TSa', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterValuesController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-18 22:02:27 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'material' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_client_dfiles_c1` SET `question` = \'\'
+WHERE `type` = \'materialdata\'
+AND `code` = \'AC10\'
+AND `c1tID` = \'10\'
+AND `clientID` = \'5\'
+AND some material ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_dfiles_c1` SET `question` = \'\'
+WHERE `type` = \'materialdata\'
+AND `code` = \'AC10\'
+AND `c1tID` = \'10\'
+AND `clientID` = \'5\'
+AND some material ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_dfiles_c1` SET `question` = \'\'
+WHERE `type` = \'materialdata\'
+AND `code` = \'AC10\'
+AND `c1tID` = \'10\'
+AND `clientID` = \'5\'
+AND some material ')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_dfiles_c1` SET `question` = :question:
+WHERE `type` = :type:
+AND `code` = :code:
+AND `c1tID` = :c1tID:
+AND `clientID` = :clientID:
+AND some material ', [...], false)
+ 5 APPPATH\Models\ChapterValuesModel.php(758): CodeIgniter\Database\BaseBuilder->update('question', 'some material ')
+ 6 APPPATH\Controllers\ChapterValuesController.php(824): App\Models\ChapterValuesModel->saveac10summ([...], [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterValuesController->saveac10summ('AC10', 'Summary', '2cd850ffe2b8a9b2aba50b262d845cdb70b67761f48c80c50f7378c4c7388fb5e0c52c3db5dcf250cebbaae192b0ccdc1795fbf5cbae5ab7c826b4e4ac418a56w5muAIsnncCeOWIXlnVF8TSa', '51973964fdb198b5e2e199ec2b9b83ec239817dfe7e667691700b8362c9a48e803f0b2e40ca94252dc3ea59d081a7297fca3d8dcc827db7004d6a503f44e10e1PTyLyHpvE$OQmF~6H4~BIF8=', 'DJ metal works')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterValuesController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 22:03:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 22:03:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 22:03:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 22:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -77,10 +77,11 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('auditsystem/client/saveac7/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac7/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveac8/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac8/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveac9/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac9/$1/$2/$3/$4');
+    $routes->post('auditsystem/client/saveac10cu/(:any)/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac10cu/$1/$2/$3/$4/$5');
+    $routes->post('auditsystem/client/saveac10s1/(:any)/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac10s1/$1/$2/$3/$4/$5');
+    $routes->post('auditsystem/client/saveac10s2/(:any)/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac10s2/$1/$2/$3/$4/$5');
+    $routes->post('auditsystem/client/saveac10summ/(:any)/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac10summ/$1/$2/$3/$4/$5');
     
-
-
-
     /**
         ----------------------------------------------------------
         CHAPTER 1 AREA

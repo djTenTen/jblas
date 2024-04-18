@@ -1793,9 +1793,9 @@ class ChapterController extends BaseController{
                 $s = explode('-', $code);
                 $data ['sheet'] = $s[1];
                 $data['code'] = $s[0];
-                $data['cu'] = $this->cvmodel->getac10cu($dc1tID,$s[1].'cu');
-                $data['ac10s1'] = $this->cvmodel->getac10s1data($dc1tID,$s[1]);
-                $data['ac10s2'] = $this->cvmodel->getac10s2data($dc1tID,$s[1]);
+                $data['cu'] = $this->cvmodel->getac10cu($dc1tID,$s[1].'cu',$dcID);
+                $data['ac10s1'] = $this->cvmodel->getac10s1data($dc1tID,$s[1],$dcID);
+                $data['ac10s2'] = $this->cvmodel->getac10s2data($dc1tID,$s[1],$dcID);
 
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/Ac10', $data);
@@ -1806,40 +1806,40 @@ class ChapterController extends BaseController{
                 $s = explode('-', $code);
                 $data ['sheet'] = $s[1];
                 $data['code'] = $s[0];
-                $data['nmk_tgb'] = $this->cvmodel->getdatacount($dc1tID,'Tangibles');
-                $data['nmk_ppe'] = $this->cvmodel->getdatacount($dc1tID,'PPE');
-                $data['nmk_invmt'] = $this->cvmodel->getdatacount($dc1tID,'Investments');
-                $data['nmk_invtr'] = $this->cvmodel->getdatacount($dc1tID,'Inventory');
-                $data['nmk_tr'] = $this->cvmodel->getdatacount($dc1tID,'Trade Receivables');
-                $data['nmk_or'] = $this->cvmodel->getdatacount($dc1tID,'Other Receivables');
-                $data['nmk_bac'] = $this->cvmodel->getdatacount($dc1tID,'Bank and Cash');
-                $data['nmk_tp'] = $this->cvmodel->getdatacount($dc1tID,'Trade Payables');
-                $data['nmk_op'] = $this->cvmodel->getdatacount($dc1tID,'Other Payables');
-                $data['nmk_prov'] = $this->cvmodel->getdatacount($dc1tID,'Provisions');
-                $data['nmk_rev'] = $this->cvmodel->getdatacount($dc1tID,'Revenue');
-                $data['nmk_cst'] = $this->cvmodel->getdatacount($dc1tID,'Costs');
-                $data['nmk_pr'] = $this->cvmodel->getdatacount($dc1tID,'Payroll');
+                $data['nmk_tgb'] = $this->cvmodel->getdatacount($dc1tID,'Tangibles',$dcID);
+                $data['nmk_ppe'] = $this->cvmodel->getdatacount($dc1tID,'PPE',$dcID);
+                $data['nmk_invmt'] = $this->cvmodel->getdatacount($dc1tID,'Investments',$dcID);
+                $data['nmk_invtr'] = $this->cvmodel->getdatacount($dc1tID,'Inventory',$dcID);
+                $data['nmk_tr'] = $this->cvmodel->getdatacount($dc1tID,'Trade Receivables',$dcID);
+                $data['nmk_or'] = $this->cvmodel->getdatacount($dc1tID,'Other Receivables',$dcID);
+                $data['nmk_bac'] = $this->cvmodel->getdatacount($dc1tID,'Bank and Cash',$dcID);
+                $data['nmk_tp'] = $this->cvmodel->getdatacount($dc1tID,'Trade Payables',$dcID);
+                $data['nmk_op'] = $this->cvmodel->getdatacount($dc1tID,'Other Payables',$dcID);
+                $data['nmk_prov'] = $this->cvmodel->getdatacount($dc1tID,'Provisions',$dcID);
+                $data['nmk_rev'] = $this->cvmodel->getdatacount($dc1tID,'Revenue',$dcID);
+                $data['nmk_cst'] = $this->cvmodel->getdatacount($dc1tID,'Costs',$dcID);
+                $data['nmk_pr'] = $this->cvmodel->getdatacount($dc1tID,'Payroll',$dcID);
                 
-                $data['vop_tgb'] = $this->cvmodel->getsumation($dc1tID,'Tangibles');
-                $data['vop_ppe'] = $this->cvmodel->getsumation($dc1tID,'PPE');
-                $data['vop_invmt'] = $this->cvmodel->getsumation($dc1tID,'Investments');
-                $data['vop_invtr'] = $this->cvmodel->getsumation($dc1tID,'Inventory');
-                $data['vop_tr'] = $this->cvmodel->getsumation($dc1tID,'Trade Receivables');
-                $data['vop_or'] = $this->cvmodel->getsumation($dc1tID,'Other Receivables');
-                $data['vop_bac'] = $this->cvmodel->getsumation($dc1tID,'Bank and Cash');
-                $data['vop_tp'] = $this->cvmodel->getsumation($dc1tID,'Trade Payables');
-                $data['vop_op'] = $this->cvmodel->getsumation($dc1tID,'Other Payables');
-                $data['vop_prov'] = $this->cvmodel->getsumation($dc1tID,'Provisions');
-                $data['vop_rev'] = $this->cvmodel->getsumation($dc1tID,'Revenue');
-                $data['vop_cst'] = $this->cvmodel->getsumation($dc1tID,'Costs');
-                $data['vop_pr'] = $this->cvmodel->getsumation($dc1tID,'Payroll');
+                $data['vop_tgb'] = $this->cvmodel->getsumation($dc1tID,'Tangibles',$dcID);
+                $data['vop_ppe'] = $this->cvmodel->getsumation($dc1tID,'PPE',$dcID);
+                $data['vop_invmt'] = $this->cvmodel->getsumation($dc1tID,'Investments',$dcID);
+                $data['vop_invtr'] = $this->cvmodel->getsumation($dc1tID,'Inventory',$dcID);
+                $data['vop_tr'] = $this->cvmodel->getsumation($dc1tID,'Trade Receivables',$dcID);
+                $data['vop_or'] = $this->cvmodel->getsumation($dc1tID,'Other Receivables',$dcID);
+                $data['vop_bac'] = $this->cvmodel->getsumation($dc1tID,'Bank and Cash',$dcID);
+                $data['vop_tp'] = $this->cvmodel->getsumation($dc1tID,'Trade Payables',$dcID);
+                $data['vop_op'] = $this->cvmodel->getsumation($dc1tID,'Other Payables',$dcID);
+                $data['vop_prov'] = $this->cvmodel->getsumation($dc1tID,'Provisions',$dcID);
+                $data['vop_rev'] = $this->cvmodel->getsumation($dc1tID,'Revenue',$dcID);
+                $data['vop_cst'] = $this->cvmodel->getsumation($dc1tID,'Costs',$dcID);
+                $data['vop_pr'] = $this->cvmodel->getsumation($dc1tID,'Payroll',$dcID);
                 
-                $data['mat'] = $this->cvmodel->getsummarydata($dc1tID,'material');
+                $data['mat'] = $this->cvmodel->getsummarydata($dc1tID,'material',$dcID);
 
                 $rowdata = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
 
                 foreach($rowdata as $row){
-                    $rdata = $this->cvmodel->getsummarydata($dc1tID, $row);
+                    $rdata = $this->cvmodel->getsummarydata($dc1tID, $row,$dcID);
                     $data[$row] = json_decode($rdata['question'], true);
                 }
 

@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -33,24 +33,6 @@
                     </div>
                 </div>
             <?php  }?>
-            <?php if (session()->get('success_registration')) { ?>
-                <div class="alert alert-success alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Success Registration</h6>
-                        Contents has been successfully saved.
-                    </div>
-                </div>
-            <?php  }?>
-            <?php if (session()->get('failed_registration')) { ?>
-                <div class="alert alert-danger alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Failed Registration</h6>
-                        Error registering contents.
-                    </div>
-                </div>
-            <?php  }?>
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -60,38 +42,30 @@
                     </div>
                 </div>
             <?php  }?>
-            <?php if (session()->get('failed_update')) { ?>
-                <div class="alert alert-danger alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Failed Update</h6>
-                        Error updating contents.
-                    </div>
-                </div>
-            <?php  }?>
+
             <div class="card-body">
 
                 <nav class="nav nav-borders">
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Tangibles')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Tangibles/<?= $header?>/<?= $c1tID; ?>">Tangibles</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'PPE')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-PPE/<?= $header?>/<?= $c1tID; ?>">PPE</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Investments')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Investments/<?= $header?>/<?= $c1tID; ?>">Investments</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Inventory')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Inventory/<?= $header?>/<?= $c1tID; ?>">Inventory</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Trade%20Receivables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Trade Receivables/<?= $header?>/<?= $c1tID; ?>">Trade Receivables</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Other%20Receivables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Other Receivables/<?= $header?>/<?= $c1tID; ?>">Other Receivables</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Bank%20and%20Cash')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Bank and Cash/<?= $header?>/<?= $c1tID; ?>">Bank and Cash</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Trade%20Payables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Trade Payables/<?= $header?>/<?= $c1tID; ?>">Trade Payables</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Other%20Payables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Other Payables/<?= $header?>/<?= $c1tID; ?>">Other Payables</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Provisions')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Provisions/<?= $header?>/<?= $c1tID; ?>">Provisions</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Revenue')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Revenue/<?= $header?>/<?= $c1tID; ?>">Revenue</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Costs')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Costs/<?= $header?>/<?= $c1tID; ?>">Costs</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Payroll')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Payroll/<?= $header?>/<?= $c1tID; ?>">Payroll</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Summary')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Summary/<?= $header?>/<?= $c1tID; ?>">Summary</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Tangibles')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-Tangibles/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">Tangibles</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'PPE')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-PPE/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">PPE</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Investments')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-Investments/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">Investments</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Inventory')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-Inventory/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">Inventory</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Trade%20Receivables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-Trade Receivables/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">Trade Receivables</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Other%20Receivables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-Other Receivables/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">Other Receivables</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Bank%20and%20Cash')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-Bank and Cash/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">Bank and Cash</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Trade%20Payables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-Trade Payables/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">Trade Payables</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Other%20Payables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-Other Payables/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">Other Payables</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Provisions')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-Provisions/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">Provisions</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Revenue')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-Revenue/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">Revenue</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Costs')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-Costs/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">Costs</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Payroll')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-Payroll/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">Payroll</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Summary')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter1/setvalues/<?= $code?>-Summary/<?= $c1tID; ?>/<?= $cID?>/<?= $name?>">Summary</a>
                 </nav>
                 <hr class="mt-0 mb-4" />
                 <br>
 
                 <div class="table-responsive">
-                    <form action="<?= base_url()?>auditsystem/c1/saveac10cu/<?= $code?>/<?= $sheet?>/<?= $header?>/<?= $c1tID?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/saveac10cu/<?= $code?>/<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <table class="table table-bordered table-sm">
                         <thead>
                             <tr>
@@ -107,7 +81,7 @@
                             <tr>
                                 <td colspan="3">Value Per Financial Statements</td>
                                 <td>
-                                    <input type="hidden" class="form-control" name="acid" value="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($cu['acID']))?>">
+                                    <input type="hidden" class="form-control" name="acid" value="<?= $crypt->encrypt($cu['acID'])?>">
                                     <input type="text" class="form-control cu" name="question" value="<?= $cu['question']?>">
                                 </td>
                                 <td><button type="submit" class="btn btn-success m-1 btn-icon btn-sm" title="Save"><i class="fas fa-file-alt"></i></button></td>
@@ -116,7 +90,7 @@
                     </table> 
                     </form>
 
-                    <form action="<?= base_url()?>auditsystem/c1/saveac10s1/<?= $code?>/<?= $sheet?>/<?= $header?>/<?= $c1tID?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/saveac10s1/<?= $code?>/<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <table class="table table-bordered table-sm">
                         <thead> 
                             <tr>
@@ -154,7 +128,7 @@
                     </form>
 
 
-                    <form action="<?= base_url()?>auditsystem/c1/saveac10s2/<?= $code?>/<?= $sheet?>/<?= $header?>/<?= $c1tID?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/saveac10s2/<?= $code?>/<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <table class="table table-bordered table-sm">
                         <thead>
                             <tr>

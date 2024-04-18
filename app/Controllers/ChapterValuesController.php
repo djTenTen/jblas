@@ -572,7 +572,7 @@ class ChapterValuesController extends BaseController{
         AC10 FUNCTIONS
         ----------------------------------------------------------
     */
-    public function saveac10summ($code,$sheet,$head,$c1tID){
+    public function saveac10summ($code,$sheet,$c1tID,$cID,$name){
 
         $tgb = [
             'tgb_rpac10' => $this->request->getPost('tgb_rpac10'),
@@ -815,28 +815,31 @@ class ChapterValuesController extends BaseController{
         $ref = [
             'materiality' => $this->request->getPost('materiality'),
             'code' => 'AC10',
-            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
         
         $res = $this->cvmodel->saveac10summ($req,$ref);
         
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'-'.$sheet.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'-'.$sheet.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
         
     }
-    public function saveac10s1($code,$sheet,$head,$c1tID){
+    public function saveac10s1($code,$sheet,$c1tID,$cID,$name){
 
         $validationRules = [
             'namedesc' => 'required'
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'-'.$sheet.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
         $req = [
@@ -845,44 +848,51 @@ class ChapterValuesController extends BaseController{
             'balance' => $this->request->getPost('balance'),
             'type' => $sheet,
             'code' => $code,
-            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
-        $res = $this->cvmodel->saves1ac10($req);
+        $res = $this->cvmodel->saveac10s1($req);
         
         if($res){
             session()->setFlashdata('success_registration','success_registration');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'-'.$sheet.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_registration','failed_registration');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'-'.$sheet.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
-    public function saveac10cu($code,$sheet,$head,$c1tID){
+    public function saveac10cu($code,$sheet,$c1tID,$cID,$name){
 
         $req = [
+            'question' => $this->request->getPost('question'),
             'acid' => $this->request->getPost('acid'),
-            'question' => $this->request->getPost('question')
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveac10cu($req);
         
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'-'.$sheet.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'-'.$sheet.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
-    public function saveac10s2($code,$sheet,$head,$c1tID){
+    public function saveac10s2($code,$sheet,$c1tID,$cID,$name){
 
         $validationRules = [
             'namedesc' => 'required'
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'-'.$sheet.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
         $req = [
@@ -892,16 +902,19 @@ class ChapterValuesController extends BaseController{
             'balance' => $this->request->getPost('balance'),
             'type' => $sheet,
             'code' => $code,
-            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveac10s2($req);
         
         if($res){
             session()->setFlashdata('success_registration','success_registration');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'-'.$sheet.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_registration','failed_registration');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'-'.$sheet.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }

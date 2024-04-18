@@ -643,41 +643,85 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getac10s1data($c1tID,$part){
+    public function getac10s1data($c1tID,$part,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => $part, 'code' => 'ac10','question' => 'section1', 'c1tID' => $c1tID))->get();
+        $where = [
+            'type' => $part, 
+            'code' => 'ac10', 
+            'question' => 'section1',
+            'c1tID' => $c1tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where)->get();
         return $query->getResultArray();
 
     }
-    public function getac10s2data($c1tID,$part){
+    public function getac10s2data($c1tID,$part,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => $part, 'code' => 'ac10','question' => 'section2', 'c1tID' => $c1tID))->get();
+        $where = [
+            'type' => $part, 
+            'code' => 'ac10', 
+            'question' => 'section2',
+            'c1tID' => $c1tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where)->get();
         return $query->getResultArray();
 
     }
-    public function getac10cu($c1tID,$part){
+    public function getac10cu($c1tID,$part,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => $part, 'code' => 'ac10', 'c1tID' => $c1tID))->get();
+        $where = [
+            'type' => $part, 
+            'code' => 'ac10', 
+            'c1tID' => $c1tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where)->get();
         return $query->getRowArray();
 
     }
-    public function getdatacount($c1tID,$part){
+    public function getdatacount($c1tID,$part,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => $part, 'code' => 'ac10', 'c1tID' => $c1tID));
+        $where = [
+            'type' => $part, 
+            'code' => 'ac10', 
+            'c1tID' => $c1tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where);
         return $query->countAllResults();
 
     }
-    public function getsumation($c1tID,$part){
+    public function getsumation($c1tID,$part,$dcID){
 
-        $total = $this->db->table($this->tblc1d)->selectSum('balance')->where(array('type' => $part, 'code' => 'ac10', 'c1tID' => $c1tID))->get()->getRowArray();
-        $cu = $this->db->table($this->tblc1d)->where(array('type' => $part.'cu', 'code' => 'ac10', 'c1tID' => $c1tID))->get()->getRowArray();
+        $where1 = [
+            'type' => $part, 
+            'code' => 'ac10', 
+            'c1tID' => $c1tID,
+            'clientID' => $dcID,
+        ];
+        $where2 = [
+            'type' => $part.'cu', 
+            'code' => 'ac10', 
+            'c1tID' => $c1tID,
+            'clientID' => $dcID,
+        ];
+        $total = $this->db->table($this->tblc1d)->selectSum('balance')->where($where1)->get()->getRowArray();
+        $cu = $this->db->table($this->tblc1d)->where($where2)->get()->getRowArray();
 
         return $cu['question'] - $total['balance'];
 
     }
-    public function getsummarydata($c1tID,$part){
+    public function getsummarydata($c1tID,$part,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => $part.'data', 'code' => 'ac10', 'c1tID' => $c1tID))->get();
+        $where2 = [
+            'type' => $part.'data', 
+            'code' => 'ac10', 
+            'c1tID' => $c1tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where2)->get();
         return $query->getRowArray();
 
     }
@@ -686,31 +730,46 @@ class ChapterValuesModel extends Model{
     */
     public function saveac10summ($req,$ref){
 
-
         foreach ($req as $r => $val){
-
-            $this->db->table($this->tblc1d)->where(array('type' => $r.'data', 'code' => 'ac10','c1tID' => $ref['c1tID']))->delete();
 
             $data = [
                 'question' => $val,
                 'type' =>  $r.'data',
-                'code' =>  $ref['code'],
-                'c1tID' => $ref['c1tID'],
-                'updated_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $ref['uID'],
             ];
 
-            $this->db->table($this->tblc1d)->insert($data);
+            $where1 = [
+                'type' => $r.'data',
+                'code' => $ref['code'],
+                'c1tID' => $ref['c1tID'],
+                'clientID' =>$ref['cID'],
+            ];
+            $this->db->table($this->tblc1d)->where($where1)->update($data);
+
         }
 
-        $this->db->table($this->tblc1d)->where(array('type' => 'materialdata', 'code' => $ref['code'],'c1tID' => $ref['c1tID']))->delete();
-        $this->db->table($this->tblc1d)->insert(array('type' => 'materialdata', 'code' => $ref['code'],'c1tID' => $ref['c1tID'], 'question' => $ref['materiality']));
+        $where2 = [
+            'type' => 'materialdata',
+            'code' => $ref['code'],
+            'c1tID' => $ref['c1tID'],
+            'clientID' =>$ref['cID'],
+        ];
+        $this->db->table($this->tblc1d)->where($where2)->update(array('question' => $ref['materiality']));
 
         return true;
 
     }
-    public function saves1ac10($req){
+    public function saveac10s1($req){
 
-        $this->db->table($this->tblc1d)->where(array('type' => $req['type'], 'code' => $req['code'],'question' => 'section1', 'c1tID' => $req['c1tID']))->delete();
+        $where = [
+            'type' => $req['type'], 
+            'code' => $req['code'],
+            'question' => 'section1',
+            'c1tID' => $req['c1tID'],
+            'clientID' => $req['cID'],
+        ];
+        $this->db->table($this->tblc1d)->where($where)->delete();
 
         foreach($req['name'] as $i => $val){
 
@@ -721,9 +780,13 @@ class ChapterValuesModel extends Model{
                 'type' =>  $req['type'],
                 'code' =>  $req['code'],
                 'c1tID' => $req['c1tID'],
+                'clientID' => $req['cID'],
+                'firmID' => $req['fID'],
                 'question' => 'section1',
-                'updated_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
+
             $this->db->table($this->tblc1d)->insert($data);
 
         }
@@ -732,7 +795,15 @@ class ChapterValuesModel extends Model{
     }
     public function saveac10s2($req){
 
-        $this->db->table($this->tblc1d)->where(array('type' => $req['type'], 'code' => $req['code'],'question' => 'section2', 'c1tID' => $req['c1tID']))->delete();
+        $where = [
+            'type' => $req['type'], 
+            'code' => $req['code'],
+            'question' => 'section2',
+            'c1tID' => $req['c1tID'],
+            'clientID' => $req['cID'],
+        ];
+    
+        $this->db->table($this->tblc1d)->where($where)->delete();
 
         foreach($req['name'] as $i => $val){
 
@@ -744,8 +815,11 @@ class ChapterValuesModel extends Model{
                 'type' =>  $req['type'],
                 'code' =>  $req['code'],
                 'c1tID' => $req['c1tID'],
+                'clientID' => $req['cID'],
+                'firmID' => $req['fID'],
                 'question' => 'section2',
-                'updated_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
             $this->db->table($this->tblc1d)->insert($data);
 
@@ -755,9 +829,12 @@ class ChapterValuesModel extends Model{
     }
     public function saveac10cu($req){
 
-        $dacid = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$req['acid']));
+        $dacid = $this->crypt->decrypt($req['acid']);
+        
         $data = [
             'question' => $req['question'],
+            'updated_on' => $this->date.' '.$this->time,
+            'updated_by' => $req['uID'],
         ];
         if($this->db->table($this->tblc1d)->where('acID', $dacid)->update($data)){
             return true;
