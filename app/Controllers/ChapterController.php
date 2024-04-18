@@ -1850,9 +1850,9 @@ class ChapterController extends BaseController{
 
             case 'AC11':
 
-                $rdata = $this->cvmodel->getac11data($code,$dc1tID);
+                $rdata = $this->cvmodel->getac11data($code,$dc1tID,$dcID);
                 $data['ac11'] = json_decode($rdata['question'], true);
-                
+                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/Ac11', $data);
                 echo view('includes/Footer');

@@ -933,7 +933,7 @@ class ChapterValuesController extends BaseController{
         AC11 FUNCTIONS
         ----------------------------------------------------------
     */
-    public function saveac11($code,$head,$c1tID){
+    public function saveac11($code,$c1tID,$cID,$name){
 
         $ac11 = [
             'datem' => $this->request->getPost('datem'),
@@ -980,18 +980,20 @@ class ChapterValuesController extends BaseController{
 
         $req = [
             'ac11' => json_encode($ac11),
-            'code' => $code,
-            'part' => 'ac11data',
-            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+            'acid' => $this->request->getPost('acid'),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveac11($req);
         
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+             return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+             return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
 

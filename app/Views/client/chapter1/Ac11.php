@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -37,7 +37,8 @@
                <h4>TEAM DISCUSSIONS AND BRIEFING MEETING</h4>
                <h6>Objective:</h6>
                <p>To document a team discussion covering fraud and risk as required by PSA 240, 315 and 550 and to demonstrate that an adequate staff briefing has occurred.</p>
-               <form action="<?= base_url()?>auditsystem/c1/saveac11/<?=$code?>/<?= $header?>/<?= $c1tID?>" method="post">
+               <form action="<?= base_url()?>auditsystem/client/saveac11/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+               <input type="hidden" name="acid" value="<?= $acID?>">
                 <label for="">
                     Date of the meeting: <input type="date" class="form-control" name="datem" value="<?= $ac11['datem']?>" required>
                 </label>
