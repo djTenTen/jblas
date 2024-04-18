@@ -1705,10 +1705,10 @@ class ChapterController extends BaseController{
 
             case 'AC4':
 
-                $data['ac4'] = $this->cvmodel->getac4($code,$dc1tID);
-                $rdata = $this->cvmodel->getac4ppr($code,$dc1tID);
+                $data['ac4'] = $this->cvmodel->getac4($code,$dc1tID,$dcID);
+                $rdata = $this->cvmodel->getac4ppr($code,$dc1tID,$dcID);
                 $data['ppr'] = json_decode($rdata['question'], true);
-
+                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/ac4', $data);
                 echo view('includes/Footer');

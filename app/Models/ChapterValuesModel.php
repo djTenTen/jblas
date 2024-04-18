@@ -249,15 +249,27 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getac4ppr($code,$c1tID){
+    public function getac4ppr($code,$c1tID,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => 'ppr', 'code' => $code, 'c1tID' => $c1tID))->get();
+        $where = [
+            'code' => $code, 
+            'type' => 'ppr',
+            'c1tID' => $c1tID, 
+            'clientID' => $dcID
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where)->get();
         return $query->getRowArray();
 
     }
-    public function getac4($code,$c1tID){
+    public function getac4($code,$c1tID,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => 'ac4sod', 'code' => $code, 'c1tID' => $c1tID))->get();
+        $where = [
+            'code' => $code, 
+            'type' => 'ac4sod',
+            'c1tID' => $c1tID, 
+            'clientID' => $dcID
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where)->get();
         return $query->getResultArray();
 
     }
@@ -267,18 +279,15 @@ class ChapterValuesModel extends Model{
     */
     public function saveac4ppr($req){
 
-        $this->db->table($this->tblc1d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
+        $acid = $this->crypt->decrypt($req['acid']);
 
         $data = [
             'question' => $req['ppr'],
-            'type' =>  $req['part'],
-            'code' =>  $req['code'],
-            'c1tID' => $req['c1tID'],
-            'status' => 'Active',
-            'updated_on' => $this->date.' '.$this->time
+            'updated_on' => $this->date.' '.$this->time,
+            'updated_by' => $req['uID'],
         ];
     
-        if($this->db->table($this->tblc1d)->insert($data)){
+        if($this->db->table($this->tblc1d)->where('acID', $acid)->update($data)){
             return true;
         }else{
             return false;
@@ -288,21 +297,15 @@ class ChapterValuesModel extends Model{
     }
     public function saveac4($req){
 
-        $this->db->table($this->tblc1d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
-
-        foreach($req['question'] as $i => $val){
-
+        foreach($req['comment'] as $i => $val){
+            $acid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'question' => $req['question'][$i],
                 'comment' => $req['comment'][$i],
-                'code' => $req['code'],
-                'c1tID' => $req['c1tID'],
-                'type' => $req['part'],
-                'status' => 'Active',
-                'added_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
 
-            $this->db->table($this->tblc1d)->insert($data);
+            $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
         }
         return true;
 
