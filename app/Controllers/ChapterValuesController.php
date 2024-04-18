@@ -1038,10 +1038,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->savequestions($req);
 
         if($res){
-            session()->setFlashdata('success_registration','success_registration');
+            session()->setFlashdata('success_update','success_update');
             return redirect()->to(site_url('auditsystem/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_registration','failed_registration');
+            session()->setFlashdata('invalid_input','invalid_input');
             return redirect()->to(site_url('auditsystem/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
         }
 
