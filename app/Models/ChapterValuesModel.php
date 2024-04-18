@@ -593,9 +593,15 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getac9data($code,$c1tID){
+    public function getac9data($code,$c1tID,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => 'ac9data', 'code' => $code, 'c1tID' => $c1tID))->get();
+        $where = [
+            'type' => 'ac9data', 
+            'code' => $code, 
+            'c1tID' => $c1tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where)->get();
         return $query->getRowArray();
 
     }
@@ -605,17 +611,15 @@ class ChapterValuesModel extends Model{
     */
     public function saveac9($req){
 
-        $this->db->table($this->tblc1d)->where(array('type' => $req['part'], 'code' => $req['code'],'c1tID' => $req['c1tID']))->delete();
+        $dacid = $this->crypt->decrypt($req['acid']);
 
         $data = [
             'question' => $req['ac9'],
-            'type' =>  $req['part'],
-            'code' =>  $req['code'],
-            'c1tID' => $req['c1tID'],
-            'updated_on' => $this->date.' '.$this->time
+            'updated_on' => $this->date.' '.$this->time,
+            'updated_by' => $req['uID'],
         ];
 
-        if($this->db->table($this->tblc1d)->insert($data)){
+        if($this->db->table($this->tblc1d)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;

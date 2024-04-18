@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -34,9 +34,9 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-            <form action="<?= base_url()?>auditsystem/c1/saveac9/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+            <form action="<?= base_url()?>auditsystem/client/saveac9/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 <input type="hidden" value="ac9data" name="part">
-
+                <input type="hidden" name="acid" value="<?= $acID?>">
                 <h4>CONSIDERATION OF SPECIFIC SKILLS REQUIRED FOR THIS ASSIGNMENT </h4>
                 <h6>(SHOULD COVER ALL MEMBERS OF THE TEAM OTHER THAN JUNIORS, INCLUDING THE EQR)</h6>
                 
