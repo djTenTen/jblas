@@ -377,15 +377,27 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getac6($part,$code,$c1tID){
+    public function getac6($part,$code,$c1tID,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => $part, 'code' => $code, 'c1tID' => $c1tID))->get();
+        $where = [
+            'code' => $code, 
+            'type' => $part,
+            'c1tID' => $c1tID, 
+            'clientID' => $dcID
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where)->get();
         return $query->getResultArray();
 
     }
-    public function gets12($code,$c1tID){
+    public function gets12($code,$c1tID,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => 'ac6s12', 'code' => $code, 'c1tID' => $c1tID))->get();
+        $where = [
+            'code' => $code, 
+            'type' => 'ac6s12',
+            'c1tID' => $c1tID, 
+            'clientID' => $dcID
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where)->get();
         return $query->getRowArray();
 
     }
@@ -395,50 +407,49 @@ class ChapterValuesModel extends Model{
     */
     public function saveac6ra($req){
 
-        $this->db->table($this->tblc1d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
+        foreach($req['planning'] as $i => $val){
 
-        foreach($req['question'] as $i => $val){
-
+            $acid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'question' => $req['question'][$i],
                 'planning' => $req['planning'][$i],
                 'finalization' => $req['finalization'][$i],
                 'reference' => $req['reference'][$i],
-                'code' => $req['code'],
-                'c1tID' => $req['c1tID'],
-                'type' => $req['part'],
-                'status' => 'Active',
-                'added_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
 
-            $this->db->table($this->tblc1d)->insert($data);
+            $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
         }
         return true;
 
     }
+
     public function saveac6s12($req){
 
-        $this->db->table($this->tblc1d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
-
+        $acid = $this->crypt->decrypt($req['acid']);
         $data = [
             'question' => $req['section'],
-            'type' =>  $req['part'],
-            'code' =>  $req['code'],
-            'c1tID' => $req['c1tID'],
-            'status' => 'Active',
-            'updated_on' => $this->date.' '.$this->time
+            'updated_on' => $this->date.' '.$this->time,
+            'updated_by' => $req['uID'],
         ];
 
-        if($this->db->table($this->tblc1d)->insert($data)){
+        if($this->db->table($this->tblc1d)->where('acID', $acid)->update($data)){
             return true;
         }else{
             return false;
         }
 
     }
-    public function saveac6s3($req){
 
-        $this->db->table($this->tblc1d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
+    public function saveac6s3($req){
+        $where = [
+            'type' => $req['part'], 
+            'code' => $req['code'], 
+            'c1tID' => $req['c1tID'],
+            'clientID' => $req['cID'],
+        ];
+
+        $this->db->table($this->tblc1d)->where($where)->delete();
 
         foreach($req['financialstatement'] as $i => $val){
 
@@ -452,9 +463,12 @@ class ChapterValuesModel extends Model{
                 'reliance' => $req['reliancecontrol'][$i],
                 'code' => $req['code'],
                 'c1tID' => $req['c1tID'],
+                'firmID' => $req['fID'],
+                'clientID' => $req['cID'],
                 'type' => $req['part'],
                 'status' => 'Active',
-                'added_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
 
             $this->db->table($this->tblc1d)->insert($data);

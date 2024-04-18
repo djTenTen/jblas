@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -33,15 +33,6 @@
                     </div>
                 </div>
             <?php  }?>
-            <?php if (session()->get('success_registration')) { ?>
-                <div class="alert alert-success alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Success Registration</h6>
-                        Contents has been successfully saved.
-                    </div>
-                </div>
-            <?php  }?>
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -51,21 +42,13 @@
                     </div>
                 </div>
             <?php  }?>
-            <?php if (session()->get('failed_registration')) { ?>
-                <div class="alert alert-danger alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Failed Registration</h6>
-                        Error registering contents.
-                    </div>
-                </div>
-            <?php  }?>
+
             <div class="card-body">
                 
                 <h4>RISK SUMMARY</h4>
                 <h6>This form should be completed when a narrative approach to inherent business risk assessment is undertaken. If more than one risk level applies, add additional lines as appropriate.</h6>
                 <br><br>
-                <form action="<?= base_url()?>auditsystem/c1/saveac6ra/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac6ra/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="ac6ra">
                     <table class="table table-hover table-bordered">
                         <thead class="text-center">
@@ -73,41 +56,26 @@
                                 <th></th>
                                 <th  colspan="2">Risk Assessment</th>
                                 <th>Reference</th>
-                                <th>Status</th>
-                                <th>Action</th>
                             </tr>
                             <tr>
                                 <th>Question</th>
                                 <th>Planning</th>
                                 <th>Finalization</th>
                                 <th></th>
-                                <th></th>
-                                <th></th>
                             </tr>
                         </thead>
                         <tbody class="tbody text-center">
                             <?php foreach($ac6 as $r){?>
                                 <tr>
-                                    <td><input class="form-control" type="text" name="question[]" value="<?= $r['question']?>"></td>
+                                    <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
                                     <td><input class="form-control" type="text" name="planning[]" value="<?= $r['planning']?>"></td>
                                     <td><input class="form-control" type="text" name="finalization[]" value="<?= $r['finalization']?>"></td>
                                     <td><input class="form-control" type="text" name="reference[]" value="<?= $r['reference']?>"></td>
-                                    <td><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
-                                    <td>
-                                        <button class="btn btn-primary btn-icon btn-sm load-data" type="button" data-bs-toggle="modal" data-bs-target="#modaledit" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" title="Edit" ><i class="fas fa-edit"></i></button>
-                                        <?php if($r['status'] == 'Active'){?>
-                                            <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
-                                        <?php }else{?>
-                                            <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
-                                        <?php }?>
-                                    </td>
                                 </tr>
                             <?php }?>
                         </tbody>
                     </table>
-
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
 
                 </form>
 
@@ -139,8 +107,8 @@
                 <p>Objective: This form is designed to determine the inherent risk of the business as a whole.  PSA 315 implies that all businesses should be high risk unless this can be rebutted.  Completion of this form will help to justify a departure from high risk.</p>
                 <h4>Section 1 – INHERENT BUSINESS RISK </h4>
                 <p>The inherent business risk of the client is deemed to be low / medium / high* for the following reasons:</p>
-                <form action="<?= base_url()?>auditsystem/c1/saveac6s12/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
-                    <input type="hidden" name="part" value="ac6s12">
+                <form action="<?= base_url()?>auditsystem/client/saveac6s12/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <input type="hidden" name="acid" value="<?= $acID?>">
                     <textarea class="form-control" cols="30" rows="20" name="s1" required><?= $s['s1']?></textarea>
                 <p>	Comprehensive consideration should be given to all clients even those deemed to be low risk. As part of this review consideration must be given to the Company’s going concern status and I.T. risk.</p>
                 <br>
@@ -177,7 +145,7 @@
                     <li>Tracing transactions through the information system relevant to financial reporting.</li>
                 </ul>
                 <p>NB: this requirement exists irrespective of whether the overall control environment has been deemed to be ineffective in section 2b above. </p>
-                <form action="<?= base_url()?>auditsystem/c1/saveac6s3/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac6s3/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="ac6s3">
                 <table class="table table-hover table-bordered">
                     <thead>
@@ -213,15 +181,15 @@
                             <td>e.g.<br>No</td>
                             <td></td>
                         </tr>
-                        <?php foreach($s3 as $r1){?>
+                        <?php foreach($s3 as $r){?>
                             <tr>
-                                <td><textarea class="form-control" id="" name="financialstatement[]" cols="30" rows="5"><?= $r1['finstate']?></textarea> </td>
-                                <td><textarea class="form-control" id="" name="descriptioncontrol[]" cols="30" rows="5"><?= $r1['desc']?></textarea> </td>
-                                <td><textarea class="form-control" id="" name="controleffective[]" cols="30" rows="5"><?= $r1['controleffect']?></textarea> </td>
-                                <td><textarea class="form-control" id="" name="controlimplemented[]" cols="30" rows="5"><?= $r1['implemented']?></textarea> </td>
-                                <td><textarea class="form-control" id="" name="assesed[]" cols="30" rows="5"><?= $r1['assessed']?></textarea> </td>
-                                <td><textarea class="form-control" id="" name="crosstesting[]" cols="30" rows="5"><?= $r1['reference']?></textarea> </td>
-                                <td><textarea class="form-control" id="" name="reliancecontrol[]" cols="30" rows="5"><?= $r1['reliance']?></textarea> </td>
+                                <td><textarea class="form-control" id="" name="financialstatement[]" cols="30" rows="5"><?= $r['finstate']?></textarea> </td>
+                                <td><textarea class="form-control" id="" name="descriptioncontrol[]" cols="30" rows="5"><?= $r['desc']?></textarea> </td>
+                                <td><textarea class="form-control" id="" name="controleffective[]" cols="30" rows="5"><?= $r['controleffect']?></textarea> </td>
+                                <td><textarea class="form-control" id="" name="controlimplemented[]" cols="30" rows="5"><?= $r['implemented']?></textarea> </td>
+                                <td><textarea class="form-control" id="" name="assesed[]" cols="30" rows="5"><?= $r['assessed']?></textarea> </td>
+                                <td><textarea class="form-control" id="" name="crosstesting[]" cols="30" rows="5"><?= $r['reference']?></textarea> </td>
+                                <td><textarea class="form-control" id="" name="reliancecontrol[]" cols="30" rows="5"><?= $r['reliance']?></textarea> </td>
                                 <td>
                                     <button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button>
                                 </td>
@@ -246,56 +214,25 @@
     </div>
     
 </main>
-
-
 <script>
     $(document).ready(function () {
-
-
-        $(".active-data").on("click", function() {
-            var status = $(this).data('status');
-            var acID = $(this).data('ac-id');
-                $('#myactiveform').attr('action', "<?= base_url('auditsystem/c1/activeinactive/')?><?= $code?>/<?= $header?>/<?= $c1tID?>/" + acID);
-                if (status == 'Active') {
-                    $('.msgconfirm').html(`<h3>Are you sure to Disable this content?</h3>`);
-                }else{
-                    $('.msgconfirm').html(`<h3>Are you sure to Enable this content?</h3>`);
-                }
-        });
-
-
-        $('.add-field').on('click', function () {
-        // Adding a row inside the tbody.
-        var form = $(this).closest('form');
-        var tbody = form.find('tbody');
-        tbody.append(`
-        <tr>
-            <td><input class="form-control" type="text" name="question[]"></td>
-            <td><input class="form-control" type="text" name="planning[]"></td>
-            <td><input class="form-control" type="text" name="finalization[]"></td>
-            <td><input class="form-control" type="text" name="reference[]"></td>
-            <td></td>
-            <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-        </tr>`);
-        });
 
         $('.tbody').on('click', 'button.remove', function () {
             $(this).closest('tr').remove();
         });
 
-
         $('#add-field1').on('click', function () {
             // Adding a row inside the tbody.
             $('#tbody1').append(`<tr>
-                    <td><textarea class="form-control" id="" name="financialstatement[]" cols="30" rows="5"></textarea> </td>
-                    <td><textarea class="form-control" id="" name="descriptioncontrol[]" cols="30" rows="5"></textarea> </td>
-                    <td><textarea class="form-control" id="" name="controleffective[]" cols="30" rows="5"></textarea> </td>
-                    <td><textarea class="form-control" id="" name="controlimplemented[]" cols="30" rows="5"></textarea> </td>
-                    <td><textarea class="form-control" id="" name="assesed[]" cols="30" rows="5"></textarea> </td>
-                    <td><textarea class="form-control" id="" name="crosstesting[]" cols="30" rows="5"></textarea> </td>
-                    <td><textarea class="form-control" id="" name="reliancecontrol[]" cols="30" rows="5"></textarea> </td>
-                    <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-                </tr>`);
+                <td><textarea class="form-control" id="" name="financialstatement[]" cols="30" rows="5"></textarea> </td>
+                <td><textarea class="form-control" id="" name="descriptioncontrol[]" cols="30" rows="5"></textarea> </td>
+                <td><textarea class="form-control" id="" name="controleffective[]" cols="30" rows="5"></textarea> </td>
+                <td><textarea class="form-control" id="" name="controlimplemented[]" cols="30" rows="5"></textarea> </td>
+                <td><textarea class="form-control" id="" name="assesed[]" cols="30" rows="5"></textarea> </td>
+                <td><textarea class="form-control" id="" name="crosstesting[]" cols="30" rows="5"></textarea> </td>
+                <td><textarea class="form-control" id="" name="reliancecontrol[]" cols="30" rows="5"></textarea> </td>
+                <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
+            </tr>`);
         });
 
     });

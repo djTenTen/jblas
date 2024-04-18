@@ -1033,7 +1033,7 @@ class ChapterController extends BaseController{
                 $data['ac6'] = $this->c1model->getac6('ac6ra',$code,$dc1tID);
                 $rdata = $this->c1model->gets12($code,$dc1tID);
                 $data['s'] = json_decode($rdata['question'], true);
-                $data['s3'] = $this->c1model->gets3($code,$dc1tID);
+                $data['s3'] = $this->c1model->getac6('ac6s3',$code,$dc1tID);
 
                 echo view('pdfc1/AC6', $data);
                 break;
@@ -1725,10 +1725,11 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC6':
-                $data['ac6'] = $this->cvmodel->getac6('ac6ra',$code,$dc1tID);
-                $rdata = $this->cvmodel->gets12($code,$dc1tID);
+                $data['ac6'] = $this->cvmodel->getac6('ac6ra',$code,$dc1tID,$dcID);
+                $rdata = $this->cvmodel->gets12($code,$dc1tID,$dcID);
                 $data['s'] = json_decode($rdata['question'], true);
-                $data['s3'] = $this->cvmodel->getac6('ac6s3',$code,$dc1tID);
+                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
+                $data['s3'] = $this->cvmodel->getac6('ac6s3',$code,$dc1tID,$dcID);
 
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/ac6', $data);
