@@ -2767,3 +2767,186 @@ INFO - 2024-04-18 17:35:19 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-04-18 17:35:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-18 17:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-18 17:35:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:36:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 17:36:42 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter1\Ac5.php on line 12.
+ 1 APPPATH\Views\client\chapter1\Ac5.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac5.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter1\\Ac5.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter1/ac5', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(1723): view('client/chapter1/ac5', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues('AC5', '69a1a4d4d8f0a3ac46c24f09eb40209b5c5035126f0ce4930af2285e0b0acd066e8e0615b948c27ebbc563072a948c3c2a2ad1876efe9af3e66d04d60f31dd16e~JwrIr1DuTLqXifMpvCzeM=', '45ee7661efc59ca82ebabcbd71e2bd361baa9548bd5ab511284907dc0e8db70854dc680361a5e0fb3ead1aeb30d328a7372d56ecd1ce7e67ad206be20e0734a1qDnPRqk~tX6LNU6cMziwRRE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 17:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:38:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:39:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:39:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 17:39:05 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Models\ChapterValuesModel.php(166): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 APPPATH\Controllers\ChapterValuesController.php(127): App\Models\ChapterValuesModel->saveac2aep([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterValuesController->saveac2aep('AC2', 'f7c5479c8a03acc195b9036f1cfc072828dbaf132ee9261eddfa45502831fc10bbd94e13231cfc39e956c5f93612118066272f7f25d1e3bca72517e54959b2b3KPzDoBmmNcFUGBrkvqw3MJY=', '45ee7661efc59ca82ebabcbd71e2bd361baa9548bd5ab511284907dc0e8db70854dc680361a5e0fb3ead1aeb30d328a7372d56ecd1ce7e67ad206be20e0734a1qDnPRqk~tX6LNU6cMziwRRE=', 'DJ metal works')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterValuesController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 17:39:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:39:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 17:40:15 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Models\ChapterValuesModel.php(166): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 APPPATH\Controllers\ChapterValuesController.php(127): App\Models\ChapterValuesModel->saveac2aep([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterValuesController->saveac2aep('AC2', 'f7c5479c8a03acc195b9036f1cfc072828dbaf132ee9261eddfa45502831fc10bbd94e13231cfc39e956c5f93612118066272f7f25d1e3bca72517e54959b2b3KPzDoBmmNcFUGBrkvqw3MJY=', '45ee7661efc59ca82ebabcbd71e2bd361baa9548bd5ab511284907dc0e8db70854dc680361a5e0fb3ead1aeb30d328a7372d56ecd1ce7e67ad206be20e0734a1qDnPRqk~tX6LNU6cMziwRRE=', 'DJ metal works')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterValuesController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 17:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:40:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:44:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:44:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:44:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:44:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:44:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:44:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:45:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:45:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:45:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:45:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 17:45:40 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ClientController.php(31): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles('undefined')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 17:45:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:45:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:45:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:45:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-18 17:45:57 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ClientController.php(31): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles('undefined')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-18 17:45:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-18 17:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-04-18 17:47:15 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 1998.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC5.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1029): view('pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC5', '20da3c65d473ef6ca82325fb6c28da6565b33fbef4724ddd79cdca2e6b4f83600ba69d79524bf55a3e90ab0c850f1be73d6a5a8af49f6520eb9bc6062dc6bbaa0Tp10LtABSNztpe08DhWWUs=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 17:47:15 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2024.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC5.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1029): view('pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC5', '20da3c65d473ef6ca82325fb6c28da6565b33fbef4724ddd79cdca2e6b4f83600ba69d79524bf55a3e90ab0c850f1be73d6a5a8af49f6520eb9bc6062dc6bbaa0Tp10LtABSNztpe08DhWWUs=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 17:47:15 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2040.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC5.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1029): view('pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC5', '20da3c65d473ef6ca82325fb6c28da6565b33fbef4724ddd79cdca2e6b4f83600ba69d79524bf55a3e90ab0c850f1be73d6a5a8af49f6520eb9bc6062dc6bbaa0Tp10LtABSNztpe08DhWWUs=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 17:47:15 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2060.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC5.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1029): view('pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC5', '20da3c65d473ef6ca82325fb6c28da6565b33fbef4724ddd79cdca2e6b4f83600ba69d79524bf55a3e90ab0c850f1be73d6a5a8af49f6520eb9bc6062dc6bbaa0Tp10LtABSNztpe08DhWWUs=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 17:47:15 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2077.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC5.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1029): view('pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC5', '20da3c65d473ef6ca82325fb6c28da6565b33fbef4724ddd79cdca2e6b4f83600ba69d79524bf55a3e90ab0c850f1be73d6a5a8af49f6520eb9bc6062dc6bbaa0Tp10LtABSNztpe08DhWWUs=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 17:47:15 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2093.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC5.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1029): view('pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC5', '20da3c65d473ef6ca82325fb6c28da6565b33fbef4724ddd79cdca2e6b4f83600ba69d79524bf55a3e90ab0c850f1be73d6a5a8af49f6520eb9bc6062dc6bbaa0Tp10LtABSNztpe08DhWWUs=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 17:47:15 --> [DEPRECATED] Required parameter $tagvspaces follows optional parameter $default_css in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 1139.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC5.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1029): view('pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC5', '20da3c65d473ef6ca82325fb6c28da6565b33fbef4724ddd79cdca2e6b4f83600ba69d79524bf55a3e90ab0c850f1be73d6a5a8af49f6520eb9bc6062dc6bbaa0Tp10LtABSNztpe08DhWWUs=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-18 17:47:15 --> [DEPRECATED] Required parameter $k follows optional parameter $points in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 2488.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\pdfc1\AC5.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\ChapterController.php(1029): view('pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf('AC5', '20da3c65d473ef6ca82325fb6c28da6565b33fbef4724ddd79cdca2e6b4f83600ba69d79524bf55a3e90ab0c850f1be73d6a5a8af49f6520eb9bc6062dc6bbaa0Tp10LtABSNztpe08DhWWUs=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()

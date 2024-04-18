@@ -116,8 +116,8 @@
             <div class="container border-dark">
 
                 <h6>***(Where appropriate): Documentation by the A.E.P. of how the self interest threat has been reduced to an acceptable level / details of communication with the Ethics Partner / Details of which services (audit or non-audit) will not be provided:</h6>
-                <form action="<?= base_url()?>auditsystem/client/saveac2aep/<?= $code?>/<?= $c1tID?>" method="post">
-                    <input type="hidden" name="acid" value="<?= $aep['acID']?>">
+                <form action="<?= base_url()?>auditsystem/client/saveac2aep/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <input type="hidden" name="acid" value="<?= $crypt->encrypt($aep['acID'])?>">
                     <textarea class="form-control" cols="30" rows="3" name="eap" required><?= $aep['question']?></textarea>
                     <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
                 </form>

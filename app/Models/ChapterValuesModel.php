@@ -327,9 +327,15 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getac5($code,$c1tID){
+    public function getac5($code,$c1tID,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => 'rescon', 'code' => $code, 'c1tID' => $c1tID))->get();
+        $where = [
+            'code' => $code, 
+            'type' => 'rescon',
+            'c1tID' => $c1tID, 
+            'clientID' => $dcID
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where )->get();
         return $query->getRowArray();
 
     }
@@ -339,18 +345,15 @@ class ChapterValuesModel extends Model{
     */
     public function saveac5($req){
 
-        $this->db->table($this->tblc1d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
+        $acid = $this->crypt->decrypt($req['acid']);
 
         $data = [
             'question' => $req['rescon'],
-            'type' =>  $req['part'],
-            'code' =>  $req['code'],
-            'c1tID' => $req['c1tID'],
-            'status' => 'Active',
-            'updated_on' => $this->date.' '.$this->time
+            'updated_on' => $this->date.' '.$this->time,
+            'updated_by' => $req['uID'],
         ];
 
-        if($this->db->table($this->tblc1d)->insert($data)){
+        if($this->db->table($this->tblc1d)->where('acID', $acid)->update($data)){
             return true;
         }else{
             return false;

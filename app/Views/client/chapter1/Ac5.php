@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -45,13 +45,13 @@
                     <li>To ensure that risks identified are transferred to the risk assessment and into the audit approach / work programmes as required and are cross referenced to indicate this.</li>
                     <li>Where a parent company produces consolidated financial statements, consideration must be given to the parent company figures and the consolidated figures.</li>
                 </ul>
-                <form action="<?= base_url()?>auditsystem/c1/saveac5/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
-                    <input type="hidden" name="part" value="rescon">
+                <form action="<?= base_url()?>auditsystem/client/saveac5/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <input type="hidden" name="acid" value="<?= $acID?>">
                     <h4>Results:</h4>
                         <textarea class="form-control" cols="30" rows="20" name="res" required><?= $rc['res']?></textarea>
                     <h4>Conclusion:</h4>
                         <textarea class="form-control" cols="30" rows="20" name="con" required><?= $rc['con']?></textarea>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
                 </form>
                 
             </div>
