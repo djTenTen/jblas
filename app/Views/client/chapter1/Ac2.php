@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -21,10 +21,9 @@
             </div>
         </div>
     </header>
-
+    
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('invalid_input')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -34,30 +33,12 @@
                     </div>
                 </div>
             <?php  }?>
-            <?php if (session()->get('success_registration')) { ?>
-                <div class="alert alert-success alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Success Registration</h6>
-                        Contents has been successfully saved.
-                    </div>
-                </div>
-            <?php  }?>
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
                         <h6 class="alert-heading">Success Update</h6>
                         Contents has been successfully updated.
-                    </div>
-                </div>
-            <?php  }?>
-            <?php if (session()->get('failed_registration')) { ?>
-                <div class="alert alert-danger alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Failed Registration</h6>
-                        Error registering contents.
                     </div>
                 </div>
             <?php  }?>
@@ -85,14 +66,13 @@
 
                 <img src="<?= base_url()?>img/ac2/ac2 flow1.png" alt="">
 
-
             </div>
 
             <h6>Section 2 – Consideration of the Type of Non-Audit Services Provided and Safeguards in Place </h6>
             <p>N.B. Complete multiple sheets if more than four different types of non-audit service are provided
             N.B. Audit related non-audit services (for example, a separate report to a regulator, (e.g. that on client money handled by a solicitor)) should still be treated as a non-audit service, but it is not necessary for safeguards to be put in place, as threats to independence are insignificant
             </p>
-            <form action="<?= base_url()?>auditsystem/c1/saveac2/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+            <form action="<?= base_url()?>auditsystem/client/saveac2/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
             <input type="hidden" name="part" value="pans">
                 <table class="table table-hover table-bordered">
                     <thead>
@@ -103,34 +83,23 @@
                             <th>Accountancy(including preparation of financial statements)</th>
                             <th>Other (specify)</th>
                             <th>Total CU</th>
-                            <th>Status</th>
-                            <th style="width: 7%;">Action</th>
+
                         </tr>
                     </thead>
                     <tbody class="tbody">
                         <?php foreach($ac2 as $r){?>
                             <tr >
-                                <td><textarea class="form-control" cols="30" rows="3" name="question[]"><?= $r['question']?></textarea></td>
+                                <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
                                 <td><input class="form-control" type="text" name="corptax[]" value="<?= $r['corptax']?>"></td>
                                 <td><input class="form-control" type="text" name="statutory[]" value="<?= $r['statutory']?>"></td>
                                 <td><input class="form-control" type="text" name="accountancy[]" value="<?= $r['accountancy']?>" ></td>
                                 <td><input class="form-control" type="text" name="other[]" value="<?= $r['other']?>"></td>
                                 <td><input class="form-control" type="text" name="totalcu[]" value="<?= $r['totalcu']?>"></td>
-                                <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
-                                <td class="text-center">
-                                    <button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button>
-                                    <?php if($r['status'] == 'Active'){?>
-                                        <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
-                                    <?php }else{?>
-                                        <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
-                                    <?php }?>
-                                </td>
                             </tr>
                         <?php }?>
                     </tbody>
                 </table>
-                <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                <button type="submit" class="btn btn-success m-1 float-end">Save</button>
             </form>
             
             <br><br>
@@ -147,8 +116,8 @@
             <div class="container border-dark">
 
                 <h6>***(Where appropriate): Documentation by the A.E.P. of how the self interest threat has been reduced to an acceptable level / details of communication with the Ethics Partner / Details of which services (audit or non-audit) will not be provided:</h6>
-                <form action="<?= base_url()?>auditsystem/c1/saveac2aep/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
-                    <input type="hidden" name="part" value="ac2aep">
+                <form action="<?= base_url()?>auditsystem/client/saveac2aep/<?= $code?>/<?= $c1tID?>" method="post">
+                    <input type="hidden" name="acid" value="<?= $aep['acID']?>">
                     <textarea class="form-control" cols="30" rows="3" name="eap" required><?= $aep['question']?></textarea>
                     <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
                 </form>
@@ -217,44 +186,3 @@
     </div>
     
 </main>
-
-
-<script>
-    $(document).ready(function () {
-
-        $(".active-data").on("click", function() {
-            var status = $(this).data('status');
-            var acID = $(this).data('ac-id');
-                $('#myactiveform').attr('action', "<?= base_url('auditsystem/c1/activeinactive/')?><?= $code?>/<?= $header?>/<?= $c1tID?>/" + acID);
-                if (status == 'Active') {
-                    $('.msgconfirm').html(`<h3>Are you sure to Disable this content?</h3>`);
-                }else{
-                    $('.msgconfirm').html(`<h3>Are you sure to Enable this content?</h3>`);
-                }
-        });
-
-
-        $('.add-field').on('click', function () {
-        // Adding a row inside the tbody.
-        var form = $(this).closest('form');
-        var tbody = form.find('tbody');
-        tbody.append(`
-        <tr>
-            <td><textarea class="form-control" cols="30" rows="3" name="question[]"></textarea></td>
-            <td><input class="form-control" type="text" name="corptax[]"></td>
-            <td><input class="form-control" type="text" name="statutory[]"></td>
-            <td><input class="form-control" type="text" name="accountancy[]"></td>
-            <td><input class="form-control" type="text" name="other[]"></td>
-            <td><input class="form-control" type="text" name="totalcu[]"></td>
-            <td></td>
-            <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-        </tr>`);
-        });
-
-        $('.tbody').on('click', 'button.remove', function () {
-            $(this).closest('tr').remove();
-        });
-
-
-    });
-</script>

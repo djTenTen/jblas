@@ -1685,10 +1685,11 @@ class ChapterController extends BaseController{
                 break;
             
             case 'AC2':
-                $data['ac2'] = $this->cvmodel->getac2($code,$dc1tID);
-                $data['aep'] = $this->cvmodel->getac2aep($code,$dc1tID);
+                $data['ac2'] = $this->cvmodel->getac2($code,$dc1tID,$dcID);
+                $data['aep'] = $this->cvmodel->getac2aep($code,$dc1tID,$dcID);
+                
                 echo view('includes/Header', $data);
-                echo view('chapter1/ac2', $data);
+                echo view('client/chapter1/ac2', $data);
                 echo view('includes/Footer');
                 break;
 
@@ -1698,7 +1699,7 @@ class ChapterController extends BaseController{
                 $data['ac3statutory'] = $this->cvmodel->getac3('statutory',$code,$dc1tID);
                 $data['ac3accsys'] = $this->cvmodel->getac3('accsys',$code,$dc1tID);
                 echo view('includes/Header', $data);
-                echo view('chapter1/ac3', $data);
+                echo view('client/chapter1/ac3', $data);
                 echo view('includes/Footer');
                 break;
 
@@ -1709,7 +1710,7 @@ class ChapterController extends BaseController{
                 $data['ppr'] = json_decode($rdata['question'], true);
 
                 echo view('includes/Header', $data);
-                echo view('chapter1/ac4', $data);
+                echo view('client/chapter1/ac4', $data);
                 echo view('includes/Footer');
                 break;
 
@@ -1719,7 +1720,7 @@ class ChapterController extends BaseController{
                 $data['rc'] = json_decode($rdata['question'], true);
 
                 echo view('includes/Header', $data);
-                echo view('chapter1/ac5', $data);
+                echo view('client/chapter1/ac5', $data);
                 echo view('includes/Footer');
                 break;
 
@@ -1730,7 +1731,7 @@ class ChapterController extends BaseController{
                 $data['s3'] = $this->cvmodel->getac6('ac6s3',$code,$dc1tID);
 
                 echo view('includes/Header', $data);
-                echo view('chapter1/ac6', $data);
+                echo view('client/chapter1/ac6', $data);
                 echo view('includes/Footer');
                 break;
 
@@ -1744,7 +1745,7 @@ class ChapterController extends BaseController{
                     $data[$row] = json_decode($rdata['question'], true);
                 }
                 echo view('includes/Header', $data);
-                echo view('chapter1/ac7', $data);
+                echo view('client/chapter1/ac7', $data);
                 echo view('includes/Footer');
                 break;
 
@@ -1759,7 +1760,7 @@ class ChapterController extends BaseController{
                     $data[$row] = $this->cvmodel->getac8($code,$dc1tID,$row);
                 }
                 echo view('includes/Header', $data);
-                echo view('chapter1/ac8', $data);
+                echo view('client/chapter1/ac8', $data);
                 echo view('includes/Footer');
                 break;
 
@@ -1769,7 +1770,7 @@ class ChapterController extends BaseController{
                 $data['ac9'] = json_decode($rdata['question'], true);
     
                 echo view('includes/Header', $data);
-                echo view('chapter1/ac9', $data);
+                echo view('client/chapter1/ac9', $data);
                 echo view('includes/Footer');
                 break;
                 
@@ -1796,7 +1797,7 @@ class ChapterController extends BaseController{
                 $data['ac10s2'] = $this->cvmodel->getac10s2data($dc1tID,$s[1]);
 
                 echo view('includes/Header', $data);
-                echo view('chapter1/Ac10', $data);
+                echo view('client/chapter1/Ac10', $data);
                 echo view('includes/Footer');
                 break;
             case 'AC10-Summary':
@@ -1842,7 +1843,7 @@ class ChapterController extends BaseController{
                 }
 
                 echo view('includes/Header', $data);
-                echo view('chapter1/Ac10-Summary', $data);
+                echo view('client/chapter1/Ac10-Summary', $data);
                 echo view('includes/Footer');
                 break;
 
@@ -1852,7 +1853,7 @@ class ChapterController extends BaseController{
                 $data['ac11'] = json_decode($rdata['question'], true);
                 
                 echo view('includes/Header', $data);
-                echo view('chapter1/Ac11', $data);
+                echo view('client/chapter1/Ac11', $data);
                 echo view('includes/Footer');
                 break;
 

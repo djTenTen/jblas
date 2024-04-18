@@ -90,55 +90,48 @@ class ChapterValuesController extends BaseController{
         AC2 FUNCTIONS
         ----------------------------------------------------------
     */
-    public function saveac2($code,$head,$c1tID){
-
-        $validationRules = [
-            'question' => 'required'
-        ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
-        }
+    public function saveac2($code,$c1tID,$cID,$name){
 
         $req = [
-            'question' => $this->request->getPost('question'),
             'corptax' => $this->request->getPost('corptax'),
             'statutory' => $this->request->getPost('statutory'),
             'accountancy' => $this->request->getPost('accountancy'),
             'other' => $this->request->getPost('other'),
             'totalcu' => $this->request->getPost('totalcu'),
-            'code' => $code,
-            'part' => $this->request->getPost('part'),
-            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+            'acid' => $this->request->getPost('acid'),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
         ];
 
         $res = $this->cvmodel->saveac2($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
-    public function saveac2aep($code,$head,$c1tID){
+    public function saveac2aep($code,$c1tID,$cID,$name){
 
         $req = [
             'eap' => $this->request->getPost('eap'),
-            'code' => $code,
-            'part' => $this->request->getPost('part'),
-            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+            'acid' => $this->request->getPost('acid'),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
         ];
         $res = $this->cvmodel->saveac2aep($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
