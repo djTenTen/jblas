@@ -62,7 +62,9 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('/auditsystem/chapter1/setvalues/(:any)/(:any)/(:any)/(:any)', 'ChapterController::c1setvalues/$1/$2/$3/$4');
     $routes->get('/auditsystem/chapter2/setvalues/(:any)/(:any)/(:any)/(:any)', 'ChapterController::c2setvalues/$1/$2/$3/$4');
     $routes->get('/auditsystem/chapter3/setvalues/(:any)/(:any)/(:any)/(:any)', 'ChapterController::c3setvalues/$1/$2/$3/$4');
-    
+    // Saving Values
+    $routes->post('auditsystem/client/saveac1/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac1/$1/$2/$3/$4');
+    $routes->post('auditsystem/client/saveac1eqr/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac1eqr/$1/$2/$3/$4');
     
     
     /**

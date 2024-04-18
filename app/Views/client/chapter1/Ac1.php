@@ -53,7 +53,7 @@
                 <h6>Any YES answers should be fully explained along with the safeguards, which will enable us to accept / continue with the appointment. </h6>
                 <h6>Significant issues must be discussed with the <span class="text-danger">Ethics Partner</span> and details of the discussion documented on file.</h6>
                 
-                <form action="<?= base_url()?>auditsystem/client/savec1/<?= $code?>/<?= $c1tID?>/<?= $cID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac1/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <table class="table table-hover table-sm table-bordered">
                         <thead>
                             <tr>
@@ -65,7 +65,7 @@
                         <tbody class="tbody">
                             <?php foreach($ac1 as $r){?>
                                 <tr>
-                                    <td><input type="hidden" name="cid[]" value="<?= $crypt->encrypt($r['acID'])?>"> <?= $r['question']?></td>
+                                    <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"> <?= $r['question']?></td>
                                     <td><input class="form-control" type="text" name="yesno[]" value="<?= $r['yesno']?>"></td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
                                 </tr>
@@ -79,11 +79,9 @@
 
                 <div class="mb-3 col-6">
                     <label class="small mb-1" for="nameap">Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement:</label>
-                    <form action="<?= base_url()?>auditsystem/c1/saveac1eqr/<?= $code?>/<?= $c1tID?>/<?= $cID?>" method="post">
-                        <input type="hidden" name="part" value="eqr">
+                    <form action="<?= base_url()?>auditsystem/client/saveac1eqr/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <input type="hidden" name="acid" value="<?= $acID?>">
                         <input type="text" class="form-control" id="nameap" name="nameap" value="<?= $eqr['nameap']?>">
-                    
-        
                 </div>
             
                 <h6>Those Charged With Governance and Management:</h6>
