@@ -150,33 +150,25 @@ class ChapterValuesController extends BaseController{
         AC3 FUNCTIONS
         ----------------------------------------------------------
     */
-    public function saveac3($code,$head,$c1tID){
-
-        $validationRules = [
-            'question' => 'required'
-        ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
-        }
+    public function saveac3($code,$c1tID,$cID,$name){
 
         $req = [
-            'question' => $this->request->getPost('question'),
             'yesno' => $this->request->getPost('yesno'),
             'comment' => $this->request->getPost('comment'),
-            'code' => $code,
-            'part' => $this->request->getPost('part'),
-            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))
+            'acid' => $this->request->getPost('acid'),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
         ];
 
         $res = $this->cvmodel->saveac3($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }

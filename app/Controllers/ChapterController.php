@@ -1694,10 +1694,10 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC3':
-                $data['ac3genmat'] = $this->cvmodel->getac3('genmat',$code,$dc1tID);
-                $data['ac3doccors'] = $this->cvmodel->getac3('doccors',$code,$dc1tID);
-                $data['ac3statutory'] = $this->cvmodel->getac3('statutory',$code,$dc1tID);
-                $data['ac3accsys'] = $this->cvmodel->getac3('accsys',$code,$dc1tID);
+                $data['ac3genmat'] = $this->cvmodel->getac3('genmat',$code,$dc1tID,$dcID);
+                $data['ac3doccors'] = $this->cvmodel->getac3('doccors',$code,$dc1tID,$dcID);
+                $data['ac3statutory'] = $this->cvmodel->getac3('statutory',$code,$dc1tID,$dcID);
+                $data['ac3accsys'] = $this->cvmodel->getac3('accsys',$code,$dc1tID,$dcID);
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/ac3', $data);
                 echo view('includes/Footer');

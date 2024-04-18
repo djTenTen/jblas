@@ -196,9 +196,15 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getac3($part,$code,$c1tID){
+    public function getac3($part,$code,$c1tID,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => $part, 'code' => $code, 'c1tID' => $c1tID))->get();
+        $where = [
+            'code' => $code, 
+            'type' => $part,
+            'c1tID' => $c1tID, 
+            'clientID' => $dcID
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where)->get();
         return $query->getResultArray();
 
     }
@@ -208,22 +214,18 @@ class ChapterValuesModel extends Model{
     */
     public function saveac3($req){
 
-        $this->db->table($this->tblc1d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
 
-        foreach($req['question'] as $i => $val){
+        foreach($req['yesno'] as $i => $val){
 
+            $acid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'question' => $req['question'][$i],
                 'yesno' => $req['yesno'][$i],
                 'comment' => $req['comment'][$i],
-                'code' => $req['code'],
-                'c1tID' => $req['c1tID'],
-                'type' => $req['part'],
-                'status' => 'Active',
-                'added_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
 
-            $this->db->table($this->tblc1d)->insert($data);
+            $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
 
         }
 
