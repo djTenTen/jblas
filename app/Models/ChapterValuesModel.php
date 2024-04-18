@@ -492,9 +492,15 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getac7($code,$c1tID,$part){
+    public function getac7($code,$c1tID,$part,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => $part, 'code' => $code, 'c1tID' => $c1tID))->get();
+        $where = [
+            'type' => $part, 
+            'code' => $code, 
+            'c1tID' => $c1tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where)->get();
         return $query->getRowArray();
 
     }
@@ -504,17 +510,17 @@ class ChapterValuesModel extends Model{
     */
     public function saveac7($req){
 
-        $this->db->table($this->tblc1d)->where(array('type' => $req['part'], 'code' => $req['code'],'c1tID' => $req['c1tID']))->delete();
-
         $data = [
             'question' => $req['genyn'],
-            'type' =>  $req['part'],
-            'code' =>  $req['code'],
-            'c1tID' => $req['c1tID'],
-            'updated_on' => $this->date.' '.$this->time
+            'updated_on' => $this->date.' '.$this->time,
+            'updated_by' => $req['uID'],
         ];
-
-        if($this->db->table($this->tblc1d)->insert($data)){
+        $where = [
+            'type' => $req['part'],
+            'c1tID' => $req['c1tID'],
+            'clientID' => $req['cID'],
+        ];
+        if($this->db->table($this->tblc1d)->where($where)->update($data)){
             return true;
         }else{
             return false;

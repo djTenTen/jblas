@@ -74,7 +74,9 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('auditsystem/client/saveac6ra/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac6ra/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveac6s12/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac6s12/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveac6s3/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac6s3/$1/$2/$3/$4');
+    $routes->post('auditsystem/client/saveac7/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac7/$1/$2/$3/$4');
 
+    
     /**
         ----------------------------------------------------------
         CHAPTER 1 AREA

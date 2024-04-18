@@ -1742,9 +1742,10 @@ class ChapterController extends BaseController{
                     'roidata','dcodata','prdata','oadata'
                 ];
                 foreach($rowdata as $row){
-                    $rdata = $this->cvmodel->getac7($code,$dc1tID, $row);
+                    $rdata = $this->cvmodel->getac7($code,$dc1tID, $row,$dcID);
                     $data[$row] = json_decode($rdata['question'], true);
                 }
+                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/ac7', $data);
                 echo view('includes/Footer');

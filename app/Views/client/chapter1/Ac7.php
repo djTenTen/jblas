@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -74,7 +74,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -181,7 +181,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE RECEIVABLES:</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -288,7 +288,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER RECEIVABLES (INCLUDING PREPAYMENTS):</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -395,7 +395,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVENTORIES:</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -503,7 +503,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVESTMENTS:</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -610,7 +610,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROPERTY, PLANT AND EQUIPMENT:</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -718,7 +718,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INTANGIBLE NON-CURRENT ASSETS:</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -826,7 +826,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE PAYABLES:</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -921,7 +921,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER PAYABLES (INCLUDING ACCRUALS):</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1015,7 +1015,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TAXATION:</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1110,7 +1110,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROVISIONS FOR LIABILITIES:</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1205,7 +1205,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – REVENUE / OTHER INCOME:</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1299,7 +1299,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – DIRECT COSTS / OTHER EXPENSES:</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1393,7 +1393,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PAYROLL:</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1488,7 +1488,7 @@
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER AREA:</h6>
                 <table class="table table-bordered">
-                <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
