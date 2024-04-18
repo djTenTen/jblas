@@ -17,10 +17,6 @@ class ChapterController extends BaseController{
     protected $c2model;
     protected $c3model;
 
-
-    protected $c2b2model;
-    protected $c2e21model;
-
     protected $crypt;
 
     public function __construct(){
@@ -84,10 +80,10 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC3':
-                $data['ac3genmat'] = $this->c1model->getac3genmat($code,$dc1tID);
-                $data['ac3doccors'] = $this->c1model->getac3doccors($code,$dc1tID);
-                $data['ac3statutory'] = $this->c1model->getac3statutory($code,$dc1tID);
-                $data['ac3accsys'] = $this->c1model->getac3accsys($code,$dc1tID);
+                $data['ac3genmat'] = $this->c1model->getac3('genmat',$code,$dc1tID);
+                $data['ac3doccors'] = $this->c1model->getac3('doccors',$code,$dc1tID);
+                $data['ac3statutory'] = $this->c1model->getac3('statutory',$code,$dc1tID);
+                $data['ac3accsys'] = $this->c1model->getac3('accsys',$code,$dc1tID);
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac3', $data);
                 echo view('includes/Footer');
@@ -115,10 +111,10 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC6':
-                $data['ac6'] = $this->c1model->getac6($code,$dc1tID);
+                $data['ac6'] = $this->c1model->getac6('ac6ra',$code,$dc1tID);
                 $rdata = $this->c1model->gets12($code,$dc1tID);
                 $data['s'] = json_decode($rdata['question'], true);
-                $data['s3'] = $this->c1model->gets3($code,$dc1tID);
+                $data['s3'] = $this->c1model->getac6('ac6s3',$code,$dc1tID);
 
                 echo view('includes/Header', $data);
                 echo view('chapter1/ac6', $data);
@@ -583,8 +579,8 @@ class ChapterController extends BaseController{
 
             case '3.1 Aa1':
 
-                $data['datapl'] = $this->c3model->getaa1pl($code,$dc3tID);
-                $data['dataaf'] = $this->c3model->getaa1af($code,$dc3tID);
+                $data['datapl'] = $this->c3model->getaa1('planning',$code,$dc3tID);
+                $data['dataaf'] = $this->c3model->getaa1('audit finalisation',$code,$dc3tID);
                 $rdata = $this->c3model->getaa1s3($code, $dc3tID);
                 $data['s3'] = json_decode($rdata['question'], true);
                 
@@ -605,9 +601,9 @@ class ChapterController extends BaseController{
 
             case '3.3 Aa3a':
 
-                $data['cr'] = $this->c3model->getaa3acr($code,$dc3tID);
-                $data['dc'] = $this->c3model->getaa3adc($code,$dc3tID);
-                $data['faf'] = $this->c3model->getaa3afaf($code,$dc3tID);
+                $data['cr'] = $this->c3model->getaa3('cr',$code,$dc3tID);
+                $data['dc'] = $this->c3model->getaa3('dc',$code,$dc3tID);
+                $data['faf'] = $this->c3model->getaa3('faf',$code,$dc3tID);
                 $data['ir'] = $this->c3model->getaa3air($code,$dc3tID);
                 
                 echo view('includes/Header', $data);
@@ -617,10 +613,10 @@ class ChapterController extends BaseController{
 
             case '3.4 Aa3b':
 
-                $data['bp1'] = $this->c3model->getaa3bp1($code,$dc3tID);
-                $data['bp2'] = $this->c3model->getaa3bp2($code,$dc3tID);
-                $data['bp3a'] = $this->c3model->getaa3bp3a($code,$dc3tID);
-                $data['bp3b'] = $this->c3model->getaa3bp3b($code,$dc3tID);
+                $data['bp1'] = $this->c3model->getaa3b('p1',$code,$dc3tID);
+                $data['bp2'] = $this->c3model->getaa3b('p2',$code,$dc3tID);
+                $data['bp3a'] = $this->c3model->getaa3b('p3a',$code,$dc3tID);
+                $data['bp3b'] = $this->c3model->getaa3b('p3b',$code,$dc3tID);
 
                 $rdata = $this->c3model->getaa3bp4($code,$dc3tID);
                 $data['bp4'] = json_decode($rdata['question'], true);
@@ -656,15 +652,17 @@ class ChapterController extends BaseController{
 
             case '3.7 Aa7':
 
-                $data['aepapp'] = $this->c3model->getaa7aepapp($code,$dc3tID);
-                $data['aa7'] = $this->c3model->getaa7isa($code,$dc3tID);
-                $data['cons'] = $this->c3model->getaa7consultation($code,$dc3tID);
-                $data['inc'] = $this->c3model->getaa7inconsistencies($code,$dc3tID);
-                $data['ref'] = $this->c3model->getaa7refusal($code,$dc3tID);
-                $data['dep'] = $this->c3model->getaa7departures($code,$dc3tID);
-                $data['oth'] = $this->c3model->getaa7other($code,$dc3tID);
+                
+                $data['aa7'] = $this->c3model->getaa7('isa315',$code,$dc3tID);
+                $data['cons'] = $this->c3model->getaa7('consultation',$code,$dc3tID);
+                $data['inc'] = $this->c3model->getaa7('inconsistencies',$code,$dc3tID);
+                $data['ref'] = $this->c3model->getaa7('refusal',$code,$dc3tID);
+                $data['dep'] = $this->c3model->getaa7('departures',$code,$dc3tID);
+                $data['oth'] = $this->c3model->getaa7('other',$code,$dc3tID);
 
-                $rdata = $this->c3model->getaa7aep($code,$dc3tID);
+
+                $data['aepapp'] = $this->c3model->getaa7aep('aepapp',$code,$dc3tID);
+                $rdata = $this->c3model->getaa7aep('aep',$code,$dc3tID);
                 $data['aep'] = json_decode($rdata['question'], true);
                 
                 echo view('includes/Header', $data);
@@ -1008,10 +1006,10 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC3':
-                $data['ac3genmat'] = $this->c1model->getac3genmat($code,$dc1tID);
-                $data['ac3doccors'] = $this->c1model->getac3doccors($code,$dc1tID);
-                $data['ac3statutory'] = $this->c1model->getac3statutory($code,$dc1tID);
-                $data['ac3accsys'] = $this->c1model->getac3accsys($code,$dc1tID);
+                $data['ac3genmat'] = $this->c1model->getac3('genmat',$code,$dc1tID);
+                $data['ac3doccors'] = $this->c1model->getac3('doccors',$code,$dc1tID);
+                $data['ac3statutory'] = $this->c1model->getac3('statutory',$code,$dc1tID);
+                $data['ac3accsys'] = $this->c1model->getac3('accsys',$code,$dc1tID);
                 echo view('pdfc1/AC3', $data);
                 break;
 
@@ -1032,7 +1030,7 @@ class ChapterController extends BaseController{
                 break;
 
             case 'AC6':
-                $data['ac6'] = $this->c1model->getac6($code,$dc1tID);
+                $data['ac6'] = $this->c1model->getac6('ac6ra',$code,$dc1tID);
                 $rdata = $this->c1model->gets12($code,$dc1tID);
                 $data['s'] = json_decode($rdata['question'], true);
                 $data['s3'] = $this->c1model->gets3($code,$dc1tID);
@@ -1410,8 +1408,8 @@ class ChapterController extends BaseController{
 
             case '3.1 Aa1':
 
-                $data['datapl'] = $this->c3model->getaa1pl($code,$dc3tID);
-                $data['dataaf'] = $this->c3model->getaa1af($code,$dc3tID);
+                $data['datapl'] = $this->c3model->getaa1('planning',$code,$dc3tID);
+                $data['dataaf'] = $this->c3model->getaa1('audit finalisation',$code,$dc3tID);
                 $rdata = $this->c3model->getaa1s3($code, $dc3tID);
                 $data['s3'] = json_decode($rdata['question'], true);
                 echo view('pdfc3/AA1', $data);
@@ -1426,9 +1424,9 @@ class ChapterController extends BaseController{
 
             case '3.3 Aa3a':
 
-                $data['cr'] = $this->c3model->getaa3acr($code,$dc3tID);
-                $data['dc'] = $this->c3model->getaa3adc($code,$dc3tID);
-                $data['faf'] = $this->c3model->getaa3afaf($code,$dc3tID);
+                $data['cr'] = $this->c3model->getaa3('cr',$code,$dc3tID);
+                $data['dc'] = $this->c3model->getaa3('dc',$code,$dc3tID);
+                $data['faf'] = $this->c3model->getaa3('faf',$code,$dc3tID);
                 $data['ir'] = $this->c3model->getaa3air($code,$dc3tID);
                 
                 echo view('pdfc3/AA3A', $data);
@@ -1436,10 +1434,10 @@ class ChapterController extends BaseController{
 
             case '3.4 Aa3b':
 
-                $data['bp1'] = $this->c3model->getaa3bp1($code,$dc3tID);
-                $data['bp2'] = $this->c3model->getaa3bp2($code,$dc3tID);
-                $data['bp3a'] = $this->c3model->getaa3bp3a($code,$dc3tID);
-                $data['bp3b'] = $this->c3model->getaa3bp3b($code,$dc3tID);
+                $data['bp1'] = $this->c3model->getaa3b('p1',$code,$dc3tID);
+                $data['bp2'] = $this->c3model->getaa3b('p2',$code,$dc3tID);
+                $data['bp3a'] = $this->c3model->getaa3b('p3a',$code,$dc3tID);
+                $data['bp3b'] = $this->c3model->getaa3b('p3b',$code,$dc3tID);
 
                 $rdata = $this->c3model->getaa3bp4($code,$dc3tID);
                 $data['bp4'] = json_decode($rdata['question'], true);
@@ -1467,15 +1465,16 @@ class ChapterController extends BaseController{
 
             case '3.7 Aa7':
 
-                $data['aepapp'] = $this->c3model->getaa7aepapp($code,$dc3tID);
-                $data['aa7'] = $this->c3model->getaa7isa($code,$dc3tID);
-                $data['cons'] = $this->c3model->getaa7consultation($code,$dc3tID);
-                $data['inc'] = $this->c3model->getaa7inconsistencies($code,$dc3tID);
-                $data['ref'] = $this->c3model->getaa7refusal($code,$dc3tID);
-                $data['dep'] = $this->c3model->getaa7departures($code,$dc3tID);
-                $data['oth'] = $this->c3model->getaa7other($code,$dc3tID);
+                
+                $data['aa7'] = $this->c3model->getaa7('isa315',$code,$dc3tID);
+                $data['cons'] = $this->c3model->getaa7('consultation',$code,$dc3tID);
+                $data['inc'] = $this->c3model->getaa7('inconsistencies',$code,$dc3tID);
+                $data['ref'] = $this->c3model->getaa7('refusal',$code,$dc3tID);
+                $data['dep'] = $this->c3model->getaa7('departures',$code,$dc3tID);
+                $data['oth'] = $this->c3model->getaa7('other',$code,$dc3tID);
 
-                $rdata = $this->c3model->getaa7aep($code,$dc3tID);
+                $data['aepapp'] = $this->c3model->getaa7aep('aepapp',$code,$dc3tID);
+                $rdata = $this->c3model->getaa7aep('aep',$code,$dc3tID);
                 $data['aep'] = json_decode($rdata['question'], true);
                 
                 echo view('pdfc3/AA7', $data);

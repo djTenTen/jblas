@@ -219,35 +219,10 @@ class Chapter1Model extends Model{
 
         GET FUNCTIONS
     */
-    public function getac3genmat($code,$c1tID){
+    public function getac3($part,$code,$c1tID){
 
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'genmat', 'code' => $code, 'c1tID' => $c1tID))->get();
+        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => $code, 'c1tID' => $c1tID))->get();
         return $query->getResultArray();
-
-    }
-    public function getac3doccors($code,$c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'doccors', 'code' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-    public function getac3statutory($code,$c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'statutory', 'code' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-    public function getac3accsys($code,$c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'accsys', 'code' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    public function getaep($code,$c1tID){
-
-        $query =  $this->db->table($this->tblc1)->where(array('code' => 'ac2', 'type' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getRowArray();
 
     }
 
@@ -417,9 +392,9 @@ class Chapter1Model extends Model{
 
         GET FUNCTIONS
     */
-    public function getac6($code,$c1tID){
+    public function getac6($part,$code,$c1tID){
 
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'ac6ra', 'code' => $code, 'c1tID' => $c1tID))->get();
+        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => $code, 'c1tID' => $c1tID))->get();
         return $query->getResultArray();
 
     }
@@ -427,12 +402,6 @@ class Chapter1Model extends Model{
 
         $query = $this->db->table($this->tblc1)->where(array('type' => 'ac6s12', 'code' => $code, 'c1tID' => $c1tID))->get();
         return $query->getRowArray();
-
-    }
-    public function gets3($code,$c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'ac6s3', 'code' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
 
     }
 

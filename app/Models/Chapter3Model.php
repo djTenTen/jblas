@@ -62,16 +62,9 @@ class Chapter3Model extends Model{
 
         GET FUNCTIONS
     */
-    public function getaa1pl($code,$c3tID){
+    public function getaa1($part,$code,$c3tID){
 
         $query = $this->db->table($this->tblc3)->where(array('type' => 'planning', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    public function getaa1af($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'audit finalisation', 'code' => $code, 'c3tID' => $c3tID))->get();
         return $query->getResultArray();
 
     }
@@ -197,23 +190,9 @@ class Chapter3Model extends Model{
 
         GET FUNCTIONS
     */
-    public function getaa3acr($code,$c3tID){
+    public function getaa3($part,$code,$c3tID){
 
         $query = $this->db->table($this->tblc3)->where(array('type' => 'cr', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    public function getaa3adc($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'dc', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    public function getaa3afaf($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'faf', 'code' => $code, 'c3tID' => $c3tID))->get();
         return $query->getResultArray();
 
     }
@@ -224,7 +203,6 @@ class Chapter3Model extends Model{
         return $query->getRowArray();
 
     }
-
 
     /** 
         POST FUNCTIONS
@@ -314,30 +292,9 @@ class Chapter3Model extends Model{
 
         GET FUNCTIONS
     */
-    public function getaa3bp1($code,$c3tID){
+    public function getaa3b($part,$code,$c3tID){
 
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'p1', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    public function getaa3bp2($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'p2', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    public function getaa3bp3a($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'p3a', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    public function getaa3bp3b($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'p3b', 'code' => $code, 'c3tID' => $c3tID))->get();
+        $query = $this->db->table($this->tblc3)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
         return $query->getResultArray();
 
     }
@@ -348,7 +305,6 @@ class Chapter3Model extends Model{
         return $query->getRowArray();
 
     }
-
 
     /** 
         POST FUNCTIONS
@@ -463,65 +419,25 @@ class Chapter3Model extends Model{
 
     /**
         ----------------------------------------------------------
-        AA5b FUNCTIONS
+        AA7 FUNCTIONS
         ----------------------------------------------------------
 
         GET FUNCTIONS
     */
-    public function getaa7isa($code,$c3tID){
+    public function getaa7($part,$code,$c3tID){
 
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'isa315', 'code' => $code, 'c3tID' => $c3tID))->get();
+        $query = $this->db->table($this->tblc3)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
         return $query->getResultArray();
 
     }
 
-    public function getaa7consultation($code,$c3tID){
+    public function getaa7aep($part,$code,$c3tID){
 
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'consultation', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    public function getaa7inconsistencies($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'inconsistencies', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    public function getaa7refusal($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'refusal', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    public function getaa7departures($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'departures', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    public function getaa7other($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'other', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    public function getaa7aep($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'aep', 'code' => $code, 'c3tID' => $c3tID))->get();
+        $query = $this->db->table($this->tblc3)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
         return $query->getRowArray();
 
     }
-    public function getaa7aepapp($code,$c3tID){
 
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'aepapp', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getRowArray();
-
-    }
     /** 
         POST FUNCTIONS
     */
