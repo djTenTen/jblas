@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -45,7 +45,7 @@
             <h4>OVERALL MATERIALITY</h4>
 
             
-            <form action="<?= base_url()?>auditsystem/c1/saveac8/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+            <form action="<?= base_url()?>auditsystem/client/saveac8/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
             <table class="table table-bordered">
                 <thead>
                     <tr>

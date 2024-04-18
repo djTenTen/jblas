@@ -544,9 +544,15 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getac8($code,$c1tID,$part){
+    public function getac8($code,$c1tID,$part,$dcID){
 
-        $query = $this->db->table($this->tblc1d)->where(array('type' => $part, 'code' => $code, 'c1tID' => $c1tID))->get();
+        $where = [
+            'type' => $part, 
+            'code' => $code, 
+            'c1tID' => $c1tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where)->get();
         return $query->getRowArray();
 
     }
@@ -561,7 +567,8 @@ class ChapterValuesModel extends Model{
             $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
                 'question' => $req['question'][$i],
-                'updated_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
             $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
 

@@ -457,21 +457,25 @@ class ChapterValuesController extends BaseController{
         AC8 FUNCTIONS
         ----------------------------------------------------------
     */
-    public function saveac8($code,$head,$c1tID){
+    public function saveac8($code,$c1tID,$cID,$name){
 
         $req = [
             'question' => $this->request->getPost('question'),
-            'acid' => $this->request->getPost('acid')
+            'acid' => $this->request->getPost('acid'),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
 
         $res = $this->cvmodel->saveac8($req);
         
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c1/manage/'.$code.'/'.$head.'/'.$c1tID));
+            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
 

@@ -1745,7 +1745,6 @@ class ChapterController extends BaseController{
                     $rdata = $this->cvmodel->getac7($code,$dc1tID, $row,$dcID);
                     $data[$row] = json_decode($rdata['question'], true);
                 }
-                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/ac7', $data);
                 echo view('includes/Footer');
@@ -1759,7 +1758,7 @@ class ChapterController extends BaseController{
                     'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
                 ];
                 foreach($rowdata as $row){
-                    $data[$row] = $this->cvmodel->getac8($code,$dc1tID,$row);
+                    $data[$row] = $this->cvmodel->getac8($code,$dc1tID,$row,$dcID);
                 }
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/ac8', $data);
