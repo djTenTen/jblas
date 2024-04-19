@@ -89,7 +89,8 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     // Saving Values chapter 3
     $routes->post('auditsystem/client/saveplaf/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveplaf/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveaa1s3/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa1s3/$1/$2/$3/$4');
- 
+    $routes->post('auditsystem/client/saveaa2/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa2/$1/$2/$3/$4');
+    
     
     /**
         ----------------------------------------------------------

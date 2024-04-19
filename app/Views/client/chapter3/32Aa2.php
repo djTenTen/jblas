@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -34,30 +34,12 @@
                     </div>
                 </div>
             <?php  }?>
-            <?php if (session()->get('success_registration')) { ?>
-                <div class="alert alert-success alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Success Registration</h6>
-                        Contents has been successfully saved.
-                    </div>
-                </div>
-            <?php  }?>
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
                         <h6 class="alert-heading">Success Update</h6>
                         Contents has been successfully updated.
-                    </div>
-                </div>
-            <?php  }?>
-            <?php if (session()->get('failed_registration')) { ?>
-                <div class="alert alert-danger alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Failed Registration</h6>
-                        Error registering contents.
                     </div>
                 </div>
             <?php  }?>
@@ -72,28 +54,29 @@
                 <p>If information has been included elsewhere on the audit file (for example, Subsequent Events Review, or the ISA Compliance Critical Issues Memorandum), it does not need to be repeated.  Where appropriate, details of suggested improvements should be outlined.</p>
                 
 
-                <form action="<?= base_url()?>auditsystem/c3/saveaa2/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa2/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                 
+                    <input type="hidden" name="acid" value="<?= $acID?>">
                     <h6>Problems encountered during the audit (regarding audit tests):</h6>
-                    <textarea class="form-control" cols="30" rows="15" name="rat" required><?= $aa2['rat']?></textarea>
+                    <textarea class="form-control" cols="30" rows="15" name="rat" ><?= $aa2['rat']?></textarea>
                     <br>
                     <h6>Problems encountered during the audit (regarding the client, and their accessibility etc.):</h6>
-                    <textarea class="form-control" cols="30" rows="15" name="rcae" required><?= $aa2['rcae']?></textarea>
+                    <textarea class="form-control" cols="30" rows="15" name="rcae" ><?= $aa2['rcae']?></textarea>
                     <br>
                     <h6>Audit tests which can be removed / reduced without impairing audit quality:</h6>
-                    <textarea class="form-control" cols="30" rows="15" name="atriaq" required><?= $aa2['atriaq']?></textarea>
+                    <textarea class="form-control" cols="30" rows="15" name="atriaq" ><?= $aa2['atriaq']?></textarea>
                     <br>
                     <h6>Known changes to, or new accounting policies and estimation techniques in the forthcoming period:</h6>
-                    <textarea class="form-control" cols="30" rows="15" name="kcapet" required><?= $aa2['kcapet']?></textarea>
+                    <textarea class="form-control" cols="30" rows="15" name="kcapet" ><?= $aa2['kcapet']?></textarea>
                     <br>
                     <h6>Future developments (nature of business, locations, acquisitions and disposals):</h6>
-                    <textarea class="form-control" cols="30" rows="15" name="fd" required><?= $aa2['fd']?></textarea>
+                    <textarea class="form-control" cols="30" rows="15" name="fd" ><?= $aa2['fd']?></textarea>
                     <br>
                     <h6>Future structure of the audit team:</h6>
-                    <textarea class="form-control" cols="30" rows="15" name="fs" required><?= $aa2['fs']?></textarea>
+                    <textarea class="form-control" cols="30" rows="15" name="fs" ><?= $aa2['fs']?></textarea>
                     <br>
                     <h6>Other issues:</h6>
-                    <textarea class="form-control" cols="30" rows="15" name="oi" required><?= $aa2['oi']?></textarea>
+                    <textarea class="form-control" cols="30" rows="15" name="oi" ><?= $aa2['oi']?></textarea>
 
                     <div class="container m-2">
                         <div class="col-3 float-end">
