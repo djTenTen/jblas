@@ -313,3 +313,32 @@ INFO - 2024-04-19 09:38:44 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-04-19 09:38:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-19 09:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-19 09:38:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 09:39:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 09:39:22 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter2\25F2.php on line 12.
+ 1 APPPATH\Views\client\chapter2\25F2.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter2\\25F2.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter2\\25F2.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter2/25F2', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(1985): view('client/chapter2/25F2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues('2.5 F2', 'c5fca182b3f5578a480f03c052dad931650af573f464687283f165a90250823a167c2d0ecb53d39710812a3fdc2562ea254306aba44d1c4c12e2e6b257262cacndqj31nllrIrnjJqCLN1t5Ug', '26375625836fd32fb9d17734ab4f49722f1e48f71d4048d06d1c985e5a18c21e19f6d27acd0380ac72b2ab9159e0cb975f30964a37556360638a96259b4ce85ddJLGKFJ78YxojV1d~15D~7U=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 09:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 09:41:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 09:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 09:41:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 09:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 09:41:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 09:41:26 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter2\26H2.php on line 12.
+ 1 APPPATH\Views\client\chapter2\26H2.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter2\\26H2.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter2\\26H2.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter2/26H2', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(1993): view('client/chapter2/26H2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues('2.6 H2', 'ed2456cb675e5aebb10f46ed5fd85fc273a6e58d3e3bd98716a641aab7e9cf0c7cdcf9eb7efd1d9c27a9d58ef2267d25b3f51e369778c06bd129aa2da2a16335kyUaXV0rh6ybBuDykWMSOqJn', '26375625836fd32fb9d17734ab4f49722f1e48f71d4048d06d1c985e5a18c21e19f6d27acd0380ac72b2ab9159e0cb975f30964a37556360638a96259b4ce85ddJLGKFJ78YxojV1d~15D~7U=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
