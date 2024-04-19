@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -47,16 +47,16 @@
             <div class="card-body">
 
                 <nav class="nav nav-borders">
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'checklist')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageab4/checklist/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Checklist</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section1')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageab4/section1/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Section 1</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section2')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageab4/section2/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Section 2</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section3')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageab4/section3/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Section 3</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section4')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageab4/section4/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Section 4</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section5')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageab4/section5/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Section 5</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section6')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageab4/section6/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Section 6</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section7')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageab4/section7/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Section 7</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section8')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageab4/section8/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Section 8</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section9')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageab4/section9/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Section 9</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'checklist')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.15 Ab4-checklist/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Checklist</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section1')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.15 Ab4-section1/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Section 1</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section2')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.15 Ab4-section2/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Section 2</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section3')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.15 Ab4-section3/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Section 3</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section4')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.15 Ab4-section4/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Section 4</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section5')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.15 Ab4-section5/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Section 5</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section6')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.15 Ab4-section6/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Section 6</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section7')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.15 Ab4-section7/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Section 7</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section8')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.15 Ab4-section8/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Section 8</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section9')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.15 Ab4-section9/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Section 9</a>
                 </nav>
                 <hr class="mt-0 mb-4" />
                 <br>
@@ -71,8 +71,10 @@
                 <p><b>NB: To ensure that the Checklist is as efficient as possible, areas which are more specialised have been addressed by supplementary disclosure checklists. <u>These supplementary disclosure checklists should only be completed if the area is relevant.</u> </b></p>
                 <p>NB: The checklist does not cover the additional disclosures required by companies which enter into insurance contracts, where these are relevant considerations, then the disclosure requirements of IFRS 4 should be given.  It also does not cover the requirements of IAS 26, which are only relevant to clients who are themselves pension schemes, or IFRIC 2 which is relevant to cooperative entities.  The checklist also does not cover the disclosure requirements of companies with listed equity or debt.</p>
 
-                <form action="<?= base_url()?>auditsystem/c3/saveab4checklist/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveab4checklist/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                 <input type="hidden" name="part" value="<?= $section?>">
+
+                <input type="hidden" name="acid" value="<?= $acID?>">
                 <table class="table table-sm table-bordered">
                     <thead>
                         <tr>

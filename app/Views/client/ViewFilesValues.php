@@ -100,9 +100,11 @@
                                                 <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter3/setvalues/')?><?= $r['code']?>-ad/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $name?>">Adjusted Mades</a>
                                             </div>
                                         </div>
+                                    <?php }elseif($r['code'] == '3.15 Ab4'){?>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/chapter3/setvalues/')?><?= $r['code']?>-checklist/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                     <?php }else{?>
                                         <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/chapter3/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
-                                <?php }?>
+                                    <?php }?>
                                 </td>
                             </tr>
                         <?php }?>

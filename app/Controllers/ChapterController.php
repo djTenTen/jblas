@@ -2293,7 +2293,6 @@ class ChapterController extends BaseController{
                 break;
 
             case '3.9':
-
             
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/39', $data);
@@ -2373,13 +2372,56 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break; 
 
-            case '3.15 Ab4':
+            case '3.15 Ab4-checklist':
+            case '3.15 Ab4-section1':
+            case '3.15 Ab4-section2':
+            case '3.15 Ab4-section3':
+            case '3.15 Ab4-section4':
+            case '3.15 Ab4-section5':
+            case '3.15 Ab4-section6':
+            case '3.15 Ab4-section7':
+            case '3.15 Ab4-section8':
+            case '3.15 Ab4-section9':
+                
+                $s = explode('-', $code);
                
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/315Ab4', $data);
-                echo view('includes/Footer');
-                break; 
+                switch ($s[1]) {
+                    case 'checklist':$data['sectiontitle'] = 'CORPORATE DISCLOSURE CHECKLIST (IFRS)';break;
+                    case 'section1':$data['sectiontitle'] = 'Format of the Annual Report and Generic Information';break;
+                    case 'section2':$data['sectiontitle'] = 'Directors Report (Review of the Business) ~ Best Practice Disclosures';break;
+                    case 'section3':$data['sectiontitle'] = 'Directors Report ~ Best Practice Disclosures';break;
+                    case 'section4':$data['sectiontitle'] = 'Statement of Comprehensive Income (SCI) and Related Notes';break;
+                    case 'section5':$data['sectiontitle'] = 'Statement of Changes in Equity';break;
+                    case 'section6':$data['sectiontitle'] = 'Statement of Financial Position and Related Notes';break;
+                    case 'section7':$data['sectiontitle'] = 'Statement of Cash Flows';break;
+                    case 'section8':$data['sectiontitle'] = 'Accounting Policies and Estimation Techniques';break;
+                    case 'section9':$data['sectiontitle'] = 'Notes and Other Disclosures';break;
+                }
+                $data['title'] = $code. ' - Chapter 3 Management';
+                $data['section'] = $s[1];
+                $data['c3tID'] = $c3tID;
+                $data['code'] = $code;
 
+                if($s[1] == "checklist"){
+
+                    $rdata = $this->cvmodel->getab4checklist($s[1],$s[0],$dc3tID,$dcID);
+                    $data['sec'] = json_decode($rdata['question'], true);
+                    $data['acID'] = $this->crypt->encrypt($rdata['acID']);
+
+                    echo view('includes/Header', $data);
+                    echo view('client/chapter3/315Ab4_checklist', $data);
+                    echo view('includes/Footer');
+
+                }else{
+
+                    $data['sec'] = $this->cvmodel->getab4($s[1],$s[0],$dc3tID,$dcID);
+                    echo view('includes/Header', $data);
+                    echo view('client/chapter3/315Ab4_section', $data);
+                    echo view('includes/Footer');
+
+                }
+                break; 
+            
             case '3.15.1 Ab4a':
                 
                 $data['ab4a'] = $this->cvmodel->getab4a($code,$dc3tID,$dcID);
