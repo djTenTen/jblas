@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -38,7 +38,7 @@
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
-                        <h6 class="alert-heading">Failed Registration</h6>
+                        <h6 class="alert-heading">Failed update</h6>
                         Error registering contents.
                     </div>
                 </div>
@@ -54,7 +54,8 @@
                 <h6>Comparisons should be made of current period figures with prior period and / or budgeted figures.  Explanations obtained for significant or unexpected changes in key business ratios and items in the financial statements must be corroborated by other evidence. A conclusion should then be reached. </h6>
                 <h6><i>Undertaking analytical procedures at finalisation is mandatory; however, the use of this form is optional.</i></h6>
 
-                <form action="<?= base_url()?>auditsystem/c3/saveaa10/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa10/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <input type="hidden" name="acid" value="<?= $acID?>">
                     <p>Summary of key ratios which may be calculated or printed from a relevant software package (add others which are specifically relevant to the entity):</p>
                     <i>
                         <ul>

@@ -1444,16 +1444,28 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getaa7($part,$code,$c3tID){
+    public function getaa7($part,$code,$c3tID,$dcID){
 
-        $query = $this->db->table($this->tblc3d)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
+        $where = [
+            'type' => $part,
+            'code' => $code,
+            'c3tID' => $c3tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc3d)->where($where)->get();
         return $query->getResultArray();
 
     }
 
-    public function getaa7aep($part,$code,$c3tID){
+    public function getaa7aep($part,$code,$c3tID,$dcID){
 
-        $query = $this->db->table($this->tblc3d)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
+        $where = [
+            'type' => $part,
+            'code' => $code,
+            'c3tID' => $c3tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc3d)->where($where)->get();
         return $query->getRowArray();
 
     }
@@ -1551,9 +1563,15 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getaa10($code,$c3tID){
+    public function getaa10($code,$c3tID,$dcID){
 
-        $query = $this->db->table($this->tblc3d)->where(array('type' => 'aa10', 'code' => $code, 'c3tID' => $c3tID))->get();
+        $where = [
+            'type' => 'aa10',
+            'code' => $code,
+            'c3tID' => $c3tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc3d)->where($where)->get();
         return $query->getRowArray();
 
     }
@@ -1563,18 +1581,15 @@ class ChapterValuesModel extends Model{
     */
     public function saveaa10($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        $dacid = $this->crypt->decrypt($req['acid']);
 
         $data = [
             'question' => $req['aa10'],
-            'type' =>  $req['part'],
-            'code' =>  $req['code'],
-            'c3tID' => $req['c3tID'],
-            'status' => 'Active',
-            'updated_on' => $this->date.' '.$this->time
+            'updated_on' => $this->date.' '.$this->time,
+            'updated_by' => $req['uID'],
         ];
 
-        if($this->db->table($this->tblc3d)->insert($data)){
+        if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;

@@ -1226,3 +1226,38 @@ INFO - 2024-04-19 16:40:19 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-04-19 16:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-19 17:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-19 17:45:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 17:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 17:49:48 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter3\38Aa10.php on line 12.
+ 1 APPPATH\Views\client\chapter3\38Aa10.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\38Aa10.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\38Aa10.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/38Aa10', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2290): view('client/chapter3/38Aa10', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.8 Aa10', '4ca0883ce643dba58c10eb8622b8185d4f0267231af451fe858e17d5dff1cc526dfaddf68974a394dec1df515aff9af70b981b3122467bba45e7a194f97b5e774JPhzuHKRTw4vpHy~BJRscma', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 17:52:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 17:53:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:01:26 --> ArgumentCountError: Too few arguments to function App\Models\ChapterValuesModel::getaa7aep(), 3 passed in D:\dhay\xampp\htdocs\jblas\app\Controllers\ChapterController.php on line 2275 and exactly 4 expected
+in APPPATH\Models\ChapterValuesModel.php on line 1460.
+ 1 APPPATH\Controllers\ChapterController.php(2275): App\Models\ChapterValuesModel->getaa7aep('aep', '3.7 Aa7', '51')
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.7 Aa7', 'e4802ae2083b5e643446bd1819116c205a55f6c2c3af7ced37ad1323da7886733278853b6c66992dff0486ff23587128b8c36d53ab0bfda0dffd9e891442cf666LO0k3v~sDbUgHmaozOFt8B$', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:01:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:07:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:07:24 --> ArgumentCountError: Too few arguments to function App\Models\ChapterValuesModel::getaa10(), 2 passed in D:\dhay\xampp\htdocs\jblas\app\Controllers\ChapterController.php on line 2286 and exactly 3 expected
+in APPPATH\Models\ChapterValuesModel.php on line 1566.
+ 1 APPPATH\Controllers\ChapterController.php(2286): App\Models\ChapterValuesModel->getaa10('3.8 Aa10', '52')
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.8 Aa10', '4ca0883ce643dba58c10eb8622b8185d4f0267231af451fe858e17d5dff1cc526dfaddf68974a394dec1df515aff9af70b981b3122467bba45e7a194f97b5e774JPhzuHKRTw4vpHy~BJRscma', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

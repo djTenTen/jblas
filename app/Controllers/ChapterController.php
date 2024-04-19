@@ -2263,16 +2263,16 @@ class ChapterController extends BaseController{
             case '3.7 Aa7':
 
                 
-                $data['aa7'] = $this->cvmodel->getaa7('isa315',$code,$dc3tID);
-                $data['cons'] = $this->cvmodel->getaa7('consultation',$code,$dc3tID);
-                $data['inc'] = $this->cvmodel->getaa7('inconsistencies',$code,$dc3tID);
-                $data['ref'] = $this->cvmodel->getaa7('refusal',$code,$dc3tID);
-                $data['dep'] = $this->cvmodel->getaa7('departures',$code,$dc3tID);
-                $data['oth'] = $this->cvmodel->getaa7('other',$code,$dc3tID);
+                $data['aa7'] = $this->cvmodel->getaa7('isa315',$code,$dc3tID,$dcID);
+                $data['cons'] = $this->cvmodel->getaa7('consultation',$code,$dc3tID,$dcID);
+                $data['inc'] = $this->cvmodel->getaa7('inconsistencies',$code,$dc3tID,$dcID);
+                $data['ref'] = $this->cvmodel->getaa7('refusal',$code,$dc3tID,$dcID);
+                $data['dep'] = $this->cvmodel->getaa7('departures',$code,$dc3tID,$dcID);
+                $data['oth'] = $this->cvmodel->getaa7('other',$code,$dc3tID,$dcID);
 
 
-                $data['aepapp'] = $this->cvmodel->getaa7aep('aepapp',$code,$dc3tID);
-                $rdata = $this->cvmodel->getaa7aep('aep',$code,$dc3tID);
+                $data['aepapp'] = $this->cvmodel->getaa7aep('aepapp',$code,$dc3tID,$dcID);
+                $rdata = $this->cvmodel->getaa7aep('aep',$code,$dc3tID,$dcID);
                 $data['aep'] = json_decode($rdata['question'], true);
                 $data['acID'] = $this->crypt->encrypt($rdata['acID']);
                 
@@ -2283,8 +2283,9 @@ class ChapterController extends BaseController{
 
             case '3.8 Aa10':
 
-                $rdata = $this->cvmodel->getaa10($code,$dc3tID);
+                $rdata = $this->cvmodel->getaa10($code,$dc3tID,$dcID);
                 $data['aa10'] = json_decode($rdata['question'], true);
+                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
 
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/38Aa10', $data);
