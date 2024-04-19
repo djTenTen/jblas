@@ -2300,15 +2300,46 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break;
 
-            case '3.10 Aa11':
-                
+            case '3.10 Aa11-un':
+
+                $s = explode('-', $code);
+
+                $data['sectiontitle'] = "SUMMARY OF UNADJUSTED ERRORS";
+
+                $data['aef'] = $this->cvmodel->getaa11p2('aef',$s[0],$dc3tID,$dcID);
+                $data['aej'] = $this->cvmodel->getaa11p2('aej',$s[0],$dc3tID,$dcID);
+                $data['ee'] = $this->cvmodel->getaa11p2('ee',$s[0],$dc3tID,$dcID);
+                $data['de'] = $this->cvmodel->getaa11p2('de',$s[0],$dc3tID,$dcID);
+                $rdata = $this->cvmodel->getaa11p('aa11ue',$s[0],$dc3tID,$dcID);
+                $data['ue'] = json_decode($rdata['question'], true);    
+                $data['ueacID'] = $this->crypt->encrypt($rdata['acID']);
+
+                $rdata2 = $this->cvmodel->getaa11p('con',$s[0],$dc3tID,$dcID);
+                $data['con'] = json_decode($rdata2['question'], true);   
+                $data['conacID'] = $this->crypt->encrypt($rdata2['acID']);
+
                 echo view('includes/Header', $data);
-                echo view('client/chapter3/310Aa11', $data);
+                echo view('client/chapter3/310Aa11_un', $data); 
+                echo view('includes/Footer');
+                break;   
+
+            case '3.10 Aa11-ad':
+
+                $s = explode('-', $code);
+
+                $data['sectiontitle'] = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";
+
+                $data['ad'] = $this->cvmodel->getaa11p2('ad',$s[0],$dc3tID,$dcID);
+                $rdata = $this->cvmodel->getaa11p('aa11uead',$s[0],$dc3tID,$dcID);
+                $data['ue'] = json_decode($rdata['question'], true);    
+                $data['ueacID'] = $this->crypt->encrypt($rdata['acID']);
+
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/310Aa11_ad', $data);
                 echo view('includes/Footer');
                 break;   
 
             case '3.11':
-
                 
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/311', $data);

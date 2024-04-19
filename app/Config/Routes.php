@@ -99,6 +99,12 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('auditsystem/client/saveaa7isa/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa7isa/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveaa7aep/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa7aep/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveaa10/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa10/$1/$2/$3/$4');
+    $routes->post('auditsystem/client/saveaa11ue/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa11ue/$1/$2/$3/$4');
+    $routes->post('auditsystem/client/saveaa11un/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa11un/$1/$2/$3/$4');
+    $routes->post('auditsystem/client/saveaa11con/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa11con/$1/$2/$3/$4');
+    $routes->post('auditsystem/client/saveaa11ad/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa11ad/$1/$2/$3/$4');
+    $routes->post('auditsystem/client/saveaa11uead/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa11uead/$1/$2/$3/$4');
+    
     
     /**
         ----------------------------------------------------------

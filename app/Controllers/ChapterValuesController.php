@@ -1615,53 +1615,7 @@ class ChapterValuesController extends BaseController{
         ----------------------------------------------------------
     */
 
-    public function viewa11($sheet,$code,$head,$c3tID){
-
-        $dc3tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID));
-
-        switch ($sheet) {
-            case 'un':$data['sectiontitle'] = "SUMMARY OF UNADJUSTED ERRORS";break;
-            case 'ad':$data['sectiontitle'] = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";break;
-        }
-
-        $data['title'] = $code. ' - Chapter 3 Management';
-        $data['header'] = $head;
-        $data['section'] = $sheet;
-        $data['c3tID'] = $c3tID;
-        $data['code'] = $code;
-
-        
-        if($sheet == "un"){
-
-            // $rdata = $this->cvmodel->getab4checklist($sheet,$code,$dc3tID);
-            // $data['sec'] = json_decode($rdata['question'], true);
-
-            $data['aef'] = $this->cvmodel->getaa11p2('aef',$code,$dc3tID);
-            $data['aej'] = $this->cvmodel->getaa11p2('aej',$code,$dc3tID);
-            $data['ee'] = $this->cvmodel->getaa11p2('ee',$code,$dc3tID);
-            $data['de'] = $this->cvmodel->getaa11p2('de',$code,$dc3tID);
-            $rdata = $this->cvmodel->getaa11p1('aa11ue',$code,$dc3tID);
-            $data['ue'] = json_decode($rdata['question'], true);    
-
-            $rdata2 = $this->cvmodel->getaa11con('con',$code,$dc3tID);
-            $data['con'] = json_decode($rdata2['question'], true);   
-
-            echo view('includes/Header', $data);
-            echo view('chapter3/310Aa11_un', $data);
-            echo view('includes/Footer');
-        }else{
-
-            $data['ad'] = $this->cvmodel->getaa11p2('ad',$code,$dc3tID);
-            $rdata = $this->cvmodel->getaa11p1('aa11uead',$code,$dc3tID);
-            $data['ue'] = json_decode($rdata['question'], true);    
-            
-            echo view('includes/Header', $data);
-            echo view('chapter3/310Aa11_ad', $data);
-            echo view('includes/Footer');
-        }
-
-    }
-    public function saveaa11un($code,$head,$c3tID){
+    public function saveaa11un($code,$c3tID,$cID,$name){
 
         $req = [
             'reference' => $this->request->getPost('reference'),
@@ -1673,22 +1627,25 @@ class ChapterValuesController extends BaseController{
             'yesno' => $this->request->getPost('yesno'),
             'code' => $code,
             'part' => $this->request->getPost('part'),
-            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
 
         $res = $this->cvmodel->saveaa11un($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c3/manageaa11/un/'.$code.'/'.$head.'/'.$c3tID));
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c3/manageaa11/un/'.$code.'/'.$head.'/'.$c3tID));
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
 
-    public function saveaa11ad($code,$head,$c3tID){
+    public function saveaa11ad($code,$c3tID,$cID,$name){
 
         $req = [
             'reference' => $this->request->getPost('reference'),
@@ -1699,22 +1656,25 @@ class ChapterValuesController extends BaseController{
             'crfp' => $this->request->getPost('crfp'),
             'code' => $code,
             'part' => 'ad',
-            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
 
         $res = $this->cvmodel->saveaa11ad($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c3/manageaa11/ad/'.$code.'/'.$head.'/'.$c3tID));
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c3/manageaa11/ad/'.$code.'/'.$head.'/'.$c3tID));
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
     
-    public function saveaa11ue($code,$head,$c3tID){
+    public function saveaa11ue($code,$c3tID,$cID,$name){
 
         $aa11 = [
             'cta' => $this->request->getPost('cta'),
@@ -1724,24 +1684,26 @@ class ChapterValuesController extends BaseController{
 
         $req = [
             'aa11' => json_encode($aa11),
-            'code' => $code,
-            'part' => $this->request->getPost('part'),
-            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+            'acid' => $this->request->getPost('acid'),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
 
         $res = $this->cvmodel->saveaa11ue($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c3/manageaa11/un/'.$code.'/'.$head.'/'.$c3tID));
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c3/manageaa11/un/'.$code.'/'.$head.'/'.$c3tID));
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
 
-    public function saveaa11con($code,$head,$c3tID){
+    public function saveaa11con($code,$c3tID,$cID,$name){
 
         $aa11con = [
             'bdr1' => $this->request->getPost('bdr1'),
@@ -1804,24 +1766,26 @@ class ChapterValuesController extends BaseController{
 
         $req = [
             'aa11' => json_encode($aa11con),
-            'code' => $code,
-            'part' => $this->request->getPost('part'),
-            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+            'acid' => $this->request->getPost('acid'),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
 
         $res = $this->cvmodel->saveaa11con($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c3/manageaa11/un/'.$code.'/'.$head.'/'.$c3tID));
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c3/manageaa11/un/'.$code.'/'.$head.'/'.$c3tID));
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
 
-    public function saveaa11uead($code,$head,$c3tID){
+    public function saveaa11uead($code,$c3tID,$cID,$name){
 
         $aa11 = [
             'pl' => $this->request->getPost('pl'),
@@ -1831,19 +1795,21 @@ class ChapterValuesController extends BaseController{
 
         $req = [
             'aa11' => json_encode($aa11),
-            'code' => $code,
-            'part' => $this->request->getPost('part'),
-            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+            'acid' => $this->request->getPost('acid'),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
 
         $res = $this->cvmodel->saveaa11ue($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c3/manageaa11/ad/'.$code.'/'.$head.'/'.$c3tID));
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c3/manageaa11/ad/'.$code.'/'.$head.'/'.$c3tID));
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }

@@ -1614,23 +1614,41 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getaa11p2($part,$code,$c3tID){
+    public function getaa11p2($part,$code,$c3tID,$dcID){
 
-        $query = $this->db->table($this->tblc3d)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
+        $where = [
+            'type' => $part,
+            'code' => $code,
+            'c3tID' => $c3tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc3d)->where($where)->get();
         return $query->getResultArray();
 
     }
 
-    public function getaa11p1($part,$code,$c3tID){
+    public function getaa11p($part,$code,$c3tID,$dcID){
 
-        $query = $this->db->table($this->tblc3d)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
+        $where = [
+            'type' => $part,
+            'code' => $code,
+            'c3tID' => $c3tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc3d)->where($where)->get();
         return $query->getRowArray();
 
     }
 
-    public function getaa11con($part,$code,$c3tID){
+    public function getaa11con($part,$code,$c3tID,$dcID){
 
-        $query = $this->db->table($this->tblc3d)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
+        $where = [
+            'type' => $part,
+            'code' => $code,
+            'c3tID' => $c3tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc3d)->where($where)->get();
         return $query->getRowArray();
 
     }
@@ -1640,7 +1658,13 @@ class ChapterValuesModel extends Model{
     */
     public function saveaa11un($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        $where = [
+            'type' => $req['part'],
+            'code' => $req['code'],
+            'c3tID' => $req['c3tID'],
+            'clientID' => $req['cID'],
+        ];
+        $this->db->table($this->tblc3d)->where($where)->delete();
 
         foreach($req['reference'] as $i => $val){
 
@@ -1655,8 +1679,11 @@ class ChapterValuesModel extends Model{
                 'type' =>  $req['part'],
                 'code' =>  $req['code'],
                 'c3tID' => $req['c3tID'],
+                'clientID' => $req['cID'],
+                'firmID' => $req['fID'],
                 'status' => 'Active',
-                'updated_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
     
             $this->db->table($this->tblc3d)->insert($data);
@@ -1670,7 +1697,13 @@ class ChapterValuesModel extends Model{
 
     public function saveaa11ad($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        $where = [
+            'type' => $req['part'],
+            'code' => $req['code'],
+            'c3tID' => $req['c3tID'],
+            'clientID' => $req['cID'],
+        ];
+        $this->db->table($this->tblc3d)->where($where)->delete();
 
         foreach($req['reference'] as $i => $val){
 
@@ -1684,8 +1717,11 @@ class ChapterValuesModel extends Model{
                 'type' =>  $req['part'],
                 'code' =>  $req['code'],
                 'c3tID' => $req['c3tID'],
+                'clientID' => $req['cID'],
+                'firmID' => $req['fID'],
                 'status' => 'Active',
-                'updated_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
     
             $this->db->table($this->tblc3d)->insert($data);
@@ -1698,18 +1734,15 @@ class ChapterValuesModel extends Model{
     
     public function saveaa11ue($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        $dacid = $this->crypt->decrypt($req['acid']);
 
         $data = [
             'question' => $req['aa11'],
-            'type' =>  $req['part'],
-            'code' =>  $req['code'],
-            'c3tID' => $req['c3tID'],
-            'status' => 'Active',
-            'updated_on' => $this->date.' '.$this->time
+            'updated_on' => $this->date.' '.$this->time,
+            'updated_by' => $req['uID'],
         ];
 
-        if($this->db->table($this->tblc3d)->insert($data)){
+        if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;
@@ -1720,18 +1753,15 @@ class ChapterValuesModel extends Model{
 
     public function saveaa11con($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        $dacid = $this->crypt->decrypt($req['acid']);
 
         $data = [
             'question' => $req['aa11'],
-            'type' =>  $req['part'],
-            'code' =>  $req['code'],
-            'c3tID' => $req['c3tID'],
-            'status' => 'Active',
-            'updated_on' => $this->date.' '.$this->time
+            'updated_on' => $this->date.' '.$this->time,
+            'updated_by' => $req['uID'],
         ];
-
-        if($this->db->table($this->tblc3d)->insert($data)){
+        
+        if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;

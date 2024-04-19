@@ -1261,3 +1261,509 @@ INFO - 2024-04-19 18:07:40 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-04-19 18:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-19 18:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-19 18:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:14:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:20:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:21:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:22:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:22:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:23:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:23:04 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\ChapterController.php on line 2312.
+ 1 APPPATH\Controllers\ChapterController.php(2312): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 2312)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', 'c17cacc7a76bd1025134777abf732d4c2d9df5c401d5fea7412b3e2b2104e60b39451d8364fb7f6ab1494d1be3b8064e5a85f6c496b061a9515d2e6b8e3a745cXIFoqjm3phRgPI~I6ZsM1WrF', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:24:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:24:12 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\ChapterController.php on line 2312.
+ 1 APPPATH\Controllers\ChapterController.php(2312): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 2312)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', 'c17cacc7a76bd1025134777abf732d4c2d9df5c401d5fea7412b3e2b2104e60b39451d8364fb7f6ab1494d1be3b8064e5a85f6c496b061a9515d2e6b8e3a745cXIFoqjm3phRgPI~I6ZsM1WrF', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:24:59 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\ChapterController.php on line 2312.
+ 1 APPPATH\Controllers\ChapterController.php(2312): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 2312)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', 'c17cacc7a76bd1025134777abf732d4c2d9df5c401d5fea7412b3e2b2104e60b39451d8364fb7f6ab1494d1be3b8064e5a85f6c496b061a9515d2e6b8e3a745cXIFoqjm3phRgPI~I6ZsM1WrF', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:27:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:27:06 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\ChapterController.php on line 2312.
+ 1 APPPATH\Controllers\ChapterController.php(2312): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 2312)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', 'c17cacc7a76bd1025134777abf732d4c2d9df5c401d5fea7412b3e2b2104e60b39451d8364fb7f6ab1494d1be3b8064e5a85f6c496b061a9515d2e6b8e3a745cXIFoqjm3phRgPI~I6ZsM1WrF', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:27:59 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\ChapterController.php on line 2312.
+ 1 APPPATH\Controllers\ChapterController.php(2312): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 2312)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', 'c17cacc7a76bd1025134777abf732d4c2d9df5c401d5fea7412b3e2b2104e60b39451d8364fb7f6ab1494d1be3b8064e5a85f6c496b061a9515d2e6b8e3a745cXIFoqjm3phRgPI~I6ZsM1WrF', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:31:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:31:32 --> ArgumentCountError: Too few arguments to function App\Models\ChapterValuesModel::getaa11p2(), 3 passed in D:\dhay\xampp\htdocs\jblas\app\Controllers\ChapterController.php on line 2307 and exactly 4 expected
+in APPPATH\Models\ChapterValuesModel.php on line 1617.
+ 1 APPPATH\Controllers\ChapterController.php(2307): App\Models\ChapterValuesModel->getaa11p2('aef', '3.10 Aa11-un', '54')
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', 'c17cacc7a76bd1025134777abf732d4c2d9df5c401d5fea7412b3e2b2104e60b39451d8364fb7f6ab1494d1be3b8064e5a85f6c496b061a9515d2e6b8e3a745cXIFoqjm3phRgPI~I6ZsM1WrF', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:32:09 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\ChapterController.php on line 2312.
+ 1 APPPATH\Controllers\ChapterController.php(2312): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 2312)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', 'c17cacc7a76bd1025134777abf732d4c2d9df5c401d5fea7412b3e2b2104e60b39451d8364fb7f6ab1494d1be3b8064e5a85f6c496b061a9515d2e6b8e3a745cXIFoqjm3phRgPI~I6ZsM1WrF', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:32:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:32:26 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\ChapterController.php on line 2315.
+ 1 APPPATH\Controllers\ChapterController.php(2315): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 2315)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', 'c17cacc7a76bd1025134777abf732d4c2d9df5c401d5fea7412b3e2b2104e60b39451d8364fb7f6ab1494d1be3b8064e5a85f6c496b061a9515d2e6b8e3a745cXIFoqjm3phRgPI~I6ZsM1WrF', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:32:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:32:58 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 12.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2318): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', 'c17cacc7a76bd1025134777abf732d4c2d9df5c401d5fea7412b3e2b2104e60b39451d8364fb7f6ab1494d1be3b8064e5a85f6c496b061a9515d2e6b8e3a745cXIFoqjm3phRgPI~I6ZsM1WrF', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:33:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:33:21 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\ChapterController.php on line 2328.
+ 1 APPPATH\Controllers\ChapterController.php(2328): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 2328)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-ad', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:34:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:34:23 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\ChapterController.php on line 2328.
+ 1 APPPATH\Controllers\ChapterController.php(2328): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 2328)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-ad', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:34:43 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\ChapterController.php on line 2328.
+ 1 APPPATH\Controllers\ChapterController.php(2328): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 2328)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-ad', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:42:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:42:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:42:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:42:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:42:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:42:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:43:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:43:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:43:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:43:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:43:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:43:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:43:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:43:52 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\ChapterController.php on line 2317.
+ 1 APPPATH\Controllers\ChapterController.php(2317): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 2317)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:44:20 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\ChapterController.php on line 2317.
+ 1 APPPATH\Controllers\ChapterController.php(2317): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 2317)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:44:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:44:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:44:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:44:24 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\ChapterController.php on line 2317.
+ 1 APPPATH\Controllers\ChapterController.php(2317): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php', 2317)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:45:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:45:17 --> ParseError: syntax error, unexpected token ",", expecting ")"
+in APPPATH\Controllers\ChapterController.php on line 2316.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\ChapterController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ChapterController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ChapterController')
+ 4 SYSTEMPATH\CodeIgniter.php(899): class_exists('\\App\\Controllers\\ChapterController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:45:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:45:23 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 12.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2320): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:45:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:45:59 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 12.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2320): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:46:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:46:14 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 12.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2320): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:46:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 18:46:23 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 12.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2320): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 18:46:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:46:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:46:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:47:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:47:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:47:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:48:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:49:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:51:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:55:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:59:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 18:59:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:10:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:10:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:10:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:11:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:11:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:11:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:11:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:11:55 --> TypeError: Unsupported operand types: int + string
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 169.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 4 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:11:59 --> TypeError: Unsupported operand types: int + string
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 169.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 4 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:12:01 --> TypeError: Unsupported operand types: int + string
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 169.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 4 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:12:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:12:08 --> TypeError: Unsupported operand types: int + string
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 169.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 4 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:12:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:12:31 --> TypeError: Unsupported operand types: int + string
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 169.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 4 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:12:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:12:33 --> TypeError: Unsupported operand types: int + string
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 169.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 4 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:12:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:12:33 --> TypeError: Unsupported operand types: int + string
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 169.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 4 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:12:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:12:42 --> TypeError: Unsupported operand types: int + string
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 169.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 4 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:12:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:13:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:13:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:14:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:14:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:20:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:20:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:20:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:20:24 --> ErrorException: Undefined array key "cta"
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 73.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cta"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 73)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:20:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:20:30 --> ErrorException: Undefined array key "cta"
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 73.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cta"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 73)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:20:32 --> ErrorException: Undefined array key "cta"
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 73.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cta"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 73)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:20:33 --> ErrorException: Undefined array key "cta"
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 73.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cta"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 73)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:20:34 --> ErrorException: Undefined array key "cta"
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 73.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cta"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 73)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:20:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:20:35 --> ErrorException: Undefined array key "cta"
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 73.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cta"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 73)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:20:36 --> ErrorException: Undefined array key "cta"
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 73.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cta"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 73)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:22:51 --> ErrorException: Undefined array key "cta"
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 73.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cta"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 73)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:22:53 --> ErrorException: Undefined array key "cta"
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 73.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cta"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 73)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:26:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:28:51 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\ChapterController.php(2309): CodeIgniter\Model->__call('getaa11p2', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:29:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:29:08 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\ChapterController.php(2309): CodeIgniter\Model->__call('getaa11p2', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:29:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:29:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:29:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:29:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:29:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:30:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:32:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:32:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:32:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 19:32:18 --> ErrorException: Undefined array key "cta"
+in APPPATH\Views\client\chapter3\310Aa11_un.php on line 73.
+ 1 APPPATH\Views\client\chapter3\310Aa11_un.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cta"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php', 73)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\310Aa11_un.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/310Aa11_un', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2322): view('client/chapter3/310Aa11_un', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.10 Aa11-un', '1c810c80c7c6b715901ca3ae560febbd1387c82af94ecea41eba04fb96441c80f17c8de6d7e701fde7c26d5a131447ec6d3619fa8c835421352e9d74896f94a5tViltpFbtx4fDlzwd$IkPyZy', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 19:33:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:34:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:44:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:44:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:44:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:50:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:50:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:50:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 19:50:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

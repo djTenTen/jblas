@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -38,7 +38,7 @@
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
-                        <h6 class="alert-heading">Failed Registration</h6>
+                        <h6 class="alert-heading">Failed update</h6>
                         Error registering contents.
                     </div>
                 </div>
@@ -47,8 +47,8 @@
             <div class="card-body">
 
                 <nav class="nav nav-borders">
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Unadjusted')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageaa11/un/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Unadjusted Errors</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Adjusments')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c3/manageaa11/ad/<?= $code?>/<?= $header?>/<?= $c3tID; ?>">Adjustments Made</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-un')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.10 Aa11-un/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Unadjusted Errors</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-ad')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.10 Aa11-ad/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Adjustments Made</a>
                 </nav>
                 <hr class="mt-0 mb-4" />
                 <br>
@@ -63,8 +63,9 @@
                 <p>Either all errors should be recorded on this form or just those over a de minimis level which can be set by the A.E.P. (this should normally be less than or equal to the clearly trivial threshold).</p>
                 
                 
-                <form action="<?= base_url()?>auditsystem/c3/saveaa11ue/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa11ue/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aa11ue">
+                    <input type="hidden" name="acid" value="<?= $ueacID?>">
                     <table class="table">
                         <tr>
                             <td>Clearly Trivial per Ac13</td>
@@ -86,7 +87,7 @@
                 </form>
 
 
-                <form action="<?= base_url()?>auditsystem/c3/saveaa11un/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aef">
                     <table class="table table-bordered table-sm">
                         <thead>
@@ -149,7 +150,7 @@
                 </form>
 
 
-                <form action="<?= base_url()?>auditsystem/c3/saveaa11un/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aej">
                     <table class="table table-bordered table-sm">
                         <thead>
@@ -188,7 +189,7 @@
                 </form>
 
 
-                <form action="<?= base_url()?>auditsystem/c3/saveaa11un/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="ee">
                     <table class="table table-bordered table-sm">
                         <thead>
@@ -227,7 +228,7 @@
                 </form>
 
 
-                <form action="<?= base_url()?>auditsystem/c3/saveaa11un/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="de">
                     <table class="table table-bordered table-sm">
                         <thead>
@@ -279,8 +280,9 @@
                 </form>
                 
                 <br><br>
-                <form action="<?= base_url()?>auditsystem/c3/saveaa11con/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa11con/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="con">
+                    <input type="hidden" name="acid" value="<?= $conacID?>">
                     <table class="table table-bordered table-sm" id="myTable">
                         <thead>
                             <tr>
