@@ -1205,16 +1205,28 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getaa3($part,$code,$c3tID){
+    public function getaa3($part,$code,$c3tID,$dcID){
 
-        $query = $this->db->table($this->tblc3d)->where(array('type' => 'cr', 'code' => $code, 'c3tID' => $c3tID))->get();
+        $where = [
+            'type' => $part,
+            'code' => $code,
+            'c3tID' => $c3tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc3d)->where($where)->get();
         return $query->getResultArray();
 
     }
 
-    public function getaa3air($code,$c3tID){
+    public function getaa3air($code,$c3tID,$dcID){
 
-        $query = $this->db->table($this->tblc3d)->where(array('type' => 'ir', 'code' => $code, 'c3tID' => $c3tID))->get();
+        $where = [
+            'type' => 'ir',
+            'code' => $code,
+            'c3tID' => $c3tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc3d)->where($where)->get();
         return $query->getRowArray();
 
     }
@@ -1224,20 +1236,16 @@ class ChapterValuesModel extends Model{
     */
     public function saveaa3a($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        foreach($req['comment'] as $i => $val){
 
-        foreach($req['question'] as $i => $val){
-
+            $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'question' => $req['question'][$i],
                 'reference' => $req['comment'][$i],
-                'type' =>  $req['part'],
-                'code' =>  $req['code'],
-                'c3tID' => $req['c3tID'],
-                'status' => 'Active',
-                'updated_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
-            $this->db->table($this->tblc3d)->insert($data);
+
+            $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
             
         }
 
@@ -1247,21 +1255,16 @@ class ChapterValuesModel extends Model{
 
     public function saveaa3afaf($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        foreach($req['extent'] as $i => $val){
 
-        foreach($req['question'] as $i => $val){
-
+            $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'question' => $req['question'][$i],
                 'extent' => $req['extent'][$i],
                 'reference' => $req['reference'][$i],
-                'type' =>  $req['part'],
-                'code' =>  $req['code'],
-                'c3tID' => $req['c3tID'],
-                'status' => 'Active',
-                'updated_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
-            $this->db->table($this->tblc3d)->insert($data);
+            $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
             
         }
 
@@ -1271,18 +1274,15 @@ class ChapterValuesModel extends Model{
 
     public function saveaa3air($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => 'ir', 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        $dacid = $this->crypt->decrypt($req['acid']);
 
         $data = [
             'question' => $req['ir'],
-            'type' =>  $req['part'],
-            'code' =>  $req['code'],
-            'c3tID' => $req['c3tID'],
-            'status' => 'Active',
-            'updated_on' => $this->date.' '.$this->time
+            'updated_on' => $this->date.' '.$this->time,
+            'updated_by' => $req['uID'],
         ];
 
-        if($this->db->table($this->tblc3d)->insert($data)){
+        if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;

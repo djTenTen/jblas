@@ -2202,7 +2202,7 @@ class ChapterController extends BaseController{
                 $rdata = $this->cvmodel->getaa2data($code, $dc3tID,$dcID);
                 $data['aa2'] = json_decode($rdata['question'], true);
                 $data['acID'] = $this->crypt->encrypt($rdata['acID']);
-                
+
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/32Aa2', $data);
                 echo view('includes/Footer');
@@ -2210,10 +2210,10 @@ class ChapterController extends BaseController{
 
             case '3.3 Aa3a':
 
-                $data['cr'] = $this->cvmodel->getaa3('cr',$code,$dc3tID);
-                $data['dc'] = $this->cvmodel->getaa3('dc',$code,$dc3tID);
-                $data['faf'] = $this->cvmodel->getaa3('faf',$code,$dc3tID);
-                $data['ir'] = $this->cvmodel->getaa3air($code,$dc3tID);
+                $data['cr'] = $this->cvmodel->getaa3('cr',$code,$dc3tID,$dcID);
+                $data['dc'] = $this->cvmodel->getaa3('dc',$code,$dc3tID,$dcID);
+                $data['faf'] = $this->cvmodel->getaa3('faf',$code,$dc3tID,$dcID);
+                $data['ir'] = $this->cvmodel->getaa3air($code,$dc3tID,$dcID);
                 
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/33Aa3a', $data);
