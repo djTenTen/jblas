@@ -2274,6 +2274,7 @@ class ChapterController extends BaseController{
                 $data['aepapp'] = $this->cvmodel->getaa7aep('aepapp',$code,$dc3tID);
                 $rdata = $this->cvmodel->getaa7aep('aep',$code,$dc3tID);
                 $data['aep'] = json_decode($rdata['question'], true);
+                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
                 
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/37Aa7', $data);

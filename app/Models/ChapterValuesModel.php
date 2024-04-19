@@ -1463,7 +1463,13 @@ class ChapterValuesModel extends Model{
     */
     public function saveaa7isa($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        $where = [
+            'type' => $req['part'],
+            'code' => $req['code'],
+            'c3tID' => $req['c3tID'],
+            'clientID' => $req['cID'],
+        ];
+        $this->db->table($this->tblc3d)->where($where)->delete();
 
         foreach($req['reference'] as $i => $val){
 
@@ -1476,9 +1482,12 @@ class ChapterValuesModel extends Model{
                 'type' =>  $req['part'],
                 'code' =>  $req['code'],
                 'c3tID' => $req['c3tID'],
+                'clientID' => $req['cID'],
+                'firmID' => $req['fID'],
                 'status' => 'Active',
                 'updated_on' => $this->date.' '.$this->time
             ];
+            
             $this->db->table($this->tblc3d)->insert($data);
             
         }
@@ -1490,18 +1499,15 @@ class ChapterValuesModel extends Model{
 
     public function saveaa7aepapp($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        $dacid = $this->crypt->decrypt($req['acid']);
 
         $data = [
             'question' => $req['aep'],
-            'type' =>  $req['part'],
-            'code' =>  $req['code'],
-            'c3tID' => $req['c3tID'],
-            'status' => 'Active',
-            'updated_on' => $this->date.' '.$this->time
+            'updated_on' => $this->date.' '.$this->time,
+            'updated_by' => $req['uID'],
         ];
 
-        if($this->db->table($this->tblc3d)->insert($data)){
+        if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;
@@ -1512,18 +1518,15 @@ class ChapterValuesModel extends Model{
 
     public function saveaa7aep($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        $dacid = $this->crypt->decrypt($req['acid']);
 
         $data = [
             'question' => $req['aep'],
-            'type' =>  $req['part'],
-            'code' =>  $req['code'],
-            'c3tID' => $req['c3tID'],
-            'status' => 'Active',
-            'updated_on' => $this->date.' '.$this->time
+            'updated_on' => $this->date.' '.$this->time,
+            'updated_by' => $req['uID'],
         ];
 
-        if($this->db->table($this->tblc3d)->insert($data)){
+        if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;

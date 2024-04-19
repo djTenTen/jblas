@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -56,8 +56,9 @@
 
 
                 <h6>Summary and Impact of Changes Made to Audit Planning After the Date of the A.E.P’s Approval:</h6>
-                <form action="<?= base_url()?>auditsystem/c3/saveaa7aepapp/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa7aepapp/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aepapp">
+                    <input type="hidden" name="acid" value="<?= $crypt->encrypt($aepapp['acID'])?>">
                     <textarea class="form-control reference" id="reference" cols="30" rows="5" name="question"><?= $aepapp['question']?></textarea>
                     <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
                 </form>
@@ -67,7 +68,7 @@
                 <h6>A summary of significant risks identified, the outcome from audit tests performed on those risks, and the conclusions reached (mandatory section):</h6>
                 <p><i>(Insert additional rows as required)</i></p>
 
-                <form action="<?= base_url()?>auditsystem/c3/saveaa7isa/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="isa315">
                     <table class="table table-bordered">
                         <thead>
@@ -103,7 +104,7 @@
 
 
                 <h6>Areas where consultation has been undertaken </h6>
-                <form action="<?= base_url()?>auditsystem/c3/saveaa7isa/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="consultation">
                     <table class="table table-bordered">
                         <thead>
@@ -140,7 +141,7 @@
 
 
                 <h6>Inconsistencies noted between information provided by the client and other findings of the audit team (mandatory section):</h6>
-                <form action="<?= base_url()?>auditsystem/c3/saveaa7isa/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="inconsistencies">
                     <table class="table table-bordered">
                         <thead>
@@ -177,7 +178,7 @@
 
 
                 <h6>Areas where management refusal to allow the audit team to send a confirmation request has led to alternative procedures being performed (mandatory section):</h6>
-                <form action="<?= base_url()?>auditsystem/c3/saveaa7isa/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="refusal">
                     <table class="table table-bordered">
                         <thead>
@@ -215,7 +216,7 @@
 
 
                 <h6>Departures from requirements of ISA, reasons for the departure and alternative audit procedures performed (mandatory section):</h6>
-                <form action="<?= base_url()?>auditsystem/c3/saveaa7isa/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="departures">
                     <table class="table table-bordered">
                         <thead>
@@ -254,7 +255,7 @@
 
 
                 <h6>Other Issues (including any key outstanding audit matters):</h6>
-                <form action="<?= base_url()?>auditsystem/c3/saveaa7isa/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="other">
                     <table class="table table-bordered">
                         <thead>
@@ -290,7 +291,8 @@
                 </form> 
 
 
-                <form action="<?= base_url()?>auditsystem/c3/saveaa7aep/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa7aep/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <input type="hidden" name="acid" value="<?= $acID?>">
                     <h6>Changes to, or new accounting policies and estimation techniques in the period:</h6>
                     <table class="table table-bordered">
                         <thead>
