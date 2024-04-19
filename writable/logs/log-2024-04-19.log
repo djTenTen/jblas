@@ -1813,3 +1813,77 @@ INFO - 2024-04-19 20:06:02 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-04-19 20:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-19 20:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-19 20:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 20:08:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 20:08:17 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter3\3151Ab4a.php on line 12.
+ 1 APPPATH\Views\client\chapter3\3151Ab4a.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\3151Ab4a.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\3151Ab4a.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/3151Ab4a', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2387): view('client/chapter3/3151Ab4a', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.15.1 Ab4a', '2c3b4c8e6906550503102ba094f2ea9bc10dd14b7f67aad4e5031263b80236f6b8eb09955425343b4ea627fb973324ea5fa651a3419c0439e4f9d9e940fa68abnAtu8lxUVUXn0~AdFiP5EHeO', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 21:48:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 21:48:15 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter3\3151Ab4a.php on line 12.
+ 1 APPPATH\Views\client\chapter3\3151Ab4a.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\3151Ab4a.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\3151Ab4a.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/3151Ab4a', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2387): view('client/chapter3/3151Ab4a', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.15.1 Ab4a', '2c3b4c8e6906550503102ba094f2ea9bc10dd14b7f67aad4e5031263b80236f6b8eb09955425343b4ea627fb973324ea5fa651a3419c0439e4f9d9e940fa68abnAtu8lxUVUXn0~AdFiP5EHeO', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 21:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 21:49:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 21:49:04 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter3\3151Ab4a.php on line 12.
+ 1 APPPATH\Views\client\chapter3\3151Ab4a.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\3151Ab4a.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\3151Ab4a.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/3151Ab4a', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2387): view('client/chapter3/3151Ab4a', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.15.1 Ab4a', '2c3b4c8e6906550503102ba094f2ea9bc10dd14b7f67aad4e5031263b80236f6b8eb09955425343b4ea627fb973324ea5fa651a3419c0439e4f9d9e940fa68abnAtu8lxUVUXn0~AdFiP5EHeO', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 21:49:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 21:49:38 --> ErrorException: Undefined variable $header
+in APPPATH\Views\client\chapter3\3151Ab4a.php on line 52.
+ 1 APPPATH\Views\client\chapter3\3151Ab4a.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\3151Ab4a.php', 52)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\client\\chapter3\\3151Ab4a.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('client/chapter3/3151Ab4a', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(2387): view('client/chapter3/3151Ab4a', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.15.1 Ab4a', '2c3b4c8e6906550503102ba094f2ea9bc10dd14b7f67aad4e5031263b80236f6b8eb09955425343b4ea627fb973324ea5fa651a3419c0439e4f9d9e940fa68abnAtu8lxUVUXn0~AdFiP5EHeO', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 21:49:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 21:55:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 21:55:25 --> ArgumentCountError: Too few arguments to function App\Models\ChapterValuesModel::getab4a(), 2 passed in D:\dhay\xampp\htdocs\jblas\app\Controllers\ChapterController.php on line 2385 and exactly 3 expected
+in APPPATH\Models\ChapterValuesModel.php on line 1969.
+ 1 APPPATH\Controllers\ChapterController.php(2385): App\Models\ChapterValuesModel->getab4a('3.15.1 Ab4a', '60')
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues('3.15.1 Ab4a', '2c3b4c8e6906550503102ba094f2ea9bc10dd14b7f67aad4e5031263b80236f6b8eb09955425343b4ea627fb973324ea5fa651a3419c0439e4f9d9e940fa68abnAtu8lxUVUXn0~AdFiP5EHeO', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 21:55:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 21:57:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 21:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 22:01:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 22:02:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-19 22:02:39 --> ErrorException: Undefined array key "question"
+in APPPATH\Models\ChapterValuesModel.php on line 1986.
+ 1 APPPATH\Models\ChapterValuesModel.php(1986): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "question"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Models\\ChapterValuesModel.php', 1986)
+ 2 APPPATH\Controllers\ChapterValuesController.php(2065): App\Models\ChapterValuesModel->saveab4a([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterValuesController->saveab4a('3.15.1 Ab4a', '2c3b4c8e6906550503102ba094f2ea9bc10dd14b7f67aad4e5031263b80236f6b8eb09955425343b4ea627fb973324ea5fa651a3419c0439e4f9d9e940fa68abnAtu8lxUVUXn0~AdFiP5EHeO', '9a6013f15a5a279eaa1bc41f24531bcb2ed95c6aa1423281cacdd98e39512e551cf2fbb6aab1f214de3501a628019de37fc995ad7af35355272f913053ae5515XxeiVUis9ApEyRfrdEaVZBE=', 'DJ metal works')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterValuesController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-19 22:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 22:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-19 22:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -2382,7 +2382,7 @@ class ChapterController extends BaseController{
 
             case '3.15.1 Ab4a':
                 
-                $data['ab4a'] = $this->cvmodel->getab4a($code,$dc3tID);
+                $data['ab4a'] = $this->cvmodel->getab4a($code,$dc3tID,$dcID);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/3151Ab4a', $data);
                 echo view('includes/Footer');

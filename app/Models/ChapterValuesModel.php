@@ -1966,9 +1966,15 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getab4a($code,$c3tID){
+    public function getab4a($code,$c3tID,$dcID){
 
-        $query = $this->db->table($this->tblc3d)->where(array('type' => 'ab4a', 'code' => $code, 'c3tID' => $c3tID))->get();
+        $where = [
+            'type' => 'ab4a',
+            'code' => $code,
+            'c3tID' => $c3tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc3d)->where($where)->get();
         return $query->getResultArray();
 
     }
@@ -1977,26 +1983,19 @@ class ChapterValuesModel extends Model{
     */
     public function saveab4a($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        foreach($req['yesno'] as $i => $val){
 
-        foreach($req['question'] as $i => $val){
+            $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'reference' => $req['reference'][$i],
-                'extent' => $req['num'][$i],
-                'question' => $req['question'][$i],
                 'yesno' => $req['yesno'][$i],
                 'comment' => $req['comment'][$i],
-                'type' =>  $req['part'],
-                'code' =>  $req['code'],
-                'c3tID' => $req['c3tID'],
-                'status' => 'Active',
-                'updated_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
-            $this->db->table($this->tblc3d)->insert($data);
+            $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
         }
         
         return true;
-       
       
     }
 

@@ -2050,35 +2050,26 @@ class ChapterValuesController extends BaseController{
         AB4a FUNCTIONS
         ----------------------------------------------------------
     */
-    public function saveab4a($code,$head,$c3tID){
-
-        $validationRules = [
-            'question' => 'required'
-        ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
-        }
+    public function saveab4a($code,$c3tID,$cID,$name){
 
         $req = [
-            'reference' => $this->request->getPost('reference'),
-            'num' => $this->request->getPost('num'),
-            'question' => $this->request->getPost('question'),
             'yesno' => $this->request->getPost('yesno'),
             'comment' => $this->request->getPost('comment'),
-            'code' => $code,
-            'part' => $this->request->getPost('part'),
-            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+            'acid' => $this->request->getPost('acid'),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
 
         $res = $this->cvmodel->saveab4a($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
