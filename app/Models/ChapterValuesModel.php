@@ -996,20 +996,15 @@ class ChapterValuesModel extends Model{
 
     public function saveaicpppa($req){
 
-        $this->db->table($this->tblc2d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c2tID' => $req['c2tID']))->delete();
+        foreach($req['comment'] as $i => $val){
 
-        foreach($req['question'] as $i => $val){
-
+            $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'question' => $req['question'][$i],
                 'reference' => $req['comment'][$i],
-                'type' =>  $req['part'],
-                'code' =>  $req['code'],
-                'c2tID' => $req['c2tID'],
-                'status' => 'Active',
-                'updated_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
-            $this->db->table($this->tblc2d)->insert($data);
+            $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
             
         }
 
@@ -1018,50 +1013,22 @@ class ChapterValuesModel extends Model{
 
     public function savercicp($req){
 
-        $this->db->table($this->tblc2d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c2tID' => $req['c2tID']))->delete();
-
-        foreach($req['question'] as $i => $val){
-
+        foreach($req['extent'] as $i => $val){
+            $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'question' => $req['question'][$i],
                 'extent' => $req['extent'][$i],
                 'reference' => $req['comment'][$i],
-                'type' =>  $req['part'],
-                'code' =>  $req['code'],
-                'c2tID' => $req['c2tID'],
-                'status' => 'Active',
-                'updated_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
-            $this->db->table($this->tblc2d)->insert($data);
+            
+            $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
             
         }
 
         return true;
     }
 
-    public function acin($req){
-
-        $query = $this->db->table($this->tblc2d)->where('acID', $req['c2ID'])->get();
-        $r = $query->getRowArray();
-        $stat = '';
-        if($r['status'] == 'Active'){
-            $stat = 'Inactive';
-        }else{
-            $stat = 'Active';
-        }
-        $data = [
-            'status' => $stat,
-            'updated_on' => $this->date.' '.$this->time
-        ];
-        if($this->db->table($this->tblc2d)->where('acID', $req['c2ID'])->update($data)){
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-
-    
 
     
 

@@ -182,7 +182,7 @@ $html .= '
         $html .= '
         <tr>
             <td style="width: 66%;">'.$r['question'].'<br></td>
-            <td class="cent bo" style="width: 18%;">'.$r['yesno'].'</td>
+            <td class="cent bo" style="width: 18%;">'.$r['extent'].'</td>
             <td class="cent bo" style="width: 18%;">'.$r['reference'].'</td>
         </tr>
         ';
