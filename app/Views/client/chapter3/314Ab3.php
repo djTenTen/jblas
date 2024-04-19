@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -65,8 +65,8 @@
                 <h6>2.	Common Changes</h6>
                 <p>Have any of the following points arisen during the period, resulting in disclosure or compliance changes:</p>
 
-                <form action="<?= base_url()?>auditsystem/c3/saveab3/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
-
+                <form action="<?= base_url()?>auditsystem/client/saveab3/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <input type="hidden" name="acid" value="<?= $acID?>">
                 <table class="table table-bordered table-sm">
                     <tbody>
                         <tr>

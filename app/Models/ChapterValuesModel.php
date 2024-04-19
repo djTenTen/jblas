@@ -1787,7 +1787,8 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getab1($code,$c3tID){
+    public function getab1($code,$c3tID,$dcID){
+
 
         $query = $this->db->table($this->tblc3d)->where(array('type' => 'ab1', 'code' => $code, 'c3tID' => $c3tID))->get();
         return $query->getResultArray();
@@ -1835,9 +1836,15 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getab3($code,$c3tID){
+    public function getab3($code,$c3tID,$dcID){
 
-        $query = $this->db->table($this->tblc3d)->where(array('type' => 'ab3', 'code' => $code, 'c3tID' => $c3tID))->get();
+        $where = [
+            'type' => 'ab3',
+            'code' => $code,
+            'c3tID' => $c3tID,
+            'clientID' => $dcID,
+        ];
+        $query = $this->db->table($this->tblc3d)->where($where)->get();
         return $query->getRowArray();
 
     }
@@ -1847,18 +1854,15 @@ class ChapterValuesModel extends Model{
     */
     public function saveab3($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        $dacid = $this->crypt->decrypt($req['acid']);
 
         $data = [
             'question' => $req['question'],
-            'type' =>  $req['part'],
-            'code' =>  $req['code'],
-            'c3tID' => $req['c3tID'],
-            'status' => 'Active',
-            'updated_on' => $this->date.' '.$this->time
+            'updated_on' => $this->date.' '.$this->time,
+            'updated_by' => $req['uID'],
         ];
         
-        if($this->db->table($this->tblc3d)->insert($data)){
+        if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;

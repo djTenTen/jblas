@@ -2356,7 +2356,7 @@ class ChapterController extends BaseController{
 
             case '3.13 Ab1':
 
-                $data['ab1'] = $this->cvmodel->getab1($code,$dc3tID);
+                $data['ab1'] = $this->cvmodel->getab1($code,$dc3tID,$dcID);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/313Ab1', $data);
                 echo view('includes/Footer');
@@ -2364,8 +2364,10 @@ class ChapterController extends BaseController{
 
             case '3.14 Ab3':
 
-                $rdata = $this->cvmodel->getab3($code,$dc3tID);
+                $rdata = $this->cvmodel->getab3($code,$dc3tID ,$dcID);
                 $data['ab3'] = json_decode($rdata['question'], true);
+                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
+
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/314Ab3', $data);
                 echo view('includes/Footer');

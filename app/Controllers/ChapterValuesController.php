@@ -1867,7 +1867,7 @@ class ChapterValuesController extends BaseController{
         AB3 FUNCTIONS
         ----------------------------------------------------------
     */
-    public function saveab3($code,$head,$c3tID){
+    public function saveab3($code,$c3tID,$cID,$name){
 
         $ab3 = [
             'aby1' => $this->request->getPost('aby1'),
@@ -1888,19 +1888,21 @@ class ChapterValuesController extends BaseController{
 
         $req = [
             'question' => json_encode($ab3),
-            'code' => $code,
-            'part' => 'ab3',
-            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID))
+            'acid' => $this->request->getPost('acid'),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
+            'uID' => $this->crypt->decrypt(session()->get('userID')),
+            'fID' => $this->crypt->decrypt(session()->get('firmID')),
         ];
 
         $res = $this->cvmodel->saveab3($req);
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/c3/manage/'.$code.'/'.$head.'/'.$c3tID));
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
