@@ -96,12 +96,12 @@
                                         <div class="dropdown">
                                             <button class="btn btn-primary btn-icon btn-sm" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-tools"></i></button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter3/view/')?><?= $r['code']?>-un/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $name?>">Unadjusted Errors</a>
-                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter3/view/')?><?= $r['code']?>-ad/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $name?>">Adjusted Mades</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter2/setvalues/')?><?= $r['code']?>-un/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $name?>">Unadjusted Errors</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/chapter2/setvalues/')?><?= $r['code']?>-ad/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $name?>">Adjusted Mades</a>
                                             </div>
                                         </div>
                                     <?php }else{?>
-                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/chapter3/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/chapter3/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                 <?php }?>
                                 </td>
                             </tr>

@@ -1886,12 +1886,12 @@ class ChapterController extends BaseController{
 
         /**
         ----------------------------------------------------------
-        Chapter 2 area
+        Chapter 2 Values
         ----------------------------------------------------------
     */
     public function c2setvalues($code,$c2tID,$cID,$name){
 
-        $data['title'] = $code. ' - Chapter 1 Management';
+        $data['title'] = $code. ' - Chapter 2 Management';
         $data['name'] = $name;
         $data['cID'] = $cID;
         $data['c2tID'] = $c2tID;
@@ -2165,7 +2165,259 @@ class ChapterController extends BaseController{
 
 
 
+    /**
+        ----------------------------------------------------------
+        Chapter 3 Values
+        ----------------------------------------------------------
+    */
 
+    public function c3setvalues($code,$c3tID,$cID,$name){
+
+        $data['title'] = $code. ' - Chapter 3 Management';
+        $data['name'] = $name;
+        $data['cID'] = $cID;
+        $data['c3tID'] = $c3tID;
+        $data['code'] = $code;
+
+        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dc3tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID));
+
+        switch ($code) {
+
+            case '3.1 Aa1':
+
+                $data['datapl'] = $this->cvmodel->getaa1('planning',$code,$dc3tID,$dcID);
+                $data['dataaf'] = $this->cvmodel->getaa1('audit finalisation',$code,$dc3tID,$dcID);
+                $rdata = $this->cvmodel->getaa1s3($code, $dc3tID,$dcID);
+                $data['s3'] = json_decode($rdata['question'], true);
+                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
+                
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/31Aa1', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.2 Aa2':
+
+                $rdata = $this->cvmodel->getaa2data($code, $dc3tID);
+                $data['aa2'] = json_decode($rdata['question'], true);
+
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/32Aa2', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.3 Aa3a':
+
+                $data['cr'] = $this->cvmodel->getaa3('cr',$code,$dc3tID);
+                $data['dc'] = $this->cvmodel->getaa3('dc',$code,$dc3tID);
+                $data['faf'] = $this->cvmodel->getaa3('faf',$code,$dc3tID);
+                $data['ir'] = $this->cvmodel->getaa3air($code,$dc3tID);
+                
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/33Aa3a', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.4 Aa3b':
+
+                $data['bp1'] = $this->cvmodel->getaa3b('p1',$code,$dc3tID);
+                $data['bp2'] = $this->cvmodel->getaa3b('p2',$code,$dc3tID);
+                $data['bp3a'] = $this->cvmodel->getaa3b('p3a',$code,$dc3tID);
+                $data['bp3b'] = $this->cvmodel->getaa3b('p3b',$code,$dc3tID);
+
+                $rdata = $this->cvmodel->getaa3bp4($code,$dc3tID);
+                $data['bp4'] = json_decode($rdata['question'], true);
+                
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/34Aa3b', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.5 Aa4':
+
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/35Aa4', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.6.1 Aa5a':
+
+
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/361Aa5a', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.6.2 Aa5b':
+
+                $data['aa5b'] = $this->cvmodel->getaa5b($code,$dc3tID);
+
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/362Aa5b', $data);
+                echo view('includes/Footer');
+                break;  
+
+            case '3.7 Aa7':
+
+                
+                $data['aa7'] = $this->cvmodel->getaa7('isa315',$code,$dc3tID);
+                $data['cons'] = $this->cvmodel->getaa7('consultation',$code,$dc3tID);
+                $data['inc'] = $this->cvmodel->getaa7('inconsistencies',$code,$dc3tID);
+                $data['ref'] = $this->cvmodel->getaa7('refusal',$code,$dc3tID);
+                $data['dep'] = $this->cvmodel->getaa7('departures',$code,$dc3tID);
+                $data['oth'] = $this->cvmodel->getaa7('other',$code,$dc3tID);
+
+
+                $data['aepapp'] = $this->cvmodel->getaa7aep('aepapp',$code,$dc3tID);
+                $rdata = $this->cvmodel->getaa7aep('aep',$code,$dc3tID);
+                $data['aep'] = json_decode($rdata['question'], true);
+                
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/37Aa7', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.8 Aa10':
+
+                $rdata = $this->cvmodel->getaa10($code,$dc3tID);
+                $data['aa10'] = json_decode($rdata['question'], true);
+
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/38Aa10', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.9':
+
+            
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/39', $data);
+                echo view('includes/Footer');
+                break;
+
+            case '3.10 Aa11':
+                
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/310Aa11', $data);
+                echo view('includes/Footer');
+                break;   
+
+            case '3.11':
+
+                
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/311', $data);
+                echo view('includes/Footer');
+                break;   
+
+            case '3.12':
+
+                
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/312', $data);
+                echo view('includes/Footer');
+                break;   
+
+            case '3.13 Ab1':
+
+                $data['ab1'] = $this->cvmodel->getab1($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/313Ab1', $data);
+                echo view('includes/Footer');
+                break;   
+
+            case '3.14 Ab3':
+
+                $rdata = $this->cvmodel->getab3($code,$dc3tID);
+                $data['ab3'] = json_decode($rdata['question'], true);
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/314Ab3', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15 Ab4':
+               
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/315Ab4', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.1 Ab4a':
+                
+                $data['ab4a'] = $this->cvmodel->getab4a($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/3151Ab4a', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.2 Ab4b':
+
+                $data['ab4b'] = $this->cvmodel->getab4b($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/3152Ab4b', $data);
+                echo view('includes/Footer');
+                break; 
+
+
+            case '3.15.3 Ab4c':
+
+                $data['ab4c'] = $this->cvmodel->getab4c($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/3153Ab4c', $data);
+                echo view('includes/Footer');
+                break; 
+
+
+            case '3.15.4 Ab4d':
+
+                $data['ab4d'] = $this->cvmodel->getab4d($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/3154Ab4d', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.5 Ab4e':
+
+                $data['ab4e'] = $this->cvmodel->getab4e($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/3155Ab4e', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.6 Ab4f':
+
+                $data['ab4f'] = $this->cvmodel->getab4f($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/3156Ab4f', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.7 Ab4g':
+
+                $data['ab4g'] = $this->cvmodel->getab4g($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/3157Ab4g', $data);
+                echo view('includes/Footer');
+                break; 
+
+            case '3.15.8 Ab4h':
+
+                $data['ab4h'] = $this->cvmodel->getab4h($code,$dc3tID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter3/3158Ab4h', $data);
+                echo view('includes/Footer');
+                break; 
+
+
+
+            default:
+                # code...
+                break;
+        }
+
+
+    }
 
 
 

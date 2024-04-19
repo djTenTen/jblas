@@ -1,15 +1,15 @@
 <?php  $crypt = \Config\Services::encrypter();?>
 <main>
-<header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
             <div class="page-header-content pt-4">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -34,15 +34,7 @@
                     </div>
                 </div>
             <?php  }?>
-            <?php if (session()->get('success_registration')) { ?>
-                <div class="alert alert-success alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Success Registration</h6>
-                        Contents has been successfully saved.
-                    </div>
-                </div>
-            <?php  }?>
+
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -52,53 +44,33 @@
                     </div>
                 </div>
             <?php  }?>
-            <?php if (session()->get('failed_registration')) { ?>
-                <div class="alert alert-danger alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Failed Registration</h6>
-                        Error registering contents.
-                    </div>
-                </div>
-            <?php  }?>
 
             <div class="card-body">
                 
                 <h4>AUDIT CONTROL RECORD</h4>
-                <form action="<?= base_url()?>auditsystem/c3/saveplaf/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveplaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
 
                     <table class="table table-sm table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>Planning</th>
+                                <th style="width: 50%;">Planning</th>
                                 <th>Yes/No</th>
                                 <th>Reference</th>
-                                <th>Status</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody id="tbody">
                             <input type="hidden" value="planning" name="part">
                             <?php foreach($datapl as $r){?>
                                 <tr>
-                                    <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"><?= $r['question']?></textarea></td>
+                                    <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
                                     <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"><?= $r['extent']?></textarea></td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
-                                    <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
-                                    <td>
-                                        <?php if($r['status'] == 'Active'){?>
-                                            <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
-                                        <?php }else{?>
-                                            <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
-                                        <?php }?>
-                                    </td>
                                 </tr>
                             <?php }?>
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field">Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
 
                 </form>
 
@@ -146,45 +118,33 @@
                 <h6>4.	Pre-sign off completion by Audit Engagement Partner</h6>
 
 
-                <form action="<?= base_url()?>auditsystem/c3/saveplaf/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveplaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
 
                     <table class="table table-sm table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>Planning</th>
+                                <th style="width: 50%;">Planning</th>
                                 <th>Yes/No</th>
                                 <th>Reference</th>
-                                <th>Status</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody id="tbody1">
                             <input type="hidden" value="audit finalisation" name="part">
                             <?php foreach($dataaf as $r){?>
                                 <tr>
-                                    <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"><?= $r['question']?></textarea></td>
+                                    <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
                                     <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"><?= $r['extent']?></textarea></td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
-                                    <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
-                                    <td>
-                                        <?php if($r['status'] == 'Active'){?>
-                                            <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
-                                        <?php }else{?>
-                                            <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
-                                        <?php }?>
-                                    </td>
                                 </tr>
                             <?php }?>
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field1" id="add-field1">Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
 
                 </form>
 
-
-
+ 
                 <h6>Signed Financial Statements and Audit Opinion</h6>
                 <p>Have all outstanding matters noted above, including confirming that the financial statements do not contain material errors or misstatements, been cleared to the satisfaction of the originator (and crossed through to demonstrate this)?………………..........</p>
                 <p>Has a letter of representation, dated on, or immediately prior to the date of the audit report, been obtained, or has an appropriate modification been given?……………………..</p>
@@ -214,7 +174,8 @@
                 <h6>Any YES answers should be fully explained along with the safeguards, which will enable us to accept the re-appointment.</h6>
                 <h6>Significant issues must be discussed with the Ethics Partner and details of the discussion should be documented on file.</h6>
 
-                <form action="<?= base_url()?>auditsystem/c3/saves3/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa1s3/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <input type="hidden" name="acid" value="<?= $acID?>">
                 <table class="table table-sm table-bordered">
                     <thead>
                         <tr>
@@ -247,7 +208,7 @@
                             <td></td>
                             <td></td>
                             <td>
-                            <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                            <button type="submit" class="btn btn-success m-1 float-end">Save</button>
                             </td>
                         </tr>
                     </tbody>
@@ -264,60 +225,6 @@
     </div>
     
 </main>
-
-
-
-<script>
-$(document).ready(function () {
-
-    $(".active-data").on("click", function() {
-        var status = $(this).data('status');
-        var acID = $(this).data('ac-id');
-            $('#myactiveform').attr('action', "<?= base_url('auditsystem/c3/activeinactive/')?><?= $code?>/<?= $header?>/<?= $c3tID?>/" + acID);
-            if (status == 'Active') {
-                $('.msgconfirm').html(`<h3>Are you sure to Disable this content?</h3>`);
-            }else{
-                $('.msgconfirm').html(`<h3>Are you sure to Enable this content?</h3>`);
-            } 
-    });
-    
-    $('#add-field').on('click', function () {
-        // Adding a row inside the tbody.
-        $('#tbody').append(`
-        <tr>
-            <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
-            <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"></textarea></td>
-            <td><textarea class="form-control" cols="30" rows="3" name="reference[]"></textarea></td>
-            <td></td>
-            <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-        </tr>`);
-    });
-
-    $('#tbody').on('click', 'button.remove', function () {
-        $(this).closest('tr').remove();
-    });
-
-    $('#add-field1').on('click', function () {
-        // Adding a row inside the tbody.
-        $('#tbody1').append(`
-        <tr>
-            <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
-            <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"></textarea></td>
-            <td><textarea class="form-control" cols="30" rows="3" name="reference[]"></textarea></td>
-            <td></td>
-            <td><button class="btn btn-danger btn-icon btn-sm remove1" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-        </tr>`);
-    });
-
-    $('#tbody1').on('click', 'button.remove1', function () {
-        $(this).closest('tr').remove();
-    });
-
-
-
-});
-</script>
-
 
 
 
