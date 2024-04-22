@@ -3,6 +3,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\HTTP\ResponseInterface;
+use Config\UploadConfig;
 
 use \App\Models\UserModel;
 
@@ -54,12 +55,20 @@ class UserController extends BaseController{
     }
 
     public function signup(){
+        // $maxsize = 5 * 1024 * 1024;
+        // $validimg = [
+        //     'logo' => 'uploaded[image]|max_size[image,'.$maxsize.']|is_image[image,jpeg,png]'
+        // ];
+        // if (!$this->validate($validimg)) {
+        //     session()->setFlashdata('invalidimage','invalidimage');
+        //     return redirect()->to(site_url('register'));
+        // }
 
         $validationRules = [
             'fname' => 'required',
             'firm' => 'required',
             'email' => 'required',
-            'pass' => 'required'
+            'pass' => 'required',
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
@@ -69,7 +78,12 @@ class UserController extends BaseController{
         $req = [
             'fname' => $this->request->getPost('fname'),
             'firm' => $this->request->getPost('firm'),
+            'address' => $this->request->getPost('address'),
+            'contact' => $this->request->getPost('contact'),
+            'noemployee' => $this->request->getPost('noemployee'),
+            'noclient' => $this->request->getPost('noclient'),
             'email' => $this->request->getPost('email'),
+            'logo' => $this->request->getFile('logo'),
             'pass' => $this->crypt->encrypt($pss)
         ];
 

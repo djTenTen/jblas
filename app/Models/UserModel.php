@@ -22,20 +22,13 @@ class UserModel extends  Model {
 
     public function edituser($duID){
 
-        $query = $this->db->query("select *, tu.status, tp.position, tf.firm
+        $query = $this->db->query("select *, tu.status, tp.position, tf.firm, tf.noemployee, tf.noclient, tf.address, tf.contact
         from {$this->tblu} as tu, {$this->tblf} as tf, {$this->tblp} as tp
         where tu.firm = tf.firmID
         and tu.position = tp.posID
         and tu.userID = {$duID}");
-        $r = $query->getRowArray();
-        $data = [
-            'name' => $r['name'],
-            'email' => $r['email'],
-            'type' =>  $r['type'],
-            'firm' =>  $r['firm'],
-            'position' =>  $r['position']
-        ];
-        return json_encode($data);
+
+        return json_encode($query->getRowArray());
 
     }
 
@@ -77,8 +70,16 @@ class UserModel extends  Model {
 
         }else{
 
+            $newlogoname = $req['logo']->getRandomName();
+            $req['logo']->move(ROOTPATH .'public/uploads/logo', $newlogoname);
+
             $firm = [
                 'firm' => $req['firm'], 
+                'address'  => $req['address'],
+                'contact'  => $req['contact'],
+                'noemployee'  => $req['noemployee'],
+                'noclient'  => $req['noclient'],
+                'logo' =>  $newlogoname,
                 'status' => 'Active',
                 'added_on'=> $this->date.' '.$this->time
             ];
@@ -107,8 +108,6 @@ class UserModel extends  Model {
             }
 
         }
-
-       
 
     }
 
