@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -50,7 +50,7 @@
                 <p><b><u>Scope: </u></b></p>
                 <p>This checklist should be completed for all entities that are applying IFRS 16 Leases for the first time, which is mandatory for accounting periods commencing on/after 1 January 2019.</p>
 
-                <form action="<?= base_url()?>auditsystem/c3/saveab4a/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="ab4h">
                     <table class="table table-bordered">
                         <thead>
@@ -63,97 +63,31 @@
                                 <th colspan="2">Reference</th>
                                 <th>Questions</th>
                                 <th>Y/N/NA</th>
-                                <th>Comments</th>
-                                <th>Action</th>
+                                <th style="width: 30%;">Comments</th>
                             </tr>
                         </thead>
                         <tbody class="tbody">
                             <?php foreach($ab4h as $r){?>
                                 <tr>
-                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
-                                    <td><input type="text" class="form-control" name="num[]" value="<?= $r['extent']?>"></td>
-                                    <td><textarea class="form-control question" id="question" cols="30" rows="3" name="question[]"><?= $r['question']?></textarea></td>
+                                    <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['reference']?></td>
+                                    <td><?= $r['extent']?></td>
+                                    <td><?= $r['question']?></td>
                                     <td><textarea class="form-control yesno" id="yesno" cols="30" rows="3" name="yesno[]"><?= $r['yesno']?></textarea></td>
                                     <td><textarea class="form-control comment" id="comment" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
-                                    <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
                                 </tr>
                             <?php }?>
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+
                 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-           
-           
-           
            
             </div>
         </div>
     </div>
     
 </main>
-
-
-<script>
-$(document).ready(function () {
-
-    $('.add-field').on('click', function () {
-        // Adding a row inside the tbody.
-        var form = $(this).closest('form');
-        var tbody = form.find('tbody');
-        tbody.append(`
-        <tr>
-            <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"></textarea></td>
-            <td><input type="text" class="form-control" name="num[]"></td>
-            <td><textarea class="form-control question" id="question" cols="30" rows="3" name="question[]"></textarea></td>
-            <td><textarea class="form-control yesno" id="yesno" cols="30" rows="3" name="yesno[]"></textarea></td>
-            <td><textarea class="form-control comment" id="comment" cols="30" rows="3" name="comment[]"></textarea></td>
-            <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-        </tr>`);
-    });
-
-    $('.tbody').on('click', 'button.remove', function () {
-        $(this).closest('tr').remove();
-    });
-
-
-});
-</script>
-
-
-
 
 
 
