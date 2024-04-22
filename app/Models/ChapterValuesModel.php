@@ -1390,9 +1390,16 @@ class ChapterValuesModel extends Model{
 
         GET FUNCTIONS
     */
-    public function getaa5b($code,$c3tID){
+    public function getaa5b($code,$c3tID,$dcID){
 
-        $query = $this->db->table($this->tblc3d)->where(array('type' => 'aa5b', 'code' => $code, 'c3tID' => $c3tID))->get();
+        $where = [
+            'type' => 'aa5b',
+            'code' => $code,
+            'c3tID' => $c3tID,
+            'clientID' => $dcID
+        ];
+
+        $query = $this->db->table($this->tblc3d)->where($where)->get();
         return $query->getResultArray();
 
     }
@@ -1402,7 +1409,14 @@ class ChapterValuesModel extends Model{
     */
     public function saveaa5b($req){
 
-        $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
+        $where = [
+            'type' => $req['part'],
+            'code' => $req['code'],
+            'c3tID' => $req['c3tID'],
+            'clientID' => $req['cID']
+        ];
+
+        $this->db->table($this->tblc3d)->where($where)->delete();
 
         foreach($req['reference'] as $i => $val){
 
@@ -1416,9 +1430,13 @@ class ChapterValuesModel extends Model{
                 'type' =>  $req['part'],
                 'code' =>  $req['code'],
                 'c3tID' => $req['c3tID'],
+                'clientID' => $req['cID'],
+                'firmID' => $req['fID'],
                 'status' => 'Active',
-                'updated_on' => $this->date.' '.$this->time
+                'updated_on' => $this->date.' '.$this->time,
+                'updated_by' => $req['uID'],
             ];
+
             $this->db->table($this->tblc3d)->insert($data);
             
         }

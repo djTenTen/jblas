@@ -108,9 +108,9 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('auditsystem/client/saveab4a/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab4a/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveab4checklist/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab4checklist/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveab4/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab4/$1/$2/$3/$4');
-    $routes->post(' auditsystem/client/saveab1/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab1/$1/$2/$3/$4');
-
-   
+    $routes->post('auditsystem/client/saveab1/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab1/$1/$2/$3/$4');
+    $routes->post('auditsystem/client/saveaa5b/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa5b/$1/$2/$3/$4');
+    
     /**
         ----------------------------------------------------------
         CHAPTER 1 AREA

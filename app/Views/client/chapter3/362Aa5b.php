@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -47,13 +47,13 @@
             <div class="card-body">
                 
                 <h4>MANAGEMENT LETTER WORKSHEET [INTERIM / FINAL AUDIT]</h4>
-                <form action="<?= base_url()?>auditsystem/c3/saveaa5b/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
+                <form action="<?= base_url()?>auditsystem/client/saveaa5b/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aa5b">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>SchRef.</th>
-                                <th>Issues Identified </th>
+                                <th>Issues Identified</th>
                                 <th>Client’s Comments</th>
                                 <th>Recommendations</th>
                                 <th>To be Included in Management Letter YES / NO</th>
@@ -71,18 +71,18 @@
                                 <td><textarea class="form-control yesno" id="yesno" cols="30" rows="5" name="yesno[]"><?= $r['yesno']?></textarea></td>
                                 <td><textarea class="form-control result" id="result" cols="30" rows="5" name="result[]"><?= $r['result']?></textarea></td>
                                 <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-                                <td></td>
                             </tr>
                         <?php }?>
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field">Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary m-1 float-end" type="button" data-action="add-field" id="add-field">Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
                 </form>
 
                 <p>This should cover weaknesses in the accounting system and control environment plus comments on the qualitative aspects of the financial statements and the appropriateness of the accounting policies and estimation techniques adopted by the client.</p>
                 <p>All significant issues should be included in the management letter.  For other issues verbal communication is adequate.  If there are no significant issues then this can be confirmed in a “voluntary” management letter or alternatively, the letter of representation can note that a management letter is not necessary ~ note, however, that this is likely to be a rare occurrence when applying IFRS.</p>
+
             </div>
         </div>
     </div>
