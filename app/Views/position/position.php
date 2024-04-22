@@ -101,7 +101,7 @@
                                 </div>
                                 <label class="small mb-1" >Select allowed managements for the position.</label>
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-5">
                                         
                                         <h6>Rules:</h6>
                                         <div class="form-check mb-2">
@@ -117,7 +117,7 @@
                                             <label class="form-check-label" for="acin">Inactive / Active</label>
                                         </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-7">
                                         <h6>Departments:</h6>
                                         <div class="form-check mb-2">
                                             <input class="form-check-input" id="clm" type="checkbox" name="clm" value="Yes"/>
@@ -140,6 +140,24 @@
                                                 <div class="form-check mb-2">
                                                     <input class="form-check-input" id="aud" type="checkbox" name="aud" value="Yes"/>
                                                     <label class="form-check-label" for="aud">Auditor</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" id="workp" type="checkbox" name="workp" value="Yes"/>
+                                            <label class="form-check-label" for="workp">Work Paper</label>
+                                            <div class="col-6">
+                                                <div class="form-check mb-2">
+                                                    <input class="form-check-input" id="preparer" type="checkbox" name="preparer" value="Yes"/>
+                                                    <label class="form-check-label" for="preparer">Preparer</label>
+                                                </div>
+                                                <div class="form-check mb-2">
+                                                    <input class="form-check-input" id="reviewer" type="checkbox" name="reviewer" value="Yes"/>
+                                                    <label class="form-check-label" for="reviewer">Reviewer</label>
+                                                </div>
+                                                <div class="form-check mb-2">
+                                                    <input class="form-check-input" id="audmanager" type="checkbox" name="audmanager" value="Yes"/>
+                                                    <label class="form-check-label" for="audmanager">Audit Manager</label>
                                                 </div>
                                             </div>
                                         </div>

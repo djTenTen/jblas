@@ -13,21 +13,35 @@ $routes->get('/register', 'UserController::register');
 $routes->post('/signup', 'UserController::signup');
 
 $routes->group('', ['filter' => 'auth'], function ($routes) {
-    //$routes->get('/dashboard', 'DashController::dashboard');
-    //Audit System
+
+    /**
+        ----------------------------------------------------------
+        DASHBOARD
+        ----------------------------------------------------------
+    */
     $routes->get('/auditsystem', 'DashController::auditsystem');
 
-    // auditinf firm management
+
+
+   
+    
+  
+    
+    
+    
+    /**
+        ----------------------------------------------------------
+        FIRMS MANAGEMENT
+        ----------------------------------------------------------
+    */
     $routes->get('/auditsystem/firms', 'FirmsController::viewfirms');
     $routes->post('/auditsystem/firms/verify/(:any)', 'FirmsController::verifyfirm/$1');
     
-    // Position Management
-    $routes->get('/auditsystem/position', 'PositionController::viewposition');
-    $routes->post('/auditsystem/position/save', 'PositionController::addposition');
-    $routes->get('/auditsystem/position/edit/(:any)', 'PositionController::editposition/$1');
-    $routes->post('/auditsystem/position/update/(:any)', 'PositionController::updateposition/$1');
-    $routes->post('/auditsystem/position/acin/(:any)', 'PositionController::acin/$1');
-    // Client Management
+    /**
+        ----------------------------------------------------------
+        CLIENT MANAGEMENT
+        ----------------------------------------------------------
+    */
     $routes->get('/auditsystem/client', 'ClientController::viewclient');
     $routes->post('/auditsystem/client/save', 'ClientController::addclient');
     $routes->get('/auditsystem/client/edit/(:any)', 'ClientController::editclient/$1');
@@ -38,31 +52,21 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('/auditsystem/client/setfiles/(:any)', 'ClientController::setfiles/$1');
     $routes->get('/auditsystem/client/defaultfiles/(:any)/', 'ClientController::getdefaultfiles/$1');
     $routes->get('/auditsystem/client/getfiles/(:any)/(:any)', 'ClientController::getfiles/$1/$2');
-    // Auditor Management
-    $routes->get('/auditsystem/auditor', 'AuditorController::viewauditor');
-    $routes->post('/auditsystem/auditor/save', 'AuditorController::addauditor');
-    $routes->get('/auditsystem/auditor/edit/(:any)', 'AuditorController::editauditor/$1');
-    $routes->post('/auditsystem/auditor/update/(:any)', 'AuditorController::updateauditor/$1');
-    $routes->post('/auditsystem/auditor/acin/(:any)', 'AuditorController::acin/$1');
-    // User Management
-    $routes->get('/auditsystem/user', 'UserController::viewusers');
-    $routes->post('/auditsystem/user/save', 'UserController::adduser');
-    $routes->get('/auditsystem/user/edit/(:any)', 'UserController::edituser/$1');
-    $routes->post('/auditsystem/user/update/(:any)', 'UserController::udpateuser/$1');
-    $routes->post('/auditsystem/user/find', 'UserController::findfirm');
-    $routes->post('/auditsystem/user/acin/(:any)', 'UserController::acin/$1');
-
-
-    
-    // viewing of chapter files
+    /**
+        Client set default value AREA
+    */
     $routes->get('/auditsystem/chapter1/view/(:any)/(:any)', 'ChapterController::viewc1pdf/$1/$2');
     $routes->get('/auditsystem/chapter2/view/(:any)/(:any)', 'ChapterController::viewc2pdf/$1/$2');
     $routes->get('/auditsystem/chapter3/view/(:any)/(:any)', 'ChapterController::viewc3pdf/$1/$2');
-    // Setting values of chapter files
+    /**
+        Setting values of chapter files
+    */
     $routes->get('/auditsystem/chapter1/setvalues/(:any)/(:any)/(:any)/(:any)', 'ChapterController::c1setvalues/$1/$2/$3/$4');
     $routes->get('/auditsystem/chapter2/setvalues/(:any)/(:any)/(:any)/(:any)', 'ChapterController::c2setvalues/$1/$2/$3/$4');
     $routes->get('/auditsystem/chapter3/setvalues/(:any)/(:any)/(:any)/(:any)', 'ChapterController::c3setvalues/$1/$2/$3/$4');
-    // Saving Values chapter 1
+    /**
+        Saving Values chapter 1
+    */
     $routes->post('auditsystem/client/saveac1/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac1/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveac1eqr/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac1eqr/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveac2/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac2/$1/$2/$3/$4');
@@ -82,11 +86,15 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('auditsystem/client/saveac10s2/(:any)/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac10s2/$1/$2/$3/$4/$5');
     $routes->post('auditsystem/client/saveac10summ/(:any)/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac10summ/$1/$2/$3/$4/$5');
     $routes->post('auditsystem/client/saveac11/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveac11/$1/$2/$3/$4');
-    // Saving Values chapter 2
+    /**
+        Saving Values chapter 2
+    */
     $routes->post('auditsystem/client/savec2/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::savequestions/$1/$2/$3/$4');
     $routes->post('auditsystem/client/aicpppa/save/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaicpppa/$1/$2/$3/$4');
     $routes->post('auditsystem/client/rcicp/save/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::savercicp/$1/$2/$3/$4');
-    // Saving Values chapter 3
+    /**
+        Saving Values chapter 3
+    */
     $routes->post('auditsystem/client/saveplaf/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveplaf/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveaa1s3/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa1s3/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveaa2/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa2/$1/$2/$3/$4');
@@ -111,9 +119,45 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('auditsystem/client/saveab1/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab1/$1/$2/$3/$4');
     $routes->post('auditsystem/client/saveaa5b/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa5b/$1/$2/$3/$4');
     
+
     /**
         ----------------------------------------------------------
-        CHAPTER 1 AREA
+        AUDITOR MANAGEMENT
+        ----------------------------------------------------------
+    */
+    $routes->get('/auditsystem/auditor', 'AuditorController::viewauditor');
+    $routes->post('/auditsystem/auditor/save', 'AuditorController::addauditor');
+    $routes->get('/auditsystem/auditor/edit/(:any)', 'AuditorController::editauditor/$1');
+    $routes->post('/auditsystem/auditor/update/(:any)', 'AuditorController::updateauditor/$1');
+    $routes->post('/auditsystem/auditor/acin/(:any)', 'AuditorController::acin/$1');
+
+    /**
+        ----------------------------------------------------------
+        USER MANAGEMENT
+        ----------------------------------------------------------
+    */
+    $routes->get('/auditsystem/user', 'UserController::viewusers');
+    $routes->post('/auditsystem/user/save', 'UserController::adduser');
+    $routes->get('/auditsystem/user/edit/(:any)', 'UserController::edituser/$1');
+    $routes->post('/auditsystem/user/update/(:any)', 'UserController::udpateuser/$1');
+    $routes->post('/auditsystem/user/find', 'UserController::findfirm');
+    $routes->post('/auditsystem/user/acin/(:any)', 'UserController::acin/$1');
+
+    /**
+        ----------------------------------------------------------
+        POSITION MANAGEMENT
+        ----------------------------------------------------------
+    */
+    $routes->get('/auditsystem/position', 'PositionController::viewposition');
+    $routes->post('/auditsystem/position/save', 'PositionController::addposition');
+    $routes->get('/auditsystem/position/edit/(:any)', 'PositionController::editposition/$1');
+    $routes->post('/auditsystem/position/update/(:any)', 'PositionController::updateposition/$1');
+    $routes->post('/auditsystem/position/acin/(:any)', 'PositionController::acin/$1');
+
+
+    /**
+        ----------------------------------------------------------
+        Admin Defaults AREA
         ----------------------------------------------------------
     */
     // CHAPTER 1 VIEWS
@@ -150,11 +194,6 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('/auditsystem/c1/saveac10summ/(:any)/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac10summ/$1/$2/$3/$4');
     //CHAPTER 1 AC11 ROUTES
     $routes->post('/auditsystem/c1/saveac11/(:any)/(:any)/(:any)', 'Chapter1Controller::saveac11/$1/$2/$3');
-    /**
-        ----------------------------------------------------------
-        CHAPTER 2 AREA
-        ----------------------------------------------------------
-    */
     // CHAPTER 2 VIEWS
     $routes->get('/auditsystem/c2/view', 'ChapterController::viewchapter2');
     $routes->get('/auditsystem/c2/manage/(:any)/(:any)/(:any)', 'ChapterController::managechapter2/$1/$2/$3');

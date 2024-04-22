@@ -211,21 +211,6 @@
                             Dashboards
                         </a>
                         <?php }?>
-                        <!-- <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
-                            Dashboards
-                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseDashboards" data-bs-parent="#accordionSidenav">
-                            <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                <a class="nav-link" href="dashboard-1.html">
-                                    Default
-                                    <span class="badge bg-primary-soft text-primary ms-auto">Updated</span>
-                                </a>
-                                <a class="nav-link" href="dashboard-2.html">Multipurpose</a>
-                                <a class="nav-link" href="dashboard-3.html">Affiliate</a>
-                            </nav>
-                        </div> -->
 
                         <div class="sidenav-menu-heading">Managements</div>
  
@@ -246,6 +231,7 @@
                                 </nav>
                             </div>
                         <?php }?>
+                       
                         <?php if(session()->get('allowed')->audm == "Yes"){?>
                         <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseAuditor" aria-expanded="false" aria-controls="collapseAuditor">
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
@@ -260,6 +246,43 @@
                             </nav>
                         </div>
                         <?php }?>
+
+                        <div class="sidenav-menu-heading">Work Paper</div>
+                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePrepare" aria-expanded="false" aria-controls="collapsePrepare">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Prepare
+                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePrepare" data-bs-parent="#accordionSidenav">
+                            <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                                <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/prepare">Prepare Work Paper</a>
+                            </nav>
+                        </div>
+
+
+                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseReview" aria-expanded="false" aria-controls="collapseReview">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Review
+                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseReview" data-bs-parent="#accordionSidenav">
+                            <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                                <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/revievw">Check Work Paper</a>
+                            </nav>
+                        </div>
+
+                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseAudManager" aria-expanded="false" aria-controls="collapseAudManager">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Audit Manager
+                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseAudManager" data-bs-parent="#accordionSidenav">
+                            <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                                <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/initiate">Initiate</a>
+                                <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/revievw">View</a>
+                                <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/Approved">Approved</a>
+                            </nav>
+                        </div>
 
 
                         <?php if(session()->get('allowed')->sett == "Yes"){?>
