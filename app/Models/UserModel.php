@@ -34,7 +34,7 @@ class UserModel extends  Model {
 
     public function getusers($uID){
 
-        $query = $this->db->query("select *, tu.status, tp.position
+        $query = $this->db->query("select *, tu.status, tp.position,tu.added_on, tu.updated_on
         from {$this->tblu} as tu, {$this->tblf} as tf, {$this->tblp} as tp
         where tu.firm = tf.firmID
         and tu.position = tp.posID

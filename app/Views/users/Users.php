@@ -78,7 +78,6 @@
                         <th>Status</th>
                         <th>Added On</th>
                         <th>Last Update</th>
-     
                         <th>Action</th>
                     </tr>
                 </thead>
