@@ -2424,7 +2424,7 @@ class ChapterController extends BaseController{
             
             case '3.15.1 Ab4a':
                 
-                $data['ab4a'] = $this->cvmodel->getab4a($code,$dc3tID,$dcID);
+                $data['ab4a'] = $this->cvmodel->getab4a('ab4a',$code,$dc3tID,$dcID);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/3151Ab4a', $data);
                 echo view('includes/Footer');
@@ -2432,7 +2432,8 @@ class ChapterController extends BaseController{
 
             case '3.15.2 Ab4b':
 
-                $data['ab4b'] = $this->cvmodel->getab4b($code,$dc3tID);
+                $data['ab4b'] = $this->cvmodel->getab4a('ab4b',$code,$dc3tID,$dcID);
+
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/3152Ab4b', $data);
                 echo view('includes/Footer');
@@ -2441,7 +2442,7 @@ class ChapterController extends BaseController{
 
             case '3.15.3 Ab4c':
 
-                $data['ab4c'] = $this->cvmodel->getab4c($code,$dc3tID);
+                $data['ab4c'] = $this->cvmodel->getab4a('ab4c',$code,$dc3tID,$dcID);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/3153Ab4c', $data);
                 echo view('includes/Footer');
@@ -2450,7 +2451,7 @@ class ChapterController extends BaseController{
 
             case '3.15.4 Ab4d':
 
-                $data['ab4d'] = $this->cvmodel->getab4d($code,$dc3tID);
+                $data['ab4d'] = $this->cvmodel->getab4a('ab4d',$code,$dc3tID,$dcID);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/3154Ab4d', $data);
                 echo view('includes/Footer');
@@ -2458,7 +2459,7 @@ class ChapterController extends BaseController{
 
             case '3.15.5 Ab4e':
 
-                $data['ab4e'] = $this->cvmodel->getab4e($code,$dc3tID);
+                $data['ab4e'] = $this->cvmodel->getab4a('ab4e',$code,$dc3tID,$dcID);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/3155Ab4e', $data);
                 echo view('includes/Footer');
@@ -2466,7 +2467,7 @@ class ChapterController extends BaseController{
 
             case '3.15.6 Ab4f':
 
-                $data['ab4f'] = $this->cvmodel->getab4f($code,$dc3tID);
+                $data['ab4f'] = $this->cvmodel->getab4a('ab4f',$code,$dc3tID,$dcID);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/3156Ab4f', $data);
                 echo view('includes/Footer');
@@ -2474,7 +2475,7 @@ class ChapterController extends BaseController{
 
             case '3.15.7 Ab4g':
 
-                $data['ab4g'] = $this->cvmodel->getab4g($code,$dc3tID);
+                $data['ab4g'] = $this->cvmodel->getab4a('ab4g',$code,$dc3tID,$dcID);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/3157Ab4g', $data);
                 echo view('includes/Footer');
@@ -2482,7 +2483,7 @@ class ChapterController extends BaseController{
 
             case '3.15.8 Ab4h':
 
-                $data['ab4h'] = $this->cvmodel->getab4h($code,$dc3tID);
+                $data['ab4h'] = $this->cvmodel->getab4a('ab4h',$code,$dc3tID,$dcID);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/3158Ab4h', $data);
                 echo view('includes/Footer');
