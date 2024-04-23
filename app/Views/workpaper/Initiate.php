@@ -59,7 +59,7 @@
             <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#adduser">Add Work Paper</button>
             <?php  }?>
 
-            <table class="table table-hover table-sm">
+            <table class="table table-hover table-sm" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>Client</th>
