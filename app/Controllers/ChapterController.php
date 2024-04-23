@@ -2632,7 +2632,7 @@ class ChapterController extends BaseController{
                     'roidata','dcodata','prdata','oadata'
                 ];
                 foreach($rowdata as $row){
-                    $rdata = $this->wpmodel->getac7($code,$dc1tID, $row,$dcID);
+                    $rdata = $this->wpmodel->getac7($code,$dc1tID,$row,$dcID,$dwpID);
                     $data[$row] = json_decode($rdata['question'], true);
                 }
                 echo view('includes/Header', $data);
@@ -2648,7 +2648,7 @@ class ChapterController extends BaseController{
                     'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
                 ];
                 foreach($rowdata as $row){
-                    $data[$row] = $this->wpmodel->getac8($code,$dc1tID,$row,$dcID);
+                    $data[$row] = $this->wpmodel->getac8($code,$dc1tID,$row,$dcID,$dwpID);
                 }
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/ac8', $data);
@@ -2683,9 +2683,9 @@ class ChapterController extends BaseController{
                 $s = explode('-', $code);
                 $data ['sheet'] = $s[1];
                 $data['code'] = $s[0];
-                $data['cu'] = $this->wpmodel->getac10cu($dc1tID,$s[1].'cu',$dcID);
-                $data['ac10s1'] = $this->wpmodel->getac10s1data($dc1tID,$s[1],$dcID);
-                $data['ac10s2'] = $this->wpmodel->getac10s2data($dc1tID,$s[1],$dcID);
+                $data['cu'] = $this->wpmodel->getac10cu($dc1tID,$s[1].'cu',$dcID,$dwpID);
+                $data['ac10s1'] = $this->wpmodel->getac10s1data($dc1tID,$s[1],$dcID,$dwpID);
+                $data['ac10s2'] = $this->wpmodel->getac10s2data($dc1tID,$s[1],$dcID,$dwpID);
 
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac10', $data);
@@ -2696,40 +2696,40 @@ class ChapterController extends BaseController{
                 $s = explode('-', $code);
                 $data ['sheet'] = $s[1];
                 $data['code'] = $s[0];
-                $data['nmk_tgb'] = $this->wpmodel->getdatacount($dc1tID,'Tangibles',$dcID);
-                $data['nmk_ppe'] = $this->wpmodel->getdatacount($dc1tID,'PPE',$dcID);
-                $data['nmk_invmt'] = $this->wpmodel->getdatacount($dc1tID,'Investments',$dcID);
-                $data['nmk_invtr'] = $this->wpmodel->getdatacount($dc1tID,'Inventory',$dcID);
-                $data['nmk_tr'] = $this->wpmodel->getdatacount($dc1tID,'Trade Receivables',$dcID);
-                $data['nmk_or'] = $this->wpmodel->getdatacount($dc1tID,'Other Receivables',$dcID);
-                $data['nmk_bac'] = $this->wpmodel->getdatacount($dc1tID,'Bank and Cash',$dcID);
-                $data['nmk_tp'] = $this->wpmodel->getdatacount($dc1tID,'Trade Payables',$dcID);
-                $data['nmk_op'] = $this->wpmodel->getdatacount($dc1tID,'Other Payables',$dcID);
-                $data['nmk_prov'] = $this->wpmodel->getdatacount($dc1tID,'Provisions',$dcID);
-                $data['nmk_rev'] = $this->wpmodel->getdatacount($dc1tID,'Revenue',$dcID);
-                $data['nmk_cst'] = $this->wpmodel->getdatacount($dc1tID,'Costs',$dcID);
-                $data['nmk_pr'] = $this->wpmodel->getdatacount($dc1tID,'Payroll',$dcID);
+                $data['nmk_tgb'] = $this->wpmodel->getdatacount($dc1tID,'Tangibles',$dcID,$dwpID);
+                $data['nmk_ppe'] = $this->wpmodel->getdatacount($dc1tID,'PPE',$dcID,$dwpID);
+                $data['nmk_invmt'] = $this->wpmodel->getdatacount($dc1tID,'Investments',$dcID,$dwpID);
+                $data['nmk_invtr'] = $this->wpmodel->getdatacount($dc1tID,'Inventory',$dcID,$dwpID);
+                $data['nmk_tr'] = $this->wpmodel->getdatacount($dc1tID,'Trade Receivables',$dcID,$dwpID);
+                $data['nmk_or'] = $this->wpmodel->getdatacount($dc1tID,'Other Receivables',$dcID,$dwpID);
+                $data['nmk_bac'] = $this->wpmodel->getdatacount($dc1tID,'Bank and Cash',$dcID,$dwpID);
+                $data['nmk_tp'] = $this->wpmodel->getdatacount($dc1tID,'Trade Payables',$dcID,$dwpID);
+                $data['nmk_op'] = $this->wpmodel->getdatacount($dc1tID,'Other Payables',$dcID,$dwpID);
+                $data['nmk_prov'] = $this->wpmodel->getdatacount($dc1tID,'Provisions',$dcID,$dwpID);
+                $data['nmk_rev'] = $this->wpmodel->getdatacount($dc1tID,'Revenue',$dcID,$dwpID);
+                $data['nmk_cst'] = $this->wpmodel->getdatacount($dc1tID,'Costs',$dcID,$dwpID);
+                $data['nmk_pr'] = $this->wpmodel->getdatacount($dc1tID,'Payroll',$dcID,$dwpID);
                 
-                $data['vop_tgb'] = $this->wpmodel->getsumation($dc1tID,'Tangibles',$dcID);
-                $data['vop_ppe'] = $this->wpmodel->getsumation($dc1tID,'PPE',$dcID);
-                $data['vop_invmt'] = $this->wpmodel->getsumation($dc1tID,'Investments',$dcID);
-                $data['vop_invtr'] = $this->wpmodel->getsumation($dc1tID,'Inventory',$dcID);
-                $data['vop_tr'] = $this->wpmodel->getsumation($dc1tID,'Trade Receivables',$dcID);
-                $data['vop_or'] = $this->wpmodel->getsumation($dc1tID,'Other Receivables',$dcID);
-                $data['vop_bac'] = $this->wpmodel->getsumation($dc1tID,'Bank and Cash',$dcID);
-                $data['vop_tp'] = $this->wpmodel->getsumation($dc1tID,'Trade Payables',$dcID);
-                $data['vop_op'] = $this->wpmodel->getsumation($dc1tID,'Other Payables',$dcID);
-                $data['vop_prov'] = $this->wpmodel->getsumation($dc1tID,'Provisions',$dcID);
-                $data['vop_rev'] = $this->wpmodel->getsumation($dc1tID,'Revenue',$dcID);
-                $data['vop_cst'] = $this->wpmodel->getsumation($dc1tID,'Costs',$dcID);
-                $data['vop_pr'] = $this->wpmodel->getsumation($dc1tID,'Payroll',$dcID);
+                $data['vop_tgb'] = $this->wpmodel->getsumation($dc1tID,'Tangibles',$dcID,$dwpID);
+                $data['vop_ppe'] = $this->wpmodel->getsumation($dc1tID,'PPE',$dcID,$dwpID);
+                $data['vop_invmt'] = $this->wpmodel->getsumation($dc1tID,'Investments',$dcID,$dwpID);
+                $data['vop_invtr'] = $this->wpmodel->getsumation($dc1tID,'Inventory',$dcID,$dwpID);
+                $data['vop_tr'] = $this->wpmodel->getsumation($dc1tID,'Trade Receivables',$dcID,$dwpID);
+                $data['vop_or'] = $this->wpmodel->getsumation($dc1tID,'Other Receivables',$dcID,$dwpID);
+                $data['vop_bac'] = $this->wpmodel->getsumation($dc1tID,'Bank and Cash',$dcID,$dwpID);
+                $data['vop_tp'] = $this->wpmodel->getsumation($dc1tID,'Trade Payables',$dcID,$dwpID);
+                $data['vop_op'] = $this->wpmodel->getsumation($dc1tID,'Other Payables',$dcID,$dwpID);
+                $data['vop_prov'] = $this->wpmodel->getsumation($dc1tID,'Provisions',$dcID,$dwpID);
+                $data['vop_rev'] = $this->wpmodel->getsumation($dc1tID,'Revenue',$dcID,$dwpID);
+                $data['vop_cst'] = $this->wpmodel->getsumation($dc1tID,'Costs',$dcID,$dwpID);
+                $data['vop_pr'] = $this->wpmodel->getsumation($dc1tID,'Payroll',$dcID,$dwpID);
                 
-                $data['mat'] = $this->wpmodel->getsummarydata($dc1tID,'material',$dcID);
+                $data['mat'] = $this->wpmodel->getsummarydata($dc1tID,'material',$dcID,$dwpID);
 
                 $rowdata = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
 
                 foreach($rowdata as $row){
-                    $rdata = $this->wpmodel->getsummarydata($dc1tID, $row,$dcID);
+                    $rdata = $this->wpmodel->getsummarydata($dc1tID, $row,$dcID,$dwpID);
                     $data[$row] = json_decode($rdata['question'], true);
                 }
 

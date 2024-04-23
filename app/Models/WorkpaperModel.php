@@ -343,7 +343,8 @@ class WorkpaperModel extends  Model {
             'code' => $code, 
             'type' => 'cacf',
             'c1tID' => $c1tID,
-            'clientID' => $dcID
+            'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query =  $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
@@ -355,7 +356,8 @@ class WorkpaperModel extends  Model {
             'code' => $code, 
             'type' => 'eqr', 
             'c1tID' => $c1tID, 
-            'clientID' => $dcID
+            'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query =  $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
@@ -419,7 +421,8 @@ class WorkpaperModel extends  Model {
             'code' => $code, 
             'type' => 'pans',
             'c1tID' => $c1tID, 
-            'clientID' => $dcID
+            'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query =  $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
@@ -432,7 +435,8 @@ class WorkpaperModel extends  Model {
             'code' => $code, 
             'type' => 'ac2aep',
             'c1tID' => $c1tID, 
-            'clientID' => $dcID
+            'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query =  $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
@@ -506,7 +510,8 @@ class WorkpaperModel extends  Model {
             'code' => $code, 
             'type' => $part,
             'c1tID' => $c1tID, 
-            'clientID' => $dcID
+            'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
@@ -559,7 +564,8 @@ class WorkpaperModel extends  Model {
             'code' => $code, 
             'type' => 'ppr',
             'c1tID' => $c1tID, 
-            'clientID' => $dcID
+            'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
@@ -571,7 +577,8 @@ class WorkpaperModel extends  Model {
             'code' => $code, 
             'type' => 'ac4sod',
             'c1tID' => $c1tID, 
-            'clientID' => $dcID
+            'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
@@ -637,7 +644,8 @@ class WorkpaperModel extends  Model {
             'code' => $code, 
             'type' => 'rescon',
             'c1tID' => $c1tID, 
-            'clientID' => $dcID
+            'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where )->get();
         return $query->getRowArray();
@@ -687,7 +695,8 @@ class WorkpaperModel extends  Model {
             'code' => $code, 
             'type' => $part,
             'c1tID' => $c1tID, 
-            'clientID' => $dcID
+            'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
@@ -699,7 +708,8 @@ class WorkpaperModel extends  Model {
             'code' => $code, 
             'type' => 'ac6s12',
             'c1tID' => $c1tID, 
-            'clientID' => $dcID
+            'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
@@ -751,6 +761,7 @@ class WorkpaperModel extends  Model {
             'code' => $req['code'], 
             'c1tID' => $req['c1tID'],
             'clientID' => $req['cID'],
+            'workpaper' => $req['wpID'],
         ];
 
         $this->db->table($this->tblc1)->where($where)->delete();
@@ -767,6 +778,7 @@ class WorkpaperModel extends  Model {
                 'reliance' => $req['reliancecontrol'][$i],
                 'code' => $req['code'],
                 'c1tID' => $req['c1tID'],
+                'workpaper' => $req['wpID'],
                 'firmID' => $req['fID'],
                 'clientID' => $req['cID'],
                 'type' => $req['part'],
@@ -796,13 +808,14 @@ class WorkpaperModel extends  Model {
 
         GET FUNCTIONS
     */
-    public function getac7($code,$c1tID,$part,$dcID){
+    public function getac7($code,$c1tID,$part,$dcID,$dwpID){
 
         $where = [
             'type' => $part, 
             'code' => $code, 
             'c1tID' => $c1tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
@@ -823,6 +836,7 @@ class WorkpaperModel extends  Model {
             'type' => $req['part'],
             'c1tID' => $req['c1tID'],
             'clientID' => $req['cID'],
+            'workpaper' => $req['wpID'],
         ];
         if($this->db->table($this->tblc1)->where($where)->update($data)){
             return true;
@@ -848,13 +862,14 @@ class WorkpaperModel extends  Model {
 
         GET FUNCTIONS
     */
-    public function getac8($code,$c1tID,$part,$dcID){
+    public function getac8($code,$c1tID,$part,$dcID,$dwpID){
 
         $where = [
             'type' => $part, 
             'code' => $code, 
             'c1tID' => $c1tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
@@ -904,6 +919,7 @@ class WorkpaperModel extends  Model {
             'code' => $code, 
             'c1tID' => $c1tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
@@ -947,7 +963,7 @@ class WorkpaperModel extends  Model {
 
         GET FUNCTIONS
     */
-    public function getac10s1data($c1tID,$part,$dcID){
+    public function getac10s1data($c1tID,$part,$dcID,$dwpID){
 
         $where = [
             'type' => $part, 
@@ -955,12 +971,13 @@ class WorkpaperModel extends  Model {
             'question' => 'section1',
             'c1tID' => $c1tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
 
     }
-    public function getac10s2data($c1tID,$part,$dcID){
+    public function getac10s2data($c1tID,$part,$dcID,$dwpID){
 
         $where = [
             'type' => $part, 
@@ -968,48 +985,53 @@ class WorkpaperModel extends  Model {
             'question' => 'section2',
             'c1tID' => $c1tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
 
     }
-    public function getac10cu($c1tID,$part,$dcID){
+    public function getac10cu($c1tID,$part,$dcID,$dwpID){
 
         $where = [
             'type' => $part, 
             'code' => 'ac10', 
             'c1tID' => $c1tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
 
     }
-    public function getdatacount($c1tID,$part,$dcID){
+    public function getdatacount($c1tID,$part,$dcID,$dwpID){
 
         $where = [
             'type' => $part, 
             'code' => 'ac10', 
             'c1tID' => $c1tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where);
         return $query->countAllResults();
 
     }
-    public function getsumation($c1tID,$part,$dcID){
+    public function getsumation($c1tID,$part,$dcID,$dwpID){
 
         $where1 = [
             'type' => $part, 
             'code' => 'ac10', 
             'c1tID' => $c1tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $where2 = [
             'type' => $part.'cu', 
             'code' => 'ac10', 
             'c1tID' => $c1tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $total = $this->db->table($this->tblc1)->selectSum('balance')->where($where1)->get()->getRowArray();
         $cu = $this->db->table($this->tblc1)->where($where2)->get()->getRowArray();
@@ -1017,13 +1039,14 @@ class WorkpaperModel extends  Model {
         return $cu['question'] - $total['balance'];
 
     }
-    public function getsummarydata($c1tID,$part,$dcID){
+    public function getsummarydata($c1tID,$part,$dcID,$dwpID){
 
         $where2 = [
             'type' => $part.'data', 
             'code' => 'ac10', 
             'c1tID' => $c1tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where2)->get();
         return $query->getRowArray();
@@ -1048,6 +1071,7 @@ class WorkpaperModel extends  Model {
                 'code' => $ref['code'],
                 'c1tID' => $ref['c1tID'],
                 'clientID' =>$ref['cID'],
+                'workpaper' => $req['wpID'],
             ];
             $this->db->table($this->tblc1)->where($where1)->update($data);
 
@@ -1058,6 +1082,7 @@ class WorkpaperModel extends  Model {
             'code' => $ref['code'],
             'c1tID' => $ref['c1tID'],
             'clientID' =>$ref['cID'],
+            'workpaper' => $req['wpID'],
         ];
         $this->db->table($this->tblc1)->where($where2)->update(array('question' => $ref['materiality']));
 
@@ -1072,6 +1097,7 @@ class WorkpaperModel extends  Model {
             'question' => 'section1',
             'c1tID' => $req['c1tID'],
             'clientID' => $req['cID'],
+            'workpaper' => $req['wpID'],
         ];
         $this->db->table($this->tblc1)->where($where)->delete();
 
@@ -1085,6 +1111,7 @@ class WorkpaperModel extends  Model {
                 'code' =>  $req['code'],
                 'c1tID' => $req['c1tID'],
                 'clientID' => $req['cID'],
+                'workpaper' => $req['wpID'],
                 'firmID' => $req['fID'],
                 'question' => 'section1',
                 'updated_on' => $this->date.' '.$this->time,
@@ -1105,6 +1132,7 @@ class WorkpaperModel extends  Model {
             'question' => 'section2',
             'c1tID' => $req['c1tID'],
             'clientID' => $req['cID'],
+            'workpaper' => $req['wpID'],
         ];
     
         $this->db->table($this->tblc1)->where($where)->delete();
@@ -1120,6 +1148,7 @@ class WorkpaperModel extends  Model {
                 'code' =>  $req['code'],
                 'c1tID' => $req['c1tID'],
                 'clientID' => $req['cID'],
+                'workpaper' => $req['wpID'],
                 'firmID' => $req['fID'],
                 'question' => 'section2',
                 'updated_on' => $this->date.' '.$this->time,
@@ -1172,6 +1201,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c1tID' => $c1tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
@@ -1242,6 +1272,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c2tID' => $c2tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc2)->where($where)->get();
         return $query->getResultArray();
@@ -1255,6 +1286,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c2tID' => $c2tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
 
         $query = $this->db->table($this->tblc2)->where($where)->get();
@@ -1269,6 +1301,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c2tID' => $c2tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc2)->where($where)->get();
         return $query->getResultArray();
@@ -1382,6 +1415,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
 
         $query = $this->db->table($this->tblc3)->where($where)->get();
@@ -1395,6 +1429,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -1466,6 +1501,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -1516,6 +1552,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
@@ -1529,6 +1566,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -1618,6 +1656,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
@@ -1631,6 +1670,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -1700,7 +1740,8 @@ class WorkpaperModel extends  Model {
             'type' => 'aa5b',
             'code' => $code,
             'c3tID' => $c3tID,
-            'clientID' => $dcID
+            'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
 
         $query = $this->db->table($this->tblc3)->where($where)->get();
@@ -1717,7 +1758,8 @@ class WorkpaperModel extends  Model {
             'type' => $req['part'],
             'code' => $req['code'],
             'c3tID' => $req['c3tID'],
-            'clientID' => $req['cID']
+            'clientID' => $req['cID'],
+            'workpaper' => $req['wpID']
         ];
 
         $this->db->table($this->tblc3)->where($where)->delete();
@@ -1734,6 +1776,7 @@ class WorkpaperModel extends  Model {
                 'type' =>  $req['part'],
                 'code' =>  $req['code'],
                 'c3tID' => $req['c3tID'],
+                'workpaper' => $req['wpID'],
                 'clientID' => $req['cID'],
                 'firmID' => $req['fID'],
                 'status' => 'Active',
@@ -1773,6 +1816,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
@@ -1786,6 +1830,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -1802,6 +1847,7 @@ class WorkpaperModel extends  Model {
             'code' => $req['code'],
             'c3tID' => $req['c3tID'],
             'clientID' => $req['cID'],
+            'workpaper' => $req['wpID']
         ];
         $this->db->table($this->tblc3)->where($where)->delete();
 
@@ -1817,6 +1863,7 @@ class WorkpaperModel extends  Model {
                 'code' =>  $req['code'],
                 'c3tID' => $req['c3tID'],
                 'clientID' => $req['cID'],
+                'workpaper' => $req['wpID'],
                 'firmID' => $req['fID'],
                 'status' => 'Active',
                 'updated_on' => $this->date.' '.$this->time
@@ -1892,6 +1939,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -1943,6 +1991,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
@@ -1956,6 +2005,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -1969,6 +2019,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -1985,6 +2036,7 @@ class WorkpaperModel extends  Model {
             'code' => $req['code'],
             'c3tID' => $req['c3tID'],
             'clientID' => $req['cID'],
+            'workpaper' => $req['wpID'],
         ];
         $this->db->table($this->tblc3)->where($where)->delete();
 
@@ -2002,6 +2054,7 @@ class WorkpaperModel extends  Model {
                 'code' =>  $req['code'],
                 'c3tID' => $req['c3tID'],
                 'clientID' => $req['cID'],
+                'workpaper' => $req['wpID'],
                 'firmID' => $req['fID'],
                 'status' => 'Active',
                 'updated_on' => $this->date.' '.$this->time,
@@ -2040,6 +2093,7 @@ class WorkpaperModel extends  Model {
                 'code' =>  $req['code'],
                 'c3tID' => $req['c3tID'],
                 'clientID' => $req['cID'],
+                'workpaper' => $req['wpID'],
                 'firmID' => $req['fID'],
                 'status' => 'Active',
                 'updated_on' => $this->date.' '.$this->time,
@@ -2116,6 +2170,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
 
         $query = $this->db->table($this->tblc3)->where($where)->get();
@@ -2168,6 +2223,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -2218,19 +2274,21 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
 
     }
 
-    public function getab4checklist($part,$code,$c3tID,$dcID){
+    public function getab4checklist($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
             'type' => $part,
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
 
         $query = $this->db->table($this->tblc3)->where($where)->get();
@@ -2303,6 +2361,7 @@ class WorkpaperModel extends  Model {
             'code' => $code,
             'c3tID' => $c3tID,
             'clientID' => $dcID,
+            'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();

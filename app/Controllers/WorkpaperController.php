@@ -536,6 +536,7 @@ class WorkpaperController extends BaseController{
             'code' => $code,
             'part' => $this->request->getPost('part'),
             'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
             'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
             'uID' => $this->crypt->decrypt(session()->get('userID')),
             'fID' => $this->crypt->decrypt(session()->get('firmID')),
@@ -599,6 +600,7 @@ class WorkpaperController extends BaseController{
             'genyn' => json_encode($genyn),
             'part' => $this->request->getPost('part'),
             'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
             'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
             'uID' => $this->crypt->decrypt(session()->get('userID')),
             'fID' => $this->crypt->decrypt(session()->get('firmID')),
@@ -989,6 +991,7 @@ class WorkpaperController extends BaseController{
             'materiality' => $this->request->getPost('materiality'),
             'code' => 'AC10',
             'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
             'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
             'uID' => $this->crypt->decrypt(session()->get('userID')),
             'fID' => $this->crypt->decrypt(session()->get('firmID')),
@@ -998,10 +1001,10 @@ class WorkpaperController extends BaseController{
         
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
         
     }
@@ -1012,7 +1015,7 @@ class WorkpaperController extends BaseController{
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
         $req = [
@@ -1022,6 +1025,7 @@ class WorkpaperController extends BaseController{
             'type' => $sheet,
             'code' => $code,
             'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
             'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
             'uID' => $this->crypt->decrypt(session()->get('userID')),
             'fID' => $this->crypt->decrypt(session()->get('firmID')),
@@ -1030,10 +1034,10 @@ class WorkpaperController extends BaseController{
         
         if($res){
             session()->setFlashdata('success_registration','success_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
             session()->setFlashdata('failed_registration','failed_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
     }
@@ -1043,6 +1047,7 @@ class WorkpaperController extends BaseController{
             'question' => $this->request->getPost('question'),
             'acid' => $this->request->getPost('acid'),
             'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
             'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
             'uID' => $this->crypt->decrypt(session()->get('userID')),
             'fID' => $this->crypt->decrypt(session()->get('firmID')),
@@ -1051,10 +1056,10 @@ class WorkpaperController extends BaseController{
         
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
     }
@@ -1065,7 +1070,7 @@ class WorkpaperController extends BaseController{
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
         $req = [
@@ -1084,10 +1089,10 @@ class WorkpaperController extends BaseController{
         
         if($res){
             session()->setFlashdata('success_registration','success_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
             session()->setFlashdata('failed_registration','failed_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
     }
@@ -1610,6 +1615,7 @@ class WorkpaperController extends BaseController{
             'code' => $code,
             'part' => $this->request->getPost('part'),
             'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
             'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
             'uID' => $this->crypt->decrypt(session()->get('userID')),
             'fID' => $this->crypt->decrypt(session()->get('firmID')),
@@ -1660,6 +1666,7 @@ class WorkpaperController extends BaseController{
             'code' => $code,
             'part' => $this->request->getPost('part'),
             'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
             'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
             'uID' => $this->crypt->decrypt(session()->get('userID')),
             'fID' => $this->crypt->decrypt(session()->get('firmID')),
@@ -1804,6 +1811,7 @@ class WorkpaperController extends BaseController{
             'code' => $code,
             'part' => $this->request->getPost('part'),
             'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
             'c3tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
             'uID' => $this->crypt->decrypt(session()->get('userID')),
             'fID' => $this->crypt->decrypt(session()->get('firmID')),
@@ -1813,10 +1821,10 @@ class WorkpaperController extends BaseController{
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
     }
@@ -1842,10 +1850,10 @@ class WorkpaperController extends BaseController{
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
     }
@@ -1871,10 +1879,10 @@ class WorkpaperController extends BaseController{
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
     }
@@ -1953,10 +1961,10 @@ class WorkpaperController extends BaseController{
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
     }
@@ -1982,10 +1990,10 @@ class WorkpaperController extends BaseController{
 
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
     }
