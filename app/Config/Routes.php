@@ -22,10 +22,12 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('/auditsystem', 'DashController::auditsystem');
 
 
+    $routes->get('/auditsystem/workpaper/initiate', 'WorkpaperController::initiate');
+    $routes->post('/auditsystem/workpaper/save', 'WorkpaperController::saveworkpaper');
 
-   
+
     
-  
+    
     
     
     
