@@ -48,7 +48,7 @@
                 <h6>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)</h6>
                 <h6>~ Additional Disclosure for Parent Undertakings that are Not Consolidating</h6>
 
-                <form action="<?= base_url()?>auditsystem/client/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="ab4f">
                     <table class="table table-bordered">
                         <thead>

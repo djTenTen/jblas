@@ -50,7 +50,7 @@
                 <p><b><u>Scope: </u></b></p>
                 <p>This checklist should be completed for all entities that are applying IFRS 16 Leases for the first time, which is mandatory for accounting periods commencing on/after 1 January 2019.</p>
 
-                <form action="<?= base_url()?>auditsystem/client/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="ab4h">
                     <table class="table table-bordered">
                         <thead>

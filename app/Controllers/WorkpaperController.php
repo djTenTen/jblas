@@ -67,14 +67,22 @@ class WorkpaperController extends BaseController{
         $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
         $dwpID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
 
+        
+        $type = session()->get('type');
+        switch ($type) {
+            case 'Preparer': $status = 'Preparing'; break;
+            case 'Reviewer': $status = 'Reviewing'; break;
+            case 'Audit Manager': $status = 'Checking'; break;
+        }
+
         $data['title'] = 'Files of '. $name;
         $data['cID'] = $cID;
         $data['wpID'] = $wpID;
         $data['name'] = $name;  
 
-        $data['c1'] = $this->wpmodel->getc1values($dcID,$dwpID);
-        $data['c2'] = $this->wpmodel->getc2values($dcID,$dwpID);
-        $data['c3'] = $this->wpmodel->getc3values($dcID,$dwpID);
+        $data['c1'] = $this->wpmodel->getc1values($dcID,$dwpID,$status);
+        $data['c2'] = $this->wpmodel->getc2values($dcID,$dwpID,$status);
+        $data['c3'] = $this->wpmodel->getc3values($dcID,$dwpID,$status);
 
         echo view('includes/Header', $data);
         echo view('workpaper/ViewFilesValues', $data);

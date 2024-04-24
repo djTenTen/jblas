@@ -49,7 +49,7 @@
                 <h4>OTHER INCOME AND GAINS</h4>
                 <p>This audit programme should only cover items recognised in profit or loss, items recognised in other comprehensive income should be addressed by the S Audit Programme.</p>
 
-                <form action="<?= base_url()?>auditsystem/client/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
 
                     <table class="table table-sm table-bordered table-hover">
                         <thead>

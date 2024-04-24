@@ -49,7 +49,7 @@
                 <h4>INVENTORY TOP UP PROGRAMME: CONSTRUCTION CONTRACTS</h4>
                 <h6>Complete this programme when the audited entity has Construction Contracts (or other contracts accounted for on a Percentage Completion basis). </h6>
                 
-                <form action="<?= base_url()?>auditsystem/client/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
 
                     <table class="table table-sm table-bordered table-hover">
                         <thead>

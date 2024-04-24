@@ -51,7 +51,7 @@
                 <p><b><u>Scope: </u></b></p>
                 <p>This checklist should be completed for all entities that are applying IFRS 15 <i>Revenue from Contracts with Customers</i>  and IFRS 9 <i>Financial Instruments</i> for the first time. Both Standards are mandatory for accounting periods commencing on/after 1 January 2018.</p>
 
-                <form action="<?= base_url()?>auditsystem/client/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="ab4g">
                     <table class="table table-bordered">
                         <thead>

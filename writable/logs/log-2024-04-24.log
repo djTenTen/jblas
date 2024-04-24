@@ -1,0 +1,483 @@
+INFO - 2024-04-24 08:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:35:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:41:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:41:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:43:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:47:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:47:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:48:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:53:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:54:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 08:59:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:00:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:00:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:01:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:02:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:04:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:06:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:07:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:07:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:13:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-24 09:13:29 --> ParseError: syntax error, unexpected token "."
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 53.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 3 APPPATH\Controllers\WorkpaperController.php(88): view('workpaper/ViewFilesValues', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('e9f5b7f1776e3cb609aa59d134d7382c28b8c8c58fab5be8fd4b16a2e836ab36c3189f8a0a6948fb62b00f508d16e351c0d1a4d79c618675cf48e84692a4b052leEPG$6CJQ4JixBKq77jqxk=', '4cc3669bd46a258f87c3d388a7f1da33df845def05ff4ba96ffbfe34f5705859b073344455ebaa57496198dae8cbc814baaa5ec907e4b4d4efd317fd034f845et1E9rXKXaScmWNCbcSl30AY=', 'DJ metal works')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-24 09:13:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-24 09:13:52 --> ErrorException: Undefined variable $p
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 47.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $p', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 47)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(88): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('e9f5b7f1776e3cb609aa59d134d7382c28b8c8c58fab5be8fd4b16a2e836ab36c3189f8a0a6948fb62b00f508d16e351c0d1a4d79c618675cf48e84692a4b052leEPG$6CJQ4JixBKq77jqxk=', '4cc3669bd46a258f87c3d388a7f1da33df845def05ff4ba96ffbfe34f5705859b073344455ebaa57496198dae8cbc814baaa5ec907e4b4d4efd317fd034f845et1E9rXKXaScmWNCbcSl30AY=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-24 09:14:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:14:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:19:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:20:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:20:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:25:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-24 09:25:22 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' and tc1.client = wp.client) as x1 ,
+        (select CONCAT(name,' - ',type)...' at line 2 in D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select wpID,wp....', 0)
+#1 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select wpID,wp....')
+#2 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select wpID,wp....')
+#3 D:\dhay\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(117): CodeIgniter\Database\BaseConnection->query('select wpID,wp....')
+#4 D:\dhay\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(58): App\Models\WorkpaperModel->getworkpaperspe('1', '8', 'Preparing')
+#5 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->prepare()
+#6 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\dhay\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-24 09:25:22 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' and tc1.client = wp.client) as x1 ,
+        (select CONCAT(name,' - ',type)...' at line 2
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(117): CodeIgniter\Database\BaseConnection->query('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.client = wp.client) as x1 ,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 2 APPPATH\Controllers\WorkpaperController.php(58): App\Models\WorkpaperModel->getworkpaperspe('1', '8', 'Preparing')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->prepare()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-24 09:25:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' and tc1.client = wp.client) as x1 ,
+        (select CONCAT(name,' - ',type)...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.client = wp.client) as x1 ,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.client = wp.client) as x1 ,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 3 APPPATH\Models\WorkpaperModel.php(117): CodeIgniter\Database\BaseConnection->query('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.client = wp.client) as x1 ,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 4 APPPATH\Controllers\WorkpaperController.php(58): App\Models\WorkpaperModel->getworkpaperspe('1', '8', 'Preparing')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->prepare()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-24 09:25:22 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' and tc1.client = wp.client) as x1 ,
+        (select CONCAT(name,' - ',type)...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.client = wp.client) as x1 ,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.client = wp.client) as x1 ,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.client = wp.client) as x1 ,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 4 APPPATH\Models\WorkpaperModel.php(117): CodeIgniter\Database\BaseConnection->query('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.client = wp.client) as x1 ,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 5 APPPATH\Controllers\WorkpaperController.php(58): App\Models\WorkpaperModel->getworkpaperspe('1', '8', 'Preparing')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->prepare()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-24 09:26:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-24 09:26:45 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,' - ',type...' at line 2 in D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select wpID,wp....', 0)
+#1 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select wpID,wp....')
+#2 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select wpID,wp....')
+#3 D:\dhay\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(117): CodeIgniter\Database\BaseConnection->query('select wpID,wp....')
+#4 D:\dhay\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(58): App\Models\WorkpaperModel->getworkpaperspe('1', '8', 'Preparing')
+#5 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->prepare()
+#6 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\dhay\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-24 09:26:45 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,' - ',type...' at line 2
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(117): CodeIgniter\Database\BaseConnection->query('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 2 APPPATH\Controllers\WorkpaperController.php(58): App\Models\WorkpaperModel->getworkpaperspe('1', '8', 'Preparing')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->prepare()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-24 09:26:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,' - ',type...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 3 APPPATH\Models\WorkpaperModel.php(117): CodeIgniter\Database\BaseConnection->query('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 4 APPPATH\Controllers\WorkpaperController.php(58): App\Models\WorkpaperModel->getworkpaperspe('1', '8', 'Preparing')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->prepare()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-24 09:26:45 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,' - ',type...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 4 APPPATH\Models\WorkpaperModel.php(117): CodeIgniter\Database\BaseConnection->query('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 5 APPPATH\Controllers\WorkpaperController.php(58): App\Models\WorkpaperModel->getworkpaperspe('1', '8', 'Preparing')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->prepare()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-24 09:26:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-24 09:26:47 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,' - ',type...' at line 2 in D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select wpID,wp....', 0)
+#1 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select wpID,wp....')
+#2 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select wpID,wp....')
+#3 D:\dhay\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(117): CodeIgniter\Database\BaseConnection->query('select wpID,wp....')
+#4 D:\dhay\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(58): App\Models\WorkpaperModel->getworkpaperspe('1', '8', 'Preparing')
+#5 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->prepare()
+#6 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\dhay\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-24 09:26:47 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,' - ',type...' at line 2
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(117): CodeIgniter\Database\BaseConnection->query('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 2 APPPATH\Controllers\WorkpaperController.php(58): App\Models\WorkpaperModel->getworkpaperspe('1', '8', 'Preparing')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->prepare()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-24 09:26:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,' - ',type...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 3 APPPATH\Models\WorkpaperModel.php(117): CodeIgniter\Database\BaseConnection->query('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 4 APPPATH\Controllers\WorkpaperController.php(58): App\Models\WorkpaperModel->getworkpaperspe('1', '8', 'Preparing')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->prepare()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-24 09:26:47 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,' - ',type...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 4 APPPATH\Models\WorkpaperModel.php(117): CodeIgniter\Database\BaseConnection->query('select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from tbl_client_files_c1 as tc1 where tc1.workpaper = wp.wpID, and tc1.clientID = wp.client) as x1,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,\' - \',type) from tbl_users as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli
+        from tbl_workpaper as wp, tbl_clients as tc
+        where wp.firm = 1
+        and wp.auditor = 8
+        and tc.cID = wp.client
+        and wp.status = \'Preparing\'')
+ 5 APPPATH\Controllers\WorkpaperController.php(58): App\Models\WorkpaperModel->getworkpaperspe('1', '8', 'Preparing')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->prepare()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-24 09:27:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:28:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:28:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:29:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:29:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:31:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:31:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:34:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:35:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:36:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:36:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:43:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:48:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-24 09:48:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

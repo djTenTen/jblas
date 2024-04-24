@@ -48,7 +48,7 @@
             <div class="card-body">
                 
                 <h4>AUDIT CONTROL RECORD</h4>
-                <form action="<?= base_url()?>auditsystem/client/saveplaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveplaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
 
                     <table class="table table-sm table-bordered table-hover">
                         <thead>
@@ -118,7 +118,7 @@
                 <h6>4.	Pre-sign off completion by Audit Engagement Partner</h6>
 
 
-                <form action="<?= base_url()?>auditsystem/client/saveplaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveplaf/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
 
                     <table class="table table-sm table-bordered table-hover">
                         <thead>
@@ -174,7 +174,7 @@
                 <h6>Any YES answers should be fully explained along with the safeguards, which will enable us to accept the re-appointment.</h6>
                 <h6>Significant issues must be discussed with the Ethics Partner and details of the discussion should be documented on file.</h6>
 
-                <form action="<?= base_url()?>auditsystem/client/saveaa1s3/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveaa1s3/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                 <input type="hidden" name="acid" value="<?= $acID?>">
                 <table class="table table-sm table-bordered">
                     <thead>

@@ -49,7 +49,7 @@
                 
                 <h4>NOMINAL LEDGER</h4>
                 
-                <form action="<?= base_url()?>auditsystem/client/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
 
                     <table class="table table-sm table-bordered table-hover">
                         <thead>

@@ -47,56 +47,51 @@ class WorkpaperModel extends  Model {
 
     }
 
-    public function getprogress($wpID,$cID){
+    public function getc1values($cID,$wpID,$status){
 
-        $c1count = $this->db->table($this->tblc1)->where(array('workpaper' => $wpID, 'clientID' => $cID))->countAllResults();
-        $c2count = $this->db->table($this->tblc2)->where(array('workpaper' => $wpID, 'clientID' => $cID))->countAllResults();
-        $c3count = $this->db->table($this->tblc3)->where(array('workpaper' => $wpID, 'clientID' => $cID))->countAllResults();
-        $x = $c1count + $c2count + $c3count;
-        $c1 = $this->db->table($this->tblc1)->where('workpaper',$wpID)->where('clientID',$cID)->where('updated_on IS NOT NULL')->countAllResults();
-        $c2 = $this->db->table($this->tblc2)->where('workpaper',$wpID)->where('clientID',$cID)->where('updated_on IS NOT NULL')->countAllResults();
-        $c3 = $this->db->table($this->tblc3)->where('workpaper',$wpID)->where('clientID',$cID)->where('updated_on IS NOT NULL')->countAllResults();
-        $y = $c1 + $c2 + $c3;
-
-        $p = $y / $x;
-        $progress = round($p, 2) * 100;
-        return $progress;
-
-    }
-
-    public function getc1values($cID,$wpID){
-
-        $query = $this->db->query("select DISTINCT title,c1t.code,c1titleID
+        $query = $this->db->query("select DISTINCT title,c1t.code,c1titleID,c1.remarks,(select COUNT(*) from {$this->tblc1} WHERE {$this->tblc1}.c1tID = c1.c1tID and {$this->tblc1}.workpaper = {$wpID} and {$this->tblc1}.clientID = {$cID}) as x , (select COUNT(*) from {$this->tblc1} WHERE {$this->tblc1}.c1tID = c1.c1tID and {$this->tblc1}.workpaper = {$wpID} and {$this->tblc1}.clientID = {$cID} and `updated_on` IS NOT NULL) as y
         from {$this->tblc1t} as c1t, {$this->tblc1} as c1
         where c1t.c1titleID = c1.c1tID
         and c1.clientID = {$cID}
-        and c1.workpaper = {$wpID}");
+        and c1.workpaper = {$wpID}
+        and c1.status = '{$status}'");
         return $query->getResultArray();
     }
 
-    public function getc2values($cID,$wpID){
+    public function getc2values($cID,$wpID,$status){
 
-        $query = $this->db->query("select DISTINCT title,c2t.code,c2titleID
+        $query = $this->db->query("select DISTINCT title,c2t.code,c2titleID,c2.remarks,
+        (select COUNT(*) from {$this->tblc2} WHERE {$this->tblc2}.c2tID = c2.c2tID and {$this->tblc2}.workpaper = {$wpID} and {$this->tblc2}.clientID = {$cID}) as x ,
+        (select COUNT(*) from {$this->tblc2} WHERE {$this->tblc2}.c2tID = c2.c2tID and {$this->tblc2}.workpaper = {$wpID} and {$this->tblc2}.clientID = {$cID} and `updated_on` IS NOT NULL) as y
         from {$this->tblc2t} as c2t, {$this->tblc2} as c2
         where c2t.c2titleID = c2.c2tID
         and c2.clientID = {$cID}
-        and c2.workpaper = {$wpID}");
+        and c2.workpaper = {$wpID}
+        and c2.status = '{$status}'");
         return $query->getResultArray();
     }
 
-    public function getc3values($cID,$wpID){
+    public function getc3values($cID,$wpID,$status){
 
-        $query = $this->db->query("select DISTINCT title,c3t.code,c3titleID
+        $query = $this->db->query("select DISTINCT title,c3t.code,c3titleID,c3.remarks,
+        (select COUNT(*) from {$this->tblc3} WHERE {$this->tblc3}.c3tID = c3.c3tID and {$this->tblc3}.workpaper = {$wpID} and {$this->tblc3}.clientID = {$cID}) as x ,
+        (select COUNT(*) from {$this->tblc3} WHERE {$this->tblc3}.c3tID = c3.c3tID and {$this->tblc3}.workpaper = {$wpID} and {$this->tblc3}.clientID = {$cID} and `updated_on` IS NOT NULL) as y
         from {$this->tblc3t} as c3t, {$this->tblc3} as c3
         where c3t.c3titleID = c3.c3tID
         and c3.clientID = {$cID}
-        and c3.workpaper = {$wpID}");
+        and c3.workpaper = {$wpID}
+        and c3.status = '{$status}'");
         return $query->getResultArray();
     }
 
     public function getworkpaperspe($fID,$uID,$status){
-
         $query = $this->db->query("select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.workpaper = wp.wpID and tc1.clientID = wp.client) as x1,
+        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.workpaper = wp.wpID and tc2.clientID = wp.client) as x2,
+        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.workpaper = wp.wpID and tc3.clientID = wp.client) as x3,
+        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.workpaper = wp.wpID and tc1.clientID = wp.client and updated_on IS NOT NULL) as y1,
+        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.workpaper = wp.wpID and tc2.clientID = wp.client and updated_on IS NOT NULL) as y2,
+        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.workpaper = wp.wpID and tc3.clientID = wp.client and updated_on IS NOT NULL) as y3,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.added_by) as added,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.auditor) as aud,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.supervisor) as sup,
@@ -115,6 +110,12 @@ class WorkpaperModel extends  Model {
     public function getworkpaper($fID){
 
         $query = $this->db->query("select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.workpaper = wp.wpID and tc1.clientID = wp.client) as x1,
+        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.workpaper = wp.wpID and tc2.clientID = wp.client) as x2,
+        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.workpaper = wp.wpID and tc3.clientID = wp.client) as x3,
+        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.workpaper = wp.wpID and tc1.clientID = wp.client and updated_on IS NOT NULL) as y1,
+        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.workpaper = wp.wpID and tc2.clientID = wp.client and updated_on IS NOT NULL) as y2,
+        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.workpaper = wp.wpID and tc3.clientID = wp.client and updated_on IS NOT NULL) as y3,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.added_by) as added,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.auditor) as aud,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.supervisor) as sup,
@@ -197,7 +198,7 @@ class WorkpaperModel extends  Model {
                         'accountancy' => $r['accountancy'],
                         'other' => $r['other'],
                         'totalcu' => $r['totalcu'],
-                        'status' => $r['status'],
+                        'status' => 'Preparing',
                         'remarks' => $r['remarks'],
                         'added_on' => $this->date.' '.$this->time
                     ];
@@ -233,7 +234,7 @@ class WorkpaperModel extends  Model {
                         'accountancy' => $r['accountancy'],
                         'other' => $r['other'],
                         'totalcu' => $r['totalcu'],
-                        'status' => $r['status'],
+                        'status' => 'Preparing',
                         'remarks' => $r['remarks'],
                         'added_on' => $this->date.' '.$this->time
                     ];
@@ -269,7 +270,7 @@ class WorkpaperModel extends  Model {
                         'comment' => $r['comment'],
                         'other' => $r['other'],
                         'totalcu' => $r['totalcu'],
-                        'status' => $r['status'],
+                        'status' => 'Preparing',
                         'remarks' => $r['remarks'],
                         'added_on' => $this->date.' '.$this->time
                     ];

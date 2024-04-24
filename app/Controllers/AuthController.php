@@ -69,6 +69,7 @@ class AuthController extends BaseController{
                 'firm' => $res['firm'],
                 'firmID' => $this->crypt->encrypt($res['firmID']),
                 'pos' => $res['pos'],
+                'type' => $res['type'],
                 'posID' => $this->crypt->encrypt($res['posID']),
                 'allowed' => $res['allowed'],
             ];

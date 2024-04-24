@@ -47,14 +47,14 @@
             <div class="card-body">
                 
                 <nav class="nav nav-borders">
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-un')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.10 Aa11-un/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Unadjusted Errors</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-ad')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.10 Aa11-ad/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Adjustments Made</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-un')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/3.10 Aa11-un/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Unadjusted Errors</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-ad')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/3.10 Aa11-ad/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Adjustments Made</a>
                 </nav>
                 <hr class="mt-0 mb-4" />
                 <br>
 
                 <h4><?= $sectiontitle?></h4>
-                <form action="<?= base_url()?>auditsystem/client/saveaa11ad/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveaa11ad/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -120,7 +120,7 @@
                 </form>
 
 
-                <form action="<?= base_url()?>auditsystem/client/saveaa11uead/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveaa11uead/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aa11uead">
                     <input type="hidden" name="acid" value="<?= $ueacID?>">
                     <table class="table">

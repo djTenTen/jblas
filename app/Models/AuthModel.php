@@ -41,6 +41,7 @@ class AuthModel extends  Model {
                             'firmID' => $ud['firmID'],
                             'pos' => $ud['pos'],
                             'posID' => $ud['posID'],
+                            'type' => $ud['type'],
                             'allowed' => json_decode($ud['allowed']),
                         ];
                         return $arr;

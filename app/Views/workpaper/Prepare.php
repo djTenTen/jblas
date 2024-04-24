@@ -1,7 +1,5 @@
 <?php  
     $crypt = \Config\Services::encrypter();
-    use \App\Models\WorkpaperModel;
-    $wpmodel = new WorkpaperModel();
 ?>
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
@@ -73,7 +71,7 @@
                 <tbody>
                     <?php 
                         foreach($wp as $r){
-                        $percent = $wpmodel->getprogress($r['wpID'],$r['client']);
+                        $p = round(($r['y1'] + $r['y2'] + $r['y3']) / ($r['x1'] + $r['x2'] + $r['x3']), 2) * 100;
                         ?>
                         <tr>
                             <td><?= $r['cli']?></td>
@@ -95,7 +93,7 @@
                             </td>
                             <td>
                                 <div class="progress mt-1">
-                                    <span class="progress-bar progress-bar-striped progress-bar-animated" style="width:<?= $percent?>%"><?= $percent?>%</span>
+                                    <span class="progress-bar" style="width:<?= $p?>%"><?= $p?>%</span>
                                 </div>
                             </td>
                             <td><?= date('F d, Y h:i A', strtotime($r['added_on']))?></td>

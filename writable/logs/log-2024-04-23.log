@@ -925,3 +925,418 @@ INFO - 2024-04-23 17:21:50 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-04-23 17:22:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-23 17:22:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-04-23 17:24:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 17:27:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 17:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:10:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:10:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:10:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:10:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:11:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:11:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:11:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:11:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:11:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:20:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:21:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-23 20:21:35 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Views\workpaper\ViewFilesValues.php(46): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('yoM~0zZNDLl1PdXNeAbY9WQ=')
+ 3 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 6 APPPATH\Controllers\WorkpaperController.php(84): view('workpaper/ViewFilesValues', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('7b3e440fdfa5463dbb85ae2ff31e0e1e16b000ee27669ab97c87e0e9e5719308bd0eaf51a42d59f46fd01d9e198a47c3d397fa4ebcd7a13ced8ef90fc1f6cc0eLIsVPMDoD$PVkkEzoIORS30=', '76bb11084f9d062d14672a9ebde083ab41da0e315b4e55963e3e27d01175765174ae25e627b79904b4704edf7fcf2cb21b1f0b52b365369bdbd5664c94ed0437yoM~0zZNDLl1PdXNeAbY9WQ=', 'DJ metal works')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 20:22:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-23 20:22:18 --> ErrorException: Undefined property: CodeIgniter\View\View::$crypt
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 46.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$crypt', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 46)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(84): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('7b3e440fdfa5463dbb85ae2ff31e0e1e16b000ee27669ab97c87e0e9e5719308bd0eaf51a42d59f46fd01d9e198a47c3d397fa4ebcd7a13ced8ef90fc1f6cc0eLIsVPMDoD$PVkkEzoIORS30=', '76bb11084f9d062d14672a9ebde083ab41da0e315b4e55963e3e27d01175765174ae25e627b79904b4704edf7fcf2cb21b1f0b52b365369bdbd5664c94ed0437yoM~0zZNDLl1PdXNeAbY9WQ=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 20:22:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-23 20:22:34 --> ErrorException: Undefined property: CodeIgniter\View\View::$crypt
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 46.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$crypt', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 46)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(84): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('7b3e440fdfa5463dbb85ae2ff31e0e1e16b000ee27669ab97c87e0e9e5719308bd0eaf51a42d59f46fd01d9e198a47c3d397fa4ebcd7a13ced8ef90fc1f6cc0eLIsVPMDoD$PVkkEzoIORS30=', '76bb11084f9d062d14672a9ebde083ab41da0e315b4e55963e3e27d01175765174ae25e627b79904b4704edf7fcf2cb21b1f0b52b365369bdbd5664c94ed0437yoM~0zZNDLl1PdXNeAbY9WQ=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 20:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:23:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:23:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:23:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:23:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:23:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:23:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:26:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-23 20:26:26 --> mysqli_sql_exception: Unknown column 'c3tID' in 'where clause' in D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*)...', 0)
+#1 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 D:\dhay\xampp\htdocs\jblas\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 D:\dhay\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(71): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 D:\dhay\xampp\htdocs\jblas\app\Views\workpaper\ViewFilesValues.php(46): App\Models\WorkpaperModel->getprogressfile('1', '4')
+#6 D:\dhay\xampp\htdocs\jblas\system\View\View.php(228): include('D:\\dhay\\xampp\\h...')
+#7 D:\dhay\xampp\htdocs\jblas\system\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#8 D:\dhay\xampp\htdocs\jblas\system\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewF...', Array, true)
+#9 D:\dhay\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(84): view('workpaper/ViewF...', Array)
+#10 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('607477ed37211db...', '56432077d726170...', 'DJ metal works')
+#11 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#12 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 D:\dhay\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2024-04-23 20:26:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c3tID' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_client_files_c2`
+WHERE `c3tID` = :c3tID:
+AND `workpaper` = :workpaper:', [...], false)
+ 2 APPPATH\Models\WorkpaperModel.php(71): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Views\workpaper\ViewFilesValues.php(46): App\Models\WorkpaperModel->getprogressfile('1', '4')
+ 4 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 7 APPPATH\Controllers\WorkpaperController.php(84): view('workpaper/ViewFilesValues', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('607477ed37211dbf0f816046fa4d774eb792972e770e10b82e639e1d01fd4c4938002a45f8fb8f6d05f7318b46f61a86c0542af7513a02d16cc10a422f233155U2mzRzarQbgcCK8dWK2sHiQ=', '56432077d72617072afb187d626a426f628fe2375bcea21fad162b1ae1a0d30c5f20890c9533feab20abf28052e2be802b60f45e7464d4f033ec379182bd74d5~2oSi7bLYwRVrQqFG7F~ULU=', 'DJ metal works')
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-23 20:26:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c3tID' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `tbl_client_files_c2`
+WHERE `c3tID` = \'1\'
+AND `workpaper` = \'4\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `tbl_client_files_c2`
+WHERE `c3tID` = \'1\'
+AND `workpaper` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_client_files_c2`
+WHERE `c3tID` = :c3tID:
+AND `workpaper` = :workpaper:', [...], false)
+ 4 APPPATH\Models\WorkpaperModel.php(71): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Views\workpaper\ViewFilesValues.php(46): App\Models\WorkpaperModel->getprogressfile('1', '4')
+ 6 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 9 APPPATH\Controllers\WorkpaperController.php(84): view('workpaper/ViewFilesValues', [...])
+10 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('607477ed37211dbf0f816046fa4d774eb792972e770e10b82e639e1d01fd4c4938002a45f8fb8f6d05f7318b46f61a86c0542af7513a02d16cc10a422f233155U2mzRzarQbgcCK8dWK2sHiQ=', '56432077d72617072afb187d626a426f628fe2375bcea21fad162b1ae1a0d30c5f20890c9533feab20abf28052e2be802b60f45e7464d4f033ec379182bd74d5~2oSi7bLYwRVrQqFG7F~ULU=', 'DJ metal works')
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-23 20:26:26 --> [Caused by] mysqli_sql_exception: Unknown column 'c3tID' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_client_files_c2`
+WHERE `c3tID` = \'1\'
+AND `workpaper` = \'4\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `tbl_client_files_c2`
+WHERE `c3tID` = \'1\'
+AND `workpaper` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `tbl_client_files_c2`
+WHERE `c3tID` = \'1\'
+AND `workpaper` = \'4\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `tbl_client_files_c2`
+WHERE `c3tID` = :c3tID:
+AND `workpaper` = :workpaper:', [...], false)
+ 5 APPPATH\Models\WorkpaperModel.php(71): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Views\workpaper\ViewFilesValues.php(46): App\Models\WorkpaperModel->getprogressfile('1', '4')
+ 7 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 8 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+10 APPPATH\Controllers\WorkpaperController.php(84): view('workpaper/ViewFilesValues', [...])
+11 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('607477ed37211dbf0f816046fa4d774eb792972e770e10b82e639e1d01fd4c4938002a45f8fb8f6d05f7318b46f61a86c0542af7513a02d16cc10a422f233155U2mzRzarQbgcCK8dWK2sHiQ=', '56432077d72617072afb187d626a426f628fe2375bcea21fad162b1ae1a0d30c5f20890c9533feab20abf28052e2be802b60f45e7464d4f033ec379182bd74d5~2oSi7bLYwRVrQqFG7F~ULU=', 'DJ metal works')
+12 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+13 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 20:26:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:27:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:28:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:28:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:29:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:30:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-23 20:30:53 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Views\workpaper\ViewFilesValues.php(46): CodeIgniter\Model->__call('getprogressfile', [...])
+ 4 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 7 APPPATH\Controllers\WorkpaperController.php(84): view('workpaper/ViewFilesValues', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('607477ed37211dbf0f816046fa4d774eb792972e770e10b82e639e1d01fd4c4938002a45f8fb8f6d05f7318b46f61a86c0542af7513a02d16cc10a422f233155U2mzRzarQbgcCK8dWK2sHiQ=', '56432077d72617072afb187d626a426f628fe2375bcea21fad162b1ae1a0d30c5f20890c9533feab20abf28052e2be802b60f45e7464d4f033ec379182bd74d5~2oSi7bLYwRVrQqFG7F~ULU=', 'DJ metal works')
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 20:31:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-23 20:31:12 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Views\workpaper\ViewFilesValues.php(46): CodeIgniter\Model->__call('getprogressfile', [...])
+ 4 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 7 APPPATH\Controllers\WorkpaperController.php(84): view('workpaper/ViewFilesValues', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('607477ed37211dbf0f816046fa4d774eb792972e770e10b82e639e1d01fd4c4938002a45f8fb8f6d05f7318b46f61a86c0542af7513a02d16cc10a422f233155U2mzRzarQbgcCK8dWK2sHiQ=', '56432077d72617072afb187d626a426f628fe2375bcea21fad162b1ae1a0d30c5f20890c9533feab20abf28052e2be802b60f45e7464d4f033ec379182bd74d5~2oSi7bLYwRVrQqFG7F~ULU=', 'DJ metal works')
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 20:31:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:40:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:40:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:40:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-23 20:40:06 --> ArgumentCountError: Too few arguments to function App\Models\WorkpaperModel::getc1values(), 2 passed in D:\dhay\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php on line 75 and exactly 3 expected
+in APPPATH\Models\WorkpaperModel.php on line 80.
+ 1 APPPATH\Controllers\WorkpaperController.php(75): App\Models\WorkpaperModel->getc1values('5', '4')
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('e89fee9bbdb3cc3489e94f8b737e57b9cd64d78dd0605a5025986d6ae98c10d6b3581712e13d9884f8e976bed570e349ff43d235c0125f232697f8ce10e4f98fenRwH94~MqPTFQ00nKvfY84=', 'cb58b990c3fdce26743b5b35e2585f12b409d48b5076880436eb19b92b7d49ffbfa83c748ccd9946488c006c069cc05e4c33b9a39023e19c4dff35ff679e87bdw8sBszWarHNvwIVw3ZsxII4=', 'DJ metal works')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 20:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-23 20:42:19 --> ParseError: syntax error, unexpected token "break"
+in APPPATH\Controllers\WorkpaperController.php on line 75.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\WorkpaperController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\WorkpaperController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\WorkpaperController')
+ 4 SYSTEMPATH\CodeIgniter.php(899): class_exists('\\App\\Controllers\\WorkpaperController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 20:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-23 20:42:21 --> ParseError: syntax error, unexpected token "break"
+in APPPATH\Controllers\WorkpaperController.php on line 75.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Controllers\\WorkpaperController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\WorkpaperController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\WorkpaperController')
+ 4 SYSTEMPATH\CodeIgniter.php(899): class_exists('\\App\\Controllers\\WorkpaperController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 20:42:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-23 20:42:31 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'an' at line 6 in D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\dhay\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT...', 0)
+#1 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT...')
+#2 D:\dhay\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT...')
+#3 D:\dhay\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(86): CodeIgniter\Database\BaseConnection->query('select DISTINCT...')
+#4 D:\dhay\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(87): App\Models\WorkpaperModel->getc1values('5', '4')
+#5 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('e89fee9bbdb3cc3...', 'cb58b990c3fdce2...', 'DJ metal works')
+#6 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\dhay\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\dhay\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-23 20:42:31 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'an' at line 6
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(86): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 5
+        and c1.workpaper = 4
+        an')
+ 2 APPPATH\Controllers\WorkpaperController.php(87): App\Models\WorkpaperModel->getc1values('5', '4')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('e89fee9bbdb3cc3489e94f8b737e57b9cd64d78dd0605a5025986d6ae98c10d6b3581712e13d9884f8e976bed570e349ff43d235c0125f232697f8ce10e4f98fenRwH94~MqPTFQ00nKvfY84=', 'cb58b990c3fdce26743b5b35e2585f12b409d48b5076880436eb19b92b7d49ffbfa83c748ccd9946488c006c069cc05e4c33b9a39023e19c4dff35ff679e87bdw8sBszWarHNvwIVw3ZsxII4=', 'DJ metal works')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-23 20:42:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'an' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c1t.code,c1titleID
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 5
+        and c1.workpaper = 4
+        an')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c1t.code,c1titleID
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 5
+        and c1.workpaper = 4
+        an')
+ 3 APPPATH\Models\WorkpaperModel.php(86): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 5
+        and c1.workpaper = 4
+        an')
+ 4 APPPATH\Controllers\WorkpaperController.php(87): App\Models\WorkpaperModel->getc1values('5', '4')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('e89fee9bbdb3cc3489e94f8b737e57b9cd64d78dd0605a5025986d6ae98c10d6b3581712e13d9884f8e976bed570e349ff43d235c0125f232697f8ce10e4f98fenRwH94~MqPTFQ00nKvfY84=', 'cb58b990c3fdce26743b5b35e2585f12b409d48b5076880436eb19b92b7d49ffbfa83c748ccd9946488c006c069cc05e4c33b9a39023e19c4dff35ff679e87bdw8sBszWarHNvwIVw3ZsxII4=', 'DJ metal works')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-23 20:42:31 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'an' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT title,c1t.code,c1titleID
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 5
+        and c1.workpaper = 4
+        an', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c1t.code,c1titleID
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 5
+        and c1.workpaper = 4
+        an')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c1t.code,c1titleID
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 5
+        and c1.workpaper = 4
+        an')
+ 4 APPPATH\Models\WorkpaperModel.php(86): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 5
+        and c1.workpaper = 4
+        an')
+ 5 APPPATH\Controllers\WorkpaperController.php(87): App\Models\WorkpaperModel->getc1values('5', '4')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('e89fee9bbdb3cc3489e94f8b737e57b9cd64d78dd0605a5025986d6ae98c10d6b3581712e13d9884f8e976bed570e349ff43d235c0125f232697f8ce10e4f98fenRwH94~MqPTFQ00nKvfY84=', 'cb58b990c3fdce26743b5b35e2585f12b409d48b5076880436eb19b92b7d49ffbfa83c748ccd9946488c006c069cc05e4c33b9a39023e19c4dff35ff679e87bdw8sBszWarHNvwIVw3ZsxII4=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 20:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:44:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:44:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:45:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:48:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:49:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-23 20:49:38 --> ErrorException: Undefined array key "remarks"
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 57.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "remarks"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(88): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('52e29d412f1721c6edfff016c9a3927a2dfbf6cd86f0ac468e5d5ab16166e047ebf47b9435a99b6bff48ebb7e8084fdf021242ad86b387cca083483a17ae12fblvVH1tF9FXR$fYypy2OiyzM=', '14c164e7d59192e48a8c72c0f389ab31683b9303eb020e48a096afefc412d82e975970bb5741fa977add913d0e42b4805f9263b11e666f5de6b4e0ad69012c3bAjoCUUeQqX3z1mclx9RVxXQ=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 20:49:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:50:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:51:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 20:51:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:31:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:32:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-23 21:32:43 --> ErrorException: Undefined array key "c1titleID"
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 90.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(90): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "c1titleID"', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 90)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(88): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('71efda1662c7377891bd37fa551688152137a6852e8858f17a0aa141ed3ae84825fafd7b8e7464e45cfb10451bbd834bd2d7b0720ea043e0512e1ad060d5e436JnWmzx3IoZ6HKhPJnL9u$hY=', '7185d23ecc26c8fac17695a6f660d94a7c5bbf8519a6d83c69bcb9b173f1112d848a27a21877300f7473506ba478ff4091d9c28150b0ce75de97f9d8c9bb14f3SNhrFdMy$bYQtcCb9sNMwX8=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 21:32:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-23 21:32:57 --> DivisionByZeroError: Division by zero
+in APPPATH\Models\WorkpaperModel.php on line 72.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(90): App\Models\WorkpaperModel->getprogressfilec1('19', '5')
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(88): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('71efda1662c7377891bd37fa551688152137a6852e8858f17a0aa141ed3ae84825fafd7b8e7464e45cfb10451bbd834bd2d7b0720ea043e0512e1ad060d5e436JnWmzx3IoZ6HKhPJnL9u$hY=', '7185d23ecc26c8fac17695a6f660d94a7c5bbf8519a6d83c69bcb9b173f1112d848a27a21877300f7473506ba478ff4091d9c28150b0ce75de97f9d8c9bb14f3SNhrFdMy$bYQtcCb9sNMwX8=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 21:33:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-23 21:33:28 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Views\workpaper\ViewFilesValues.php(90): CodeIgniter\Model->__call('getprogressfilec2', [...])
+ 4 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 7 APPPATH\Controllers\WorkpaperController.php(88): view('workpaper/ViewFilesValues', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('71efda1662c7377891bd37fa551688152137a6852e8858f17a0aa141ed3ae84825fafd7b8e7464e45cfb10451bbd834bd2d7b0720ea043e0512e1ad060d5e436JnWmzx3IoZ6HKhPJnL9u$hY=', '7185d23ecc26c8fac17695a6f660d94a7c5bbf8519a6d83c69bcb9b173f1112d848a27a21877300f7473506ba478ff4091d9c28150b0ce75de97f9d8c9bb14f3SNhrFdMy$bYQtcCb9sNMwX8=', 'Sample client 1s')
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-23 21:34:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:34:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:34:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:34:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:35:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:35:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:36:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:43:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:53:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:53:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:53:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:53:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:53:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:58:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:59:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 21:59:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:02:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:03:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:04:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:10:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:10:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:10:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:10:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:12:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:19:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:23:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:27:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:28:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:31:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-23 22:31:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

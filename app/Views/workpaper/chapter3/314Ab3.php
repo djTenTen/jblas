@@ -65,7 +65,7 @@
                 <h6>2.	Common Changes</h6>
                 <p>Have any of the following points arisen during the period, resulting in disclosure or compliance changes:</p>
 
-                <form action="<?= base_url()?>auditsystem/client/saveab3/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveab3/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                 <input type="hidden" name="acid" value="<?= $acID?>">
                 <table class="table table-bordered table-sm">
                     <tbody>

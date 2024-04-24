@@ -49,7 +49,7 @@
                 <h4>CRITICAL REVIEW OF THE FINANCIAL STATEMENTS</h4>
                
 
-                <form action="<?= base_url()?>auditsystem/client/saveab1/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveab1/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <table class="table table-bordered">
                         <thead>
                             <tr>

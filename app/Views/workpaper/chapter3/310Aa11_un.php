@@ -47,8 +47,8 @@
             <div class="card-body">
 
                 <nav class="nav nav-borders">
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-un')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.10 Aa11-un/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Unadjusted Errors</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-ad')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/chapter3/setvalues/3.10 Aa11-ad/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Adjustments Made</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-un')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/3.10 Aa11-un/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Unadjusted Errors</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-ad')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/3.10 Aa11-ad/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Adjustments Made</a>
                 </nav>
                 <hr class="mt-0 mb-4" />
                 <br>
@@ -63,7 +63,7 @@
                 <p>Either all errors should be recorded on this form or just those over a de minimis level which can be set by the A.E.P. (this should normally be less than or equal to the clearly trivial threshold).</p>
                 
                 
-                <form action="<?= base_url()?>auditsystem/client/saveaa11ue/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveaa11ue/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aa11ue">
                     <input type="hidden" name="acid" value="<?= $ueacID?>">
                     <table class="table">
@@ -87,7 +87,7 @@
                 </form>
 
 
-                <form action="<?= base_url()?>auditsystem/client/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aef">
                     <table class="table table-bordered table-sm">
                         <thead>
@@ -150,7 +150,7 @@
                 </form>
 
 
-                <form action="<?= base_url()?>auditsystem/client/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aej">
                     <table class="table table-bordered table-sm">
                         <thead>
@@ -189,7 +189,7 @@
                 </form>
 
 
-                <form action="<?= base_url()?>auditsystem/client/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="ee">
                     <table class="table table-bordered table-sm">
                         <thead>
@@ -228,7 +228,7 @@
                 </form>
 
 
-                <form action="<?= base_url()?>auditsystem/client/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="de">
                     <table class="table table-bordered table-sm">
                         <thead>
@@ -280,7 +280,7 @@
                 </form>
                 
                 <br><br>
-                <form action="<?= base_url()?>auditsystem/client/saveaa11con/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveaa11con/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="con">
                     <input type="hidden" name="acid" value="<?= $conacID?>">
                     <table class="table table-bordered table-sm" id="myTable">

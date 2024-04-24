@@ -43,11 +43,11 @@
                     </div>
                 </div>
             <?php  }?>
-
+            
             <div class="card-body">
                 
                 <h4>INVENTORY APPENDIX 1 – INVENTORY COUNT PLANNING</h4>
-                <form action="<?= base_url()?>auditsystem/client/aicpppa/save/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/aicpppa/save/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
 
                     <table class="table table-sm table-bordered table-hover">
                         <thead>
@@ -77,7 +77,7 @@
                 <p>This review should be completed before attending the client’s inventory count in conjunction with a copy of the client’s inventory count instructions.  Section 1 deals with overall controls, and sections 2 to 4 with inventory count instructions and procedures, section 5 covers inventory counts performed by independent inventory counters and section 6 covers clients that operate a cyclical inventory count system.</p>
                 
                 
-                <form action="<?= base_url()?>auditsystem/client/rcicp/save/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/rcicp/save/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
 
                     <table class="table table-sm table-bordered table-hover">
                         <thead>
