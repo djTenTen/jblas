@@ -83,9 +83,9 @@ $html .= '
     <tr>
         <td style="width: 60%;">
             <table>
-                <tr><td class="bb">Client:</td></tr>
+                <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                 <tr><td></td></tr>
-                <tr><td class="bb">Period:</td></tr>
+                <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
             </table>
         </td>
     </tr>

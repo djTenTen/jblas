@@ -79,12 +79,12 @@
                             <td><?= date('F d, Y h:i A', strtotime($r['added_on']))?></td>
                             <td><?= $r['added']?></td>
                             <td>
-                                <?php if($r['remarks'] != 'Not Submitted'){?>
+                                <?php if($r['remarks'] != 'Not Submitted' and $r['remarks'] != ''){?>
                                     <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button> 
                                 <?php }?>
                                 <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>/<?= $r['cli']?>"><i class="fas fa-highlighter"></i></a>
                                 <?php //if($p == 100){?>
-                                    <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                    <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewer/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                 <?php //}?>
                             </td>
                         </tr>
@@ -95,6 +95,7 @@
         </div>
     </div>
 </main>
+
 <!-- Modal Review-->
 <div class="modal fade" id="sendtoreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
@@ -143,7 +144,7 @@ $(document).ready(function () {
     $('.senddata').on('click', function () {
         var file = $(this).data('file');
         var urlsubmit = $(this).data('urlsubmit');
-        $('#formsend').html(`<h6>Are you sure to send this file <b>`+ file +`</b> for Review?</h6>`);
+        $('#formsend').html(`<h6>Are you sure to send this file <b>`+ file +`</b> for Review?</h6><textarea name="remarks" class="lh-base form-control" type="text" placeholder="Remarks/Comment" rows="4"></textarea>`);
         $('#formsend').attr('action',urlsubmit);
     });  
 
@@ -151,8 +152,6 @@ $(document).ready(function () {
         var remarks = $(this).data('remarks');
         $('#rem').html(remarks);
     });  
-
- 
 
 });
 </script>

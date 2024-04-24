@@ -55,11 +55,17 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('/auditsystem/workpaper/save', 'WorkpaperController::saveworkpaper');
     $routes->get('/auditsystem/workpaper/prepare', 'WorkpaperController::prepare');
     $routes->get('/auditsystem/wp/getfiles/(:any)/(:any)/(:any)', 'WorkpaperController::getfiles/$1/$2/$3');
-    $routes->post('/auditsystem/wp/sendtoreviewc1/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::sendtoreviewc1/$1/$2/$3/$4');
-    $routes->post('/auditsystem/wp/sendtoauditorc1/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::sendtoauditorc1/$1/$2/$3/$4');
+    $routes->post('/auditsystem/wp/sendtoreview/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::sendtoreview/$1/$2/$3/$4/$5');
+    $routes->post('/auditsystem/wp/sendtoauditor/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::sendtoauditor/$1/$2/$3/$4/$5');
+    $routes->post('/auditsystem/wp/sendtomanager/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::sendtomanager/$1/$2/$3/$4/$5');
+    
 
-    $routes->post('/auditsystem/wp/sendtoreview/(:any)', 'WorkpaperController::sendtoreview/$1/');
-    $routes->post('/auditsystem/wp/sendtoauditor/(:any)', 'WorkpaperController::sendtoauditor/$1/');
+
+    $routes->post('/auditsystem/wp/sendtoreviewer/(:any)', 'WorkpaperController::sendtoreviewer/$1');
+    $routes->post('/auditsystem/wp/sendtopreparer/(:any)', 'WorkpaperController::sendtopreparer/$1');
+    $routes->post('/auditsystem/wp/sendtoapprover/(:any)', 'WorkpaperController::sendtoapprover/$1');
+    $routes->post('/auditsystem/wp/sendbacktoreviewer/(:any)', 'WorkpaperController::sendbacktoreviewer/$1');
+    
     
     $routes->get('/auditsystem/workpaper/review', 'WorkpaperController::review');
     

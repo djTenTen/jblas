@@ -83,20 +83,20 @@ $html .= '
     <tr>
         <td style="width: 50%;">
             <table>
-                <tr><td class="bb">Client:</td></tr>
+                <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                 <tr><td></td></tr>
-                <tr><td class="bb">Period:</td></tr>
+                <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
             </table>
         </td>
         <td style="width: 50%;">
             <table border="1">
                 <tr>
-                    <td>Programme prepared by: <br></td>
-                    <td>Date: <br></td>
+                    <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                    <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
                 </tr>
                 <tr>
-                    <td>A.E.P. review at completion:<br></td>
-                    <td>Date: <br></td>
+                    <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                    <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
                 </tr>
             </table>
         </td>

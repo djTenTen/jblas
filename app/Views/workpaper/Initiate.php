@@ -38,13 +38,21 @@
                     </div>
                 </div>
             <?php  }?>
-
             <?php if (session()->get('invalid_input')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
                         <h6 class="alert-heading">Invalid Input</h6>
                         Something wrong with your data inputd, please try again.
+                    </div>
+                </div>
+            <?php  }?>
+            <?php if (session()->get('senttorev')) { ?>
+                <div class="alert alert-success alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Work paper sent.</h6>
+                        Work paper has been successfully sent back to reviewer
                     </div>
                 </div>
             <?php  }?>
@@ -65,7 +73,6 @@
                         <th>End of FY</th>
                         <th>Assigned</th>
                         <th>Status</th>
-                        <th>Remarks</th>
                         <th>Progress</th>
                         <th>Added_on</th>
                         <th>Added_by</th>
@@ -88,22 +95,13 @@
                             </td>
                             <td>
                                 <?php if($r['status'] == 'Preparing'){?>
-                                    <span class="badge bg-primary"><?= $r['status']?></span>
+                                    <span class="badge bg-danger"><?= $r['status']?></span>
                                 <?php }elseif($r['status'] == 'Reviewing'){?>
+                                    <span class="badge bg-primary"><?= $r['status']?></span>
+                                <?php }elseif($r['status'] == 'Checking'){?>
                                     <span class="badge bg-secondary"><?= $r['status']?></span>
                                 <?php }elseif($r['status'] == 'Approved'){?>
                                     <span class="badge bg-success"><?= $r['status']?></span>
-                                <?php }?>
-                            </td>
-                            <td>
-                                <?php if($r['remarks'] == 'Not Submitted'){?>
-                                    <span class="badge bg-warning"><?= $r['remarks']?></span>
-                                <?php }elseif($r['remarks'] == 'Submitted for Review'){?>
-                                    <span class="badge bg-primary"><?= $r['remarks']?></span>
-                                <?php }elseif($r['remarks'] == 'Submitted for Approval'){?>
-                                    <span class="badge bg-secondary"><?= $r['remarks']?></span>
-                                <?php }elseif($r['remarks'] == 'Approved'){?>
-                                    <span class="badge bg-success"><?= $r['remarks']?></span>
                                 <?php }?>
                             </td>
                             <td>
@@ -113,7 +111,9 @@
                             </td>
                             <td><?= date('F d, Y h:i A', strtotime($r['added_on']))?></td>
                             <td><?= $r['added']?></td>
-                            <td></td>
+                            <td>
+                                
+                            </td>
                         </tr>
                     <?php }?>
                 </tbody>
@@ -304,3 +304,4 @@
         </div>
     </div>
 </div>
+

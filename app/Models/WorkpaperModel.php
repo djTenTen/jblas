@@ -63,11 +63,33 @@ class WorkpaperModel extends  Model {
 
     public function getfileinfoc1($wpID,$cID,$ctID){
 
-        $query = $this->db->query("select prepared_on,reviewed_on,approved_on 
+        $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on 
         from {$this->tblc1} as c1 
         where c1.workpaper = {$wpID}
         and c1.clientID = {$cID}
-        and c1.c1tID = {$ctID}");
+        and c1.c1tID = {$ctID} limit 1");
+        return $query->getRowArray();
+
+    }
+
+    public function getfileinfoc2($wpID,$cID,$ctID){
+
+        $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on 
+        from {$this->tblc2} as c2 
+        where c2.workpaper = {$wpID}
+        and c2.clientID = {$cID}
+        and c2.c2tID = {$ctID} limit 1");
+        return $query->getRowArray();
+
+    }
+
+    public function getfileinfoc3($wpID,$cID,$ctID){
+
+        $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on 
+        from {$this->tblc3} as c3 
+        where c3.workpaper = {$wpID}
+        and c3.clientID = {$cID}
+        and c3.c3tID = {$ctID} limit 1");
         return $query->getRowArray();
 
     }
@@ -311,57 +333,89 @@ class WorkpaperModel extends  Model {
 
     }
 
-    public function sendtoreviewc1($req){
+    public function sendtoreview($req){
 
+        switch ($req['c']) {
+            case 'c1': $table = $this->tblc1; $ctID = 'c1tID';break;
+            case 'c2': $table = $this->tblc2; $ctID = 'c2tID';break;
+            case 'c3': $table = $this->tblc3; $ctID = 'c3tID';break;
+        }
         $where = [
             'clientID' => $req['cID'],
             'workpaper' => $req['wpID'],
-            'c1tID' => $req['ctID'],
+            $ctID => $req['ctID'],
         ];
         $data = [
-            'remarks' => 'Sent to Supervisor for review',
+            'remarks' => $req['remarks'],
             'status' => 'Reviewing',
             'prepared_on' => $this->date.' '.$this->time
         ];
-        
-        if($this->db->table($this->tblc1)->where($where)->update($data)){
+        if($this->db->table($table)->where($where)->update($data)){
             return "sent";
         }else{
             return false;
         }
 
     }
+    public function sendtoauditor($req){
 
-    public function sendtoauditorc1($req){
-
+        switch ($req['c']) {
+            case 'c1': $table = $this->tblc1; $ctID = 'c1tID';break;
+            case 'c2': $table = $this->tblc2; $ctID = 'c2tID';break;
+            case 'c3': $table = $this->tblc3; $ctID = 'c3tID';break;
+        }
         $where = [
             'clientID' => $req['cID'],
             'workpaper' => $req['wpID'],
-            'c1tID' => $req['ctID'],
+            $ctID => $req['ctID'],
         ];
         $data = [
             'remarks' => $req['remarks'],
             'status' => 'Preparing',
         ];
         
-        if($this->db->table($this->tblc1)->where($where)->update($data)){
+        if($this->db->table($table)->where($where)->update($data)){
             return "sent";
         }else{
             return false;
         }
 
     }
+    public function sendtomanager($req){
 
+        switch ($req['c']) {
+            case 'c1': $table = $this->tblc1; $ctID = 'c1tID';break;
+            case 'c2': $table = $this->tblc2; $ctID = 'c2tID';break;
+            case 'c3': $table = $this->tblc3; $ctID = 'c3tID';break;
+        }
+        $where = [
+            'clientID' => $req['cID'],
+            'workpaper' => $req['wpID'],
+            $ctID => $req['ctID'],
+        ];
+        $data = [
+            'remarks' => $req['remarks'],
+            'status' => 'Checking',
+            'reviewed_on' => $this->date.' '.$this->time
+        ];
+        
+        if($this->db->table($table)->where($where)->update($data)){
+            return "sent";
+        }else{
+            return false;
+        }
+
+    }
+    
     
 
 
-    public function sendtoreview($req){
+    public function sendtoreviewer($req){
 
         $data = [
-            'remarks' => 'Sent to Supervisor for review',
+            'remarks' => $req['remarks'],
             'status' => 'Reviewing',
         ];
-        
         if($this->db->table($this->tblwp)->where('wpID', $req['wpID'])->update($data)){
             return "sent";
         }else{
@@ -369,14 +423,12 @@ class WorkpaperModel extends  Model {
         }
         
     }
-
-    public function sendtoauditor($req){
+    public function sendtopreparer($req){
 
         $data = [
             'remarks' => $req['remarks'],
             'status' => 'Preparing',
         ];
-        
         if($this->db->table($this->tblwp)->where('wpID', $req['wpID'])->update($data)){
             return "sent";
         }else{
@@ -384,7 +436,19 @@ class WorkpaperModel extends  Model {
         }
         
     }
+    public function sendtoapprover($req){
 
+        $data = [
+            'remarks' => $req['remarks'],
+            'status' => 'Checking',
+        ];
+        if($this->db->table($this->tblwp)->where('wpID', $req['wpID'])->update($data)){
+            return "sent";
+        }else{
+            return false;
+        }
+        
+    }
 
     
 

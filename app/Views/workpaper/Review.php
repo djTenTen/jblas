@@ -89,9 +89,13 @@
                             <td><?= date('F d, Y h:i A', strtotime($r['added_on']))?></td>
                             <td><?= $r['added']?></td>
                             <td>
+                                <?php if($r['remarks'] != 'Not Submitted' and $r['remarks'] != ''){?>
+                                    <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button> 
+                                <?php }?>
                                 <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>/<?= $r['cli']?>"><i class="fas fa-highlighter"></i></a>
                                 <?php //if($p == 100){?>
-                                    <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send to Auditor"><i class="fas fa-undo"></i></button>
+                                    <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtopreparer/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send to Auditor"><i class="fas fa-undo"></i></button>
+                                    <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprover/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
                                 <?php //}?>
                             </td>
                         </tr>
@@ -124,6 +128,29 @@
 </div>
 
 
+<!-- Modal REMARKS-->
+<div class="modal fade" id="remarks" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Remarks</h5>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="rem">
+                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 <script>
 $(document).ready(function () {
     
@@ -134,7 +161,17 @@ $(document).ready(function () {
         $('#formsend').attr('action',urlsubmit);
     });  
 
+    $('.sendtomanager').on('click', function () {
+        var file = $(this).data('file');
+        var urlsubmit = $(this).data('urlsubmit');
+        $('#formsend').html(`<h6>Are you sure to send this file <b>`+ file +`</b> to Manager?</h6></h6><textarea name="remarks" class="lh-base form-control" type="text" placeholder="Remarks/Comment" rows="4"></textarea>`);
+        $('#formsend').attr('action',urlsubmit);
+    }); 
     
+    $('.rem').on('click', function () {
+        var remarks = $(this).data('remarks');
+        $('#rem').html(remarks);
+    });  
 
 });
 </script>

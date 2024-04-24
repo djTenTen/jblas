@@ -150,16 +150,18 @@ class WorkpaperController extends BaseController{
 
     }
 
-    public function sendtoreviewc1($ctID,$cID,$wpID,$name){
+    public function sendtoreview($c,$ctID,$cID,$wpID,$name){
 
         $req = [
             'ctID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
             'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
             'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'remarks' => $this->request->getPost('remarks'),
+            'c' => $c,
         ];
 
-        $res = $this->wpmodel->sendtoreviewc1($req);
-
+        $res = $this->wpmodel->sendtoreview($req);
+    
         if($res == "sent"){
             session()->setFlashdata('senttosup','senttosup');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
@@ -170,17 +172,16 @@ class WorkpaperController extends BaseController{
 
     }
 
-    public function sendtoauditorc1($ctID,$cID,$wpID,$name){
+    public function sendtoauditor($c,$ctID,$cID,$wpID,$name){
 
         $req = [
             'ctID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
             'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
             'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
             'remarks' => $this->request->getPost('remarks'),
+            'c' => $c,
         ];
-
-        $res = $this->wpmodel->sendtoauditorc1($req);
-
+        $res = $this->wpmodel->sendtoauditor($req);
         if($res == "sent"){
             session()->setFlashdata('senttoaud','senttoaud');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
@@ -191,14 +192,32 @@ class WorkpaperController extends BaseController{
 
     }
 
-    public function sendtoreview($wpID){
+    public function sendtomanager($c,$ctID,$cID,$wpID,$name){
+
+        $req = [
+            'ctID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'remarks' => $this->request->getPost('remarks'),
+            'c' => $c,
+        ];
+        $res = $this->wpmodel->sendtomanager($req);
+        if($res == "sent"){
+            session()->setFlashdata('sentoman','sentoman');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }
+
+    }
+    public function sendtoreviewer($wpID){
 
         $req = [
             'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'remarks' => $this->request->getPost('remarks'),
         ];
-
-        $res = $this->wpmodel->sendtoreview($req);
-
+        $res = $this->wpmodel->sendtoreviewer($req);
         if($res == "sent"){
             session()->setFlashdata('sent','sent');
             return redirect()->to(site_url('auditsystem/workpaper/prepare'));
@@ -208,26 +227,59 @@ class WorkpaperController extends BaseController{
         }
 
     }
-    public function sendtoauditor($wpID){
+    public function sendtopreparer($wpID){
 
         $req = [
             'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
             'remarks' => $this->request->getPost('remarks'),
         ];
-
-        $res = $this->wpmodel->sendtoauditor($req);
-
+        $res = $this->wpmodel->sendtopreparer($req);
         if($res == "sent"){
             session()->setFlashdata('senttoaud','senttoaud');
-            return redirect()->to(site_url('auditsystem/workpaper/prepare'));
+            return redirect()->to(site_url('auditsystem/workpaper/review'));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/workpaper/prepare'));
+            return redirect()->to(site_url('auditsystem/workpaper/review'));
+        }
+
+    }
+    public function sendtoapprover($wpID){
+
+        $req = [
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'remarks' => $this->request->getPost('remarks'),
+        ];
+        $res = $this->wpmodel->sendtoapprover($req);
+        if($res == "sent"){
+            session()->setFlashdata('senttoaud','senttoaud');
+            return redirect()->to(site_url('auditsystem/workpaper/review'));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/workpaper/review'));
+        }
+
+    }
+    public function sendbacktoreviewer($wpID){
+
+        $req = [
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'remarks' => $this->request->getPost('remarks'),
+        ];
+        $res = $this->wpmodel->sendtoreviewer($req);
+        if($res == "sent"){
+            session()->setFlashdata('senttorev','senttorev');
+            return redirect()->to(site_url('auditsystem/workpaper/initiate'));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/workpaper/initiate'));
         }
 
     }
     
+    
 
+
+    
 
 
 
@@ -2589,6 +2641,9 @@ class WorkpaperController extends BaseController{
         $dwpID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
         $dc2tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c2tID));
 
+        $data['cl'] = $this->wpmodel->getclientinfo($dwpID,$dcID);
+        $data['fl'] = $this->wpmodel->getfileinfoc2($dwpID,$dcID,$dc2tID);
+
         switch ($code) {
 
             case '2.1 B2':
@@ -2810,6 +2865,9 @@ class WorkpaperController extends BaseController{
         $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
         $dwpID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
         $dc3tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID));
+
+        $data['cl'] = $this->wpmodel->getclientinfo($dwpID,$dcID);
+        $data['fl'] = $this->wpmodel->getfileinfoc3($dwpID,$dcID,$dc3tID);
 
         switch ($code) {
 
