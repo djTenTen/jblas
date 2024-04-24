@@ -26,7 +26,7 @@
 
     <div class="container-xl px-4 mt-n10">
 
-        <?php if (session()->get('sent')) { ?>
+        <?php if (session()->get('senttosup')) { ?>
             <div class="alert alert-success alert-icon" role="alert">
                 <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                 <div class="alert-icon-content">
@@ -35,8 +35,17 @@
                 </div>
             </div>
         <?php  }?>
+        <?php if (session()->get('senttoaud')) { ?>
+            <div class="alert alert-success alert-icon" role="alert">
+                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="alert-icon-content">
+                    <h6 class="alert-heading">Files Sent</h6>
+                    The file has been sent to Auditor for Correction.
+                </div>
+            </div>
+        <?php  }?>
 
-
+        
         <div class="card">
             <div class="card-body">
                 <table class="table table-hover" >
@@ -89,10 +98,21 @@
                                     <?php }else{?>
                                         <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                     <?php }?>
-                                    <?php if($p == 100){?>
-                                        <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewc1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                    <?php if($r['remarks'] != 'Not Submitted' and $r['remarks'] != ''){?>
+                                        <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button> 
                                     <?php }?>
-                                    <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                    <?php if($p == 100){?>
+                                        
+                                        <?php if($type == 'Preparer'){?>
+                                            <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewc1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtoreviewer" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                        <?php }elseif($type == 'Reviewer'){?>   
+                                            <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditorc1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
+                                            <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanagerc1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtomanager" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
+                                        <?php }elseif($type == 'Audit Manager'){?>   
+                                            <button class="btn btn-warning btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewc1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendback" title="Send to back to Reviewer"><i class="fas fa-undo"></i></button>
+                                        <?php }?>
+                                    <?php }?>
+                                    <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
                                 </td>
                             </tr>
                         <?php }?>
@@ -113,9 +133,20 @@
                                 <td><?= $r['remarks']?></td>
                                 <td>
                                     <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter2/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
-                                    <?php if($p == 100){?>
-                                        <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewc1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                    <?php if($r['remarks'] != 'Not Submitted' and $r['remarks'] != ''){?>
+                                        <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button> 
                                     <?php }?>
+                                    <?php if($p == 100){?>
+                                        <?php if($type == 'Preparer'){?>
+                                            <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewc2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtoreviewer" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                        <?php }elseif($type == 'Reviewer'){?>   
+                                            <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditorc2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
+                                            <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanagerc2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtomanager" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
+                                        <?php }elseif($type == 'Audit Manager'){?>   
+                                            <button class="btn btn-warning btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewc2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendback" title="Send to back to Reviewer"><i class="fas fa-undo"></i></button>
+                                        <?php }?>
+                                    <?php }?>
+                                    <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc2/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
                                 </td>
                             </tr>
                         <?php }?>
@@ -148,9 +179,20 @@
                                     <?php }else{?>
                                         <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                     <?php }?>
-                                    <?php if($p == 100){?>
-                                        <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewc1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                    <?php if($r['remarks'] != 'Not Submitted' and $r['remarks'] != ''){?>
+                                        <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button> 
                                     <?php }?>
+                                    <?php if($p == 100){?>
+                                        <?php if($type == 'Preparer'){?>
+                                            <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewc3/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtoreviewer" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                        <?php }elseif($type == 'Reviewer'){?>   
+                                            <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditorc3/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
+                                            <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanagerc3/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtomanager" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
+                                        <?php }elseif($type == 'Audit Manager'){?>   
+                                            <button class="btn btn-warning btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewc3/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendback" title="Send to back to Reviewer"><i class="fas fa-undo"></i></button>
+                                        <?php }?>
+                                    <?php }?>
+                                    <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
                                 </td>
                             </tr>
                         <?php }?>
@@ -163,8 +205,8 @@
     
 </main>
 
-    <!-- Modal Review-->
-    <div class="modal fade" id="sendtoreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <!-- Modal Send to Reviewer-->
+    <div class="modal fade" id="sendtoreviewer" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -172,7 +214,33 @@
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="formsend" action="" method="post">
+                    <form id="toreview" action="" method="post">
+                    
+                    
+                        
+                </div>
+                <div class="modal-footer">
+                        <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
+                        <button class="btn btn-primary" type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Send to Auditor-->
+    <div class="modal fade" id="sendtoauditor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="toaud" action="" method="post">
+
+                    
                         
                 </div>
                 <div class="modal-footer">
@@ -185,17 +253,80 @@
     </div>
 
 
+    <!-- Modal Send to Auditor-->
+    <div class="modal fade" id="sendtomanager" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="toman" action="" method="post">
+
+                    
+                        
+                </div>
+                <div class="modal-footer">
+                        <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
+                        <button class="btn btn-primary" type="submit">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal REMARKS-->
+    <div class="modal fade" id="remarks" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Remarks</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="rem">
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script>
     $(document).ready(function () {
         
-        $('.senddata').on('click', function () {
+        $('.sendtoreviewer').on('click', function () {
             var file = $(this).data('file');
             var urlsubmit = $(this).data('urlsubmit');
-            $('#formsend').html(`<h6>Are you sure to send this file <b>`+ file +`</b> for Review?</h6>`);
-            $('#formsend').attr('action',urlsubmit);
+            $('#toreview').html(`<h6>Are you sure to send this file <b>`+ file +`</b> for Review?</h6>`);
+            $('#toreview').attr('action',urlsubmit);
         });  
 
-    
+        $('.sendtoauditor').on('click', function () {
+            var file = $(this).data('file');
+            var urlsubmit = $(this).data('urlsubmit');
+            $('#toaud').html(`<h6>Are you sure to send back this file <b>`+ file +`</b> to Auditor for correction?</h6><textarea name="remarks" class="lh-base form-control" type="text" placeholder="Remarks/Comment" rows="4"></textarea>`);
+            $('#toaud').attr('action',urlsubmit);
+        });  
+
+        $('.sendtomanager').on('click', function () {
+            var file = $(this).data('file');
+            var urlsubmit = $(this).data('urlsubmit');
+            $('#toman').html(`<h6>Are you sure to send back this file <b>`+ file +`</b> to Manager for Approval?`);
+            $('#toman').attr('action',urlsubmit);
+        });  
+
+        $('.rem').on('click', function () {
+            var remarks = $(this).data('remarks');
+            $('#rem').html(remarks);
+        });  
+
 
     });
     </script>

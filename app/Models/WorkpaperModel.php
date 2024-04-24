@@ -332,6 +332,28 @@ class WorkpaperModel extends  Model {
 
     }
 
+    public function sendtoauditorc1($req){
+
+        $where = [
+            'clientID' => $req['cID'],
+            'workpaper' => $req['wpID'],
+            'c1tID' => $req['ctID'],
+        ];
+        $data = [
+            'remarks' => $req['remarks'],
+            'status' => 'Preparing',
+        ];
+        
+        if($this->db->table($this->tblc1)->where($where)->update($data)){
+            return "sent";
+        }else{
+            return false;
+        }
+
+    }
+
+    
+
 
     public function sendtoreview($req){
 
@@ -348,7 +370,23 @@ class WorkpaperModel extends  Model {
         
     }
 
+    public function sendtoauditor($req){
 
+        $data = [
+            'remarks' => $req['remarks'],
+            'status' => 'Preparing',
+        ];
+        
+        if($this->db->table($this->tblwp)->where('wpID', $req['wpID'])->update($data)){
+            return "sent";
+        }else{
+            return false;
+        }
+        
+    }
+
+
+    
 
 
 

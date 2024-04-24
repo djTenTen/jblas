@@ -56,7 +56,11 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('/auditsystem/workpaper/prepare', 'WorkpaperController::prepare');
     $routes->get('/auditsystem/wp/getfiles/(:any)/(:any)/(:any)', 'WorkpaperController::getfiles/$1/$2/$3');
     $routes->post('/auditsystem/wp/sendtoreviewc1/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::sendtoreviewc1/$1/$2/$3/$4');
+    $routes->post('/auditsystem/wp/sendtoauditorc1/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::sendtoauditorc1/$1/$2/$3/$4');
+
     $routes->post('/auditsystem/wp/sendtoreview/(:any)', 'WorkpaperController::sendtoreview/$1/');
+    $routes->post('/auditsystem/wp/sendtoauditor/(:any)', 'WorkpaperController::sendtoauditor/$1/');
+    
     $routes->get('/auditsystem/workpaper/review', 'WorkpaperController::review');
     
     /**

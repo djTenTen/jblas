@@ -86,6 +86,7 @@ class WorkpaperController extends BaseController{
             case 'Audit Manager': $status = 'Checking'; break;
         }
 
+        $data['type'] = $type;
         $data['title'] = 'Files of '. $name;
         $data['cID'] = $cID;
         $data['wpID'] = $wpID;
@@ -160,7 +161,28 @@ class WorkpaperController extends BaseController{
         $res = $this->wpmodel->sendtoreviewc1($req);
 
         if($res == "sent"){
-            session()->setFlashdata('sent','sent');
+            session()->setFlashdata('senttosup','senttosup');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }
+
+    }
+
+    public function sendtoauditorc1($ctID,$cID,$wpID,$name){
+
+        $req = [
+            'ctID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'remarks' => $this->request->getPost('remarks'),
+        ];
+
+        $res = $this->wpmodel->sendtoauditorc1($req);
+
+        if($res == "sent"){
+            session()->setFlashdata('senttoaud','senttoaud');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -186,6 +208,25 @@ class WorkpaperController extends BaseController{
         }
 
     }
+    public function sendtoauditor($wpID){
+
+        $req = [
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'remarks' => $this->request->getPost('remarks'),
+        ];
+
+        $res = $this->wpmodel->sendtoauditor($req);
+
+        if($res == "sent"){
+            session()->setFlashdata('senttoaud','senttoaud');
+            return redirect()->to(site_url('auditsystem/workpaper/prepare'));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/workpaper/prepare'));
+        }
+
+    }
+    
 
 
 
