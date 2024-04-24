@@ -44,6 +44,31 @@ class WorkpaperModel extends  Model {
         $query = $this->db->table($this->tblu)->where($where)->get();
         return $query->getResultArray();
 
+    }
+
+    public function getclientinfo($wpID,$cID){
+
+        $query = $this->db->query("select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select name from {$this->tblu} as tu where tu.userID = wp.auditor) as aud,
+        (select name from {$this->tblu} as tu where tu.userID = wp.supervisor) as sup,
+        (select name from {$this->tblu} as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as clientname
+        from {$this->tblwp} as wp, {$this->tblc} as tc
+        where tc.cID = wp.client
+        and wp.wpID = {$wpID}
+        and wp.client = {$cID}");
+        return $query->getRowArray();
+
+    }
+
+    public function getfileinfoc1($wpID,$cID,$ctID){
+
+        $query = $this->db->query("select prepared_on,reviewed_on,approved_on 
+        from {$this->tblc1} as c1 
+        where c1.workpaper = {$wpID}
+        and c1.clientID = {$cID}
+        and c1.c1tID = {$ctID}");
+        return $query->getRowArray();
 
     }
 
@@ -296,6 +321,7 @@ class WorkpaperModel extends  Model {
         $data = [
             'remarks' => 'Sent to Supervisor for review',
             'status' => 'Reviewing',
+            'prepared_on' => $this->date.' '.$this->time
         ];
         
         if($this->db->table($this->tblc1)->where($where)->update($data)){

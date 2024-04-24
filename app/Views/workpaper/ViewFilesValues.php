@@ -92,6 +92,7 @@
                                     <?php if($p == 100){?>
                                         <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewc1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                     <?php }?>
+                                    <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
                                 </td>
                             </tr>
                         <?php }?>

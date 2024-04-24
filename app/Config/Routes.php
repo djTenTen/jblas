@@ -59,6 +59,13 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('/auditsystem/wp/sendtoreview/(:any)', 'WorkpaperController::sendtoreview/$1/');
     $routes->get('/auditsystem/workpaper/review', 'WorkpaperController::review');
     
+    /**
+        PDF VIEW WORK PAPER
+     */
+    $routes->get('/auditsystem/wp/viewpdfc1/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::viewpdfc1/$1/$2/$3/$4');
+    $routes->get('/auditsystem/wp/viewpdfc2/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::viewpdfc2/$1/$2/$3/$4');
+    $routes->get('/auditsystem/wp/viewpdfc3/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::viewpdfc3/$1/$2/$3/$4');
+
     
     /**
         Setting values of chapter files
