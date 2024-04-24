@@ -25,6 +25,18 @@
     </header>
 
     <div class="container-xl px-4 mt-n10">
+
+        <?php if (session()->get('sent')) { ?>
+            <div class="alert alert-danger alert-icon" role="alert">
+                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="alert-icon-content">
+                    <h6 class="alert-heading">Files Sent</h6>
+                    The file has been sent to Supervisor for Review.
+                </div>
+            </div>
+        <?php  }?>
+
+
         <div class="card">
             <div class="card-body">
                 <table class="table table-hover" >
@@ -78,7 +90,7 @@
                                         <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                     <?php }?>
                                     <?php if($p == 100){?>
-                                        <button class="btn btn-success btn-icon btn-sm" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                        <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewc1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                     <?php }?>
                                 </td>
                             </tr>
@@ -101,7 +113,7 @@
                                 <td>
                                     <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter2/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                     <?php if($p == 100){?>
-                                        <button class="btn btn-success btn-icon btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                        <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewc1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                     <?php }?>
                                 </td>
                             </tr>
@@ -136,7 +148,7 @@
                                         <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                     <?php }?>
                                     <?php if($p == 100){?>
-                                        <a class="btn btn-success btn-icon btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></a>
+                                        <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewc1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                     <?php }?>
                                 </td>
                             </tr>
@@ -159,8 +171,8 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="" action="<?= base_url('auditsystem/workpaper/save')?>" method="post">
-                    Are you sure to send this file for Review?
+                <form id="formsend" action="" method="post">
+                    
             </div>
             <div class="modal-footer">
                     <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
@@ -177,9 +189,10 @@ $(document).ready(function () {
     
     $('.senddata').on('click', function () {
         var file = $(this).data('file');
-
-        console.log(file);
-    });
+        var urlsubmit = $(this).data('urlsubmit');
+        $('#formsend').html(`<h6>Are you sure to send this file <b>`+ file +`</b> for Review?</h6>`);
+        $('#formsend').attr('action',urlsubmit);
+    });  
 
  
 

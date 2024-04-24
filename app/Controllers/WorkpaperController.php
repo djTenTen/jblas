@@ -67,7 +67,6 @@ class WorkpaperController extends BaseController{
         $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
         $dwpID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
 
-        
         $type = session()->get('type');
         switch ($type) {
             case 'Preparer': $status = 'Preparing'; break;
@@ -135,6 +134,26 @@ class WorkpaperController extends BaseController{
         }
 
 
+
+    }
+
+    public function sendtoreviewc1($ctID,$cID,$wpID,$name){
+
+        $req = [
+            'ctID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+            'cID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+        ];
+
+        $res = $this->wpmodel->sendtoreviewc1($req);
+
+        if($res == "added"){
+            session()->setFlashdata('sent','sent');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }
 
     }
 
@@ -2190,6 +2209,7 @@ class WorkpaperController extends BaseController{
 
 
 
+    
     /**
         ----------------------------------------------------------
         AB4a,b,c,d,e,f,g,h FUNCTIONS

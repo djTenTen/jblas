@@ -286,6 +286,29 @@ class WorkpaperModel extends  Model {
 
     }
 
+    public function sendtoreviewc1($req){
+
+        $where = [
+            'clientID' => $req['cID'],
+            'workpaper' => $req['wpID'],
+            'c1tID' => $req['ctID'],
+        ];
+        $data = [
+            'remarks' => 'Sent to Supervisor for review',
+            'status' => 'Reviewing',
+        ];
+        
+        if($this->db->table($this->tblc1)->where($where)->update($data)){
+            return "sent";
+        }else{
+            return false;
+        }
+
+
+
+        
+    }
+
 
 
 

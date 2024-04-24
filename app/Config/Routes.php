@@ -55,6 +55,9 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('/auditsystem/workpaper/save', 'WorkpaperController::saveworkpaper');
     $routes->get('/auditsystem/workpaper/prepare', 'WorkpaperController::prepare');
     $routes->get('/auditsystem/wp/getfiles/(:any)/(:any)/(:any)', 'WorkpaperController::getfiles/$1/$2/$3');
+    $routes->post('/auditsystem/wp/sendtoreviewc1/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::sendtoreviewc1/$1/$2/$3/$4');
+
+    
     /**
         Setting values of chapter files
      */
