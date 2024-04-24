@@ -267,7 +267,7 @@
                         </a>
                         <div class="collapse" id="collapseReview" data-bs-parent="#accordionSidenav">
                             <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/revievw">Check Work Paper</a>
+                                <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/review">Check Work Paper</a>
                             </nav>
                         </div>
 

@@ -84,7 +84,7 @@ class WorkpaperModel extends  Model {
         return $query->getResultArray();
     }
 
-    public function getworkpaperspe($fID,$uID,$status){
+    public function getworkpaperspe($pos,$fID,$uID,$status){
         $query = $this->db->query("select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
         (select COUNT(*) from {$this->tblc1} as tc1 where tc1.workpaper = wp.wpID and tc1.clientID = wp.client) as x1,
         (select COUNT(*) from {$this->tblc2} as tc2 where tc2.workpaper = wp.wpID and tc2.clientID = wp.client) as x2,
@@ -99,7 +99,7 @@ class WorkpaperModel extends  Model {
         tc.name as cli
         from {$this->tblwp} as wp, {$this->tblc} as tc
         where wp.firm = {$fID}
-        and wp.auditor = {$uID}
+        and wp.{$pos} = {$uID}
         and tc.cID = wp.client
         and wp.status = '{$status}'");
         
@@ -304,8 +304,21 @@ class WorkpaperModel extends  Model {
             return false;
         }
 
+    }
 
 
+    public function sendtoreview($req){
+
+        $data = [
+            'remarks' => 'Sent to Supervisor for review',
+            'status' => 'Reviewing',
+        ];
+        
+        if($this->db->table($this->tblwp)->where('wpID', $req['wpID'])->update($data)){
+            return "sent";
+        }else{
+            return false;
+        }
         
     }
 

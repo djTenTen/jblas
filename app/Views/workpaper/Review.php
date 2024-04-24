@@ -20,16 +20,36 @@
 
     <div class="container-xl px-4 mt-n10">
 
-            <?php if (session()->get('sent')) { ?>
+            <?php if (session()->get('added')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
-                        <h6 class="alert-heading">Files Sent</h6>
-                        The file has been sent to Supervisor for Review.
+                        <h6 class="alert-heading">Workpaper Initialized</h6>
+                        Work paper has been successfully initiated
                     </div>
                 </div>
             <?php  }?>
-    
+            <?php if (session()->get('exist')) { ?>
+                <div class="alert alert-danger alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Duplicate Detected</h6>
+                        Work paper is already exist
+                    </div>
+                </div>
+            <?php  }?>
+
+            <?php if (session()->get('invalid_input')) { ?>
+                <div class="alert alert-danger alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Invalid Input</h6>
+                        Something wrong with your data inputd, please try again.
+                    </div>
+                </div>
+            <?php  }?>
+
+
         <div class="card">
 
             <div class="card-body">
@@ -80,9 +100,6 @@
                             <td><?= $r['added']?></td>
                             <td>
                                 <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>/<?= $r['cli']?>"><i class="fas fa-highlighter"></i></a>
-                                <?php //if($p == 100){?>
-                                    <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
-                                <?php //}?>
                             </td>
                         </tr>
                     <?php }?>
@@ -92,39 +109,3 @@
         </div>
     </div>
 </main>
-<!-- Modal Review-->
-<div class="modal fade" id="sendtoreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
-                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="formsend" action="" method="post">
-                    
-            </div>
-            <div class="modal-footer">
-                    <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
-                    <button class="btn btn-primary" type="submit">Confirm</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-$(document).ready(function () {
-    
-    $('.senddata').on('click', function () {
-        var file = $(this).data('file');
-        var urlsubmit = $(this).data('urlsubmit');
-        $('#formsend').html(`<h6>Are you sure to send this file <b>`+ file +`</b> for Review?</h6>`);
-        $('#formsend').attr('action',urlsubmit);
-    });  
-
- 
-
-});
-</script>

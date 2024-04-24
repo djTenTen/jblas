@@ -51,17 +51,29 @@ class WorkpaperController extends BaseController{
         $fID = $this->crypt->decrypt(session()->get('firmID'));
         $uID = $this->crypt->decrypt(session()->get('userID'));
 
-        $data['aud'] = $this->wpmodel->getauditors($fID,'Preparer');
-        $data['sup'] = $this->wpmodel->getauditors($fID,'Reviewer');
-        $data['mgr'] = $this->wpmodel->getauditors($fID,'Audit Manager');
-        $data['cl'] = $this->cmodel->getclients($fID);
-        $data['wp'] = $this->wpmodel->getworkpaperspe($fID,$uID,'Preparing');
+        $data['wp'] = $this->wpmodel->getworkpaperspe('auditor',$fID,$uID,'Preparing');
 
         echo view('includes/Header', $data);
         echo view('workpaper/Prepare', $data);    
         echo view('includes/Footer');
 
     }
+
+    public function review(){
+
+        $data['title'] = "Review Working Paper";
+
+        $fID = $this->crypt->decrypt(session()->get('firmID'));
+        $uID = $this->crypt->decrypt(session()->get('userID'));
+
+        $data['wp'] = $this->wpmodel->getworkpaperspe('supervisor',$fID,$uID,'Reviewing');
+
+        echo view('includes/Header', $data);
+        echo view('workpaper/Review', $data);    
+        echo view('includes/Footer');
+
+    }
+
     public function getfiles($cID,$wpID,$name){
 
         $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
@@ -147,12 +159,30 @@ class WorkpaperController extends BaseController{
 
         $res = $this->wpmodel->sendtoreviewc1($req);
 
-        if($res == "added"){
+        if($res == "sent"){
             session()->setFlashdata('sent','sent');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }
+
+    }
+
+    public function sendtoreview($wpID){
+
+        $req = [
+            'wpID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+        ];
+
+        $res = $this->wpmodel->sendtoreview($req);
+
+        if($res == "sent"){
+            session()->setFlashdata('sent','sent');
+            return redirect()->to(site_url('auditsystem/workpaper/prepare'));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/workpaper/prepare'));
         }
 
     }
