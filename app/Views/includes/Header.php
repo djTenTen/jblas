@@ -216,17 +216,19 @@
  
                         <?php if(session()->get('allowed')->clm == "Yes"){?>
                             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseClient" aria-expanded="false" aria-controls="collapseClient">
-                                <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                                <div class="nav-link-icon"><i data-feather="table"></i></div>
                                 Client Management
                                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseClient" data-bs-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
                                 <?php if(session()->get('allowed')->cl == "Yes"){?>
-                                    <a class="nav-link" href="<?= base_url()?>auditsystem/client">Clients</a>
+                                    <a class="nav-link" href="<?= base_url()?>auditsystem/client">
+                                    <div class="nav-link-icon"><i data-feather="users"></i></div>Clients</a>
                                 <?php }?>
                                 <?php if(session()->get('allowed')->sd == "Yes"){?>
-                                    <a class="nav-link" href="<?= base_url()?>auditsystem/client/set">Set Defaults</a>
+                                    <a class="nav-link" href="<?= base_url()?>auditsystem/client/set">
+                                    <div class="nav-link-icon"><i data-feather="tool"></i></div>Set Defaults</a>
                                 <?php }?>
                                 </nav>
                             </div>
@@ -234,7 +236,7 @@
                        
                         <?php if(session()->get('allowed')->audm == "Yes"){?>
                         <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseAuditor" aria-expanded="false" aria-controls="collapseAuditor">
-                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            <div class="nav-link-icon"><i data-feather="sliders"></i></div>
                             Auditor Management
                             <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
@@ -242,51 +244,57 @@
                         <?php if(session()->get('allowed')->aud == "Yes"){?>
                         <div class="collapse" id="collapseAuditor" data-bs-parent="#accordionSidenav">
                             <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                <a class="nav-link" href="<?= base_url()?>auditsystem/auditor">Auditor</a>
+                                <a class="nav-link" href="<?= base_url()?>auditsystem/auditor">
+                                <div class="nav-link-icon"><i data-feather="slack"></i></div>Auditor</a>
                             </nav>
                         </div>
                         <?php }?>
                             
                         <?php if(session()->get('allowed')->workp == "Yes"){?>
                                 <div class="sidenav-menu-heading">Work Paper</div>
-                            <?php if(session()->get('allowed')->preparer == "Yes"){?>
+                            <?php //if(session()->get('allowed')->preparer == "Yes"){?>
                                 <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePrepare" aria-expanded="false" aria-controls="collapsePrepare">
-                                    <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                                    <div class="nav-link-icon"><i data-feather="edit"></i></div>
                                     Prepare
                                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                 </a>
                                 <div class="collapse" id="collapsePrepare" data-bs-parent="#accordionSidenav">
                                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                        <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/prepare">Prepare Work Paper</a>
+                                        <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/prepare">
+                                        <div class="nav-link-icon"><i data-feather="edit-3"></i></div>Prepare Work Paper</a>
                                     </nav>
                                 </div>
-                            <?php }?>
-                            <?php if(session()->get('allowed')->reviewer == "Yes"){?>
+                            <?php //}?>
+                            <?php //if(session()->get('allowed')->reviewer == "Yes"){?>
                                 <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseReview" aria-expanded="false" aria-controls="collapseReview">
-                                    <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                                    <div class="nav-link-icon"><i data-feather="eye"></i></div>
                                     Review
                                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                 </a>
                                 <div class="collapse" id="collapseReview" data-bs-parent="#accordionSidenav">
                                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                        <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/review">Check Work Paper</a>
+                                        <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/review">
+                                        <div class="nav-link-icon"><i data-feather="check-square"></i></div>Check Work Paper</a>
                                     </nav>
                                 </div>
-                            <?php }?>
-                            <?php if(session()->get('allowed')->audmanager == "Yes"){?>
+                            <?php //}?>
+                            <?php //if(session()->get('allowed')->audmanager == "Yes"){?>
                             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseAudManager" aria-expanded="false" aria-controls="collapseAudManager">
-                                <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                                <div class="nav-link-icon"><i data-feather="users"></i></div>
                                 Audit Manager
                                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseAudManager" data-bs-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                    <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/initiate">Initiate</a>
-                                    <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/revievw">View</a>
-                                    <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/Approved">Approved</a>
+                                    <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/initiate">
+                                    <div class="nav-link-icon"><i data-feather="file-plus"></i></div>Initiate</a>
+                                    <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/revievw">
+                                    <div class="nav-link-icon"><i data-feather="eye"></i></div>View</a>
+                                    <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/Approved">
+                                    <div class="nav-link-icon"><i data-feather="check-square"></i></div>Approved</a>
                                 </nav>
                             </div>
-                            <?php }?>
+                            <?php // }?>
                         <?php }?>
 
                         <?php if(session()->get('allowed')->sett == "Yes"){?>
@@ -294,12 +302,12 @@
 
                             <?php if(session()->get('allowed')->frm == "Yes"){?>
                             <a class="nav-link" href="<?= base_url('auditsystem/firms')?>">
-                                <div class="nav-link-icon"><i data-feather="filter"></i></div>
+                                <div class="nav-link-icon"><i data-feather="aperture"></i></div>
                                 Firms
                             </a>
                             <?php }?>
                             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                <div class="nav-link-icon"><i data-feather="settings"></i></div>
                                 Settings
                                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -307,6 +315,7 @@
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
                                     <!-- Nested Sidenav Accordion (Pages -> Account)-->
                                     <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
+                                        <div class="nav-link-icon"><i data-feather="file-text"></i></div>   
                                         HAT Audit
                                         <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
@@ -320,7 +329,7 @@
                                         </nav>
                                     </div>
                                     <a class="nav-link" href="<?= base_url('auditsystem/position')?>">
-                                        <div class="nav-link-icon"><i data-feather="filter"></i></div>
+                                        <div class="nav-link-icon"><i data-feather="unlock"></i></div>
                                         Position
                                     </a>
                                 </nav>
@@ -329,7 +338,7 @@
                             <?php if(session()->get('allowed')->user == "Yes"){?>
                                 <div class="sidenav-menu-heading">User Management</div>
                                 <a class="nav-link" href="<?= base_url('auditsystem/user')?>">
-                                    <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                                    <div class="nav-link-icon"><i data-feather="user"></i></div>
                                     Users
                                 </a>
                             <?php }?>
