@@ -55,7 +55,7 @@
             <div class="card-body">
                
             <div class="row">
-                <div class="col-xl-6">
+                <div class="col-xl-5">
 
                     <div class="card mb-4 mb-xl-0">
                         <div class="card-header">Positions</div>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6">
+                <div class="col-xl-7">
                     <!-- Account details card-->
                     <div class="card mb-4">
                         <div class="card-header">Position Details</div>
@@ -101,78 +101,87 @@
                                 </div>
                                 <label class="small mb-1" >Select allowed managements for the position.</label>
                                 <div class="row">
-                                    <div class="col-5">
-                                        
-                                        <h6>Rules:</h6>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" id="add" type="checkbox" name="add" value="Yes"/>
-                                            <label class="form-check-label" for="add">Add</label>
+                                    <h6>Rules:</h6>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" id="add" type="checkbox" name="add" value="Yes"/>
+                                                <label class="form-check-label" for="add">Add</label>
+                                            </div>
                                         </div>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" id="edit" type="checkbox" name="edit" value="Yes"/>
-                                            <label class="form-check-label" for="edit">Edit</label>
+                                        <div class="col-3">
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" id="edit" type="checkbox" name="edit" value="Yes"/>
+                                                <label class="form-check-label" for="edit">Edit</label>
+                                            </div>
                                         </div>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" id="acin" type="checkbox" name="acin" value="Yes" />
-                                            <label class="form-check-label" for="acin">Inactive / Active</label>
+                                        <div class="col-4">
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" id="acin" type="checkbox" name="acin" value="Yes" />
+                                                <label class="form-check-label" for="acin">Inactive / Active</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-7">
-                                        <h6>Departments:</h6>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" id="clm" type="checkbox" name="clm" value="Yes"/>
-                                            <label class="form-check-label" for="clm">Client Management</label>
-                                            <div class="col-6">
-                                                <div class="form-check mb-2">
-                                                    <input class="form-check-input" id="cl" type="checkbox" name="cl" value="Yes"/>
-                                                    <label class="form-check-label" for="cl">Client</label>
-                                                </div>
-                                                <div class="form-check mb-2">
-                                                    <input class="form-check-input" id="sd" type="checkbox" name="sd" value="Yes"/>
-                                                    <label class="form-check-label" for="sd">Set Defaults</label>
-                                                </div>
+                                </div>
+                                <div class="row">
+                                    <h6>Departments:</h6>
+                                    <div class="form-check mb-2 col-4">
+                                        <input class="form-check-input" id="clm" type="checkbox" name="clm" value="Yes"/>
+                                        <label class="form-check-label" for="clm">Client Management</label>
+                                        <div class="col-12">
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" id="cl" type="checkbox" name="cl" value="Yes"/>
+                                                <label class="form-check-label" for="cl">Client</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" id="sd" type="checkbox" name="sd" value="Yes"/>
+                                                <label class="form-check-label" for="sd">Set Defaults</label>
                                             </div>
                                         </div>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" id="audm" type="checkbox" name="audm" value="Yes"/>
-                                            <label class="form-check-label" for="audm">Auditor Management</label>
-                                            <div class="col-6">
-                                                <div class="form-check mb-2">
-                                                    <input class="form-check-input" id="aud" type="checkbox" name="aud" value="Yes"/>
-                                                    <label class="form-check-label" for="aud">Auditor</label>
-                                                </div>
+                                    </div>
+                                    <div class="form-check mb-2 col-4">
+                                        <input class="form-check-input" id="audm" type="checkbox" name="audm" value="Yes"/>
+                                        <label class="form-check-label" for="audm">Auditor Management</label>
+                                        <div class="col-12">
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" id="aud" type="checkbox" name="aud" value="Yes"/>
+                                                <label class="form-check-label" for="aud">Auditor</label>
                                             </div>
                                         </div>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" id="workp" type="checkbox" name="workp" value="Yes"/>
-                                            <label class="form-check-label" for="workp">Work Paper</label>
-                                            <div class="col-6">
-                                                <div class="form-check mb-2">
-                                                    <input class="form-check-input" id="preparer" type="checkbox" name="preparer" value="Yes"/>
-                                                    <label class="form-check-label" for="preparer">Preparer</label>
-                                                </div>
-                                                <div class="form-check mb-2">
-                                                    <input class="form-check-input" id="reviewer" type="checkbox" name="reviewer" value="Yes"/>
-                                                    <label class="form-check-label" for="reviewer">Reviewer</label>
-                                                </div>
-                                                <div class="form-check mb-2">
-                                                    <input class="form-check-input" id="audmanager" type="checkbox" name="audmanager" value="Yes"/>
-                                                    <label class="form-check-label" for="audmanager">Audit Manager</label>
-                                                </div>
+                                    </div>
+                                    <div class="form-check mb-2 col-4">
+                                        <input class="form-check-input" id="workp" type="checkbox" name="workp" value="Yes"/>
+                                        <label class="form-check-label" for="workp">Work Paper</label>
+                                        <div class="col-12">
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" id="preparer" type="checkbox" name="preparer" value="Yes"/>
+                                                <label class="form-check-label" for="preparer">Preparer</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" id="reviewer" type="checkbox" name="reviewer" value="Yes"/>
+                                                <label class="form-check-label" for="reviewer">Reviewer</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" id="audmanager" type="checkbox" name="audmanager" value="Yes"/>
+                                                <label class="form-check-label" for="audmanager">Audit Manager</label>
                                             </div>
                                         </div>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" id="frm" type="checkbox" name="frm" value="Yes"/>
-                                            <label class="form-check-label" for="frm">Firms Management</label>
-                                        </div>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" id="sett" type="checkbox" name="sett" value="Yes"/>
-                                            <label class="form-check-label" for="sett">Settings</label>
-                                        </div>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" id="dash" type="checkbox" name="dash" value="Yes"/>
-                                            <label class="form-check-label" for="dash">Dashboard</label>
-                                        </div>
+                                    </div>
+                                    <div class="form-check mb-2 col-4">
+                                        <input class="form-check-input" id="frm" type="checkbox" name="frm" value="Yes"/>
+                                        <label class="form-check-label" for="frm">Firms Management</label>
+                                    </div>
+                                    <div class="form-check mb-2 col-4">
+                                        <input class="form-check-input" id="sett" type="checkbox" name="sett" value="Yes"/>
+                                        <label class="form-check-label" for="sett">Settings</label>
+                                    </div>
+                                    <div class="form-check mb-2 col-4">
+                                        <input class="form-check-input" id="dash" type="checkbox" name="dash" value="Yes"/>
+                                        <label class="form-check-label" for="dash">Dashboard</label>
+                                    </div>
+                                    <div class="form-check mb-2 col-4">
+                                        <input class="form-check-input" id="user" type="checkbox" name="user" value="Yes"/>
+                                        <label class="form-check-label" for="user">User Management</label>
                                     </div>
                                 </div>
                                 <button class="btn btn-success float-end" type="submit">Save changes</button>
@@ -203,65 +212,92 @@
                         <input class="form-control pos" id="pos" type="text" placeholder="Enter position name" name="pos" required/>
                     </div>
                     <label class="small mb-1" >Select allowed managements for the position.</label>
+
                     <div class="row">
-                        <div class="col-6">
-                            
-                            <h6>Rules:</h6>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input add" id="add" type="checkbox" name="add" value="Yes"/>
-                                <label class="form-check-label" for="add">Add</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input edit" id="edit" type="checkbox" name="edit" value="Yes"/>
-                                <label class="form-check-label" for="edit">Edit</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input acin" id="acin" type="checkbox" name="acin" value="Yes" />
-                                <label class="form-check-label" for="acin">Inactive / Active</label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <h6>Departments:</h6>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input clm" id="clm" type="checkbox" name="clm" value="Yes"/>
-                                <label class="form-check-label" for="clm">Client Management</label>
-                                <div class="col-6">
-                                    <div class="form-check mb-2">
-                                        <input class="form-check-input cl" id="cl" type="checkbox" name="cl" value="Yes"/>
-                                        <label class="form-check-label" for="cl">Client</label>
-                                    </div>
-                                    <div class="form-check mb-2">
-                                        <input class="form-check-input sd" id="sd" type="checkbox" name="sd" value="Yes"/>
-                                        <label class="form-check-label" for="sd">Set Defaults</label>
-                                    </div>
+                        <h6>Rules:</h6>
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input add" id="add" type="checkbox" name="add" value="Yes"/>
+                                    <label class="form-check-label" for="add">Add</label>
                                 </div>
                             </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input audm" id="audm" type="checkbox" name="audm" value="Yes"/>
-                                <label class="form-check-label" for="audm">Auditor Management</label>
-                                <div class="col-6">
-                                    <div class="form-check mb-2">
-                                        <input class="form-check-input aud" id="aud" type="checkbox" name="aud" value="Yes"/>
-                                        <label class="form-check-label" for="aud">Auditor</label>
-                                    </div>
+                            <div class="col-3">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input edit" id="edit" type="checkbox" name="edit" value="Yes"/>
+                                    <label class="form-check-label" for="edit">Edit</label>
                                 </div>
                             </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input frm" id="frm" type="checkbox" name="frm" value="Yes"/>
-                                <label class="form-check-label" for="frm">Firms Management</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input sett" id="sett" type="checkbox" name="sett" value="Yes"/>
-                                <label class="form-check-label" for="sett">Settings</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input dash" id="dash" type="checkbox" name="dash" value="Yes"/>
-                                <label class="form-check-label" for="dash">Dashboard</label>
+                            <div class="col-4">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input acin" id="acin" type="checkbox" name="acin" value="Yes" />
+                                    <label class="form-check-label" for="acin">Inactive / Active</label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                
-            </div>
+                    <div class="row">
+                        <h6>Departments:</h6>
+                        <div class="form-check mb-2 col-4">
+                            <input class="form-check-input clm" id="clm" type="checkbox" name="clm" value="Yes"/>
+                            <label class="form-check-label" for="clm">Client Management</label>
+                            <div class="col-12">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input cl" id="cl" type="checkbox" name="cl" value="Yes"/>
+                                    <label class="form-check-label" for="cl">Client</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input sd" id="sd" type="checkbox" name="sd" value="Yes"/>
+                                    <label class="form-check-label" for="sd">Set Defaults</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-check mb-2 col-4">
+                            <input class="form-check-input audm" id="audm" type="checkbox" name="audm" value="Yes"/>
+                            <label class="form-check-label" for="audm">Auditor Management</label>
+                            <div class="col-12">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input aud" id="aud" type="checkbox" name="aud" value="Yes"/>
+                                    <label class="form-check-label" for="aud">Auditor</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-check mb-2 col-4">
+                            <input class="form-check-input workp" id="workp" type="checkbox" name="workp" value="Yes"/>
+                            <label class="form-check-label" for="workp">Work Paper</label>
+                            <div class="col-12">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input preparer" id="preparer" type="checkbox" name="preparer" value="Yes"/>
+                                    <label class="form-check-label" for="preparer">Preparer</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input reviewer" id="reviewer" type="checkbox" name="reviewer" value="Yes"/>
+                                    <label class="form-check-label" for="reviewer">Reviewer</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input audmanager" id="audmanager" type="checkbox" name="audmanager" value="Yes"/>
+                                    <label class="form-check-label" for="audmanager">Audit Manager</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-check mb-2 col-4">
+                            <input class="form-check-input frm" id="frm" type="checkbox" name="frm" value="Yes"/>
+                            <label class="form-check-label" for="frm">Firms Management</label>
+                        </div>
+                        <div class="form-check mb-2 col-4">
+                            <input class="form-check-input sett" id="sett" type="checkbox" name="sett" value="Yes"/>
+                            <label class="form-check-label" for="sett">Settings</label>
+                        </div>
+                        <div class="form-check mb-2 col-4">
+                            <input class="form-check-input dash" id="dash" type="checkbox" name="dash" value="Yes"/>
+                            <label class="form-check-label" for="dash">Dashboard</label>
+                        </div>
+                        <div class="form-check mb-2 col-4">
+                            <input class="form-check-input user" id="user" type="checkbox" name="user" value="Yes"/>
+                            <label class="form-check-label" for="user">User Management</label>
+                        </div>
+                    </div>
+
             <div class="modal-footer">
                 <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
                 

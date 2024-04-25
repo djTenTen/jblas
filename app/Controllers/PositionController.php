@@ -60,7 +60,12 @@ class PositionController extends BaseController{
             'aud' => $this->request->getPost('aud'),
             'frm' => $this->request->getPost('frm'),
             'sett' => $this->request->getPost('sett'),
-            'dash' => $this->request->getPost('dash')
+            'dash' => $this->request->getPost('dash'),
+            'workp' => $this->request->getPost('workp'),
+            'preparer' => $this->request->getPost('preparer'),
+            'reviewer' => $this->request->getPost('reviewer'),
+            'audmanager' => $this->request->getPost('audmanager'),
+            'user' => $this->request->getPost('user'),
         ];
 
         $req = [
@@ -104,7 +109,12 @@ class PositionController extends BaseController{
             'aud' => $this->request->getPost('aud'),
             'frm' => $this->request->getPost('frm'),
             'sett' => $this->request->getPost('sett'),
-            'dash' => $this->request->getPost('dash')
+            'dash' => $this->request->getPost('dash'),
+            'workp' => $this->request->getPost('workp'),
+            'preparer' => $this->request->getPost('preparer'),
+            'reviewer' => $this->request->getPost('reviewer'),
+            'audmanager' => $this->request->getPost('audmanager'),
+            'user' => $this->request->getPost('user'),
         ];
 
         $req = [
