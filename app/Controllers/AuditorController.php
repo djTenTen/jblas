@@ -58,6 +58,7 @@ class AuditorController extends BaseController{
             'pass' => $this->crypt->encrypt('password'), //Should be generated and emailed to the user
             'type' => $this->request->getPost('type'),
             'fID' => $this->crypt->decrypt(session()->get('firmID')),
+            'signature' => $this->request->getFile('signature'),
             'pos' => 2,
         ];
 

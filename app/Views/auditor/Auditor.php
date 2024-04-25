@@ -120,7 +120,7 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="" action="<?= base_url('auditsystem/auditor/save')?>" method="post">
+                <form id="" action="<?= base_url('auditsystem/auditor/save')?>" method="post" enctype="multipart/form-data">
 
                     <div class="row gx-3">
                         <div class="col-md-12">
@@ -150,6 +150,17 @@
                                 </select>
                             </div>
                         </div>
+
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <div class="small font-italic text-muted mb-4">The file must be PNG, no larger than 5 MB and 2x2 or square size image</div>
+                                <!-- Profile picture upload button-->
+                                <input type="file" id="imageInput" name="signature" class="form-control btn btn-primary" required>
+                            </div>
+                            <div id="errorContainer" style="display: none;"></div>
+                        </div>
+                                  
                     </div>
                 
             </div>
@@ -186,6 +197,44 @@
 
 <script>
 $(document).ready(function () {
+
+    $('#imageInput').change(function() {
+        var maxSizeInBytes = 5 * 1024 * 1024; // 5MB
+        var fileSize = this.files[0].size;
+        var fileType = this.files[0].type;
+        
+
+        if (fileType !== 'image/png') {
+            $('#errorContainer').html(`
+            <div class="alert alert-danger alert-icon" role="alert">
+                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="alert-icon-content">
+                    <h6 class="alert-heading">Image not PNG</h6>
+                    Please select a PNG image
+                </div>
+            </div>`).show();
+
+            $(this).val('');
+            return; // Exit the function if file type is not PNG
+        }
+
+        if (fileSize > maxSizeInBytes) {
+            $('#errorContainer').html(`
+            <div class="alert alert-danger alert-icon" role="alert">
+                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="alert-icon-content">
+                    <h6 class="alert-heading">Image too Large</h6>
+                    File size exceeds the maximum limit (5MB)
+                </div>
+            </div>`).show();
+            $(this).val('');
+            return; // Exit the function if file size exceeds the limit
+        }
+
+        $('#errorContainer').hide();
+
+    });
+
 
     $(".active-data").on("click", function() {
         var name = $(this).data('name');

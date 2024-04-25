@@ -55,6 +55,10 @@ class AuditorModel extends Model{
         if($res1 >= 1){
             return 'exist';
         }else{
+
+            $sign = $req['signature']->getRandomName();
+            $req['signature']->move(ROOTPATH .'public/uploads/signature', $sign);
+
             $data = [
                 'name' => ucfirst($req['name']),
                 'email' => $req['email'],
@@ -63,6 +67,7 @@ class AuditorModel extends Model{
                 'firm' => $req['fID'],
                 'position' => $req['pos'],
                 'status' => 'Active',
+                'signature' => $sign,
                 'verified' => 'No',
                 'added_on' => $this->date.' '.$this->time,
             ];
