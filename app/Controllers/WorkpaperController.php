@@ -2968,7 +2968,7 @@ class WorkpaperController extends BaseController{
                 $data['ee'] = $this->wpmodel->getaa11p2('ee',$s[0],$dc3tID,$dcID,$dwpID);
                 $data['de'] = $this->wpmodel->getaa11p2('de',$s[0],$dc3tID,$dcID,$dwpID);
     
-                $rdata = $this->wpmodel->getaa11p1('aa11ue',$s[0],$dc3tID,$dcID,$dwpID);
+                $rdata = $this->wpmodel->getaa11p('aa11ue',$s[0],$dc3tID,$dcID,$dwpID);
                 $data['ue'] = json_decode($rdata['question'], true);
 
                 $rdata2 = $this->wpmodel->getaa11con('con',$s[0],$dc3tID,$dcID,$dwpID);
@@ -2980,7 +2980,7 @@ class WorkpaperController extends BaseController{
 
                 $s = explode('-', $code);
                 $data['ad'] = $this->wpmodel->getaa11p2('ad',$s[0],$dc3tID,$dcID,$dwpID);
-                $rdata = $this->wpmodel->getaa11p1('aa11uead',$s[0],$dc3tID,$dcID,$dwpID);
+                $rdata = $this->wpmodel->getaa11p('aa11uead',$s[0],$dc3tID,$dcID,$dwpID);
                 $data['ue'] = json_decode($rdata['question'], true);   
                 
                 $s = explode('-', $code);
@@ -3037,45 +3037,45 @@ class WorkpaperController extends BaseController{
 
             case '3.15.2 Ab4b':
 
-                $data['ab4b'] = $this->wpmodel->getab4b($code,$dc3tID);
+                $data['ab4b'] = $this->wpmodel->getab4a('ab4b',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4B', $data);
                 break; 
 
 
             case '3.15.3 Ab4c':
 
-                $data['ab4c'] = $this->wpmodel->getab4c($code,$dc3tID);
+                $data['ab4c'] = $this->wpmodel->getab4a('ab4c',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4C', $data);
                 break; 
 
 
             case '3.15.4 Ab4d':
 
-                $data['ab4d'] = $this->wpmodel->getab4d($code,$dc3tID);
+                $data['ab4d'] = $this->wpmodel->getab4a('ab4d',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4D', $data);
                 break; 
 
             case '3.15.5 Ab4e':
 
-                $data['ab4e'] = $this->wpmodel->getab4e($code,$dc3tID);
+                $data['ab4e'] = $this->wpmodel->getab4a('ab4e',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4E', $data);
                 break; 
 
             case '3.15.6 Ab4f':
 
-                $data['ab4f'] = $this->wpmodel->getab4f($code,$dc3tID);
+                $data['ab4f'] = $this->wpmodel->getab4a('ab4f',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4F', $data);
                 break; 
 
             case '3.15.7 Ab4g':
 
-                $data['ab4g'] = $this->wpmodel->getab4g($code,$dc3tID);
+                $data['ab4g'] = $this->wpmodel->getab4a('ab4g',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4G', $data);
                 break; 
 
             case '3.15.8 Ab4h':
 
-                $data['ab4h'] = $this->wpmodel->getab4h($code,$dc3tID);
+                $data['ab4h'] = $this->wpmodel->getab4a('ab4h',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4H', $data);
                 break; 
 

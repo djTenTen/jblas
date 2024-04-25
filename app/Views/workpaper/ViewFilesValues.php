@@ -79,7 +79,7 @@
                                         <span class="progress-bar bg-success" style="width:<?= $p?>%"><?= $p?>%</span>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="row">
                                     <?php if($r['code'] == 'AC10'){?>
                                         <div class="dropdown">
                                             <button class="btn btn-primary btn-icon btn-sm" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-tools"></i></button>
@@ -117,7 +117,29 @@
                                             <button class="btn btn-success btn-icon btn-sm approve" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/approve/c1')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
                                         <?php }?>
                                     <?php }?>
+                                    <?php if($r['code'] == 'AC10'){?>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary btn-icon btn-sm" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-eye"></i></button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Tangibles/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">Tangibles</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-PPE/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">PPE</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Investments/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">Investments</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Inventory/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">Inventory</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Trade Receivables/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">Trade Receivables</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Other Receivables/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">Other Receivables</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Bank and Cash/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">Bank and Cash</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Trade Payables/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">Trade Payables</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Other Payables/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">Other Payables</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Provisions/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">Provisions</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Revenue/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">Revenue</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Costs/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">Costs</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Payroll/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">Payroll</a>
+                                                <a target="_blank"class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Summary/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>">Summary</a>
+                                            </div>
+                                        </div>
+                                    <?php }else{?>
                                     <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                    <?php }?>
                                 </td>
                             </tr>
                         <?php }?>
@@ -197,7 +219,17 @@
                                             <button class="btn btn-success btn-icon btn-sm approve" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/approve/c3')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
                                         <?php }?>
                                     <?php }?>
-                                    <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                    <?php if($r['code'] == '3.10 Aa11'){?>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary btn-icon btn-sm" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-eye"></i></button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $r['code']?>-un/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>">Unadjusted Errors</a>
+                                                <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $r['code']?>-ad/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>">Adjusted Mades</a>
+                                            </div>
+                                        </div>
+                                    <?php }else{?>
+                                        <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                    <?php }?>
                                 </td>
                             </tr>
                         <?php }?>
