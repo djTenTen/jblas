@@ -52,6 +52,9 @@ class WorkpaperModel extends  Model {
         (select name from {$this->tblu} as tu where tu.userID = wp.auditor) as aud,
         (select name from {$this->tblu} as tu where tu.userID = wp.supervisor) as sup,
         (select name from {$this->tblu} as tu where tu.userID = wp.audmanager) as audm,
+        (select signature from {$this->tblu} as tu where tu.userID = wp.auditor) as audsign,
+        (select signature from {$this->tblu} as tu where tu.userID = wp.supervisor) as supsign,
+        (select signature from {$this->tblu} as tu where tu.userID = wp.audmanager) as mansign,
         tc.name as clientname
         from {$this->tblwp} as wp, {$this->tblc} as tc
         where tc.cID = wp.client
@@ -63,7 +66,7 @@ class WorkpaperModel extends  Model {
 
     public function getfileinfoc1($wpID,$cID,$ctID){
 
-        $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on 
+        $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on
         from {$this->tblc1} as c1 
         where c1.workpaper = {$wpID}
         and c1.clientID = {$cID}

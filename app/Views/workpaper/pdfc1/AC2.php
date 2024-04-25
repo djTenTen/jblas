@@ -105,6 +105,15 @@ $html .= '
 
 
 $html .= '
+    
+';
+//$image_file = base_url('uploads/signature/'.$cl['audsign']) ;
+//$pdf->Image($image_file, $x = 20, $y = 190, $w = 180, $h = 180, $type = '', $link = '', $align = '', $resize = true, $dpi = 300, $palign = '', $ismask = false, $imgmask = false, $border = 0, $fitbox = true, $hidden = false, $fitonpage = false, $alt = '');
+
+//$image_file = base_url('uploads/sinature/'.$cl['audsign']);
+//pdf->Image($image_file, $x = 20, $y = 190, $w = 180, $h = 180, $type = '', $link = '', $align = '', $resize = true, $dpi = 300, $palign = '', $ismask = false, $imgmask = false, $border = 0, $fitbox = true, $hidden = false, $fitonpage = false, $alt = '');
+
+$html .= '
 <h3>PROVISION OF NON-AUDIT SERVICES</h3>
 <p><b>Aim:</b></p>
 <p>To give adequate consideration of the acceptability of providing non-audit services to entities which are not listed (or affiliates of such an entity).</p>
@@ -286,9 +295,14 @@ $html .= '
         <li>We will provide other services but because it is not possible to put sufficient safeguards in place, we will resign as auditor.*</li>
     </ol>
     <table>
+        <style>
+            img{
+                
+            }
+        </style>
         <tbody>
             <tr>
-                <td style="width: 50%;"><p>Signature:</p></td>
+                <td style="width: 50%;"><p>Signature:</p> <b>'.$cl['aud'].'</b> <img src="'.base_url('uploads/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 50px; align-self: center;"></td>
                 <td style="width: 50%;">(A.E.P.)</td>
             </tr>
             <tr>
