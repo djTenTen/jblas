@@ -61,10 +61,10 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                
+                <hr>
                 <h4>RISK SUMMARY</h4>
                 <h6>This form should be completed when a narrative approach to inherent business risk assessment is undertaken. If more than one risk level applies, add additional lines as appropriate.</h6>
-                <br><br>
+                <br>
                 <form action="<?= base_url()?>auditsystem/c1/saveac6ra/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <input type="hidden" name="part" value="ac6ra">
                     <table class="table table-hover table-bordered">
@@ -106,13 +106,12 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
 
-                <br>
-                <br>
+                <br><br><br><hr>
 
                 <h4>NARRATIVE RISK ASSESSMENT INHERENT BUSINESS RISK AND CONTROL ENVIRONMENT ASSESSMENT</h4>
                 <p>The risk forms should not be completed until –</p>
@@ -141,23 +140,23 @@
                 <p>The inherent business risk of the client is deemed to be low / medium / high* for the following reasons:</p>
                 <form action="<?= base_url()?>auditsystem/c1/saveac6s12/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <input type="hidden" name="part" value="ac6s12">
-                    <textarea class="form-control" cols="30" rows="20" name="s1" required><?= $s['s1']?></textarea>
-                <p>	Comprehensive consideration should be given to all clients even those deemed to be low risk. As part of this review consideration must be given to the Company’s going concern status and I.T. risk.</p>
-                <br>
+                    <textarea class="form-control border-dark" cols="30" rows="20" name="s1" required><?= $s['s1']?></textarea>
+                <p>Comprehensive consideration should be given to all clients even those deemed to be low risk. As part of this review consideration must be given to the Company’s going concern status and I.T. risk.</p>
                 <p>Objective: This form is designed to assess the adequacy of the entity’s control environment as a whole to determine whether a control based audit approach is appropriate. Section 3 looks at internal controls specific to the audit. To comply with PSA 315, both sections must be completed regardless of whether you intend to test, and if successful, place reliance on the entity’s controls.</p>
                 <p>In addition, this form should document the considerations of the risks related to management override of controls.</p>
+                <hr>
                 <h4>Section 2a – CONSIDERATION OF THE RISK OF MANAGEMENT OVERRIDE OF CONTROLS </h4>
                 <p>The risk of management override is present in ALL entities. However, the level of that risk will vary from entity to entity. Where management can override key controls, document here the considerations relating to the level of risk posed by management override and the audit procedures planned to address this risk:</p>
                     <textarea class="form-control" cols="30" rows="20" name="s2a" required><?= $s['s2a']?></textarea>
-                <br>
+                <br><hr>
                 <h4>Section 2b – CONSIDERATION OF THE CONTROL ENVIRONMENT </h4>
                 <p>The control environment of the client deemed to be effective / ineffective* for the following reasons: </p>
                 
                     <textarea class="form-control" cols="30" rows="20" name="s2b" required><?= $s['s2b']?></textarea>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <p>Based on the above assessment control testing is / is not * going to be undertaken </p>
-                <br>
+                <br><hr>
                 <h4>Section 3 - UNDERSTANDING THE DESIGN AND IMPLEMENTATION OF INTERNAL CONTROLS</h4>
                 <p>Objective: <br>
                 The auditor is required to “obtain an understanding of internal control relevant to the audit. Although most controls relevant to the audit are likely to relate to financial reporting, not all controls that relate to financial reporting are relevant to the audit.” (paragraph 12 of PSA 315).</p>
@@ -230,11 +229,11 @@
                     </tbody>
                 </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" id="add-field1">Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" id="add-field1"><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br>
-                <br>
+                <br><br><hr>
 
                 <h6>Notes Regarding Assessment of Controls:	</h6>
                 <p>1.	The audit approach section of the assignment plan should include details of how the risk and control environment assessment have influenced the design of the audit programmes and have identified key items and key audit issues.</p>

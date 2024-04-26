@@ -64,7 +64,7 @@
 
             <div class="card-body">
                <!-- Contents Here -->
-
+                <hr>
                 <h4>Client Acceptance or Continuance Form</h4>
                 <h6">This form must be completed by the A.E.P. before any work is undertaken on the file.</p>
                 <p>While answering these questions the following matters should be fully considered for the audit firm and any network firm: independence, integrity, conflicts of interest with other clients, economic dependence, trusts, matters arising with regulatory authorities, ability to service the client, other services provided to the client and hospitality. Additional guidance is available in legislation and the Code of Ethics issued by the International Ethics Standards Board for Accountants.  </h6>
@@ -107,24 +107,25 @@
                         <?php }?>
                     </tbody>
                 </table>
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary m-1 float-end add-field  btn-sm" type="button"><i class="fas fa-plus-square m-1"></i> Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
-                  
-
-                    
+                <br><br><br>
+                <hr>
+                            
                 
 
-                <br><br>
-
-                <div class="mb-3 col-6">
-                    <label class="small mb-1" for="nameap">Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement:</label>
-                    <form action="<?= base_url()?>auditsystem/c1/saveac1eqr/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
-                        <input type="hidden" name="part" value="eqr">
-                        <input type="text" class="form-control" id="nameap" name="nameap" value="<?= $eqr['nameap']?>">
-                    
-        
+                <form action="<?= base_url()?>auditsystem/c1/saveac1eqr/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <input type="hidden" name="part" value="eqr">
+                
+                <div class="mb-3 row">
+                    <div class="col-8">
+                        <label class="small mb-1" for="nameap">Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement:</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control border-dark" id="nameap" name="nameap" value="<?= $eqr['nameap']?>">
+                    </div>
                 </div>
             
                 <h6>Those Charged With Governance and Management:</h6>
@@ -167,18 +168,22 @@
                 <ul>
                     <li>No EQR needs to be performed.</li>
                     <li>It is necessary for an EQR to be performed and this will be performed by 
-                        <input type="text" class="form-control" id="eqr" name="eqr1" value="<?= $eqr['eqr1']?>">
+                        <div class="col-4">
+                            <input type="text" class="form-control border-dark" id="eqr" name="eqr1" value="<?= $eqr['eqr1']?>">
+                        </div>
                     </li>
                     <li>Where the EQR is undertaken by an external reviewer the name of the organisation which they work for
-                        <input type="text" class="form-control" id="eqr" name="eqr2" value="<?= $eqr['eqr2']?>">
+                        <div class="col-4">
+                            <input type="text" class="form-control border-dark" id="eqr" name="eqr2" value="<?= $eqr['eqr2']?>">
+                        </div>
                     </li>
                 </ul>
 
                 <table class="table">
                     <tr>
                         <td> REASON FOR EQR (If an EQR review was performed in the previous period, but is not being performed in the current period, this decision must also be justified.)  
-                            <textarea class="form-control" cols="30" rows="3" name="eqrr" required><?= $eqr['eqrr']?></textarea>
-                            <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                            <textarea class="form-control border-dark" cols="30" rows="5" name="eqrr" required><?= $eqr['eqrr']?></textarea>
+                            <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                         </form>
                         </td>
                     </tr>

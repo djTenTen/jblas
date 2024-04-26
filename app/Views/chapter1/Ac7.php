@@ -34,7 +34,7 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-               
+                <hr>
                 <h4>SPECIFIC AREA NARRATIVE INHERENT RISK ASSESSMENT</h4>
                 <p>Objective: This form is designed to assess the risk for each audit assertion relevant to each audit area.  PSA 315 implies that all areas and all assertions are high risk unless this can be rebutted.  Completion of this form will help to justify a departure from high risk.</p>
                 <p>The risk forms should not be completed until –</p>
@@ -71,11 +71,10 @@
                     <li>They will be communicated to the client at the planning stage in the Planning Letter; and</li>
                     <li>How the risk has been addressed during the assignment should be summarized on the PSA Compliance Critical Issues Memorandum.</li>
                 </ul>
-
+                <hr>
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
-                
+                <table class="table table-bordered">
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
@@ -162,26 +161,15 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $bacdata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $bacdata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
                     </tbody>
-                    </form>
                 </table>
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE RECEIVABLES:</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -269,26 +257,15 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $trdata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $trdata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
                     </tbody>
-                    </form>
                 </table>
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER RECEIVABLES (INCLUDING PREPAYMENTS):</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -376,26 +353,15 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $ordata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $ordata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                    </form>
+                        </tbody>
                 </table>
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVENTORIES:</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -502,8 +468,8 @@
                 <br><br>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVESTMENTS:</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -591,26 +557,15 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $invmtdata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $invmtdata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                    </form>
+                        </tbody>
                 </table>
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROPERTY, PLANT AND EQUIPMENT:</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -717,8 +672,8 @@
                 <br><br>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INTANGIBLE NON-CURRENT ASSETS:</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -825,8 +780,8 @@
                 <br><br>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE PAYABLES:</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -920,8 +875,8 @@
                 <br><br>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER PAYABLES (INCLUDING ACCRUALS):</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -996,26 +951,15 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $opdata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $opdata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                    </form>
+                        </tbody>
                 </table>
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TAXATION:</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1109,8 +1053,8 @@
                 <br><br>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROVISIONS FOR LIABILITIES:</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1204,8 +1148,8 @@
                 <br><br>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – REVENUE / OTHER INCOME:</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1280,26 +1224,15 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $roidata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $roidata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                    </form>
+                        </tbody>
                 </table>
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – DIRECT COSTS / OTHER EXPENSES:</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1374,26 +1307,15 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $dcodata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $dcodata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                    </form>
+                        </tbody>
                 </table>
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PAYROLL:</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1487,8 +1409,8 @@
                 <br><br>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER AREA:</h6>
-                <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <table class="table table-bordered">
                 
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>

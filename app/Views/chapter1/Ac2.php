@@ -64,7 +64,7 @@
 
             <div class="card-body">
                <!-- Contents Here -->
-
+            <hr>
             <h4>PROVISION OF NON-AUDIT SERVICES</h4>
             <h6>Aim:</h6>
             <p>To give adequate consideration of the acceptability of providing non-audit services to entities which are not listed (or affiliates of such an entity).</p>
@@ -129,11 +129,12 @@
                         <?php }?>
                     </tbody>
                 </table>
-                <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                <button class="btn btn-primary m-1 float-end add-field  btn-sm" type="button"><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
             </form>
             
-            <br><br>
+            <br><br><br>
+            <hr>
 
             <h4>Section 3 – Consideration of Self Interest Threat Arising from Substantial Fees from Non Audit Services</h4>
 
@@ -149,8 +150,8 @@
                 <h6>***(Where appropriate): Documentation by the A.E.P. of how the self interest threat has been reduced to an acceptable level / details of communication with the Ethics Partner / Details of which services (audit or non-audit) will not be provided:</h6>
                 <form action="<?= base_url()?>auditsystem/c1/saveac2aep/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <input type="hidden" name="part" value="ac2aep">
-                    <textarea class="form-control" cols="30" rows="3" name="eap" required><?= $aep['question']?></textarea>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <textarea class="form-control border-dark" cols="30" rows="3" name="eap" required><?= $aep['question']?></textarea>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end  btn-sm">Save</button>
                 </form>
                 
 

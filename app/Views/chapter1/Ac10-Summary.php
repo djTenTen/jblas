@@ -1509,22 +1509,21 @@
                                 <td><input name="materiality" type="text" class="form-control form-control-sm" value="<?= $mat['question']?>"></td>
                             </tr>
                         </tbody>   
-                            <div class="container">
-                                <div class="col-3 float-end">
-                                    <div class="d-grid">
-                                        <button type="submit" class="btn btn-success  btn-block m-2">Save</button>
-                                    </div>
-                                </div>
-                            </div>     
-                    </table>
                             
-                    </form>
+                    </table>
+
+                            
+                            
+                    
                 </div>
+
+                    <button type="submit" class="btn btn-success m-1 float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                          
+                </form>   
+                <br><br><br><hr>
                <p>(1) Risk must be assessed for each area at assertion level.  If for an area, all assertions have the same risk use the "all" line. However, if there are different levels of risks then the various assertion rows should be expanded in each area as relevant. At the testing stage the key assertions are occurrence, completeness, accuracy, cut off and classification for transactions and existence, rights and obligations, completeness, valuation and allocation and disclosure for balances.</p>
                <p>'(2) If testing controls then the operating effectiveness of the non critical controls must be tested at least every three years to ensure that they are effective, all critical controls should still be tested annually.  Walkthrough tests should be carried out every year to ensure that controls have not changed.</p>
                <p>(3) It will usually only be appropriate to test controls where they are expected to be effective therefore a low risk sample size should be used.</p>
-
-               <h4>Reference Table</h4>
                
 
             </div>

@@ -63,7 +63,7 @@
             <?php  }?>
 
             <div class="card-body">
-               
+            <hr>
                 <h4>PRELIMINARY PLANNING PROCEDURES – CLIENT INVOLVEMENT IN THE PLANNING PROCESS</h4>
                 <h6>NB: The key issues noted from this document must be recorded in the relevant areas of the audit file or the PAF and should feed through into the risk assessment, audit approach and fieldwork.</h6>
                 <form action="<?= base_url()?>auditsystem/c1/saveac4ppr/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
@@ -72,20 +72,21 @@
                         <tr>
                             <td>
                                 <h6>Which members of the client staff and the audit team have been involved in the preplanning process and what are their roles?</h6>
-                                <textarea class="form-control" cols="30" rows="3" name="ppr1" required><?= $ppr['ppr1']?></textarea>
+                                <textarea class="form-control border-dark" cols="30" rows="3" name="ppr1" required><?= $ppr['ppr1']?></textarea>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <h6>How was the communication undertaken and on what date? </h6>
-                                <textarea class="form-control" cols="30" rows="3" name="ppr2" required><?= $ppr['ppr2']?></textarea>
+                                <textarea class="form-control border-dark" cols="30" rows="3" name="ppr2" required><?= $ppr['ppr2']?></textarea>
                             </td>
                         </tr>
                     </table>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
 
-                <br>
+                <br><br><br>
+                <hr>
                 <p>In respect of a new audit assignment, where the discussion points below request “changes” to be noted, full information should be documented, as the working papers will not document “existing” issues affecting the client.</p>
 
                 <table class="table">
@@ -130,10 +131,11 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br>
+                <hr>
             </div>
         </div>
     </div>

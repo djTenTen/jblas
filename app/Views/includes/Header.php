@@ -252,7 +252,7 @@
                             
                         <?php if(session()->get('allowed')->workp == "Yes"){?>
                                 <div class="sidenav-menu-heading">Work Paper</div>
-                            <?php //if(session()->get('allowed')->preparer == "Yes"){?>
+                            <?php if(session()->get('allowed')->preparer == "Yes"){?>
                                 <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePrepare" aria-expanded="false" aria-controls="collapsePrepare">
                                     <div class="nav-link-icon"><i data-feather="edit"></i></div>
                                     Prepare
@@ -264,8 +264,8 @@
                                         <div class="nav-link-icon"><i data-feather="edit-3"></i></div>Prepare Work Paper</a>
                                     </nav>
                                 </div>
-                            <?php //}?>
-                            <?php //if(session()->get('allowed')->reviewer == "Yes"){?>
+                            <?php }?>
+                            <?php if(session()->get('allowed')->reviewer == "Yes"){?>
                                 <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseReview" aria-expanded="false" aria-controls="collapseReview">
                                     <div class="nav-link-icon"><i data-feather="eye"></i></div>
                                     Review
@@ -277,8 +277,8 @@
                                         <div class="nav-link-icon"><i data-feather="check-square"></i></div>Check Work Paper</a>
                                     </nav>
                                 </div>
-                            <?php //}?>
-                            <?php //if(session()->get('allowed')->audmanager == "Yes"){?>
+                            <?php }?>
+                            <?php if(session()->get('allowed')->audmanager == "Yes"){?>
                             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseAudManager" aria-expanded="false" aria-controls="collapseAudManager">
                                 <div class="nav-link-icon"><i data-feather="users"></i></div>
                                 Audit Manager
@@ -294,7 +294,7 @@
                                     <div class="nav-link-icon"><i data-feather="check-square"></i></div>Approved</a>
                                 </nav>
                             </div>
-                            <?php // }?>
+                            <?php }?>
                         <?php }?>
 
                         <?php if(session()->get('allowed')->sett == "Yes"){?>

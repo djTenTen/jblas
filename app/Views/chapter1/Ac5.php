@@ -36,7 +36,7 @@
             <?php  }?>
     
             <div class="card-body">
-               
+               <hr>
                 <h4>PRELIMINARY ANALYTICAL PROCEDURES</h4>
                 <h6>Summary of results and preliminary analytical procedures</h6>
                 <h6>Objectives:</h6>
@@ -48,12 +48,13 @@
                 <form action="<?= base_url()?>auditsystem/c1/saveac5/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <input type="hidden" name="part" value="rescon">
                     <h4>Results:</h4>
-                        <textarea class="form-control" cols="30" rows="20" name="res" required><?= $rc['res']?></textarea>
+                        <textarea class="form-control border-dark" cols="30" rows="20" name="res" required><?= $rc['res']?></textarea>
+                    <br>
                     <h4>Conclusion:</h4>
-                        <textarea class="form-control" cols="30" rows="20" name="con" required><?= $rc['con']?></textarea>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                        <textarea class="form-control border-dark" cols="30" rows="20" name="con" required><?= $rc['con']?></textarea>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-                
+                <br><br><br><hr>
             </div>
         </div>
     </div>
