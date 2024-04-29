@@ -54,7 +54,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>GOING CONCERN CHECKLIST</h4>
                 <h6>Objective:</h6>
                 <p>To ensure that the fundamental concept of going concern is fully considered and that the requirements of ISA 570 are met.</p>
@@ -90,10 +90,10 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-                <br>
+                <br><br><br><hr>
                 <h6>Part 2 – The Auditor’s Assessment ~ General Considerations:</h6>
                 <form action="<?= base_url()?>auditsystem/c3/saveaa3b/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
                     <input type="hidden" value="p2" name="part">
@@ -125,11 +125,12 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
 
-                <br>
+                <br><br><br><hr>
+
                 <h6>Part 3a – The Auditor’s Assessment ~ Specific Concerns:</h6>
                 <h6><i>Completion of this section is optional unless potential issues regarding the going concern presumption have been identified in Parts 1 or 2 above.</i></h6>
                
@@ -163,11 +164,12 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
 
-                <br>
+                <br><br><br><hr>
+
                 <h6>Part 3b – The Auditor’s Assessment ~ Disclosure considerations:</h6>
                
                 <form action="<?= base_url()?>auditsystem/c3/saveaa3b/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
@@ -200,11 +202,11 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
 
-                <br>
+                <br><br><br><hr>
 
                 <h6>Part 4 – Conclusion:</h6>
                 <p>Where potential problems with the going concern presumption have been identified, summarise the issue and resolution:</p>
@@ -216,9 +218,9 @@
                         </tr>
                         
                     </table>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br><hr>
 
                 <p>On the basis of the work recorded above, I consider that:</p>
                 <ul>
@@ -270,50 +272,6 @@ $(document).ready(function () {
         $(this).closest('tr').remove();
     });
 
-
-    // $('#add-field').on('click', function () {
-    //     // Adding a row inside the tbody.
-    //     $('#tbody').append(`
-    //     <tr>
-    //         <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
-    //         <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"></textarea></td>
-    //         <td></td>
-    //         <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-    //     </tr>`);
-    // });
-
-    // $('#tbody').on('click', 'button.remove', function () {
-    //     $(this).closest('tr').remove();
-    // });
-
-
-    // $('#add-field2').on('click', function () {
-    //     // Adding a row inside the tbody.
-    //     $('#tbody2').append(`
-    //     <tr>
-    //         <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
-    //         <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"></textarea></td>
-    //         <td></td>
-    //         <td><button class="btn btn-danger btn-icon btn-sm remove2" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-    //     </tr>`);
-    // });
-
-    // $('#tbody2').on('click', 'button.remove2', function () {
-    //     $(this).closest('tr').remove();
-    // });
-
-
-
-    // $('#add-field3').on('click', function () {
-    //     // Adding a row inside the tbody.
-    //     $('#tbody3').append(`
-    //     <tr>
-    //         <td><textarea class="form-control question" id="question" cols="30" rows="5" name="question[]"></textarea></td>
-    //         <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"></textarea></td>
-    //         <td></td>
-    //         <td><button class="btn btn-danger btn-icon btn-sm remove3" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
-    //     </tr>`);
-    // });
 
     $('#tbody3').on('click', 'button.remove3', function () {
         $(this).closest('tr').remove();

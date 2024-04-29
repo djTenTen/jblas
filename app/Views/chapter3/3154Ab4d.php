@@ -45,6 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
+                <hr>
                 <h6>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)</h6>
                 <h6> ~ Additional Disclosures for an Entity with Agricultural Activities</h6>
                 <h6><u>Scope</u></h6>
@@ -84,43 +85,9 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-           
-           
-           
            
             </div>
         </div>

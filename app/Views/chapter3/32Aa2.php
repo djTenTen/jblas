@@ -63,7 +63,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>POINTS FORWARD</h4>
                 <h6>Objective: </h6>
                 <p>To provide a summary of the key points arising from the audit, where it is possible for improvements to the efficiency of the audit to be made, and should include both financial and non-financial matters. <i> The use of this form is optional. </i> </p>
@@ -95,15 +95,9 @@
                     <h6>Other issues:</h6>
                     <textarea class="form-control" cols="30" rows="15" name="oi" required><?= $aa2['oi']?></textarea>
 
-                    <div class="container m-2">
-                        <div class="col-3 float-end">
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success  btn-block">Save</button>
-                            </div>
-                        </div>
-                    </div>
-
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
+                <br><br><br><hr>
 
                 
             </div>

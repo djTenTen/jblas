@@ -63,7 +63,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>AUDIT CONTROL RECORD</h4>
                 <form action="<?= base_url()?>auditsystem/c3/saveplaf/<?= $code?>/<?= $header?>/<?= $c3tID?>" method="post">
 
@@ -97,11 +97,11 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field">Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field"><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
-
+                <br><br><br><hr>
 
                 <h6>Completion by most senior person completing the fieldwork</h6>
                 <p>I have completed my work as summarised above, and consider that the working papers adequately support our proposed opinion, except for the outstanding points listed on </p>
@@ -178,11 +178,11 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field1" id="add-field1">Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field1" id="add-field1"><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
-
+                <br><br><br><hr>
 
 
                 <h6>Signed Financial Statements and Audit Opinion</h6>
@@ -242,19 +242,12 @@
                             <td>Do we know of any other factors that could affect independence or otherwise indicate that we should not accept re-appointment?</td>
                             <td><textarea class="form-control question" id="question" cols="30" rows="5" name="a6"><?= $s3['a6'];?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="5" name="a7"><?= $s3['a7'];?></textarea></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
-                            </td>
-                        </tr>
+                        </tr>   
                     </tbody>
                 </table>
-                    
+                <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br><hr>
                 <h6>Authority to accept re-appointment:</h6>              
                 <p>I have considered the above, and do not consider that there are any perceived threats to our independence, integrity and objectivity and believe that we *can accept / *can accept with the stated safeguards /* cannot accept this re-appointment. </p>         
                 <p>Where necessary adequate consultation has been undertaken and documented with the Ethics Partner.</p>
