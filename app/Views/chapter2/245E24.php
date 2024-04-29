@@ -63,7 +63,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>INVENTORY TOP UP PROGRAMME: CONSTRUCTION CONTRACTS</h4>
                 <h6>Complete this programme when the audited entity has Construction Contracts (or other contracts accounted for on a Percentage Completion basis). </h6>
                 
@@ -100,10 +100,10 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field">Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
-
+                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field"> <i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
+                <br><br><br><hr>
 
             </div>
         </div>

@@ -63,7 +63,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>INVENTORY APPENDIX 3 – ALTERNATIVE PROCEDURES</h4>
                 <p>Alternative procedures will be required if no inventory count has taken place at the period-end.  If an inventory count has taken place but was not attended, the file should indicate why, and assess the possible impact on the audit report.</p>
                 <h6>Note that ISA 501 states that the auditor shall attend the inventory count if inventory is material.</h6>
@@ -101,10 +101,10 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field">Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
-
+                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field"> <i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
+                <br><br><br><hr>
 
             </div>
         </div>

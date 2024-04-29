@@ -63,7 +63,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>IFRS 15 CONSIDERATIONS</h4>
                 <p><i>IFRS 15 ‘Revenue from Contracts with Customers’ became mandatory for accounting periods commencing on/after 1 January 2018. </i></p>
                 <p><i>The core principle of IFRS 15 is that “an entity shall recognise revenue to depict the transfer of promised goods or services to customers in an amount that reflects the consideration to which the entity expects to be entitled in exchange for those goods or services”. </i></p>
@@ -109,11 +109,10 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field">Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
-
+                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field"> <i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br><hr>
             </div>
         </div>
     </div>

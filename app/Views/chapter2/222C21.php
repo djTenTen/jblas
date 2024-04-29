@@ -63,7 +63,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>PROPERTY, PLANT AND EQUIPMENT – TOP UP PROGRAMME</h4>
                 <i><p>This programme includes “top up” tests to be completed when the entity has the following</p>
                     <ul>
@@ -119,10 +119,10 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field">Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
-
+                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field"> <i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
+                <br><br><br><hr>
 
             </div>
         </div>

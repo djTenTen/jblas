@@ -63,7 +63,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>DSHARE-BASED PAYMENTS</h4>
                 <p><i>This work programme should be used when an entity has share-based payment transactions that fall within the scope of IFRS 2.  Typically share-based payments are offered to employees as an incentive to remain with the entity, but they can be offered to third parties in return for the provision of goods and services.  The corresponding disclosure requirements of IFRS 2 are set out in a Supplementary Checklist to the full Corporate Disclosure Checklist, see Appendix 3.15.3.</i></p>
                 <p><i>NB: The valuation of share-based payments cannot be undertaken by the auditor. It is unlikely that most audit firms could demonstrate competency in this area and unless the fair value was immaterial it would also be a breach of the IESBA’s Code of Ethics. </i></p>
@@ -100,10 +100,10 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field">Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
-
+                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field"> <i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
+                <br><br><br><hr>
 
             </div>
         </div>
