@@ -163,7 +163,7 @@
                         </tr>
                     </tbody>
                 </table>
-                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
 
@@ -259,7 +259,7 @@
                         </tr>
                     </tbody>
                 </table>
-                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
 
@@ -355,7 +355,7 @@
                         </tr>
                         </tbody>
                 </table>
-                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
 
@@ -449,23 +449,11 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $invtrdata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $invtrdata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                    </form>
+                        </tbody>
                 </table>
-
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVESTMENTS:</h6>
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
@@ -559,7 +547,7 @@
                         </tr>
                         </tbody>
                 </table>
-                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
 
@@ -653,23 +641,11 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $ppedata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $ppedata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
                     </tbody>
-                    </form>
                 </table>
-
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INTANGIBLE NON-CURRENT ASSETS:</h6>
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
@@ -761,23 +737,11 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $incadata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $incadata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
                     </tbody>
-                    </form>
                 </table>
-
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE PAYABLES:</h6>
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
@@ -856,23 +820,11 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $tpdata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $tpdata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
                     </tbody>
-                    </form>
                 </table>
-
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER PAYABLES (INCLUDING ACCRUALS):</h6>
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
@@ -953,7 +905,7 @@
                         </tr>
                         </tbody>
                 </table>
-                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
 
@@ -1034,23 +986,11 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $taxdata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $taxdata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
                     </tbody>
-                    </form>
                 </table>
-
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROVISIONS FOR LIABILITIES:</h6>
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
@@ -1129,23 +1069,11 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $provdata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $provdata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
                     </tbody>
-                    </form>
                 </table>
-                
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – REVENUE / OTHER INCOME:</h6>
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
@@ -1226,7 +1154,7 @@
                         </tr>
                         </tbody>
                 </table>
-                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
 
@@ -1309,7 +1237,7 @@
                         </tr>
                         </tbody>
                 </table>
-                    <button type="submit" class="btn btn-success float-end btn-block"><i class="fas fa-file-alt m-1"></i>Save</button>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
 
@@ -1390,23 +1318,11 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $prdata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $prdata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
                     </tbody>
-                    </form>
                 </table>
-
-
-                <br><br>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER AREA:</h6>
                 <form action="<?= base_url()?>auditsystem/c1/saveac7/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
@@ -1485,20 +1401,11 @@
                             <td><textarea class="form-control" cols="30" rows="3" name="pd2"><?= $oadata['pd2']?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="3" name="pd3"><?= $oadata['pd3']?></textarea></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success float-end btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
                     </tbody>
-                    </form>
                 </table>
+                    <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
 
             </div>

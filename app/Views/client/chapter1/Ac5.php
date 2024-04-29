@@ -36,7 +36,7 @@
             <?php  }?>
     
             <div class="card-body">
-               
+                <hr>
                 <h4>PRELIMINARY ANALYTICAL PROCEDURES</h4>
                 <h6>Summary of results and preliminary analytical procedures</h6>
                 <h6>Objectives:</h6>
@@ -51,9 +51,9 @@
                         <textarea class="form-control" cols="30" rows="20" name="res" required><?= $rc['res']?></textarea>
                     <h4>Conclusion:</h4>
                         <textarea class="form-control" cols="30" rows="20" name="con" required><?= $rc['con']?></textarea>
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                        <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-                
+                <br><br><br><hr>
             </div>
         </div>
     </div>

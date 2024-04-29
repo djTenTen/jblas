@@ -45,7 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>ISA COMPLIANCE CRITICAL ISSUES MEMORANDUM</h4>
                 <h6>Objective:</h6>
                 <p>To ensure compliance with ISA by providing a summary of critical audit issues and how these have been resolved. When read in conjunction with final analytical procedures, completion of this memorandum should provide the Audit Engagement Partner with an executive summary of the key points arising from the assignment.</p>
@@ -60,8 +60,9 @@
                     <input type="hidden" name="part" value="aepapp">
                     <input type="hidden" name="acid" value="<?= $crypt->encrypt($aepapp['acID'])?>">
                     <textarea class="form-control reference" id="reference" cols="30" rows="5" name="question"><?= $aepapp['question']?></textarea>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
+                <br><br><br><hr>
                 <p>I approve the above changes to the planning, and consider that these changes have been adequately integrated into the audit approach.</p>
 
                 <h6>I have considered the requirements of ISA 315 and specifically, the definition of a significant risk being, “an identified and assessed risk of material misstatement that, in the auditor’s judgment, requires special audit consideration”.</h6>
@@ -95,10 +96,10 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i> Add Field</button>
+                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br><hr>
 
 
 
@@ -135,10 +136,10 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i> Add Field</button>
+                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br><hr>
 
                 <h6>Inconsistencies noted between information provided by the client and other findings of the audit team (mandatory section):</h6>
                 <form action="<?= base_url()?>auditsystem/client/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
@@ -172,10 +173,10 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i> Add Field</button>
+                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br><hr>
 
                 <h6>Areas where management refusal to allow the audit team to send a confirmation request has led to alternative procedures being performed (mandatory section):</h6>
                 <form action="<?= base_url()?>auditsystem/client/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
@@ -209,10 +210,10 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i> Add Field</button>
+                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br><hr>                
 
 
                 <h6>Departures from requirements of ISA, reasons for the departure and alternative audit procedures performed (mandatory section):</h6>
@@ -247,10 +248,10 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i> Add Field</button>
+                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form> 
-
+                <br><br><br><hr>
 
 
 
@@ -286,10 +287,10 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i> Add Field</button>
+                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form> 
-
+                <br><br><br><hr>
 
                 <form action="<?= base_url()?>auditsystem/client/saveaa7aep/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="acid" value="<?= $acID?>">
@@ -340,7 +341,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <h6>Costs to date, including an explanation of deviation from budget, and timetable for completion:</h6>
                     <table class="table table-bordered">
                         <thead>
@@ -356,8 +356,9 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form> 
+                <br><br><br><hr>
             </div>
         </div>
     </div>

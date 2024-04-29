@@ -46,7 +46,7 @@
 
 
             <div class="card-body">
-                
+                <hr>
                 <h4>DEFINED BENEFIT PENSION SCHEMES</h4>
                 <p><i>Multi-employer schemes contributed to by a number of related or group entities must be split at entity level and it is not possible just to account for these schemes on consolidation.</i></p>
                 <p><i>NB: The valuation of an actuarial liability cannot be undertaken by the auditor. It is unlikely that most audit firms could demonstrate competency in this area and unless the actuarial liability was immaterial it would also be a breach of the IESBA’s Code of Ethics. </i></p>
@@ -73,7 +73,7 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
 

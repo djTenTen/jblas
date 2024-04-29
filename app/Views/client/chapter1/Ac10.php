@@ -84,7 +84,7 @@
                                     <input type="hidden" class="form-control" name="acid" value="<?= $crypt->encrypt($cu['acID'])?>">
                                     <input type="text" class="form-control cu" name="question" value="<?= $cu['question']?>">
                                 </td>
-                                <td><button type="submit" class="btn btn-success m-1 btn-icon btn-sm" title="Save"><i class="fas fa-file-alt"></i></button></td>
+                                <td><button type="submit" class="btn btn-success m-1 btn-sm" title="Save"><i class="fas fa-file-alt"></i> Save</button></td>
                             </tr>
                         </tbody>
                     </table> 
@@ -120,8 +120,8 @@
                         </tbody>   
                             <tr>
                                 <td colspan="5" >
-                                    <button type="submit" class="btn btn-success float-end m-1">Save</button>
-                                    <button class="btn btn-primary float-end m-1" type="button" data-action="add-field1" id="add-field1">Add Field</button>
+                                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                                    <button class="btn btn-primary float-end m-1 btn-sm" type="button" data-action="add-field1" id="add-field1"><i class="fas fa-plus-square m-1"></i>Add Field</button>
                                 </td>
                             </tr>
                     </table>
@@ -159,8 +159,8 @@
                         </tbody>
                             <tr>
                                 <td colspan="5" >
-                                    <button type="submit" class="btn btn-success float-end m-1">Save</button>
-                                    <button class="btn btn-primary float-end m-1" type="button" data-action="add-field2" id="add-field2">Add Field</button>
+                                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                                    <button class="btn btn-primary float-end m-1 btn-sm" type="button" data-action="add-field2" id="add-field2"><i class="fas fa-plus-square m-1"></i>Add Field</button>
                                 </td>
                             </tr>
                         <tfoot>

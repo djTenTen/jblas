@@ -46,7 +46,7 @@
 
 
             <div class="card-body">
-                
+                <hr>
                 <h4>INVESTMENTS</h4>
                 <p><i>This programme <strong><u>does not</u></strong>  include tests relating to investment properties. These tests are included on the C audit programme.</i></p>
                 <p><i>Tests on this programme relate solely to listed and non-listed equity instruments.  Where investments are debt instruments the appropriate tests on the F audit programme should be completed. If an entity has physical investments, such as wine, works of art or commodities such as precious metals, it would seem appropriate that these are carried at fair value. Tests 16 and 18 to 23 could be completed when auditing such investments</i></p>
@@ -75,7 +75,7 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
 

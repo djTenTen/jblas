@@ -26,7 +26,6 @@
         <div class="card">
 
             <div class="card-body">
-            <form action="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>" method="post">
 
                 <table class="table table-hover" >
                     <thead>
@@ -110,8 +109,6 @@
                         <?php }?>
                     </tbody>
                 </table>
-
-                <button class="btn btn-success float-end">Set Files</button>
 
             </form>
             

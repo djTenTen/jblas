@@ -46,7 +46,7 @@
 
 
             <div class="card-body">
-                
+                <hr>
                 <h4>OTHER AUDIT AREAS INCLUDING:</h4>
                 <ul>
                     <li><h6>ACCOUNTING ESTIMATES</h6></li>
@@ -79,7 +79,7 @@
                             <?php }?>
                         </tbody>
                     </table>
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
 

@@ -45,7 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>FINANCIAL STATEMENTS DISCLOSURE AND COMPLIANCE ANNUAL REVIEW CHECKLIST</h4>
                 <p>This checklist should be used to evidence the checking of disclosure and compliance matters for 'uncomplex companies' where the appropriate (i.e. IFRS) disclosure checklist has been completed within the last three years and the size and complexity of the company means that the firm does not consider that a full disclosure checklist needs to be completed every year.</p>
 
@@ -152,8 +152,10 @@
                 </table>
            
 
-                <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
+                </form>
+                <br><br><br><hr>
                 <h6>4.	Conclusion</h6>
                 <p>It is unnecessary to complete the relevant disclosure checklist for the current period.</p>
                 <p>The financial statements have been reviewed with reference to the previously completed disclosure checklist and the requirements of any new financial reporting standards or amendments, and disclosures are considered to be adequate.</p>

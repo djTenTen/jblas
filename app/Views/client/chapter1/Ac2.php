@@ -45,7 +45,7 @@
 
             <div class="card-body">
                <!-- Contents Here -->
-
+            <hr>
             <h4>PROVISION OF NON-AUDIT SERVICES</h4>
             <h6>Aim:</h6>
             <p>To give adequate consideration of the acceptability of providing non-audit services to entities which are not listed (or affiliates of such an entity).</p>
@@ -99,10 +99,10 @@
                         <?php }?>
                     </tbody>
                 </table>
-                <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                <button type="submit" class="btn btn-success m-1 float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
             </form>
             
-            <br><br>
+            <br><br><br><hr>
 
             <h4>Section 3 – Consideration of Self Interest Threat Arising from Substantial Fees from Non Audit Services</h4>
 
@@ -119,11 +119,12 @@
                 <form action="<?= base_url()?>auditsystem/client/saveac2aep/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="acid" value="<?= $crypt->encrypt($aep['acID'])?>">
                     <textarea class="form-control" cols="30" rows="3" name="eap" required><?= $aep['question']?></textarea>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 
 
             </div>
+            <br><br><br><hr>
 
             <h4>Conclusion</h4>
             <p>1.	The client has informed management.  I consider that there are no threats arising from fee income from the non-audit services provided / to be provided to the client and that the services can be provided.*</p>

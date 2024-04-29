@@ -46,7 +46,7 @@
 
 
             <div class="card-body">
-               
+                <hr>
                 <h4>PERMANENT FILE CHECKLIST</h4>
                 <p>Objective: This form is to be used to ensure the permanent file contains sufficient background information about the client. </p>
                 <p>This is a mandatory form.  Any “no” answers indicate a deficiency on the permanent file and a comment should be made as to how this will be addressed.</p>
@@ -72,9 +72,9 @@
                             <?php }?>
                         </tbody>
                     </table>
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-                <br><br>
+                <br><br><br>
                 <hr>
 
 
@@ -100,9 +100,9 @@
                             <?php }?>
                         </tbody>
                     </table>
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-                <br><br>
+                <br><br><br>
                 <hr>
 
 
@@ -127,9 +127,9 @@
                             <?php }?>
                         </tbody>
                     </table>
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-                <br><br>
+                <br><br><br>
                 <hr>
                 
                 <form action="<?= base_url()?>auditsystem/client/saveac3/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
@@ -153,8 +153,10 @@
                             <?php }?>
                         </tbody>
                     </table>
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
+
+                <br><br><br><hr>
 
             </div>
         </div>

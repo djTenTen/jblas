@@ -46,7 +46,7 @@
 
 
             <div class="card-body">
-                
+                <hr>
                 <h4>INVENTORIES</h4>
                 <form action="<?= base_url()?>auditsystem/client/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
 
@@ -71,7 +71,7 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
 

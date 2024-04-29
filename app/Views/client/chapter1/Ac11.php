@@ -34,6 +34,7 @@
                 </div>
             <?php  }?>
             <div class="card-body">
+                <hr>
                <h4>TEAM DISCUSSIONS AND BRIEFING MEETING</h4>
                <h6>Objective:</h6>
                <p>To document a team discussion covering fraud and risk as required by PSA 240, 315 and 550 and to demonstrate that an adequate staff briefing has occurred.</p>
@@ -230,14 +231,9 @@
 
                      
                 </table>
-                    <div class="container">
-                        <div class="col-3 float-end">
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success  btn-block m-2">Save</button>
-                            </div>
-                        </div>
-                    </div>    
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
+                <br><br><br><hr>
 
             </div>
         </div>

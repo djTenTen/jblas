@@ -45,7 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>OTHER INCOME AND GAINS</h4>
                 <p>This audit programme should only cover items recognised in profit or loss, items recognised in other comprehensive income should be addressed by the S Audit Programme.</p>
 
@@ -72,7 +72,7 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
 
