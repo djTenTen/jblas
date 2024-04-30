@@ -21,8 +21,6 @@
             </div>
         </div>
     </header>
-
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('success_update')) { ?>
@@ -34,7 +32,6 @@
                     </div>
                 </div>
             <?php  }?>
-    
             <div class="card-body">
                <hr>
                 <h4>PRELIMINARY ANALYTICAL PROCEDURES</h4>
@@ -58,5 +55,4 @@
             </div>
         </div>
     </div>
-    
 </main>

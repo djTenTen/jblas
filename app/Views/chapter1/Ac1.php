@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('invalid_input')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -61,19 +59,14 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
                <!-- Contents Here -->
                 <hr>
                 <h4>Client Acceptance or Continuance Form</h4>
                 <h6">This form must be completed by the A.E.P. before any work is undertaken on the file.</p>
-                <p>While answering these questions the following matters should be fully considered for the audit firm and any network firm: independence, integrity, conflicts of interest with other clients, economic dependence, trusts, matters arising with regulatory authorities, ability to service the client, other services provided to the client and hospitality. Additional guidance is available in legislation and the Code of Ethics issued by the International Ethics Standards Board for Accountants.  </h6>
-
+                <p>While answering these questions the following matters should be fully considered for the audit firm and any network firm: independence, integrity, conflicts of interest with other clients, economic dependence, trusts, matters arising with regulatory authorities, ability to service the client, other services provided to the client and hospitality. Additional guidance is available in legislation and the Code of Ethics issued by the International Ethics Standards Board for Accountants.</p>
                 <h6>Any YES answers should be fully explained along with the safeguards, which will enable us to accept / continue with the appointment. </h6>
-
                 <h6>Significant issues must be discussed with the <span class="text-danger">Ethics Partner</span> and details of the discussion documented on file.</h6>
-                
-                
                 <form action="<?= base_url()?>auditsystem/c1/saveac1/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                 <input type="hidden" name="part" value="cacf">
                 <table class="table table-hover table-sm table-bordered">
@@ -94,14 +87,12 @@
                                 <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
                                 <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
                                 <td class="text-center">
-
                                     <button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button>
                                     <?php if($r['status'] == 'Active'){?>
                                         <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
                                     <?php }else{?>
                                         <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
-                                    <?php }?>
-                                    
+                                    <?php }?>   
                                 </td>
                             </tr>
                         <?php }?>
@@ -109,16 +100,11 @@
                 </table>
                     <button class="btn btn-primary m-1 float-end add-field  btn-sm" type="button"><i class="fas fa-plus-square m-1"></i> Add Field</button>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-
                 </form>
                 <br><br><br>
-                <hr>
-                            
-                
-
+                <hr>                                    
                 <form action="<?= base_url()?>auditsystem/c1/saveac1eqr/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                 <input type="hidden" name="part" value="eqr">
-                
                 <div class="mb-3 row">
                     <div class="col-8">
                         <label class="small mb-1" for="nameap">Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement:</label>
@@ -126,8 +112,7 @@
                     <div class="col-4">
                         <input type="text" class="form-control border-dark" id="nameap" name="nameap" value="<?= $eqr['nameap']?>">
                     </div>
-                </div>
-            
+                </div>            
                 <h6>Those Charged With Governance and Management:</h6>
                 <p>PSA 260 / 265 requires different matters to be communicated separately to those charged with governance and to management.  Where those charged with governance and management are the same individuals (for example, all matters are dealt with solely by the directors of the company), it is not necessary for these matters to be communicated twice.</p>
                 <p>[EITHER]</p>
@@ -156,7 +141,6 @@
                     <li>Letter of representation</li>
                     <li>Management letter</li>
                 </ul>
-
                 <h4>ENGAGEMENT QUALITY REVIEW:</h4>
                 <p>An EQR needs to be undertaken on all audits where:</p>
                 <ul>
@@ -178,7 +162,6 @@
                         </div>
                     </li>
                 </ul>
-
                 <table class="table">
                     <tr>
                         <td> REASON FOR EQR (If an EQR review was performed in the previous period, but is not being performed in the current period, this decision must also be justified.)  
@@ -199,35 +182,26 @@
                         </td>
                     </tr>
                 </table>
-
                 <h6>Authority to accept appointment:</h6>
                 <p>Having completed the checklist I *do / *do not consider that there are any perceived threats to our independence, integrity and objectivity, and believe that we *can accept / *can accept with the stated safeguards / *cannot accept this appointment.</p>
                 <p>Where necessary, adequate consultation has been undertaken and documented at 				.</p>
                 <p>
                     Signature:	
                     (A.E.P.)
-
                     Date:	
                 </p>        
                 <p>If appropriate:</p>
                 <p>
                     Signature:	
                     (EQR) 
-
                     Date:	
                 </p>
             </div>
         </div>
     </div>
-    
 </main>
-
-
-
 <script>
-
     $(document).ready(function () {
-
         $(".active-data").on("click", function() {
             var status = $(this).data('status');
             var acID = $(this).data('ac-id');
@@ -236,12 +210,8 @@
                     $('.msgconfirm').html(`<h3>Are you sure to Disable this content?</h3>`);
                 }else{
                     $('.msgconfirm').html(`<h3>Are you sure to Enable this content?</h3>`);
-                }
-
-                
+                }               
         });
-
-
         $('.add-field').on('click', function () {
         // Adding a row inside the tbody.
         var form = $(this).closest('form');
@@ -255,12 +225,9 @@
             <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
         </tr>`);
         });
-
         $('.tbody').on('click', 'button.remove', function () {
             $(this).closest('tr').remove();
         });
-
     });
-
 </script>
 

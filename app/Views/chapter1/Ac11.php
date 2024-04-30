@@ -21,7 +21,6 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('success_update')) { ?>
@@ -35,16 +34,14 @@
             <?php  }?>
             <div class="card-body">
                 <hr>
-               <h4>TEAM DISCUSSIONS AND BRIEFING MEETING</h4>
-               <h6>Objective:</h6>
-               <p>To document a team discussion covering fraud and risk as required by PSA 240, 315 and 550 and to demonstrate that an adequate staff briefing has occurred.</p>
-               <form action="<?= base_url()?>auditsystem/c1/saveac11/<?=$code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <h4>TEAM DISCUSSIONS AND BRIEFING MEETING</h4>
+                <h6>Objective:</h6>
+                <p>To document a team discussion covering fraud and risk as required by PSA 240, 315 and 550 and to demonstrate that an adequate staff briefing has occurred.</p>
+                <form action="<?= base_url()?>auditsystem/c1/saveac11/<?=$code?>/<?= $header?>/<?= $c1tID?>" method="post">
                 <label for="">
                     Date of the meeting: <input type="date" class="form-control border-dark" name="datem" value="<?= $ac11['datem']?>" required>
                 </label>
-
                 <h6>Details of the assignment team:</h6>
-                
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -99,11 +96,9 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <p>* Prior to initialling this column all staff should review the assignment plan, assessment of materiality & risk and systems notes.</p>
                 <p>The team discussions on fraud, risk and related party transactions should be chaired by the A.E.P. (although the general briefing can be performed by another team member, i.e. the manager) and it should be undertaken ensuring that, when considering fraud, professional scepticism is applied. <strong> Team members should set aside the belief that the client is honest and acts with integrity. </strong></p>
                 <p>Where junior staff are briefed separately, this should be clearly documented.</p>
-
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -174,7 +169,6 @@
                     </tbody>
                 </table>
                 <br>
-
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -225,19 +219,12 @@
                             <td>6.	Timing of review procedures have been discussed and it has been documented who has responsibility to review which areas.</td>
                             <td><input type="text" class="form-control border-dark" name="sacb9" value="<?= $ac11['sacb9']?>"></td>
                         </tr>
-                        
                     </tbody>
-
-                     
                 </table>
-                    
                     <button type="submit" class="btn btn-success m-1 float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-                       
                 </form>
                 <br><br><br><hr>
-
             </div>
         </div>
     </div>
-    
 </main>

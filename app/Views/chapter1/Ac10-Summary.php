@@ -21,7 +21,6 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('success_update')) { ?>
@@ -42,9 +41,7 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
-
                 <nav class="nav nav-borders">
                     <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Tangibles')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-Tangibles/<?= $header?>/<?= $c1tID; ?>">Tangibles</a>
                     <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'PPE')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/c1/manage/<?= $code?>-PPE/<?= $header?>/<?= $c1tID; ?>">PPE</a>
@@ -63,13 +60,10 @@
                 </nav>
                 <hr class="mt-0 mb-4" />
                 <br>
-
                 <h4>AUDIT APPROACH AND SAMPLE SIZE CALCULATION</h4>
-               
                <p>To complete the table below enter the risk level as per Ac6 and the materiality level as documented at Ac8. Where a different risk level is relevant for different assertions the table can be expanded as indicated on the lefthand margin. The audit approach should be selected by entering 'Y' or 'N' as appropriate. Where sampling is not required under the approach selected the remainder of the row will be greyed out. </p>
                <p>Where substantive testing is to be undertaken document whether this will be supported by controls testing or supportive analytical procedures. For each area, enter the population and any large or key items on the appropriate supporting schedule. The residual sample size will then be automatically calculated by dividing the residual population (after large and key items) by materiality and multiplying this by the risk factor which is determined by the audit approach as documented on the reference table below.</p>
                <p>Where transaction testing is to be undertaken select the approximate number of transactions from the drop down. This together with the risk level entered will calculate the appropriate sample size, again based on the information on the reference table below.</p>
-
                <div class="table-responsive">
                     <form action="<?= base_url()?>auditsystem/c1/saveac10summ/<?= $code?>/<?= $sheet?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <table class="table table-bordered table-sm" style="width: 2500px;">
@@ -107,7 +101,6 @@
                                 <th>Transaction sample size from table B</th>
                             </tr>
                         </thead>
-
                         <tbody id="tbody">
                             <tr>
                                 <td>Intangible Assets</td>
@@ -1503,52 +1496,33 @@
                                     <input value="<?= $pr['pr_tss']?>" name="pr_tss" type="text" class="form-control form-control-sm">
                                 </td>
                             </tr>
-
                             <tr>
                                 <td>Materiality </td>
                                 <td><input name="materiality" type="text" class="form-control form-control-sm" value="<?= $mat['question']?>"></td>
                             </tr>
                         </tbody>   
-                            
                     </table>
-
-                            
-                            
-                    
                 </div>
-
                     <button type="submit" class="btn btn-success m-1 float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-                          
                 </form>   
                 <br><br><br><hr>
                <p>(1) Risk must be assessed for each area at assertion level.  If for an area, all assertions have the same risk use the "all" line. However, if there are different levels of risks then the various assertion rows should be expanded in each area as relevant. At the testing stage the key assertions are occurrence, completeness, accuracy, cut off and classification for transactions and existence, rights and obligations, completeness, valuation and allocation and disclosure for balances.</p>
                <p>'(2) If testing controls then the operating effectiveness of the non critical controls must be tested at least every three years to ensure that they are effective, all critical controls should still be tested annually.  Walkthrough tests should be carried out every year to ensure that controls have not changed.</p>
                <p>(3) It will usually only be appropriate to test controls where they are expected to be effective therefore a low risk sample size should be used.</p>
-               
-
             </div>
         </div>
     </div>
-    
 </main>
-
-
 <script>
     $(document).ready(function() {
-
         $('#tbody').on('change', '.selectrisk , .ctrf, .arf', function() {
             //$('.pcur').attr('value',  revpr);
-
             var riskval = $(this).closest('tr').find('.selectrisk').val();
             var ctr = $(this).closest('tr').find('.ctrf').val();
             var arf = $(this).closest('tr').find('.arf').val();
-            
             var riskf = $(this).closest('tr').find('.riskf');
-
             var fin = parseFloat(riskval) * parseFloat(ctr) * parseFloat(arf);
-
             riskf.attr('value', Math.round(fin * 10) / 10);
-            
         });
     });
 </script>

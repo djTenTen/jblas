@@ -47,6 +47,19 @@ class UserController extends BaseController{
 
     }
 
+    public function myaccount(){
+
+        $uID = $this->crypt->decrypt(session()->get('userID'));
+
+        $data['title'] = 'My Account';
+        $data['u'] = $this->usermodel->getmyinfo($uID);
+        
+        echo view('includes/Header', $data);
+        echo view('users/MyAccount', $data);    
+        echo view('includes/Footer');
+
+    }
+
     public function edituser($uID){
 
         $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
@@ -181,6 +194,41 @@ class UserController extends BaseController{
 
 
         
+    }
+
+    public function updatemyinfo($uID){
+
+        $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
+
+        $npss = '';
+        if(!empty($this->request->getPost('pass'))){
+            $npss = $this->crypt->encrypt($this->request->getPost('pass'));
+        }else{
+            $npss = session()->get('pass');
+        }
+
+        $req = [
+            'name' => $this->request->getPost('fname'),
+            'address' => $this->request->getPost('address'),
+            'contact' => $this->request->getPost('contact'),
+            'email' => $this->request->getPost('email'),
+            'pass' => $npss,
+            'photo' => $this->request->getFile('photo'),
+            'signature' => $this->request->getFile('signature'),
+            'uID' => $duID,
+        ];
+
+        $res = $this->usermodel->updatemyinfo($req);
+
+        if($res == "updated"){
+            session()->setFlashdata('updated','updated');
+            return redirect()->to(site_url('auditsystem/myaccount'));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/myaccount'));
+        }
+        
+
     }
 
 

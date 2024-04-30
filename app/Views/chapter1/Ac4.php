@@ -9,7 +9,7 @@
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
                             <?= $title?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                            <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('invalid_input')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -61,7 +59,6 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
             <hr>
                 <h4>PRELIMINARY PLANNING PROCEDURES – CLIENT INVOLVEMENT IN THE PLANNING PROCESS</h4>
@@ -84,29 +81,19 @@
                     </table>
                     <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
                 <br><br><br>
                 <hr>
                 <p>In respect of a new audit assignment, where the discussion points below request “changes” to be noted, full information should be documented, as the working papers will not document “existing” issues affecting the client.</p>
-
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Question</th>
-                            <th>Default Value</th>
-                            <th>Status</th>
-                            <th style="width: 7%;">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                       
-                    </tbody>
-                </table>
-
                 <form action="<?= base_url()?>auditsystem/c1/saveac4/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <input type="hidden" name="part" value="ac4sod">
                     <table class="table table-hover">
                         <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Default Value</th>
+                                <th>Status</th>
+                                <th style="width: 7%;">Action</th>
+                            </tr>
                             <tr>
                                 <th colspan="2">Scope of discussion (add additional points as appropriate) ~ note that all points should be discussed, and key issues highlighted:</th>
                                 <th></th>
@@ -130,7 +117,6 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
                     <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
@@ -139,14 +125,9 @@
             </div>
         </div>
     </div>
-    
 </main>
-
-
-
 <script>
     $(document).ready(function () {
-
         $(".active-data").on("click", function() {
             var status = $(this).data('status');
             var acID = $(this).data('ac-id');
@@ -157,8 +138,6 @@
                     $('.msgconfirm').html(`<h3>Are you sure to Enable this content?</h3>`);
                 }
         });
-
-
         $('.add-field').on('click', function () {
         // Adding a row inside the tbody.
         var form = $(this).closest('form');
@@ -171,10 +150,8 @@
             <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
         </tr>`);
         });
-
         $('.tbody').on('click', 'button.remove', function () {
             $(this).closest('tr').remove();
         });
-
     });
 </script>

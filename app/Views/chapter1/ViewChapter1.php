@@ -21,12 +21,10 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <div class="card-header">Chapter 1 Titles</div>
             <div class="card-body">
-
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
@@ -35,7 +33,6 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <?php foreach($c1 as $r){?>
                             <tr>
@@ -54,7 +51,5 @@
                 </table>
             </div>
         </div>
-        
     </div>
-    
 </main>

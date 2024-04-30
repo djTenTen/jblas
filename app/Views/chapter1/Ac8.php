@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -34,17 +32,11 @@
                     </div>
                 </div>
             <?php  }?>
-            
             <div class="card-body">
             <hr>
-
             <h4>ASSESSMENT OF MATERIALITY (INCLUDING PERFORMANCE MATERIALITY)</h4>
-
             <p>OBJECTIVE: To assess materiality for the financial statements as a whole, performance materiality and other quantitative benchmarks based on materiality, which will reduce the risk of material misstatements in the financial statements to an acceptable level.</p>
-
             <h4>OVERALL MATERIALITY</h4>
-
-            
             <form action="<?= base_url()?>auditsystem/c1/saveac8/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
             <table class="table table-bordered">
                 <thead>
@@ -169,7 +161,6 @@
                             <textarea class="form-control border-dark" cols="30" rows="5" name="question[]"><?= $justn45['question']?></textarea>
                         </td>
                     </tr>
-
                     <tr>
                         <td colspan="4"><h6>Initial suggested Materiality Level:</h6></td>
                         <td>
@@ -181,7 +172,6 @@
                             <input type="number" class="form-control border-dark fcur" name="question[]" value="<?= $fcur['question']?>" readonly>
                         </td>
                     </tr>
-
                     <tr>
                         <td colspan="4"><p>If any adjustments are required to initial materiality level, detail these here (Note 6) :</p></td>
                         <td></td>
@@ -200,7 +190,6 @@
                             <input type="hidden" value="<?= $crypt->encrypt($adjaf['acID'])?>" name="acid[]">
                             <input type="number" class="form-control border-dark adjaf" name="question[]" value="<?= $adjaf['question']?>" >
                         </td>
-                        
                     </tr>
                     <tr>
                         <td colspan="4">
@@ -252,7 +241,6 @@
                         </td>
                         <td></td> 
                     </tr>
-
                     <tr>
                         <td colspan="6"><h6>Conclusion at planning stage</h6></td>
                     </tr>
@@ -265,7 +253,6 @@
                             <textarea class="form-control border-dark" cols="30" rows="5" name="question[]"><?= $conplst['question']?></textarea>
                         </td>
                     </tr>
-
                     <tr>
                         <td colspan="6">
                             <h6>Conclusion at finalisation stage</h6>
@@ -277,7 +264,6 @@
                     <tr>
                         <td colspan="6"><h4>PERFORMANCE MATERIALITY</h4></td>
                     </tr>
-
                     <tr>
                         <td colspan="4">Select Overall Inherent Risk (Low / Medium / High):</td>
                         <td>
@@ -310,7 +296,6 @@
                             <input type="text" class="form-control border-dark pmpf" name="question[]" value="<?= $pmpf['question']?>" readonly>
                         </td>
                     </tr>
-
                     <tr>
                         <td colspan="4">Assessed Performance Materiality</td>
                         <td>
@@ -322,7 +307,6 @@
                             <input type="text" class="form-control border-dark apmf" name="question[]" value="<?= $apmf['question']?>" readonly>
                         </td>
                     </tr>
-
                     <tr>
                         <td colspan="6">
                             <h6>Conclusion at planning stage</h6>
@@ -331,7 +315,6 @@
                             <textarea class="form-control border-dark" cols="30" rows="5" name="question[]"><?= $conplst2['question']?></textarea>
                         </td>
                     </tr>
-
                     <tr>
                         <td colspan="6">
                             <h6>Conclusion at finalisation stage</h6>
@@ -340,7 +323,6 @@
                             <textarea class="form-control border-dark" cols="30" rows="5" name="question[]"><?= $confnst2['question']?></textarea>
                         </td>
                     </tr>
-
                     <tr>
                         <td colspan="6"><h4>CLEARLY TRIVIAL</h4></td>
                     </tr>
@@ -356,22 +338,17 @@
                             <input type="text" class="form-control border-dark ctf" name="question[]" value="<?= $ctf['question']?>" readonly>
                         </td>
                     </tr>rsp
-
                     <tr>
                         <td colspan="6">
                             <h6>Document reasons for any revision to the suggested percentage </h6>
                             <input type="hidden" value="<?= $crypt->encrypt($rsp['acID'])?>" name="acid[]">
                             <textarea class="form-control border-dark" cols="30" rows="5" name="question[]"><?= $rsp['question']?></textarea>
-                 
                         </td>
                     </tr>
-
                     <tr>
-
                         <td colspan="6">
                             <h6>SPECIFIC PERFORMANCE MATERIALITY LEVELS FOR CLASSES OF TRANSACTIONS, ACCOUNT BALANCES OR DISCLOSURES (Notes 9 and 10):</h6>
                             <p>Factors that may indicate the existence of one or more particular classes of transactions, account balances or disclosures for which a lower level of materiality should be applied include the following:</p>
-                            
                             <ul>
                                 <li>Related party transactions and compensation of key management personnel;</li>
                                 <li>Key disclosures in relation to the industry in which the entity operates;</li>
@@ -381,7 +358,6 @@
                             <p>Document below the materiality levels to be applied to the relevant classes of transactions, account balances or disclosures. </p>
                             <p>The auditor may find it useful to get the views and expectations of the client here.</p>
                         </td>
-
                     </tr>
                     <tr>
                         <td colspan="6"><h6>Other levels of performance materiality to be applied:</h6></td>
@@ -467,14 +443,12 @@
                             <input type="text" class="form-control border-dark itbd3f" name="question[]" value="<?= $itbd3f['question']?>" readonly>
                         </td>
                     </tr>
-
                     <tr>
                         <td colspan="6">
                             <h6>Definition per PSA 320.9:</h6>
                             <p>Performance materiality - For the purposes of the ISAs, performance materiality means the amount or amounts set by the auditor at less than materiality for the financial statements as a whole to reduce to an acceptably low level the probability that the aggregate of uncorrected and undetected misstatements exceeds materiality for the financial statements as a whole.  If applicable, performance materiality also refers to the amount or amounts set by the auditor at less than the materiality level or levels for particular classes of transactions, account balances or disclosures.</p>
                         </td>
                     </tr>
-
                     <tr>
                         <td colspan="6">
                             <h6>Guidance and Notes:</h6>
@@ -494,27 +468,17 @@
                             <p>11. Document reasons for not using a materiality level based on the amounts calculated, reasons for setting different levels for individual items in the financial statements and reasons why the final materiality level differs from the planning materiality level.</p>
                         </td>
                     </tr>
-                    
-                    
                 </tbody>
             </table>
                 <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-            
             </form>
                 <br><br><br><hr>
-            
-
             </div>
         </div>
     </div>
-    
 </main>
-
-
-
 <script>
     $(document).ready(function () {
-
         $(".revp").on("change", function() {
             var revp = $(".revp").val();
             $('.revpr').attr('value', Math.round(revp * 0.01));
@@ -539,14 +503,11 @@
             var grof = $(".grof").val();
             $('.grofr').attr('value',  Math.round(grof * 0.02));
         });
-
         $(".pcu").on("change", function() {
-
             var pcu = $(".pcu").val();
             var adjap = $(".adjap").val();
             var adjbp = $(".adjbp").val();
             var adjcp = $(".adjcp").val();   
-
             if(pcu == 'r'){
                 var revpr = $(".revpr").val();  
                 $('.pcur').attr('value',  revpr);
@@ -571,23 +532,18 @@
                 var aomp = $(".aomp").val();
                 $('.ctp').attr('value',  Math.round(aomp * .01));
             }
-
         });
-
-
         $(".fcu").on("change", function() {
             var fcu = $(".fcu").val();
             var adjaf = $(".adjaf").val();
             var adjbf = $(".adjbf").val();
             var adjcf = $(".adjcf").val();   
-
             if(fcu == 'r'){
                 var revfr = $(".revfr").val();  
                 $('.fcur').attr('value',  revfr);
                 $('.aomf').attr('value', parseInt(revfr) + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
                 var aomf = $(".aomf").val();
                 $('.ctf').attr('value',  Math.round(aomf * .01));
-                
             }else if(fcu == 'pbt'){
                 var profr = $(".profr").val();  
                 $('.fcur').attr('value',  profr); 
@@ -604,10 +560,7 @@
                 $('.aomf').attr('value', parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
                 var aomf = $(".aomf").val();
             }
-
         });
-
-
         $(".adjap, .adjbp, .adjcp").on("change", function() {
             var pcur = $(".pcur").val();
             var adjap = $(".adjap").val();
@@ -617,7 +570,6 @@
             var aomp = $(".aomp").val();
             $('.ctp').attr('value',  Math.round(aomp * .01));
         });
-
         $(".adjaf, .adjbf, .adjcf").on("change", function() {
             var fcur = $(".fcur").val();
             var adjaf = $(".adjaf").val();
@@ -627,27 +579,21 @@
             var aomf = $(".aomf").val();
             $('.ctf').attr('value',  Math.round(aomf * .01));
         });
-
-
         $(".oirp").on("change", function() {
             var oirp = $(".oirp").val();
             var aomp = $(".aomp").val();
-
             if(oirp == 'Low'){
                 $('.pmpp').attr('value',  '75%');
                 $('.apmp').attr('value',  Math.round(aomp * .75));
                 $('.aest').attr('value', '35.5%');
                 $('.aestp').attr('value', Math.round(aomp * 0.375));
                 $('.rptp').attr('value', Math.round(aomp * 0.05));
-
-
             }else if(oirp == 'Medium'){
                 $('.pmpp').attr('value',  '62.5%');
                 $('.apmp').attr('value',  Math.round(aomp * .625));
                 $('.aest').attr('value', '31.3%');
                 $('.aestp').attr('value', Math.round(aomp * 0.313));
                 $('.rptp').attr('value', Math.round(aomp * 0.05));
-
             }else if(oirp == 'High'){
                 $('.pmpp').attr('value',  '50%');
                 $('.apmp').attr('value',  Math.round(aomp * .50));
@@ -655,9 +601,7 @@
                 $('.aestp').attr('value', Math.round(aomp * 0.25));
                 $('.rptp').attr('value', Math.round(aomp * 0.05));
             }
-
         });
-
         $(".oirf").on("change", function() {
             var oirf = $(".oirf").val();
             var aomf = $(".aomf").val();
@@ -679,9 +623,7 @@
                 $('.aestf').attr('value', Math.round(aomf * 0.25));
                 $('.rptf').attr('value', Math.round(aomf * 0.05));
             }
-            
         });
-
         $(".itbd1").on("change", function() {
             var itbd1 = $(".itbd1").val();
             var aomp = $(".aomp").val();
@@ -690,7 +632,6 @@
             $('.itbd1p').attr('value',  aomp * dec);
             $('.itbd1f').attr('value',  aomf * dec);
         });
-
         $(".itbd2").on("change", function() {
             var itbd2 = $(".itbd2").val();
             var aomp = $(".aomp").val();
@@ -699,7 +640,6 @@
             $('.itbd2p').attr('value',  aomp * dec);
             $('.itbd2f').attr('value',  aomf * dec);
         });
-
         $(".itbd3").on("change", function() {
             var itbd3 = $(".itbd3").val();
             var aomp = $(".aomp").val();
@@ -708,6 +648,5 @@
             $('.itbd3p').attr('value',  aomp * dec);
             $('.itbd3f').attr('value',  aomf * dec);
         });
-
     });
 </script>

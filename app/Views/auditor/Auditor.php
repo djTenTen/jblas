@@ -59,7 +59,6 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
             <?php if(session()->get('allowed')->add == "Yes"){?>
                 <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addauditor">Add Auditor</button>
@@ -106,8 +105,7 @@
 
             </div>
         </div>
-    </div>
-    
+    </div>    
 </main>
 <!-- Modal add-->
 <div class="modal fade" id="addauditor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -121,10 +119,24 @@
                 <form id="" action="<?= base_url('auditsystem/auditor/save')?>" method="post" enctype="multipart/form-data">
                     <div class="row gx-3">
                         <div class="col-md-12">
-                            <!-- Form Group (first name)-->
+
                             <div class="mb-3">
                                 <label class="small mb-1" for="name">Name:</label>
                                 <input class="form-control" id="name" type="text" placeholder="Enter full name" name="name" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-3">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="small mb-1" for="address">Address:</label>
+                                <input class="form-control" id="address" type="text"  placeholder="Enter Address" name="address" required/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="small mb-1" for="contact">Contact No.:</label>
+                                <input class="form-control" id="contact" type="number"  placeholder="Enter Contact" name="contact" required/>
                             </div>
                         </div>
                     </div>
@@ -147,8 +159,6 @@
                                 </select>
                             </div>
                         </div>
-
-
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <div class="small font-italic text-muted mb-4">The file must be PNG, no larger than 5 MB and 2x2 or square size image</div>
@@ -156,10 +166,8 @@
                                 <input type="file" id="imageInput" name="signature" class="form-control btn btn-primary" required>
                             </div>
                             <div id="errorContainer" style="display: none;"></div>
-                        </div>
-                                  
-                    </div>
-                
+                        </div>             
+                    </div>               
             </div>
             <div class="modal-footer">
                     <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
@@ -169,8 +177,6 @@
         </div>
     </div>
 </div>
-
-
 <!-- Modal edit-->
 <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -181,7 +187,6 @@
             </div>
             <div class="modal-body">
                 <form id="editform" action="" method="post">
-
             </div>
             <div class="modal-footer">
                     <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
@@ -191,16 +196,12 @@
         </div>
     </div>
 </div>
-
 <script>
 $(document).ready(function () {
-
     $('#imageInput').change(function() {
         var maxSizeInBytes = 5 * 1024 * 1024; // 5MB
         var fileSize = this.files[0].size;
         var fileType = this.files[0].type;
-        
-
         if (fileType !== 'image/png') {
             $('#errorContainer').html(`
             <div class="alert alert-danger alert-icon" role="alert">
@@ -210,11 +211,9 @@ $(document).ready(function () {
                     Please select a PNG image
                 </div>
             </div>`).show();
-
             $(this).val('');
             return; // Exit the function if file type is not PNG
         }
-
         if (fileSize > maxSizeInBytes) {
             $('#errorContainer').html(`
             <div class="alert alert-danger alert-icon" role="alert">
@@ -227,12 +226,8 @@ $(document).ready(function () {
             $(this).val('');
             return; // Exit the function if file size exceeds the limit
         }
-
         $('#errorContainer').hide();
-
     });
-
-
     $(".active-data").on("click", function() {
         var name = $(this).data('name');
         var status = $(this).data('status');
@@ -244,12 +239,10 @@ $(document).ready(function () {
             $('.msgconfirm').html(`<h3>Are you sure to Enable this auditor `+name+`?</h3>`);
         }
     });
-
     $(".get-data").on("click", function() {
         var name = $(this).data('name');
         var uid = $(this).data('uid');
         $('#editform').attr('action', "<?= base_url('auditsystem/auditor/update/')?>" + uid);
-
         $("#editform").html(`
         <div class="container mt-3">
             <p>Loading...</p>
@@ -268,7 +261,6 @@ $(document).ready(function () {
             method: "GET",
             dataType: 'json',
             success: function(data) {
-
                 $("#editform").html(`
                 <div class="row gx-3">
                     <div class="col-md-12">
@@ -282,11 +274,24 @@ $(document).ready(function () {
                 <div class="row gx-3">
                     <div class="col-md-6">
                         <div class="mb-3">
+                            <label class="small mb-1" for="address">Address:</label>
+                            <input class="form-control address" id="address" type="text"  placeholder="Enter Address" name="address" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="small mb-1" for="contact">Contact No.:</label>
+                            <input class="form-control contact" id="contact" type="number"  placeholder="Enter Contact" name="contact" required/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-3">
+                    <div class="col-md-6">
+                        <div class="mb-3">
                             <label class="small mb-1" for="email">Email</label>
                             <input class="form-control email" id="email" type="email" aria-describedby="emailHelp" placeholder="Enter email address" name="email" required/>
                         </div>
                     </div>
-
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label class="small mb-1" for="type">Type</label>
@@ -301,19 +306,15 @@ $(document).ready(function () {
                 </div>`);
                 $('.name').attr('value', data.name);
                 $('.email').attr('value', data.email);
-
+                $('.address').attr('value', data.address);
+                $('.contact').attr('value', data.contact);
             },
             error: function() {
                 // Handle error if the data fetch fails
                 $(".tbitem").html("Error loading data");
             }
-
         });
-
-
-
     });
-
 });
 </script>
 

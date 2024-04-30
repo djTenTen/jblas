@@ -62,6 +62,8 @@ class AuditorModel extends Model{
             $data = [
                 'name' => ucfirst($req['name']),
                 'email' => $req['email'],
+                'address' => $req['address'],
+                'contact' => $req['contact'],
                 'pass' => $req['pass'],
                 'type' => $req['type'],
                 'firm' => $req['fID'],

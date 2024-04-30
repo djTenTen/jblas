@@ -133,17 +133,28 @@
             </li>
             <!-- User Dropdown-->
             <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
-                <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="<?= base_url()?>assets/img/illustrations/profiles/profile-1.png" /></a>
+                <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php if(empty(session()->get('photo'))){?>
+                        <img class="img-fluid" src="<?= base_url()?>uploads/logo/<?= session()->get('logo')?>" />
+                    <?php }else{?>
+                        <img class="img-fluid" src="<?= base_url()?>uploads/photo/<?= session()->get('photo')?>" />
+                    <?php }?>
+       </a>
                 <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                     <h6 class="dropdown-header d-flex align-items-center">
-                        <img class="dropdown-user-img" src="<?= base_url()?>assets/img/illustrations/profiles/profile-1.png" />
+                    <?php if(empty(session()->get('photo'))){?>
+                        <img class="dropdown-user-img" src="<?= base_url()?>uploads/logo/<?= session()->get('logo')?>" />
+                    <?php }else{?>
+                        <img class="dropdown-user-img" src="<?= base_url()?>uploads/photo/<?= session()->get('photo')?>" />
+                    <?php }?>
+                        
                         <div class="dropdown-user-details">
                             <div class="dropdown-user-details-name"><?= session()->get('name') ?></div>
                             <div class="dropdown-user-details-email"><?= session()->get('email') ?></div>
                         </div>
                     </h6>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#!">
+                    <a class="dropdown-item" href="<?= base_url()?>auditsystem/myaccount">
                         <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                         Account
                     </a>

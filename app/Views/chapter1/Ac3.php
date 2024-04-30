@@ -9,7 +9,7 @@
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
                             <?= $title?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                            <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('invalid_input')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -61,15 +59,12 @@
                     </div>
                 </div>
             <?php  }?>
-
-
             <div class="card-body">
             <hr>
                 <h4>PERMANENT FILE CHECKLIST</h4>
                 <p>Objective: This form is to be used to ensure the permanent file contains sufficient background information about the client. </p>
                 <p>This is a mandatory form.  Any “no” answers indicate a deficiency on the permanent file and a comment should be made as to how this will be addressed.</p>
                 <p>Per PSA 315, para A128c, “Disclosures in the financial statements of smaller entities may be less detailed or less complex (e.g., some financial reporting frameworks allow smaller entities to provide fewer disclosures in the financial statements). However, this does not relieve the auditor of the responsibility to obtain an understanding of the entity and its environment, including internal control, as it relates to disclosures.”</p>
-
                 <form action="<?= base_url()?>auditsystem/c1/saveac3/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <input type="hidden" name="part" value="genmat">
                     <h3>General Matters</h3>
@@ -85,7 +80,6 @@
                         <tbody class="tbody">
                             <?php foreach($ac3genmat as $r1){?>
                                 <tr>
-
                                     <td><textarea class="form-control" cols="30" rows="3" name="question[]"><?= $r1['question']?></textarea></td>
                                     <td><input class="form-control" type="text" name="yesno[]" value="<?= $r1['yesno']?>"></td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r1['comment']?></textarea></td>
@@ -102,15 +96,11 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary m-1 float-end add-field  btn-sm" type="button"><i class="fas fa-plus-square m-1"></i> Add Field</button>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br>
                 <hr>
-
-
-
                 <form action="<?= base_url()?>auditsystem/c1/saveac3/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <input type="hidden" name="part" value="doccors">
                     <h3>Documents and Correspondence of a Permanent Nature</h3>
@@ -126,7 +116,6 @@
                         <tbody class="tbody">
                             <?php foreach($ac3doccors as $r1){?>
                                 <tr>
-
                                     <td><textarea class="form-control" cols="30" rows="3" name="question[]"><?= $r1['question']?></textarea></td>
                                     <td><input class="form-control" type="text" name="yesno[]" value="<?= $r1['yesno']?>"></td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r1['comment']?></textarea></td>
@@ -143,14 +132,11 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary m-1 float-end add-field  btn-sm" type="button"><i class="fas fa-plus-square m-1"></i> Add Field</button>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br>
                 <hr>
-
-
                 <form action="<?= base_url()?>auditsystem/c1/saveac3/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <input type="hidden" name="part" value="statutory">
                     <h3>Statutory Matters</h3>
@@ -166,7 +152,6 @@
                         <tbody class="tbody">
                             <?php foreach($ac3statutory as $r1){?>
                                 <tr>
-
                                     <td><textarea class="form-control" cols="30" rows="3" name="question[]"><?= $r1['question']?></textarea></td>
                                     <td><input class="form-control" type="text" name="yesno[]" value="<?= $r1['yesno']?>"></td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r1['comment']?></textarea></td>
@@ -183,15 +168,11 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary m-1 float-end add-field  btn-sm" type="button"><i class="fas fa-plus-square m-1"></i> Add Field</button>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br>
                 <hr>
-               
-
-
                 <form action="<?= base_url()?>auditsystem/c1/saveac3/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
                     <input type="hidden" name="part" value="accsys">
                     <h3>The Accounting System</h3>
@@ -207,7 +188,6 @@
                         <tbody class="tbody">
                             <?php foreach($ac3accsys as $r1){?>
                                 <tr>
-
                                     <td><textarea class="form-control" cols="30" rows="3" name="question[]"><?= $r1['question']?></textarea></td>
                                     <td><input class="form-control" type="text" name="yesno[]" value="<?= $r1['yesno']?>"></td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r1['comment']?></textarea></td>
@@ -224,24 +204,17 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary m-1 float-end add-field  btn-sm" type="button"><i class="fas fa-plus-square m-1"></i> Add Field</button>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br>
                 <hr>
-
             </div>
         </div>
     </div>
-    
 </main>
-
-
 <script>
     $(document).ready(function () {
-
-
         $(".active-data").on("click", function() {
             var status = $(this).data('status');
             var acID = $(this).data('ac-id');
@@ -252,8 +225,6 @@
                     $('.msgconfirm').html(`<h3>Are you sure to Enable this content?</h3>`);
                 }
         });
-
-
         $('.add-field').on('click', function () {
         // Adding a row inside the tbody.
         var form = $(this).closest('form');
@@ -267,10 +238,8 @@
             <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
         </tr>`);
         });
-
         $('.tbody').on('click', 'button.remove', function () {
             $(this).closest('tr').remove();
         });
-
     });
 </script>

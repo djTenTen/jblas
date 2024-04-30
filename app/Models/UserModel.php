@@ -43,6 +43,19 @@ class UserModel extends  Model {
 
     }
 
+    public function getmyinfo($uID){
+
+        $query = $this->db->query("select *, tu.status,tu.address,tu.contact,tp.position,tu.added_on, tu.updated_on
+        from {$this->tblu} as tu, {$this->tblf} as tf, {$this->tblp} as tp
+        where tu.firm = tf.firmID
+        and tu.position = tp.posID
+        and tu.userID = {$uID}");
+        return $query->getRowArray();
+
+    }
+
+    
+
     public function getfirm(){
 
         $query = $this->db->query("select * 
@@ -161,6 +174,48 @@ class UserModel extends  Model {
 
     }
 
+
+    public function updatemyinfo($req){
+
+        $data = [
+            'name' => $req['name'],
+            'address' => $req['address'],
+            'pass' => $req['pass'],
+            'contact' => $req['contact'],
+            'email' => $req['email'],
+        ];
+
+        if(!empty($req['photo']) and $req['photo'] != ''){
+            
+            $photoname = $req['uID'].'.png';
+            $imagePath = ROOTPATH .'/public/uploads/photo/'.$photoname; 
+
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+            
+            $req['photo']->move(ROOTPATH .'public/uploads/photo', $photoname);
+            $data['photo'] = $photoname;
+
+        }
+        if(!empty($req['signature']) and $req['signature'] != ''){
+            $signaturename = $req['uID'].'.png';
+            $imagePath = ROOTPATH .'/public/uploads/signature/'.$signaturename; 
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+            $req['signature']->move(ROOTPATH .'public/uploads/signature', $signaturename);
+            $data['signature'] = $signaturename;
+        }
+
+        if($this->db->table($this->tblu)->where('userID', $req['uID'])->update($data)){
+            return "updated";
+        }else{
+            return "error";
+        }
+    
+
+    }
 
 
     public function acin($duID){

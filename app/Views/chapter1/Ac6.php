@@ -21,7 +21,6 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('invalid_input')) { ?>
@@ -105,14 +104,10 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
                     <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
-
                 </form>
-
                 <br><br><br><hr>
-
                 <h4>NARRATIVE RISK ASSESSMENT INHERENT BUSINESS RISK AND CONTROL ENVIRONMENT ASSESSMENT</h4>
                 <p>The risk forms should not be completed until –</p>
                 <ul>
@@ -134,7 +129,6 @@
                     <li>The extent to which transactions with related parties are incorporated into the financial statements;</li>
                     <li>The extent to which there are material figures in the financial statements which are derived from Accounting Estimates.</li>
                 </ul>
-
                 <p>Objective: This form is designed to determine the inherent risk of the business as a whole.  PSA 315 implies that all businesses should be high risk unless this can be rebutted.  Completion of this form will help to justify a departure from high risk.</p>
                 <h4>Section 1 – INHERENT BUSINESS RISK </h4>
                 <p>The inherent business risk of the client is deemed to be low / medium / high* for the following reasons:</p>
@@ -151,7 +145,6 @@
                 <br><hr>
                 <h4>Section 2b – CONSIDERATION OF THE CONTROL ENVIRONMENT </h4>
                 <p>The control environment of the client deemed to be effective / ineffective* for the following reasons: </p>
-                
                     <textarea class="form-control" cols="30" rows="20" name="s2b" required><?= $s['s2b']?></textarea>
                     <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
@@ -228,13 +221,11 @@
                         <?php }?>
                     </tbody>
                 </table>
-
                     <button class="btn btn-primary btn-sm m-1 float-end" type="button" id="add-field1"><i class="fas fa-plus-square m-1"></i>Add Field</button>
                     <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br>
                 <br><br><hr>
-
                 <h6>Notes Regarding Assessment of Controls:	</h6>
                 <p>1.	The audit approach section of the assignment plan should include details of how the risk and control environment assessment have influenced the design of the audit programmes and have identified key items and key audit issues.</p>
                 <p>2.	Where it is unlikely that sufficient, appropriate audit evidence can be obtained solely from substantive procedures, it is necessary to obtain an understanding of the controls over risks which may arise.  In such circumstances, it is necessary for controls testing to be performed (for example, a company which sells goods and services over the internet, where the process is highly automated, and relies on little or no human input).  In such cases, the entity's controls over such risks are relevant to the audit.  (PSA 315.30, PSA 315.A140-142).</p>
@@ -243,14 +234,9 @@
             </div>
         </div>
     </div>
-    
 </main>
-
-
 <script>
     $(document).ready(function () {
-
-
         $(".active-data").on("click", function() {
             var status = $(this).data('status');
             var acID = $(this).data('ac-id');
@@ -261,8 +247,6 @@
                     $('.msgconfirm').html(`<h3>Are you sure to Enable this content?</h3>`);
                 }
         });
-
-
         $('.add-field').on('click', function () {
         // Adding a row inside the tbody.
         var form = $(this).closest('form');
@@ -277,15 +261,13 @@
             <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
         </tr>`);
         });
-
         $('.tbody').on('click', 'button.remove', function () {
             $(this).closest('tr').remove();
         });
-
-
         $('#add-field1').on('click', function () {
             // Adding a row inside the tbody.
-            $('#tbody1').append(`<tr>
+            $('#tbody1').append(`
+                <tr>
                     <td><textarea class="form-control" id="" name="financialstatement[]" cols="30" rows="5"></textarea> </td>
                     <td><textarea class="form-control" id="" name="descriptioncontrol[]" cols="30" rows="5"></textarea> </td>
                     <td><textarea class="form-control" id="" name="controleffective[]" cols="30" rows="5"></textarea> </td>
@@ -296,6 +278,5 @@
                     <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
                 </tr>`);
         });
-
     });
 </script>

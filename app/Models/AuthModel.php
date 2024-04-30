@@ -37,11 +37,15 @@ class AuthModel extends  Model {
                             'userID' => $ud['userID'],
                             'name' => $ud['name'],
                             'email' => $ud['email'],
+                            'pass' => $ud['pass'],
                             'firm' => $ud['firmname'],
                             'firmID' => $ud['firmID'],
                             'pos' => $ud['pos'],
                             'posID' => $ud['posID'],
                             'type' => $ud['type'],
+                            'photo' => $ud['photo'],
+                            'signature' => $ud['signature'],
+                            'logo' => $ud['logo'],
                             'allowed' => json_decode($ud['allowed']),
                         ];
                         return $arr;

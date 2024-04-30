@@ -22,8 +22,8 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('/auditsystem', 'DashController::auditsystem');
 
 
-
-
+    $routes->get('/auditsystem/myaccount', 'UserController::myaccount');
+    $routes->post('/auditsystem/myaccount/update/(:any)', 'UserController::updatemyinfo/$1');
 
 
 

@@ -55,6 +55,8 @@ class AuditorController extends BaseController{
         $req = [
             'name' => $this->request->getPost('name'),
             'email' => $this->request->getPost('email'),
+            'address' => $this->request->getPost('address'),
+            'contact' => $this->request->getPost('contact'),
             'pass' => $this->crypt->encrypt('password'), //Should be generated and emailed to the user
             'type' => $this->request->getPost('type'),
             'fID' => $this->crypt->decrypt(session()->get('firmID')),
