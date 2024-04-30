@@ -21,7 +21,6 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('invalid_input')) { ?>
@@ -110,7 +109,6 @@
     </div>
     
 </main>
-
 <!-- Modal add-->
 <div class="modal fade" id="addauditor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -121,7 +119,6 @@
             </div>
             <div class="modal-body">
                 <form id="" action="<?= base_url('auditsystem/auditor/save')?>" method="post" enctype="multipart/form-data">
-
                     <div class="row gx-3">
                         <div class="col-md-12">
                             <!-- Form Group (first name)-->
