@@ -45,6 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
+                <hr>
                 <h6>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)</h6>
                 <h6>~ Additional Disclosure for Parent Undertakings that are Not Consolidating</h6>
 
@@ -77,9 +78,10 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
+                <br><br><br><hr>
            
             </div>
         </div>

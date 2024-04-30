@@ -46,7 +46,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>AUDIT CONTROL RECORD</h4>
                 <form action="<?= base_url()?>auditsystem/wp/saveplaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
 
@@ -70,10 +70,10 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
-
+                <br><br><br><hr>                
 
                 <h6>Completion by most senior person completing the fieldwork</h6>
                 <p>I have completed my work as summarised above, and consider that the working papers adequately support our proposed opinion, except for the outstanding points listed on </p>
@@ -118,7 +118,7 @@
                 <h6>4.	Pre-sign off completion by Audit Engagement Partner</h6>
 
 
-                <form action="<?= base_url()?>auditsystem/wp/saveplaf/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveplaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
 
                     <table class="table table-sm table-bordered table-hover">
                         <thead>
@@ -140,10 +140,10 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
-
+                <br><br><br><hr>
  
                 <h6>Signed Financial Statements and Audit Opinion</h6>
                 <p>Have all outstanding matters noted above, including confirming that the financial statements do not contain material errors or misstatements, been cleared to the satisfaction of the originator (and crossed through to demonstrate this)?………………..........</p>
@@ -174,7 +174,7 @@
                 <h6>Any YES answers should be fully explained along with the safeguards, which will enable us to accept the re-appointment.</h6>
                 <h6>Significant issues must be discussed with the Ethics Partner and details of the discussion should be documented on file.</h6>
 
-                <form action="<?= base_url()?>auditsystem/wp/saveaa1s3/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/saveaa1s3/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                 <input type="hidden" name="acid" value="<?= $acID?>">
                 <table class="table table-sm table-bordered">
                     <thead>
@@ -208,14 +208,14 @@
                             <td></td>
                             <td></td>
                             <td>
-                            <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                            <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
                     
                 </form>
-
+                <br><br><br><hr>               
                 <h6>Authority to accept re-appointment:</h6>              
                 <p>I have considered the above, and do not consider that there are any perceived threats to our independence, integrity and objectivity and believe that we *can accept / *can accept with the stated safeguards /* cannot accept this re-appointment. </p>         
                 <p>Where necessary adequate consultation has been undertaken and documented with the Ethics Partner.</p>

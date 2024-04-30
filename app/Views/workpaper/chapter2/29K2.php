@@ -46,7 +46,7 @@
 
 
             <div class="card-body">
-                
+                <hr>
                 <h4>TRANSACTIONS WITH RELATED PARTIES</h4>
                 <p>NB: Tests covering directors’ remuneration, key management* compensation (KMC) and the identification of key management are noted on the R2 audit programme.</p>
                 <form action="<?= base_url()?>auditsystem/wp/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
@@ -72,7 +72,7 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
 

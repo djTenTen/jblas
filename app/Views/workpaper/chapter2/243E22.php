@@ -45,7 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>INVENTORY APPENDIX 2 – TESTS AT INVENTORY COUNT</h4>
                 <h6>N.B. If inventory count is solely undertaken by a 3rd party, this does not negate the need to carry out audit procedures identical to that carried out if the client had undertaken the procedures.  Consideration should be given as to the integrity and independence of the 3rd party.</h6>
                 
@@ -72,7 +72,7 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
 

@@ -1,0 +1,209 @@
+INFO - 2024-04-30 09:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:46:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:46:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:51:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:52:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:54:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:54:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:54:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-30 09:54:59 --> ErrorException: Undefined variable $c1tID
+in APPPATH\Views\workpaper\chapter3\31Aa1.php on line 121.
+ 1 APPPATH\Views\workpaper\chapter3\31Aa1.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $c1tID', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\chapter3\\31Aa1.php', 121)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\chapter3\\31Aa1.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/chapter3/31Aa1', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(3078): view('workpaper/chapter3/31Aa1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setworkpaper('3.1 Aa1', '95d9924a5c017d648718548ddbd15ae18e314ec34ddf9846553e94601bff0f95c1be6b97a48a16ac4e2e0678cdd24ea02dc49fb885cf3c1a1261320fe0cd8074fZtbPwHYaTcgn~LRPxku$y$b', 'ebaddbddc28b1bf4e2e5453ed6c27c6468cd0871cd7205755ed19e9ba506c7a78f3c8dfc604a74d5ae161b663b33a1a4294ff3e59fc03c76f379b787d0113c83yTSFeVA$pbbZ8iXLxh7l6fU=', '31e64ae80f1c6ab44b1ed12b4bb25db7cecd952185117115289e1ea6fbca54c5f2d7746ea3fb6a4f0e6aaadb2df72d06da0a218474851db2f048e40d9a94c373My$xlLeUDPGnbr5~gBp3TJY=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 09:55:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:55:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-30 09:55:16 --> ErrorException: Undefined variable $c1tID
+in APPPATH\Views\workpaper\chapter3\31Aa1.php on line 121.
+ 1 APPPATH\Views\workpaper\chapter3\31Aa1.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $c1tID', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\chapter3\\31Aa1.php', 121)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\chapter3\\31Aa1.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/chapter3/31Aa1', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(3078): view('workpaper/chapter3/31Aa1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setworkpaper('3.1 Aa1', '95d9924a5c017d648718548ddbd15ae18e314ec34ddf9846553e94601bff0f95c1be6b97a48a16ac4e2e0678cdd24ea02dc49fb885cf3c1a1261320fe0cd8074fZtbPwHYaTcgn~LRPxku$y$b', 'ebaddbddc28b1bf4e2e5453ed6c27c6468cd0871cd7205755ed19e9ba506c7a78f3c8dfc604a74d5ae161b663b33a1a4294ff3e59fc03c76f379b787d0113c83yTSFeVA$pbbZ8iXLxh7l6fU=', '31e64ae80f1c6ab44b1ed12b4bb25db7cecd952185117115289e1ea6fbca54c5f2d7746ea3fb6a4f0e6aaadb2df72d06da0a218474851db2f048e40d9a94c373My$xlLeUDPGnbr5~gBp3TJY=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 09:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:55:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-30 09:55:22 --> ErrorException: Undefined variable $c1tID
+in APPPATH\Views\workpaper\chapter3\31Aa1.php on line 121.
+ 1 APPPATH\Views\workpaper\chapter3\31Aa1.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $c1tID', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\chapter3\\31Aa1.php', 121)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\chapter3\\31Aa1.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/chapter3/31Aa1', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(3078): view('workpaper/chapter3/31Aa1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setworkpaper('3.1 Aa1', '95d9924a5c017d648718548ddbd15ae18e314ec34ddf9846553e94601bff0f95c1be6b97a48a16ac4e2e0678cdd24ea02dc49fb885cf3c1a1261320fe0cd8074fZtbPwHYaTcgn~LRPxku$y$b', 'ebaddbddc28b1bf4e2e5453ed6c27c6468cd0871cd7205755ed19e9ba506c7a78f3c8dfc604a74d5ae161b663b33a1a4294ff3e59fc03c76f379b787d0113c83yTSFeVA$pbbZ8iXLxh7l6fU=', '31e64ae80f1c6ab44b1ed12b4bb25db7cecd952185117115289e1ea6fbca54c5f2d7746ea3fb6a4f0e6aaadb2df72d06da0a218474851db2f048e40d9a94c373My$xlLeUDPGnbr5~gBp3TJY=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 09:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-04-30 09:55:24 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 1998.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc3\AA1.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc3\\AA1.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc3/AA1', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2880): view('workpaper/pdfc3/AA1', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc3('3.1 Aa1', 'd5787dff6500888598a375b54c5d7f2431a713a24e5c4835c0b3876e4a3c8893b6d258c98c2894807abe6caca9ffcdedeca1cb70c58ee76739412efaf933aad4sVZGJyWnXUUE0CKttOt821o1', 'ebaddbddc28b1bf4e2e5453ed6c27c6468cd0871cd7205755ed19e9ba506c7a78f3c8dfc604a74d5ae161b663b33a1a4294ff3e59fc03c76f379b787d0113c83yTSFeVA$pbbZ8iXLxh7l6fU=', '31e64ae80f1c6ab44b1ed12b4bb25db7cecd952185117115289e1ea6fbca54c5f2d7746ea3fb6a4f0e6aaadb2df72d06da0a218474851db2f048e40d9a94c373My$xlLeUDPGnbr5~gBp3TJY=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-30 09:55:24 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2024.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc3\AA1.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc3\\AA1.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc3/AA1', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2880): view('workpaper/pdfc3/AA1', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc3('3.1 Aa1', 'd5787dff6500888598a375b54c5d7f2431a713a24e5c4835c0b3876e4a3c8893b6d258c98c2894807abe6caca9ffcdedeca1cb70c58ee76739412efaf933aad4sVZGJyWnXUUE0CKttOt821o1', 'ebaddbddc28b1bf4e2e5453ed6c27c6468cd0871cd7205755ed19e9ba506c7a78f3c8dfc604a74d5ae161b663b33a1a4294ff3e59fc03c76f379b787d0113c83yTSFeVA$pbbZ8iXLxh7l6fU=', '31e64ae80f1c6ab44b1ed12b4bb25db7cecd952185117115289e1ea6fbca54c5f2d7746ea3fb6a4f0e6aaadb2df72d06da0a218474851db2f048e40d9a94c373My$xlLeUDPGnbr5~gBp3TJY=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-30 09:55:24 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2040.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc3\AA1.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc3\\AA1.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc3/AA1', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2880): view('workpaper/pdfc3/AA1', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc3('3.1 Aa1', 'd5787dff6500888598a375b54c5d7f2431a713a24e5c4835c0b3876e4a3c8893b6d258c98c2894807abe6caca9ffcdedeca1cb70c58ee76739412efaf933aad4sVZGJyWnXUUE0CKttOt821o1', 'ebaddbddc28b1bf4e2e5453ed6c27c6468cd0871cd7205755ed19e9ba506c7a78f3c8dfc604a74d5ae161b663b33a1a4294ff3e59fc03c76f379b787d0113c83yTSFeVA$pbbZ8iXLxh7l6fU=', '31e64ae80f1c6ab44b1ed12b4bb25db7cecd952185117115289e1ea6fbca54c5f2d7746ea3fb6a4f0e6aaadb2df72d06da0a218474851db2f048e40d9a94c373My$xlLeUDPGnbr5~gBp3TJY=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-30 09:55:24 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2060.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc3\AA1.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc3\\AA1.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc3/AA1', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2880): view('workpaper/pdfc3/AA1', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc3('3.1 Aa1', 'd5787dff6500888598a375b54c5d7f2431a713a24e5c4835c0b3876e4a3c8893b6d258c98c2894807abe6caca9ffcdedeca1cb70c58ee76739412efaf933aad4sVZGJyWnXUUE0CKttOt821o1', 'ebaddbddc28b1bf4e2e5453ed6c27c6468cd0871cd7205755ed19e9ba506c7a78f3c8dfc604a74d5ae161b663b33a1a4294ff3e59fc03c76f379b787d0113c83yTSFeVA$pbbZ8iXLxh7l6fU=', '31e64ae80f1c6ab44b1ed12b4bb25db7cecd952185117115289e1ea6fbca54c5f2d7746ea3fb6a4f0e6aaadb2df72d06da0a218474851db2f048e40d9a94c373My$xlLeUDPGnbr5~gBp3TJY=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-30 09:55:24 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2077.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc3\AA1.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc3\\AA1.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc3/AA1', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2880): view('workpaper/pdfc3/AA1', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc3('3.1 Aa1', 'd5787dff6500888598a375b54c5d7f2431a713a24e5c4835c0b3876e4a3c8893b6d258c98c2894807abe6caca9ffcdedeca1cb70c58ee76739412efaf933aad4sVZGJyWnXUUE0CKttOt821o1', 'ebaddbddc28b1bf4e2e5453ed6c27c6468cd0871cd7205755ed19e9ba506c7a78f3c8dfc604a74d5ae161b663b33a1a4294ff3e59fc03c76f379b787d0113c83yTSFeVA$pbbZ8iXLxh7l6fU=', '31e64ae80f1c6ab44b1ed12b4bb25db7cecd952185117115289e1ea6fbca54c5f2d7746ea3fb6a4f0e6aaadb2df72d06da0a218474851db2f048e40d9a94c373My$xlLeUDPGnbr5~gBp3TJY=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-30 09:55:24 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2093.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc3\AA1.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc3\\AA1.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc3/AA1', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2880): view('workpaper/pdfc3/AA1', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc3('3.1 Aa1', 'd5787dff6500888598a375b54c5d7f2431a713a24e5c4835c0b3876e4a3c8893b6d258c98c2894807abe6caca9ffcdedeca1cb70c58ee76739412efaf933aad4sVZGJyWnXUUE0CKttOt821o1', 'ebaddbddc28b1bf4e2e5453ed6c27c6468cd0871cd7205755ed19e9ba506c7a78f3c8dfc604a74d5ae161b663b33a1a4294ff3e59fc03c76f379b787d0113c83yTSFeVA$pbbZ8iXLxh7l6fU=', '31e64ae80f1c6ab44b1ed12b4bb25db7cecd952185117115289e1ea6fbca54c5f2d7746ea3fb6a4f0e6aaadb2df72d06da0a218474851db2f048e40d9a94c373My$xlLeUDPGnbr5~gBp3TJY=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-30 09:55:24 --> [DEPRECATED] Required parameter $tagvspaces follows optional parameter $default_css in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 1139.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc3\AA1.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc3\\AA1.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc3/AA1', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2880): view('workpaper/pdfc3/AA1', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc3('3.1 Aa1', 'd5787dff6500888598a375b54c5d7f2431a713a24e5c4835c0b3876e4a3c8893b6d258c98c2894807abe6caca9ffcdedeca1cb70c58ee76739412efaf933aad4sVZGJyWnXUUE0CKttOt821o1', 'ebaddbddc28b1bf4e2e5453ed6c27c6468cd0871cd7205755ed19e9ba506c7a78f3c8dfc604a74d5ae161b663b33a1a4294ff3e59fc03c76f379b787d0113c83yTSFeVA$pbbZ8iXLxh7l6fU=', '31e64ae80f1c6ab44b1ed12b4bb25db7cecd952185117115289e1ea6fbca54c5f2d7746ea3fb6a4f0e6aaadb2df72d06da0a218474851db2f048e40d9a94c373My$xlLeUDPGnbr5~gBp3TJY=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-04-30 09:55:24 --> [DEPRECATED] Required parameter $k follows optional parameter $points in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 2488.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc3\AA1.php(6): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc3\\AA1.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc3/AA1', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2880): view('workpaper/pdfc3/AA1', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc3('3.1 Aa1', 'd5787dff6500888598a375b54c5d7f2431a713a24e5c4835c0b3876e4a3c8893b6d258c98c2894807abe6caca9ffcdedeca1cb70c58ee76739412efaf933aad4sVZGJyWnXUUE0CKttOt821o1', 'ebaddbddc28b1bf4e2e5453ed6c27c6468cd0871cd7205755ed19e9ba506c7a78f3c8dfc604a74d5ae161b663b33a1a4294ff3e59fc03c76f379b787d0113c83yTSFeVA$pbbZ8iXLxh7l6fU=', '31e64ae80f1c6ab44b1ed12b4bb25db7cecd952185117115289e1ea6fbca54c5f2d7746ea3fb6a4f0e6aaadb2df72d06da0a218474851db2f048e40d9a94c373My$xlLeUDPGnbr5~gBp3TJY=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 09:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-30 09:55:34 --> ErrorException: Undefined variable $c1tID
+in APPPATH\Views\workpaper\chapter3\31Aa1.php on line 121.
+ 1 APPPATH\Views\workpaper\chapter3\31Aa1.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $c1tID', 'D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\chapter3\\31Aa1.php', 121)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\dhay\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\chapter3\\31Aa1.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/chapter3/31Aa1', [], true)
+ 5 APPPATH\Controllers\ChapterController.php(3078): view('workpaper/chapter3/31Aa1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ChapterController->c3setworkpaper('3.1 Aa1', '95d9924a5c017d648718548ddbd15ae18e314ec34ddf9846553e94601bff0f95c1be6b97a48a16ac4e2e0678cdd24ea02dc49fb885cf3c1a1261320fe0cd8074fZtbPwHYaTcgn~LRPxku$y$b', 'ebaddbddc28b1bf4e2e5453ed6c27c6468cd0871cd7205755ed19e9ba506c7a78f3c8dfc604a74d5ae161b663b33a1a4294ff3e59fc03c76f379b787d0113c83yTSFeVA$pbbZ8iXLxh7l6fU=', '31e64ae80f1c6ab44b1ed12b4bb25db7cecd952185117115289e1ea6fbca54c5f2d7746ea3fb6a4f0e6aaadb2df72d06da0a218474851db2f048e40d9a94c373My$xlLeUDPGnbr5~gBp3TJY=', 'DJ metal works')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChapterController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-30 09:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:56:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:58:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 09:59:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:00:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:00:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:02:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:02:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:02:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:03:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:04:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:04:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:06:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:06:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:06:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:08:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:08:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:09:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:09:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:10:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:11:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:11:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:12:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:13:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:17:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:17:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-30 10:18:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

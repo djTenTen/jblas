@@ -115,10 +115,10 @@
                         </tfoot>
 
                     </table>
-                        <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                        <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                        <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                        <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br><hr>
 
                 <form action="<?= base_url()?>auditsystem/wp/saveaa11uead/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aa11uead">
@@ -140,8 +140,9 @@
                             <td><input type="text" class="form-control" name="pl2" value="<?= $ue['pl2']?>"></td>
                         </tr>
                     </table>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
+                <br><br><br><hr>
 
                 <h6>Conclusion:</h6>
                 <p>No adjustments have been made to the client's draft financial statements.*</p>

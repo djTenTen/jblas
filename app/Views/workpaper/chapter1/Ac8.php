@@ -37,6 +37,7 @@
             
             <div class="card-body">
               
+            <hr>
 
             <h4>ASSESSMENT OF MATERIALITY (INCLUDING PERFORMANCE MATERIALITY)</h4>
 
@@ -498,16 +499,9 @@
                     
                 </tbody>
             </table>
-
-            <div class="container">
-                <div class="col-3 float-end">
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-success  btn-block">Save</button>
-                    </div>
-                </div>
-            </div>
-           
+                <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
             </form>
+            <br><br><br><hr>
             
 
             </div>

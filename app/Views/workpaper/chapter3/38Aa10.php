@@ -45,7 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>FINAL ANALYTICAL PROCEDURES</h4>
                 <h6>Objective: </h6>
                 <p>TTo carry out a review of the financial statements such that the results obtained, together with the conclusions drawn from other audit tests, give a basis for the opinion on the financial statements.</p>
@@ -106,9 +106,13 @@
 
                     <textarea name="exp" id="" cols="30" rows="10" class="form-control"><?= $aa10['exp']?></textarea>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
-                    <h6>Conclusion:</h6>
+                    
+                </form>
+                <br><br><br><hr>
+
+                <h6>Conclusion:</h6>
                     <p>I have carried out both overall and detailed analytical procedures on the financial statements and I am satisfied that:</p>
                     <ul>
                         <li>there are no large or unusual variations in the figures which cannot be adequately explained;</li>
@@ -116,7 +120,6 @@
                         <li>no indicators of fraud have been identified; and</li>
                     </ul>
 
-                </form>
 
                 
             </div>

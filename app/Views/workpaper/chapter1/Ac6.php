@@ -44,7 +44,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>RISK SUMMARY</h4>
                 <h6>This form should be completed when a narrative approach to inherent business risk assessment is undertaken. If more than one risk level applies, add additional lines as appropriate.</h6>
                 <br><br>
@@ -75,12 +75,12 @@
                             <?php }?>
                         </tbody>
                     </table>
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
 
-                <br>
-                <br>
+                <br><br>
+                <br><hr>
 
                 <h4>NARRATIVE RISK ASSESSMENT INHERENT BUSINESS RISK AND CONTROL ENVIRONMENT ASSESSMENT</h4>
                 <p>The risk forms should not be completed until –</p>
@@ -198,11 +198,11 @@
                     </tbody>
                 </table>
 
-                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" id="add-field1">Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end" type="button" id="add-field1"><i class="fas fa-plus-square m-1"></i> Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br>
-                <br>
+                <br><br><hr>
 
                 <h6>Notes Regarding Assessment of Controls:	</h6>
                 <p>1.	The audit approach section of the assignment plan should include details of how the risk and control environment assessment have influenced the design of the audit programmes and have identified key items and key audit issues.</p>

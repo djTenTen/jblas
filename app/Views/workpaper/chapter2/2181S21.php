@@ -45,7 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>DISCLOSURE AUDIT PROGRAMME ~ Covering the Directors’ Report and Financial Statements </h4>
                 <p><i>Additional audit programmes will be needed where the entity operates a defined benefit pension, has share-based payments or hedge accounts. Complete Appendices 2.18.2, 2.18.3 and 2.18.4 as necessary.</i></p>
 
@@ -72,8 +72,7 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
-
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
 
             </div>

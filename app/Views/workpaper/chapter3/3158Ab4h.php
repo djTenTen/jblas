@@ -45,6 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
+                <hr>
                 <h6>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS AND FRS 101)</h6>
                 <h6> ~ Additional Disclosures on transition to IFRS 16</h6>
                 <p><b><u>Scope: </u></b></p>
@@ -79,9 +80,11 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
+
+                <br><br><br><hr>
            
             </div>
         </div>

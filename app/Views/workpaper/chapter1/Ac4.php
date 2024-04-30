@@ -45,7 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
-               
+                <hr>
                 <h4>PRELIMINARY PLANNING PROCEDURES – CLIENT INVOLVEMENT IN THE PLANNING PROCESS</h4>
                 <h6>NB: The key issues noted from this document must be recorded in the relevant areas of the audit file or the PAF and should feed through into the risk assessment, audit approach and fieldwork.</h6>
                 <form action="<?= base_url()?>auditsystem/wp/saveac4ppr/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
@@ -64,10 +64,10 @@
                             </td>
                         </tr>
                     </table>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
 
-                <br>
+                <br><br><br><hr>
                 <p>In respect of a new audit assignment, where the discussion points below request “changes” to be noted, full information should be documented, as the working papers will not document “existing” issues affecting the client.</p>
 
                 <form action="<?= base_url()?>auditsystem/wp/saveac4/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
@@ -88,8 +88,9 @@
                             <?php }?>
                         </tbody>
                     </table>
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
+                <br><br><br><hr>
 
             </div>
         </div>

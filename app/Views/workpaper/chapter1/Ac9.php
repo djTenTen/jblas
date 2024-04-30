@@ -34,6 +34,7 @@
                 </div>
             <?php  }?>
             <div class="card-body">
+                <hr>
             <form action="<?= base_url()?>auditsystem/wp/saveac9/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                 <input type="hidden" value="ac9data" name="part">
                 <input type="hidden" name="acid" value="<?= $acID?>">
@@ -275,19 +276,12 @@
                             <td><input type="text" name="lo1" id="" class="form-control" value="<?= $ac9['lo1']?>"></td>
                             <td><input type="date" name="lo2" id="" class="form-control" value="<?= $ac9['lo2']?>"></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success btn-block">Save</button>
-                                </div>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
-                </form>
 
+                <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                <br><br><br><hr>
 
 
 

@@ -45,7 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>SUBSEQUENT EVENTS REVIEW</h4>
                 <h6>Objective:</h6>
                 <p>To determine whether any material adjustment or disclosure is required to the financial statements as a result of events occurring between the end of the accounting period and the date of signing the audit report and to ensure the requirements of ISA 560 regarding subsequent events are met.</p>
@@ -70,11 +70,11 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
 
-                <br>
+                <br><br><br><hr>
                 <h6>Discussion with Client</h6>
 
                 <form action="<?= base_url()?>auditsystem/wp/saveaa3a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
@@ -96,11 +96,11 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
 
-
+                <br><br><br><hr>
                 <h6>Finalisation of the Audit File</h6>
                 <p>This section should also detail any other work done on subsequent events not covered by the questions below.</p>
 
@@ -125,9 +125,10 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
+                <br><br><br><hr>
 
                 <h4>Initial Conclusion:</h4>
                 <p>* Delete as applicable </p>
@@ -150,8 +151,10 @@
                 <form action="<?= base_url()?>auditsystem/wp/saveaa3air/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="acid" value="<?= $crypt->encrypt($ir['acID'])?>">
                     <textarea class="form-control" cols="30" rows="15" name="ir" required><?= $ir['question']?></textarea>
-                    <button type="submit" class="btn btn-sm btn-icon btn-success float-end"><i class="fas fa-file-alt"></i></button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
+
+                <br><br><br><hr>
                 <p>Having reviewed the above procedures:</p>
                 <p>I am satisfied that no further significant events have occurred between the initial review as documented by the conclusion above and _____________ (date of the final review) *</p>
                 <p>Significant events that have occurred are explained above, have been communicated to the A.E.P., and adequately accounted for / disclosed in the financial statements. *</p>

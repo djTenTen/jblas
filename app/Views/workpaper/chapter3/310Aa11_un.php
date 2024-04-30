@@ -83,9 +83,10 @@
                             <td><input type="text" class="form-control" name="fma" value="<?= $ue['fma']?>"></td>
                         </tr>
                     </table>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
 
+                <br><br><br><hr>
 
                 <form action="<?= base_url()?>auditsystem/wp/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aef">
@@ -145,11 +146,10 @@
                             <?php }?>
                         </tbody>
                     </table>
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
-
+                <br><br><br><hr>
                 <form action="<?= base_url()?>auditsystem/wp/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aej">
                     <table class="table table-bordered table-sm">
@@ -184,10 +184,10 @@
                             <?php }?>
                         </tbody>
                     </table>
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br><hr>                    
 
                 <form action="<?= base_url()?>auditsystem/wp/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="ee">
@@ -223,10 +223,10 @@
                             <?php }?>
                         </tbody>
                     </table>
-                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br><hr>
 
                 <form action="<?= base_url()?>auditsystem/wp/saveaa11un/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="de">
@@ -274,12 +274,12 @@
                             </tr>
                         </tfoot>
                     </table>
-                        <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" >Add Field</button>
-                        <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                        <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                        <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
                 
-                <br><br>
+                <br><br><br><hr>
                 <form action="<?= base_url()?>auditsystem/wp/saveaa11con/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="con">
                     <input type="hidden" name="acid" value="<?= $conacID?>">
@@ -434,9 +434,9 @@
                         </tfoot>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br><hr>              
 
 
 

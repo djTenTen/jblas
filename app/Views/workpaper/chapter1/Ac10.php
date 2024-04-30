@@ -120,8 +120,8 @@
                         </tbody>   
                             <tr>
                                 <td colspan="5" >
-                                    <button type="submit" class="btn btn-success float-end m-1">Save</button>
-                                    <button class="btn btn-primary float-end m-1" type="button" data-action="add-field1" id="add-field1">Add Field</button>
+                                    <button type="submit" class="btn btn-success float-end m-1"><i class="fas fa-file-alt m-1"></i>Save</button>
+                                    <button class="btn btn-primary float-end m-1" type="button" data-action="add-field1" id="add-field1"><i class="fas fa-plus-square m-1"></i> Add Field</button>
                                 </td>
                             </tr>
                     </table>
@@ -159,8 +159,8 @@
                         </tbody>
                             <tr>
                                 <td colspan="5" >
-                                    <button type="submit" class="btn btn-success float-end m-1">Save</button>
-                                    <button class="btn btn-primary float-end m-1" type="button" data-action="add-field2" id="add-field2">Add Field</button>
+                                    <button type="submit" class="btn btn-success float-end m-1"><i class="fas fa-file-alt m-1"></i>Save</button>
+                                    <button class="btn btn-primary float-end m-1" type="button" data-action="add-field2" id="add-field2"><i class="fas fa-plus-square m-1"></i>Add Field</button>
                                 </td>
                             </tr>
                         <tfoot>

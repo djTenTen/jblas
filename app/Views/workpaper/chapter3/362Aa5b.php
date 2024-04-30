@@ -45,7 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>MANAGEMENT LETTER WORKSHEET [INTERIM / FINAL AUDIT]</h4>
                 <form action="<?= base_url()?>auditsystem/wp/saveaa5b/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aa5b">
@@ -76,10 +76,10 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary m-1 float-end" type="button" data-action="add-field" id="add-field">Add Field</button>
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button class="btn btn-primary m-1 float-end btn-sm" type="button" data-action="add-field" id="add-field"><i class="fas fa-plus-square m-1"></i> Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br><hr>
                 <p>This should cover weaknesses in the accounting system and control environment plus comments on the qualitative aspects of the financial statements and the appropriateness of the accounting policies and estimation techniques adopted by the client.</p>
                 <p>All significant issues should be included in the management letter.  For other issues verbal communication is adequate.  If there are no significant issues then this can be confirmed in a “voluntary” management letter or alternatively, the letter of representation can note that a management letter is not necessary ~ note, however, that this is likely to be a rare occurrence when applying IFRS.</p>
 

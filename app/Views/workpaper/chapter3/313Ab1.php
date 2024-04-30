@@ -45,7 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>CRITICAL REVIEW OF THE FINANCIAL STATEMENTS</h4>
                
 
@@ -70,11 +70,11 @@
                         </tbody>
                     </table>
                 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
-            
-            
+                <br><br><br><hr>
+                                
                 <p>The tests above were undertaken on draft financial statements sent to the client.</p>
             
             

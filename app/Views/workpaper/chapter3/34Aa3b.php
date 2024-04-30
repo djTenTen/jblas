@@ -45,7 +45,7 @@
             <?php  }?>
 
             <div class="card-body">
-                
+                <hr>
                 <h4>GOING CONCERN CHECKLIST</h4>
                 <h6>Objective:</h6>
                 <p>To ensure that the fundamental concept of going concern is fully considered and that the requirements of ISA 570 are met.</p>
@@ -70,10 +70,10 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
-                <br>
+                <br><br><br><hr>
                 <h6>Part 2 – The Auditor’s Assessment ~ General Considerations:</h6>
                 <form action="<?= base_url()?>auditsystem/wp/saveaa3b/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" value="p2" name="part">
@@ -94,10 +94,10 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
 
-                <br>
+                <br><br><br><hr>
                 <h6>Part 3a – The Auditor’s Assessment ~ Specific Concerns:</h6>
                 <h6><i>Completion of this section is optional unless potential issues regarding the going concern presumption have been identified in Parts 1 or 2 above.</i></h6>
                
@@ -120,11 +120,11 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
 
-                <br>
+                <br><br><br><hr>
                 <h6>Part 3b – The Auditor’s Assessment ~ Disclosure considerations:</h6>
                
                 <form action="<?= base_url()?>auditsystem/wp/saveaa3b/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
@@ -146,11 +146,11 @@
                         </tbody>
                     </table>
 
-                    <button type="submit" class="btn btn-success m-1 float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
 
                 </form>
 
-                <br>
+                <br><br><br><hr>
 
                 <h6>Part 4 – Conclusion:</h6>
                 <p>Where potential problems with the going concern presumption have been identified, summarise the issue and resolution:</p>
@@ -162,9 +162,9 @@
                         </tr>
                         
                     </table>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
+                <br><br><br><hr>
 
                 <p>On the basis of the work recorded above, I consider that:</p>
                 <ul>
