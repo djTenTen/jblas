@@ -88,6 +88,7 @@ class AuditorModel extends Model{
             'name' => $req['name'],
             'email' => $req['email'],
             'type' => $req['type'],
+            'position' => $req['pos'],
             'updated_on' => $this->date.' '.$this->time
         ];
 

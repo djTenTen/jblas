@@ -297,9 +297,9 @@ $(document).ready(function () {
                             <label class="small mb-1" for="type">Type</label>
                             <select name="type" id="type" class="form-control form-select" required>
                                 <option value="`+ data.type +`" selected>`+ data.type +`</option>
-                                <option value="Auditor">Auditor</option>
-                                <option value="Supervisor">Supervisor</option>
-                                <option value="Approver">Approver</option>
+                                <option value="Preparer">Preparer</option>
+                                <option value="Reviewer">Reviewer</option>
+                                <option value="Audit Manager">Audit Manager</option>
                             </select>
                         </div>
                     </div>

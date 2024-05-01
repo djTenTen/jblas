@@ -52,6 +52,13 @@ class AuditorController extends BaseController{
             return redirect()->to(site_url('auditsystem/auditor'));
         }
 
+        switch ($this->request->getPost('type')) {
+            case 'Preparer': $pos = 2; break;
+            case 'Reviewer': $pos = 4; break;
+            case 'Audit Manager': $pos = 5; break;
+            default: $pos = 2;break;
+        }
+
         $req = [
             'name' => $this->request->getPost('name'),
             'email' => $this->request->getPost('email'),
@@ -61,7 +68,7 @@ class AuditorController extends BaseController{
             'type' => $this->request->getPost('type'),
             'fID' => $this->crypt->decrypt(session()->get('firmID')),
             'signature' => $this->request->getFile('signature'),
-            'pos' => 2,
+            'pos' => $pos,
         ];
 
         $res = $this->audmodel->saveauditor($req);
@@ -93,11 +100,19 @@ class AuditorController extends BaseController{
             session()->setFlashdata('invalid_input','invalid_input');
             return redirect()->to(site_url('auditsystem/auditor'));
         }
+        
+        switch ($this->request->getPost('type')) {
+            case 'Preparer': $pos = 2; break;
+            case 'Reviewer': $pos = 4; break;
+            case 'Audit Manager': $pos = 5; break;
+            default: $pos = 2;break;
+        }
 
         $req = [
             'name' => $this->request->getPost('name'),
             'email' => $this->request->getPost('email'),
             'type' => $this->request->getPost('type'),
+            'pos' => $pos,
             'uID' =>  $duID,
         ];
 
