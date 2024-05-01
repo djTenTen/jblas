@@ -215,6 +215,8 @@ class UserController extends BaseController{
             'pass' => $npss,
             'photo' => $this->request->getFile('photo'),
             'signature' => $this->request->getFile('signature'),
+            'myphoto' => session()->get('photo'),
+            'mysignature' => session()->get('signature'),
             'uID' => $duID,
         ];
 

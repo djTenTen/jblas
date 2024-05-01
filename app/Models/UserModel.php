@@ -187,25 +187,25 @@ class UserModel extends  Model {
 
         if(!empty($req['photo']) and $req['photo'] != ''){
             
-            $photoname = $req['uID'].'.png';
-            $imagePath = ROOTPATH .'/public/uploads/photo/'.$photoname; 
-
+            $imagePath = ROOTPATH .'/public/uploads/photo/'.$req['myphoto']; 
             if (file_exists($imagePath)) {
                 unlink($imagePath);
             }
-            
+            $photoname = $req['photo']->getRandomName();
             $req['photo']->move(ROOTPATH .'public/uploads/photo', $photoname);
             $data['photo'] = $photoname;
+            session()->set('photo', $photoname);
 
         }
         if(!empty($req['signature']) and $req['signature'] != ''){
-            $signaturename = $req['uID'].'.png';
-            $imagePath = ROOTPATH .'/public/uploads/signature/'.$signaturename; 
+            $imagePath = ROOTPATH .'/public/uploads/photo/'.$req['mysignature']; 
             if (file_exists($imagePath)) {
                 unlink($imagePath);
             }
+            $signaturename = $req['signature']->getRandomName();
             $req['signature']->move(ROOTPATH .'public/uploads/signature', $signaturename);
             $data['signature'] = $signaturename;
+            session()->set('signature', $signaturename);
         }
 
         if($this->db->table($this->tblu)->where('userID', $req['uID'])->update($data)){
