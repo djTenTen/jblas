@@ -23,6 +23,15 @@
     </header>
     <div class="container-xl px-4 mt-n10">
         <div class="card">
+            <?php if (session()->get('updated')) { ?>
+                <div class="alert alert-success alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Success Update</h6>
+                        Your information has been successfully updated
+                    </div>
+                </div>
+            <?php  }?>
             <div class="card-body">
                 <hr>
 
@@ -56,7 +65,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="card mb-4 mb-xl-0">
                                 <div class="card-header">Signature</div>
                                 <div class="card-body text-center">

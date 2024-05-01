@@ -1,6 +1,6 @@
 <?php  $crypt = \Config\Services::encrypter();?>
 <main>
-<header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
             <div class="page-header-content pt-4">
                 <div class="row align-items-center justify-content-between">
@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('invalid_input')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -61,16 +59,13 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
                 <hr>
                 <h4>INVESTMENTS</h4>
                 <p><i>This programme <strong><u>does not</u></strong>  include tests relating to investment properties. These tests are included on the C audit programme.</i></p>
                 <p><i>Tests on this programme relate solely to listed and non-listed equity instruments.  Where investments are debt instruments the appropriate tests on the F audit programme should be completed. If an entity has physical investments, such as wine, works of art or commodities such as precious metals, it would seem appropriate that these are carried at fair value. Tests 16 and 18 to 23 could be completed when auditing such investments</i></p>
                 <p><i>This programme does not cover complex financial instruments: interest rates swaps are addressed on the I audit programme and forward exchange contracts are addressed on the L audit programme. If the entity has other types of complex financial instrument then additional tests must be added to an appropriate audit programme.</i></p>
-                
                 <form action="<?= base_url()?>auditsystem/c2/manage/save/<?= $code?>/<?= $header?>/<?= $c2tID?>" method="post">
-
                     <table class="table table-sm table-bordered table-hover">
                         <thead>
                             <tr>
@@ -101,7 +96,6 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary btn-sm m-1 float-end" type="button" data-action="add-field" id="add-field"> <i class="fas fa-plus-square m-1"></i>Add Field</button>
                     <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
@@ -109,12 +103,9 @@
             </div>
         </div>
     </div>
-    
 </main>
-
 <script>
 $(document).ready(function () {
-
     $(".active-data").on("click", function() {
         var status = $(this).data('status');
         var acID = $(this).data('ac-id');
@@ -125,7 +116,6 @@ $(document).ready(function () {
                 $('.msgconfirm').html(`<h3>Are you sure to Enable this content?</h3>`);
             } 
     });
-    
     $('#add-field').on('click', function () {
         // Adding a row inside the tbody.
         $('#tbody').append(`
@@ -137,13 +127,9 @@ $(document).ready(function () {
             <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
         </tr>`);
     });
-
     $('#tbody').on('click', 'button.remove', function () {
         $(this).closest('tr').remove();
     });
-
-
-
 });
 </script>
 
