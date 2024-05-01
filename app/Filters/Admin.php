@@ -7,7 +7,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Config\Services;
 
-class Auth implements FilterInterface{
+class Admin implements FilterInterface{
 
     protected $authmodel;
 
@@ -20,13 +20,18 @@ class Auth implements FilterInterface{
     {
         // Check session validation here
         \Config\Services::session();
+        if(!empty(session()->get('allowed'))){
+            if (session()->get('allowed')->user != "Yes") {
+                
+                
+                return redirect()->to(site_url('403'));
+            }
 
-        if (!session()->get('authentication')) {
-            // Redirect to login page or perform any action
+        }else{
             return redirect()->to(site_url('401'));
         }
-
         $this->authmodel->getUserAccess();
+
 
     }
 

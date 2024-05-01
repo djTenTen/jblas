@@ -9,6 +9,7 @@ use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
 use App\Filters\Auth;
+use App\Filters\Admin;
 class Filters extends BaseConfig
 {
     /**
@@ -25,6 +26,7 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'auth'          => Auth::class,
+        'admin'         => Admin::class,
     ];
 
     /**
@@ -38,12 +40,15 @@ class Filters extends BaseConfig
            
             // 'csrf',
             // 'invalidchars',
+            
         ],
         'after' => [
             'toolbar',
             // 'honeypot',
             // 'secureheaders',
+            'admin',
             'auth',
+            
         ],
     ];
 

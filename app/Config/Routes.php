@@ -12,6 +12,9 @@ $routes->post('/logout', 'AuthController::logout');
 $routes->get('/register', 'UserController::register');
 $routes->post('/signup', 'UserController::signup');
 
+$routes->get('/403', 'ErrorController::error403');
+$routes->get('/401', 'ErrorController::error401');
+
 $routes->group('', ['filter' => 'auth'], function ($routes) {
 
     /**
@@ -24,9 +27,6 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
 
     $routes->get('/auditsystem/myaccount', 'UserController::myaccount');
     $routes->post('/auditsystem/myaccount/update/(:any)', 'UserController::updatemyinfo/$1');
-
-
-
 
 
 
@@ -264,17 +264,20 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->post('/auditsystem/auditor/update/(:any)', 'AuditorController::updateauditor/$1');
     $routes->post('/auditsystem/auditor/acin/(:any)', 'AuditorController::acin/$1');
 
-    /**
-        ----------------------------------------------------------
-        USER MANAGEMENT
-        ----------------------------------------------------------
-     */
-    $routes->get('/auditsystem/user', 'UserController::viewusers');
-    $routes->post('/auditsystem/user/save', 'UserController::adduser');
-    $routes->get('/auditsystem/user/edit/(:any)', 'UserController::edituser/$1');
-    $routes->post('/auditsystem/user/update/(:any)', 'UserController::udpateuser/$1');
-    $routes->post('/auditsystem/user/find', 'UserController::findfirm');
-    $routes->post('/auditsystem/user/acin/(:any)', 'UserController::acin/$1');
+    $routes->group('', ['filter' => 'admin'], function ($routes) {
+        /**
+            ----------------------------------------------------------
+            USER MANAGEMENT
+            ----------------------------------------------------------
+        */
+        $routes->get('/auditsystem/user', 'UserController::viewusers');
+        $routes->post('/auditsystem/user/save', 'UserController::adduser');
+        $routes->get('/auditsystem/user/edit/(:any)', 'UserController::edituser/$1');
+        $routes->post('/auditsystem/user/update/(:any)', 'UserController::udpateuser/$1');
+        $routes->post('/auditsystem/user/find', 'UserController::findfirm');
+        $routes->post('/auditsystem/user/acin/(:any)', 'UserController::acin/$1');
+    });
+    
 
     /**
         ----------------------------------------------------------
