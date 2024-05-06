@@ -1,28 +1,21 @@
 <?php
-
-
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
-
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
-
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
 // set margins
 $pdf->SetMargins(25,10,15);   
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
@@ -32,26 +25,18 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 $pdf->setPrintHeader(false);
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
-
-
 // ---------------------------------------------------------
 // set font
-
-
-
 // add a page
 $pdf->AddPage();
 //$pdf->SetPageSize('A4');
-
 $style = "<style>
 *{
     font-family: 'Times New Roman', Times, serif;
@@ -77,11 +62,8 @@ p,li{
     text-indent: 20px;
 }
 </style>";
-
 $html =  "";
-
 $html .= $style;
-
 $html .= '
 <table>
     <tr>
@@ -107,8 +89,6 @@ $html .= '
     </tr>
 </table>
 ';
-
-
 $html .= '
 <p><b>CORPORATE DISCLOSURE CHECKLIST (IFRS)</b></p>
 <p><b><u>Scope</u></b></p>
@@ -120,7 +100,6 @@ $html .= '
 <p><b>NB: To ensure that the Checklist is as efficient as possible, areas which are more specialised have been addressed by supplementary disclosure checklists.  <u>These supplementary disclosure checklists should only be completed if the area is relevant.</u></b></p>
 <p>NB: The checklist does not cover the additional disclosures required by companies which enter into insurance contracts, where these are relevant considerations, then the disclosure requirements of IFRS 4 should be given.  It also does not cover the requirements of IAS 26, which are only relevant to clients who are themselves pension schemes, or IFRIC 2 which is relevant to cooperative entities.  The checklist also does not cover the disclosure requirements of companies with listed equity or debt.</p>
 ';
-
 $html .= '
 <table border="1">
     <thead>
@@ -183,12 +162,10 @@ $html .= '
     </tbody>
 </table>
 ';
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <p>For areas which are relevant, “Supplementary Checklist Completed” should be marked ‘Yes’, ‘No’ or ‘Not Applicable’ as appropriate.  Any ‘No’ answers must be fully explained.</p>
     <p><b>Contents</b></p>
@@ -246,12 +223,10 @@ $html .= '
         </tbody>
     </table>
 ';
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -276,18 +251,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -312,18 +283,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -348,18 +315,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -388,18 +351,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -428,18 +387,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -466,18 +421,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -504,19 +455,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -544,20 +490,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -584,21 +524,10 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
-
-
-
-
-
-    
-
-
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,'J', false, '');

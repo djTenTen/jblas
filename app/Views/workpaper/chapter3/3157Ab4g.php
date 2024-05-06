@@ -21,11 +21,8 @@
             </div>
         </div>
     </header>
-
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -44,14 +41,12 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
                 <hr>
                 <h6>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS AND FRS 101)</h6>
                 <h6> ~ Additional Disclosures on transition to IFRS 15 and IFRS 9</h6>
                 <p><b><u>Scope: </u></b></p>
                 <p>This checklist should be completed for all entities that are applying IFRS 15 <i>Revenue from Contracts with Customers</i>  and IFRS 9 <i>Financial Instruments</i> for the first time. Both Standards are mandatory for accounting periods commencing on/after 1 January 2018.</p>
-
                 <form action="<?= base_url()?>auditsystem/wp/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="ab4g">
                     <table class="table table-bordered">
@@ -81,15 +76,12 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-
                 </form>
                 <br><br><br><hr>
             </div>
         </div>
     </div>
-    
 </main>
 
 

@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,9 +41,7 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
-                
                 <nav class="nav nav-borders">
                     <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'checklist')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/3.15 Ab4-checklist/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Checklist</a>
                     <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section1')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/3.15 Ab4-section1/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 1</a>
@@ -60,7 +56,6 @@
                 </nav>
                 <hr class="mt-0 mb-4" />
                 <br>
-
                 <form action="<?= base_url()?>auditsystem/wp/saveab4/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="<?= $section?>">
                     <table class="table table-bordered">
@@ -89,16 +84,12 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-
                 </form>
                 <br><br><br><hr>
-           
             </div>
         </div>
     </div>
-    
 </main>
 
 

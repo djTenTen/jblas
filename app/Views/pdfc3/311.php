@@ -1,28 +1,21 @@
 <?php
-
-
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
-
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
-
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
 // set margins
 $pdf->SetMargins(25,10,15);   
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
@@ -32,27 +25,18 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 $pdf->setPrintHeader(false);
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
-
-
 // ---------------------------------------------------------
 // set font
-
-
-
 // add a page
 $pdf->AddPage();
 //$pdf->SetPageSize('A4');
-
-
 $html =  "
     <style>
         *{
@@ -73,14 +57,12 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
         .ind{
             text-indent: 20px;
         }
     </style>
 ";
-
 $html .= '
 <p><b>INDEPENDENT AUDITOR’S REPORT TO THE MEMBERS OF [NAME OF ENTITY] LIMITED</b></p>
 <p><b>Opinion</b></p>
@@ -93,7 +75,6 @@ $html .= '
 </ul>
 <p><b>Basis for opinion</b></p>
 <p>We conducted our audit in accordance with International Standards on Auditing (ISAs).  Our responsibilities under those standards are further described in the Auditor’s Responsibilities for the Audit of the Financial Statements section of our report.  We are independent of the Company in accordance with the International Ethics Standards Board for Accountants Code of Ethics for Professional Accountants (IESBA Code), and we have fulfilled our other ethical responsibilities in accordance with these requirements.  We believe that the audit evidence we have obtained is sufficient and appropriate to provide a basis for our opinion.</p>
-
 <p><b>[Use of our report</b></p>
 <p>This report, including the opinion, has been prepared for and only for the company’s members as a body in accordance with [insert legislation]3 and for no other purpose.  We do not, in giving these opinions, accept or assume responsibility for any other purpose or to any other person to whom this report is shown or into whose hands it may come save where expressly agreed by our prior consent in writing.]4</p>
 <p><b>Responsibilities of directors for the financial statements</b></p>
@@ -120,7 +101,6 @@ $html .= '
 <p>[Address]</p>
 <p>[Signature in the name of the audit firm, the personal name of the auditor, or both, depending on local legislation]3</p>
 <p>[Date]</p>
-
 <p><b>Notes:</b></p>
 <ol type="1">
     <li>Amend as appropriate.</li>
@@ -128,22 +108,7 @@ $html .= '
     <li>Where applicable, there should be appropriate reference to local legislation applicable to the financial statements of limited companies, including any additional auditor reporting requirements which may arise.</li>
     <li>Certain jurisdictions recommend including a disclaimer in the wording of the audit report to highlight that no duty of care is owed to any party other than the addressee of the report.  Such wording should be included if encouraged locally.</li>
 </ol>
-
 ';
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,'J', false, '');

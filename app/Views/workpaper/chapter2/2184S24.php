@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('invalid_input')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,7 +41,6 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
                 <hr>
                 <h4>HEDGE ACCOUNTING</h4>
@@ -51,7 +48,6 @@
                 <p><i>On first time application, IFRS 9 permits an entity to choose as its accounting policy either to apply the hedge accounting requirements of IFRS 9 or to continue to apply the IAS 39 requirements.</i></p>
                 <p><i>This programme is to be used when the entity has entered into hedge relationships and is applying <strong>hedge accounting</strong> . The application of hedge accounting is <strong>optional</strong> – many clients take out financial instruments to “hedge” risks (such as forward foreign currency contracts to mitigate the risks arising from exposure to fluctuating exchange rates), but this does not necessitate the application of hedge accounting. Hedge accounting is a choice, and can only be applied when certain criteria have been met.</i></p>
                 <form action="<?= base_url()?>auditsystem/wp/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-
                     <table class="table table-sm table-bordered table-hover">
                         <thead>
                             <tr>
@@ -74,9 +70,7 @@
                     </table>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
             </div>
         </div>
     </div>
-    
 </main>

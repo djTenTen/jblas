@@ -1,28 +1,21 @@
 <?php
-
-
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
-
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
-
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
 // set margins
 $pdf->SetMargins(25,10,15);   
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
@@ -32,27 +25,18 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 $pdf->setPrintHeader(false);
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
-
-
 // ---------------------------------------------------------
 // set font
-
-
-
 // add a page
 $pdf->AddPage();
 //$pdf->SetPageSize('A4');
-
-
 $html =  "
     <style>
         *{
@@ -73,11 +57,9 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '
 <table>
     <tr>
@@ -103,15 +85,12 @@ $html .= '
     </tr>
 </table>
 ';
-
 $html .= '<h3>INVESTMENTS</h3>';
-
 $html .= '
 <p><i>This programme <b><u>does not</u></b>  include tests relating to investment properties. These tests are included on the C audit programme.</i></p>
 <p><i>Tests on this programme relate solely to listed and non-listed equity instruments.  Where investments are debt instruments the appropriate tests on the F audit programme should be completed. If an entity has physical investments, such as wine, works of art or commodities such as precious metals, it would seem appropriate that these are carried at fair value. Tests 16 and 18 to 23 could be completed when auditing such investments</i></p>
 <p><i>This programme does not cover complex financial instruments: interest rates swaps are addressed on the I audit programme and forward exchange contracts are addressed on the L audit programme. If the entity has other types of complex financial instrument then additional tests must be added to an appropriate audit programme.</i></p>
 ';
-
 $html .= '
 <table>
     <thead>
@@ -137,7 +116,6 @@ $html .= '
         </tr>
         ';
     }
-
 $html .= '
     </tbody>
 </table>
@@ -153,14 +131,6 @@ CO = Cut-off;<br>
 CL = Classification.<br>
 </p>
 ';
-    
-    
-
-
-
-
-
-
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,'J', false, '');

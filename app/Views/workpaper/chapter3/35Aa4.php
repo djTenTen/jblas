@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,21 +41,12 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
-                
                 <p>Dear Sirs</p>
-
-                
-
                 <h4>LETTER OF REPRESENTATION FOR THE <input type="text" class="form-control form-control-sm col-1" placeholder="[YEAR / PERIOD]">   ENDED  <input type="date" class="form-control form-control-sm col-1" placeholder="[DATE]"></h4>
-             
-
                 <p>We confirm that the following representations are made on the basis of enquiries of management and staff with relevant knowledge and experience and where appropriate, of inspection of supporting documentation, sufficient to satisfy ourselves that we can properly make each of the following representations to you in connection with your audit of the company's financial statements for the year ended <input type="date" class="form-control form-control-sm col-1" placeholder="[DATE]"></p>
                 <p>We acknowledge our legal responsibilities regarding disclosure of information to you as auditors and confirm that so far as we are aware, there is no relevant audit information needed by you in connection with preparing your audit report of which you are unaware.  Each director has taken all the steps that they ought to have taken as a director in order to make themselves aware of any relevant audit information and to establish that you are aware of that information.</p>
-                    
                 <h6>Financial Statements:</h6>
-
                 <p>1.	We acknowledge, and have fulfilled, as directors, our collective responsibility under <input type="text" class="form-control form-control-sm col-1" placeholder="[insert legislation]"> for presenting financial statements (in accordance with <input type="text" class="form-control col-1" placeholder="[insert legislation]"> and International Financial Reporting Standards), which give a true and fair view of the financial position of the company at the reporting date, and of its result for the period then ended, and for making accurate representations to you.  We confirm that we have approved the financial statements for the year ended <input type="date" class="form-control col-1" placeholder="[DATE]">. </p>
                 <p>2.	We confirm that the accounting policies and estimation techniques <textarea class="form-control form-control-sm" name="" id="" cols="30" rows="10" placeholder="[, including significant assumptions used to determine estimates measured at fair value,]"></textarea>  adopted for the preparation of the financial statements are the most appropriate to the circumstances in which the company operates.</p>
                 <p>3.	Other than as disclosed in the financial statements, the company has not entered into any transactions involving directors, officers or other related parties, which require disclosure under <input type="text" class="form-control form-control-sm col-1" placeholder="[insert legislation]"> or International Financial Reporting Standards.  Appropriate disclosure has been made of the control of the company.</p>
@@ -69,19 +58,15 @@
                 <p>We confirm that we have been notified by you that either no unadjusted or only clearly trivial errors were identified during the audit.</p>
                 <p>8.	We confirm that we have agreed the adjustments appended to this letter which have been made to the performance statement(s), and statement of financial position which we presented to you for audit.</p>
                 <p>9.	We confirm we have no plans or intentions that may materially affect the carrying value or classification of any assets and liabilities reflected in the financial statements.</p>
-
                 <p><textarea class="form-control form-control-sm" name="" id="" cols="30" rows="10" placeholder="[The following three paragraphs should only be included where applicable:]"></textarea></p>
-
                 <p>10.	With regard to the defined benefit pension plan, we are satisfied that:</p>
                 <ul>
                     <li>the actuarial assumptions underlying the valuation are consistent with our knowledge of the business;</li>
                     <li>all significant retirement benefits have been identified and properly accounted for; and</li>
                     <li>all settlements and curtailments have been identified and properly accounted for.</li>
                 </ul>
-
                 <p>11.	[Where there has been a prior period adjustment as a result of a material error, and comparative information has been restated, a specific representation is required (ISA 710.9).]</p>
                 <p>12.	[Add any additional representations related to new or revised accounting standards that are being implemented for the first time that have a material impact on financial statements].</p>
-
                 <h6>Information provided:</h6>
                 <p><strong>13.	All the accounting records have been made available to you for the purpose of your audit and all the transactions undertaken by the company have been properly reflected and recorded in the accounting records.  We have provided to you all other information requested and given unrestricted access to persons within the entity from whom you have deemed it necessary to speak to.  All other records and relevant information, including minutes of all management and shareholders' meetings, have been made available to you.  </strong></p>
                 <p><strong>14.	Other than those disclosed in the financial statements we are not aware of any material liabilities, provisions, contingent liabilities, contingent assets or contracted for capital commitments, that need to be provided for or disclosed in the financial statements.</strong></p>
@@ -100,24 +85,18 @@
                     <li>	[List any change to the member of informed management]; and</li>
                     <li>	[List any change to interests held in the client’s shares].</li>
                 </ul>
-
                 <p>23.	We confirm receipt of your planning letter dated [date] and we confirm receipt of your management letter dated [date].</p>
                 <p>[or]</p>
                 <p>We confirm receipt of your planning letter dated [date] and we confirm that we have been notified by you that there are no matters of governance interest (which include deficiencies in internal control, comments regarding accounting policies, estimation techniques and financial statement disclosure, and details of significant difficulties during the audit fieldwork) which you wish to draw to our attention.</p>
-
                 <p>Yours faithfully</p>
-
-                <p>[Name]</p>
                 <p>Signed on behalf of the Board of Directors (those charged with governance)</p>
                 <p><i>The following signature is only required where management differ from those charged with governance, as were identified on the Regulation of Auditor’s Checklist.  (Separate letters may be considered appropriate if there are representations which those charged with governance wish to remain confidential from management):</i></p>
                 <br>
                 <p>[Name]</p>
                 <p>Signed on behalf of management</p>
-
             </div>
         </div>
     </div>
-    
 </main>
 
 

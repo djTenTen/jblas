@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,7 +41,6 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
                 <hr>
                 <h4>MANAGEMENT LETTER WORKSHEET [INTERIM / FINAL AUDIT]</h4>
@@ -75,26 +72,18 @@
                         <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary m-1 float-end btn-sm" type="button" data-action="add-field" id="add-field"><i class="fas fa-plus-square m-1"></i> Add Field</button>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
                 <p>This should cover weaknesses in the accounting system and control environment plus comments on the qualitative aspects of the financial statements and the appropriateness of the accounting policies and estimation techniques adopted by the client.</p>
                 <p>All significant issues should be included in the management letter.  For other issues verbal communication is adequate.  If there are no significant issues then this can be confirmed in a “voluntary” management letter or alternatively, the letter of representation can note that a management letter is not necessary ~ note, however, that this is likely to be a rare occurrence when applying IFRS.</p>
-
             </div>
         </div>
     </div>
-    
 </main>
-
-
-
-
 <script>
 $(document).ready(function () {
-    
     $('#add-field').on('click', function () {
         // Adding a row inside the tbody.
         $('#tbody').append(`
@@ -108,13 +97,9 @@ $(document).ready(function () {
             <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
         </tr>`);
     });
-
     $('#tbody').on('click', 'button.remove', function () {
         $(this).closest('tr').remove();
     });
-
-
-
 });
 </script>
 

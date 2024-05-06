@@ -1,28 +1,21 @@
 <?php
-
-
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
-
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
-
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
 // set margins
 $pdf->SetMargins(25,15,15);  
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
@@ -32,27 +25,18 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 $pdf->setPrintHeader(false);
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
-
-
 // ---------------------------------------------------------
 // set font
-
-
-
 // add a page
 $pdf->AddPage();
 //$pdf->SetPageSize('A4');
-
-
 $html =  "
     <style>
         *{
@@ -73,11 +57,9 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '
 <table>
     <tr>
@@ -92,9 +74,7 @@ $html .= '
 </table>
 ';
 $space = $pdf->Ln(10);
-
 $html .= '<h3>TEAM DISCUSSIONS AND BRIEFING MEETING</h3>';
-
 $html .= '
     <p> <b>Objective:</b> <br>To document a team discussion covering fraud and risk as required by PSA 240, 315 and 550 and to demonstrate that an adequate staff briefing has occurred.</p>
     <table>
@@ -162,12 +142,10 @@ $html .= '
             </tr>
         </tbody>
     </table>
-
     <p><i>* Prior to initialling this column all staff should review the assignment plan, assessment of materiality & risk and systems notes.</i></p>
     <p><i>The team discussions on fraud, risk and related party transactions should be chaired by the A.E.P. (although the general briefing can be performed by another team member, i.e. the manager) and it should be undertaken ensuring that, when considering fraud, professional scepticism is applied. <u><b>Team members should set aside the belief that the client is honest and acts with integrity.</b></u></i></p>
     <p><i>Where junior staff are briefed separately, this should be clearly documented.</i></p>
 ';
-    
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -190,11 +168,9 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '
 <table border="1">
 <thead>
@@ -316,19 +292,9 @@ $html .= '
             <td>6.	Timing of review procedures have been discussed and it has been documented who has responsibility to review which areas.</td>
             <td>'.$ac11['sacb9'].'</td>
         </tr>
-        
     </tbody>
-
-        
 </table>
-
-
 ';
-
-
-
-
-
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,'J', false, '');

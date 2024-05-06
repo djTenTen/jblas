@@ -24,8 +24,6 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header justify-content-center"><h3 class="fw-light my-4">Create Account</h3></div>
                                     <div class="card-body">
-                                    
-
                                         <?php if (session()->get('invalidimage')) { ?>
                                             <div class="alert alert-danger alert-icon" role="alert">
                                                 <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -71,10 +69,8 @@
                                                 </div>
                                             </div>
                                         <?php  }?>
-                                        
                                         <!-- Registration form-->
                                         <form id="uploadForm" action="<?= base_url('signup')?>" method="post" enctype="multipart/form-data">
-
                                             <div class="row" id="editform">
                                                 <div class="col-xl-4">
                                                     <!-- Profile picture card-->
@@ -88,7 +84,6 @@
                                                             <!-- Profile picture upload button-->
                                                             <input type="file" id="imageInput" name="logo" class="form-control btn btn-primary" required>
                                                         </div>
-                                                        
                                                     </div>
                                                     <div id="errorContainer" style="display: none;">
                                                             <div class="alert alert-danger alert-icon" role="alert">
@@ -131,7 +126,6 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                                    
                                                             <div class="row gx-3">
                                                                 <div class="col-md-6">
                                                                     <div class="mb-3">
@@ -146,7 +140,6 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-
                                                             <div class="mb-3">
                                                                 <label class="small mb-1" for="email">Email</label>
                                                                 <input class="form-control" id="email" type="email" aria-describedby="emailHelp" placeholder="Enter email address" name="email" required/>
@@ -171,9 +164,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <button type="submit" class="btn btn-primary btn-block float-end">Create Account</button>
-           
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">

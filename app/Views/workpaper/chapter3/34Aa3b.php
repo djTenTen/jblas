@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('invalid_input')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,7 +41,6 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
                 <hr>
                 <h4>GOING CONCERN CHECKLIST</h4>
@@ -69,9 +66,7 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-
                 </form>
                 <br><br><br><hr>
                 <h6>Part 2 – The Auditor’s Assessment ~ General Considerations:</h6>
@@ -93,14 +88,11 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
                 <br><br><br><hr>
                 <h6>Part 3a – The Auditor’s Assessment ~ Specific Concerns:</h6>
                 <h6><i>Completion of this section is optional unless potential issues regarding the going concern presumption have been identified in Parts 1 or 2 above.</i></h6>
-               
                 <form action="<?= base_url()?>auditsystem/wp/saveaa3b/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" value="p3a" name="part">
                     <table class="table table-hover table-sm table-bordered">
@@ -119,14 +111,10 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-
                 </form>
-
                 <br><br><br><hr>
                 <h6>Part 3b – The Auditor’s Assessment ~ Disclosure considerations:</h6>
-               
                 <form action="<?= base_url()?>auditsystem/wp/saveaa3b/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" value="p3b" name="part">
                     <table class="table table-hover table-sm table-bordered">
@@ -145,13 +133,9 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-
                 </form>
-
                 <br><br><br><hr>
-
                 <h6>Part 4 – Conclusion:</h6>
                 <p>Where potential problems with the going concern presumption have been identified, summarise the issue and resolution:</p>
                 <form action="<?= base_url()?>auditsystem/wp/saveaa3bp4/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
@@ -160,12 +144,10 @@
                             <td><textarea class="form-control" cols="30" rows="15" name="p41" required><?= $bp4['p41'];?></textarea></td>
                             <td><textarea class="form-control" cols="30" rows="15" name="p42" required><?= $bp4['p42'];?></textarea></td>
                         </tr>
-                        
                     </table>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <p>On the basis of the work recorded above, I consider that:</p>
                 <ul>
                     <li>The financial statements have been correctly prepared on the break-up basis.*</li>
@@ -175,11 +157,9 @@
                     <li>The audit report should be unmodified* / unmodified with a “Material uncertainty related to going concern” paragraph* / qualified with respect to going concern.*</li>
                     <li><i>(If qualification or ”Material uncertainty” paragraph) Consideration has been given as to whether a report to a regulatory authority is required.(* Delete as applicable)</i></li>
                 </ul>
-
             </div>
         </div>
     </div>
-    
 </main>
 
 

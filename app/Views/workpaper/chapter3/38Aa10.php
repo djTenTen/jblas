@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,7 +41,6 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
                 <hr>
                 <h4>FINAL ANALYTICAL PROCEDURES</h4>
@@ -53,7 +50,6 @@
                 <p>Review key ratios of most significance to the entity. Any large or unexpected movements in these ratios should be explained. This section should also contain details of significant or unexpected changes in major Statement of Financial Position and Performance Statement items.</p>
                 <h6>Comparisons should be made of current period figures with prior period and / or budgeted figures.  Explanations obtained for significant or unexpected changes in key business ratios and items in the financial statements must be corroborated by other evidence. A conclusion should then be reached. </h6>
                 <h6><i>Undertaking analytical procedures at finalisation is mandatory; however, the use of this form is optional.</i></h6>
-
                 <form action="<?= base_url()?>auditsystem/wp/saveaa10/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="acid" value="<?= $acID?>">
                     <p>Summary of key ratios which may be calculated or printed from a relevant software package (add others which are specifically relevant to the entity):</p>
@@ -69,9 +65,7 @@
                             <li>Total Liabilities / Equity</li>
                         </ul>
                     </i>
-
                     <textarea name="sum" id="" cols="30" rows="10" class="form-control"><?= $aa10['sum']?></textarea>
-                    
                     <br><br>
                     <p>Comparison of key figures (or summarise where this work is filed)</p>
                     <i>
@@ -87,9 +81,7 @@
                         <p>Ensure that a summary is prepared of all variances (both absolute and percentage) to justify the analysis performed.</p>
                         <p>Compare results of final analytical procedures with those of preliminary analytical procedures.</p>
                     </i>
-
                     <textarea name="comp" id="" cols="30" rows="10" class="form-control"><?= $aa10['comp']?></textarea>
-
                     <br><br>
                     <p><b>Explanations of unusual variations </b> (or summarise where this work is filed)</p>
                     <i>
@@ -103,15 +95,10 @@
                         </ul>
                         <p>Consider whether any of the unusual variances identified indicate a previously unrecognised risk of material misstatements due to fraud.</p>
                     </i>
-
                     <textarea name="exp" id="" cols="30" rows="10" class="form-control"><?= $aa10['exp']?></textarea>
-
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-
-                    
                 </form>
                 <br><br><br><hr>
-
                 <h6>Conclusion:</h6>
                     <p>I have carried out both overall and detailed analytical procedures on the financial statements and I am satisfied that:</p>
                     <ul>
@@ -119,13 +106,9 @@
                         <li>no indicators of fraud have been identified; and</li>
                         <li>no indicators of fraud have been identified; and</li>
                     </ul>
-
-
-                
             </div>
         </div>
     </div>
-    
 </main>
 
 

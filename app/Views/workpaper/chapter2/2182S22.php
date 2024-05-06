@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('invalid_input')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,15 +41,12 @@
                     </div>
                 </div>
             <?php  }?>
-
-
             <div class="card-body">
                 <hr>
                 <h4>DEFINED BENEFIT PENSION SCHEMES</h4>
                 <p><i>Multi-employer schemes contributed to by a number of related or group entities must be split at entity level and it is not possible just to account for these schemes on consolidation.</i></p>
                 <p><i>NB: The valuation of an actuarial liability cannot be undertaken by the auditor. It is unlikely that most audit firms could demonstrate competency in this area and unless the actuarial liability was immaterial it would also be a breach of the IESBA’s Code of Ethics. </i></p>
                 <form action="<?= base_url()?>auditsystem/wp/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-
                     <table class="table table-sm table-bordered table-hover">
                         <thead>
                             <tr>
@@ -72,13 +67,9 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-
                 </form>
-
             </div>
         </div>
     </div>
-    
 </main>

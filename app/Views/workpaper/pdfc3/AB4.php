@@ -1,28 +1,21 @@
 <?php
-
-
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
-
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
-
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
 // set margins
 $pdf->SetMargins(25,10,15);   
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
@@ -32,163 +25,146 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 $pdf->setPrintHeader(false);
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
-
-
 // ---------------------------------------------------------
 // set font
-
-
-
 // add a page
 $pdf->AddPage();
 //$pdf->SetPageSize('A4');
-
 $style = "<style>
-*{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 14px;
-}
-h3{
-    font-size: 16px;
-}
-.cent{
-    text-align: center;
-}
-.bo{
-    border: 1px solid black;
-}
-p,li{
-    text-align: justify;
-}
-.bb{
-    border-bottom: 1px solid black;
-    
-}
-.ind{
-    text-indent: 20px;
-}
-</style>";
-
+        *{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 14px;
+        }
+        h3{
+            font-size: 16px;
+        }
+        .cent{
+            text-align: center;
+        }
+        .bo{
+            border: 1px solid black;
+        }
+        p,li{
+            text-align: justify;
+        }
+        .bb{
+            border-bottom: 1px solid black;
+        }
+        .ind{
+            text-indent: 20px;
+        }
+        </style>";
 $html =  "";
-
 $html .= $style;
-
 $html .= '
-<table>
-    <tr>
-        <td style="width: 60%;">
-            <table>
-                <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
-                <tr><td></td></tr>
-                <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
-            </table>
-        </td>
-        <td style="width: 40%;">
-            <table border="1">
-                <tr>
-                    <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                    <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
-                </tr>
-                <tr>
-                    <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                    <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
+    <table>
+        <tr>
+            <td style="width: 60%;">
+                <table>
+                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                    <tr><td></td></tr>
+                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                </table>
+            </td>
+            <td style="width: 40%;">
+                <table border="1">
+                    <tr>
+                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                    </tr>
+                    <tr>
+                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 ';
-
-
 $html .= '
-<p><b>CORPORATE DISCLOSURE CHECKLIST (IFRS)</b></p>
-<p><b><u>Scope</u></b></p>
-<p>This checklist should be completed for every corporate entity where International Financial Reporting Standards (IFRS) are being followed and it is not appropriate to complete Appendix 3.14 – Financial Statements Disclosure and Compliance Annual Review Checklist.</p>
-<p>This checklist can be used for any entity that adopts IFRS, and includes a number of “best practice” disclosures which are commonly included within financial statements as a result of local legislative requirements.  If such best practice disclosures are not required, or are prohibited by legislation, it would be necessary to disregard these, and where relevant, to replace these disclosures with those disclosures required by the relevant legislation.</p>
-<p>The requirements of IFRS only apply to material items.  Immaterial balances can be aggregated into other account headings and immaterial notes and accounting policies can be, and should ideally be, removed [IAS 1 paragraphs 29-31].</p>
-<p>IFRS 15 <i>Revenue from Contracts with Customers</i> and IFRS 9 <i>Financial Instruments</i> became mandatory for accounting periods commencing on or after 1 January 2018. These resulted in significant additional disclosure requirements compared to the superseded standards dealing with these areas. </p>
-<p>IFRS 16 Leases is mandatory for accounting periods commencing on or after 1 January 2019. This fundamentally alters the accounting treatment for lessees, with consequential disclosure amendments.</p>
-<p><b>NB: To ensure that the Checklist is as efficient as possible, areas which are more specialised have been addressed by supplementary disclosure checklists.  <u>These supplementary disclosure checklists should only be completed if the area is relevant.</u></b></p>
-<p>NB: The checklist does not cover the additional disclosures required by companies which enter into insurance contracts, where these are relevant considerations, then the disclosure requirements of IFRS 4 should be given.  It also does not cover the requirements of IAS 26, which are only relevant to clients who are themselves pension schemes, or IFRIC 2 which is relevant to cooperative entities.  The checklist also does not cover the disclosure requirements of companies with listed equity or debt.</p>
-';
-
+    <p><b>CORPORATE DISCLOSURE CHECKLIST (IFRS)</b></p>
+    <p><b><u>Scope</u></b></p>
+    <p>This checklist should be completed for every corporate entity where International Financial Reporting Standards (IFRS) are being followed and it is not appropriate to complete Appendix 3.14 – Financial Statements Disclosure and Compliance Annual Review Checklist.</p>
+    <p>This checklist can be used for any entity that adopts IFRS, and includes a number of “best practice” disclosures which are commonly included within financial statements as a result of local legislative requirements.  If such best practice disclosures are not required, or are prohibited by legislation, it would be necessary to disregard these, and where relevant, to replace these disclosures with those disclosures required by the relevant legislation.</p>
+    <p>The requirements of IFRS only apply to material items.  Immaterial balances can be aggregated into other account headings and immaterial notes and accounting policies can be, and should ideally be, removed [IAS 1 paragraphs 29-31].</p>
+    <p>IFRS 15 <i>Revenue from Contracts with Customers</i> and IFRS 9 <i>Financial Instruments</i> became mandatory for accounting periods commencing on or after 1 January 2018. These resulted in significant additional disclosure requirements compared to the superseded standards dealing with these areas. </p>
+    <p>IFRS 16 Leases is mandatory for accounting periods commencing on or after 1 January 2019. This fundamentally alters the accounting treatment for lessees, with consequential disclosure amendments.</p>
+    <p><b>NB: To ensure that the Checklist is as efficient as possible, areas which are more specialised have been addressed by supplementary disclosure checklists.  <u>These supplementary disclosure checklists should only be completed if the area is relevant.</u></b></p>
+    <p>NB: The checklist does not cover the additional disclosures required by companies which enter into insurance contracts, where these are relevant considerations, then the disclosure requirements of IFRS 4 should be given.  It also does not cover the requirements of IAS 26, which are only relevant to clients who are themselves pension schemes, or IFRIC 2 which is relevant to cooperative entities.  The checklist also does not cover the disclosure requirements of companies with listed equity or debt.</p>
+    ';
 $html .= '
-<table border="1">
-    <thead>
-        <tr class="cent">
-            <th style="width: 55%;"><b>Specialist Area ~ Additional Disclosures Relating to:-</b></th>
-            <th style="width: 15%;"><b>Reference in this Manual</b></th>
-            <th style="width: 15%;"><b>Is this Area Relevant?(Y/N)</b></th>
-            <th style="width: 15%;"><b>Supplementary Checklist Completed?(Y/N/NA)</b></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="cent">
-            <td style="width: 55%;">Exploration for and Evaluation of Mineral Resources</td>
-            <td style="width: 15%;">App. 3.15.1</td>
-            <td style="width: 15%;">'.$sec['y1'].'</td>
-            <td style="width: 15%;">'.$sec['y2'].'</td>
-        </tr>
-        <tr class="cent">
-            <td style="width: 55%;">Defined Benefit Pension Plans</td>
-            <td style="width: 15%;">App. 3.15.2</td>
-            <td style="width: 15%;">'.$sec['y3'].'</td>
-            <td style="width: 15%;">'.$sec['y4'].'</td>
-        </tr>
-        <tr class="cent">
-            <td style="width: 55%;">Share-Based Payments</td>
-            <td style="width: 15%;">App. 3.15.3</td>
-            <td style="width: 15%;">'.$sec['y5'].'</td>
-            <td style="width: 15%;">'.$sec['y6'].'</td>
-        </tr>
-        <tr class="cent">
-            <td style="width: 55%;">Agricultural Activitiess</td>
-            <td style="width: 15%;">App. 3.15.4</td>
-            <td style="width: 15%;">'.$sec['y7'].'</td>
-            <td style="width: 15%;">'.$sec['y8'].'</td>
-        </tr>
-        <tr class="cent">
-            <td style="width: 55%;">First Time Adoption of IFRS</td>
-            <td style="width: 15%;">App. 3.15.5</td>
-            <td style="width: 15%;">'.$sec['y9'].'</td>
-            <td style="width: 15%;">'.$sec['y10'].'</td>
-        </tr>
-        <tr class="cent">
-            <td style="width: 55%;">Parent where Consolidated Financial Statements are not Prepared</td>
-            <td style="width: 15%;">App. 3.15.6</td>
-            <td style="width: 15%;">'.$sec['y11'].'</td>
-            <td style="width: 15%;">'.$sec['y12'].'</td>
-        </tr>
-        <tr class="cent">
-            <td style="width: 55%;">First Time Adoption of IFRS 15 / 9</td>
-            <td style="width: 15%;">App. 3.15.7</td>
-            <td style="width: 15%;">'.$sec['y13'].'</td>
-            <td style="width: 15%;">'.$sec['y14'].'</td>
-        </tr>
-        <tr class="cent">
-            <td style="width: 55%;">First Time Adoption of IFRS 16</td>
-            <td style="width: 15%;">App. 3.15.8</td>
-            <td style="width: 15%;">'.$sec['y15'].'</td>
-            <td style="width: 15%;">'.$sec['y16'].'</td>
-        </tr>
-    </tbody>
-</table>
-';
-
+    <table border="1">
+        <thead>
+            <tr class="cent">
+                <th style="width: 55%;"><b>Specialist Area ~ Additional Disclosures Relating to:-</b></th>
+                <th style="width: 15%;"><b>Reference in this Manual</b></th>
+                <th style="width: 15%;"><b>Is this Area Relevant?(Y/N)</b></th>
+                <th style="width: 15%;"><b>Supplementary Checklist Completed?(Y/N/NA)</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="cent">
+                <td style="width: 55%;">Exploration for and Evaluation of Mineral Resources</td>
+                <td style="width: 15%;">App. 3.15.1</td>
+                <td style="width: 15%;">'.$sec['y1'].'</td>
+                <td style="width: 15%;">'.$sec['y2'].'</td>
+            </tr>
+            <tr class="cent">
+                <td style="width: 55%;">Defined Benefit Pension Plans</td>
+                <td style="width: 15%;">App. 3.15.2</td>
+                <td style="width: 15%;">'.$sec['y3'].'</td>
+                <td style="width: 15%;">'.$sec['y4'].'</td>
+            </tr>
+            <tr class="cent">
+                <td style="width: 55%;">Share-Based Payments</td>
+                <td style="width: 15%;">App. 3.15.3</td>
+                <td style="width: 15%;">'.$sec['y5'].'</td>
+                <td style="width: 15%;">'.$sec['y6'].'</td>
+            </tr>
+            <tr class="cent">
+                <td style="width: 55%;">Agricultural Activitiess</td>
+                <td style="width: 15%;">App. 3.15.4</td>
+                <td style="width: 15%;">'.$sec['y7'].'</td>
+                <td style="width: 15%;">'.$sec['y8'].'</td>
+            </tr>
+            <tr class="cent">
+                <td style="width: 55%;">First Time Adoption of IFRS</td>
+                <td style="width: 15%;">App. 3.15.5</td>
+                <td style="width: 15%;">'.$sec['y9'].'</td>
+                <td style="width: 15%;">'.$sec['y10'].'</td>
+            </tr>
+            <tr class="cent">
+                <td style="width: 55%;">Parent where Consolidated Financial Statements are not Prepared</td>
+                <td style="width: 15%;">App. 3.15.6</td>
+                <td style="width: 15%;">'.$sec['y11'].'</td>
+                <td style="width: 15%;">'.$sec['y12'].'</td>
+            </tr>
+            <tr class="cent">
+                <td style="width: 55%;">First Time Adoption of IFRS 15 / 9</td>
+                <td style="width: 15%;">App. 3.15.7</td>
+                <td style="width: 15%;">'.$sec['y13'].'</td>
+                <td style="width: 15%;">'.$sec['y14'].'</td>
+            </tr>
+            <tr class="cent">
+                <td style="width: 55%;">First Time Adoption of IFRS 16</td>
+                <td style="width: 15%;">App. 3.15.8</td>
+                <td style="width: 15%;">'.$sec['y15'].'</td>
+                <td style="width: 15%;">'.$sec['y16'].'</td>
+            </tr>
+        </tbody>
+    </table>
+    ';
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <p>For areas which are relevant, “Supplementary Checklist Completed” should be marked ‘Yes’, ‘No’ or ‘Not Applicable’ as appropriate.  Any ‘No’ answers must be fully explained.</p>
     <p><b>Contents</b></p>
@@ -246,12 +222,10 @@ $html .= '
         </tbody>
     </table>
 ';
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -276,18 +250,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -312,18 +282,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -348,13 +314,10 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
@@ -388,18 +351,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -428,18 +387,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -466,18 +421,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -504,19 +455,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -544,20 +490,14 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage();
 $html = "";
 $html .= $style;
-
 $html .= '
     <table border="1">
         <thead>
@@ -584,21 +524,10 @@ $html .= '
             </tr>
             ';
         }
-        
 $html .= '
         </tbody>
     </table>
 ';
-
-
-
-
-
-
-
-    
-
-
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,'J', false, '');

@@ -1,28 +1,21 @@
 <?php
-
-
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
-
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
-
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
 // set margins
 $pdf->SetMargins(25,10,15);   
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
@@ -32,27 +25,18 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 $pdf->setPrintHeader(false);
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
-
-
 // ---------------------------------------------------------
 // set font
-
-
-
 // add a page
 $pdf->AddPage();
 //$pdf->SetPageSize('A4');
-
-
 $html =  "
     <style>
         *{
@@ -73,11 +57,9 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '
 <table>
     <tr>
@@ -91,9 +73,7 @@ $html .= '
     </tr>
 </table>
 ';
-
 $html .= '<h3>AUDIT CONTROL RECORD</h3>';
-
 $html .= '
 <table>
     <thead>
@@ -117,12 +97,10 @@ $html .= '
         </tr>
         ';
     }
-
 $html .= '
     </tbody>
 </table>
 ';
-
 $html .= '
 <p><b>1.  Completion by most senior person completing the fieldwork</b></p>
 <p>I have completed my work as summarised above, and consider that the working papers adequately support our proposed opinion, except for the outstanding points listed on ...........................................</p>
@@ -206,12 +184,10 @@ $html .= '
         </tr>
         ';
     }
-
 $html .= '
     </tbody>
 </table>
 ';
-
 $html .= '
     <p><b>5.  Signed Financial Statements and Audit Opinion</b></p>
     <p>Have all outstanding matters noted above, including confirming that the financial statements do not contain material errors or misstatements, been cleared to the satisfaction of the originator (and crossed through to demonstrate this)?………………..........</p>
@@ -246,7 +222,6 @@ $html .= '
             <td style="width: 50%;">Date:_____________</td>
         </tr>
     </table>
-
     <p><b>7	Acceptance of Re-Appointment (to be completed by the A.E.P.)</b></p>
     <p><b>This section is to be completed by the A.E.P. prior to re-appointment.</b></p>
     <p>Whilst answering these questions the following matters should be fully considered for the audit firm and any network firm: independence, integrity, conflicts of interest with other clients, economic dependence, trusts, matters arising with regulatory authorities, ability to service the client, other services provided to the client and hospitality. Additional guidance is available in legislation and the Code of Ethics issued by the International Ethics Standards Board for Accountants.</p>
@@ -312,16 +287,6 @@ $html .= '
         </tbody>
     </table>
     ';
-
-
-    
-    
-
-
-
-
-
-
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,'J', false, '');

@@ -1,28 +1,21 @@
 <?php
-
-
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
-
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
-
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
 // set margins
 $pdf->SetMargins(25,10,15);   
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
@@ -32,27 +25,18 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 $pdf->setPrintHeader(false);
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
-
-
 // ---------------------------------------------------------
 // set font
-
-
-
 // add a page
 $pdf->AddPage('P');
 //$pdf->SetPageSize('A4');
-
-
 $html =  "
     <style>
         *{
@@ -73,14 +57,12 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
         .ind{
             text-indent: 20px;
         }
     </style>
 ";
-
 $html .= '
 <h3>ANALYTICAL REVIEW TECHNIQUES AND INTERPRETATIONS</h3>
 <table>
@@ -181,7 +163,6 @@ $html .= '
                     <li>Changes in value of unlisted investments due to the directors considering that fair value can now be determined</li>
                     <li>Write back of an impairment loss</li>
                     <li>Items of a revenue nature being incorrectly capitalised</li>
-
                 </ul>
                 <p>A decrease in investments may be due to:</p>
                 <ul>
@@ -210,7 +191,6 @@ $html .= '
                     <li>Costs being charged to inventory which should have been written-off to an expense account</li>
                     <li>Increased purchase costs due to inflation or adverse movements in exchange rates etc.</li>
                     <li>Cut-off errors</li>
-
                 </ul>
                 <p>A fall in stock levels / a rise in inventory turnover could be due to:</p>
                 <ul>
@@ -294,7 +274,6 @@ $html .= '
                 <br><br>
             </td>
         </tr>
-        
         <tr>
             <td style="width: 7%;">6.</td>
             <td style="width: 93%;"><b>CASH AT BANK AND IN HAND</b>
@@ -328,11 +307,9 @@ $html .= '
                     <li>Available bank facilities</li>
                     <li>Interest received / paid compared to average balance</li>
                 </ul>
-
                 <br><br>
             </td>
         </tr>
-
         <tr>
             <td style="width: 7%;">7.</td>
             <td style="width: 93%;"><b>TRADE PAYABLES</b>
@@ -362,11 +339,9 @@ $html .= '
                     <li>Monies owed to major suppliers</li>
                     <li>Payables days</li>
                 </ul>
-
                 <br><br>
             </td>
         </tr>
-
         <tr>
             <td style="width: 7%;">8.</td>
             <td style="width: 93%;"><b>REVENUE</b>
@@ -380,12 +355,9 @@ $html .= '
                     <li>Industry conditions</li>
                     <li>Goods returned or discounts</li>
                 </ul>
-
                 <br><br>
             </td>
         </tr>
-
-
         <tr>
             <td style="width: 7%;">9.</td>
             <td style="width: 93%;"><b>EXPENSES</b>
@@ -397,11 +369,9 @@ $html .= '
                     <li>Theoretical purchase changes</li>
                     <li>Monthly pattern of purchases</li>
                 </ul>
-
                 <br><br>
             </td>
         </tr>
-
         <tr>
             <td style="width: 7%;">10.</td>
             <td style="width: 93%;"><b>GROSS PROFIT</b>
@@ -419,11 +389,9 @@ $html .= '
                     <li>Geographical area</li>
                     <li>Business activity or division</li>
                 </ul>
-
                 <br><br>
             </td>
         </tr>
-
         <tr>
             <td style="width: 7%;">11.</td>
             <td style="width: 93%;"><b>PAYROLL COSTS</b>
@@ -448,7 +416,6 @@ $html .= '
                 <br><br>
             </td>
         </tr>
-
         <tr>
             <td style="width: 7%;">12.</td>
             <td style="width: 93%;"><b>OTHER PERFORMANCE STATEMENT CATEGORIES</b>
@@ -463,11 +430,9 @@ $html .= '
                     <li>Signs of future commitments</li>
                     <li>Signs of future commitments</li>
                 </ul>
-
                 <br><br>
             </td>
         </tr>
-
         <tr>
             <td style="width: 7%;">13.</td>
             <td style="width: 93%;"><b>KEY BUSINESS RATIOS</b>
@@ -478,11 +443,9 @@ $html .= '
                     <li>Liquidity</li>
                     <li>Solvency</li>
                 </ul>
-
                 <br><br>
             </td>
         </tr>
-
         <tr>
             <td style="width: 7%;">13.1</td>
             <td style="width: 93%;">
@@ -564,7 +527,6 @@ $html .= '
                 <br><br>
             </td>
         </tr>
-
         <tr>
             <td style="width: 7%;">13.2</td>
             <td style="width: 93%;">
@@ -615,11 +577,9 @@ $html .= '
                         </td>
                     </tr>
                 </table>
-
                 <br><br>
             </td>
         </tr>
-
         <tr>
             <td style="width: 7%;">13.3</td>
             <td style="width: 93%;">
@@ -653,7 +613,6 @@ $html .= '
                         <td><h6>Gearing</h6></td>
                         <td>Total Non-Shareholder Liabilities x 100%
                         Equity 1 <br><br>
-
                         1 = including those classified as debt under        IAS 32
                         <br><br>
                         </td>
@@ -705,13 +664,7 @@ $html .= '
         </tr>
     </tbody>
 </table>
-
-
-
 ';
-
-
-
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,'J', false, '');

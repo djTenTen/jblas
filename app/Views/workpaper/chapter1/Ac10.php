@@ -21,7 +21,6 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('invalid_input')) { ?>
@@ -42,9 +41,7 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
-
                 <nav class="nav nav-borders">
                     <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Tangibles')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter1/setvalues/<?= $code?>-Tangibles/<?= $c1tID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Tangibles</a>
                     <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'PPE')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter1/setvalues/<?= $code?>-PPE/<?= $c1tID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">PPE</a>
@@ -63,7 +60,6 @@
                 </nav>
                 <hr class="mt-0 mb-4" />
                 <br>
-
                 <div class="table-responsive">
                     <form action="<?= base_url()?>auditsystem/wp/saveac10cu/<?= $code?>/<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <table class="table table-bordered table-sm">
@@ -72,7 +68,6 @@
                                 <th colspan="5"><?= $sheet?></th>
                             </tr>
                             <tr>
-
                                 <th colspan="3"></th>
                                 <th colspan="2">CU</th>
                             </tr>
@@ -89,7 +84,6 @@
                         </tbody>
                     </table> 
                     </form>
-
                     <form action="<?= base_url()?>auditsystem/wp/saveac10s1/<?= $code?>/<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <table class="table table-bordered table-sm">
                         <thead> 
@@ -126,8 +120,6 @@
                             </tr>
                     </table>
                     </form>
-
-
                     <form action="<?= base_url()?>auditsystem/wp/saveac10s2/<?= $code?>/<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <table class="table table-bordered table-sm">
                         <thead>
@@ -182,25 +174,16 @@
                         </tfoot>
                     </table>
                     </form>
-
-
                 </div>
             </div>
         </div>
     </div>
-    
 </main>
-
-
 <script>
 $(document).ready(function () {
-
-    
-
     $('.count').on('change', function () {
         // Adding a row inside the tbody.
         var total = 0;
-
         $('.count').each(function() {
             var value = $(this).val();
             var numericValue = parseFloat(value);
@@ -210,12 +193,8 @@ $(document).ready(function () {
         if(parseInt(cu) > total){
             $('.ptotal').attr('value', parseInt(cu) - total);
         }
-
         $('.total').attr('value', total);
-        
     });
-    
-
     $('#add-field1').on('click', function () {
         // Adding a row inside the tbody.
         $('#tbody1').append(` <tr>
@@ -225,11 +204,9 @@ $(document).ready(function () {
                                 <td><button class="btn btn-danger btn-icon remove1 btn-sm" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
                             </tr>`);
     });
-
     $('#tbody1').on('click', 'button.remove1', function () {
         $(this).closest('tr').remove();
     });
-
     $('#add-field2').on('click', function () {
         // Adding a row inside the tbody.
         $('#tbody2').append(` <tr>
@@ -240,10 +217,8 @@ $(document).ready(function () {
                                 <td><button class="btn btn-danger btn-icon remove2 btn-sm" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
                             </tr>`);
     });
-
     $('#tbody2').on('click', 'button.remove2', function () {
         $(this).closest('tr').remove();
     });
-
 });
 </script>

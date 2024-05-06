@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,14 +41,11 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
                 <hr>
                 <h4>FINANCIAL STATEMENTS DISCLOSURE AND COMPLIANCE ANNUAL REVIEW CHECKLIST</h4>
                 <p>This checklist should be used to evidence the checking of disclosure and compliance matters for 'uncomplex companies' where the appropriate (i.e. IFRS) disclosure checklist has been completed within the last three years and the size and complexity of the company means that the firm does not consider that a full disclosure checklist needs to be completed every year.</p>
-
                 <h6>1. Use of Disclosure Checklists</h6>
-
                 <p>The appropriate disclosure checklist must be completed in the following circumstances:</p>
                 <ul>
                     <li>First year of engagement;</li>
@@ -60,11 +55,8 @@
                     <li>Where there have been significant changes in financial reporting standards (including First Time Adoption of / Amendments to IFRS) or legislative requirements;</li>
                     <li>Where there has been a significant transaction which would require additional disclosure in the financial statements (for example, a change to Equity (other than the profit for the year), the introduction of a new type of asset or liability, or acquiring a new source of income or expenditure).</li>
                 </ul>
-            
-
                 <h6>2.	Common Changes</h6>
                 <p>Have any of the following points arisen during the period, resulting in disclosure or compliance changes:</p>
-
                 <form action="<?= base_url()?>auditsystem/wp/saveab3/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                 <input type="hidden" name="acid" value="<?= $acID?>">
                 <table class="table table-bordered table-sm">
@@ -112,14 +104,9 @@
                     </tbody>
                 </table>
                 <p>If the answer to any of the above is yes, a full disclosure checklist needs to be completed.</p>
-
                 <h1>3.	New Financial Reporting Standards </h1>
-
                 <p>The most recently completed disclosure checklist was for the period ending_________________</p>
-
                 <p>Since then, no further* / the following* Accounting / Financial Reporting Standards or amendments (IFRS*) have become mandatory, with a commentary of the effect on disclosure in the financial statements being shown <i>(or included on a separate, cross-referenced schedule)(*delete as applicable):</i></p>
-           
-           
                 <table class="table table-bordered table-sm">
                     <thead>
                         <tr>
@@ -150,22 +137,15 @@
                         </tr>
                     </tbody>
                 </table>
-           
-
                 <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-
                 </form>
-
                 <br><br><br><hr>
-
                 <h6>4.	Conclusion</h6>
                 <p>It is unnecessary to complete the relevant disclosure checklist for the current period.</p>
                 <p>The financial statements have been reviewed with reference to the previously completed disclosure checklist and the requirements of any new financial reporting standards or amendments, and disclosures are considered to be adequate.</p>
-           
             </div>
         </div>
     </div>
-    
 </main>
 
 

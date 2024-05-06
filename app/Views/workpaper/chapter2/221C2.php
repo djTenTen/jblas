@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('invalid_input')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,8 +41,6 @@
                     </div>
                 </div>
             <?php  }?>
-
-
             <div class="card-body">
                 <hr>
                 <h4>PROPERTY, PLANT AND EQUIPMENT</h4>
@@ -70,13 +66,9 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-
                 </form>
-
             </div>
         </div>
     </div>
-    
 </main>

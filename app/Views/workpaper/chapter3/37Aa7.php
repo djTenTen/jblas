@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,7 +41,6 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
                 <hr>
                 <h4>ISA COMPLIANCE CRITICAL ISSUES MEMORANDUM</h4>
@@ -53,8 +50,6 @@
                 <p>This form must be completed and include any changes made to the original planning documentation, how significant risks have been addressed during the audit and certain other issues specifically required by ISA. <i><u>The first 3 pages of this form are mandatory</u></i>.</p>
                 <p>If the A.E.P. wishes, this form can be fully completed thus providing a comprehensive executive summary which (when read in conjunction with final analytical procedures) provides a critical review of financial and non-financial matters, notes outstanding work; key issues where the A.E.P.’s input is needed and key issues that require further client involvement.</p>
                 <p>This form should not be used to record routine review points or administrative points for the A.E.P.’s attention or to record outstanding work at interim stages of the assignment.</p>
-
-
                 <h6>Summary and Impact of Changes Made to Audit Planning After the Date of the A.E.P’s Approval:</h6>
                 <form action="<?= base_url()?>auditsystem/wp/saveaa7aepapp/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aepapp">
@@ -64,11 +59,9 @@
                 </form>
                 <br><br><br><hr>
                 <p>I approve the above changes to the planning, and consider that these changes have been adequately integrated into the audit approach.</p>
-
                 <h6>I have considered the requirements of ISA 315 and specifically, the definition of a significant risk being, “an identified and assessed risk of material misstatement that, in the auditor’s judgment, requires special audit consideration”.</h6>
                 <h6>A summary of significant risks identified, the outcome from audit tests performed on those risks, and the conclusions reached (mandatory section):</h6>
                 <p><i>(Insert additional rows as required)</i></p>
-
                 <form action="<?= base_url()?>auditsystem/wp/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="isa315">
                     <table class="table table-bordered">
@@ -95,15 +88,10 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i> Add Field</button>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
                 <br><br><br><hr>
-
-
-
                 <h6>Areas where consultation has been undertaken </h6>
                 <form action="<?= base_url()?>auditsystem/wp/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="consultation">
@@ -135,11 +123,9 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i> Add Field</button>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
                 <br><br><br><hr>
                 <h6>Inconsistencies noted between information provided by the client and other findings of the audit team (mandatory section):</h6>
                 <form action="<?= base_url()?>auditsystem/wp/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
@@ -172,11 +158,9 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i> Add Field</button>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
                 <br><br><br><hr>
                 <h6>Areas where management refusal to allow the audit team to send a confirmation request has led to alternative procedures being performed (mandatory section):</h6>
                 <form action="<?= base_url()?>auditsystem/wp/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
@@ -209,13 +193,10 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i> Add Field</button>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
-
                 <h6>Departures from requirements of ISA, reasons for the departure and alternative audit procedures performed (mandatory section):</h6>
                 <form action="<?= base_url()?>auditsystem/wp/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="departures">
@@ -247,14 +228,10 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i> Add Field</button>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form> 
-
-
                 <br><br><br><hr>
-
                 <h6>Other Issues (including any key outstanding audit matters):</h6>
                 <form action="<?= base_url()?>auditsystem/wp/saveaa7isa/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="other">
@@ -286,12 +263,10 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i> Add Field</button>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form> 
                 <br><br><br><hr>
-
                 <form action="<?= base_url()?>auditsystem/wp/saveaa7aep/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="acid" value="<?= $acID?>">
                     <h6>Changes to, or new accounting policies and estimation techniques in the period:</h6>
@@ -309,7 +284,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <h6>Developments during the period:</h6>
                     <table class="table table-bordered">
                         <thead>
@@ -341,7 +315,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <h6>Costs to date, including an explanation of deviation from budget, and timetable for completion:</h6>
                     <table class="table table-bordered">
                         <thead>
@@ -359,20 +332,13 @@
                     </table>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form> 
-
                 <br><br><br><hr>
             </div>
         </div>
     </div>
-    
 </main>
-
-
-
-
 <script>
 $(document).ready(function () {
-    
     $('.add-field').on('click', function () {
         // Adding a row inside the tbody.
         var form = $(this).closest('form');
@@ -387,13 +353,9 @@ $(document).ready(function () {
             <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
         </tr>`);
     });
-
-    
     $('.tbody').on('click', 'button.remove', function () {
         $(this).closest('tr').remove();
     });
-
-
 });
 </script>
 

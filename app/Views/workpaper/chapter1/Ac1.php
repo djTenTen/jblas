@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('invalid_input')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,7 +41,6 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
                <!-- Contents Here -->
                 <hr>
@@ -52,7 +49,6 @@
                 <p>While answering these questions the following matters should be fully considered for the audit firm and any network firm: independence, integrity, conflicts of interest with other clients, economic dependence, trusts, matters arising with regulatory authorities, ability to service the client, other services provided to the client and hospitality. Additional guidance is available in legislation and the Code of Ethics issued by the International Ethics Standards Board for Accountants.  </h6>
                 <h6>Any YES answers should be fully explained along with the safeguards, which will enable us to accept / continue with the appointment. </h6>
                 <h6>Significant issues must be discussed with the <span class="text-danger">Ethics Partner</span> and details of the discussion documented on file.</h6>
-                
                 <form action="<?= base_url()?>auditsystem/wp/saveac1/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <table class="table table-hover table-sm table-bordered">
                         <thead>
@@ -74,16 +70,13 @@
                     </table>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
                 <br><br><br><hr>
-
                 <div class="mb-3 col-6">
                     <label class="small mb-1" for="nameap">Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement:</label>
                     <form action="<?= base_url()?>auditsystem/wp/saveac1eqr/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="acid" value="<?= $acID?>">
                         <input type="text" class="form-control" id="nameap" name="nameap" value="<?= $eqr['nameap']?>">
                 </div>
-            
                 <h6>Those Charged With Governance and Management:</h6>
                 <p>PSA 260 / 265 requires different matters to be communicated separately to those charged with governance and to management.  Where those charged with governance and management are the same individuals (for example, all matters are dealt with solely by the directors of the company), it is not necessary for these matters to be communicated twice.</p>
                 <p>[EITHER]</p>
@@ -112,7 +105,6 @@
                     <li>Letter of representation</li>
                     <li>Management letter</li>
                 </ul>
-
                 <h4>ENGAGEMENT QUALITY REVIEW:</h4>
                 <p>An EQR needs to be undertaken on all audits where:</p>
                 <ul>
@@ -130,7 +122,6 @@
                         <input type="text" class="form-control" id="eqr" name="eqr2" value="<?= $eqr['eqr2']?>">
                     </li>
                 </ul>
-
                 <table class="table">
                     <tr>
                         <td> REASON FOR EQR (If an EQR review was performed in the previous period, but is not being performed in the current period, this decision must also be justified.)  
@@ -154,6 +145,5 @@
             </div>
         </div>
     </div>
-    
 </main>
 

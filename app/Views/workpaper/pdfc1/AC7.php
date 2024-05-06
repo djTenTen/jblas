@@ -1,28 +1,21 @@
 <?php
-
-
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
-
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
-
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
 // set margins
 $pdf->SetMargins(25,15,15);  
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
@@ -32,27 +25,18 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 $pdf->setPrintHeader(false);
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
-
-
 // ---------------------------------------------------------
 // set font
-
-
-
 // add a page
 $pdf->AddPage();
 //$pdf->SetPageSize('A4');
-
-
 $html =  "
     <style>
         *{
@@ -70,15 +54,12 @@ $html =  "
         }
         p,li{
             text-align: justify;
-
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '
 <table>
     <tr>
@@ -104,9 +85,7 @@ $html .= '
     </tr>
 </table>
 ';
-
 $html .= '<h3>SPECIFIC AREA NARRATIVE INHERENT RISK ASSESSMENT</h3>';
-
 $html .= '
     <p><b>Objective:</b> This form is designed to assess the risk for each audit assertion relevant to each audit area.  PSA 315 implies that all areas and all assertions are high risk unless this can be rebutted.  Completion of this form will help to justify a departure from high risk.</p>
     <p>The risk forms should not be completed until –</p>
@@ -126,7 +105,6 @@ $html .= '
     <p>Per PSA 240, paragraph 26 <i>“the auditor shall, based on a presumption that there are risks of fraud in revenue recognition, evaluate which types of revenue, revenue transactions or assertions give rise to such risks”.  Paragraph 47 states “if the auditor has concluded that the presumption that there is a risk of material misstatement due to fraud related to revenue recognition is not applicable in the circumstances of the engagement, the auditor shall include in the audit documentation the reasons for that conclusion”. </i></p>
     <p>It is therefore expected that the risk attributed to Revenue will be high unless there is sufficient justification given to rebut the presumption of high risk. Paragraphs A28 to A30 of the Application and Other Explanatory Material of PSA 240 should be referred to for additional guidance.</p>
     <p>If the risk of fraud in revenue recognition cannot be rebutted, it is a significant risk (see below).</p>
-
     <p><b>Significant risks: </b><br> All risks which are deemed to be significant should be specifically highlighted.  A significant risk is one which would be a “blockbuster”.  A risk may be deemed to be significant for the following reasons:</p>
     <ul>
         <li>The risk is a risk of fraud;</li>
@@ -145,7 +123,6 @@ $html .= '
         <li>How the risk has been addressed during the assignment should be summarized on the PSA Compliance Critical Issues Memorandum.</li>
     </ul>
 ';
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -168,13 +145,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -202,7 +176,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$bacdata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -274,13 +247,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE RECEIVABLES:</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -308,7 +278,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$trdata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -358,7 +327,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -381,13 +349,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER RECEIVABLES (INCLUDING PREPAYMENTS):</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -415,7 +380,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$ordata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -465,8 +429,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -489,13 +451,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVENTORIES:</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -523,7 +482,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$invtrdata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -573,8 +531,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -597,13 +553,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVESTMENTS:</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -631,7 +584,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$invmtdata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -681,9 +633,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -706,13 +655,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROPERTY, PLANT AND EQUIPMENT:</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -740,7 +686,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$ppedata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -790,7 +735,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -813,13 +757,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INTANGIBLE NON-CURRENT ASSETS:</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -847,7 +788,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$incadata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -897,8 +837,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -921,13 +859,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE PAYABLES:</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -955,7 +890,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$tpdata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -1005,7 +939,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -1028,13 +961,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER PAYABLES (INCLUDING ACCRUALS):</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -1062,7 +992,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$opdata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -1112,9 +1041,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -1137,13 +1063,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TAXATION:</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -1171,7 +1094,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$taxdata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -1221,9 +1143,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -1246,13 +1165,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROVISIONS FOR LIABILITIES:</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -1280,7 +1196,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$provdata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -1330,9 +1245,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -1355,13 +1267,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – REVENUE / OTHER INCOME:</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -1389,7 +1298,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$roidata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -1439,8 +1347,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -1463,13 +1369,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – DIRECT COSTS / OTHER EXPENSES:</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -1497,7 +1400,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$dcodata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -1547,8 +1449,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -1571,13 +1471,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PAYROLL:</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -1605,7 +1502,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$prdata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -1655,9 +1551,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -1680,13 +1573,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER AREA:</h3>';
-
 $html .= '
     <table>
         <tbody>
@@ -1714,7 +1604,6 @@ $html .= '
                 <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                 <td style="width: 10%;">'.$oadata['y6'].'</td>
             </tr>
-            
         </tbody>
     </table>
     <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
@@ -1764,12 +1653,6 @@ $html .= '
         </tbody>
     </table>
 ';
-
-
-
-
-
-
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,'J', false, '');

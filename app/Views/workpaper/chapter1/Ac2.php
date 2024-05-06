@@ -21,7 +21,6 @@
             </div>
         </div>
     </header>
-    
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('invalid_input')) { ?>
@@ -42,7 +41,6 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
                <!-- Contents Here -->
                 <hr>
@@ -61,13 +59,9 @@
             <p>If any of the above is to be undertaken, this should be separately considered, with reference to the IESBA Code of Ethics.</p>
             <h6>NB: If the client does not have ‘informed management’ the provision of both audit and non-audit services is not permitted.</h6>
             <h6>Section 1 – Consideration of Prohibited Services</h6>
-
             <div class="container">
-
                 <img src="<?= base_url()?>img/ac2/ac2 flow1.png" alt="">
-
             </div>
-
             <h6>Section 2 – Consideration of the Type of Non-Audit Services Provided and Safeguards in Place </h6>
             <p>N.B. Complete multiple sheets if more than four different types of non-audit service are provided
             N.B. Audit related non-audit services (for example, a separate report to a regulator, (e.g. that on client money handled by a solicitor)) should still be treated as a non-audit service, but it is not necessary for safeguards to be put in place, as threats to independence are insignificant
@@ -83,7 +77,6 @@
                             <th>Accountancy(including preparation of financial statements)</th>
                             <th>Other (specify)</th>
                             <th>Total CU</th>
-
                         </tr>
                     </thead>
                     <tbody class="tbody">
@@ -101,49 +94,32 @@
                 </table>
                 <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
             </form>
-            
             <br><br><br><hr>
-
             <h4>Section 3 – Consideration of Self Interest Threat Arising from Substantial Fees from Non Audit Services</h4>
-
             <div class="container">
-
                 <img src="<?= base_url()?>img/ac2/ac2 flow2.png" alt="">
-
             </div>
-
-
             <div class="container border-dark">
-
                 <h6>***(Where appropriate): Documentation by the A.E.P. of how the self interest threat has been reduced to an acceptable level / details of communication with the Ethics Partner / Details of which services (audit or non-audit) will not be provided:</h6>
                 <form action="<?= base_url()?>auditsystem/wp/saveac2aep/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="acid" value="<?= $crypt->encrypt($aep['acID'])?>">
                     <textarea class="form-control" cols="30" rows="3" name="eap" required><?= $aep['question']?></textarea>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-                
-
             </div>
             <br><br><br><hr>
-
             <h4>Conclusion</h4>
             <p>1.	The client has informed management.  I consider that there are no threats arising from fee income from the non-audit services provided / to be provided to the client and that the services can be provided.*</p>
             <p>2.	The client has informed management. I consider that the threats imposed by the non-audit services provided / to be provided to the client and the resulting level of fee income have been reduced to an acceptable level as documented above.*</p>
             <p>3.	We will not provide other services as it is not possible to put sufficient safeguards in place and we wish to remain as auditor.*</p>
             <p>4.	We will provide other services but because it is not possible to put sufficient safeguards in place, we will resign as auditor.*</p>
-
             <div>
                 Signature:	(A.E.P.) Date:	 * Delete as appropriate
             </div>
-
-
             <h6>Notes:</h6>
             <p>1.	The audit firm can set their own criteria, but non-audit fees greater than three times the audit fee are likely to create a self-interest threat, which needs to be mitigated.</p>
             <p>2.	Although the audit firm can set its own criteria, in circumstances where the audit fee is more significant to the firm, non-audit fees which represent a lower multiple of the audit fee are likely to be considered ‘substantial’.</p>
-
-
             <h4>Definitions:</h4>
-
             <table class="table">
                 <tr>
                     <td><h6>Audit related non-audit services:</h6></td>
@@ -160,14 +136,12 @@
                         </ul>
                     </td>
                 </tr>
-
                 <tr>
                     <td><h6>“Informed management”:</h6></td>
                     <td>
                         <p>Member of management (or senior employee), of the audited entity who has the authority and capability to make independent management judgments and decisions in relation to non-audit services on the basis of information provided by the audit firm.</p>
                     </td>
                 </tr>
-
                 <tr>
                     <td><h6>Safeguards:</h6></td>
                     <td>
@@ -179,11 +153,8 @@
                         </ul>
                     </td>
                 </tr>
-
             </table>
-
             </div>
         </div>
     </div>
-    
 </main>

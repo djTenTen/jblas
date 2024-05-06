@@ -1,28 +1,21 @@
 <?php
-
-
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
-
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
-
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
 // set margins
 $pdf->SetMargins(25,10,15);   
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
@@ -32,27 +25,18 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 $pdf->setPrintHeader(false);
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
-
-
 // ---------------------------------------------------------
 // set font
-
-
-
 // add a page
 $pdf->AddPage('P');
 //$pdf->SetPageSize('A4');
-
-
 $html =  "
     <style>
         *{
@@ -73,14 +57,12 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
         .ind{
             text-indent: 20px;
         }
     </style>
 ";
-
 $html .= '
 <table>
     <tr>
@@ -106,8 +88,6 @@ $html .= '
     </tr>
 </table>
 ';
-
-
 $html .= '
 <h3>ISA COMPLIANCE CRITICAL ISSUES MEMORANDUM</h3>
 <p><b>Objective:</b></p>
@@ -135,7 +115,6 @@ $html .= '
     </tr>
 </table>
 ';
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -158,7 +137,6 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
@@ -193,7 +171,6 @@ $html .= '
 $html .='
     </tbody>
 </table>';
-
 $html .= '
 <p>I consider that significant risks have been identified and adequately addressed by this assignment, and have been appropriately communicated to the client in the Planning Letter (or, for significant risks identified at a later stage of the assignment, via alternative, appropriate documentation).</p>
 <table>
@@ -203,7 +180,6 @@ $html .= '
     </tr>
 </table>
 ';
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -226,11 +202,9 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '
 <table border="1" >
     <thead>
@@ -289,7 +263,6 @@ $html .= '
     <tr>
         <td colspan="5"><b>Departures from requirements of ISA, reasons for the departure and alternative audit procedures performed (mandatory section):</b></td>
     </tr>';
-
     foreach($dep as $r){
         $html .= '
         <tr>
@@ -300,11 +273,9 @@ $html .= '
             <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
         </tr>';
     }
-
 $html .='
     </tbody>
 </table>';
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -327,12 +298,10 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
 $html .= '<p><b>Other Issues (including any key outstanding audit matters):</b></p>';
-
 $html .= '
 <table border="1" >
     <thead>
@@ -359,7 +328,6 @@ $html .= '
 $html .='
     </tbody>
 </table>';
-
 $html .= '
 <p><b>Changes to, or new accounting policies and estimation techniques in the period:</b></p>
 <table border="1">
@@ -384,7 +352,6 @@ $html .= '
         </tr>
     </tbody>
 </table>
-
 <p><b>Developments during the period:</b></p>
 <table border="1">
     <thead>
@@ -408,7 +375,6 @@ $html .= '
         </tr>
     </tbody>
 </table>
-
 <p><b>Future developments:</b></p>
 <table border="1">
     <thead>
@@ -432,7 +398,6 @@ $html .= '
         </tr>
     </tbody>
 </table>
-
 <p><b>Costs to date, including an explanation of deviation from budget, and timetable for completion:</b></p>
 <table border="1">
     <thead>
@@ -457,12 +422,6 @@ $html .= '
     </tbody>
 </table>
 ';
-
-
-
-    
-
-
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,'J', false, '');

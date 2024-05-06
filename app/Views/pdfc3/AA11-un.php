@@ -1,28 +1,21 @@
 <?php
-
-
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
-
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
-
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
 // set margins
 $pdf->SetMargins(25,10,15);   
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
@@ -32,27 +25,18 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 $pdf->setPrintHeader(false);
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
-
-
 // ---------------------------------------------------------
 // set font
-
-
-
 // add a page
 $pdf->AddPage('P');
 //$pdf->SetPageSize('A4');
-
-
 $html =  "
     <style>
         *{
@@ -73,14 +57,12 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
         .ind{
             text-indent: 20px;
         }
     </style>
 ";
-
 $html .= '
 <table>
     <tr>
@@ -106,8 +88,6 @@ $html .= '
     </tr>
 </table>
 ';
-
-
 $html .= '
 <p><b>SUMMARY OF UNADJUSTED ERRORS</b></p>
 <p>If, during the assignment, either the aggregate of accumulated misstatements approaches performance materiality, or the nature of identified misstatements indicate that other misstatements may exist which would lead to accumulated misstatements exceeding performance materiality, it shall be determined whether the overall audit strategy and audit plan need to be revised.</p>
@@ -139,7 +119,6 @@ $html .= '
     </tbody>
 </table>
 <br><br> ';
-
 $html .= '
 <table border="1">
     <thead>
@@ -179,7 +158,6 @@ $html .= '
         $aef_crps += $r['crps'];
         $aef_drfp += $r['drfp'];
         $aef_crfp += $r['crfp'];
-    
         $html .= '
             <tr>
                 <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
@@ -207,7 +185,6 @@ $html .= '
         $aej_crps += $r['crps'];
         $aej_drfp += $r['drfp'];
         $aej_crfp += $r['crfp'];     
-    
         $html .= '
             <tr>
                 <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
@@ -235,7 +212,6 @@ $html .= '
         $ee_crps += $r['crps'];
         $ee_drfp += $r['drfp'];
         $ee_crfp += $r['crfp'];
-    
         $html .= '
             <tr>
                 <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
@@ -254,7 +230,6 @@ $html .= '
             <td style="width: 10%;"><b>Adjust?</b></td>
         </tr>
 ';
-
         $de_drps = 0;
         $de_crps = 0;
         $de_drfp = 0;
@@ -264,7 +239,6 @@ $html .= '
         $de_crps += $r['crps'];
         $de_drfp += $r['drfp'];
         $de_crfp += $r['crfp'];
-    
         $html .= '
             <tr>
                 <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
@@ -290,10 +264,8 @@ $html .= '
 </tbody>
 </table>
 ';
-
 $html .= '
 <p><b>Conclusion (only include errors which remain uncorrected):</b></p>
-
 <table border="1">
     <thead>
         <tr>
@@ -462,10 +434,6 @@ $html .= '
 <p>However, misstatements relating to amounts may not be clearly trivial when judged on criteria of nature or circumstance. If this is the case, the misstatements should be accumulated as unadjusted errors.</p>
 <p>Misstatements in disclosures may also be clearly trivial whether taken individually or in aggregate, and whether judged by any criteria of size, nature or circumstances. Misstatements in disclosures that are not clearly trivial are also accumulated to assist the auditor in evaluating the effect of such misstatements on the relevant disclosures and the financial statements as a whole. Paragraph A13a of ISA 450 provides examples of where misstatements in qualitative disclosures may be material.</p>
 ';
-
-
-
-
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,'J', false, '');

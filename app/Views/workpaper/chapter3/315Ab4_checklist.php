@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,9 +41,7 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
-
                 <nav class="nav nav-borders">
                     <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'checklist')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/3.15 Ab4-checklist/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Checklist</a>
                     <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section1')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/3.15 Ab4-section1/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 1</a>
@@ -60,7 +56,6 @@
                 </nav>
                 <hr class="mt-0 mb-4" />
                 <br>
-                
                 <h4>CORPORATE DISCLOSURE CHECKLIST (IFRS)</h4>
                 <h6><u>Scope</u></h6>
                 <p>This checklist should be completed for every corporate entity where International Financial Reporting Standards (IFRS) are being followed and it is not appropriate to complete Appendix 3.14 – Financial Statements Disclosure and Compliance Annual Review Checklist.</p>
@@ -70,10 +65,8 @@
                 <p>IFRS 16 <i>Leases</i> is mandatory for accounting periods commencing on or after 1 January 2019. This fundamentally alters the accounting treatment for lessees, with consequential disclosure amendments.</p>
                 <p><b>NB: To ensure that the Checklist is as efficient as possible, areas which are more specialised have been addressed by supplementary disclosure checklists. <u>These supplementary disclosure checklists should only be completed if the area is relevant.</u> </b></p>
                 <p>NB: The checklist does not cover the additional disclosures required by companies which enter into insurance contracts, where these are relevant considerations, then the disclosure requirements of IFRS 4 should be given.  It also does not cover the requirements of IAS 26, which are only relevant to clients who are themselves pension schemes, or IFRIC 2 which is relevant to cooperative entities.  The checklist also does not cover the disclosure requirements of companies with listed equity or debt.</p>
-
                 <form action="<?= base_url()?>auditsystem/wp/saveab4checklist/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                 <input type="hidden" name="part" value="<?= $section?>">
-
                 <input type="hidden" name="acid" value="<?= $acID?>">
                 <table class="table table-sm table-bordered">
                     <thead>
@@ -242,12 +235,9 @@
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
-
             </div>
         </div>
     </div>
-    
 </main>
 
 

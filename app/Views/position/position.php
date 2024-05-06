@@ -21,8 +21,6 @@
             </div>
         </div>
     </header>
-
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('added')) { ?>
@@ -53,10 +51,8 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-               
             <div class="row">
                 <div class="col-xl-5">
-
                     <div class="card mb-4 mb-xl-0">
                         <div class="card-header">Positions</div>
                         <div class="card-body">
@@ -190,13 +186,10 @@
                     </div>
                 </div>
             </div>
-            
             </div>
         </div>
     </div>
-    
 </main>
-
 <!-- Modal Logout-->
 <div class="modal fade" id="verify" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -297,20 +290,16 @@
                             <label class="form-check-label" for="user">User Management</label>
                         </div>
                     </div>
-
             <div class="modal-footer">
                 <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
-                
                     <button class="btn btn-primary" type="submit">Update</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
 <script>
 $(document).ready(function () {
-
     $(".active-data").on("click", function() {
         var status = $(this).data('status');
         var usid = $(this).data('usid');
@@ -321,22 +310,18 @@ $(document).ready(function () {
             $('.msgconfirm').html(`<h3>Are you sure to Enable this Position?</h3>`);
         }
     });
-
     $(".verify-data").on("click", function() {
         var pos = $(this).data('pos');
         var usid = $(this).data('usid');
         $('#vform').attr('action', "<?= base_url('auditsystem/position/update/')?>" + usid);
         $('.pos').attr('value', pos);
-
         $.ajax({
             url: "<?= base_url('auditsystem/position/edit/')?>" + usid,  // Replace with your actual data endpoint URL
             method: "GET",
             dataType: 'json',
             success: function(data) {
-
                 // get the json encoded from database and parse it 
                 var ad = JSON.parse(data.allowed);
-
                 $.each(ad, function(i, a) {
                     // populate the checkboxes
                     if(a == "Yes"){
@@ -345,19 +330,13 @@ $(document).ready(function () {
                         $('.'+ i).prop('checked', false);
                     }
                 });
-
                 },
                 error: function() {
                     // Handle error if the data fetch fails
                     $(".tbitem").html("Error loading data");
                 }
-
         });
-
-
-
     });
-
 });
 </script>
 

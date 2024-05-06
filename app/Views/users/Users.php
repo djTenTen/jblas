@@ -21,7 +21,6 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('invalid_input')) { ?>
@@ -60,12 +59,10 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
             <?php if(session()->get('allowed')->add == "Yes"){?>
             <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#adduser">Add User</button>
             <?php  }?>
-
             <table class="table table-hover" id="datatablesSimple">
                 <thead>
                     <tr>
@@ -108,17 +105,11 @@
                         </tr>
                     <?php }?>
                 </tbody>
-
             </table>
-            
-
             </div>
         </div>
     </div>
-    
 </main>
-
-
 <!-- Modal add-->
 <div class="modal fade" id="adduser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -129,7 +120,6 @@
             </div>
             <div class="modal-body">
                 <form id="" action="<?= base_url('auditsystem/user/save')?>" method="post">
-
                 <div class="row gx-3">
                         <div class="col-md-12">
                             <!-- Form Group (first name)-->
@@ -181,7 +171,6 @@
                             </div>  
                         </div>
                     </div>
-                
             </div>
             <div class="modal-footer">
                     <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
@@ -191,8 +180,6 @@
         </div>
     </div>
 </div>
-
-
 <!-- Modal edit-->
 <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -258,11 +245,8 @@
         </div>
     </div>
 </div>
-
 <script>
 $(document).ready(function () {
-
-
     // $('#firm').on('input', function() {
     //     var searchTerm = $(this).val();
     //     $.ajax({
@@ -275,7 +259,6 @@ $(document).ready(function () {
     //             $.each(response, function(index, item) {
     //                 $('#searchResults').append('<tr><td class="searchResult">' + item.firm + '</td></tr>');
     //             });
-
     //             if(searchTerm == ''){
     //                 $('#searchResults').empty();
     //             }
@@ -285,14 +268,11 @@ $(document).ready(function () {
     //         }
     //     });
     // });
-
-   
     // $(document).on('click', '.searchResult', function() {
     //     var selectedName = $(this).text();
     //     $('#firm').val(selectedName);
     //     $('#searchResults').empty();
     // });
-
     $(".active-data").on("click", function() {
         var name = $(this).data('name');
         var status = $(this).data('status');
@@ -304,16 +284,13 @@ $(document).ready(function () {
             $('.msgconfirm').html(`<h3>Are you sure to Enable this auditor `+name+`?</h3>`);
         }
     });
-
     $(".get-data").on("click", function() {
         var name = $(this).data('name');
         var uid = $(this).data('uid');
         var pos = $(this).data('pos');
         $('#editform').attr('action', "<?= base_url('auditsystem/user/update/')?>" + uid);
-
         var originalContent = $("#editform").html();
         var origpos = $("#pos").html();
-
         $("#editform").html(`
         <div class="container mt-3">
             <p>Loading...</p>
@@ -332,11 +309,9 @@ $(document).ready(function () {
             method: "GET",
             dataType: 'json',
             success: function(data) {
-
                 console.log(data.firm);
                 $("#editform").html(originalContent);
                 $("#pos").html(origpos);
-
                 $('.name').attr('value', data.name);
                 $('.email').attr('value', data.email);
                 $('.firm').attr('value', data.firm);
@@ -346,19 +321,12 @@ $(document).ready(function () {
                 //$('#pos option[value=""]').html(data.position);
                 //$('#pos').find('.ps').html(`<option value="` + pos + `" selected>` + data.position + `</option>`);
                 //$('#pos').find(`<option value="` + pos + `" selected>` + data.position + `</option>`);
-    
-          
             },
             error: function() {
                 // Handle error if the data fetch fails
                 $(".tbitem").html("Error loading data");
             }
-
         });
-
-
-
     });
-
 });
 </script>

@@ -21,7 +21,6 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <div class="card-header"><?= $header?></div>
@@ -30,5 +29,4 @@
             </div>
         </div>
     </div>
-    
 </main>

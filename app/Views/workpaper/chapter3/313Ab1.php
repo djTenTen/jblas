@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,12 +41,9 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
                 <hr>
                 <h4>CRITICAL REVIEW OF THE FINANCIAL STATEMENTS</h4>
-               
-
                 <form action="<?= base_url()?>auditsystem/wp/saveab1/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <table class="table table-bordered">
                         <thead>
@@ -65,22 +60,14 @@
                                     <td><textarea class="form-control yesno" id="yesno" cols="30" rows="3" name="yesno[]"><?= $r['yesno']?></textarea></td>
                                     <td><textarea class="form-control comment" id="comment" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
                                 </tr>
-                            
                             <?php }?>
                         </tbody>
                     </table>
-                
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-
                 </form>
                 <br><br><br><hr>
-                                
                 <p>The tests above were undertaken on draft financial statements sent to the client.</p>
-            
-            
-            
             </div>
         </div>
     </div>
-    
 </main>

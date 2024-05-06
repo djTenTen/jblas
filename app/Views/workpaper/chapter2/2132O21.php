@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('invalid_input')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,8 +41,6 @@
                     </div>
                 </div>
             <?php  }?>
-
-
             <div class="card-body">
                 <hr>
                 <h4>IFRS 15 CONSIDERATIONS</h4>
@@ -57,10 +53,7 @@
                 <p><i>Step 4: Allocate the transaction price to the performance obligations in the contract.</i></p>
                 <p><i>Step 5: Recognise revenue when (or as) the entity satisfies a performance obligation.</i></p>
                 <p><i>Auditors must read IFRS 15, the accompanying application guidance (Appendix B of IFRS 15) and the transition requirements (Appendix C of IFRS 15) to gain a full understanding of the accounting requirements. </i></p>
-
-
                 <form action="<?= base_url()?>auditsystem/wp/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-
                     <table class="table table-sm table-bordered table-hover">
                         <thead>
                             <tr>
@@ -81,13 +74,9 @@
                             <?php }?>
                         </tbody>
                     </table>
-
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-
                 </form>
-
             </div>
         </div>
     </div>
-    
 </main>

@@ -21,7 +21,6 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('success_update')) { ?>
@@ -40,11 +39,8 @@
                 <input type="hidden" name="acid" value="<?= $acID?>">
                 <h4>CONSIDERATION OF SPECIFIC SKILLS REQUIRED FOR THIS ASSIGNMENT </h4>
                 <h6>(SHOULD COVER ALL MEMBERS OF THE TEAM OTHER THAN JUNIORS, INCLUDING THE EQR)</h6>
-                
                 <textarea class="form-control" cols="30" rows="20" name="coss"><?= $ac9['coss']?></textarea>
-
                 <br>
-
                 <h4>APPROVAL OF PLANNING</h4>
                 <p>The following have all been reviewed prior to the team discussions being held and the detailed audit fieldwork commencing, and this has been documented by myself as A.E.P.:</p>
                 <ul>
@@ -54,30 +50,21 @@
                     <li>Assessment of Risk in Individual Audit Areas; and</li>
                     <li>Determination of Materiality and Performance Materiality levels.</li>
                 </ul>
-
                 <p>Additionally, audit programmes of the working papers file have been reviewed, and I am satisfied that tailoring of these audit programmes is appropriate for the purpose of this audit.</p>
-
                 <p>Planning approved by:______________(A.E.P.) on___________</p>
-
                 <h4>APPROVAL OF PLANNING BY INTERNAL EQR (IF APPLICABLE)</h4>
                 <p>I have reviewed, and this has been documented by myself as E.Q.R., the Acceptance or Continuance Form.  I have also reviewed the remaining documents set out in the bullet points above, along with this Assignment Plan, and additionally, the following:</p>
                     <ul>
                         <li>
-                            
                             <input type="text" class="form-control" name="aop1" value="<?= $ac9['aop1']?>">
                         </li>
                         <li>
-                            
                             <input type="text" class="form-control" name="aop2" value="<?= $ac9['aop2']?>">
                         </li>
                     </ul>
-
-
                 <p>I am satisfied that the proposed audit approach is appropriate for the purpose of this audit.</p>
                 <p>Planning approved by:______________(A.E.P.) on___________</p>
-
                 <br>
-
                 <table class="table table-bordered">
                     <tr>
                         <td>
@@ -85,7 +72,6 @@
                             <p>Detailed background information is included in the permanent file, the below information is just a short executive summary.</p>
                             <p>The entity is a company [other: insert details].</p>
                             <p>The principal activities of the entity are [ 
-
                                 <input type="text" class="form-control" name="bipa" value="<?= $ac9['bipa']?>"> 
                             ]</p>
                             <p>The business objectives and strategies of the entity are  [
@@ -93,7 +79,6 @@
                             ]</p>
                         </td>
                     </tr>
-
                     <tr>
                         <td>
                             <h4>SIGNIFICANT FACTORS FROM PREVIOUS AUDIT AND IMPACT ON THIS PERIOD’S AUDIT </h4>
@@ -102,11 +87,9 @@
                                 <li>If applicable, the findings of recent cold file reviews have been addressed by the planning documentation; and</li>
                                 <li>If applicable, last period’s management letter points have been reviewed and any points have been considered during this period’s risk assessment and audit approach.</li>
                             </ul>
-                            
                             <textarea class="form-control" cols="30" rows="20" name="sffpa" placeholder="This should not repeat information included elsewhere."><?= $ac9['sffpa']?></textarea>
                         </td>
                     </tr>
-
                     <tr>
                         <td>
                             <h4>SUMMARY OF SIGNIFICANT DEVELOPMENTS DURING THE PERIOD</h4>
@@ -133,7 +116,6 @@
                             <textarea class="form-control" cols="30" rows="20" name="soae"><?= $ac9['soae']?></textarea>
                         </td>
                     </tr>
-
                     <tr>
                         <td>
                             <h4>AUDIT APPROACH</h4>
@@ -145,11 +127,8 @@
                             <textarea class="form-control" cols="30" rows="20" name="aa2"><?= $ac9['aa2']?></textarea>
                         </td>
                     </tr>
-
                 </table>
-
                 <br>
-
                 <table class="table table-bordered">
                     <tr>
                         <td><h4>IS THE FINANCIAL REPORTING FRAMEWORK APPROPRIATE FOR THE ENTITY, BASED ON IT’S CIRCUMSTANCES</h4></td>
@@ -161,7 +140,6 @@
                             <textarea class="form-control" cols="30" rows="20" name="frfa"><?= $ac9['frfa']?></textarea>
                         </td>
                     </tr>
-
                     <tr>
                         <td><h4>ARE THERE ANY OTHER REPORTING REQUIREMENTS (SUCH AS TO A PARENT AUDITOR OR REGULATOR)</h4></td>
                         <td><h4>YES / NO</h4></td>
@@ -172,18 +150,14 @@
                             <textarea class="form-control" cols="30" rows="20" name="orr"><?= $ac9['orr']?></textarea>
                         </td>
                     </tr>
-                
                     <tr>
                         <td colspan="2">
                         <h4>TAX SCHEDULES REQUIRED (THESE SHOULD ONLY BE PREPARED WHERE IT HAS BEEN AGREED THAT A NON-AUDIT SERVICE IS BEING PROVIDED)</h4>
                         <textarea class="form-control" cols="30" rows="20" name="tsr"><?= $ac9['tsr']?></textarea>
                         </td>
                     </tr>
-
                 </table>
-
                 <br><hr>               
-
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -222,11 +196,9 @@
                                 <input type="date" name="agm" id="" class="form-control" value="<?= $ac9['agm']?>">
                             </td>
                         </tr>
-                       
                     </tbody>
                 </table>
                 <br><hr>
-
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -278,17 +250,10 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
-
-
-
-
             </div>
         </div>
     </div>
-    
 </main>

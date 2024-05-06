@@ -1,28 +1,21 @@
 <?php
-
-
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
-
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
-
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
 // set margins
 $pdf->SetMargins(25,7,15);  
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
@@ -32,27 +25,18 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 $pdf->setPrintHeader(false);
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
-
-
 // ---------------------------------------------------------
 // set font
-
-
-
 // add a page
 $pdf->AddPage('L');
 //$pdf->SetPageSize('A4');
-
-
 $html =  "
     <style>
         *{
@@ -73,11 +57,9 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '
 <table>
     <tr>
@@ -103,14 +85,11 @@ $html .= '
     </tr>
 </table>
 ';
-
 $html .= '<p><b>AUDIT APPROACH AND SAMPLE SIZE CALCULATION</b></p>';
 $html .= ' <p><i>To complete the table below enter the risk level as per Ac6 and the materiality level as documented at Ac8. Where a different risk level is relevant for different assertions the table can be expanded as indicated on the lefthand margin. The audit approach should be selected by entering \'Y\' or \'N\' as appropriate. Where sampling is not required under the approach selected the remainder of the row will be greyed out. 
     <br>Where substantive testing is to be undertaken document whether this will be supported by controls testing or supportive analytical procedures. For each area, enter the population and any large or key items on the appropriate supporting schedule. The residual sample size will then be automatically calculated by dividing the residual population (after large and key items) by materiality and multiplying this by the risk factor which is determined by the audit approach as documented on the reference table below.
     <br>Where transaction testing is to be undertaken select the approximate number of transactions from the drop down. This together with the risk level entered will calculate the appropriate sample size, again based on the information on the reference table below.
 </i></p> ';
-
-
 $html .= '
 <table border="1">
     <thead>
@@ -146,7 +125,6 @@ $html .= '
             <th style="width: 5%;">Transaction sample size from table B</th>
         </tr>
     </thead>
-
     <tbody id="tbody">';
 $html .='
         <tr>
@@ -188,7 +166,6 @@ $html .='   </td>
             <td style="width: 5%;">'.$tgb['tgb_ant'].'</td>
             <td style="width: 5%;">'.$tgb['tgb_tss'].'</td>
         </tr>';
-
 $html .='
         <tr>
             <td style="width: 10%;">PPE</td>
@@ -229,7 +206,6 @@ $html .='   </td>
             <td style="width: 5%;">'.$ppe['ppe_ant'].'</td>
             <td style="width: 5%;">'.$ppe['ppe_tss'].'</td>
         </tr>';
-
         $html .='
         <tr>
             <td style="width: 10%;">Investments</td>
@@ -270,7 +246,6 @@ $html .='   </td>
             <td style="width: 5%;">'.$invmt['invmt_ant'].'</td>
             <td style="width: 5%;">'.$invmt['invmt_tss'].'</td>
         </tr>';
-
         $html .='
         <tr>
             <td style="width: 10%;">Inventories</td>
@@ -311,9 +286,6 @@ $html .='   </td>
             <td style="width: 5%;">'.$invtr['invtr_ant'].'</td>
             <td style="width: 5%;">'.$invtr['invtr_tss'].'</td>
         </tr>';
-
-
-
         $html .='
         <tr>
             <td style="width: 10%;">Trade Receivables</td>
@@ -354,7 +326,6 @@ $html .='   </td>
             <td style="width: 5%;">'.$tr['tr_ant'].'</td>
             <td style="width: 5%;">'.$tr['tr_tss'].'</td>
         </tr>';
-
         $html .='
         <tr>
             <td style="width: 10%;">All Other Receivables</td>
@@ -395,7 +366,6 @@ $html .='   </td>
             <td style="width: 5%;">'.$or['or_ant'].'</td>
             <td style="width: 5%;">'.$or['or_tss'].'</td>
         </tr>';
-
         $html .='
         <tr>
             <td style="width: 10%;">Bank and Cash</td>
@@ -436,7 +406,6 @@ $html .='   </td>
             <td style="width: 5%;">'.$bac['bac_ant'].'</td>
             <td style="width: 5%;">'.$bac['bac_tss'].'</td>
         </tr>';
-
         $html .='
         <tr>
             <td style="width: 10%;">Trade Payables</td>
@@ -477,7 +446,6 @@ $html .='   </td>
             <td style="width: 5%;">'.$tp['tp_ant'].'</td>
             <td style="width: 5%;">'.$tp['tp_tss'].'</td>
         </tr>';
-
         $html .='
         <tr>
             <td style="width: 10%;">All Other Payables</td>
@@ -518,8 +486,7 @@ $html .='   </td>
             <td style="width: 5%;">'.$op['op_ant'].'</td>
             <td style="width: 5%;">'.$op['op_tss'].'</td>
         </tr>';
-
-        $html .='
+$html .='
         <tr>
             <td style="width: 10%;">Provisions</td>
             <td style="width: 10%;">All</td>
@@ -559,13 +526,10 @@ $html .='   </td>
             <td style="width: 5%;">'.$prov['prov_ant'].'</td>
             <td style="width: 5%;">'.$prov['prov_tss'].'</td>
         </tr>';
-
 $html .= '<tr>
             <td colspan="17"></td>
     </tr>';
-
-
-        $html .='
+$html .='
         <tr>
             <td style="width: 10%;">Revenue</td>
             <td style="width: 10%;">All</td>
@@ -605,7 +569,6 @@ $html .='   </td>
             <td style="width: 5%;">'.$rev['rev_ant'].'</td>
             <td style="width: 5%;">'.$rev['rev_tss'].'</td>
         </tr>';
-
         $html .='
         <tr>
             <td style="width: 10%;">Costs</td>
@@ -646,8 +609,7 @@ $html .='   </td>
             <td style="width: 5%;">'.$cst['cst_ant'].'</td>
             <td style="width: 5%;">'.$cst['cst_tss'].'</td>
         </tr>';
-
-        $html .='
+$html .='
         <tr>
             <td style="width: 10%;">Payroll</td>
             <td style="width: 10%;">All</td>
@@ -691,8 +653,6 @@ $html .='
     </tbody>   
 </table>
 ';
-
-
 $pdf->writeHTML($html, true, false,'J', false, '');
 $pdf->AddPage('L');
 $html =  "
@@ -715,11 +675,9 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '
     <ol>
         <li>Risk must be assessed for each area at assertion level.  If for an area, all assertions have the same risk use the "all" line. However, if there are different levels of risks then the various assertion rows should be expanded in each area as relevant. At the testing stage the key assertions are occurrence, completeness, accuracy, cut off and classification for transactions and existence, rights and obligations, completeness, valuation and allocation and disclosure for balances.</li>
@@ -727,7 +685,6 @@ $html .= '
         <li>It will usually only be appropriate to test controls where they are expected to be effective therefore a low risk sample size should be used.</li>
     </ol>
     <p><b>Reference Table</b></p>
-
     <table border="1">
         <thead>
             <tr>
@@ -756,7 +713,6 @@ $html .= '
                 <th></th>
             </tr>
             <tr>
-         
                 <th>A</th>
                 <th>B</th>
                 <th>C</th>
@@ -769,7 +725,6 @@ $html .= '
                 <th>L</th>
             </tr>
             <tr>
-            
                 <th>Approach</th>
                 <th>Control</th>
                 <th>AR</th>
@@ -921,17 +876,7 @@ $html .= '
         C - Tests of control <br>
         ** - When performing substantive procedures, the number of items selected from the residual population (after testing all "large" / "key" items) may be capped at the levels noted for transaction / control testing.
     </p>
-
 ';
-
-
-    
-
-
-
-
-
-
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,'J', false, '');

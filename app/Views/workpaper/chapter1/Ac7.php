@@ -21,7 +21,6 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('success_update')) { ?>
@@ -34,7 +33,6 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-               
                 <h4>SPECIFIC AREA NARRATIVE INHERENT RISK ASSESSMENT</h4>
                 <p>Objective: This form is designed to assess the risk for each audit assertion relevant to each audit area.  PSA 315 implies that all areas and all assertions are high risk unless this can be rebutted.  Completion of this form will help to justify a departure from high risk.</p>
                 <p>The risk forms should not be completed until –</p>
@@ -71,11 +69,9 @@
                     <li>They will be communicated to the client at the planning stage in the Planning Letter; and</li>
                     <li>How the risk has been addressed during the assignment should be summarized on the PSA Compliance Critical Issues Memorandum.</li>
                 </ul>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
@@ -113,12 +109,9 @@
                             <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $bacdata['y6']?>">
                         </td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -130,7 +123,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $bacdata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -167,11 +159,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE RECEIVABLES:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
@@ -209,12 +199,9 @@
                             <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $trdata['y6']?>">
                         </td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -226,7 +213,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $trdata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -263,11 +249,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER RECEIVABLES (INCLUDING PREPAYMENTS):</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
@@ -305,12 +289,9 @@
                             <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $ordata['y6']?>">
                         </td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -322,7 +303,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $ordata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -359,11 +339,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVENTORIES:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
@@ -401,12 +379,9 @@
                             <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $invtrdata['y6']?>">
                         </td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -418,7 +393,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $invtrdata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -455,11 +429,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVESTMENTS:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
@@ -497,12 +469,9 @@
                             <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $invmtdata['y6']?>">
                         </td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -514,7 +483,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $invmtdata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -551,11 +519,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROPERTY, PLANT AND EQUIPMENT:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
@@ -593,12 +559,9 @@
                             <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $ppedata['y6']?>">
                         </td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -610,7 +573,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $ppedata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -647,11 +609,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INTANGIBLE NON-CURRENT ASSETS:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td>
@@ -689,12 +649,9 @@
                             <input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $incadata['y6']?>">
                         </td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -706,7 +663,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $incadata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -743,11 +699,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE PAYABLES:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td><input type="hidden" value="tpdata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $tpdata['y1']?>"></td>
@@ -772,12 +726,9 @@
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $tpdata['y6']?>"></td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -789,7 +740,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $tpdata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -826,11 +776,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER PAYABLES (INCLUDING ACCRUALS):</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td><input type="hidden" value="opdata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $opdata['y1']?>"></td>
@@ -855,12 +803,9 @@
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $opdata['y6']?>"></td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -872,7 +817,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $opdata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -909,11 +853,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TAXATION:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td><input type="hidden" value="taxdata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $taxdata['y1']?>"></td>
@@ -938,12 +880,9 @@
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $taxdata['y6']?>"></td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -955,7 +894,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $taxdata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -992,11 +930,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROVISIONS FOR LIABILITIES:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td><input type="hidden" value="provdata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $provdata['y1']?>"></td>
@@ -1021,12 +957,9 @@
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $provdata['y6']?>"></td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -1038,7 +971,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $provdata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -1075,11 +1007,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – REVENUE / OTHER INCOME:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td><input type="hidden" value="roidata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $roidata['y1']?>"></td>
@@ -1104,12 +1034,9 @@
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $roidata['y6']?>"></td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -1121,7 +1048,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $roidata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -1158,11 +1084,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – DIRECT COSTS / OTHER EXPENSES:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td><input type="hidden" value="dcodata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $dcodata['y1']?>"></td>
@@ -1187,12 +1111,9 @@
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $dcodata['y6']?>"></td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -1204,7 +1125,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $dcodata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -1241,11 +1161,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PAYROLL:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td><input type="hidden" value="prdata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $prdata['y1']?>"></td>
@@ -1270,12 +1188,9 @@
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $prdata['y6']?>"></td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -1287,7 +1202,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $prdata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -1324,11 +1238,9 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER AREA:</h6>
                 <table class="table table-bordered">
                 <form action="<?= base_url()?>auditsystem/wp/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                
                     <tr>
                         <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
                         <td><input type="hidden" value="oadata" name="part"><input class="form-control" type="text" name="y1" placeholder="Yer or No" value="<?= $oadata['y1']?>"></td>
@@ -1353,12 +1265,9 @@
                         <td>6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
                         <td><input class="form-control" type="text" name="y6" placeholder="Yer or No" value="<?= $oadata['y6']?>"></td>
                     </tr>
-                   
                 </table>
-
                 <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
                 <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-            
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -1370,7 +1279,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
                             <td rowspan="5"><textarea class="form-control" cols="30" rows="30" name="gen"><?= $oadata['gen']?></textarea></td>
                             <td>Existence</td>
@@ -1407,10 +1315,7 @@
                     <button type="submit" class="btn btn-success float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
-
             </div>
         </div>
     </div>
-    
 </main>

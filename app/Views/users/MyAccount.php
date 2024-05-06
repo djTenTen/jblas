@@ -34,9 +34,7 @@
             <?php  }?>
             <div class="card-body">
                 <hr>
-
                 <form id="uploadForm" action="<?= base_url('auditsystem/myaccount/update')?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($u['userID']))?>" method="post" enctype="multipart/form-data">
-
                     <div class="row" id="editform">
                         <div class="col-xl-4">
                             <!-- Profile picture card-->
@@ -53,10 +51,8 @@
                                     <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB and 2x2 or square size image</div>
                                     <!-- Profile picture upload button-->
                                     <input type="file" id="imagephoto" name="photo" class="form-control btn btn-primary" >
-                                    
                                 </div>
                             </div>
-                            
                             <div id="errorContainer" style="display: none;">
                                 <div class="alert alert-danger alert-icon" role="alert">
                                     <div class="alert-icon-content">
@@ -65,7 +61,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="card mb-4 mb-xl-0">
                                 <div class="card-header">Signature</div>
                                 <div class="card-body text-center">
@@ -79,11 +74,8 @@
                                     <div class="small font-italic text-muted mb-4">PNG no larger than 5 MB</div>
                                     <!-- Profile picture upload button-->
                                     <input type="file" id="signatureinput" name="signature" class="form-control btn btn-primary" >
-
-                                    
                                 </div>
                             </div>
-
                             <div id="errorContainer2" style="display: none;">
                                 <div class="alert alert-danger alert-icon" role="alert">
                                     <div class="alert-icon-content">
@@ -100,7 +92,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
                         <div class="col-xl-8">
                             <!-- Account details card-->
@@ -133,7 +124,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                            
                                     <div class="mb-3">
                                         <label class="small mb-1" for="email">Email</label>
                                         <input class="form-control" id="email" type="email" aria-describedby="emailHelp" placeholder="Enter email address" name="email" value="<?= $u['email']?>" required/>
@@ -147,7 +137,6 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                        
                                             <div class="mb-3">
                                                 <label class="small mb-1" for="confirmpass">Confirm Password</label>
                                                 <input class="form-control" id="confirmpass" type="password" placeholder="Confirm password" name="cpass" />
@@ -158,19 +147,14 @@
                             </div>
                         </div>
                     </div>
-
                     <button type="submit" class="btn btn-success btn-block float-end">Update</button>
-
                 </form>
-
             </div>
         </div>
     </div>
 </main>
-
 <script>
     $(document).ready(function() {
-
         $('#imagephoto').change(function() {
             var maxSizeInBytes = 5 * 1024 * 1024; // 5MB
             var fileSize = this.files[0].size;
@@ -181,7 +165,6 @@
                 $('#errorContainer').hide();
             }
         });
-    
         $('#signatureinput').change(function() {
             var maxSizeInBytes = 5 * 1024 * 1024; // 5MB
             var fileSize = this.files[0].size;
@@ -197,8 +180,6 @@
                 $('#errorContainer3').hide();
             }
         });
-
-        
     });
 </script>
 

@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,16 +41,13 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
-                
                 <nav class="nav nav-borders">
                     <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-un')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/3.10 Aa11-un/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Unadjusted Errors</a>
                     <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-ad')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/3.10 Aa11-ad/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Adjustments Made</a>
                 </nav>
                 <hr class="mt-0 mb-4" />
                 <br>
-
                 <h4><?= $sectiontitle?></h4>
                 <form action="<?= base_url()?>auditsystem/wp/saveaa11ad/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <table class="table table-bordered">
@@ -101,7 +96,6 @@
                                 </tr>
                             <?php }?>
                         </tbody>
-
                         <tfoot>
                             <tr>
                                 <td colspan="2">Total Effect of Unadjusted Errors</td>
@@ -113,13 +107,11 @@
                                 <td></td>
                             </tr>
                         </tfoot>
-
                     </table>
                         <button class="btn btn-primary btn-sm m-1 float-end add-field" type="button" ><i class="fas fa-plus-square m-1"></i>Add Field</button>
                         <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <form action="<?= base_url()?>auditsystem/wp/saveaa11uead/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                     <input type="hidden" name="part" value="aa11uead">
                     <input type="hidden" name="acid" value="<?= $ueacID?>">
@@ -143,18 +135,15 @@
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>
-
                 <h6>Conclusion:</h6>
                 <p>No adjustments have been made to the client's draft financial statements.*</p>
                 <p>The above adjustments have been identified, the directors ("informed management") have confirmed verbally that they wish to adjust them and this will be confirmed in the letter of representation.*</p>
             </div>
         </div>
     </div>
-    
 </main>
 <script>
 $(document).ready(function () {
-
     $('.drps').on('change', function () {
         // Adding a row inside the tbody.
         var total = 0;
@@ -164,9 +153,7 @@ $(document).ready(function () {
             total += numericValue;
         });
         $('.tdrps').attr('value', total);
-
     });
-
     $('.crps').on('change', function () {
         // Adding a row inside the tbody.
         var total = 0;
@@ -176,9 +163,7 @@ $(document).ready(function () {
             total += numericValue;
         });
         $('.tcrps').attr('value', total);
-
     });
-
     $('.drfp').on('change', function () {
         // Adding a row inside the tbody.
         var total = 0;
@@ -188,9 +173,7 @@ $(document).ready(function () {
             total += numericValue;
         });
         $('.tdrfp').attr('value', total);
-
     });
-
     $('.crfp').on('change', function () {
         // Adding a row inside the tbody.
         var total = 0;
@@ -200,11 +183,7 @@ $(document).ready(function () {
             total += numericValue;
         });
         $('.tcrfp').attr('value', total);
-
     });
-
-
-    
     $('.add-field').on('click', function () {
         // Adding a row inside the tbody.
         var form = $(this).closest('form');
@@ -220,13 +199,9 @@ $(document).ready(function () {
             <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
         </tr>`);
     });
-
-    
     $('.tbody').on('click', 'button.remove', function () {
         $(this).closest('tr').remove();
     });
-
-
 });
 </script>
 

@@ -21,10 +21,8 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
             <?php if (session()->get('success_update')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -43,10 +41,7 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
-                
-
                 <h4>ANALYTICAL REVIEW TECHNIQUES AND INTERPRETATIONS</h4>
                 <h6>1. INTANGIBLE FIXED ASSETS (INCLUDING GOODWILL)</h6>
                 <p>An increase in intangible fixed assets may be due to:</p>
@@ -82,7 +77,6 @@
                         </ul>
                     </li>
                 </ul>
-
                 <h6>2. PROPERTY, PLANT AND EQUIPMENT</h6>
                 <p>An increase in property, plant and equipment may be due to:</p>
                 <ul>
@@ -95,7 +89,6 @@
                     <li>A write back of an impairment loss</li>
                     <li>Items of a revenue nature being incorrectly capitalised</li>
                 </ul>
-                
                 <p>A decrease in fixed assets may be due to:</p>
                 <ul>
                     <li>Disposal / scrapping of assets due to a business winding down / outsourcing / ceasing to be a going concern etc.</li>
@@ -125,8 +118,6 @@
                         </ul>
                     </li>
                 </ul>
-
-
                 <h6>3. INVESTMENTS</h6>
                 <p>An increase in investments may be due to:</p>
                 <ul>
@@ -150,8 +141,6 @@
                     <li>Change in stock market indices (Dow Jones / Nikkei / FTSE etc.)</li>
                     <li>Value of unlisted investment in relation to the EBITDA of the companies in which the investments are held</li>
                 </ul>
-
-
                 <h6>4. INVENTORY</h6>
                 <p>An increase in inventory could be due to:</p>
                 <ul>
@@ -195,8 +184,6 @@
                     <li>Level of returns (especially immediately after the period-end)</li>
                     <li>Inventory turnover</li>
                 </ul>
-
-
                 <h6>5. TRADE RECEIVABLES</h6>
                 <p>An increase in receivables may be due to:</p>
                 <ul>
@@ -238,8 +225,6 @@
                     <li>Irrecoverable receivables written-off as a percentage of sales</li>
                     <li>Money owed by key customers</li>
                 </ul>
-
-
                 <h6>6. CASH AT BANK AND IN HAND</h6>
                 <p>An increase in bank and cash balances could be due to:</p>
                 <ul>
@@ -271,9 +256,6 @@
                     <li>Available bank facilities</li>
                     <li>Interest received / paid compared to average balance</li>
                 </ul>
-
-
-
                 <h6>7. TRADE PAYABLES</h6>
                 <p>An increase in payables could be due to:</p>
                 <ul>
@@ -301,9 +283,6 @@
                     <li>Monies owed to major suppliers</li>
                     <li>Payables days</li>
                 </ul>
-
-
-
                 <h6>8. REVENUE</h6>
                 <p>Key factors to consider are:</p>
                 <ul>
@@ -315,9 +294,6 @@
                     <li>Industry conditions</li>
                     <li>Goods returned or discounts</li>
                 </ul>
-
-
-
                 <h6>9. EXPENSES</h6>
                 <p>Key factors to consider are:</p>
                 <ul>
@@ -327,10 +303,6 @@
                     <li>Theoretical purchase changes</li>
                     <li>Monthly pattern of purchases</li>
                 </ul>
-
-
-
-
                 <h6>10. GROSS PROFIT</h6>
                 <p>Possible causes of changes could include changes in:</p>
                 <ul>
@@ -346,10 +318,6 @@
                     <li>Geographical area</li>
                     <li>Business activity or division</li>
                 </ul>
-
-
-                
-
                 <h6>11. PAYROLL COSTS</h6>
                 <ul>
                     <li>Changes in payroll levels of different grades</li>
@@ -369,9 +337,6 @@
                         </ul>
                     </li>
                 </ul>
-
-
-
                 <h6>12. OTHER PERFORMANCE STATEMENT CATEGORIES</h6>
                 <p>Points to consider include:</p>
                 <ul>
@@ -384,9 +349,6 @@
                     <li>Signs of future commitments</li>
                     <li>Signs of future commitments</li>
                 </ul>
-
-
-
                 <h6>13. KEY BUSINESS RATIOS</h6>
                 <p>There are four main categories as follows:</p>
                 <ul>
@@ -395,9 +357,6 @@
                     <li>Liquidity</li>
                     <li>Solvency</li>
                 </ul>
-
-
-
                 <h6>13.1	PROFITABILITY AND RETURNS</h6>
                 <table class="table table-bordered">
                     <tr>
@@ -416,8 +375,6 @@
                         </td>
                     </tr>
                 </table>
-
-
                 <table class="table table-bordered">
                     <tr>
                         <td><h6>Net Profit Margin</h6></td>
@@ -430,8 +387,6 @@
                         </td>
                     </tr>
                 </table>
-
-
                 <table class="table table-bordered">
                     <tr>
                         <td><h6>Shareholders’ Return</h6></td>
@@ -444,11 +399,6 @@
                         </td>
                     </tr>
                 </table>
-
-
-
-
-
                 <table class="table table-bordered">
                     <tr>
                         <td><h6>Return on Capital Employed (ROCE)</h6></td>
@@ -462,12 +412,6 @@
                         </td>
                     </tr>
                 </table>
-
-
-
-
-
-
                 <table class="table table-bordered">
                     <tr>
                         <td><h6>Interest Cover</h6></td>
@@ -480,10 +424,6 @@
                         </td>
                     </tr>
                 </table>
-
-
-
-
                 <table class="table table-bordered">
                     <tr>
                         <td><h6>Interest Cover</h6></td>
@@ -496,10 +436,6 @@
                         </td>
                     </tr>
                 </table>
-
-
-
-
                 <h6>13.2	ACTIVITY</h6>
                 <table class="table table-bordered">
                     <tr>
@@ -512,8 +448,6 @@
                         </td>
                     </tr>
                 </table>
-
-
                 <table class="table table-bordered">
                     <tr>
                         <td><h6>Receivables Days</h6></td>
@@ -525,8 +459,6 @@
                         </td>
                     </tr>
                 </table>
-
-
                 <table class="table table-bordered">
                     <tr>
                         <td><h6>Payables Days</h6></td>
@@ -538,8 +470,6 @@
                         </td>
                     </tr>
                 </table>
-
-
                 <h6>13.3	LIQUIDITY</h6>
                 <table class="table table-bordered">
                     <tr>
@@ -552,7 +482,6 @@
                         </td>
                     </tr>
                 </table>
-
                 <table class="table table-bordered">
                     <tr>
                         <td><h6>Current Ratio</h6></td>
@@ -564,8 +493,6 @@
                         </td>
                     </tr>
                 </table>
-
-
                 <table class="table table-bordered">
                     <tr>
                         <td><h6>Gearing</h6></td>
@@ -581,8 +508,6 @@
                         </td>
                     </tr>
                 </table>
-
-
                 <table class="table table-bordered">
                     <tr>
                         <td><h6>Non-Current Assets : Long-Term Liabilities</h6></td>
@@ -594,8 +519,6 @@
                         </td>
                     </tr>
                 </table>
-
-
                 <table class="table table-bordered">
                     <tr>
                         <td><h6>Non-Current Assets : Equity</h6></td>
@@ -607,8 +530,6 @@
                         </td>
                     </tr>
                 </table>
-
-
                 <table class="table table-bordered">
                     <tr>
                         <td><h6>Current Liabilities : Equity</h6></td>
@@ -620,16 +541,9 @@
                         </td>
                     </tr>
                 </table>
-
-
-
-
-
-           
             </div>
         </div>
     </div>
-    
 </main>
 
 

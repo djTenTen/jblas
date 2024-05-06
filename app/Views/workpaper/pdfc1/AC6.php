@@ -1,28 +1,21 @@
 <?php
-
-
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
-
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
-
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
 // set margins
 $pdf->SetMargins(25,15,15);  
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
@@ -32,27 +25,18 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 $pdf->setPrintHeader(false);
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
-
-
 // ---------------------------------------------------------
 // set font
-
-
-
 // add a page
 $pdf->AddPage();
 //$pdf->SetPageSize('A4');
-
-
 $html =  "
     <style>
         *{
@@ -73,11 +57,9 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '
 <table>
     <tr>
@@ -103,11 +85,8 @@ $html .= '
     </tr>
 </table>
 ';
-
-
 $html .= '<h3>RISK SUMMARY</h3>';
 $html .= '<p><b>This form should be completed when a narrative approach to inherent business risk assessment is undertaken. </b> If more than one risk level applies, add additional lines as appropriate.</p>';
-
 $html .= '
     <table>
     <thead >
@@ -115,7 +94,6 @@ $html .= '
             <th></th>
             <th  colspan="2" class="cent">Risk Assessment</th>
             <th class="cent">Reference</th>
-
         </tr>
         <tr>
             <th class="cent" style="width: 50%;">Question</th>
@@ -136,7 +114,6 @@ $html .= '
             <td class="bo" style="width: 16%;">'.$r['reference'].'</td>
         </tr>
         ';
-
         if($r['question'] == 'Control environment'){
             $html .= '
             <tr>
@@ -156,7 +133,6 @@ $html .= '
         </tbody>
     </table>';
 $pdf->writeHTML($html, true, false,'J', false, '');
-
 $pdf->AddPage();
 $html =  "
     <style>
@@ -178,11 +154,9 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '
 <h3>NARRATIVE RISK ASSESSMENTINHERENT BUSINESS RISK AND CONTROL ENVIRONMENT ASSESSMENT</h3>
 <p>The risk forms should not be completed until –</p>
@@ -207,9 +181,7 @@ $html .= '
 </ul>
 ';
 $pdf->writeHTML($html, true, false,'J', false, '');
-
 $pdf->AddPage('L');
-
 $html =  "
     <style>
         *{
@@ -230,7 +202,6 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
@@ -255,16 +226,13 @@ $html .= '
                 <br>
                 <br>
             </td>
-            
         </tr>
     </tbody>
 </table>
 <p>Comprehensive consideration should be given to all clients even those deemed to be low risk. As part of this review consideration must be given to the Company’s going concern status and I.T. risk.</p>
 ';
 $pdf->writeHTML($html, true, false,'J', false, '');
-
 $pdf->AddPage('L');
-
 $html =  "
     <style>
         *{
@@ -285,7 +253,6 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
@@ -310,7 +277,6 @@ $html .= '<p><b>Objective:</b> This form is designed to assess the adequacy of t
                 <br>
                 <br>
             </td>
-            
         </tr>
     </tbody>
 </table>
@@ -339,9 +305,7 @@ $html .= '<p><b>Objective:</b> This form is designed to assess the adequacy of t
 </table>
 ';
 $pdf->writeHTML($html, true, false,'J', false, '');
-
 $pdf->AddPage('L');
-
 $html =  "
     <style>
         *{
@@ -362,11 +326,9 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '
     <h3>Section 3 - UNDERSTANDING THE DESIGN AND IMPLEMENTATION OF INTERNAL CONTROLS</h3>
     <p><b>Objective:</b><br>The auditor is required to “obtain an understanding of internal control relevant to the audit. Although most controls relevant to the audit are likely to relate to financial reporting, not all controls that relate to financial reporting are relevant to the audit.” (paragraph 12 of PSA 315).</p>
@@ -385,11 +347,8 @@ $html .= '
     </ul>
     <p>NB: this requirement exists irrespective of whether the overall control environment has been deemed to be ineffective in section 2b above. </p>
 ';
-
 $pdf->writeHTML($html, true, false,'J', false, '');
-
 $pdf->AddPage('L');
-
 $html =  "
     <style>
         *{
@@ -410,11 +369,9 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
-
 $html .= '
     <table border="1">
         <thead>
@@ -465,9 +422,7 @@ $html .='
     </table>
 ';
 $pdf->writeHTML($html, true, false,'J', false, '');
-
 $pdf->AddPage('L');
-
 $html =  "
     <style>
         *{
@@ -488,7 +443,6 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
-            
         }
     </style>
 ";
@@ -501,34 +455,6 @@ $html .= '
     <li>Paragraph 31 of PSA 240 states "Management is in a unique position to perpetrate fraud because of management’s ability to manipulate accounting records and prepare fraudulent financial statements by overriding controls that otherwise appear to be operating effectively. Although the level of risk of management override of controls will vary from entity to entity, the risk is nevertheless present in all entities. Due to the unpredictable way in which such override could occur, it is a risk of material misstatement due to fraud and thus a significant risk". <br></li>
 </ol>
 ';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,'J', false, '');

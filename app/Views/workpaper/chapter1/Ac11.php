@@ -21,7 +21,6 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('success_update')) { ?>
@@ -43,9 +42,7 @@
                 <label for="">
                     Date of the meeting: <input type="date" class="form-control" name="datem" value="<?= $ac11['datem']?>" required>
                 </label>
-
                 <h6>Details of the assignment team:</h6>
-                
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -100,11 +97,9 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <p>* Prior to initialling this column all staff should review the assignment plan, assessment of materiality & risk and systems notes.</p>
                 <p>The team discussions on fraud, risk and related party transactions should be chaired by the A.E.P. (although the general briefing can be performed by another team member, i.e. the manager) and it should be undertaken ensuring that, when considering fraud, professional scepticism is applied. <strong> Team members should set aside the belief that the client is honest and acts with integrity. </strong></p>
                 <p>Where junior staff are briefed separately, this should be clearly documented.</p>
-
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -175,7 +170,6 @@
                     </tbody>
                 </table>
                 <br>
-
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -226,16 +220,11 @@
                             <td>6.	Timing of review procedures have been discussed and it has been documented who has responsibility to review which areas.</td>
                             <td><input type="text" class="form-control" name="sacb9" value="<?= $ac11['sacb9']?>"></td>
                         </tr>
-                        
                     </tbody>
-
-                     
                 </table>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-
             </div>
         </div>
     </div>
-    
 </main>
