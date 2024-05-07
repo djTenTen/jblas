@@ -17,9 +17,7 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
-
             <?php if (session()->get('added')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -56,15 +54,11 @@
                     </div>
                 </div>
             <?php  }?>
-
-
         <div class="card">
-
             <div class="card-body">
             <?php if(session()->get('allowed')->add == "Yes"){?>
             <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#adduser">Add Work Paper</button>
             <?php  }?>
-
             <table class="table table-hover table-sm" id="datatablesSimple">
                 <thead>
                     <tr>
@@ -112,18 +106,14 @@
                             <td><?= date('F d, Y h:i A', strtotime($r['added_on']))?></td>
                             <td><?= $r['added']?></td>
                             <td>
-                                
                             </td>
                         </tr>
                     <?php }?>
                 </tbody>
             </table>
-
         </div>
     </div>
 </main>
-
-
 <!-- Modal add-->
 <div class="modal fade" id="adduser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable" role="document">
@@ -134,7 +124,6 @@
             </div>
             <div class="modal-body">
                 <form id="" action="<?= base_url('auditsystem/workpaper/save')?>" method="post">
-
                 <div class="row gx-3">
                     <div class="col-md-3">
                         <div class="mb-3">
@@ -148,7 +137,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row gx-3">
                     <div class="col-md-3">
                         <div class="mb-3">
@@ -199,7 +187,6 @@
                             </select>
                         </div>
                     </div>
-
                     <!-- <div class="col-md-3">
                         <div class="mb-3">
                             <label class="small mb-1" for="org">First day in pack:</label>
@@ -220,7 +207,6 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="col-md-3">
                         <div class="mb-3">
                             <label class="small mb-1" for="org">Last day in pack:</label>
@@ -241,10 +227,7 @@
                             </select>
                         </div>
                     </div> -->
-
-
                 </div>
-
                 <div class="row gx-3">
                     <div class="col-md-6">
                         <div class="mb-3">
@@ -256,7 +239,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row gx-3">
                     <div class="col-md-3">
                         <div class="mb-3">
@@ -269,7 +251,6 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="col-md-3">
                         <div class="mb-3">
                             <label class="small mb-1" for="reviewer">Assign Reviewer:</label>
@@ -281,7 +262,6 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="col-md-3">
                         <div class="mb-3">
                             <label class="small mb-1" for="audmanager">Assign Audit Manager:</label>
@@ -294,7 +274,6 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
             <div class="modal-footer">
                     <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
@@ -304,4 +283,3 @@
         </div>
     </div>
 </div>
-

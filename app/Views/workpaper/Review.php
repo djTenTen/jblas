@@ -17,9 +17,7 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
-
         <?php if (session()->get('senttoaud')) { ?>
             <div class="alert alert-success alert-icon" role="alert">
                 <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -38,12 +36,8 @@
                 </div>
             </div>
         <?php  }?>
-
-
         <div class="card">
-
             <div class="card-body">
-        
             <table class="table table-hover table-sm" id="datatablesSimple">
                 <thead>
                     <tr>
@@ -102,7 +96,7 @@
                     <?php }?>
                 </tbody>
             </table>
-
+            </div>
         </div>
     </div>
 </main>
@@ -116,7 +110,6 @@
             </div>
             <div class="modal-body">
                 <form id="formsend" action="" method="post">
-                    
             </div>
             <div class="modal-footer">
                     <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
@@ -126,8 +119,6 @@
         </div>
     </div>
 </div>
-
-
 <!-- Modal REMARKS-->
 <div class="modal fade" id="remarks" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
@@ -138,7 +129,6 @@
             </div>
             <div class="modal-body">
                 <div id="rem">
-                    
                 </div>
             </div>
             <div class="modal-footer">
@@ -147,31 +137,23 @@
         </div>
     </div>
 </div>
-
-
-
-
 <script>
 $(document).ready(function () {
-    
     $('.sendtoauditor').on('click', function () {
         var file = $(this).data('file');
         var urlsubmit = $(this).data('urlsubmit');
         $('#formsend').html(`<h6>Are you sure to send this file <b>`+ file +`</b> for Correction?</h6></h6><textarea name="remarks" class="lh-base form-control" type="text" placeholder="Remarks/Comment" rows="4"></textarea>`);
         $('#formsend').attr('action',urlsubmit);
     });  
-
     $('.sendtomanager').on('click', function () {
         var file = $(this).data('file');
         var urlsubmit = $(this).data('urlsubmit');
         $('#formsend').html(`<h6>Are you sure to send this file <b>`+ file +`</b> to Manager?</h6></h6><textarea name="remarks" class="lh-base form-control" type="text" placeholder="Remarks/Comment" rows="4"></textarea>`);
         $('#formsend').attr('action',urlsubmit);
     }); 
-    
     $('.rem').on('click', function () {
         var remarks = $(this).data('remarks');
         $('#rem').html(remarks);
     });  
-
 });
 </script>

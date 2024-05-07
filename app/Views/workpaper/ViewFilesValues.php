@@ -23,7 +23,6 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('senttosup')) { ?>
@@ -53,7 +52,6 @@
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
                 <table class="table table-hover" >
                     <thead>
@@ -187,13 +185,10 @@
                         <?php }?>
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>
-    
 </main>
-
     <!-- Modal Send to Reviewer-->
     <div class="modal fade" id="tosend" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
@@ -213,7 +208,6 @@
             </div>
         </div>
     </div>
-
     <!-- Modal REMARKS-->
     <div class="modal fade" id="remarks" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
@@ -232,52 +226,41 @@
             </div>
         </div>
     </div>
-
-
     <script>
     $(document).ready(function () {
-        
         $('.sendtoreviewer').on('click', function () {
             var file = $(this).data('file');
             var urlsubmit = $(this).data('urlsubmit');
             $('#toconfirm').html(`<h6>Are you sure to send this file <b>`+ file +`</b> for Review?</h6><textarea name="remarks" class="lh-base form-control" type="text" placeholder="Remarks/Comment" rows="4"></textarea>`);
             $('#toconfirm').attr('action',urlsubmit);
         });  
-
         $('.sendtoauditor').on('click', function () {
             var file = $(this).data('file');
             var urlsubmit = $(this).data('urlsubmit');
             $('#toconfirm').html(`<h6>Are you sure to send back this file <b>`+ file +`</b> to Auditor for correction?</h6><textarea name="remarks" class="lh-base form-control" type="text" placeholder="Remarks/Comment" rows="4"></textarea>`);
             $('#toconfirm').attr('action',urlsubmit);
         });  
-
         $('.sendtomanager').on('click', function () {
             var file = $(this).data('file');
             var urlsubmit = $(this).data('urlsubmit');
             $('#toconfirm').html(`<h6>Are you sure to send this file <b>`+ file +`</b> to Manager for Approval?</h6><textarea name="remarks" class="lh-base form-control" type="text" placeholder="Remarks/Comment" rows="4"></textarea>`);
             $('#toconfirm').attr('action',urlsubmit);
         });  
-
         $('.sendbacktoreviewer').on('click', function () {
             var file = $(this).data('file');
             var urlsubmit = $(this).data('urlsubmit');
             $('#toconfirm').html(`<h6>Are you sure to send back this file <b>`+ file +`</b> to Reviewer for correction?</h6><textarea name="remarks" class="lh-base form-control" type="text" placeholder="Remarks/Comment" rows="4"></textarea>`);
             $('#toconfirm').attr('action',urlsubmit);
         }); 
-
         $('.approve').on('click', function () {
             var file = $(this).data('file');
             var urlsubmit = $(this).data('urlsubmit');
             $('#toconfirm').html(`<h6>Are you sure you approved this file <b>`+ file +`</b>? There are no more corrections?</h6><textarea name="remarks" class="lh-base form-control" type="text" placeholder="Remarks/Comment" rows="4"></textarea>`);
             $('#toconfirm').attr('action',urlsubmit);
         }); 
-
-
         $('.rem').on('click', function () {
             var remarks = $(this).data('remarks');
             $('#rem').html(remarks);
         });  
-
-
     });
     </script>

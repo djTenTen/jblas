@@ -13,7 +13,7 @@ $routes->get('register', 'UserController::register');
 $routes->post('signup', 'UserController::signup');
 $routes->get('403', 'ErrorController::error403');
 $routes->get('401', 'ErrorController::error401');
-
+ 
 $routes->group('', ['filter' => 'auth'], function ($auth) {
 
     /**
