@@ -1,4 +1,9 @@
-<?php \Config\Services::session(); ?>
+<?php 
+    \Config\Services::session(); 
+    if(session()->get('authentication')){
+        return redirect()->to(site_url('auditsystem'));
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

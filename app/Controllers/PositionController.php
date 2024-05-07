@@ -65,6 +65,8 @@ class PositionController extends BaseController{
             'preparer' => $this->request->getPost('preparer'),
             'reviewer' => $this->request->getPost('reviewer'),
             'audmanager' => $this->request->getPost('audmanager'),
+            'position' => $this->request->getPost('position'),
+            'hat' => $this->request->getPost('hat'),
             'user' => $this->request->getPost('user'),
         ];
 
@@ -114,6 +116,8 @@ class PositionController extends BaseController{
             'preparer' => $this->request->getPost('preparer'),
             'reviewer' => $this->request->getPost('reviewer'),
             'audmanager' => $this->request->getPost('audmanager'),
+            'position' => $this->request->getPost('position'),
+            'hat' => $this->request->getPost('hat'),
             'user' => $this->request->getPost('user'),
         ];
 

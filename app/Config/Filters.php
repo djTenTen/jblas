@@ -9,7 +9,21 @@ use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
 use App\Filters\Auth;
-use App\Filters\Admin;
+use App\Filters\Client;
+use App\Filters\Client_cl;
+use App\Filters\Client_sd;
+use App\Filters\Manager;
+use App\Filters\Auditor;
+use App\Filters\WorkPaper;
+use App\Filters\WorkPaper_preparer;
+use App\Filters\WorkPaper_reviewer;
+use App\Filters\WorkPaper_audmanager;
+use App\Filters\Firm;
+use App\Filters\Setting;
+use App\Filters\Setting_user;
+use App\Filters\Setting_pos;
+use App\Filters\Setting_hat;
+
 class Filters extends BaseConfig
 {
     /**
@@ -26,7 +40,21 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'auth'          => Auth::class,
-        'admin'         => Admin::class,
+        'client'        => Client::class,
+        'client_cl'     => Client_cl::class,
+        'client_sd'     => Client_sd::class,
+        'manager'       => Manager::class,
+        'auditor'       => Auditor::class,
+        'workp'         => WorkPaper::class,
+        'preparer'      => WorkPaper_preparer::class,
+        'reviewer'      => WorkPaper_reviewer::class,
+        'audmanager'    => WorkPaper_audmanager::class,
+        'firm'          => Firm::class,
+        'setting'       => Setting::class,
+        'settinguser'   => Setting_user::class,
+        'settingpos'   => Setting_pos::class,
+        'settinghat'   => Setting_hat::class,
+        
     ];
 
     /**
@@ -41,13 +69,28 @@ class Filters extends BaseConfig
             // 'csrf',
             // 'invalidchars',
             
+            
+            
         ],
         'after' => [
             'toolbar',
             // 'honeypot',
             // 'secureheaders',
-            'admin',
             'auth',
+            'client',
+            'client_cl',
+            'client_sd',
+            'manager',
+            'auditor',
+            'workp',
+            'preparer',
+            'reviewer',
+            'audmanager',
+            'firm',
+            'setting',
+            'settinguser',
+            'settingpos',
+            'settinghat',
             
         ],
     ];
