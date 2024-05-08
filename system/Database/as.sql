@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2024 at 03:16 AM
+-- Generation Time: May 08, 2024 at 06:07 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -6200,7 +6200,7 @@ CREATE TABLE `tbl_position` (
 --
 
 INSERT INTO `tbl_position` (`posID`, `position`, `allowed`, `status`, `added_on`, `updated_on`) VALUES
-(1, 'Admin', '{\"add\":\"Yes\",\"edit\":\"Yes\",\"acin\":\"Yes\",\"clm\":\"Yes\",\"cl\":\"Yes\",\"sd\":\"Yes\",\"audm\":\"Yes\",\"aud\":\"Yes\",\"frm\":\"Yes\",\"sett\":\"Yes\",\"dash\":\"Yes\",\"workp\":\"Yes\",\"preparer\":null,\"reviewer\":null,\"audmanager\":\"Yes\",\"user\":\"Yes\"}', 'Active', '2024-04-03 20:34:51', '2024-04-25 13:46:46'),
+(1, 'Admin', '{\"add\":\"Yes\",\"edit\":\"Yes\",\"acin\":\"Yes\",\"clm\":\"Yes\",\"cl\":\"Yes\",\"sd\":\"Yes\",\"audm\":\"Yes\",\"aud\":\"Yes\",\"frm\":\"Yes\",\"sett\":\"Yes\",\"dash\":\"Yes\",\"workp\":\"Yes\",\"preparer\":\"Yes\",\"reviewer\":\"Yes\",\"audmanager\":\"Yes\",\"position\":\"Yes\",\"hat\":\"Yes\",\"user\":\"Yes\"}', 'Active', '2024-04-03 20:34:51', '2024-05-07 10:45:17'),
 (2, 'Auditor', '{\"add\":null,\"edit\":\"Yes\",\"acin\":null,\"clm\":\"Yes\",\"cl\":null,\"sd\":\"Yes\",\"audm\":null,\"aud\":null,\"frm\":null,\"sett\":null,\"dash\":null,\"workp\":\"Yes\",\"preparer\":\"Yes\",\"reviewer\":null,\"audmanager\":null,\"user\":null}', 'Active', '2024-04-03 21:18:14', '2024-04-25 13:24:58'),
 (3, 'Auditing Firm', '{\"add\":\"Yes\",\"edit\":\"Yes\",\"acin\":\"Yes\",\"clm\":\"Yes\",\"cl\":\"Yes\",\"sd\":\"Yes\",\"audm\":\"Yes\",\"aud\":\"Yes\",\"frm\":null,\"sett\":null,\"dash\":null,\"workp\":\"Yes\",\"preparer\":null,\"reviewer\":null,\"audmanager\":\"Yes\",\"user\":null}', 'Active', '2024-04-03 22:00:42', '2024-04-25 13:24:45'),
 (4, 'Supervisor', '{\"add\":\"Yes\",\"edit\":\"Yes\",\"acin\":null,\"clm\":\"Yes\",\"cl\":null,\"sd\":\"Yes\",\"audm\":\"Yes\",\"aud\":\"Yes\",\"frm\":null,\"sett\":null,\"dash\":null,\"workp\":\"Yes\",\"preparer\":null,\"reviewer\":\"Yes\",\"audmanager\":null,\"user\":null}', 'Active', '2024-04-25 13:25:42', NULL),
@@ -6237,16 +6237,17 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`userID`, `name`, `email`, `address`, `contact`, `pass`, `firm`, `position`, `type`, `verified`, `status`, `two_factor_secret`, `email_verify_at`, `added_on`, `signature`, `photo`, `updated_on`) VALUES
-(1, 'Davies John Boco', 'myemail@gmail.com', 'Pampanga', '09369690104', 'a9f23c616642edfe677d3f49a28b7c87d2da6dae94e3359addd72add6d93c9e921367526a039e56dfb872b9aa7349fc1929f0abfadbb5b58e01e571eb67c0184cqsEIqpDwktYw2V7rVweRl6KzhA=', '1', '1', 'Admin', 'Yes', 'Active', NULL, '0000-00-00', '2024-04-03 14:09:35', '1.png', '1.png', '0000-00-00'),
+(1, 'Davies John Boco', 'myemail@gmail.com', 'Pampanga', '09369690104', 'a9f23c616642edfe677d3f49a28b7c87d2da6dae94e3359addd72add6d93c9e921367526a039e56dfb872b9aa7349fc1929f0abfadbb5b58e01e571eb67c0184cqsEIqpDwktYw2V7rVweRl6KzhA=', '1', '1', 'Admin', 'Yes', 'Active', NULL, '0000-00-00', '2024-04-03 14:09:35', '1714540092_6b215074a1d5e014fddb.png', '1714540948_46e5d7a34c07ebd9bff5.jpeg', '0000-00-00'),
 (4, 'Juan Dela Cruz', 'lakadmatatag@gmail.com', NULL, NULL, 'd1150fdeeec0489fa0933a0f7e7bc9a475dcf8167a99a19859ce9eba6c762c2fc3a6aa5b555986e1cf5d7fdaf721083c7989823885339db2009652d09b731ed2dW+JfanePBaVA5Srm1195mQvi9Q3paul', '4', '2', 'Auditor', 'Yes', 'Active', NULL, '2024-04-03 14:53:13', '2024-04-03 14:44:35', NULL, NULL, '2024-04-04 22:53:47'),
 (6, 'JOHN CARLO', 'mymail@gmail.com', NULL, NULL, 'e0146d9e5a0056451aa3ca3a979357beeb29996349fcc750cab0a4b54f744332e1317f6809ccdaeb91541cc4c20dbe919811e2ab1de262d78d0f59f7d955862aEnP0fg1UdwM0Lr/aDXKE8CH2mz11W97z', '1', '3', 'Auditing Firm', 'Yes', 'Active', NULL, '2024-04-04 20:17:50', '2024-04-03 14:57:42', NULL, NULL, '2024-04-04 20:17:50'),
-(7, 'DJ', 'djrboco@hccp', NULL, NULL, 'e0146d9e5a0056451aa3ca3a979357beeb29996349fcc750cab0a4b54f744332e1317f6809ccdaeb91541cc4c20dbe919811e2ab1de262d78d0f59f7d955862aEnP0fg1UdwM0Lr/aDXKE8CH2mz11W97z', '1', '2', 'Audit Manager', 'Yes', 'Active', NULL, '2024-04-04 20:17:28', '2024-04-04 18:36:28', NULL, NULL, '2024-04-04 20:17:28'),
+(7, 'DJ', 'djrboco@hccp', NULL, NULL, 'e0146d9e5a0056451aa3ca3a979357beeb29996349fcc750cab0a4b54f744332e1317f6809ccdaeb91541cc4c20dbe919811e2ab1de262d78d0f59f7d955862aEnP0fg1UdwM0Lr/aDXKE8CH2mz11W97z', '1', '5', 'Audit Manager', 'Yes', 'Active', NULL, '2024-04-04 20:17:28', '2024-04-04 18:36:28', NULL, NULL, '2024-04-04 20:17:28'),
 (8, 'Dhay Dhay', 'sample@gmail.com', NULL, NULL, 'f5e3d336c3ee6d762f78cc79e5d2d30f4ac1913669d26fc05233fa8343aaa197d15b69171ac23d700e32688c066dc60362f516672330bb1edbf703c3c9982453JHNRFYB8VtGAs6s5Hw5E2G0PV0QKVYET', '1', '2', 'Preparer', 'Yes', 'Active', NULL, '0000-00-00', '2024-04-04 20:23:23', '1714015590_0a0b78180876a495f898.png', NULL, '2024-04-23 14:17:44'),
-(9, 'sample', 'samplemail@gmail.com', NULL, NULL, 'bc6c5f74f7db7cbafb6ae9d1a013ab709c6f6a5db7fcc254174762ba2061129bbbd9087652d1dce9d0e0614a32c1dc08ed70e4163fd1e68f0f5b0188067c1d2aiHwV9Tl3DoEg+dD0F23JhcWEtQiwaQnQ', '1', '2', 'Reviewer', 'Yes', 'Active', NULL, '0000-00-00', '2024-04-05 18:49:53', NULL, NULL, '2024-04-05 19:07:09'),
+(9, 'sample', 'samplemail@gmail.com', NULL, NULL, 'bc6c5f74f7db7cbafb6ae9d1a013ab709c6f6a5db7fcc254174762ba2061129bbbd9087652d1dce9d0e0614a32c1dc08ed70e4163fd1e68f0f5b0188067c1d2aiHwV9Tl3DoEg+dD0F23JhcWEtQiwaQnQ', '1', '4', 'Reviewer', 'Yes', 'Active', NULL, '0000-00-00', '2024-04-05 18:49:53', NULL, NULL, '2024-04-05 19:07:09'),
 (10, 'Pedro Penduco', 'youremail@gmail.com', NULL, NULL, 'e97d009ca965f5e75ce67989df65b6d709776141d20c9418f61b424ee18a339d6bbd7551c6b8d6a6fd2a5166943e497f3eeeb7e16de4914f52c6378e33f7c45bE+sT2D+16gKlelTh0/lbRu/qXxptBOqt', '8', '3', 'Auditing Firm', 'No', 'Active', NULL, '0000-00-00', '2024-04-22 14:27:38', NULL, NULL, '0000-00-00'),
 (11, '111', '23123123@gmail.com', NULL, NULL, '657a0b676d03db463af5377bbfca6efae2813133abb4625c7f32c590084f4e789c4976787827799fb4a139475a22c871d9cea8ec8c05aa64b76f05eafd6fc336WFjNgUi6FqNJDB24lHibS8ePQqji6k88', '9', '3', 'Auditing Firm', 'No', 'Active', NULL, '0000-00-00', '2024-04-22 16:35:37', NULL, NULL, '0000-00-00'),
 (12, 'qwer', '123@gmail.com', NULL, NULL, 'c473935c35da89e09e96061075fe1842f7ddd91ee83f520f71e3004260955047e9ff6e78a3f69006a0fa3574a1543a299921ff2a2c009120321adc0bea4baa69BD+loJ7gk/v4LHSvz2ZUZyfIvgdqt7YD', '10', '3', 'Auditing Firm', 'No', 'Active', NULL, '0000-00-00', '2024-04-22 16:48:03', NULL, NULL, '2024-04-22 17:52:18'),
-(13, 'Juan DC', 'dc@gmail.com', NULL, NULL, 'ca628c371a855926385355357754922500d45e74508c67af10c8c00c2c566f858b3669985d51904dc100c400a38096468c035b49172ddd7764059ace7294ee8a8Qv114seC4YMVXfV3Pm1bO1PenIhxHpR', '1', '2', 'Preparer', 'No', 'Active', NULL, '0000-00-00', '2024-04-25 11:26:30', '1714015590_0a0b78180876a495f898.png', NULL, '0000-00-00');
+(13, 'Juan DC', 'dc@gmail.com', NULL, NULL, 'ca628c371a855926385355357754922500d45e74508c67af10c8c00c2c566f858b3669985d51904dc100c400a38096468c035b49172ddd7764059ace7294ee8a8Qv114seC4YMVXfV3Pm1bO1PenIhxHpR', '1', '2', 'Preparer', 'No', 'Active', NULL, '0000-00-00', '2024-04-25 11:26:30', '1714015590_0a0b78180876a495f898.png', NULL, '0000-00-00'),
+(14, 'Eva Yabut', 'eva@gmail.com', 'Sta. Ana Pampanga', '09369690104', 'e43bb41447914a9770f93b87fd613e988164ddac9254ddd8d2110c8849e55fe2e7ab2fa60c6731d011e0f63ba9692948f89640e7ca5cf377a0fb6ed630677151TpeBtE4VjI2I42cfY4CBlJ9VXbHcxj8S', '1', '4', 'Reviewer', 'No', 'Active', NULL, '0000-00-00', '2024-05-01 11:40:59', '1714534859_b90d800ed82b891bf91a.png', NULL, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -6525,7 +6526,7 @@ ALTER TABLE `tbl_position`
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tbl_workpaper`
