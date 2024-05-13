@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2024 at 01:21 PM
+-- Generation Time: May 13, 2024 at 03:37 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -6158,14 +6158,39 @@ INSERT INTO `tbl_client_files_c3` (`acID`, `firmID`, `workpaper`, `clientID`, `c
 CREATE TABLE `tbl_client_file_index` (
   `cfiID` int(11) NOT NULL,
   `client` varchar(20) DEFAULT NULL,
+  `firm` varchar(20) DEFAULT NULL,
   `workpaper` varchar(20) DEFAULT NULL,
   `index` varchar(20) DEFAULT NULL,
   `account_code` varchar(20) DEFAULT NULL,
   `account` varchar(300) DEFAULT NULL,
   `account_type` varchar(300) DEFAULT NULL,
   `dytd` varchar(300) DEFAULT NULL,
-  `cytd` varchar(300) DEFAULT NULL
+  `cytd` varchar(300) DEFAULT NULL,
+  `added_by` varchar(20) DEFAULT NULL,
+  `added_on` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_client_file_index`
+--
+
+INSERT INTO `tbl_client_file_index` (`cfiID`, `client`, `firm`, `workpaper`, `index`, `account_code`, `account`, `account_type`, `dytd`, `cytd`, `added_by`, `added_on`) VALUES
+(1, '5', '1', '4', '4', '210', 'Sale of Services', 'Revenue', '0', '7875215', '8', '2024-05-13 21:26:29'),
+(2, '5', '1', '4', '8', '310', 'Cost of Goods Sold', 'Direct Costs', '5415788', '0', '8', '2024-05-13 21:26:29'),
+(3, '5', '1', '4', '11', '429', 'Salaries and Wages', 'Expense', '338000', '0', '8', '2024-05-13 21:26:29'),
+(4, '5', '1', '4', '8', '431', 'SSS, GSIS, Philhealth, HDMF and Other Contributions', 'Expense', '33120', '0', '8', '2024-05-13 21:26:29'),
+(5, '5', '1', '4', '7', '432', 'Taxes and Licenses', 'Expense', '20339', '0', '8', '2024-05-13 21:26:29'),
+(6, '5', '1', '4', '12', '435', 'Transportation and Travel', 'Expense', '306921', '0', '8', '2024-05-13 21:26:29'),
+(7, '5', '1', '4', '15', '601', 'Cash in Bank', 'Current Asset', '3501263.87', '0', '8', '2024-05-13 21:26:29'),
+(8, '5', '1', '4', '11', '611', 'Accounts Receivable', 'Current Asset', '1735000', '0', '8', '2024-05-13 21:26:29'),
+(9, '5', '1', '4', '6', '622', 'Creditable Tax Withheld', 'Current Asset', '553539', '0', '8', '2024-05-13 21:26:29'),
+(10, '5', '1', '4', '8', '631', 'Inventory, Ending', 'Current Asset', '471000', '0', '8', '2024-05-13 21:26:29'),
+(11, '5', '1', '4', '9', '710', 'Office Equipment', 'Fixed Asset', '15238000', '0', '8', '2024-05-13 21:26:29'),
+(12, '5', '1', '4', '10', '711', 'Less Accumulated Depreciation on Office Equipment', 'Fixed Asset', '0', '235000', '8', '2024-05-13 21:26:29'),
+(13, '5', '1', '4', '14', '801', 'Accounts Payable', 'Current Liability', '0', '3500', '8', '2024-05-13 21:26:29'),
+(14, '5', '1', '4', '7', '880', 'Long-Term Liabilities', 'Non-current Liability', '0', '5718554', '8', '2024-05-13 21:26:29'),
+(15, '5', '1', '4', '13', '900', 'Owner\'s Capital', 'Equity', '0', '13302057', '8', '2024-05-13 21:26:29'),
+(16, '5', '1', '4', '12', '960', 'Retained Earnings', 'Equity', '0', '478644.87', '8', '2024-05-13 21:26:29');
 
 -- --------------------------------------------------------
 
@@ -6589,7 +6614,7 @@ ALTER TABLE `tbl_client_files_c3`
 -- AUTO_INCREMENT for table `tbl_client_file_index`
 --
 ALTER TABLE `tbl_client_file_index`
-  MODIFY `cfiID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cfiID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tbl_file_index`
