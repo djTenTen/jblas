@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2024 at 06:07 AM
+-- Generation Time: May 13, 2024 at 01:21 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -6152,6 +6152,67 @@ INSERT INTO `tbl_client_files_c3` (`acID`, `firmID`, `workpaper`, `clientID`, `c
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_client_file_index`
+--
+
+CREATE TABLE `tbl_client_file_index` (
+  `cfiID` int(11) NOT NULL,
+  `client` varchar(20) DEFAULT NULL,
+  `workpaper` varchar(20) DEFAULT NULL,
+  `index` varchar(20) DEFAULT NULL,
+  `account_code` varchar(20) DEFAULT NULL,
+  `account` varchar(300) DEFAULT NULL,
+  `account_type` varchar(300) DEFAULT NULL,
+  `dytd` varchar(300) DEFAULT NULL,
+  `cytd` varchar(300) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_file_index`
+--
+
+CREATE TABLE `tbl_file_index` (
+  `fiID` int(11) NOT NULL,
+  `section` varchar(20) DEFAULT NULL,
+  `desc` varchar(300) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_file_index`
+--
+
+INSERT INTO `tbl_file_index` (`fiID`, `section`, `desc`) VALUES
+(1, '-', 'Copy of the signed financial statements for the period'),
+(2, 'Aa', 'Finalisation'),
+(3, 'Ab', 'Checklists'),
+(4, 'Ac', 'Planning'),
+(5, 'Ad', 'Draft financial statements'),
+(6, 'B', 'Non-current assets - intangibles and goodwill'),
+(7, 'C', 'Non-current assets - property, plant and equipment'),
+(8, 'D / G', 'Investments'),
+(9, 'E', 'Inventories'),
+(10, 'F', 'Receivables'),
+(11, 'H', 'Cash at bank and in hand'),
+(12, 'I', 'Payables'),
+(13, 'J', 'Taxation'),
+(14, 'K', 'Transactions with related parties'),
+(15, 'L', 'Provisions for liabilities, contingencies and financial commitments'),
+(16, 'M', 'Equity and statutory information'),
+(17, 'N', 'Other audit areas'),
+(18, 'O', 'Revenue'),
+(19, 'P', 'Direct costs'),
+(20, 'Q', 'Other income and gains'),
+(21, 'R', 'Other expenditure and losses'),
+(22, 'S', 'Disclosure items for the financial statements'),
+(23, 'T', 'Transaction and control testing'),
+(24, 'U', 'Trial balance and adjustments'),
+(25, 'V', 'Accountancy analysis details');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_firm`
 --
 
@@ -6200,11 +6261,11 @@ CREATE TABLE `tbl_position` (
 --
 
 INSERT INTO `tbl_position` (`posID`, `position`, `allowed`, `status`, `added_on`, `updated_on`) VALUES
-(1, 'Admin', '{\"add\":\"Yes\",\"edit\":\"Yes\",\"acin\":\"Yes\",\"clm\":\"Yes\",\"cl\":\"Yes\",\"sd\":\"Yes\",\"audm\":\"Yes\",\"aud\":\"Yes\",\"frm\":\"Yes\",\"sett\":\"Yes\",\"dash\":\"Yes\",\"workp\":\"Yes\",\"preparer\":\"Yes\",\"reviewer\":\"Yes\",\"audmanager\":\"Yes\",\"position\":\"Yes\",\"hat\":\"Yes\",\"user\":\"Yes\"}', 'Active', '2024-04-03 20:34:51', '2024-05-07 10:45:17'),
-(2, 'Auditor', '{\"add\":null,\"edit\":\"Yes\",\"acin\":null,\"clm\":\"Yes\",\"cl\":null,\"sd\":\"Yes\",\"audm\":null,\"aud\":null,\"frm\":null,\"sett\":null,\"dash\":null,\"workp\":\"Yes\",\"preparer\":\"Yes\",\"reviewer\":null,\"audmanager\":null,\"user\":null}', 'Active', '2024-04-03 21:18:14', '2024-04-25 13:24:58'),
-(3, 'Auditing Firm', '{\"add\":\"Yes\",\"edit\":\"Yes\",\"acin\":\"Yes\",\"clm\":\"Yes\",\"cl\":\"Yes\",\"sd\":\"Yes\",\"audm\":\"Yes\",\"aud\":\"Yes\",\"frm\":null,\"sett\":null,\"dash\":null,\"workp\":\"Yes\",\"preparer\":null,\"reviewer\":null,\"audmanager\":\"Yes\",\"user\":null}', 'Active', '2024-04-03 22:00:42', '2024-04-25 13:24:45'),
-(4, 'Supervisor', '{\"add\":\"Yes\",\"edit\":\"Yes\",\"acin\":null,\"clm\":\"Yes\",\"cl\":null,\"sd\":\"Yes\",\"audm\":\"Yes\",\"aud\":\"Yes\",\"frm\":null,\"sett\":null,\"dash\":null,\"workp\":\"Yes\",\"preparer\":null,\"reviewer\":\"Yes\",\"audmanager\":null,\"user\":null}', 'Active', '2024-04-25 13:25:42', NULL),
-(5, 'Audit Manager', '{\"add\":\"Yes\",\"edit\":\"Yes\",\"acin\":\"Yes\",\"clm\":\"Yes\",\"cl\":\"Yes\",\"sd\":\"Yes\",\"audm\":\"Yes\",\"aud\":\"Yes\",\"frm\":null,\"sett\":null,\"dash\":null,\"workp\":\"Yes\",\"preparer\":null,\"reviewer\":null,\"audmanager\":\"Yes\",\"user\":null}', 'Active', '2024-04-25 13:26:32', NULL);
+(1, 'Admin', '{\"add\":\"Yes\",\"edit\":\"Yes\",\"acin\":\"Yes\",\"clm\":\"Yes\",\"cl\":\"Yes\",\"sd\":\"Yes\",\"audm\":\"Yes\",\"aud\":\"Yes\",\"frm\":\"Yes\",\"sett\":\"Yes\",\"dash\":\"Yes\",\"workp\":\"Yes\",\"preparer\":\"Yes\",\"reviewer\":\"Yes\",\"audmanager\":\"Yes\",\"position\":\"Yes\",\"hat\":\"Yes\",\"user\":\"Yes\"}', 'Active', '2024-04-03 20:34:51', '2024-05-09 15:22:04'),
+(2, 'Auditor', '{\"add\":null,\"edit\":\"Yes\",\"acin\":null,\"clm\":\"Yes\",\"cl\":null,\"sd\":\"Yes\",\"audm\":null,\"aud\":null,\"frm\":null,\"sett\":null,\"dash\":\"Yes\",\"workp\":\"Yes\",\"preparer\":\"Yes\",\"reviewer\":null,\"audmanager\":null,\"position\":null,\"hat\":null,\"user\":null}', 'Active', '2024-04-03 21:18:14', '2024-05-09 12:46:47'),
+(3, 'Auditing Firm', '{\"add\":\"Yes\",\"edit\":\"Yes\",\"acin\":\"Yes\",\"clm\":\"Yes\",\"cl\":\"Yes\",\"sd\":\"Yes\",\"audm\":\"Yes\",\"aud\":\"Yes\",\"frm\":null,\"sett\":null,\"dash\":\"Yes\",\"workp\":\"Yes\",\"preparer\":null,\"reviewer\":null,\"audmanager\":\"Yes\",\"position\":null,\"hat\":null,\"user\":null}', 'Active', '2024-04-03 22:00:42', '2024-05-09 12:46:52'),
+(4, 'Supervisor', '{\"add\":\"Yes\",\"edit\":\"Yes\",\"acin\":null,\"clm\":\"Yes\",\"cl\":null,\"sd\":\"Yes\",\"audm\":\"Yes\",\"aud\":\"Yes\",\"frm\":null,\"sett\":null,\"dash\":\"Yes\",\"workp\":\"Yes\",\"preparer\":null,\"reviewer\":\"Yes\",\"audmanager\":null,\"position\":null,\"hat\":null,\"user\":null}', 'Active', '2024-04-25 13:25:42', '2024-05-09 12:46:58'),
+(5, 'Audit Manager', '{\"add\":\"Yes\",\"edit\":\"Yes\",\"acin\":\"Yes\",\"clm\":\"Yes\",\"cl\":\"Yes\",\"sd\":\"Yes\",\"audm\":\"Yes\",\"aud\":\"Yes\",\"frm\":null,\"sett\":null,\"dash\":\"Yes\",\"workp\":\"Yes\",\"preparer\":null,\"reviewer\":null,\"audmanager\":\"Yes\",\"position\":null,\"hat\":null,\"user\":null}', 'Active', '2024-04-25 13:26:32', '2024-05-09 12:47:02');
 
 -- --------------------------------------------------------
 
@@ -6389,6 +6450,20 @@ ALTER TABLE `tbl_client_files_c3`
   ADD UNIQUE KEY `c1ID` (`acID`);
 
 --
+-- Indexes for table `tbl_client_file_index`
+--
+ALTER TABLE `tbl_client_file_index`
+  ADD PRIMARY KEY (`cfiID`),
+  ADD UNIQUE KEY `cfiID` (`cfiID`);
+
+--
+-- Indexes for table `tbl_file_index`
+--
+ALTER TABLE `tbl_file_index`
+  ADD PRIMARY KEY (`fiID`),
+  ADD UNIQUE KEY `fiID` (`fiID`);
+
+--
 -- Indexes for table `tbl_firm`
 --
 ALTER TABLE `tbl_firm`
@@ -6509,6 +6584,18 @@ ALTER TABLE `tbl_client_files_c2`
 --
 ALTER TABLE `tbl_client_files_c3`
   MODIFY `acID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=803;
+
+--
+-- AUTO_INCREMENT for table `tbl_client_file_index`
+--
+ALTER TABLE `tbl_client_file_index`
+  MODIFY `cfiID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_file_index`
+--
+ALTER TABLE `tbl_file_index`
+  MODIFY `fiID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `tbl_firm`
