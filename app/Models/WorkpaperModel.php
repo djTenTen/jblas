@@ -21,7 +21,7 @@ class WorkpaperModel extends  Model {
     protected $tblc3 = "tbl_client_files_c3";
 
     protected $tblfi = "tbl_file_index";
-
+    protected $tblcfi = "tbl_client_file_index";
     
     protected $time,$date;
     protected $crypt;
@@ -187,6 +187,32 @@ class WorkpaperModel extends  Model {
 
     }
 
+    public function importtb($req){
+
+        foreach($req['account_code'] as $i => $val){
+
+            $data = [
+                'client' => $req['client'],
+                'firm' => $req['firm'],
+                'workpaper' => $req['workpaper'],
+                'index' => $this->crypt->decrypt($req['fileindex'][$i]),
+                'account_code' => $req['account_code'][$i],
+                'account' => $req['account'][$i],
+                'account_type' => $req['account_type'][$i],
+                'dytd' => $req['dytd'][$i],
+                'cytd' =>$req['cytd'][$i],
+                'added_on'=> $this->date.' '.$this->time,
+                'added_by' => $req['uID'],
+            ];
+
+            $this->db->table($this->tblcfi)->insert($data);
+
+        }
+
+        return "uploaded";
+        
+
+    }
     public function saveworkpaper($req){
 
         $where = [

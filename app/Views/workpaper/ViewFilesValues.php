@@ -52,6 +52,15 @@
                     </div>
                 </div>
             <?php  }?>
+            <?php if (session()->get('excel_upload')) { ?>
+                <div class="alert alert-success alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Data Uploaded</h6>
+                        The Trial Balance data has been successfully uploaded
+                    </div>
+                </div>
+            <?php  }?>
 
             <div class="card-header border-bottom">
                 <!-- Wizard navigation-->
@@ -288,9 +297,9 @@
                         <div class="col-3">
                             <input type="file" name="" id="excelInput" accept=".xlsx, .xls" class="form form-control">
                         </div>
-                        
-                        <form action="" method="post">
-                            <table class="table table-hover table-sm">
+
+                        <form action="<?= base_url()?>auditsystem/wp/importtb/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                            <table class="table table-hover table-bordered table-sm">
                                 <thead id="tbhead">
                                     <tr>
                                         <th>Account Code</th>
@@ -306,7 +315,7 @@
                                 </tbody>
                             </table>
 
-                            <button type="button" class="btn btn-primary float-end">Import</button>
+                            <button type="submit" class="btn btn-primary float-end">Import</button>
                         </form>
                         
                     
@@ -354,7 +363,7 @@
         </div>
     </div>
     
-
+    
     
     <script>
     $(document).ready(function () {
@@ -375,7 +384,7 @@
 
                 // Convert the sheet data to JSON
                 var jsonData = XLSX.utils.sheet_to_json(sheet, { header: 'A' });
-                //console.log(jsonData);
+                jsonData = jsonData.slice(1);
                     
                 jsonData.forEach(function(cell) {
                     var rd = {
@@ -389,16 +398,21 @@
                 });
 
                 var row = '';
+                let debit = 0;
+                let credit = 0;
                 tb.forEach(function(r){
+
+                    debit += parseFloat(r.dytd);
+                    credit += parseFloat(r.cytd);
                     row += `
                         <tr>
-                            <td>`+r.account_code+`</td>
-                            <td>`+r.account+`</td>
-                            <td>`+r.account_type+`</td>
-                            <td>`+r.dytd+`</td>
-                            <td>`+r.cytd+`</td>
+                            <td><input type="text" class="form form-control" name="account_code[]" value="`+r.account_code+`" readonly></td>
+                            <td><input type="text" class="form form-control" name="account[]" value="`+r.account+`" readonly></td>
+                            <td><input type="text" class="form form-control" name="account_type[]" value="`+r.account_type+`" readonly></td>
+                            <td><input type="number" class="form form-control" name="dytd[]" value="`+r.dytd+`" readonly></td>
+                            <td><input type="number" class="form form-control" name="cytd[]" value="`+r.cytd+`" readonly></td>
                             <td>
-                                <select name="" id="" class="form form-select" required>
+                                <select name="fileindex[]" id="" class="form form-select" required>
                                     <option value="" selected>Select Index</option>
                                 <?php foreach($fi as $r){?>
                                     <option value="<?= $crypt->encrypt($r['fiID'])?>" ><?= $r['section'].' - '.$r['desc']?></option>
@@ -409,7 +423,14 @@
                     `;
                 });
 
-                console.log(tb);
+                row += `
+                    <tr>
+                        <td colspan="3" class="text-end"><b>Total</b></td>
+                        <td><b>₱ `+debit.toLocaleString('en-PH')+`</b></td>
+                        <td><b>₱ `+credit.toLocaleString('en-PH')+`</b></td>
+                        <td></td>
+                    </tr>
+                `;
 
                 $('#tbbody').append(row);
 

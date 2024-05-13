@@ -42,7 +42,8 @@ $routes->group('', ['filter' => 'auth'], function ($auth) {
             $prep->get('auditsystem/workpaper/prepare', 'WorkpaperController::prepare');
             $prep->post('auditsystem/wp/sendtoreview/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::sendtoreview/$1/$2/$3/$4/$5');
             $prep->post('auditsystem/wp/sendtoreviewer/(:any)', 'WorkpaperController::sendtoreviewer/$1');
-
+            $prep->post('auditsystem/wp/importtb/(:any)/(:any)/(:any)', 'WorkpaperController::importtb/$1/$2/$3');
+            
         });
 
         $workp->group('', ['filter' => 'reviewer'], function ($rev) {

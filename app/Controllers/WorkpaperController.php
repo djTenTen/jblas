@@ -147,6 +147,48 @@ class WorkpaperController extends BaseController{
 
     }
 
+    public function importtb($cID,$wpID,$name){
+
+        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dwpID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
+
+        $fID = $this->crypt->decrypt(session()->get('firmID'));
+        $uID = $this->crypt->decrypt(session()->get('userID'));
+
+        $validationRules = [
+            'fileindex' => 'required',
+        ];
+
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }
+
+        $req = [
+            'client' => $dcID,
+            'firm' => $fID,
+            'workpaper' => $dwpID,
+            'fileindex' => $this->request->getPost('fileindex'),
+            'account_code' => $this->request->getPost('account_code'),
+            'account' => $this->request->getPost('account'),
+            'account_type' => $this->request->getPost('account_type'),
+            'dytd' => $this->request->getPost('dytd'),
+            'cytd' => $this->request->getPost('cytd'),
+            'uID' => $uID,
+        ];
+
+        $res = $this->wpmodel->importtb($req);
+
+        if($res == "uploaded"){
+            session()->setFlashdata('excel_upload','excel_upload');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }
+
+    }
+
     public function sendtoreview($c,$ctID,$cID,$wpID,$name){
 
         $req = [
