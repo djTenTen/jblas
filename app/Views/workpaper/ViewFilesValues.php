@@ -284,39 +284,32 @@
 
                     <div class="tab-pane py-5 fade" id="wizard5" role="tabpanel" aria-labelledby="wizard5-tab">
 
-
-
-                        <input type="file" id="excelInput" accept=".xlsx, .xls">
-
-                        <table class="table table-hover table-sm">
-                            <thead id="tbhead">
-                                <tr>
-                                    <th>Account Code</th>
-                                    <th>Account</th>
-                                    <th>Account Type</th>
-                                    <th>Debit-Year to date</th>
-                                    <th>Credit-Year to date</th>
-                                    <th>Index</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbbody">
-
-                            </tbody>
-                        </table>
-
-                        <br><br>
-                        
                         <h3>Import Trial Balance</h3>
                         <div class="col-3">
-                            <input type="file" name="" id="" class="form form-control">
+                            <input type="file" name="" id="excelInput" accept=".xlsx, .xls" class="form form-control">
                         </div>
                         
+                        <form action="" method="post">
+                            <table class="table table-hover table-sm">
+                                <thead id="tbhead">
+                                    <tr>
+                                        <th>Account Code</th>
+                                        <th>Account</th>
+                                        <th>Account Type</th>
+                                        <th>Debit-Year to date</th>
+                                        <th>Credit-Year to date</th>
+                                        <th>Index</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbbody">
+
+                                </tbody>
+                            </table>
+
+                            <button type="button" class="btn btn-primary float-end">Import</button>
+                        </form>
                         
-                            <button type="button" class="btn btn-primary">Import</button>
-                        
-                        
-                             
-                       
+                    
                     </div>
                 </div>
             </div>
@@ -371,6 +364,8 @@
             var reader = new FileReader();
 
             reader.onload = function() {
+                
+                var tb = [];
                 var data = new Uint8Array(reader.result);
                 var workbook = XLSX.read(data, { type: 'array' });
 
@@ -379,45 +374,49 @@
                 var sheet = workbook.Sheets[sheetName];
 
                 // Convert the sheet data to JSON
-                var jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+                var jsonData = XLSX.utils.sheet_to_json(sheet, { header: 'A' });
+                //console.log(jsonData);
+                    
+                jsonData.forEach(function(cell) {
+                    var rd = {
+                        'account_code' : cell.A ,
+                        'account' : cell.B, 
+                        'account_type': cell.C,
+                        'dytd':cell.D,
+                        'cytd' : cell.E,
+                    };
+                    tb.push(rd);
+                });
 
-                //console.log(sheet);
-
-                // Clear existing table data
-                //$('#tbhead').empty();
-
-                // Add table headers
-                // var headerRow = '<tr>';
-                //     jsonData[0].forEach(function(cell) {
-                //     headerRow += '<th>' + cell + '</th>';
-                // });
-                // headerRow += '<th>Index</th>';
-                // headerRow += '</tr>';
-
-                // $('#tbhead').append(headerRow);
-
-                //Add table rows
-                for (var i = 1; i < jsonData.length; i++) {
-                    var row = '<tr>';
-                    jsonData[i].forEach(function(cell) {
-                        row += '<td><input type="text" class="form form-control form-control-sm" value="' + cell + '"></td>';
-                    });
+                var row = '';
+                tb.forEach(function(r){
                     row += `
-                    <td>
-                        <select name="" id="" class="form form-select" required>
-                            <option value="" selected>Select Index</option>
-                        <?php foreach($fi as $r){?>
-                            <option value="<?= $crypt->encrypt($r['fiID'])?>" ><?= $r['section'].' - '.$r['desc']?></option>
-                        <?php }?>
-                        </select>
-                    </td>
+                        <tr>
+                            <td>`+r.account_code+`</td>
+                            <td>`+r.account+`</td>
+                            <td>`+r.account_type+`</td>
+                            <td>`+r.dytd+`</td>
+                            <td>`+r.cytd+`</td>
+                            <td>
+                                <select name="" id="" class="form form-select" required>
+                                    <option value="" selected>Select Index</option>
+                                <?php foreach($fi as $r){?>
+                                    <option value="<?= $crypt->encrypt($r['fiID'])?>" ><?= $r['section'].' - '.$r['desc']?></option>
+                                <?php }?>
+                                </select>
+                            </td>
+                        </tr>
                     `;
-                    row += '</tr>';
-                    $('#tbbody').append(row);
-                }
+                });
+
+                console.log(tb);
+
+                $('#tbbody').append(row);
+
             };
 
             reader.readAsArrayBuffer(input.files[0]);
+
         });
 
 
