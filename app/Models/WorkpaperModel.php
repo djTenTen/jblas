@@ -20,6 +20,8 @@ class WorkpaperModel extends  Model {
     protected $tblc2 = "tbl_client_files_c2";
     protected $tblc3 = "tbl_client_files_c3";
 
+    protected $tblfi = "tbl_file_index";
+
     
     protected $time,$date;
     protected $crypt;
@@ -64,6 +66,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    public function getfileindex(){
+
+        $query = $this->db->table($this->tblfi)->get();
+        return $query->getResultArray();
+
+    }
+
     public function getfileinfoc1($wpID,$cID,$ctID){
 
         $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on
@@ -97,18 +106,19 @@ class WorkpaperModel extends  Model {
 
     }
 
-    public function getc1values($cID,$wpID,$status){
+    public function getc1values($cID,$wpID){
 
-        $query = $this->db->query("select DISTINCT title,c1t.code,c1titleID,c1.remarks,(select COUNT(*) from {$this->tblc1} WHERE {$this->tblc1}.c1tID = c1.c1tID and {$this->tblc1}.workpaper = {$wpID} and {$this->tblc1}.clientID = {$cID}) as x , (select COUNT(*) from {$this->tblc1} WHERE {$this->tblc1}.c1tID = c1.c1tID and {$this->tblc1}.workpaper = {$wpID} and {$this->tblc1}.clientID = {$cID} and `updated_on` IS NOT NULL) as y
+        $query = $this->db->query("select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+        (select COUNT(*) from {$this->tblc1} WHERE {$this->tblc1}.c1tID = c1.c1tID and {$this->tblc1}.workpaper = {$wpID} and {$this->tblc1}.clientID = {$cID}) as x , 
+        (select COUNT(*) from {$this->tblc1} WHERE {$this->tblc1}.c1tID = c1.c1tID and {$this->tblc1}.workpaper = {$wpID} and {$this->tblc1}.clientID = {$cID} and `updated_on` IS NOT NULL) as y
         from {$this->tblc1t} as c1t, {$this->tblc1} as c1
         where c1t.c1titleID = c1.c1tID
         and c1.clientID = {$cID}
-        and c1.workpaper = {$wpID}
-        and c1.status = '{$status}'");
+        and c1.workpaper = {$wpID}");
         return $query->getResultArray();
     }
 
-    public function getc2values($cID,$wpID,$status){
+    public function getc2values($cID,$wpID){
 
         $query = $this->db->query("select DISTINCT title,c2t.code,c2titleID,c2.remarks,
         (select COUNT(*) from {$this->tblc2} WHERE {$this->tblc2}.c2tID = c2.c2tID and {$this->tblc2}.workpaper = {$wpID} and {$this->tblc2}.clientID = {$cID}) as x ,
@@ -116,12 +126,11 @@ class WorkpaperModel extends  Model {
         from {$this->tblc2t} as c2t, {$this->tblc2} as c2
         where c2t.c2titleID = c2.c2tID
         and c2.clientID = {$cID}
-        and c2.workpaper = {$wpID}
-        and c2.status = '{$status}'");
+        and c2.workpaper = {$wpID}");
         return $query->getResultArray();
     }
 
-    public function getc3values($cID,$wpID,$status){
+    public function getc3values($cID,$wpID){
 
         $query = $this->db->query("select DISTINCT title,c3t.code,c3titleID,c3.remarks,
         (select COUNT(*) from {$this->tblc3} WHERE {$this->tblc3}.c3tID = c3.c3tID and {$this->tblc3}.workpaper = {$wpID} and {$this->tblc3}.clientID = {$cID}) as x ,
@@ -129,8 +138,7 @@ class WorkpaperModel extends  Model {
         from {$this->tblc3t} as c3t, {$this->tblc3} as c3
         where c3t.c3titleID = c3.c3tID
         and c3.clientID = {$cID}
-        and c3.workpaper = {$wpID}
-        and c3.status = '{$status}'");
+        and c3.workpaper = {$wpID}");
         return $query->getResultArray();
     }
 
