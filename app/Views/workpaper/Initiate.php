@@ -187,46 +187,7 @@
                             </select>
                         </div>
                     </div>
-                    <!-- <div class="col-md-3">
-                        <div class="mb-3">
-                            <label class="small mb-1" for="org">First day in pack:</label>
-                            <select name="" id="" class="form-select">
-                                <option value="" >End of Financial Year:</option>
-                                <option value="01-31">January</option>
-                                <option value="02-29">February</option>
-                                <option value="03-31">March</option>
-                                <option value="04-30">April</option>
-                                <option value="05-31">May</option>
-                                <option value="06-30">June</option>
-                                <option value="07-31">July</option>
-                                <option value="08-31">August</option>
-                                <option value="09-30">September</option>
-                                <option value="10-31">Otcober</option>
-                                <option value="11-30">November</option>
-                                <option value="12-31" selected>December</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="mb-3">
-                            <label class="small mb-1" for="org">Last day in pack:</label>
-                            <select name="" id="" class="form-select">
-                                <option value="" >End of Financial Year:</option>
-                                <option value="01-31">January</option>
-                                <option value="02-29">February</option>
-                                <option value="03-31">March</option>
-                                <option value="04-30">April</option>
-                                <option value="05-31">May</option>
-                                <option value="06-30">June</option>
-                                <option value="07-31">July</option>
-                                <option value="08-31">August</option>
-                                <option value="09-30">September</option>
-                                <option value="10-31">Otcober</option>
-                                <option value="11-30">November</option>
-                                <option value="12-31" selected>December</option>
-                            </select>
-                        </div>
-                    </div> -->
+                    
                 </div>
                 <div class="row gx-3">
                     <div class="col-md-6">

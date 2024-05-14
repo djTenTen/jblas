@@ -1,0 +1,517 @@
+INFO - 2024-05-14 10:29:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 10:29:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 10:29:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 10:29:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 10:29:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 10:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 10:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 10:58:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 10:58:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:18:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:18:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:43:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-14 11:43:30 --> mysqli_sql_exception: Column 'added_on' in field list is ambiguous in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select Distinct...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select Distinct...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select Distinct...')
+#3 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(196): CodeIgniter\Database\BaseConnection->query('select Distinct...')
+#4 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(93): App\Models\WorkpaperModel->getlatestupload('3', '5')
+#5 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb7...', 'a2ea716751df109...', 'Sample client 1...')
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-14 11:43:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'added_on' in field list is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(196): CodeIgniter\Database\BaseConnection->query('select Distinct added_on,added_by,name
+        from tbl_users as tu, tbl_client_file_index as cfi
+        where tu.userID = cfi.added_by
+        and cfi.workpaper = 5
+        and cfi.client = 3')
+ 2 APPPATH\Controllers\WorkpaperController.php(93): App\Models\WorkpaperModel->getlatestupload('3', '5')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-14 11:43:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'added_on' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select Distinct added_on,added_by,name
+        from tbl_users as tu, tbl_client_file_index as cfi
+        where tu.userID = cfi.added_by
+        and cfi.workpaper = 5
+        and cfi.client = 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select Distinct added_on,added_by,name
+        from tbl_users as tu, tbl_client_file_index as cfi
+        where tu.userID = cfi.added_by
+        and cfi.workpaper = 5
+        and cfi.client = 3')
+ 3 APPPATH\Models\WorkpaperModel.php(196): CodeIgniter\Database\BaseConnection->query('select Distinct added_on,added_by,name
+        from tbl_users as tu, tbl_client_file_index as cfi
+        where tu.userID = cfi.added_by
+        and cfi.workpaper = 5
+        and cfi.client = 3')
+ 4 APPPATH\Controllers\WorkpaperController.php(93): App\Models\WorkpaperModel->getlatestupload('3', '5')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-14 11:43:30 --> [Caused by] mysqli_sql_exception: Column 'added_on' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select Distinct added_on,added_by,name
+        from tbl_users as tu, tbl_client_file_index as cfi
+        where tu.userID = cfi.added_by
+        and cfi.workpaper = 5
+        and cfi.client = 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select Distinct added_on,added_by,name
+        from tbl_users as tu, tbl_client_file_index as cfi
+        where tu.userID = cfi.added_by
+        and cfi.workpaper = 5
+        and cfi.client = 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select Distinct added_on,added_by,name
+        from tbl_users as tu, tbl_client_file_index as cfi
+        where tu.userID = cfi.added_by
+        and cfi.workpaper = 5
+        and cfi.client = 3')
+ 4 APPPATH\Models\WorkpaperModel.php(196): CodeIgniter\Database\BaseConnection->query('select Distinct added_on,added_by,name
+        from tbl_users as tu, tbl_client_file_index as cfi
+        where tu.userID = cfi.added_by
+        and cfi.workpaper = 5
+        and cfi.client = 3')
+ 5 APPPATH\Controllers\WorkpaperController.php(93): App\Models\WorkpaperModel->getlatestupload('3', '5')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:43:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:43:55 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:44:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:44:08 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:45:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:45:10 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:45:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:45:11 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:46:42 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:46:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:46:44 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:46:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:46:47 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:46:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:46:48 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:46:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:46:49 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:46:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:46:49 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:46:50 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:46:50 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:46:59 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:47:00 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:47:00 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:47:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:47:01 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:47:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:47:11 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:50:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:50:10 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('01692c188784cb73a03656fca94cf7860fd0485a5bd486b350fec18acc017be6081e9b97dcfe0516a26667bde56ae7dacd52996cae52d1f23eb2077a38c206eaGl$VAh5pDuxkEEyoUx7Qicw=', 'a2ea716751df10905c2a13fd94ede9e7d7ac3a253f44827b766cc408adeb1228b7b98c5709e4d3730ce6ddf1b44ad6e88b625bb1150c20d0372bfa53f13a0c969nNjq31Q4NTliMJQRytQuVc=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:50:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:50:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:50:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:50:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:50:16 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('71b8bb853a8daac4bbe775659a0ad3f4266c4749b14b1b9a8d8e21bbd3703b4e36a0cf41a76fbd5daed37519271b25934e038790aff7f955b9b96030181696cdSYWoAbJr4DYPygB~DxbPfGw=', '7cffed859d01ed39e4468aa817b30be9919ba87bb730900a66af8c338a7959b1ee7c8328cd98eb083ad2280510c285cefa74df6d996199655b71dc5c82956f3eSrx4Ifiyon0U0B74R1OEjxM=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:50:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:50:48 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('71b8bb853a8daac4bbe775659a0ad3f4266c4749b14b1b9a8d8e21bbd3703b4e36a0cf41a76fbd5daed37519271b25934e038790aff7f955b9b96030181696cdSYWoAbJr4DYPygB~DxbPfGw=', '7cffed859d01ed39e4468aa817b30be9919ba87bb730900a66af8c338a7959b1ee7c8328cd98eb083ad2280510c285cefa74df6d996199655b71dc5c82956f3eSrx4Ifiyon0U0B74R1OEjxM=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:50:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:50:49 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('71b8bb853a8daac4bbe775659a0ad3f4266c4749b14b1b9a8d8e21bbd3703b4e36a0cf41a76fbd5daed37519271b25934e038790aff7f955b9b96030181696cdSYWoAbJr4DYPygB~DxbPfGw=', '7cffed859d01ed39e4468aa817b30be9919ba87bb730900a66af8c338a7959b1ee7c8328cd98eb083ad2280510c285cefa74df6d996199655b71dc5c82956f3eSrx4Ifiyon0U0B74R1OEjxM=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:52:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:52:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:52:49 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('71b8bb853a8daac4bbe775659a0ad3f4266c4749b14b1b9a8d8e21bbd3703b4e36a0cf41a76fbd5daed37519271b25934e038790aff7f955b9b96030181696cdSYWoAbJr4DYPygB~DxbPfGw=', '7cffed859d01ed39e4468aa817b30be9919ba87bb730900a66af8c338a7959b1ee7c8328cd98eb083ad2280510c285cefa74df6d996199655b71dc5c82956f3eSrx4Ifiyon0U0B74R1OEjxM=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:52:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:53:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:53:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:54:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:54:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:56:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-14 11:56:01 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 296.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(296): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 296)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('0cf4fbaf6622f91eba0c805b135ce6d9474ddf9678e7b5b76ed3e413ec1fd3c77f5f2fb5c887a49b6acca31ec7b29cdae6ca2961958bcf0e923defed625d95e1Zjf7ZN4HL7HqLf2F$4HHyL4=', 'dd7e3f41fb7b4c94a426a67b46db64078d716613af2a22ab31bd52931628bbc3c4e46013cf5e9d702b554d90f3826fd3395adeadefc8e4f7cf720b20d71e928cltFpMmIjwEAsrMiGpTi1uQA=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 11:56:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:59:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 11:59:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:02:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:02:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:03:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:03:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:03:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:03:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:03:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:04:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:04:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:04:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:04:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:04:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:04:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:04:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:04:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:04:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-05-14 12:04:46 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 1998.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc1\AC5.php(4): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2524): view('workpaper/pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC5', '78cdbe3d266500639eac0eea5a70969dce2543a3ffd07d47f35f14cbb333458bb15b919900a5aa3d7930e13ee132c639957640aca0b00295e0d1cb03738022955Bunk2urMUF2FLVOcRaKsj0=', '1cabdb25e5d74c2a2d9145986f94bd033ca4db06ccd266ac853befb40756efd0cf1b5b35114f2f2b2875c14d8aca1acfb667902c600e00c4c21ac3c7dc486eebE9BjzW9ceHnYE1jMiwHMw$U=', '70194ce3edd406978b7b76df1fb41264626d8c044f2d221e8d599f125b7f376e771289ce2ffaf0429bc15a6af085a8610f9f4672304a23981fa8359cbd2acb10tpqSWsFEJBkSiea1ijqYnNw=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-05-14 12:04:46 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $isunicode in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2024.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc1\AC5.php(4): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2524): view('workpaper/pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC5', '78cdbe3d266500639eac0eea5a70969dce2543a3ffd07d47f35f14cbb333458bb15b919900a5aa3d7930e13ee132c639957640aca0b00295e0d1cb03738022955Bunk2urMUF2FLVOcRaKsj0=', '1cabdb25e5d74c2a2d9145986f94bd033ca4db06ccd266ac853befb40756efd0cf1b5b35114f2f2b2875c14d8aca1acfb667902c600e00c4c21ac3c7dc486eebE9BjzW9ceHnYE1jMiwHMw$U=', '70194ce3edd406978b7b76df1fb41264626d8c044f2d221e8d599f125b7f376e771289ce2ffaf0429bc15a6af085a8610f9f4672304a23981fa8359cbd2acb10tpqSWsFEJBkSiea1ijqYnNw=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-05-14 12:04:46 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2040.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc1\AC5.php(4): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2524): view('workpaper/pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC5', '78cdbe3d266500639eac0eea5a70969dce2543a3ffd07d47f35f14cbb333458bb15b919900a5aa3d7930e13ee132c639957640aca0b00295e0d1cb03738022955Bunk2urMUF2FLVOcRaKsj0=', '1cabdb25e5d74c2a2d9145986f94bd033ca4db06ccd266ac853befb40756efd0cf1b5b35114f2f2b2875c14d8aca1acfb667902c600e00c4c21ac3c7dc486eebE9BjzW9ceHnYE1jMiwHMw$U=', '70194ce3edd406978b7b76df1fb41264626d8c044f2d221e8d599f125b7f376e771289ce2ffaf0429bc15a6af085a8610f9f4672304a23981fa8359cbd2acb10tpqSWsFEJBkSiea1ijqYnNw=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-05-14 12:04:46 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $setbom in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2060.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc1\AC5.php(4): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2524): view('workpaper/pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC5', '78cdbe3d266500639eac0eea5a70969dce2543a3ffd07d47f35f14cbb333458bb15b919900a5aa3d7930e13ee132c639957640aca0b00295e0d1cb03738022955Bunk2urMUF2FLVOcRaKsj0=', '1cabdb25e5d74c2a2d9145986f94bd033ca4db06ccd266ac853befb40756efd0cf1b5b35114f2f2b2875c14d8aca1acfb667902c600e00c4c21ac3c7dc486eebE9BjzW9ceHnYE1jMiwHMw$U=', '70194ce3edd406978b7b76df1fb41264626d8c044f2d221e8d599f125b7f376e771289ce2ffaf0429bc15a6af085a8610f9f4672304a23981fa8359cbd2acb10tpqSWsFEJBkSiea1ijqYnNw=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-05-14 12:04:46 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2077.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc1\AC5.php(4): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2524): view('workpaper/pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC5', '78cdbe3d266500639eac0eea5a70969dce2543a3ffd07d47f35f14cbb333458bb15b919900a5aa3d7930e13ee132c639957640aca0b00295e0d1cb03738022955Bunk2urMUF2FLVOcRaKsj0=', '1cabdb25e5d74c2a2d9145986f94bd033ca4db06ccd266ac853befb40756efd0cf1b5b35114f2f2b2875c14d8aca1acfb667902c600e00c4c21ac3c7dc486eebE9BjzW9ceHnYE1jMiwHMw$U=', '70194ce3edd406978b7b76df1fb41264626d8c044f2d221e8d599f125b7f376e771289ce2ffaf0429bc15a6af085a8610f9f4672304a23981fa8359cbd2acb10tpqSWsFEJBkSiea1ijqYnNw=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-05-14 12:04:46 --> [DEPRECATED] Required parameter $currentfont follows optional parameter $str in APPPATH\Libraries\tcpdf\include\tcpdf_fonts.php on line 2093.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(115): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc1\AC5.php(4): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2524): view('workpaper/pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC5', '78cdbe3d266500639eac0eea5a70969dce2543a3ffd07d47f35f14cbb333458bb15b919900a5aa3d7930e13ee132c639957640aca0b00295e0d1cb03738022955Bunk2urMUF2FLVOcRaKsj0=', '1cabdb25e5d74c2a2d9145986f94bd033ca4db06ccd266ac853befb40756efd0cf1b5b35114f2f2b2875c14d8aca1acfb667902c600e00c4c21ac3c7dc486eebE9BjzW9ceHnYE1jMiwHMw$U=', '70194ce3edd406978b7b76df1fb41264626d8c044f2d221e8d599f125b7f376e771289ce2ffaf0429bc15a6af085a8610f9f4672304a23981fa8359cbd2acb10tpqSWsFEJBkSiea1ijqYnNw=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-05-14 12:04:46 --> [DEPRECATED] Required parameter $tagvspaces follows optional parameter $default_css in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 1139.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc1\AC5.php(4): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2524): view('workpaper/pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC5', '78cdbe3d266500639eac0eea5a70969dce2543a3ffd07d47f35f14cbb333458bb15b919900a5aa3d7930e13ee132c639957640aca0b00295e0d1cb03738022955Bunk2urMUF2FLVOcRaKsj0=', '1cabdb25e5d74c2a2d9145986f94bd033ca4db06ccd266ac853befb40756efd0cf1b5b35114f2f2b2875c14d8aca1acfb667902c600e00c4c21ac3c7dc486eebE9BjzW9ceHnYE1jMiwHMw$U=', '70194ce3edd406978b7b76df1fb41264626d8c044f2d221e8d599f125b7f376e771289ce2ffaf0429bc15a6af085a8610f9f4672304a23981fa8359cbd2acb10tpqSWsFEJBkSiea1ijqYnNw=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-05-14 12:04:46 --> [DEPRECATED] Required parameter $k follows optional parameter $points in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 2488.
+ 1 APPPATH\Libraries\tcpdf\tcpdf.php(121): require_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries\\tcpdf\\tcpdf.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(253): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries/tcpdf/tcpdf.php')
+ 4 APPPATH\Views\workpaper\pdfc1\AC5.php(4): CodeIgniter\Autoloader\Autoloader->loadClassmap('TCPDF')
+ 5 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC5.php')
+ 6 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC5', [], true)
+ 8 APPPATH\Controllers\WorkpaperController.php(2524): view('workpaper/pdfc1/AC5', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC5', '78cdbe3d266500639eac0eea5a70969dce2543a3ffd07d47f35f14cbb333458bb15b919900a5aa3d7930e13ee132c639957640aca0b00295e0d1cb03738022955Bunk2urMUF2FLVOcRaKsj0=', '1cabdb25e5d74c2a2d9145986f94bd033ca4db06ccd266ac853befb40756efd0cf1b5b35114f2f2b2875c14d8aca1acfb667902c600e00c4c21ac3c7dc486eebE9BjzW9ceHnYE1jMiwHMw$U=', '70194ce3edd406978b7b76df1fb41264626d8c044f2d221e8d599f125b7f376e771289ce2ffaf0429bc15a6af085a8610f9f4672304a23981fa8359cbd2acb10tpqSWsFEJBkSiea1ijqYnNw=')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-14 12:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:05:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:05:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:05:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:05:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:05:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 12:05:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 13:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 13:10:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 13:12:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-14 13:12:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

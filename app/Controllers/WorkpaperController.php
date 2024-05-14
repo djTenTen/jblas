@@ -90,6 +90,7 @@ class WorkpaperController extends BaseController{
         $data['c1'] = $this->wpmodel->getc1values($dcID,$dwpID);
         $data['c2'] = $this->wpmodel->getc2values($dcID,$dwpID);
         $data['c3'] = $this->wpmodel->getc3values($dcID,$dwpID);
+        $data['cfi'] = $this->wpmodel->getlatestupload($dcID,$dwpID);
         $data['fi'] = $this->wpmodel->getfileindex();
         
 

@@ -293,6 +293,13 @@
 
                     <div class="tab-pane py-5 fade" id="wizard5" role="tabpanel" aria-labelledby="wizard5-tab">
 
+                        <?php if(!empty($cfi)){?>
+                            <h5>Latest upload:</h5>
+                            <p>Added on: <b><?= date('F d, Y h:i A', strtotime($cfi['added_on']))?></b></p>
+                            <p>Uploaded by: <b><?= $cfi['name']?></b></p>
+                            <br><br>
+                        <?php }?>
+
                         <h3>Import Trial Balance</h3>
                         <div class="col-3">
                             <input type="file" name="" id="excelInput" accept=".xlsx, .xls" class="form form-control">

@@ -187,6 +187,17 @@ class WorkpaperModel extends  Model {
 
     }
 
+    public function getlatestupload($cID,$wpID){
+
+        $query = $this->db->query("select DISTINCT cfi.added_on,cfi.added_by,tu.name
+        from {$this->tblu} as tu, {$this->tblcfi} as cfi
+        where tu.userID = cfi.added_by
+        and cfi.workpaper = {$wpID}
+        and cfi.client = {$cID}");
+        return $query->getRowArray();
+
+    }
+
     public function importtb($req){
 
         foreach($req['account_code'] as $i => $val){
