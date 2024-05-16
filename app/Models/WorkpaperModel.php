@@ -22,6 +22,7 @@ class WorkpaperModel extends  Model {
 
     protected $tblfi = "tbl_file_index";
     protected $tblcfi = "tbl_client_file_index";
+    protected $tbltb = "tbl_client_trial_balance";
     
     protected $time,$date;
     protected $crypt;
@@ -66,9 +67,13 @@ class WorkpaperModel extends  Model {
 
     }
 
-    public function getfileindex(){
+    public function getfileindex($cID,$wpID){
 
-        $query = $this->db->table($this->tblfi)->get();
+        $query = $this->db->query("select *
+        from {$this->tblcfi} as cfi, {$this->tblfi} as fi
+        where cfi.index = fi.fiID
+        and cfi.workpaper = {$wpID}
+        and cfi.client = {$cID}");
         return $query->getResultArray();
 
     }
@@ -190,11 +195,46 @@ class WorkpaperModel extends  Model {
     public function getlatestupload($cID,$wpID){
 
         $query = $this->db->query("select DISTINCT cfi.added_on,cfi.added_by,tu.name
-        from {$this->tblu} as tu, {$this->tblcfi} as cfi
+        from {$this->tblu} as tu, {$this->tbltb} as cfi
         where tu.userID = cfi.added_by
         and cfi.workpaper = {$wpID}
         and cfi.client = {$cID}");
         return $query->getRowArray();
+
+    }
+
+    public function gettrialbalance($cID,$wpID){
+
+        $query = $this->db->query("select *
+        from {$this->tbltb} as cfi, {$this->tblfi} as fi
+        where cfi.index = fi.fiID
+        and cfi.workpaper = {$wpID}
+        and cfi.client = {$cID}");
+        return $query->getResultArray();
+
+    }
+
+    public function gettbindex($cID,$wpID,$index){
+
+        $query = $this->db->query("select * 
+        from {$this->tbltb} as tb
+        where tb.index = {$index}
+        and tb.workpaper = {$wpID}
+        and tb.client = {$cID}");
+        return $query->getResultArray();
+
+    }
+
+    public function updateindex($req){
+
+        $data = [
+            'acquired' => $req['acquired']
+        ];
+        if($this->db->table($this->tblcfi)->where('cfiID', $req['cfiID'])->update($data)){
+            return 'updated';
+        }else{
+            return 'error';
+        }
 
     }
 
@@ -216,7 +256,7 @@ class WorkpaperModel extends  Model {
                 'added_by' => $req['uID'],
             ];
 
-            $this->db->table($this->tblcfi)->insert($data);
+            $this->db->table($this->tbltb)->insert($data);
 
         }
 
@@ -257,6 +297,20 @@ class WorkpaperModel extends  Model {
 
             $this->db->table($this->tblwp)->insert($workpaper);
             $wpid = $this->db->insertID();
+
+            $index = $this->db->table($this->tblfi)->get();
+            foreach($index->getResultArray() as $i){
+                $ind = [
+                    'client' => $req['client'],
+                    'firm' => $req['firm'],
+                    'workpaper' => $wpid,
+                    'index' => $i['fiID'],
+                    'acquired' => 'No',
+                    'added_on'=> $this->date.' '.$this->time,
+                    'added_by' => $req['uID'],
+                ];
+                $this->db->table($this->tblcfi)->insert($ind);
+            }
             
             $wherec1 = [
                 'firmID' => $req['firm'],

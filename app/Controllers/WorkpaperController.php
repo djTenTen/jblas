@@ -91,9 +91,9 @@ class WorkpaperController extends BaseController{
         $data['c2'] = $this->wpmodel->getc2values($dcID,$dwpID);
         $data['c3'] = $this->wpmodel->getc3values($dcID,$dwpID);
         $data['cfi'] = $this->wpmodel->getlatestupload($dcID,$dwpID);
-        $data['fi'] = $this->wpmodel->getfileindex();
+        $data['tb'] = $this->wpmodel->gettrialbalance($dcID,$dwpID);
+        $data['fi'] = $this->wpmodel->getfileindex($dcID,$dwpID);
         
-
         echo view('includes/Header', $data);
         echo view('workpaper/ViewFilesValues', $data);
         echo view('includes/Footer');
@@ -187,6 +187,21 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('invalid_input','invalid_input');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }
+
+    }
+
+    public function updateindex($cfiID){
+
+        $dcfiID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID));
+        $yn = $this->request->getPost('checked');
+
+        $req = [
+            'cfiID' => $dcfiID,
+            'acquired' => $yn
+        ];
+
+        $res = $this->wpmodel->updateindex($req);
+        return $this->response->setJSON(['message' => $res]);
 
     }
 
@@ -2412,7 +2427,183 @@ class WorkpaperController extends BaseController{
 
 
 
+    public function viewindexfiles($code,$cID,$wpID,$index,$desc){
 
+        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dwpID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
+        $dindex = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index));
+
+        $data['title'] = $code.' - '.$desc;
+
+        switch ($code) {
+            case 'Aa':
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/Aa', $data);
+                echo view('includes/Footer');
+            break;
+            
+            case 'Ab':
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/Ab', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'Ac':
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/Ac', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'Acd':
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/Ad', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'B':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/B', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'C':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/C', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'DG':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/DG', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'E':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/E', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'F':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/F', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'H':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/H', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'I':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/I', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'J':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/J', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'K':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/K', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'L':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/L', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'M':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/M', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'N':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/N', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'O':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/O', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'P':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/P', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'Q':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/Q', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'R':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/R', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'S':
+                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/S', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'T':
+
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/T', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'U':
+
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/U', $data);
+                echo view('includes/Footer');
+            break;
+
+            case 'V':
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/V', $data);
+                echo view('includes/Footer');
+            break;
+            
+        }
+
+
+
+    }
 
 
 
@@ -3128,6 +3319,40 @@ class WorkpaperController extends BaseController{
 
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

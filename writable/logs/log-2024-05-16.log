@@ -1,0 +1,1272 @@
+INFO - 2024-05-16 09:04:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:04:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:04:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:04:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:04:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:04:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:04:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:18:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-16 09:18:33 --> ErrorException: foreach() argument must be of type array|object, null given
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 322.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(322): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 322)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(99): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('8d090ba13e3244fa21fb10fcdfb8a2e48d2b8e9c20f8b2ca6728f42a71da59d1a57780a83040513b054559289d45f8d41a04457a0dbfcb13433a1860e13eb2c11guC3U4BMgv6HBbGVDAPSJo=', 'cae78dbfa7484d58de6d19c02a8c55df55c92581fa21cb584597b6751bb093bae84613b9f1c4d2ff787e3da72d29d4527e5c8315fe0c8fe01a237324849168d8HV9~o6HiyuitEH4fkv2oGb8=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 09:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:22:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:22:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:23:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:24:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:30:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 09:43:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 10:03:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:02:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:02:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:03:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:04:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:07:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:21:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:39:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:39:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:39:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:39:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:39:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:39:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:39:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:40:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-16 11:40:35 --> mysqli_sql_exception: Unknown column 'aquired' in 'field list' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `tb...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(284): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(135): App\Models\WorkpaperModel->saveworkpaper(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->saveworkpaper()
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-16 11:40:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'aquired' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `aquired`, `added_on`, `added_by`) VALUES (:client:, :firm:, :workpaper:, :index:, :aquired:, :added_on:, :added_by:)', [...], false)
+ 2 APPPATH\Models\WorkpaperModel.php(284): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\WorkpaperController.php(135): App\Models\WorkpaperModel->saveworkpaper([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->saveworkpaper()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 11:40:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'aquired' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `aquired`, `added_on`, `added_by`) VALUES (\'3\', \'1\', 1, \'1\', \'No\', \'2024-05-16 11:40:35\', \'1\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `aquired`, `added_on`, `added_by`) VALUES (\'3\', \'1\', 1, \'1\', \'No\', \'2024-05-16 11:40:35\', \'1\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `aquired`, `added_on`, `added_by`) VALUES (:client:, :firm:, :workpaper:, :index:, :aquired:, :added_on:, :added_by:)', [...], false)
+ 4 APPPATH\Models\WorkpaperModel.php(284): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\WorkpaperController.php(135): App\Models\WorkpaperModel->saveworkpaper([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->saveworkpaper()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 11:40:35 --> [Caused by] mysqli_sql_exception: Unknown column 'aquired' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `aquired`, `added_on`, `added_by`) VALUES (\'3\', \'1\', 1, \'1\', \'No\', \'2024-05-16 11:40:35\', \'1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `aquired`, `added_on`, `added_by`) VALUES (\'3\', \'1\', 1, \'1\', \'No\', \'2024-05-16 11:40:35\', \'1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `aquired`, `added_on`, `added_by`) VALUES (\'3\', \'1\', 1, \'1\', \'No\', \'2024-05-16 11:40:35\', \'1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `aquired`, `added_on`, `added_by`) VALUES (:client:, :firm:, :workpaper:, :index:, :aquired:, :added_on:, :added_by:)', [...], false)
+ 5 APPPATH\Models\WorkpaperModel.php(284): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\WorkpaperController.php(135): App\Models\WorkpaperModel->saveworkpaper([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->saveworkpaper()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 11:44:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:44:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-16 11:44:30 --> DivisionByZeroError: Division by zero
+in APPPATH\Views\workpaper\Initiate.php on line 79.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Initiate', [], true)
+ 4 APPPATH\Controllers\WorkpaperController.php(42): view('workpaper/Initiate', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->initiate()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 11:46:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:46:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:46:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:47:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:47:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-16 11:47:44 --> DivisionByZeroError: Division by zero
+in APPPATH\Views\workpaper\Initiate.php on line 79.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Initiate', [], true)
+ 4 APPPATH\Controllers\WorkpaperController.php(42): view('workpaper/Initiate', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->initiate()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 11:47:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:48:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-16 11:48:18 --> DivisionByZeroError: Division by zero
+in APPPATH\Views\workpaper\Initiate.php on line 79.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Initiate', [], true)
+ 4 APPPATH\Controllers\WorkpaperController.php(42): view('workpaper/Initiate', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->initiate()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 11:52:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-16 11:52:18 --> DivisionByZeroError: Division by zero
+in APPPATH\Views\workpaper\Initiate.php on line 79.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Initiate', [], true)
+ 4 APPPATH\Controllers\WorkpaperController.php(42): view('workpaper/Initiate', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->initiate()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 11:52:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-16 11:52:27 --> DivisionByZeroError: Division by zero
+in APPPATH\Views\workpaper\Initiate.php on line 79.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Initiate', [], true)
+ 4 APPPATH\Controllers\WorkpaperController.php(42): view('workpaper/Initiate', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->initiate()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 11:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-16 11:52:29 --> DivisionByZeroError: Division by zero
+in APPPATH\Views\workpaper\Initiate.php on line 79.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Initiate', [], true)
+ 4 APPPATH\Controllers\WorkpaperController.php(42): view('workpaper/Initiate', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->initiate()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 11:52:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-16 11:52:29 --> DivisionByZeroError: Division by zero
+in APPPATH\Views\workpaper\Initiate.php on line 79.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Initiate', [], true)
+ 4 APPPATH\Controllers\WorkpaperController.php(42): view('workpaper/Initiate', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->initiate()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 11:52:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-16 11:52:49 --> DivisionByZeroError: Division by zero
+in APPPATH\Views\workpaper\Initiate.php on line 79.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Initiate', [], true)
+ 4 APPPATH\Controllers\WorkpaperController.php(42): view('workpaper/Initiate', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->initiate()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 11:55:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:58:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-16 11:58:45 --> mysqli_sql_exception: Unknown column 'acquired' in 'field list' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `tb...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(284): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(135): App\Models\WorkpaperModel->saveworkpaper(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->saveworkpaper()
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-16 11:58:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'acquired' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `acquired`, `added_on`, `added_by`) VALUES (:client:, :firm:, :workpaper:, :index:, :acquired:, :added_on:, :added_by:)', [...], false)
+ 2 APPPATH\Models\WorkpaperModel.php(284): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\WorkpaperController.php(135): App\Models\WorkpaperModel->saveworkpaper([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->saveworkpaper()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 11:58:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'acquired' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `acquired`, `added_on`, `added_by`) VALUES (\'4\', \'1\', 2, \'1\', \'No\', \'2024-05-16 11:58:44\', \'1\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `acquired`, `added_on`, `added_by`) VALUES (\'4\', \'1\', 2, \'1\', \'No\', \'2024-05-16 11:58:44\', \'1\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `acquired`, `added_on`, `added_by`) VALUES (:client:, :firm:, :workpaper:, :index:, :acquired:, :added_on:, :added_by:)', [...], false)
+ 4 APPPATH\Models\WorkpaperModel.php(284): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\WorkpaperController.php(135): App\Models\WorkpaperModel->saveworkpaper([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->saveworkpaper()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 11:58:45 --> [Caused by] mysqli_sql_exception: Unknown column 'acquired' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `acquired`, `added_on`, `added_by`) VALUES (\'4\', \'1\', 2, \'1\', \'No\', \'2024-05-16 11:58:44\', \'1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `acquired`, `added_on`, `added_by`) VALUES (\'4\', \'1\', 2, \'1\', \'No\', \'2024-05-16 11:58:44\', \'1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `acquired`, `added_on`, `added_by`) VALUES (\'4\', \'1\', 2, \'1\', \'No\', \'2024-05-16 11:58:44\', \'1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_client_file_index` (`client`, `firm`, `workpaper`, `index`, `acquired`, `added_on`, `added_by`) VALUES (:client:, :firm:, :workpaper:, :index:, :acquired:, :added_on:, :added_by:)', [...], false)
+ 5 APPPATH\Models\WorkpaperModel.php(284): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\WorkpaperController.php(135): App\Models\WorkpaperModel->saveworkpaper([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->saveworkpaper()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 11:59:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 11:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:00:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:00:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:00:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:01:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:01:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:01:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:21:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:21:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:24:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:25:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:31:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:32:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:42:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:54:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:54:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-16 12:54:57 --> mysqli_sql_exception: Unknown column 'Yes' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_cli...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_cli...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_cli...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_cli...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('1b3d7a25f3750c0...')
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-16 12:54:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 2 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 3 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('1b3d7a25f3750c05c0f8b1708f20e129919d42c58b250366fdf72097e4fef92200efa875f0318e43487f3564492fda59a0fc10a0ee115ef71ab20e785fb09162U~djbBOeCo8nobLHDIwNu3I=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 12:54:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'4\'
+AND `Yes` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'4\'
+AND `Yes` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 4 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 5 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('1b3d7a25f3750c05c0f8b1708f20e129919d42c58b250366fdf72097e4fef92200efa875f0318e43487f3564492fda59a0fc10a0ee115ef71ab20e785fb09162U~djbBOeCo8nobLHDIwNu3I=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 12:54:57 --> [Caused by] mysqli_sql_exception: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'4\'
+AND `Yes` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'4\'
+AND `Yes` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'4\'
+AND `Yes` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 5 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 6 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('1b3d7a25f3750c05c0f8b1708f20e129919d42c58b250366fdf72097e4fef92200efa875f0318e43487f3564492fda59a0fc10a0ee115ef71ab20e785fb09162U~djbBOeCo8nobLHDIwNu3I=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 12:59:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 12:59:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-16 12:59:39 --> mysqli_sql_exception: Unknown column 'Yes' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_cli...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_cli...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_cli...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_cli...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('6d1916011ff6047...')
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-16 12:59:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 2 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 3 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('6d1916011ff60470449613ce3ec4f9943fa9373928f0ff3b4649a3efbddb276ff019d99ee84d82d267911d32b6ebc2b809f0be1d524ee13fa8b3409242214e81VAquc8CKZKH5ZCkEXeH10gY=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 12:59:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'4\'
+AND `Yes` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'4\'
+AND `Yes` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 4 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 5 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('6d1916011ff60470449613ce3ec4f9943fa9373928f0ff3b4649a3efbddb276ff019d99ee84d82d267911d32b6ebc2b809f0be1d524ee13fa8b3409242214e81VAquc8CKZKH5ZCkEXeH10gY=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 12:59:39 --> [Caused by] mysqli_sql_exception: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'4\'
+AND `Yes` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'4\'
+AND `Yes` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'4\'
+AND `Yes` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 5 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 6 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('6d1916011ff60470449613ce3ec4f9943fa9373928f0ff3b4649a3efbddb276ff019d99ee84d82d267911d32b6ebc2b809f0be1d524ee13fa8b3409242214e81VAquc8CKZKH5ZCkEXeH10gY=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 12:59:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-16 12:59:45 --> mysqli_sql_exception: Unknown column 'Yes' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_cli...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_cli...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_cli...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_cli...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('9357ee520530ed2...')
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-16 12:59:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 2 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 3 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('9357ee520530ed248ebb953a2488686a08c0f100bc1d0876c438f119b0009f8fb994068317628198fcab92236ee3fce19adcbebe5877c39d57270b69ae33d2f95eN~lU3PsECkMuu6zcG0c7Y=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 12:59:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'5\'
+AND `Yes` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'5\'
+AND `Yes` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 4 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 5 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('9357ee520530ed248ebb953a2488686a08c0f100bc1d0876c438f119b0009f8fb994068317628198fcab92236ee3fce19adcbebe5877c39d57270b69ae33d2f95eN~lU3PsECkMuu6zcG0c7Y=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 12:59:45 --> [Caused by] mysqli_sql_exception: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'5\'
+AND `Yes` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'5\'
+AND `Yes` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'5\'
+AND `Yes` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 5 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 6 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('9357ee520530ed248ebb953a2488686a08c0f100bc1d0876c438f119b0009f8fb994068317628198fcab92236ee3fce19adcbebe5877c39d57270b69ae33d2f95eN~lU3PsECkMuu6zcG0c7Y=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 12:59:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-16 12:59:46 --> mysqli_sql_exception: Unknown column 'Yes' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_cli...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_cli...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_cli...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_cli...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('b43eba2d92660e0...')
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-16 12:59:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 2 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 3 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('b43eba2d92660e01f493acd3f361089912c6049f0ec4fc5c01b51b340408834a032ce1bfd492a668a7393c41380f93b222a28af1d44fa0b87ec9ec32db7fb951AWQpg41FL4BoVazVMsUJ15c=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 12:59:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `Yes` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `Yes` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 4 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 5 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('b43eba2d92660e01f493acd3f361089912c6049f0ec4fc5c01b51b340408834a032ce1bfd492a668a7393c41380f93b222a28af1d44fa0b87ec9ec32db7fb951AWQpg41FL4BoVazVMsUJ15c=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 12:59:46 --> [Caused by] mysqli_sql_exception: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `Yes` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `Yes` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `Yes` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 5 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 6 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('b43eba2d92660e01f493acd3f361089912c6049f0ec4fc5c01b51b340408834a032ce1bfd492a668a7393c41380f93b222a28af1d44fa0b87ec9ec32db7fb951AWQpg41FL4BoVazVMsUJ15c=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 13:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:00:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:00:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:00:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:02:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:02:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:04:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:04:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-16 13:04:23 --> mysqli_sql_exception: Unknown column 'Yes' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_cli...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_cli...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_cli...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_cli...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('083c1b09c422d66...')
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-16 13:04:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 2 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 3 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('083c1b09c422d6601627886f0b0c5d7f5332ebce7cc036ede253f941af3258612ee3441538eb973abffcec32da06d827a50295cf93182e203184f70f7c410fe9JPQZkyqqaStpOBwGnl4P2sI=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 13:04:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `Yes` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `Yes` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 4 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 5 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('083c1b09c422d6601627886f0b0c5d7f5332ebce7cc036ede253f941af3258612ee3441538eb973abffcec32da06d827a50295cf93182e203184f70f7c410fe9JPQZkyqqaStpOBwGnl4P2sI=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 13:04:23 --> [Caused by] mysqli_sql_exception: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `Yes` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `Yes` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `Yes` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 5 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 6 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('083c1b09c422d6601627886f0b0c5d7f5332ebce7cc036ede253f941af3258612ee3441538eb973abffcec32da06d827a50295cf93182e203184f70f7c410fe9JPQZkyqqaStpOBwGnl4P2sI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 13:04:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-16 13:04:24 --> mysqli_sql_exception: Unknown column 'No' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_cli...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_cli...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_cli...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_cli...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'No')
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('083c1b09c422d66...')
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-16 13:04:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'No' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `No` IS NULL', [...], false)
+ 2 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'No')
+ 3 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('083c1b09c422d6601627886f0b0c5d7f5332ebce7cc036ede253f941af3258612ee3441538eb973abffcec32da06d827a50295cf93182e203184f70f7c410fe9JPQZkyqqaStpOBwGnl4P2sI=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 13:04:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'No' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `No` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `No` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `No` IS NULL', [...], false)
+ 4 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'No')
+ 5 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('083c1b09c422d6601627886f0b0c5d7f5332ebce7cc036ede253f941af3258612ee3441538eb973abffcec32da06d827a50295cf93182e203184f70f7c410fe9JPQZkyqqaStpOBwGnl4P2sI=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 13:04:24 --> [Caused by] mysqli_sql_exception: Unknown column 'No' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `No` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `No` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'6\'
+AND `No` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `No` IS NULL', [...], false)
+ 5 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'No')
+ 6 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('083c1b09c422d6601627886f0b0c5d7f5332ebce7cc036ede253f941af3258612ee3441538eb973abffcec32da06d827a50295cf93182e203184f70f7c410fe9JPQZkyqqaStpOBwGnl4P2sI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 13:04:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:04:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:04:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:05:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:05:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:05:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:07:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:07:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:09:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-16 13:09:20 --> mysqli_sql_exception: Unknown column 'Yes' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_cli...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_cli...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_cli...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_cli...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('0c7a1aee5a43be0...')
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-16 13:09:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 2 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 3 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('0c7a1aee5a43be09157079955204f6b33efd3b3bd5e3022b37d9157308fe27101fb1c1db035f4b0992fdd3b49545d8816aa5cd1f17cba95aab6f6bdbce6f51e2PJ2sdFuJkmAfzYWetk4ybNg=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 13:09:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'5\'
+AND `Yes` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'5\'
+AND `Yes` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 4 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 5 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('0c7a1aee5a43be09157079955204f6b33efd3b3bd5e3022b37d9157308fe27101fb1c1db035f4b0992fdd3b49545d8816aa5cd1f17cba95aab6f6bdbce6f51e2PJ2sdFuJkmAfzYWetk4ybNg=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 13:09:20 --> [Caused by] mysqli_sql_exception: Unknown column 'Yes' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'5\'
+AND `Yes` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'5\'
+AND `Yes` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'\'
+WHERE `cfiID` = \'5\'
+AND `Yes` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `cfiID` = :cfiID:
+AND `Yes` IS NULL', [...], false)
+ 5 APPPATH\Models\WorkpaperModel.php(219): CodeIgniter\Database\BaseBuilder->update('acquired', 'Yes')
+ 6 APPPATH\Controllers\WorkpaperController.php(203): App\Models\WorkpaperModel->updateindex([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->updateindex('0c7a1aee5a43be09157079955204f6b33efd3b3bd5e3022b37d9157308fe27101fb1c1db035f4b0992fdd3b49545d8816aa5cd1f17cba95aab6f6bdbce6f51e2PJ2sdFuJkmAfzYWetk4ybNg=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 13:10:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:10:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:10:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:14:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:14:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:24:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:25:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:25:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:27:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:27:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:27:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:27:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:33:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:36:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:39:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:40:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:40:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:40:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 13:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:56:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:57:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:58:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:58:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:58:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:58:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 14:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:02:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:03:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:03:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:03:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:03:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:03:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:03:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:03:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:04:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:04:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:04:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:04:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:04:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:04:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:04:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:04:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:05:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:05:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:05:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:05:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:05:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:06:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:06:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:07:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:07:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:07:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:07:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:09:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:09:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:09:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:09:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:10:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:10:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:10:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:10:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:10:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:10:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:11:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:12:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:12:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:12:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:18:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:28:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:31:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:31:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:36:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:36:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:36:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:37:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:37:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:38:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:38:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:38:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:40:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:44:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:44:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:44:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:44:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 15:45:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:06:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:06:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:07:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:07:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:11:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:17:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:17:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:17:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:17:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:17:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:18:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:18:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:18:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:37:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-16 16:37:25 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3' at line 3 in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select * \r\n    ...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * \r\n    ...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * \r\n    ...')
+#3 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(223): CodeIgniter\Database\BaseConnection->query('select * \r\n    ...')
+#4 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(2466): App\Models\WorkpaperModel->getncab('3', '3', '6')
+#5 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '7e26e5a3c8c5a9c...', 'aa5f1660152828e...', '3eb49bd0b6e5a8d...', 'Non-current ass...')
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-16 16:37:25 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3' at line 3
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(223): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_client_trial_balance as tb,
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 2 APPPATH\Controllers\WorkpaperController.php(2466): App\Models\WorkpaperModel->getncab('3', '3', '6')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '7e26e5a3c8c5a9cca51253d44af0bf572e1c77af184a8a0a3aa5e9b3ba416021bb814ea8a9bbc22496f70247c0453acdc5abbf8c1ad747149be6113ff4afc502KviaLHuX8mv48jUq5BmtLDU=', 'aa5f1660152828e38eb81dcd4c33a9439449775b66935f974a1aad6070b9642aea8f2e8900fa348fbaa930b6f5d7332b1e97c1f182bf7f46567beb211cd525e0fj6UeXDk~knRiWSUg06WQtE=', '3eb49bd0b6e5a8dcefe75b730ba815ddc7f618c85f51d0094528ec20d002adfaa7e5022fc06d62345fe58cf51497a9b3d173051f2a926968d6416afd94bfc5b4q5UkevOzXMuvtXKwWiSx3~M=', 'Non-current assets - intangibles and goodwill')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:37:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * 
+        from tbl_client_trial_balance as tb,
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * 
+        from tbl_client_trial_balance as tb,
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 3 APPPATH\Models\WorkpaperModel.php(223): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_client_trial_balance as tb,
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 4 APPPATH\Controllers\WorkpaperController.php(2466): App\Models\WorkpaperModel->getncab('3', '3', '6')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '7e26e5a3c8c5a9cca51253d44af0bf572e1c77af184a8a0a3aa5e9b3ba416021bb814ea8a9bbc22496f70247c0453acdc5abbf8c1ad747149be6113ff4afc502KviaLHuX8mv48jUq5BmtLDU=', 'aa5f1660152828e38eb81dcd4c33a9439449775b66935f974a1aad6070b9642aea8f2e8900fa348fbaa930b6f5d7332b1e97c1f182bf7f46567beb211cd525e0fj6UeXDk~knRiWSUg06WQtE=', '3eb49bd0b6e5a8dcefe75b730ba815ddc7f618c85f51d0094528ec20d002adfaa7e5022fc06d62345fe58cf51497a9b3d173051f2a926968d6416afd94bfc5b4q5UkevOzXMuvtXKwWiSx3~M=', 'Non-current assets - intangibles and goodwill')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:37:25 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select * 
+        from tbl_client_trial_balance as tb,
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * 
+        from tbl_client_trial_balance as tb,
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * 
+        from tbl_client_trial_balance as tb,
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 4 APPPATH\Models\WorkpaperModel.php(223): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_client_trial_balance as tb,
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 5 APPPATH\Controllers\WorkpaperController.php(2466): App\Models\WorkpaperModel->getncab('3', '3', '6')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '7e26e5a3c8c5a9cca51253d44af0bf572e1c77af184a8a0a3aa5e9b3ba416021bb814ea8a9bbc22496f70247c0453acdc5abbf8c1ad747149be6113ff4afc502KviaLHuX8mv48jUq5BmtLDU=', 'aa5f1660152828e38eb81dcd4c33a9439449775b66935f974a1aad6070b9642aea8f2e8900fa348fbaa930b6f5d7332b1e97c1f182bf7f46567beb211cd525e0fj6UeXDk~knRiWSUg06WQtE=', '3eb49bd0b6e5a8dcefe75b730ba815ddc7f618c85f51d0094528ec20d002adfaa7e5022fc06d62345fe58cf51497a9b3d173051f2a926968d6416afd94bfc5b4q5UkevOzXMuvtXKwWiSx3~M=', 'Non-current assets - intangibles and goodwill')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 16:37:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-16 16:37:40 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tb.workpaper = 3
+        tb.client = 3' at line 4 in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select * \r\n    ...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * \r\n    ...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * \r\n    ...')
+#3 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(223): CodeIgniter\Database\BaseConnection->query('select * \r\n    ...')
+#4 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(2466): App\Models\WorkpaperModel->getncab('3', '3', '6')
+#5 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '7e26e5a3c8c5a9c...', 'aa5f1660152828e...', '3eb49bd0b6e5a8d...', 'Non-current ass...')
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-16 16:37:40 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tb.workpaper = 3
+        tb.client = 3' at line 4
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(223): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 2 APPPATH\Controllers\WorkpaperController.php(2466): App\Models\WorkpaperModel->getncab('3', '3', '6')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '7e26e5a3c8c5a9cca51253d44af0bf572e1c77af184a8a0a3aa5e9b3ba416021bb814ea8a9bbc22496f70247c0453acdc5abbf8c1ad747149be6113ff4afc502KviaLHuX8mv48jUq5BmtLDU=', 'aa5f1660152828e38eb81dcd4c33a9439449775b66935f974a1aad6070b9642aea8f2e8900fa348fbaa930b6f5d7332b1e97c1f182bf7f46567beb211cd525e0fj6UeXDk~knRiWSUg06WQtE=', '3eb49bd0b6e5a8dcefe75b730ba815ddc7f618c85f51d0094528ec20d002adfaa7e5022fc06d62345fe58cf51497a9b3d173051f2a926968d6416afd94bfc5b4q5UkevOzXMuvtXKwWiSx3~M=', 'Non-current assets - intangibles and goodwill')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:37:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tb.workpaper = 3
+        tb.client = 3' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 3 APPPATH\Models\WorkpaperModel.php(223): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 4 APPPATH\Controllers\WorkpaperController.php(2466): App\Models\WorkpaperModel->getncab('3', '3', '6')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '7e26e5a3c8c5a9cca51253d44af0bf572e1c77af184a8a0a3aa5e9b3ba416021bb814ea8a9bbc22496f70247c0453acdc5abbf8c1ad747149be6113ff4afc502KviaLHuX8mv48jUq5BmtLDU=', 'aa5f1660152828e38eb81dcd4c33a9439449775b66935f974a1aad6070b9642aea8f2e8900fa348fbaa930b6f5d7332b1e97c1f182bf7f46567beb211cd525e0fj6UeXDk~knRiWSUg06WQtE=', '3eb49bd0b6e5a8dcefe75b730ba815ddc7f618c85f51d0094528ec20d002adfaa7e5022fc06d62345fe58cf51497a9b3d173051f2a926968d6416afd94bfc5b4q5UkevOzXMuvtXKwWiSx3~M=', 'Non-current assets - intangibles and goodwill')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:37:40 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tb.workpaper = 3
+        tb.client = 3' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 4 APPPATH\Models\WorkpaperModel.php(223): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 5 APPPATH\Controllers\WorkpaperController.php(2466): App\Models\WorkpaperModel->getncab('3', '3', '6')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '7e26e5a3c8c5a9cca51253d44af0bf572e1c77af184a8a0a3aa5e9b3ba416021bb814ea8a9bbc22496f70247c0453acdc5abbf8c1ad747149be6113ff4afc502KviaLHuX8mv48jUq5BmtLDU=', 'aa5f1660152828e38eb81dcd4c33a9439449775b66935f974a1aad6070b9642aea8f2e8900fa348fbaa930b6f5d7332b1e97c1f182bf7f46567beb211cd525e0fj6UeXDk~knRiWSUg06WQtE=', '3eb49bd0b6e5a8dcefe75b730ba815ddc7f618c85f51d0094528ec20d002adfaa7e5022fc06d62345fe58cf51497a9b3d173051f2a926968d6416afd94bfc5b4q5UkevOzXMuvtXKwWiSx3~M=', 'Non-current assets - intangibles and goodwill')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 16:37:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-16 16:37:42 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tb.workpaper = 3
+        tb.client = 3' at line 4 in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select * \r\n    ...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * \r\n    ...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * \r\n    ...')
+#3 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(223): CodeIgniter\Database\BaseConnection->query('select * \r\n    ...')
+#4 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(2466): App\Models\WorkpaperModel->getncab('3', '3', '6')
+#5 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '7e26e5a3c8c5a9c...', 'aa5f1660152828e...', '3eb49bd0b6e5a8d...', 'Non-current ass...')
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-16 16:37:42 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tb.workpaper = 3
+        tb.client = 3' at line 4
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(223): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 2 APPPATH\Controllers\WorkpaperController.php(2466): App\Models\WorkpaperModel->getncab('3', '3', '6')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '7e26e5a3c8c5a9cca51253d44af0bf572e1c77af184a8a0a3aa5e9b3ba416021bb814ea8a9bbc22496f70247c0453acdc5abbf8c1ad747149be6113ff4afc502KviaLHuX8mv48jUq5BmtLDU=', 'aa5f1660152828e38eb81dcd4c33a9439449775b66935f974a1aad6070b9642aea8f2e8900fa348fbaa930b6f5d7332b1e97c1f182bf7f46567beb211cd525e0fj6UeXDk~knRiWSUg06WQtE=', '3eb49bd0b6e5a8dcefe75b730ba815ddc7f618c85f51d0094528ec20d002adfaa7e5022fc06d62345fe58cf51497a9b3d173051f2a926968d6416afd94bfc5b4q5UkevOzXMuvtXKwWiSx3~M=', 'Non-current assets - intangibles and goodwill')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:37:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tb.workpaper = 3
+        tb.client = 3' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 3 APPPATH\Models\WorkpaperModel.php(223): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 4 APPPATH\Controllers\WorkpaperController.php(2466): App\Models\WorkpaperModel->getncab('3', '3', '6')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '7e26e5a3c8c5a9cca51253d44af0bf572e1c77af184a8a0a3aa5e9b3ba416021bb814ea8a9bbc22496f70247c0453acdc5abbf8c1ad747149be6113ff4afc502KviaLHuX8mv48jUq5BmtLDU=', 'aa5f1660152828e38eb81dcd4c33a9439449775b66935f974a1aad6070b9642aea8f2e8900fa348fbaa930b6f5d7332b1e97c1f182bf7f46567beb211cd525e0fj6UeXDk~knRiWSUg06WQtE=', '3eb49bd0b6e5a8dcefe75b730ba815ddc7f618c85f51d0094528ec20d002adfaa7e5022fc06d62345fe58cf51497a9b3d173051f2a926968d6416afd94bfc5b4q5UkevOzXMuvtXKwWiSx3~M=', 'Non-current assets - intangibles and goodwill')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 16:37:42 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tb.workpaper = 3
+        tb.client = 3' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 4 APPPATH\Models\WorkpaperModel.php(223): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_client_trial_balance as tb
+        where tb.index = 6
+        tb.workpaper = 3
+        tb.client = 3')
+ 5 APPPATH\Controllers\WorkpaperController.php(2466): App\Models\WorkpaperModel->getncab('3', '3', '6')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '7e26e5a3c8c5a9cca51253d44af0bf572e1c77af184a8a0a3aa5e9b3ba416021bb814ea8a9bbc22496f70247c0453acdc5abbf8c1ad747149be6113ff4afc502KviaLHuX8mv48jUq5BmtLDU=', 'aa5f1660152828e38eb81dcd4c33a9439449775b66935f974a1aad6070b9642aea8f2e8900fa348fbaa930b6f5d7332b1e97c1f182bf7f46567beb211cd525e0fj6UeXDk~knRiWSUg06WQtE=', '3eb49bd0b6e5a8dcefe75b730ba815ddc7f618c85f51d0094528ec20d002adfaa7e5022fc06d62345fe58cf51497a9b3d173051f2a926968d6416afd94bfc5b4q5UkevOzXMuvtXKwWiSx3~M=', 'Non-current assets - intangibles and goodwill')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 16:38:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:39:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:43:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:43:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-16 16:43:17 --> ErrorException: Undefined variable $ind
+in APPPATH\Views\workpaper\index\E.php on line 33.
+ 1 APPPATH\Views\workpaper\index\E.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ind', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\E.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\E.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/index/E', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(2486): view('workpaper/index/E', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('E', '7e26e5a3c8c5a9cca51253d44af0bf572e1c77af184a8a0a3aa5e9b3ba416021bb814ea8a9bbc22496f70247c0453acdc5abbf8c1ad747149be6113ff4afc502KviaLHuX8mv48jUq5BmtLDU=', 'aa5f1660152828e38eb81dcd4c33a9439449775b66935f974a1aad6070b9642aea8f2e8900fa348fbaa930b6f5d7332b1e97c1f182bf7f46567beb211cd525e0fj6UeXDk~knRiWSUg06WQtE=', '454e3069fe6513dffaf40ad2c754a57ff6f36972078923366a838648efa8357ecb742404129e57033b894f06bf56e30c15d46bf0d608582383d9c16dcb9945f9Jvj8qLh7LSEtoY5XrDvcPrw=', 'Inventories')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-16 16:43:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:43:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:43:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:43:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:51:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:51:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:51:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:51:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-16 16:51:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

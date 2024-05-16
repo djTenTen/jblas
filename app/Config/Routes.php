@@ -65,6 +65,11 @@ $routes->group('', ['filter' => 'auth'], function ($auth) {
         });
 
         $workp->get('auditsystem/wp/getfiles/(:any)/(:any)/(:any)', 'WorkpaperController::getfiles/$1/$2/$3');
+        $workp->post('auditsystem/wp/updateindex/(:any)', 'WorkpaperController::updateindex/$1');
+
+        
+        $workp->get('auditsystem/wp/index/setvalues/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::viewindexfiles/$1/$2/$3/$4/$5');
+        
         
         /**
             PDF VIEW WORK PAPER

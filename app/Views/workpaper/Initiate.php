@@ -76,7 +76,13 @@
                 <tbody>
                     <?php 
                         foreach($wp as $r){
-                        $p = round(($r['y1'] + $r['y2'] + $r['y3']) / ($r['x1'] + $r['x2'] + $r['x3']), 2) * 100;
+                            $x = $r['x1'] + $r['x2'] + $r['x3'];
+                            $y = $r['y1'] + $r['y2'] + $r['y3'];
+                            if($x == 0 or $y == 0){
+                                $p = 1;
+                            }else{
+                                $p = round($y / $x, 2) * 100;
+                            }
                         ?>
                         <tr>
                             <td><?= $r['cli']?></td>

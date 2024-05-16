@@ -109,16 +109,18 @@
                                         <th></th>
                                         <th>Section</th>
                                         <th>Desc</th>
-                                        <th class="text-center">Action</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody class="tbody">
                                     <?php foreach($fi as $r){?>
                                         <tr>
-                                            <td><input class="form-check-input" id="add" type="checkbox" name="c1[]" value="<?= $crypt->encrypt($r['fiID'])?>"/></td>
+                                            <td><input class="form-check-input ficheck" id="add" type="checkbox" name="c1[]" value="<?= $crypt->encrypt($r['cfiID'])?>" data-url="<?= base_url()?>auditsystem/wp/updateindex/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>" <?php if($r['acquired'] == 'Yes'){echo 'checked';} ?>/></td>
                                             <td><?= $r['section']?></td>
                                             <td><?= $r['desc']?></td>
-                                            <td></td>
+                                            <td>
+                                                <a href="<?= base_url()?>auditsystem/wp/index/setvalues/<?= $r['section']?>/<?= $cID?>/<?= $wpID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['index']))?>/<?= $r['desc']?>" class="btn btn-icon btn-sm btn-primary cfi" target="_blank" title="Set Values" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?> ><i class="fas fa-tools"></i>
+                                            </td>
                                         </tr>
                                     <?php }?>
                                 </tbody>
@@ -304,6 +306,7 @@
                         <div class="col-3">
                             <input type="file" name="" id="excelInput" accept=".xlsx, .xls" class="form form-control">
                         </div>
+                        <br>
 
                         <form action="<?= base_url()?>auditsystem/wp/importtb/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                             <table class="table table-hover table-bordered table-sm">
@@ -318,7 +321,34 @@
                                     </tr>
                                 </thead>
                                 <tbody id="tbbody">
-
+                                    <?php if(!empty($tb)){?>
+                                        <?php 
+                                            $d = 0;
+                                            $c = 0;
+                                            foreach($tb as $r){
+                                                $d += $r['dytd'];
+                                                $c += $r['cytd'];
+                                        ?>
+                                            <tr>
+                                                <td><?= $r['account_code']?></td>
+                                                <td><?= $r['account']?></td>
+                                                <td><?= $r['account_type']?></td>
+                                                <td><?= $r['dytd']?></td>
+                                                <td><?= $r['cytd']?></td>
+                                                <td><?= $r['desc']?></td>
+                                            </tr>
+                                        <?php }?>
+                                        <tr>
+                                            <td colspan="3" class="text-end"><b>Total</b></td>
+                                            <td><b>₱ <?= number_format($d,2)?></b></td>
+                                            <td><b>₱ <?= number_format($c,2)?></b></td>
+                                            <td></td>
+                                        </tr>
+                                    <?php }else{?>
+                                        <tr class="table-danger">
+                                            <td colspan="7" class="text-center"><h3>No Data Yet</h3></td>
+                                        </tr>
+                                    <?php }?>
                                 </tbody>
                             </table>
 
@@ -374,6 +404,34 @@
     
     <script>
     $(document).ready(function () {
+
+        $('.ficheck').change(function(){
+
+            if (this.checked) {
+                //$(this).closest('tr').find('.cfi').show();
+                $(this).closest('tr').find('.cfi').removeAttr('hidden');
+            } else {
+                //$(this).closest('tr').find('.cfi').hide();
+                $(this).closest('tr').find('.cfi').attr('hidden', 'hidden');
+            }
+
+            var url = $(this).data('url');
+            var dataToSend = this.checked ? 'Yes' : 'No';
+            
+            $.ajax({
+                url: url, 
+                type: 'POST',
+                data: { checked: dataToSend },
+                success: function(response) {
+                    console.log(response.message);
+                },
+                error: function(xhr, status, error) {
+                    
+                }
+            });
+            
+            
+        });
 
         $('#excelInput').change(function(event) {
             var input = event.target;
