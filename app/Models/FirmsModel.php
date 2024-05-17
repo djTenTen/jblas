@@ -2,22 +2,21 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-
 class FirmsModel extends  Model {
+
 
     protected $tbluser = "tbl_users";
     protected $tblfirm = "tbl_firm";
     protected $time,$date;
+
     public function __construct(){
 
-        $this->db = \Config\Database::connect('default'); 
+        $this->db   = \Config\Database::connect('default'); 
         date_default_timezone_set("Asia/Singapore"); 
         $this->time = date("H:i:s");
         $this->date = date("Y-m-d");
 
     }
-
-
 
     public function getfirms(){
 
@@ -27,9 +26,7 @@ class FirmsModel extends  Model {
         and tu.type != 'Admin'");
         return $query->getResultArray();
 
-
     }
-
 
     public function verifyfirm($uID){
 
@@ -40,7 +37,6 @@ class FirmsModel extends  Model {
         }
 
     }
-
 
 
 }

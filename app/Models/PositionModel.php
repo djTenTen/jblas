@@ -2,15 +2,15 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-
 class PositionModel extends  Model {
 
-    protected $tblpos = "tbl_position";
 
+    protected $tblpos = "tbl_position";
     protected $time,$date;
+
     public function __construct(){
 
-        $this->db = \Config\Database::connect('default'); 
+        $this->db   = \Config\Database::connect('default'); 
         date_default_timezone_set("Asia/Singapore"); 
         $this->time = date("H:i:s");
         $this->date = date("Y-m-d");
@@ -21,12 +21,12 @@ class PositionModel extends  Model {
 
         $query = $this->db->table($this->tblpos)->where('posID', $pID)->get();
         $r = $query->getRowArray();
-
         $data = [
-            'position' => $r['position'],
-            'allowed' => $r['allowed']
+            'position'  => $r['position'],
+            'allowed'   => $r['allowed']
         ];
         return json_encode($data);
+
     }
 
     public function getposition(){
@@ -39,12 +39,11 @@ class PositionModel extends  Model {
     public function saveposition($req){
 
         $data = [
-            'position' => $req['pos'],
-            'allowed' => $req['dpt'],
-            'status' => $req['status'],
-            'added_on' => $this->date.' '.$this->time
+            'position'      => $req['pos'],
+            'allowed'       => $req['dpt'],
+            'status'        => $req['status'],
+            'added_on'      => $this->date.' '.$this->time
         ];
-
         if($this->db->table($this->tblpos)->insert($data)){
             return true;
         }else{
@@ -56,11 +55,10 @@ class PositionModel extends  Model {
     public function updateposition($req){
 
         $data = [
-            'position' => $req['pos'],
-            'allowed' => $req['dpt'],
-            'updated_on' => $this->date.' '.$this->time
+            'position'      => $req['pos'],
+            'allowed'       => $req['dpt'],
+            'updated_on'    => $this->date.' '.$this->time
         ];
-
         if($this->db->table($this->tblpos)->where('posID', $req['pID'])->update($data)){
             return true;
         }else{
@@ -90,9 +88,6 @@ class PositionModel extends  Model {
         }
 
     }
-
-
-    
 
 
 }

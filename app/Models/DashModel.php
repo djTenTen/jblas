@@ -1,21 +1,20 @@
 <?php
-
 namespace App\Models;
-
 use CodeIgniter\Model;
 use \App\Models\DashController;
 
 class DashModel extends Model{
    
-    protected $tblc = "tbl_clients";
-    protected $tblwp = "tbl_workpaper";
-    protected $tblu = "tbl_users";
-    protected $tblp = "tbl_position";
+
+    protected $tblc     = "tbl_clients";
+    protected $tblwp    = "tbl_workpaper";
+    protected $tblu     = "tbl_users";
+    protected $tblp     = "tbl_position";
     protected $time,$date;
 
     public function __construct(){
 
-        $this->db = \Config\Database::connect('default'); 
+        $this->db   = \Config\Database::connect('default'); 
         date_default_timezone_set("Asia/Singapore"); 
         $this->time = date("H:i:s");
         $this->date = date("Y-m-d");
@@ -47,19 +46,6 @@ class DashModel extends Model{
         return $query->getResultArray();
 
     }
-
-    
-
-
-    
-
-
-
-
-    
-
-
-
 
 
 }

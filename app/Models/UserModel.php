@@ -2,23 +2,22 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-
 class UserModel extends  Model {
+
 
     protected $tblu = "tbl_users";
     protected $tblf = "tbl_firm";
     protected $tblp = "tbl_position";
     protected $time,$date;
+
     public function __construct(){
 
-        $this->db = \Config\Database::connect('default'); 
+        $this->db   = \Config\Database::connect('default'); 
         date_default_timezone_set("Asia/Singapore"); 
         $this->time = date("H:i:s");
         $this->date = date("Y-m-d");
 
     }
-
-   
 
     public function edituser($duID){
 
@@ -27,7 +26,6 @@ class UserModel extends  Model {
         where tu.firm = tf.firmID
         and tu.position = tp.posID
         and tu.userID = {$duID}");
-
         return json_encode($query->getRowArray());
 
     }
@@ -54,8 +52,6 @@ class UserModel extends  Model {
 
     }
 
-    
-
     public function getfirm(){
 
         $query = $this->db->query("select * 
@@ -76,50 +72,39 @@ class UserModel extends  Model {
 
         $res1 = $this->db->table($this->tblu)->where('email', $req['email'])->get()->getNumRows();
         $res2 = $this->db->table($this->tblf)->where('firm', $req['firm'])->get()->getNumRows();
-
         if($res1 >= 1 or $res2 >= 1){
-
             return 'exist';
-
         }else{
-
             $newlogoname = $req['logo']->getRandomName();
             $req['logo']->move(ROOTPATH .'public/uploads/logo', $newlogoname);
-
             $firm = [
-                'firm' => $req['firm'], 
-                'address'  => $req['address'],
-                'contact'  => $req['contact'],
-                'noemployee'  => $req['noemployee'],
-                'noclient'  => $req['noclient'],
-                'logo' =>  $newlogoname,
-                'status' => 'Active',
-                'added_on'=> $this->date.' '.$this->time
+                'firm'          => $req['firm'], 
+                'address'       => $req['address'],
+                'contact'       => $req['contact'],
+                'noemployee'    => $req['noemployee'],
+                'noclient'      => $req['noclient'],
+                'logo'          =>  $newlogoname,
+                'status'        => 'Active',
+                'added_on'      => $this->date.' '.$this->time
             ];
             $this->db->table($this->tblf)->insert($firm);
             $insertedId = $this->db->insertID();
-
             $data = [
-                'name'  => $req['fname'],
-                'firm'  => $insertedId,
-                'email' => $req['email'],
-                'pass'  => $req['pass'],
-                'position'  => 3,
-                'type'  => 'Auditing Firm',
-                'verified'  => 'No',
-                'status'    => 'Active',
-                'added_on'  => $this->date.' '.$this->time
+                'name'          => $req['fname'],
+                'firm'          => $insertedId,
+                'email'         => $req['email'],
+                'pass'          => $req['pass'],
+                'position'      => 3,
+                'type'          => 'Auditing Firm',
+                'verified'      => 'No',
+                'status'        => 'Active',
+                'added_on'      => $this->date.' '.$this->time
             ];
             if($this->db->table($this->tblu)->insert($data)){
-
                 return 'registered';
-
             }else{
-
                 return 'failed';
-
             }
-
         }
 
     }
@@ -128,22 +113,20 @@ class UserModel extends  Model {
 
         $res1 = $this->db->table($this->tblu)->where('email', $req['email'])->get()->getNumRows();
         $res2 = $this->db->table($this->tblu)->where('name', $req['name'])->get()->getNumRows();
-
         if($res1 >= 1 or $res2 >= 1){
             return 'exist';
         }else{
             $data = [
-                'name' => $req['name'],
-                'email' => $req['email'],
-                'pass'  => $req['pass'],
-                'type' => $req['type'],
-                'firm' => $req['firm'],
-                'position' => $req['pos'],
+                'name'      => $req['name'],
+                'email'     => $req['email'],
+                'pass'      => $req['pass'],
+                'type'      => $req['type'],
+                'firm'      => $req['firm'],
+                'position'  => $req['pos'],
                 'verified'  => 'Yes',
                 'status'    => 'Active',
-                'added_on' => $this->date.' '.$this->time
+                'added_on'  => $this->date.' '.$this->time
             ];
-
             if($this->db->table($this->tblu)->insert($data)){
                 return 'added';
             }else{
@@ -151,21 +134,17 @@ class UserModel extends  Model {
             }
         }
 
-        
-
-
     }
 
     public function udpateuser($req){
 
         $data = [
-            'name' => $req['name'],
-            'email' => $req['email'],
-            'type' => $req['type'],
-            'position' => $req['pos'],
-            'updated_on' => $this->date.' '.$this->time
+            'name'          => $req['name'],
+            'email'         => $req['email'],
+            'type'          => $req['type'],
+            'position'      => $req['pos'],
+            'updated_on'    => $this->date.' '.$this->time
         ];
-
         if($this->db->table($this->tblu)->where('userID', $req['uID'])->update($data)){
             return 'updated';
         }else{
@@ -174,19 +153,16 @@ class UserModel extends  Model {
 
     }
 
-
     public function updatemyinfo($req){
 
         $data = [
-            'name' => $req['name'],
-            'address' => $req['address'],
-            'pass' => $req['pass'],
-            'contact' => $req['contact'],
-            'email' => $req['email'],
+            'name'          => $req['name'],
+            'address'       => $req['address'],
+            'pass'          => $req['pass'],
+            'contact'       => $req['contact'],
+            'email'         => $req['email'],
         ];
-
         if(!empty($req['photo']) and $req['photo'] != ''){
-            
             $imagePath = ROOTPATH .'/public/uploads/photo/'.$req['myphoto']; 
             if (file_exists($imagePath)) {
                 unlink($imagePath);
@@ -195,7 +171,6 @@ class UserModel extends  Model {
             $req['photo']->move(ROOTPATH .'public/uploads/photo', $photoname);
             $data['photo'] = $photoname;
             session()->set('photo', $photoname);
-
         }
         if(!empty($req['signature']) and $req['signature'] != ''){
             $imagePath = ROOTPATH .'/public/uploads/photo/'.$req['mysignature']; 
@@ -207,16 +182,13 @@ class UserModel extends  Model {
             $data['signature'] = $signaturename;
             session()->set('signature', $signaturename);
         }
-
         if($this->db->table($this->tblu)->where('userID', $req['uID'])->update($data)){
             return "updated";
         }else{
             return "error";
         }
-    
 
     }
-
 
     public function acin($duID){
 
@@ -239,10 +211,6 @@ class UserModel extends  Model {
         }
 
     }
-
-
-
-
 
 
 }

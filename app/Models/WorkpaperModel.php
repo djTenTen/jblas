@@ -4,45 +4,42 @@ use CodeIgniter\Model;
 
 class WorkpaperModel extends  Model {
 
-    protected $tblu = "tbl_users";
-    protected $tblwp = "tbl_workpaper";
-    protected $tblc = "tbl_clients";
 
-    protected $tblc1t = "tbl_c1_titles";
-    protected $tblc2t = "tbl_c2_titles";
-    protected $tblc3t = "tbl_c3_titles";
-
-    protected $tblc1d = "tbl_client_dfiles_c1";
-    protected $tblc2d = "tbl_client_dfiles_c2";
-    protected $tblc3d = "tbl_client_dfiles_c3";
-
-    protected $tblc1 = "tbl_client_files_c1";
-    protected $tblc2 = "tbl_client_files_c2";
-    protected $tblc3 = "tbl_client_files_c3";
-
-    protected $tblfi = "tbl_file_index";
-    protected $tblcfi = "tbl_client_file_index";
-    protected $tbltb = "tbl_client_trial_balance";
-    
+    protected $tblu     = "tbl_users";
+    protected $tblwp    = "tbl_workpaper";
+    protected $tblc     = "tbl_clients";
+    protected $tblc1t   = "tbl_c1_titles";
+    protected $tblc2t   = "tbl_c2_titles";
+    protected $tblc3t   = "tbl_c3_titles";
+    protected $tblc1d   = "tbl_client_dfiles_c1";
+    protected $tblc2d   = "tbl_client_dfiles_c2";
+    protected $tblc3d   = "tbl_client_dfiles_c3";
+    protected $tblc1    = "tbl_client_files_c1";
+    protected $tblc2    = "tbl_client_files_c2";
+    protected $tblc3    = "tbl_client_files_c3";
+    protected $tblfi    = "tbl_file_index";
+    protected $tblcfi   = "tbl_client_file_index";
+    protected $tbltb    = "tbl_client_trial_balance";
     protected $time,$date;
     protected $crypt;
+
     public function __construct(){
 
-        $this->db = \Config\Database::connect('default'); 
+        $this->db       = \Config\Database::connect('default'); 
         date_default_timezone_set("Asia/Singapore"); 
-        $this->crypt = \Config\Services::encrypter();
-        $this->time = date("H:i:s");
-        $this->date = date("Y-m-d");
+        $this->crypt    = \Config\Services::encrypter();
+        $this->time     = date("H:i:s");
+        $this->date     = date("Y-m-d");
 
     }
 
     public function getauditors($firmID,$type){
 
         $where = [
-            'firm' => $firmID,
-            'type' => $type,
-            'status' => 'Active',
-            'verified' => 'Yes',
+            'firm'          => $firmID,
+            'type'          => $type,
+            'status'        => 'Active',
+            'verified'      => 'Yes',
         ];
         $query = $this->db->table($this->tblu)->where($where)->get();
         return $query->getResultArray();
@@ -121,6 +118,7 @@ class WorkpaperModel extends  Model {
         and c1.clientID = {$cID}
         and c1.workpaper = {$wpID}");
         return $query->getResultArray();
+
     }
 
     public function getc2values($cID,$wpID){
@@ -133,6 +131,7 @@ class WorkpaperModel extends  Model {
         and c2.clientID = {$cID}
         and c2.workpaper = {$wpID}");
         return $query->getResultArray();
+
     }
 
     public function getc3values($cID,$wpID){
@@ -145,9 +144,11 @@ class WorkpaperModel extends  Model {
         and c3.clientID = {$cID}
         and c3.workpaper = {$wpID}");
         return $query->getResultArray();
+
     }
 
     public function getworkpaperspe($pos,$fID,$uID,$status){
+
         $query = $this->db->query("select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
         (select COUNT(*) from {$this->tblc1} as tc1 where tc1.workpaper = wp.wpID and tc1.clientID = wp.client) as x1,
         (select COUNT(*) from {$this->tblc2} as tc2 where tc2.workpaper = wp.wpID and tc2.clientID = wp.client) as x2,
@@ -165,7 +166,6 @@ class WorkpaperModel extends  Model {
         and wp.{$pos} = {$uID}
         and tc.cID = wp.client
         and wp.status = '{$status}'");
-        
         return $query->getResultArray();
 
     }
@@ -187,7 +187,6 @@ class WorkpaperModel extends  Model {
         from {$this->tblwp} as wp, {$this->tblc} as tc
         where wp.firm = {$fID}
         and tc.cID = wp.client");
-        
         return $query->getResultArray();
 
     }
@@ -241,197 +240,181 @@ class WorkpaperModel extends  Model {
     public function importtb($req){
 
         foreach($req['account_code'] as $i => $val){
-
             $data = [
-                'client' => $req['client'],
-                'firm' => $req['firm'],
-                'workpaper' => $req['workpaper'],
-                'index' => $this->crypt->decrypt($req['fileindex'][$i]),
-                'account_code' => $req['account_code'][$i],
-                'account' => $req['account'][$i],
-                'account_type' => $req['account_type'][$i],
-                'dytd' => $req['dytd'][$i],
-                'cytd' =>$req['cytd'][$i],
-                'added_on'=> $this->date.' '.$this->time,
-                'added_by' => $req['uID'],
+                'client'        => $req['client'],
+                'firm'          => $req['firm'],
+                'workpaper'     => $req['workpaper'],
+                'index'         => $this->crypt->decrypt($req['fileindex'][$i]),
+                'account_code'  => $req['account_code'][$i],
+                'account'       => $req['account'][$i],
+                'account_type'  => $req['account_type'][$i],
+                'dytd'          => $req['dytd'][$i],
+                'cytd'          =>$req['cytd'][$i],
+                'added_on'      => $this->date.' '.$this->time,
+                'added_by'      => $req['uID'],
             ];
-
             $this->db->table($this->tbltb)->insert($data);
-
         }
-
         return "uploaded";
-        
 
     }
+
     public function saveworkpaper($req){
 
         $where = [
-            'client' => $req['client'],
-            'financial_year' => $req['fy'],
-            'end_financial_year' => $req['efy'],
-            'firm' => $req['firm'],
+            'client'                => $req['client'],
+            'financial_year'        => $req['fy'],
+            'end_financial_year'    => $req['efy'],
+            'firm'                  => $req['firm'],
         ];
         $checkexist = $this->db->table($this->tblwp)->where($where)->get()->getNumRows();
-
         if($checkexist >= 1){
-
             return 'exist';
-
         }else{
-
             $workpaper = [
-                'auditor' => $req['auditor'],
-                'supervisor' => $req['reviewer'],
-                'audmanager' => $req['audmanager'],
-                'client' => $req['client'],
-                'firm' => $req['firm'],
-                'jobdur' => $req['jobdur'],
-                'financial_year' => $req['fy'],
-                'end_financial_year' => $req['efy'],
-                'status' => 'Preparing',
-                'Remarks' => 'Not Submitted',
-                'added_on'=> $this->date.' '.$this->time,
-                'added_by' => $req['uID'],
+                'auditor'               => $req['auditor'],
+                'supervisor'            => $req['reviewer'],
+                'audmanager'            => $req['audmanager'],
+                'client'                => $req['client'],
+                'firm'                  => $req['firm'],
+                'jobdur'                => $req['jobdur'],
+                'financial_year'        => $req['fy'],
+                'end_financial_year'    => $req['efy'],
+                'status'                => 'Preparing',
+                'Remarks'               => 'Not Submitted',
+                'added_on'              => $this->date.' '.$this->time,
+                'added_by'              => $req['uID'],
             ];
-
             $this->db->table($this->tblwp)->insert($workpaper);
             $wpid = $this->db->insertID();
-
             $index = $this->db->table($this->tblfi)->get();
             foreach($index->getResultArray() as $i){
                 $ind = [
-                    'client' => $req['client'],
-                    'firm' => $req['firm'],
-                    'workpaper' => $wpid,
-                    'index' => $i['fiID'],
-                    'acquired' => 'No',
-                    'added_on'=> $this->date.' '.$this->time,
-                    'added_by' => $req['uID'],
+                    'client'        => $req['client'],
+                    'firm'          => $req['firm'],
+                    'workpaper'     => $wpid,
+                    'index'         => $i['fiID'],
+                    'acquired'      => 'No',
+                    'added_on'      => $this->date.' '.$this->time,
+                    'added_by'      => $req['uID'],
                 ];
                 $this->db->table($this->tblcfi)->insert($ind);
             }
-            
             $wherec1 = [
-                'firmID' => $req['firm'],
-                'clientID' => $req['client'],
+                'firmID'    => $req['firm'],
+                'clientID'  => $req['client'],
             ];
             $c1df = $this->db->table($this->tblc1d)->where($wherec1)->get();
             if($c1df->getNumRows() >= 1){
                 foreach($c1df->getResultArray() as $r){
                     $datac1 = [
-                        'firmID' => $req['firm'],
-                        'workpaper' => $wpid,
-                        'clientID' => $req['client'],
-                        'c1tID' => $r['c1tID'],
-                        'code' => $r['code'],
-                        'type' => $r['type'],
-                        'question' => $r['question'],
-                        'less' => $r['less'],
-                        'name' => $r['name'],
-                        'reason' => $r['reason'],
-                        'balance' => $r['balance'],
-                        'planning' => $r['planning'],
-                        'finalization' => $r['finalization'],
-                        'reference' => $r['reference'],
-                        'reliance' => $r['reliance'],
-                        'finstate' => $r['finstate'],
-                        'desc' => $r['desc'],
-                        'controleffect' => $r['controleffect'],
-                        'implemented' => $r['implemented'],
-                        'assessed' => $r['assessed'],
-                        'yesno' => $r['yesno'],
-                        'comment' => $r['comment'],
-                        'corptax' => $r['corptax'],
-                        'statutory' => $r['statutory'],
-                        'accountancy' => $r['accountancy'],
-                        'other' => $r['other'],
-                        'totalcu' => $r['totalcu'],
-                        'status' => 'Preparing',
-                        'remarks' => $r['remarks'],
-                        'added_on' => $this->date.' '.$this->time
+                        'firmID'            => $req['firm'],
+                        'workpaper'         => $wpid,
+                        'clientID'          => $req['client'],
+                        'c1tID'             => $r['c1tID'],
+                        'code'              => $r['code'],
+                        'type'              => $r['type'],
+                        'question'          => $r['question'],
+                        'less'              => $r['less'],
+                        'name'              => $r['name'],
+                        'reason'            => $r['reason'],
+                        'balance'           => $r['balance'],
+                        'planning'          => $r['planning'],
+                        'finalization'      => $r['finalization'],
+                        'reference'         => $r['reference'],
+                        'reliance'          => $r['reliance'],
+                        'finstate'          => $r['finstate'],
+                        'desc'              => $r['desc'],
+                        'controleffect'     => $r['controleffect'],
+                        'implemented'       => $r['implemented'],
+                        'assessed'          => $r['assessed'],
+                        'yesno'             => $r['yesno'],
+                        'comment'           => $r['comment'],
+                        'corptax'           => $r['corptax'],
+                        'statutory'         => $r['statutory'],
+                        'accountancy'       => $r['accountancy'],
+                        'other'             => $r['other'],
+                        'totalcu'           => $r['totalcu'],
+                        'status'            => 'Preparing',
+                        'remarks'           => $r['remarks'],
+                        'added_on'          => $this->date.' '.$this->time
                     ];
                     $this->db->table($this->tblc1)->insert($datac1);
                 }
             }
-
             $wherec2 = [
-                'firmID' => $req['firm'],
-                'clientID' => $req['client'],
+                'firmID'    => $req['firm'],
+                'clientID'  => $req['client'],
             ];
             $c2df = $this->db->table($this->tblc2d)->where($wherec2)->get();
             if($c2df->getNumRows() >= 1){
                 foreach($c2df->getResultArray() as $r){
                     $datac2 = [
-                        'firmID' => $req['firm'],
-                        'workpaper' => $wpid,
-                        'clientID' => $req['client'],
-                        'c2tID' => $r['c2tID'],
-                        'code' => $r['code'],
-                        'type' => $r['type'],
-                        'question' => $r['question'],
-                        'extent' => $r['extent'],
-                        'reference' => $r['reference'],
-                        'initials' => $r['initials'],
-                        'desc' => $r['desc'],
-                        'controleffect' => $r['controleffect'],
-                        'assessed' => $r['assessed'],
-                        'yesno' => $r['yesno'],
-                        'comment' => $r['comment'],
-                        'corptax' => $r['corptax'],
-                        'statutory' => $r['statutory'],
-                        'accountancy' => $r['accountancy'],
-                        'other' => $r['other'],
-                        'totalcu' => $r['totalcu'],
-                        'status' => 'Preparing',
-                        'remarks' => $r['remarks'],
-                        'added_on' => $this->date.' '.$this->time
+                        'firmID'            => $req['firm'],
+                        'workpaper'         => $wpid,
+                        'clientID'          => $req['client'],
+                        'c2tID'             => $r['c2tID'],
+                        'code'              => $r['code'],
+                        'type'              => $r['type'],
+                        'question'          => $r['question'],
+                        'extent'            => $r['extent'],
+                        'reference'         => $r['reference'],
+                        'initials'          => $r['initials'],
+                        'desc'              => $r['desc'],
+                        'controleffect'     => $r['controleffect'],
+                        'assessed'          => $r['assessed'],
+                        'yesno'             => $r['yesno'],
+                        'comment'           => $r['comment'],
+                        'corptax'           => $r['corptax'],
+                        'statutory'         => $r['statutory'],
+                        'accountancy'       => $r['accountancy'],
+                        'other'             => $r['other'],
+                        'totalcu'           => $r['totalcu'],
+                        'status'            => 'Preparing',
+                        'remarks'           => $r['remarks'],
+                        'added_on'          => $this->date.' '.$this->time
                     ];
                     $this->db->table($this->tblc2)->insert($datac2);
                 }
             }
             $wherec3 = [
-                'firmID' => $req['firm'],
-                'clientID' => $req['client'],
+                'firmID'    => $req['firm'],
+                'clientID'  => $req['client'],
             ];
             $c3df = $this->db->table($this->tblc3d)->where($wherec3)->get();
             if($c3df->getNumRows() >= 1){
                 foreach($c3df->getResultArray() as $r){
                     $datac3 = [
-                        'firmID' => $req['firm'],
-                        'workpaper' => $wpid,
-                        'clientID' => $req['client'],
-                        'c3tID' => $r['c3tID'],
-                        'code' => $r['code'],
-                        'type' => $r['type'],
-                        'question' => $r['question'],
-                        'extent' => $r['extent'],
-                        'reference' => $r['reference'],
-                        'initials' => $r['initials'],
-                        'drps' => $r['drps'],
-                        'crps' => $r['crps'],
-                        'drfp' => $r['drfp'],
-                        'crfp' => $r['crfp'],
-                        'issue' => $r['issue'],
-                        'recommendation' => $r['recommendation'],
-                        'result' => $r['result'],
-                        'yesno' => $r['yesno'],
-                        'comment' => $r['comment'],
-                        'other' => $r['other'],
-                        'totalcu' => $r['totalcu'],
-                        'status' => 'Preparing',
-                        'remarks' => $r['remarks'],
-                        'added_on' => $this->date.' '.$this->time
+                        'firmID'            => $req['firm'],
+                        'workpaper'         => $wpid,
+                        'clientID'          => $req['client'],
+                        'c3tID'             => $r['c3tID'],
+                        'code'              => $r['code'],
+                        'type'              => $r['type'],
+                        'question'          => $r['question'],
+                        'extent'            => $r['extent'],
+                        'reference'         => $r['reference'],
+                        'initials'          => $r['initials'],
+                        'drps'              => $r['drps'],
+                        'crps'              => $r['crps'],
+                        'drfp'              => $r['drfp'],
+                        'crfp'              => $r['crfp'],
+                        'issue'             => $r['issue'],
+                        'recommendation'    => $r['recommendation'],
+                        'result'            => $r['result'],
+                        'yesno'             => $r['yesno'],
+                        'comment'           => $r['comment'],
+                        'other'             => $r['other'],
+                        'totalcu'           => $r['totalcu'],
+                        'status'            => 'Preparing',
+                        'remarks'           => $r['remarks'],
+                        'added_on'          => $this->date.' '.$this->time
                     ];
                     $this->db->table($this->tblc3)->insert($datac3);
                 }
             }
-
             return "added";
-
         }
-
-    
 
     }
 
@@ -443,14 +426,14 @@ class WorkpaperModel extends  Model {
             case 'c3': $table = $this->tblc3; $ctID = 'c3tID';break;
         }
         $where = [
-            'clientID' => $req['cID'],
-            'workpaper' => $req['wpID'],
-            $ctID => $req['ctID'],
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID'],
+            $ctID           => $req['ctID'],
         ];
         $data = [
-            'remarks' => $req['remarks'],
-            'status' => 'Reviewing',
-            'prepared_on' => $this->date.' '.$this->time
+            'remarks'       => $req['remarks'],
+            'status'        => 'Reviewing',
+            'prepared_on'   => $this->date.' '.$this->time
         ];
         if($this->db->table($table)->where($where)->update($data)){
             return "sent";
@@ -459,6 +442,7 @@ class WorkpaperModel extends  Model {
         }
 
     }
+
     public function sendtoauditor($req){
 
         switch ($req['c']) {
@@ -467,15 +451,14 @@ class WorkpaperModel extends  Model {
             case 'c3': $table = $this->tblc3; $ctID = 'c3tID';break;
         }
         $where = [
-            'clientID' => $req['cID'],
-            'workpaper' => $req['wpID'],
-            $ctID => $req['ctID'],
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID'],
+            $ctID           => $req['ctID'],
         ];
         $data = [
-            'remarks' => $req['remarks'],
-            'status' => 'Preparing',
+            'remarks'   => $req['remarks'],
+            'status'    => 'Preparing',
         ];
-        
         if($this->db->table($table)->where($where)->update($data)){
             return "sent";
         }else{
@@ -483,6 +466,7 @@ class WorkpaperModel extends  Model {
         }
 
     }
+
     public function sendtomanager($req){
 
         switch ($req['c']) {
@@ -491,16 +475,15 @@ class WorkpaperModel extends  Model {
             case 'c3': $table = $this->tblc3; $ctID = 'c3tID';break;
         }
         $where = [
-            'clientID' => $req['cID'],
-            'workpaper' => $req['wpID'],
-            $ctID => $req['ctID'],
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID'],
+            $ctID           => $req['ctID'],
         ];
         $data = [
-            'remarks' => $req['remarks'],
-            'status' => 'Checking',
-            'reviewed_on' => $this->date.' '.$this->time
+            'remarks'       => $req['remarks'],
+            'status'        => 'Checking',
+            'reviewed_on'   => $this->date.' '.$this->time
         ];
-        
         if($this->db->table($table)->where($where)->update($data)){
             return "sent";
         }else{
@@ -508,15 +491,12 @@ class WorkpaperModel extends  Model {
         }
 
     }
-    
-    
-
 
     public function sendtoreviewer($req){
 
         $data = [
-            'remarks' => $req['remarks'],
-            'status' => 'Reviewing',
+            'remarks'   => $req['remarks'],
+            'status'    => 'Reviewing',
         ];
         if($this->db->table($this->tblwp)->where('wpID', $req['wpID'])->update($data)){
             return "sent";
@@ -525,11 +505,12 @@ class WorkpaperModel extends  Model {
         }
         
     }
+
     public function sendtopreparer($req){
 
         $data = [
-            'remarks' => $req['remarks'],
-            'status' => 'Preparing',
+            'remarks'   => $req['remarks'],
+            'status'    => 'Preparing',
         ];
         if($this->db->table($this->tblwp)->where('wpID', $req['wpID'])->update($data)){
             return "sent";
@@ -538,11 +519,12 @@ class WorkpaperModel extends  Model {
         }
         
     }
+
     public function sendtoapprover($req){
 
         $data = [
-            'remarks' => $req['remarks'],
-            'status' => 'Checking',
+            'remarks'   => $req['remarks'],
+            'status'    => 'Checking',
         ];
         if($this->db->table($this->tblwp)->where('wpID', $req['wpID'])->update($data)){
             return "sent";
@@ -551,85 +533,41 @@ class WorkpaperModel extends  Model {
         }
         
     }
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
         AC1 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getac1($code,$c1tID,$dcID,$dwpID){
 
         $where = [
-            'code' => $code, 
-            'type' => 'cacf',
-            'c1tID' => $c1tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'code'          => $code, 
+            'type'          => 'cacf',
+            'c1tID'         => $c1tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query =  $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
 
     }
+
     public function getac1eqr($code,$c1tID,$dcID,$dwpID){
         
         $where = [
-            'code' => $code, 
-            'type' => 'eqr', 
-            'c1tID' => $c1tID, 
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'code'          => $code, 
+            'type'          => 'eqr', 
+            'c1tID'         => $c1tID, 
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query =  $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
 
     }
+
     /** 
         POST FUNCTIONS
     */
@@ -638,14 +576,13 @@ class WorkpaperModel extends  Model {
         foreach($req['yesno'] as $i => $val){
             $acid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'yesno' => $req['yesno'][$i],
-                'comment' => $req['comment'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'yesno'         => $req['yesno'][$i],
+                'comment'       => $req['comment'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
             $this->db->table($this->tblc1)->where('acID', $acid)->update($data);
         }
-        
         return true;
       
     }
@@ -654,42 +591,32 @@ class WorkpaperModel extends  Model {
 
         $acid = $this->crypt->decrypt($req['acid']);
         $data = [
-            'question' => $req['question'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['question'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-    
         if($this->db->table($this->tblc1)->where('acID', $acid)->update($data)){
             return true;
         }else{
             return false;
         }
+
     }
-
-
-
-
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
         AC2 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getac2($code,$c1tID,$dcID,$dwpID){
 
         $where = [
-            'code' => $code, 
-            'type' => 'pans',
-            'c1tID' => $c1tID, 
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'code'          => $code, 
+            'type'          => 'pans',
+            'c1tID'         => $c1tID, 
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query =  $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
@@ -699,39 +626,35 @@ class WorkpaperModel extends  Model {
     public function getac2aep($code,$c1tID,$dcID,$dwpID){
 
         $where = [
-            'code' => $code, 
-            'type' => 'ac2aep',
-            'c1tID' => $c1tID, 
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'code'          => $code, 
+            'type'          => 'ac2aep',
+            'c1tID'         => $c1tID, 
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query =  $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
 
     }
+
     /** 
         POST FUNCTIONS
     */
     public function saveac2($req){
 
         foreach($req['corptax'] as $i => $val){
-
             $acid = $this->crypt->decrypt($req['acid'][$i]);
-
             $data = [
-                'corptax' => $req['corptax'][$i],
-                'statutory' => $req['statutory'][$i],
-                'accountancy' => $req['accountancy'][$i],
-                'other' => $req['other'][$i],
-                'totalcu' => $req['totalcu'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'corptax'       => $req['corptax'][$i],
+                'statutory'     => $req['statutory'][$i],
+                'accountancy'   => $req['accountancy'][$i],
+                'other'         => $req['other'][$i],
+                'totalcu'       => $req['totalcu'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
-
             $this->db->table($this->tblc1)->where('acID', $acid)->update($data);
-
         }
-
         return true;
 
     }
@@ -739,46 +662,33 @@ class WorkpaperModel extends  Model {
     public function saveac2aep($req){
 
         $acid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['eap'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['eap'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-    
         if($this->db->table($this->tblc1)->where('acID', $acid)->update($data)){
             return true;
         }else{
             return false;
         }
-        
 
     }
-
-
-
-
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
         AC3 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getac3($part,$code,$c1tID,$dcID,$dwpID){
 
         $where = [
-            'code' => $code, 
-            'type' => $part,
-            'c1tID' => $c1tID, 
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'code'          => $code, 
+            'type'          => $part,
+            'c1tID'         => $c1tID, 
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
@@ -790,33 +700,19 @@ class WorkpaperModel extends  Model {
     */
     public function saveac3($req){
 
-
         foreach($req['yesno'] as $i => $val){
-
             $acid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'yesno' => $req['yesno'][$i],
-                'comment' => $req['comment'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'yesno'         => $req['yesno'][$i],
+                'comment'       => $req['comment'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
-
             $this->db->table($this->tblc1)->where('acID', $acid)->update($data);
-
         }
-
         return true;
 
     }
-
-
-
-
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
@@ -828,24 +724,25 @@ class WorkpaperModel extends  Model {
     public function getac4ppr($code,$c1tID,$dcID,$dwpID){
 
         $where = [
-            'code' => $code, 
-            'type' => 'ppr',
-            'c1tID' => $c1tID, 
-            'clientID' => $dcID,
+            'code'      => $code, 
+            'type'      => 'ppr',
+            'c1tID'     => $c1tID, 
+            'clientID'  => $dcID,
             'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
 
     }
+
     public function getac4($code,$c1tID,$dcID,$dwpID){
 
         $where = [
-            'code' => $code, 
-            'type' => 'ac4sod',
-            'c1tID' => $c1tID, 
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'code'          => $code, 
+            'type'          => 'ac4sod',
+            'c1tID'         => $c1tID, 
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
@@ -858,45 +755,33 @@ class WorkpaperModel extends  Model {
     public function saveac4ppr($req){
 
         $acid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['ppr'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['ppr'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-    
         if($this->db->table($this->tblc1)->where('acID', $acid)->update($data)){
             return true;
         }else{
             return false;
         }
-        
 
     }
+
     public function saveac4($req){
 
         foreach($req['comment'] as $i => $val){
             $acid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'comment' => $req['comment'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'comment'       => $req['comment'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
-
             $this->db->table($this->tblc1)->where('acID', $acid)->update($data);
         }
         return true;
 
     }
-
-
-
-
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
@@ -908,11 +793,11 @@ class WorkpaperModel extends  Model {
     public function getac5($code,$c1tID,$dcID,$dwpID){
 
         $where = [
-            'code' => $code, 
-            'type' => 'rescon',
-            'c1tID' => $c1tID, 
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'code'          => $code, 
+            'type'          => 'rescon',
+            'c1tID'         => $c1tID, 
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where )->get();
         return $query->getRowArray();
@@ -925,13 +810,11 @@ class WorkpaperModel extends  Model {
     public function saveac5($req){
 
         $acid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['rescon'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['rescon'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-
         if($this->db->table($this->tblc1)->where('acID', $acid)->update($data)){
             return true;
         }else{
@@ -940,43 +823,34 @@ class WorkpaperModel extends  Model {
 
     }
 
-
-
-
-
-
-
-
-
-
     /**
         ----------------------------------------------------------
         AC6 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getac6($part,$code,$c1tID,$dcID,$dwpID){
 
         $where = [
-            'code' => $code, 
-            'type' => $part,
-            'c1tID' => $c1tID, 
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'code'          => $code, 
+            'type'          => $part,
+            'c1tID'         => $c1tID, 
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
 
     }
+
     public function gets12($code,$c1tID,$dcID,$dwpID){
 
         $where = [
-            'code' => $code, 
-            'type' => 'ac6s12',
-            'c1tID' => $c1tID, 
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'code'          => $code, 
+            'type'          => 'ac6s12',
+            'c1tID'         => $c1tID, 
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
@@ -989,16 +863,14 @@ class WorkpaperModel extends  Model {
     public function saveac6ra($req){
 
         foreach($req['planning'] as $i => $val){
-
             $acid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'planning' => $req['planning'][$i],
-                'finalization' => $req['finalization'][$i],
-                'reference' => $req['reference'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'planning'      => $req['planning'][$i],
+                'finalization'  => $req['finalization'][$i],
+                'reference'     => $req['reference'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
-
             $this->db->table($this->tblc1)->where('acID', $acid)->update($data);
         }
         return true;
@@ -1009,11 +881,10 @@ class WorkpaperModel extends  Model {
 
         $acid = $this->crypt->decrypt($req['acid']);
         $data = [
-            'question' => $req['section'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['section'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-
         if($this->db->table($this->tblc1)->where('acID', $acid)->update($data)){
             return true;
         }else{
@@ -1024,65 +895,52 @@ class WorkpaperModel extends  Model {
 
     public function saveac6s3($req){
         $where = [
-            'type' => $req['part'], 
-            'code' => $req['code'], 
-            'c1tID' => $req['c1tID'],
-            'clientID' => $req['cID'],
-            'workpaper' => $req['wpID'],
+            'type'          => $req['part'], 
+            'code'          => $req['code'], 
+            'c1tID'         => $req['c1tID'],
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID'],
         ];
-
         $this->db->table($this->tblc1)->where($where)->delete();
-
         foreach($req['financialstatement'] as $i => $val){
-
             $data = [
-                'finstate' => $req['financialstatement'][$i],
-                'desc' => $req['descriptioncontrol'][$i],
-                'controleffect' => $req['controleffective'][$i],
-                'implemented' => $req['controlimplemented'][$i],
-                'assessed' => $req['assesed'][$i],
-                'reference' => $req['crosstesting'][$i],
-                'reliance' => $req['reliancecontrol'][$i],
-                'code' => $req['code'],
-                'c1tID' => $req['c1tID'],
-                'workpaper' => $req['wpID'],
-                'firmID' => $req['fID'],
-                'clientID' => $req['cID'],
-                'type' => $req['part'],
-                'status' => 'Active',
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'finstate'          => $req['financialstatement'][$i],
+                'desc'              => $req['descriptioncontrol'][$i],
+                'controleffect'     => $req['controleffective'][$i],
+                'implemented'       => $req['controlimplemented'][$i],
+                'assessed'          => $req['assesed'][$i],
+                'reference'         => $req['crosstesting'][$i],
+                'reliance'          => $req['reliancecontrol'][$i],
+                'code'              => $req['code'],
+                'c1tID'             => $req['c1tID'],
+                'workpaper'         => $req['wpID'],
+                'firmID'            => $req['fID'],
+                'clientID'          => $req['cID'],
+                'type'              => $req['part'],
+                'status'            => 'Active',
+                'updated_on'        => $this->date.' '.$this->time,
+                'updated_by'        => $req['uID'],
             ];
-
             $this->db->table($this->tblc1)->insert($data);
         }
         return true;
 
     }
-    
-
-    
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
         AC7 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getac7($code,$c1tID,$part,$dcID,$dwpID){
 
         $where = [
-            'type' => $part, 
-            'code' => $code, 
-            'c1tID' => $c1tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => $part, 
+            'code'          => $code, 
+            'c1tID'         => $c1tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
@@ -1095,15 +953,15 @@ class WorkpaperModel extends  Model {
     public function saveac7($req){
 
         $data = [
-            'question' => $req['genyn'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['genyn'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
         $where = [
-            'type' => $req['part'],
-            'c1tID' => $req['c1tID'],
-            'clientID' => $req['cID'],
-            'workpaper' => $req['wpID'],
+            'type'          => $req['part'],
+            'c1tID'         => $req['c1tID'],
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID'],
         ];
         if($this->db->table($this->tblc1)->where($where)->update($data)){
             return true;
@@ -1113,30 +971,20 @@ class WorkpaperModel extends  Model {
 
     }
 
-
-
-
-
-
-
-
-
-
     /**
         ----------------------------------------------------------
         AC8 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getac8($code,$c1tID,$part,$dcID,$dwpID){
 
         $where = [
-            'type' => $part, 
-            'code' => $code, 
-            'c1tID' => $c1tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => $part, 
+            'code'          => $code, 
+            'c1tID'         => $c1tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
@@ -1149,43 +997,31 @@ class WorkpaperModel extends  Model {
     public function saveac8($req){
 
         foreach($req['question'] as $i => $val){
-
             $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'question' => $req['question'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'question'      => $req['question'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
             $this->db->table($this->tblc1)->where('acID', $dacid)->update($data);
-
         }
-
         return true;
+
     }
-
-
-
-
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
         AC9 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getac9data($code,$c1tID,$dcID,$dwpID){
 
         $where = [
-            'type' => 'ac9data', 
-            'code' => $code, 
-            'c1tID' => $c1tID,
-            'clientID' => $dcID,
+            'type'      => 'ac9data', 
+            'code'      => $code, 
+            'c1tID'     => $c1tID,
+            'clientID'  => $dcID,
             'workpaper' => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
@@ -1199,13 +1035,11 @@ class WorkpaperModel extends  Model {
     public function saveac9($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['ac9'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['ac9'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-
         if($this->db->table($this->tblc1)->where('acID', $dacid)->update($data)){
             return true;
         }else{
@@ -1214,266 +1048,240 @@ class WorkpaperModel extends  Model {
 
     }
 
-
-
-
-
-
-
-
-
-
     /**
         ----------------------------------------------------------
         AC10 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getac10s1data($c1tID,$part,$dcID,$dwpID){
 
         $where = [
-            'type' => $part, 
-            'code' => 'ac10', 
-            'question' => 'section1',
-            'c1tID' => $c1tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => $part, 
+            'code'          => 'ac10', 
+            'question'      => 'section1',
+            'c1tID'         => $c1tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
 
     }
+
     public function getac10s2data($c1tID,$part,$dcID,$dwpID){
 
         $where = [
-            'type' => $part, 
-            'code' => 'ac10', 
-            'question' => 'section2',
-            'c1tID' => $c1tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => $part, 
+            'code'          => 'ac10', 
+            'question'      => 'section2',
+            'c1tID'         => $c1tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
 
     }
+
     public function getac10cu($c1tID,$part,$dcID,$dwpID){
 
         $where = [
-            'type' => $part, 
-            'code' => 'ac10', 
-            'c1tID' => $c1tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => $part, 
+            'code'          => 'ac10', 
+            'c1tID'         => $c1tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
 
     }
+
     public function getdatacount($c1tID,$part,$dcID,$dwpID){
 
         $where = [
-            'type' => $part, 
-            'code' => 'ac10', 
-            'c1tID' => $c1tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => $part, 
+            'code'          => 'ac10', 
+            'c1tID'         => $c1tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where);
         return $query->countAllResults();
 
     }
+
     public function getsumation($c1tID,$part,$dcID,$dwpID){
 
         $where1 = [
-            'type' => $part, 
-            'code' => 'ac10', 
-            'c1tID' => $c1tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => $part, 
+            'code'          => 'ac10', 
+            'c1tID'         => $c1tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $where2 = [
-            'type' => $part.'cu', 
-            'code' => 'ac10', 
-            'c1tID' => $c1tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => $part.'cu', 
+            'code'          => 'ac10', 
+            'c1tID'         => $c1tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $total = $this->db->table($this->tblc1)->selectSum('balance')->where($where1)->get()->getRowArray();
         $cu = $this->db->table($this->tblc1)->where($where2)->get()->getRowArray();
-
         return $cu['question'] - $total['balance'];
 
     }
+
     public function getsummarydata($c1tID,$part,$dcID,$dwpID){
 
         $where2 = [
-            'type' => $part.'data', 
-            'code' => 'ac10', 
-            'c1tID' => $c1tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => $part.'data', 
+            'code'          => 'ac10', 
+            'c1tID'         => $c1tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc1)->where($where2)->get();
         return $query->getRowArray();
 
     }
+
     /**     
         POST FUNCTIONS
     */
     public function saveac10summ($req,$ref){
 
         foreach ($req as $r => $val){
-
             $data = [
-                'question' => $val,
-                'type' =>  $r.'data',
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $ref['uID'],
+                'question'      => $val,
+                'type'          =>  $r.'data',
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $ref['uID'],
             ];
-
             $where1 = [
-                'type' => $r.'data',
-                'code' => $ref['code'],
-                'c1tID' => $ref['c1tID'],
-                'clientID' =>$ref['cID'],
-                'workpaper' => $req['wpID'],
+                'type'          => $r.'data',
+                'code'          => $ref['code'],
+                'c1tID'         => $ref['c1tID'],
+                'clientID'      =>$ref['cID'],
+                'workpaper'     => $req['wpID'],
             ];
             $this->db->table($this->tblc1)->where($where1)->update($data);
-
         }
-
         $where2 = [
-            'type' => 'materialdata',
-            'code' => $ref['code'],
-            'c1tID' => $ref['c1tID'],
-            'clientID' =>$ref['cID'],
-            'workpaper' => $req['wpID'],
+            'type'          => 'materialdata',
+            'code'          => $ref['code'],
+            'c1tID'         => $ref['c1tID'],
+            'clientID'      =>$ref['cID'],
+            'workpaper'     => $req['wpID'],
         ];
         $this->db->table($this->tblc1)->where($where2)->update(array('question' => $ref['materiality']));
-
         return true;
 
     }
+
     public function saveac10s1($req){
 
         $where = [
-            'type' => $req['type'], 
-            'code' => $req['code'],
-            'question' => 'section1',
-            'c1tID' => $req['c1tID'],
-            'clientID' => $req['cID'],
-            'workpaper' => $req['wpID'],
+            'type'          => $req['type'], 
+            'code'          => $req['code'],
+            'question'      => 'section1',
+            'c1tID'         => $req['c1tID'],
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID'],
         ];
         $this->db->table($this->tblc1)->where($where)->delete();
-
         foreach($req['name'] as $i => $val){
-
             $data = [
-                'less' => $req['less'][$i],
-                'name' => $req['name'][$i],
-                'balance' => $req['balance'][$i],
-                'type' =>  $req['type'],
-                'code' =>  $req['code'],
-                'c1tID' => $req['c1tID'],
-                'clientID' => $req['cID'],
-                'workpaper' => $req['wpID'],
-                'firmID' => $req['fID'],
-                'question' => 'section1',
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'less'          => $req['less'][$i],
+                'name'          => $req['name'][$i],
+                'balance'       => $req['balance'][$i],
+                'type'          =>  $req['type'],
+                'code'          =>  $req['code'],
+                'c1tID'         => $req['c1tID'],
+                'clientID'      => $req['cID'],
+                'workpaper'     => $req['wpID'],
+                'firmID'        => $req['fID'],
+                'question'      => 'section1',
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
-
             $this->db->table($this->tblc1)->insert($data);
-
         }
-
         return true;
+
     }
+
     public function saveac10s2($req){
 
         $where = [
-            'type' => $req['type'], 
-            'code' => $req['code'],
-            'question' => 'section2',
-            'c1tID' => $req['c1tID'],
-            'clientID' => $req['cID'],
-            'workpaper' => $req['wpID'],
+            'type'          => $req['type'], 
+            'code'          => $req['code'],
+            'question'      => 'section2',
+            'c1tID'         => $req['c1tID'],
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID'],
         ];
-    
         $this->db->table($this->tblc1)->where($where)->delete();
-
         foreach($req['name'] as $i => $val){
-
             $data = [
-                'less' => $req['less'][$i],
-                'name' => $req['name'][$i],
-                'reason' => $req['reason'][$i],
-                'balance' => $req['balance'][$i],
-                'type' =>  $req['type'],
-                'code' =>  $req['code'],
-                'c1tID' => $req['c1tID'],
-                'clientID' => $req['cID'],
-                'workpaper' => $req['wpID'],
-                'firmID' => $req['fID'],
-                'question' => 'section2',
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'less'          => $req['less'][$i],
+                'name'          => $req['name'][$i],
+                'reason'        => $req['reason'][$i],
+                'balance'       => $req['balance'][$i],
+                'type'          =>  $req['type'],
+                'code'          =>  $req['code'],
+                'c1tID'         => $req['c1tID'],
+                'clientID'      => $req['cID'],
+                'workpaper'     => $req['wpID'],
+                'firmID'        => $req['fID'],
+                'question'      => 'section2',
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
             $this->db->table($this->tblc1)->insert($data);
-
         }
-
         return true;
+
     }
+
     public function saveac10cu($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
-        
         $data = [
-            'question' => $req['question'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['question'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;
         }
-
         
     }
-
-
-
-
-
-
-
-
-
 
      /**
         ----------------------------------------------------------
         AC11 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getac11data($code,$c1tID,$dcID,$dwpID){
 
         $where = [
-            'type' => 'ac11data',
-            'code' => $code,
-            'c1tID' => $c1tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => 'ac11data',
+            'code'          => $code,
+            'c1tID'         => $c1tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getRowArray();
 
     }
+
     /**     
         POST FUNCTIONS
     */
@@ -1481,9 +1289,9 @@ class WorkpaperModel extends  Model {
 
         $dacid = $this->crypt->decrypt($req['acid']);
         $data = [
-            'question' => $req['ac11'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['ac11'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1)->where('acID', $dacid)->update($data)){
             return true;
@@ -1493,53 +1301,19 @@ class WorkpaperModel extends  Model {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /**
         ----------------------------------------------------------
         Chapter 2 GET FUNCTIONS
         ----------------------------------------------------------
     */
-
     public function getquestionsdata($code,$c2tID,$dcID,$dwpID){
 
         $where = [
-            'type' => $code,
-            'code' => $code,
-            'c2tID' => $c2tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => $code,
+            'code'          => $code,
+            'c2tID'         => $c2tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc2)->where($where)->get();
         return $query->getResultArray();
@@ -1549,13 +1323,12 @@ class WorkpaperModel extends  Model {
     public function getquestionsaicpppa($code,$c2tID,$dcID,$dwpID){
 
         $where = [
-            'type' => 'aicpppa',
-            'code' => $code,
-            'c2tID' => $c2tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => 'aicpppa',
+            'code'          => $code,
+            'c2tID'         => $c2tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
-
         $query = $this->db->table($this->tblc2)->where($where)->get();
         return $query->getResultArray();
 
@@ -1564,17 +1337,16 @@ class WorkpaperModel extends  Model {
     public function getquestionsrcicp($code,$c2tID,$dcID,$dwpID){
 
         $where = [
-            'type' => 'rcicp',
-            'code' => $code,
-            'c2tID' => $c2tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => 'rcicp',
+            'code'          => $code,
+            'c2tID'         => $c2tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc2)->where($where)->get();
         return $query->getResultArray();
 
     }
-   
    
     /**
         ----------------------------------------------------------
@@ -1586,33 +1358,31 @@ class WorkpaperModel extends  Model {
         foreach($req['extent'] as $i => $val){
             $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'extent' => $req['extent'][$i],
-                'reference' => $req['reference'][$i],
-                'initials' => $req['initials'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'extent'        => $req['extent'][$i],
+                'reference'     => $req['reference'][$i],
+                'initials'      => $req['initials'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
             $this->db->table($this->tblc2)->where('acID', $dacid)->update($data);
         }
-
         return true;
+
     }
 
     public function saveaicpppa($req){
 
         foreach($req['comment'] as $i => $val){
-
             $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'reference' => $req['comment'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'reference'         => $req['comment'][$i],
+                'updated_on'        => $this->date.' '.$this->time,
+                'updated_by'        => $req['uID'],
             ];
             $this->db->table($this->tblc2)->where('acID', $dacid)->update($data);
-            
         }
-
         return true;
+
     }
 
     public function savercicp($req){
@@ -1620,89 +1390,51 @@ class WorkpaperModel extends  Model {
         foreach($req['extent'] as $i => $val){
             $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'extent' => $req['extent'][$i],
-                'reference' => $req['comment'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'extent'            => $req['extent'][$i],
+                'reference'         => $req['comment'][$i],
+                'updated_on'        => $this->date.' '.$this->time,
+                'updated_by'        => $req['uID'],
             ];
-            
             $this->db->table($this->tblc2)->where('acID', $dacid)->update($data);
-            
         }
-
         return true;
+
     }
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
         CHAPTER 3
         AA1 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getaa1($part,$code,$c3tID,$dcID,$dwpID){
-        $where = [
-            'type' => $part,
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
-        ];
 
+        $where = [
+            'type'          => $part,
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
+        ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
 
     }
 
     public function getaa1s3($code,$c3tID,$dcID,$dwpID){
+
         $where = [
-            'type' => 'section3',
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => 'section3',
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
 
     }
-   
    
     /**
         POST FUNCTIONS
@@ -1712,29 +1444,25 @@ class WorkpaperModel extends  Model {
         foreach($req['extent'] as $i => $val){
             $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'extent' => $req['extent'][$i],
-                'reference' => $req['reference'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'extent'        => $req['extent'][$i],
+                'reference'     => $req['reference'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
-
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
-            
         }
-
         return true;
+
     }
 
     public function saveaa1s3($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['question'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['question'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
             return true;
         }else{
@@ -1743,38 +1471,25 @@ class WorkpaperModel extends  Model {
 
     }
 
-    
-
-
-
-
-
-
-
-
-
-
     /**
         ----------------------------------------------------------
         AA2 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
-
     public function getaa2data($code,$c3tID,$dcID,$dwpID){
+
         $where = [
-            'type' => 'aa2',
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
+            'type'      => 'aa2',
+            'code'      => $code,
+            'c3tID'     => $c3tID,
+            'clientID'  => $dcID,
             'workpaper' => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
 
     }
-
    
     /**
         POST FUNCTIONS
@@ -1782,13 +1497,11 @@ class WorkpaperModel extends  Model {
     public function saveaa2($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['aa2'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['aa2'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
             return true;
         }else{
@@ -1797,29 +1510,20 @@ class WorkpaperModel extends  Model {
 
     }
 
-
-
-
-
-
-
-
-
     /**
         ----------------------------------------------------------
         AA3a FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getaa3($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => $part,
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => $part,
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
@@ -1829,11 +1533,11 @@ class WorkpaperModel extends  Model {
     public function getaa3air($code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => 'ir',
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => 'ir',
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -1846,18 +1550,14 @@ class WorkpaperModel extends  Model {
     public function saveaa3a($req){
 
         foreach($req['comment'] as $i => $val){
-
             $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'reference' => $req['comment'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'reference'     => $req['comment'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
-
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
-            
         }
-
         return true;
 
     }
@@ -1865,18 +1565,15 @@ class WorkpaperModel extends  Model {
     public function saveaa3afaf($req){
 
         foreach($req['extent'] as $i => $val){
-
             $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'extent' => $req['extent'][$i],
-                'reference' => $req['reference'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'extent'        => $req['extent'][$i],
+                'reference'     => $req['reference'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
-            
         }
-
         return true;
 
     }
@@ -1884,46 +1581,33 @@ class WorkpaperModel extends  Model {
     public function saveaa3air($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['ir'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['ir'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;
         }
 
-
     }
-
-
-
-
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
         AA3b FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getaa3b($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => $part,
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => $part,
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
@@ -1933,11 +1617,11 @@ class WorkpaperModel extends  Model {
     public function getaa3bp4($code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => 'p4',
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => 'p4',
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -1950,18 +1634,14 @@ class WorkpaperModel extends  Model {
     public function saveaa3b($req){
 
         foreach($req['reference'] as $i => $val){
-
             $dacid = $this->crypt->decrypt($req['acid'][$i]);
-            
             $data = [
-                'reference' => $req['reference'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'reference'     => $req['reference'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
-            
         }
-
         return true;
 
     }
@@ -1969,48 +1649,34 @@ class WorkpaperModel extends  Model {
     public function saveaa3bp4($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['p4'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['p4'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;
         }
 
-
     }
-
-
-    
-
-   
-
-
-
-
 
     /**
         ----------------------------------------------------------
         AA5b FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getaa5b($code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => 'aa5b',
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
+            'type'      => 'aa5b',
+            'code'      => $code,
+            'c3tID'     => $c3tID,
+            'clientID'  => $dcID,
             'workpaper' => $dwpID
         ];
-
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
 
@@ -2022,68 +1688,51 @@ class WorkpaperModel extends  Model {
     public function saveaa5b($req){
 
         $where = [
-            'type' => $req['part'],
-            'code' => $req['code'],
-            'c3tID' => $req['c3tID'],
-            'clientID' => $req['cID'],
-            'workpaper' => $req['wpID']
+            'type'          => $req['part'],
+            'code'          => $req['code'],
+            'c3tID'         => $req['c3tID'],
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID']
         ];
-
         $this->db->table($this->tblc3)->where($where)->delete();
-
         foreach($req['reference'] as $i => $val){
-
             $data = [
-                'reference' => $req['reference'][$i],
-                'issue' => $req['issue'][$i],
-                'comment' => $req['comment'][$i],
-                'recommendation' => $req['recommendation'][$i],
-                'yesno' => $req['yesno'][$i],
-                'result' => $req['result'][$i],
-                'type' =>  $req['part'],
-                'code' =>  $req['code'],
-                'c3tID' => $req['c3tID'],
-                'workpaper' => $req['wpID'],
-                'clientID' => $req['cID'],
-                'firmID' => $req['fID'],
-                'status' => 'Active',
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'reference'         => $req['reference'][$i],
+                'issue'             => $req['issue'][$i],
+                'comment'           => $req['comment'][$i],
+                'recommendation'    => $req['recommendation'][$i],
+                'yesno'             => $req['yesno'][$i],
+                'result'            => $req['result'][$i],
+                'type'              =>  $req['part'],
+                'code'              =>  $req['code'],
+                'c3tID'             => $req['c3tID'],
+                'workpaper'         => $req['wpID'],
+                'clientID'          => $req['cID'],
+                'firmID'            => $req['fID'],
+                'status'            => 'Active',
+                'updated_on'        => $this->date.' '.$this->time,
+                'updated_by'        => $req['uID'],
             ];
-
             $this->db->table($this->tblc3)->insert($data);
-            
         }
-
         return true;
 
-
     }
-
-
-
-
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
         AA7 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getaa7($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => $part,
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => $part,
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
@@ -2093,11 +1742,11 @@ class WorkpaperModel extends  Model {
     public function getaa7aep($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => $part,
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => $part,
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -2110,103 +1759,81 @@ class WorkpaperModel extends  Model {
     public function saveaa7isa($req){
 
         $where = [
-            'type' => $req['part'],
-            'code' => $req['code'],
-            'c3tID' => $req['c3tID'],
-            'clientID' => $req['cID'],
-            'workpaper' => $req['wpID']
+            'type'          => $req['part'],
+            'code'          => $req['code'],
+            'c3tID'         => $req['c3tID'],
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID']
         ];
         $this->db->table($this->tblc3)->where($where)->delete();
-
         foreach($req['reference'] as $i => $val){
-
             $data = [
-                'reference' => $req['reference'][$i],
-                'issue' => $req['issue'][$i],
-                'comment' => $req['comment'][$i],
-                'recommendation' => $req['recommendation'][$i],
-                'result' => $req['result'][$i],
-                'type' =>  $req['part'],
-                'code' =>  $req['code'],
-                'c3tID' => $req['c3tID'],
-                'clientID' => $req['cID'],
-                'workpaper' => $req['wpID'],
-                'firmID' => $req['fID'],
-                'status' => 'Active',
-                'updated_on' => $this->date.' '.$this->time
+                'reference'             => $req['reference'][$i],
+                'issue'                 => $req['issue'][$i],
+                'comment'               => $req['comment'][$i],
+                'recommendation'        => $req['recommendation'][$i],
+                'result'                => $req['result'][$i],
+                'type'                  =>  $req['part'],
+                'code'                  =>  $req['code'],
+                'c3tID'                 => $req['c3tID'],
+                'clientID'              => $req['cID'],
+                'workpaper'             => $req['wpID'],
+                'firmID'                => $req['fID'],
+                'status'                => 'Active',
+                'updated_on'            => $this->date.' '.$this->time
             ];
-            
             $this->db->table($this->tblc3)->insert($data);
-            
         }
-
         return true;
-
 
     }
 
     public function saveaa7aepapp($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['aep'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['aep'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;
         }
-
 
     }
 
     public function saveaa7aep($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['aep'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['aep'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;
         }
 
-
     }
-
-
-
-
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
         AA10 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getaa10($code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => 'aa10',
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => 'aa10',
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -2219,46 +1846,33 @@ class WorkpaperModel extends  Model {
     public function saveaa10($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['aa10'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['aa10'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;
         }
 
-
     }
-
-
-
-
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
         AA11 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getaa11p2($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => $part,
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => $part,
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
@@ -2268,11 +1882,11 @@ class WorkpaperModel extends  Model {
     public function getaa11p($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => $part,
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => $part,
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -2282,11 +1896,11 @@ class WorkpaperModel extends  Model {
     public function getaa11con($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => $part,
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID
+            'type'          => $part,
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -2299,78 +1913,67 @@ class WorkpaperModel extends  Model {
     public function saveaa11un($req){
 
         $where = [
-            'type' => $req['part'],
-            'code' => $req['code'],
-            'c3tID' => $req['c3tID'],
-            'clientID' => $req['cID'],
-            'workpaper' => $req['wpID'],
+            'type'          => $req['part'],
+            'code'          => $req['code'],
+            'c3tID'         => $req['c3tID'],
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID'],
         ];
         $this->db->table($this->tblc3)->where($where)->delete();
-
         foreach($req['reference'] as $i => $val){
-
             $data = [
-                'reference' => $req['reference'][$i],
-                'initials' => $req['desc'][$i],
-                'drps' => $req['drps'][$i],
-                'crps' => $req['crps'][$i],
-                'drfp' => $req['drfp'][$i],
-                'crfp' => $req['crfp'][$i],
-                'yesno' => $req['yesno'][$i],
-                'type' =>  $req['part'],
-                'code' =>  $req['code'],
-                'c3tID' => $req['c3tID'],
-                'clientID' => $req['cID'],
-                'workpaper' => $req['wpID'],
-                'firmID' => $req['fID'],
-                'status' => 'Active',
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'reference'         => $req['reference'][$i],
+                'initials'          => $req['desc'][$i],
+                'drps'              => $req['drps'][$i],
+                'crps'              => $req['crps'][$i],
+                'drfp'              => $req['drfp'][$i],
+                'crfp'              => $req['crfp'][$i],
+                'yesno'             => $req['yesno'][$i],
+                'type'              =>  $req['part'],
+                'code'              =>  $req['code'],
+                'c3tID'             => $req['c3tID'],
+                'clientID'          => $req['cID'],
+                'workpaper'         => $req['wpID'],
+                'firmID'            => $req['fID'],
+                'status'            => 'Active',
+                'updated_on'        => $this->date.' '.$this->time,
+                'updated_by'        => $req['uID'],
             ];
-    
             $this->db->table($this->tblc3)->insert($data);
-
         }
-
        return true;
 
     }
 
-
     public function saveaa11ad($req){
 
         $where = [
-            'type' => $req['part'],
-            'code' => $req['code'],
-            'c3tID' => $req['c3tID'],
-            'clientID' => $req['cID'],
+            'type'          => $req['part'],
+            'code'          => $req['code'],
+            'c3tID'         => $req['c3tID'],
+            'clientID'      => $req['cID'],
         ];
         $this->db->table($this->tblc3)->where($where)->delete();
-
         foreach($req['reference'] as $i => $val){
-
             $data = [
-                'reference' => $req['reference'][$i],
-                'initials' => $req['desc'][$i],
-                'drps' => $req['drps'][$i],
-                'crps' => $req['crps'][$i],
-                'drfp' => $req['drfp'][$i],
-                'crfp' => $req['crfp'][$i],
-                'type' =>  $req['part'],
-                'code' =>  $req['code'],
-                'c3tID' => $req['c3tID'],
-                'clientID' => $req['cID'],
-                'workpaper' => $req['wpID'],
-                'firmID' => $req['fID'],
-                'status' => 'Active',
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'reference'         => $req['reference'][$i],
+                'initials'          => $req['desc'][$i],
+                'drps'              => $req['drps'][$i],
+                'crps'              => $req['crps'][$i],
+                'drfp'              => $req['drfp'][$i],
+                'crfp'              => $req['crfp'][$i],
+                'type'              =>  $req['part'],
+                'code'              =>  $req['code'],
+                'c3tID'             => $req['c3tID'],
+                'clientID'          => $req['cID'],
+                'workpaper'         => $req['wpID'],
+                'firmID'            => $req['fID'],
+                'status'            => 'Active',
+                'updated_on'        => $this->date.' '.$this->time,
+                'updated_by'        => $req['uID'],
             ];
-    
             $this->db->table($this->tblc3)->insert($data);
-
         }
-
        return true;
 
     }
@@ -2378,32 +1981,27 @@ class WorkpaperModel extends  Model {
     public function saveaa11ue($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['aa11'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['aa11'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;
         }
-
 
     }
 
     public function saveaa11con($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['aa11'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['aa11'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-        
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
             return true;
         }else{
@@ -2412,34 +2010,21 @@ class WorkpaperModel extends  Model {
 
     }
 
-
-
-    
-
-
-
-
-
-
-
-
     /**
         ----------------------------------------------------------
         AB1 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getab1($code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => 'ab1',
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => 'ab1',
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
-
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
 
@@ -2451,46 +2036,33 @@ class WorkpaperModel extends  Model {
     public function saveab1($req){
 
         foreach ($req['yesno'] as $i => $val){
-
             $dacid = $this->crypt->decrypt($req['acid'][$i]);
-
             $data = [
-                'yesno' => $req['yesno'][$i],
-                'comment' => $req['comment'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'yesno'         => $req['yesno'][$i],
+                'comment'       => $req['comment'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
         }
-
         return true;
       
     }
-    
-
-
-
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
         AB3 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getab3($code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => 'ab3',
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => 'ab3',
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
@@ -2503,13 +2075,11 @@ class WorkpaperModel extends  Model {
     public function saveab3($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['question'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['question'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-        
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
             return true;
         }else{
@@ -2518,30 +2088,20 @@ class WorkpaperModel extends  Model {
       
     }
 
-
-
-
-
-
-
-
-
-
     /**
         ----------------------------------------------------------
         AB3 FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getab4($part,$code,$c3tID,$dcID,$dwpID){
         
         $where = [
-            'type' => $part,
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => $part,
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
@@ -2551,13 +2111,12 @@ class WorkpaperModel extends  Model {
     public function getab4checklist($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => $part,
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => $part,
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
-
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getRowArray();
 
@@ -2569,93 +2128,73 @@ class WorkpaperModel extends  Model {
     public function saveab4($req){
 
         foreach($req['yesno'] as $i => $val){
-
             $dacid = $this->crypt->decrypt($req['acid'][$i]);
-
             $data = [
-                'yesno' => $req['yesno'][$i],
-                'comment' => $req['comment'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'yesno'         => $req['yesno'][$i],
+                'comment'       => $req['comment'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
         }
-        
         return true;
-       
       
     }
 
     public function saveab4checklist($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
-
         $data = [
-            'question' => $req['chlst'],
-            'updated_on' => $this->date.' '.$this->time,
-            'updated_by' => $req['uID'],
+            'question'      => $req['chlst'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-    
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
             return true;
         }else{
             return false;
         }
-
       
     }
-
-
-
-
-
-
-
-
-
 
     /**
         ----------------------------------------------------------
         AB4a FUNCTIONS
         ----------------------------------------------------------
-
         GET FUNCTIONS
     */
     public function getab4a($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
-            'type' => $part,
-            'code' => $code,
-            'c3tID' => $c3tID,
-            'clientID' => $dcID,
-            'workpaper' => $dwpID,
+            'type'          => $part,
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID,
         ];
         $query = $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
 
     }
+
     /** 
         POST FUNCTIONS
     */
     public function saveab4a($req){
 
         foreach($req['yesno'] as $i => $val){
-
             $dacid = $this->crypt->decrypt($req['acid'][$i]);
             $data = [
-                'yesno' => $req['yesno'][$i],
-                'comment' => $req['comment'][$i],
-                'updated_on' => $this->date.' '.$this->time,
-                'updated_by' => $req['uID'],
+                'yesno'         => $req['yesno'][$i],
+                'comment'       => $req['comment'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
             ];
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
         }
-        
         return true;
       
     }
-
-    
 
 
 }

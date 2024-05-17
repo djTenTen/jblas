@@ -1,11 +1,13 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
+
 class AuthModel extends  Model {
 
-    protected $tbluser = "tbl_users";
-    protected $tblfirm = "tbl_firm";
-    protected $tblpos = "tbl_position";
+
+    protected $tbluser  = "tbl_users";
+    protected $tblfirm  = "tbl_firm";
+    protected $tblpos   = "tbl_position";
     protected $crypt;
 
     public function __construct(){
@@ -20,7 +22,6 @@ class AuthModel extends  Model {
 
         $email = $req['email'];
         $pass = $req['password'];
-
         $q = "select * , tf.firm as firmname, tp.position as pos
         from {$this->tbluser} as tu,{$this->tblfirm} as tf, {$this->tblpos} as tp
         where BINARY email = ? 
@@ -34,19 +35,19 @@ class AuthModel extends  Model {
                 if($ud['status'] == "Active"){
                     if($pass == $dpss){
                         $arr = [
-                            'userID' => $ud['userID'],
-                            'name' => $ud['name'],
-                            'email' => $ud['email'],
-                            'pass' => $ud['pass'],
-                            'firm' => $ud['firmname'],
-                            'firmID' => $ud['firmID'],
-                            'pos' => $ud['pos'],
-                            'posID' => $ud['posID'],
-                            'type' => $ud['type'],
-                            'photo' => $ud['photo'],
-                            'signature' => $ud['signature'],
-                            'logo' => $ud['logo'],
-                            'allowed' => json_decode($ud['allowed']),
+                            'userID'        => $ud['userID'],
+                            'name'          => $ud['name'],
+                            'email'         => $ud['email'],
+                            'pass'          => $ud['pass'],
+                            'firm'          => $ud['firmname'],
+                            'firmID'        => $ud['firmID'],
+                            'pos'           => $ud['pos'],
+                            'posID'         => $ud['posID'],
+                            'type'          => $ud['type'],
+                            'photo'         => $ud['photo'],
+                            'signature'     => $ud['signature'],
+                            'logo'          => $ud['logo'],
+                            'allowed'       => json_decode($ud['allowed']),
                         ];
                         return $arr;
                     }else{
@@ -62,11 +63,7 @@ class AuthModel extends  Model {
             return 'usernotexist';
         }
 
-
     }
-
-
-
 
     public function getUserAccess(){
 
@@ -76,5 +73,5 @@ class AuthModel extends  Model {
 
     }
 
-
+    
 }

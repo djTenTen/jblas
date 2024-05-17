@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Models;
-
 use CodeIgniter\Model;
 
 class AuditorModel extends Model{
@@ -15,7 +13,6 @@ class AuditorModel extends Model{
     public function __construct(){
 
         $this->db = \Config\Database::connect('default'); 
-
         date_default_timezone_set("Asia/Singapore"); 
         $this->time = date("H:i:s");
         $this->date = date("Y-m-d");
@@ -27,9 +24,9 @@ class AuditorModel extends Model{
         $query = $this->db->table($this->tblu)->where('userID', $duID)->get();
         $r = $query->getRowArray();
         $data = [
-            'name' => $r['name'],
+            'name'  => $r['name'],
             'email' => $r['email'],
-            'type' =>  $r['type']
+            'type'  =>  $r['type']
         ];
         return json_encode($data);
     
@@ -51,27 +48,24 @@ class AuditorModel extends Model{
     public function saveauditor($req){
 
         $res1 = $this->db->table($this->tblu)->where('email', $req['email'])->get()->getNumRows();
-
         if($res1 >= 1){
             return 'exist';
         }else{
-
             $sign = $req['signature']->getRandomName();
             $req['signature']->move(ROOTPATH .'public/uploads/signature', $sign);
-
             $data = [
-                'name' => ucfirst($req['name']),
-                'email' => $req['email'],
-                'address' => $req['address'],
-                'contact' => $req['contact'],
-                'pass' => $req['pass'],
-                'type' => $req['type'],
-                'firm' => $req['fID'],
-                'position' => $req['pos'],
-                'status' => 'Active',
+                'name'      => ucfirst($req['name']),
+                'email'     => $req['email'],
+                'address'   => $req['address'],
+                'contact'   => $req['contact'],
+                'pass'      => $req['pass'],
+                'type'      => $req['type'],
+                'firm'      => $req['fID'],
+                'position'  => $req['pos'],
+                'status'    => 'Active',
                 'signature' => $sign,
-                'verified' => 'No',
-                'added_on' => $this->date.' '.$this->time,
+                'verified'  => 'No',
+                'added_on'  => $this->date.' '.$this->time,
             ];
             if($this->db->table($this->tblu)->insert($data)){
                 return 'registered';
@@ -85,13 +79,12 @@ class AuditorModel extends Model{
     public function updateauditor($req){
 
         $data = [
-            'name' => $req['name'],
-            'email' => $req['email'],
-            'type' => $req['type'],
-            'position' => $req['pos'],
-            'updated_on' => $this->date.' '.$this->time
+            'name'          => $req['name'],
+            'email'         => $req['email'],
+            'type'          => $req['type'],
+            'position'      => $req['pos'],
+            'updated_on'    => $this->date.' '.$this->time
         ];
-
         if($this->db->table($this->tblu)->where('userID', $req['uID'])->update($data)){
             return 'updated';
         }else{
@@ -100,14 +93,11 @@ class AuditorModel extends Model{
 
     }
 
-
-
-
     public function acin($duID){
 
-        $query = $this->db->table($this->tblu)->where('userID', $duID)->get();
-        $r = $query->getRowArray();
-        $stat = '';
+        $query      = $this->db->table($this->tblu)->where('userID', $duID)->get();
+        $r          = $query->getRowArray();
+        $stat       = '';
         if($r['status'] == 'Active'){
             $stat = 'Inactive';
         }else{
@@ -124,20 +114,6 @@ class AuditorModel extends Model{
         }
 
     }
-
-
-    
-
-
-    
-
-
-
-
-    
-
-
-
 
 
 }

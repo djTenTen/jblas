@@ -2,7 +2,6 @@
 namespace App\Controllers;
 use App\Controllers\BaseController;
 
-
 class ErrorController extends BaseController{
 
 
@@ -17,8 +16,6 @@ class ErrorController extends BaseController{
         echo view('errors/html/error_403');
 
     }
-    
-
 
 
 }
