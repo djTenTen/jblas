@@ -28,7 +28,7 @@ class HomeController extends BaseController{
         $res = $db->table($this->scheme)->select($this->schemename)->where($this->schemename, $this->dbname)->get();
         if($res->getNumRows() > 0){
             if(session()->get('authentication')){
-                return redirect()->to(site_url('dashboard')); 
+                return redirect()->to(site_url('auditsystem')); 
             }else{
                 $page = 'Login';
                 $data['title'] = 'Login';
