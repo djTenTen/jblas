@@ -30,7 +30,7 @@ class HomeController extends BaseController{
             if(session()->get('authentication')){
                 return redirect()->to(site_url('dashboard')); 
             }else{
-                $page = 'login';
+                $page = 'Login';
                 $data['title'] = 'Login';
                 return view('index/'.$page, $data);
             }
