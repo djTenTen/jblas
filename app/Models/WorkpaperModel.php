@@ -237,6 +237,36 @@ class WorkpaperModel extends  Model {
 
     }
 
+    public function updatetb($req){
+
+        foreach($req['tbID'] as $i => $val){
+            $dtbID = $this->crypt->decrypt($req['tbID'][$i]);
+            $data = [
+                'supp_bal'      => $req['sb'][$i],
+                'supp_bal'      => $req['sb'][$i],
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $req['uID'],
+            ];
+            $this->db->table($this->tbltb)->where('tbID', $dtbID)->update($data);
+        }
+        return 'updated';
+
+    }
+
+    public function uploadtbfiles($req){
+
+        $pdfname = $req['cfiID'].'-'.$req['cID'].'-'.$req['wpID'].'-'.$req['index'].'.pdf';
+        $pdfPath = ROOTPATH .'/public/uploads/pdf/'.$pdfname; 
+        if (file_exists($pdfPath)) {
+            unlink($pdfPath);
+        }
+        $req['pdf']->move(ROOTPATH .'public/uploads/pdf', $pdfname);
+        if($this->db->table($this->tblcfi)->where('cfiID', $req['cfiID'])->update(array('file' => $pdfname))){
+            return 'uploaded';
+        }
+
+    }
+
     public function importtb($req){
 
         foreach($req['account_code'] as $i => $val){
@@ -248,8 +278,8 @@ class WorkpaperModel extends  Model {
                 'account_code'  => $req['account_code'][$i],
                 'account'       => $req['account'][$i],
                 'account_type'  => $req['account_type'][$i],
-                'dytd'          => $req['dytd'][$i],
-                'cytd'          =>$req['cytd'][$i],
+                'debit'         => $req['debit'][$i],
+                'credit'        =>$req['credit'][$i],
                 'added_on'      => $this->date.' '.$this->time,
                 'added_by'      => $req['uID'],
             ];

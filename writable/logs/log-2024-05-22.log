@@ -1,0 +1,384 @@
+CRITICAL - 2024-05-22 11:27:46 --> ErrorException: Undefined array key "dytd"
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 329.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "dytd"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 329)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(82): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('d845392b0457ef169fb1a5665f49213e40994ffdc165471ae1d4be4b099bd3bce83532333905e91ee629a69c0d4241ee56939b50cecd7607f6f0e7074e8d20cdIKHrH2f1H5~4bHIYYGq35ag=', 'db635dd9d70514853a524fc5dba7b13160e208f8b0b1481fd639dbac5189eccc15355f1d4848fe6c92b32c9b03ee8867c70caaf407abbe80706aa2306d1880d0mpbljpM5Gm$fblDtQ~pUnqw=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-22 11:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-22 11:28:04 --> ErrorException: Undefined array key "dytd"
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 329.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "dytd"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 329)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(82): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('d845392b0457ef169fb1a5665f49213e40994ffdc165471ae1d4be4b099bd3bce83532333905e91ee629a69c0d4241ee56939b50cecd7607f6f0e7074e8d20cdIKHrH2f1H5~4bHIYYGq35ag=', 'db635dd9d70514853a524fc5dba7b13160e208f8b0b1481fd639dbac5189eccc15355f1d4848fe6c92b32c9b03ee8867c70caaf407abbe80706aa2306d1880d0mpbljpM5Gm$fblDtQ~pUnqw=', 'Sample client 1s')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-22 11:28:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:15:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:16:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-22 12:16:46 --> ErrorException: Undefined array key "dytd"
+in APPPATH\Views\workpaper\index\B.php on line 34.
+ 1 APPPATH\Views\workpaper\index\B.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "dytd"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\B.php', 34)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\B.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/index/B', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(1994): view('workpaper/index/B', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', 'd845392b0457ef169fb1a5665f49213e40994ffdc165471ae1d4be4b099bd3bce83532333905e91ee629a69c0d4241ee56939b50cecd7607f6f0e7074e8d20cdIKHrH2f1H5~4bHIYYGq35ag=', 'db635dd9d70514853a524fc5dba7b13160e208f8b0b1481fd639dbac5189eccc15355f1d4848fe6c92b32c9b03ee8867c70caaf407abbe80706aa2306d1880d0mpbljpM5Gm$fblDtQ~pUnqw=', '1ec54458e50ce30bbd6d0217b3f7b783ca422f3bec6e128c9ac26de5ec5c5b89e53ea2be626046c1b61f2e02c818caacecf7020ca72f190c6776230b460412925iklg5yfvA1dmXNQM9hDfY4=', 'Non-current assets - intangibles and goodwill')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-22 12:17:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:17:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:17:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:19:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:22:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:22:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:22:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:22:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:22:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:22:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:22:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:22:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-22 12:22:53 --> ErrorException: Undefined array key "dytd"
+in APPPATH\Views\workpaper\index\P.php on line 33.
+ 1 APPPATH\Views\workpaper\index\P.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "dytd"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\P.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\P.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/index/P', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(2072): view('workpaper/index/P', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('P', 'd845392b0457ef169fb1a5665f49213e40994ffdc165471ae1d4be4b099bd3bce83532333905e91ee629a69c0d4241ee56939b50cecd7607f6f0e7074e8d20cdIKHrH2f1H5~4bHIYYGq35ag=', 'db635dd9d70514853a524fc5dba7b13160e208f8b0b1481fd639dbac5189eccc15355f1d4848fe6c92b32c9b03ee8867c70caaf407abbe80706aa2306d1880d0mpbljpM5Gm$fblDtQ~pUnqw=', '92a637e197ad1d9947380c72c2bb87fe9e53bd39e58e682271beb0c7ed89b98e8b65dc68ec298dab89e9bcb1663c6b8fdae364e6de118692bdfc7951a20fec4aUKMiBO7yQr4wkBZhKzW5LqDM', 'Direct costs')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-22 12:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:23:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:27:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:28:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:29:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:29:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:30:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:32:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:34:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:37:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:42:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:42:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:46:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 12:59:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:01:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:02:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:02:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:07:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:09:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:09:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:11:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:20:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:20:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:21:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:22:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:23:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:23:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:23:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:25:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:26:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:26:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:26:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:31:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:32:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:36:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:37:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:40:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:40:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:41:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:45:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:46:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:47:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:47:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:49:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:51:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:52:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:53:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:54:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:55:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:56:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:56:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 13:59:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:01:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:02:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:02:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:02:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:06:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:14:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:16:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:28:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:32:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:33:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:33:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:41:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:45:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 14:59:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:05:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:05:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:06:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:07:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:11:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-22 15:11:34 --> ParseError: syntax error, unexpected token ")"
+in APPPATH\Views\workpaper\index\B.php on line 66.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/index/B', [], true)
+ 3 APPPATH\Controllers\WorkpaperController.php(1994): view('workpaper/index/B', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', 'd845392b0457ef169fb1a5665f49213e40994ffdc165471ae1d4be4b099bd3bce83532333905e91ee629a69c0d4241ee56939b50cecd7607f6f0e7074e8d20cdIKHrH2f1H5~4bHIYYGq35ag=', 'db635dd9d70514853a524fc5dba7b13160e208f8b0b1481fd639dbac5189eccc15355f1d4848fe6c92b32c9b03ee8867c70caaf407abbe80706aa2306d1880d0mpbljpM5Gm$fblDtQ~pUnqw=', '1ec54458e50ce30bbd6d0217b3f7b783ca422f3bec6e128c9ac26de5ec5c5b89e53ea2be626046c1b61f2e02c818caacecf7020ca72f190c6776230b460412925iklg5yfvA1dmXNQM9hDfY4=', 'Non-current assets - intangibles and goodwill')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-22 15:11:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:17:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:25:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:25:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:26:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:26:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:28:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:32:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:32:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:37:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:38:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:38:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:49:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:50:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:50:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:59:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:59:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:59:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 15:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-22 16:01:25 --> ErrorException: Undefined array key "supp_val"
+in APPPATH\Views\workpaper\index\B.php on line 71.
+ 1 APPPATH\Views\workpaper\index\B.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "supp_val"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\B.php', 71)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\B.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/index/B', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(2017): view('workpaper/index/B', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '85f9ccd4315a77145a088c70fc3c9b48428d83312317d7786ccc9ab398b43be7b1b58caea64f173ad2d5aa7088871d0ee3968bb6aa5b82b04c01724181d459ecdfPlkrzEMKVDhS9amcRhFBk=', '907f50dd8af6d4670716e4b82cc2efd4a6b58ca73217dedd0b18369b93151a52c25d1842db42cf53e72d2939241a04bf8e7065c3e8082b82d583dc3b5bb41877Jf3UT$6sLHIuXUiGPR9mEDg=', 'c8c73d4ec6a2d7256e74954e2437da1ad6e5e311a4de4c47637f801892ef7feb5b969c1e2a1e9894f617bb1adfbe83d6124e257be2d8d469d4d14c68872a8b2aYgayTfD46oVgPjU3yJ3QU1k=', 'Non-current assets - intangibles and goodwill')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-22 16:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:04:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:06:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:08:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:08:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:14:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:21:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:21:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:28:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:29:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:30:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:31:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:31:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:31:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:31:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:31:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 16:31:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:45:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:45:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:45:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:45:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:45:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:45:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:45:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:46:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:46:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:46:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:46:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:47:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:48:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:49:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 20:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:12:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-22 21:13:00 --> DivisionByZeroError: Division by zero
+in APPPATH\Views\workpaper\index\B.php on line 92.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/index/B', [], true)
+ 4 APPPATH\Controllers\WorkpaperController.php(2039): view('workpaper/index/B', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '8a148e1e6ad89b47760b11ca384b0b6535c20468d0658eba1e79472f932bdc2764706931c2f0ca3ff9b1c787281583ae149cd05ded660ddba49894b0898b5cd6lvyVg31vuMkkrI9caE8qx8Q=', 'efaf2c7fd9dd901028c233f33cfcdd132f8b525a68db82466f4fdbe096c36009a2b6fc6bb7052571a06b9da46ce048afa96de61bce950bcb5497b5ab84888bbbcIiUeZonuE3JnKOFazCCYP4=', 'fa7723facb731e978c3b8b1bdf702ad42153a926d2e9a6dd09b428116c58e6e7a96cf3f1cfd6b81d38df387625fdb478288bb800b1bdf312218aab380e1bb4f5X$wq2S2kq09$Hpp24sI3LWc=', 'd54aeadeccef67dc2a4bf6cef1780911e366acf3edd01e02cedfb846b26b1a0e8bb2c9751be19d98ae4e37d55f9a23320a0869326afcdf50226afe56bc9fdd42Z58cWSxCKPuDioQsqWAWiJ0=', 'Non-current assets - intangibles and goodwill')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-22 21:13:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:13:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:13:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:16:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:16:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-22 21:16:25 --> DivisionByZeroError: Division by zero
+in APPPATH\Views\workpaper\index\B.php on line 92.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/index/B', [], true)
+ 4 APPPATH\Controllers\WorkpaperController.php(2040): view('workpaper/index/B', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '41d55aa1ea4ee24990f8159404bd31202f442a7695ca447bf27a3a262efc639458fd4c6bb78a0279b49f0a7f6baab641048a3e24c970497d76916ed0fe7029120K81XUGBUYL4W70gvyETE~Y=', '5761007c1d9c6b5b4b65f8436a71bad10b93b3087dbc784c3dab6e2ba7c9d451b18f949d7bdc1693c0b681771b09b12479b232268c1df910d7dd8efbd0961d2d9AYr0NyIWk91NLYLszUWAKw=', '84f2c4c9c5b4ec4bd0265fdcc3cff15d0ffc73383ca447286cc07f1aa70054df0ec0840c4458223d7b63e6fc0e0caf520c018f4720331fa6d9c58b47d53ac364bLNmby~5sb7TKtlvAeEKTxk=', '1f9445614b65771971f6d8c5740e73c5ca402ce8abb9f8efce09f3a3511a4a43af01546017e83f19d72fd977bd3be5f1191bec1f9d1e5ba099f61a7c7d72e1ebdjuKZycscj27aS3jgOOvRNc=', 'Non-current assets - intangibles and goodwill')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-22 21:17:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:17:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:17:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-22 21:17:16 --> DivisionByZeroError: Division by zero
+in APPPATH\Views\workpaper\index\B.php on line 92.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/index/B', [], true)
+ 4 APPPATH\Controllers\WorkpaperController.php(2040): view('workpaper/index/B', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', '0423ca5bfc2c8e238fc01ee1fb197e604ef35239232dd00905e1944cd104869abd9e28df56afdec21534919d2bfcad6eafe4aef5b961409669a468a03cc60732JyOqHAw0~qlQcV9ex0pXjGk=', '5761007c1d9c6b5b4b65f8436a71bad10b93b3087dbc784c3dab6e2ba7c9d451b18f949d7bdc1693c0b681771b09b12479b232268c1df910d7dd8efbd0961d2d9AYr0NyIWk91NLYLszUWAKw=', '84f2c4c9c5b4ec4bd0265fdcc3cff15d0ffc73383ca447286cc07f1aa70054df0ec0840c4458223d7b63e6fc0e0caf520c018f4720331fa6d9c58b47d53ac364bLNmby~5sb7TKtlvAeEKTxk=', 'cd53ef8abe1016f845e49df64fe57efdbf1c78ea778f5ceb4ec7b0076ccee1f0292a6880423907137917fc8c6fc9942f0e0b69989cf08225b3da521a57b6737e2lzuXI9DW~$ketmc1uVDlRM=', 'Non-current assets - intangibles and goodwill')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-22 21:19:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:19:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:19:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:19:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:21:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:24:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:25:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:25:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:25:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:25:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:27:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:33:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:33:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:33:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-22 21:33:40 --> ErrorException: Undefined array key "cid"
+in APPPATH\Models\WorkpaperModel.php on line 258.
+ 1 APPPATH\Models\WorkpaperModel.php(258): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cid"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\WorkpaperModel.php', 258)
+ 2 APPPATH\Controllers\WorkpaperController.php(207): App\Models\WorkpaperModel->uploadtbfiles([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->uploadtbfiles('B', '171e387ab3f41ad899ea44f330767b7bb3882660e97d1f92ff57ac1eabe4e7a73c568f9d2cfdef47db33740f53c51ba8663ca14ce0c9ab94ae225d65dbbce6e3oUMjmV8w50mfNkdhBPxl5VY=', 'fc21216d8d8ad83c1b2b4dfaf7ed6cacf6cc3257bca4b5b5da54c8c3440670ff24d93b20c30d3656be410f8c17cc56227fd12b8f21028b7b5f54821dea38dd06hXdAtYLL1v0$tXoUdvrpohg=', '96677d04c536038d4145057d719787990d5dc6aa1d765c12836c16bfb190a2fa55be10840f759051d26fe8ca9baaab9d5fe4e349bbabe40e5441f614c0ea4e03gfMfdNZmaWCeEVxKh0Qt4Ew=', '27f9fb29b1ace963dfcf9f8a250418aa0aa4bdb28d34b5e8dc2a3b5a0fe0b00068d5119ce1e64a57354b39c78aed03b152b86b604564ef408820b1682bf50e07WbsLatP9b8tppTxmWwqvPC0=', 'Non-current assets - intangibles and goodwill')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-22 21:33:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:38:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:38:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-22 21:38:34 --> Error: Call to a member function move() on null
+in APPPATH\Models\WorkpaperModel.php on line 259.
+ 1 APPPATH\Controllers\WorkpaperController.php(209): App\Models\WorkpaperModel->uploadtbfiles([...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->uploadtbfiles('B', '171e387ab3f41ad899ea44f330767b7bb3882660e97d1f92ff57ac1eabe4e7a73c568f9d2cfdef47db33740f53c51ba8663ca14ce0c9ab94ae225d65dbbce6e3oUMjmV8w50mfNkdhBPxl5VY=', 'fc21216d8d8ad83c1b2b4dfaf7ed6cacf6cc3257bca4b5b5da54c8c3440670ff24d93b20c30d3656be410f8c17cc56227fd12b8f21028b7b5f54821dea38dd06hXdAtYLL1v0$tXoUdvrpohg=', '96677d04c536038d4145057d719787990d5dc6aa1d765c12836c16bfb190a2fa55be10840f759051d26fe8ca9baaab9d5fe4e349bbabe40e5441f614c0ea4e03gfMfdNZmaWCeEVxKh0Qt4Ew=', '27f9fb29b1ace963dfcf9f8a250418aa0aa4bdb28d34b5e8dc2a3b5a0fe0b00068d5119ce1e64a57354b39c78aed03b152b86b604564ef408820b1682bf50e07WbsLatP9b8tppTxmWwqvPC0=', 'Non-current assets - intangibles and goodwill')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-22 21:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:42:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:43:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:43:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-22 21:43:12 --> DivisionByZeroError: Division by zero
+in APPPATH\Views\workpaper\index\B.php on line 93.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/index/B', [], true)
+ 4 APPPATH\Controllers\WorkpaperController.php(2043): view('workpaper/index/B', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('B', 'fc21216d8d8ad83c1b2b4dfaf7ed6cacf6cc3257bca4b5b5da54c8c3440670ff24d93b20c30d3656be410f8c17cc56227fd12b8f21028b7b5f54821dea38dd06hXdAtYLL1v0$tXoUdvrpohg=', '171e387ab3f41ad899ea44f330767b7bb3882660e97d1f92ff57ac1eabe4e7a73c568f9d2cfdef47db33740f53c51ba8663ca14ce0c9ab94ae225d65dbbce6e3oUMjmV8w50mfNkdhBPxl5VY=', '96677d04c536038d4145057d719787990d5dc6aa1d765c12836c16bfb190a2fa55be10840f759051d26fe8ca9baaab9d5fe4e349bbabe40e5441f614c0ea4e03gfMfdNZmaWCeEVxKh0Qt4Ew=', '27f9fb29b1ace963dfcf9f8a250418aa0aa4bdb28d34b5e8dc2a3b5a0fe0b00068d5119ce1e64a57354b39c78aed03b152b86b604564ef408820b1682bf50e07WbsLatP9b8tppTxmWwqvPC0=', 'Non-current assets - intangibles and goodwill')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-22 21:44:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:45:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:45:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:46:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:46:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:46:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:46:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:47:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:51:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:51:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:53:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:54:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:54:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:54:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 21:59:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 22:00:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-22 22:00:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -147,8 +147,8 @@ class WorkpaperController extends BaseController{
             'account_code'  => $this->request->getPost('account_code'),
             'account'       => $this->request->getPost('account'),
             'account_type'  => $this->request->getPost('account_type'),
-            'dytd'          => $this->request->getPost('dytd'),
-            'cytd'          => $this->request->getPost('cytd'),
+            'debit'         => $this->request->getPost('debit'),
+            'credit'         => $this->request->getPost('credit'),
             'uID'           => $uID,
         ];
         $res = $this->wpmodel->importtb($req);
@@ -172,6 +172,48 @@ class WorkpaperController extends BaseController{
         ];  
         $res = $this->wpmodel->updateindex($req);
         return $this->response->setJSON(['message' => $res]);
+
+    }
+
+    public function updatetb($code,$cfiID,$cID,$wpID,$index,$desc){
+
+        $req = [
+            'tbID'  => $this->request->getPost('tbID'),
+            'sb'    => $this->request->getPost('sb'),
+            'uID'   => $this->crypt->decrypt(session()->get('userID')),
+        ];
+        $res = $this->wpmodel->updatetb($req);
+        if($res == "updated"){
+            session()->setFlashdata('updated','updated');
+            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc));
+        }
+
+    }
+
+    public function uploadtbfiles($code,$cfiID,$cID,$wpID,$index,$desc){
+
+        $dcfiID     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID));
+        $dcID       = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dwpID      = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
+        $dindex     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index));
+        $req = [
+            'pdf'       => $this->request->getFile('pdffile'),
+            'cfiID'     => $dcfiID,
+            'cID'       => $dcID,
+            'wpID'      => $dwpID,
+            'index'     => $dindex,
+        ];
+        $res = $this->wpmodel->uploadtbfiles($req);
+        if($res == "uploaded"){
+            session()->setFlashdata('uploaded','uploaded');
+            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc));
+        }
 
     }
 
@@ -1961,12 +2003,19 @@ class WorkpaperController extends BaseController{
 
     }
 
-    public function viewindexfiles($code,$cID,$wpID,$index,$desc){
+    public function viewindexfiles($code,$cfiID,$cID,$wpID,$index,$desc){
 
-        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $dwpID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
-        $dindex = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index));
-        $data['title'] = $code.' - '.$desc;
+        $data['code']   = $code;
+        $data['cID']    = $cID;
+        $data['cfiID']  = $cfiID;
+        $data['wpID']   = $wpID;
+        $data['index']  = $index;
+        $data['desc']   = $desc;
+        $dcID       = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dcfiID     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID));
+        $dwpID      = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
+        $dindex     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index));
+        $data['title'] = $code.' : '.$desc;
         switch ($code) {
             case 'Aa':
                 echo view('includes/Header', $data);
@@ -2111,7 +2160,7 @@ class WorkpaperController extends BaseController{
 
     }
 
-     /** 
+    /** 
         ----------------------------------------------------------
         PDF Chapter 1 area
         ----------------------------------------------------------

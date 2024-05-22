@@ -11,7 +11,7 @@
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
                             <?= $title?>
                         </h1>
-                        <div class="page-header-subtitle">Select files for you clients</div>
+                        <div class="page-header-subtitle">Set files for your clients</div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -109,6 +109,7 @@
                                         <th></th>
                                         <th>Section</th>
                                         <th>Desc</th>
+                                        <th>Progress</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -118,8 +119,9 @@
                                             <td><input class="form-check-input ficheck" id="add" type="checkbox" name="c1[]" value="<?= $crypt->encrypt($r['cfiID'])?>" data-url="<?= base_url()?>auditsystem/wp/updateindex/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>" <?php if($r['acquired'] == 'Yes'){echo 'checked';} ?>/></td>
                                             <td><?= $r['section']?></td>
                                             <td><?= $r['desc']?></td>
+                                            <td></td>
                                             <td>
-                                                <a href="<?= base_url()?>auditsystem/wp/index/setvalues/<?= $r['section']?>/<?= $cID?>/<?= $wpID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['index']))?>/<?= $r['desc']?>" class="btn btn-icon btn-sm btn-primary cfi" target="_blank" title="Set Values" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?> ><i class="fas fa-tools"></i>
+                                                <a href="<?= base_url()?>auditsystem/wp/index/setvalues/<?= $r['section']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['index']))?>/<?= $r['desc']?>" class="btn btn-icon btn-sm btn-primary cfi" target="_blank" title="Set Values" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?> ><i class="fas fa-tools"></i>
                                             </td>
                                         </tr>
                                     <?php }?>
@@ -315,8 +317,8 @@
                                         <th>Account Code</th>
                                         <th>Account</th>
                                         <th>Account Type</th>
-                                        <th>Debit-Year to date</th>
-                                        <th>Credit-Year to date</th>
+                                        <th>Debit</th>
+                                        <th>Credit</th>
                                         <th>Index</th>
                                     </tr>
                                 </thead>
@@ -326,15 +328,15 @@
                                             $d = 0;
                                             $c = 0;
                                             foreach($tb as $r){
-                                                $d += $r['dytd'];
-                                                $c += $r['cytd'];
+                                                $d += $r['debit'];
+                                                $c += $r['credit'];
                                         ?>
                                             <tr>
                                                 <td><?= $r['account_code']?></td>
                                                 <td><?= $r['account']?></td>
                                                 <td><?= $r['account_type']?></td>
-                                                <td><?= $r['dytd']?></td>
-                                                <td><?= $r['cytd']?></td>
+                                                <td><?= $r['debit']?></td>
+                                                <td><?= $r['credit']?></td>
                                                 <td><?= $r['desc']?></td>
                                             </tr>
                                         <?php }?>
@@ -342,7 +344,16 @@
                                             <td colspan="3" class="text-end"><b>Total</b></td>
                                             <td><b>₱ <?= number_format($d,2)?></b></td>
                                             <td><b>₱ <?= number_format($c,2)?></b></td>
-                                            <td></td>
+                                            <td>
+                                                <?php if(($d - $c) != 0){?>
+                                                    <div class="alert alert-danger alert-icon" role="alert">
+                                                        <div class="alert-icon-content">
+                                                            <h6 class="alert-heading">Balance Out!</h6>
+                                                            Please check your trial balance file.
+                                                        </div>
+                                                    </div>     
+                                                <?php }?> 
+                                            </td>
                                         </tr>
                                     <?php }else{?>
                                         <tr class="table-danger">
@@ -352,7 +363,7 @@
                                 </tbody>
                             </table>
 
-                            <button type="submit" class="btn btn-primary float-end">Import</button>
+                            <button type="submit"  id="imp" class="btn btn-primary float-end">Import</button>
                         </form>
                         
                     
@@ -456,8 +467,8 @@
                         'account_code' : cell.A ,
                         'account' : cell.B, 
                         'account_type': cell.C,
-                        'dytd':cell.D,
-                        'cytd' : cell.E,
+                        'debit':cell.D,
+                        'credit' : cell.E,
                     };
                     tb.push(rd);
                 });
@@ -467,15 +478,15 @@
                 let credit = 0;
                 tb.forEach(function(r){
 
-                    debit += parseFloat(r.dytd);
-                    credit += parseFloat(r.cytd);
+                    debit += parseFloat(r.debit);
+                    credit += parseFloat(r.credit);
                     row += `
                         <tr>
                             <td><input type="text" class="form form-control" name="account_code[]" value="`+r.account_code+`" readonly></td>
                             <td><input type="text" class="form form-control" name="account[]" value="`+r.account+`" readonly></td>
                             <td><input type="text" class="form form-control" name="account_type[]" value="`+r.account_type+`" readonly></td>
-                            <td><input type="number" class="form form-control" name="dytd[]" value="`+r.dytd+`" readonly></td>
-                            <td><input type="number" class="form form-control" name="cytd[]" value="`+r.cytd+`" readonly></td>
+                            <td><input type="number" class="form form-control" name="debit[]" value="`+r.debit+`" readonly></td>
+                            <td><input type="number" class="form form-control" name="credit[]" value="`+r.credit+`" readonly></td>
                             <td>
                                 <select name="fileindex[]" id="" class="form form-select" required>
                                     <option value="" selected>Select Index</option>
@@ -488,12 +499,26 @@
                     `;
                 });
 
+                var msg = '';
+                if((debit - credit) != 0) {
+                    console.log(debit + credit);
+                    msg = `
+                        <div class="alert alert-danger alert-icon" role="alert">
+                            <div class="alert-icon-content">
+                                <h6 class="alert-heading">Balance Out!</h6>
+                                Please check your trial balance file.
+                            </div>
+                        </div>     
+                    `;
+                    $('#imp').hide();
+                }
+
                 row += `
                     <tr>
                         <td colspan="3" class="text-end"><b>Total</b></td>
                         <td><b>₱ `+debit.toLocaleString('en-PH')+`</b></td>
                         <td><b>₱ `+credit.toLocaleString('en-PH')+`</b></td>
-                        <td></td>
+                        <td>`+msg+`</td>
                     </tr>
                 `;
 
