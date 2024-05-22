@@ -146,7 +146,7 @@ $html .= '
     <p><i>The team discussions on fraud, risk and related party transactions should be chaired by the A.E.P. (although the general briefing can be performed by another team member, i.e. the manager) and it should be undertaken ensuring that, when considering fraud, professional scepticism is applied. <u><b>Team members should set aside the belief that the client is honest and acts with integrity.</b></u></i></p>
     <p><i>Where junior staff are briefed separately, this should be clearly documented.</i></p>
 ';
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 $pdf->AddPage('L');
 $html =  "
     <style>
@@ -297,6 +297,6 @@ $html .= '
 ';
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 $pdf->Output('stocktransfer.pdf','I');
 exit();

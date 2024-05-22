@@ -154,6 +154,6 @@ $html .= '</tbody>
 
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 $pdf->Output('stocktransfer.pdf','I');
 exit();

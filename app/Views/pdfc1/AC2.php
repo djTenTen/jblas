@@ -125,7 +125,7 @@ $html .= '
 
 $image_file = base_url('img/ac2/ac2-f1.jpg');
 $pdf->Image($image_file, $x = 20, $y = 190, $w = 180, $h = 180, $type = '', $link = '', $align = '', $resize = true, $dpi = 300, $palign = '', $ismask = false, $imgmask = false, $border = 0, $fitbox = true, $hidden = false, $fitonpage = false, $alt = '');
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 
 
 $pdf->AddPage('L');
@@ -189,7 +189,7 @@ $html .= '
 </table>';
 
 
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 $pdf->AddPage('P');
 
 $html =  "
@@ -216,7 +216,7 @@ $html =  "
 $html .= '<p><b>Section 2 – Consideration of the Type of Non-Audit Services Provided and Safeguards in Place </b></p>';
 $image_file = base_url('img/ac2/ac2-f2.jpg');
 $pdf->Image($image_file, $x = 20, $y = 30, $w = 180, $h = 180, $type = '', $link = '', $align = '', $resize = true, $dpi = 300, $palign = '', $ismask = false, $imgmask = false, $border = 0, $fitbox = true, $hidden = false, $fitonpage = false, $alt = '');
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 
 $pdf->SetXY(50, 205); // Set the position to (50, 160) pixels
 $html =  "
@@ -251,7 +251,7 @@ $html .= '
 ';
 
 
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 $pdf->AddPage('P');
 $html =  "
     <style>
@@ -337,7 +337,7 @@ $html .= '
         </tbody>
     </table>
 ';
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 
 
 

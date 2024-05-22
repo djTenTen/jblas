@@ -132,7 +132,7 @@ $html .= '
 $html .= '
         </tbody>
     </table>';
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 $pdf->AddPage();
 $html =  "
     <style>
@@ -180,7 +180,7 @@ $html .= '
     <li>The extent to which there are material figures in the financial statements which are derived from Accounting Estimates.</li>
 </ul>
 ';
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 $pdf->AddPage('L');
 $html =  "
     <style>
@@ -231,7 +231,7 @@ $html .= '
 </table>
 <p>Comprehensive consideration should be given to all clients even those deemed to be low risk. As part of this review consideration must be given to the Company’s going concern status and I.T. risk.</p>
 ';
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 $pdf->AddPage('L');
 $html =  "
     <style>
@@ -304,7 +304,7 @@ $html .= '<p><b>Objective:</b> This form is designed to assess the adequacy of t
     </tbody>
 </table>
 ';
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 $pdf->AddPage('L');
 $html =  "
     <style>
@@ -347,7 +347,7 @@ $html .= '
     </ul>
     <p>NB: this requirement exists irrespective of whether the overall control environment has been deemed to be ineffective in section 2b above. </p>
 ';
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 $pdf->AddPage('L');
 $html =  "
     <style>
@@ -421,7 +421,7 @@ $html .='
         </tbody>
     </table>
 ';
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 $pdf->AddPage('L');
 $html =  "
     <style>
@@ -457,6 +457,6 @@ $html .= '
 ';
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
-$pdf->writeHTML($html, true, false,'J', false, '');
+$pdf->writeHTML($html, true, false,false, false, '');
 $pdf->Output('stocktransfer.pdf','I');
 exit();
