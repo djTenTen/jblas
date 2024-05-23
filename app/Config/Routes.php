@@ -42,7 +42,6 @@ $routes->group('', ['filter' => 'auth'], function ($auth) {
             $prep->get('auditsystem/workpaper/prepare', 'WorkpaperController::prepare');
             $prep->post('auditsystem/wp/sendtoreview/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::sendtoreview/$1/$2/$3/$4/$5');
             $prep->post('auditsystem/wp/sendtoreviewer/(:any)', 'WorkpaperController::sendtoreviewer/$1');
-            $prep->post('auditsystem/wp/importtb/(:any)/(:any)/(:any)', 'WorkpaperController::importtb/$1/$2/$3');
             
         });
 
@@ -67,6 +66,7 @@ $routes->group('', ['filter' => 'auth'], function ($auth) {
         $workp->get('auditsystem/wp/getfiles/(:any)/(:any)/(:any)', 'WorkpaperController::getfiles/$1/$2/$3');
         $workp->post('auditsystem/wp/updateindex/(:any)', 'WorkpaperController::updateindex/$1');
 
+        $workp->post('auditsystem/wp/importtb/(:any)/(:any)/(:any)', 'WorkpaperController::importtb/$1/$2/$3');
         $workp->get('auditsystem/wp/index/setvalues/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::viewindexfiles/$1/$2/$3/$4/$5/$6');
         $workp->post('auditsystem/wp/index/tb/update/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::updatetb/$1/$2/$3/$4/$5/$6');
         $workp->post('auditsystem/wp/index/tb/upload/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::uploadtbfiles/$1/$2/$3/$4/$5/$6');

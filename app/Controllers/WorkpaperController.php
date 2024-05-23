@@ -201,11 +201,18 @@ class WorkpaperController extends BaseController{
         $dindex     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index));
         $req = [
             'pdf'       => $this->request->getFile('pdffile'),
+            'remarks'   => $this->request->getPost('remarks'),
             'cfiID'     => $dcfiID,
             'cID'       => $dcID,
             'wpID'      => $dwpID,
             'index'     => $dindex,
         ];
+
+        // if($req['pdf'] != ''){
+        //     return 'not empty';
+        // }else{
+        //     return 'empty';
+        // }
         $res = $this->wpmodel->uploadtbfiles($req);
         if($res == "uploaded"){
             session()->setFlashdata('uploaded','uploaded');

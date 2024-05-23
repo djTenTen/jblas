@@ -106,22 +106,44 @@
                             <table class="table table-hover table-sm" >
                                 <thead>
                                     <tr>
-                                        <th></th>
-                                        <th>Section</th>
-                                        <th>Desc</th>
-                                        <th>Progress</th>
-                                        <th>Action</th>
+                                        <th style="width: 5%;" class="text-center"></th>
+                                        <th style="width: 10%;" class="text-center">Section</th>
+                                        <th style="width: 45%;">Desc</th>
+                                        <th style="width: 15%;" class="text-center">Status</th>
+                                        <th style="width: 25%;" class="text-center">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody class="tbody">
                                     <?php foreach($fi as $r){?>
                                         <tr>
-                                            <td><input class="form-check-input ficheck" id="add" type="checkbox" name="c1[]" value="<?= $crypt->encrypt($r['cfiID'])?>" data-url="<?= base_url()?>auditsystem/wp/updateindex/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>" <?php if($r['acquired'] == 'Yes'){echo 'checked';} ?>/></td>
-                                            <td><?= $r['section']?></td>
+                                            <td class="text-center"><input class="form-check-input ficheck" id="add" type="checkbox" name="c1[]" value="<?= $crypt->encrypt($r['cfiID'])?>" data-url="<?= base_url()?>auditsystem/wp/updateindex/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>" <?php if($r['acquired'] == 'Yes'){echo 'checked';} ?>/></td>
+                                            <td class="text-center"><?= $r['section']?></td>
                                             <td><?= $r['desc']?></td>
-                                            <td></td>
-                                            <td>
-                                                <a href="<?= base_url()?>auditsystem/wp/index/setvalues/<?= $r['section']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['index']))?>/<?= $r['desc']?>" class="btn btn-icon btn-sm btn-primary cfi" target="_blank" title="Set Values" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?> ><i class="fas fa-tools"></i>
+                                            <td class="text-center">
+                                                <?php if($r['status'] == 'Preparing'){?>
+                                                    <span class="badge bg-primary"><?= $r['status']?></span>
+                                                <?php }elseif($r['status'] == 'Reviewing'){?>
+                                                    <span class="badge bg-secondary"><?= $r['status']?></span>
+                                                <?php }elseif($r['status'] == 'Checking'){?>
+                                                    <span class="badge bg-warning"><?= $r['status']?></span>
+                                                <?php }elseif($r['status'] == 'Approved'){?>
+                                                    <span class="badge bg-success"><?= $r['status']?></span>
+                                                <?php }?>
+                                            </td>
+                                            <td class="text-center">
+                                                <?php if($r['remarks'] != 'Not Submitted' and $r['remarks'] != ''){?>
+                                                    <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" data-pdf="<?= base_url()?>uploads/pdf/<?= $r['file']?>" title="View Remarks"><i class="fas fa-flag"></i></button>
+                                                <?php }?>
+                                                <a href="<?= base_url()?>auditsystem/wp/index/setvalues/<?= $r['section']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['index']))?>/<?= $r['desc']?>" class="btn btn-icon btn-sm btn-primary cfi" target="_blank" title="Set Values" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?> ><i class="fas fa-tools"></i></a>
+                                                <?php if($type == 'Preparer'){?>
+                                                    <button class="btn btn-success btn-icon btn-sm sendtoreviewer sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/index/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
+                                                <?php }elseif($type == 'Reviewer'){?>   
+                                                    <button class="btn btn-warning btn-icon btn-sm sendtoauditor sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/index/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-undo"></i></button>
+                                                    <button class="btn btn-success btn-icon btn-sm sendtomanager sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/index/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
+                                                <?php }elseif($type == 'Audit Manager'){?>   
+                                                    <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/index/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to back to Reviewer" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-undo"></i></button>
+                                                    <button class="btn btn-success btn-icon btn-sm approve sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/approve/index/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-thumbs-up"></i></button>
+                                                <?php }?>
                                             </td>
                                         </tr>
                                     <?php }?>
@@ -394,15 +416,16 @@
     </div>
     <!-- Modal REMARKS-->
     <div class="modal fade" id="remarks" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalCenterTitle">Remarks</h5>
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div id="rem">
-                    </div>
+                    <div id="rem"></div>
+                    <hr>
+                    <object id="pdf" data="" type="application/pdf" frameborder="0" width="100%" height="1000"> </object>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Ok</button>
@@ -421,9 +444,12 @@
             if (this.checked) {
                 //$(this).closest('tr').find('.cfi').show();
                 $(this).closest('tr').find('.cfi').removeAttr('hidden');
+                $(this).closest('tr').find('.sendto').removeAttr('hidden');
+                
             } else {
                 //$(this).closest('tr').find('.cfi').hide();
                 $(this).closest('tr').find('.cfi').attr('hidden', 'hidden');
+                $(this).closest('tr').find('.sendto').attr('hidden', 'hidden');
             }
 
             var url = $(this).data('url');
@@ -563,7 +589,9 @@
         }); 
         $('.rem').on('click', function () {
             var remarks = $(this).data('remarks');
-            $('#rem').html(remarks);
+            var pdf = $(this).data('pdf');
+            $('#rem').html(`<h1>`+remarks+`</h1>`);
+            $('#pdf').attr('data', pdf);
         });  
     });
     </script>

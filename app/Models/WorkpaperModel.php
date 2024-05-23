@@ -70,7 +70,7 @@ class WorkpaperModel extends  Model {
         from {$this->tblcfi} as cfi, {$this->tblfi} as fi
         where cfi.index = fi.fiID
         and cfi.workpaper = {$wpID}
-        and cfi.client = {$cID}");
+        and cfi.clientID = {$cID}");
         return $query->getResultArray();
 
     }
@@ -255,16 +255,22 @@ class WorkpaperModel extends  Model {
 
     public function uploadtbfiles($req){
 
-        $pdfname = $req['cfiID'].'-'.$req['cID'].'-'.$req['wpID'].'-'.$req['index'].'.pdf';
-        $pdfPath = ROOTPATH .'/public/uploads/pdf/'.$pdfname; 
-        if (file_exists($pdfPath)) {
-            unlink($pdfPath);
+        $pdfname = $req['cfiID'].$req['cID'].$req['wpID'].$req['index'].'.pdf';
+        if($req['pdf'] != ''){
+            $pdfPath = ROOTPATH .'/public/uploads/pdf/'.$pdfname; 
+            if (file_exists($pdfPath)) {
+                unlink($pdfPath);
+            }
+            $req['pdf']->move(ROOTPATH .'public/uploads/pdf', $pdfname);
         }
-        $req['pdf']->move(ROOTPATH .'public/uploads/pdf', $pdfname);
-        if($this->db->table($this->tblcfi)->where('cfiID', $req['cfiID'])->update(array('file' => $pdfname))){
+        $data = [
+            'file'      => $pdfname,
+            'remarks'   => $req['remarks'],
+        ];
+        if($this->db->table($this->tblcfi)->where('cfiID', $req['cfiID'])->update($data)){
             return 'uploaded';
         }
-
+    
     }
 
     public function importtb($req){
@@ -451,9 +457,10 @@ class WorkpaperModel extends  Model {
     public function sendtoreview($req){
 
         switch ($req['c']) {
-            case 'c1': $table = $this->tblc1; $ctID = 'c1tID';break;
-            case 'c2': $table = $this->tblc2; $ctID = 'c2tID';break;
-            case 'c3': $table = $this->tblc3; $ctID = 'c3tID';break;
+            case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
+            case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
+            case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
+            case 'index': $table    = $this->tblcfi; $ctID = 'index';break;
         }
         $where = [
             'clientID'      => $req['cID'],
@@ -476,9 +483,10 @@ class WorkpaperModel extends  Model {
     public function sendtoauditor($req){
 
         switch ($req['c']) {
-            case 'c1': $table = $this->tblc1; $ctID = 'c1tID';break;
-            case 'c2': $table = $this->tblc2; $ctID = 'c2tID';break;
-            case 'c3': $table = $this->tblc3; $ctID = 'c3tID';break;
+            case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
+            case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
+            case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
+            case 'index': $table    = $this->tblcfi; $ctID = 'index';break;
         }
         $where = [
             'clientID'      => $req['cID'],
@@ -500,9 +508,10 @@ class WorkpaperModel extends  Model {
     public function sendtomanager($req){
 
         switch ($req['c']) {
-            case 'c1': $table = $this->tblc1; $ctID = 'c1tID';break;
-            case 'c2': $table = $this->tblc2; $ctID = 'c2tID';break;
-            case 'c3': $table = $this->tblc3; $ctID = 'c3tID';break;
+            case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
+            case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
+            case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
+            case 'index': $table    = $this->tblcfi; $ctID = 'index';break;
         }
         $where = [
             'clientID'      => $req['cID'],
