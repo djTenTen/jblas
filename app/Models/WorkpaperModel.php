@@ -275,17 +275,40 @@ class WorkpaperModel extends  Model {
 
     public function importtb($req){
 
+        $where = [
+            'client'        => $req['client'],
+            'firm'          => $req['firm'],
+            'workpaper'     => $req['workpaper'],
+        ];
+        $this->db->table($this->tbltb)->where($where)->delete();
         foreach($req['account_code'] as $i => $val){
+            $index = $this->crypt->decrypt($req['fileindex'][$i]);
+            switch ($index) {
+                case '6'    : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'tangiblescu']; break;
+                case '7'    : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'ppecu']; break;
+                case '8'    : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'investmentscu']; break;
+                case '9'    : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'inventorycu']; break;
+                case '23'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'trade receivablescu']; break;
+                case '20'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'other receivablescu']; break;
+                case '11'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'bank and cashcu']; break;
+                case '12'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'trade payablescu']; break;
+                case '21'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'other payablescu']; break;
+                case '15'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'provisionscu']; break;
+                case '18'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'revenuecu']; break;
+                case '19'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'costscu']; break;
+                case '17'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'payrollcu']; break;
+            }
+            $this->db->table($this->tblc1)->where($refaut)->update(array('question' => $req['debit'][$i] - $req['credit'][$i]));
             $data = [
                 'client'        => $req['client'],
                 'firm'          => $req['firm'],
                 'workpaper'     => $req['workpaper'],
-                'index'         => $this->crypt->decrypt($req['fileindex'][$i]),
+                'index'         => $index,
                 'account_code'  => $req['account_code'][$i],
                 'account'       => $req['account'][$i],
                 'account_type'  => $req['account_type'][$i],
                 'debit'         => $req['debit'][$i],
-                'credit'        =>$req['credit'][$i],
+                'credit'        => $req['credit'][$i],
                 'added_on'      => $this->date.' '.$this->time,
                 'added_by'      => $req['uID'],
             ];
@@ -326,7 +349,7 @@ class WorkpaperModel extends  Model {
             $index = $this->db->table($this->tblfi)->get();
             foreach($index->getResultArray() as $i){
                 $ind = [
-                    'client'        => $req['client'],
+                    'clientID'        => $req['client'],
                     'firm'          => $req['firm'],
                     'workpaper'     => $wpid,
                     'index'         => $i['fiID'],

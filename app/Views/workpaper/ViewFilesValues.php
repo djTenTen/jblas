@@ -326,10 +326,24 @@
                             <br><br>
                         <?php }?>
 
-                        <h3>Import Trial Balance</h3>
-                        <div class="col-3">
-                            <input type="file" name="" id="excelInput" accept=".xlsx, .xls" class="form form-control">
+                        
+                        <div class="row">
+                            <div class="col-3">
+                                <h3>Import Trial Balance</h3>
+                                <input type="file" name="" id="excelInput" accept=".xlsx, .xls" class="form form-control">
+                            </div>
+                            <div class="col-7">
+                            <?php if(!empty($cfi)){?>
+                                <div class="alert alert-warning alert-icon" role="alert">
+                                    <div class="alert-icon-content">
+                                        <b>Note:</b> If you imported a file again, it will overwrite your previous data, all old data will be erased.
+                                    </div>
+                                </div> 
+                            <?php }?>
+                            </div>
                         </div>
+                        
+
                         <br>
 
                         <form action="<?= base_url()?>auditsystem/wp/importtb/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
@@ -499,11 +513,30 @@
                     tb.push(rd);
                 });
 
+
+                var dup = function finduplicate(data){
+                    var accountCodeCounts = {};
+                    var duplicates = [];
+                    data.forEach(function(item){
+                        var code = item.account_code;
+                        if (accountCodeCounts[code]) {
+                            accountCodeCounts[code]++;
+                        } else {
+                            accountCodeCounts[code] = 1;
+                        }
+                    });
+                    for(var code in accountCodeCounts){
+                        if (accountCodeCounts[code] > 1) {
+                            duplicates.push(code);
+                        }
+                    }
+                    return duplicates;
+                }
+
                 var row = '';
                 let debit = 0;
                 let credit = 0;
                 tb.forEach(function(r){
-
                     debit += parseFloat(r.debit);
                     credit += parseFloat(r.credit);
                     row += `
@@ -527,8 +560,7 @@
 
                 var msg = '';
                 if((debit - credit) != 0) {
-                    console.log(debit + credit);
-                    msg = `
+                    msg += `
                         <div class="alert alert-danger alert-icon" role="alert">
                             <div class="alert-icon-content">
                                 <h6 class="alert-heading">Balance Out!</h6>
@@ -538,7 +570,18 @@
                     `;
                     $('#imp').hide();
                 }
-
+                
+                if(dup(tb).length > 0){
+                    msg += `
+                        <div class="alert alert-danger alert-icon" role="alert">
+                            <div class="alert-icon-content">
+                                <h6 class="alert-heading">Duplicate Detected</h6>
+                                Duplicate data found on the Acount_code (`+dup(tb)+`)
+                            </div>
+                        </div>     
+                    `;
+                    $('#imp').hide();
+                }
                 row += `
                     <tr>
                         <td colspan="3" class="text-end"><b>Total</b></td>

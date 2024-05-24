@@ -148,7 +148,7 @@ class WorkpaperController extends BaseController{
             'account'       => $this->request->getPost('account'),
             'account_type'  => $this->request->getPost('account_type'),
             'debit'         => $this->request->getPost('debit'),
-            'credit'         => $this->request->getPost('credit'),
+            'credit'        => $this->request->getPost('credit'),
             'uID'           => $uID,
         ];
         $res = $this->wpmodel->importtb($req);
@@ -207,12 +207,6 @@ class WorkpaperController extends BaseController{
             'wpID'      => $dwpID,
             'index'     => $dindex,
         ];
-
-        // if($req['pdf'] != ''){
-        //     return 'not empty';
-        // }else{
-        //     return 'empty';
-        // }
         $res = $this->wpmodel->uploadtbfiles($req);
         if($res == "uploaded"){
             session()->setFlashdata('uploaded','uploaded');
