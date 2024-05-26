@@ -10,6 +10,8 @@ $routes->get('login', 'HomeController::homepage');
 $routes->post('authenticate', 'AuthController::auth');
 $routes->post('logout', 'AuthController::logout');
 $routes->get('register', 'UserController::register');
+$routes->get('aud/(:any)', 'UserController::aud/$1');
+$routes->post('accept/aud/(:any)', 'UserController::acceptaud/$1');
 $routes->post('signup', 'UserController::signup');
 $routes->get('403', 'ErrorController::error403');
 $routes->get('401', 'ErrorController::error401');

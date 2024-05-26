@@ -55,14 +55,17 @@ class AuditorController extends BaseController{
             case 'Audit Manager': $pos = 5; break;
             default             : $pos = 2;break;
         }
+        $genpass = substr(bin2hex(random_bytes(10)), 0, 10);
         $req = [
             'name'      => $this->request->getPost('name'),
             'email'     => $this->request->getPost('email'),
             'address'   => $this->request->getPost('address'),
             'contact'   => $this->request->getPost('contact'),
-            'pass'      => $this->crypt->encrypt('password'), //Should be generated and emailed to the user
+            'pass'      => $this->crypt->encrypt($genpass), //Should be generated and emailed to the user
+            'genpass'   => $genpass,
             'type'      => $this->request->getPost('type'),
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+            'firm'      => session()->get('firm'),
             'signature' => $this->request->getFile('signature'),
             'pos'       => $pos,
         ];

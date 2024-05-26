@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="<?= base_url()?>css/styles.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
     <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
@@ -35,8 +35,8 @@
                                             Invalid email or password, Please try again.
                                         </div>
                                     </div>
-                                 <?php  }?>
-                                 <?php if (session()->get('accountnotexist')) { ?>
+                                <?php  }?>
+                                <?php if (session()->get('accountnotexist')) { ?>
                                     <div class="alert alert-danger alert-icon" role="alert">
                                         <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                                         <div class="alert-icon-content">
@@ -44,8 +44,8 @@
                                             the account you have been using does not exist
                                         </div>
                                     </div>
-                                 <?php  }?>
-                                 <?php if (session()->get('accountinactive')) { ?>
+                                <?php  }?>
+                                <?php if (session()->get('accountinactive')) { ?>
                                     <div class="alert alert-danger alert-icon" role="alert">
                                         <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                                         <div class="alert-icon-content">
@@ -53,8 +53,8 @@
                                             Your account is inactive, PLease contact your administrator for further actions.
                                         </div>
                                     </div>
-                                 <?php  }?>
-                                 <?php if (session()->get('accountunverified')) { ?>
+                                <?php  }?>
+                                <?php if (session()->get('accountunverified')) { ?>
                                     <div class="alert alert-danger alert-icon" role="alert">
                                         <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                                         <div class="alert-icon-content">
@@ -62,7 +62,17 @@
                                             Your account is not yet verified, Please wait until it verifies or contact the administrator for further actions
                                         </div>
                                     </div>
-                                 <?php  }?>
+                                <?php  }?>
+                                <?php if (session()->get('confirmed')) { ?>
+                                    <div class="alert alert-success alert-icon" role="alert">
+                                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        <div class="alert-icon-content">
+                                            <h6 class="alert-heading">Account Confirmed</h6>
+                                            Your Account has been verified please Login.
+                                        </div>
+                                    </div>
+                                <?php  }?>
+
                                 <div class="card-header justify-content-center"><h3 class="fw-light my-4">Login</h3></div>
                                 <div class="card-body">
                                     <!-- Login form-->

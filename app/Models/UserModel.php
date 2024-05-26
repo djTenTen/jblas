@@ -4,15 +4,16 @@ use CodeIgniter\Model;
 
 class UserModel extends  Model {
 
-
     protected $tblu = "tbl_users";
     protected $tblf = "tbl_firm";
     protected $tblp = "tbl_position";
     protected $time,$date;
+    protected $crypt;
 
     public function __construct(){
 
         $this->db   = \Config\Database::connect('default'); 
+        $this->crypt = \Config\Services::encrypter();
         date_default_timezone_set("Asia/Singapore"); 
         $this->time = date("H:i:s");
         $this->date = date("Y-m-d");
@@ -112,6 +113,33 @@ class UserModel extends  Model {
             }else{
                 return 'failed';
             }
+        }
+
+    }
+
+    public function acceptaud($req){
+
+        $where = [
+            'userID' => $req['refID'],
+            'email' => $req['email'],
+        ];
+        $count = $this->db->table($this->tblu)->where($where)->get();
+        if($count->getNumRows() >= 1){
+            $d = $count->getRowArray();
+            if($req['password'] == $this->crypt->decrypt($d['pass'])){
+                if($d['verified'] == 'No'){
+                    $data = [
+                        'verified' => 'Yes',
+                        'email_verify_at' => $this->date.' '.$this->time,
+                    ];
+                    $this->db->table($this->tblu)->where(array('userID' => $d['userID']))->update($data);
+                    return 'confirmed';
+                }else{
+                    return 'confirmed';
+                }
+            }
+        }else{
+            return 'infonotfound';
         }
 
     }

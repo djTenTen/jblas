@@ -27,6 +27,13 @@ class UserController extends BaseController{
 
     }
 
+    public function aud($email){
+
+        $data['email'] = $email;
+        return view('users/Aud', $data);
+
+    }
+
     public function viewusers(){
 
         $uID            = $this->crypt->decrypt(session()->get('userID'));
@@ -97,6 +104,32 @@ class UserController extends BaseController{
         }else{
             session()->setFlashdata('passnotmatch','passnotmatch');
             return redirect()->to(site_url('register'));
+        }
+
+    }
+
+    public function acceptaud($email){
+
+        $validationRules = [
+            'refid'     => 'required',
+            'password'  => 'required',
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('aud/'.$email));
+        }
+        $req = [
+            'email' => $email,
+            'refID' => $this->request->getPost('refid'),
+            'password' => $this->request->getPost('password'),
+        ];
+        $res = $this->usermodel->acceptaud($req);
+        if($res == 'confirmed'){
+            session()->setFlashdata('confirmed','confirmed');
+            return redirect()->to(site_url());
+        }else{
+            session()->setFlashdata('infonotfound','infonotfound');
+            return redirect()->to(site_url('aud/'.$email));
         }
 
     }
