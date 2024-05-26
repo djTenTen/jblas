@@ -28,12 +28,12 @@ class Email extends BaseConfig
     /**
      * SMTP Server Hostname
      */
-    public string $SMTPHost = 'sg2nlvphout-v01.shr.prod.sin2.secureserver.net';
+    public string $SMTPHost = 'mail.buildappminds.com';
 
     /**
      * SMTP Username
      */
-    public string $SMTPUser = 'mail.buildappminds.com';
+    public string $SMTPUser = 'applaud@buildappminds.com';
 
     /**
      * SMTP Password
