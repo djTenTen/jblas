@@ -152,3 +152,271 @@ quit: 250 OK id=1sB5ce-00DxLC-1A
 The following SMTP error was encountered: 250 OK id=1sB5ce-00DxLC-1A
 
 The following SMTP error was encountered: 
+INFO - 2024-05-26 12:48:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-26 12:48:19 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-05-26 12:48:19 --> 220-sg2plmcpnl480577.prod.sin2.secureserver.net ESMTP Exim 4.96.2 #2 Sat, 25 May 2024 21:48:11 -0700 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-sg2plmcpnl480577.prod.sin2.secureserver.net Hello localhost [120.29.109.172]
+250-SIZE 52428800
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 250 OK
+
+to: 250 Accepted
+
+data: 354 Enter message, ending with "." on a line by itself
+
+
+quit: 250 OK id=1sB5nn-00E4bG-2i
+
+The following SMTP error was encountered: 250 OK id=1sB5nn-00E4bG-2i
+
+The following SMTP error was encountered: 
+INFO - 2024-05-26 12:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-26 12:51:29 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-05-26 12:51:29 --> 220-sg2plmcpnl480577.prod.sin2.secureserver.net ESMTP Exim 4.96.2 #2 Sat, 25 May 2024 21:51:21 -0700 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-sg2plmcpnl480577.prod.sin2.secureserver.net Hello localhost [120.29.109.172]
+250-SIZE 52428800
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 250 OK
+
+to: 250 Accepted
+
+data: 354 Enter message, ending with "." on a line by itself
+
+
+quit: 250 OK id=1sB5qs-00E6by-07
+
+The following SMTP error was encountered: 250 OK id=1sB5qs-00E6by-07
+
+The following SMTP error was encountered: 
+INFO - 2024-05-26 12:54:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 12:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 12:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:04:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:04:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:10:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:12:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:14:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:14:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:16:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:20:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:26:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:28:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:28:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:29:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:34:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:38:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-26 13:38:17 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-05-26 13:38:17 --> 220-sg2plmcpnl480577.prod.sin2.secureserver.net ESMTP Exim 4.96.2 #2 Sat, 25 May 2024 22:38:09 -0700 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-sg2plmcpnl480577.prod.sin2.secureserver.net Hello localhost [120.29.109.172]
+250-SIZE 52428800
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 250 OK
+
+to: 250 Accepted
+
+data: 354 Enter message, ending with "." on a line by itself
+
+
+quit: 250 OK id=1sB6a9-00Ebu6-2l
+
+The following SMTP error was encountered: 250 OK id=1sB6a9-00Ebu6-2l
+
+The following SMTP error was encountered: 
+INFO - 2024-05-26 13:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:38:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:43:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:43:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:43:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:43:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:43:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:44:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:44:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 13:44:26 --> ErrorException: unlink(D:\Applications\xampp\htdocs\jblas\/public/uploads/photo/): Is a directory
+in APPPATH\Models\UserModel.php on line 185.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Applications\\xampp\\htdocs\\jblas\\/public/uploads/photo/): Is a directory', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\UserModel.php', 185)
+ 2 APPPATH\Models\UserModel.php(185): unlink('D:\\Applications\\xampp\\htdocs\\jblas\\/public/uploads/photo/')
+ 3 APPPATH\Controllers\UserController.php(190): App\Models\UserModel->updatemyinfo([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->updatemyinfo('c895ff51ee432a42f1d104410cac2649225c2e0340cb592e2831445d77343398bdf8f9807be37f30989c38dd047dc0e6ca9e391a5826fda47a198d5e0b97ef09JzZ7HpR0gORdZs9gInS0fs8=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-26 13:44:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:46:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 13:46:18 --> ErrorException: unlink(D:\Applications\xampp\htdocs\jblas\/public/uploads/photo/): Is a directory
+in APPPATH\Models\UserModel.php on line 175.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Applications\\xampp\\htdocs\\jblas\\/public/uploads/photo/): Is a directory', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\UserModel.php', 175)
+ 2 APPPATH\Models\UserModel.php(175): unlink('D:\\Applications\\xampp\\htdocs\\jblas\\/public/uploads/photo/')
+ 3 APPPATH\Controllers\UserController.php(190): App\Models\UserModel->updatemyinfo([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->updatemyinfo('ba8767f5157c69a1247f2effeb242911a9add26e59ecf02aed4168a3ce1b7e3db76bcff96e9bef239c0aafe5c9c2957730fd520bc093745dea237921a1affd95CUyoGpFq7~2sixY3dZPNZ1w=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-26 13:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 13:47:25 --> ErrorException: unlink(D:\Applications\xampp\htdocs\jblas\/public/uploads/photo/): Is a directory
+in APPPATH\Models\UserModel.php on line 175.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Applications\\xampp\\htdocs\\jblas\\/public/uploads/photo/): Is a directory', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\UserModel.php', 175)
+ 2 APPPATH\Models\UserModel.php(175): unlink('D:\\Applications\\xampp\\htdocs\\jblas\\/public/uploads/photo/')
+ 3 APPPATH\Controllers\UserController.php(190): App\Models\UserModel->updatemyinfo([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->updatemyinfo('ba8767f5157c69a1247f2effeb242911a9add26e59ecf02aed4168a3ce1b7e3db76bcff96e9bef239c0aafe5c9c2957730fd520bc093745dea237921a1affd95CUyoGpFq7~2sixY3dZPNZ1w=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-26 13:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 13:57:04 --> ErrorException: unlink(D:\Applications\xampp\htdocs\jblas\/public/uploads/photo/): Is a directory
+in APPPATH\Models\UserModel.php on line 175.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Applications\\xampp\\htdocs\\jblas\\/public/uploads/photo/): Is a directory', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\UserModel.php', 175)
+ 2 APPPATH\Models\UserModel.php(175): unlink('D:\\Applications\\xampp\\htdocs\\jblas\\/public/uploads/photo/')
+ 3 APPPATH\Controllers\UserController.php(190): App\Models\UserModel->updatemyinfo([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->updatemyinfo('aa87d00364586e79f9a150491c9e8916402576f4d70178d47048ed28681b7c3d7ced26283e2433303ba076b4714d8f7423f845ae87b5994c8251e1ceaee890331OroQSVPIzy94tY0sXp$JjY=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-26 13:57:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:57:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 13:57:55 --> ErrorException: unlink(D:\Applications\xampp\htdocs\jblas\public/uploads/photo/): Is a directory
+in APPPATH\Models\UserModel.php on line 175.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/photo/): Is a directory', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\UserModel.php', 175)
+ 2 APPPATH\Models\UserModel.php(175): unlink('D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/photo/')
+ 3 APPPATH\Controllers\UserController.php(190): App\Models\UserModel->updatemyinfo([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->updatemyinfo('3ccc9a156092b2759c4d5b34b8c7a55e43f46eadc1659eed529c87e2b2eb077405dc05d21823e9d8b430f721718fd1cc048799d5ae6187d32f70d6e66ebf2c9dmY~XCEgBMRn5FHWKbImtpF4=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-26 13:58:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 13:58:13 --> ErrorException: unlink(D:\Applications\xampp\htdocs\jblas\public/uploads/photo/): Is a directory
+in APPPATH\Models\UserModel.php on line 175.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/photo/): Is a directory', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\UserModel.php', 175)
+ 2 APPPATH\Models\UserModel.php(175): unlink('D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/photo/')
+ 3 APPPATH\Controllers\UserController.php(190): App\Models\UserModel->updatemyinfo([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->updatemyinfo('3ccc9a156092b2759c4d5b34b8c7a55e43f46eadc1659eed529c87e2b2eb077405dc05d21823e9d8b430f721718fd1cc048799d5ae6187d32f70d6e66ebf2c9dmY~XCEgBMRn5FHWKbImtpF4=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-26 13:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 13:59:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 13:59:41 --> ErrorException: unlink(D:\Applications\xampp\htdocs\jblas\public/uploads/photo/): Is a directory
+in APPPATH\Models\UserModel.php on line 185.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/photo/): Is a directory', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\UserModel.php', 185)
+ 2 APPPATH\Models\UserModel.php(185): unlink('D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/photo/')
+ 3 APPPATH\Controllers\UserController.php(190): App\Models\UserModel->updatemyinfo([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->updatemyinfo('c1df0362b9ae88c98f5881a491235c84276988c58eca21251dbd806f5c6a4fcf4d06e5ea4930cfe5b06225478f89b213a0a9596b19251c237566a61ea741e3a7xmZ79QhE29aCdt$F7C63aJ4=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-26 14:06:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 14:06:56 --> ErrorException: unlink(D:\Applications\xampp\htdocs\jblas\public/uploads/signature): Is a directory
+in APPPATH\Models\UserModel.php on line 185.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/signature): Is a directory', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\UserModel.php', 185)
+ 2 APPPATH\Models\UserModel.php(185): unlink('D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/signature')
+ 3 APPPATH\Controllers\UserController.php(190): App\Models\UserModel->updatemyinfo([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->updatemyinfo('c1df0362b9ae88c98f5881a491235c84276988c58eca21251dbd806f5c6a4fcf4d06e5ea4930cfe5b06225478f89b213a0a9596b19251c237566a61ea741e3a7xmZ79QhE29aCdt$F7C63aJ4=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-26 14:07:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:07:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:07:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 14:07:06 --> ErrorException: unlink(D:\Applications\xampp\htdocs\jblas\public/uploads/signature): Is a directory
+in APPPATH\Models\UserModel.php on line 185.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/signature): Is a directory', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\UserModel.php', 185)
+ 2 APPPATH\Models\UserModel.php(185): unlink('D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/signature')
+ 3 APPPATH\Controllers\UserController.php(190): App\Models\UserModel->updatemyinfo([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->updatemyinfo('7e7eb04dbd30a7096772c639fa6ebccefe94e9f55a62b238fe47415119413e8cb1f862be48ba05237d5f42246583d00aa27ef2985f62c376c7dbc3e2406e71e2SGNnP$Cz5NyyoI3t6Pdtj~c=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-26 14:08:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:08:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:09:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 14:09:28 --> ErrorException: unlink(D:\Applications\xampp\htdocs\jblas\public/uploads/photo/): Is a directory
+in APPPATH\Models\UserModel.php on line 175.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/photo/): Is a directory', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\UserModel.php', 175)
+ 2 APPPATH\Models\UserModel.php(175): unlink('D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/photo/')
+ 3 APPPATH\Controllers\UserController.php(190): App\Models\UserModel->updatemyinfo([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->updatemyinfo('d3c07784d8a0f0e12d00d7e443ca01e312ffe58c26c9619ca6c9949ced4779b74e8bc54f6003c061a130c439bc54728b82210db4ecee768e59ae053ed393677ePQo~b0I2D0qJtZILlQ5AUpU=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-26 14:11:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:11:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:12:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 14:12:29 --> ErrorException: unlink(D:\Applications\xampp\htdocs\jblas\public/uploads/photo/): Is a directory
+in APPPATH\Models\UserModel.php on line 175.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/photo/): Is a directory', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\UserModel.php', 175)
+ 2 APPPATH\Models\UserModel.php(175): unlink('D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/photo/')
+ 3 APPPATH\Controllers\UserController.php(190): App\Models\UserModel->updatemyinfo([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->updatemyinfo('6d8e1698e219e708c5efaff9c05db5926055d140cb6986f688102d52efc100d64220e6cbad2b2a399d3d9f53935fdb564cb5bde1d0bd5fd6aabbc27fcb7e730bhzZg7gyVOUMeMle5k06$Q~E=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-26 14:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:12:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:14:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 14:14:03 --> ErrorException: unlink(D:\Applications\xampp\htdocs\jblas\public/uploads/photo/): Is a directory
+in APPPATH\Models\UserModel.php on line 175.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/photo/): Is a directory', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Models\\UserModel.php', 175)
+ 2 APPPATH\Models\UserModel.php(175): unlink('D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/photo/')
+ 3 APPPATH\Controllers\UserController.php(190): App\Models\UserModel->updatemyinfo([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\UserController->updatemyinfo('cbada2f97505baf29c3b0798846b87989e8f6f7208118727a685eb25db0b823ffd1ac474fd0ac12230d9fe789df5a4a8621382a7815e27ea024f22e83f8195d4cP8JvSF7crXWD3$orSwtwAk=')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-26 14:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:15:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:15:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:15:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:20:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:20:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:20:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:20:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 14:25:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

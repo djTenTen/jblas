@@ -101,6 +101,13 @@ class UserModel extends  Model {
                 'added_on'      => $this->date.' '.$this->time
             ];
             if($this->db->table($this->tblu)->insert($data)){
+                $email = \Config\Services::email();
+                $email->setFrom('applaud@buildappminds.com', 'ApplAud Systems');
+                $email->setTo($req['email']);
+                $email->setSubject('Welcome to Applaud');
+                $msg = "Dear ".$req['fname'].",\n\nWe have received your registration, Please wait a few minutes, and we will send a Confirmation once your information has been verified.\n\nThank you so much,\nApplAud Systems";
+                $email->setMessage($msg);
+                $email->send();
                 return 'registered';
             }else{
                 return 'failed';
@@ -162,9 +169,9 @@ class UserModel extends  Model {
             'contact'       => $req['contact'],
             'email'         => $req['email'],
         ];
-        if(!empty($req['photo']) and $req['photo'] != ''){
-            $imagePath = ROOTPATH .'/public/uploads/photo/'.$req['myphoto']; 
-            if (file_exists($imagePath)) {
+        if($req['photo'] != ''){
+            $imagePath = ROOTPATH .'public/uploads/photo/'.$req['myphoto']; 
+            if(file_exists($imagePath) && is_file($imagePath)) {
                 unlink($imagePath);
             }
             $photoname = $req['photo']->getRandomName();
@@ -172,9 +179,9 @@ class UserModel extends  Model {
             $data['photo'] = $photoname;
             session()->set('photo', $photoname);
         }
-        if(!empty($req['signature']) and $req['signature'] != ''){
-            $imagePath = ROOTPATH .'/public/uploads/photo/'.$req['mysignature']; 
-            if (file_exists($imagePath)) {
+        if($req['signature'] != ''){
+            $imagePath = ROOTPATH .'public/uploads/signature/'.$req['mysignature']; 
+            if (file_exists($imagePath) && is_file($imagePath)) {
                 unlink($imagePath);
             }
             $signaturename = $req['signature']->getRandomName();

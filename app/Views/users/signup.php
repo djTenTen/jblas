@@ -1,5 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+        .strength-meter {
+            height: 10px;
+            margin-top: 5px;
+            background: #ddd;
+            border-radius: 5px;
+            transition: width 0.3s;
+        }
+
+        .strength-meter.weak {
+            width: 20%;
+            background: red;
+        }
+
+        .strength-meter.medium {
+            width: 60%;
+            background: yellow;
+        }
+
+        .strength-meter.strong {
+            width: 100%;
+            background: green;
+        }
+    </style>
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -148,8 +172,10 @@
                                                                 <div class="col-md-6">
                                             
                                                                     <div class="mb-3">
-                                                                        <label class="small mb-1" for="pass">Password</label>
-                                                                        <input class="form-control" id="pass" type="password" placeholder="Enter password" name="pass" required/>
+                                                                        <label class="small mb-1" for="password">Password</label>
+                                                                        <input class="form-control" id="password" type="password" placeholder="Enter password" name="pass" required/>
+                                                                        <div id="password-strength" class="strength-meter"></div>
+                                                                        <small id="password-help" class="form-text text-muted"></small>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
@@ -157,6 +183,9 @@
                                                                     <div class="mb-3">
                                                                         <label class="small mb-1" for="confirmpass">Confirm Password</label>
                                                                         <input class="form-control" id="confirmpass" type="password" placeholder="Confirm password" name="cpass" required/>
+                                                                        <div id="password-match">
+                                                                            
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -164,8 +193,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-primary btn-block float-end">Create Account</button>
+                                            <button type="submit" id="ca" class="btn btn-primary btn-block float-end" hidden>Create Account</button>
                                         </form>
+                                        
+                                        
                                     </div>
                                     <div class="card-footer text-center">
                                         <div class="small"><a href="<?= base_url('/login')?>">Have an account? Go to login</a></div>
@@ -197,6 +228,74 @@
 </html>
 <script>
     $(document).ready(function() {
+
+        var password;
+
+        $('#password').on('input', function() {
+            password = $(this).val();
+            var strength = evaluatePasswordStrength(password);
+            $('#password-strength').removeClass();
+            $('#password-help').text('');
+
+            if(password.length < 8){
+                $('#password-strength').addClass('strength-meter weak');
+                $('#password-help').text('Please make a password atleast 8 characters long.');
+                $('#ca').attr('hidden', 'hidden');
+            }else{
+                if (strength === 'weak') {
+                    $('#password-strength').addClass('strength-meter weak');
+                    $('#password-help').text('Weak password. Try adding more characters, numbers, and symbols.');
+                } else if (strength === 'medium') {
+                    $('#password-strength').addClass('strength-meter medium');
+                    $('#password-help').text('Medium strength. Consider adding more unique characters.');
+                } else if (strength === 'strong') {
+                    $('#password-strength').addClass('strength-meter strong');
+                    $('#password-help').text('Strong password.');
+                }
+            }
+            
+        });
+
+        $('#confirmpass').on('input', function() {
+            var cpass = $(this).val();
+            if(cpass == password){
+                $('#password-match').html(`
+                    <div class="alert alert-success alert-icon" role="alert">
+                        <div class="alert-icon-content">
+                            Password match
+                        </div>
+                    </div>
+                `);
+                $('#ca').removeAttr('hidden');
+            }else{
+                $('#password-match').html(`
+                    <div class="alert alert-danger alert-icon" role="alert">
+                        <div class="alert-icon-content">
+                            Password not Match
+                        </div>
+                    </div>
+                `);
+            }
+        });
+        
+
+        function evaluatePasswordStrength(password) {
+            var strength = 'weak';
+            var score = 0;
+            if (password.length >= 8) score++;
+            if (password.match(/[A-Z]/)) score++;
+            if (password.match(/[a-z]/)) score++;
+            if (password.match(/[0-9]/)) score++;
+            if (password.match(/[^A-Za-z0-9]/)) score++;
+            if (score >= 4) {
+                strength = 'strong';
+            } else if (score >= 2) {
+                strength = 'medium';
+            }
+            return strength;
+        }
+
+
         $('#imageInput').change(function() {
             var maxSizeInBytes = 5 * 1024 * 1024; // 5MB
             var fileSize = this.files[0].size;
