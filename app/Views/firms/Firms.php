@@ -58,7 +58,7 @@
                                 <td>
                                     <button class="btn btn-secondary btn-icon btn-sm view-data" title="View Info" type="button" data-bs-toggle="modal" data-bs-target="#viewfirm" data-firm="<?= $r['firmname']?>" data-verify="<?= $r['name']?>" data-usid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['userID']))?>"><i class="fas fa-eye"></i></button>
                                     <?php if($r['verified'] == 'No'){?>
-                                        <button class="btn btn-primary btn-icon btn-sm verify-data" title="Verify" type="button" data-bs-toggle="modal" data-bs-target="#verify" data-firm="<?= $r['firmname']?>" data-verify="<?= $r['name']?>" data-usid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['userID']))?>"><i class="fas fa-check-circle"></i></button>
+                                        <button class="btn btn-primary btn-icon btn-sm verify-data" title="Verify" type="button" data-bs-toggle="modal" data-bs-target="#verify" data-firm="<?= $r['firmname']?>" data-verify="<?= $r['name']?>" data-url="<?= base_url()?>auditsystem/firms/verify/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['userID']))?>"><i class="fas fa-check-circle"></i></button>
                                     <?php }?>
                                     
                                 </td>
@@ -177,7 +177,7 @@
             </div>
             <div class="modal-body">
                 
-                <h4>Are you sure to Verify <span class="user"></span> from <span class="firm"></span> firm?</h4>
+                <h4>Are you sure to Verify <b><span class="user"></span></b> from <b><span class="firm"></span></b> firm?</h4>
                 
             </div>
             <div class="modal-footer">
@@ -197,6 +197,7 @@ $(document).ready(function () {
         var firm = $(this).data('firm');
         var verify = $(this).data('verify');
         var usid = $(this).data('usid');
+        var email = $(this).data('email');
         $('.user').html(verify);
         $('.firm').html(firm);
 
@@ -257,8 +258,8 @@ $(document).ready(function () {
     $(".verify-data").on("click", function() {
         var firm = $(this).data('firm');
         var verify = $(this).data('verify');
-        var usid = $(this).data('usid');
-        $('#vform').attr('action', "<?= base_url('auditsystem/firms/verify/')?>" + usid);
+        var url = $(this).data('url');
+        $('#vform').attr('action', url);
         $('.user').html(verify);
         $('.firm').html(firm);
     });
