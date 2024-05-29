@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" rel="stylesheet" />
     <link href="https://unpkg.com/easymde/dist/easymde.min.css" rel="stylesheet" />
-    <link href="<?= base_url()?>css/styles.css" rel="stylesheet" />
+    <link href="<?= base_url()?>public/css/styles.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="<?= base_url()?>assets/img/favicon.png" />
     <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
@@ -135,10 +135,20 @@
             <!-- User Dropdown-->
             <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
                 <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php if(empty(session()->get('photo'))){?>
-                        <img class="img-fluid" src="<?= base_url()?>uploads/logo/<?= session()->get('logo')?>" />
-                    <?php }else{?>
-                        <img class="img-fluid" src="<?= base_url()?>uploads/photo/<?= session()->get('photo')?>" />
+                    <?php if(empty(session()->get('photo'))){
+                            $path = base_url().'uploads/logo/'.session()->get('logo');
+                            if(file_exists($path) && is_file($path)) { ?>
+                                <img class="img-fluid" src="<?= base_url()?>uploads/logo/<?= session()->get('logo')?>" />
+                            <?php }else{?>
+                                <img class="img-fluid" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
+                            <?php }?>
+                    <?php }else{
+                            $path = base_url().'uploads/photo/'.session()->get('photo');
+                            if(file_exists($path) && is_file($path)) { ?>
+                                <img class="img-fluid" src="<?= base_url()?>uploads/photo/<?= session()->get('photo')?>" />
+                            <?php }else{?>
+                                <img class="img-fluid" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
+                            <?php }?>
                     <?php }?>
        </a>
                 <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
@@ -152,6 +162,7 @@
                         <div class="dropdown-user-details">
                             <div class="dropdown-user-details-name"><?= session()->get('name') ?></div>
                             <div class="dropdown-user-details-email"><?= session()->get('email') ?></div>
+                            <div class="dropdown-user-details-email"><?= session()->get('pos') ?></div>
                         </div>
                     </h6>
                     <div class="dropdown-divider"></div>
@@ -365,6 +376,7 @@
                     <div class="sidenav-footer-content">
                         <div class="sidenav-footer-subtitle">Logged in as:</div>
                         <div class="sidenav-footer-title"><?= session()->get('name') ?></div>
+                        <div class="sidenav-footer-title"><?= session()->get('type') ?></div>
                     </div>
                 </div>
             </nav>
