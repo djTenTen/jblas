@@ -43,16 +43,23 @@ class WorkpaperModel extends  Model {
                 and status = 'Active'
                 and verified = 'Yes'
             ");
-        }else{
-            $where = [
-                'firm'          => $firmID,
-                'type'          => $type,
-                'status'        => 'Active',
-                'verified'      => 'Yes',
-            ];
-            $query = $this->db->table($this->tblu)->where($where)->get();
+        }elseif($type == 'Reviewer'){
+            $query = $this->db->query("select * 
+                from {$this->tblu} 
+                where (type = 'Auditing Firm' or type = 'Audit Manager' or type = 'Reviewer')
+                and firm = {$firmID}
+                and status = 'Active'
+                and verified = 'Yes'
+            ");
+        }elseif($type == 'Preparer'){
+            $query = $this->db->query("select * 
+                from {$this->tblu} 
+                where (type = 'Auditing Firm' or type = 'Audit Manager' or type = 'Reviewer' or type = 'Preparer')
+                and firm = {$firmID}
+                and status = 'Active'
+                and verified = 'Yes'
+            ");
         }
-        
         return $query->getResultArray();
 
     }
