@@ -11,7 +11,7 @@
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
                             <?= $title?>
                         </h1>
-                        <div class="page-header-subtitle">Prepare Working Paper</div>
+                        <div class="page-header-subtitle"><?= $subt?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -27,7 +27,7 @@
         <div class="card">
 
             <div class="card-body">
-
+                <h3 class="p-3"><?= $subt?></h3>
                 <h1>AA</h1>
                 
             </div>

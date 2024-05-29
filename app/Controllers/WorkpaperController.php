@@ -71,7 +71,8 @@ class WorkpaperController extends BaseController{
         $dwpID          = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
         $type           = session()->get('type');
         $data['type']   = $type;
-        $data['title']  = 'Files of '. $name;
+        $data['title']  = 'Work Paper';
+        $data['subt']   = 'Work paper file of '. $name;
         $data['cID']    = $cID;
         $data['wpID']   = $wpID;
         $data['name']   = $name;  
@@ -2008,7 +2009,7 @@ class WorkpaperController extends BaseController{
 
     }
 
-    public function viewindexfiles($code,$cfiID,$cID,$wpID,$index,$desc){
+    public function viewindexfiles($code,$cfiID,$cID,$wpID,$index,$desc,$name){
 
         $data['code']   = $code;
         $data['cID']    = $cID;
@@ -2020,7 +2021,8 @@ class WorkpaperController extends BaseController{
         $dcfiID     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID));
         $dwpID      = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
         $dindex     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index));
-        $data['title'] = $code.' : '.$desc;
+        $data['title'] = $name;
+        $data['subt']  = $code.' : '.$desc;
         switch ($code) {
             case 'Aa':
                 echo view('includes/Header', $data);
