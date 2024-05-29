@@ -74,13 +74,13 @@
                             <td><?= date('F d, Y h:i A', strtotime($r['added_on']))?></td>
                             <td><?= $r['added']?></td>
                             <td>
-                                <?php if($r['remarks'] != 'Not Submitted' and $r['remarks'] != ''){?>
-                                    <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button> 
-                                <?php }?>
+                                <?php //if($r['remarks'] != 'Not Submitted' and $r['remarks'] != ''){?>
+                                    <!-- <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?//= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button>  -->
+                                <?php //}?>
                                 <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>/<?= $r['cli']?>"><i class="fas fa-highlighter"></i></a>
                                 <?php //if($p == 100){?>
-                                    <button class="btn btn-warning btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendbacktoreviewer/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send to Reviewer"><i class="fas fa-undo"></i></button>
-                                    <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/approve/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send to Manager"><i class="fas fa-thumbs-up"></i></button>
+                                    <!-- <button class="btn btn-warning btn-icon btn-sm sendtoreviewer" type="button" data-file="<?//= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?//= base_url('auditsystem/wp/sendbacktoreviewer/')?><?//= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send to Reviewer"><i class="fas fa-undo"></i></button>
+                                    <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?//= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?//= base_url('auditsystem/wp/approve/')?><?//= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send to Manager"><i class="fas fa-thumbs-up"></i></button> -->
                                 <?php //}?>
                             </td>
                         </tr>

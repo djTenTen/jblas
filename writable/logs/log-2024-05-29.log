@@ -810,3 +810,800 @@ INFO - 2024-05-29 13:49:57 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-05-29 13:50:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-05-29 13:52:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-05-29 13:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:54:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:54:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:56:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:57:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:57:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:57:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:57:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:57:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 13:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:00:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:00:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:01:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:01:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:02:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:02:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:02:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:02:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:02:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:09:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:09:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:10:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:10:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:10:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:12:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:13:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:16:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:16:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:16:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:17:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:18:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:18:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:26:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-29 14:26:18 --> mysqli_sql_exception: Unknown column 'Preparing' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT...')
+#3 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(149): CodeIgniter\Database\BaseConnection->query('select DISTINCT...')
+#4 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(91): App\Models\WorkpaperModel->getc1values('3', '1', 'Preparing')
+#5 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('2f576051d5ba31e...', '0768df648f26511...', 'Sample client 1...')
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-29 14:26:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Preparing' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(149): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 2 APPPATH\Controllers\WorkpaperController.php(91): App\Models\WorkpaperModel->getc1values('3', '1', 'Preparing')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('2f576051d5ba31ebdf530b3b5a5fb7380bda3405847ff44d526d09e1d2534ecdd8c826771c1a9d9f1a82618968ba4947d3d01ba26866c847c689d0fba02b0325O6as8D~yfEVtsIkI578G2KQ=', '0768df648f26511b4b9bd43908738ec46f2e49b66f9d1309d06acd6832b4d87275b035e951c105a1bc7a13d5d3bc3fc6194caeb1f103be516cec18bb6951edf8nUmWSRdfus8913sCrbJlURY=', 'Sample client 1s - aaaa')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 14:26:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Preparing' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 3 APPPATH\Models\WorkpaperModel.php(149): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 4 APPPATH\Controllers\WorkpaperController.php(91): App\Models\WorkpaperModel->getc1values('3', '1', 'Preparing')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('2f576051d5ba31ebdf530b3b5a5fb7380bda3405847ff44d526d09e1d2534ecdd8c826771c1a9d9f1a82618968ba4947d3d01ba26866c847c689d0fba02b0325O6as8D~yfEVtsIkI578G2KQ=', '0768df648f26511b4b9bd43908738ec46f2e49b66f9d1309d06acd6832b4d87275b035e951c105a1bc7a13d5d3bc3fc6194caeb1f103be516cec18bb6951edf8nUmWSRdfus8913sCrbJlURY=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 14:26:18 --> [Caused by] mysqli_sql_exception: Unknown column 'Preparing' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 4 APPPATH\Models\WorkpaperModel.php(149): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 5 APPPATH\Controllers\WorkpaperController.php(91): App\Models\WorkpaperModel->getc1values('3', '1', 'Preparing')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('2f576051d5ba31ebdf530b3b5a5fb7380bda3405847ff44d526d09e1d2534ecdd8c826771c1a9d9f1a82618968ba4947d3d01ba26866c847c689d0fba02b0325O6as8D~yfEVtsIkI578G2KQ=', '0768df648f26511b4b9bd43908738ec46f2e49b66f9d1309d06acd6832b4d87275b035e951c105a1bc7a13d5d3bc3fc6194caeb1f103be516cec18bb6951edf8nUmWSRdfus8913sCrbJlURY=', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 14:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:26:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-29 14:26:28 --> mysqli_sql_exception: Unknown column 'Preparing' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT...')
+#3 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(149): CodeIgniter\Database\BaseConnection->query('select DISTINCT...')
+#4 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(91): App\Models\WorkpaperModel->getc1values('3', '1', 'Preparing')
+#5 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('02bad0b040eb17e...', '9fa4fe63dbd82b5...', 'Sample client 1...')
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-29 14:26:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Preparing' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(149): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 2 APPPATH\Controllers\WorkpaperController.php(91): App\Models\WorkpaperModel->getc1values('3', '1', 'Preparing')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('02bad0b040eb17e925906de0b4cab93bda217ee92a3c94e6e7a05614c47bcc8ce4c25a7ce08141272bc7b3dca0519ee4e14bce26e6ca58a658f1f323d0694a06v3SzRl44PXerN6w0UPF7hME=', '9fa4fe63dbd82b586a93942209d67c8028fb860acab708d7387832c96d800fffaca265d744f54826065ce19f23e3b3bb28aeefa87f9d9cbe9ff96fcf1027c41bf8dVhz5A4qbdY6mp8MwfuE0=', 'Sample client 1s - aaaa')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 14:26:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Preparing' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 3 APPPATH\Models\WorkpaperModel.php(149): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 4 APPPATH\Controllers\WorkpaperController.php(91): App\Models\WorkpaperModel->getc1values('3', '1', 'Preparing')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('02bad0b040eb17e925906de0b4cab93bda217ee92a3c94e6e7a05614c47bcc8ce4c25a7ce08141272bc7b3dca0519ee4e14bce26e6ca58a658f1f323d0694a06v3SzRl44PXerN6w0UPF7hME=', '9fa4fe63dbd82b586a93942209d67c8028fb860acab708d7387832c96d800fffaca265d744f54826065ce19f23e3b3bb28aeefa87f9d9cbe9ff96fcf1027c41bf8dVhz5A4qbdY6mp8MwfuE0=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 14:26:28 --> [Caused by] mysqli_sql_exception: Unknown column 'Preparing' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 4 APPPATH\Models\WorkpaperModel.php(149): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1
+            and c1.status = Preparing')
+ 5 APPPATH\Controllers\WorkpaperController.php(91): App\Models\WorkpaperModel->getc1values('3', '1', 'Preparing')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('02bad0b040eb17e925906de0b4cab93bda217ee92a3c94e6e7a05614c47bcc8ce4c25a7ce08141272bc7b3dca0519ee4e14bce26e6ca58a658f1f323d0694a06v3SzRl44PXerN6w0UPF7hME=', '9fa4fe63dbd82b586a93942209d67c8028fb860acab708d7387832c96d800fffaca265d744f54826065ce19f23e3b3bb28aeefa87f9d9cbe9ff96fcf1027c41bf8dVhz5A4qbdY6mp8MwfuE0=', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 14:26:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:26:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:27:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:27:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:27:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:27:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:28:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 14:30:57 --> ErrorException: Undefined array key "status"
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 176.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(176): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 176)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('02bad0b040eb17e925906de0b4cab93bda217ee92a3c94e6e7a05614c47bcc8ce4c25a7ce08141272bc7b3dca0519ee4e14bce26e6ca58a658f1f323d0694a06v3SzRl44PXerN6w0UPF7hME=', '9fa4fe63dbd82b586a93942209d67c8028fb860acab708d7387832c96d800fffaca265d744f54826065ce19f23e3b3bb28aeefa87f9d9cbe9ff96fcf1027c41bf8dVhz5A4qbdY6mp8MwfuE0=', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 14:31:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 14:31:45 --> ErrorException: Undefined array key "status"
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 176.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(176): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 176)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798d86fae5c12f618c42a8bd6394b47fd52b347facc6e49255a19b32fb8968b567555484719af3d3e0db9f563b0a1bb8aa666c43c552238c523af3T0bqbsoqCAEqbL0h$Oux0=', '1af18481a78ea2cf4f7cc3db9f3589d04661c925f6bbe69c525fe691f9f8e82cecd170a5d0f2a8012022e80ce1a710c120e9428278c7c49161a9df1f3bed155bjPDZsTRnoNz9B90aLJgP1HU=', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 14:32:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-29 14:32:42 --> mysqli_sql_exception: Column 'status' in field list is ambiguous in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT...')
+#3 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(140): CodeIgniter\Database\BaseConnection->query('select DISTINCT...')
+#4 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(91): App\Models\WorkpaperModel->getc1values('3', '1', 'Reviewing')
+#5 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798...', '1af18481a78ea2c...', 'Sample client 1...')
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-29 14:32:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'status' in field list is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(140): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,status,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1')
+ 2 APPPATH\Controllers\WorkpaperController.php(91): App\Models\WorkpaperModel->getc1values('3', '1', 'Reviewing')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798d86fae5c12f618c42a8bd6394b47fd52b347facc6e49255a19b32fb8968b567555484719af3d3e0db9f563b0a1bb8aa666c43c552238c523af3T0bqbsoqCAEqbL0h$Oux0=', '1af18481a78ea2cf4f7cc3db9f3589d04661c925f6bbe69c525fe691f9f8e82cecd170a5d0f2a8012022e80ce1a710c120e9428278c7c49161a9df1f3bed155bjPDZsTRnoNz9B90aLJgP1HU=', 'Sample client 1s - aaaa')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 14:32:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'status' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c1t.code,c1titleID,c1.remarks,status,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c1t.code,c1titleID,c1.remarks,status,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1')
+ 3 APPPATH\Models\WorkpaperModel.php(140): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,status,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1')
+ 4 APPPATH\Controllers\WorkpaperController.php(91): App\Models\WorkpaperModel->getc1values('3', '1', 'Reviewing')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798d86fae5c12f618c42a8bd6394b47fd52b347facc6e49255a19b32fb8968b567555484719af3d3e0db9f563b0a1bb8aa666c43c552238c523af3T0bqbsoqCAEqbL0h$Oux0=', '1af18481a78ea2cf4f7cc3db9f3589d04661c925f6bbe69c525fe691f9f8e82cecd170a5d0f2a8012022e80ce1a710c120e9428278c7c49161a9df1f3bed155bjPDZsTRnoNz9B90aLJgP1HU=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 14:32:42 --> [Caused by] mysqli_sql_exception: Column 'status' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,status,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c1t.code,c1titleID,c1.remarks,status,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c1t.code,c1titleID,c1.remarks,status,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1')
+ 4 APPPATH\Models\WorkpaperModel.php(140): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,status,
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3) as x , 
+            (select COUNT(*) from tbl_client_files_c1 WHERE tbl_client_files_c1.c1tID = c1.c1tID and tbl_client_files_c1.workpaper = 1 and tbl_client_files_c1.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = 3
+            and c1.workpaper = 1')
+ 5 APPPATH\Controllers\WorkpaperController.php(91): App\Models\WorkpaperModel->getc1values('3', '1', 'Reviewing')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798d86fae5c12f618c42a8bd6394b47fd52b347facc6e49255a19b32fb8968b567555484719af3d3e0db9f563b0a1bb8aa666c43c552238c523af3T0bqbsoqCAEqbL0h$Oux0=', '1af18481a78ea2cf4f7cc3db9f3589d04661c925f6bbe69c525fe691f9f8e82cecd170a5d0f2a8012022e80ce1a710c120e9428278c7c49161a9df1f3bed155bjPDZsTRnoNz9B90aLJgP1HU=', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 14:32:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-29 14:32:53 --> mysqli_sql_exception: Column 'status' in field list is ambiguous in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT...')
+#3 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(164): CodeIgniter\Database\BaseConnection->query('select DISTINCT...')
+#4 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(92): App\Models\WorkpaperModel->getc2values('3', '1', 'Reviewing')
+#5 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798...', '1af18481a78ea2c...', 'Sample client 1...')
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-29 14:32:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'status' in field list is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(164): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c2t.code,c2titleID,c2.remarks,status,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c2_titles as c2t, tbl_client_files_c2 as c2
+            where c2t.c2titleID = c2.c2tID
+            and c2.clientID = 3
+            and c2.workpaper = 1')
+ 2 APPPATH\Controllers\WorkpaperController.php(92): App\Models\WorkpaperModel->getc2values('3', '1', 'Reviewing')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798d86fae5c12f618c42a8bd6394b47fd52b347facc6e49255a19b32fb8968b567555484719af3d3e0db9f563b0a1bb8aa666c43c552238c523af3T0bqbsoqCAEqbL0h$Oux0=', '1af18481a78ea2cf4f7cc3db9f3589d04661c925f6bbe69c525fe691f9f8e82cecd170a5d0f2a8012022e80ce1a710c120e9428278c7c49161a9df1f3bed155bjPDZsTRnoNz9B90aLJgP1HU=', 'Sample client 1s - aaaa')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 14:32:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'status' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c2t.code,c2titleID,c2.remarks,status,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c2_titles as c2t, tbl_client_files_c2 as c2
+            where c2t.c2titleID = c2.c2tID
+            and c2.clientID = 3
+            and c2.workpaper = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c2t.code,c2titleID,c2.remarks,status,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c2_titles as c2t, tbl_client_files_c2 as c2
+            where c2t.c2titleID = c2.c2tID
+            and c2.clientID = 3
+            and c2.workpaper = 1')
+ 3 APPPATH\Models\WorkpaperModel.php(164): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c2t.code,c2titleID,c2.remarks,status,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c2_titles as c2t, tbl_client_files_c2 as c2
+            where c2t.c2titleID = c2.c2tID
+            and c2.clientID = 3
+            and c2.workpaper = 1')
+ 4 APPPATH\Controllers\WorkpaperController.php(92): App\Models\WorkpaperModel->getc2values('3', '1', 'Reviewing')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798d86fae5c12f618c42a8bd6394b47fd52b347facc6e49255a19b32fb8968b567555484719af3d3e0db9f563b0a1bb8aa666c43c552238c523af3T0bqbsoqCAEqbL0h$Oux0=', '1af18481a78ea2cf4f7cc3db9f3589d04661c925f6bbe69c525fe691f9f8e82cecd170a5d0f2a8012022e80ce1a710c120e9428278c7c49161a9df1f3bed155bjPDZsTRnoNz9B90aLJgP1HU=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 14:32:53 --> [Caused by] mysqli_sql_exception: Column 'status' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT title,c2t.code,c2titleID,c2.remarks,status,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c2_titles as c2t, tbl_client_files_c2 as c2
+            where c2t.c2titleID = c2.c2tID
+            and c2.clientID = 3
+            and c2.workpaper = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c2t.code,c2titleID,c2.remarks,status,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c2_titles as c2t, tbl_client_files_c2 as c2
+            where c2t.c2titleID = c2.c2tID
+            and c2.clientID = 3
+            and c2.workpaper = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c2t.code,c2titleID,c2.remarks,status,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c2_titles as c2t, tbl_client_files_c2 as c2
+            where c2t.c2titleID = c2.c2tID
+            and c2.clientID = 3
+            and c2.workpaper = 1')
+ 4 APPPATH\Models\WorkpaperModel.php(164): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c2t.code,c2titleID,c2.remarks,status,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c2 WHERE tbl_client_files_c2.c2tID = c2.c2tID and tbl_client_files_c2.workpaper = 1 and tbl_client_files_c2.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c2_titles as c2t, tbl_client_files_c2 as c2
+            where c2t.c2titleID = c2.c2tID
+            and c2.clientID = 3
+            and c2.workpaper = 1')
+ 5 APPPATH\Controllers\WorkpaperController.php(92): App\Models\WorkpaperModel->getc2values('3', '1', 'Reviewing')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798d86fae5c12f618c42a8bd6394b47fd52b347facc6e49255a19b32fb8968b567555484719af3d3e0db9f563b0a1bb8aa666c43c552238c523af3T0bqbsoqCAEqbL0h$Oux0=', '1af18481a78ea2cf4f7cc3db9f3589d04661c925f6bbe69c525fe691f9f8e82cecd170a5d0f2a8012022e80ce1a710c120e9428278c7c49161a9df1f3bed155bjPDZsTRnoNz9B90aLJgP1HU=', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 14:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-29 14:33:32 --> mysqli_sql_exception: Unknown column 'c1t.status' in 'field list' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT...')
+#3 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(188): CodeIgniter\Database\BaseConnection->query('select DISTINCT...')
+#4 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(93): App\Models\WorkpaperModel->getc3values('3', '1', 'Reviewing')
+#5 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798...', '1af18481a78ea2c...', 'Sample client 1...')
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-29 14:33:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c1t.status' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(188): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c1t.status,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+            where c3t.c3titleID = c3.c3tID
+            and c3.clientID = 3
+            and c3.workpaper = \'1\'')
+ 2 APPPATH\Controllers\WorkpaperController.php(93): App\Models\WorkpaperModel->getc3values('3', '1', 'Reviewing')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798d86fae5c12f618c42a8bd6394b47fd52b347facc6e49255a19b32fb8968b567555484719af3d3e0db9f563b0a1bb8aa666c43c552238c523af3T0bqbsoqCAEqbL0h$Oux0=', '1af18481a78ea2cf4f7cc3db9f3589d04661c925f6bbe69c525fe691f9f8e82cecd170a5d0f2a8012022e80ce1a710c120e9428278c7c49161a9df1f3bed155bjPDZsTRnoNz9B90aLJgP1HU=', 'Sample client 1s - aaaa')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 14:33:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c1t.status' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c1t.status,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+            where c3t.c3titleID = c3.c3tID
+            and c3.clientID = 3
+            and c3.workpaper = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c1t.status,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+            where c3t.c3titleID = c3.c3tID
+            and c3.clientID = 3
+            and c3.workpaper = \'1\'')
+ 3 APPPATH\Models\WorkpaperModel.php(188): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c1t.status,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+            where c3t.c3titleID = c3.c3tID
+            and c3.clientID = 3
+            and c3.workpaper = \'1\'')
+ 4 APPPATH\Controllers\WorkpaperController.php(93): App\Models\WorkpaperModel->getc3values('3', '1', 'Reviewing')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798d86fae5c12f618c42a8bd6394b47fd52b347facc6e49255a19b32fb8968b567555484719af3d3e0db9f563b0a1bb8aa666c43c552238c523af3T0bqbsoqCAEqbL0h$Oux0=', '1af18481a78ea2cf4f7cc3db9f3589d04661c925f6bbe69c525fe691f9f8e82cecd170a5d0f2a8012022e80ce1a710c120e9428278c7c49161a9df1f3bed155bjPDZsTRnoNz9B90aLJgP1HU=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 14:33:32 --> [Caused by] mysqli_sql_exception: Unknown column 'c1t.status' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c1t.status,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+            where c3t.c3titleID = c3.c3tID
+            and c3.clientID = 3
+            and c3.workpaper = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c1t.status,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+            where c3t.c3titleID = c3.c3tID
+            and c3.clientID = 3
+            and c3.workpaper = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c1t.status,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+            where c3t.c3titleID = c3.c3tID
+            and c3.clientID = 3
+            and c3.workpaper = \'1\'')
+ 4 APPPATH\Models\WorkpaperModel.php(188): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c1t.status,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+            (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+            from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+            where c3t.c3titleID = c3.c3tID
+            and c3.clientID = 3
+            and c3.workpaper = \'1\'')
+ 5 APPPATH\Controllers\WorkpaperController.php(93): App\Models\WorkpaperModel->getc3values('3', '1', 'Reviewing')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798d86fae5c12f618c42a8bd6394b47fd52b347facc6e49255a19b32fb8968b567555484719af3d3e0db9f563b0a1bb8aa666c43c552238c523af3T0bqbsoqCAEqbL0h$Oux0=', '1af18481a78ea2cf4f7cc3db9f3589d04661c925f6bbe69c525fe691f9f8e82cecd170a5d0f2a8012022e80ce1a710c120e9428278c7c49161a9df1f3bed155bjPDZsTRnoNz9B90aLJgP1HU=', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 14:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:37:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:43:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:44:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:44:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:45:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:45:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:46:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:49:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:49:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:50:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 14:50:20 --> ErrorException: Undefined array key "c2titleID"
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 198.
+ 1 APPPATH\Views\workpaper\ViewFilesValues.php(198): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "c2titleID"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php', 198)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\ViewFilesValues.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(98): view('workpaper/ViewFilesValues', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798d86fae5c12f618c42a8bd6394b47fd52b347facc6e49255a19b32fb8968b567555484719af3d3e0db9f563b0a1bb8aa666c43c552238c523af3T0bqbsoqCAEqbL0h$Oux0=', '1af18481a78ea2cf4f7cc3db9f3589d04661c925f6bbe69c525fe691f9f8e82cecd170a5d0f2a8012022e80ce1a710c120e9428278c7c49161a9df1f3bed155bjPDZsTRnoNz9B90aLJgP1HU=', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 14:51:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:51:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:52:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:53:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:54:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:54:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:55:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:55:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:55:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 14:55:49 --> ErrorException: Undefined variable $status
+in APPPATH\Controllers\WorkpaperController.php on line 91.
+ 1 APPPATH\Controllers\WorkpaperController.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Controllers\\WorkpaperController.php', 91)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('6f937726be8d8cec5906ebb4868fd44648c804918eba9efeb00f82a8f9b9af67a1b027fca9b6e68119f88052725f6ae1caeed348eda040afce9339b3d955b9edr0PJfthCXsCbpFka$7FkHL4=', '48375845936fbdd0b2f2c977802bdc014c09e754256080b6304883d70a0f1b0289090a382155ba8363ccbc75e085d22413ed4fb1b514bda9a92b047f15de1d05BVkmxtF2g4HCQbVLawslHwY=', 'All', 'Sample client 1s - aaaa')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 14:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:56:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 14:56:01 --> ErrorException: Undefined variable $status
+in APPPATH\Controllers\WorkpaperController.php on line 91.
+ 1 APPPATH\Controllers\WorkpaperController.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Controllers\\WorkpaperController.php', 91)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('fabc07339710f300ac9cefb5e6f4a8151f5ba9a0d1f4e6d00a4a61152098601a1b97007ab7177cfc3357ac1265c162900f973d782b81e80973ac950bfff9d918oHBM5eCX$7PnP0N$$MK5KWs=', '0ef54d662ff345c92837d6460af8ef746e3d90e681d525ba0d25c415cdb7efc953ab241a08996eb543bc8f5c9c25664ff4c1f6a73c6abab7a0f4ef96a142bd9fAHzcGCJ6$pOOpAnxUCY22eE=', 'All', 'Sample client 1s - aaaa')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 14:56:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:57:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:59:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:59:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:59:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 14:59:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:00:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:00:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:01:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:02:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:02:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:05:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:05:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:05:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:06:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:06:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:07:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:08:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:08:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:08:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:08:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:08:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:09:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:09:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:11:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:12:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:14:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:14:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 15:14:26 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ClientController.php(31): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles('undefined')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 15:14:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:14:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 15:14:31 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ClientController.php(31): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles('undefined')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 15:14:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:14:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:15:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:19:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:19:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:23:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:23:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:23:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:23:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:23:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:23:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:24:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:24:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:25:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:25:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:27:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:30:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:30:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:30:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:30:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:30:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:33:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:33:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:34:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:34:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:35:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:35:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:36:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:36:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 15:36:26 --> ParseError: syntax error, unexpected token ")"
+in APPPATH\Views\workpaper\ViewFilesValues.php on line 147.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/ViewFilesValues', [], true)
+ 3 APPPATH\Controllers\WorkpaperController.php(99): view('workpaper/ViewFilesValues', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('cbae879a82f3798d86fae5c12f618c42a8bd6394b47fd52b347facc6e49255a19b32fb8968b567555484719af3d3e0db9f563b0a1bb8aa666c43c552238c523af3T0bqbsoqCAEqbL0h$Oux0=', '1af18481a78ea2cf4f7cc3db9f3589d04661c925f6bbe69c525fe691f9f8e82cecd170a5d0f2a8012022e80ce1a710c120e9428278c7c49161a9df1f3bed155bjPDZsTRnoNz9B90aLJgP1HU=', 'Sample client 1s - aaaa')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 15:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:36:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:36:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:37:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:39:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:40:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:40:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:41:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:43:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:43:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:47:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:47:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:48:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:48:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:49:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:49:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:49:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:50:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:52:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:52:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:52:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 15:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

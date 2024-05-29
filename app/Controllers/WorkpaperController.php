@@ -70,18 +70,31 @@ class WorkpaperController extends BaseController{
         $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
         $dwpID          = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
         $type           = session()->get('type');
+        switch ($type) {
+            case 'Auditing Firm':
+            case 'Audit Manager':
+            case 'Admin':
+                $status = 'All';
+            break;
+            case 'Preparer':
+                $status = 'Preparing';
+            break;
+            case 'Reviewer':
+                $status = 'Reviewing';
+            break;
+        }
         $data['type']   = $type;
         $data['title']  = 'Work Paper';
         $data['subt']   = 'Work paper file of '. $name;
         $data['cID']    = $cID;
         $data['wpID']   = $wpID;
         $data['name']   = $name;  
-        $data['c1']     = $this->wpmodel->getc1values($dcID,$dwpID);
-        $data['c2']     = $this->wpmodel->getc2values($dcID,$dwpID);
-        $data['c3']     = $this->wpmodel->getc3values($dcID,$dwpID);
+        $data['c1']     = $this->wpmodel->getc1values($dcID,$dwpID,$status);
+        $data['c2']     = $this->wpmodel->getc2values($dcID,$dwpID,$status);
+        $data['c3']     = $this->wpmodel->getc3values($dcID,$dwpID,$status);
+        $data['fi']     = $this->wpmodel->getfileindex($dcID,$dwpID,$status);
         $data['cfi']    = $this->wpmodel->getlatestupload($dcID,$dwpID);
         $data['tb']     = $this->wpmodel->gettrialbalance($dcID,$dwpID);
-        $data['fi']     = $this->wpmodel->getfileindex($dcID,$dwpID);
         echo view('includes/Header', $data);
         echo view('workpaper/ViewFilesValues', $data);
         echo view('includes/Footer');
