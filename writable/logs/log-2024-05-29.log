@@ -1611,3 +1611,449 @@ INFO - 2024-05-29 16:01:54 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-05-29 16:02:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-05-29 16:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-05-29 16:26:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:43:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-29 16:43:44 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '!< 6
+        and fID !> 22' at line 3 in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select * \r\n    ...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * \r\n    ...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * \r\n    ...')
+#3 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(291): CodeIgniter\Database\BaseConnection->query('select * \r\n    ...')
+#4 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(98): App\Models\WorkpaperModel->getindexfile()
+#5 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('f3a204068231fb2...', '59064c56a349db2...', 'All', 'Sample client 1...')
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-29 16:43:44 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '!< 6
+        and fID !> 22' at line 3
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(291): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_file_index as fi
+        where fiID !< 6
+        and fID !> 22')
+ 2 APPPATH\Controllers\WorkpaperController.php(98): App\Models\WorkpaperModel->getindexfile()
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All', 'Sample client 1s - aaaa')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 16:43:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '!< 6
+        and fID !> 22' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * 
+        from tbl_file_index as fi
+        where fiID !< 6
+        and fID !> 22')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * 
+        from tbl_file_index as fi
+        where fiID !< 6
+        and fID !> 22')
+ 3 APPPATH\Models\WorkpaperModel.php(291): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_file_index as fi
+        where fiID !< 6
+        and fID !> 22')
+ 4 APPPATH\Controllers\WorkpaperController.php(98): App\Models\WorkpaperModel->getindexfile()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 16:43:44 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '!< 6
+        and fID !> 22' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select * 
+        from tbl_file_index as fi
+        where fiID !< 6
+        and fID !> 22', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * 
+        from tbl_file_index as fi
+        where fiID !< 6
+        and fID !> 22')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * 
+        from tbl_file_index as fi
+        where fiID !< 6
+        and fID !> 22')
+ 4 APPPATH\Models\WorkpaperModel.php(291): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_file_index as fi
+        where fiID !< 6
+        and fID !> 22')
+ 5 APPPATH\Controllers\WorkpaperController.php(98): App\Models\WorkpaperModel->getindexfile()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 16:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-29 16:44:11 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '!< 6
+        and fi.fID !> 22' at line 3 in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select * \r\n    ...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * \r\n    ...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * \r\n    ...')
+#3 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(291): CodeIgniter\Database\BaseConnection->query('select * \r\n    ...')
+#4 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(98): App\Models\WorkpaperModel->getindexfile()
+#5 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('f3a204068231fb2...', '59064c56a349db2...', 'All', 'Sample client 1...')
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-29 16:44:11 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '!< 6
+        and fi.fID !> 22' at line 3
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(291): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_file_index as fi
+        where fi.fiID !< 6
+        and fi.fID !> 22')
+ 2 APPPATH\Controllers\WorkpaperController.php(98): App\Models\WorkpaperModel->getindexfile()
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All', 'Sample client 1s - aaaa')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 16:44:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '!< 6
+        and fi.fID !> 22' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * 
+        from tbl_file_index as fi
+        where fi.fiID !< 6
+        and fi.fID !> 22')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * 
+        from tbl_file_index as fi
+        where fi.fiID !< 6
+        and fi.fID !> 22')
+ 3 APPPATH\Models\WorkpaperModel.php(291): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_file_index as fi
+        where fi.fiID !< 6
+        and fi.fID !> 22')
+ 4 APPPATH\Controllers\WorkpaperController.php(98): App\Models\WorkpaperModel->getindexfile()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 16:44:11 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '!< 6
+        and fi.fID !> 22' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select * 
+        from tbl_file_index as fi
+        where fi.fiID !< 6
+        and fi.fID !> 22', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * 
+        from tbl_file_index as fi
+        where fi.fiID !< 6
+        and fi.fID !> 22')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * 
+        from tbl_file_index as fi
+        where fi.fiID !< 6
+        and fi.fID !> 22')
+ 4 APPPATH\Models\WorkpaperModel.php(291): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_file_index as fi
+        where fi.fiID !< 6
+        and fi.fID !> 22')
+ 5 APPPATH\Controllers\WorkpaperController.php(98): App\Models\WorkpaperModel->getindexfile()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 16:44:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-29 16:44:49 --> mysqli_sql_exception: Unknown column 'fi.fID' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select * \r\n    ...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * \r\n    ...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * \r\n    ...')
+#3 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(291): CodeIgniter\Database\BaseConnection->query('select * \r\n    ...')
+#4 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(98): App\Models\WorkpaperModel->getindexfile()
+#5 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('f3a204068231fb2...', '59064c56a349db2...', 'All', 'Sample client 1...')
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-29 16:44:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'fi.fID' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(291): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_file_index as fi
+        where fi.fiID >= 6
+        and fi.fID <= 22')
+ 2 APPPATH\Controllers\WorkpaperController.php(98): App\Models\WorkpaperModel->getindexfile()
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All', 'Sample client 1s - aaaa')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 16:44:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'fi.fID' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * 
+        from tbl_file_index as fi
+        where fi.fiID >= 6
+        and fi.fID <= 22')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * 
+        from tbl_file_index as fi
+        where fi.fiID >= 6
+        and fi.fID <= 22')
+ 3 APPPATH\Models\WorkpaperModel.php(291): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_file_index as fi
+        where fi.fiID >= 6
+        and fi.fID <= 22')
+ 4 APPPATH\Controllers\WorkpaperController.php(98): App\Models\WorkpaperModel->getindexfile()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 16:44:49 --> [Caused by] mysqli_sql_exception: Unknown column 'fi.fID' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select * 
+        from tbl_file_index as fi
+        where fi.fiID >= 6
+        and fi.fID <= 22', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select * 
+        from tbl_file_index as fi
+        where fi.fiID >= 6
+        and fi.fID <= 22')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select * 
+        from tbl_file_index as fi
+        where fi.fiID >= 6
+        and fi.fID <= 22')
+ 4 APPPATH\Models\WorkpaperModel.php(291): CodeIgniter\Database\BaseConnection->query('select * 
+        from tbl_file_index as fi
+        where fi.fiID >= 6
+        and fi.fID <= 22')
+ 5 APPPATH\Controllers\WorkpaperController.php(98): App\Models\WorkpaperModel->getindexfile()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->getfiles('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 16:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:45:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:51:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:52:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:53:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:53:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:53:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:53:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:53:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 16:55:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 17:02:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 17:02:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-29 17:02:38 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = '3'
+AND `firmID` = '1'
+AND `co...' at line 2 in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM 3...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM 3...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM 3...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM 3...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(372): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(172): App\Models\WorkpaperModel->importtb(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->importtb('f3a204068231fb2...', '59064c56a349db2...', 'All')
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-29 17:02:38 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = '3'
+AND `firmID` = '1'
+AND `co...' at line 2
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = :clientID:
+AND `firmID` = :firmID:
+AND `code` = :code:
+AND `type` = :type:', [...], false)
+ 2 APPPATH\Models\WorkpaperModel.php(372): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\WorkpaperController.php(172): App\Models\WorkpaperModel->importtb([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->importtb('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 17:02:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = '3'
+AND `firmID` = '1'
+AND `co...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = \'3\'
+AND `firmID` = \'1\'
+AND `code` = \'AC10\'
+AND `type` = \'tangiblescu\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = \'3\'
+AND `firmID` = \'1\'
+AND `code` = \'AC10\'
+AND `type` = \'tangiblescu\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = :clientID:
+AND `firmID` = :firmID:
+AND `code` = :code:
+AND `type` = :type:', [...], false)
+ 4 APPPATH\Models\WorkpaperModel.php(372): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\WorkpaperController.php(172): App\Models\WorkpaperModel->importtb([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->importtb('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 17:02:38 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = '3'
+AND `firmID` = '1'
+AND `co...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = \'3\'
+AND `firmID` = \'1\'
+AND `code` = \'AC10\'
+AND `type` = \'tangiblescu\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = \'3\'
+AND `firmID` = \'1\'
+AND `code` = \'AC10\'
+AND `type` = \'tangiblescu\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = \'3\'
+AND `firmID` = \'1\'
+AND `code` = \'AC10\'
+AND `type` = \'tangiblescu\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = :clientID:
+AND `firmID` = :firmID:
+AND `code` = :code:
+AND `type` = :type:', [...], false)
+ 5 APPPATH\Models\WorkpaperModel.php(372): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\WorkpaperController.php(172): App\Models\WorkpaperModel->importtb([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->importtb('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 17:05:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 17:05:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 17:05:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-29 17:05:46 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = '3'
+AND `firmID` = '1'
+AND `co...' at line 2 in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM 3...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM 3...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM 3...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM 3...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(372): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(172): App\Models\WorkpaperModel->importtb(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->importtb('f3a204068231fb2...', '59064c56a349db2...', 'All')
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-29 17:05:46 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = '3'
+AND `firmID` = '1'
+AND `co...' at line 2
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = :clientID:
+AND `firmID` = :firmID:
+AND `code` = :code:
+AND `type` = :type:', [...], false)
+ 2 APPPATH\Models\WorkpaperModel.php(372): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\WorkpaperController.php(172): App\Models\WorkpaperModel->importtb([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->importtb('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 17:05:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = '3'
+AND `firmID` = '1'
+AND `co...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = \'3\'
+AND `firmID` = \'1\'
+AND `code` = \'AC10\'
+AND `type` = \'tangiblescu\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = \'3\'
+AND `firmID` = \'1\'
+AND `code` = \'AC10\'
+AND `type` = \'tangiblescu\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = :clientID:
+AND `firmID` = :firmID:
+AND `code` = :code:
+AND `type` = :type:', [...], false)
+ 4 APPPATH\Models\WorkpaperModel.php(372): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\WorkpaperController.php(172): App\Models\WorkpaperModel->importtb([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->importtb('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 17:05:46 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = '3'
+AND `firmID` = '1'
+AND `co...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = \'3\'
+AND `firmID` = \'1\'
+AND `code` = \'AC10\'
+AND `type` = \'tangiblescu\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = \'3\'
+AND `firmID` = \'1\'
+AND `code` = \'AC10\'
+AND `type` = \'tangiblescu\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = \'3\'
+AND `firmID` = \'1\'
+AND `code` = \'AC10\'
+AND `type` = \'tangiblescu\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM 3, 1, `AC10`, `tangiblescu`
+WHERE `clientID` = :clientID:
+AND `firmID` = :firmID:
+AND `code` = :code:
+AND `type` = :type:', [...], false)
+ 5 APPPATH\Models\WorkpaperModel.php(372): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\WorkpaperController.php(172): App\Models\WorkpaperModel->importtb([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->importtb('f3a204068231fb2b8d2d0f0bfc89d77fb8a6fd92615df5ba7e58bd891f49b04438bdd92af150808d8bfc24b893289a5ffad2be850e3da72baf1a6ce34070b2f0KqKzXh1$jn4rSRu8pp7PldM=', '59064c56a349db28957fe4c33dc9db00323199c2b4c54f38ecde248fdea887834e614d2d1a5c6a0d779c586735827baf069184100c6b7b902b965cdca1cb5a0bW6wdGCkp0dW7IeKsVyos7B0=', 'All')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 17:06:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 17:07:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 17:07:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 17:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

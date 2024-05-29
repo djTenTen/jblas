@@ -95,6 +95,7 @@ class WorkpaperController extends BaseController{
         $data['fi']     = $this->wpmodel->getfileindex($dcID,$dwpID,$status);
         $data['cfi']    = $this->wpmodel->getlatestupload($dcID,$dwpID);
         $data['tb']     = $this->wpmodel->gettrialbalance($dcID,$dwpID);
+        $data['if']     = $this->wpmodel->getindexfile();
         echo view('includes/Header', $data);
         echo view('workpaper/ViewFilesValues', $data);
         echo view('includes/Footer');

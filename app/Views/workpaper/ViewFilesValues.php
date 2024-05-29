@@ -640,7 +640,7 @@
                             <td>
                                 <select name="fileindex[]" id="" class="form form-select" required>
                                     <option value="" selected>Select Index</option>
-                                <?php foreach($fi as $r){?>
+                                <?php foreach($if as $r){?>
                                     <option value="<?= $crypt->encrypt($r['fiID'])?>" ><?= $r['section'].' - '.$r['desc']?></option>
                                 <?php }?>
                                 </select>

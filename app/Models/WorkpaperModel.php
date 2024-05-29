@@ -285,6 +285,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+    public function getindexfile(){
+
+        $query = $this->db->query("select * 
+        from {$this->tblfi} as fi
+        where fi.fiID >= 6
+        and fi.fiID <= 22");
+        return $query->getResultArray();
+
+    }
+
     public function updateindex($req){
 
         $data = [
@@ -359,7 +369,8 @@ class WorkpaperModel extends  Model {
                 case '19'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'costscu']; break;
                 //case '17'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'payrollcu']; break;
             }
-            $this->db->table($this->tblc1)->where($refaut)->update(array('question' => $req['debit'][$i] - $req['credit'][$i]));
+            $balcu = $this->db->table($this->tblc1)->where($refaut)->get()->getRowArray(); 
+            $this->db->table($this->tblc1)->where($refaut)->update(array('question' => $balcu['question'] + ($req['debit'][$i] - $req['credit'][$i])));
             $data = [
                 'client'        => $req['client'],
                 'firm'          => $req['firm'],
