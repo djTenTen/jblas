@@ -119,19 +119,19 @@
                 <form action="<?= base_url()?>auditsystem/client/saveac2aep/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                     <input type="hidden" name="acid" value="<?= $crypt->encrypt($aep['acID'])?>">
                     <textarea class="form-control" cols="30" rows="3" name="eap" required><?= $aep['question']?></textarea>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
-                </form>
-                
-
             </div>
             <br><br><br><hr>
 
             <h4>Conclusion</h4>
-            <p>1.	The client has informed management.  I consider that there are no threats arising from fee income from the non-audit services provided / to be provided to the client and that the services can be provided.*</p>
-            <p>2.	The client has informed management. I consider that the threats imposed by the non-audit services provided / to be provided to the client and the resulting level of fee income have been reduced to an acceptable level as documented above.*</p>
-            <p>3.	We will not provide other services as it is not possible to put sufficient safeguards in place and we wish to remain as auditor.*</p>
-            <p>4.	We will provide other services but because it is not possible to put sufficient safeguards in place, we will resign as auditor.*</p>
-
+                    <select name="concl" id="" class="form-control form-select" required>
+                        <option value="<?= $aep['name']?>" selected><?= $aep['name']?></option>
+                        <option value="The client has informed management.  I consider that there are no threats arising from fee income from the non-audit services provided / to be provided to the client and that the services can be provided.">The client has informed management.  I consider that there are no threats arising from fee income from the non-audit services provided / to be provided to the client and that the services can be provided.</option>
+                        <option value="The client has informed management. I consider that the threats imposed by the non-audit services provided / to be provided to the client and the resulting level of fee income have been reduced to an acceptable level as documented above.">The client has informed management. I consider that the threats imposed by the non-audit services provided / to be provided to the client and the resulting level of fee income have been reduced to an acceptable level as documented above.</option>
+                        <option value="We will not provide other services as it is not possible to put sufficient safeguards in place and we wish to remain as auditor">We will not provide other services as it is not possible to put sufficient safeguards in place and we wish to remain as auditor</option>
+                        <option value="We will provide other services but because it is not possible to put sufficient safeguards in place, we will resign as auditor">We will provide other services but because it is not possible to put sufficient safeguards in place, we will resign as auditor</option>
+                    </select>
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
             <div>
                 Signature:	(A.E.P.) Date:	 * Delete as appropriate
             </div>

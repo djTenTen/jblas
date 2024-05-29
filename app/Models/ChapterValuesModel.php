@@ -150,6 +150,7 @@ class ChapterValuesModel extends Model{
         $acid = $this->crypt->decrypt($req['acid']);
         $data = [
             'question'      => $req['eap'],
+            'name'          => $req['concl'],
             'updated_on'    => $this->date.' '.$this->time,
             'updated_by'    => $req['uID'],
         ];

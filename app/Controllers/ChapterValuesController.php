@@ -105,6 +105,8 @@ class ChapterValuesController extends BaseController{
 
         $req = [
             'eap'       => $this->request->getPost('eap'),
+            'concl' => $this->request->getPost('concl'),
+            'concl'     => $this->request->getPost('concl'),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
             'c1tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),

@@ -77,115 +77,119 @@
                 <p>If any of the above is to be undertaken, this should be separately considered, with reference to the IESBA Code of Ethics.</p>
                 <h6>NB: If the client does not have ‘informed management’ the provision of both audit and non-audit services is not permitted.</h6>
                 <h6>Section 1 – Consideration of Prohibited Services</h6>
-            </div>
-            <div class="container">
-                <img src="<?= base_url()?>img/ac2/ac2 flow1.png" alt="">
-            </div>
-            <h6>Section 2 – Consideration of the Type of Non-Audit Services Provided and Safeguards in Place </h6>
-            <p>N.B. Complete multiple sheets if more than four different types of non-audit service are provided
-            N.B. Audit related non-audit services (for example, a separate report to a regulator, (e.g. that on client money handled by a solicitor)) should still be treated as a non-audit service, but it is not necessary for safeguards to be put in place, as threats to independence are insignificant
-            </p>
-            <form action="<?= base_url()?>auditsystem/c1/saveac2/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
-            <input type="hidden" name="part" value="pans">
-                <table class="table table-hover table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Non-audit service to be provided:</th>
-                            <th>Corporation tax</th>
-                            <th>Statutoryservices</th>
-                            <th>Accountancy(including preparation of financial statements)</th>
-                            <th>Other (specify)</th>
-                            <th>Total CU</th>
-                            <th>Status</th>
-                            <th style="width: 7%;">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody class="tbody">
-                        <?php foreach($ac2 as $r){?>
-                            <tr >
-                                <td><textarea class="form-control" cols="30" rows="3" name="question[]"><?= $r['question']?></textarea></td>
-                                <td><input class="form-control" type="text" name="corptax[]" value="<?= $r['corptax']?>"></td>
-                                <td><input class="form-control" type="text" name="statutory[]" value="<?= $r['statutory']?>"></td>
-                                <td><input class="form-control" type="text" name="accountancy[]" value="<?= $r['accountancy']?>" ></td>
-                                <td><input class="form-control" type="text" name="other[]" value="<?= $r['other']?>"></td>
-                                <td><input class="form-control" type="text" name="totalcu[]" value="<?= $r['totalcu']?>"></td>
-                                <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
-                                <td class="text-center">
-                                    <button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button>
-                                    <?php if($r['status'] == 'Active'){?>
-                                        <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
-                                    <?php }else{?>
-                                        <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
-                                    <?php }?>
-                                </td>
+            
+                <div class="container">
+                    <img src="<?= base_url()?>img/ac2/ac2 flow1.png" alt="">
+                </div>
+                <h6>Section 2 – Consideration of the Type of Non-Audit Services Provided and Safeguards in Place </h6>
+                <p>N.B. Complete multiple sheets if more than four different types of non-audit service are provided
+                N.B. Audit related non-audit services (for example, a separate report to a regulator, (e.g. that on client money handled by a solicitor)) should still be treated as a non-audit service, but it is not necessary for safeguards to be put in place, as threats to independence are insignificant
+                </p>
+                <form action="<?= base_url()?>auditsystem/c1/saveac2/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                <input type="hidden" name="part" value="pans">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Non-audit service to be provided:</th>
+                                <th>Corporation tax</th>
+                                <th>Statutoryservices</th>
+                                <th>Accountancy(including preparation of financial statements)</th>
+                                <th>Other (specify)</th>
+                                <th>Total CU</th>
+                                <th>Status</th>
+                                <th style="width: 7%;">Action</th>
                             </tr>
-                        <?php }?>
-                    </tbody>
-                </table>
-                <button class="btn btn-primary m-1 float-end add-field  btn-sm" type="button"><i class="fas fa-plus-square m-1"></i>Add Field</button>
-                <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-            </form>
-            <br><br><br>
-            <hr>
-            <h4>Section 3 – Consideration of Self Interest Threat Arising from Substantial Fees from Non Audit Services</h4>
-            <div class="container">
-                <img src="<?= base_url()?>img/ac2/ac2 flow2.png" alt="">
-            </div>
-            <div class="container border-dark">
-                <h6>***(Where appropriate): Documentation by the A.E.P. of how the self interest threat has been reduced to an acceptable level / details of communication with the Ethics Partner / Details of which services (audit or non-audit) will not be provided:</h6>
-                <form action="<?= base_url()?>auditsystem/c1/saveac2aep/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
-                    <input type="hidden" name="part" value="ac2aep">
-                    <textarea class="form-control border-dark" cols="30" rows="3" name="eap" required><?= $aep['question']?></textarea>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end  btn-sm">Save</button>
+                        </thead>
+                        <tbody class="tbody">
+                            <?php foreach($ac2 as $r){?>
+                                <tr >
+                                    <td><textarea class="form-control" cols="30" rows="3" name="question[]"><?= $r['question']?></textarea></td>
+                                    <td><input class="form-control" type="text" name="corptax[]" value="<?= $r['corptax']?>"></td>
+                                    <td><input class="form-control" type="text" name="statutory[]" value="<?= $r['statutory']?>"></td>
+                                    <td><input class="form-control" type="text" name="accountancy[]" value="<?= $r['accountancy']?>" ></td>
+                                    <td><input class="form-control" type="text" name="other[]" value="<?= $r['other']?>"></td>
+                                    <td><input class="form-control" type="text" name="totalcu[]" value="<?= $r['totalcu']?>"></td>
+                                    <td class="text-center"><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button>
+                                        <?php if($r['status'] == 'Active'){?>
+                                            <button class="btn btn-danger btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Disable" ><i class="fas fa-ban"></i></button>
+                                        <?php }else{?>
+                                            <button class="btn btn-success btn-icon btn-sm active-data" type="button" data-bs-toggle="modal" data-bs-target="#modealactive" data-ac-id="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['acID']))?>" data-status="<?= $r['status']?>" title="Enable" ><i class="fas fa-check-circle"></i></button>
+                                        <?php }?>
+                                    </td>
+                                </tr>
+                            <?php }?>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary m-1 float-end add-field  btn-sm" type="button"><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-            </div>
-            <h4>Conclusion</h4>
-            <p>1.	The client has informed management.  I consider that there are no threats arising from fee income from the non-audit services provided / to be provided to the client and that the services can be provided.*</p>
-            <p>2.	The client has informed management. I consider that the threats imposed by the non-audit services provided / to be provided to the client and the resulting level of fee income have been reduced to an acceptable level as documented above.*</p>
-            <p>3.	We will not provide other services as it is not possible to put sufficient safeguards in place and we wish to remain as auditor.*</p>
-            <p>4.	We will provide other services but because it is not possible to put sufficient safeguards in place, we will resign as auditor.*</p>
-            <div>
-                Signature:	(A.E.P.) Date:	 * Delete as appropriate
-            </div>
-            <div>
-                <h6>Notes:</h6>
-                <p>1.	The audit firm can set their own criteria, but non-audit fees greater than three times the audit fee are likely to create a self-interest threat, which needs to be mitigated.</p>
-                <p>2.	Although the audit firm can set its own criteria, in circumstances where the audit fee is more significant to the firm, non-audit fees which represent a lower multiple of the audit fee are likely to be considered ‘substantial’.</p>
-                <h4>Definitions:</h4>
-                <table class="table">
-                <tr>
-                    <td><h6>Audit related non-audit services:</h6></td>
-                    <td>
-                        <p>The following are generally treated as being audit related non-audit services:</p>
-                        <ul>
-                            <li>Reporting required by law or regulation to be provided by the auditor;</li>
-                            <li>Reviews of interim financial information;</li>
-                            <li>Reporting on regulatory returns;</li>
-                            <li>Reporting to a regulator on client assets;</li>
-                            <li>Reporting on government grants;</li>
-                            <li>Reporting on internal financial controls when required by law or regulation; and</li>
-                            <li>Extended audit work that is authorized by those charged with governance performed on financial information and / or financial controls where this work is integrated with the audit work and is performed on the same principal terms and conditions.</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td><h6>“Informed management”:</h6></td>
-                    <td>
-                        <p>Member of management (or senior employee), of the audited entity who has the authority and capability to make independent management judgments and decisions in relation to non-audit services on the basis of information provided by the audit firm.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><h6>Safeguards:</h6></td>
-                    <td>
-                        <p>Safeguards include:</p>
-                        <ul>
-                            <li>Non-audit services provided by the firm are performed by partners and staff who have no involvement in the external audit of the financial statements; or</li>
-                            <li>The non-audit services are reviewed by a partner or other senior staff member with appropriate expertise who is not a member of the audit team; or</li>
-                            <li>An engagement quality control review is performed.</li>
-                        </ul>
-                    </td>
-                </tr>
-                </table>
+                <br><br><br>
+                <hr>
+                <h4>Section 3 – Consideration of Self Interest Threat Arising from Substantial Fees from Non Audit Services</h4>
+                <div class="container">
+                    <img src="<?= base_url()?>img/ac2/ac2 flow2.png" alt="">
+                </div>
+                <div class="container border-dark">
+                    <h6>***(Where appropriate): Documentation by the A.E.P. of how the self interest threat has been reduced to an acceptable level / details of communication with the Ethics Partner / Details of which services (audit or non-audit) will not be provided:</h6>
+                    <form action="<?= base_url()?>auditsystem/c1/saveac2aep/<?= $code?>/<?= $header?>/<?= $c1tID?>" method="post">
+                        <input type="hidden" name="part" value="ac2aep">
+                        <textarea class="form-control border-dark" cols="30" rows="3" name="eap" required><?= $aep['question']?></textarea>
+                </div>
+                <h4>Conclusion</h4>
+                        <select name="concl" id="" class="form-control form-select" required>
+                            <option value="<?= $aep['name']?>" selected><?= $aep['name']?></option>
+                            <option value="The client has informed management.  I consider that there are no threats arising from fee income from the non-audit services provided / to be provided to the client and that the services can be provided.">The client has informed management.  I consider that there are no threats arising from fee income from the non-audit services provided / to be provided to the client and that the services can be provided.</option>
+                            <option value="The client has informed management. I consider that the threats imposed by the non-audit services provided / to be provided to the client and the resulting level of fee income have been reduced to an acceptable level as documented above.">The client has informed management. I consider that the threats imposed by the non-audit services provided / to be provided to the client and the resulting level of fee income have been reduced to an acceptable level as documented above.</option>
+                            <option value="We will not provide other services as it is not possible to put sufficient safeguards in place and we wish to remain as auditor">We will not provide other services as it is not possible to put sufficient safeguards in place and we wish to remain as auditor</option>
+                            <option value="We will provide other services but because it is not possible to put sufficient safeguards in place, we will resign as auditor">We will provide other services but because it is not possible to put sufficient safeguards in place, we will resign as auditor</option>
+                        </select>
+                        <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                    </form>
+                <div>
+                    Signature:	(A.E.P.) Date:	 * Delete as appropriate
+                </div>
+                <div>
+                    <h6>Notes:</h6>
+                    <p>1.	The audit firm can set their own criteria, but non-audit fees greater than three times the audit fee are likely to create a self-interest threat, which needs to be mitigated.</p>
+                    <p>2.	Although the audit firm can set its own criteria, in circumstances where the audit fee is more significant to the firm, non-audit fees which represent a lower multiple of the audit fee are likely to be considered ‘substantial’.</p>
+                    <h4>Definitions:</h4>
+                    <table class="table">
+                    <tr>
+                        <td><h6>Audit related non-audit services:</h6></td>
+                        <td>
+                            <p>The following are generally treated as being audit related non-audit services:</p>
+                            <ul>
+                                <li>Reporting required by law or regulation to be provided by the auditor;</li>
+                                <li>Reviews of interim financial information;</li>
+                                <li>Reporting on regulatory returns;</li>
+                                <li>Reporting to a regulator on client assets;</li>
+                                <li>Reporting on government grants;</li>
+                                <li>Reporting on internal financial controls when required by law or regulation; and</li>
+                                <li>Extended audit work that is authorized by those charged with governance performed on financial information and / or financial controls where this work is integrated with the audit work and is performed on the same principal terms and conditions.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h6>“Informed management”:</h6></td>
+                        <td>
+                            <p>Member of management (or senior employee), of the audited entity who has the authority and capability to make independent management judgments and decisions in relation to non-audit services on the basis of information provided by the audit firm.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h6>Safeguards:</h6></td>
+                        <td>
+                            <p>Safeguards include:</p>
+                            <ul>
+                                <li>Non-audit services provided by the firm are performed by partners and staff who have no involvement in the external audit of the financial statements; or</li>
+                                <li>The non-audit services are reviewed by a partner or other senior staff member with appropriate expertise who is not a member of the audit team; or</li>
+                                <li>An engagement quality control review is performed.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>  

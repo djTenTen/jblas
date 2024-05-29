@@ -279,12 +279,7 @@ $html =  "
 
 $html .= '
     <h3>Conclusion</h3>
-    <ol>
-        <li>The client has informed management.  I consider that there are no threats arising from fee income from the non-audit services provided / to be provided to the client and that the services can be provided.*</li>
-        <li>The client has informed management. I consider that the threats imposed by the non-audit services provided / to be provided to the client and the resulting level of fee income have been reduced to an acceptable level as documented above.*</li>
-        <li>We will not provide other services as it is not possible to put sufficient safeguards in place and we wish to remain as auditor.*</li>
-        <li>We will provide other services but because it is not possible to put sufficient safeguards in place, we will resign as auditor.*</li>
-    </ol>
+    <p>'.$aep['name'].'</p>
     <table>
         <tbody>
             <tr>

@@ -161,8 +161,9 @@ class Chapter1Model extends Model{
         $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
         $data = [
             'question'      => $req['eap'],
-            'type'          =>  $req['part'],
-            'code'          =>  $req['code'],
+            'name'          => $req['concl'],
+            'type'          => $req['part'],
+            'code'          => $req['code'],
             'c1tID'         => $req['c1tID'],
             'status'        => 'Active',
             'updated_on'    => $this->date.' '.$this->time

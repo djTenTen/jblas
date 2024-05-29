@@ -139,6 +139,7 @@ class Chapter1Controller extends BaseController{
 
         $req = [
             'eap'   => $this->request->getPost('eap'),
+            'concl' => $this->request->getPost('concl'),
             'code'  => $code,
             'part'  => $this->request->getPost('part'),
             'c1tID' => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID))

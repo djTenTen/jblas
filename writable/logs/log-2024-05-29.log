@@ -45,3 +45,315 @@ INFO - 2024-05-29 10:42:40 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-05-29 10:42:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-05-29 10:42:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-05-29 10:42:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 10:46:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 10:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 10:46:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 10:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 10:47:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 10:47:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 10:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 10:56:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 10:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 10:58:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 10:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 10:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 10:59:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:00:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 11:00:44 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ClientController.php(31): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles('undefined')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 11:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 11:00:50 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ClientController.php(31): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles('undefined')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 11:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:04:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:04:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:04:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:05:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:05:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:05:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:07:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 11:07:33 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ClientController.php(31): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles('undefined')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 11:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:07:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:08:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:09:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:09:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 11:10:12 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ClientController.php(31): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles('undefined')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 11:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:10:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:11:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:11:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:12:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:13:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:13:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:15:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:15:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:15:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:16:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:17:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:17:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:17:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:20:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:21:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:22:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:23:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:23:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:24:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:26:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:29:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 11:33:05 --> ErrorException: imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile
+in APPPATH\Views\workpaper\pdfc1\AC2.php on line 253.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php', 253)
+ 2 APPPATH\Views\workpaper\pdfc1\AC2.php(253): imagecreatefrompng('http://localhost/jblas/uploads/signature/1716952350_823fdc6f8097f9c2ceb2.png')
+ 3 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 6 APPPATH\Controllers\WorkpaperController.php(2190): view('workpaper/pdfc1/AC2', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '80911b5a1d189a8bfa1b807cd099bbd581ba070c449819f5b11f25ae8880d8ee6a84d7ab9d01c6fd951cdea83ca0b0b2f486177dceddfede709891810af6d86fjMmmK5apDyrw8BlZn6yG7Lo=', 'd0b91c98ac8c73d29cb4604c931d9f9d9cc40983d4eceef0c3156cff20492cb1c8509546e30e4a0b281b7ac167d7d2d114ca1ee352d87d18fe01bd377cf4c5a0a~RHD0h$ZfsuI3OCes~h$z4=', 'f559bf9337217ebb33fdf5906ab4333e8e37fbbe2455072599f9b5d1e1d79e599e9a1e2ff5fa3d837deacaedd57e4896c318ef6fd5de716a0502575495a5d8b7za6cG9JPxCKctZdMEl~BBnI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 11:35:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:35:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:37:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:39:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:39:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:40:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:40:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 11:47:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 11:47:09 --> ErrorException: imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile
+in APPPATH\Views\workpaper\pdfc1\AC2.php on line 255.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php', 255)
+ 2 APPPATH\Views\workpaper\pdfc1\AC2.php(255): imagecreatefrompng('D:\\Applications\\xampp\\htdocs\\jblas\\public/uploads/signature/1716952350_823fdc6f8097f9c2ceb2.png')
+ 3 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 6 APPPATH\Controllers\WorkpaperController.php(2190): view('workpaper/pdfc1/AC2', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '80911b5a1d189a8bfa1b807cd099bbd581ba070c449819f5b11f25ae8880d8ee6a84d7ab9d01c6fd951cdea83ca0b0b2f486177dceddfede709891810af6d86fjMmmK5apDyrw8BlZn6yG7Lo=', 'd0b91c98ac8c73d29cb4604c931d9f9d9cc40983d4eceef0c3156cff20492cb1c8509546e30e4a0b281b7ac167d7d2d114ca1ee352d87d18fe01bd377cf4c5a0a~RHD0h$ZfsuI3OCes~h$z4=', 'f559bf9337217ebb33fdf5906ab4333e8e37fbbe2455072599f9b5d1e1d79e599e9a1e2ff5fa3d837deacaedd57e4896c318ef6fd5de716a0502575495a5d8b7za6cG9JPxCKctZdMEl~BBnI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 11:48:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 11:48:23 --> ErrorException: imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile
+in APPPATH\Views\workpaper\pdfc1\AC2.php on line 256.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php', 256)
+ 2 APPPATH\Views\workpaper\pdfc1\AC2.php(256): imagecreatefrompng('http://localhost/jblas/uploads/signature/1716952350_823fdc6f8097f9c2ceb2.png')
+ 3 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 6 APPPATH\Controllers\WorkpaperController.php(2190): view('workpaper/pdfc1/AC2', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '80911b5a1d189a8bfa1b807cd099bbd581ba070c449819f5b11f25ae8880d8ee6a84d7ab9d01c6fd951cdea83ca0b0b2f486177dceddfede709891810af6d86fjMmmK5apDyrw8BlZn6yG7Lo=', 'd0b91c98ac8c73d29cb4604c931d9f9d9cc40983d4eceef0c3156cff20492cb1c8509546e30e4a0b281b7ac167d7d2d114ca1ee352d87d18fe01bd377cf4c5a0a~RHD0h$ZfsuI3OCes~h$z4=', 'f559bf9337217ebb33fdf5906ab4333e8e37fbbe2455072599f9b5d1e1d79e599e9a1e2ff5fa3d837deacaedd57e4896c318ef6fd5de716a0502575495a5d8b7za6cG9JPxCKctZdMEl~BBnI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 11:54:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 11:54:01 --> ErrorException: imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile
+in APPPATH\Views\workpaper\pdfc1\AC2.php on line 256.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php', 256)
+ 2 APPPATH\Views\workpaper\pdfc1\AC2.php(256): imagecreatefrompng('http://localhost/jblas/uploads/signature/1716952350_823fdc6f8097f9c2ceb2.png')
+ 3 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 6 APPPATH\Controllers\WorkpaperController.php(2190): view('workpaper/pdfc1/AC2', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '80911b5a1d189a8bfa1b807cd099bbd581ba070c449819f5b11f25ae8880d8ee6a84d7ab9d01c6fd951cdea83ca0b0b2f486177dceddfede709891810af6d86fjMmmK5apDyrw8BlZn6yG7Lo=', 'd0b91c98ac8c73d29cb4604c931d9f9d9cc40983d4eceef0c3156cff20492cb1c8509546e30e4a0b281b7ac167d7d2d114ca1ee352d87d18fe01bd377cf4c5a0a~RHD0h$ZfsuI3OCes~h$z4=', 'f559bf9337217ebb33fdf5906ab4333e8e37fbbe2455072599f9b5d1e1d79e599e9a1e2ff5fa3d837deacaedd57e4896c318ef6fd5de716a0502575495a5d8b7za6cG9JPxCKctZdMEl~BBnI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 11:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 11:54:40 --> ErrorException: imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile
+in APPPATH\Views\workpaper\pdfc1\AC2.php on line 256.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php', 256)
+ 2 APPPATH\Views\workpaper\pdfc1\AC2.php(256): imagecreatefrompng('http://localhost/jblas/uploads/signature/1716952350_823fdc6f8097f9c2ceb2.png')
+ 3 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 6 APPPATH\Controllers\WorkpaperController.php(2190): view('workpaper/pdfc1/AC2', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '80911b5a1d189a8bfa1b807cd099bbd581ba070c449819f5b11f25ae8880d8ee6a84d7ab9d01c6fd951cdea83ca0b0b2f486177dceddfede709891810af6d86fjMmmK5apDyrw8BlZn6yG7Lo=', 'd0b91c98ac8c73d29cb4604c931d9f9d9cc40983d4eceef0c3156cff20492cb1c8509546e30e4a0b281b7ac167d7d2d114ca1ee352d87d18fe01bd377cf4c5a0a~RHD0h$ZfsuI3OCes~h$z4=', 'f559bf9337217ebb33fdf5906ab4333e8e37fbbe2455072599f9b5d1e1d79e599e9a1e2ff5fa3d837deacaedd57e4896c318ef6fd5de716a0502575495a5d8b7za6cG9JPxCKctZdMEl~BBnI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 11:54:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 11:54:59 --> ErrorException: imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile
+in APPPATH\Views\workpaper\pdfc1\AC2.php on line 256.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php', 256)
+ 2 APPPATH\Views\workpaper\pdfc1\AC2.php(256): imagecreatefrompng('http://localhost/jblas/uploads/signature/1716952350_823fdc6f8097f9c2ceb2.png')
+ 3 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 6 APPPATH\Controllers\WorkpaperController.php(2190): view('workpaper/pdfc1/AC2', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '80911b5a1d189a8bfa1b807cd099bbd581ba070c449819f5b11f25ae8880d8ee6a84d7ab9d01c6fd951cdea83ca0b0b2f486177dceddfede709891810af6d86fjMmmK5apDyrw8BlZn6yG7Lo=', 'd0b91c98ac8c73d29cb4604c931d9f9d9cc40983d4eceef0c3156cff20492cb1c8509546e30e4a0b281b7ac167d7d2d114ca1ee352d87d18fe01bd377cf4c5a0a~RHD0h$ZfsuI3OCes~h$z4=', 'f559bf9337217ebb33fdf5906ab4333e8e37fbbe2455072599f9b5d1e1d79e599e9a1e2ff5fa3d837deacaedd57e4896c318ef6fd5de716a0502575495a5d8b7za6cG9JPxCKctZdMEl~BBnI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 12:18:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 12:18:19 --> ErrorException: imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile
+in APPPATH\Views\workpaper\pdfc1\AC2.php on line 256.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php', 256)
+ 2 APPPATH\Views\workpaper\pdfc1\AC2.php(256): imagecreatefrompng('http://localhost/jblas/uploads/signature/1716952350_823fdc6f8097f9c2ceb2.png')
+ 3 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 6 APPPATH\Controllers\WorkpaperController.php(2190): view('workpaper/pdfc1/AC2', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '80911b5a1d189a8bfa1b807cd099bbd581ba070c449819f5b11f25ae8880d8ee6a84d7ab9d01c6fd951cdea83ca0b0b2f486177dceddfede709891810af6d86fjMmmK5apDyrw8BlZn6yG7Lo=', 'd0b91c98ac8c73d29cb4604c931d9f9d9cc40983d4eceef0c3156cff20492cb1c8509546e30e4a0b281b7ac167d7d2d114ca1ee352d87d18fe01bd377cf4c5a0a~RHD0h$ZfsuI3OCes~h$z4=', 'f559bf9337217ebb33fdf5906ab4333e8e37fbbe2455072599f9b5d1e1d79e599e9a1e2ff5fa3d837deacaedd57e4896c318ef6fd5de716a0502575495a5d8b7za6cG9JPxCKctZdMEl~BBnI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 12:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 12:20:38 --> ErrorException: Undefined variable $signature
+in APPPATH\Views\workpaper\pdfc1\AC2.php on line 3.
+ 1 APPPATH\Views\workpaper\pdfc1\AC2.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $signature', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php', 3)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(2190): view('workpaper/pdfc1/AC2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '80911b5a1d189a8bfa1b807cd099bbd581ba070c449819f5b11f25ae8880d8ee6a84d7ab9d01c6fd951cdea83ca0b0b2f486177dceddfede709891810af6d86fjMmmK5apDyrw8BlZn6yG7Lo=', 'd0b91c98ac8c73d29cb4604c931d9f9d9cc40983d4eceef0c3156cff20492cb1c8509546e30e4a0b281b7ac167d7d2d114ca1ee352d87d18fe01bd377cf4c5a0a~RHD0h$ZfsuI3OCes~h$z4=', 'f559bf9337217ebb33fdf5906ab4333e8e37fbbe2455072599f9b5d1e1d79e599e9a1e2ff5fa3d837deacaedd57e4896c318ef6fd5de716a0502575495a5d8b7za6cG9JPxCKctZdMEl~BBnI=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 12:20:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 12:20:56 --> ErrorException: imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile
+in APPPATH\Views\workpaper\pdfc1\AC2.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php', 4)
+ 2 APPPATH\Views\workpaper\pdfc1\AC2.php(4): imagecreatefrompng('http://localhost/jblas/uploads/signature/1716952350_823fdc6f8097f9c2ceb2.png')
+ 3 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 6 APPPATH\Controllers\WorkpaperController.php(2190): view('workpaper/pdfc1/AC2', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '80911b5a1d189a8bfa1b807cd099bbd581ba070c449819f5b11f25ae8880d8ee6a84d7ab9d01c6fd951cdea83ca0b0b2f486177dceddfede709891810af6d86fjMmmK5apDyrw8BlZn6yG7Lo=', 'd0b91c98ac8c73d29cb4604c931d9f9d9cc40983d4eceef0c3156cff20492cb1c8509546e30e4a0b281b7ac167d7d2d114ca1ee352d87d18fe01bd377cf4c5a0a~RHD0h$ZfsuI3OCes~h$z4=', 'f559bf9337217ebb33fdf5906ab4333e8e37fbbe2455072599f9b5d1e1d79e599e9a1e2ff5fa3d837deacaedd57e4896c318ef6fd5de716a0502575495a5d8b7za6cG9JPxCKctZdMEl~BBnI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 12:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:23:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:27:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:28:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:29:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:30:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 12:31:02 --> ErrorException: imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile
+in APPPATH\Views\workpaper\pdfc1\AC2.php on line 255.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php', 255)
+ 2 APPPATH\Views\workpaper\pdfc1\AC2.php(255): imagecreatefrompng('http://localhost/jblas/uploads/signature/1716952350_823fdc6f8097f9c2ceb2.png')
+ 3 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 6 APPPATH\Controllers\WorkpaperController.php(2190): view('workpaper/pdfc1/AC2', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '80911b5a1d189a8bfa1b807cd099bbd581ba070c449819f5b11f25ae8880d8ee6a84d7ab9d01c6fd951cdea83ca0b0b2f486177dceddfede709891810af6d86fjMmmK5apDyrw8BlZn6yG7Lo=', 'd0b91c98ac8c73d29cb4604c931d9f9d9cc40983d4eceef0c3156cff20492cb1c8509546e30e4a0b281b7ac167d7d2d114ca1ee352d87d18fe01bd377cf4c5a0a~RHD0h$ZfsuI3OCes~h$z4=', 'f559bf9337217ebb33fdf5906ab4333e8e37fbbe2455072599f9b5d1e1d79e599e9a1e2ff5fa3d837deacaedd57e4896c318ef6fd5de716a0502575495a5d8b7za6cG9JPxCKctZdMEl~BBnI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 12:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 12:34:10 --> ErrorException: imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile
+in APPPATH\Views\workpaper\pdfc1\AC2.php on line 255.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php', 255)
+ 2 APPPATH\Views\workpaper\pdfc1\AC2.php(255): imagecreatefrompng('http://localhost/jblas/uploads/signature/1716952350_823fdc6f8097f9c2ceb2.png')
+ 3 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 6 APPPATH\Controllers\WorkpaperController.php(2190): view('workpaper/pdfc1/AC2', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '80911b5a1d189a8bfa1b807cd099bbd581ba070c449819f5b11f25ae8880d8ee6a84d7ab9d01c6fd951cdea83ca0b0b2f486177dceddfede709891810af6d86fjMmmK5apDyrw8BlZn6yG7Lo=', 'd0b91c98ac8c73d29cb4604c931d9f9d9cc40983d4eceef0c3156cff20492cb1c8509546e30e4a0b281b7ac167d7d2d114ca1ee352d87d18fe01bd377cf4c5a0a~RHD0h$ZfsuI3OCes~h$z4=', 'f559bf9337217ebb33fdf5906ab4333e8e37fbbe2455072599f9b5d1e1d79e599e9a1e2ff5fa3d837deacaedd57e4896c318ef6fd5de716a0502575495a5d8b7za6cG9JPxCKctZdMEl~BBnI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 12:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 12:39:45 --> ErrorException: imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile
+in APPPATH\Views\workpaper\pdfc1\AC2.php on line 255.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php', 255)
+ 2 APPPATH\Views\workpaper\pdfc1\AC2.php(255): imagecreatefrompng('http://localhost/jblas/uploads/signature/1716952350_823fdc6f8097f9c2ceb2.png')
+ 3 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 6 APPPATH\Controllers\WorkpaperController.php(2190): view('workpaper/pdfc1/AC2', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '80911b5a1d189a8bfa1b807cd099bbd581ba070c449819f5b11f25ae8880d8ee6a84d7ab9d01c6fd951cdea83ca0b0b2f486177dceddfede709891810af6d86fjMmmK5apDyrw8BlZn6yG7Lo=', 'd0b91c98ac8c73d29cb4604c931d9f9d9cc40983d4eceef0c3156cff20492cb1c8509546e30e4a0b281b7ac167d7d2d114ca1ee352d87d18fe01bd377cf4c5a0a~RHD0h$ZfsuI3OCes~h$z4=', 'f559bf9337217ebb33fdf5906ab4333e8e37fbbe2455072599f9b5d1e1d79e599e9a1e2ff5fa3d837deacaedd57e4896c318ef6fd5de716a0502575495a5d8b7za6cG9JPxCKctZdMEl~BBnI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 12:41:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-29 12:41:58 --> ErrorException: imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile
+in APPPATH\Views\workpaper\pdfc1\AC2.php on line 255.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php', 255)
+ 2 APPPATH\Views\workpaper\pdfc1\AC2.php(255): imagecreatefrompng('http://localhost/jblas/uploads/signature/1716952350_823fdc6f8097f9c2ceb2.jpg')
+ 3 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\pdfc1\\AC2.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 6 APPPATH\Controllers\WorkpaperController.php(2190): view('workpaper/pdfc1/AC2', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '80911b5a1d189a8bfa1b807cd099bbd581ba070c449819f5b11f25ae8880d8ee6a84d7ab9d01c6fd951cdea83ca0b0b2f486177dceddfede709891810af6d86fjMmmK5apDyrw8BlZn6yG7Lo=', 'd0b91c98ac8c73d29cb4604c931d9f9d9cc40983d4eceef0c3156cff20492cb1c8509546e30e4a0b281b7ac167d7d2d114ca1ee352d87d18fe01bd377cf4c5a0a~RHD0h$ZfsuI3OCes~h$z4=', 'f559bf9337217ebb33fdf5906ab4333e8e37fbbe2455072599f9b5d1e1d79e599e9a1e2ff5fa3d837deacaedd57e4896c318ef6fd5de716a0502575495a5d8b7za6cG9JPxCKctZdMEl~BBnI=')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-29 12:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:43:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:43:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:44:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:45:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:47:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:48:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:49:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:53:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:54:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:55:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:56:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:56:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:57:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-29 12:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
