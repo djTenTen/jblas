@@ -171,7 +171,8 @@ class WorkpaperModel extends  Model {
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.auditor) as aud,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.supervisor) as sup,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.audmanager) as audm,
-        tc.name as cli
+        tc.name as cli,
+        tc.org
         from {$this->tblwp} as wp, {$this->tblc} as tc
         where wp.firm = {$fID}
         and wp.{$pos} = {$uID}
@@ -194,7 +195,8 @@ class WorkpaperModel extends  Model {
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.auditor) as aud,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.supervisor) as sup,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.audmanager) as audm,
-        tc.name as cli
+        tc.name as cli,
+        tc.org
         from {$this->tblwp} as wp, {$this->tblc} as tc
         where wp.firm = {$fID}
         and tc.cID = wp.client");

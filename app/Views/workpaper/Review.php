@@ -11,7 +11,7 @@
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
                             <?= $title?>
                         </h1>
-                        <div class="page-header-subtitle">Initiate you client working paper here.</div>
+                        <div class="page-header-subtitle"><?= $subt?></div>
                     </div>
                 </div>
             </div>

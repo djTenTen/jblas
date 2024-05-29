@@ -9,7 +9,7 @@
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
                             <?= $title?>
                         </h1>
-                        <div class="page-header-subtitle">Select files for you clients</div>
+                        <div class="page-header-subtitle"><?= $subt?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">

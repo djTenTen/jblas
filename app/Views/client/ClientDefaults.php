@@ -68,8 +68,8 @@
                             <td><?= $r['email']?></td>
                             <td><?php if($r['status'] == 'Active'){echo '<span class="badge bg-success">'.$r['status'].'</span>';}else{echo '<span class="badge bg-danger">'.$r['status'].'</span>';}?></td>                            
                             <td>
-                                <a class="btn btn-primary btn-icon btn-sm get-data" title="Set files" type="button" href="<?= base_url('auditsystem/client/files/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>/<?= $r['name']?>"><i class="fas fa-stream"></i></a>
-                                <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/client/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>/<?= $r['name']?>"><i class="fas fa-highlighter"></i></a>
+                                <a class="btn btn-primary btn-icon btn-sm get-data" title="Set files" type="button" href="<?= base_url('auditsystem/client/files/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>/<?= $r['name']?> - <?= $r['org']?>"><i class="fas fa-stream"></i></a>
+                                <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/client/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>/<?= $r['name']?> - <?= $r['org']?>"><i class="fas fa-highlighter"></i></a>
                                 <a class="btn btn-success btn-icon btn-sm get-data" title="View files added" type="button" data-bs-toggle="modal" data-bs-target="#view"  data-name="<?= $r['name']?>" data-cid="<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cID']))?>"><i class="fas fa-eye"></i></a>
                             </td>
                         </tr>

@@ -11,7 +11,7 @@
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
                             <?= $title?>
                         </h1>
-                        <div class="page-header-subtitle">Initiate you client working paper here.</div>
+                        <div class="page-header-subtitle"><?= $subt?></div>
                     </div>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                             }
                         ?>
                         <tr>
-                            <td><?= $r['cli']?></td>
+                            <td><?= $r['cli'].' - '.$r['org']?></td>
                             <td><?= $r['financial_year']?></td>
                             <td><?= date('F-d', strtotime($r['financial_year'].'-'.$r['end_financial_year']))?></td>
                             <td>
@@ -144,7 +144,7 @@
                             <select name="client" id="client" class="form-select" required>
                                 <option value="" selected>Select Client</option>
                                 <?php foreach($cl as $c){?>
-                                    <option value="<?= $crypt->encrypt($c['cID']) ?>"><?= $c['name']?></option>
+                                    <option value="<?= $crypt->encrypt($c['cID']) ?>"><?= $c['name'].' - '.$c['org']?></option>
                                 <?php }?>
                             </select>
                         </div>

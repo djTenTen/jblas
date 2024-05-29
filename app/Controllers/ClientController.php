@@ -35,7 +35,8 @@ class ClientController extends BaseController{
 
     public function viewfiles($cID,$name){
 
-        $data['title']  = 'HAT Audit Files for '. $name;
+        $data['title']  = 'HAT Audit Files';
+        $data['subt']   = 'Select HAT files for '.$name;
         $data['cID']    = $cID;
         $data['name']   = $name;
         $data['c1']     = $this->cmodel->getc1();
@@ -50,7 +51,8 @@ class ClientController extends BaseController{
     public function getfiles($cID,$name){
 
         $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $data['title']  = 'Files of '. $name;
+        $data['title']  = 'HAT Audit Files';
+        $data['subt']   = 'Set default data on '.$name;
         $data['cID']    = $cID;
         $data['name']   = $name;
         $data['c1']     = $this->cmodel->getc1values($dcID);

@@ -25,7 +25,8 @@ class WorkpaperController extends BaseController{
 
     public function initiate(){
 
-        $data['title']  = "Initiate Working Paper";
+        $data['title']  = "Work Paper";
+        $data['subt']   = "Initiate your work paper";
         $fID            = $this->crypt->decrypt(session()->get('firmID'));
         $data['aud']    = $this->wpmodel->getauditors($fID,'Preparer');
         $data['sup']    = $this->wpmodel->getauditors($fID,'Reviewer');
@@ -40,7 +41,8 @@ class WorkpaperController extends BaseController{
 
     public function prepare(){
 
-        $data['title']  = "Prepare Working Paper";
+        $data['title']  = "Prepare Work Paper";
+        $data['subt']   = "Prepare your work paper";
         $fID            = $this->crypt->decrypt(session()->get('firmID'));
         $uID            = $this->crypt->decrypt(session()->get('userID'));
         $data['wp']     = $this->wpmodel->getworkpaperspe('auditor',$fID,$uID,'Preparing');
@@ -52,7 +54,8 @@ class WorkpaperController extends BaseController{
 
     public function review(){
 
-        $data['title']  = "Review Working Paper";
+        $data['title']  = "Review Work Paper";
+        $data['subt']   = "Review your work paper";
         $fID            = $this->crypt->decrypt(session()->get('firmID'));
         $uID            = $this->crypt->decrypt(session()->get('userID'));
         $data['wp']     = $this->wpmodel->getworkpaperspe('supervisor',$fID,$uID,'Reviewing');
