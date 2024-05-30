@@ -72,6 +72,8 @@ $routes->group('', ['filter' => 'auth'], function ($auth) {
         $workp->get('auditsystem/wp/index/setvalues/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::viewindexfiles/$1/$2/$3/$4/$5/$6');
         $workp->post('auditsystem/wp/index/tb/update/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::updatetb/$1/$2/$3/$4/$5/$6');
         $workp->post('auditsystem/wp/index/tb/upload/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::uploadtbfiles/$1/$2/$3/$4/$5/$6');
+        $workp->get('auditsystem/wp/downloadexcel/(:any)', 'WorkpaperController::downloadexcel/$1');
+        
         
         
         /**

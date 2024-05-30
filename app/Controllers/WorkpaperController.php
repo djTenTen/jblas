@@ -144,6 +144,18 @@ class WorkpaperController extends BaseController{
 
     }
 
+    public function downloadexcel($file){
+
+        $filePath = ROOTPATH .'public/uploads/xls/' . $file;
+
+        if (!file_exists($filePath)) {
+            return redirect()->to(site_url('403'));
+        }
+        
+        return $this->response->download($filePath, null);
+
+    }
+
     public function importtb($cID,$wpID,$name){
 
         $dcID               = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
