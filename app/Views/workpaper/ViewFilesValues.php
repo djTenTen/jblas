@@ -61,6 +61,17 @@
                     </div>
                 </div>
             <?php  }?>
+            <?php if (session()->get('cfs_upload')) { ?>
+                <div class="alert alert-success alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">File Uploaded</h6>
+                        The Copy of the signed financial statements for the period file has been successfully uploaded
+                    </div>
+                </div>
+            <?php  }?>
+
+            
 
             <div class="card-header border-bottom">
                 <!-- Wizard navigation-->

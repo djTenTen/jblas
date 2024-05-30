@@ -419,6 +419,22 @@ class WorkpaperModel extends  Model {
 
     }
 
+    public function uploadcfsfiles($req){
+
+        if($req['file'] != ''){
+            $fn = $req['cID'].'-'.$req['wpID'].'.pdf';
+            $pdfpath = ROOTPATH .'public/uploads/pdf/'.$fn; 
+            if(file_exists($pdfpath) && is_file($pdfpath)) {
+                unlink($pdfpath);
+            }
+            $req['file']->move(ROOTPATH .'public/uploads/pdf', $fn);
+            return 'uploaded';
+        }else{
+            return false;
+        }
+
+    }
+
     public function saveworkpaper($req){
 
         $where = [

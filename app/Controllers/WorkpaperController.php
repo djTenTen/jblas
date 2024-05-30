@@ -190,6 +190,26 @@ class WorkpaperController extends BaseController{
 
     }
 
+    public function uploadcfsfiles($cID,$wpID,$name){
+
+        $dcID    = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dwpID   = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
+        $req = [
+            'cID'   => $dcID,
+            'wpID'  => $dwpID,
+            'file'  => $this->request->getFile('pdf'),
+        ];
+        $res = $this->wpmodel->uploadcfsfiles($req);
+        if($res == "uploaded"){
+            session()->setFlashdata('cfs_upload','cfs_upload');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }
+
+    }
+
     public function updateindex($cfiID){
 
         $dcfiID     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID));
@@ -2049,8 +2069,14 @@ class WorkpaperController extends BaseController{
         $dwpID      = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
         $dindex     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index));
         $data['title'] = $name;
-        $data['subt']  = $code.' : '.$desc;
+        $data['subt']  = $desc;
         switch ($code) {
+            case '-':
+                $data['aa']     = $this->wpmodel->getabc3values($code,$dcID,$dwpID);
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/CFS', $data);
+                echo view('includes/Footer');
+            break;
             case 'Aa':
                 $data['aa']     = $this->wpmodel->getabc3values($code,$dcID,$dwpID);
                 echo view('includes/Header', $data);
