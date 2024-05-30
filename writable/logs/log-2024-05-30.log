@@ -34,3 +34,101 @@ INFO - 2024-05-30 09:52:51 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-05-30 09:52:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-05-30 09:54:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-05-30 09:54:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 09:58:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:07:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-30 10:07:16 --> mysqli_sql_exception: Unknown column 'client' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_cli...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_cli...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_cli...')
+#3 D:\Applications\xampp\htdocs\jblas\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_cli...', Array, false)
+#4 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(374): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(184): App\Models\WorkpaperModel->importtb(Array)
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->importtb('c05e767aa6e4e6e...', '9a22bd277a47cbb...', 'Sample client 1...')
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#8 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-30 10:07:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'client' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `client` = :client:
+AND `firm` = :firm:
+AND `workpaper` = :workpaper:
+AND `index` = :index:', [...], false)
+ 2 APPPATH\Models\WorkpaperModel.php(374): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\WorkpaperController.php(184): App\Models\WorkpaperModel->importtb([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->importtb('c05e767aa6e4e6e1a4e2750b88f9fcdbb3d5fd00d2c5dab2eee64c1d0f661c2d1bef19ca61e8e3fe3371b8da85d94cd03242298a1e4ff5974bc2fa598c2622beZ5Lfi00Oj4YHzF4poj3~11E=', '9a22bd277a47cbbfef884955f0e5c37d401f944698ff08866d07e54156fb04abb1b5df427fac87f03cdd58775f3f8a6ac6f3ba426055c2129c5a46a1432deaacIUBIMYpUPQiNjfTIudIea74=', 'Sample client 1s - aaaa')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 10:07:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'client' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'Yes\'
+WHERE `client` = \'3\'
+AND `firm` = \'1\'
+AND `workpaper` = \'1\'
+AND `index` = \'6\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'Yes\'
+WHERE `client` = \'3\'
+AND `firm` = \'1\'
+AND `workpaper` = \'1\'
+AND `index` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `client` = :client:
+AND `firm` = :firm:
+AND `workpaper` = :workpaper:
+AND `index` = :index:', [...], false)
+ 4 APPPATH\Models\WorkpaperModel.php(374): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\WorkpaperController.php(184): App\Models\WorkpaperModel->importtb([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->importtb('c05e767aa6e4e6e1a4e2750b88f9fcdbb3d5fd00d2c5dab2eee64c1d0f661c2d1bef19ca61e8e3fe3371b8da85d94cd03242298a1e4ff5974bc2fa598c2622beZ5Lfi00Oj4YHzF4poj3~11E=', '9a22bd277a47cbbfef884955f0e5c37d401f944698ff08866d07e54156fb04abb1b5df427fac87f03cdd58775f3f8a6ac6f3ba426055c2129c5a46a1432deaacIUBIMYpUPQiNjfTIudIea74=', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 10:07:16 --> [Caused by] mysqli_sql_exception: Unknown column 'client' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `tbl_client_file_index` SET `acquired` = \'Yes\'
+WHERE `client` = \'3\'
+AND `firm` = \'1\'
+AND `workpaper` = \'1\'
+AND `index` = \'6\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tbl_client_file_index` SET `acquired` = \'Yes\'
+WHERE `client` = \'3\'
+AND `firm` = \'1\'
+AND `workpaper` = \'1\'
+AND `index` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tbl_client_file_index` SET `acquired` = \'Yes\'
+WHERE `client` = \'3\'
+AND `firm` = \'1\'
+AND `workpaper` = \'1\'
+AND `index` = \'6\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `tbl_client_file_index` SET `acquired` = :acquired:
+WHERE `client` = :client:
+AND `firm` = :firm:
+AND `workpaper` = :workpaper:
+AND `index` = :index:', [...], false)
+ 5 APPPATH\Models\WorkpaperModel.php(374): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\WorkpaperController.php(184): App\Models\WorkpaperModel->importtb([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->importtb('c05e767aa6e4e6e1a4e2750b88f9fcdbb3d5fd00d2c5dab2eee64c1d0f661c2d1bef19ca61e8e3fe3371b8da85d94cd03242298a1e4ff5974bc2fa598c2622beZ5Lfi00Oj4YHzF4poj3~11E=', '9a22bd277a47cbbfef884955f0e5c37d401f944698ff08866d07e54156fb04abb1b5df427fac87f03cdd58775f3f8a6ac6f3ba426055c2129c5a46a1432deaacIUBIMYpUPQiNjfTIudIea74=', 'Sample client 1s - aaaa')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-30 10:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:07:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

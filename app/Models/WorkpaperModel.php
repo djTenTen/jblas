@@ -371,6 +371,7 @@ class WorkpaperModel extends  Model {
             }
             $balcu = $this->db->table($this->tblc1)->where($refaut)->get()->getRowArray(); 
             $this->db->table($this->tblc1)->where($refaut)->update(array('question' => $balcu['question'] + ($req['debit'][$i] - $req['credit'][$i])));
+            $this->db->table($this->tblcfi)->where(array('clientID' => $req['client'], 'firm' => $req['firm'], 'workpaper' => $req['workpaper'], 'index' => $index))->update(array('acquired' => 'Yes'));
             $data = [
                 'client'        => $req['client'],
                 'firm'          => $req['firm'],
