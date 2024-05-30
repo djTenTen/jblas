@@ -159,6 +159,20 @@ class WorkpaperModel extends  Model {
 
     }
 
+    public function getacc1values($code,$cID,$wpID){
+
+        $query = $this->db->query("select DISTINCT title,c1t.code,c1titleID,c1.remarks,c1.status,
+            (select COUNT(*) from {$this->tblc1} WHERE {$this->tblc1}.c1tID = c1.c1tID and {$this->tblc1}.workpaper = {$wpID} and {$this->tblc1}.clientID = {$cID}) as x , 
+            (select COUNT(*) from {$this->tblc1} WHERE {$this->tblc1}.c1tID = c1.c1tID and {$this->tblc1}.workpaper = {$wpID} and {$this->tblc1}.clientID = {$cID} and `updated_on` IS NOT NULL) as y
+            from {$this->tblc1t} as c1t, {$this->tblc1} as c1
+            where c1t.c1titleID = c1.c1tID
+            and c1.clientID = {$cID}
+            and c1.workpaper = {$wpID}
+            and c1.code like '%{$code}%'");
+        return $query->getResultArray();
+
+    }
+
     public function getc2values($cID,$wpID,$status){
 
         //if($status == 'All'){
@@ -203,6 +217,20 @@ class WorkpaperModel extends  Model {
         //     and c3.workpaper = {$wpID}
         //     and c3.status = '{$status}'");
         // }
+        return $query->getResultArray();
+
+    }
+
+    public function getabc3values($code,$cID,$wpID){
+
+        $query = $this->db->query("select DISTINCT title,c3t.code,c3titleID,c3.remarks,c3.status,
+        (select COUNT(*) from {$this->tblc3} WHERE {$this->tblc3}.c3tID = c3.c3tID and {$this->tblc3}.workpaper = {$wpID} and {$this->tblc3}.clientID = {$cID}) as x ,
+        (select COUNT(*) from {$this->tblc3} WHERE {$this->tblc3}.c3tID = c3.c3tID and {$this->tblc3}.workpaper = {$wpID} and {$this->tblc3}.clientID = {$cID} and `updated_on` IS NOT NULL) as y
+        from {$this->tblc3t} as c3t, {$this->tblc3} as c3
+        where c3t.c3titleID = c3.c3tID
+        and c3.clientID = {$cID}
+        and c3.workpaper = '{$wpID}'
+        and c3.code like '%{$code}%'");
         return $query->getResultArray();
 
     }

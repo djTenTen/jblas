@@ -147,11 +147,9 @@ class WorkpaperController extends BaseController{
     public function downloadexcel($file){
 
         $filePath = ROOTPATH .'public/uploads/xls/' . $file;
-
         if (!file_exists($filePath)) {
             return redirect()->to(site_url('403'));
         }
-        
         return $this->response->download($filePath, null);
 
     }
@@ -2037,12 +2035,15 @@ class WorkpaperController extends BaseController{
 
     public function viewindexfiles($code,$cfiID,$cID,$wpID,$index,$desc,$name){
 
+        $type           = session()->get('type');
+        $data['type']   = $type;
         $data['code']   = $code;
         $data['cID']    = $cID;
         $data['cfiID']  = $cfiID;
         $data['wpID']   = $wpID;
         $data['index']  = $index;
         $data['desc']   = $desc;
+        $data['name']   = $name;  
         $dcID       = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
         $dcfiID     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID));
         $dwpID      = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
@@ -2051,16 +2052,19 @@ class WorkpaperController extends BaseController{
         $data['subt']  = $code.' : '.$desc;
         switch ($code) {
             case 'Aa':
+                $data['aa']     = $this->wpmodel->getabc3values($code,$dcID,$dwpID);
                 echo view('includes/Header', $data);
                 echo view('workpaper/index/Aa', $data);
                 echo view('includes/Footer');
             break;
             case 'Ab':
+                $data['ab']     = $this->wpmodel->getabc3values($code,$dcID,$dwpID);
                 echo view('includes/Header', $data);
                 echo view('workpaper/index/Ab', $data);
                 echo view('includes/Footer');
             break;
             case 'Ac':
+                $data['ac']     = $this->wpmodel->getacc1values($code,$dcID,$dwpID);
                 echo view('includes/Header', $data);
                 echo view('workpaper/index/Ac', $data);
                 echo view('includes/Footer');

@@ -132,3 +132,250 @@ AND `index` = :index:', [...], false)
 INFO - 2024-05-30 10:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-05-30 10:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-05-30 10:07:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:27:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:27:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:27:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:28:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:55:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:56:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:56:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:56:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:57:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:57:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:57:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:59:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:59:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:59:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 10:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:00:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:01:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:03:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:04:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:08:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:12:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:23:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-30 11:23:58 --> ErrorException: Undefined variable $ac
+in APPPATH\Views\workpaper\index\Ac.php on line 43.
+ 1 APPPATH\Views\workpaper\index\Ac.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ac', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\Ac.php', 43)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\Ac.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/index/Ac', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(2066): view('workpaper/index/Ac', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('Ac', '9e9f990d115dcc8a965dd91d7ebaf95a048eea95b55d21f97647ee28219efe48f243586718005a37607a6291c5ff0e5761b4d0549d9578739117869ed9f43259ZPN4m1zHFnTHzpUcaYHrgYc=', '7fa2f3bf15a969e8e0872234b574e218ef3c7011ef76cfb3cb53c20ec516986927128aa7464d4a9ab4060637877d7c4a5d281aeb052a1757b664ac6c7b103674olCf2xubAM4a5WhYldym1KY=', 'eff368c47ae33b954875ccfde2763f69d41a0a0913ffdfeb51ab070726c0d4b03ee63227fd22675581a595a1e96c462558e04847c26555b16aadc5f1c41dac19piROU3eNz$W5Ca2n3gbGnQc=', '7ad762aab02e85cf9ddf174ab7be700013e9dbdb3688d3326d4f703af38342ca07d842de2d72176cdf45252766d8e7f3b0a885a3b4f8a04babb40e4325402ccaWXcSDwtcO25YWuuKorYEp~E=', 'Planning', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-30 11:24:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-30 11:24:07 --> ErrorException: Undefined variable $type
+in APPPATH\Views\workpaper\index\Ac.php on line 70.
+ 1 APPPATH\Views\workpaper\index\Ac.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $type', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\Ac.php', 70)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\Ac.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/index/Ac', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(2066): view('workpaper/index/Ac', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('Ac', '9e9f990d115dcc8a965dd91d7ebaf95a048eea95b55d21f97647ee28219efe48f243586718005a37607a6291c5ff0e5761b4d0549d9578739117869ed9f43259ZPN4m1zHFnTHzpUcaYHrgYc=', '7fa2f3bf15a969e8e0872234b574e218ef3c7011ef76cfb3cb53c20ec516986927128aa7464d4a9ab4060637877d7c4a5d281aeb052a1757b664ac6c7b103674olCf2xubAM4a5WhYldym1KY=', 'eff368c47ae33b954875ccfde2763f69d41a0a0913ffdfeb51ab070726c0d4b03ee63227fd22675581a595a1e96c462558e04847c26555b16aadc5f1c41dac19piROU3eNz$W5Ca2n3gbGnQc=', '7ad762aab02e85cf9ddf174ab7be700013e9dbdb3688d3326d4f703af38342ca07d842de2d72176cdf45252766d8e7f3b0a885a3b4f8a04babb40e4325402ccaWXcSDwtcO25YWuuKorYEp~E=', 'Planning', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-30 11:25:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-30 11:25:06 --> ErrorException: Undefined variable $name
+in APPPATH\Views\workpaper\index\Ac.php on line 93.
+ 1 APPPATH\Views\workpaper\index\Ac.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $name', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\Ac.php', 93)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\Ac.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/index/Ac', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(2068): view('workpaper/index/Ac', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('Ac', '9e9f990d115dcc8a965dd91d7ebaf95a048eea95b55d21f97647ee28219efe48f243586718005a37607a6291c5ff0e5761b4d0549d9578739117869ed9f43259ZPN4m1zHFnTHzpUcaYHrgYc=', '7fa2f3bf15a969e8e0872234b574e218ef3c7011ef76cfb3cb53c20ec516986927128aa7464d4a9ab4060637877d7c4a5d281aeb052a1757b664ac6c7b103674olCf2xubAM4a5WhYldym1KY=', 'eff368c47ae33b954875ccfde2763f69d41a0a0913ffdfeb51ab070726c0d4b03ee63227fd22675581a595a1e96c462558e04847c26555b16aadc5f1c41dac19piROU3eNz$W5Ca2n3gbGnQc=', '7ad762aab02e85cf9ddf174ab7be700013e9dbdb3688d3326d4f703af38342ca07d842de2d72176cdf45252766d8e7f3b0a885a3b4f8a04babb40e4325402ccaWXcSDwtcO25YWuuKorYEp~E=', 'Planning', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-30 11:25:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:25:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:26:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:35:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:40:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:40:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-30 11:40:02 --> mysqli_sql_exception: Unknown column 'c1.code' in 'where clause' in D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\Applications\xampp\htdocs\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT...', 0)
+#1 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT...')
+#2 D:\Applications\xampp\htdocs\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT...')
+#3 D:\Applications\xampp\htdocs\jblas\app\Models\WorkpaperModel.php(233): CodeIgniter\Database\BaseConnection->query('select DISTINCT...')
+#4 D:\Applications\xampp\htdocs\jblas\app\Controllers\WorkpaperController.php(2060): App\Models\WorkpaperModel->getabc3values('Ab', '3', '1')
+#5 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('Ab', 'd81c36dd6660404...', '7fa2f3bf15a969e...', 'eff368c47ae33b9...', '9753771904b848e...', 'Checklists', 'Sample client 1...')
+#6 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+#7 D:\Applications\xampp\htdocs\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Applications\xampp\htdocs\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-30 11:40:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c1.code' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\WorkpaperModel.php(233): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c3.status,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+        from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+        where c3t.c3titleID = c3.c3tID
+        and c3.clientID = 3
+        and c3.workpaper = \'1\'
+        and c1.code like \'%Ab%\'')
+ 2 APPPATH\Controllers\WorkpaperController.php(2060): App\Models\WorkpaperModel->getabc3values('Ab', '3', '1')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('Ab', 'd81c36dd66604045d369461a042af3be7bebd8db21141e94d5cb4d86021d933979966735418d9821b4ec64481942715e65ef2a7e47a9cc3db7c03c1e63f64db2osu3hcpKXZ8ipLkYCK2pcq8=', '7fa2f3bf15a969e8e0872234b574e218ef3c7011ef76cfb3cb53c20ec516986927128aa7464d4a9ab4060637877d7c4a5d281aeb052a1757b664ac6c7b103674olCf2xubAM4a5WhYldym1KY=', 'eff368c47ae33b954875ccfde2763f69d41a0a0913ffdfeb51ab070726c0d4b03ee63227fd22675581a595a1e96c462558e04847c26555b16aadc5f1c41dac19piROU3eNz$W5Ca2n3gbGnQc=', '9753771904b848efe4026d887ed761a13dd93aad7d89b122b0779cc9daaa465a24b2defc1e44bff718404e860cf3e2f7537d8504a8c61685cdd967239168619e6iY5S3dWlJAYNa~hJHXotvk=', 'Checklists', 'Sample client 1s - aaaa')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 11:40:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c1.code' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c3.status,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+        from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+        where c3t.c3titleID = c3.c3tID
+        and c3.clientID = 3
+        and c3.workpaper = \'1\'
+        and c1.code like \'%Ab%\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c3.status,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+        from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+        where c3t.c3titleID = c3.c3tID
+        and c3.clientID = 3
+        and c3.workpaper = \'1\'
+        and c1.code like \'%Ab%\'')
+ 3 APPPATH\Models\WorkpaperModel.php(233): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c3.status,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+        from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+        where c3t.c3titleID = c3.c3tID
+        and c3.clientID = 3
+        and c3.workpaper = \'1\'
+        and c1.code like \'%Ab%\'')
+ 4 APPPATH\Controllers\WorkpaperController.php(2060): App\Models\WorkpaperModel->getabc3values('Ab', '3', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('Ab', 'd81c36dd66604045d369461a042af3be7bebd8db21141e94d5cb4d86021d933979966735418d9821b4ec64481942715e65ef2a7e47a9cc3db7c03c1e63f64db2osu3hcpKXZ8ipLkYCK2pcq8=', '7fa2f3bf15a969e8e0872234b574e218ef3c7011ef76cfb3cb53c20ec516986927128aa7464d4a9ab4060637877d7c4a5d281aeb052a1757b664ac6c7b103674olCf2xubAM4a5WhYldym1KY=', 'eff368c47ae33b954875ccfde2763f69d41a0a0913ffdfeb51ab070726c0d4b03ee63227fd22675581a595a1e96c462558e04847c26555b16aadc5f1c41dac19piROU3eNz$W5Ca2n3gbGnQc=', '9753771904b848efe4026d887ed761a13dd93aad7d89b122b0779cc9daaa465a24b2defc1e44bff718404e860cf3e2f7537d8504a8c61685cdd967239168619e6iY5S3dWlJAYNa~hJHXotvk=', 'Checklists', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-30 11:40:02 --> [Caused by] mysqli_sql_exception: Unknown column 'c1.code' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c3.status,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+        from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+        where c3t.c3titleID = c3.c3tID
+        and c3.clientID = 3
+        and c3.workpaper = \'1\'
+        and c1.code like \'%Ab%\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c3.status,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+        from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+        where c3t.c3titleID = c3.c3tID
+        and c3.clientID = 3
+        and c3.workpaper = \'1\'
+        and c1.code like \'%Ab%\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c3.status,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+        from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+        where c3t.c3titleID = c3.c3tID
+        and c3.clientID = 3
+        and c3.workpaper = \'1\'
+        and c1.code like \'%Ab%\'')
+ 4 APPPATH\Models\WorkpaperModel.php(233): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c3t.code,c3titleID,c3.remarks,c3.status,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3) as x ,
+        (select COUNT(*) from tbl_client_files_c3 WHERE tbl_client_files_c3.c3tID = c3.c3tID and tbl_client_files_c3.workpaper = 1 and tbl_client_files_c3.clientID = 3 and `updated_on` IS NOT NULL) as y
+        from tbl_c3_titles as c3t, tbl_client_files_c3 as c3
+        where c3t.c3titleID = c3.c3tID
+        and c3.clientID = 3
+        and c3.workpaper = \'1\'
+        and c1.code like \'%Ab%\'')
+ 5 APPPATH\Controllers\WorkpaperController.php(2060): App\Models\WorkpaperModel->getabc3values('Ab', '3', '1')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('Ab', 'd81c36dd66604045d369461a042af3be7bebd8db21141e94d5cb4d86021d933979966735418d9821b4ec64481942715e65ef2a7e47a9cc3db7c03c1e63f64db2osu3hcpKXZ8ipLkYCK2pcq8=', '7fa2f3bf15a969e8e0872234b574e218ef3c7011ef76cfb3cb53c20ec516986927128aa7464d4a9ab4060637877d7c4a5d281aeb052a1757b664ac6c7b103674olCf2xubAM4a5WhYldym1KY=', 'eff368c47ae33b954875ccfde2763f69d41a0a0913ffdfeb51ab070726c0d4b03ee63227fd22675581a595a1e96c462558e04847c26555b16aadc5f1c41dac19piROU3eNz$W5Ca2n3gbGnQc=', '9753771904b848efe4026d887ed761a13dd93aad7d89b122b0779cc9daaa465a24b2defc1e44bff718404e860cf3e2f7537d8504a8c61685cdd967239168619e6iY5S3dWlJAYNa~hJHXotvk=', 'Checklists', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-30 11:40:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:40:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:40:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:40:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:40:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:40:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:41:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:42:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:42:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:42:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:42:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:42:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:45:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:45:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:47:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:47:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:48:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:48:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:52:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:56:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:57:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:57:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:59:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 11:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-30 11:59:59 --> ErrorException: Undefined variable $if
+in APPPATH\Views\workpaper\index\Aa.php on line 220.
+ 1 APPPATH\Views\workpaper\index\Aa.php(220): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $if', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\Aa.php', 220)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\index\\Aa.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/index/Aa', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(2057): view('workpaper/index/Aa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->viewindexfiles('Aa', '486b22486505baf5edcda9acbb3bd47d20bae11ec5d70956418570c785b53cae563ab5c53053cd1fe97177ecfce4b014a7db2693ee331ff6038032ac32572c76LSukEgF3X71ELWg4dmn$OdU=', '24699a9757036071d457c6aebf0074f6982b48052bee57cd7f2a217c59129d152db68e6aa35b3ecf602112245c87b59f50c8b5076d3cfedba22c980ebefd4cbe0~xPs46FDb7NFCacgqeLLNs=', '8582c50f63267f280ddf445e17b8a9f67f58319bfe0f1e8d7ce7095129e65b593bd6ed428f41dd362b644775c56675737b8d953b69aaf6dceceea6b03344e64azWVSfokkfgsv9NkS6UCRe0E=', 'd6109e60b3b8ef6ed152331c5ef24127d4898ea2ed2b2a5750e236b909eddf26984f78754fe84b92a646379d09284f3965bb4a0e0bf34e9a8423477707b0d4e6nusD3l6b5x6bbGaISsSuvls=', 'Finalisation', 'Sample client 1s - aaaa')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-30 12:00:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:02:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:02:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:05:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:07:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:07:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:09:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-30 12:12:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
