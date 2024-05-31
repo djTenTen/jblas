@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
+use App\Libraries\Logs;
 
 class Chapter3Model extends Model{
 
@@ -8,11 +9,13 @@ class Chapter3Model extends Model{
     protected $tblc3 = "tbl_c3";
     protected $crypt;
     protected $time,$date;
+    protected $logs;
 
     public function __construct(){
 
         $this->db       = \Config\Database::connect('default'); 
         $this->crypt    = \Config\Services::encrypter();
+        $this->logs     = new Logs();
         date_default_timezone_set("Asia/Singapore"); 
         $this->time     = date("H:i:s");
         $this->date     = date("Y-m-d");
@@ -39,6 +42,7 @@ class Chapter3Model extends Model{
             'updated_on' => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc3)->where('acID', $req['c3ID'])->update($data)){
+            $this->logs->log(session()->get('name'). " Set the contents of ".$r['code']." to ".$stat);
             return true;
         }else{
             return false;
@@ -85,6 +89,7 @@ class Chapter3Model extends Model{
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
         return true;
 
     }
@@ -101,6 +106,7 @@ class Chapter3Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc3)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
             return true;
         }else{
             return false;
@@ -136,6 +142,7 @@ class Chapter3Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc3)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
             return true;
         }else{
             return false;
@@ -181,6 +188,7 @@ class Chapter3Model extends Model{
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
         return true;
 
     }
@@ -201,6 +209,7 @@ class Chapter3Model extends Model{
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
         return true;
 
     }
@@ -217,6 +226,7 @@ class Chapter3Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc3)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
             return true;
         }else{
             return false;
@@ -262,6 +272,7 @@ class Chapter3Model extends Model{
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
         return true;
 
     }
@@ -278,6 +289,7 @@ class Chapter3Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc3)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
             return true;
         }else{
             return false;
@@ -320,6 +332,7 @@ class Chapter3Model extends Model{
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
         return true;
 
     }
@@ -365,6 +378,7 @@ class Chapter3Model extends Model{
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
         return true;
 
     }
@@ -381,6 +395,7 @@ class Chapter3Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc3)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
             return true;
         }else{
             return false;
@@ -400,6 +415,7 @@ class Chapter3Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc3)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
             return true;
         }else{
             return false;
@@ -435,6 +451,7 @@ class Chapter3Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc3)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
             return true;
         }else{
             return false;
@@ -492,7 +509,8 @@ class Chapter3Model extends Model{
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
-       return true;
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
+        return true;
 
     }
 
@@ -515,7 +533,8 @@ class Chapter3Model extends Model{
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
-       return true;
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
+        return true;
 
     }
     
@@ -531,6 +550,7 @@ class Chapter3Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc3)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
             return true;
         }else{
             return false;
@@ -550,6 +570,7 @@ class Chapter3Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc3)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
             return true;
         }else{
             return false;
@@ -589,6 +610,7 @@ class Chapter3Model extends Model{
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
         return true;
       
     }
@@ -621,6 +643,7 @@ class Chapter3Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc3)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
             return true;
         }else{
             return false;
@@ -670,6 +693,7 @@ class Chapter3Model extends Model{
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
         return true;
       
     }
@@ -686,6 +710,7 @@ class Chapter3Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc3)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
             return true;
         }else{
             return false;
@@ -727,6 +752,7 @@ class Chapter3Model extends Model{
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 3");
         return true;
       
     }

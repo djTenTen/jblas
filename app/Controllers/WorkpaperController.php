@@ -402,6 +402,7 @@ class WorkpaperController extends BaseController{
     public function saveac1($code,$c1tID,$cID,$wpID,$name){
 
         $req = [
+            'code'      => $code,
             'acid'      => $this->request->getPost('acid'),
             'yesno'     => $this->request->getPost('yesno'),
             'comment'   => $this->request->getPost('comment'),
@@ -423,6 +424,7 @@ class WorkpaperController extends BaseController{
     public function saveac1eqr($code,$c1tID,$cID,$wpID,$name){
 
         $eqr = [
+            'code'      => $code,
             'nameap'    => $this->request->getPost('nameap'),
             'eqr1'      => $this->request->getPost('eqr1'),
             'eqr2'      => $this->request->getPost('eqr2'),
@@ -454,6 +456,7 @@ class WorkpaperController extends BaseController{
     public function saveac2($code,$c1tID,$cID,$wpID,$name){
 
         $req = [
+            'code'          => $code,
             'corptax'       => $this->request->getPost('corptax'),
             'statutory'     => $this->request->getPost('statutory'),
             'accountancy'   => $this->request->getPost('accountancy'),
@@ -478,6 +481,7 @@ class WorkpaperController extends BaseController{
     public function saveac2aep($code,$c1tID,$cID,$wpID,$name){
 
         $req = [
+            'code'      => $code,
             'eap'       => $this->request->getPost('eap'),
             'concl'     => $this->request->getPost('concl'),
             'acid'      => $this->request->getPost('acid'),
@@ -504,6 +508,7 @@ class WorkpaperController extends BaseController{
     public function saveac3($code,$c1tID,$cID,$wpID,$name){
 
         $req = [
+            'code'      => $code,
             'yesno'     => $this->request->getPost('yesno'),
             'comment'   => $this->request->getPost('comment'),
             'acid'      => $this->request->getPost('acid'),
@@ -534,6 +539,7 @@ class WorkpaperController extends BaseController{
             'ppr2'  => $this->request->getPost('ppr2')
         ];
         $req = [
+            'code'      => $code,
             'ppr'       => json_encode($ppr),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -554,6 +560,7 @@ class WorkpaperController extends BaseController{
     public function saveac4($code,$c1tID,$cID,$wpID,$name){
 
         $req = [
+            'code'      => $code,
             'comment'   => $this->request->getPost('comment'),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -583,6 +590,7 @@ class WorkpaperController extends BaseController{
             'con'   => $this->request->getPost('con')
         ];
         $req = [
+            'code'      => $code,
             'rescon'    => json_encode($rc),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -608,6 +616,7 @@ class WorkpaperController extends BaseController{
     public function saveac6ra($code,$c1tID,$cID,$wpID,$name){
 
         $req = [
+            'code'              => $code,
             'planning'          => $this->request->getPost('planning'),
             'finalization'      => $this->request->getPost('finalization'),
             'reference'         => $this->request->getPost('reference'),
@@ -635,6 +644,7 @@ class WorkpaperController extends BaseController{
             's2b'   => $this->request->getPost('s2b')
         ];
         $req = [
+            'code'      => $code,
             'section'   => json_encode($s),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -668,6 +678,7 @@ class WorkpaperController extends BaseController{
             return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
         $req = [
+            'code'                      => $code,
             'financialstatement'        => $this->request->getPost('financialstatement'),
             'descriptioncontrol'        => $this->request->getPost('descriptioncontrol'),
             'controleffective'          => $this->request->getPost('controleffective'),
@@ -726,6 +737,7 @@ class WorkpaperController extends BaseController{
             'pd3'   => $this->request->getPost('pd3'),
         ];
         $req = [
+            'code'      => $code,
             'genyn'     => json_encode($genyn),
             'part'      => $this->request->getPost('part'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -753,6 +765,7 @@ class WorkpaperController extends BaseController{
     public function saveac8($code,$c1tID,$cID,$wpID,$name){
 
         $req = [
+            'code'      => $code,
             'question'  => $this->request->getPost('question'),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -817,6 +830,7 @@ class WorkpaperController extends BaseController{
             'lo2'       => $this->request->getPost('lo2')
         ];
         $req = [
+            'code'      => $code,
             'ac9'       => json_encode($ac9),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1079,6 +1093,7 @@ class WorkpaperController extends BaseController{
             'pr'        => json_encode($pr),
         ];
         $ref = [
+            'code'          => $code,
             'materiality'   => $this->request->getPost('materiality'),
             'code'          => 'AC10',
             'cID'           => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1108,6 +1123,7 @@ class WorkpaperController extends BaseController{
             return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
         $req = [
+            'code'      => $code,
             'less'      => $this->request->getPost('less'),
             'name'      => $this->request->getPost('namedesc'),
             'balance'   => $this->request->getPost('balance'),
@@ -1133,6 +1149,7 @@ class WorkpaperController extends BaseController{
     public function saveac10cu($code,$sheet,$c1tID,$cID,$wpID,$name){
 
         $req = [
+            'code'      => $code,
             'question'  => $this->request->getPost('question'),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1162,6 +1179,7 @@ class WorkpaperController extends BaseController{
             return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
         $req = [
+            'code'      => $code,
             'less'      => $this->request->getPost('less'),
             'name'      => $this->request->getPost('namedesc'),
             'reason'    => $this->request->getPost('reason'),
@@ -1234,6 +1252,7 @@ class WorkpaperController extends BaseController{
             'sacb9'     => $this->request->getPost('sacb9'),
         ];
         $req = [
+            'code'      => $code,
             'ac11'      => json_encode($ac11),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1261,6 +1280,7 @@ class WorkpaperController extends BaseController{
     public function savequestions($code,$c2tID,$cID,$wpID,$name){
 
         $req = [
+            'code'          => $code,
             'extent'        => $this->request->getPost('extent'),
             'reference'     => $this->request->getPost('reference'),
             'initials'      => $this->request->getPost('initials'),
@@ -1284,6 +1304,7 @@ class WorkpaperController extends BaseController{
     public function saveaicpppa($code,$c2tID,$cID,$wpID,$name){
 
         $req = [
+            'code'      => $code,
             'comment'   => $this->request->getPost('comment'),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1305,6 +1326,7 @@ class WorkpaperController extends BaseController{
     public function savercicp($code,$c2tID,$cID,$wpID,$name){
 
         $req = [
+            'code'      => $code,
             'extent'    => $this->request->getPost('yesno'),
             'comment'   => $this->request->getPost('comment'),
             'acid'      => $this->request->getPost('acid'),
@@ -1333,6 +1355,7 @@ class WorkpaperController extends BaseController{
     public function saveplaf($code,$c3tID,$cID,$wpID,$name){
 
         $req = [
+            'code'          => $code,
             'extent'        => $this->request->getPost('extent'),
             'reference'     => $this->request->getPost('reference'),
             'acid'          => $this->request->getPost('acid'),
@@ -1364,6 +1387,7 @@ class WorkpaperController extends BaseController{
             'a7'    => $this->request->getPost('a7')
         ];
         $req = [
+            'code'      => $code,
             'question'  => json_encode($sec),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1399,6 +1423,7 @@ class WorkpaperController extends BaseController{
             'oi'        => $this->request->getPost('oi')
         ];
         $req = [
+            'code'      => $code,
             'aa2'       => json_encode($aa2),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1425,6 +1450,7 @@ class WorkpaperController extends BaseController{
     public function saveaa3a($code,$c3tID,$cID,$wpID,$name){
 
         $req = [
+            'code'      => $code,
             'comment'   => $this->request->getPost('comment'),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1446,6 +1472,7 @@ class WorkpaperController extends BaseController{
     public function saveaa3afaf($code,$c3tID,$cID,$wpID,$name){
 
         $req = [
+            'code'          => $code,
             'extent'        => $this->request->getPost('extent'),
             'reference'     => $this->request->getPost('reference'),
             'acid'          => $this->request->getPost('acid'),
@@ -1468,6 +1495,7 @@ class WorkpaperController extends BaseController{
     public function saveaa3air($code,$c3tID,$cID,$wpID,$name){
 
         $req = [
+            'code'      => $code,
             'ir'        => $this->request->getPost('ir'),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1494,6 +1522,7 @@ class WorkpaperController extends BaseController{
     public function saveaa3b($code,$c3tID,$cID,$wpID,$name){
 
         $req = [
+            'code'          => $code,
             'reference'     => $this->request->getPost('reference'),
             'acid'          => $this->request->getPost('acid'),
             'cID'           => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1519,6 +1548,7 @@ class WorkpaperController extends BaseController{
             'p42'   => $this->request->getPost('p42')
         ];
         $req = [
+            'code'      => $code,
             'p4'        => json_encode($p4),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1619,6 +1649,7 @@ class WorkpaperController extends BaseController{
     public function saveaa7aepapp($code,$c3tID,$cID,$wpID,$name){
         
         $req = [
+            'code'      => $code,
             'aep'       => $this->request->getPost('question'),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1650,6 +1681,7 @@ class WorkpaperController extends BaseController{
             'cst2'  => $this->request->getPost('cst2')
         ];
         $req = [
+            'code'  => $code,
             'aep'   => json_encode($aep),
             'acid'  => $this->request->getPost('acid'),
             'cID'   => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1681,6 +1713,7 @@ class WorkpaperController extends BaseController{
             'exp'   => $this->request->getPost('exp')
         ];
         $req = [
+            'code'      => $code,
             'aa10'      => json_encode($aa10),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1768,6 +1801,7 @@ class WorkpaperController extends BaseController{
             'fma'   => $this->request->getPost('fma')
         ];
         $req = [
+            'code'  => $code,
             'aa11'  => json_encode($aa11),
             'acid'  => $this->request->getPost('acid'),
             'cID'   => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1847,6 +1881,7 @@ class WorkpaperController extends BaseController{
             'rcr2'      => $this->request->getPost('rcr2'),
         ];
         $req = [
+            'code'      => $code,
             'aa11'      => json_encode($aa11con),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1873,6 +1908,7 @@ class WorkpaperController extends BaseController{
             'pl2'   => $this->request->getPost('pl2')
         ];
         $req = [
+            'code'      => $code,
             'aa11'      => json_encode($aa11),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1899,6 +1935,7 @@ class WorkpaperController extends BaseController{
     public function saveab1($code,$c3tID,$cID,$wpID,$name){
 
         $req = [
+            'code'      => $code,
             'yesno'     => $this->request->getPost('yesno'),
             'comment'   => $this->request->getPost('comment'),
             'acid'      => $this->request->getPost('acid'),
@@ -1942,6 +1979,7 @@ class WorkpaperController extends BaseController{
             'ed5'       => $this->request->getPost('ed5')
         ];
         $req = [
+            'code'      => $code,
             'question'  => json_encode($ab3),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -1968,6 +2006,7 @@ class WorkpaperController extends BaseController{
     public function saveab4($code,$c3tID,$cID,$wpID,$name){
 
         $req = [
+            'code'      => $code,
             'yesno'     => $this->request->getPost('yesno'),
             'comment'   => $this->request->getPost('comment'),
             'acid'      => $this->request->getPost('acid'),
@@ -2008,6 +2047,7 @@ class WorkpaperController extends BaseController{
             'y16'   => $this->request->getPost('y16')
         ];
         $req = [
+            'code'      => $code,
             'chlst'     => json_encode($chlst),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
@@ -2034,6 +2074,7 @@ class WorkpaperController extends BaseController{
     public function saveab4a($code,$c3tID,$cID,$wpID,$name){
 
         $req = [
+            'code'      => $code,
             'yesno'     => $this->request->getPost('yesno'),
             'comment'   => $this->request->getPost('comment'),
             'acid'      => $this->request->getPost('acid'),

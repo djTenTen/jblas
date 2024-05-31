@@ -13,6 +13,29 @@
         </div>
     </div>    
 
+    <!-- Modal ACTIVE-->
+    <div class="modal fade" id="modealactive" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="msgconfirm">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
+                    <form id="myactiveform" action="" method="post">
+                        <button class="btn btn-primary" type="submit">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="<?= base_url()?>js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" crossorigin="anonymous"></script>

@@ -129,11 +129,12 @@
                 <div class="card mb-4">
                     <div class="card-body py-5">
                         <div class="d-flex flex-column justify-content-center">
-                            <img class="img-fluid mb-4" src="assets/img/illustrations/data-report.svg" alt="" style="height: 10rem" />
-                            <div class="text-center px-0 px-lg-5">
-                                <h5>New reports are here! Generate custom reports now!</h5>
-                                <p class="mb-4">Our new report generation system is now online. You can start creating custom reporting for any documents available on your account.</p>
-                                <a class="btn btn-primary p-3" href="#!">Get Started</a>
+                            <!-- <img class="img-fluid mb-4" src="assets/img/illustrations/data-report.svg" alt="" style="height: 10rem" /> -->
+                            <img class="img-fluid mb-4" src="assets/img/illustrations/team-spirit.svg" alt="" style="height: 10rem" />
+                            <div class="px-0 px-lg-5">
+                    
+                                <h5>Team Access</h5>
+                                <p class="mb-4"><?= $logs ?></p>
                             </div>
                         </div>
                     </div>
@@ -320,9 +321,7 @@
                 <!-- Illustration dashboard card example-->
                 <div class="card">
                     <div class="card-body text-center p-5">
-                        <img class="img-fluid mb-4" src="assets/img/illustrations/team-spirit.svg" alt="" style="max-width: 5rem" />
-                        <h5>Team Access</h5>
-                        <p class="mb-4"><?= $logs ?></p>
+                        
                     </div>
                 </div>
             </div>

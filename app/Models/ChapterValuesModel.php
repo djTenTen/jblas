@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
+use App\Libraries\Logs;
 
 class ChapterValuesModel extends Model{
 
@@ -13,11 +14,13 @@ class ChapterValuesModel extends Model{
     protected $tblc3d   = "tbl_client_dfiles_c3";
     protected $time,$date;
     protected $crypt;
+    protected $logs;
 
     public function __construct(){
 
         $this->db       = \Config\Database::connect('default'); 
         $this->crypt    = \Config\Services::encrypter();
+        $this->logs     = new Logs();
         date_default_timezone_set("Asia/Singapore"); 
         $this->time     = date("H:i:s");
         $this->date     = date("Y-m-d");
@@ -71,6 +74,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file AC1 Chapter 1");
         return true;
       
     }
@@ -84,6 +88,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1d)->where('acID', $acid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file AC1 Chapter 1");
             return true;
         }else{
             return false;
@@ -141,6 +146,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file AC2 Chapter 1");
         return true;
 
     }
@@ -155,6 +161,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1d)->where('acID', $acid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file AC2 Chapter 1");
             return true;
         }else{
             return false;
@@ -196,6 +203,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file AC3 Chapter 1");
         return true;
 
     }
@@ -244,6 +252,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1d)->where('acID', $acid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file AC4 Chapter 1");
             return true;
         }else{
             return false;
@@ -262,6 +271,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file AC4 Chapter 1");
         return true;
 
     }
@@ -297,6 +307,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1d)->where('acID', $acid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file AC5 Chapter 1");
             return true;
         }else{
             return false;
@@ -353,6 +364,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file AC6 Chapter 1");
         return true;
 
     }
@@ -366,6 +378,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1d)->where('acID', $acid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file AC6 Chapter 1");
             return true;
         }else{
             return false;
@@ -401,6 +414,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc1d)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file AC6 Chapter 1");
         return true;
 
     }
@@ -440,6 +454,7 @@ class ChapterValuesModel extends Model{
             'clientID'      => $req['cID'],
         ];
         if($this->db->table($this->tblc1d)->where($where)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file AC7 Chapter 1");
             return true;
         }else{
             return false;
@@ -480,6 +495,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file AC8 Chapter 1");
         return true;
 
     }
@@ -516,6 +532,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file AC9 Chapter 1");
             return true;
         }else{
             return false;
@@ -644,6 +661,7 @@ class ChapterValuesModel extends Model{
             'clientID'      =>$ref['cID'],
         ];
         $this->db->table($this->tblc1d)->where($where2)->update(array('question' => $ref['materiality']));
+        $this->logs->log(session()->get('name'). " set a default value on a client file AC10 Chapter 1");
         return true;
 
     }
@@ -674,6 +692,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc1d)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file AC10 Chapter 1");
         return true;
 
     }
@@ -705,6 +724,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc1d)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file AC10 Chapter 1");
         return true;
 
     }
@@ -718,6 +738,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file AC10 Chapter 1");
             return true;
         }else{
             return false;
@@ -756,6 +777,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file AC11 Chapter 1");
             return true;
         }else{
             return false;
@@ -825,6 +847,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 2");
         return true;
 
     }
@@ -840,6 +863,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 2");
         return true;
 
     }
@@ -856,6 +880,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 2");
         return true;
 
     }
@@ -909,6 +934,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
         return true;
 
     }
@@ -922,6 +948,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
             return true;
         }else{
             return false;
@@ -961,6 +988,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
             return true;
         }else{
             return false;
@@ -1014,6 +1042,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
         return true;
 
     }
@@ -1030,6 +1059,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
         return true;
 
     }
@@ -1043,6 +1073,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
             return true;
         }else{
             return false;
@@ -1096,6 +1127,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
         return true;
 
     }
@@ -1109,6 +1141,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
             return true;
         }else{
             return false;
@@ -1166,6 +1199,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc3d)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
         return true;
 
     }
@@ -1231,6 +1265,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc3d)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
         return true;
 
     }
@@ -1244,6 +1279,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
             return true;
         }else{
             return false;
@@ -1260,6 +1296,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
             return true;
         }else{
             return false;
@@ -1298,6 +1335,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
             return true;
         }else{
             return false;
@@ -1382,6 +1420,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc3d)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
        return true;
 
     }
@@ -1414,6 +1453,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc3d)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
        return true;
 
     }
@@ -1427,6 +1467,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
             return true;
         }else{
             return false;
@@ -1443,6 +1484,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
             return true;
         }else{
             return false;
@@ -1485,6 +1527,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
         return true;
       
     }
@@ -1521,6 +1564,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
             return true;
         }else{
             return false;
@@ -1576,6 +1620,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
         return true;
       
     }
@@ -1589,6 +1634,7 @@ class ChapterValuesModel extends Model{
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
             return true;
         }else{
             return false;
@@ -1630,6 +1676,7 @@ class ChapterValuesModel extends Model{
             ];
             $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
         return true;
       
     }

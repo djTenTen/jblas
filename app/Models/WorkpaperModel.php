@@ -350,6 +350,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tbltb)->where('tbID', $dtbID)->update($data);
         }
+        $this->logs->log(session()->get('name'). " Updated a work paper");
         return 'updated';
 
     }
@@ -369,6 +370,7 @@ class WorkpaperModel extends  Model {
             'remarks'   => $req['remarks'],
         ];
         if($this->db->table($this->tblcfi)->where('cfiID', $req['cfiID'])->update($data)){
+            $this->logs->log(session()->get('name'). " uploaded a file on work paper");
             return 'uploaded';
         }
     
@@ -417,6 +419,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tbltb)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " has imported a trial balance");
         return "uploaded";
 
     }
@@ -430,6 +433,7 @@ class WorkpaperModel extends  Model {
                 unlink($pdfpath);
             }
             $req['file']->move(ROOTPATH .'public/uploads/pdf', $fn);
+            $this->logs->log(session()->get('name'). " has uploaded a copy signed financial statement on workpaper");
             return 'uploaded';
         }else{
             return false;
@@ -591,6 +595,7 @@ class WorkpaperModel extends  Model {
                     $this->db->table($this->tblc3)->insert($datac3);
                 }
             }
+            $this->logs->log(session()->get('name'). " has initiated a workpaper");
             return "added";
         }
 
@@ -615,7 +620,7 @@ class WorkpaperModel extends  Model {
             'prepared_on'   => $this->date.' '.$this->time
         ];
         if($this->db->table($table)->where($where)->update($data)){
-            $this->logs->log(session()->get('name'). " sent a file to reviewer");
+            $this->logs->log(session()->get('name'). " sent a file {$req['c']} to reviewer");
             return "sent";
         }else{
             return false;
@@ -641,7 +646,7 @@ class WorkpaperModel extends  Model {
             'status'    => 'Preparing',
         ];
         if($this->db->table($table)->where($where)->update($data)){
-            $this->logs->log(session()->get('name'). " sent back a file to preparer");
+            $this->logs->log(session()->get('name'). " sent back a file {$req['c']} to preparer");
             return "sent";
         }else{
             return false;
@@ -668,6 +673,7 @@ class WorkpaperModel extends  Model {
             'reviewed_on'   => $this->date.' '.$this->time
         ];
         if($this->db->table($table)->where($where)->update($data)){
+            $this->logs->log(session()->get('name'). " sent a file to {$req['c']} audit manager");
             return "sent";
         }else{
             return false;
@@ -682,6 +688,7 @@ class WorkpaperModel extends  Model {
             'status'    => 'Reviewing',
         ];
         if($this->db->table($this->tblwp)->where('wpID', $req['wpID'])->update($data)){
+            $this->logs->log(session()->get('name'). " sent a file to reviewer");
             return "sent";
         }else{
             return false;
@@ -696,6 +703,7 @@ class WorkpaperModel extends  Model {
             'status'    => 'Preparing',
         ];
         if($this->db->table($this->tblwp)->where('wpID', $req['wpID'])->update($data)){
+            $this->logs->log(session()->get('name'). " sent back a file to preparer");
             return "sent";
         }else{
             return false;
@@ -710,6 +718,7 @@ class WorkpaperModel extends  Model {
             'status'    => 'Checking',
         ];
         if($this->db->table($this->tblwp)->where('wpID', $req['wpID'])->update($data)){
+            $this->logs->log(session()->get('name'). " sent a file to audit manager");
             return "sent";
         }else{
             return false;
@@ -766,6 +775,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc1)->where('acID', $acid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
         return true;
       
     }
@@ -779,6 +789,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1)->where('acID', $acid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
             return true;
         }else{
             return false;
@@ -838,6 +849,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc1)->where('acID', $acid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
         return true;
 
     }
@@ -852,6 +864,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1)->where('acID', $acid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
             return true;
         }else{
             return false;
@@ -894,6 +907,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc1)->where('acID', $acid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
         return true;
 
     }
@@ -945,6 +959,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1)->where('acID', $acid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
             return true;
         }else{
             return false;
@@ -1000,6 +1015,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1)->where('acID', $acid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
             return true;
         }else{
             return false;
@@ -1057,6 +1073,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc1)->where('acID', $acid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
         return true;
 
     }
@@ -1070,6 +1087,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1)->where('acID', $acid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
             return true;
         }else{
             return false;
@@ -1107,6 +1125,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc1)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
         return true;
 
     }
@@ -1148,6 +1167,7 @@ class WorkpaperModel extends  Model {
             'workpaper'     => $req['wpID'],
         ];
         if($this->db->table($this->tblc1)->where($where)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
             return true;
         }else{
             return false;
@@ -1189,6 +1209,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc1)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
         return true;
 
     }
@@ -1225,6 +1246,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
             return true;
         }else{
             return false;
@@ -1361,6 +1383,7 @@ class WorkpaperModel extends  Model {
             'workpaper'     => $req['wpID'],
         ];
         $this->db->table($this->tblc1)->where($where2)->update(array('question' => $ref['materiality']));
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
         return true;
 
     }
@@ -1393,6 +1416,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc1)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
         return true;
 
     }
@@ -1426,6 +1450,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc1)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
         return true;
 
     }
@@ -1439,6 +1464,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
             return true;
         }else{
             return false;
@@ -1478,6 +1504,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc1)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
             return true;
         }else{
             return false;
@@ -1550,6 +1577,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc2)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 2 on work paper");
         return true;
 
     }
@@ -1565,6 +1593,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc2)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 2 on work paper");
         return true;
 
     }
@@ -1581,6 +1610,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc2)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 2 on work paper");
         return true;
 
     }
@@ -1635,6 +1665,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
         return true;
 
     }
@@ -1648,6 +1679,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
             return true;
         }else{
             return false;
@@ -1687,6 +1719,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
             return true;
         }else{
             return false;
@@ -1742,6 +1775,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
         return true;
 
     }
@@ -1758,6 +1792,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
         return true;
 
     }
@@ -1771,6 +1806,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
             return true;
         }else{
             return false;
@@ -1826,6 +1862,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
         return true;
 
     }
@@ -1839,6 +1876,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
             return true;
         }else{
             return false;
@@ -1899,6 +1937,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
         return true;
 
     }
@@ -1968,6 +2007,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
         return true;
 
     }
@@ -1981,6 +2021,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
             return true;
         }else{
             return false;
@@ -1997,6 +2038,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
             return true;
         }else{
             return false;
@@ -2036,6 +2078,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
             return true;
         }else{
             return false;
@@ -2125,6 +2168,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
        return true;
 
     }
@@ -2158,6 +2202,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc3)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
        return true;
 
     }
@@ -2171,6 +2216,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
             return true;
         }else{
             return false;
@@ -2187,6 +2233,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
             return true;
         }else{
             return false;
@@ -2229,6 +2276,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
         return true;
       
     }
@@ -2265,6 +2313,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
             return true;
         }else{
             return false;
@@ -2321,6 +2370,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
         return true;
       
     }
@@ -2334,6 +2384,7 @@ class WorkpaperModel extends  Model {
             'updated_by'    => $req['uID'],
         ];
         if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
             return true;
         }else{
             return false;
@@ -2376,6 +2427,7 @@ class WorkpaperModel extends  Model {
             ];
             $this->db->table($this->tblc3)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
         return true;
       
     }

@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
+use App\Libraries\Logs;
 
 class AuditorModel extends Model{
    
@@ -9,10 +10,12 @@ class AuditorModel extends Model{
     protected $tblf = "tbl_firm";
     protected $tblp = "tbl_position";
     protected $time,$date;
+    protected $logs;
 
     public function __construct(){
 
-        $this->db = \Config\Database::connect('default'); 
+        $this->db   = \Config\Database::connect('default'); 
+        $this->logs = new Logs();
         date_default_timezone_set("Asia/Singapore"); 
         $this->time = date("H:i:s");
         $this->date = date("Y-m-d");
@@ -77,6 +80,7 @@ class AuditorModel extends Model{
                 $msg = "Dear ".ucfirst($req['name']).",\n\n".$req['firm']." added you as their ".$req['type']." on the firm, Click this Link for verificaton ".base_url('aud/').$req['email'].".\n\n Your password is: ".$req['genpass']." \n Your Reference ID is:".$refID."\n\nThank you so much,\nApplAud Systems";
                 $email->setMessage($msg);
                 $email->send();
+                $this->logs->log(session()->get('name'). " Added ".$req['name']." as a ".$req['name']." in your firm");
                 return 'registered';
             }else{
                 return 'failed';
@@ -95,6 +99,7 @@ class AuditorModel extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblu)->where('userID', $req['uID'])->update($data)){
+            $this->logs->log(session()->get('name'). " Updated ".$req['name']."'s information");
             return 'updated';
         }else{
             return 'failed';
@@ -117,6 +122,7 @@ class AuditorModel extends Model{
             'updated_on' => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblu)->where('userID', $duID)->update($data)){
+            $this->logs->log(session()->get('name'). " Set the information of ".$r['name']." to ".$stat);
             return true;
         }else{
             return false;

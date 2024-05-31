@@ -1,16 +1,19 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
+use App\Libraries\Logs;
 
 class PositionModel extends  Model {
 
 
     protected $tblpos = "tbl_position";
     protected $time,$date;
+    protected $logs;
 
     public function __construct(){
 
         $this->db   = \Config\Database::connect('default'); 
+        $this->logs = new Logs();
         date_default_timezone_set("Asia/Singapore"); 
         $this->time = date("H:i:s");
         $this->date = date("Y-m-d");
@@ -45,6 +48,7 @@ class PositionModel extends  Model {
             'added_on'      => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblpos)->insert($data)){
+            $this->logs->log(session()->get('name'). " added a position in the system");
             return true;
         }else{
             return false;
@@ -60,6 +64,7 @@ class PositionModel extends  Model {
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblpos)->where('posID', $req['pID'])->update($data)){
+            $this->logs->log(session()->get('name'). " updated a position in the system");
             return true;
         }else{
             return false;
@@ -82,6 +87,7 @@ class PositionModel extends  Model {
             'updated_on' => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblpos)->where('posID', $dpID)->update($data)){
+            $this->logs->log(session()->get('name'). " set the information of ".$r['position']." to ".$stat);
             return true;
         }else{
             return false;

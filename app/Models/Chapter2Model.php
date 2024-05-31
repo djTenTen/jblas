@@ -67,6 +67,7 @@ class Chapter2Model extends Model{
             ];
             $this->db->table($this->tblc2)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 2");
         return true;
 
     }
@@ -86,6 +87,7 @@ class Chapter2Model extends Model{
             ];
             $this->db->table($this->tblc2)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 2");
         return true;
 
     }
@@ -106,6 +108,7 @@ class Chapter2Model extends Model{
             ];
             $this->db->table($this->tblc2)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 2");
         return true;
 
     }
@@ -125,6 +128,7 @@ class Chapter2Model extends Model{
             'updated_on' => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc2)->where('acID', $req['c2ID'])->update($data)){
+            $this->logs->log(session()->get('name'). " Set the contents of ".$r['code']." to ".$stat);
             return true;
         }else{
             return false;

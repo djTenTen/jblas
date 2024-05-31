@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
+use App\Libraries\Logs;
 
 class Chapter1Model extends Model{
     
@@ -8,10 +9,12 @@ class Chapter1Model extends Model{
     protected $tblc1 = "tbl_c1";
     protected $time,$date;
     protected $crypt;
+    protected $logs;
 
     public function __construct(){
 
         $this->db       = \Config\Database::connect('default'); 
+        $this->logs     = new Logs();
         $this->crypt    = \Config\Services::encrypter();
         date_default_timezone_set("Asia/Singapore"); 
         $this->time     = date("H:i:s");
@@ -39,6 +42,7 @@ class Chapter1Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc1)->where('acID', $req['c1ID'])->update($data)){
+            $this->logs->log(session()->get('name'). " Set the contents of ".$r['code']." to ".$stat);
             return true;
         }else{
             return false;
@@ -86,6 +90,7 @@ class Chapter1Model extends Model{
             ];
             $this->db->table($this->tblc1)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
         return true;
       
     }
@@ -102,6 +107,7 @@ class Chapter1Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc1)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
             return true;
         }else{
             return false;
@@ -152,6 +158,7 @@ class Chapter1Model extends Model{
             ];
             $this->db->table($this->tblc1)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
         return true;
 
     }
@@ -169,6 +176,7 @@ class Chapter1Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc1)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
             return true;
         }else{
             return false;
@@ -210,6 +218,7 @@ class Chapter1Model extends Model{
             ];
             $this->db->table($this->tblc1)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
         return true;
 
     }
@@ -250,6 +259,7 @@ class Chapter1Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc1)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
             return true;
         }else{
             return false;
@@ -272,6 +282,7 @@ class Chapter1Model extends Model{
             ];
             $this->db->table($this->tblc1)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
         return true;
 
     }
@@ -305,6 +316,7 @@ class Chapter1Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc1)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
             return true;
         }else{
             return false;
@@ -353,6 +365,7 @@ class Chapter1Model extends Model{
             ];
             $this->db->table($this->tblc1)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
         return true;
 
     }
@@ -369,6 +382,7 @@ class Chapter1Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc1)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on AC6");
             return true;
         }else{
             return false;
@@ -396,6 +410,7 @@ class Chapter1Model extends Model{
             ];
             $this->db->table($this->tblc1)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
         return true;
 
     }
@@ -428,6 +443,7 @@ class Chapter1Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc1)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
             return true;
         }else{
             return false;
@@ -462,6 +478,7 @@ class Chapter1Model extends Model{
             ];
             $this->db->table($this->tblc1)->where('acID', $dacid)->update($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
         return true;
 
     }
@@ -494,6 +511,7 @@ class Chapter1Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc1)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
             return true;
         }else{
             return false;
@@ -569,6 +587,7 @@ class Chapter1Model extends Model{
         }
         $this->db->table($this->tblc1)->where(array('type' => 'materialdata', 'code' => $ref['code'],'c1tID' => $ref['c1tID']))->delete();
         $this->db->table($this->tblc1)->insert(array('type' => 'materialdata', 'code' => $ref['code'],'c1tID' => $ref['c1tID'], 'question' => $ref['materiality']));
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
         return true;
 
     }
@@ -589,6 +608,7 @@ class Chapter1Model extends Model{
             ];
             $this->db->table($this->tblc1)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
         return true;
 
     }
@@ -610,6 +630,7 @@ class Chapter1Model extends Model{
             ];
             $this->db->table($this->tblc1)->insert($data);
         }
+        $this->logs->log(session()->get('name'). " save a content on AC10");
         return true;
 
     }
@@ -621,6 +642,7 @@ class Chapter1Model extends Model{
             'question' => $req['question'],
         ];
         if($this->db->table($this->tblc1)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
             return true;
         }else{
             return false;
@@ -656,6 +678,7 @@ class Chapter1Model extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc1)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a content on ".$req['code']." Chapter 1");
             return true;
         }else{
             return false;

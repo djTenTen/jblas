@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
+use App\Libraries\Logs;
 
 class ClientModel extends Model{
    
@@ -18,11 +19,13 @@ class ClientModel extends Model{
     protected $tblc3d   = "tbl_client_dfiles_c3";
     protected $time,$date;
     protected $crypt;
+    protected $logs;
 
     public function __construct(){
 
         $this->db       = \Config\Database::connect('default'); 
         $this->crypt    = \Config\Services::encrypter();
+        $this->logs     = new Logs();
         date_default_timezone_set("Asia/Singapore"); 
         $this->time     = date("H:i:s");
         $this->date     = date("Y-m-d");
@@ -140,6 +143,7 @@ class ClientModel extends Model{
                 'added_on'      => $this->date.' '.$this->time,
             ];
             if($this->db->table($this->tblc)->insert($data)){
+                $this->logs->log(session()->get('name'). " added a client ".$req['name'].'-'.$req['org']);
                 return 'registered';
             }else{
                 return 'failed';
@@ -161,6 +165,7 @@ class ClientModel extends Model{
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc)->where('cID', $req['cID'])->update($data)){
+            $this->logs->log(session()->get('name'). " updated the client ".$req['name'].'-'.$req['org']." information");
             return 'updated';
         }else{
             return 'failed';
@@ -286,6 +291,7 @@ class ClientModel extends Model{
                 }
             }
         }
+        $this->logs->log(session()->get('name'). " added a file to a client ");
         return 'files_added';
 
     }
@@ -305,6 +311,7 @@ class ClientModel extends Model{
             'updated_on' => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblc)->where('cID', $dcID)->update($data)){
+            $this->logs->log(session()->get('name'). " Set the information of ".$r['name']." to ".$stat);
             return true;
         }else{
             return false;

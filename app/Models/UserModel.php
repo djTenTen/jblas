@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
+use App\Libraries\Logs;
 
 class UserModel extends  Model {
 
@@ -9,11 +10,13 @@ class UserModel extends  Model {
     protected $tblp = "tbl_position";
     protected $time,$date;
     protected $crypt;
+    protected $logs;
 
     public function __construct(){
 
         $this->db   = \Config\Database::connect('default'); 
         $this->crypt = \Config\Services::encrypter();
+        $this->logs = new Logs();
         date_default_timezone_set("Asia/Singapore"); 
         $this->time = date("H:i:s");
         $this->date = date("Y-m-d");
@@ -133,6 +136,7 @@ class UserModel extends  Model {
                         'email_verify_at' => $this->date.' '.$this->time,
                     ];
                     $this->db->table($this->tblu)->where(array('userID' => $d['userID']))->update($data);
+                    $this->logs->log($req['email']. " has been confirmed his/her email ");
                     return 'confirmed';
                 }else{
                     return 'confirmed';
@@ -163,6 +167,7 @@ class UserModel extends  Model {
                 'added_on'  => $this->date.' '.$this->time
             ];
             if($this->db->table($this->tblu)->insert($data)){
+                $this->logs->log(session()->get('name'). " added a user {$req['name']}");
                 return 'added';
             }else{
                 return 'failed';
@@ -181,6 +186,7 @@ class UserModel extends  Model {
             'updated_on'    => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblu)->where('userID', $req['uID'])->update($data)){
+            $this->logs->log(session()->get('name'). " updated a user {$req['name']}");
             return 'updated';
         }else{
             return 'failed';
@@ -218,6 +224,7 @@ class UserModel extends  Model {
             session()->set('signature', $signaturename);
         }
         if($this->db->table($this->tblu)->where('userID', $req['uID'])->update($data)){
+            $this->logs->log($req['name']. " updated his/her information");
             return "updated";
         }else{
             return "error";
@@ -240,6 +247,7 @@ class UserModel extends  Model {
             'updated_on' => $this->date.' '.$this->time
         ];
         if($this->db->table($this->tblu)->where('userID', $duID)->update($data)){
+            $this->logs->log(session()->get('name'). " set the information of ".$r['name']." to ".$stat);
             return true;
         }else{
             return false;
