@@ -1,0 +1,349 @@
+INFO - 2024-05-31 13:17:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:17:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:17:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:20:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:20:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:24:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:24:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:36:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:36:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:49:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:50:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:50:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 14:50:18 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\WorkpaperModel.php(645): CodeIgniter\Model->__call('log', [...])
+ 4 APPPATH\Controllers\WorkpaperController.php(298): App\Models\WorkpaperModel->sendtoauditor([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoauditor('index', '2ca3b9d1e0247e989195495acfd5496ff8980ce4f880fb3dcf47c44bc4c2dcff398dfc0ab57961ed63eb29dbd723d61092283eca207132b0bfb2096cac35c5a4dZm9JeWFSNTxmJD~OnALdlo=', '1822a61687144c9d634844781ead95f458e65fd47ab393b058bbef5282a9e129fa066731440e24cc5f92df66e84ce656d01df3920b9fbff3eaaacbf090dcec29cPjp1gAhQVFIASu0YPPgB$g=', '6cadd1072f229dd89083a4b03a5cd97375dbd5c8ef43633ea20aa86670832da57138c3040adb79b6ada9135322acce82ca34607ba11a611fb9c9a35506cc55b9jf1C66jcgkM2LNUT9tRq0yU=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 14:50:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:50:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 14:50:55 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\WorkpaperModel.php(645): CodeIgniter\Model->__call('log', [...])
+ 4 APPPATH\Controllers\WorkpaperController.php(298): App\Models\WorkpaperModel->sendtoauditor([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoauditor('index', '0339dd6ee272e55ba27d0446168a92eec7b2cae816f39cc01ffdd0574be41d786b66e6eee3ac1f82cf23404e4e8694810d511a7170bd1332c419900dd358420eszj8q18eUKAiaHpj85p3zbM=', '1822a61687144c9d634844781ead95f458e65fd47ab393b058bbef5282a9e129fa066731440e24cc5f92df66e84ce656d01df3920b9fbff3eaaacbf090dcec29cPjp1gAhQVFIASu0YPPgB$g=', '6cadd1072f229dd89083a4b03a5cd97375dbd5c8ef43633ea20aa86670832da57138c3040adb79b6ada9135322acce82ca34607ba11a611fb9c9a35506cc55b9jf1C66jcgkM2LNUT9tRq0yU=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 14:52:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:52:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:52:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:52:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:52:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:52:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:52:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:54:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:55:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:56:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 14:56:13 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\WorkpaperModel.php(618): CodeIgniter\Model->__call('log', [...])
+ 4 APPPATH\Controllers\WorkpaperController.php(278): App\Models\WorkpaperModel->sendtoreview([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoreview('index', '441d56d6be479de9c984bad67bf51965e88e40b6f8609545f7a19ee701c495554ca30b2e4f94eabc500b0c9a1c1de8672fd8376cf362b6452cbada729da14083W$MlcwI9LZLT9j7tHoH5K1I=', '6ca9acbad8a81851bf44b13da9feaaf0afcbb78c0d9f5477a73b7de0d118d9badce3ca2d6126d0188533c73f0181ddb8f34302af8e1d62164e90532d4661981fKQZe9SU7NWh1gvMVCprDh7U=', '8592874f16bec178b136401a9d88f6940c2f35726c4ba17780b8eb409c9836298c238eda1bd47640fd3e8dd15503363d0ea2afe88631d1cecda6f8fa3364240eiVL8wmQfU8Fsu06dbNeNEGk=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 14:56:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:59:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 14:59:48 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\WorkpaperModel.php(618): CodeIgniter\Model->__call('log', [...])
+ 4 APPPATH\Controllers\WorkpaperController.php(278): App\Models\WorkpaperModel->sendtoreview([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoreview('index', 'e6433063467568c00bef415c035c170fc46c2820160e586e4646219e8613bfe380d2843aac780297cf6d22d5f5b7a1e532b22bec2e7166653c00043d95f6f2876ZkKrOFaq7yGDE3$ce7bKJo=', '6ca9acbad8a81851bf44b13da9feaaf0afcbb78c0d9f5477a73b7de0d118d9badce3ca2d6126d0188533c73f0181ddb8f34302af8e1d62164e90532d4661981fKQZe9SU7NWh1gvMVCprDh7U=', '8592874f16bec178b136401a9d88f6940c2f35726c4ba17780b8eb409c9836298c238eda1bd47640fd3e8dd15503363d0ea2afe88631d1cecda6f8fa3364240eiVL8wmQfU8Fsu06dbNeNEGk=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:00:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:00:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:00:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:00:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:00:32 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\WorkpaperModel.php(618): CodeIgniter\Model->__call('log', [...])
+ 4 APPPATH\Controllers\WorkpaperController.php(278): App\Models\WorkpaperModel->sendtoreview([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoreview('index', '1259b918ce0d2081ec23fe5d5f630631033ec0e1aa645ccadd135e9c86192048f0eec77de7a7ee3ed8f22930e3dd0d6aa9ed7e45260ebb2217d38c78d88a78f9hUx2iRv3kFoUxt83BGNwzfM=', '6ca9acbad8a81851bf44b13da9feaaf0afcbb78c0d9f5477a73b7de0d118d9badce3ca2d6126d0188533c73f0181ddb8f34302af8e1d62164e90532d4661981fKQZe9SU7NWh1gvMVCprDh7U=', '8592874f16bec178b136401a9d88f6940c2f35726c4ba17780b8eb409c9836298c238eda1bd47640fd3e8dd15503363d0ea2afe88631d1cecda6f8fa3364240eiVL8wmQfU8Fsu06dbNeNEGk=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:00:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:02:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:02:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:02:35 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\WorkpaperModel.php(618): CodeIgniter\Model->__call('log', [...])
+ 4 APPPATH\Controllers\WorkpaperController.php(278): App\Models\WorkpaperModel->sendtoreview([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoreview('index', 'eb386c38e684f1529650c99e27af97dc734458e3228bf3e8042e055c9e8c16d5e16c7e7deb35313333cb660b2414af1116f39be9185958679cb7b47af2c4273eQVuG50iZMXoMdczVx~IglMYz', '6ca9acbad8a81851bf44b13da9feaaf0afcbb78c0d9f5477a73b7de0d118d9badce3ca2d6126d0188533c73f0181ddb8f34302af8e1d62164e90532d4661981fKQZe9SU7NWh1gvMVCprDh7U=', '8592874f16bec178b136401a9d88f6940c2f35726c4ba17780b8eb409c9836298c238eda1bd47640fd3e8dd15503363d0ea2afe88631d1cecda6f8fa3364240eiVL8wmQfU8Fsu06dbNeNEGk=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:02:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:02:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:02:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:02:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:03:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:03:19 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\WorkpaperModel.php(645): CodeIgniter\Model->__call('log', [...])
+ 4 APPPATH\Controllers\WorkpaperController.php(298): App\Models\WorkpaperModel->sendtoauditor([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoauditor('index', 'c9b2497f61138818a10b5fe74e4da275cac6b716ccc8326978e53032b01c568ec93fbe4781c5ddda43a3ad924493c7a8a66ea7485ab61e1aa92725749a9501d9BzJA~VrUHFdQhCT4MPfKoY8=', '1822a61687144c9d634844781ead95f458e65fd47ab393b058bbef5282a9e129fa066731440e24cc5f92df66e84ce656d01df3920b9fbff3eaaacbf090dcec29cPjp1gAhQVFIASu0YPPgB$g=', '6cadd1072f229dd89083a4b03a5cd97375dbd5c8ef43633ea20aa86670832da57138c3040adb79b6ada9135322acce82ca34607ba11a611fb9c9a35506cc55b9jf1C66jcgkM2LNUT9tRq0yU=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:03:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:14:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:14:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:15:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:15:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:15:24 --> ErrorException: mkdir(): Invalid path
+in APPPATH\Libraries\Logs.php on line 25.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mkdir(): Invalid path', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries\\Logs.php', 25)
+ 2 APPPATH\Libraries\Logs.php(25): mkdir('', 420, true)
+ 3 APPPATH\Models\WorkpaperModel.php(645): App\Libraries\Logs->log('sample sent back a file to preparer')
+ 4 APPPATH\Controllers\WorkpaperController.php(298): App\Models\WorkpaperModel->sendtoauditor([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoauditor('index', '1602d87d25ddda7e83739a747edc97e527d76a0fb5bfbfcd64c2e5a4fe97391464ea07b943d214d19b6bab03f4ee693e10729258abb9a9a1126ddf88a202346a2KmGGMnFwG4ovftA6XYyU1s=', '1822a61687144c9d634844781ead95f458e65fd47ab393b058bbef5282a9e129fa066731440e24cc5f92df66e84ce656d01df3920b9fbff3eaaacbf090dcec29cPjp1gAhQVFIASu0YPPgB$g=', '6cadd1072f229dd89083a4b03a5cd97375dbd5c8ef43633ea20aa86670832da57138c3040adb79b6ada9135322acce82ca34607ba11a611fb9c9a35506cc55b9jf1C66jcgkM2LNUT9tRq0yU=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:16:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:16:28 --> CodeIgniter\Files\Exceptions\FileNotFoundException: File not found: "D:\Applications\xampp\htdocs\jblas\writable\applaudlogs/System-Log: .log"
+in SYSTEMPATH\Files\File.php on line 49.
+ 1 SYSTEMPATH\Files\File.php(49): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/System-Log: .log')
+ 2 APPPATH\Libraries\Logs.php(27): CodeIgniter\Files\File->__construct('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/System-Log: .log', true)
+ 3 APPPATH\Models\WorkpaperModel.php(645): App\Libraries\Logs->log('sample sent back a file to preparer')
+ 4 APPPATH\Controllers\WorkpaperController.php(298): App\Models\WorkpaperModel->sendtoauditor([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoauditor('index', '1602d87d25ddda7e83739a747edc97e527d76a0fb5bfbfcd64c2e5a4fe97391464ea07b943d214d19b6bab03f4ee693e10729258abb9a9a1126ddf88a202346a2KmGGMnFwG4ovftA6XYyU1s=', '1822a61687144c9d634844781ead95f458e65fd47ab393b058bbef5282a9e129fa066731440e24cc5f92df66e84ce656d01df3920b9fbff3eaaacbf090dcec29cPjp1gAhQVFIASu0YPPgB$g=', '6cadd1072f229dd89083a4b03a5cd97375dbd5c8ef43633ea20aa86670832da57138c3040adb79b6ada9135322acce82ca34607ba11a611fb9c9a35506cc55b9jf1C66jcgkM2LNUT9tRq0yU=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:16:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:16:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:16:40 --> CodeIgniter\Files\Exceptions\FileNotFoundException: File not found: "D:\Applications\xampp\htdocs\jblas\writable\applaudlogs/System-Log: .log"
+in SYSTEMPATH\Files\File.php on line 49.
+ 1 SYSTEMPATH\Files\File.php(49): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/System-Log: .log')
+ 2 APPPATH\Libraries\Logs.php(27): CodeIgniter\Files\File->__construct('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/System-Log: .log', true)
+ 3 APPPATH\Models\WorkpaperModel.php(645): App\Libraries\Logs->log('sample sent back a file to preparer')
+ 4 APPPATH\Controllers\WorkpaperController.php(298): App\Models\WorkpaperModel->sendtoauditor([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoauditor('index', '50de5fad8e3b5da99edf6f7b4a7819a9d66365cd2a9aec0ce458ec563f6b9aff370a38e9a793cce84160b60cba34232e140625a370d60760886f5ea788ea2da4EvOWZ$t6YriqwacJHwN2DMnQ', '1822a61687144c9d634844781ead95f458e65fd47ab393b058bbef5282a9e129fa066731440e24cc5f92df66e84ce656d01df3920b9fbff3eaaacbf090dcec29cPjp1gAhQVFIASu0YPPgB$g=', '6cadd1072f229dd89083a4b03a5cd97375dbd5c8ef43633ea20aa86670832da57138c3040adb79b6ada9135322acce82ca34607ba11a611fb9c9a35506cc55b9jf1C66jcgkM2LNUT9tRq0yU=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:17:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:17:42 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\WorkpaperModel.php(618): CodeIgniter\Model->__call('log', [...])
+ 4 APPPATH\Controllers\WorkpaperController.php(278): App\Models\WorkpaperModel->sendtoreview([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoreview('index', '897ac688125fc10c894abbaf8db74aa7429961105d6fe2d3acd09e893fd42f80c47fff21b2b2cc966da6f90caef6c869a3c74d34cc55b6d4bd59dc1b3c3bc1358JpjRNDTcC8K9yPSivSgSk4=', '6ca9acbad8a81851bf44b13da9feaaf0afcbb78c0d9f5477a73b7de0d118d9badce3ca2d6126d0188533c73f0181ddb8f34302af8e1d62164e90532d4661981fKQZe9SU7NWh1gvMVCprDh7U=', '8592874f16bec178b136401a9d88f6940c2f35726c4ba17780b8eb409c9836298c238eda1bd47640fd3e8dd15503363d0ea2afe88631d1cecda6f8fa3364240eiVL8wmQfU8Fsu06dbNeNEGk=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:17:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:18:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:18:13 --> CodeIgniter\Files\Exceptions\FileNotFoundException: File not found: "D:\Applications\xampp\htdocs\jblas\writable\applaudlogs/System-Log: May 31, 2024.log"
+in SYSTEMPATH\Files\File.php on line 49.
+ 1 SYSTEMPATH\Files\File.php(49): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/System-Log: May 31, 2024.log')
+ 2 APPPATH\Libraries\Logs.php(27): CodeIgniter\Files\File->__construct('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/System-Log: May 31, 2024.log', true)
+ 3 APPPATH\Models\WorkpaperModel.php(618): App\Libraries\Logs->log('Dhay Dhay sent a file to reviewer')
+ 4 APPPATH\Controllers\WorkpaperController.php(278): App\Models\WorkpaperModel->sendtoreview([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoreview('index', '4c3908951b8da2244fd6ff77a00a6a80ce3708bfd4d1d52705d5716a801d14a1e58e58cd8b30ddfc4d8e07687f974db7c813972e8f78e510998ec35d86966cedcz72Z1$2iw4ifX8RmdIf9sk=', '6ca9acbad8a81851bf44b13da9feaaf0afcbb78c0d9f5477a73b7de0d118d9badce3ca2d6126d0188533c73f0181ddb8f34302af8e1d62164e90532d4661981fKQZe9SU7NWh1gvMVCprDh7U=', '8592874f16bec178b136401a9d88f6940c2f35726c4ba17780b8eb409c9836298c238eda1bd47640fd3e8dd15503363d0ea2afe88631d1cecda6f8fa3364240eiVL8wmQfU8Fsu06dbNeNEGk=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:22:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:22:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:22:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:23:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:23:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:23:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:23:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:24:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:24:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:25:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:26:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:26:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:29:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:29:23 --> CodeIgniter\Files\Exceptions\FileNotFoundException: File not found: "D:\Applications\xampp\htdocs\jblas\writable\applaudlogs/Systems-Log: May 31, 2024.log"
+in SYSTEMPATH\Files\File.php on line 49.
+ 1 SYSTEMPATH\Files\File.php(49): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/Systems-Log: May 31, 2024.log')
+ 2 APPPATH\Libraries\Logs.php(27): CodeIgniter\Files\File->__construct('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/Systems-Log: May 31, 2024.log', true)
+ 3 APPPATH\Models\WorkpaperModel.php(644): App\Libraries\Logs->log('sample sent back a file to preparer')
+ 4 APPPATH\Controllers\WorkpaperController.php(298): App\Models\WorkpaperModel->sendtoauditor([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoauditor('index', '86d165b013893514209f45514611330b0bb4e43f39fdb7c78a418a4b36ca8a94d19804eee5b35c04f1d792abb17651608851f64abe220551d912308a8b847763zQ~a6dPCmibq$PxT30FEIY8=', '1822a61687144c9d634844781ead95f458e65fd47ab393b058bbef5282a9e129fa066731440e24cc5f92df66e84ce656d01df3920b9fbff3eaaacbf090dcec29cPjp1gAhQVFIASu0YPPgB$g=', '6cadd1072f229dd89083a4b03a5cd97375dbd5c8ef43633ea20aa86670832da57138c3040adb79b6ada9135322acce82ca34607ba11a611fb9c9a35506cc55b9jf1C66jcgkM2LNUT9tRq0yU=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:30:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:30:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:30:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:30:18 --> CodeIgniter\Files\Exceptions\FileNotFoundException: File not found: "D:\Applications\xampp\htdocs\jblas\writable\applaudlogs/systems-log:May 31, 2024.log"
+in SYSTEMPATH\Files\File.php on line 49.
+ 1 SYSTEMPATH\Files\File.php(49): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log:May 31, 2024.log')
+ 2 APPPATH\Libraries\Logs.php(27): CodeIgniter\Files\File->__construct('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log:May 31, 2024.log', true)
+ 3 APPPATH\Models\WorkpaperModel.php(644): App\Libraries\Logs->log('sample sent back a file to preparer')
+ 4 APPPATH\Controllers\WorkpaperController.php(298): App\Models\WorkpaperModel->sendtoauditor([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoauditor('index', '7066afaae4e6fd7094965bfe35b373eaa06c79f31dca3fdd3d1c4148a5da3fe334be63e1effafcc71af26577a2ca610f728d0c90dc04bd7e6b34648c7787321dQGKOi6NHXvmAyMooctmlVsU=', '1822a61687144c9d634844781ead95f458e65fd47ab393b058bbef5282a9e129fa066731440e24cc5f92df66e84ce656d01df3920b9fbff3eaaacbf090dcec29cPjp1gAhQVFIASu0YPPgB$g=', '6cadd1072f229dd89083a4b03a5cd97375dbd5c8ef43633ea20aa86670832da57138c3040adb79b6ada9135322acce82ca34607ba11a611fb9c9a35506cc55b9jf1C66jcgkM2LNUT9tRq0yU=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:32:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:32:46 --> CodeIgniter\Files\Exceptions\FileNotFoundException: File not found: "D:\Applications\xampp\htdocs\jblas\writable\applaudlogs/systems-log-May 31, 2024.log"
+in SYSTEMPATH\Files\File.php on line 49.
+ 1 SYSTEMPATH\Files\File.php(49): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log-May 31, 2024.log')
+ 2 APPPATH\Libraries\Logs.php(27): CodeIgniter\Files\File->__construct('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log-May 31, 2024.log', true)
+ 3 APPPATH\Models\WorkpaperModel.php(644): App\Libraries\Logs->log('sample sent back a file to preparer')
+ 4 APPPATH\Controllers\WorkpaperController.php(298): App\Models\WorkpaperModel->sendtoauditor([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoauditor('index', '7066afaae4e6fd7094965bfe35b373eaa06c79f31dca3fdd3d1c4148a5da3fe334be63e1effafcc71af26577a2ca610f728d0c90dc04bd7e6b34648c7787321dQGKOi6NHXvmAyMooctmlVsU=', '1822a61687144c9d634844781ead95f458e65fd47ab393b058bbef5282a9e129fa066731440e24cc5f92df66e84ce656d01df3920b9fbff3eaaacbf090dcec29cPjp1gAhQVFIASu0YPPgB$g=', '6cadd1072f229dd89083a4b03a5cd97375dbd5c8ef43633ea20aa86670832da57138c3040adb79b6ada9135322acce82ca34607ba11a611fb9c9a35506cc55b9jf1C66jcgkM2LNUT9tRq0yU=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:33:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:33:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:33:07 --> CodeIgniter\Files\Exceptions\FileNotFoundException: File not found: "D:\Applications\xampp\htdocs\jblas\writable\applaudlogs/systems-log-May 31 2024.log"
+in SYSTEMPATH\Files\File.php on line 49.
+ 1 SYSTEMPATH\Files\File.php(49): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log-May 31 2024.log')
+ 2 APPPATH\Libraries\Logs.php(27): CodeIgniter\Files\File->__construct('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log-May 31 2024.log', true)
+ 3 APPPATH\Models\WorkpaperModel.php(644): App\Libraries\Logs->log('sample sent back a file to preparer')
+ 4 APPPATH\Controllers\WorkpaperController.php(298): App\Models\WorkpaperModel->sendtoauditor([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoauditor('index', '0a1fd6b378c79f81c3d5cb6365893b569f6071e6bb0439459b5af338f6ccc24cdaa41ad0da8807317784adfc73007f575fc6eddbbdeb8642d79cbadcc8cddd1crTPmiF6~P6T3EPY0pMiW7b0=', '1822a61687144c9d634844781ead95f458e65fd47ab393b058bbef5282a9e129fa066731440e24cc5f92df66e84ce656d01df3920b9fbff3eaaacbf090dcec29cPjp1gAhQVFIASu0YPPgB$g=', '6cadd1072f229dd89083a4b03a5cd97375dbd5c8ef43633ea20aa86670832da57138c3040adb79b6ada9135322acce82ca34607ba11a611fb9c9a35506cc55b9jf1C66jcgkM2LNUT9tRq0yU=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:33:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:33:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:33:57 --> CodeIgniter\Files\Exceptions\FileNotFoundException: File not found: "D:\Applications\xampp\htdocs\jblas\writable\applaudlogs/systems-log-May 31 2024.log"
+in SYSTEMPATH\Files\File.php on line 49.
+ 1 SYSTEMPATH\Files\File.php(49): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log-May 31 2024.log')
+ 2 APPPATH\Libraries\Logs.php(27): CodeIgniter\Files\File->__construct('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log-May 31 2024.log', true)
+ 3 APPPATH\Models\WorkpaperModel.php(618): App\Libraries\Logs->log('Dhay Dhay sent a file to reviewer')
+ 4 APPPATH\Controllers\WorkpaperController.php(278): App\Models\WorkpaperModel->sendtoreview([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoreview('index', '0b314241aab150ca0388d5aeef8fe44e0e5a4720c0700f9e18be2d706171c9af6849a924c6fa2f859cad554cb79ef0553b49d56b0ea9c0296dbaa9b9ddcd4a0b5rsHDLmJgs1yznkjvqAJDIU=', '6ca9acbad8a81851bf44b13da9feaaf0afcbb78c0d9f5477a73b7de0d118d9badce3ca2d6126d0188533c73f0181ddb8f34302af8e1d62164e90532d4661981fKQZe9SU7NWh1gvMVCprDh7U=', '8592874f16bec178b136401a9d88f6940c2f35726c4ba17780b8eb409c9836298c238eda1bd47640fd3e8dd15503363d0ea2afe88631d1cecda6f8fa3364240eiVL8wmQfU8Fsu06dbNeNEGk=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:34:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:34:13 --> CodeIgniter\Files\Exceptions\FileNotFoundException: File not found: "D:\Applications\xampp\htdocs\jblas\writable\applaudlogs/systems-log-May-31-2024.log"
+in SYSTEMPATH\Files\File.php on line 49.
+ 1 SYSTEMPATH\Files\File.php(49): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log-May-31-2024.log')
+ 2 APPPATH\Libraries\Logs.php(27): CodeIgniter\Files\File->__construct('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log-May-31-2024.log', true)
+ 3 APPPATH\Models\WorkpaperModel.php(618): App\Libraries\Logs->log('Dhay Dhay sent a file to reviewer')
+ 4 APPPATH\Controllers\WorkpaperController.php(278): App\Models\WorkpaperModel->sendtoreview([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoreview('index', '0b314241aab150ca0388d5aeef8fe44e0e5a4720c0700f9e18be2d706171c9af6849a924c6fa2f859cad554cb79ef0553b49d56b0ea9c0296dbaa9b9ddcd4a0b5rsHDLmJgs1yznkjvqAJDIU=', '6ca9acbad8a81851bf44b13da9feaaf0afcbb78c0d9f5477a73b7de0d118d9badce3ca2d6126d0188533c73f0181ddb8f34302af8e1d62164e90532d4661981fKQZe9SU7NWh1gvMVCprDh7U=', '8592874f16bec178b136401a9d88f6940c2f35726c4ba17780b8eb409c9836298c238eda1bd47640fd3e8dd15503363d0ea2afe88631d1cecda6f8fa3364240eiVL8wmQfU8Fsu06dbNeNEGk=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:34:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:34:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:34:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:34:28 --> CodeIgniter\Files\Exceptions\FileNotFoundException: File not found: "D:\Applications\xampp\htdocs\jblas\writable\applaudlogs/systems-log-May-31-2024.log"
+in SYSTEMPATH\Files\File.php on line 49.
+ 1 SYSTEMPATH\Files\File.php(49): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log-May-31-2024.log')
+ 2 APPPATH\Libraries\Logs.php(27): CodeIgniter\Files\File->__construct('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log-May-31-2024.log', true)
+ 3 APPPATH\Models\WorkpaperModel.php(618): App\Libraries\Logs->log('Dhay Dhay sent a file to reviewer')
+ 4 APPPATH\Controllers\WorkpaperController.php(278): App\Models\WorkpaperModel->sendtoreview([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoreview('index', '1cb9e3340ea6e4352cce352fb2f5f99242dafc4df0655374c207081d084df6faf65e27d5eefc1110cb90c252dfd1eed7f1575fa8a10e6ac4b30ee3c64a9d8cd3ex51$XPYZ7sa425l5II81$8=', '6ca9acbad8a81851bf44b13da9feaaf0afcbb78c0d9f5477a73b7de0d118d9badce3ca2d6126d0188533c73f0181ddb8f34302af8e1d62164e90532d4661981fKQZe9SU7NWh1gvMVCprDh7U=', '8592874f16bec178b136401a9d88f6940c2f35726c4ba17780b8eb409c9836298c238eda1bd47640fd3e8dd15503363d0ea2afe88631d1cecda6f8fa3364240eiVL8wmQfU8Fsu06dbNeNEGk=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:34:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:34:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:35:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:35:00 --> CodeIgniter\Files\Exceptions\FileNotFoundException: File not found: "D:\Applications\xampp\htdocs\jblas\writable\applaudlogs/systems-log-May-31-2024.log"
+in SYSTEMPATH\Files\File.php on line 49.
+ 1 SYSTEMPATH\Files\File.php(49): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log-May-31-2024.log')
+ 2 APPPATH\Libraries\Logs.php(27): CodeIgniter\Files\File->__construct('D:\\Applications\\xampp\\htdocs\\jblas\\writable\\applaudlogs/systems-log-May-31-2024.log', true)
+ 3 APPPATH\Models\WorkpaperModel.php(618): App\Libraries\Logs->log('Dhay Dhay sent a file to reviewer')
+ 4 APPPATH\Controllers\WorkpaperController.php(278): App\Models\WorkpaperModel->sendtoreview([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->sendtoreview('index', '2bcd4a0f2f67d4b1e6d6c2edbe956aa637676fdc006da26b45d9142244ef9722596f691e69a5f0d5969e6cfde86c59c6399ff6e4da54e534fbfeda23943bfea3ivh~cEHBdBFLG$mb5NpbYnU=', '6ca9acbad8a81851bf44b13da9feaaf0afcbb78c0d9f5477a73b7de0d118d9badce3ca2d6126d0188533c73f0181ddb8f34302af8e1d62164e90532d4661981fKQZe9SU7NWh1gvMVCprDh7U=', '8592874f16bec178b136401a9d88f6940c2f35726c4ba17780b8eb409c9836298c238eda1bd47640fd3e8dd15503363d0ea2afe88631d1cecda6f8fa3364240eiVL8wmQfU8Fsu06dbNeNEGk=', 'Sample client 1s - aaaa')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:35:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:35:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:36:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:36:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:36:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:37:58 --> Error: Object of class CodeIgniter\Session\Session could not be converted to string
+in APPPATH\Libraries\Logs.php on line 18.
+ 1 APPPATH\Models\WorkpaperModel.php(30): App\Libraries\Logs->__construct()
+ 2 APPPATH\Controllers\WorkpaperController.php(20): App\Models\WorkpaperModel->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\WorkpaperController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:38:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-31 15:38:00 --> Error: Object of class CodeIgniter\Session\Session could not be converted to string
+in APPPATH\Libraries\Logs.php on line 18.
+ 1 APPPATH\Models\WorkpaperModel.php(30): App\Libraries\Logs->__construct()
+ 2 APPPATH\Controllers\WorkpaperController.php(20): App\Models\WorkpaperModel->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\WorkpaperController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 15:39:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:54:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:55:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:56:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:58:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:58:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:59:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:59:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

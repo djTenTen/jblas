@@ -1,9 +1,9 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
+use App\Libraries\Logs;
 
 class WorkpaperModel extends  Model {
-
 
     protected $tblu     = "tbl_users";
     protected $tblwp    = "tbl_workpaper";
@@ -22,10 +22,12 @@ class WorkpaperModel extends  Model {
     protected $tbltb    = "tbl_client_trial_balance";
     protected $time,$date;
     protected $crypt;
+    protected $logs;
 
     public function __construct(){
 
         $this->db       = \Config\Database::connect('default'); 
+        $this->logs     = new Logs();
         date_default_timezone_set("Asia/Singapore"); 
         $this->crypt    = \Config\Services::encrypter();
         $this->time     = date("H:i:s");
@@ -613,6 +615,7 @@ class WorkpaperModel extends  Model {
             'prepared_on'   => $this->date.' '.$this->time
         ];
         if($this->db->table($table)->where($where)->update($data)){
+            $this->logs->log(session()->get('name'). " sent a file to reviewer");
             return "sent";
         }else{
             return false;
@@ -638,6 +641,7 @@ class WorkpaperModel extends  Model {
             'status'    => 'Preparing',
         ];
         if($this->db->table($table)->where($where)->update($data)){
+            $this->logs->log(session()->get('name'). " sent back a file to preparer");
             return "sent";
         }else{
             return false;

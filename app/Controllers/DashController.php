@@ -4,17 +4,20 @@ use App\Controllers\BaseController;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\HTTP\ResponseInterface;
 use \App\Models\DashModel;
+use App\Controllers\LogsController;
 
 class DashController extends BaseController{
 
 
     protected $dmodel;
     protected $crypt;
+    protected $lc;
 
     public function __construct(){
 
         \Config\Services::session();
         $this->dmodel   = new DashModel();
+        $this->lc       = new LogsController;
         $this->crypt    = \Config\Services::encrypter();
 
     }
@@ -35,6 +38,14 @@ class DashController extends BaseController{
         $data['rev']        = $this->dmodel->getnumwp($fID,'Reviewing');
         $data['check']      = $this->dmodel->getnumwp($fID,'Checking');
         $data['aud']        = $this->dmodel->getmyauditors($fID);
+        $logs               = $this->lc->viewlogs();
+
+        if($logs == 'no logs'){
+            $data['logs'] = 'No Logs';
+        }else{
+            $data['logs'] = $logs;
+        }
+
         echo view('includes/Header', $data);
         echo view('dashboard/DashboardAudit', $data);
         echo view('includes/Footer');

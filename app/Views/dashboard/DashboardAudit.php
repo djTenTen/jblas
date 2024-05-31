@@ -320,10 +320,9 @@
                 <!-- Illustration dashboard card example-->
                 <div class="card">
                     <div class="card-body text-center p-5">
-                        <img class="img-fluid mb-4" src="assets/img/illustrations/team-spirit.svg" alt="" style="max-width: 16.25rem" />
+                        <img class="img-fluid mb-4" src="assets/img/illustrations/team-spirit.svg" alt="" style="max-width: 5rem" />
                         <h5>Team Access</h5>
-                        <p class="mb-4">Upgrade your plan to get access to team collaboration tools.</p>
-                        <a class="btn btn-primary p-3" href="#!">Upgrade</a>
+                        <p class="mb-4"><?= $logs ?></p>
                     </div>
                 </div>
             </div>
