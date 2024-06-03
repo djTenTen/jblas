@@ -1,7 +1,6 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
-use App\Libraries\Logs;
 class AuthModel extends  Model {
 
 
@@ -9,14 +8,12 @@ class AuthModel extends  Model {
     protected $tblfirm  = "tbl_firm";
     protected $tblpos   = "tbl_position";
     protected $crypt;
-    protected $logs;
 
     public function __construct(){
 
         \Config\Services::session();
         $this->db = \Config\Database::connect('default'); 
         $this->crypt = \Config\Services::encrypter();
-        $this->logs = new Logs();
 
     }
 
@@ -51,7 +48,6 @@ class AuthModel extends  Model {
                             'logo'          => $ud['logo'],
                             'allowed'       => json_decode($ud['allowed']),
                         ];
-                        $this->logs->log($ud['name']. " has just Logged-in");
                         return $arr;
                     }else{
                         return 'wrongpassword';

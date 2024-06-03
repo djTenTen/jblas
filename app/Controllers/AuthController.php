@@ -5,18 +5,21 @@ use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\HTTP\ResponseInterface;
 use \App\Models\HomeModel;
 use \App\Models\AuthModel;
+use App\Libraries\Logs;
 
 class AuthController extends BaseController{
 
 
     protected $authModel;
     protected $crypt;
+    protected $logs;
 
     public function __construct(){
 
         \Config\Services::session();
         $this->authModel = new AuthModel();
         $this->crypt     = \Config\Services::encrypter();
+        $this->logs = new Logs();
 
     }
 
@@ -71,6 +74,7 @@ class AuthController extends BaseController{
                 'allowed'           => $res['allowed'],
             ];
             session()->set($user_data);
+            $this->logs->log($user_data['name']. " has just Logged-in");
             return redirect()->to(site_url('/auditsystem'));
         }else{
             session()->setFlashdata('access_denied','access_denied');

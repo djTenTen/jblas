@@ -1,0 +1,67 @@
+INFO - 2024-06-03 13:20:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 13:20:12 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Libraries\Logs.php(20): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 APPPATH\Models\AuthModel.php(19): App\Libraries\Logs->__construct()
+ 4 APPPATH\Filters\Auth.php(15): App\Models\AuthModel->__construct()
+ 5 SYSTEMPATH\Filters\Filters.php(175): App\Filters\Auth->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(522): CodeIgniter\Filters\Filters->run('', 'after')
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-03 13:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:23:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 13:23:24 --> ValueError: Path cannot be empty
+in APPPATH\Libraries\Logs.php on line 34.
+ 1 APPPATH\Libraries\Logs.php(34): file_put_contents('', '[01:23 PM]: Davies John Boco has just Logged-in
+', 8)
+ 2 APPPATH\Models\AuthModel.php(54): App\Libraries\Logs->log('Davies John Boco has just Logged-in')
+ 3 APPPATH\Controllers\AuthController.php(37): App\Models\AuthModel->authenticate([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-03 13:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 13:25:19 --> ErrorException: Undefined variable $logFile
+in APPPATH\Libraries\Logs.php on line 33.
+ 1 APPPATH\Libraries\Logs.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $logFile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries\\Logs.php', 33)
+ 2 APPPATH\Models\AuthModel.php(54): App\Libraries\Logs->log('Davies John Boco has just Logged-in')
+ 3 APPPATH\Controllers\AuthController.php(37): App\Models\AuthModel->authenticate([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-03 13:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 13:26:29 --> ErrorException: Undefined variable $logFile
+in APPPATH\Libraries\Logs.php on line 33.
+ 1 APPPATH\Libraries\Logs.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $logFile', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Libraries\\Logs.php', 33)
+ 2 APPPATH\Models\AuthModel.php(54): App\Libraries\Logs->log('Davies John Boco has just Logged-in')
+ 3 APPPATH\Controllers\AuthController.php(37): App\Models\AuthModel->authenticate([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-03 13:29:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:30:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:30:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:30:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:30:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 13:30:44 --> ValueError: Path cannot be empty
+in APPPATH\Libraries\Logs.php on line 34.
+ 1 APPPATH\Libraries\Logs.php(34): file_put_contents('', '[01:30 PM]: Davies John Boco has just Logged-in
+', 8)
+ 2 APPPATH\Controllers\AuthController.php(77): App\Libraries\Logs->log('Davies John Boco has just Logged-in')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AuthController->auth()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-03 13:31:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:31:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:31:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:31:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:31:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:31:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:31:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
