@@ -14,8 +14,8 @@
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
                             <span class="input-group-text"><i class="text-primary" data-feather="calendar"></i></span>
                             <select name="" id="dateyear" class="form-control" data-url="<?= base_url()?>auditsystem/dashboard/wp/" data-urlpp="<?= base_url()?>auditsystem/dashboard/numwpp/">
-                                <option value="2000">2002</option>
-                                <option value="2001">2013</option>
+                                <option value="2000">2000</option>
+                                <option value="2001">2001</option>
                                 <option value="2002">2002</option>
                                 <option value="2003">2003</option>
                                 <option value="2004">2004</option>
