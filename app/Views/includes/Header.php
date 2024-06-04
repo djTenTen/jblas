@@ -153,10 +153,21 @@
        </a>
                 <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                     <h6 class="dropdown-header d-flex align-items-center">
-                    <?php if(empty(session()->get('photo'))){?>
-                        <img class="dropdown-user-img" src="<?= base_url()?>uploads/logo/<?= session()->get('logo')?>" />
-                    <?php }else{?>
-                        <img class="dropdown-user-img" src="<?= base_url()?>uploads/photo/<?= session()->get('photo')?>" />
+
+                    <?php if(empty(session()->get('photo'))){
+                            $path = base_url().'uploads/logo/'.session()->get('logo');
+                            if(file_exists($path) && is_file($path)) { ?>
+                                <img class="dropdown-user-img" src="<?= base_url()?>uploads/logo/<?= session()->get('logo')?>" />
+                            <?php }else{?>
+                                <img class="dropdown-user-img" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
+                            <?php }?>
+                    <?php }else{
+                            $path = base_url().'uploads/photo/'.session()->get('photo');
+                            if(file_exists($path) && is_file($path)) { ?>
+                                <img class="dropdown-user-img" src="<?= base_url()?>uploads/photo/<?= session()->get('photo')?>" />
+                            <?php }else{?>
+                                <img class="dropdown-user-img" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
+                            <?php }?>
                     <?php }?>
                         
                         <div class="dropdown-user-details">

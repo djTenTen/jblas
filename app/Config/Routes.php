@@ -24,6 +24,9 @@ $routes->group('', ['filter' => 'auth'], function ($auth) {
         ----------------------------------------------------------
     */
     $auth->get('auditsystem', 'DashController::auditsystem');
+    $auth->get('auditsystem/dashboard/wp/(:any)', 'DashController::getwpp/$1');
+    $auth->get('auditsystem/dashboard/numwpp/(:any)', 'DashController::getnumwpp/$1');
+    
 
     /**
         ----------------------------------------------------------

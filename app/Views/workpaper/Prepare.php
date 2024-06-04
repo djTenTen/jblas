@@ -53,15 +53,17 @@
                             <td><?= $r['financial_year']?></td>
                             <td><?= date('F-d', strtotime($r['financial_year'].'-'.$r['end_financial_year']))?></td>
                             <td>
-                                <span class="badge bg-primary"><?= $r['aud']?></span><br>
+                                <span class="badge bg-warning"><?= $r['aud']?></span><br>
                                 <span class="badge bg-secondary"><?= $r['sup']?></span><br>
                                 <span class="badge bg-success"><?= $r['audm']?></span>
                             </td>
                             <td>
                                 <?php if($r['status'] == 'Preparing'){?>
-                                    <span class="badge bg-primary"><?= $r['status']?></span>
+                                    <span class="badge bg-warning"><?= $r['status']?></span>
                                 <?php }elseif($r['status'] == 'Reviewing'){?>
                                     <span class="badge bg-secondary"><?= $r['status']?></span>
+                                <?php }elseif($r['status'] == 'Checking'){?>
+                                    <span class="badge bg-primary"><?= $r['status']?></span>
                                 <?php }elseif($r['status'] == 'Approved'){?>
                                     <span class="badge bg-success"><?= $r['status']?></span>
                                 <?php }?>
@@ -74,13 +76,17 @@
                             <td><?= date('F d, Y h:i A', strtotime($r['added_on']))?></td>
                             <td><?= $r['added']?></td>
                             <td>
-                                <?php //if($r['remarks'] != 'Not Submitted' and $r['remarks'] != ''){?>
-                                    <!-- <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?//= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button>  -->
-                                <?php //}?>
-                                <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>/<?= $r['cli'].' - '.$r['org']?>"><i class="fas fa-highlighter"></i></a>
-                                <?php //if($p == 100){?>
-                                    <!-- <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?//= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?//= base_url('auditsystem/wp/sendtoreviewer/')?><?//= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button> -->
-                                <?php //}?>
+                                <?php if($r['remarks'] != 'Not Submitted' and $r['remarks'] != ''){?>
+                                    <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button>
+                                <?php }?>
+                                <?php if($r['status'] == 'Preparing'){?>
+                                    <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>/<?= $r['cli'].' - '.$r['org']?>"><i class="fas fa-highlighter"></i></a>
+                                <?php }?>
+                                <?php if($p == 100){?>
+                                    <?php if($r['status'] == 'Preparing'){?>
+                                    <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewer/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                    <?php }?>
+                                <?php }?>
                             </td>
                         </tr>
                     <?php }?>

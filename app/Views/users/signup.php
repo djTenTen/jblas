@@ -106,7 +106,7 @@
                                                             <!-- <img class="img-account-profile rounded-circle mb-2" src="assets/img/illustrations/profiles/profile-1.png" alt="" /> -->
                                                             <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB and 2x2 or square size image</div>
                                                             <!-- Profile picture upload button-->
-                                                            <input type="file" id="imageInput" name="logo" class="form-control btn btn-primary" required>
+                                                            <input type="file" id="imageInput" name="logo" class="form-control btn btn-primary" >
                                                         </div>
                                                     </div>
                                                     <div id="errorContainer" style="display: none;">

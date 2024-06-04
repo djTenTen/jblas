@@ -163,7 +163,7 @@
                             <div class="mb-3">
                                 <div class="small font-italic text-muted mb-4">The file must be PNG, no larger than 5 MB and 2x2 or square size image</div>
                                 <!-- Profile picture upload button-->
-                                <input type="file" id="imageInput" name="signature" class="form-control btn btn-primary" required>
+                                <input type="file" id="imageInput" name="signature" class="form-control btn btn-primary">
                             </div>
                             <div id="errorContainer" style="display: none;"></div>
                         </div>             

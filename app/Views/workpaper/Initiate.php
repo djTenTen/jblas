@@ -112,7 +112,14 @@
                             <td><?= date('F d, Y h:i A', strtotime($r['added_on']))?></td>
                             <td><?= $r['added']?></td>
                             <td>
+                                <?php if($r['remarks'] != 'Not Submitted' and $r['remarks'] != ''){?>
+                                    <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button>
+                                <?php }?>
                                 <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>/<?= $r['cli'].' - '.$r['org']?>"><i class="fas fa-highlighter"></i></a>
+                                <?php if($r['status'] == 'Checking'){?>
+                                    <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewer/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
+                                    <button class="btn btn-success btn-icon btn-sm approved" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/approved/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-thumbs-up"></i></button>
+                                <?php }?>
                             </td>
                         </tr>
                     <?php }?>
@@ -253,7 +260,8 @@
 </div>
 
 <!-- Modal Review-->
-<div class="modal fade" id="sendtoreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+<div class="modal fade" id="tosend" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -261,16 +269,17 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="formsend" action="" method="post">
+                <form id="toconfirm" action="" method="post">
             </div>
             <div class="modal-footer">
                     <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>
-                    <button class="btn btn-primary" type="submit">Confirm</button>
+                    <button class="btn btn-primary" type="submit">Send</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
 <!-- Modal REMARKS-->
 <div class="modal fade" id="remarks" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
@@ -292,12 +301,20 @@
 </div>
 <script>
 $(document).ready(function () {
-    $('.senddata').on('click', function () {
+    $('.sendbacktoreviewer').on('click', function () {
         var file = $(this).data('file');
         var urlsubmit = $(this).data('urlsubmit');
-        $('#formsend').html(`<h6>Are you sure to send this file <b>`+ file +`</b> for Review?</h6><textarea name="remarks" class="lh-base form-control" type="text" placeholder="Remarks/Comment" rows="4"></textarea>`);
-        $('#formsend').attr('action',urlsubmit);
-    });  
+        $('#toconfirm').html(`<h6>Are you sure to send back this file <b>`+ file +`</b> to Reviewer for correction?</h6><textarea name="remarks" class="lh-base form-control" type="text" placeholder="Remarks/Comment" rows="4"></textarea>`);
+        $('#toconfirm').attr('action',urlsubmit);
+    }); 
+
+    $('.approved').on('click', function () {
+        var file = $(this).data('file');
+        var urlsubmit = $(this).data('urlsubmit');
+        $('#toconfirm').html(`<h6>Please confirm that this file <b>`+ file +`</b> has been reviewed and all data are correct and mark it as approved?</h6><textarea name="remarks" class="lh-base form-control" type="text" placeholder="Remarks/Comment" rows="4"></textarea>`);
+        $('#toconfirm').attr('action',urlsubmit);
+    }); 
+
     $('.rem').on('click', function () {
         var remarks = $(this).data('remarks');
         $('#rem').html(remarks);
