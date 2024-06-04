@@ -61,7 +61,7 @@
                     <div class="card-body d-flex justify-content-center flex-column">
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="me-3">
-                                <i class="feather-xl text-primary mb-3" data-feather="users"></i>
+                                <i class="feather-xl text-primary mb-3" data-feather="user-check"></i>
                                 <h5>Your Clients</h5>
                                 <h1 class="text-xl"><?= $numcli?></h1>
                             </div>
@@ -128,7 +128,7 @@
                     <div class="card-body d-flex justify-content-center flex-column">
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="me-3">
-                                <i class="feather-xl text-primary mb-3" data-feather="users"></i>
+                                <i class="feather-xl text-primary mb-3" data-feather="check"></i>
                                 <h5>Checking</h5>
                                 <h1 class="text-xl" id="numcheck"><?= $check?></h1>
                             </div>
@@ -323,7 +323,7 @@ $(document).ready(function () {
             },
             error: function() {
                 // Handle error if the data fetch fails
-                $("#progress").html("Error loading data");
+                $("#progress").html("No Data Found");
             }
         });
         $.ajax({
