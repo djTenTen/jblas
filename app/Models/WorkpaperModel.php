@@ -681,6 +681,33 @@ class WorkpaperModel extends  Model {
 
     }
 
+    public function sendtoapprove($req){
+
+        switch ($req['c']) {
+            case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
+            case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
+            case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
+            case 'index': $table    = $this->tblcfi; $ctID = 'index';break;
+        }
+        $where = [
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID'],
+            $ctID           => $req['ctID'],
+        ];
+        $data = [
+            'remarks'       => $req['remarks'],
+            'status'        => 'Approved',
+            'approved_on'   => $this->date.' '.$this->time
+        ];
+        if($this->db->table($table)->where($where)->update($data)){
+            $this->logs->log(session()->get('name'). " approved a file to {$req['c']}");
+            return "sent";
+        }else{
+            return false;
+        }
+
+    }
+
     public function sendtoreviewer($req){
 
         $data = [
@@ -724,6 +751,21 @@ class WorkpaperModel extends  Model {
             return false;
         }
         
+    }
+
+    public function approvewp($req){
+
+        $data = [
+            'remarks'   => $req['remarks'],
+            'status'    => 'Approved',
+        ];
+        if($this->db->table($this->tblwp)->where('wpID', $req['wpID'])->update($data)){
+            $this->logs->log(session()->get('name'). " approved a work paper");
+            return "sent";
+        }else{
+            return false;
+        }
+
     }
 
     /**

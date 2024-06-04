@@ -326,6 +326,26 @@ class WorkpaperController extends BaseController{
 
     }
 
+    public function sendtoapprove($c,$ctID,$cID,$wpID,$name){
+
+        $req = [
+            'ctID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'remarks'   => $this->request->getPost('remarks'),
+            'c'         => $c,
+        ];
+        $res = $this->wpmodel->sendtoapprove($req);
+        if($res == "sent"){
+            session()->setFlashdata('sentapprove','sentapprove');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+        }
+
+    }
+
     public function sendtoreviewer($wpID){
 
         $req = [
@@ -386,6 +406,23 @@ class WorkpaperController extends BaseController{
         $res = $this->wpmodel->sendtoreviewer($req);
         if($res == "sent"){
             session()->setFlashdata('senttorev','senttorev');
+            return redirect()->to(site_url('auditsystem/workpaper/initiate'));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/workpaper/initiate'));
+        }
+
+    }
+
+    public function approvewp($wpID){
+        
+        $req = [
+            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'remarks'   => $this->request->getPost('remarks'),
+        ];
+        $res = $this->wpmodel->approvewp($req);
+        if($res == "sent"){
+            session()->setFlashdata('approved','approved');
             return redirect()->to(site_url('auditsystem/workpaper/initiate'));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');

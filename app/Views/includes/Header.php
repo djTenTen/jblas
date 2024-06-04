@@ -329,9 +329,7 @@
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
                                     <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/initiate">
                                     <div class="nav-link-icon"><i data-feather="file-plus"></i></div>Initiate</a>
-                                    <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/revievw">
-                                    <div class="nav-link-icon"><i data-feather="eye"></i></div>View</a>
-                                    <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/Approved">
+                                    <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/approved">
                                     <div class="nav-link-icon"><i data-feather="check-square"></i></div>Approved</a>
                                 </nav>
                             </div>

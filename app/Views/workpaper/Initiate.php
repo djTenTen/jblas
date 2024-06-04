@@ -54,6 +54,15 @@
                     </div>
                 </div>
             <?php  }?>
+            <?php if (session()->get('approved')) { ?>
+                <div class="alert alert-success alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Work paper Approved.</h6>
+                        Work paper has been Approved.
+                    </div>
+                </div>
+            <?php  }?>
         <div class="card">
             <div class="card-body">
             <?php if(session()->get('allowed')->add == "Yes"){?>
@@ -81,7 +90,14 @@
                             if($x == 0 or $y == 0){
                                 $p = 1;
                             }else{
-                                $p = round($y / $x, 2) * 100;
+                                $p = round($y / $x, 2) * 70;
+                            }
+                            $pcnt = 0;
+                            switch ($r['status']) {
+                                case 'Preparing': $pcnt = 0; break;
+                                case 'Reviewing': $pcnt = 10; break;
+                                case 'Checking' : $pcnt = 20; break;
+                                case 'Approved' : $pcnt = 30; break;
                             }
                         ?>
                         <tr>
@@ -106,7 +122,7 @@
                             </td>
                             <td>
                                 <div class="progress mt-1">
-                                    <span class="progress-bar" style="width:<?= $p?>%"><?= $p?>%</span>
+                                    <span class="progress-bar" style="width:<?= $p + $pcnt?>%"><?= $p + $pcnt?>%</span>
                                 </div>
                             </td>
                             <td><?= date('F d, Y h:i A', strtotime($r['added_on']))?></td>
@@ -118,7 +134,7 @@
                                 <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>/<?= $r['cli'].' - '.$r['org']?>"><i class="fas fa-highlighter"></i></a>
                                 <?php if($r['status'] == 'Checking'){?>
                                     <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewer/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
-                                    <button class="btn btn-success btn-icon btn-sm approved" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/approved/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-thumbs-up"></i></button>
+                                    <button class="btn btn-success btn-icon btn-sm approved" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/approved/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
                                 <?php }?>
                             </td>
                         </tr>

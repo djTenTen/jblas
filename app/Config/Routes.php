@@ -63,8 +63,10 @@ $routes->group('', ['filter' => 'auth'], function ($auth) {
         $workp->group('', ['filter' => 'audmanager'], function ($audmanager) {
 
             $audmanager->get('auditsystem/workpaper/initiate', 'WorkpaperController::initiate');
+            $audmanager->post('auditsystem/wp/sendtoapprove/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::sendtoapprove/$1/$2/$3/$4/$5');
             $audmanager->post('auditsystem/workpaper/save', 'WorkpaperController::saveworkpaper');
             $audmanager->post('auditsystem/wp/sendbacktoreviewer/(:any)', 'WorkpaperController::sendbacktoreviewer/$1');
+            $audmanager->post('auditsystem/wp/approved/(:any)', 'WorkpaperController::approvewp/$1');
 
         });
 
