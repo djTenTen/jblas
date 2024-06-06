@@ -44,7 +44,7 @@
                                     <div class="card-body p-5 text-center"><div class="h3 fw-light mb-0">Password Recovery</div></div>
                                     <hr class="my-0" />
                                     <div class="card-body p-5">
-                                        <div class="text-center small text-muted mb-4">Enter your email address below and we will send you a link to reset your password.</div>
+                                        <div class="text-center small text-muted mb-4">Enter your email address below and we will send you an otp to reset your password.</div>
                                         <!-- Forgot password form-->
                                         <form action="<?= base_url()?>resetpass" method="post">
                                             <!-- Form Group (email address)-->
