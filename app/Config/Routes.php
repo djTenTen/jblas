@@ -7,6 +7,10 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'HomeController::homepage');
 $routes->get('login', 'HomeController::homepage');
+$routes->get('forgot', 'HomeController::forgotpass');
+$routes->post('resetpass', 'HomeController::resetpass');
+$routes->get('setpass/(:any)', 'HomeController::setpass/$1');
+$routes->post('savepass/(:any)', 'HomeController::savepass/$1');
 $routes->post('authenticate', 'AuthController::auth');
 $routes->post('logout', 'AuthController::logout');
 $routes->get('register', 'UserController::register');
@@ -15,6 +19,8 @@ $routes->post('accept/aud/(:any)', 'UserController::acceptaud/$1');
 $routes->post('signup', 'UserController::signup');
 $routes->get('403', 'ErrorController::error403');
 $routes->get('401', 'ErrorController::error401');
+$routes->get('500', 'ErrorController::error500');
+
  
 $routes->group('', ['filter' => 'auth'], function ($auth) {
 

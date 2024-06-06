@@ -9,23 +9,19 @@ use \App\Models\AuthModel;
 class HomeController extends BaseController{
 
     protected $homeModel;
-    protected $userdata;
-    protected $scheme = 'information_schema.SCHEMATA';
-    protected $schemename = 'SCHEMA_NAME';
-    protected $dbname = 'as';
+    protected $crypt;
 
     public function __construct(){
 
         \Config\Services::session();
         $this->homeModel = new HomeModel();
+        $this->crypt  = \Config\Services::encrypter();
 
     }
 
     public function homepage(){
 
-        $db = \Config\Database::connect('default'); 
-        try { $db->connect('default'); } catch (\Throwable $th) { return view("errors/error500"); }
-        $res = $db->table($this->scheme)->select($this->schemename)->where($this->schemename, $this->dbname)->get();
+        $res = $this->homeModel->getdbexist();
         if($res->getNumRows() > 0){
             if(session()->get('authentication')){
                 return redirect()->to(site_url('auditsystem')); 
@@ -35,20 +31,75 @@ class HomeController extends BaseController{
                 return view('index/'.$page, $data);
             }
         }else{
-            return redirect()->to(site_url('error500'));
+            return redirect()->to(site_url('500'));
         }
 
     }
 
-    public function auth(){
+    public function forgotpass(){
+
+        $page = 'Forgot';
+        $data['title'] = 'Forgot Password';
+        return view('index/'.$page, $data);
 
     }
 
-    public function getpost(){
+    public function setpass($email){
 
-        return $this->userdata;
+        $page = 'Setpass';
+        $data['email'] = $email;
+        $data['title'] = 'Set New Password';
+        return view('index/'.$page, $data);
 
     }
+
+    public function resetpass(){
+
+        $validationRules = [
+            'email'     => 'required',
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_email','invalid_email');
+            return redirect()->to(site_url('forgot'));
+        }
+        $email = $this->request->getPost('email');
+        $res = $this->homeModel->resetpass($email);
+        if($res){
+            return redirect()->to(site_url('setpass/'.$email));
+        }else{
+            session()->setFlashdata('emailnotexist','emailnotexist');
+            return redirect()->to(site_url('forgot'));
+        }
+
+    }
+
+    public function savepass($email){
+
+        $validationRules = [
+            'otp'       => 'required',
+            'password'  => 'required',
+        ];
+        if (!$this->validate($validationRules)) {
+            session()->setFlashdata('invalid_otp','invalid_otp');
+            return redirect()->to(site_url('setpass/'.$email));
+        }
+        $req = [
+            'email'     => $email,
+            'otp'       => $this->request->getPost('otp'),
+            'password'  => $this->crypt->encrypt($this->request->getPost('password')),
+        ];
+        $res = $this->homeModel->savepass($req);
+        if($res){
+            session()->setFlashdata('pass_changed','pass_changed');
+            return redirect()->to(site_url());
+        }else{
+            session()->setFlashdata('wrong_otp','wrong_otp');
+            return redirect()->to(site_url('setpass/'.$email));
+        }
+
+    }
+
+
 
 
 }

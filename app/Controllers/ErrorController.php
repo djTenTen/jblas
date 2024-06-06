@@ -17,5 +17,14 @@ class ErrorController extends BaseController{
 
     }
 
+    public function error500(){
+
+        echo view('errors/html/error_500');
+
+    }
+
+
+    
+
 
 }

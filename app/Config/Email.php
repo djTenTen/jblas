@@ -92,7 +92,7 @@ class Email extends BaseConfig
     /**
      * Email Priority. 1 = highest. 5 = lowest. 3 = normal
      */
-    public int $priority = 1;
+    public int $priority = 3;
 
     /**
      * Newline character. (Use “\r\n” to comply with RFC 822)
