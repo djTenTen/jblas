@@ -645,6 +645,8 @@
                 //$(this).closest('tr').find('.cfi').show();
                 $(this).closest('tr').find('.cfi').removeAttr('hidden');
                 $(this).closest('tr').find('.sendto').removeAttr('hidden');
+                $(this).closest('tr').find('.cfi').addClass('animated--fade-in-up');
+                $(this).closest('tr').find('.sendto').addClass('animated--fade-in-up');
                 
             } else {
                 //$(this).closest('tr').find('.cfi').hide();
