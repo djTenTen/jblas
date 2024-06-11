@@ -23,7 +23,16 @@
         <div id="layoutAuthentication_content">
             <main>
                 <div class="container-xl px-4">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center align-items-center">
+
+                        <div class="col-xl-7 col-lg-6 col-md-8 col-sm-11">
+                            <div class="my-5 ">
+                            <img src="<?= base_url()?>assets/img/illustrations/login.svg" alt="..." style="width: 30rem" />
+                                <h1 class="text-white display-6"><b>Welcome to</b></h1>
+                                <h1 class="text-white display-1"><b>APPLAUD SYSTEM</b></h1>
+                            </div>
+                        </div>
+
                         <div class="col-xl-5 col-lg-6 col-md-8 col-sm-11">
                             <div class="card my-5">
                                 <?php if (session()->get('access_denied')) { ?>
@@ -81,7 +90,7 @@
                                     </div>
                                 <?php  }?>
                                 <div class="card-body p-5 text-center">
-                                    <div class="h3 fw-light mb-3">Sign In</div>
+                                    <div class="h3 fw-dark mb-3">Sign In</div>
                                 </div>
                                 <hr class="my-0" />
                                 <div class="card-body p-5 animated--fade-in-up">
@@ -122,7 +131,7 @@
             <footer class="footer-admin mt-auto footer-dark">
                 <div class="container-xl px-4">
                     <div class="row">
-                        <div class="col-md-6 small">Copyright &copy; Applaud 2021</div>
+                        <div class="col-md-6 small">Copyright &copy; Applaud 2021 <span>||</span> Powered by: Build App Minds Software Solutions Inc.</div>
                         <div class="col-md-6 text-md-end small">
                             <a href="#!" type="button"  data-bs-toggle="modal" data-bs-target="#privacy">Privacy Policy</a>
                             &middot;
