@@ -29,7 +29,7 @@ class Database extends Config
         'hostname'     => 'localhost',
         'username'     => 'applaud',
         'password'     => 'y1d8QzG[3Ca2pt}',
-        'database'     => 'as',
+        'database'     => 'as_test',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
