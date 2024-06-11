@@ -27,9 +27,9 @@
 
                         <div class="col-xl-7 col-lg-6 col-md-8 col-sm-11">
                             <div class="my-5 ">
-                            <img src="<?= base_url()?>assets/img/illustrations/login.svg" alt="..." style="width: 30rem" />
-                                <h1 class="text-white display-6"><b>Welcome to</b></h1>
-                                <h1 class="text-white display-1"><b>APPLAUD SYSTEM</b></h1>
+                                <img src="<?= base_url()?>assets/img/illustrations/login.svg" alt="..." style="width: 30rem" />
+                                <h1 class="text-white display-6 animated--fade-in-up"><b>Welcome to</b></h1>
+                                <h1 class="text-white display-1 animated--fade-in-up"><b>APPLAUD SYSTEM</b></h1>
                             </div>
                         </div>
 
