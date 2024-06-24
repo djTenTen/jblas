@@ -8,9 +8,20 @@ use \App\Models\Chapter1Model;
 class Chapter1Controller extends BaseController{
 
 
+    /**
+        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL //
+        THIS FILE IS USED FOR CHAPTER 1 MANAGMENT
+        Properties being used on this file
+        * @property c1model to include the file chapter 1 model
+        * @property crypt to load the encryption file
+    */
     protected $c1model;
     protected $crypt;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         \Config\Services::session();
@@ -19,10 +30,16 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
     /**
-        ----------------------------------------------------------
-        GENERAL FUNCTIONS
-        ----------------------------------------------------------
+        * @method acin() used to set active/inactive the data from chapter 1 files
+        * @param code consist the code of the file name
+        * @param head consist the name of the file
+        * @param c1tID consist the encrypted data of title id from the title file name
+        * @param c1ID consist the encrypted data of chapter 1 id data
+        * @var array-req consist the chapter 1 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function acin($code,$head,$c1tID,$c1ID){
 
@@ -41,10 +58,20 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
     /**
+        ALL FUNCTIONS HERE USES THIS PARAMETERS
+        * @param code consist the code of the file name
+        * @param head consist the name of the file
+        * @param c1tID consist the encrypted data of title id from the title file name
         ----------------------------------------------------------
         AC1 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac1() used to save the data of ac1 file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the ac1 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac1($code,$head,$c1tID){
 
@@ -74,6 +101,14 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
+    /**
+        * @method saveac1eqr() used to save the data of ac1 file
+        * @var array-eqr consist the ac1 eqr file information
+        * @var array-req consist the ac1 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac1eqr($code,$head,$c1tID){
 
         $eqr = [
@@ -99,10 +134,16 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC2 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac2() used to save the data of ac2 file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the ac2 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac2($code,$head,$c1tID){
 
@@ -135,6 +176,13 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
+    /**
+        * @method saveac2aep() used to save the data of ac2 file
+        * @var array-req consist the ac2 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac2aep($code,$head,$c1tID){
 
         $req = [
@@ -155,10 +203,16 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC3 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac3() used to save the data of ac3 file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the ac3 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac3($code,$head,$c1tID){
 
@@ -188,10 +242,16 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC4 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac4ppr() used to save the data of ac4 file
+        * @var array-ppr consist the ac4 file information and converted into json data
+        * @var array-req consist the ac3 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac4ppr($code,$head,$c1tID){
 
@@ -216,7 +276,16 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
+    /**
+        * @method saveac4() used to save the data of ac4 file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the ac4 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac4($code,$head,$c1tID){
+
         $validationRules = [
             'question'   => 'required'
         ];
@@ -242,10 +311,16 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC5 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac5() used to save the data of ac5 file
+        * @var array-rc consist the ac5 file information and converted into json data
+        * @var array-req consist the ac5 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac5($code,$head,$c1tID){
 
@@ -270,10 +345,16 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC6 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac6ra() used to save the data of ac6 file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the ac6 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac6ra($code,$head,$c1tID){
 
@@ -304,6 +385,13 @@ class Chapter1Controller extends BaseController{
 
     }
 
+    /**
+        * @method saveac6s12() used to save the data of ac6 file
+        * @var array-s consist the ac6 file information and converted into json data
+        * @var array-req consist the ac6 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac6s12($code,$head,$c1tID){
 
         $s = [
@@ -328,6 +416,13 @@ class Chapter1Controller extends BaseController{
 
     }
 
+    /**
+        * @method saveac6s3() used to save the data of ac6 file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the ac6 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac6s3($code,$head,$c1tID){
 
         $validationRules = [
@@ -366,10 +461,16 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC7 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac7() used to save the data of ac7 file
+        * @var array-genyn consist the ac7 file information and converted into json data
+        * @var array-req consist the ac6 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac7($code,$head,$c1tID){
 
@@ -414,10 +515,15 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC8 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac8() used to save the data of ac8 file
+        * @var array-req consist the ac8 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac8($code,$head,$c1tID){
 
@@ -436,10 +542,16 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC9 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac9() used to save the data of ac9 file
+        * @var array-ac9 consist the ac9 file information and converted into json data
+        * @var array-req consist the ac9 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac9($code,$head,$c1tID){
 
@@ -498,10 +610,29 @@ class Chapter1Controller extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC10 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac10summ() used to save the data of ac10 file
+        * @param sheet contains sheet name like tangible,bank and cash and other part of AC10
+        * @var array-tgb consist the ac10 tangible file information and converted into json data
+        * @var array-ppe consist the ac10 property file information and converted into json data
+        * @var array-invmt consist the ac10 invesment file information and converted into json data
+        * @var array-invtr consist the ac10 inventory file information and converted into json data
+        * @var array-tr consist the ac10 trade receivables file information and converted into json data
+        * @var array-or consist the ac10 other receivables file information and converted into json data
+        * @var array-bac consist the ac10 bank and cash file information and converted into json data
+        * @var array-tp consist the ac10 trade payables file information and converted into json data
+        * @var array-op consist the ac10 other payables file information and converted into json data
+        * @var array-prov consist the ac10 provisions file information and converted into json data
+        * @var array-rev consist the ac10 revenue file information and converted into json data
+        * @var array-cst consist the ac10 cost file information and converted into json data
+        * @var array-pr consist the ac10 payroll file information and converted into json data
+        * @var array-req consist the ac9 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac10summ($code,$sheet,$head,$c1tID){
 
@@ -757,6 +888,14 @@ class Chapter1Controller extends BaseController{
 
     }
 
+    /**
+        * @method saveac10s1() used to save the data of ac10 file
+        * @param sheet contains sheet name like tangible,bank and cash and other part of AC10
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the ac10 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac10s1($code,$sheet,$head,$c1tID){
 
         $validationRules = [
@@ -785,6 +924,14 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
+    /**
+        * @method saveac10cu() used to save the data of ac10 file
+        * @param sheet contains sheet name like tangible,bank and cash and other part of AC10
+        * @var array-req consist the ac10 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac10cu($code,$sheet,$head,$c1tID){
 
         $req = [
@@ -802,6 +949,15 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
+    /**
+        * @method saveac10s2() used to save the data of ac10 file
+        * @var validationRules set to validate the data before saving to database
+        * @param sheet contains sheet name like tangible,bank and cash and other part of AC10
+        * @var array-req consist the ac10 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac10s2($code,$sheet,$head,$c1tID){
 
         $validationRules = [
@@ -831,10 +987,16 @@ class Chapter1Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC11 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac11() used to save the data of ac11 file
+        * @var array-ac11 consist the ac11 file information and converted into json data
+        * @var array-req consist the ac11 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac11($code,$head,$c1tID){
 

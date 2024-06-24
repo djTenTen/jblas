@@ -7,37 +7,69 @@ use \App\Models\AuditorModel;
 
 class AuditorController extends BaseController{
 
-    
+
+    /**
+        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL //
+        THIS FILE IS USED TO AUDITOR MANAGEMENT
+        Properties being used on this file
+        * @property audmodel to include the file auditor model
+        * @property crypt to load the encryption file
+    */
     protected $audmodel;
     protected $crypt;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         \Config\Services::session();
-        $this->audmodel = new AuditorModel();
-        $this->crypt = \Config\Services::encrypter();
+        $this->audmodel     = new AuditorModel();
+        $this->crypt        = \Config\Services::encrypter();
 
     }
 
+
+    /**
+        * @method editauditor() used to load the data of auditor for editing
+        * @param uID encrypted data of user id
+        * @var duID decrypted data of user id
+        * @return json
+    */
     public function editauditor($uID){
 
         $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
         return $this->audmodel->editauditor($duID);
         
     }
-    
+
+
+    /**
+        * @method viewauditor() used to display the auditor page
+        * @return view
+    */
     public function viewauditor(){
 
         $fID = $this->crypt->decrypt(session()->get('firmID'));
         $uID = $this->crypt->decrypt(session()->get('userID'));
-        $data['title'] = 'Auditor Management';
-        $data['aud'] = $this->audmodel->getauditor($fID,$uID);
+        $data['title']  = 'Auditor Management';
+        $data['aud']    = $this->audmodel->getauditor($fID,$uID);
         echo view('includes/Header', $data);
         echo view('auditor/Auditor', $data);
         echo view('includes/Footer');
     
     }
 
+
+    /**
+        * @method addauditor() used to add or register a auditor
+        * @var validationRules set to validate the data before submitting to the database
+        * @var genpass consist of generated password given to the auditor
+        * @var array-req array data that consist the auditor information
+        * @var res a return response from the auditor model if it succeeded
+        * @return redirect-to-page
+    */
     public function addauditor(){
 
         $validationRules = [
@@ -83,6 +115,16 @@ class AuditorController extends BaseController{
 
     }
 
+
+    /**
+        * @method updateauditor() used to update the information of auditor
+        * @param uID consist the encrypted id of auditor
+        * @var duID consist the decrypted id of auditor
+        * @var validationRules set to validate the data before submitting to the database
+        * @var array-req array data that consist the auditor information
+        * @var res a return response from the auditor model if it succeeded
+        * @return redirect-to-page
+    */
     public function updateauditor($uID){
 
         $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
@@ -119,10 +161,19 @@ class AuditorController extends BaseController{
 
     }
 
+
+    /**
+        * @method acin() used to set inactive and active the information of auditor
+        * @param uID consist the encrypted id of auditor
+        * @var duID consist the decrypted id of auditor
+        * @var array-req array data that consist the auditor information
+        * @var res a return response from the auditor model if it succeeded
+        * @return redirect-to-page
+    */
     public function acin($uID){
 
         $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
-        $res = $this->audmodel->acin($duID);
+        $res  = $this->audmodel->acin($duID);
         if($res){
             session()->setFlashdata('updated','updated');
             return redirect()->to(site_url('auditsystem/auditor'));

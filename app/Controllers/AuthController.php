@@ -10,19 +10,40 @@ use App\Libraries\Logs;
 class AuthController extends BaseController{
 
 
+    /**
+        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL //
+        THIS FILE IS USED FOR AUTHENTICATION
+        Properties being used on this file
+        * @property authModel to include the file authentication model
+        * @property crypt to load the encryption file
+        * @property logs to load the logs files
+    */
     protected $authModel;
     protected $crypt;
     protected $logs;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         \Config\Services::session();
-        $this->authModel = new AuthModel();
-        $this->crypt     = \Config\Services::encrypter();
-        $this->logs = new Logs();
+        $this->authModel    = new AuthModel();
+        $this->crypt        = \Config\Services::encrypter();
+        $this->logs         = new Logs();
 
     }
 
+
+    /**
+        * @method auth() used to authenticate the user on the system
+        * @var validationRules set to validate the data before searching to the database
+        * @var array-req consist login information
+        * @var res a return response from the authentication model if it succeeded
+        * @var user_data contains the user information and setting-up the user information through out the system.
+        * @return redirect-to-page
+    */
     public function auth(){
 
         $validationRules = [
@@ -83,6 +104,11 @@ class AuthController extends BaseController{
 
     }
 
+
+    /**
+        * @method logout() used to log out from the system and destroy all the session used by the user
+        * @return redirect-to-page
+    */
     public function logout(){
 
         session_destroy();

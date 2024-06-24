@@ -13,6 +13,18 @@ use \App\Models\WorkpaperModel;
 class ChapterController extends BaseController{
 
 
+    /**
+        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL //
+        THIS FILE IS USED TO VIEW OF ALL THE CHAPTER FILES
+        Properties being used on this file
+        * @property chapterModel to include the file chapter model
+        * @property c1model to include the file chapter 1 model
+        * @property c2model to include the file chapter 2 model
+        * @property c3model to include the file chapter 3 model
+        * @property cvmodel to include the file chapter values model
+        * @property wpmodel to include the file work paper model
+        * @property crypt to load the encryption file
+    */
     protected $chapterModel;
     protected $c1model;
     protected $c2model;
@@ -21,6 +33,10 @@ class ChapterController extends BaseController{
     protected $wpmodel;
     protected $crypt;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         \Config\Services::session();
@@ -36,8 +52,11 @@ class ChapterController extends BaseController{
 
     /**
         ----------------------------------------------------------
-        Chapter 1 area
+        CHAPTER 1 AREA
         ----------------------------------------------------------
+        * @method viewchapter1() used to view the chapter 1 titles
+        * @var array-data consist the data from database to display on the page
+        * @return view
     */
     public function viewchapter1(){
 
@@ -49,6 +68,17 @@ class ChapterController extends BaseController{
     
     }
 
+    /**
+        * @method managechapter1() used to view the chapter 1 files
+        * @param code consists of file code
+        * @param head consists of file name
+        * @param c1tID encrypted of title id
+        * @var dc1tID decrypted id of @param c1tID
+        * @var rdata contains raw json data from database
+        * @param array-data consist the data from database to display on the page
+          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return view
+    */
     public function managechapter1($code,$head,$c1tID){
 
         $data['title']      = $code. ' - Chapter 1 Management';
@@ -215,10 +245,14 @@ class ChapterController extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
-        Chapter 2 area
+        CHAPTER 2 AREA
         ----------------------------------------------------------
+        * @method viewchapter2() used to view the chapter 2 titles
+        * @var array-data consist the data from database to display on the page
+        * @return view
     */
     public function viewchapter2(){
 
@@ -230,6 +264,16 @@ class ChapterController extends BaseController{
     
     }
 
+    /**
+        * @method managechapter2() used to view the chapter 2 files
+        * @param code consists of file code
+        * @param head consists of file name
+        * @param c2tID encrypted of title id
+        * @var dc2tID decrypted id of @param c2tID
+        * @param array-data consist the data from database to display on the page
+          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return view
+    */
     public function managechapter2($code,$head,$c2tID){
 
         $data['title']  = $code. ' - Chapter 2 Management';
@@ -425,10 +469,14 @@ class ChapterController extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
-        Chapter 3 area
+        CHAPTER 3 AREA
         ----------------------------------------------------------
+        * @method viewchapter3() used to view the chapter 3 titles
+        * @var array-data consist the data from database to display on the page
+        * @return view
     */
     public function viewchapter3(){
 
@@ -440,6 +488,17 @@ class ChapterController extends BaseController{
     
     }
 
+    /**
+        * @method managechapter3() used to view the chapter 3 files
+        * @param code consists of file code
+        * @param head consists of file name
+        * @param c3tID encrypted of title id
+        * @var dc3tID decrypted id of @param c3tID
+        * @var rdata contains raw json data from database
+        * @param array-data consist the data from database to display on the page
+          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return view
+    */
     public function managechapter3($code,$head,$c3tID){
 
         $data['title']  = $code. ' - Chapter 3 Management';
@@ -613,10 +672,14 @@ class ChapterController extends BaseController{
 
     }
 
-     /**
+
+    /**
         ----------------------------------------------------------
-        Chapter 4 area
+        CHAPTER 4 AREA
         ----------------------------------------------------------
+        * @method viewchapter3() used to view the chapter 3 titles
+        * @var array-data consist the data from database to display on the page
+        * @return view
     */
     public function viewchapter4(){
 
@@ -711,10 +774,19 @@ class ChapterController extends BaseController{
 
     }
 
+
     /** 
         ----------------------------------------------------------
-        PDF Chapter 1 area
+        PDF VIEW CHAPTER 1
         ----------------------------------------------------------
+        * @method viewc1pdf() used to generate a pdf file of Chapter 1
+        * @param code consists of file code
+        * @param c1tID encrypted of title id
+        * @var dc1tID decrypted id of @param c1tID
+        * @var rdata contains raw json data from database
+        * @param array-data consist the data from database to display on the page
+          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return pdf-view
     */
     public function viewc1pdf($code,$c1tID){
 
@@ -857,10 +929,18 @@ class ChapterController extends BaseController{
 
     }
 
+
     /** 
         ----------------------------------------------------------
-        PDF Chapter 2 area
+        PDF VIEW CHAPTER 2
         ----------------------------------------------------------
+        * @method viewc2pdf() used to generate a pdf file of Chapter 2
+        * @param code consists of file code
+        * @param c2tID encrypted of title id
+        * @var dc2tID decrypted id of @param c2tID
+        * @param array-data consist the data from database to display on the page
+          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return pdf-view
     */
     public function viewc2pdf($code,$c2tID){
 
@@ -996,10 +1076,19 @@ class ChapterController extends BaseController{
 
     }
 
+
     /** 
         ----------------------------------------------------------
-        PDF Chapter 3 area
+        PDF VIEW CHAPTER 3
         ----------------------------------------------------------
+        * @method viewc3pdf() used to generate a pdf file of Chapter 3
+        * @param code consists of file code
+        * @param c3tID encrypted of title id
+        * @var dc3tID decrypted id of @param c3tID
+        * @var rdata contains raw json data from database
+        * @param array-data consist the data from database to display on the page
+          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return pdf-view
     */
     public function viewc3pdf($code,$c3tID){
 
@@ -1152,10 +1241,21 @@ class ChapterController extends BaseController{
 
     }
 
-    /**
+
+    /** 
         ----------------------------------------------------------
-        Chapter 1 Values
+        CHAPTER 1 VALUES
         ----------------------------------------------------------
+        * @method c1setvalues() used view the default values file of Chapter 1
+        * @param code consists of file code
+        * @param c1tID encrypted of title id
+        * @param cID encrypted of client id
+        * @param name client name
+        * @var dc1tID decrypted id of @param c1tID
+        * @var rdata contains raw json data from database
+        * @param array-data consist the data from database to display on the page
+          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return pdf-view
     */
     public function c1setvalues($code,$c1tID,$cID,$name){
 
@@ -1331,10 +1431,20 @@ class ChapterController extends BaseController{
 
     }
 
-        /**
+
+    /** 
         ----------------------------------------------------------
-        Chapter 2 Values
+        CHAPTER 2 VALUES
         ----------------------------------------------------------
+        * @method c2setvalues() used view the default values file of Chapter 2
+        * @param code consists of file code
+        * @param c2tID encrypted of title id
+        * @param cID encrypted of client id
+        * @param name client name
+        * @var dc2tID decrypted id of @param c2tID
+        * @param array-data consist the data from database to display on the page
+          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return pdf-view
     */
     public function c2setvalues($code,$c2tID,$cID,$name){
 
@@ -1533,10 +1643,21 @@ class ChapterController extends BaseController{
 
     }
 
-    /**
+
+    /** 
         ----------------------------------------------------------
-        Chapter 3 Values
+        CHAPTER 3 VALUES
         ----------------------------------------------------------
+        * @method c3setvalues() used view the default values file of Chapter 3
+        * @param code consists of file code
+        * @param c3tID encrypted of title id
+        * @param cID encrypted of client id
+        * @param name client name
+        * @var dc3tID decrypted id of @param c3tID
+        * @var rdata contains raw json data from database
+        * @param array-data consist the data from database to display on the page
+          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return pdf-view
     */
     public function c3setvalues($code,$c3tID,$cID,$name){
 
@@ -1778,10 +1899,24 @@ class ChapterController extends BaseController{
 
     }
 
-    /**
+
+    /** 
         ----------------------------------------------------------
-        Chapter 1 Values
+        WORK PAPER CHAPTER 1 VALUES
         ----------------------------------------------------------
+        * @method c1setworkpaper() used view the workpaper values file of Chapter 1
+        * @param code consists of file code
+        * @param c1tID encrypted of title id
+        * @param cID encrypted of client id
+        * @param wpID encrypted of work paper id
+        * @param name client name
+        * @var dc1tID decrypted id of @param c1tID
+        * @var dcID decrypted id of @param cID
+        * @var dwpID decrypted id of @param wpID
+        * @var rdata contains raw json data from database
+        * @param array-data consist the data from database to display on the page
+          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return view
     */
     public function c1setworkpaper($code,$c1tID,$cID,$wpID,$name){
 
@@ -1959,10 +2094,23 @@ class ChapterController extends BaseController{
 
     }
 
-        /**
+
+    /** 
         ----------------------------------------------------------
-        Chapter 2 Values
+        WORK PAPER CHAPTER 2 VALUES
         ----------------------------------------------------------
+        * @method c2setworkpaper() used view the workpaper values file of Chapter 2
+        * @param code consists of file code
+        * @param c2tID encrypted of title id
+        * @param cID encrypted of client id
+        * @param wpID encrypted of work paper id
+        * @param name client name
+        * @var dc2tID decrypted id of @param c2tID
+        * @var dcID decrypted id of @param cID
+        * @var dwpID decrypted id of @param wpID
+        * @param array-data consist the data from database to display on the page
+          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return view
     */
     public function c2setworkpaper($code,$c2tID,$cID,$wpID,$name){
 
@@ -2163,10 +2311,24 @@ class ChapterController extends BaseController{
 
     }
 
-    /**
+    
+    /** 
         ----------------------------------------------------------
-        Chapter 3 Values
+        WORK PAPER CHAPTER 3 VALUES
         ----------------------------------------------------------
+        * @method c3setworkpaper() used view the workpaper values file of Chapter 3
+        * @param code consists of file code
+        * @param c3tID encrypted of title id
+        * @param cID encrypted of client id
+        * @param wpID encrypted of work paper id
+        * @param name client name
+        * @var dc3tID decrypted id of @param c3tID
+        * @var dcID decrypted id of @param cID
+        * @var dwpID decrypted id of @param wpID
+        * @var rdata contains raw json data from database
+        * @param array-data consist the data from database to display on the page
+          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return view
     */
     public function c3setworkpaper($code,$c3tID,$cID,$wpID,$name){
 

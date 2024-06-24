@@ -8,9 +8,20 @@ use \App\Models\ClientModel;
 class ClientController extends BaseController{
 
 
+    /**
+        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL // 
+        THIS FILE IS USED FOR CLIENT MANAGMENT
+        Properties being used on this file
+        * @property cmodel to include the file client model
+        * @property crypt to load the encryption file
+    */
     protected $cmodel;
     protected $crypt;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         \Config\Services::session();
@@ -19,6 +30,13 @@ class ClientController extends BaseController{
 
     }
     
+
+    /**
+        * @method editclient() used to load the data of client for editing
+        * @param cID encrypted data of client id
+        * @var dcID decrypted data of client id
+        * @return json
+    */
     public function editclient($cID){
 
         $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
@@ -26,6 +44,13 @@ class ClientController extends BaseController{
 
     }
 
+
+    /**
+        * @method getdefaultfiles() used to load the data of default files assigned to the client
+        * @param cID encrypted data of client id
+        * @var dcID decrypted data of client id
+        * @return json
+    */
     public function getdefaultfiles($cID){
 
         $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
@@ -33,6 +58,14 @@ class ClientController extends BaseController{
 
     }
 
+
+    /**
+        * @method viewfiles() view the HAT files to be assign to client
+        * @param cID encrypted data of client id
+        * @param name name of the client
+        * @var array-data consist of data and display it on the page
+        * @return view
+    */
     public function viewfiles($cID,$name){
 
         $data['title']  = 'HAT Audit Files';
@@ -48,6 +81,14 @@ class ClientController extends BaseController{
 
     }
 
+
+    /**
+        * @method getfiles() get the files assigned to the client
+        * @param cID encrypted data of client id
+        * @param name name of the client
+        * @var array-data consist of data and display it on the page
+        * @return view
+    */
     public function getfiles($cID,$name){
 
         $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
@@ -64,6 +105,13 @@ class ClientController extends BaseController{
 
     }
 
+
+    /**
+        * @method viewclient() view the client information
+        * @var fID decrypted data of firm id
+        * @var array-data consist of data and display it on the page
+        * @return view
+    */
     public function viewclient(){
 
         $fID            = $this->crypt->decrypt(session()->get('firmID'));
@@ -75,6 +123,13 @@ class ClientController extends BaseController{
     
     }
 
+
+    /**
+        * @method viewclientset() view the client default values
+        * @var fID decrypted data of firm id
+        * @var array-data consist of data and display it on the page
+        * @return view
+    */
     public function viewclientset(){
 
         $fID            = $this->crypt->decrypt(session()->get('firmID'));
@@ -86,6 +141,14 @@ class ClientController extends BaseController{
 
     }
 
+
+    /**
+        * @method addclient() add the client information to the database
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the client information
+        * @var res a return response from the client model
+        * @return redirect-to-page
+    */
     public function addclient(){
 
         $validationRules = [
@@ -121,6 +184,16 @@ class ClientController extends BaseController{
 
     }
 
+
+    /**
+        * @method updateclient() update the client information to the database
+        * @param cID encrypted data of client id
+        * @var dcID decrypted data of client id
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the client information
+        * @var res a return response from the client model
+        * @return redirect-to-page
+    */
     public function updateclient($cID){
 
         $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
@@ -155,6 +228,15 @@ class ClientController extends BaseController{
 
     }
 
+
+    /**
+        * @method setfiles() set default files to the client
+        * @param cID encrypted data of client id
+        * @var dcID decrypted data of client id
+        * @var array-req consist the client information
+        * @var res a return response from the client model
+        * @return redirect-to-page
+    */
     public function setfiles($cID){
 
         $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
@@ -177,6 +259,14 @@ class ClientController extends BaseController{
         
     }
 
+
+    /**
+        * @method acin() used to set active/inactive the client
+        * @param cID encrypted data of client id
+        * @var dcID decrypted data of client id
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function acin($cID){
 
         $dcID  = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));

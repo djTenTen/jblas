@@ -8,9 +8,20 @@ use \App\Models\Chapter3Model;
 class Chapter3Controller extends BaseController{
 
 
+    /**
+        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL //
+        THIS FILE IS USED FOR CHAPTER 3 MANAGMENT
+        Properties being used on this file
+        * @property c3model to include the file chapter 1 model
+        * @property crypt to load the encryption file
+    */
     protected $c3model;
     protected $crypt;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         \Config\Services::session();
@@ -19,10 +30,16 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
     /**
-        ----------------------------------------------------------
-        GENERAL FUNCTIONS
-        ----------------------------------------------------------
+        * @method acin() used to set active/inactive the data from chapter 3 files
+        * @param code consist the code of the file name
+        * @param head consist the name of the file
+        * @param c3tID consist the encrypted data of title id from the title file name
+        * @param c3ID consist the encrypted data of chapter 2 id data
+        * @var array-req consist the chapter 3 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function acin($code,$head,$c3tID,$c3ID){
 
@@ -41,10 +58,20 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
     /**
+        ALL FUNCTIONS HERE USES THIS PARAMETERS
+        * @param code consist the code of the file name
+        * @param head consist the name of the file
+        * @param c3tID consist the encrypted data of title id from the title file name
         ----------------------------------------------------------
         AA1 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa1plaf() used to save the data of aa1 file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the aa1 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa1plaf($code,$head,$c3tID){
 
@@ -74,6 +101,13 @@ class Chapter3Controller extends BaseController{
 
     }
 
+    /**
+        * @method saveaa1s3() used to save the data of aa1 file
+        * @var array-sec consist the aa1 file information and converted into json data
+        * @var array-req consist the aa1 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa1s3($code,$head,$c3tID){
 
         $sec = [
@@ -102,10 +136,16 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA2 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa2() used to save the data of aa2 file
+        * @var array-aa2 consist the aa2 file information and converted into json data
+        * @var array-req consist the aa2 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa2($code,$head,$c3tID){
 
@@ -135,10 +175,16 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA3a FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa3a() used to save the data of aa3a file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the aa3a file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa3a($code,$head,$c3tID){
 
@@ -167,6 +213,13 @@ class Chapter3Controller extends BaseController{
 
     }
 
+    /**
+        * @method saveaa3afaf() used to save the data of aa3a file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the aa3a file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa3afaf($code,$head,$c3tID){
 
         $validationRules = [
@@ -195,6 +248,13 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
+    /**
+        * @method saveaa3afaf() used to save the data of aa3a file
+        * @var array-req consist the aa3a file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa3air($code,$head,$c3tID){
 
         $req = [
@@ -214,10 +274,16 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA3b FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa3b() used to save the data of aa3b file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the aa3b file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa3b($code,$head,$c3tID){
 
@@ -246,6 +312,14 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
+    /**
+        * @method saveaa3bp4() used to save the data of aa3b file
+        * @var array-p4 consist the aa3b file information and converted into json data
+        * @var array-req consist the aa3b file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa3bp4($code,$head,$c3tID){
 
         $p4 = [
@@ -269,10 +343,16 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA5b FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa5b() used to save the data of aa5b file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the aa5b file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa5b($code,$head,$c3tID){
 
@@ -305,10 +385,16 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA7 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa7isa() used to save the data of aa7 file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the aa7 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa7isa($code,$head,$c3tID){
 
@@ -340,6 +426,13 @@ class Chapter3Controller extends BaseController{
 
     }
     
+
+    /**
+        * @method saveaa7aepapp() used to save the data of aa7 file
+        * @var array-req consist the aa7 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa7aepapp($code,$head,$c3tID){
         
         $req = [
@@ -359,6 +452,13 @@ class Chapter3Controller extends BaseController{
 
     }
 
+    /**
+        * @method saveaa7aep() used to save the data of aa7 file
+        * @var array-aep consist the aa7 file information and converted into json data
+        * @var array-req consist the aa7 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa7aep($code,$head,$c3tID){
 
         $aep = [
@@ -388,10 +488,16 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA10 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa10() used to save the data of aa10 file
+        * @var array-aa10 consist the aa10 file information and converted into json data
+        * @var array-req consist the aa10 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa10($code,$head,$c3tID){
 
@@ -417,10 +523,17 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA11 FUNCTIONS
         ----------------------------------------------------------
+        * @method viewa11() used to view the of aa11 file
+        * @param sheet consist the sheet name of the file if adjusted or unadjusted
+        * @var dc3tID decrypted id of @param c3tID
+        * @var array-data consist of data needed to display on the page
+        * @var rdata consist of json formated data from database
+        * @return view
     */
     public function viewa11($sheet,$code,$head,$c3tID){
 
@@ -457,6 +570,12 @@ class Chapter3Controller extends BaseController{
 
     }
 
+    /**
+        * @method saveaa11un() used to save the data of aa11 file
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa11un($code,$head,$c3tID){
 
         $req = [
@@ -482,6 +601,12 @@ class Chapter3Controller extends BaseController{
 
     }
 
+    /**
+        * @method saveaa11ad() used to save the data of aa11 file
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa11ad($code,$head,$c3tID){
 
         $req = [
@@ -506,6 +631,14 @@ class Chapter3Controller extends BaseController{
 
     }
     
+
+    /**
+        * @method saveaa11ad() used to save the data of aa11 file
+        * @var array-aa11 consist the aa11 file information and converted into json data
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa11ue($code,$head,$c3tID){
 
         $aa11 = [
@@ -530,6 +663,14 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
+    /**
+        * @method saveaa11con() used to save the data of aa11 file
+        * @var array-aa11con consist the aa11 file information and converted into json data
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa11con($code,$head,$c3tID){
 
         $aa11con = [
@@ -607,6 +748,14 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
+    /**
+        * @method saveaa11uead() used to save the data of aa11 file
+        * @var array-aa11 consist the aa11 file information and converted into json data
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa11uead($code,$head,$c3tID){
 
         $aa11 = [
@@ -635,6 +784,10 @@ class Chapter3Controller extends BaseController{
         ----------------------------------------------------------
         AB1 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveab1() used to save the data of ab1 file
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveab1($code,$head,$c3tID){
 
@@ -657,10 +810,15 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AB3 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveab3() used to save the data of ab3 file
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveab3($code,$head,$c3tID){
 
@@ -697,10 +855,17 @@ class Chapter3Controller extends BaseController{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AB4 FUNCTIONS
         ----------------------------------------------------------
+        * @method viewab4() used to view the ab4 file
+        * @param sheet consist the section name of the file
+        * @var dc3tID decrypted id of @param c3tID
+        * @var array-data consist of data needed to display on the page
+        * @var rdata consist of json formated data from database
+        * @return view
     */
     public function viewab4($sheet,$code,$head,$c3tID){
 
@@ -737,6 +902,13 @@ class Chapter3Controller extends BaseController{
 
     }
 
+    /**
+        * @method saveab4() used to save data of ab4 file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveab4($code,$head,$c3tID){
 
         $validationRules = [
@@ -767,6 +939,13 @@ class Chapter3Controller extends BaseController{
 
     }
 
+    /**
+        * @method saveab4checklist() used to save data of ab4 file
+        * @var array-chlst consist the ab4 file information and converted into json data
+        * @var array-req consist the ab4 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveab4checklist($code,$head,$c3tID){
 
         $chlst = [
@@ -808,6 +987,11 @@ class Chapter3Controller extends BaseController{
         ----------------------------------------------------------
         AB4a FUNCTIONS
         ----------------------------------------------------------
+        * @method saveab4a() used to save data of ab4a file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the ab4a file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveab4a($code,$head,$c3tID){
 

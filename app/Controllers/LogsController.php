@@ -9,8 +9,19 @@ use App\Libraries\Logs;
 
 class LogsController extends BaseController{
 
+
+    /**
+        // THIS CONTROLLER ONLY ACCESSED ON THE MODEL// 
+        THIS FILE IS USED FOR FIRM MANAGEMENT
+        Properties being used on this file
+        * @property crypt to load the encryption file
+    */
     protected $crypt;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         \Config\Services::session();
@@ -18,6 +29,14 @@ class LogsController extends BaseController{
 
     }
 
+
+    /**
+        * @method viewlogs() view the system logs
+        * @var fID decrypted data of firm id
+        * @var logFile path of the log file
+        * @var log contains log information
+        * @return @var logs
+    */
     public function viewlogs(){
 
         $fID = $this->crypt->decrypt(session()->get('firmID'));

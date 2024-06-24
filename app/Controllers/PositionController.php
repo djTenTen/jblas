@@ -7,9 +7,21 @@ use \App\Models\PositionModel;
 
 class PositionController extends BaseController{
 
+
+    /**
+        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL // 
+        THIS FILE IS USED FOR POSITION MANAGEMENT
+        Properties being used on this file
+        * @property pmodel to include the file position model
+        * @property crypt to load the encryption file
+    */
     protected $pmodel;
     protected $crypt;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         \Config\Services::session();
@@ -18,6 +30,13 @@ class PositionController extends BaseController{
 
     }
 
+
+    /**
+        * @method editposition() used to load the data of position for editing
+        * @param pID encrypted data of position id
+        * @var dpID decrypted data of position id
+        * @return json
+    */
     public function editposition($pID){
 
         $dpID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$pID));
@@ -25,6 +44,12 @@ class PositionController extends BaseController{
 
     }
 
+
+    /**
+        * @method viewposition() view the position page
+        * @var array-data consist of data and display it on the page
+        * @return view
+    */
     public function viewposition(){
 
         $data['title'] = 'Position Management';
@@ -35,6 +60,15 @@ class PositionController extends BaseController{
 
     }
 
+
+    /**
+        * @method addposition() add the position information to the database
+        * @var validationRules set to validate the data before saving to database
+        * @var array-dpt consist of access information of a position
+        * @var array-req consist of position information
+        * @var res a return response from the position model
+        * @return redirect-to-page
+    */
     public function addposition(){
 
         $validationRules = [
@@ -80,6 +114,17 @@ class PositionController extends BaseController{
 
     }
 
+
+    /**
+        * @method updateposition() update the position information to the database
+        * @param pID encrypted data of position id
+        * @var dpID decrypted data of position id
+        * @var validationRules set to validate the data before saving to database
+        * @var array-dpt consist of access information of a position
+        * @var array-req consist of position information
+        * @var res a return response from the position model
+        * @return redirect-to-page
+    */
     public function updateposition($pID){
 
         $dpID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$pID));
@@ -126,6 +171,14 @@ class PositionController extends BaseController{
 
     }
 
+
+    /**
+        * @method acin() used to set inactive and active the position
+        * @param pID encrypted data of position id
+        * @var dpID decrypted data of position id
+        * @var res a return response from the position model
+        * @return redirect-to-page
+    */
     public function acin($pID){
 
         $dpID   = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$pID));

@@ -9,11 +9,23 @@ use \App\Models\ClientModel;
 
 class WorkpaperController extends BaseController{
     
-    use ResponseTrait;
+
+    /**
+        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL // 
+        THIS FILE IS USED FOR WORK PAPER MANAGEMENT
+        Properties being used on this file
+        * @property wpmodel to include the file work paper model
+        * @property cmodel to include the file client model
+        * @property crypt to load the encryption file
+    */
     protected $wpmodel;
     protected $cmodel;
     protected $crypt;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         \Config\Services::session();
@@ -23,6 +35,13 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method initiate() work paper initiation page
+        * @var array-data consist of data and display it on the page
+        * @var fID consist of decrypted firm id
+        * @return view
+    */
     public function initiate(){
 
         $data['title']  = "Work Paper";
@@ -39,6 +58,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method prepare() work paper prepare page
+        * @var array-data consist of data and display it on the page
+        * @var fID consist of decrypted firm id
+        * @var uID consist of decrypted user id
+        * @return view
+    */
     public function prepare(){
 
         $data['title']  = "Prepare Work Paper";
@@ -52,6 +79,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method review() work paper review page
+        * @var array-data consist of data and display it on the page
+        * @var fID consist of decrypted firm id
+        * @var uID consist of decrypted user id
+        * @return view
+    */
     public function review(){
 
         $data['title']  = "Review Work Paper";
@@ -65,6 +100,20 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method getfiles() get the hat files assigned
+        * @param cID encrypted client id
+        * @param wpID encrypted work paper id
+        * @param name name of the client
+        * @var dcID decrypted client id
+        * @var dwpID decrypted work paper id
+        * @var type user type
+        * @var array-data consist of data and display it on the page
+        * @var fID consist of decrypted firm id
+        * @var uID consist of decrypted user id
+        * @return view
+    */
     public function getfiles($cID,$wpID,$name){
 
         $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
@@ -102,6 +151,16 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveworkpaper() save the workpaper
+        * @var fID decrypted firm id
+        * @var uID decrypted user id id
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist of work paper information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function saveworkpaper(){
 
         $fID                = $this->crypt->decrypt(session()->get('firmID'));
@@ -144,6 +203,13 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method downloadexcel() download the trial balance format
+        * @param file the file name
+        * @var filePath file path
+        * @return download
+    */
     public function downloadexcel($file){
 
         $filePath = ROOTPATH .'public/uploads/xls/' . $file;
@@ -154,6 +220,21 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method importtb() import the trial balance
+        * @param cID encrypted client id
+        * @param wpID encrypted work paper id
+        * @param name client name
+        * @var dcID decrypted client id
+        * @var dwpID decrypted work paper id
+        * @var fID decrypted firm id
+        * @var uID decrypted user id
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function importtb($cID,$wpID,$name){
 
         $dcID               = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
@@ -190,6 +271,18 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method uploadcfsfiles() upload supporting files 
+        * @param cID encrypted client id
+        * @param wpID encrypted work paper id
+        * @param name client name
+        * @var dcID decrypted client id
+        * @var dwpID decrypted work paper id
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function uploadcfsfiles($cID,$wpID,$name){
 
         $dcID    = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
@@ -210,6 +303,15 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method updateindex() selecting work paper to be used 
+        * @param cfiID encrypted client file index id
+        * @var dcfiID decrypted client file index id
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return json-response
+    */
     public function updateindex($cfiID){
 
         $dcfiID     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID));
@@ -223,6 +325,19 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method updatetb() updating trial balance 
+        * @param code file name code
+        * @param cfiID encrypted client file index id
+        * @param cID encrypted client id
+        * @param wpID encrypted work paper id
+        * @param index encrypted index work paper id
+        * @param desc file descryption
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function updatetb($code,$cfiID,$cID,$wpID,$index,$desc){
 
         $req = [
@@ -241,19 +356,28 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method uploadtbfiles() uploading trial balance 
+        * @param code file name code
+        * @param cfiID encrypted client file index id
+        * @param cID encrypted client id
+        * @param wpID encrypted work paper id
+        * @param index encrypted index work paper id
+        * @param desc file descryption
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function uploadtbfiles($code,$cfiID,$cID,$wpID,$index,$desc){
 
-        $dcfiID     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID));
-        $dcID       = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $dwpID      = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
-        $dindex     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index));
         $req = [
             'pdf'       => $this->request->getFile('pdffile'),
             'remarks'   => $this->request->getPost('remarks'),
-            'cfiID'     => $dcfiID,
-            'cID'       => $dcID,
-            'wpID'      => $dwpID,
-            'index'     => $dindex,
+            'cfiID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID)),
+            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'index'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index)),
         ];
         $res = $this->wpmodel->uploadtbfiles($req);
         if($res == "uploaded"){
@@ -266,6 +390,18 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method sendtoreview() sending the work paper for review
+        * @param c chapter files
+        * @param ctID encrypted chapter title id
+        * @param cID encypted client id
+        * @param wpID encrypted work paper id
+        * @param index encrypted index work paper id
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function sendtoreview($c,$ctID,$cID,$wpID,$name){
 
         $req = [
@@ -286,6 +422,18 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method sendtoauditor() sending the work paper for prepare
+        * @param c chapter files
+        * @param ctID encrypted chapter title id
+        * @param cID encypted client id
+        * @param wpID encrypted work paper id
+        * @param index encrypted index work paper id
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function sendtoauditor($c,$ctID,$cID,$wpID,$name){
 
         $req = [
@@ -306,6 +454,18 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method sendtomanager() sending the work paper for checking and approval
+        * @param c chapter files
+        * @param ctID encrypted chapter title id
+        * @param cID encypted client id
+        * @param wpID encrypted work paper id
+        * @param index encrypted index work paper id
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function sendtomanager($c,$ctID,$cID,$wpID,$name){
 
         $req = [
@@ -326,6 +486,18 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method sendtoapprove() sending the work paper for approval
+        * @param c chapter files
+        * @param ctID encrypted chapter title id
+        * @param cID encypted client id
+        * @param wpID encrypted work paper id
+        * @param index encrypted index work paper id
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function sendtoapprove($c,$ctID,$cID,$wpID,$name){
 
         $req = [
@@ -346,6 +518,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method sendtoreviewer() sending the whole work paper for review
+        * @param wpID encypted work paper id
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function sendtoreviewer($wpID){
 
         $req = [
@@ -363,6 +543,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method sendtopreparer() sending the whole work paper for prepare
+        * @param wpID encypted work paper id
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function sendtopreparer($wpID){
 
         $req = [
@@ -380,6 +568,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method sendtopreparer() sending the whole work paper for checking and approval
+        * @param wpID encypted work paper id
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function sendtoapprover($wpID){
 
         $req = [
@@ -397,6 +593,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method sendbacktoreviewer() sending the whole work paper for sending back to reviewer
+        * @param wpID encypted work paper id
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function sendbacktoreviewer($wpID){
 
         $req = [
@@ -414,6 +618,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method approvewp() approve the whole work paper
+        * @param wpID encypted work paper id
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
     public function approvewp($wpID){
         
         $req = [
@@ -431,10 +643,22 @@ class WorkpaperController extends BaseController{
 
     }
 
+
     /**
+        ALL FUNCTIONS UNDER CHAPTER 1 USES THIS PARAMETERS
+        * @param code consist the code of the file name
+        * @param c1tID consist the encrypted data of title id from the title file name
+        * @param cID consist the encrypted data of client id
+        * @param wpID consist the encrypted data of work paper id
+        * @param name consist the name of the client 
         ----------------------------------------------------------
+        CHAPTER 1
         AC1 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac1() used to save the data of ac1 file
+        * @var array-req consist the ac1 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac1($code,$c1tID,$cID,$wpID,$name){
 
@@ -458,6 +682,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveac1eqr() used to save the data of ac1 file
+        * @var array-eqr consist the ac1 eqr file information
+        * @var array-req consist the ac1 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac1eqr($code,$c1tID,$cID,$wpID,$name){
 
         $eqr = [
@@ -485,10 +717,16 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
+    
     /**
         ----------------------------------------------------------
         AC2 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac2() used to save the data of ac2 file
+        * @var array-req consist the ac2 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac2($code,$c1tID,$cID,$wpID,$name){
 
@@ -515,6 +753,13 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveac2aep() used to save the data of ac2 file
+        * @var array-req consist the ac2 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac2aep($code,$c1tID,$cID,$wpID,$name){
 
         $req = [
@@ -537,10 +782,15 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC3 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac3() used to save the data of ac3 file
+        * @var array-req consist the ac3 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac3($code,$c1tID,$cID,$wpID,$name){
 
@@ -564,10 +814,16 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC4 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac4ppr() used to save the data of ac4 file
+        * @var array-ppr consist the ac4 file information and converted into json data
+        * @var array-req consist the ac3 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac4ppr($code,$c1tID,$cID,$wpID,$name){
 
@@ -594,6 +850,13 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveac4() used to save the data of ac4 file
+        * @var array-req consist the ac4 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac4($code,$c1tID,$cID,$wpID,$name){
 
         $req = [
@@ -615,10 +878,16 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC5 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac5() used to save the data of ac5 file
+        * @var array-rc consist the ac5 file information and converted into json data
+        * @var array-req consist the ac5 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac5($code,$c1tID,$cID,$wpID,$name){
 
@@ -645,10 +914,15 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC6 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac6ra() used to save the data of ac6 file
+        * @var array-req consist the ac6 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac6ra($code,$c1tID,$cID,$wpID,$name){
 
@@ -673,6 +947,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveac6s12() used to save the data of ac6 file
+        * @var array-s consist the ac6 file information and converted into json data
+        * @var array-req consist the ac6 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac6s12($code,$c1tID,$cID,$wpID,$name){
 
         $s = [
@@ -699,6 +981,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveac6s3() used to save the data of ac6 file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the ac6 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac6s3($code,$c1tID,$cID,$wpID,$name){
 
         $validationRules = [
@@ -742,10 +1032,16 @@ class WorkpaperController extends BaseController{
 
     }
     
+    
     /**
         ----------------------------------------------------------
         AC7 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac7() used to save the data of ac7 file
+        * @var array-genyn consist the ac7 file information and converted into json data
+        * @var array-req consist the ac6 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac7($code,$c1tID,$cID,$wpID,$name){
 
@@ -794,10 +1090,15 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC8 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac8() used to save the data of ac8 file
+        * @var array-req consist the ac8 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac8($code,$c1tID,$cID,$wpID,$name){
 
@@ -821,10 +1122,16 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC9 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac9() used to save the data of ac9 file
+        * @var array-ac9 consist the ac9 file information and converted into json data
+        * @var array-req consist the ac9 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac9($code,$c1tID,$cID,$wpID,$name){
 
@@ -886,10 +1193,29 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC10 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac10summ() used to save the data of ac10 file
+        * @param sheet contains sheet name like tangible,bank and cash and other part of AC10
+        * @var array-tgb consist the ac10 tangible file information and converted into json data
+        * @var array-ppe consist the ac10 property file information and converted into json data
+        * @var array-invmt consist the ac10 invesment file information and converted into json data
+        * @var array-invtr consist the ac10 inventory file information and converted into json data
+        * @var array-tr consist the ac10 trade receivables file information and converted into json data
+        * @var array-or consist the ac10 other receivables file information and converted into json data
+        * @var array-bac consist the ac10 bank and cash file information and converted into json data
+        * @var array-tp consist the ac10 trade payables file information and converted into json data
+        * @var array-op consist the ac10 other payables file information and converted into json data
+        * @var array-prov consist the ac10 provisions file information and converted into json data
+        * @var array-rev consist the ac10 revenue file information and converted into json data
+        * @var array-cst consist the ac10 cost file information and converted into json data
+        * @var array-pr consist the ac10 payroll file information and converted into json data
+        * @var array-req consist the ac9 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac10summ($code,$sheet,$c1tID,$cID,$wpID,$name){
 
@@ -1150,6 +1476,15 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveac10s1() used to save the data of ac10 file
+        * @param sheet contains sheet name like tangible,bank and cash and other part of AC10
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the ac10 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac10s1($code,$sheet,$c1tID,$cID,$wpID,$name){
 
         $validationRules = [
@@ -1183,6 +1518,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveac10cu() used to save the data of ac10 file
+        * @param sheet contains sheet name like tangible,bank and cash and other part of AC10
+        * @var array-req consist the ac10 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac10cu($code,$sheet,$c1tID,$cID,$wpID,$name){
 
         $req = [
@@ -1206,6 +1549,15 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveac10cu() used to save the data of ac10 file
+        * @var validationRules set to validate the data before saving to database
+        * @param sheet contains sheet name like tangible,bank and cash and other part of AC10
+        * @var array-req consist the ac10 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
+    */
     public function saveac10s2($code,$sheet,$c1tID,$cID,$wpID,$name){
 
         $validationRules = [
@@ -1239,10 +1591,16 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC11 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveac11() used to save the data of ac11 file
+        * @var array-ac11 consist the ac11 file information and converted into json data
+        * @var array-req consist the ac11 file information
+        * @var res a return response from the chapter 1 model
+        * @return redirect-to-page
     */
     public function saveac11($code,$c1tID,$cID,$wpID,$name){
 
@@ -1308,11 +1666,23 @@ class WorkpaperController extends BaseController{
 
     }
 
+
     /**
+        SINCE THE CHAPTER 2 HAS ALMOST SAME FORMAT OF FILE, AND IT USES @method savequestions() 
+        TO SAVE ALL VALUES
+        * @param code consist the code of the file name
+        * @param c2tID consist the encrypted data of title id from the title file name
+        * @param cID consist the encrypted data of client id
+        * @param wpID consist the encrypted data of work paper id
+        * @param name consist the name of the client 
         ----------------------------------------------------------
         CHAPTER 2
         AA1 FUNCTIONS
         ----------------------------------------------------------
+        * @method savequestions() used to save the data of Chapter 2 file
+        * @var array-req consist the Chapter 2 file information
+        * @var res a return response from the chapter 2 model
+        * @return redirect-to-page
     */
     public function savequestions($code,$c2tID,$cID,$wpID,$name){
 
@@ -1338,6 +1708,13 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveaicpppa() used to save the data of Chapter 2 file
+        * @var array-req consist the Chapter 2 file information
+        * @var res a return response from the chapter 2 model
+        * @return redirect-to-page
+    */
     public function saveaicpppa($code,$c2tID,$cID,$wpID,$name){
 
         $req = [
@@ -1360,6 +1737,13 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method savercicp() used to save the data of Chapter 2 file
+        * @var array-req consist the Chapter 2 file information
+        * @var res a return response from the chapter 2 model
+        * @return redirect-to-page
+    */
     public function savercicp($code,$c2tID,$cID,$wpID,$name){
 
         $req = [
@@ -1383,11 +1767,22 @@ class WorkpaperController extends BaseController{
 
     }
     
+    
     /**
+        ALL FUNCTIONS UNDER CHAPTER 3 USES THIS PARAMETERS
+        * @param code consist the code of the file name
+        * @param c3tID consist the encrypted data of title id from the title file name
+        * @param cID consist the encrypted data of client id
+        * @param wpID consist the encrypted data of work paper id
+        * @param name consist the name of the client 
         ----------------------------------------------------------
         CHAPTER 3
         AA1 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa1plaf() used to save the data of aa1 file
+        * @var array-req consist the aa1 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveplaf($code,$c3tID,$cID,$wpID,$name){
 
@@ -1412,6 +1807,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveaa1s3() used to save the data of aa1 file
+        * @var array-sec consist the aa1 file information and converted into json data
+        * @var array-req consist the aa1 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa1s3($code,$c3tID,$cID,$wpID,$name){
 
         $sec = [
@@ -1443,10 +1846,16 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA2 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa2() used to save the data of aa2 file
+        * @var array-aa2 consist the aa2 file information and converted into json data
+        * @var array-req consist the aa2 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa2($code,$c3tID,$cID,$wpID,$name){
 
@@ -1479,10 +1888,15 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA3a FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa3a() used to save the data of aa3a file
+        * @var array-req consist the aa3a file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa3a($code,$c3tID,$cID,$wpID,$name){
 
@@ -1506,6 +1920,13 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveaa3afaf() used to save the data of aa3a file
+        * @var array-req consist the aa3a file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa3afaf($code,$c3tID,$cID,$wpID,$name){
 
         $req = [
@@ -1529,6 +1950,13 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveaa3afaf() used to save the data of aa3a file
+        * @var array-req consist the aa3a file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa3air($code,$c3tID,$cID,$wpID,$name){
 
         $req = [
@@ -1551,10 +1979,15 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA3b FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa3b() used to save the data of aa3b file
+        * @var array-req consist the aa3b file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa3b($code,$c3tID,$cID,$wpID,$name){
 
@@ -1578,6 +2011,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveaa3bp4() used to save the data of aa3b file
+        * @var array-p4 consist the aa3b file information and converted into json data
+        * @var array-req consist the aa3b file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa3bp4($code,$c3tID,$cID,$wpID,$name){
 
         $p4 = [
@@ -1604,10 +2045,16 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA5b FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa5b() used to save the data of aa5b file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the aa5b file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa5b($code,$c3tID,$cID,$wpID,$name){
 
@@ -1644,10 +2091,16 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA7 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa7isa() used to save the data of aa7 file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the aa7 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa7isa($code,$c3tID,$cID,$wpID,$name){
 
@@ -1683,6 +2136,13 @@ class WorkpaperController extends BaseController{
 
     }
     
+
+    /**
+        * @method saveaa7aepapp() used to save the data of aa7 file
+        * @var array-req consist the aa7 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa7aepapp($code,$c3tID,$cID,$wpID,$name){
         
         $req = [
@@ -1705,6 +2165,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveaa7aep() used to save the data of aa7 file
+        * @var array-aep consist the aa7 file information and converted into json data
+        * @var array-req consist the aa7 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa7aep($code,$c3tID,$cID,$wpID,$name){
 
         $aep = [
@@ -1737,10 +2205,16 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA10 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa10() used to save the data of aa10 file
+        * @var array-aa10 consist the aa10 file information and converted into json data
+        * @var array-req consist the aa10 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa10($code,$c3tID,$cID,$wpID,$name){
 
@@ -1769,10 +2243,15 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA11 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveaa11un() used to save the data of aa11 file
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveaa11un($code,$c3tID,$cID,$wpID,$name){
 
@@ -1803,6 +2282,13 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveaa11ad() used to save the data of aa11 file
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa11ad($code,$c3tID,$cID,$wpID,$name){
 
         $req = [
@@ -1830,6 +2316,14 @@ class WorkpaperController extends BaseController{
 
     }
     
+
+    /**
+        * @method saveaa11ad() used to save the data of aa11 file
+        * @var array-aa11 consist the aa11 file information and converted into json data
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa11ue($code,$c3tID,$cID,$wpID,$name){
 
         $aa11 = [
@@ -1857,6 +2351,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveaa11con() used to save the data of aa11 file
+        * @var array-aa11con consist the aa11 file information and converted into json data
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa11con($code,$c3tID,$cID,$wpID,$name){
 
         $aa11con = [
@@ -1937,6 +2439,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveaa11uead() used to save the data of aa11 file
+        * @var array-aa11 consist the aa11 file information and converted into json data
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveaa11uead($code,$c3tID,$cID,$wpID,$name){
 
         $aa11 = [
@@ -1964,10 +2474,15 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AB1 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveab1() used to save the data of ab1 file
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveab1($code,$c3tID,$cID,$wpID,$name){
 
@@ -1992,10 +2507,15 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AB3 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveab3() used to save the data of ab3 file
+        * @var array-req consist the aa11 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveab3($code,$c3tID,$cID,$wpID,$name){
 
@@ -2035,10 +2555,15 @@ class WorkpaperController extends BaseController{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AB4 FUNCTIONS
         ----------------------------------------------------------
+        * @method saveab4checklist() used to save data of ab4 file
+        * @var array-req consist the ab4 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveab4($code,$c3tID,$cID,$wpID,$name){
 
@@ -2063,6 +2588,14 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        * @method saveab4checklist() used to save data of ab4 file
+        * @var array-chlst consist the ab4 file information and converted into json data
+        * @var array-req consist the ab4 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
     public function saveab4checklist($code,$c3tID,$cID,$wpID,$name){
 
         $chlst = [
@@ -2103,10 +2636,15 @@ class WorkpaperController extends BaseController{
 
     }
     
+    
     /**
         ----------------------------------------------------------
         AB4a,b,c,d,e,f,g,h FUNCTIONS
         ----------------------------------------------------------
+        * @method saveab4a() used to save data of ab4a file
+        * @var array-req consist the ab4a file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
     */
     public function saveab4a($code,$c3tID,$cID,$wpID,$name){
 
@@ -2131,6 +2669,29 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+    /**
+        ----------------------------------------------------------
+        INDEX FILES
+        ----------------------------------------------------------
+        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @method viewindexfiles() used to view the index or work paper files
+        * @param code consist the code of the file name
+        * @param cfiID consist the encrypted client file index id
+        * @param cID consist the encrypted data of client id
+        * @param wpID consist the encrypted data of work paper id
+        * @param index consist the encrypted data of index id
+        * @param desc consist the file description
+        * @param name consist the name of the client 
+        * @var type constains the user type
+        * @var array-data consist of data and display it on the page
+        * @var dcID decrypted client id
+        * @var dcfiID decrypted client file index id
+        * @var dwpID decrypted work paper id
+        * @var dindex decrypted index id
+        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return view
+    */
     public function viewindexfiles($code,$cfiID,$cID,$wpID,$index,$desc,$name){
 
         $type           = session()->get('type');
@@ -2301,10 +2862,25 @@ class WorkpaperController extends BaseController{
 
     }
 
-    /** 
+
+    /**
         ----------------------------------------------------------
-        PDF Chapter 1 area
+        PDF
+        CHAPTER 1 AREA
         ----------------------------------------------------------
+        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @method viewpdfc1() used to view pdf result of chapter 1 file
+        * @param code consist the code of the file name
+        * @param cfiID consist the encrypted client file index id
+        * @param cID consist the encrypted data of client id
+        * @param wpID consist the encrypted data of work paper id
+        * @var array-data consist of data and display it on the page
+        * @var dcID decrypted client id
+        * @var dcfiID decrypted client file index id
+        * @var dwpID decrypted work paper id
+        * @var rdata contains raw json data from database
+        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return view
     */
     public function viewpdfc1($code,$c1tID,$cID,$wpID){
 
@@ -2451,10 +3027,24 @@ class WorkpaperController extends BaseController{
 
     }
 
-    /** 
+    
+    /**
         ----------------------------------------------------------
-        PDF Chapter 2 area
+        PDF
+        CHAPTER 2 AREA
         ----------------------------------------------------------
+        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @method viewpdfc2() used to view pdf result of chapter 2 file
+        * @param code consist the code of the file name
+        * @param c2tID consist the encrypted client file index id
+        * @param cID consist the encrypted data of client id
+        * @param wpID consist the encrypted data of work paper id
+        * @var array-data consist of data and display it on the page
+        * @var dcID decrypted client id
+        * @var dcfiID decrypted client file index id
+        * @var dwpID decrypted work paper id
+        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return view
     */
     public function viewpdfc2($code,$c2tID,$cID,$wpID){
 
@@ -2594,10 +3184,25 @@ class WorkpaperController extends BaseController{
 
     }
 
-    /** 
+    
+    /**
         ----------------------------------------------------------
-        PDF Chapter 3 area
+        PDF
+        CHAPTER 3 AREA
         ----------------------------------------------------------
+        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @method viewpdfc3() used to view pdf result of chapter 3 file
+        * @param code consist the code of the file name
+        * @param c3tID consist the encrypted client file index id
+        * @param cID consist the encrypted data of client id
+        * @param wpID consist the encrypted data of work paper id
+        * @var array-data consist of data and display it on the page
+        * @var dcID decrypted client id
+        * @var dcfiID decrypted client file index id
+        * @var dwpID decrypted work paper id
+        * @var rdata contains raw json data from database
+        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return view
     */
     public function viewpdfc3($code,$c3tID,$cID,$wpID){
 
