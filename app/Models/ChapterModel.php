@@ -5,13 +5,31 @@ use CodeIgniter\Model;
 class ChapterModel extends Model{
 
    
+    /**
+        // ALL MODELS ARE COMMUNICATING ON THE DATABASE AND PROCESSES DATA TO THE DATABASE // 
+        THIS FILE IS USED FOR CHAPTER FILE MANAGEMENT
+        Properties being used on this file
+        * @property tblc1t table of chapter 1 titles
+        * @property tblc2t table of chapter 2 titles
+        * @property tblc3t table of chapter 3 titles
+        * @property tblc4t table of chapter 4 titles
+        * @property tblc5t table of chapter 5 titles
+        * @property time-date to load the date and time
+        * @property db to load the data base
+
+    */
     protected $tblc1t = "tbl_c1_titles";
     protected $tblc2t = "tbl_c2_titles";
     protected $tblc3t = "tbl_c3_titles";
     protected $tblc4t = "tbl_c4_titles";
     protected $tblc5t = "tbl_c5_titles";
     protected $time,$date;
+    protected $db;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         $this->db   = \Config\Database::connect('default'); 
@@ -21,10 +39,14 @@ class ChapterModel extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         CHAPTER 1 FUNCTIONS
         ----------------------------------------------------------
+        * @method getc1() get the chapter 1 titles
+        * @var query result from database
+        * @return result-array
     */
     public function getc1(){
 
@@ -33,10 +55,14 @@ class ChapterModel extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         CHAPTER 2 FUNCTIONS
         ----------------------------------------------------------
+        * @method getc2() get the chapter 2 titles
+        * @var query result from database
+        * @return result-array
     */
     public function getc2(){
 
@@ -45,10 +71,14 @@ class ChapterModel extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         CHAPTER 3 FUNCTIONS
         ----------------------------------------------------------
+        * @method getc3() get the chapter 3 titles
+        * @var query result from database
+        * @return result-array
     */
     public function getc3(){
 
@@ -61,6 +91,9 @@ class ChapterModel extends Model{
         ----------------------------------------------------------
         CHAPTER 4 FUNCTIONS
         ----------------------------------------------------------
+        * @method getc4() get the chapter 4 titles
+        * @var query result from database
+        * @return result-array
     */
     public function getc4(){
 
@@ -73,6 +106,9 @@ class ChapterModel extends Model{
         ----------------------------------------------------------
         CHAPTER 5 FUNCTIONS
         ----------------------------------------------------------
+        * @method getc5() get the chapter 5 titles
+        * @var query result from database
+        * @return result-array
     */
     public function getc5(){
 

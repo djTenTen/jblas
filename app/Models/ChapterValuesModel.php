@@ -6,6 +6,21 @@ use App\Libraries\Logs;
 class ChapterValuesModel extends Model{
 
 
+    /**
+        // ALL MODELS ARE COMMUNICATING ON THE DATABASE AND PROCESSES DATA TO THE DATABASE // 
+        THIS FILE IS USED FOR CHAPTER 2 FILE MANAGEMENT
+        Properties being used on this file
+        * @property tblc1 table of chapter 1
+        * @property tblc2 table of chapter 2
+        * @property tblc3 table of chapter 3
+        * @property tblc1d table of client files chapter 1
+        * @property tblc2d table of client files chapter 2
+        * @property tblc3d table of client files chapter 3
+        * @property time-date to load the date and time
+        * @property db to load the data base
+        * @property crypt to load the encryption file
+        * @property logs to load the logs libraries for user activity logs
+    */
     protected $tblc1    = "tbl_c1";
     protected $tblc2    = "tbl_c2";
     protected $tblc3    = "tbl_c3";
@@ -13,9 +28,14 @@ class ChapterValuesModel extends Model{
     protected $tblc2d   = "tbl_client_dfiles_c2";
     protected $tblc3d   = "tbl_client_dfiles_c3";
     protected $time,$date;
+    protected $db;
     protected $crypt;
     protected $logs;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         $this->db       = \Config\Database::connect('default'); 
@@ -27,11 +47,18 @@ class ChapterValuesModel extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
+        CHAPTER 1
         AC1 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac1() get the ac1 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getac1($code,$c1tID,$dcID){
 
@@ -46,6 +73,15 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getac1eqr() get the ac1 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getac1eqr($code,$c1tID,$dcID){
         
         $where = [
@@ -59,8 +95,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveac1() save the ac1 information
+        * @param req ac1 data
+        * @var acid decrypted chapter id
+        * @var data contains ac1 information
+        * @return bool
     */
     public function saveac1($req){
 
@@ -79,6 +119,13 @@ class ChapterValuesModel extends Model{
       
     }
 
+    /**
+        * @method saveeqr() save the ac1 information
+        * @param req ac1 data
+        * @var acid decrypted chapter id
+        * @var data contains ac1 information
+        * @return bool
+    */
     public function saveac1eqr($req){
 
         $acid = $this->crypt->decrypt($req['acid']);
@@ -96,11 +143,18 @@ class ChapterValuesModel extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC2 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac2() get the ac2 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getac2($code,$c1tID,$dcID){
 
@@ -115,6 +169,15 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getac2aep() get the ac2 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getac2aep($code,$c1tID,$dcID){
 
         $where = [
@@ -128,8 +191,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveac2() save the ac2 information
+        * @param req ac2 data
+        * @var acid decrypted chapter id
+        * @var data contains ac1 information
+        * @return bool
     */
     public function saveac2($req){
 
@@ -151,6 +218,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveac2aep() save the ac2 information
+        * @param req ac2 data
+        * @var acid decrypted chapter id
+        * @var data contains ac2 information
+        * @return bool
+    */
     public function saveac2aep($req){
 
         $acid = $this->crypt->decrypt($req['acid']);
@@ -169,11 +243,19 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC3 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac3() get the ac3 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getac3($part,$code,$c1tID,$dcID){
 
@@ -188,8 +270,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveac3() save the ac3 information
+        * @param req ac3 data
+        * @var acid decrypted chapter id
+        * @var data contains ac3 information
+        * @return bool
     */
     public function saveac3($req){
 
@@ -208,11 +294,18 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC4 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac4ppr() get the ac4 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getac4ppr($code,$c1tID,$dcID){
 
@@ -227,6 +320,15 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getac4() get the ac4 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
+    */
     public function getac4($code,$c1tID,$dcID){
 
         $where = [
@@ -240,8 +342,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveac4ppr() save the ac4 information
+        * @param req ac4 data
+        * @var acid decrypted chapter id
+        * @var data contains ac4 information
+        * @return bool
     */
     public function saveac4ppr($req){
 
@@ -260,6 +366,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveac4() save the ac4 information
+        * @param req ac4 data
+        * @var acid decrypted chapter id
+        * @var data contains ac4 information
+        * @return bool
+    */
     public function saveac4($req){
 
         foreach($req['comment'] as $i => $val){
@@ -276,11 +389,18 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC5 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac5() get the ac5 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getac5($code,$c1tID,$dcID){
 
@@ -295,8 +415,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac5() save the ac5 information
+        * @param req ac5 data
+        * @var acid decrypted chapter id
+        * @var data contains ac5 information
+        * @return bool
     */
     public function saveac5($req){
 
@@ -315,12 +439,19 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC6 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac6() get the ac6 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getac6($part,$code,$c1tID,$dcID){
 
@@ -335,6 +466,15 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method gets12() get the ac6 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function gets12($code,$c1tID,$dcID){
 
         $where = [
@@ -348,8 +488,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac6ra() save the ac6 information
+        * @param req ac6 data
+        * @var acid decrypted chapter id
+        * @var data contains ac6 information
+        * @return bool
     */
     public function saveac6ra($req){
 
@@ -369,6 +513,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveac6s12() save the ac6 information
+        * @param req ac6 data
+        * @var acid decrypted chapter id
+        * @var data contains ac6 information
+        * @return bool
+    */
     public function saveac6s12($req){
 
         $acid = $this->crypt->decrypt($req['acid']);
@@ -386,6 +537,14 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveac6s3() save the ac6 information
+        * @param req ac6 data
+        * @var array-where reference data
+        * @var acid decrypted chapter id
+        * @var data contains ac6 information
+        * @return bool
+    */
     public function saveac6s3($req){
         $where = [
             'type'          => $req['part'], 
@@ -419,11 +578,19 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC7 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac7() get the ac7 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getac7($code,$c1tID,$part,$dcID){
 
@@ -438,8 +605,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac7() save the ac7 information
+        * @param req ac7 data
+        * @var data contains ac7 information
+        * @var array-where reference data
+        * @return bool
     */
     public function saveac7($req){
 
@@ -462,11 +633,19 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC8 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac8() get the ac8 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getac8($code,$c1tID,$part,$dcID){
 
@@ -481,8 +660,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac8() save the ac8 information
+        * @param req ac8 data
+        * @var dacid decrypted chapter id
+        * @var data contains ac4 information
+        * @return bool
     */
     public function saveac8($req){
 
@@ -500,12 +683,18 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC9 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac9data() get the ac9 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getac9data($code,$c1tID,$dcID){
 
@@ -520,8 +709,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac9() save the ac9 information
+        * @param req ac9 data
+        * @var dacid decrypted chapter id
+        * @var data contains ac9 information
+        * @return bool
     */
     public function saveac9($req){
 
@@ -540,12 +733,18 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC10 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac10s1data() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getac10s1data($c1tID,$part,$dcID){
 
@@ -561,6 +760,15 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getac10s2data() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
+    */
     public function getac10s2data($c1tID,$part,$dcID){
 
         $where = [
@@ -575,6 +783,15 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getac10cu() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getac10cu($c1tID,$part,$dcID){
 
         $where = [
@@ -588,6 +805,15 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getdatacount() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return integer
+    */
     public function getdatacount($c1tID,$part,$dcID){
 
         $where = [
@@ -601,6 +827,15 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getdatacount() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @var array-where1-where2 reference data
+        * @var query result from database
+        * @return integer
+    */
     public function getsumation($c1tID,$part,$dcID){
 
         $where1 = [
@@ -621,21 +856,35 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getsummarydata() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getsummarydata($c1tID,$part,$dcID){
 
-        $where2 = [
+        $where = [
             'type'          => $part.'data', 
             'code'          => 'ac10', 
             'c1tID'         => $c1tID,
             'clientID'      => $dcID,
         ];
-        $query = $this->db->table($this->tblc1d)->where($where2)->get();
+        $query = $this->db->table($this->tblc1d)->where($where)->get();
         return $query->getRowArray();
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac10summ() save the ac10 information
+        * @param req ac10 data
+        * @param ref ac10 reference
+        * @var data contains ac10 information
+        * @var where1-where2 update reference on client files
+        * @return bool
     */
     public function saveac10summ($req,$ref){
 
@@ -666,6 +915,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saves1ac10() save the ac10 information
+        * @param req ac10 data
+        * @var where update reference on client files
+        * @var data contains ac10 information
+        * @return bool
+    */
     public function saveac10s1($req){
 
         $where = [
@@ -697,6 +953,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveac10s2() save the ac10 information
+        * @param req ac10 data
+        * @var where update reference on client files
+        * @var data contains ac10 information
+        * @return bool
+    */
     public function saveac10s2($req){
 
         $where = [
@@ -729,6 +992,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveac10cu() save the ac10 information
+        * @param req ac10 data
+        * @var dacid decrypted chapter id
+        * @var data contains ac10 information
+        * @return bool
+    */
     public function saveac10cu($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -746,11 +1016,18 @@ class ChapterValuesModel extends Model{
         
     }
 
-     /**
+
+    /**
         ----------------------------------------------------------
         AC11 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac11data() get the ac11 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getac11data($code,$c1tID,$dcID){
 
@@ -765,8 +1042,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac11() save the ac10 information
+        * @param req ac10 data
+        * @var dacid decrypted chapter id
+        * @var data contains ac10 information
+        * @return bool
     */
     public function saveac11($req){
 
@@ -785,10 +1066,18 @@ class ChapterValuesModel extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
-        Chapter 2 GET FUNCTIONS
+        CHAPTER 2 FUNCTIONS
         ----------------------------------------------------------
+        * @method getquestionsdata() get the chapter 2 data information
+        * @param code contains file codes
+        * @param c2tID chapter 2 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getquestionsdata($code,$c2tID,$dcID){
 
@@ -803,6 +1092,15 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getquestionsaicpppa() get the chapter 2 data information
+        * @param code contains file codes
+        * @param c2tID chapter 2 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
+    */
     public function getquestionsaicpppa($code,$c2tID,$dcID){
 
         $where = [
@@ -816,6 +1114,15 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getquestionsrcicp() get the chapter 2 data information
+        * @param code contains file codes
+        * @param c2tID chapter 2 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
+    */
     public function getquestionsrcicp($code,$c2tID,$dcID){
 
         $where = [
@@ -830,9 +1137,11 @@ class ChapterValuesModel extends Model{
     }
    
     /**
-        ----------------------------------------------------------
-        Chapter 2 POST FUNCTIONS
-        ----------------------------------------------------------
+        * @method savequestions() save the chapter 2
+        * @param req chapter 2
+        * @var dacid decrypted chapter id
+        * @var data contains chapter 2
+        * @return bool
     */
     public function savequestions($req){
 
@@ -852,6 +1161,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveaicpppa() save the chapter 2
+        * @param req chapter 2
+        * @var dacid decrypted chapter id
+        * @var data contains chapter 2
+        * @return bool
+    */
     public function saveaicpppa($req){
 
         foreach($req['comment'] as $i => $val){
@@ -868,6 +1184,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method savercicp() save the chapter 2
+        * @param req chapter 2
+        * @var dacid decrypted chapter id
+        * @var data contains chapter 2
+        * @return bool
+    */
     public function savercicp($req){
 
         foreach($req['extent'] as $i => $val){
@@ -890,8 +1213,14 @@ class ChapterValuesModel extends Model{
         CHAPTER 3
         AA1 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getaa1() get the aa1 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getaa1($part,$code,$c3tID,$dcID){
 
@@ -906,6 +1235,15 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getaa1s3() save the aa1 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa1s3($code,$c3tID,$dcID){
 
         $where = [
@@ -920,7 +1258,11 @@ class ChapterValuesModel extends Model{
     }
    
     /**
-        POST FUNCTIONS
+        * @method savequestions() save the aa1 information
+        * @param req aa1 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa1 information
+        * @return bool
     */
     public function saveplaf($req){
 
@@ -939,6 +1281,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveaa1s3() save the aa1 information
+        * @param req aa1 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa1 information
+        * @return bool
+    */
     public function saveaa1s3($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -956,13 +1305,19 @@ class ChapterValuesModel extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA2 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa2data() get the aa2 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
-
     public function getaa2data($code,$c3tID,$dcID){
 
         $where = [
@@ -977,7 +1332,11 @@ class ChapterValuesModel extends Model{
     }
    
     /**
-        POST FUNCTIONS
+        * @method saveaa2() save the aa2 information
+        * @param req aa2 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa2 information
+        * @return bool
     */
     public function saveaa2($req){
 
@@ -1000,7 +1359,14 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         AA3a FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa3() get the aa3a information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getaa3($part,$code,$c3tID,$dcID){
 
@@ -1015,6 +1381,15 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getaa3air() get the aa3a information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa3air($code,$c3tID,$dcID){
 
         $where = [
@@ -1028,8 +1403,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa3a() save the aa3a information
+        * @param req aa3a data
+        * @var dacid decrypted chapter id
+        * @var data contains aa3a information
+        * @return bool
     */
     public function saveaa3a($req){
 
@@ -1047,6 +1426,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveaa3afaf() save the aa3a information
+        * @param req aa3a data
+        * @var dacid decrypted chapter id
+        * @var data contains aa3a information
+        * @return bool
+    */
     public function saveaa3afaf($req){
 
         foreach($req['extent'] as $i => $val){
@@ -1064,6 +1450,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveaa3air() save the aa3a information
+        * @param req aa3a data
+        * @var dacid decrypted chapter id
+        * @var data contains aa3a information
+        * @return bool
+    */
     public function saveaa3air($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -1081,11 +1474,19 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA3b FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa3b() get the aa3b information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getaa3b($part,$code,$c3tID,$dcID){
 
@@ -1100,6 +1501,15 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getaa3bp4() get the aa3b information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa3bp4($code,$c3tID,$dcID){
 
         $where = [
@@ -1113,8 +1523,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa3b() save the aa3b information
+        * @param req aa3b data
+        * @var dacid decrypted chapter id
+        * @var data contains aa3b information
+        * @return bool
     */
     public function saveaa3b($req){
 
@@ -1132,6 +1546,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveaa3bp4() save the aa3b information
+        * @param req aa3b data
+        * @var dacid decrypted chapter id
+        * @var data contains aa3b information
+        * @return bool
+    */
     public function saveaa3bp4($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -1149,11 +1570,19 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA5b FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa5b() get the aa5b information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getaa5b($code,$c3tID,$dcID){
 
@@ -1168,8 +1597,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa5b() save the aa5b information
+        * @param req aa5b data
+        * @var array-where reference data
+        * @var data contains aa5b information
+        * @return bool
     */
     public function saveaa5b($req){
 
@@ -1204,11 +1637,19 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA7 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa7() get the aa7 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getaa7($part,$code,$c3tID,$dcID){
 
@@ -1223,6 +1664,16 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getaa7aep() get the aa7 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa7aep($part,$code,$c3tID,$dcID){
 
         $where = [
@@ -1236,8 +1687,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa7isa() save the aa7 information
+        * @param req aa7 data
+        * @var array-where reference data
+        * @var data contains aa7 information
+        * @return bool
     */
     public function saveaa7isa($req){
 
@@ -1270,6 +1725,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveaa7aepapp() save the aa7 information
+        * @param req aa7 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa7 information
+        * @return bool
+    */
     public function saveaa7aepapp($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -1287,6 +1749,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveaa7aep() save the aa7 information
+        * @param req aa7 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa7 information
+        * @return bool
+    */
     public function saveaa7aep($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -1304,11 +1773,18 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA10 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa10() get the aa10 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getaa10($code,$c3tID,$dcID){
 
@@ -1323,8 +1799,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa10() save the aa10 information
+        * @param req aa10 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa10 information
+        * @return bool
     */
     public function saveaa10($req){
 
@@ -1343,11 +1823,19 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA11 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa11p2() get the aa11 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getaa11p2($part,$code,$c3tID,$dcID){
 
@@ -1362,6 +1850,16 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getaa11p() get the aa11 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa11p($part,$code,$c3tID,$dcID){
 
         $where = [
@@ -1375,6 +1873,16 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getaa11con() get the aa11 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa11con($part,$code,$c3tID,$dcID){
 
         $where = [
@@ -1388,8 +1896,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa11un() save the aa11 information
+        * @param req aa11 data
+        * @var array-where reference data
+        * @var data contains aa11 information
+        * @return bool
     */
     public function saveaa11un($req){
 
@@ -1425,6 +1937,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveaa11ad() save the aa11 information
+        * @param req aa11 data
+        * @var array-where reference data
+        * @var data contains aa11 information
+        * @return bool
+    */
     public function saveaa11ad($req){
 
         $where = [
@@ -1458,6 +1977,13 @@ class ChapterValuesModel extends Model{
 
     }
     
+    /**
+        * @method saveaa11ue() save the aa11 information
+        * @param req aa11 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa11 information
+        * @return bool
+    */
     public function saveaa11ue($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -1475,6 +2001,13 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method saveaa11con() save the aa11 information
+        * @param req aa11 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa11 information
+        * @return bool
+    */
     public function saveaa11con($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -1492,12 +2025,18 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AB1 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getab1() get the ab1 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getab1($code,$c3tID,$dcID){
 
@@ -1512,8 +2051,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveab1() save the ab1 information
+        * @param req ab1 data
+        * @var dacid decrypted chapter id
+        * @var data contains ab1 information
+        * @return bool
     */
     public function saveab1($req){
 
@@ -1532,12 +2075,18 @@ class ChapterValuesModel extends Model{
       
     }
     
+    
     /**
         ----------------------------------------------------------
         AB3 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getab3() get the ab1 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getab3($code,$c3tID,$dcID){
 
@@ -1552,8 +2101,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveab3() save the ab3 information
+        * @param req ab3 data
+        * @var dacid decrypted chapter id
+        * @var data contains ab3 information
+        * @return bool
     */
     public function saveab3($req){
 
@@ -1572,12 +2125,19 @@ class ChapterValuesModel extends Model{
       
     }
 
+    
     /**
         ----------------------------------------------------------
-        AB3 FUNCTIONS
+        AB4 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getab4() get the ab4 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getab4($part,$code,$c3tID,$dcID){
         
@@ -1592,6 +2152,16 @@ class ChapterValuesModel extends Model{
 
     }
 
+    /**
+        * @method getab4checklist() get the ab4 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
+    */
     public function getab4checklist($part,$code,$c3tID,$dcID){
 
         $where = [
@@ -1605,8 +2175,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveab4() save the ab4 information
+        * @param req ab4 data
+        * @var dacid decrypted chapter id
+        * @var data contains ab4 information
+        * @return bool
     */
     public function saveab4($req){
 
@@ -1625,6 +2199,13 @@ class ChapterValuesModel extends Model{
       
     }
 
+    /**
+        * @method saveab4checklist() save the ab4 information
+        * @param req ab4 data
+        * @var dacid decrypted chapter id
+        * @var data contains ab4 information
+        * @return bool
+    */
     public function saveab4checklist($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -1644,9 +2225,15 @@ class ChapterValuesModel extends Model{
 
     /**
         ----------------------------------------------------------
-        AB4a FUNCTIONS
+        AB4a,b,c,d,e,f,g,h FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getab4a() get the ab4a information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getab4a($part,$code,$c3tID,$dcID){
 
@@ -1661,8 +2248,12 @@ class ChapterValuesModel extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveab4csaveab4ahecklist() save the ab4a information
+        * @param req ab4a data
+        * @var dacid decrypted chapter id
+        * @var data contains ab4a information
+        * @return bool
     */
     public function saveab4a($req){
 

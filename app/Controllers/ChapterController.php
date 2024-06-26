@@ -619,49 +619,49 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break; 
             case '3.15.1 Ab4a':
-                $data['ab4a'] = $this->c3model->getab4a($code,$dc3tID);
+                $data['ab4a'] = $this->c3model->getab4a('ab4a',$code,$dc3tID);
                 echo view('includes/Header', $data);
                 echo view('chapter3/3151Ab4a', $data);
                 echo view('includes/Footer');
                 break; 
             case '3.15.2 Ab4b':
-                $data['ab4b'] = $this->c3model->getab4b($code,$dc3tID);
+                $data['ab4b'] = $this->c3model->getab4a('ab4b',$code,$dc3tID);
                 echo view('includes/Header', $data);
                 echo view('chapter3/3152Ab4b', $data);
                 echo view('includes/Footer');
                 break; 
             case '3.15.3 Ab4c':
-                $data['ab4c'] = $this->c3model->getab4c($code,$dc3tID);
+                $data['ab4c'] = $this->c3model->getab4a('ab4c',$code,$dc3tID);
                 echo view('includes/Header', $data);
                 echo view('chapter3/3153Ab4c', $data);
                 echo view('includes/Footer');
                 break; 
             case '3.15.4 Ab4d':
-                $data['ab4d'] = $this->c3model->getab4d($code,$dc3tID);
+                $data['ab4d'] = $this->c3model->getab4a('ab4d',$code,$dc3tID);
                 echo view('includes/Header', $data);
                 echo view('chapter3/3154Ab4d', $data);
                 echo view('includes/Footer');
                 break; 
             case '3.15.5 Ab4e':
-                $data['ab4e'] = $this->c3model->getab4e($code,$dc3tID);
+                $data['ab4e'] = $this->c3model->getab4a('ab4e',$code,$dc3tID);
                 echo view('includes/Header', $data);
                 echo view('chapter3/3155Ab4e', $data);
                 echo view('includes/Footer');
                 break; 
             case '3.15.6 Ab4f':
-                $data['ab4f'] = $this->c3model->getab4f($code,$dc3tID);
+                $data['ab4f'] = $this->c3model->getab4a('ab4f',$code,$dc3tID);
                 echo view('includes/Header', $data);
                 echo view('chapter3/3156Ab4f', $data);
                 echo view('includes/Footer');
                 break; 
             case '3.15.7 Ab4g':
-                $data['ab4g'] = $this->c3model->getab4g($code,$dc3tID);
+                $data['ab4g'] = $this->c3model->getab4a('ab4g',$code,$dc3tID);
                 echo view('includes/Header', $data);
                 echo view('chapter3/3157Ab4g', $data);
                 echo view('includes/Footer');
                 break; 
             case '3.15.8 Ab4h':
-                $data['ab4h'] = $this->c3model->getab4h($code,$dc3tID);
+                $data['ab4h'] = $this->c3model->getab4a('ab4h',$code,$dc3tID);
                 echo view('includes/Header', $data);
                 echo view('chapter3/3158Ab4h', $data);
                 echo view('includes/Footer');
@@ -1204,35 +1204,35 @@ class ChapterController extends BaseController{
                 echo view('pdfc3/AB4', $data);
                 break; 
             case '3.15.1 Ab4a':
-                $data['ab4a'] = $this->c3model->getab4a($code,$dc3tID);
+                $data['ab4a'] = $this->c3model->getab4a('ab4a',$code,$dc3tID);
                 echo view('pdfc3/AB4A', $data);
                 break; 
             case '3.15.2 Ab4b':
-                $data['ab4b'] = $this->c3model->getab4b($code,$dc3tID);
+                $data['ab4b'] = $this->c3model->getab4a('ab4b',$code,$dc3tID);
                 echo view('pdfc3/AB4B', $data);
                 break; 
             case '3.15.3 Ab4c':
-                $data['ab4c'] = $this->c3model->getab4c($code,$dc3tID);
+                $data['ab4c'] = $this->c3model->getab4a('ab4c',$code,$dc3tID);
                 echo view('pdfc3/AB4C', $data);
                 break; 
             case '3.15.4 Ab4d':
-                $data['ab4d'] = $this->c3model->getab4d($code,$dc3tID);
+                $data['ab4d'] = $this->c3model->getab4a('ab4d',$code,$dc3tID);
                 echo view('pdfc3/AB4D', $data);
                 break; 
             case '3.15.5 Ab4e':
-                $data['ab4e'] = $this->c3model->getab4e($code,$dc3tID);
+                $data['ab4e'] = $this->c3model->getab4a('ab4e',$code,$dc3tID);
                 echo view('pdfc3/AB4E', $data);
                 break; 
             case '3.15.6 Ab4f':
-                $data['ab4f'] = $this->c3model->getab4f($code,$dc3tID);
+                $data['ab4f'] = $this->c3model->getab4a('ab4f',$code,$dc3tID);
                 echo view('pdfc3/AB4F', $data);
                 break; 
             case '3.15.7 Ab4g':
-                $data['ab4g'] = $this->c3model->getab4g($code,$dc3tID);
+                $data['ab4g'] = $this->c3model->getab4a('ab4g',$code,$dc3tID);
                 echo view('pdfc3/AB4G', $data);
                 break; 
             case '3.15.8 Ab4h':
-                $data['ab4h'] = $this->c3model->getab4h($code,$dc3tID);
+                $data['ab4h'] = $this->c3model->getab4a('ab4h',$code,$dc3tID);
                 echo view('pdfc3/AB4H', $data);
                 break; 
             default:

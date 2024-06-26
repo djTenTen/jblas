@@ -6,26 +6,47 @@ use App\Libraries\Logs;
 class Chapter1Model extends Model{
     
 
+    /**
+        // ALL MODELS ARE COMMUNICATING ON THE DATABASE AND PROCESSES DATA TO THE DATABASE // 
+        THIS FILE IS USED FOR CHAPTER 1 FILE MANAGEMENT
+        Properties being used on this file
+        * @property tblc1 table of chapter 1
+        * @property time-date to load the date and time
+        * @property db to load the data base
+        * @property crypt to load the encryption file
+        * @property logs to load the logs libraries for user activity logs
+    */
     protected $tblc1 = "tbl_c1";
     protected $time,$date;
+    protected $db;
     protected $crypt;
     protected $logs;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         $this->db       = \Config\Database::connect('default'); 
-        $this->logs     = new Logs();
         $this->crypt    = \Config\Services::encrypter();
+        $this->logs     = new Logs();
         date_default_timezone_set("Asia/Singapore"); 
         $this->time     = date("H:i:s");
         $this->date     = date("Y-m-d");
 
     }
 
+
     /**
-        ----------------------------------------------------------
-        GENERAL FUNCTIONS
-        ----------------------------------------------------------
+        * @method acin() set the chapter 1 files to active and inactive
+        * @param req contains chapter file information
+        * @var query result from database
+        * @var r result from database as row array
+        * @var stat set the status
+        * @param duID user id
+        * @var array-data contains auditor information going to save to database
+        * @return bool
     */
     public function acin($req){
 
@@ -50,12 +71,16 @@ class Chapter1Model extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC1 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac1() get the ac1 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @var query result from database
+        * @return result-array
     */
     public function getac1($code,$c1tID){
 
@@ -64,6 +89,13 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method getac1eqr() get the ac1 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @var query result from database
+        * @return row-array
+    */
     public function getac1eqr($code,$c1tID){
 
         $query =  $this->db->table($this->tblc1)->where(array('code' => $code, 'type' => 'eqr', 'c1tID' => $c1tID))->get();
@@ -71,8 +103,11 @@ class Chapter1Model extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveac1() save the ac1 information
+        * @param req ac1 data
+        * @var data contains ac1 information
+        * @return bool
     */
     public function saveac1($req){
 
@@ -95,6 +130,12 @@ class Chapter1Model extends Model{
       
     }
 
+    /**
+        * @method saveeqr() save the ac1 information
+        * @param req ac1 data
+        * @var data contains ac1 information
+        * @return bool
+    */
     public function saveeqr($req){
 
         $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
@@ -115,12 +156,16 @@ class Chapter1Model extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
-        AC1 FUNCTIONS
+        AC2 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac2() get the ac2 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @var query result from database
+        * @return result-array
     */
     public function getac2($code,$c1tID){
 
@@ -129,6 +174,13 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method getac2aep() get the ac2 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @var query result from database
+        * @return row-array
+    */
     public function getac2aep($code,$c1tID){
 
         $query =  $this->db->table($this->tblc1)->where(array('code' => $code, 'type' => 'ac2aep', 'c1tID' => $c1tID))->get();
@@ -136,8 +188,11 @@ class Chapter1Model extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveac2() save the ac2 information
+        * @param req ac2 data
+        * @var data contains ac1 information
+        * @return bool
     */
     public function saveac2($req){
 
@@ -163,6 +218,12 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method saveac2aep() save the ac2 information
+        * @param req ac2 data
+        * @var data contains ac2 information
+        * @return bool
+    */
     public function saveac2aep($req){
 
         $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
@@ -184,12 +245,17 @@ class Chapter1Model extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC3 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac3() get the ac3 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @var query result from database
+        * @return result-array
     */
     public function getac3($part,$code,$c1tID){
 
@@ -198,8 +264,11 @@ class Chapter1Model extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveac3() save the ac3 information
+        * @param req ac3 data
+        * @var data contains ac3 information
+        * @return bool
     */
     public function saveac3($req){
 
@@ -223,12 +292,16 @@ class Chapter1Model extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC4 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac4ppr() get the ac4 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @var query result from database
+        * @return row-array
     */
     public function getac4ppr($code,$c1tID){
 
@@ -237,6 +310,13 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method getac4() get the ac4 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @var query result from database
+        * @return result-array
+    */
     public function getac4($code,$c1tID){
 
         $query = $this->db->table($this->tblc1)->where(array('type' => 'ac4sod', 'code' => $code, 'c1tID' => $c1tID))->get();
@@ -244,8 +324,11 @@ class Chapter1Model extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveac4ppr() save the ac4 information
+        * @param req ac4 data
+        * @var data contains ac4 information
+        * @return bool
     */
     public function saveac4ppr($req){
 
@@ -267,6 +350,12 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method saveac4() save the ac4 information
+        * @param req ac4 data
+        * @var data contains ac4 information
+        * @return bool
+    */
     public function saveac4($req){
 
         $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
@@ -287,12 +376,16 @@ class Chapter1Model extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC5 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac5() get the ac5 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @var query result from database
+        * @return row-array
     */
     public function getac5($code,$c1tID){
 
@@ -301,8 +394,11 @@ class Chapter1Model extends Model{
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac5() save the ac5 information
+        * @param req ac5 data
+        * @var data contains ac5 information
+        * @return bool
     */
     public function saveac5($req){
 
@@ -324,12 +420,17 @@ class Chapter1Model extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC6 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac6() get the ac6 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @var query result from database
+        * @return result-array
     */
     public function getac6($part,$code,$c1tID){
 
@@ -338,6 +439,13 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method gets12() get the ac6 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @var query result from database
+        * @return row-array
+    */
     public function gets12($code,$c1tID){
 
         $query = $this->db->table($this->tblc1)->where(array('type' => 'ac6s12', 'code' => $code, 'c1tID' => $c1tID))->get();
@@ -345,8 +453,11 @@ class Chapter1Model extends Model{
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac6ra() save the ac6 information
+        * @param req ac6 data
+        * @var data contains ac6 information
+        * @return bool
     */
     public function saveac6ra($req){
 
@@ -370,6 +481,12 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method saveac6s12() save the ac6 information
+        * @param req ac6 data
+        * @var data contains ac6 information
+        * @return bool
+    */
     public function saveac6s12($req){
 
         $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
@@ -390,6 +507,12 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method saveac6s3() save the ac6 information
+        * @param req ac6 data
+        * @var data contains ac6 information
+        * @return bool
+    */
     public function saveac6s3($req){
 
         $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
@@ -415,12 +538,17 @@ class Chapter1Model extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC7 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac7() get the ac7 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @var query result from database
+        * @return row-array
     */
     public function getac7($code,$c1tID,$part){
 
@@ -429,8 +557,11 @@ class Chapter1Model extends Model{
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac7() save the ac7 information
+        * @param req ac7 data
+        * @var data contains ac7 information
+        * @return bool
     */
     public function saveac7($req){
 
@@ -451,12 +582,17 @@ class Chapter1Model extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC8 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac8() get the ac8 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @var query result from database
+        * @return row-array
     */
     public function getac8($code,$c1tID,$part){
 
@@ -465,8 +601,12 @@ class Chapter1Model extends Model{
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac8() save the ac8 information
+        * @param req ac8 data
+        * @var dacid decrypted chapter id
+        * @var data contains ac4 information
+        * @return bool
     */
     public function saveac8($req){
 
@@ -483,12 +623,16 @@ class Chapter1Model extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC9 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac9data() get the ac9 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @var query result from database
+        * @return row-array
     */
     public function getac9data($code,$c1tID){
 
@@ -497,8 +641,11 @@ class Chapter1Model extends Model{
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac9() save the ac9 information
+        * @param req ac9 data
+        * @var data contains ac9 information
+        * @return bool
     */
     public function saveac9($req){
 
@@ -519,12 +666,16 @@ class Chapter1Model extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC10 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac10s1data() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @var query result from database
+        * @return result-array
     */
     public function getac10s1data($c1tID,$part){
 
@@ -533,6 +684,13 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method getac10s2data() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @var query result from database
+        * @return result-array
+    */
     public function getac10s2data($c1tID,$part){
 
         $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => 'ac10','question' => 'section2', 'c1tID' => $c1tID))->get();
@@ -540,6 +698,13 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method getac10cu() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @var query result from database
+        * @return row-array
+    */
     public function getac10cu($c1tID,$part){
 
         $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => 'ac10', 'c1tID' => $c1tID))->get();
@@ -547,6 +712,13 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method getdatacount() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @var query result from database
+        * @return integer
+    */
     public function getdatacount($c1tID,$part){
 
         $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => 'ac10', 'c1tID' => $c1tID));
@@ -554,6 +726,13 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method getsumation() Count/Compute the balances
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @var total result from database
+        * @return integer
+    */
     public function getsumation($c1tID,$part){
 
         $total = $this->db->table($this->tblc1)->selectSum('balance')->where(array('type' => $part, 'code' => 'ac10', 'c1tID' => $c1tID))->get()->getRowArray();
@@ -562,6 +741,13 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method getsummarydata() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @var query result from database
+        * @return row-array
+    */
     public function getsummarydata($c1tID,$part){
 
         $query = $this->db->table($this->tblc1)->where(array('type' => $part.'data', 'code' => 'ac10', 'c1tID' => $c1tID))->get();
@@ -569,8 +755,13 @@ class Chapter1Model extends Model{
 
     }
 
-    /**     
-        POST FUNCTIONS
+
+    /**
+        * @method saveac10summ() save the ac10 information
+        * @param req ac10 data
+        * @param ref ac10 reference
+        * @var data contains ac10 information
+        * @return bool
     */
     public function saveac10summ($req,$ref){
 
@@ -592,6 +783,12 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method saves1ac10() save the ac10 information
+        * @param req ac10 data
+        * @var data contains ac10 information
+        * @return bool
+    */
     public function saves1ac10($req){
 
         $this->db->table($this->tblc1)->where(array('type' => $req['type'], 'code' => $req['code'],'question' => 'section1', 'c1tID' => $req['c1tID']))->delete();
@@ -613,6 +810,12 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method saveac10s2() save the ac10 information
+        * @param req ac10 data
+        * @var data contains ac10 information
+        * @return bool
+    */
     public function saveac10s2($req){
 
         $this->db->table($this->tblc1)->where(array('type' => $req['type'], 'code' => $req['code'],'question' => 'section2', 'c1tID' => $req['c1tID']))->delete();
@@ -635,6 +838,13 @@ class Chapter1Model extends Model{
 
     }
 
+    /**
+        * @method saveac10cu() save the ac10 information
+        * @param req ac10 data
+        * @var dacid decrypted chapter id
+        * @var data contains ac10 information
+        * @return bool
+    */
     public function saveac10cu($req){
 
         $dacid = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$req['acid']));
@@ -650,12 +860,16 @@ class Chapter1Model extends Model{
         
     }
 
-     /**
+    
+    /**
         ----------------------------------------------------------
         AC11 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac11data() get the ac11 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @var query result from database
+        * @return row-array
     */
     public function getac11data($code,$c1tID){
 
@@ -664,8 +878,11 @@ class Chapter1Model extends Model{
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac11() save the ac10 information
+        * @param req ac10 data
+        * @var data contains ac10 information
+        * @return bool
     */
     public function saveac11($req){
 

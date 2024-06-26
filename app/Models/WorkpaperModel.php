@@ -5,6 +5,32 @@ use App\Libraries\Logs;
 
 class WorkpaperModel extends  Model {
 
+
+    /**
+        // ALL MODELS ARE COMMUNICATING ON THE DATABASE AND PROCESSES DATA TO THE DATABASE // 
+        THIS FILE IS USED FOR USER MANAGEMENT
+        Properties being used on this file
+        * @property tblu table of users
+        * @property tblwp table of workpaper
+        * @property tblc table of clients
+        * @property tblc1t table of chapter 1 titles
+        * @property tblc2t table of chapter 2 titles
+        * @property tblc3t table of chapter 3 titles
+        * @property tblc1d table of client default files chapter 1
+        * @property tblc2d table of client default files chapter 2
+        * @property tblc3d table of client default files chapter 3
+        * @property tblc1 table of client files chapter 1
+        * @property tblc2 table of client files chapter 2
+        * @property tblc3 table of client files chapter 3
+        * @property tblfi table of file index
+        * @property tblcfi table of client file index
+        * @property tbltb table of client trial balance
+        * @property db to load the database
+        * @property crypt to load the encryption file
+        * @property logs scheme name
+        * @property time-date to load the date and time
+        
+    */
     protected $tblu     = "tbl_users";
     protected $tblwp    = "tbl_workpaper";
     protected $tblc     = "tbl_clients";
@@ -21,20 +47,33 @@ class WorkpaperModel extends  Model {
     protected $tblcfi   = "tbl_client_file_index";
     protected $tbltb    = "tbl_client_trial_balance";
     protected $time,$date;
+    protected $db;
     protected $crypt;
     protected $logs;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         $this->db       = \Config\Database::connect('default'); 
+        $this->crypt    = \Config\Services::encrypter();
         $this->logs     = new Logs();
         date_default_timezone_set("Asia/Singapore"); 
-        $this->crypt    = \Config\Services::encrypter();
         $this->time     = date("H:i:s");
         $this->date     = date("Y-m-d");
 
     }
 
+
+    /**
+        * @method getauditors() get the auditors for work paper assignment
+        * @param firmID firm id
+        * @param type type of auditor
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getauditors($firmID,$type){
 
         if($type == 'Audit Manager'){
@@ -66,6 +105,15 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getclientinfo() get the clients workpaper
+        * @param wpID workpaper id
+        * @param cID client id
+        * @param type type of auditor
+        * @var query contains database result query
+        * @return row-array
+    */
     public function getclientinfo($wpID,$cID){
 
         $query = $this->db->query("select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
@@ -84,6 +132,15 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getfileinfoc1() get the clients file chapter 1
+        * @param wpID workpaper id
+        * @param cID client id
+        * @param ctID chapter title id
+        * @var query contains database result query
+        * @return row-array
+    */
     public function getfileinfoc1($wpID,$cID,$ctID){
 
         $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on
@@ -95,6 +152,15 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
+    /**
+        * @method getfileinfoc2() get the clients file chapter 2
+        * @param wpID workpaper id
+        * @param cID client id
+        * @param ctID chapter title id
+        * @var query contains database result query
+        * @return row-array
+    */
     public function getfileinfoc2($wpID,$cID,$ctID){
 
         $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on 
@@ -106,6 +172,15 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getfileinfoc2() get the clients file chapter 2
+        * @param wpID workpaper id
+        * @param cID client id
+        * @param ctID chapter title id
+        * @var query contains database result query
+        * @return row-array
+    */
     public function getfileinfoc3($wpID,$cID,$ctID){
 
         $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on 
@@ -117,6 +192,15 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getfileindex() get the clients file index
+        * @param cID client id
+        * @param wpID workpaper id
+        * @param status status of the file
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getfileindex($cID,$wpID,$status){
 
         //if($status == 'All'){
@@ -137,6 +221,15 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getc1values() get the clients chapter 1
+        * @param cID client id
+        * @param wpID workpaper id
+        * @param status status of the file
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getc1values($cID,$wpID,$status){
 
         //if($status == 'All'){
@@ -161,6 +254,15 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getacc1values() get the files AC index
+        * @param code file code
+        * @param cID client id
+        * @param wpID workpaper id
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getacc1values($code,$cID,$wpID){
 
         $query = $this->db->query("select DISTINCT title,c1t.code,c1titleID,c1.remarks,c1.status,
@@ -175,6 +277,15 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getc2values() get the files of client chapter 2
+        * @param cID client id
+        * @param wpID workpaper id
+        * @param status status of the file
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getc2values($cID,$wpID,$status){
 
         //if($status == 'All'){
@@ -199,6 +310,15 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getc2values() get the files of client chapter 3
+        * @param cID client id
+        * @param wpID workpaper id
+        * @param status status of the file
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getc3values($cID,$wpID,$status){
 
         //if($status == 'All'){
@@ -223,6 +343,15 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getabc3values() get the files AB index
+        * @param code file code
+        * @param cID client id
+        * @param wpID workpaper id
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getabc3values($code,$cID,$wpID){
 
         $query = $this->db->query("select DISTINCT title,c3t.code,c3titleID,c3.remarks,c3.status,
@@ -237,6 +366,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getworkpaperspe() get the specified assigned work paper
+        * @param pos position of the user
+        * @param fID firm id
+        * @param uID user id
+        * @param status status of the file
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getworkpaperspe($pos,$fID,$uID,$status){
 
         $query = $this->db->query("select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
@@ -260,6 +399,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getworkpaper() get all the work paper
+        * @param fID firm id
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getworkpaper($fID){
 
         $query = $this->db->query("select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
@@ -282,6 +428,14 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getlatestupload() get the latest upload og trial balance
+        * @param cID client id
+        * @param wpID work paper id
+        * @var query contains database result query
+        * @return row-array
+    */
     public function getlatestupload($cID,$wpID){
 
         $query = $this->db->query("select DISTINCT cfi.added_on,cfi.added_by,tu.name
@@ -293,6 +447,14 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method gettrialbalance() get the trial balance
+        * @param cID client id
+        * @param wpID work paper id
+        * @var query contains database result query
+        * @return result-array
+    */
     public function gettrialbalance($cID,$wpID){
 
         $query = $this->db->query("select *
@@ -304,6 +466,15 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method gettbindex() get the index file values
+        * @param cID client id
+        * @param wpID work paper id
+        * @param index index id
+        * @var query contains database result query
+        * @return result-array
+    */
     public function gettbindex($cID,$wpID,$index){
 
         $query = $this->db->query("select * 
@@ -315,6 +486,12 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getindexfile() get the index file
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getindexfile(){
 
         $query = $this->db->query("select * 
@@ -325,6 +502,12 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method updateindex() update the index if selected
+        * @var req index data
+        * @return updated-error
+    */
     public function updateindex($req){
 
         $data = [
@@ -338,6 +521,14 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method updatetb() update the trial balance
+        * @param req trial balance data
+        * @var dtbID decrypted trial balance id
+        * @var data-array contains trial balance information
+        * @return updated
+    */
     public function updatetb($req){
 
         foreach($req['tbID'] as $i => $val){
@@ -355,6 +546,15 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method uploadtbfiles() upload trial balance files
+        * @param req trial balance data
+        * @var pdfname file name
+        * @var pdfPath path of the file uploaded
+        * @var data-array contains file information
+        * @return updated
+    */
     public function uploadtbfiles($req){
 
         $pdfname = $req['cfiID'].$req['cID'].$req['wpID'].$req['index'].'.pdf';
@@ -376,6 +576,17 @@ class WorkpaperModel extends  Model {
     
     }
 
+
+    /**
+        * @method importtb() import trial balance
+        * @param req trial balance data
+        * @var where reference import
+        * @var index decrypted index id
+        * @var balcu balance CU on ac10 file
+        * @var cal calculation balance CU on ac10 file
+        * @var data-array contains trial balance information
+        * @return uploaded
+    */
     public function importtb($req){
 
         $where = [
@@ -401,8 +612,13 @@ class WorkpaperModel extends  Model {
                 case '19'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'costscu']; break;
                 //case '17'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'payrollcu']; break;
             }
-            $balcu = $this->db->table($this->tblc1)->where($refaut)->get()->getRowArray(); 
-            $this->db->table($this->tblc1)->where($refaut)->update(array('question' => $balcu['question'] + ($req['debit'][$i] - $req['credit'][$i])));
+            $balcu = $this->db->table($this->tblc1)->where($refaut)->get()->getRowArray();
+            if($balcu['question'] != 0){
+                $cal = ['question' => $req['debit'][$i] - $req['credit'][$i]];
+            }else{
+                $cal = ['question' => $balcu['question'] + ($req['debit'][$i] - $req['credit'][$i])];
+            }
+            $this->db->table($this->tblc1)->where($refaut)->update($cal);
             $this->db->table($this->tblcfi)->where(array('clientID' => $req['client'], 'firm' => $req['firm'], 'workpaper' => $req['workpaper'], 'index' => $index))->update(array('acquired' => 'Yes'));
             $data = [
                 'client'        => $req['client'],
@@ -424,6 +640,14 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method uploadcfsfiles() upload client supporting files
+        * @param req trial file data
+        * @var fn file name
+        * @var pdfpath path of the file uploaded
+        * @return updated-false
+    */
     public function uploadcfsfiles($req){
 
         if($req['file'] != ''){
@@ -441,6 +665,24 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method saveworkpaper() saving the work paper
+        * @param req work paper data
+        * @var where-array check reference
+        * @var checkexist check if the workpaper already exist
+        * @var ind-array contains index information
+        * @var c1df check assigned chapter 1 files
+        * @var wherec1-array chapter 1 reference
+        * @var datac1-array contains chapter 1 information
+        * @var c2df check assigned chapter 2 files
+        * @var wherec2-array chapter 2 reference
+        * @var datac2-array contains chapter 2 information
+        * @var c3df check assigned chapter 3 files
+        * @var wherec3-array chapter 3 reference
+        * @var datac3-array contains chapter 3 information
+        * @return added
+    */
     public function saveworkpaper($req){
 
         $where = [
@@ -601,6 +843,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method sendtoreview() the the chapter file to review
+        * @param req chapter file data
+        * @var table dynamic table selection
+        * @var ctID dynamic chapter id selection
+        * @var where-array reference send
+        * @var data-array contains send information
+        * @return sent-false
+    */
     public function sendtoreview($req){
 
         switch ($req['c']) {
@@ -628,6 +880,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method sendtoauditor() the the chapter file to prepare
+        * @param req chapter file data
+        * @var table dynamic table selection
+        * @var ctID dynamic chapter id selection
+        * @var where-array reference send
+        * @var data-array contains send information
+        * @return sent-false
+    */
     public function sendtoauditor($req){
 
         switch ($req['c']) {
@@ -654,6 +916,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method sendtomanager() the the chapter file to manager for check
+        * @param req chapter file data
+        * @var table dynamic table selection
+        * @var ctID dynamic chapter id selection
+        * @var where-array reference send
+        * @var data-array contains send information
+        * @return sent-false
+    */
     public function sendtomanager($req){
 
         switch ($req['c']) {
@@ -681,6 +953,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method sendtoapprove() the the chapter file to approve
+        * @param req chapter file data
+        * @var table dynamic table selection
+        * @var ctID dynamic chapter id selection
+        * @var where-array reference send
+        * @var data-array contains send information
+        * @return sent-false
+    */
     public function sendtoapprove($req){
 
         switch ($req['c']) {
@@ -708,6 +990,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method sendtoreviewer() send the work paper to reviewer
+        * @param req workpaper file data
+        * @var data-array workpaper information
+        * @return sent-false
+    */
     public function sendtoreviewer($req){
 
         $data = [
@@ -723,6 +1012,13 @@ class WorkpaperModel extends  Model {
         
     }
 
+
+    /**
+        * @method sendtopreparer() send the work paper to preparer
+        * @param req workpaper file data
+        * @var data-array workpaper information
+        * @return sent-false
+    */
     public function sendtopreparer($req){
 
         $data = [
@@ -738,6 +1034,13 @@ class WorkpaperModel extends  Model {
         
     }
 
+
+    /**
+        * @method sendtoapprover() send the work paper to approver
+        * @param req workpaper file data
+        * @var data-array workpaper information
+        * @return sent-false
+    */
     public function sendtoapprover($req){
 
         $data = [
@@ -753,6 +1056,13 @@ class WorkpaperModel extends  Model {
         
     }
 
+
+    /**
+        * @method sendtoapprover() approve the work paper
+        * @param req workpaper file data
+        * @var data-array workpaper information
+        * @return sent-false
+    */
     public function approvewp($req){
 
         $data = [
@@ -768,11 +1078,19 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
     /**
         ----------------------------------------------------------
+        CHAPTER 1
         AC1 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac1() get the ac1 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getac1($code,$c1tID,$dcID,$dwpID){
 
@@ -788,6 +1106,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getac1eqr() get the ac1 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getac1eqr($code,$c1tID,$dcID,$dwpID){
         
         $where = [
@@ -802,8 +1130,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveac1() save the ac1 information
+        * @param req ac1 data
+        * @var acid decrypted chapter id
+        * @var data contains ac1 information
+        * @return bool
     */
     public function saveac1($req){
 
@@ -822,6 +1154,13 @@ class WorkpaperModel extends  Model {
       
     }
 
+    /**
+        * @method saveeqr() save the ac1 information
+        * @param req ac1 data
+        * @var acid decrypted chapter id
+        * @var data contains ac1 information
+        * @return bool
+    */
     public function saveac1eqr($req){
 
         $acid = $this->crypt->decrypt($req['acid']);
@@ -839,11 +1178,19 @@ class WorkpaperModel extends  Model {
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC2 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac2() get the ac2 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getac2($code,$c1tID,$dcID,$dwpID){
 
@@ -859,6 +1206,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getac2aep() get the ac2 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getac2aep($code,$c1tID,$dcID,$dwpID){
 
         $where = [
@@ -873,8 +1230,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveac2() save the ac2 information
+        * @param req ac2 data
+        * @var acid decrypted chapter id
+        * @var data contains ac1 information
+        * @return bool
     */
     public function saveac2($req){
 
@@ -896,6 +1257,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveac2aep() save the ac2 information
+        * @param req ac2 data
+        * @var acid decrypted chapter id
+        * @var data contains ac2 information
+        * @return bool
+    */
     public function saveac2aep($req){
 
         $acid = $this->crypt->decrypt($req['acid']);
@@ -914,11 +1282,20 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC3 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac3() get the ac3 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getac3($part,$code,$c1tID,$dcID,$dwpID){
 
@@ -934,8 +1311,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveac3() save the ac3 information
+        * @param req ac3 data
+        * @var acid decrypted chapter id
+        * @var data contains ac3 information
+        * @return bool
     */
     public function saveac3($req){
 
@@ -954,12 +1335,19 @@ class WorkpaperModel extends  Model {
 
     }
 
+
     /**
         ----------------------------------------------------------
         AC4 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac4ppr() get the ac4 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getac4ppr($code,$c1tID,$dcID,$dwpID){
 
@@ -975,6 +1363,15 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getac4() get the ac4 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
+    */
     public function getac4($code,$c1tID,$dcID,$dwpID){
 
         $where = [
@@ -989,8 +1386,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveac4ppr() save the ac4 information
+        * @param req ac4 data
+        * @var acid decrypted chapter id
+        * @var data contains ac4 information
+        * @return bool
     */
     public function saveac4ppr($req){
 
@@ -1009,6 +1410,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveac4() save the ac4 information
+        * @param req ac4 data
+        * @var acid decrypted chapter id
+        * @var data contains ac4 information
+        * @return bool
+    */
     public function saveac4($req){
 
         foreach($req['comment'] as $i => $val){
@@ -1024,12 +1432,19 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC5 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getac5() get the ac5 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getac5($code,$c1tID,$dcID,$dwpID){
 
@@ -1045,8 +1460,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac5() save the ac5 information
+        * @param req ac5 data
+        * @var acid decrypted chapter id
+        * @var data contains ac5 information
+        * @return bool
     */
     public function saveac5($req){
 
@@ -1069,7 +1488,15 @@ class WorkpaperModel extends  Model {
         ----------------------------------------------------------
         AC6 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac6() get the ac6 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getac6($part,$code,$c1tID,$dcID,$dwpID){
 
@@ -1085,6 +1512,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method gets12() get the ac6 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function gets12($code,$c1tID,$dcID,$dwpID){
 
         $where = [
@@ -1099,8 +1536,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac6ra() save the ac6 information
+        * @param req ac6 data
+        * @var acid decrypted chapter id
+        * @var data contains ac6 information
+        * @return bool
     */
     public function saveac6ra($req){
 
@@ -1120,6 +1561,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveac6s12() save the ac6 information
+        * @param req ac6 data
+        * @var acid decrypted chapter id
+        * @var data contains ac6 information
+        * @return bool
+    */
     public function saveac6s12($req){
 
         $acid = $this->crypt->decrypt($req['acid']);
@@ -1137,6 +1585,14 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveac6s3() save the ac6 information
+        * @param req ac6 data
+        * @var array-where reference data
+        * @var acid decrypted chapter id
+        * @var data contains ac6 information
+        * @return bool
+    */
     public function saveac6s3($req){
         $where = [
             'type'          => $req['part'], 
@@ -1172,11 +1628,20 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC7 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac7() get the ac7 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getac7($code,$c1tID,$part,$dcID,$dwpID){
 
@@ -1192,8 +1657,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac7() save the ac7 information
+        * @param req ac7 data
+        * @var data contains ac7 information
+        * @var array-where reference data
+        * @return bool
     */
     public function saveac7($req){
 
@@ -1217,11 +1686,20 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC8 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac8() get the ac8 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getac8($code,$c1tID,$part,$dcID,$dwpID){
 
@@ -1237,8 +1715,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac8() save the ac8 information
+        * @param req ac8 data
+        * @var dacid decrypted chapter id
+        * @var data contains ac4 information
+        * @return bool
     */
     public function saveac8($req){
 
@@ -1256,11 +1738,19 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AC9 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac9data() get the ac9 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getac9data($code,$c1tID,$dcID,$dwpID){
 
@@ -1276,8 +1766,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac9() save the ac9 information
+        * @param req ac9 data
+        * @var dacid decrypted chapter id
+        * @var data contains ac9 information
+        * @return bool
     */
     public function saveac9($req){
 
@@ -1296,11 +1790,19 @@ class WorkpaperModel extends  Model {
 
     }
 
+   
     /**
         ----------------------------------------------------------
         AC10 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac10s1data() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getac10s1data($c1tID,$part,$dcID,$dwpID){
 
@@ -1317,6 +1819,17 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        * @method getac10s2data() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
+    */
     public function getac10s2data($c1tID,$part,$dcID,$dwpID){
 
         $where = [
@@ -1332,6 +1845,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getac10cu() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getac10cu($c1tID,$part,$dcID,$dwpID){
 
         $where = [
@@ -1346,6 +1869,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getdatacount() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return integer
+    */
     public function getdatacount($c1tID,$part,$dcID,$dwpID){
 
         $where = [
@@ -1360,6 +1893,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getdatacount() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where1-where2 reference data
+        * @var query result from database
+        * @return integer
+    */
     public function getsumation($c1tID,$part,$dcID,$dwpID){
 
         $where1 = [
@@ -1382,6 +1925,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getsummarydata() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getsummarydata($c1tID,$part,$dcID,$dwpID){
 
         $where2 = [
@@ -1396,8 +1949,13 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac10summ() save the ac10 information
+        * @param req ac10 data
+        * @param ref ac10 reference
+        * @var data contains ac10 information
+        * @var where1-where2 update reference on client files
+        * @return bool
     */
     public function saveac10summ($req,$ref){
 
@@ -1430,6 +1988,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saves1ac10() save the ac10 information
+        * @param req ac10 data
+        * @var where update reference on client files
+        * @var data contains ac10 information
+        * @return bool
+    */
     public function saveac10s1($req){
 
         $where = [
@@ -1463,6 +2028,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveac10s2() save the ac10 information
+        * @param req ac10 data
+        * @var where update reference on client files
+        * @var data contains ac10 information
+        * @return bool
+    */
     public function saveac10s2($req){
 
         $where = [
@@ -1497,6 +2069,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveac10cu() save the ac10 information
+        * @param req ac10 data
+        * @var dacid decrypted chapter id
+        * @var data contains ac10 information
+        * @return bool
+    */
     public function saveac10cu($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -1514,11 +2093,19 @@ class WorkpaperModel extends  Model {
         
     }
 
-     /**
+
+    /**
         ----------------------------------------------------------
         AC11 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getac11data() get the ac11 information
+        * @param code contains file codes
+        * @param c1tID chapter 1 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getac11data($code,$c1tID,$dcID,$dwpID){
 
@@ -1534,8 +2121,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /**     
-        POST FUNCTIONS
+    /**
+        * @method saveac11() save the ac10 information
+        * @param req ac10 data
+        * @var dacid decrypted chapter id
+        * @var data contains ac10 information
+        * @return bool
     */
     public function saveac11($req){
 
@@ -1554,10 +2145,19 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
     /**
         ----------------------------------------------------------
-        Chapter 2 GET FUNCTIONS
+        CHAPTER 2 FUNCTIONS
         ----------------------------------------------------------
+        * @method getquestionsdata() get the chapter 2 data information
+        * @param code contains file codes
+        * @param c2tID chapter 2 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getquestionsdata($code,$c2tID,$dcID,$dwpID){
 
@@ -1573,6 +2173,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getquestionsaicpppa() get the chapter 2 data information
+        * @param code contains file codes
+        * @param c2tID chapter 2 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
+    */
     public function getquestionsaicpppa($code,$c2tID,$dcID,$dwpID){
 
         $where = [
@@ -1587,6 +2197,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getquestionsrcicp() get the chapter 2 data information
+        * @param code contains file codes
+        * @param c2tID chapter 2 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
+    */
     public function getquestionsrcicp($code,$c2tID,$dcID,$dwpID){
 
         $where = [
@@ -1602,9 +2222,11 @@ class WorkpaperModel extends  Model {
     }
    
     /**
-        ----------------------------------------------------------
-        Chapter 2 POST FUNCTIONS
-        ----------------------------------------------------------
+        * @method savequestions() save the chapter 2
+        * @param req chapter 2
+        * @var dacid decrypted chapter id
+        * @var data contains chapter 2
+        * @return bool
     */
     public function savequestions($req){
 
@@ -1624,6 +2246,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveaicpppa() save the chapter 2
+        * @param req chapter 2
+        * @var dacid decrypted chapter id
+        * @var data contains chapter 2
+        * @return bool
+    */
     public function saveaicpppa($req){
 
         foreach($req['comment'] as $i => $val){
@@ -1640,6 +2269,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method savercicp() save the chapter 2
+        * @param req chapter 2
+        * @var dacid decrypted chapter id
+        * @var data contains chapter 2
+        * @return bool
+    */
     public function savercicp($req){
 
         foreach($req['extent'] as $i => $val){
@@ -1657,12 +2293,21 @@ class WorkpaperModel extends  Model {
 
     }
 
+
     /**
         ----------------------------------------------------------
         CHAPTER 3
         AA1 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa1() get the aa1 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getaa1($part,$code,$c3tID,$dcID,$dwpID){
 
@@ -1678,6 +2323,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getaa1s3() save the aa1 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa1s3($code,$c3tID,$dcID,$dwpID){
 
         $where = [
@@ -1693,7 +2348,11 @@ class WorkpaperModel extends  Model {
     }
    
     /**
-        POST FUNCTIONS
+        * @method savequestions() save the aa1 information
+        * @param req aa1 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa1 information
+        * @return bool
     */
     public function saveplaf($req){
 
@@ -1712,6 +2371,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveaa1s3() save the aa1 information
+        * @param req aa1 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa1 information
+        * @return bool
+    */
     public function saveaa1s3($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -1729,11 +2395,19 @@ class WorkpaperModel extends  Model {
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA2 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa2data() get the aa2 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getaa2data($code,$c3tID,$dcID,$dwpID){
 
@@ -1750,7 +2424,11 @@ class WorkpaperModel extends  Model {
     }
    
     /**
-        POST FUNCTIONS
+        * @method saveaa2() save the aa2 information
+        * @param req aa2 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa2 information
+        * @return bool
     */
     public function saveaa2($req){
 
@@ -1769,11 +2447,20 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA3a FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa3() get the aa3a information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getaa3($part,$code,$c3tID,$dcID,$dwpID){
 
@@ -1789,6 +2476,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getaa3air() get the aa3a information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa3air($code,$c3tID,$dcID,$dwpID){
 
         $where = [
@@ -1803,8 +2500,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa3a() save the aa3a information
+        * @param req aa3a data
+        * @var dacid decrypted chapter id
+        * @var data contains aa3a information
+        * @return bool
     */
     public function saveaa3a($req){
 
@@ -1822,6 +2523,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveaa3afaf() save the aa3a information
+        * @param req aa3a data
+        * @var dacid decrypted chapter id
+        * @var data contains aa3a information
+        * @return bool
+    */
     public function saveaa3afaf($req){
 
         foreach($req['extent'] as $i => $val){
@@ -1839,6 +2547,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveaa3air() save the aa3a information
+        * @param req aa3a data
+        * @var dacid decrypted chapter id
+        * @var data contains aa3a information
+        * @return bool
+    */
     public function saveaa3air($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -1856,11 +2571,20 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA3b FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa3b() get the aa3b information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getaa3b($part,$code,$c3tID,$dcID,$dwpID){
 
@@ -1876,6 +2600,16 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getaa3bp4() get the aa3b information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa3bp4($code,$c3tID,$dcID,$dwpID){
 
         $where = [
@@ -1890,8 +2624,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa3b() save the aa3b information
+        * @param req aa3b data
+        * @var dacid decrypted chapter id
+        * @var data contains aa3b information
+        * @return bool
     */
     public function saveaa3b($req){
 
@@ -1909,6 +2647,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveaa3bp4() save the aa3b information
+        * @param req aa3b data
+        * @var dacid decrypted chapter id
+        * @var data contains aa3b information
+        * @return bool
+    */
     public function saveaa3bp4($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -1926,11 +2671,20 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA5b FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa5b() get the aa5b information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getaa5b($code,$c3tID,$dcID,$dwpID){
 
@@ -1946,8 +2700,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa5b() save the aa5b information
+        * @param req aa5b data
+        * @var array-where reference data
+        * @var data contains aa5b information
+        * @return bool
     */
     public function saveaa5b($req){
 
@@ -1984,11 +2742,20 @@ class WorkpaperModel extends  Model {
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA7 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa7() get the aa7 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getaa7($part,$code,$c3tID,$dcID,$dwpID){
 
@@ -2004,6 +2771,17 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getaa7aep() get the aa7 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa7aep($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
@@ -2018,8 +2796,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa7isa() save the aa7 information
+        * @param req aa7 data
+        * @var array-where reference data
+        * @var data contains aa7 information
+        * @return bool
     */
     public function saveaa7isa($req){
 
@@ -2054,6 +2836,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveaa7aepapp() save the aa7 information
+        * @param req aa7 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa7 information
+        * @return bool
+    */
     public function saveaa7aepapp($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -2071,6 +2860,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveaa7aep() save the aa7 information
+        * @param req aa7 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa7 information
+        * @return bool
+    */
     public function saveaa7aep($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -2088,11 +2884,19 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA10 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa10() get the aa10 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getaa10($code,$c3tID,$dcID,$dwpID){
 
@@ -2108,8 +2912,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa10() save the aa10 information
+        * @param req aa10 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa10 information
+        * @return bool
     */
     public function saveaa10($req){
 
@@ -2128,11 +2936,20 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA11 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa11p2() get the aa11 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getaa11p2($part,$code,$c3tID,$dcID,$dwpID){
 
@@ -2148,6 +2965,17 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getaa11p() get the aa11 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa11p($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
@@ -2162,6 +2990,17 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getaa11con() get the aa11 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa11con($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
@@ -2176,8 +3015,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa11un() save the aa11 information
+        * @param req aa11 data
+        * @var array-where reference data
+        * @var data contains aa11 information
+        * @return bool
     */
     public function saveaa11un($req){
 
@@ -2215,6 +3058,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveaa11ad() save the aa11 information
+        * @param req aa11 data
+        * @var array-where reference data
+        * @var data contains aa11 information
+        * @return bool
+    */
     public function saveaa11ad($req){
 
         $where = [
@@ -2249,6 +3099,13 @@ class WorkpaperModel extends  Model {
 
     }
     
+    /**
+        * @method saveaa11ue() save the aa11 information
+        * @param req aa11 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa11 information
+        * @return bool
+    */
     public function saveaa11ue($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -2266,6 +3123,13 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveaa11con() save the aa11 information
+        * @param req aa11 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa11 information
+        * @return bool
+    */
     public function saveaa11con($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -2283,11 +3147,19 @@ class WorkpaperModel extends  Model {
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AB1 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getab1() get the ab1 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getab1($code,$c3tID,$dcID,$dwpID){
 
@@ -2303,8 +3175,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveab1() save the ab1 information
+        * @param req ab1 data
+        * @var dacid decrypted chapter id
+        * @var data contains ab1 information
+        * @return bool
     */
     public function saveab1($req){
 
@@ -2323,11 +3199,19 @@ class WorkpaperModel extends  Model {
       
     }
 
+    
     /**
         ----------------------------------------------------------
         AB3 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getab3() get the ab1 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return row-array
     */
     public function getab3($code,$c3tID,$dcID,$dwpID){
 
@@ -2343,8 +3227,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveab3() save the ab3 information
+        * @param req ab3 data
+        * @var dacid decrypted chapter id
+        * @var data contains ab3 information
+        * @return bool
     */
     public function saveab3($req){
 
@@ -2365,9 +3253,17 @@ class WorkpaperModel extends  Model {
 
     /**
         ----------------------------------------------------------
-        AB3 FUNCTIONS
+        AB4 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getab4() get the ab4 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getab4($part,$code,$c3tID,$dcID,$dwpID){
         
@@ -2383,6 +3279,17 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method getab4checklist() get the ab4 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
+    */
     public function getab4checklist($part,$code,$c3tID,$dcID,$dwpID){
 
         $where = [
@@ -2397,8 +3304,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+   /**
+        * @method saveab4() save the ab4 information
+        * @param req ab4 data
+        * @var dacid decrypted chapter id
+        * @var data contains ab4 information
+        * @return bool
     */
     public function saveab4($req){
 
@@ -2417,6 +3328,13 @@ class WorkpaperModel extends  Model {
       
     }
 
+    /**
+        * @method saveab4checklist() save the ab4 information
+        * @param req ab4 data
+        * @var dacid decrypted chapter id
+        * @var data contains ab4 information
+        * @return bool
+    */
     public function saveab4checklist($req){
 
         $dacid = $this->crypt->decrypt($req['acid']);
@@ -2436,9 +3354,16 @@ class WorkpaperModel extends  Model {
 
     /**
         ----------------------------------------------------------
-        AB4a FUNCTIONS
+        AB4a,b,c,d,e,f,g,h FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getab4a() get the ab4a information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @param dwpID worpaper id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
     */
     public function getab4a($part,$code,$c3tID,$dcID,$dwpID){
 
@@ -2454,8 +3379,12 @@ class WorkpaperModel extends  Model {
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveab4csaveab4ahecklist() save the ab4a information
+        * @param req ab4a data
+        * @var dacid decrypted chapter id
+        * @var data contains ab4a information
+        * @return bool
     */
     public function saveab4a($req){
 

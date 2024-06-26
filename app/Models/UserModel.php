@@ -5,24 +5,50 @@ use App\Libraries\Logs;
 
 class UserModel extends  Model {
 
+
+    /**
+        // ALL MODELS ARE COMMUNICATING ON THE DATABASE AND PROCESSES DATA TO THE DATABASE // 
+        THIS FILE IS USED FOR USER MANAGEMENT
+        Properties being used on this file
+        * @property tblu table of users
+        * @property tblf table of firms
+        * @property tblpos table of position
+        * @property db to load the database
+        * @property crypt to load the encryption file
+        * @property logs scheme name
+        * @property time-date to load the date and time
+        
+    */
     protected $tblu = "tbl_users";
     protected $tblf = "tbl_firm";
     protected $tblp = "tbl_position";
     protected $time,$date;
+    protected $db;
     protected $crypt;
     protected $logs;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
-        $this->db   = \Config\Database::connect('default'); 
+        $this->db    = \Config\Database::connect('default'); 
         $this->crypt = \Config\Services::encrypter();
-        $this->logs = new Logs();
+        $this->logs  = new Logs();
         date_default_timezone_set("Asia/Singapore"); 
-        $this->time = date("H:i:s");
-        $this->date = date("Y-m-d");
+        $this->time  = date("H:i:s");
+        $this->date  = date("Y-m-d");
 
     }
 
+
+    /**
+        * @method edituser() edit the user information
+        * @param duID decrypted user id
+        * @var query contains database result query
+        * @return json
+    */
     public function edituser($duID){
 
         $query = $this->db->query("select *, tu.status, tp.position, tf.firm, tf.noemployee, tf.noclient, tf.address, tf.contact
@@ -34,6 +60,13 @@ class UserModel extends  Model {
 
     }
 
+
+    /**
+        * @method getusers() get all the users
+        * @param uID user id
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getusers($uID){
 
         $query = $this->db->query("select *, tu.status, tp.position,tu.added_on, tu.updated_on
@@ -45,6 +78,13 @@ class UserModel extends  Model {
 
     }
 
+
+    /**
+        * @method getmyinfo() get the user personal information
+        * @param uID user id
+        * @var query contains database result query
+        * @return row-array
+    */
     public function getmyinfo($uID){
 
         $query = $this->db->query("select *, tu.status,tu.address,tu.contact,tp.position,tu.added_on, tu.updated_on
@@ -56,6 +96,12 @@ class UserModel extends  Model {
 
     }
 
+
+    /**
+        * @method getfirm() get the firm information
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getfirm(){
 
         $query = $this->db->query("select * 
@@ -65,6 +111,12 @@ class UserModel extends  Model {
 
     }
 
+
+    /**
+        * @method getposition() get all the positions
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getposition(){
 
         $query = $this->db->table($this->tblp)->get();
@@ -72,6 +124,19 @@ class UserModel extends  Model {
 
     }
 
+
+    /**
+        * @method signin() firm signing up
+        * @param array-req contains the firm data
+        * @var res1 a number result of email if exist
+        * @var res2 a number result of firm if exist
+        * @var newlogoname the Logo Name
+        * @var array-firm contains firm information
+        * @var insertedId the id of firm just inserted
+        * @var array-data contains contains firm user login information
+        * @var email email configuration for email notification
+        * @return registered-failed
+    */
     public function signin($req){
 
         $res1 = $this->db->table($this->tblu)->where('email', $req['email'])->get()->getNumRows();
@@ -120,6 +185,18 @@ class UserModel extends  Model {
 
     }
 
+
+    /**
+        * @method acceptaud() validation of auditor's account
+        * @param array-req contains the auditor validation
+        * @var array-where reference for the update
+        * @var count count if the reference exist
+        * @var newlogoname the Logo Name
+        * @var array-data contains verification information
+        * @var array-data contains contains firm user login information
+        * @var email email configuration for email notification
+        * @return confirmed-infonotfound
+    */
     public function acceptaud($req){
 
         $where = [
@@ -148,6 +225,15 @@ class UserModel extends  Model {
 
     }
 
+
+    /**
+        * @method adduser() register systems user
+        * @param array-req contains the user data
+        * @var res1 a number result of email if exist
+        * @var res2 a number result of name if exist
+        * @var array-data contains user information
+        * @return added-failed
+    */
     public function adduser($req){
 
         $res1 = $this->db->table($this->tblu)->where('email', $req['email'])->get()->getNumRows();
@@ -176,6 +262,13 @@ class UserModel extends  Model {
 
     }
 
+
+    /**
+        * @method udpateuser() update the user
+        * @param array-req contains the user data
+        * @var array-data contains user information
+        * @return updated-failed
+    */
     public function udpateuser($req){
 
         $data = [
@@ -194,6 +287,16 @@ class UserModel extends  Model {
 
     }
 
+
+    /**
+        * @method updatemyinfo() use to update self information
+        * @param array-req contains the user data
+        * @var array-data contains user information
+        * @var imagePath path of the uploaded photo
+        * @var photoname photo name
+        * @var signaturename signature name
+        * @return updated-error
+    */
     public function updatemyinfo($req){
 
         $data = [
@@ -232,6 +335,16 @@ class UserModel extends  Model {
 
     }
 
+
+    /**
+        * @method acin() set the user information to active and inactive
+        * @param duID decrypted user id
+        * @var query result from database
+        * @var r result from database as row array
+        * @var stat set the status
+        * @var array-data contains auditor information going to save to database
+        * @return bool
+    */
     public function acin($duID){
 
         $query = $this->db->table($this->tblu)->where('userID', $duID)->get();

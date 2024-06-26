@@ -6,12 +6,28 @@ use App\Libraries\Logs;
 class AuditorModel extends Model{
    
 
+    /**
+        // ALL MODELS ARE COMMUNICATING ON THE DATABASE AND PROCESSES DATA TO THE DATABASE // 
+        THIS FILE IS USED FOR AUDITOR MANAGEMENT
+        Properties being used on this file
+        * @property tblu table of users
+        * @property tblf table of firms
+        * @property tblp table of positions
+        * @property db to load the data base
+        * @property time-date to load the date and time
+        * @property logs to load the logs libraries for user activity logs
+    */
     protected $tblu = "tbl_users";
     protected $tblf = "tbl_firm";
     protected $tblp = "tbl_position";
+    protected $db;
     protected $time,$date;
     protected $logs;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         $this->db   = \Config\Database::connect('default'); 
@@ -22,19 +38,28 @@ class AuditorModel extends Model{
 
     }
 
+
+    /**
+        * @method editauditor() to edit the information of editor
+        * @param duID decrypted user id
+        * @var query contains database result query
+        * @return json
+    */
     public function editauditor($duID){
 
         $query = $this->db->table($this->tblu)->where('userID', $duID)->get();
-        $r = $query->getRowArray();
-        $data = [
-            'name'  => $r['name'],
-            'email' => $r['email'],
-            'type'  =>  $r['type']
-        ];
-        return json_encode($data);
+        return json_encode($query->getRowArray());
     
     }
 
+
+    /**
+        * @method getauditor() get all the auditors
+        * @param fID firms id
+        * @param uID user id
+        * @var query contains database result query
+        * @return query-result-as-array
+    */
     public function getauditor($fID,$uID){
 
         $query = $this->db->query("select *, tu.status, tp.position
@@ -48,6 +73,17 @@ class AuditorModel extends Model{
 
     }
 
+
+    /**
+        * @method saveauditor() save the information of the auditor
+        * @param array-req contains the auditor information
+        * @var res1 a number result of query if data exist
+        * @var sign signature name
+        * @var array-data contains auditor information going to save to database
+        * @var refID reference id after registering
+        * @var email email configuration for email notification
+        * @return registered-failed
+    */
     public function saveauditor($req){
 
         $res1 = $this->db->table($this->tblu)->where('email', $req['email'])->get()->getNumRows();
@@ -89,6 +125,13 @@ class AuditorModel extends Model{
 
     }
 
+
+    /**
+        * @method updateauditor() update the information of the auditor
+        * @param array-req contains the auditor information
+        * @var array-data contains auditor information going to save to database
+        * @return updated-failed
+    */
     public function updateauditor($req){
 
         $data = [
@@ -107,6 +150,16 @@ class AuditorModel extends Model{
 
     }
 
+
+    /**
+        * @method acin() set the auditor information to active and inactive
+        * @var query result from database
+        * @var r result from database as row array
+        * @var stat set the status
+        * @param duID user id
+        * @var array-data contains auditor information going to save to database
+        * @return bool
+    */
     public function acin($duID){
 
         $query      = $this->db->table($this->tblu)->where('userID', $duID)->get();

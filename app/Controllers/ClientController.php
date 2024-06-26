@@ -63,18 +63,20 @@ class ClientController extends BaseController{
         * @method viewfiles() view the HAT files to be assign to client
         * @param cID encrypted data of client id
         * @param name name of the client
+        * @var dcID decrypted data of client id
         * @var array-data consist of data and display it on the page
         * @return view
     */
     public function viewfiles($cID,$name){
 
+        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
         $data['title']  = 'HAT Audit Files';
         $data['subt']   = 'Select HAT files for '.$name;
         $data['cID']    = $cID;
         $data['name']   = $name;
-        $data['c1']     = $this->cmodel->getc1();
-        $data['c2']     = $this->cmodel->getc2();
-        $data['c3']     = $this->cmodel->getc3();
+        $data['c1']     = $this->cmodel->getc1($dcID);
+        $data['c2']     = $this->cmodel->getc2($dcID);
+        $data['c3']     = $this->cmodel->getc3($dcID);
         echo view('includes/Header', $data);
         echo view('client/ViewFiles', $data);
         echo view('includes/Footer');

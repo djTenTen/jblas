@@ -5,6 +5,21 @@ use \App\Models\DashController;
 
 class DashModel extends Model{
    
+
+    /**
+        // ALL MODELS ARE COMMUNICATING ON THE DATABASE AND PROCESSES DATA TO THE DATABASE // 
+        THIS FILE IS USED FOR DASHBOARD VIEW
+        Properties being used on this file
+        * @property tblc1 table of client files chapter 1
+        * @property tblc2 table of client files chapter 2
+        * @property tblc3 table of client files chapter 3
+        * @property tblc table of clients
+        * @property tblwp table of workpaper
+        * @property tblu table of user
+        * @property tblp table of position
+        * @property time-date-year to load the date and time
+        * @property db to load the data base
+    */
     protected $tblc1    = "tbl_client_files_c1";
     protected $tblc2    = "tbl_client_files_c2";
     protected $tblc3    = "tbl_client_files_c3";
@@ -13,7 +28,12 @@ class DashModel extends Model{
     protected $tblu     = "tbl_users";
     protected $tblp     = "tbl_position";
     protected $time,$date,$year;
+    protected $db;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         $this->db   = \Config\Database::connect('default'); 
@@ -24,6 +44,13 @@ class DashModel extends Model{
 
     }
 
+
+    /**
+        * @method getnumauds() count all the auditors
+        * @param fID firm id
+        * @var query contains database result query
+        * @return integer
+    */
     public function getnumauds($fID){
 
         $query = $this->db->table($this->tblu)->where('firm',$fID)->get();
@@ -31,6 +58,13 @@ class DashModel extends Model{
 
     }
 
+
+    /**
+        * @method getnumclients() count all the clients
+        * @param fID firm id
+        * @var query contains database result query
+        * @return integer
+    */
     public function getnumclients($fID){
 
         $query = $this->db->table($this->tblc)->where('fID',$fID)->get();
@@ -38,6 +72,15 @@ class DashModel extends Model{
 
     }
 
+
+    /**
+        * @method getnumwp() count all the work paper per status
+        * @param fID firm id
+        * @param status status of the workpaper
+        * @var where reference on the query
+        * @var query contains database result query
+        * @return integer
+    */
     public function getnumwp($fID,$status){
 
         $where = ['firm' => $fID, 'status' => $status];
@@ -46,6 +89,13 @@ class DashModel extends Model{
 
     }
 
+
+    /**
+        * @method getmyauditors() get all my auditors
+        * @param fID firm id
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getmyauditors($fID){
 
         $query = $this->db->query("select *
@@ -57,6 +107,13 @@ class DashModel extends Model{
 
     }
 
+
+    /**
+        * @method getwpprogress() get all the workpaper progress
+        * @param fID firm id
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getwpprogress($fID){
 
         $query = $this->db->query("select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
@@ -76,6 +133,14 @@ class DashModel extends Model{
 
     }
 
+
+    /**
+        * @method getwpp() get all the workpaper progress per year
+        * @param year selected year
+        * @param fID firm id
+        * @var query contains database result query
+        * @return json
+    */
     public function getwpp($year,$fID){
 
         //$query = $this->db->table($this->tblu)->get();
@@ -96,6 +161,16 @@ class DashModel extends Model{
 
     }
 
+
+    /**
+        * @method getnumwpp() count progress per year
+        * @param fID firm id
+        * @param status status of the workpaper
+        * @param year selected year
+        * @var where reference on the query
+        * @var query contains database result query
+        * @return integer
+    */
     public function getnumwpp($fID,$status,$year){
 
         $where = ['firm' => $fID, 'status' => $status, 'financial_year' => $year];

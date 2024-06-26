@@ -6,11 +6,26 @@ use App\Libraries\Logs;
 class Chapter3Model extends Model{
 
    
+    /**
+        // ALL MODELS ARE COMMUNICATING ON THE DATABASE AND PROCESSES DATA TO THE DATABASE // 
+        THIS FILE IS USED FOR CHAPTER 3 FILE MANAGEMENT
+        Properties being used on this file
+        * @property tblc3 table of chapter 3
+        * @property time-date to load the date and time
+        * @property db to load the data base
+        * @property crypt to load the encryption file
+        * @property logs to load the logs libraries for user activity logs
+    */
     protected $tblc3 = "tbl_c3";
-    protected $crypt;
     protected $time,$date;
+    protected $db;
+    protected $crypt;
     protected $logs;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         $this->db       = \Config\Database::connect('default'); 
@@ -22,10 +37,16 @@ class Chapter3Model extends Model{
 
     }
 
+
     /**
-        ----------------------------------------------------------
-        GENERAL FUNCTIONS
-        ----------------------------------------------------------
+        * @method acin() set the chapter 3 files to active and inactive
+        * @param req contains chapter file information
+        * @var query result from database
+        * @var r result from database as row array
+        * @var stat set the status
+        * @param duID user id
+        * @var array-data contains auditor information going to save to database
+        * @return bool
     */
     public function acin($req){
 
@@ -50,11 +71,17 @@ class Chapter3Model extends Model{
 
     }
     
+    
     /**
         ----------------------------------------------------------
         AA1 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa1() get the aa1 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return result-array
     */
     public function getaa1($part,$code,$c3tID){
 
@@ -63,6 +90,13 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method getaa1s3() save the aa1 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa1s3($code,$c3tID){
 
         $query = $this->db->table($this->tblc3)->where(array('type' => 'section3', 'code' => $code, 'c3tID' => $c3tID))->get();
@@ -71,7 +105,10 @@ class Chapter3Model extends Model{
     }
    
     /**
-        POST FUNCTIONS
+        * @method savequestions() save the aa1 information
+        * @param req aa1 data
+        * @var data contains aa1 information
+        * @return bool
     */
     public function savequestions($req){
 
@@ -81,8 +118,8 @@ class Chapter3Model extends Model{
                 'question'      => $req['question'][$i],
                 'extent'        => $req['extent'][$i],
                 'reference'     => $req['reference'][$i],
-                'type'          =>  $req['part'],
-                'code'          =>  $req['code'],
+                'type'          => $req['part'],
+                'code'          => $req['code'],
                 'c3tID'         => $req['c3tID'],
                 'status'        => 'Active',
                 'updated_on'    => $this->date.' '.$this->time
@@ -94,13 +131,19 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method saveaa1s3() save the aa1 information
+        * @param req aa1 data
+        * @var data contains aa1 information
+        * @return bool
+    */
     public function saveaa1s3($req){
 
         $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
         $data = [
             'question'      => $req['question'],
-            'type'          =>  $req['part'],
-            'code'          =>  $req['code'],
+            'type'          => $req['part'],
+            'code'          => $req['code'],
             'c3tID'         => $req['c3tID'],
             'status'        => 'Active',
             'updated_on'    => $this->date.' '.$this->time
@@ -114,11 +157,16 @@ class Chapter3Model extends Model{
 
     }
 
+    
     /**
         ----------------------------------------------------------
         AA2 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa2data() get the aa2 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return result-array
     */
     public function getaa2data($code,$c3tID){
 
@@ -128,15 +176,18 @@ class Chapter3Model extends Model{
     }
    
     /**
-        POST FUNCTIONS
+        * @method saveaa2() save the aa2 information
+        * @param req aa2 data
+        * @var data contains aa2 information
+        * @return bool
     */
     public function saveaa2($req){
 
         $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
         $data = [
             'question'      => $req['aa2'],
-            'type'          =>  $req['part'],
-            'code'          =>  $req['code'],
+            'type'          => $req['part'],
+            'code'          => $req['code'],
             'c3tID'         => $req['c3tID'],
             'status'        => 'Active',
             'updated_on'    => $this->date.' '.$this->time
@@ -150,19 +201,32 @@ class Chapter3Model extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA3a FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa3() get the aa3a information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return result-array
     */
     public function getaa3($part,$code,$c3tID){
 
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'cr', 'code' => $code, 'c3tID' => $c3tID))->get();
+        $query = $this->db->table($this->tblc3)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
         return $query->getResultArray();
 
     }
 
+    /**
+        * @method getaa3air() get the aa3a information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa3air($code,$c3tID){
 
         $query = $this->db->table($this->tblc3)->where(array('type' => 'ir', 'code' => $code, 'c3tID' => $c3tID))->get();
@@ -170,8 +234,11 @@ class Chapter3Model extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa3a() save the aa3a information
+        * @param req aa3a data
+        * @var data contains aa3a information
+        * @return bool
     */
     public function saveaa3a($req){
 
@@ -180,8 +247,8 @@ class Chapter3Model extends Model{
             $data = [
                 'question'      => $req['question'][$i],
                 'reference'     => $req['comment'][$i],
-                'type'          =>  $req['part'],
-                'code'          =>  $req['code'],
+                'type'          => $req['part'],
+                'code'          => $req['code'],
                 'c3tID'         => $req['c3tID'],
                 'status'        => 'Active',
                 'updated_on'    => $this->date.' '.$this->time
@@ -193,6 +260,12 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method saveaa3afaf() save the aa3a information
+        * @param req aa3a data
+        * @var data contains aa3a information
+        * @return bool
+    */
     public function saveaa3afaf($req){
 
         $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
@@ -201,8 +274,8 @@ class Chapter3Model extends Model{
                 'question'      => $req['question'][$i],
                 'extent'        => $req['extent'][$i],
                 'reference'     => $req['reference'][$i],
-                'type'          =>  $req['part'],
-                'code'          =>  $req['code'],
+                'type'          => $req['part'],
+                'code'          => $req['code'],
                 'c3tID'         => $req['c3tID'],
                 'status'        => 'Active',
                 'updated_on'    => $this->date.' '.$this->time
@@ -214,13 +287,19 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method saveaa3air() save the aa3a information
+        * @param req aa3a data
+        * @var data contains aa3a information
+        * @return bool
+    */
     public function saveaa3air($req){
 
         $this->db->table($this->tblc3)->where(array('type' => 'ir', 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
         $data = [
             'question'      => $req['ir'],
-            'type'          =>  $req['part'],
-            'code'          =>  $req['code'],
+            'type'          => $req['part'],
+            'code'          => $req['code'],
             'c3tID'         => $req['c3tID'],
             'status'        => 'Active',
             'updated_on'    => $this->date.' '.$this->time
@@ -234,11 +313,17 @@ class Chapter3Model extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA3b FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa3b() get the aa3b information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return result-array
     */
     public function getaa3b($part,$code,$c3tID){
 
@@ -247,6 +332,13 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method getaa3bp4() get the aa3b information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa3bp4($code,$c3tID){
 
         $query = $this->db->table($this->tblc3)->where(array('type' => 'p4', 'code' => $code, 'c3tID' => $c3tID))->get();
@@ -254,8 +346,11 @@ class Chapter3Model extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa3b() save the aa3b information
+        * @param req aa3b data
+        * @var data contains aa3b information
+        * @return bool
     */
     public function saveaa3b($req){
 
@@ -277,6 +372,12 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method saveaa3bp4() save the aa3b information
+        * @param req aa3b data
+        * @var data contains aa3b information
+        * @return bool
+    */
     public function saveaa3bp4($req){
 
         $this->db->table($this->tblc3)->where(array('type' => 'p4', 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
@@ -297,11 +398,17 @@ class Chapter3Model extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA5b FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa5b() get the aa5b information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return result-array
     */
     public function getaa5b($code,$c3tID){
 
@@ -310,8 +417,11 @@ class Chapter3Model extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa5b() save the aa5b information
+        * @param req aa5b data
+        * @var data contains aa5b information
+        * @return bool
     */
     public function saveaa5b($req){
 
@@ -337,11 +447,17 @@ class Chapter3Model extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA7 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa7() get the aa7 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return result-array
     */
     public function getaa7($part,$code,$c3tID){
 
@@ -350,6 +466,14 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method getaa7aep() get the aa7 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa7aep($part,$code,$c3tID){
 
         $query = $this->db->table($this->tblc3)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
@@ -357,8 +481,11 @@ class Chapter3Model extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa7isa() save the aa7 information
+        * @param req aa7 data
+        * @var data contains aa7 information
+        * @return bool
     */
     public function saveaa7isa($req){
 
@@ -383,6 +510,12 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method saveaa7aepapp() save the aa7 information
+        * @param req aa7 data
+        * @var data contains aa7 information
+        * @return bool
+    */
     public function saveaa7aepapp($req){
 
         $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
@@ -403,6 +536,12 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method saveaa7aep() save the aa7 information
+        * @param req aa7 data
+        * @var data contains aa7 information
+        * @return bool
+    */
     public function saveaa7aep($req){
 
         $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
@@ -423,11 +562,16 @@ class Chapter3Model extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA10 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa10() get the aa10 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return row-array
     */
     public function getaa10($code,$c3tID){
 
@@ -436,8 +580,11 @@ class Chapter3Model extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa10() save the aa10 information
+        * @param req aa10 data
+        * @var data contains aa10 information
+        * @return bool
     */
     public function saveaa10($req){
 
@@ -459,11 +606,17 @@ class Chapter3Model extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AA11 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getaa11p2() get the aa11 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return result-array
     */
     public function getaa11p2($part,$code,$c3tID){
 
@@ -472,6 +625,14 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method getaa11p1() get the aa11 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa11p1($part,$code,$c3tID){
 
         $query = $this->db->table($this->tblc3)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
@@ -479,6 +640,14 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method getaa11con() get the aa11 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return row-array
+    */
     public function getaa11con($part,$code,$c3tID){
 
         $query = $this->db->table($this->tblc3)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
@@ -486,8 +655,11 @@ class Chapter3Model extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveaa11un() save the aa11 information
+        * @param req aa11 data
+        * @var data contains aa11 information
+        * @return bool
     */
     public function saveaa11un($req){
 
@@ -514,6 +686,12 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method saveaa11ad() save the aa11 information
+        * @param req aa11 data
+        * @var data contains aa11 information
+        * @return bool
+    */
     public function saveaa11ad($req){
 
         $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
@@ -538,6 +716,12 @@ class Chapter3Model extends Model{
 
     }
     
+    /**
+        * @method saveaa11ue() save the aa11 information
+        * @param req aa11 data
+        * @var data contains aa11 information
+        * @return bool
+    */
     public function saveaa11ue($req){
 
         $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
@@ -558,6 +742,12 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method saveaa11con() save the aa11 information
+        * @param req aa11 data
+        * @var data contains aa11 information
+        * @return bool
+    */
     public function saveaa11con($req){
 
         $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
@@ -578,11 +768,16 @@ class Chapter3Model extends Model{
 
     }
 
+
     /**
         ----------------------------------------------------------
         AB1 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getab1() get the ab1 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return result-array
     */
     public function getab1($code,$c3tID){
 
@@ -591,8 +786,11 @@ class Chapter3Model extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveab1() save the ab1 information
+        * @param req ab1 data
+        * @var data contains ab1 information
+        * @return bool
     */
     public function saveab1($req){
 
@@ -615,11 +813,16 @@ class Chapter3Model extends Model{
       
     }
 
+    
     /**
         ----------------------------------------------------------
         AB3 FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getab3() get the ab1 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return row-array
     */
     public function getab3($code,$c3tID){
 
@@ -628,8 +831,11 @@ class Chapter3Model extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveab3() save the ab3 information
+        * @param req ab3 data
+        * @var data contains ab3 information
+        * @return bool
     */
     public function saveab3($req){
 
@@ -651,12 +857,17 @@ class Chapter3Model extends Model{
       
     }
 
+
     /**
         ----------------------------------------------------------
-        AB3 FUNCTIONS
+        AB4 FUNCTIONS
         ----------------------------------------------------------
-
-        GET FUNCTIONS
+        * @method getab4() get the ab4 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return result-array
     */
     public function getab4($part,$code,$c3tID){
 
@@ -665,6 +876,14 @@ class Chapter3Model extends Model{
 
     }
 
+    /**
+        * @method getab4checklist() get the ab4 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return row-array
+    */
     public function getab4checklist($part,$code,$c3tID){
 
         $query = $this->db->table($this->tblc3)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
@@ -672,8 +891,11 @@ class Chapter3Model extends Model{
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveab4() save the ab4 information
+        * @param req ab4 data
+        * @var data contains ab4 information
+        * @return bool
     */
     public function saveab4($req){
 
@@ -698,6 +920,12 @@ class Chapter3Model extends Model{
       
     }
 
+    /**
+        * @method saveab4checklist() save the ab4 information
+        * @param req ab4 data
+        * @var data contains ab4 information
+        * @return bool
+    */
     public function saveab4checklist($req){
 
         $this->db->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $req['code'], 'c3tID' => $req['c3tID']))->delete();
@@ -718,21 +946,29 @@ class Chapter3Model extends Model{
       
     }
 
+
     /**
         ----------------------------------------------------------
-        AB4a FUNCTIONS
+        AB4a,b,c,d,e,f,g,h FUNCTIONS
         ----------------------------------------------------------
-        GET FUNCTIONS
+        * @method getab4a() get the ab4a information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return result-array
     */
-    public function getab4a($code,$c3tID){
+    public function getab4a($part,$code,$c3tID){
 
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'ab4a', 'code' => $code, 'c3tID' => $c3tID))->get();
+        $query = $this->db->table($this->tblc3)->where(array('type' => $part, 'code' => $code, 'c3tID' => $c3tID))->get();
         return $query->getResultArray();
 
     }
 
-    /** 
-        POST FUNCTIONS
+    /**
+        * @method saveab4csaveab4ahecklist() save the ab4a information
+        * @param req ab4a data
+        * @var data contains ab4a information
+        * @return bool
     */
     public function saveab4a($req){
 
@@ -756,119 +992,6 @@ class Chapter3Model extends Model{
         return true;
       
     }
-
-    /**
-        ----------------------------------------------------------
-        AB4b FUNCTIONS
-        ----------------------------------------------------------
-        GET FUNCTIONS
-    */
-    public function getab4b($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'ab4b', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-    /** 
-        POST FUNCTIONS
-    */
-
-    /**
-        ----------------------------------------------------------
-        AB4c FUNCTIONS
-        ----------------------------------------------------------
-        GET FUNCTIONS
-    */
-    public function getab4c($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'ab4c', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-    /** 
-        POST FUNCTIONS
-    */
-
-     /**
-        ----------------------------------------------------------
-        AB4d FUNCTIONS
-        ----------------------------------------------------------
-        GET FUNCTIONS
-    */
-    public function getab4d($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'ab4d', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-    /** 
-        POST FUNCTIONS
-    */
-
-    /**
-        ----------------------------------------------------------
-        AB4e FUNCTIONS
-        ----------------------------------------------------------
-        GET FUNCTIONS
-    */
-    public function getab4e($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'ab4e', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-    /** 
-        POST FUNCTIONS
-    */
-
-    /**
-        ----------------------------------------------------------
-        AB4f FUNCTIONS
-        ----------------------------------------------------------
-        GET FUNCTIONS
-    */
-    public function getab4f($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'ab4f', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-    /** 
-        POST FUNCTIONS
-    */
-
-    /**
-        ----------------------------------------------------------
-        AB4g FUNCTIONS
-        ----------------------------------------------------------
-        GET FUNCTIONS
-    */
-    public function getab4g($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'ab4g', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-    /** 
-        POST FUNCTIONS
-    */
-
-    /**
-        ----------------------------------------------------------
-        AB4h FUNCTIONS
-        ----------------------------------------------------------
-
-        GET FUNCTIONS
-    */
-    public function getab4h($code,$c3tID){
-
-        $query = $this->db->table($this->tblc3)->where(array('type' => 'ab4h', 'code' => $code, 'c3tID' => $c3tID))->get();
-        return $query->getResultArray();
-
-    }
-    /** 
-        POST FUNCTIONS
-    */
 
 
 }

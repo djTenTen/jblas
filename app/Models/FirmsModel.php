@@ -6,11 +6,25 @@ use App\Libraries\Logs;
 class FirmsModel extends  Model {
 
 
+    /**
+        // ALL MODELS ARE COMMUNICATING ON THE DATABASE AND PROCESSES DATA TO THE DATABASE // 
+        THIS FILE IS USED FOR FIRMS MANAGEMENT
+        Properties being used on this file
+        * @property tbluser table of user
+        * @property tblfirm table of firm
+        * @property time-date-year to load the date and time
+        * @property db to load the data base
+    */
     protected $tbluser = "tbl_users";
     protected $tblfirm = "tbl_firm";
     protected $time,$date;
+    protected $db;
     protected $logs;
 
+
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         $this->db   = \Config\Database::connect('default'); 
@@ -21,6 +35,12 @@ class FirmsModel extends  Model {
 
     }
 
+
+    /**
+        * @method getfirms() get the firms informations
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getfirms(){
 
         $query = $this->db->query("select *,tf.firm as firmname 
@@ -31,6 +51,15 @@ class FirmsModel extends  Model {
 
     }
 
+
+    /**
+        * @method verifyfirm() verify the information of the firm
+        * @param uID user id
+        * @param data contains verify information
+        * @var f contains firms data
+        * @var email email confirguration for email notification
+        * @return bool
+    */
     public function verifyfirm($uID){
 
         $data = [

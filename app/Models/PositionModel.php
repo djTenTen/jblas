@@ -6,10 +6,25 @@ use App\Libraries\Logs;
 class PositionModel extends  Model {
 
 
+    /**
+        // ALL MODELS ARE COMMUNICATING ON THE DATABASE AND PROCESSES DATA TO THE DATABASE // 
+        THIS FILE IS USED FOR POSITION MANAGEMENT
+        Properties being used on this file
+        * @property tblpos table of position
+        * @property logs scheme name
+        * @property db to load the database
+        * @property time-date to load the date and time
+        
+    */
     protected $tblpos = "tbl_position";
-    protected $time,$date;
     protected $logs;
+    protected $db;
+    protected $time,$date;
+    
 
+    /**
+        * @method __construct() to assign and load the method on the @property
+    */
     public function __construct(){
 
         $this->db   = \Config\Database::connect('default'); 
@@ -20,18 +35,26 @@ class PositionModel extends  Model {
 
     }
 
+
+    /**
+        * @method editposition() edit the position information
+        * @param pId position ID
+        * @var query contains database result query
+        * @return json
+    */
     public function editposition($pID){
 
         $query = $this->db->table($this->tblpos)->where('posID', $pID)->get();
-        $r = $query->getRowArray();
-        $data = [
-            'position'  => $r['position'],
-            'allowed'   => $r['allowed']
-        ];
-        return json_encode($data);
+        return json_encode($query->getRowArray());
 
     }
 
+
+    /**
+        * @method getposition() get all the positions
+        * @var query contains database result query
+        * @return result-array
+    */
     public function getposition(){
 
         $query = $this->db->table($this->tblpos)->get();
@@ -39,6 +62,13 @@ class PositionModel extends  Model {
 
     }
 
+
+    /**
+        * @method saveposition() save the position information
+        * @param req contains position data
+        * @var data contains position information
+        * @return bool
+    */
     public function saveposition($req){
 
         $data = [
@@ -56,6 +86,13 @@ class PositionModel extends  Model {
 
     }
 
+
+    /**
+        * @method updateposition() update the position information
+        * @param req contains position data
+        * @var data contains position update information
+        * @return bool
+    */
     public function updateposition($req){
 
         $data = [
@@ -72,6 +109,16 @@ class PositionModel extends  Model {
 
     }
 
+
+    /**
+        * @method acin() set the position information to active and inactive
+        * @param dpID decrypted position ID
+        * @var query result from database
+        * @var r result from database as row array
+        * @var stat set the status
+        * @var array-data contains auditor information going to save to database
+        * @return bool
+    */
     public function acin($dpID){
 
         $query = $this->db->table($this->tblpos)->where('posID', $dpID)->get();
