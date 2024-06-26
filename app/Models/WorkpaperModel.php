@@ -613,11 +613,11 @@ class WorkpaperModel extends  Model {
                 //case '17'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'payrollcu']; break;
             }
             $balcu = $this->db->table($this->tblc1)->where($refaut)->get()->getRowArray();
-            if($balcu['question'] != 0){
-                $cal = ['question' => $req['debit'][$i] - $req['credit'][$i]];
-            }else{
+            // if($balcu['question'] != 0){
+            //     $cal = ['question' => $req['debit'][$i] - $req['credit'][$i]];
+            // }else{
                 $cal = ['question' => $balcu['question'] + ($req['debit'][$i] - $req['credit'][$i])];
-            }
+            //}
             $this->db->table($this->tblc1)->where($refaut)->update($cal);
             $this->db->table($this->tblcfi)->where(array('clientID' => $req['client'], 'firm' => $req['firm'], 'workpaper' => $req['workpaper'], 'index' => $index))->update(array('acquired' => 'Yes'));
             $data = [
