@@ -100,7 +100,7 @@
                                     <option value="<?= $sec['y2']?>" selected><?= $sec['y2']?></option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
-                                    <option value="NA">NA</option>
+                                    <option value="N/A">N/A</option>
                                 </select>
                             </td>
                         </tr>
@@ -119,7 +119,7 @@
                                     <option value="<?= $sec['y4']?>" selected><?= $sec['y4']?></option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
-                                    <option value="NA">NA</option>
+                                    <option value="N/A">N/A</option>
                                 </select>
                             </td>
                         </tr>
@@ -138,7 +138,7 @@
                                     <option value="<?= $sec['y6']?>" selected><?= $sec['y6']?></option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
-                                    <option value="NA">NA</option>
+                                    <option value="N/A">N/A</option>
                                 </select>
                             </td>
                         </tr>
@@ -157,7 +157,7 @@
                                     <option value="<?= $sec['y8']?>" selected><?= $sec['y8']?></option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
-                                    <option value="NA">NA</option>
+                                    <option value="N/A">N/A</option>
                                 </select>
                             </td>
                         </tr>
@@ -176,7 +176,7 @@
                                     <option value="<?= $sec['y10']?>" selected><?= $sec['y10']?></option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
-                                    <option value="NA">NA</option>
+                                    <option value="N/A">N/A</option>
                                 </select>
                             </td>
                         </tr>
@@ -195,7 +195,7 @@
                                     <option value="<?= $sec['y12']?>" selected><?= $sec['y12']?></option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
-                                    <option value="NA">NA</option>
+                                    <option value="N/A">N/A</option>
                                 </select>
                             </td>
                         </tr>
@@ -214,7 +214,7 @@
                                     <option value="<?= $sec['y14']?>" selected><?= $sec['y14']?></option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
-                                    <option value="NA">NA</option>
+                                    <option value="N/A">N/A</option>
                                 </select>
                             </td>
                         </tr>
@@ -233,7 +233,7 @@
                                     <option value="<?= $sec['y16']?>" selected><?= $sec['y16']?></option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
-                                    <option value="NA">NA</option>
+                                    <option value="N/A">N/A</option>
                                 </select>
                             </td>
                         </tr>

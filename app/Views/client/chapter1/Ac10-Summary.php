@@ -72,11 +72,10 @@
 
                <div class="table-responsive">
                     <form action="<?= base_url()?>auditsystem/client/saveac10summ/<?= $code?>/<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
-                    <table class="table table-bordered table-sm" style="width: 2500px;">
+                    <table class="table table-bordered table-sm" style="width: 2000px;">
                         <thead>
                             <tr class="text-center">
                                 <th colspan="3"></th>
-
                                 <th colspan="5">A</th>
                                 <th>B</th>
                                 <th>C</th>
@@ -88,26 +87,25 @@
                                 <th colspan="2">Transaction</th>
                             </tr>
                             <tr>
-                                <th>Audit Area</th>
-                                <th>Audit Assertion (1) (Expand if different risks apply to different assertions)</th>
-                                <th style="width: 5%;" class="text-center">Risk per Ac10</th>
-                                <th style="width: 5%;" class="text-center">I</th>
-                                <th style="width: 5%;" class="text-center">P</th>
-                                <th style="width: 5%;" class="text-center">%</th>
-                                <th style="width: 5%;" class="text-center">S</th>
-                                <th style="width: 5%;" class="text-center">T</th>
-                                <th>Tests of control  # (2) @</th>
-                                <th>Supportive analytical procedures #</th>
-                                <th>Risk factor (as below)</th>
-                                <th>Value of population after large and key items</th>
-                                <th>Section Ref</th>
-                                <th>Residual sample size</th>
-                                <th>No of material / key items to be tested </th>
-                                <th>Approximate number of transactions</th>
-                                <th>Transaction sample size from table B</th>
+                                <th style="width: 7%;">Audit Area</th>
+                                <th style="width: 3%;">Audit Assertion (1) (Expand if different risks apply to different assertions)</th>
+                                <th style="width: 4%;" class="text-center">Risk per Ac10</th>
+                                <th style="width: 3%;" class="text-center">I</th>
+                                <th style="width: 3%;" class="text-center">P</th>
+                                <th style="width: 3%;" class="text-center">%</th>
+                                <th style="width: 3%;" class="text-center">S</th>
+                                <th style="width: 3%;" class="text-center">T</th>
+                                <th style="width: 3%;">Tests of control  # (2) @</th>
+                                <th style="width: 3%;">Supportive analytical procedures #</th>
+                                <th style="width: 3%;">Risk factor (as below)</th>
+                                <th style="width: 5%;">Value of population after large and key items</th>
+                                <th style="width: 5%;">Section Ref</th>
+                                <th style="width: 5%;">Residual sample size</th>
+                                <th style="width: 3%;">No of material / key items to be tested </th>
+                                <th style="width: 5%;">Approximate number of transactions</th>
+                                <th style="width: 5%;">Transaction sample size from table B</th>
                             </tr>
                         </thead>
-
                         <tbody id="tbody">
                             <tr>
                                 <td>Intangible Assets</td>

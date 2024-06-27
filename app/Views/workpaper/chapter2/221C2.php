@@ -50,16 +50,16 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Audit Tests</th>
-                                <th>Extent</th>
-                                <th>Reference</th>
-                                <th>Initials/Date</th>
+                                <th style="width: 15%;">Extent</th>
+                                <th style="width: 15%;">Reference</th>
+                                <th style="width: 15%;">Initials/Date</th>
                             </tr>
                         </thead>
                         <tbody id="tbody">
                             <?php foreach($qdata as $r){?>
                                 <tr>
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"><?= $r['extent']?></textarea></td>
+                                    <td><textarea class="form-control question" id="question" cols="30" rows="3" name="extent[]"><?= $r['extent']?></textarea></td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="initials[]"><?= $r['initials']?></textarea></td>
                                 </tr>

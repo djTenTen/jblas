@@ -52,16 +52,22 @@
                     <table class="table table-sm table-hover table-bordered">
                         <thead>
                             <tr>
-                                <th>Question</th>
-                                <th>Yes/No</th>
-                                <th>Comments</th>
+                                <th style="width: 55%;">Question</th>
+                                <th style="width: 10%;">Yes/No</th>
+                                <th style="width: 35%;">Comment</th>
                             </tr>
                         </thead>
                         <tbody class="tbody">
                             <?php foreach($ac3genmat as $r){?>
                                 <tr>
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><input class="form-control" type="text" name="yesno[]" value="<?= $r['yesno']?>"></td>
+                                    <td>
+                                        <select name="yesno[]" id="" class="form-select">
+                                            <option value="<?= $r['yesno']?>" selected><?= $r['yesno']?></option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
                                 </tr>
                             <?php }?>
@@ -77,16 +83,22 @@
                     <table class="table table-sm table-hover table-bordered">
                         <thead>
                             <tr>
-                                <th>Question</th>
-                                <th>Yes/No</th>
-                                <th>Comments</th>
+                                <th style="width: 55%;">Question</th>
+                                <th style="width: 10%;">Yes/No</th>
+                                <th style="width: 35%;">Comment</th>
                             </tr>
                         </thead>
                         <tbody class="tbody">
                             <?php foreach($ac3doccors as $r){?>
                                 <tr>
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><input class="form-control" type="text" name="yesno[]" value="<?= $r['yesno']?>"></td>
+                                    <td>
+                                        <select name="yesno[]" id="" class="form-select">
+                                            <option value="<?= $r['yesno']?>" selected><?= $r['yesno']?></option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
                                 </tr>
                             <?php }?>
@@ -102,16 +114,22 @@
                     <table class="table table-sm table-hover table-bordered">
                         <thead>
                             <tr>
-                                <th>Question</th>
-                                <th>Yes/No</th>
-                                <th>Comments</th>
+                                <th style="width: 55%;">Question</th>
+                                <th style="width: 10%;">Yes/No</th>
+                                <th style="width: 35%;">Comment</th>
                             </tr>
                         </thead>
                         <tbody class="tbody">
                             <?php foreach($ac3statutory as $r){?>
                                 <tr>
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><input class="form-control" type="text" name="yesno[]" value="<?= $r['yesno']?>"></td>
+                                    <td>
+                                        <select name="yesno[]" id="" class="form-select">
+                                            <option value="<?= $r['yesno']?>" selected><?= $r['yesno']?></option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
                                 </tr>
                             <?php }?>
@@ -127,16 +145,22 @@
                     <table class="table table-sm table-hover table-bordered">
                         <thead>
                             <tr>
-                                <th>Question</th>
-                                <th>Yes/No</th>
-                                <th>Comments</th>
+                                <th style="width: 55%;">Question</th>
+                                <th style="width: 10%;">Yes/No</th>
+                                <th style="width: 35%;">Comment</th>
                             </tr>
                         </thead>
                         <tbody class="tbody">
                             <?php foreach($ac3accsys as $r){?>
                                 <tr>
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><input class="form-control" type="text" name="yesno[]" value="<?= $r['yesno']?>"></td>
+                                    <td>
+                                        <select name="yesno[]" id="" class="form-select">
+                                            <option value="<?= $r['yesno']?>" selected><?= $r['yesno']?></option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
                                 </tr>
                             <?php }?>

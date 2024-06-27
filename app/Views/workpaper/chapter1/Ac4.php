@@ -71,7 +71,7 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Scope of discussion (add additional points as appropriate) ~ note that all points should be discussed, and key issues highlighted:</th>
-                                <th></th>
+                                <th style="width: 50%;"></th>
                             </tr>
                         </thead>
                         <tbody class="tbody">

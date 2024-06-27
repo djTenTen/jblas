@@ -53,7 +53,7 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Audit Tests – Attendance at Inventory Count – Planning Procedures Prior to Attending </th>
-                                <th>Comments/Reference</th>
+                                <th style="width: 50%;">Comments/Reference</th>
                             </tr>
                         </thead>
                         <tbody id="tbody">
@@ -83,16 +83,23 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Do the inventory count procedures cover:</th>
-                                <th>Yes/No/N/A</th>
-                                <th>Comments/ Reference</th>
+                                <th style="width: 25%;"> Yes/No/N/A</th>
+                                <th style="width: 25%;" >Comments/ Reference</th>
                             </tr>
                         </thead>
                         <tbody id="tbody2">
                             <?php foreach($rcicp as $r1){?>
                                 <tr>
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r1['acID'])?>"><?= $r1['question']?></td>
-                                    <td><textarea class="form-control question" id="question" cols="30" rows="5" name="yesno[]"><?= $r1['extent']?></textarea></td>
-                                    <td><textarea class="form-control question" id="question" cols="30" rows="5" name="comment[]"><?= $r1['reference']?></textarea></td>
+                                    <td>
+                                        <select name="yesno[]" id="" class="form-select">
+                                            <option value="<?= $r['extent']?>" selected><?= $r['extent']?></option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </td>
+                                    <td><textarea class="form-control question" id="question" cols="30" rows="3" name="comment[]"><?= $r1['reference']?></textarea></td>
                                 </tr>
                             <?php }?>
                         </tbody>

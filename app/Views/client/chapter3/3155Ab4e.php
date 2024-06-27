@@ -61,10 +61,10 @@
                         </thead>
                         <thead>
                             <tr>
-                                <th colspan="2">Reference</th>
-                                <th>Questions</th>
-                                <th>Y/N/NA</th>
-                                <th>Comments</th>
+                                <th colspan="2" style="width: 5%;">Reference</th>
+                                <th style="width: 55%;">Questions</th>
+                                <th style="width: 10%;">Y/N/NA</th>
+                                <th style="width: 30%;">Comments</th>
                             </tr>
                         </thead>
                         <tbody class="tbody">
@@ -73,7 +73,14 @@
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['reference']?></td>
                                     <td><?= $r['extent']?></td>
                                     <td><?= $r['question']?></td>
-                                    <td><textarea class="form-control yesno" id="yesno" cols="30" rows="3" name="yesno[]"><?= $r['yesno']?></textarea></td>
+                                    <td>
+                                        <select name="yesno[]" id="" class="form-select">
+                                            <option value="<?= $r['yesno']?>" selected><?= $r['yesno']?></option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </td>
                                     <td><textarea class="form-control comment" id="comment" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
                                 </tr>
                             <?php }?>

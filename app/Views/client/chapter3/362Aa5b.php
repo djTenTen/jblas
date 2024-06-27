@@ -76,7 +76,7 @@
                         </tbody>
                     </table>
 
-                    <button class="btn btn-primary m-1 float-end" type="button" data-action="add-field" id="add-field"><i class="fas fa-plus-square m-1"></i> Add Field</button>
+                    <button class="btn btn-primary m-1 float-end btn-sm" type="button" data-action="add-field" id="add-field"><i class="fas fa-plus-square m-1"></i> Add Field</button>
                     <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>

@@ -49,8 +49,8 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Planning</th>
-                                <th>Yes/No</th>
-                                <th>Reference</th>
+                                <th style="width: 25%;">Yes/No</th>
+                                <th style="width: 25%;">Reference</th>
                             </tr>
                         </thead>
                         <tbody id="tbody">
@@ -58,7 +58,13 @@
                             <?php foreach($datapl as $r){?>
                                 <tr>
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"><?= $r['extent']?></textarea></td>
+                                    <td>
+                                        <select name="extent[]" id="" class="form-select">
+                                            <option value="<?= $r['extent']?>" selected><?= $r['extent']?></option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
                                 </tr>
                             <?php }?>
@@ -111,8 +117,8 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Planning</th>
-                                <th>Yes/No</th>
-                                <th>Reference</th>
+                                <th style="width: 25%;">Yes/No</th>
+                                <th style="width: 25%;">Reference</th>
                             </tr>
                         </thead>
                         <tbody id="tbody1">
@@ -120,7 +126,13 @@
                             <?php foreach($dataaf as $r){?>
                                 <tr>
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"><?= $r['extent']?></textarea></td>
+                                    <td>
+                                        <select name="extent[]" id="" class="form-select">
+                                            <option value="<?= $r['extent']?>" selected><?= $r['extent']?></option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
                                 </tr>
                             <?php }?>
@@ -162,40 +174,52 @@
                 <table class="table table-sm table-bordered">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Yes/No</th>
-                            <th>Comment</th>
+                            <th style="width: 55%;"></th>
+                            <th style="width: 10%;">Yes/No</th>
+                            <th style="width: 35%;">Reference</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Are there any matters which would alter any of the Ethical Considerations set out on the Regulation of Auditor’s Checklist (Ac2), Provision of Non-Audit Services to Audit Clients (Ac3), and Part 4 of the Audit Control Record?</td>
-                            <td><textarea class="form-control question" id="question" cols="30" rows="5" name="a1"><?= $s3['a1'];?></textarea></td>
-                            <td><textarea class="form-control" cols="30" rows="5" name="a2"><?= $s3['a2'];?></textarea></td>
+                            <td>
+                                <select name="a1" id="" class="form-select">
+                                    <option value="<?= $s3['a1'];?>" selected><?= $s3['a1'];?></option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="a2"><?= $s3['a2'];?></textarea></td>
                         </tr>
                         <tr>
                             <td>
-                                Are there any matters which would alter any of the Ethical Considerations set out on the Regulation of Auditor’s Checklist (Ac2), Provision of Non-Audit Services to Audit Clients (Ac3), and Part 4 of the Audit Control Record?
-                                <textarea class="form-control question" id="question" cols="30" rows="5" name="a3"><?= $s3['a3'];?></textarea>
+                                If the answer to the above question is “Yes”, what matters need to be considered:
+                                <textarea class="form-control question" id="question" cols="30" rows="3" name="a3"><?= $s3['a3'];?></textarea>
                                 Does any of the above affect our service as auditors of this client?
                             </td>
-                            <td><textarea class="form-control question" id="question" cols="30" rows="7" name="a4"><?= $s3['a4'];?></textarea></td>
-                            <td><textarea class="form-control" cols="30" rows="7" name="a5"><?= $s3['a5'];?></textarea></td>
+                            <td>
+                                <select name="a4" id="" class="form-select">
+                                    <option value="<?= $s3['a4'];?>" selected><?= $s3['a4'];?></option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="a5"><?= $s3['a5'];?></textarea></td>
                         </tr>
                         <tr>
                             <td>Do we know of any other factors that could affect independence or otherwise indicate that we should not accept re-appointment?</td>
-                            <td><textarea class="form-control question" id="question" cols="30" rows="5" name="a6"><?= $s3['a6'];?></textarea></td>
-                            <td><textarea class="form-control" cols="30" rows="5" name="a7"><?= $s3['a7'];?></textarea></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
                             <td>
-                            <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                                <select name="a6" id="" class="form-select">
+                                    <option value="<?= $s3['a6'];?>" selected><?= $s3['a6'];?></option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
                             </td>
+                            <td><textarea class="form-control" cols="30" rows="3" name="a7"><?= $s3['a7'];?></textarea></td>
                         </tr>
                     </tbody>
                 </table>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
                 <br><br><br><hr>               
                 <h6>Authority to accept re-appointment:</h6>              

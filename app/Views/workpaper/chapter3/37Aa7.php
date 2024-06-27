@@ -78,11 +78,11 @@
                         <tbody class="tbody">
                             <?php foreach($aa7 as $r){?>
                                 <tr>
-                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
-                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="5" name="issue[]"><?= $r['issue']?></textarea></td>
-                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="5" name="comment[]"><?= $r['comment']?></textarea></td>
-                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="5" name="recommendation[]"><?= $r['recommendation']?></textarea></td>
-                                    <td><textarea class="form-control result" id="result" cols="30" rows="5" name="result[]"><?= $r['result']?></textarea></td>
+                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
+                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="3" name="issue[]"><?= $r['issue']?></textarea></td>
+                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
+                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="3" name="recommendation[]"><?= $r['recommendation']?></textarea></td>
+                                    <td><textarea class="form-control result" id="result" cols="30" rows="3" name="result[]"><?= $r['result']?></textarea></td>
                                     <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
                                 </tr>
                             <?php }?>
@@ -113,11 +113,11 @@
                         <tbody class="tbody">
                             <?php foreach($cons as $r){?>
                                 <tr>
-                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
-                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="5" name="issue[]"><?= $r['issue']?></textarea></td>
-                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="5" name="comment[]"><?= $r['comment']?></textarea></td>
-                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="5" name="recommendation[]"><?= $r['recommendation']?></textarea></td>
-                                    <td><textarea class="form-control result" id="result" cols="30" rows="5" name="result[]"><?= $r['result']?></textarea></td>
+                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
+                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="3" name="issue[]"><?= $r['issue']?></textarea></td>
+                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
+                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="3" name="recommendation[]"><?= $r['recommendation']?></textarea></td>
+                                    <td><textarea class="form-control result" id="result" cols="30" rows="3" name="result[]"><?= $r['result']?></textarea></td>
                                     <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
                                 </tr>
                             <?php }?>
@@ -148,11 +148,11 @@
                         <tbody class="tbody">
                             <?php foreach($inc as $r){?>
                                 <tr>
-                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
-                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="5" name="issue[]"><?= $r['issue']?></textarea></td>
-                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="5" name="comment[]"><?= $r['comment']?></textarea></td>
-                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="5" name="recommendation[]"><?= $r['recommendation']?></textarea></td>
-                                    <td><textarea class="form-control result" id="result" cols="30" rows="5" name="result[]"><?= $r['result']?></textarea></td>
+                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
+                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="3" name="issue[]"><?= $r['issue']?></textarea></td>
+                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
+                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="3" name="recommendation[]"><?= $r['recommendation']?></textarea></td>
+                                    <td><textarea class="form-control result" id="result" cols="30" rows="3" name="result[]"><?= $r['result']?></textarea></td>
                                     <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
                                 </tr>
                             <?php }?>
@@ -183,11 +183,11 @@
                         <tbody class="tbody">
                             <?php foreach($ref as $r){?>
                                 <tr>
-                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
-                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="5" name="issue[]"><?= $r['issue']?></textarea></td>
-                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="5" name="comment[]"><?= $r['comment']?></textarea></td>
-                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="5" name="recommendation[]"><?= $r['recommendation']?></textarea></td>
-                                    <td><textarea class="form-control result" id="result" cols="30" rows="5" name="result[]"><?= $r['result']?></textarea></td>
+                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
+                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="3" name="issue[]"><?= $r['issue']?></textarea></td>
+                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
+                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="3" name="recommendation[]"><?= $r['recommendation']?></textarea></td>
+                                    <td><textarea class="form-control result" id="result" cols="30" rows="3" name="result[]"><?= $r['result']?></textarea></td>
                                     <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
                                 </tr>
                             <?php }?>
@@ -218,11 +218,11 @@
                         <tbody class="tbody">
                             <?php foreach($dep as $r){?>
                                 <tr>
-                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
-                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="5" name="issue[]"><?= $r['issue']?></textarea></td>
-                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="5" name="comment[]"><?= $r['comment']?></textarea></td>
-                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="5" name="recommendation[]"><?= $r['recommendation']?></textarea></td>
-                                    <td><textarea class="form-control result" id="result" cols="30" rows="5" name="result[]"><?= $r['result']?></textarea></td>
+                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
+                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="3" name="issue[]"><?= $r['issue']?></textarea></td>
+                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
+                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="3" name="recommendation[]"><?= $r['recommendation']?></textarea></td>
+                                    <td><textarea class="form-control result" id="result" cols="30" rows="3" name="result[]"><?= $r['result']?></textarea></td>
                                     <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
                                 </tr>
                             <?php }?>
@@ -253,11 +253,11 @@
                         <tbody class="tbody">
                             <?php foreach($oth as $r){?>
                                 <tr>
-                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
-                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="5" name="issue[]"><?= $r['issue']?></textarea></td>
-                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="5" name="comment[]"><?= $r['comment']?></textarea></td>
-                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="5" name="recommendation[]"><?= $r['recommendation']?></textarea></td>
-                                    <td><textarea class="form-control result" id="result" cols="30" rows="5" name="result[]"><?= $r['result']?></textarea></td>
+                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
+                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="3" name="issue[]"><?= $r['issue']?></textarea></td>
+                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
+                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="3" name="recommendation[]"><?= $r['recommendation']?></textarea></td>
+                                    <td><textarea class="form-control result" id="result" cols="30" rows="3" name="result[]"><?= $r['result']?></textarea></td>
                                     <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
                                 </tr>
                             <?php }?>
@@ -279,8 +279,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><textarea id="" cols="30" rows="10" class="form-control" name="ch1"><?= $aep['ch1']?></textarea></td>
-                                <td><textarea id="" cols="30" rows="10" class="form-control" name="ch2"><?= $aep['ch2']?></textarea></td>
+                                <td><textarea id="" cols="30" rows="5" class="form-control" name="ch1"><?= $aep['ch1']?></textarea></td>
+                                <td><textarea id="" cols="30" rows="5" class="form-control" name="ch2"><?= $aep['ch2']?></textarea></td>
                             </tr>
                         </tbody>
                     </table>
@@ -294,8 +294,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><textarea id="" cols="30" rows="10" class="form-control" name="dev1"><?= $aep['dev1']?></textarea></td>
-                                <td><textarea id="" cols="30" rows="10" class="form-control" name="dev2"><?= $aep['dev2']?></textarea></td>
+                                <td><textarea id="" cols="30" rows="5" class="form-control" name="dev1"><?= $aep['dev1']?></textarea></td>
+                                <td><textarea id="" cols="30" rows="5" class="form-control" name="dev2"><?= $aep['dev2']?></textarea></td>
                             </tr>
                         </tbody>
                     </table>
@@ -310,8 +310,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><textarea id="" cols="30" rows="10" class="form-control" name="fut1"><?= $aep['fut1']?></textarea></td>
-                                <td><textarea id="" cols="30" rows="10" class="form-control" name="fut2"><?= $aep['fut2']?></textarea></td>
+                                <td><textarea id="" cols="30" rows="5" class="form-control" name="fut1"><?= $aep['fut1']?></textarea></td>
+                                <td><textarea id="" cols="30" rows="5" class="form-control" name="fut2"><?= $aep['fut2']?></textarea></td>
                             </tr>
                         </tbody>
                     </table>
@@ -325,8 +325,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><textarea id="" cols="30" rows="10" class="form-control" name="cst1"><?= $aep['cst1']?></textarea></td>
-                                <td><textarea id="" cols="30" rows="10" class="form-control" name="cst2"><?= $aep['cst2']?></textarea></td>
+                                <td><textarea id="" cols="30" rows="5" class="form-control" name="cst1"><?= $aep['cst1']?></textarea></td>
+                                <td><textarea id="" cols="30" rows="5" class="form-control" name="cst2"><?= $aep['cst2']?></textarea></td>
                             </tr>
                         </tbody>
                     </table>

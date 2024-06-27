@@ -57,14 +57,14 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Question</th>
-                                <th>Comment</th>
+                                <th style="width: 50%;">Comment</th>
                             </tr>
                         </thead>
                         <tbody id="tbody">
                             <?php foreach($cr as $r){?>
                             <tr>
                                 <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                <td><textarea class="form-control question" id="question" cols="30" rows="5" name="comment[]"><?= $r['reference']?></textarea></td>
+                                <td><textarea class="form-control question" id="question" cols="30" rows="3" name="comment[]"><?= $r['reference']?></textarea></td>
                             </tr>
                             <?php }?>
                         </tbody>
@@ -83,14 +83,14 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Question</th>
-                                <th>Comment</th>
+                                <th style="width: 50%;">Comment</th>
                             </tr>
                         </thead>
                         <tbody id="tbody1">
                             <?php foreach($dc as $r){?>
                             <tr>
                                 <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                <td><textarea class="form-control question" id="question" cols="30" rows="5" name="comment[]"><?= $r['reference']?></textarea></td>
+                                <td><textarea class="form-control question" id="question" cols="30" rows="3" name="comment[]"><?= $r['reference']?></textarea></td>
                             </tr>
                             <?php }?>
                         </tbody>
@@ -110,15 +110,15 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Question</th>
-                                <th>Initial & Date</th>
-                                <th>Reference</th>
+                                <th style="width: 25%;">Initial & Date</th>
+                                <th style="width: 25%;">Reference</th>
                             </tr>
                         </thead>
                         <tbody id="tbody2">
                             <?php foreach($faf as $r){?>
                             <tr>
                                 <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"><?= $r['extent']?></textarea></td>
+                                <td><textarea class="form-control question" id="question" cols="30" rows="3" name="extent[]"><?= $r['extent']?></textarea></td>
                                 <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
                             </tr>
                             <?php }?>

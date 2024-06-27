@@ -57,14 +57,14 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Question</th>
-                                <th>Values</th>
+                                <th style="width: 50%;">Values</th>
                             </tr>
                         </thead>
                         <tbody class="tbody">
                             <?php foreach($bp1 as $r){?>
                                 <tr>
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
+                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
                                 </tr>
                             <?php }?>
                         </tbody>
@@ -83,14 +83,14 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Question</th>
-                                <th>Values</th>
+                                <th style="width: 50%;">Values</th>
                             </tr>
                         </thead>
                         <tbody class="tbody">
                             <?php foreach($bp2 as $r){?>
                                 <tr>
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
+                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
                                 </tr>
                             <?php }?>
                         </tbody>
@@ -110,14 +110,14 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Question</th>
-                                <th>Values</th>
+                                <th style="width: 50%;">Values</th>
                             </tr>
                         </thead>
                         <tbody class="tbody">
                             <?php foreach($bp3a as $r){?>
                                 <tr>
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
+                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
                                 </tr>
                             <?php }?>
                         </tbody>
@@ -137,14 +137,14 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Question</th>
-                                <th>Values</th>
+                                <th style="width: 50%;">Values</th>
                             </tr>
                         </thead>
                         <tbody class="tbody">
                             <?php foreach($bp3b as $r){?>
                                 <tr>
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
+                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
                                 </tr>
                             <?php }?>
                         </tbody>

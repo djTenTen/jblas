@@ -56,18 +56,25 @@
                         <thead>
                             <tr>
                                 <th style="width: 50%;">Existence/Completeness</th>
-                                <th>Yes/No/N/A</th>
-                                <th>Reference</th>
-                                <th>Completed By</th>
+                                <th style="width: 10%;">Yes/No/N/A</th>
+                                <th style="width: 20%;">Reference</th>
+                                <th style="width: 20%;">Completed By</th>
                             </tr>
                         </thead>
                         <tbody id="tbody">
                             <?php foreach($qdata as $r){?>
                                 <tr>
                                     <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><textarea class="form-control question" id="question" cols="30" rows="5" name="extent[]"><?= $r['extent']?></textarea></td>
-                                    <td><textarea class="form-control" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
-                                    <td><textarea class="form-control" cols="30" rows="5" name="initials[]"><?= $r['initials']?></textarea></td>
+                                    <td>
+                                        <select name="extent[]" id="" class="form-select">
+                                            <option value="<?= $r['extent']?>" selected><?= $r['extent']?></option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </td>
+                                    <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
+                                    <td><textarea class="form-control" cols="30" rows="3" name="initials[]"><?= $r['initials']?></textarea></td>
                                 </tr>
                             <?php }?>
                         </tbody>
