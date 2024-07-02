@@ -46,7 +46,8 @@ class FirmsModel extends  Model {
         $query = $this->db->query("select *,tf.firm as firmname 
         from {$this->tblfirm} as tf,{$this->tbluser} as tu 
         where tu.firm = tf.firmID
-        and tu.type != 'Admin'");
+        and tu.type != 'Admin'
+        and tu.type = 'Auditing Firm'");
         return $query->getResultArray();
 
     }
