@@ -153,7 +153,7 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="" action="<?= base_url('auditsystem/workpaper/save')?>" method="post">
+                <form id="" action="<?= base_url('auditsystem/wp/save')?>" method="post">
                 <div class="row gx-3">
                     <div class="col-md-3">
                         <div class="mb-3">

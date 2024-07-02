@@ -236,13 +236,6 @@
                             </div>
                             <?php }?>
                         <?php }?>
-
-                        <?php if(session()->get('allowed')->frm == "Yes"){?>
-                            <a class="nav-link" href="<?= base_url('auditsystem/firms')?>">
-                                <div class="nav-link-icon"><i data-feather="aperture"></i></div>
-                                Firms Management
-                        </a>
-                        <?php }?>
                             
                         <?php if(session()->get('allowed')->workp == "Yes"){?>
                                 <div class="sidenav-menu-heading">Work Paper</div>
@@ -254,7 +247,7 @@
                                 </a>
                                 <div class="collapse" id="collapsePrepare" data-bs-parent="#accordionSidenav">
                                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                        <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/prepare">
+                                        <a class="nav-link" href="<?= base_url()?>auditsystem/wp/prepare">
                                         <div class="nav-link-icon"><i data-feather="edit-3"></i></div>Prepare Work Paper</a>
                                     </nav>
                                 </div>
@@ -267,7 +260,7 @@
                                 </a>
                                 <div class="collapse" id="collapseReview" data-bs-parent="#accordionSidenav">
                                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                        <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/review">
+                                        <a class="nav-link" href="<?= base_url()?>auditsystem/wp/review">
                                         <div class="nav-link-icon"><i data-feather="check-square"></i></div>Check Work Paper</a>
                                     </nav>
                                 </div>
@@ -280,54 +273,12 @@
                             </a>
                             <div class="collapse" id="collapseAudManager" data-bs-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                    <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/initiate">
+                                    <a class="nav-link" href="<?= base_url()?>auditsystem/wp/initiate">
                                     <div class="nav-link-icon"><i data-feather="file-plus"></i></div>Initiate</a>
-                                    <a class="nav-link" href="<?= base_url()?>auditsystem/workpaper/approved">
+                                    <a class="nav-link" href="<?= base_url()?>auditsystem/wp/approved">
                                     <div class="nav-link-icon"><i data-feather="check-square"></i></div>Approved</a>
                                 </nav>
                             </div>
-                            <?php }?>
-                        <?php }?>
-
-                        <?php if(session()->get('allowed')->sett == "Yes"){?>
-                            <div class="sidenav-menu-heading">System</div>
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="nav-link-icon"><i data-feather="settings"></i></div>
-                                Settings
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" data-bs-parent="#accordionSidenav">
-                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
-                                    <!-- Nested Sidenav Accordion (Pages -> Account)-->
-                                    <?php if(session()->get('allowed')->hat == "Yes"){?>
-                                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
-                                            <div class="nav-link-icon"><i data-feather="file-text"></i></div>   
-                                            HAT Audit
-                                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                        </a>
-                                        <div class="collapse" id="pagesCollapseAccount" data-bs-parent="#accordionSidenavPagesMenu">
-                                            <nav class="sidenav-menu-nested nav">
-                                                <a class="nav-link" href="<?= base_url()?>auditsystem/c1/view">Chapter 1</a>
-                                                <a class="nav-link" href="<?= base_url()?>auditsystem/c2/view">Chapter 2</a>
-                                                <a class="nav-link" href="<?= base_url()?>auditsystem/c3/view">Chapter 3</a>
-                                                <a class="nav-link" href="<?= base_url()?>auditsystem/c4/view">Prof Documents</a>
-                                                <a class="nav-link" href="<?= base_url()?>auditsystem/c5/view">Prof Dividers</a>
-                                            </nav>
-                                        </div>
-                                    <?php }?>
-                                    <?php if(session()->get('allowed')->position == "Yes"){?>
-                                        <a class="nav-link" href="<?= base_url('auditsystem/position')?>">
-                                            <div class="nav-link-icon"><i data-feather="unlock"></i></div>
-                                            Position
-                                        </a>
-                                    <?php }?>
-                                </nav>
-                            </div>
-                            <?php if(session()->get('allowed')->user == "Yes"){?>
-                                <a class="nav-link" href="<?= base_url('auditsystem/user')?>">
-                                    <div class="nav-link-icon"><i data-feather="user"></i></div>
-                                    User Management
-                                </a>
                             <?php }?>
                         <?php }?>
 
