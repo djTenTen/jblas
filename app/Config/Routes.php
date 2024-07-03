@@ -72,7 +72,10 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
             $audmanager->post('sendtoapprove/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::sendtoapprove/$1/$2/$3/$4/$5');
             $audmanager->post('save', 'WorkpaperController::saveworkpaper');
             $audmanager->post('sendbacktoreviewer/(:any)', 'WorkpaperController::sendbacktoreviewer/$1');
-            $audmanager->post('approved/(:any)', 'WorkpaperController::approve$1');
+            $audmanager->post('approved/(:any)', 'WorkpaperController::approvewp/$1');
+            $audmanager->get('approved', 'WorkpaperController::approved');
+            $audmanager->get('generatepdf/(:any)/(:any)', 'ReportController::generatepdf/$1/$2');
+            
 
         });
 
@@ -156,7 +159,7 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
         
     });
     
-    $auth->group('client', ['filter' => 'client'], function ($client) {
+    $auth->group('', ['filter' => 'client'], function ($client) {
 
         $client->group('', ['filter' => 'client_cl'], function ($cl) {
             /**
@@ -164,20 +167,20 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
                 CLIENT MANAGEMENT
                 ----------------------------------------------------------
             */
-            $cl->get('', 'ClientController::viewclient');
-            $cl->post('save', 'ClientController::addclient');
-            $cl->get('edit/(:any)', 'ClientController::editclient/$1');
-            $cl->post('update/(:any)', 'ClientController::updateclient/$1');
-            $cl->post('acin/(:any)', 'ClientController::acin/$1');
+            $cl->get('client', 'ClientController::viewclient');
+            $cl->post('client/save', 'ClientController::addclient');
+            $cl->get('client/edit/(:any)', 'ClientController::editclient/$1');
+            $cl->post('client/update/(:any)', 'ClientController::updateclient/$1');
+            $cl->post('client/acin/(:any)', 'ClientController::acin/$1');
         });
             
         $client->group('', ['filter' => 'client_sd'], function ($sd) {
 
-            $sd->get('set', 'ClientController::viewclientset');
-            $sd->get('files/(:any)/(:any)', 'ClientController::viewfiles/$1/$2');
-            $sd->post('setfiles/(:any)', 'ClientController::setfiles/$1');
-            $sd->get('defaultfiles/(:any)/', 'ClientController::getdefaultfiles/$1');
-            $sd->get('getfiles/(:any)/(:any)', 'ClientController::getfiles/$1/$2');
+            $sd->get('client/set', 'ClientController::viewclientset');
+            $sd->get('client/files/(:any)/(:any)', 'ClientController::viewfiles/$1/$2');
+            $sd->post('client/setfiles/(:any)', 'ClientController::setfiles/$1');
+            $sd->get('client/defaultfiles/(:any)/', 'ClientController::getdefaultfiles/$1');
+            $sd->get('client/getfiles/(:any)/(:any)', 'ClientController::getfiles/$1/$2');
             /**
             Client set default value AREA
             */

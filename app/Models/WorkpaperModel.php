@@ -394,7 +394,8 @@ class WorkpaperModel extends  Model {
         from {$this->tblwp} as wp, {$this->tblc} as tc
         where wp.firm = {$fID}
         and wp.{$pos} = {$uID}
-        and tc.cID = wp.client");
+        and tc.cID = wp.client
+        and wp.status != 'Approved'");
         return $query->getResultArray();
 
     }
@@ -423,7 +424,32 @@ class WorkpaperModel extends  Model {
         tc.org
         from {$this->tblwp} as wp, {$this->tblc} as tc
         where wp.firm = {$fID}
-        and tc.cID = wp.client");
+        and tc.cID = wp.client
+        and wp.status != 'Approved'");
+        return $query->getResultArray();
+
+    }
+
+
+    /**
+        * @method getapprovedwp() get all the approved work paper
+        * @param fID firm id
+        * @var query contains database result query
+        * @return result-array
+    */
+    public function getapprovedwp($fID){
+
+        $query = $this->db->query("select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
+        (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.added_by) as added,
+        (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.auditor) as aud,
+        (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.supervisor) as sup,
+        (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.audmanager) as audm,
+        tc.name as cli,
+        tc.org
+        from {$this->tblwp} as wp, {$this->tblc} as tc
+        where wp.firm = {$fID}
+        and tc.cID = wp.client
+        and wp.status = 'Approved'");
         return $query->getResultArray();
 
     }

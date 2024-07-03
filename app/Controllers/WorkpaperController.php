@@ -102,6 +102,24 @@ class WorkpaperController extends BaseController{
 
 
     /**
+        * @method approved() work paper review page
+        * @var array-data consist of data and display it on the page
+        * @var fID consist of decrypted firm id
+        * @return view
+    */
+    public function approved(){
+
+        $data['title']  = "Approved Work paper";
+        $data['subt']   = "Archive and export your work paper";
+        $fID            = $this->crypt->decrypt(session()->get('firmID'));
+        $data['wp']     = $this->wpmodel->getapprovedwp($fID,'');
+        echo view('includes/Header', $data);
+        echo view('workpaper/Approved', $data);    
+        echo view('includes/Footer');
+
+    }
+
+    /**
         * @method getfiles() get the hat files assigned
         * @param cID encrypted client id
         * @param wpID encrypted work paper id
@@ -535,10 +553,10 @@ class WorkpaperController extends BaseController{
         $res = $this->wpmodel->sendtoreviewer($req);
         if($res == "sent"){
             session()->setFlashdata('sent','sent');
-            return redirect()->to(site_url('auditsystem/workpaper/prepare'));
+            return redirect()->to(site_url('auditsystem/wp/prepare'));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/workpaper/prepare'));
+            return redirect()->to(site_url('auditsystem/wp/prepare'));
         }
 
     }
@@ -560,10 +578,10 @@ class WorkpaperController extends BaseController{
         $res = $this->wpmodel->sendtopreparer($req);
         if($res == "sent"){
             session()->setFlashdata('senttoaud','senttoaud');
-            return redirect()->to(site_url('auditsystem/workpaper/review'));
+            return redirect()->to(site_url('auditsystem/wp/review'));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/workpaper/review'));
+            return redirect()->to(site_url('auditsystem/wp/review'));
         }
 
     }
@@ -585,10 +603,10 @@ class WorkpaperController extends BaseController{
         $res = $this->wpmodel->sendtoapprover($req);
         if($res == "sent"){
             session()->setFlashdata('senttoaud','senttoaud');
-            return redirect()->to(site_url('auditsystem/workpaper/review'));
+            return redirect()->to(site_url('auditsystem/wp/review'));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/workpaper/review'));
+            return redirect()->to(site_url('auditsystem/wp/review'));
         }
 
     }
@@ -610,10 +628,10 @@ class WorkpaperController extends BaseController{
         $res = $this->wpmodel->sendtoreviewer($req);
         if($res == "sent"){
             session()->setFlashdata('senttorev','senttorev');
-            return redirect()->to(site_url('auditsystem/workpaper/initiate'));
+            return redirect()->to(site_url('auditsystem/wp/initiate'));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/workpaper/initiate'));
+            return redirect()->to(site_url('auditsystem/wp/initiate'));
         }
 
     }
@@ -635,10 +653,10 @@ class WorkpaperController extends BaseController{
         $res = $this->wpmodel->approvewp($req);
         if($res == "sent"){
             session()->setFlashdata('approved','approved');
-            return redirect()->to(site_url('auditsystem/workpaper/initiate'));
+            return redirect()->to(site_url('auditsystem/wp/initiate'));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/workpaper/initiate'));
+            return redirect()->to(site_url('auditsystem/wp/initiate'));
         }
 
     }

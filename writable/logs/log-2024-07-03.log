@@ -1,0 +1,648 @@
+INFO - 2024-07-03 10:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:17:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:39:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:40:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:40:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:40:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:46:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:46:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:49:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 10:49:26 --> ErrorException: Undefined variable $type
+in APPPATH\Views\workpaper\Initiate.php on line 135.
+ 1 APPPATH\Views\workpaper\Initiate.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $type', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Initiate.php', 135)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Initiate.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Initiate', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(56): view('workpaper/Initiate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->initiate()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 10:49:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:50:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:50:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:52:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:52:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:54:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:55:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:56:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:57:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:57:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:57:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:57:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 10:59:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:00:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:00:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:02:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:02:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:02:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:02:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:03:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:17:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:17:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:19:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:20:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:32:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:34:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 11:35:52 --> ErrorException: Undefined variable $p
+in APPPATH\Views\workpaper\Approved.php on line 77.
+ 1 APPPATH\Views\workpaper\Approved.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $p', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Approved.php', 77)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Approved.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Approved', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(118): view('workpaper/Approved', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->approved()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 11:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 11:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 12:04:51 --> ErrorException: Undefined variable $wpID
+in APPPATH\Views\workpaper\Approved.php on line 75.
+ 1 APPPATH\Views\workpaper\Approved.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $wpID', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Approved.php', 75)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Approved.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Approved', [], true)
+ 5 APPPATH\Controllers\WorkpaperController.php(118): view('workpaper/Approved', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\WorkpaperController->approved()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 12:05:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:10:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:18:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:21:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:22:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:22:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:22:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:22:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:28:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 12:28:44 --> ErrorException: Undefined variable $code
+in APPPATH\Views\workpaper\Report.php on line 9.
+ 1 APPPATH\Views\workpaper\Report.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $code', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 9)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(38): view('workpaper/Report')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('5237cf8f6bbf652cb30cf7ffe7f42236408615373bf8b8be0dd14ec424d0fb8fdef4448157986087081d19945d8883c88bc51270a053e9a27a512eceaf69223dEDq2nQDP4wj2iStUyXVrmnM=', '82c039585ff0b0883439f18d29b502a051899c45ef349e19135f88b9c9038bf06e0f4cc971e591e48463fdeb2e6e9a7e217492f5335ad793d1d4f1cd079647b2dHYl47ZkKnX96va1sWAZiPE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 12:29:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:29:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:29:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:29:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:29:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:29:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:29:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:29:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:29:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:29:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:29:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:48:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 12:48:45 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(839): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\ReportModel.php(50): CodeIgniter\Model->__get('tblc1t')
+ 4 APPPATH\Controllers\ReportController.php(40): App\Models\ReportModel->getc1values('3', '3')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('af4137751342683a543ba939eeacd19907262ae6320d37f23a546983d6ebcc80d66637a8c9daae0a70a19f5e8a645a99b8c702d3bb3090e391b5442a78b01ffaX$SjTzy5psBUTVlXdtZTZQ8=', '6bfc2c1f502e4b504b7d2e02a28f328e897f554800881993880df8aa831f714a0d2f94bf9496858e596d9f028bff2225e83423f2d432d617cafd16882a2737bdqwPC8jOgFU2z6weqz9Hvoa8=')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 12:50:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 12:50:05 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(662): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(839): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\ReportModel.php(50): CodeIgniter\Model->__get('tblc1t')
+ 4 APPPATH\Controllers\ReportController.php(59): App\Models\ReportModel->getc1values('3', '3')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('af4137751342683a543ba939eeacd19907262ae6320d37f23a546983d6ebcc80d66637a8c9daae0a70a19f5e8a645a99b8c702d3bb3090e391b5442a78b01ffaX$SjTzy5psBUTVlXdtZTZQ8=', '6bfc2c1f502e4b504b7d2e02a28f328e897f554800881993880df8aa831f714a0d2f94bf9496858e596d9f028bff2225e83423f2d432d617cafd16882a2737bdqwPC8jOgFU2z6weqz9Hvoa8=')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 12:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-03 12:50:43 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1tit...' at line 2 in D:\projects\jblas\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\projects\jblas\system\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT...', 0)
+#1 D:\projects\jblas\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT...')
+#2 D:\projects\jblas\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT...')
+#3 D:\projects\jblas\app\Models\ReportModel.php(66): CodeIgniter\Database\BaseConnection->query('select DISTINCT...')
+#4 D:\projects\jblas\app\Controllers\ReportController.php(40): App\Models\ReportModel->getc1values('3', '3')
+#5 D:\projects\jblas\system\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('af4137751342683...', '6bfc2c1f502e4b5...')
+#6 D:\projects\jblas\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+#7 D:\projects\jblas\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\projects\jblas\public\index.php(84): CodeIgniter\CodeIgniter->run()
+#9 D:\projects\jblas\system\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jbl...')
+#10 {main}
+CRITICAL - 2024-07-03 12:50:43 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1tit...' at line 2
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\ReportModel.php(66): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,c1.status,
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 3
+        and c1.workpaper = 3')
+ 2 APPPATH\Controllers\ReportController.php(40): App\Models\ReportModel->getc1values('3', '3')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('af4137751342683a543ba939eeacd19907262ae6320d37f23a546983d6ebcc80d66637a8c9daae0a70a19f5e8a645a99b8c702d3bb3090e391b5442a78b01ffaX$SjTzy5psBUTVlXdtZTZQ8=', '6bfc2c1f502e4b504b7d2e02a28f328e897f554800881993880df8aa831f714a0d2f94bf9496858e596d9f028bff2225e83423f2d432d617cafd16882a2737bdqwPC8jOgFU2z6weqz9Hvoa8=')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+CRITICAL - 2024-07-03 12:50:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1tit...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c1t.code,c1titleID,c1.remarks,c1.status,
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 3
+        and c1.workpaper = 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c1t.code,c1titleID,c1.remarks,c1.status,
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 3
+        and c1.workpaper = 3')
+ 3 APPPATH\Models\ReportModel.php(66): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,c1.status,
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 3
+        and c1.workpaper = 3')
+ 4 APPPATH\Controllers\ReportController.php(40): App\Models\ReportModel->getc1values('3', '3')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('af4137751342683a543ba939eeacd19907262ae6320d37f23a546983d6ebcc80d66637a8c9daae0a70a19f5e8a645a99b8c702d3bb3090e391b5442a78b01ffaX$SjTzy5psBUTVlXdtZTZQ8=', '6bfc2c1f502e4b504b7d2e02a28f328e897f554800881993880df8aa831f714a0d2f94bf9496858e596d9f028bff2225e83423f2d432d617cafd16882a2737bdqwPC8jOgFU2z6weqz9Hvoa8=')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+CRITICAL - 2024-07-03 12:50:43 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1tit...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,c1.status,
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 3
+        and c1.workpaper = 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('select DISTINCT title,c1t.code,c1titleID,c1.remarks,c1.status,
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 3
+        and c1.workpaper = 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('select DISTINCT title,c1t.code,c1titleID,c1.remarks,c1.status,
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 3
+        and c1.workpaper = 3')
+ 4 APPPATH\Models\ReportModel.php(66): CodeIgniter\Database\BaseConnection->query('select DISTINCT title,c1t.code,c1titleID,c1.remarks,c1.status,
+        from tbl_c1_titles as c1t, tbl_client_files_c1 as c1
+        where c1t.c1titleID = c1.c1tID
+        and c1.clientID = 3
+        and c1.workpaper = 3')
+ 5 APPPATH\Controllers\ReportController.php(40): App\Models\ReportModel->getc1values('3', '3')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('af4137751342683a543ba939eeacd19907262ae6320d37f23a546983d6ebcc80d66637a8c9daae0a70a19f5e8a645a99b8c702d3bb3090e391b5442a78b01ffaX$SjTzy5psBUTVlXdtZTZQ8=', '6bfc2c1f502e4b504b7d2e02a28f328e897f554800881993880df8aa831f714a0d2f94bf9496858e596d9f028bff2225e83423f2d432d617cafd16882a2737bdqwPC8jOgFU2z6weqz9Hvoa8=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 12:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:54:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:54:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:54:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:54:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:54:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:55:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:55:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:55:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:55:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:55:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:55:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:56:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:56:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:56:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 12:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:18:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:23:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:24:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 13:24:15 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\workpaper\Report.php on line 118.
+ 1 APPPATH\Views\workpaper\Report.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 118)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('bc3dba89d387c18aa72809f3a3d0e4f53d31cd75b1178f7b973135319c02c47eb69f363d2e95cf1b32f19e0c7971f4fb2ded660c392cae0c5e2bef35d0f8de22qKCu5eKeLzLJnwRHh1qM9sg=', '36ea53787cd4cbffaf8c4f02f9f2c174b84c23586fc287eb50edaf57eaabd3d260c246572582bc01ebda43c13bd7ddcd3ff27891b733e83979116e9cfe889c45SMjaRbzL4efQEz4QqjmB6uE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 13:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 13:25:35 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\workpaper\Report.php on line 118.
+ 1 APPPATH\Views\workpaper\Report.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 118)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('bc3dba89d387c18aa72809f3a3d0e4f53d31cd75b1178f7b973135319c02c47eb69f363d2e95cf1b32f19e0c7971f4fb2ded660c392cae0c5e2bef35d0f8de22qKCu5eKeLzLJnwRHh1qM9sg=', '36ea53787cd4cbffaf8c4f02f9f2c174b84c23586fc287eb50edaf57eaabd3d260c246572582bc01ebda43c13bd7ddcd3ff27891b733e83979116e9cfe889c45SMjaRbzL4efQEz4QqjmB6uE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 13:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 13:32:35 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\workpaper\Report.php on line 118.
+ 1 APPPATH\Views\workpaper\Report.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 118)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('bc3dba89d387c18aa72809f3a3d0e4f53d31cd75b1178f7b973135319c02c47eb69f363d2e95cf1b32f19e0c7971f4fb2ded660c392cae0c5e2bef35d0f8de22qKCu5eKeLzLJnwRHh1qM9sg=', '36ea53787cd4cbffaf8c4f02f9f2c174b84c23586fc287eb50edaf57eaabd3d260c246572582bc01ebda43c13bd7ddcd3ff27891b733e83979116e9cfe889c45SMjaRbzL4efQEz4QqjmB6uE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 13:32:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 13:32:38 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\workpaper\Report.php on line 118.
+ 1 APPPATH\Views\workpaper\Report.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 118)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('bc3dba89d387c18aa72809f3a3d0e4f53d31cd75b1178f7b973135319c02c47eb69f363d2e95cf1b32f19e0c7971f4fb2ded660c392cae0c5e2bef35d0f8de22qKCu5eKeLzLJnwRHh1qM9sg=', '36ea53787cd4cbffaf8c4f02f9f2c174b84c23586fc287eb50edaf57eaabd3d260c246572582bc01ebda43c13bd7ddcd3ff27891b733e83979116e9cfe889c45SMjaRbzL4efQEz4QqjmB6uE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 13:32:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 13:32:38 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\workpaper\Report.php on line 118.
+ 1 APPPATH\Views\workpaper\Report.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 118)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('bc3dba89d387c18aa72809f3a3d0e4f53d31cd75b1178f7b973135319c02c47eb69f363d2e95cf1b32f19e0c7971f4fb2ded660c392cae0c5e2bef35d0f8de22qKCu5eKeLzLJnwRHh1qM9sg=', '36ea53787cd4cbffaf8c4f02f9f2c174b84c23586fc287eb50edaf57eaabd3d260c246572582bc01ebda43c13bd7ddcd3ff27891b733e83979116e9cfe889c45SMjaRbzL4efQEz4QqjmB6uE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 13:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 13:40:03 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\workpaper\Report.php on line 118.
+ 1 APPPATH\Views\workpaper\Report.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 118)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('bc3dba89d387c18aa72809f3a3d0e4f53d31cd75b1178f7b973135319c02c47eb69f363d2e95cf1b32f19e0c7971f4fb2ded660c392cae0c5e2bef35d0f8de22qKCu5eKeLzLJnwRHh1qM9sg=', '36ea53787cd4cbffaf8c4f02f9f2c174b84c23586fc287eb50edaf57eaabd3d260c246572582bc01ebda43c13bd7ddcd3ff27891b733e83979116e9cfe889c45SMjaRbzL4efQEz4QqjmB6uE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 13:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 13:44:17 --> ErrorException: Undefined array key "c1tID"
+in APPPATH\Views\workpaper\Report.php on line 105.
+ 1 APPPATH\Views\workpaper\Report.php(105): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "c1tID"', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 105)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('bc3dba89d387c18aa72809f3a3d0e4f53d31cd75b1178f7b973135319c02c47eb69f363d2e95cf1b32f19e0c7971f4fb2ded660c392cae0c5e2bef35d0f8de22qKCu5eKeLzLJnwRHh1qM9sg=', '36ea53787cd4cbffaf8c4f02f9f2c174b84c23586fc287eb50edaf57eaabd3d260c246572582bc01ebda43c13bd7ddcd3ff27891b733e83979116e9cfe889c45SMjaRbzL4efQEz4QqjmB6uE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 13:45:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 13:45:56 --> ErrorException: Undefined variable $eqr
+in APPPATH\Views\workpaper\Report.php on line 137.
+ 1 APPPATH\Views\workpaper\Report.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $eqr', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 137)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('bc3dba89d387c18aa72809f3a3d0e4f53d31cd75b1178f7b973135319c02c47eb69f363d2e95cf1b32f19e0c7971f4fb2ded660c392cae0c5e2bef35d0f8de22qKCu5eKeLzLJnwRHh1qM9sg=', '36ea53787cd4cbffaf8c4f02f9f2c174b84c23586fc287eb50edaf57eaabd3d260c246572582bc01ebda43c13bd7ddcd3ff27891b733e83979116e9cfe889c45SMjaRbzL4efQEz4QqjmB6uE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 13:47:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 13:47:38 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\workpaper\Report.php on line 119.
+ 1 APPPATH\Views\workpaper\Report.php(119): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 119)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('bc3dba89d387c18aa72809f3a3d0e4f53d31cd75b1178f7b973135319c02c47eb69f363d2e95cf1b32f19e0c7971f4fb2ded660c392cae0c5e2bef35d0f8de22qKCu5eKeLzLJnwRHh1qM9sg=', '36ea53787cd4cbffaf8c4f02f9f2c174b84c23586fc287eb50edaf57eaabd3d260c246572582bc01ebda43c13bd7ddcd3ff27891b733e83979116e9cfe889c45SMjaRbzL4efQEz4QqjmB6uE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 13:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 13:49:19 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\workpaper\Report.php on line 119.
+ 1 APPPATH\Views\workpaper\Report.php(119): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 119)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('bc3dba89d387c18aa72809f3a3d0e4f53d31cd75b1178f7b973135319c02c47eb69f363d2e95cf1b32f19e0c7971f4fb2ded660c392cae0c5e2bef35d0f8de22qKCu5eKeLzLJnwRHh1qM9sg=', '36ea53787cd4cbffaf8c4f02f9f2c174b84c23586fc287eb50edaf57eaabd3d260c246572582bc01ebda43c13bd7ddcd3ff27891b733e83979116e9cfe889c45SMjaRbzL4efQEz4QqjmB6uE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 13:49:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:49:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:53:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 13:54:46 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles('undefined')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 13:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:55:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:55:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 13:55:06 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles('undefined')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 13:55:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:57:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:57:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:58:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:58:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:58:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 13:58:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:02:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 14:03:54 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\workpaper\Report.php on line 124.
+ 1 APPPATH\Views\workpaper\Report.php(124): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 124)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('bc3dba89d387c18aa72809f3a3d0e4f53d31cd75b1178f7b973135319c02c47eb69f363d2e95cf1b32f19e0c7971f4fb2ded660c392cae0c5e2bef35d0f8de22qKCu5eKeLzLJnwRHh1qM9sg=', '36ea53787cd4cbffaf8c4f02f9f2c174b84c23586fc287eb50edaf57eaabd3d260c246572582bc01ebda43c13bd7ddcd3ff27891b733e83979116e9cfe889c45SMjaRbzL4efQEz4QqjmB6uE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 14:04:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:04:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 14:04:24 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\workpaper\Report.php on line 125.
+ 1 APPPATH\Views\workpaper\Report.php(125): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 125)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('bc3dba89d387c18aa72809f3a3d0e4f53d31cd75b1178f7b973135319c02c47eb69f363d2e95cf1b32f19e0c7971f4fb2ded660c392cae0c5e2bef35d0f8de22qKCu5eKeLzLJnwRHh1qM9sg=', '36ea53787cd4cbffaf8c4f02f9f2c174b84c23586fc287eb50edaf57eaabd3d260c246572582bc01ebda43c13bd7ddcd3ff27891b733e83979116e9cfe889c45SMjaRbzL4efQEz4QqjmB6uE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 14:04:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 14:05:00 --> ErrorException: Trying to access array offset on value of type int
+in APPPATH\Views\workpaper\Report.php on line 140.
+ 1 APPPATH\Views\workpaper\Report.php(140): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php', 140)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('bc3dba89d387c18aa72809f3a3d0e4f53d31cd75b1178f7b973135319c02c47eb69f363d2e95cf1b32f19e0c7971f4fb2ded660c392cae0c5e2bef35d0f8de22qKCu5eKeLzLJnwRHh1qM9sg=', '36ea53787cd4cbffaf8c4f02f9f2c174b84c23586fc287eb50edaf57eaabd3d260c246572582bc01ebda43c13bd7ddcd3ff27891b733e83979116e9cfe889c45SMjaRbzL4efQEz4QqjmB6uE=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\jblas\\public\\index.php')
+INFO - 2024-07-03 14:05:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:05:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:06:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:09:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:10:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:11:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:14:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:15:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:15:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:15:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:18:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 14:19:28 --> ErrorException: Maximum execution time of 60 seconds exceeded
+in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 1841.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-07-03 14:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 14:20:42 --> ErrorException: Maximum execution time of 60 seconds exceeded
+in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 1841.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-07-03 14:20:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:20:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:21:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:21:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:24:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:24:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 14:25:09 --> ErrorException: Maximum execution time of 60 seconds exceeded
+in APPPATH\Libraries\tcpdf\include\tcpdf_static.php on line 1841.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-07-03 14:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:26:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:27:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 14:27:00 --> ErrorException: Undefined variable $aep
+in APPPATH\Views\workpaper\Report.php on line 340.
+ 1 APPPATH\Views\workpaper\Report.php(340): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $aep', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php', 340)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('9294f908ed19518336d4b2f9c876aea85c424097638ef5efa325b07e93788a6d45814e31eb52b62ddecc89184b6d095ec8b7b1794fd2f7de08e02d8ff19df05dGjQwhq$9YnQ4ntjkequKJ64=', 'd5cd7e45650de667e10fe90702ab0f9d1e659099b5f3a6a80db58ea3e7d15242503905998c01f1361221cd688bea6490e4e4f7dd89ad85876b24d99703931592AghBOPeZboTrBDh$SQaEtIs=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-03 14:30:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 14:30:04 --> ErrorException: Undefined variable $aep
+in APPPATH\Views\workpaper\Report.php on line 340.
+ 1 APPPATH\Views\workpaper\Report.php(340): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $aep', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php', 340)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('9294f908ed19518336d4b2f9c876aea85c424097638ef5efa325b07e93788a6d45814e31eb52b62ddecc89184b6d095ec8b7b1794fd2f7de08e02d8ff19df05dGjQwhq$9YnQ4ntjkequKJ64=', 'd5cd7e45650de667e10fe90702ab0f9d1e659099b5f3a6a80db58ea3e7d15242503905998c01f1361221cd688bea6490e4e4f7dd89ad85876b24d99703931592AghBOPeZboTrBDh$SQaEtIs=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-03 14:30:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:34:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:38:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 14:47:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:03:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 15:03:56 --> TypeError: Cannot increment array
+in APPPATH\Views\workpaper\Report.php on line 497.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 4 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('9294f908ed19518336d4b2f9c876aea85c424097638ef5efa325b07e93788a6d45814e31eb52b62ddecc89184b6d095ec8b7b1794fd2f7de08e02d8ff19df05dGjQwhq$9YnQ4ntjkequKJ64=', 'd5cd7e45650de667e10fe90702ab0f9d1e659099b5f3a6a80db58ea3e7d15242503905998c01f1361221cd688bea6490e4e4f7dd89ad85876b24d99703931592AghBOPeZboTrBDh$SQaEtIs=')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-03 15:04:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 15:04:34 --> ErrorException: Undefined variable $ac3statutory
+in APPPATH\Views\workpaper\Report.php on line 523.
+ 1 APPPATH\Views\workpaper\Report.php(523): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ac3statutory', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php', 523)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('9294f908ed19518336d4b2f9c876aea85c424097638ef5efa325b07e93788a6d45814e31eb52b62ddecc89184b6d095ec8b7b1794fd2f7de08e02d8ff19df05dGjQwhq$9YnQ4ntjkequKJ64=', 'd5cd7e45650de667e10fe90702ab0f9d1e659099b5f3a6a80db58ea3e7d15242503905998c01f1361221cd688bea6490e4e4f7dd89ad85876b24d99703931592AghBOPeZboTrBDh$SQaEtIs=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-03 15:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:28:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 15:28:11 --> ErrorException: Undefined array key "ppr1"
+in APPPATH\Views\workpaper\Report.php on line 624.
+ 1 APPPATH\Views\workpaper\Report.php(624): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ppr1"', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php', 624)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('9294f908ed19518336d4b2f9c876aea85c424097638ef5efa325b07e93788a6d45814e31eb52b62ddecc89184b6d095ec8b7b1794fd2f7de08e02d8ff19df05dGjQwhq$9YnQ4ntjkequKJ64=', 'd5cd7e45650de667e10fe90702ab0f9d1e659099b5f3a6a80db58ea3e7d15242503905998c01f1361221cd688bea6490e4e4f7dd89ad85876b24d99703931592AghBOPeZboTrBDh$SQaEtIs=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-03 15:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:47:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:47:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:48:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:50:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:50:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 15:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 15:56:43 --> ErrorException: Undefined variable $code
+in APPPATH\Views\workpaper\Report.php on line 1057.
+ 1 APPPATH\Views\workpaper\Report.php(1057): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $code', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php', 1057)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('9294f908ed19518336d4b2f9c876aea85c424097638ef5efa325b07e93788a6d45814e31eb52b62ddecc89184b6d095ec8b7b1794fd2f7de08e02d8ff19df05dGjQwhq$9YnQ4ntjkequKJ64=', 'd5cd7e45650de667e10fe90702ab0f9d1e659099b5f3a6a80db58ea3e7d15242503905998c01f1361221cd688bea6490e4e4f7dd89ad85876b24d99703931592AghBOPeZboTrBDh$SQaEtIs=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-03 15:59:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:08:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:16:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 16:16:24 --> ErrorException: Undefined variable $code
+in APPPATH\Views\workpaper\Report.php on line 2362.
+ 1 APPPATH\Views\workpaper\Report.php(2362): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $code', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php', 2362)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('9294f908ed19518336d4b2f9c876aea85c424097638ef5efa325b07e93788a6d45814e31eb52b62ddecc89184b6d095ec8b7b1794fd2f7de08e02d8ff19df05dGjQwhq$9YnQ4ntjkequKJ64=', 'd5cd7e45650de667e10fe90702ab0f9d1e659099b5f3a6a80db58ea3e7d15242503905998c01f1361221cd688bea6490e4e4f7dd89ad85876b24d99703931592AghBOPeZboTrBDh$SQaEtIs=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-03 16:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:31:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 16:31:21 --> ErrorException: Undefined property: CodeIgniter\View\View::$wpmodel
+in APPPATH\Views\workpaper\Report.php on line 2719.
+ 1 APPPATH\Views\workpaper\Report.php(2719): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$wpmodel', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php', 2719)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('9294f908ed19518336d4b2f9c876aea85c424097638ef5efa325b07e93788a6d45814e31eb52b62ddecc89184b6d095ec8b7b1794fd2f7de08e02d8ff19df05dGjQwhq$9YnQ4ntjkequKJ64=', 'd5cd7e45650de667e10fe90702ab0f9d1e659099b5f3a6a80db58ea3e7d15242503905998c01f1361221cd688bea6490e4e4f7dd89ad85876b24d99703931592AghBOPeZboTrBDh$SQaEtIs=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-03 16:31:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:50:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 16:50:34 --> ErrorException: Undefined variable $dc1tID
+in APPPATH\Views\workpaper\Report.php on line 3131.
+ 1 APPPATH\Views\workpaper\Report.php(3131): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dc1tID', 'D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php', 3131)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\Applications\\xampp\\htdocs\\jblas\\app\\Views\\workpaper\\Report.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH\Controllers\ReportController.php(49): view('workpaper/Report', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('9294f908ed19518336d4b2f9c876aea85c424097638ef5efa325b07e93788a6d45814e31eb52b62ddecc89184b6d095ec8b7b1794fd2f7de08e02d8ff19df05dGjQwhq$9YnQ4ntjkequKJ64=', 'd5cd7e45650de667e10fe90702ab0f9d1e659099b5f3a6a80db58ea3e7d15242503905998c01f1361221cd688bea6490e4e4f7dd89ad85876b24d99703931592AghBOPeZboTrBDh$SQaEtIs=')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-03 16:51:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:51:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:52:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:52:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:53:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:54:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:54:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 16:59:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 17:04:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
