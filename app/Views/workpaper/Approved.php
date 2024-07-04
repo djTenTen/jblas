@@ -72,7 +72,7 @@
                                     <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button>
                                 <?php }?>
                                 <button class="btn btn-primary btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" title="Archive"><i class="fas fa-archive"></i></button>
-                                <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/generatepdf/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" target="_blank" title="Generate PDF"><i class="fas fa-eye"></i></a>
+                                <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/generatepdf/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" target="_blank" title="Generate PDF"><i class="fas fa-file-pdf"></i></a>
                             </td>
                         </tr>
                     <?php }?>

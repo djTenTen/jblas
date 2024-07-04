@@ -63,8 +63,11 @@ $style =  "
     </style>
 ";
 $html = '';
-// FOR CHAPTER 1 AREA
-
+    /**
+        ----------------------------------------------------------
+        CHAPTER 1 PDF GENERATOR
+        ---------------------------------------------------------- 
+    */
     foreach($c1 as $c){
         switch ($c['code']) {
             case 'AC1':
@@ -4099,6 +4102,2588 @@ $html = '';
         
     }
 
+    /**
+        ----------------------------------------------------------
+        CHAPTER 2 PDF GENERATOR
+        ---------------------------------------------------------- 
+    */
+    foreach($c2 as $c){
+        switch ($c['code']) {
+            case '2.1 B2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+
+                $html .= '<h3>INTANGIBLE NON-CURRENT ASSETS AND GOODWILL</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit Test</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.2.1 C2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>PROPERTY, PLANT AND EQUIPMENT</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit Test</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+               
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.2.2 C2-1':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>PROPERTY, PLANT AND EQUIPMENT – TOP UP PROGRAMME</h3>';
+                $html .= '
+                        <p>This programme includes “top up” tests to be completed when the entity has the following:</i></p>
+                        <ul>
+                            <li><i>Leased assets</i></li>
+                            <li><i>Assets financed by capital grants</i></li>
+                        </ul>
+                    <p><b>SPECIFIC AREA 1 – LEASED ASSETS </b></p>
+                    <p><i>IFRS 16 ‘Leases’ is a brand-new Standard and is mandatory for accounting periods commencing on/after 1 January 2019. </i></p>
+                    <p><i>IFRS 16 fundamentally affects the way in which <u><b>lessees</b></u> account for leases; all leases (except those which are short term (i.e. 12 months or less) or those for which the underlying asset is of low value) now result in the recognition of a “right of use” asset and a corresponding lease liability. </i></p>
+                    <p><i>There are a couple of specific areas where lessors are affected by IFRS 16; sale and leaseback transactions and where the lessor is an intermediate lessor. </i></p>
+                    <p><i>First time adoption of IFRS 16 requires transition adjustments. The entity has a choice over the transition method adopted:</i></p>
+                    <ul>
+                        <li>full retrospective restatement (i.e. restate comparatives in line with the IFRS 16 requirements), subject to some practical expedients; or</li>
+                        <li>a “cumulative catch up”, where opening retained earnings are adjusted to account for the IFRS 16 impact, but the comparatives are unaffected.</li>
+                    </ul>
+                    <p><i>Audit work will be required on the transition adjustments made. </i></p>
+                    <p><i>Auditors must read IFRS 16, the accompanying application guidance (Appendix B of IFRS 16) and the transition requirements (Appendix C of IFRS 16) to gain a full understanding of the accounting requirements. </i></p>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit Test</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    ';
+               
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.3 D2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>INVESTMENTS</h3>';
+                $html .= '
+                    <p><i>This programme <b><u>does not</u></b>  include tests relating to investment properties. These tests are included on the C audit programme.</i></p>
+                    <p><i>Tests on this programme relate solely to listed and non-listed equity instruments.  Where investments are debt instruments the appropriate tests on the F audit programme should be completed. If an entity has physical investments, such as wine, works of art or commodities such as precious metals, it would seem appropriate that these are carried at fair value. Tests 16 and 18 to 23 could be completed when auditing such investments</i></p>
+                    <p><i>This programme does not cover complex financial instruments: interest rates swaps are addressed on the I audit programme and forward exchange contracts are addressed on the L audit programme. If the entity has other types of complex financial instrument then additional tests must be added to an appropriate audit programme.</i></p>
+                    ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit Test</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+                
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.4.1 E2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>INVENTORIES</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit Test</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.4.2 E2-1':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    ';
+                $html .= '<h3>INVENTORY APPENDIX 1 – INVENTORY COUNT PLANNING</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit Tests – Attendance at Inventory Count – Planning Procedures Prior to Attending </b></th>
+                                <th class="cent bo" style="width: 36%;"><b>Comments/Reference</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $aicpppa = $rp->getquestionsaicpppa($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($aicpppa as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 36%;">'.$r['reference'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= '
+                    <center><p><b>Review of client’s inventory count procedures</b></p></center>
+                    <p>This review should be completed before attending the client’s inventory count in conjunction with a copy of the client’s inventory count instructions.  Section 1 deals with overall controls, and sections 2 to 4 with inventory count instructions and procedures, section 5 covers inventory counts performed by independent inventory counters and section 6 covers clients that operate a cyclical inventory count system.</p>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 66%;"><b>Do the inventory count procedures cover:</b></th>
+                                <th class="cent bo" style="width: 18%;"><b>Yes/No/N/A</b></th>
+                                <th class="cent bo" style="width: 18%;"><b>Comments/<br>Reference</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $rcicp = $rp->getquestionsrcicp($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($rcicp as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 66%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 18%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 18%;">'.$r['reference'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.4.3 E2-2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>INVENTORY APPENDIX 2 – TESTS AT INVENTORY COUNT</h3>';
+                $html .= '<p><b>N.B. If inventory count is solely undertaken by a 3rd party, this does not negate the need to carry out audit procedures identical to that carried out if the client had undertaken the procedures.  Consideration should be given as to the integrity and independence of the 3rd party.</b></p>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Existence/Completeness</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Yes/No/<br>N/A</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Ref.</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Completed by</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.4.4 E2-3':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>INVENTORY APPENDIX 3 – ALTERNATIVE PROCEDURES</h3>';
+                $html .= '
+                    <p>Alternative procedures will be required if no inventory count has taken place at the period-end.  If an inventory count has taken place but was not attended, the file should indicate why, and assess the possible impact on the audit report.</p>
+                    <p><b>Note that ISA 501 states that the auditor shall attend the inventory count if inventory is material.</b></p>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Existence</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Completed by</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.4.5 E2-4':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>INVENTORY TOP UP PROGRAMME: CONSTRUCTION CONTRACTS</h3>
+                    <p><b>Complete this programme when the audited entity has Construction Contracts (or other contracts accounted for on a Percentage Completion basis). </b></p>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit Test</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Yes/No/<br>N/A</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+ 
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.5 F2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>RECEIVABLES</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit tests ~ General </b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+ 
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.6 H2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>BANK AND CASH</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit Test</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+                    
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.7 I2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>PAYABLES</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit Test</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+       
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.8 J2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>TAXATION ~ INCLUDING DEFERRED TAXATION</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit Test</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+      
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.9 K2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>TRANSACTIONS WITH RELATED PARTIES</h3>
+                    <p>NB: Tests covering directors’ remuneration, key management* compensation (KMC) and the identification of key management are noted on the R2 audit programme.</p>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit Test</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+         
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.10 L2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>PROVISIONS, CONTINGENCIES AND FINANCIAL COMMITMENTS</h3>
+                    <p><i>Audit work on deferred taxation is included in the J audit programme. It should also be noted that deferred tax provisions cannot be discounted.</i></p>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit Test</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.11 M2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>EQUITY AND STATUTORY INFORMATION</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit Test</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.12 N2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+                
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>OTHER AUDIT AREAS INCLUDING:</h3>
+                    <p><i>Audit work on deferred taxation is included in the J audit programme. It should also be noted that deferred tax provisions cannot be discounted.</i></p>
+                    <ul>
+                        <li><b>ACCOUNTING ESTIMATES</b></li>
+                        <li><b>LAW AND REGULATION</b></li>
+                        <li><b>FRAUD AND ERROR</b></li>
+                        <li><b>SERVICE ORGANISATION</b></li>
+                        <li><b>AUDIT EXPERTS</b></li>
+                        <li><b>RELIANCE ON OTHER AUDITORS AND INTERNAL AUDITORS</b></li>
+                    </ul>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>ACCOUNTING ESTIMATES</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.13.1 O2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>REVENUE</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit tests</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+      
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.13.2 O2-1':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>IFRS 15 CONSIDERATIONS</h3>
+                    <p><i>IFRS 15 ‘Revenue from Contracts with Customers’ became mandatory for accounting periods commencing on/after 1 January 2018. </i></p>
+                    <p><i>The core principle of IFRS 15 is that “an entity shall recognise revenue to depict the transfer of promised goods or services to customers in an amount that reflects the consideration to which the entity expects to be entitled in exchange for those goods or services”. </i></p>
+                    <p><i>The 5-step approach to recognising revenue is as follows:<br>
+                    Step 1: Identify the contract(s) with a customer.<br>
+                    Step 2: Identify the performance obligations in the contract.<br>
+                    Step 3: Determine the transaction price.<br>
+                    Step 4: Allocate the transaction price to the performance obligations in the contract.<br>
+                    Step 5: Recognise revenue when (or as) the entity satisfies a performance obligation.</i></p>
+                    <p><i>Auditors must read IFRS 15, the accompanying application guidance (Appendix B of IFRS 15) and the transition requirements (Appendix C of IFRS 15) to gain a full understanding of the accounting requirements. </i></p>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit tests</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.14 P2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>DIRECT COSTS</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit tests</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+  
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '2.15 Q2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>OTHER INCOME AND GAINS</h3>
+                    <p>This audit programme should only cover items recognised in profit or loss, items recognised in other comprehensive income should be addressed by the S Audit Programme.</p>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit tests</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+     
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;  
+
+            case '2.16 R2-1':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    ';
+                    $html .= '<h3>OTHER EXPENDITURE AND LOSSES</h3>';
+                    $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit tests</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+         
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;  
+
+            case '2.17 R2-2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>PAYROLL COSTS</h3>
+                    <p>Where the entity operates a defined benefit pension scheme ensure the S2/2 audit programme is completed and where employees receive share-based payments ensure the S2/3 audit programme is completed.</p>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit tests</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;  
+
+            case '2.18.1 S2-1':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>DISCLOSURE AUDIT PROGRAMME ~ Covering the Directors’ Report and Financial Statements</h3>
+                    <p><i>Additional audit programmes will be needed where the entity operates a defined benefit pension, has share-based payments or hedge accounts. Complete Appendices 2.18.2, 2.18.3 and 2.18.4 as necessary.</i></p>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit tests</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;  
+
+            case '2.18.2 S2-2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>DEFINED BENEFIT PENSION SCHEMES</h3>
+                    <p><i>Multi-employer schemes contributed to by a number of related or group entities must be split at entity level and it is not possible just to account for these schemes on consolidation.</i></p>
+                    <p><i>NB: The valuation of an actuarial liability cannot be undertaken by the auditor. It is unlikely that most audit firms could demonstrate competency in this area and unless the actuarial liability was immaterial it would also be a breach of the IESBA’s Code of Ethics. </i></p>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit tests – planning and permanent file procedures prior to fieldwork</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+ 
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break; 
+
+            case '2.18.3 S2-3':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>SHARE-BASED PAYMENTS</h3>
+                    <p><i>This work programme should be used when an entity has share-based payment transactions that fall within the scope of IFRS 2.  Typically share-based payments are offered to employees as an incentive to remain with the entity, but they can be offered to third parties in return for the provision of goods and services.  The corresponding disclosure requirements of IFRS 2 are set out in a Supplementary Checklist to the full Corporate Disclosure Checklist, see Appendix 3.15.3.</i></p>
+                    <p><i>NB: The valuation of share-based payments cannot be undertaken by the auditor. It is unlikely that most audit firms could demonstrate competency in this area and unless the fair value was immaterial it would also be a breach of the IESBA’s Code of Ethics. </i></p>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit tests – Background information</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+        
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;  
+
+            case '2.18.4 S2-4':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>HEDGE ACCOUNTING</h3>
+                    <p><i>See Chapter 6 of IFRS 9 for detail. </i></p>
+                    <p><i>On first time application, IFRS 9 permits an entity to choose as its accounting policy either to apply the hedge accounting requirements of IFRS 9 or to continue to apply the IAS 39 requirements.</i></p>
+                    <p><i>This programme is to be used when the entity has entered into hedge relationships and is applying <b>hedge accounting</b>. The application of hedge accounting is <b>optional</b> – many clients take out financial instruments to “hedge” risks (such as forward foreign currency contracts to mitigate the risks arising from exposure to fluctuating exchange rates), but this does not necessitate the application of hedge accounting. Hedge accounting is a choice, and can only be applied when certain criteria have been met.</i></p>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit tests – Background information</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+       
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break; 
+
+            case '2.19.1 U2-1':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+                
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>NOMINAL LEDGER</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>GENERAL</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;   
+
+            case '2.19.2 U2-2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>NEW CLIENT – PRIOR PERIOD AUDITED</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b></b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+    
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break; 
+
+            case '2.19.3 U2-3':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 50%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Programme prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>A.E.P. review at completion: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>PRIOR PERIOD UNAUDITED ~ NEW OR EXISTING CLIENT</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b></b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Extent</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Reference</b></th>
+                                <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        foreach($qdata as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 12%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
+                                <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p><b>Assertion key:</b><br>
+                    E = Existence;<br>
+                    R&O = Rights and Obligations;<br>
+                    C = Completeness;<br>
+                    V = Accuracy, Valuation and Allocation;<br>
+                    P = Presentation;<br>
+                    O = Occurrence;<br>
+                    A = Accuracy;<br>
+                    CO = Cut-off;<br>
+                    CL = Classification.<br>
+                    </p>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break; 
+        }
+    }
+
+    /**
+        ----------------------------------------------------------
+        CHAPTER 2 PDF GENERATOR
+        ---------------------------------------------------------- 
+    */
+    foreach($c3 as $c){
+        switch($c['code']){
+            case '3.1 Aa1':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $datapl     = $rp->getaa1('planning',$c['code'],$c['c3tID'],$cID,$wpID);
+                $dataaf     = $rp->getaa1('audit finalisation',$c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata      = $rp->getaa1s3($c['code'],$c['c3tID'],$cID,$wpID);
+                $s3         = json_decode($rdata['question'], true);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '3.2 Aa2':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $rdata          = $rp->getaa2data($c['code'],$c['c3tID'],$cID,$wpID);
+                $aa2    = json_decode($rdata['question'], true);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '3.3 Aa3a':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $cr     = $rp->getaa3('cr',$c['code'],$c['c3tID'],$cID,$wpID);
+                $dc     = $rp->getaa3('dc',$c['code'],$c['c3tID'],$cID,$wpID);
+                $faf    = $rp->getaa3('faf',$c['code'],$c['c3tID'],$cID,$wpID);
+                $ir     = $rp->getaa3air($c['code'],$c['c3tID'],$cID,$wpID);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+            case '3.4 Aa3b':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $bp1    = $rp->getaa3b('p1',$c['code'],$c['c3tID'],$cID,$wpID);
+                $bp2    = $rp->getaa3b('p2',$c['code'],$c['c3tID'],$cID,$wpID);
+                $bp3a   = $rp->getaa3b('p3a',$c['code'],$c['c3tID'],$cID,$wpID);
+                $bp3b   = $rp->getaa3b('p3b',$c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata          = $rp->getaa3bp4($c['code'],$c['c3tID'],$cID,$wpID);
+                $bp4    = json_decode($rdata['question'], true);
+                
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '3.5 Aa4':
+                
+            break;
+
+            case '3.6.1 Aa5a':
+                
+            break;
+
+            case '3.6.2 Aa5b':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $aa5b = $rp->getaa5b($c['code'],$c['c3tID'],$cID,$wpID);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '3.7 Aa7':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $aa7    = $rp->getaa7('isa315',$c['code'],$c['c3tID'],$cID,$wpID);
+                $cons   = $rp->getaa7('consultation',$c['code'],$c['c3tID'],$cID,$wpID);
+                $inc    = $rp->getaa7('inconsistencies',$c['code'],$c['c3tID'],$cID,$wpID);
+                $ref    = $rp->getaa7('refusal',$c['code'],$c['c3tID'],$cID,$wpID);
+                $dep    = $rp->getaa7('departures',$c['code'],$c['c3tID'],$cID,$wpID);
+                $oth    = $rp->getaa7('other',$c['code'],$c['c3tID'],$cID,$wpID);
+                $aepapp = $rp->getaa7aep('aepapp',$c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata          = $rp->getaa7aep('aep',$c['code'],$c['c3tID'],$cID,$wpID);
+                $aep    = json_decode($rdata['question'], true);
+                
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '3.8 Aa10':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $rdata = $rp->getaa10($c['code'],$c['c3tID'],$cID,$wpID);
+                $aa10 = json_decode($rdata['question'], true);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
+            case '3.9':
+                echo view('workpaper/pdfc3/39', $data);
+                break;
+            case '3.10 Aa11-un':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $s              = explode('-', $code);
+                $aef    = $rp->getaa11p2('aef',$s[0],$c['c3tID'],$cID,$wpID);
+                $aej    = $rp->getaa11p2('aej',$s[0],$c['c3tID'],$cID,$wpID);
+                $ee     = $rp->getaa11p2('ee',$s[0],$c['c3tID'],$cID,$wpID);
+                $de     = $rp->getaa11p2('de',$s[0],$c['c3tID'],$cID,$wpID);
+                $rdata          = $rp->getaa11p('aa11ue',$s[0],$c['c3tID'],$cID,$wpID);
+                $ue     = json_decode($rdata['question'], true);
+                $rdata2         = $rp->getaa11con('con',$s[0],$c['c3tID'],$cID,$wpID);
+                $con    = json_decode($rdata2['question'], true); 
+                
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+            case '3.10 Aa11-ad':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $s = explode('-', $code);
+                $ad = $rp->getaa11p2('ad',$s[0],$c['c3tID'],$cID,$wpID);
+                $rdata = $rp->getaa11p('aa11uead',$s[0],$c['c3tID'],$cID,$wpID);
+                $ue = json_decode($rdata['question'], true);   
+                $s = explode('-', $code);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break; 
+
+            case '3.11':
+                
+            break;   
+            case '3.12':
+                
+            break;  
+
+            case '3.13 Ab1':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $ab1 = $rp->getab1($c['code'],$c['c3tID'],$cID,$wpID);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break; ;   
+            
+            case '3.14 Ab3':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $rdata = $rp->getab3($c['code'],$c['c3tID'],$cID,$wpID);
+                $ab3 = json_decode($rdata['question'], true);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break; 
+            case '3.15 Ab4':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $rdata = $rp->getab4checklist('checklist',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec    = json_decode($rdata['question'], true);
+                $sec1   = $rp->getab4('section1',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec2   = $rp->getab4('section2',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec3   = $rp->getab4('section3',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec4   = $rp->getab4('section4',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec5   = $rp->getab4('section5',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec6   = $rp->getab4('section6',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec7   = $rp->getab4('section7',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec8   = $rp->getab4('section8',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec9   = $rp->getab4('section9',$c['code'],$c['c3tID'],$cID,$wpID);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break; 
+
+            case '3.15.1 Ab4a':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $ab4a = $rp->getab4a('ab4a',$c['code'],$c['c3tID'],$cID,$wpID);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break; 
+
+            case '3.15.2 Ab4b':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $ab4b = $rp->getab4a('ab4b',$c['code'],$c['c3tID'],$cID,$wpID);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;  
+
+            case '3.15.3 Ab4c':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $ab4c = $rp->getab4a('ab4c',$c['code'],$c['c3tID'],$cID,$wpID);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;  
+
+            case '3.15.4 Ab4d':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $ab4d = $rp->getab4a('ab4d',$c['code'],$c['c3tID'],$cID,$wpID);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;  
+
+            case '3.15.5 Ab4e':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $ab4e = $rp->getab4a('ab4e',$c['code'],$c['c3tID'],$cID,$wpID);
+                
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;  
+
+            case '3.15.6 Ab4f':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $ab4f = $rp->getab4a('ab4f',$c['code'],$c['c3tID'],$cID,$wpID);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break; 
+            case '3.15.7 Ab4g':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $ab4g = $rp->getab4a('ab4g',$c['code'],$c['c3tID'],$cID,$wpID);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break; 
+            case '3.15.8 Ab4h':
+                $pdf->AddPage();
+                $html .= $style;
+                $html .= $c['code'];
+
+                $ab4h = $rp->getab4a('ab4h',$c['code'],$c['c3tID'],$cID,$wpID);
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;  
+        }
+    }
 
 
 //$pdf->writeHTML($html, true, false,false, false, '');
