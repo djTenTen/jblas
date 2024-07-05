@@ -16,10 +16,10 @@ class App extends BaseConfig
      *
      *    http://example.com/
      */
-    //public string $baseURL = 'http://localhost/jblas'; //Home
+    public string $baseURL = 'http://localhost/jblas'; //Home
     //public string $baseURL = 'http://192.168.0.54:8080/'; //spark
     //public string $baseURL = 'http://192.168.0.34/jblas'; //Home
-    public string $baseURL = 'http://192.168.0.54/jblas'; //Home
+    //public string $baseURL = 'http://192.168.0.54/jblas'; //Home
     //public string $baseURL = 'http://192.168.1.117/jblas'; // Office
 
     /**

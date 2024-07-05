@@ -112,7 +112,7 @@ $html .= '
         <td style="width: 7%;">'.$r['extent'].'</td>
         <td style="width: 50%;">'.$r['question'].'</td>
         <td style="width: 15%;">'.$r['yesno'].'</td>
-        td style="width: 15%;">'.$r['comment'].'</td>
+        <td style="width: 15%;">'.$r['comment'].'</td>
     </tr>
 ';
 }

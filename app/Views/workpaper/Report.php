@@ -6411,10 +6411,177 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $datapl     = $rp->getaa1('planning',$c['code'],$c['c3tID'],$cID,$wpID);
-                $dataaf     = $rp->getaa1('audit finalisation',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>AUDIT CONTROL RECORD</h3>';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Planning</b></th>
+                                <th class="cent bo" style="width: 18%;"><b>Yes/No /N/A</b></th>
+                                <th class="cent bo" style="width: 18%;"><b>WP Ref / Comment</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $datapl     = $rp->getaa1('planning',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($datapl as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 18%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 18%;">'.$r['reference'].'</td>
+                            </tr>
+                            ';
+                    }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b>Audit finalisation</b></th>
+                                <th class="cent bo" style="width: 18%;"><b>Yes/No /N/A</b></th>
+                                <th class="cent bo" style="width: 18%;"><b>WP Ref / Comment</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                    $count = 0;
+                    $dataaf     = $rp->getaa1('audit finalisation',$c['code'],$c['c3tID'],$cID,$wpID);
+                    foreach($dataaf as $r){
+                        $count ++;
+                        $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 18%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 18%;">'.$r['reference'].'</td>
+                            </tr>
+                        ';
+                    }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
                 $rdata      = $rp->getaa1s3($c['code'],$c['c3tID'],$cID,$wpID);
                 $s3         = json_decode($rdata['question'], true);
+                $html .= '
+                    <p><b>5.  Signed Financial Statements and Audit Opinion</b></p>
+                    <p>Have all outstanding matters noted above, including confirming that the financial statements do not contain material errors or misstatements, been cleared to the satisfaction of the originator (and crossed through to demonstrate this)?………………..........</p>
+                    <p>Has a letter of representation, dated on, or immediately prior to the date of the audit report, been obtained, or has an appropriate modification been given?……………………..</p>
+                    <p>I confirm that consideration has been given to subsequent events arising since the reporting date, to the date of the approval of the financial statements.  If matters have arisen, these have been disclosed in the financial statements in note ………………..........</p>
+                    <p>I confirm that the going concern basis *is / *is not appropriate, and that relevant disclosures have been made in the financial statements.</p>                       
+                    <p>In considering the audit opinion, I have considered whether:</p>
+                    <ul>
+                        <li>Sufficient appropriate audit evidence has been obtained as to whether the financial statements as a whole are free from material misstatement, whether due to fraud or error;</li>
+                        <li>Uncorrected misstatements, individually and in aggregate are immaterial;</li>
+                        <li>The financial statements give a true and fair view; and</li>
+                        <li>The financial statements have been correctly prepared in accordance with *National GAAP / *IFRS, including all relevant legal requirements.</li>
+                    </ul>
+                    <p>I approve the signing of an *unmodified / *modified audit opinion.</p>
+                    <p>*The opinion is modified for the reasons noted on………………………</p>
+                    <p>*The audit report includes an *emphasis of matter paragraph / *other matter paragraph for the reasons noted on .............................</p>
+                    <p>*As the audit opinion has been modified an additional paragraph has been included regarding the impact of the modification on the company’s ability to pay future dividends.</p>
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">Signed:___________(A.E.P)</td>
+                            <td style="width: 50%;">Date:_____________</td>
+                        </tr>
+                    </table>
+                    <p><b>6.  Completion by EQCR:</b></p>
+                    <p>I have carried out a hot review, the scope of which is documented on………...</p>
+                    <p>*I am satisfied that all points raised in my review on ........................ have been cleared.</p>
+                    <p>*I have reviewed the proposed modification / emphasis of matter paragraph and consider it appropriate.</p>
+                    <p>*I confirm that the conclusion in 5 above is appropriate.</p>    
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">Signed:___________(EQCR)</td>
+                            <td style="width: 50%;">Date:_____________</td>
+                        </tr>
+                    </table>
+                    <p><b>7	Acceptance of Re-Appointment (to be completed by the A.E.P.)</b></p>
+                    <p><b>This section is to be completed by the A.E.P. prior to re-appointment.</b></p>
+                    <p>Whilst answering these questions the following matters should be fully considered for the audit firm and any network firm: independence, integrity, conflicts of interest with other clients, economic dependence, trusts, matters arising with regulatory authorities, ability to service the client, other services provided to the client and hospitality. Additional guidance is available in legislation and the Code of Ethics issued by the International Ethics Standards Board for Accountants.</p>
+                    <p><b>Any YES answers should be fully explained along with the safeguards, which will enable us to accept the re-appointment.</b></p>
+                    <p><b>Significant issues must be discussed with the Ethics Partner and details of the discussion should be documented on file.</b></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 60%;"></th>
+                                <th style="width: 20%;">Yes/No</th>
+                                <th style="width: 20%;">Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width: 60%;">Are there any matters which would alter any of the Ethical Considerations set out on the Regulation of Auditor’s Checklist (Ac2), Provision of Non-Audit Services to Audit Clients (Ac3), and Part 4 of the Audit Control Record?</td>
+                                <td class="bo" style="width: 20%;">'.$s3['a1'].'</td>
+                                <td class="bo" style="width: 20%;">'.$s3['a2'].'</td>
+                            </tr>
+                            <tr>
+                                <td class="bo" style="width: 60%;">
+                                    Are there any matters which would alter any of the Ethical Considerations set out on the Regulation of Auditor’s Checklist (Ac2), Provision of Non-Audit Services to Audit Clients (Ac3), and Part 4 of the Audit Control Record?
+                                    <br><br><br>
+                                    '.$s3['a3'].'
+                                    <br><br><br>
+                                    Does any of the above affect our service as auditors of this client?
+                                </td>
+                                <td class="bo" style="width: 20%;">'.$s3['a4'].'</td>
+                                <td class="bo" style="width: 20%;">'.$s3['a5'].'</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 60%;">Do we know of any other factors that could affect independence or otherwise indicate that we should not accept re-appointment?</td>
+                                <td class="bo" style="width: 20%;">'.$s3['a6'].'</td>
+                                <td class="bo" style="width: 20%;">'.$s3['a7'].'</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><b>Authority to accept re-appointment:</b></p>
+                    <p>I have considered the above, and do not consider that there are any perceived threats to our independence, integrity and objectivity and believe that we *can accept / *can accept with the stated safeguards /* cannot accept this re-appointment. </p>
+                    <p>Where necessary adequate consultation has been undertaken and documented with the Ethics Partner.</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="width: 50%;"><p>Signature: </p></td>
+                                <td style="width: 50%;">(A.E.P.)</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50%;"><p>Date:</p><br></td>
+                                <td style="width: 50%;" class="cent"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50%;"><p><i>If appropriate:</i></p><br></td>
+                                <td style="width: 50%;" class="cent"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50%;"><p>Signature: </p></td>
+                                <td style="width: 50%;">(EQR) </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50%;"><p>Date:</p></td>
+                                <td style="width: 50%;" class="cent"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6425,8 +6592,118 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $rdata          = $rp->getaa2data($c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>POINTS FORWARD</h3>
+                    <p><b>Objective: </b> <br>
+                        To provide a summary of the key points arising from the audit, where it is possible for improvements to the efficiency of the audit to be made, and should include both financial and non-financial matters. <br><i>The use of this form is optional.</i></p>
+                    <p><b>Recording:</b> <br>This form should be completed during the audit, and should cover key matters which are of relevance to next year’s assignment.</p>
+                    <p>If information has been included elsewhere on the audit file (for example, Subsequent Events Review, or the ISA Compliance Critical Issues Memorandum), it does not need to be repeated.  Where appropriate, details of suggested improvements should be outlined.</p>
+                ';
+                $rdata  = $rp->getaa2data($c['code'],$c['c3tID'],$cID,$wpID);
                 $aa2    = json_decode($rdata['question'], true);
+                $html .= '
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td><b>Problems encountered during the audit (regarding audit tests):</b>
+                                    <br><p>'.$aa2['rat'].'</p><br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br>
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td><b>Problems encountered during the audit (regarding the client, and their accessibility etc.):</b>
+                                    <br><p>'.$aa2['rcae'].'</p><br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br>
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td><b>Audit tests which can be removed / reduced without impairing audit quality:</b>
+                                    <br><p>'.$aa2['atriaq'].'</p><br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br>
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td><b>Known changes to, or new accounting policies and estimation techniques in the forthcoming period:</b>
+                                    <br><p>'.$aa2['kcapet'].'</p><br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+
+                $html .= '
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td><b>Future developments (nature of business, locations, acquisitions and disposals):</b>
+                                    <br><p>'.$aa2['fd'].'</p><br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br>
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td><b>Future structure of the audit team:</b>
+                                    <br><p>'.$aa2['fs'].'</p><br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br>
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td><b>Other issues:</b>
+                                    <br><p>'.$aa2['oi'].'</p><br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6437,10 +6714,172 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $cr     = $rp->getaa3('cr',$c['code'],$c['c3tID'],$cID,$wpID);
-                $dc     = $rp->getaa3('dc',$c['code'],$c['c3tID'],$cID,$wpID);
-                $faf    = $rp->getaa3('faf',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>SUBSEQUENT EVENTS REVIEW</h3>
+                    <p><b>Objective: </b> <br>
+                    To determine whether any material adjustment or disclosure is required to the financial statements as a result of events occurring between the end of the accounting period and the date of signing the audit report and to ensure the requirements of ISA 560 regarding subsequent events are met.</p>
+                    <p class="bo"><b>NB: An adjusting event is an event that provides evidence of a condition that existed at the reporting date.  A non-adjusting event is an event that arose solely after the reporting date, however, its disclosure is necessary to give a true and fair view.</b></p>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 47%;"><b>Review of Clients Records</b></th>
+                                <th class="cent bo" style="width: 47%;"><b>Working Paper Reference or Comment</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $cr     = $rp->getaa3('cr',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($cr as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 47%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 47%;">'.$r['reference'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 47%;"><b>Discussion with Client</b></th>
+                                <th class="cent bo" style="width: 47%;"><b>Working Paper Reference or Comment</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $dc     = $rp->getaa3('dc',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($dc as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 47%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 47%;">'.$r['reference'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+                $html .= '
+                    <p><b>Finalisation of the Audit File</b></p>
+                    <p>This section should also detail any other work done on subsequent events not covered by the questions below.</p>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b></b></th>
+                                <th class="cent bo" style="width: 18%;"><b>Initial & Date</b></th>
+                                <th class="cent bo" style="width: 18%;"><b>WP Ref / Comment</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $faf    = $rp->getaa3('faf',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($faf as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 18%;">'.$r['extent'].'</td>
+                                <td class="cent bo" style="width: 18%;">'.$r['reference'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+                    
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+
                 $ir     = $rp->getaa3air($c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <h3>Initial Conclusion:</h3>
+                    <p>* Delete as applicable </p>
+                    <p>Having completed the above procedures:</p>
+                    <p>There were no significant events. *</p>
+                    <p>Subsequent events identified above have* / have not* been adequately reflected in the financial statements.</p>
+                    <p>Significant events highlighted by this review, including any disagreements with the client have been brought to the A.E.P.\'s attention and are noted on schedule ___________ *</p>
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">Prepared by:___________</td>
+                            <td style="width: 50%;">Date:_____________</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 50%;">Reviewed by:___________</td>
+                            <td style="width: 50%;">Date:_____________</td>
+                        </tr>
+                    </table>
+                    <h3>Final Conclusion:</h3>
+                    <p><i>If there is a significant delay* between the initial subsequent event review and the signing of the audit report:</i></p>
+                    <ul>
+                        <li><i>then a detailed subsequent event review will need to be reperformed to this date;</i></li>
+                        <li><i>consideration should be given to the reason for the delay, as this may be indicative of potential going concern problems; and</i></li>
+                        <li><i>if there is no justifiable reason for the delay, revisit and update the going concern review.</i></li>
+                    </ul>
+                    <p><i>* - “Significant delay” is not defined, but a delay in excess of three months is likely to mean that the subsequent events review will need to be reperformed.</i></p>
+                    <p>The initial review was conducted sufficiently close to the proposed date of the audit report not to require the work to be revised.*</p>
+                    <p>The initial review has been updated to _____________ (insert date). The work performed is outlined below:*</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="bo">
+                                    <br><br><br>
+                                    '.$ir['question'].'
+                                    <br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Having reviewed the above procedures:</p>
+                    <p>I am satisfied that no further significant events have occurred between the initial review as documented by the conclusion above and _____________ (date of the final review) * <br> Significant events that have occurred are explained above, have been communicated to the A.E.P., and adequately accounted for / disclosed in the financial statements. *</p>
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">Prepared by:___________</td>
+                            <td style="width: 50%;">Date:_____________</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 50%;">Reviewed by:___________</td>
+                            <td style="width: 50%;">Date:_____________</td>
+                        </tr>
+                    </table>
+                    <p><i>N.B. If a matter is discovered after the financial statements are approved which may have changed the opinion given, consider the following (ISA 560.10):</i></p>
+                    <ul>
+                        <li><i>Discuss the issue with management;</i></li>
+                        <li><i>Revising the financial statements;</i></li>
+                        <li><i>Taking appropriate action.</i></li>
+                    </ul>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6450,12 +6889,196 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $bp1    = $rp->getaa3b('p1',$c['code'],$c['c3tID'],$cID,$wpID);
-                $bp2    = $rp->getaa3b('p2',$c['code'],$c['c3tID'],$cID,$wpID);
-                $bp3a   = $rp->getaa3b('p3a',$c['code'],$c['c3tID'],$cID,$wpID);
-                $bp3b   = $rp->getaa3b('p3b',$c['code'],$c['c3tID'],$cID,$wpID);
-                $rdata          = $rp->getaa3bp4($c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '<h3>GOING CONCERN CHECKLIST</h3>
+                    <p><b>Objective: </b> <br>
+                    To ensure that the fundamental concept of going concern is fully considered and that the requirements of ISA 570 are met.</p>
+                    <p class="bo"><b>Overview:  Under the going concern assumption, an entity is viewed as continuing in business for the foreseeable future.  Financial statements are prepared on a going concern basis, unless management either intends to liquidate the entity or to cease to operate, or has no realistic alternative to do so (in these circumstances the financial statements are prepared on a break-up basis).</b></p>
+                ';
+                $html .= '
+                    <br><br><br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 65%;"><b>Part 1 – Discussion with the Client Regarding Going Concern:</b></th>
+                                <th class="cent" style="width: 29%;"><b></b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $bp1    = $rp->getaa3b('p1',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($bp1 as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 65%;">'.$r['question'].'</td>
+                                <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+                $html .= '
+                    <br><br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 65%;"><b>Part 2 – The Auditor’s Assessment ~ General Considerations:</b></th>
+                                <th class="cent bo" style="width: 29%;"><b>Comments / Ref</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $bp2    = $rp->getaa3b('p2',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($bp2 as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 65%;">'.$r['question'].'</td>
+                                <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
+                            </tr>
+                        ';
+                    }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+                $html .= '
+                    <br><br>
+                    <p><b>Part 3a – The Auditor’s Assessment ~ Specific Concerns: <br><i>Completion of this section is optional unless potential issues regarding the going concern presumption have been identified in Parts 1 or 2 above. </i></b></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 65%;"><b></b></th>
+                                <th class="cent bo" style="width: 29%;"><b>Comments / Ref</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $bp3a   = $rp->getaa3b('p3a',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($bp3a as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 65%;">'.$r['question'].'</td>
+                                <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
+                            </tr>
+                        ';
+                    }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+                $html .= '
+                    <br><br>
+                    <p><b>Part 3b – The Auditor’s Assessment ~ Disclosure considerations:</b></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 65%;"><b></b></th>
+                                <th class="cent bo" style="width: 29%;"><b>Comments / Ref</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        $bp3b   = $rp->getaa3b('p3b',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($bp3b as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 65%;">'.$r['question'].'</td>
+                                <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
+                            </tr>
+                        ';
+                    }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+
+                $rdata  = $rp->getaa3bp4($c['code'],$c['c3tID'],$cID,$wpID);
                 $bp4    = json_decode($rdata['question'], true);
+                $html .= '
+                    <p><b>Part 4 – Conclusion:</b></p>
+                    <p>Where potential problems with the going concern presumption have been identified, summarise the issue and resolution:</p>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th class="cent"><b>Going Concern Problem</b></th>
+                                <th class="cent"><b>Audit Evidence Gained / Schedule Reference</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <br><br><br>
+                                    '.$bp4['p41'].'
+                                    <br><br><br>
+                                </td>
+                                <td>
+                                    <br><br><br>
+                                    '.$bp4['p42'].'
+                                    <br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>On the basis of the work recorded above, I consider that:</p>
+                    <ul>
+                        <li>The financial statements have been correctly prepared on the break-up basis.*</li>
+                        <li>The going concern concept is* / is not* correctly applied to this client.</li>
+                        <li>There is no concern* / concern* / significant concern* regarding the going concern concept for this client.</li>
+                        <li>The notes to the financial statements require* / do not require* additional information regarding the going concern concept.</li>
+                        <li>The audit report should be unmodified* / unmodified with a “Material uncertainty related to going concern” paragraph* / qualified with respect to going concern.*</li>
+                        <li><i>(If qualification or ”Material uncertainty” paragraph) Consideration has been given as to whether a report to a regulatory authority is required.(* Delete as applicable)</i></li>
+                    </ul>
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">Signed:___________[A.E.P.]</td>
+                            <td style="width: 50%;">Date:_____________</td>
+                        </tr>
+                    </table>
+                    <p><i>There is more guidance on the impact on the financial statements and audit report of going concern issues in Chapter 3, paragraph 5.4 of the Manual, as well as in ISA 570.</i></p>
+                ';
                 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6474,7 +7097,64 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $aa5b = $rp->getaa5b($c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '
+                    <h3>MANAGEMENT LETTER WORKSHEET [INTERIM / FINAL AUDIT]</h3>
+                    <table border="1" class="cent">
+                        <thead>
+                            <tr >
+                                <th style="width: 7%;">SchRef.</th>
+                                <th style="width: 18.6%;">Issues Identified </th>
+                                <th style="width: 18.6%;">Client’s Comments</th>
+                                <th style="width: 18.6%;">Recommendations</th>
+                                <th style="width: 18.6%;">To be Included in Management Letter YES / NO</th>
+                                <th style="width: 18.6%;">Results of Follow up at Next Audit Visit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        ';
+                        $aa5b = $rp->getaa5b($c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($aa5b as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 7%;"><br><br>'.$r['reference'].'<br></td>
+                                <td style="width: 18.6%;"><br><br>'.$r['issue'].'<br></td>
+                                <td style="width: 18.6%;"><br><br>'.$r['comment'].'<br></td>
+                                <td style="width: 18.6%;"><br><br>'.$r['recommendation'].'<br></td>
+                                <td style="width: 18.6%;"><br><br>'.$r['yesno'].'<br></td>
+                                <td style="width: 18.6%;"><br><br>'.$r['result'].'<br></td>
+                            </tr>';
+                        }
+                $html .='
+                        </tbody>
+                    </table>
+                    <p>This should cover weaknesses in the accounting system and control environment plus comments on the qualitative aspects of the financial statements and the appropriateness of the accounting policies and estimation techniques adopted by the client.</p>
+                    <p>All significant issues should be included in the management letter.  For other issues verbal communication is adequate.  If there are no significant issues then this can be confirmed in a “voluntary” management letter or alternatively, the letter of representation can note that a management letter is not necessary ~ note, however, that this is likely to be a rare occurrence when applying IFRS.</p>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6485,16 +7165,322 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $aa7    = $rp->getaa7('isa315',$c['code'],$c['c3tID'],$cID,$wpID);
-                $cons   = $rp->getaa7('consultation',$c['code'],$c['c3tID'],$cID,$wpID);
-                $inc    = $rp->getaa7('inconsistencies',$c['code'],$c['c3tID'],$cID,$wpID);
-                $ref    = $rp->getaa7('refusal',$c['code'],$c['c3tID'],$cID,$wpID);
-                $dep    = $rp->getaa7('departures',$c['code'],$c['c3tID'],$cID,$wpID);
-                $oth    = $rp->getaa7('other',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
                 $aepapp = $rp->getaa7aep('aepapp',$c['code'],$c['c3tID'],$cID,$wpID);
-                $rdata          = $rp->getaa7aep('aep',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <h3>ISA COMPLIANCE CRITICAL ISSUES MEMORANDUM</h3>
+                    <p><b>Objective:</b></p>
+                    <p>To ensure compliance with ISA by providing a summary of critical audit issues and how these have been resolved. When read in conjunction with final analytical procedures, completion of this memorandum should provide the Audit Engagement Partner with an executive summary of the key points arising from the assignment.</p>
+                    <p><b>Recording:</b></p>
+                    <p>This form must be completed and include any changes made to the original planning documentation, how significant risks have been addressed during the audit and certain other issues specifically required by ISA. <i>The first 3 pages of this form are mandatory</i>.</p>
+                    <p>If the A.E.P. wishes, this form can be fully completed thus providing a comprehensive executive summary which (when read in conjunction with final analytical procedures) provides a critical review of financial and non-financial matters, notes outstanding work; key issues where the A.E.P.’s input is needed and key issues that require further client involvement.</p>
+                    <p>This form should not be used to record routine review points or administrative points for the A.E.P.’s attention or to record outstanding work at interim stages of the assignment.</p>
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td><b>Summary and Impact of Changes Made to Audit Planning After the Date of the A.E.P’s Approval:</b>
+                                    <br><br><br>
+                                    '.$aepapp['question'].'
+                                    <br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>I approve the above changes to the planning, and consider that these changes have been adequately integrated into the audit approach.</p>
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">Changes approved by:___________(A.E.P.) </td>
+                            <td style="width: 50%;">on_____________</td>
+                        </tr>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage('L');
+                $html .= $style;
+
+                $html .= '
+                    <p><b>I have considered the requirements of ISA 315 and specifically, the definition of a significant risk being, “an identified and assessed risk of material misstatement that, in the auditor’s judgment, requires special audit consideration”.</b></p>
+                    <p><b>A summary of significant risks identified, the outcome from audit tests performed on those risks, and the conclusions reached (mandatory section):</b> <br> <i>(Insert additional rows as required)</i></p>
+                ';
+                $html .= '
+                    <h3>MANAGEMENT LETTER WORKSHEET [INTERIM / FINAL AUDIT]</h3>
+                    <table border="1" class="cent">
+                        <thead>
+                            <tr >
+                                <th style="width: 15%;"><b>Area / Assertion</b></th>
+                                <th style="width: 30%;"><b>Significant risk identified</b></th>
+                                <th style="width: 10%;"><b>Audit test reference</b></th>
+                                <th style="width: 20%;"><b>Results of audit tests</b></th>
+                                <th style="width: 20%;"><b>Conclusions</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $aa7    = $rp->getaa7('isa315',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($aa7 as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 15%;"><br><br>'.$r['reference'].'<br></td>
+                                <td style="width: 30%;"><br><br>'.$r['issue'].'<br></td>
+                                <td style="width: 10%;"><br><br>'.$r['comment'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+                            </tr>';
+                    }
+                $html .='
+                        </tbody>
+                    </table>';
+                $html .= '
+                    <p>I consider that significant risks have been identified and adequately addressed by this assignment, and have been appropriately communicated to the client in the Planning Letter (or, for significant risks identified at a later stage of the assignment, via alternative, appropriate documentation).</p>
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">Signature:___________(A.E.P.) </td>
+                            <td style="width: 50%;">on_____________</td>
+                        </tr>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage('L');
+                $html .= $style;
+
+                $html .= '
+                    <table border="1" >
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;"><b>Issue(s):</b></th>
+                                <th style="width: 20%;"><b>Comments and conclusion of the audit team:</b></th>
+                                <th style="width: 20%;"><b>(If applicable) <br> Further information needed from the client and a summary of information subsequently received:</b></th>
+                                <th style="width: 20%;"><b>(If applicable) <br> A.E.P. input required:</b></th>
+                                <th style="width: 20%;"><b>A.E.P. Conclusion(s):</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5"><b>Areas where consultation has been undertaken (mandatory section):</b></td>
+                            </tr>';
+                    $cons   = $rp->getaa7('consultation',$c['code'],$c['c3tID'],$cID,$wpID);
+                    foreach($cons as $r){
+                        $html .= '
+                        <tr>
+                            <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+                        </tr>';
+                    }
+                $html .= '
+                    <tr>
+                        <td colspan="5"><b>Inconsistencies noted between information provided by the client and other findings of the audit team (mandatory section):</b></td>
+                    </tr>';
+                    $inc    = $rp->getaa7('inconsistencies',$c['code'],$c['c3tID'],$cID,$wpID);
+                    foreach($inc as $r){
+                        $html .= '
+                        <tr>
+                            <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+                        </tr>';
+                    }
+                $html .= '
+                    <tr>
+                        <td colspan="5"><b>Areas where management refusal to allow the audit team to send a confirmation request has led to alternative procedures being performed (mandatory section):</b></td>
+                    </tr>
+                ';
+                    $ref    = $rp->getaa7('refusal',$c['code'],$c['c3tID'],$cID,$wpID);
+                    foreach($ref as $r){
+                        $html .= '
+                        <tr>
+                            <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+                        </tr>';
+                    }
+                $html .= '
+                    <tr>
+                        <td colspan="5"><b>Departures from requirements of ISA, reasons for the departure and alternative audit procedures performed (mandatory section):</b></td>
+                    </tr>
+                ';
+                    $dep    = $rp->getaa7('departures',$c['code'],$c['c3tID'],$cID,$wpID);
+                    foreach($dep as $r){
+                        $html .= '
+                        <tr>
+                            <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
+                            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+                        </tr>';
+                    }
+                $html .='
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage('L');
+                $html .= $style;
+
+                $html .= '<p><b>Other Issues (including any key outstanding audit matters):</b></p>';
+
+                $html .= '
+                    <table border="1" >
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;"><b>Issue(s):</b></th>
+                                <th style="width: 20%;"><b>Comments and conclusion of the audit team:</b></th>
+                                <th style="width: 20%;"><b>(If applicable) <br> Further information needed from the client and a summary of information subsequently received:</b></th>
+                                <th style="width: 20%;"><b>(If applicable) <br> A.E.P. input required:</b></th>
+                                <th style="width: 20%;"><b>A.E.P. Conclusion(s):</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        ';
+                        $oth    = $rp->getaa7('other',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($oth as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+                            </tr>';
+                        }
+                $html .='
+                        </tbody>
+                    </table>
+                ';
+
+                $rdata  = $rp->getaa7aep('aep',$c['code'],$c['c3tID'],$cID,$wpID);
                 $aep    = json_decode($rdata['question'], true);
-                
+                $html .= '
+                    <p><b>Changes to, or new accounting policies and estimation techniques in the period:</b></p>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th><b>Points to A.E.P.:</b></th>
+                                <th><b>A.E.P. Comments:</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <br><br><br>
+                                    '.$aep['ch1'].'
+                                    <br><br><br>
+                                </td>
+                                <td>
+                                    <br><br><br>
+                                    '.$aep['ch2'].'
+                                    <br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><b>Developments during the period:</b></p>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th><b>Points to A.E.P.:</b></th>
+                                <th><b>A.E.P. Comments:</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <br><br><br>
+                                    '.$aep['dev1'].'
+                                    <br><br><br>
+                                </td>
+                                <td>
+                                    <br><br><br>
+                                    '.$aep['dev2'].'
+                                    <br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><b>Future developments:</b></p>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th><b>Points to A.E.P.:</b></th>
+                                <th><b>A.E.P. Comments:</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <br><br><br>
+                                    '.$aep['fut1'].'
+                                    <br><br><br>
+                                </td>
+                                <td>
+                                    <br><br><br>
+                                    '.$aep['fut2'].'
+                                    <br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><b>Costs to date, including an explanation of deviation from budget, and timetable for completion:</b></p>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th><b>Points to A.E.P.:</b></th>
+                                <th><b>A.E.P. Comments:</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <br><br><br>
+                                    '.$aep['cst1'].'
+                                    <br><br><br>
+                                </td>
+                                <td>
+                                    <br><br><br>
+                                    '.$aep['cst2'].'
+                                    <br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                ';
+                                
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6504,8 +7490,140 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '
+                    <h3>FINAL ANALYTICAL PROCEDURES</h3>
+                    <p><b>Objective:</b> <br> To carry out a review of the financial statements such that the results obtained, together with the conclusions drawn from other audit tests, give a basis for the opinion on the financial statements.</p>
+                    <p><b>Recording:</b> <br> Review key ratios of most significance to the entity. Any large or unexpected movements in these ratios should be explained. This section should also contain details of significant or unexpected changes in major Statement of Financial Position and Performance Statement items.</p>
+                    <p><b>Comparisons should be made of current period figures with prior period and / or budgeted figures.  Explanations obtained for significant or unexpected changes in key business ratios and items in the financial statements must be corroborated by other evidence. A conclusion should then be reached. </b></p>
+                    <p><b><i>Undertaking analytical procedures at finalisation is mandatory; however, the use of this form is optional.</i></b></p>
+                ';
+
                 $rdata = $rp->getaa10($c['code'],$c['c3tID'],$cID,$wpID);
                 $aa10 = json_decode($rdata['question'], true);
+
+                $html .='
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Summary of key ratios which may be calculated or printed from a relevant software package (add others which are specifically relevant to the entity):
+                                    <ul>
+                                        <li><i>(Gross Profit / Revenue) x 100</i></li>
+                                        <li><i>(Profit before Tax / Revenue) x 100</i></li>
+                                        <li><i>Direct expenses / Inventory</i></li>
+                                        <li><i>(Trade Receivables / Credit Sales) x 365</i></li>
+                                        <li><i>(Trade Payables / Credit Purchases) x 365</i></li>
+                                        <li><i>Current Assets / Current Liabilities</i></li>
+                                        <li><i>Current Assets – Inventory / Current Liabilities</i></li>
+                                        <li><i>Total Liabilities / Equity</i></li>
+                                        <br><br><br><br><br>
+                                        '.$aa10['sum'].'
+                                        <br><br><br><br><br>
+                                        To give an accurate figure an adjustment for sales taxes will have to be made.
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage('L');
+                $html .= $style;
+
+                $html .='
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b>Comparison of key figures</b> (or summarise where this work is filed) <br>
+                                    <i>For example:</i> <br>
+                                    <i>Compare current year’s figures, at intervals appropriate with the availability of management information, against a sample of the following, as appropriate:</i>
+                                    <ul>
+                                        <li><i>Prior year’s figures;</i></li>
+                                        <li><i>Budgeted figures;</i></li>
+                                        <li><i>Industry and other external statistics;</i></li>
+                                        <li><i>Non-financial information (specify which information); or</i></li>
+                                        <li><i>Any other relevant information.</i></li>
+                                    </ul>
+                                    <p><i>Ensure that a summary is prepared of all variances (both absolute and percentage) to justify the analysis performed.</i></p>
+                                    <p><i>Compare results of final analytical procedures with those of preliminary analytical procedures.</i></p>
+                                    <br><br><br><br><br>
+                                    '.$aa10['comp'].'
+                                    <br><br><br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage('L');
+                $html .= $style;
+
+                $html .='
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b>Explanations of unusual variations</b> (or summarise where this work is filed) <br>
+                                    <i>For example:</i> <br>
+                                    <i>Investigate normal and abnormal fluctuations, and record explanations.</i> <br>
+                                    <i>Record details of the evidence obtained to substantiate and corroborate the explanations received.</i> <br>
+                                    <i>Consider whether any of the points raised need to be included in either:</i>
+                                    <ul>
+                                        <li><i>The management letter, as a result of a weakness highlighted in the accounting system; or</i></li>
+                                        <li><i>The letter of representation, as a result of an explanation for which only verbal evidence is available.</i></li>
+                                    </ul>
+                                    <p><i>Consider whether any of the unusual variances identified indicate a previously unrecognised risk of material misstatements due to fraud.</i></p>
+                                    <br><br><br><br><br>
+                                    '.$aa10['exp'].'
+                                    <br><br><br><br><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><b>Conclusion:</b></p>
+                    <p>I have carried out both overall and detailed analytical procedures on the financial statements and I am satisfied that:</p>
+                    <ul>
+                        <li>there are no large or unusual variations in the figures which cannot be adequately explained;</li>
+                        <li>no indicators of fraud have been identified; and</li>
+                        <li>no indicators of fraud have been identified; and</li>
+                    </ul>
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">Signature:___________</td>
+                            <td style="width: 50%;">Dated:_____________</td>
+                        </tr>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6519,16 +7637,388 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $s              = explode('-', $code);
-                $aef    = $rp->getaa11p2('aef',$s[0],$c['c3tID'],$cID,$wpID);
-                $aej    = $rp->getaa11p2('aej',$s[0],$c['c3tID'],$cID,$wpID);
-                $ee     = $rp->getaa11p2('ee',$s[0],$c['c3tID'],$cID,$wpID);
-                $de     = $rp->getaa11p2('de',$s[0],$c['c3tID'],$cID,$wpID);
+                $s      = explode('-', $code);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
                 $rdata          = $rp->getaa11p('aa11ue',$s[0],$c['c3tID'],$cID,$wpID);
                 $ue     = json_decode($rdata['question'], true);
+                $html .= '
+                    <p><b>SUMMARY OF UNADJUSTED ERRORS</b></p>
+                    <p>If, during the assignment, either the aggregate of accumulated misstatements approaches performance materiality, or the nature of identified misstatements indicate that other misstatements may exist which would lead to accumulated misstatements exceeding performance materiality, it shall be determined whether the overall audit strategy and audit plan need to be revised.</p>
+                    <p><b>Objective:</b> <br>This summary of errors is to determine whether any errors, including disclosure errors, which have not yet been corrected (including uncorrected misstatements relating to prior periods), are individually or in total, sufficiently material to warrant correction in the financial statements and to ensure, if appropriate, that they are communicated to the client.  Where applicable, the effect of taxation should also be documented.</p>
+                    <p><b>Scope:</b> <br>Either all errors should be recorded on this form or just those over a de minimis level which can be set by the A.E.P. (this should normally be less than or equal to the clearly trivial threshold).</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="width: 60%;"><b>Clearly Trivial per Ac13</b></td>
+                                <td style="width: 5%;"><b>CU</b></td>
+                                <td style="width: 20%;" class="bo">'.$ue['cta'].'</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 60%;"><b>Final Performance Materiality per Ac13</b></td>
+                                <td style="width: 5%;"><b>CU</b></td>
+                                <td style="width: 20%;" class="bo">'.$ue['fpm'].'</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 60%;"><b>Final Materiality per Ac13</b></td>
+                                <td style="width: 5%;"><b>CU</b></td>
+                                <td style="width: 20%;" class="bo">'.$ue['fma'].'</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br> 
+                ';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%;"></th>
+                                <th style="width: 40%;"></th>
+                                <th colspan="4" style="width: 40%;"><b>Potential Effect on the Financial Statements</b></th>
+                                <th style="width: 10%;"></th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th colspan="2" style="width: 20%;"><b>Performance Statements</b></th>
+                                <th colspan="2" style="width: 20%;"><b>S\'ment of Fin. Position</b></th>
+                                <th style="width: 10%;"><b>Adjust?</b></th>
+                            </tr>
+                            <tr>
+                                <th style="width: 10%;"><b>WP Ref.</b></th>
+                                <th style="width: 40%;"><b>Account and Description of Error</b></th>
+                                <th style="width: 10%;" class="cent"><b>Dr</b></th>
+                                <th style="width: 10%;" class="cent"><b>Cr</b></th>
+                                <th style="width: 10%;" class="cent"><b>Dr</b></th>
+                                <th style="width: 10%;" class="cent"><b>Cr</b></th>
+                                <th style="width: 10%;" class="cent"><b>Yes/No</b></th>
+                            </tr>
+                            <tr>
+                                <th colspan="7"><b>ACTUAL ERRORS - FACTUAL</b></th>
+                            </tr>
+                        </thead>
+                        <tbody> ';
+                            $aef_drps = 0;
+                            $aef_crps = 0;
+                            $aef_drfp = 0;
+                            $aef_crfp = 0;
+                            $aef    = $rp->getaa11p2('aef',$s[0],$c['c3tID'],$cID,$wpID);
+                            foreach($aef as $r){
+                            $aef_drps += $r['drps'];
+                            $aef_crps += $r['crps'];
+                            $aef_drfp += $r['drfp'];
+                            $aef_crfp += $r['crfp'];
+                            $html .= '
+                                <tr>
+                                    <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
+                                    <td style="width: 40%;">'.$r['initials'].'</td>
+                                    <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
+                                    <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
+                                    <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
+                                    <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
+                                    <td style="width: 10%;" class="cent">'.$r['yesno'].'</td>
+                                </tr>
+                            ';
+                            }
+                $html .= '
+                        <tr>
+                            <td colspan="6" style="width: 90%;"><b>ACTUAL ERRORS - JUDGMENTAL</b></td>
+                            <td style="width: 10%;"><b>Adjust?</b></td>
+                        </tr>
+                ';
+                        $aej_drps = 0;
+                        $aej_crps = 0;
+                        $aej_drfp = 0;
+                        $aej_crfp = 0;
+                        $aej    = $rp->getaa11p2('aej',$s[0],$c['c3tID'],$cID,$wpID);
+                        foreach($aej as $r){
+                        $aej_drps += $r['drps'];
+                        $aej_crps += $r['crps'];
+                        $aej_drfp += $r['drfp'];
+                        $aej_crfp += $r['crfp'];     
+                        $html .= '
+                            <tr>
+                                <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
+                                <td style="width: 40%;">'.$r['initials'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['yesno'].'</td>
+                            </tr>
+                        ';
+                        }
+                $html .= '
+                        <tr>
+                            <td colspan="6" style="width: 90%;"><b>EXTRAPOLATED ERRORS</b></td>
+                            <td style="width: 10%;"><b>Adjust?</b></td>
+                        </tr>
+                ';
+                        $ee_drps = 0;
+                        $ee_crps = 0;
+                        $ee_drfp = 0;
+                        $ee_crfp = 0;
+                        $ee     = $rp->getaa11p2('ee',$s[0],$c['c3tID'],$cID,$wpID);
+                        foreach($ee as $r){
+                        $ee_drps += $r['drps'];
+                        $ee_crps += $r['crps'];
+                        $ee_drfp += $r['drfp'];
+                        $ee_crfp += $r['crfp'];
+                        $html .= '
+                            <tr>
+                                <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
+                                <td style="width: 40%;">'.$r['initials'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['yesno'].'</td>
+                            </tr>
+                        ';
+                        }
+                $html .= '
+                        <tr>
+                            <td colspan="6" style="width: 90%;"><b>DISCLOSURE ERRORS</b></td>
+                            <td style="width: 10%;"><b>Adjust?</b></td>
+                        </tr>
+                ';
+                        $de_drps = 0;
+                        $de_crps = 0;
+                        $de_drfp = 0;
+                        $de_crfp = 0;
+                        $de     = $rp->getaa11p2('de',$s[0],$c['c3tID'],$cID,$wpID);
+                        foreach($de as $r){
+                        $de_drps += $r['drps'];
+                        $de_crps += $r['crps'];
+                        $de_drfp += $r['drfp'];
+                        $de_crfp += $r['crfp'];
+                        $html .= '
+                            <tr>
+                                <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
+                                <td style="width: 40%;">'.$r['initials'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['yesno'].'</td>
+                            </tr>
+                        ';
+                        }
+                $html .= '
+                        <tr>
+                            <td colspan="6" style="width: 50%;"><b>Total Effect of Unadjusted Errors</b></td>
+                            <td style="width: 10%;" class="cent">'.$aef_drps + $aej_drps + $ee_drps + $de_drps.'</td>
+                            <td style="width: 10%;" class="cent">'.$aef_crps + $aej_crps + $ee_crps + $de_crps.'</td>
+                            <td style="width: 10%;" class="cent">'.$aef_drfp + $aej_drfp + $ee_drfp + $de_drfp.'</td>
+                            <td style="width: 10%;" class="cent">'.$aef_crfp + $aej_crfp + $ee_crfp + $de_crfp.'</td>
+                        </tr>
+                ';
+                $html .= '
+                    </tbody>
+                    </table>
+                    ';
                 $rdata2         = $rp->getaa11con('con',$s[0],$c['c3tID'],$cID,$wpID);
-                $con    = json_decode($rdata2['question'], true); 
-                
+                $con    = json_decode($rdata2['question'], true);
+                $html .= '
+                    <p><b>Conclusion (only include errors which remain uncorrected):</b></p>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%;"></th>
+                                <th style="width: 40%;"></th>
+                                <th colspan="4" style="width: 40%;"><b>Potential Effect on the Financial Statements</b></th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th colspan="2" style="width: 20%;"><b>Performance Statements</b></th>
+                                <th colspan="2" style="width: 20%;"><b>S\'ment of Fin. Position</b></th>
+
+                            </tr>
+                            <tr>
+                                <th style="width: 10%;"><b>WP Ref.</b></th>
+                                <th style="width: 40%;"><b>Details</b></th>
+                                <th style="width: 10%;" class="cent"><b>Dr</b></th>
+                                <th style="width: 10%;" class="cent"><b>Cr</b></th>
+                                <th style="width: 10%;" class="cent"><b>Dr</b></th>
+                                <th style="width: 10%;" class="cent"><b>Cr</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tbody>
+                                <tr>
+                                    <td style="width: 10%;">B DIV</td>
+                                    <td style="width: 40%;">Intangibles and goodwill</td>
+                                    <td style="width: 10%;">'.$con['bdr1'].'</td>
+                                    <td style="width: 10%;">'.$con['bcr1'].'</td>
+                                    <td style="width: 10%;">'.$con['bdr2'].'</td>
+                                    <td style="width: 10%;">'.$con['bcr2'].'</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;">C DIV</td>
+                                    <td style="width: 40%;">Property, plant and equipment</td>
+                                    <td style="width: 10%;">'.$con['cdr1'].'</td>
+                                    <td style="width: 10%;">'.$con['ccr1'].'</td>
+                                    <td style="width: 10%;">'.$con['cdr2'].'</td>
+                                    <td style="width: 10%;">'.$con['ccr2'].'</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;">D/G DIV</td>
+                                    <td style="width: 40%;">Investments</td>
+                                    <td style="width: 10%;">'.$con['ddr1'].'</td>
+                                    <td style="width: 10%;">'.$con['dcr1'].'</td>
+                                    <td style="width: 10%;">'.$con['ddr2'].'</td>
+                                    <td style="width: 10%;">'.$con['dcr2'].'</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;">E DIV</td>
+                                    <td style="width: 40%;">Inventories</td>
+                                    <td style="width: 10%;">'.$con['edr1'].'</td>
+                                    <td style="width: 10%;">'.$con['ecr1'].'</td>
+                                    <td style="width: 10%;">'.$con['edr2'].'</td>
+                                    <td style="width: 10%;">'.$con['ecr2'].'</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;">F DIV</td>
+                                    <td style="width: 40%;">Receivables</td>
+                                    <td style="width: 10%;">'.$con['fdr1'].'</td>
+                                    <td style="width: 10%;">'.$con['fcr1'].'</td>
+                                    <td style="width: 10%;">'.$con['fdr2'].'</td>
+                                    <td style="width: 10%;">'.$con['fcr2'].'</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;">H DIV</td>
+                                    <td style="width: 40%;">Cash at bank and in hand</td>
+                                    <td style="width: 10%;">'.$con['hdr1'].'</td>
+                                    <td style="width: 10%;">'.$con['hcr1'].'</td>
+                                    <td style="width: 10%;">'.$con['hdr2'].'</td>
+                                    <td style="width: 10%;">'.$con['hcr2'].'</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;">I DIV</td>
+                                    <td style="width: 40%;">Payables</td>
+                                    <td style="width: 10%;">'.$con['idr1'].'</td>
+                                    <td style="width: 10%;">'.$con['icr1'].'</td>
+                                    <td style="width: 10%;">'.$con['idr2'].'</td>
+                                    <td style="width: 10%;">'.$con['icr2'].'</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;">J DIV</td>
+                                    <td style="width: 40%;">Taxation</td>
+                                    <td style="width: 10%;">'.$con['jdr1'].'</td>
+                                    <td style="width: 10%;">'.$con['jcr1'].'</td>
+                                    <td style="width: 10%;">'.$con['jdr2'].'</td>
+                                    <td style="width: 10%;">'.$con['jcr2'].'</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;">L DIV</td>
+                                    <td style="width: 40%;">Provisions</td>
+                                    <td style="width: 10%;">'.$con['ldr1'].'</td>
+                                    <td style="width: 10%;">'.$con['lcr1'].'</td>
+                                    <td style="width: 10%;">'.$con['ldr2'].'</td>
+                                    <td style="width: 10%;">'.$con['lcr2'].'</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;">M DIV</td>
+                                    <td style="width: 40%;">Equity</td>
+                                    <td style="width: 10%;">'.$con['mdr1'].'</td>
+                                    <td style="width: 10%;">'.$con['mcr1'].'</td>
+                                    <td style="width: 10%;">'.$con['mdr2'].'</td>
+                                    <td style="width: 10%;">'.$con['mcr2'].'</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;">O DIV</td>
+                                    <td style="width: 40%;">Revenue</td>
+                                    <td style="width: 10%;">'.$con['odr1'].'</td>
+                                    <td style="width: 10%;">'.$con['ocr1'].'</td>
+                                    <td style="width: 10%;">'.$con['odr2'].'</td>
+                                    <td style="width: 10%;">'.$con['ocr2'].'</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;">P DIV</td>
+                                    <td style="width: 40%;">Direct costs</td>
+                                    <td style="width: 10%;">'.$con['pdr1'].'</td>
+                                    <td style="width: 10%;">'.$con['pcr1'].'</td>
+                                    <td style="width: 10%;">'.$con['pdr2'].'</td>
+                                    <td style="width: 10%;">'.$con['pcr2'].'</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;">Q DIV</td>
+                                    <td style="width: 40%;">Other income and gains</td>
+                                    <td style="width: 10%;">'.$con['qdr1'].'</td>
+                                    <td style="width: 10%;">'.$con['qcr1'].'</td>
+                                    <td style="width: 10%;">'.$con['qdr2'].'</td>
+                                    <td style="width: 10%;">'.$con['qcr2'].'</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 10%;">R DIV</td>
+                                    <td style="width: 40%;">Other expenditure and losses</td>
+                                    <td style="width: 10%;">'.$con['rdr1'].'</td>
+                                    <td style="width: 10%;">'.$con['rcr1'].'</td>
+                                    <td style="width: 10%;">'.$con['rdr2'].'</td>
+                                    <td style="width: 10%;">'.$con['rcr2'].'</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">Total Effect of Unadjusted Errors</td>
+                                    <td>'.$con['bdr1'] + $con['cdr1'] + $con['ddr1'] + $con['edr1'] + $con['fdr1'] + $con['hdr1'] + $con['idr1'] + $con['jdr1'] + $con['ldr1'] + $con['mdr1'] + $con['odr1'] + $con['pdr1'] + $con['qdr1']  + $con['rdr1']  .'</td>
+                                    <td>'.$con['bcr1'] + $con['ccr1'] + $con['dcr1'] + $con['ecr1'] + $con['fcr1'] + $con['hcr1'] + $con['icr1'] + $con['jcr1'] + $con['lcr1'] + $con['mcr1'] + $con['ocr1'] + $con['pcr1'] + $con['qcr1']  + $con['rcr1']  .'</td>
+                                    <td>'.$con['bdr2'] + $con['cdr2'] + $con['ddr2'] + $con['edr2'] + $con['fdr2'] + $con['hdr2'] + $con['idr2'] + $con['jdr2'] + $con['ldr2'] + $con['mdr2'] + $con['odr2'] + $con['pdr2'] + $con['qdr2']  + $con['rdr2']  .'</td>
+                                    <td>'.$con['bcr2'] + $con['ccr2'] + $con['dcr2'] + $con['ecr2'] + $con['fcr2'] + $con['hcr2'] + $con['icr2'] + $con['jcr2'] + $con['lcr2'] + $con['mcr2'] + $con['ocr2'] + $con['pcr2'] + $con['qcr2']  + $con['rcr2']  .'</td>
+                                </tr>
+                            </tfoot>
+                        </tbody>
+                    </table>
+                    ';
+                $html .= '
+                    <p>The errors in total are clearly trivial (as defined by the planning letter) and have not been communicated to the directors.*</p>
+                    <p>The errors in total are not trivial and the directors have confirmed verbally that they do not want to adjust them and this will be confirmed in the letter of representation.*</p>
+                    <p>I am satisfied that the combined effect of the above errors is below performance materiality for the financial statements as a whole**, and therefore does not warrant correction.*</p>
+                    <p>The errors in total exceed performance materiality for the financial statements as a whole**, and given the risk of unidentified items, the financial statements are deemed to be materially incorrect, and the audit opinion will be modified (Aa1, page 7)</p>
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">Signed:___________ (A.E.P.)</td>
+                            <td style="width: 50%;">Dated:_____________</td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <p>*  Delete as appropriate</p>
+                    <p>** Does not turn a profit into a loss (or vice versa) or a net asset position into a net liability position (or vice versa), adjustments, misstatements for an individual area being greater than the performance materiality level, or is greater than any of the specific measures of performance materiality noted at Ac13 (for example, related party transactions, directors\' emoluments, etc.).  Also, where the client has artificially ‘cherry picked’ potential adjustments to achieve a particular presentation of its financial position, financial performance or cash flows (for example, all items that reduce profit have been corrected but all adjustments that increase it have not) then this would also be considered to be a material error in the financial statements.</p>
+                    <p><b>Notes: </b><br>"Clearly trivial"  errors do not need to be accumulated.  These items are clearly inconsequential, whether taken individually or in aggregate, whether judged by size, nature or circumstances.  It is suggested that 1% of audit materiality is used to determine a level at which items are deemed to be clearly trivial, but a different percentage can be used if deemed to be more appropriate and is adequately justified.  </p>
+                    <p>However, misstatements relating to amounts may not be clearly trivial when judged on criteria of nature or circumstance. If this is the case, the misstatements should be accumulated as unadjusted errors.</p>
+                    <p>Misstatements in disclosures may also be clearly trivial whether taken individually or in aggregate, and whether judged by any criteria of size, nature or circumstances. Misstatements in disclosures that are not clearly trivial are also accumulated to assist the auditor in evaluating the effect of such misstatements on the relevant disclosures and the financial statements as a whole. Paragraph A13a of ISA 450 provides examples of where misstatements in qualitative disclosures may be material.</p>
+                ';
+
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6538,10 +8028,116 @@ $html = '';
                 $html .= $c['code'];
 
                 $s = explode('-', $code);
-                $ad = $rp->getaa11p2('ad',$s[0],$c['c3tID'],$cID,$wpID);
+
+                $html .= '
+                    <p><b>SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT\'S FINANCIAL STATEMENTS</b></p>
+                    <p><b>Objective:</b> <br> To carry out a review of the financial statements such that the results obtained, together with the conclusions drawn from other audit tests, give a basis for the opinion on the financial statements.</p>
+                    <p><b>Recording:</b> <br> Review key ratios of most significance to the entity. Any large or unexpected movements in these ratios should be explained. This section should also contain details of significant or unexpected changes in major Statement of Financial Position and Performance Statement items.</p>
+                    <p><b>Comparisons should be made of current period figures with prior period and / or budgeted figures.  Explanations obtained for significant or unexpected changes in key business ratios and items in the financial statements must be corroborated by other evidence. A conclusion should then be reached. </b></p>
+                    <p><b><i>Undertaking analytical procedures at finalisation is mandatory; however, the use of this form is optional.</i></b></p>
+                ';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%;"></th>
+                                <th style="width: 40%;"></th>
+                                <th colspan="4" style="width: 40%;"><b>Potential Effect on the Financial Statements</b></th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th colspan="2" style="width: 20%;"><b>Performance Statements</b></th>
+                                <th colspan="2" style="width: 20%;"><b>S\'ment of Fin. Position</b></th>
+                        
+                            </tr>
+                            <tr>
+                                <th style="width: 10%;"><b>WP Ref.</b></th>
+                                <th style="width: 40%;"><b>Account and Description of Adjustment</b></th>
+                                <th style="width: 10%;" class="cent"><b>Dr</b></th>
+                                <th style="width: 10%;" class="cent"><b>Cr</b></th>
+                                <th style="width: 10%;" class="cent"><b>Dr</b></th>
+                                <th style="width: 10%;" class="cent"><b>Cr</b></th>
+                            </tr>
+                            <tr>
+                                <th colspan="6"><b>ADJUSTMENTS MADE BY AUDITORS</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $drps = 0;
+                            $crps = 0;
+                            $drfp = 0;
+                            $crfp = 0;
+                            $ad = $rp->getaa11p2('ad',$s[0],$c['c3tID'],$cID,$wpID);
+                            foreach($ad as $r){
+                                $drps += $r['drps'];
+                                $crps += $r['crps'];
+                                $drfp += $r['drfp'];
+                                $crfp += $r['crfp'];
+
+                                $html .= '
+                                <tr>
+                                    <td style="width: 10%;">'.$r['reference'].'</td>
+                                    <td style="width: 40%;">'.$r['initials'].'</td>
+                                    <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
+                                    <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
+                                    <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
+                                    <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
+                                </tr>
+                            ';
+                    }
+                $html .= '
+                        <tr>
+                            <td colspan="6" style="width: 50%;"><b>Total Effect of Unadjusted Errors</b></td>
+                            <td style="width: 10%;" class="cent">'.$drps.'</td>
+                            <td style="width: 10%;" class="cent">'.$crps.'</td>
+                            <td style="width: 10%;" class="cent">'.$drfp.'</td>
+                            <td style="width: 10%;" class="cent">'.$crfp.'</td>
+                        </tr>
+                ';
+                $html .= '
+                        </tbody>
+                    </table>
+                    <br><br>
+                ';
                 $rdata = $rp->getaa11p('aa11uead',$s[0],$c['c3tID'],$cID,$wpID);
                 $ue = json_decode($rdata['question'], true);   
-                $s = explode('-', $code);
+                $html .= '
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="width: 65%;"><b>Profit (Loss) for the Period per Draft Financial Statements</b></td>
+                                <td style="width: 5%;"><b>CU</b></td>
+                                <td style="width: 20%;" class="bo">'.$ue['pl'].'</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 65%;"><b>Net Adjustments Made by Auditors to Client\'s Draft Figures</b></td>
+                                <td style="width: 5%;"><b>CU</b></td>
+                                <td style="width: 20%;" class="bo">'.$ue['na'].'</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 65%;"><b>Profit (Loss)  for the Period per Final Financial Statements</b></td>
+                                <td style="width: 5%;"><b>CU</b></td>
+                                <td style="width: 20%;" class="bo">'.$ue['pl2'].'</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>No adjustments have been made to the client\'s draft financial statements.*</p>
+                    <p>The above adjustments have been identified, the directors ("informed management") have confirmed verbally that they wish to adjust them and this will be confirmed in the letter of representation.*</p>
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">Signed:___________ (A.E.P.)</td>
+                            <td style="width: 50%;">Dated:_____________</td>
+                        </tr>
+                    </table>
+                    <p>* Delete as appropriate</p>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6561,6 +8157,65 @@ $html = '';
 
                 $ab1 = $rp->getab1($c['code'],$c['c3tID'],$cID,$wpID);
 
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '
+                    <h3>CRITICAL REVIEW OF THE FINANCIAL STATEMENTS</h3>
+                ';
+                $html .= '
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 60%;"><b></b></th>
+                                <th class="cent bo" style="width: 18%;"><b>Yes / No / N/A</b></th>
+                                <th class="cent bo" style="width: 18%;"><b>WP Ref. / Comment</b></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $count = 0;
+                        foreach($ab1 as $r){
+                            $count ++;
+                            $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 60%;">'.$r['question'].'<br></td>
+                                <td class="cent bo" style="width: 18%;">'.$r['yesno'].'</td>
+                                <td class="cent bo" style="width: 18%;">'.$r['comment'].'</td>
+                            </tr>
+                        ';
+                    }
+                $html .= '
+                        </tbody>
+                    </table>
+                    <p>The tests above were undertaken on draft financial statements sent to the client.</p>
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">Signed:___________ </td>
+                            <td style="width: 50%;">Date:_____________</td>
+                        </tr>
+                    </table>
+                    <p>The tests above were undertaken on final financial statements sent to the client.  The financial statements are correctly prepared, and other information included within the Annual Report is consistent with the financial statements.</p>
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">Signed:___________ (Manager)</td>
+                            <td style="width: 50%;">Date:_____________</td>
+                        </tr>
+                    </table>
+                ';
+
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break; ;   
@@ -6570,8 +8225,136 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
                 $rdata = $rp->getab3($c['code'],$c['c3tID'],$cID,$wpID);
                 $ab3 = json_decode($rdata['question'], true);
+                $html .= '
+                    <h3>FINANCIAL STATEMENTS DISCLOSURE AND COMPLIANCE ANNUAL REVIEW CHECKLIST</h3>
+                    <p>This checklist should be used to evidence the checking of disclosure and compliance matters for \'uncomplex companies\' where the appropriate (i.e. IFRS) disclosure checklist has been completed within the last three years and the size and complexity of the company means that the firm does not consider that a full disclosure checklist needs to be completed every year.</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="width: 7%;"><b>1.</b></td>
+                                <td style="width: 93%;"><b>Use of Disclosure Checklists</b>
+                                    <p>The appropriate disclosure checklist must be completed in the following circumstances:</p>
+                                    <ul>
+                                        <li>First year of engagement;</li>
+                                        <li>Every three years;</li>
+                                        <li>Where the financial statements are not prepared via a computerised accounts production package;</li>
+                                        <li>Where there have been significant changes in the client\'s business or accounting policies;</li>
+                                        <li>Where there have been significant changes in financial reporting standards (including First Time Adoption of / Amendments to IFRS) or legislative requirements;</li>
+                                        <li>Where there has been a significant transaction which would require additional disclosure in the financial statements (for example, a change to Equity (other than the profit for the year), the introduction of a new type of asset or liability, or acquiring a new source of income or expenditure).</li>
+                                    </ul>
+                                    <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 7%;"><b>2.</b></td>
+                                <td style="width: 93%;"><b>Common Changes</b>
+                                    <p>Have any of the following points arisen during the period, resulting in disclosure or compliance changes:</p>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 80%;"></th>
+                                                <th class="bo cent" style="width: 20%;"><b>Yes/No</b></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>•  Are disclosure exemptions available in legislation / IFRS now being taken / lost?</td>
+                                                <td class="bo cent">'.$ab3['aby1'].'</td>
+                                            </tr>
+                                            <tr>
+                                                <td>•  Was the company required to produce consolidated financial statements in the previous period but not in this period?</td>
+                                                <td class="bo cent">'.$ab3['aby2'].'</td>
+                                            </tr>
+                                            <tr>
+                                                <td>•  Is the company required to prepare consolidated financial statements this period (but has not in the previous period)?</td>
+                                                <td class="bo cent">'.$ab3['aby3'].'</td>
+                                            </tr>
+                                            <tr>
+                                                <td>•  Is the company adopting a new accounting framework for the first time?</td>
+                                                <td class="bo cent">'.$ab3['aby4'].'</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <p>If the answer to any of the above is yes, a full disclosure checklist needs to be completed.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 7%;"><b>3.</b></td>
+                                <td style="width: 93%;"><b>New Financial Reporting Standards </b>
+                                    <p>The most recently completed disclosure checklist was for the period ending_________________</p>
+                                    <p>Since then, no further* / the following* Accounting / Financial Reporting Standards or amendments (IFRS*) have become mandatory, with a commentary of the effect on disclosure in the financial statements being shown <i>(or included on a separate, cross-referenced schedule)(*delete as applicable):</i></p>
+                                    <table border="1">
+                                        <thead>
+                                            <tr>
+                                                <th class="cent"><b>Financial Reporting Standard </b></th>
+                                                <th class="cent"><b>Effect on disclosures</b></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="cent">
+                                                <td>'.$ab3['frs1'].'</td>
+                                                <td>'.$ab3['ed1'].'</td>
+                                            </tr>
+                                            <tr class="cent">
+                                                <td>'.$ab3['frs2'].'</td>
+                                                <td>'.$ab3['ed2'].'</td>
+                                            </tr>
+                                            <tr class="cent">
+                                                <td>'.$ab3['frs3'].'</td>
+                                                <td>'.$ab3['ed3'].'</td>
+                                            </tr>
+                                            <tr class="cent">
+                                                <td>'.$ab3['frs4'].'</td>
+                                                <td>'.$ab3['ed4'].'</td>
+                                            </tr>
+                                            <tr class="cent">
+                                                <td>'.$ab3['frs5'].'</td>
+                                                <td>'.$ab3['ed5'].'</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 7%;"><b>4.</b></td>
+                                <td style="width: 93%;"><b>Conclusion</b>
+                                    <p>It is unnecessary to complete the relevant disclosure checklist for the current period.</p>
+                                    <p>The financial statements have been reviewed with reference to the previously completed disclosure checklist and the requirements of any new financial reporting standards or amendments, and disclosures are considered to be adequate.</p>
+                                    <br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6581,17 +8364,496 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '
+                    <p><b>CORPORATE DISCLOSURE CHECKLIST (IFRS)</b></p>
+                    <p><b><u>Scope</u></b></p>
+                    <p>This checklist should be completed for every corporate entity where International Financial Reporting Standards (IFRS) are being followed and it is not appropriate to complete Appendix 3.14 – Financial Statements Disclosure and Compliance Annual Review Checklist.</p>
+                    <p>This checklist can be used for any entity that adopts IFRS, and includes a number of “best practice” disclosures which are commonly included within financial statements as a result of local legislative requirements.  If such best practice disclosures are not required, or are prohibited by legislation, it would be necessary to disregard these, and where relevant, to replace these disclosures with those disclosures required by the relevant legislation.</p>
+                    <p>The requirements of IFRS only apply to material items.  Immaterial balances can be aggregated into other account headings and immaterial notes and accounting policies can be, and should ideally be, removed [IAS 1 paragraphs 29-31].</p>
+                    <p>IFRS 15 <i>Revenue from Contracts with Customers</i> and IFRS 9 <i>Financial Instruments</i> became mandatory for accounting periods commencing on or after 1 January 2018. These resulted in significant additional disclosure requirements compared to the superseded standards dealing with these areas. </p>
+                    <p>IFRS 16 Leases is mandatory for accounting periods commencing on or after 1 January 2019. This fundamentally alters the accounting treatment for lessees, with consequential disclosure amendments.</p>
+                    <p><b>NB: To ensure that the Checklist is as efficient as possible, areas which are more specialised have been addressed by supplementary disclosure checklists.  <u>These supplementary disclosure checklists should only be completed if the area is relevant.</u></b></p>
+                    <p>NB: The checklist does not cover the additional disclosures required by companies which enter into insurance contracts, where these are relevant considerations, then the disclosure requirements of IFRS 4 should be given.  It also does not cover the requirements of IAS 26, which are only relevant to clients who are themselves pension schemes, or IFRIC 2 which is relevant to cooperative entities.  The checklist also does not cover the disclosure requirements of companies with listed equity or debt.</p>
+                ';
                 $rdata = $rp->getab4checklist('checklist',$c['code'],$c['c3tID'],$cID,$wpID);
                 $sec    = json_decode($rdata['question'], true);
-                $sec1   = $rp->getab4('section1',$c['code'],$c['c3tID'],$cID,$wpID);
-                $sec2   = $rp->getab4('section2',$c['code'],$c['c3tID'],$cID,$wpID);
-                $sec3   = $rp->getab4('section3',$c['code'],$c['c3tID'],$cID,$wpID);
-                $sec4   = $rp->getab4('section4',$c['code'],$c['c3tID'],$cID,$wpID);
-                $sec5   = $rp->getab4('section5',$c['code'],$c['c3tID'],$cID,$wpID);
-                $sec6   = $rp->getab4('section6',$c['code'],$c['c3tID'],$cID,$wpID);
-                $sec7   = $rp->getab4('section7',$c['code'],$c['c3tID'],$cID,$wpID);
-                $sec8   = $rp->getab4('section8',$c['code'],$c['c3tID'],$cID,$wpID);
-                $sec9   = $rp->getab4('section9',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr class="cent">
+                                <th style="width: 55%;"><b>Specialist Area ~ Additional Disclosures Relating to:-</b></th>
+                                <th style="width: 15%;"><b>Reference in this Manual</b></th>
+                                <th style="width: 15%;"><b>Is this Area Relevant?(Y/N)</b></th>
+                                <th style="width: 15%;"><b>Supplementary Checklist Completed?(Y/N/NA)</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="cent">
+                                <td style="width: 55%;">Exploration for and Evaluation of Mineral Resources</td>
+                                <td style="width: 15%;">App. 3.15.1</td>
+                                <td style="width: 15%;">'.$sec['y1'].'</td>
+                                <td style="width: 15%;">'.$sec['y2'].'</td>
+                            </tr>
+                            <tr class="cent">
+                                <td style="width: 55%;">Defined Benefit Pension Plans</td>
+                                <td style="width: 15%;">App. 3.15.2</td>
+                                <td style="width: 15%;">'.$sec['y3'].'</td>
+                                <td style="width: 15%;">'.$sec['y4'].'</td>
+                            </tr>
+                            <tr class="cent">
+                                <td style="width: 55%;">Share-Based Payments</td>
+                                <td style="width: 15%;">App. 3.15.3</td>
+                                <td style="width: 15%;">'.$sec['y5'].'</td>
+                                <td style="width: 15%;">'.$sec['y6'].'</td>
+                            </tr>
+                            <tr class="cent">
+                                <td style="width: 55%;">Agricultural Activitiess</td>
+                                <td style="width: 15%;">App. 3.15.4</td>
+                                <td style="width: 15%;">'.$sec['y7'].'</td>
+                                <td style="width: 15%;">'.$sec['y8'].'</td>
+                            </tr>
+                            <tr class="cent">
+                                <td style="width: 55%;">First Time Adoption of IFRS</td>
+                                <td style="width: 15%;">App. 3.15.5</td>
+                                <td style="width: 15%;">'.$sec['y9'].'</td>
+                                <td style="width: 15%;">'.$sec['y10'].'</td>
+                            </tr>
+                            <tr class="cent">
+                                <td style="width: 55%;">Parent where Consolidated Financial Statements are not Prepared</td>
+                                <td style="width: 15%;">App. 3.15.6</td>
+                                <td style="width: 15%;">'.$sec['y11'].'</td>
+                                <td style="width: 15%;">'.$sec['y12'].'</td>
+                            </tr>
+                            <tr class="cent">
+                                <td style="width: 55%;">First Time Adoption of IFRS 15 / 9</td>
+                                <td style="width: 15%;">App. 3.15.7</td>
+                                <td style="width: 15%;">'.$sec['y13'].'</td>
+                                <td style="width: 15%;">'.$sec['y14'].'</td>
+                            </tr>
+                            <tr class="cent">
+                                <td style="width: 55%;">First Time Adoption of IFRS 16</td>
+                                <td style="width: 15%;">App. 3.15.8</td>
+                                <td style="width: 15%;">'.$sec['y15'].'</td>
+                                <td style="width: 15%;">'.$sec['y16'].'</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+
+                $html .= '
+                    <p>For areas which are relevant, “Supplementary Checklist Completed” should be marked ‘Yes’, ‘No’ or ‘Not Applicable’ as appropriate.  Any ‘No’ answers must be fully explained.</p>
+                    <p><b>Contents</b></p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="width: 15%;"><b>Section 1</b></td>
+                                <td style="width: 85%;"><b style="color: blue;">Format of the Annual Report and Generic Information</b><br></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;"><b>Section 2</b></td>
+                                <td style="width: 85%;"><b style="color: blue;">Directors Report (Review of the Business) ~ Best Practice Disclosures</b><br></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;"><b>Section 3</b></td>
+                                <td style="width: 85%;"><b style="color: blue;">Directors Report ~ Best Practice Disclosures</b><br></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;"><b>Section 4</b></td>
+                                <td style="width: 85%;"><b style="color: blue;">Statement of Comprehensive Income (SCI) and Related Notes</b><br></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;"><b>Section 5</b></td>
+                                <td style="width: 85%;"><b style="color: blue;">Statement of Changes in Equity</b><br></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;"><b>Section 6</b></td>
+                                <td style="width: 85%;"><b style="color: blue;">Statement of Financial Position and Related Notes</b><br></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;"><b>Section 7</b></td>
+                                <td style="width: 85%;"><b style="color: blue;">Statement of Cash Flows</b><br></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;"><b>Section 8</b></td>
+                                <td style="width: 85%;"><b style="color: blue;">Accounting Policies and Estimation Techniques</b><br></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;"><b>Section 9</b></td>
+                                <td style="width: 85%;"><b style="color: blue;">Notes and Other Disclosures</b><br></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><b>Key to abbreviations used in the “Reference” column:</b></p>
+                    <table style="width: 50%;">
+                        <tbody>
+                            <tr>
+                                <td>IAS 1.82</td>
+                                <td>Paragraph 82 of IAS 1</td>
+                            </tr>
+                            <tr>
+                                <td>IFRS 15.110</td>
+                                <td>Paragraph 110 of IFRS 15</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th  colspan="5"><b>Section 1 – Format of the Annual Report and Generic Information</b></th>
+                            </tr>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $sec1   = $rp->getab4('section1',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($sec1 as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th  colspan="5"><b>Section 2– Directors’ Report (Review of the Business) ~ Best Practice Disclosures</b></th>
+                            </tr>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $sec2   = $rp->getab4('section2',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($sec2 as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th  colspan="5"><b>Section 3 – Directors’ Report (Other) ~ Best Practice Disclosures</b></th>
+                            </tr>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $sec3   = $rp->getab4('section3',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($sec3 as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th  colspan="5"><b>Section 4 – Statement of Comprehensive Income (SCI) and Related Notes</b></th>
+                            </tr>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5">IAS 1 paragraph 81A allows the SCI to be presented as either one or two statements (a profit and loss account and a SCI (which is a combination of the profit for the year plus items of other comprehensive income (OCI))).</td>
+                            </tr>
+                            ';
+                        $sec4   = $rp->getab4('section4',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($sec4 as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th  colspan="5"><b>Section 5 – Statement of Changes in Equity</b>
+                                <p>NB1: This must be presented as a primary statement and not as a note to the financial statements.</p>
+                                <p>NB2: Per IAS 21 paragraph 52(a) there should be a column for foreign exchange differences that pass through OCI and accumulate in equity.</p>
+                            </th>
+                            </tr>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $sec5   = $rp->getab4('section5',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($sec5 as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th  colspan="5"><b>Section 6 – Statement of Financial Position and Related Notes</b>
+                            </th>
+                            </tr>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $sec6   = $rp->getab4('section6',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($sec6 as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th  colspan="5"><b>Section 7 – Statement of Cash Flows</b>
+                            </th>
+                            </tr>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $sec7   = $rp->getab4('section7',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($sec7 as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th  colspan="5"><b>Section 8 – Accounting Policies and Estimation Techniques</b>
+                                <p>The following disclosures can be show as part of the notes to the financial statements or as a specific section in the financial statements [IAS 1.116].</p>
+                            </th>
+                            </tr>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $sec8   = $rp->getab4('section8',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($sec8 as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
+
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+                $pdf->AddPage();
+                $html .= $style;
+
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th  colspan="5"><b>Section 9– Notes and Other Disclosures </b>
+                            </th>
+                            </tr>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $sec9   = $rp->getab4('section9',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($sec9 as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6602,7 +8864,62 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $ab4a = $rp->getab4a('ab4a',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '
+                    <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) <br>
+                        ~ Additional Disclosures for an Entity Involved in Exploration for and Evaluation of Mineral Resources
+                    </b></p>
+                ';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>IFRS  Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $ab4a = $rp->getab4a('ab4a',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($ab4a as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6613,7 +8930,62 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $ab4b = $rp->getab4a('ab4b',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '
+                    <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)<br>
+                    ~ Additional Disclosures for an Entity with a Defined Benefit Pension Plan(s) (including those Accounted for on a Defined Contribution Basis)
+                    </b></p>
+                ';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>IFRS  Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $ab4b = $rp->getab4a('ab4b',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($ab4b as $r){
+                            $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                            ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6624,7 +8996,62 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $ab4c = $rp->getab4a('ab4c',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+            ';
+            $html .= '
+                <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)<br>
+                ~ Additional Disclosures for an Entity with Share-Based Payments
+                </b></p>
+            ';
+            $html .= '
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th style="width: 70%;" colspan="3"><b>IFRS  Reference</b></th>
+                            <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                            <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>';
+                    $ab4c = $rp->getab4a('ab4c',$c['code'],$c['c3tID'],$cID,$wpID);
+                    foreach($ab4c as $r){
+                        $html .= '
+                        <tr>
+                            <td style="width: 13%;">'.$r['reference'].'</td>
+                            <td style="width: 7%;">'.$r['extent'].'</td>
+                            <td style="width: 50%;">'.$r['question'].'</td>
+                            <td style="width: 15%;">'.$r['yesno'].'</td>
+                            <td style="width: 15%;">'.$r['comment'].'</td>
+                        </tr>
+                        ';
+                    }
+            $html .= '
+                    </tbody>
+                </table>
+            ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6635,7 +9062,65 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $ab4d = $rp->getab4a('ab4d',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '
+                    <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)<br>
+                    ~ Additional Disclosures for an Entity with Agricultural Activities
+                    </b></p>
+                    <p><b><u>Scope</u></b> <br>This checklist should be completed where the entity is engaged in agricultural activities.</p>
+                    <p><b>Agricultural Activities </b>are defined as ‘The management by an entity of the biological transformation and harvest of biological assets for sale or for conversion into agricultural produce or into additional biological assets’.</p>
+                    <p><b>Agricultural Produce </b> is defined as ‘The harvested product of the entity’s biological assets’.</p>
+                    <p><b>Biological Assets </b> are defined as ‘A living animal or plant’.</p>
+                ';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>IFRS  Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $ab4d = $rp->getab4a('ab4d',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($ab4d as $r){
+                $html .= '
+                    <tr>
+                        <td style="width: 13%;">'.$r['reference'].'</td>
+                        <td style="width: 7%;">'.$r['extent'].'</td>
+                        <td style="width: 50%;">'.$r['question'].'</td>
+                        <td style="width: 15%;">'.$r['yesno'].'</td>
+                        <td style="width: 15%;">'.$r['comment'].'</td>
+                    </tr>';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6646,7 +9131,63 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $ab4e = $rp->getab4a('ab4e',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '
+                    <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)<br>
+                    ~ Additional Disclosures for First Time Adopters of IFRS
+                    </b></p>
+                    <p><b><u>Scope</u></b> <br>This checklist should be completed for all entities that are adopting IFRS for the first time.</p>
+                ';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>IFRS  Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $ab4e = $rp->getab4a('ab4e',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($ab4e as $r){
+                $html .= '
+                    <tr>
+                        <td style="width: 13%;">'.$r['reference'].'</td>
+                        <td style="width: 7%;">'.$r['extent'].'</td>
+                        <td style="width: 50%;">'.$r['question'].'</td>
+                        <td style="width: 15%;">'.$r['yesno'].'</td>
+                        <td style="width: 15%;">'.$r['comment'].'</td>
+                    </tr>
+                ';
+                        }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
                 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6657,7 +9198,62 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $ab4f = $rp->getab4a('ab4f',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '
+                    <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)<br>
+                    ~ Additional Disclosure for Parent Undertakings that are Not Consolidating
+                    </b></p>
+                ';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>IFRS  Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $ab4f = $rp->getab4a('ab4f',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($ab4f as $r){
+                $html .= '
+                    <tr>
+                        <td style="width: 13%;">'.$r['reference'].'</td>
+                        <td style="width: 7%;">'.$r['extent'].'</td>
+                        <td style="width: 50%;">'.$r['question'].'</td>
+                        <td style="width: 15%;">'.$r['yesno'].'</td>
+                        <td style="width: 15%;">'.$r['comment'].'</td>
+                    </tr>
+                ';
+                }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6667,7 +9263,63 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $ab4g = $rp->getab4a('ab4g',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '
+                    <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS AND FRS 101)<br>
+                    ~ Additional Disclosures on transition to IFRS 15 and IFRS 9
+                    </b></p>
+                    <p><b><u>Scope:</u></b> <br>This checklist should be completed for all entities that are applying IFRS 15 <i>Revenue from Contracts with Customers</i> and IFRS 9 <i>Financial Instruments</i> for the first time. Both Standards are mandatory for accounting periods commencing on/after 1 January 2018.</p>
+                ';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>IFRS  Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $ab4g = $rp->getab4a('ab4g',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($ab4g as $r){
+                $html .= '
+                    <tr>
+                        <td style="width: 13%;">'.$r['reference'].'</td>
+                        <td style="width: 7%;">'.$r['extent'].'</td>
+                        <td style="width: 50%;">'.$r['question'].'</td>
+                        <td style="width: 15%;">'.$r['yesno'].'</td>
+                        <td style="width: 15%;">'.$r['comment'].'</td>
+                    </tr>
+                ';
+                }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -6677,7 +9329,63 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $ab4h = $rp->getab4a('ab4h',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html .= '
+                    <table>
+                        <tr>
+                            <td style="width: 60%;">
+                                <table>
+                                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                                    <tr><td></td></tr>
+                                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                                </table>
+                            </td>
+                            <td style="width: 40%;">
+                                <table border="1">
+                                    <tr>
+                                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $html .= '
+                    <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS AND FRS 101)<br>
+                    ~ Additional Disclosures on transition to IFRS 16
+                    </b></p>
+                    <p><b><u>Scope:</u></b> <br>This checklist should be completed for all entities that are applying IFRS 16 Leases for the first time, which is mandatory for accounting periods commencing on/after 1 January 2019.</p>
+                ';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th style="width: 70%;" colspan="3"><b>IFRS  Reference</b></th>
+                                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                        $ab4h = $rp->getab4a('ab4h',$c['code'],$c['c3tID'],$cID,$wpID);
+                        foreach($ab4h as $r){
+                $html .= '
+                    <tr>
+                        <td style="width: 13%;">'.$r['reference'].'</td>
+                        <td style="width: 7%;">'.$r['extent'].'</td>
+                        <td style="width: 50%;">'.$r['question'].'</td>
+                        <td style="width: 15%;">'.$r['yesno'].'</td>
+                        <td style="width: 15%;">'.$r['comment'].'</td>
+                    </tr>
+                ';
+                }
+                $html .= '
+                        </tbody>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
