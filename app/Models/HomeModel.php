@@ -8,16 +8,10 @@ class HomeModel extends  Model {
         // ALL MODELS ARE COMMUNICATING ON THE DATABASE AND PROCESSES DATA TO THE DATABASE // 
         THIS FILE IS USED FOR HOME VIEW VALIDATION
         Properties being used on this file
-        * @property scheme database information
-        * @property schemename scheme name
-        * @property dbname database name
         * @property tbluser table of user
         * @property time-date to load the date and time
         * @property db to load the data base
     */
-    protected $scheme = 'information_schema.SCHEMATA';
-    protected $schemename = 'SCHEMA_NAME';
-    protected $dbname = 'as';
     protected $tbluser = "tbl_users";
     protected $db;
     protected $time,$date;
@@ -42,9 +36,14 @@ class HomeModel extends  Model {
     */
     public function getdbexist(){
 
-        try { $this->db->connect('default'); } catch (\Throwable $th) { return false; }
-        $res = $this->db->table($this->scheme)->select($this->schemename)->where($this->schemename, $this->dbname)->get();
-        return $res;
+        try { 
+            if($this->db->connect('default')){
+                return true;
+            } 
+        } catch (\Throwable $th) { 
+            return false; 
+        }
+        
 
     }
 

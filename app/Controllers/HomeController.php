@@ -41,7 +41,7 @@ class HomeController extends BaseController{
     public function homepage(){
 
         $res = $this->homeModel->getdbexist();
-        if($res->getNumRows() > 0){
+        if($res){
             if(session()->get('authentication')){
                 return redirect()->to(site_url('auditsystem')); 
             }else{
