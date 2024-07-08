@@ -126,7 +126,8 @@ class ReportModel extends  Model {
         from {$this->tblcfi} as cfi, {$this->tblfi} as fi
         where cfi.index = fi.fiID
         and cfi.workpaper = {$wpID}
-        and cfi.clientID = {$cID}");
+        and cfi.clientID = {$cID}
+        and acquired = 'Yes'");
         return $query->getResultArray();
 
     }
@@ -265,6 +266,29 @@ class ReportModel extends  Model {
         where c3.workpaper = {$wpID}
         and c3.clientID = {$cID} limit 1");
         return $query->getRowArray();
+
+    }
+
+    /**
+     
+        ----------------------------------------------------------
+        WORKPAPER FUNCTIONS
+        ----------------------------------------------------------
+        * @method gettbindex() get the index file values
+        * @param cID client id
+        * @param wpID work paper id
+        * @param index index id
+        * @var query contains database result query
+        * @return result-array
+    */
+    public function gettbindex($cID,$wpID,$index){
+
+        $query = $this->db->query("select * 
+        from {$this->tbltb} as tb
+        where tb.index = {$index}
+        and tb.workpaper = {$wpID}
+        and tb.client = {$cID}");
+        return $query->getResultArray();
 
     }
 

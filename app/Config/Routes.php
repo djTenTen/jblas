@@ -74,7 +74,7 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
             $audmanager->post('sendbacktoreviewer/(:any)', 'WorkpaperController::sendbacktoreviewer/$1');
             $audmanager->post('approved/(:any)', 'WorkpaperController::approvewp/$1');
             $audmanager->get('approved', 'WorkpaperController::approved');
-            $audmanager->get('generatepdf/(:any)/(:any)', 'ReportController::generatepdf/$1/$2');
+            $audmanager->get('generatepdf/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'ReportController::generatepdf/$1/$2/$3/$4/$5/$6/$7');
             
 
         });

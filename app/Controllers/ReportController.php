@@ -31,11 +31,20 @@ class ReportController extends BaseController{
     }
 
 
-    public function generatepdf($cID,$wpID){
-
+    public function generatepdf($cID,$wpID,$cname,$aud,$sup,$audm,$fy,$efy){
 
         $dwpID          = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
         $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $a              = explode('-', $aud);
+        $s              = explode('-', $sup);
+        $am             = explode('-', $audm);
+        $data['aud']    = $a[0];
+        $data['sup']    = $s[0];
+        $data['audm']   = $am[0];
+        $data['fy']     = $fy;
+        $data['efy']    = $efy;
+        $data['firm']   = session()->get('firm');
+        $data['client'] = strtoupper($cname);
         $data['wpID']   = $dwpID;
         $data['cID']    = $dcID;
         $data['c1']     = $this->rpmodel->getc1values($dcID,$dwpID);
