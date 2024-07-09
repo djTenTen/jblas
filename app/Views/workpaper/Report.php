@@ -39,6 +39,18 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // add a page
 $pdf->AddPage('P');
 //$pdf->SetPageSize('A4');
+$style2 =  "
+    <style>
+        *{
+            font-family: 'dejavusans';
+            font-size: 12px;
+        }
+        h2{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+        }
+    </style>
+";
 $style =  "
     <style>
         *{
@@ -103,7 +115,10 @@ $html = '';
     */
     $pdf->AddPage('P');
     $pdf->Bookmark('Work Paper',0,0);
+
+    $html .= '<hr style="color:blue;">';
     $html .= '<h1 style="color:navy;text-align:center;">WORK PAPER</h1>';
+    $html .= '<hr style="color:blue;">';
     $pdf->writeHTML($html, true, false,false, false, '');
     $html = '';
     foreach($fi as $f){
@@ -114,7 +129,8 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
                 $html .= $style;
-                $html .= $f['section'];
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -125,7 +141,8 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
                 $html .= $style;
-                $html .= $f['section'];
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -136,7 +153,8 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
                 $html .= $style;
-                $html .= $f['section'];
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -147,8 +165,9 @@ $html = '';
                 
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -157,187 +176,1038 @@ $html = '';
                 
             break;
             case 'B':
-                // $ind = $rp->gettbindex($dcID,$dwpID,$dindex);
-                
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,6);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'C':
-                // $ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
+
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,7);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'DG':
-                // $ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,8);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
             case 'E':
-                // $ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,9);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'F':
-                // $ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,10);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'H':
-                // $ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,11);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'I':
-                //$ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,12);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'J':
-                //$ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,13);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'K':
-                //$ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,14);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'L':
-                //$ind = $rp->gettbindex($dcID,$dwpID,$dindex);
+                
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,15);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'M':
-                //$ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,16);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'N':
-                //$ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,17);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'O':
-                //$ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,18);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'P':
-                //$ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,19);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'Q':
-                //$ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,20);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'R':
-                //$ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,21);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
             case 'S':
-                //$ind = $rp->gettbindex($dcID,$dwpID,$dindex);
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= $f['section'];
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '
+                    <table border="1">
+                        <thead>
+                            <tr style="background-color: navy; color:white;">
+                                <th style="width: 30%;"><b>Account</b></th>
+                                <th style="width: 20%;"><b>Balance</b></th>
+                                <th style="width: 20%;"><b>Supp Balance</b></th>
+                                <th style="width: 20%;"><b>Diff Amount</b></th>
+                                <th style="width: 10%;"><b>Diff %</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+                            $b = 0;
+                            $va = 0;
+                            $sv = 0;
+                            $ind = $rp->gettbindex($cID,$wpID,22);
+                            foreach($ind as $r){
+                                $b += ($r['debit'] - $r['credit']);
+                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                                $sv += $r['supp_bal'];
+                                $html .= '  
+                                    <tr>
+                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                                    </tr>
+                                ';
+                            }
+                $html .= '             
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th><b>Total</b></th>
+                                <th><b>₱ '.number_format($b,2).'</b></th>
+                                <th><b>₱ '.number_format($sv,2).'</b></th>
+                                <th><b>₱ '.number_format($va,2).'</b></th>
+                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                ';
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -365,9 +1235,9 @@ $html = '';
     */
     $pdf->AddPage('P');
     $pdf->Bookmark('Chapter 1 : Planning',0,0);
-    $html .= '
-        <h1 style="color:navy;text-align:center;">CHAPTER 1: PLANNING</h1>
-    ';
+    $html .= '<hr style="color:blue;">';
+    $html .= '<h1 style="color:navy;text-align:center;">CHAPTER 1: PLANNING</h1>';
+    $html .= '<hr style="color:blue;">';
     $pdf->writeHTML($html, true, false,false, false, '');
     $html = '';
 
@@ -4424,9 +5294,9 @@ $html = '';
 
     $pdf->AddPage('P');
     $pdf->Bookmark('Chapter 2 : Detailed Procedure',0,0);
-    $html .= '
-        <h1 style="color:navy;text-align:center;">CHAPTER 2: DETAILED PROCEDURE</h1>
-    ';
+    $html .= '<hr style="color:blue;">';
+    $html .= '<h1 style="color:navy;text-align:center;">CHAPTER 2: DETAILED PROCEDURE</h1>';
+    $html .= '<hr style="color:blue;">';
     $pdf->writeHTML($html, true, false,false, false, '');
     $html = '';
     foreach($c2 as $c){
@@ -6758,9 +7628,9 @@ $html = '';
     */
     $pdf->AddPage('P');
     $pdf->Bookmark('Chapter 3 : Conclusion',0,0);
-    $html .= '
-        <h1 style="color:navy;text-align:center;">CHAPTER 3: CONCLUSION</h1>
-    ';
+    $html .= '<hr style="color:blue;">';
+    $html .= '<h1 style="color:navy;text-align:center;">CHAPTER 3: CONCLUSION</h1>';
+    $html .= '<hr style="color:blue;">';
     $pdf->writeHTML($html, true, false,false, false, '');
     $html = '';
     foreach($c3 as $c){
@@ -9775,12 +10645,18 @@ $html = '';
         }
     }
 
-
+    
 
     $pdf->addTOCPage('P');
+    $toc = '
+        <hr style="color:blue;">
+        <h1 style="color:navy; text-align:center;">TABLE OF CONTENTS</h1>
+        <hr style="color:blue;">
+    ';
+    $pdf->writeHTML($toc, true, false,false, false, '');
     $pdf->addTOC(2, '', '-', 'Table of Contents', 'B', array(128,0,0));
     $pdf->endTOCPage();
 
 //$pdf->writeHTML($html, true, false,false, false, '');
-$pdf->Output('stocktransfer.pdf','I');
+$pdf->Output('workpaper-'.$client.'.pdf','I');
 exit();
