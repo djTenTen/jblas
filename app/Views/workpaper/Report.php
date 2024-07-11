@@ -127,7 +127,7 @@ $html = '';
             case '-':
                 // $aa    = $rp->getabc3values($f['section'],$dcID,$dwpID);
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
@@ -139,7 +139,7 @@ $html = '';
             case 'Aa':
                 // $aa     = $rp->getabc3values($f['section'],$dcID,$dwpID);
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
@@ -151,7 +151,7 @@ $html = '';
             case 'Ab':
                 // $ab     = $rp->getabc3values($f['section'],$dcID,$dwpID);
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
@@ -164,7 +164,7 @@ $html = '';
                 // $ac     = $rp->getacc1values($f['section'],$dcID,$dwpID);
                 
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
@@ -177,7 +177,7 @@ $html = '';
             break;
             case 'B':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -238,7 +238,7 @@ $html = '';
 
             case 'C':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
@@ -300,7 +300,7 @@ $html = '';
 
             case 'DG':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -360,7 +360,7 @@ $html = '';
             break;
             case 'E':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -421,7 +421,7 @@ $html = '';
 
             case 'F':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -482,7 +482,7 @@ $html = '';
 
             case 'H':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -543,7 +543,7 @@ $html = '';
 
             case 'I':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -604,7 +604,7 @@ $html = '';
 
             case 'J':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -665,7 +665,7 @@ $html = '';
 
             case 'K':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -727,7 +727,7 @@ $html = '';
             case 'L':
                 
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -788,7 +788,7 @@ $html = '';
 
             case 'M':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -849,7 +849,7 @@ $html = '';
 
             case 'N':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -910,7 +910,7 @@ $html = '';
 
             case 'O':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -971,7 +971,7 @@ $html = '';
 
             case 'P':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -1032,7 +1032,7 @@ $html = '';
 
             case 'Q':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -1093,7 +1093,7 @@ $html = '';
 
             case 'R':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -1154,7 +1154,7 @@ $html = '';
 
             case 'S':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].': '.$f['desc'],1,1);
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
@@ -1245,7 +1245,7 @@ $html = '';
         switch ($c['code']) {
             case 'AC1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': Client Acceptance or Continuance Form',1,1);
+                $pdf->Bookmark($c['code'].' : Client Acceptance or Continuance Form',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 $html .= '
@@ -1417,7 +1417,7 @@ $html = '';
 
             case 'AC2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': PROVISION OF NON-AUDIT SERVICES',1,1);
+                $pdf->Bookmark($c['code'].' : PROVISION OF NON-AUDIT SERVICES',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 $html .= '
@@ -1599,7 +1599,7 @@ $html = '';
 
             case 'AC3':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': PERMANENT FILE CHECKLIST',1,1);
+                $pdf->Bookmark($c['code'].' : PERMANENT FILE CHECKLIST',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 $html .= '
@@ -1768,7 +1768,7 @@ $html = '';
 
             case 'AC4':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': PRELIMINARY PLANNING PROCEDURES – CLIENT INVOLVEMENT IN THE PLANNING PROCESS',1,1);
+                $pdf->Bookmark($c['code'].' : PRELIMINARY PLANNING PROCEDURES – CLIENT INVOLVEMENT IN THE PLANNING PROCESS',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 $html .= '
@@ -1841,7 +1841,7 @@ $html = '';
 
             case 'AC5':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': PRELIMINARY ANALYTICAL PROCEDURES',1,1);
+                $pdf->Bookmark($c['code'].' : PRELIMINARY ANALYTICAL PROCEDURES',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 $html .= '
@@ -1901,7 +1901,7 @@ $html = '';
 
             case 'AC6':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': RISK SUMMARY',1,1);
+                $pdf->Bookmark($c['code'].' : RISK SUMMARY',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 $html .= '
@@ -2158,7 +2158,7 @@ $html = '';
             
             case 'AC7':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': SPECIFIC AREA NARRATIVE INHERENT RISK ASSESSMENT',1,1);
+                $pdf->Bookmark($c['code'].' : SPECIFIC AREA NARRATIVE INHERENT RISK ASSESSMENT',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -3495,7 +3495,7 @@ $html = '';
 
             case 'AC8':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': ASSESSMENT OF MATERIALITY',1,1);
+                $pdf->Bookmark($c['code'].' : ASSESSMENT OF MATERIALITY',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 $html .= '
@@ -3871,7 +3871,7 @@ $html = '';
 
             case 'AC9':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': APPROVAL OF PLANNING',1,1);
+                $pdf->Bookmark($c['code'].' : APPROVAL OF PLANNING',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 
@@ -4212,7 +4212,7 @@ $html = '';
 
             case 'AC10':
                 $pdf->AddPage('L');
-                $pdf->Bookmark($c['code'].': AUDIT APPROACH AND SAMPLE SIZE CALCULATION',1,1);
+                $pdf->Bookmark($c['code'].' : AUDIT APPROACH AND SAMPLE SIZE CALCULATION',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 
@@ -5056,7 +5056,7 @@ $html = '';
 
             case 'AC11':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': TEAM DISCUSSIONS AND BRIEFING MEETING',1,1);
+                $pdf->Bookmark($c['code'].' : TEAM DISCUSSIONS AND BRIEFING MEETING',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 
@@ -5303,7 +5303,7 @@ $html = '';
         switch ($c['code']) {
             case '2.1 B2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': INTANGIBLE NON-CURRENT ASSETS AND GOODWILL',1,1);
+                $pdf->Bookmark($c['code'].' : INTANGIBLE NON-CURRENT ASSETS AND GOODWILL',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -5382,7 +5382,7 @@ $html = '';
 
             case '2.2.1 C2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': PROPERTY, PLANT AND EQUIPMENT',1,1);
+                $pdf->Bookmark($c['code'].' : PROPERTY, PLANT AND EQUIPMENT',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 $html .= '
@@ -5459,7 +5459,7 @@ $html = '';
 
             case '2.2.2 C2-1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': PROPERTY, PLANT AND EQUIPMENT – TOP UP PROGRAMME',1,1);
+                $pdf->Bookmark($c['code'].' : PROPERTY, PLANT AND EQUIPMENT – TOP UP PROGRAMME',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 $html .= '
@@ -5543,7 +5543,7 @@ $html = '';
 
             case '2.3 D2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': INVESTMENTS',1,1);
+                $pdf->Bookmark($c['code'].' : INVESTMENTS',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 $html .= '
@@ -5625,7 +5625,7 @@ $html = '';
 
             case '2.4.1 E2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': INVENTORIES',1,1);
+                $pdf->Bookmark($c['code'].' : INVENTORIES',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 $html .= '
@@ -5702,7 +5702,7 @@ $html = '';
 
             case '2.4.2 E2-1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': INVENTORY APPENDIX 1 – INVENTORY COUNT PLANNING',1,1);
+                $pdf->Bookmark($c['code'].' : INVENTORY APPENDIX 1 – INVENTORY COUNT PLANNING',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 $html .= '
@@ -5795,7 +5795,7 @@ $html = '';
 
             case '2.4.3 E2-2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': INVENTORY APPENDIX 2 – TESTS AT INVENTORY COUNT',1,1);
+                $pdf->Bookmark($c['code'].' : INVENTORY APPENDIX 2 – TESTS AT INVENTORY COUNT',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -5863,7 +5863,7 @@ $html = '';
 
             case '2.4.4 E2-3':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': INVENTORY APPENDIX 3 – ALTERNATIVE PROCEDURES',1,1);
+                $pdf->Bookmark($c['code'].' : INVENTORY APPENDIX 3 – ALTERNATIVE PROCEDURES',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -5934,7 +5934,7 @@ $html = '';
 
             case '2.4.5 E2-4':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': INVENTORY TOP UP PROGRAMME: CONSTRUCTION CONTRACTS',1,1);
+                $pdf->Bookmark($c['code'].' : INVENTORY TOP UP PROGRAMME: CONSTRUCTION CONTRACTS',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -6014,7 +6014,7 @@ $html = '';
 
             case '2.5 F2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': RECEIVABLES',1,1);
+                $pdf->Bookmark($c['code'].' : RECEIVABLES',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -6092,7 +6092,7 @@ $html = '';
 
             case '2.6 H2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': BANK AND CASH',1,1);
+                $pdf->Bookmark($c['code'].' : BANK AND CASH',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 $html .= '
@@ -6169,7 +6169,7 @@ $html = '';
 
             case '2.7 I2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': PAYABLES',1,1);
+                $pdf->Bookmark($c['code'].' : PAYABLES',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -6247,7 +6247,7 @@ $html = '';
 
             case '2.8 J2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': TAXATION ~ INCLUDING DEFERRED TAXATION',1,1);
+                $pdf->Bookmark($c['code'].' : TAXATION ~ INCLUDING DEFERRED TAXATION',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -6325,7 +6325,7 @@ $html = '';
 
             case '2.9 K2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': TRANSACTIONS WITH RELATED PARTIES',1,1);
+                $pdf->Bookmark($c['code'].' : TRANSACTIONS WITH RELATED PARTIES',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -6405,7 +6405,7 @@ $html = '';
 
             case '2.10 L2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': PROVISIONS, CONTINGENCIES AND FINANCIAL COMMITMENTS',1,1);
+                $pdf->Bookmark($c['code'].' : PROVISIONS, CONTINGENCIES AND FINANCIAL COMMITMENTS',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -6485,7 +6485,7 @@ $html = '';
 
             case '2.11 M2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': EQUITY AND STATUTORY INFORMATION',1,1);
+                $pdf->Bookmark($c['code'].' : EQUITY AND STATUTORY INFORMATION',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -6563,7 +6563,7 @@ $html = '';
 
             case '2.12 N2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': OTHER AUDIT AREAS INCLUDING',1,1);
+                $pdf->Bookmark($c['code'].' : OTHER AUDIT AREAS INCLUDING',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 
@@ -6651,7 +6651,7 @@ $html = '';
 
             case '2.13.1 O2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': REVENUE',1,1);
+                $pdf->Bookmark($c['code'].' : REVENUE',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -6729,7 +6729,7 @@ $html = '';
 
             case '2.13.2 O2-1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': IFRS 15 CONSIDERATIONS',1,1);
+                $pdf->Bookmark($c['code'].' : IFRS 15 CONSIDERATIONS',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -6806,7 +6806,7 @@ $html = '';
 
             case '2.14 P2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': DIRECT COSTS',1,1);
+                $pdf->Bookmark($c['code'].' : DIRECT COSTS',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -6884,7 +6884,7 @@ $html = '';
 
             case '2.15 Q2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': OTHER INCOME AND GAINS',1,1);
+                $pdf->Bookmark($c['code'].' : OTHER INCOME AND GAINS',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -6963,7 +6963,7 @@ $html = '';
 
             case '2.16 R2-1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': OTHER EXPENDITURE AND LOSSES',1,1);
+                $pdf->Bookmark($c['code'].' : OTHER EXPENDITURE AND LOSSES',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -7041,7 +7041,7 @@ $html = '';
 
             case '2.17 R2-2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': PAYROLL COSTS',1,1);
+                $pdf->Bookmark($c['code'].' : PAYROLL COSTS',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -7120,7 +7120,7 @@ $html = '';
 
             case '2.18.1 S2-1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': DISCLOSURE AUDIT PROGRAMME ~ Covering the Directors’ Report and Financial Statements',1,1);
+                $pdf->Bookmark($c['code'].' : DISCLOSURE AUDIT PROGRAMME ~ Covering the Directors’ Report and Financial Statements',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -7188,7 +7188,7 @@ $html = '';
 
             case '2.18.2 S2-2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': DEFINED BENEFIT PENSION SCHEMES',1,1);
+                $pdf->Bookmark($c['code'].' : DEFINED BENEFIT PENSION SCHEMES',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -7257,7 +7257,7 @@ $html = '';
 
             case '2.18.3 S2-3':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': SHARE-BASED PAYMENTS',1,1);
+                $pdf->Bookmark($c['code'].' : SHARE-BASED PAYMENTS',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -7326,7 +7326,7 @@ $html = '';
 
             case '2.18.4 S2-4':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': HEDGE ACCOUNTING',1,1);
+                $pdf->Bookmark($c['code'].' : HEDGE ACCOUNTING',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -7397,7 +7397,7 @@ $html = '';
 
             case '2.19.1 U2-1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': NOMINAL LEDGER',1,1);
+                $pdf->Bookmark($c['code'].' : NOMINAL LEDGER',1,1);
                 $html .= $style;
                 $html .= $c['code'];
                 
@@ -7465,7 +7465,7 @@ $html = '';
 
             case '2.19.2 U2-2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': NEW CLIENT – PRIOR PERIOD AUDITED',1,1);
+                $pdf->Bookmark($c['code'].' : NEW CLIENT – PRIOR PERIOD AUDITED',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -7543,7 +7543,7 @@ $html = '';
 
             case '2.19.3 U2-3':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': PRIOR PERIOD UNAUDITED ~ NEW OR EXISTING CLIENT',1,1);
+                $pdf->Bookmark($c['code'].' : PRIOR PERIOD UNAUDITED ~ NEW OR EXISTING CLIENT',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -7637,7 +7637,7 @@ $html = '';
         switch($c['code']){
             case '3.1 Aa1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': AUDIT CONTROL RECORD',1,1);
+                $pdf->Bookmark($c['code'].' : AUDIT CONTROL RECORD',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -7819,7 +7819,7 @@ $html = '';
 
             case '3.2 Aa2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': POINTS FORWARD',1,1);
+                $pdf->Bookmark($c['code'].' : POINTS FORWARD',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -7942,7 +7942,7 @@ $html = '';
 
             case '3.3 Aa3a':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': SUBSEQUENT EVENTS REVIEW',1,1);
+                $pdf->Bookmark($c['code'].' : SUBSEQUENT EVENTS REVIEW',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -8118,7 +8118,7 @@ $html = '';
             break;
             case '3.4 Aa3b':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': GOING CONCERN CHECKLIST',1,1);
+                $pdf->Bookmark($c['code'].' : GOING CONCERN CHECKLIST',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -8327,7 +8327,7 @@ $html = '';
 
             case '3.6.2 Aa5b':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': MANAGEMENT LETTER WORKSHEET',1,1);
+                $pdf->Bookmark($c['code'].' : MANAGEMENT LETTER WORKSHEET',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -8396,7 +8396,7 @@ $html = '';
 
             case '3.7 Aa7':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': ISA COMPLIANCE CRITICAL ISSUES MEMORANDUM',1,1);
+                $pdf->Bookmark($c['code'].' : ISA COMPLIANCE CRITICAL ISSUES MEMORANDUM',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -8722,7 +8722,7 @@ $html = '';
 
             case '3.8 Aa10':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': FINAL ANALYTICAL PROCEDURES',1,1);
+                $pdf->Bookmark($c['code'].' : FINAL ANALYTICAL PROCEDURES',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -8867,10 +8867,11 @@ $html = '';
 
             case '3.9':
                 echo view('workpaper/pdfc3/39', $data);
-                break;
+            break;
+
             case '3.10 Aa11-un':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': SUMMARY OF UNADJUSTED ERRORS',1,1);
+                $pdf->Bookmark($c['code'].' : SUMMARY OF UNADJUSTED ERRORS',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -9259,9 +9260,10 @@ $html = '';
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
+
             case '3.10 Aa11-ad':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT\'S FINANCIAL STATEMENTS',1,1);
+                $pdf->Bookmark($c['code'].' : SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT\'S FINANCIAL STATEMENTS',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -9390,7 +9392,7 @@ $html = '';
 
             case '3.13 Ab1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': CRITICAL REVIEW OF THE FINANCIAL STATEMENTS',1,1);
+                $pdf->Bookmark($c['code'].' : CRITICAL REVIEW OF THE FINANCIAL STATEMENTS',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -9461,7 +9463,7 @@ $html = '';
             
             case '3.14 Ab3':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': FINANCIAL STATEMENTS DISCLOSURE AND COMPLIANCE ANNUAL REVIEW CHECKLIST',1,1);
+                $pdf->Bookmark($c['code'].' : FINANCIAL STATEMENTS DISCLOSURE AND COMPLIANCE ANNUAL REVIEW CHECKLIST',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -9602,7 +9604,7 @@ $html = '';
 
             case '3.15 Ab4':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': CORPORATE DISCLOSURE CHECKLIST (IFRS)',1,1);
+                $pdf->Bookmark($c['code'].' : CORPORATE DISCLOSURE CHECKLIST (IFRS)',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -10103,7 +10105,7 @@ $html = '';
 
             case '3.15.1 Ab4a':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures for an Entity Involved in Exploration for and Evaluation of Mineral Resources',1,1);
+                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures for an Entity Involved in Exploration for and Evaluation of Mineral Resources',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -10170,7 +10172,7 @@ $html = '';
 
             case '3.15.2 Ab4b':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)',1,1);
+                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -10237,7 +10239,7 @@ $html = '';
 
             case '3.15.3 Ab4c':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)',1,1);
+                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -10304,7 +10306,7 @@ $html = '';
 
             case '3.15.4 Ab4d':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures for an Entity with Agricultural Activities',1,1);
+                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures for an Entity with Agricultural Activities',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -10374,7 +10376,7 @@ $html = '';
 
             case '3.15.5 Ab4e':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures for First Time Adopters of IFRS',1,1);
+                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures for First Time Adopters of IFRS',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -10442,7 +10444,7 @@ $html = '';
 
             case '3.15.6 Ab4f':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosure for Parent Undertakings that are Not Consolidating',1,1);
+                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosure for Parent Undertakings that are Not Consolidating',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -10509,7 +10511,7 @@ $html = '';
 
             case '3.15.7 Ab4g':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures on transition to IFRS 15 and IFRS 9',1,1);
+                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures on transition to IFRS 15 and IFRS 9',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
@@ -10577,7 +10579,7 @@ $html = '';
 
             case '3.15.8 Ab4h':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].': SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures on transition to IFRS 16',1,1);
+                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures on transition to IFRS 16',1,1);
                 $html .= $style;
                 $html .= $c['code'];
 
