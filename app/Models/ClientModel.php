@@ -125,9 +125,7 @@ class ClientModel extends Model{
     */
     public function getc1($cID){
 
-        $query = $this->db->query("select * from {$this->tblc1t} as c1t 
-        where c1t.c1titleID not in (select DISTINCT c1tID
-        from {$this->tblc1d} where clientID = {$cID})");
+        $query = $this->db->query("select *, if((select count(DISTINCT c1tID) from {$this->tblc1d} as c1tcd where clientID = {$cID} and c1t.c1titleID = c1tcd.c1tID) > 0, 'Yes', 'No') as yn from {$this->tblc1t} as c1t");
         return $query->getResultArray();
 
     }
@@ -140,9 +138,7 @@ class ClientModel extends Model{
     */
     public function getc2($cID){
 
-        $query = $this->db->query("select * from {$this->tblc2t} as c2t 
-        where c2t.c2titleID not in (select DISTINCT c2tID
-        from {$this->tblc2d} where clientID = {$cID})");
+        $query = $this->db->query("select *, if((select count(DISTINCT c2tID) from {$this->tblc2d} as c2tcd where clientID = {$cID} and c2t.c2titleID = c2tcd.c2tID) > 0, 'Yes', 'No') as yn from {$this->tblc2t} as c2t");
         return $query->getResultArray();
 
     }
@@ -155,9 +151,7 @@ class ClientModel extends Model{
     */
     public function getc3($cID){
 
-        $query = $this->db->query("select * from {$this->tblc3t} as c3t 
-        where c3t.c3titleID not in (select DISTINCT c3tID
-        from {$this->tblc3d} where clientID = {$cID})");
+        $query = $this->db->query("select *, if((select count(DISTINCT c3tID) from {$this->tblc3d} as c3tcd where clientID = {$cID} and c3t.c3titleID = c3tcd.c3tID) > 0, 'Yes', 'No') as yn from {$this->tblc3t} as c3t");
         return $query->getResultArray();
 
     }
@@ -287,126 +281,169 @@ class ClientModel extends Model{
     */
     public function setfiles($req){
 
-        if(!empty($req['c1'] )){
-            foreach($req['c1'] as $i => $val){
-                $check = $this->db->table($this->tblc1d)->where(array('c1tID' => $this->crypt->decrypt($val), 'clientID' => $req['clientID']))->get()->getNumRows();
-                if($check >= 1){
-                    continue;
+        switch ($req['cval']) {
+            case 'c1':
+                $check = $this->db->table($this->tblc1d)->where(array('c1tID' => $req['ctID'], 'clientID' => $req['clientID']))->get()->getNumRows();
+                if($check == 0){
+                    $sc1 = $this->db->table($this->tblc1)->where(array('c1tID' => $req['ctID']))->get();
+                    foreach($sc1->getResultArray() as $r){
+                        $datac1 = [
+                            'firmID'            => $req['firmID'],
+                            'clientID'          => $req['clientID'],
+                            'c1tID'             => $r['c1tID'],
+                            'code'              => $r['code'],
+                            'type'              => $r['type'],
+                            'question'          => $r['question'],
+                            'less'              => $r['less'],
+                            'name'              => $r['name'],
+                            'reason'            => $r['reason'],
+                            'balance'           => $r['balance'],
+                            'planning'          => $r['planning'],
+                            'finalization'      => $r['finalization'],
+                            'reference'         => $r['reference'],
+                            'reliance'          => $r['reliance'],
+                            'finstate'          => $r['finstate'],
+                            'desc'              => $r['desc'],
+                            'controleffect'     => $r['controleffect'],
+                            'implemented'       => $r['implemented'],
+                            'assessed'          => $r['assessed'],
+                            'yesno'             => $r['yesno'],
+                            'comment'           => $r['comment'],
+                            'corptax'           => $r['corptax'],
+                            'statutory'         => $r['statutory'],
+                            'accountancy'       => $r['accountancy'],
+                            'other'             => $r['other'],
+                            'totalcu'           => $r['totalcu'],
+                            'status'            => $r['status'],
+                            'remarks'           => $r['remarks'],
+                            'added_on'          => $this->date.' '.$this->time
+                        ];
+                        $this->db->table($this->tblc1d)->insert($datac1);
+                    }
+                    return 'updated c1';
                 }
-                $sc1 = $this->db->table($this->tblc1)->where(array('c1tID' => $this->crypt->decrypt($val)))->get();
-                foreach($sc1->getResultArray() as $r){
-                    $datac1 = [
-                        'firmID'            => $req['firmID'],
-                        'clientID'          => $req['clientID'],
-                        'c1tID'             => $r['c1tID'],
-                        'code'              => $r['code'],
-                        'type'              => $r['type'],
-                        'question'          => $r['question'],
-                        'less'              => $r['less'],
-                        'name'              => $r['name'],
-                        'reason'            => $r['reason'],
-                        'balance'           => $r['balance'],
-                        'planning'          => $r['planning'],
-                        'finalization'      => $r['finalization'],
-                        'reference'         => $r['reference'],
-                        'reliance'          => $r['reliance'],
-                        'finstate'          => $r['finstate'],
-                        'desc'              => $r['desc'],
-                        'controleffect'     => $r['controleffect'],
-                        'implemented'       => $r['implemented'],
-                        'assessed'          => $r['assessed'],
-                        'yesno'             => $r['yesno'],
-                        'comment'           => $r['comment'],
-                        'corptax'           => $r['corptax'],
-                        'statutory'         => $r['statutory'],
-                        'accountancy'       => $r['accountancy'],
-                        'other'             => $r['other'],
-                        'totalcu'           => $r['totalcu'],
-                        'status'            => $r['status'],
-                        'remarks'           => $r['remarks'],
-                        'added_on'          => $this->date.' '.$this->time
-                    ];
-                    $this->db->table($this->tblc1d)->insert($datac1);
+            break;
+
+            case 'c2':
+                $check = $this->db->table($this->tblc2d)->where(array('c2tID' => $req['ctID'], 'clientID' => $req['clientID']))->get()->getNumRows();
+                if($check == 0){
+                    $sc2 = $this->db->table($this->tblc2)->where(array('c2tID' => $req['ctID']))->get();
+                    foreach($sc2->getResultArray() as $r){
+                        $datac2 = [
+                            'firmID'            => $req['firmID'],
+                            'clientID'          => $req['clientID'],
+                            'c2tID'             => $r['c2tID'],
+                            'code'              => $r['code'],
+                            'type'              => $r['type'],
+                            'question'          => $r['question'],
+                            'extent'            => $r['extent'],
+                            'reference'         => $r['reference'],
+                            'initials'          => $r['initials'],
+                            'desc'              => $r['desc'],
+                            'controleffect'     => $r['controleffect'],
+                            'assessed'          => $r['assessed'],
+                            'yesno'             => $r['yesno'],
+                            'comment'           => $r['comment'],
+                            'corptax'           => $r['corptax'],
+                            'statutory'         => $r['statutory'],
+                            'accountancy'       => $r['accountancy'],
+                            'other'             => $r['other'],
+                            'totalcu'           => $r['totalcu'],
+                            'status'            => $r['status'],
+                            'remarks'           => $r['remarks'],
+                            'added_on'          => $this->date.' '.$this->time
+                        ];
+                        $this->db->table($this->tblc2d)->insert($datac2);
+                    }
+                    return 'updated c2';
                 }
-            }
+            break;
+
+            case 'c3':
+                $check = $this->db->table($this->tblc3d)->where(array('c3tID' => $req['ctID'], 'clientID' => $req['clientID']))->get()->getNumRows();
+                if($check == 0){
+                    $sc3 = $this->db->table($this->tblc3)->where(array('c3tID' => $req['ctID']))->get();
+                    foreach($sc3->getResultArray() as $r){
+                        $datac3 = [
+                            'firmID'            => $req['firmID'],
+                            'clientID'          => $req['clientID'],
+                            'c3tID'             => $r['c3tID'],
+                            'code'              => $r['code'],
+                            'type'              => $r['type'],
+                            'question'          => $r['question'],
+                            'extent'            => $r['extent'],
+                            'reference'         => $r['reference'],
+                            'initials'          => $r['initials'],
+                            'drps'              => $r['drps'],
+                            'crps'              => $r['crps'],
+                            'drfp'              => $r['drfp'],
+                            'crfp'              => $r['crfp'],
+                            'issue'             => $r['issue'],
+                            'recommendation'    => $r['recommendation'],
+                            'result'            => $r['result'],
+                            'yesno'             => $r['yesno'],
+                            'comment'           => $r['comment'],
+                            'other'             => $r['other'],
+                            'totalcu'           => $r['totalcu'],
+                            'status'            => $r['status'],
+                            'remarks'           => $r['remarks'],
+                            'added_on'          => $this->date.' '.$this->time
+                        ];
+                        $this->db->table($this->tblc3d)->insert($datac3);
+                    }
+                    return 'updated c3';
+                }
+            break;
         }
-        if(!empty($req['c2'] )){
-            foreach($req['c2'] as $i => $val){
-                $check = $this->db->table($this->tblc2d)->where(array('c2tID' => $this->crypt->decrypt($val), 'clientID' => $req['clientID']))->get()->getNumRows();
-                if($check >= 1){
-                    continue;
-                }
-                $sc2 = $this->db->table($this->tblc2)->where(array('c2tID' => $this->crypt->decrypt($val)))->get();
-                foreach($sc2->getResultArray() as $r){
-                    $datac2 = [
-                        'firmID'            => $req['firmID'],
-                        'clientID'          => $req['clientID'],
-                        'c2tID'             => $r['c2tID'],
-                        'code'              => $r['code'],
-                        'type'              => $r['type'],
-                        'question'          => $r['question'],
-                        'extent'            => $r['extent'],
-                        'reference'         => $r['reference'],
-                        'initials'          => $r['initials'],
-                        'desc'              => $r['desc'],
-                        'controleffect'     => $r['controleffect'],
-                        'assessed'          => $r['assessed'],
-                        'yesno'             => $r['yesno'],
-                        'comment'           => $r['comment'],
-                        'corptax'           => $r['corptax'],
-                        'statutory'         => $r['statutory'],
-                        'accountancy'       => $r['accountancy'],
-                        'other'             => $r['other'],
-                        'totalcu'           => $r['totalcu'],
-                        'status'            => $r['status'],
-                        'remarks'           => $r['remarks'],
-                        'added_on'          => $this->date.' '.$this->time
-                    ];
-                    $this->db->table($this->tblc2d)->insert($datac2);
-                }
-            }
-        }
-        if(!empty($req['c3'] )){
-            foreach($req['c3'] as $i => $val){
-                $check = $this->db->table($this->tblc3d)->where(array('c3tID' => $this->crypt->decrypt($val), 'clientID' => $req['clientID']))->get()->getNumRows();
-                if($check >= 1){
-                    continue;
-                }
-                $sc3 = $this->db->table($this->tblc3)->where(array('c3tID' => $this->crypt->decrypt($val)))->get();
-                foreach($sc3->getResultArray() as $r){
-                    $datac3 = [
-                        'firmID'            => $req['firmID'],
-                        'clientID'          => $req['clientID'],
-                        'c3tID'             => $r['c3tID'],
-                        'code'              => $r['code'],
-                        'type'              => $r['type'],
-                        'question'          => $r['question'],
-                        'extent'            => $r['extent'],
-                        'reference'         => $r['reference'],
-                        'initials'          => $r['initials'],
-                        'drps'              => $r['drps'],
-                        'crps'              => $r['crps'],
-                        'drfp'              => $r['drfp'],
-                        'crfp'              => $r['crfp'],
-                        'issue'             => $r['issue'],
-                        'recommendation'    => $r['recommendation'],
-                        'result'            => $r['result'],
-                        'yesno'             => $r['yesno'],
-                        'comment'           => $r['comment'],
-                        'other'             => $r['other'],
-                        'totalcu'           => $r['totalcu'],
-                        'status'            => $r['status'],
-                        'remarks'           => $r['remarks'],
-                        'added_on'          => $this->date.' '.$this->time
-                    ];
-                    $this->db->table($this->tblc3d)->insert($datac3);
-                }
-            }
-        }
-        $this->logs->log(session()->get('name'). " added a file to a client ");
-        return 'files_added';
 
     }
+
+    /**
+        * @method removefiles() remove the files from the client
+        * @param req files data
+        * @var check check if files are already exist
+        * @var sc1-sc2-sc3 result from the system files
+        * @var datac1 contains chapter 1 informations
+        * @var datac2 contains chapter 2 informations
+        * @var datac3 contains chapter 3 informations
+        * @return files_added
+    */
+    public function removefiles($req){
+
+        switch ($req['cval']) {
+            case 'c1':
+                $where = [
+                    'c1tID' => $req['ctID'], 
+                    'clientID' => $req['clientID'],
+                    'firmID' => $req['firmID']
+                ];
+                $this->db->table($this->tblc1d)->where($where)->delete();
+                return 'removed c1';
+            break;
+
+            case 'c2':
+                $where = [
+                    'c2tID' => $req['ctID'], 
+                    'clientID' => $req['clientID'],
+                    'firmID' => $req['firmID']
+                ];
+                $this->db->table($this->tblc2d)->where($where)->delete();
+                return 'removed c2';
+            break;
+
+            case 'c3':
+                $where = [
+                    'c3tID' => $req['ctID'], 
+                    'clientID' => $req['clientID'],
+                    'firmID' => $req['firmID']
+                ];
+                $this->db->table($this->tblc3d)->where($where)->delete();
+                return 'removed c3';
+            break;
+        }
+
+    }
+
 
     /**
         * @method acin() set the client information to active and inactive

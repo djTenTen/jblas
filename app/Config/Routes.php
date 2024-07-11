@@ -178,7 +178,8 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
 
             $sd->get('client/set', 'ClientController::viewclientset');
             $sd->get('client/files/(:any)/(:any)', 'ClientController::viewfiles/$1/$2');
-            $sd->post('client/setfiles/(:any)', 'ClientController::setfiles/$1');
+            $sd->post('client/setfiles/(:any)/(:any)', 'ClientController::setfiles/$1/$2');
+            $sd->post('client/removefiles/(:any)/(:any)', 'ClientController::removefiles/$1/$2');
             $sd->get('client/defaultfiles/(:any)/', 'ClientController::getdefaultfiles/$1');
             $sd->get('client/getfiles/(:any)/(:any)', 'ClientController::getfiles/$1/$2');
             /**

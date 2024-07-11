@@ -24,7 +24,6 @@
 
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-            <form action="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>" method="post">
             <div class="card-header border-bottom">
                 <!-- Wizard navigation-->
                 <div class="nav nav-pills nav-justified flex-column flex-xl-row" id="cardTab" role="tablist">
@@ -64,8 +63,8 @@
                             </thead>
                             <tbody>
                             <?php foreach($c1 as $r){?>
-                                <tr>
-                                    <td><input class="form-check-input" id="add" type="checkbox" name="c1[]" value="<?= $crypt->encrypt($r['c1titleID'])?>"/></td>
+                                    <tr>
+                                    <td><input class="form-check-input filecheck" id="add" type="checkbox" name="c1" value="c1" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
                                     <td><?= $r['code']?></td>
                                     <td><?= $r['title']?></td>
                                     <td>
@@ -98,8 +97,6 @@
                             <?php }?>
                             </tbody>
                         </table>
-                        <br>
-                        <button class="btn btn-success float-end">Set Files</button>
                     </div>
                     <!-- Wizard tab pane item 2-->
                     <div class="tab-pane py-5 fade" id="wizard2" role="tabpanel" aria-labelledby="wizard2-tab">
@@ -116,7 +113,7 @@
                             <tbody>
                             <?php foreach($c2 as $r){?>
                                 <tr>
-                                    <td><input class="form-check-input" id="add" type="checkbox" name="c2[]" value="<?= $crypt->encrypt($r['c2titleID'])?>"/></td>
+                                    <td><input class="form-check-input filecheck" id="add" type="checkbox" name="c2" value="c2" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
                                     <td><?= $r['code']?></td>
                                     <td><?= $r['title']?></td>
                                     <td>
@@ -126,8 +123,6 @@
                             <?php }?>
                             </tbody>
                         </table>
-                        <br>
-                        <button class="btn btn-success float-end">Set Files</button>
                     </div>
                     <!-- Wizard tab pane item 3-->
                     <div class="tab-pane py-5 fade" id="wizard3" role="tabpanel" aria-labelledby="wizard3-tab">
@@ -144,7 +139,7 @@
                             <tbody>
                             <?php foreach($c3 as $r){?>
                                 <tr>
-                                    <td><input class="form-check-input" id="add" type="checkbox" name="c3[]" value="<?= $crypt->encrypt($r['c3titleID'])?>"/></td>
+                                    <td><input class="form-check-input filecheck" id="add" type="checkbox" name="c3" value="c3" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
                                     <td><?= $r['code']?></td>
                                     <td><?= $r['title']?></td>
                                     <td>
@@ -164,18 +159,45 @@
                             <?php }?>
                             </tbody>
                         </table>
-                        <br>
-                        <button class="btn btn-success float-end">Set Files</button>
                     </div>
                 </div>
             </div>
-            </form>
         </div>
     </div>
     
 </main>
 
 
+<script>
+    $(document).ready(function () {
+
+        $('.filecheck').change(function(){
+
+            var yn = this.checked ? 'Yes' : 'No';
+            var val = $(this).val();
+            var urladd = $(this).data('urladd');
+            var urlremove = $(this).data('urlremove');
+            if(yn == 'Yes'){
+                url = urladd
+            }
+            if(yn == 'No'){
+                url = urlremove
+            }
+            $.ajax({
+                url: url, 
+                type: 'POST',
+                data: { checked: val , ischeck: yn},
+                success: function(response) {
+                    console.log(response.message);
+                },
+                error: function(xhr, status, error) {
+                    
+                }
+            });
+        });
+
+    });
+</script>
 
 
 

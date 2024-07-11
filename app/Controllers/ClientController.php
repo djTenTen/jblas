@@ -234,33 +234,50 @@ class ClientController extends BaseController{
     /**
         * @method setfiles() set default files to the client
         * @param cID encrypted data of client id
+        * @param cID encrypted data of chapter title id
         * @var dcID decrypted data of client id
         * @var array-req consist the client information
         * @var res a return response from the client model
-        * @return redirect-to-page
+        * @return json-response
     */
-    public function setfiles($cID){
+    public function setfiles($cID,$ctID){
 
         $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dctID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID));
         $req = [
-            'c1'        => $this->request->getPost('c1'),
-            'c2'        => $this->request->getPost('c2'),
-            'c3'        => $this->request->getPost('c3'),
+            'cval'      => $this->request->getPost('checked'),
             'clientID'  => $dcID,
+            'ctID'      => $dctID,
             'firmID'    => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cmodel->setfiles($req);
-
-        if($res == "files_added"){
-            session()->setFlashdata('files_added','files_added');
-            return redirect()->to(site_url('auditsystem/client/set'));
-        }else{
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/client/set'));
-        }
+        return $this->response->setJSON(['message' => $res]);
         
     }
 
+    /**
+        * @method removefiles() remove the file from the client
+        * @param cID encrypted data of client id
+        * @param cID encrypted data of chapter title id
+        * @var dcID decrypted data of client id
+        * @var array-req consist the client information
+        * @var res a return response from the client model
+        * @return json-response
+    */
+    public function removefiles($cID,$ctID){
+
+        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dctID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID));
+        $req = [
+            'cval'      => $this->request->getPost('checked'),
+            'clientID'  => $dcID,
+            'ctID'      => $dctID,
+            'firmID'    => $this->crypt->decrypt(session()->get('firmID')),
+        ];
+        $res = $this->cmodel->removefiles($req);
+        return $this->response->setJSON(['message' => $res]);
+        
+    }
 
     /**
         * @method acin() used to set active/inactive the client
