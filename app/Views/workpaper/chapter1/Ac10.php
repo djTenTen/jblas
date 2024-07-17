@@ -95,6 +95,7 @@
                                 <th></th>
                                 <th colspan="2">Name</th>
                                 <th colspan="2">Balance</th>
+                                <th>Remove</th>
                             </tr>
                         </thead>
                         <tbody id="tbody1">
@@ -113,9 +114,9 @@
                             <?php }?>
                         </tbody>   
                             <tr>
-                                <td colspan="5" >
-                                    <button type="submit" class="btn btn-success float-end m-1"><i class="fas fa-file-alt m-1"></i>Save</button>
-                                    <button class="btn btn-primary float-end m-1" type="button" data-action="add-field1" id="add-field1"><i class="fas fa-plus-square m-1"></i> Add Field</button>
+                                <td colspan="6" >
+                                    <button type="submit" class="btn btn-success float-end m-1 btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                                    <button class="btn btn-primary float-end m-1 btn-sm" type="button" data-action="add-field1" id="add-field1"><i class="fas fa-plus-square m-1"></i> Add Field</button>
                                 </td>
                             </tr>
                     </table>
@@ -132,6 +133,7 @@
                                 <th colspan="1">Description</th>
                                 <th colspan="1">Reason</th>
                                 <th colspan="2">Balance</th>
+                                <th>Remove</th>
                             </tr>
                         </thead>
                         <tbody id="tbody2">
@@ -150,9 +152,9 @@
                             <?php }?>
                         </tbody>
                             <tr>
-                                <td colspan="5" >
-                                    <button type="submit" class="btn btn-success float-end m-1"><i class="fas fa-file-alt m-1"></i>Save</button>
-                                    <button class="btn btn-primary float-end m-1" type="button" data-action="add-field2" id="add-field2"><i class="fas fa-plus-square m-1"></i>Add Field</button>
+                                <td colspan="6" >
+                                    <button type="submit" class="btn btn-success float-end m-1 btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                                    <button class="btn btn-primary float-end m-1 btn-sm" type="button" data-action="add-field2" id="add-field2"><i class="fas fa-plus-square m-1"></i>Add Field</button>
                                 </td>
                             </tr>
                         <tfoot>

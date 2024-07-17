@@ -10,14 +10,14 @@
     <link href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" rel="stylesheet" />
     <link href="https://unpkg.com/easymde/dist/easymde.min.css" rel="stylesheet" />
     <link href="<?= base_url()?>css/styles.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="<?= base_url()?>assets/img/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="<?= base_url()?>img/bg/APPLAUD1.png" />
     <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
 
 </head>
-<body class="nav-fixed">
+<body class="nav-fixed bg-primary-soft">
 
     <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
         <!-- Sidenav Toggle Button-->
@@ -26,6 +26,7 @@
         <!-- * * Tip * * You can use text or an image for your navbar brand.-->
         <!-- * * * * * * When using an image, we recommend the SVG format.-->
         <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
+        <img src="<?= base_url()?>img/bg/APPLAUD1.png" alt="" style="width: 40px;" >
         <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="<?= base_url()?>auditsystem">ApplAud - <?= session()->get('firm')?></a>
        
         <!-- Navbar Items-->

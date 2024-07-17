@@ -11,13 +11,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="<?= base_url()?>css/styles.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="<?= base_url()?>assets/img/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="<?= base_url()?>img/bg/APPLAUD1.png" />
     <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
 
 
 </head>
-<body class="bg-primary">
+<body  style="background-image: url('<?= base_url();?>img/bg/Background.png'); height: auto;
+                width: auto;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: cover;
+                overflow-x: hidden; >
 
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
@@ -27,14 +32,13 @@
 
                         <div class="col-xl-7 col-lg-6 col-md-8 col-sm-11">
                             <div class="my-5 ">
-                                <img src="<?= base_url()?>assets/img/illustrations/login.svg" alt="..." style="width: 30rem" />
-                                <h1 class="text-white display-6 animated--fade-in-up"><b>Welcome to</b></h1>
-                                <h1 class="text-white display-1 animated--fade-in-up"><b>APPLAUD SYSTEM</b></h1>
+                                <h1 class="text-secondary display-6 animated--fade-in-up"><b>Welcome to</b></h1>
+                                <h1 class="text-secondary display-1 animated--fade-in-up"><b>APPLAUD SYSTEM</b></h1>
                             </div>
                         </div>
 
                         <div class="col-xl-5 col-lg-6 col-md-8 col-sm-11">
-                            <div class="card my-5">
+                            <div class="card my-5 bg-white bg-opacity-75">
                                 <?php if (session()->get('access_denied')) { ?>
                                     <div class="alert alert-danger alert-icon" role="alert">
                                         <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -90,7 +94,8 @@
                                     </div>
                                 <?php  }?>
                                 <div class="card-body p-5 text-center">
-                                    <div class="h3 fw-dark mb-3">Sign In</div>
+                                    <img src="<?= base_url()?>img/bg/APPLAUD1.png" alt="" style="width: 25%;" >
+                                    <div class="h3 mb-3 text-secondary">Sign In</div>
                                 </div>
                                 <hr class="my-0" />
                                 <div class="card-body p-5 animated--fade-in-up">
@@ -98,12 +103,12 @@
                                     <form action="authenticate" method="post">
                                         <!-- Form Group (email address)-->
                                         <div class="mb-3">
-                                            <label class="text-gray-600 small" for="inputEmailAddress">Email address</label>
+                                            <label class="small" for="inputEmailAddress">Email address</label>
                                             <input class="form-control form-control-solid" id="inputEmailAddress" type="email" placeholder="Enter email address" name="email" required/>
                                         </div>
                                         <!-- Form Group (password)-->
                                         <div class="mb-3">
-                                            <label class="text-gray-600 small" for="inputPassword">Password</label>
+                                            <label class="small" for="inputPassword">Password</label>
                                             <input class="form-control form-control-solid" id="inputPassword" type="password" placeholder="Enter password" name="password" required/>
                                         </div>
                                         <!-- Form Group (forgot password link)-->
@@ -130,7 +135,7 @@
         <div id="layoutAuthentication_footer">
             <footer class="footer-admin mt-auto footer-dark">
                 <div class="container-xl px-4">
-                    <div class="row">
+                    <div class="row text-secondary">
                         <div class="col-md-6 small">Copyright &copy; Applaud 2021 <span>||</span> Powered by: Build App Minds Software Solutions Inc.</div>
                         <div class="col-md-6 text-md-end small">
                             <a href="#!" type="button"  data-bs-toggle="modal" data-bs-target="#privacy">Privacy Policy</a>
