@@ -24,7 +24,19 @@ class Logs{
             $logFile = $logPath. $this->crypt->decrypt(session()->get('firmID')).'-systems-log-'.date("F d, Y").'.log';
         }
         if (!is_dir($logPath)) {
-            mkdir($logPath, 0644, true);
+            mkdir($logPath, 0755, true);
+        }
+        $logMessage = "[{$this->time}]: {$msg}" . PHP_EOL;
+        file_put_contents($logFile, $logMessage, FILE_APPEND);
+
+    }
+
+    public function cronlogs($msg){
+
+        $logPath = WRITEPATH . 'cronlogs/';
+        $logFile = $logPath. 'cron-log-'.date("F d, Y").'.log';
+        if (!is_dir($logPath)) {
+            mkdir($logPath, 0755, true);
         }
         $logMessage = "[{$this->time}]: {$msg}" . PHP_EOL;
         file_put_contents($logFile, $logMessage, FILE_APPEND);

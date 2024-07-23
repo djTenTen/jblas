@@ -3,7 +3,6 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\HTTP\ResponseInterface;
-use Config\UploadConfig;
 use \App\Models\SystemModel;
 
 class SystemController extends BaseController{
@@ -32,7 +31,12 @@ class SystemController extends BaseController{
     }
 
     
-    
+    public function crontask(){
+
+        $res = $this->sm->crontask();
+        return $res;
+
+    }
 
     
     

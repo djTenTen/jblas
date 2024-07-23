@@ -20,6 +20,7 @@ $routes->post('signup', 'UserController::signup');
 $routes->get('403', 'ErrorController::error403');
 $routes->get('401', 'ErrorController::error401');
 $routes->get('500', 'ErrorController::error500');
+$routes->get('cron/task', 'SystemController::crontask');
 
  
 $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {

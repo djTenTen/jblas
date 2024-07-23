@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
+use App\Libraries\Logs;
 
 class SystemModel extends  Model {
 
@@ -16,8 +17,9 @@ class SystemModel extends  Model {
         
     */
     protected $tblf = "tbl_firm";
-    protected $tblu = "tbl_users";
+    protected $tbln = "tbl_notification";
     protected $logs;
+    protected $crypt;
     protected $db;
     protected $time,$date;
     
@@ -28,11 +30,61 @@ class SystemModel extends  Model {
     public function __construct(){
 
         $this->db           = \Config\Database::connect('default'); 
+        $this->logs         = new Logs();
+        $this->crypt        = \Config\Services::encrypter();
         date_default_timezone_set("Asia/Singapore"); 
         $this->time         = date("H:i:s");
         $this->date         = date("Y-m-d");
 
     }
+
+    public function crontask(){
+        
+        $firm = $this->db->table($this->tblf)->get()->getResultArray();
+        foreach($firm as $f){
+            $now = new \DateTime();
+            $targetdate = new \DateTime($f['exp_on']);
+            $interval = $now->diff($targetdate);
+            $days = $interval->invert ? -$interval->days : $interval->days;
+            if($days < 15){
+                $data = [
+                    'firm' => $f['firmID'],
+                    'intensity' => 'danger',
+                    'msg' => 'Your subscription will expire in '.$days. ' days',
+                    'added_on' => $this->date.' '.$this->time
+                ];
+                $this->db->table($this->tbln)->insert($data);
+                $insertedId = $this->db->insertID();
+                $this->logs->cronlogs('Cron Job success Ref: '.$insertedId);
+            }
+        }
+
+        return true;
+
+    }
+
+    public function getnotif(){
+
+        $fID = $this->crypt->decrypt(session()->get('firmID'));
+        $where = [
+            'firm' => $fID,
+        ];
+        $query = $this->db->table($this->tbln)->where($where)->get();
+        return $query->getResultArray();
+
+    }
+
+    public function countnotif(){
+
+        $fID = $this->crypt->decrypt(session()->get('firmID'));
+        $where = [
+            'firm' => $fID,
+        ];
+        $query = $this->db->table($this->tbln)->where($where)->get();
+        return $query->getNumRows();
+
+    }
+
 
     
 
