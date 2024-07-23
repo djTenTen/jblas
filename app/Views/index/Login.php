@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="col-xl-5 col-lg-6 col-md-8 col-sm-11">
-                            <div class="card my-5 bg-white bg-opacity-75">
+                            <div class="card my-5 bg-white">
                                 <?php if (session()->get('access_denied')) { ?>
                                     <div class="alert alert-danger alert-icon" role="alert">
                                         <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>

@@ -139,13 +139,20 @@ class UserModel extends  Model {
     */
     public function signin($req){
 
+        $date = new \DateTime($this->date);
+        $date->modify('+30 days');
+        $expdate = $date->format('Y-m-d');
         $res1 = $this->db->table($this->tblu)->where('email', $req['email'])->get()->getNumRows();
         $res2 = $this->db->table($this->tblf)->where('firm', $req['firm'])->get()->getNumRows();
         if($res1 >= 1 or $res2 >= 1){
             return 'exist';
         }else{
-            $newlogoname = $req['logo']->getRandomName();
-            $req['logo']->move(ROOTPATH .'public/uploads/logo', $newlogoname);
+            if($req['logo'] != ''){
+                $newlogoname = $req['logo']->getRandomName();
+                $req['logo']->move(ROOTPATH .'public/uploads/logo', $newlogoname);
+            }else{
+                $newlogoname = '';
+            }
             $firm = [
                 'firm'          => $req['firm'], 
                 'address'       => $req['address'],
@@ -154,7 +161,8 @@ class UserModel extends  Model {
                 'noclient'      => $req['noclient'],
                 'logo'          =>  $newlogoname,
                 'status'        => 'Active',
-                'added_on'      => $this->date.' '.$this->time
+                'added_on'      => $this->date.' '.$this->time,
+                'exp_on'        => $expdate,
             ];
             $this->db->table($this->tblf)->insert($firm);
             $insertedId = $this->db->insertID();
@@ -167,16 +175,16 @@ class UserModel extends  Model {
                 'type'          => 'Auditing Firm',
                 'verified'      => 'No',
                 'status'        => 'Active',
-                'added_on'      => $this->date.' '.$this->time
+                'added_on'      => $this->date.' '.$this->time,
             ];
             if($this->db->table($this->tblu)->insert($data)){
-                $email = \Config\Services::email();
-                $email->setFrom('applaud@buildappminds.com', 'ApplAud Systems');
-                $email->setTo($req['email']);
-                $email->setSubject('Welcome to Applaud');
-                $msg = "Dear ".$req['fname'].",\n\nWe have received your registration, Please wait a few minutes, and we will send a Confirmation once your information has been verified.\n\nThank you so much,\nApplAud Systems";
-                $email->setMessage($msg);
-                $email->send();
+                // $email = \Config\Services::email();
+                // $email->setFrom('applaud@buildappminds.com', 'ApplAud Systems');
+                // $email->setTo($req['email']);
+                // $email->setSubject('Welcome to Applaud');
+                // $msg = "Dear ".$req['fname'].",\n\nWe have received your registration, Please wait a few minutes, and we will send a Confirmation once your information has been verified.\n\nThank you so much,\nApplAud Systems";
+                // $email->setMessage($msg);
+                // $email->send();
                 return 'registered';
             }else{
                 return 'failed';

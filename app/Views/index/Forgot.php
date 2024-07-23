@@ -12,7 +12,12 @@
         <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-primary">
+    <body  style="background-image: url('<?= base_url();?>img/bg/Background.png'); height: auto;
+                width: auto;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: cover;
+                overflow-x: hidden; >
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -72,7 +77,7 @@
             <div id="layoutAuthentication_footer">
                 <footer class="footer-admin mt-auto footer-dark">
                     <div class="container-xl px-4">
-                        <div class="row">
+                        <div class="row text-secondary">
                             <div class="col-md-6 small">Copyright &copy; Applaud 2021 <span>||</span> Powered by: Build App Minds Software Solutions Inc.</div>
                             <div class="col-md-6 text-md-end small">
                                 <a href="#!" type="button"  data-bs-toggle="modal" data-bs-target="#privacy">Privacy Policy</a>
