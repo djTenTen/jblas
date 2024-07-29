@@ -38,7 +38,7 @@ class Logs{
         if (!is_dir($logPath)) {
             mkdir($logPath, 0755, true);
         }
-        $logMessage = "[{$this->time}." - ".{$this->date}]: {$msg}" . PHP_EOL;
+        $logMessage = "[{$this->time} - {$this->date}]: {$msg}" . PHP_EOL;
         file_put_contents($logFile, $logMessage, FILE_APPEND);
 
     }

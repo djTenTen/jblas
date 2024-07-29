@@ -47,10 +47,18 @@ class SystemModel extends  Model {
             $interval = $now->diff($targetdate);
             $days = $interval->invert ? -$interval->days : $interval->days;
             if($days < 15){
+                $intensity = 'info';
+                if($days <= 0){
+                    $intensity = 'danger';
+                    $msg = 'Your subscription has been expired, please re-new.';
+                }else{
+                    $intensity = 'warning';
+                    $msg = 'Your subscription will expire in '.$days. ' days';
+                }
                 $data = [
                     'firm' => $f['firmID'],
-                    'intensity' => 'danger',
-                    'msg' => 'Your subscription will expire in '.$days. ' days',
+                    'intensity' => $intensity,
+                    'msg' => $msg,
                     'added_on' => $this->date.' '.$this->time
                 ];
                 $this->db->table($this->tbln)->insert($data);
@@ -68,6 +76,7 @@ class SystemModel extends  Model {
         $fID = $this->crypt->decrypt(session()->get('firmID'));
         $where = [
             'firm' => $fID,
+            'isread' => 'No',
         ];
         $query = $this->db->table($this->tbln)->where($where)->get();
         return $query->getResultArray();
@@ -82,6 +91,14 @@ class SystemModel extends  Model {
         ];
         $query = $this->db->table($this->tbln)->where($where)->get();
         return $query->getNumRows();
+
+    }
+
+    public function removenotif($nID){
+
+        if($this->db->table($this->tbln)->where('notifID', $nID)->delete()){
+            return 'deleted';
+        }
 
     }
 

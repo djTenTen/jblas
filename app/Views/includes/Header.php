@@ -59,7 +59,7 @@
                         Notification Center
                     </h6>
                     <?php foreach($sm->getnotif() as $ntf){?>
-                        <a class="dropdown-item dropdown-notifications-item" href="#!">
+                        <a class="dropdown-item dropdown-notifications-item" href="<?= base_url()?>auditsystem/notif">
                             <div class="dropdown-notifications-item-icon bg-<?= $ntf['intensity']?>"><i class="fas fa-exclamation-triangle"></i></div>
                             <div class="dropdown-notifications-item-content">
                                 <div class="dropdown-notifications-item-content-details"><?= date('F d, Y ', strtotime($ntf['added_on']))?></div>
@@ -67,7 +67,7 @@
                             </div>
                         </a>
                     <?php }?>
-                    <a class="dropdown-item dropdown-notifications-footer" href="#!">View All Alerts</a>
+                    <a class="dropdown-item dropdown-notifications-footer" href="<?= base_url()?>auditsystem/notif">View All Alerts</a>
                 </div>
             </li>
             

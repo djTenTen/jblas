@@ -38,6 +38,26 @@ class SystemController extends BaseController{
 
     }
 
+    public function notif(){
+        
+        $data['not'] = $this->sm->getnotif();
+        $data['title'] = 'Notification Center';
+        echo view('includes/Header', $data);
+        echo view('system/Notif', $data);
+        echo view('includes/Footer');
+
+    }
+
+
+    public function removenotif($nID){
+
+        $dnID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$nID));
+        $res = $this->sm->removenotif($dnID);
+        return $res;
+
+    }
+
+
     
     
 

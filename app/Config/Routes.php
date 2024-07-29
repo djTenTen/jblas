@@ -43,6 +43,16 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
     $auth->get('myaccount', 'UserController::myaccount');
     $auth->post('myaccount/update/(:any)', 'UserController::updatemyinfo/$1');
 
+
+    /**
+        ----------------------------------------------------------
+        NOTIFICATION MANAGEMENT
+        ----------------------------------------------------------
+    */
+    $auth->get('notif', 'SystemController::notif');
+    $auth->post('notif/rem/(:any)', 'SystemController::removenotif/$1');
+
+
     $auth->group('wp', ['filter' => 'workp'], function ($workp) {
         /**
             ----------------------------------------------------------

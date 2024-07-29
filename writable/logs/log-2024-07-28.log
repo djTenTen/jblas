@@ -1,0 +1,13 @@
+INFO - 2024-07-28 03:27:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-28 05:45:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-28 07:35:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-28 15:00:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-28 15:00:04 --> TypeError: Unsupported operand types: string - string
+in APPPATH/Libraries/Logs.php on line 41.
+ 1 APPPATH/Models/SystemModel.php(58): App\Libraries\Logs->cronlogs()
+ 2 APPPATH/Controllers/SystemController.php(36): App\Models\SystemModel->crontask()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\SystemController->crontask()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-28 23:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
