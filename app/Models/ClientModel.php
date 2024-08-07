@@ -232,6 +232,99 @@ class ClientModel extends Model{
                 'added_on'      => $this->date.' '.$this->time,
             ];
             if($this->db->table($this->tblc)->insert($data)){
+                $clID = $this->db->insertID();
+                $c1 = $this->db->query("select * from {$this->tblc1} where code = 'ac1' or code = 'ac6' or code = 'ac7' order by code asc");
+                foreach($c1->getResultArray() as $r){
+                    $datac1 = [
+                        'firmID'            => $req['fID'],
+                        'clientID'          => $clID,
+                        'c1tID'             => $r['c1tID'],
+                        'code'              => $r['code'],
+                        'type'              => $r['type'],
+                        'question'          => $r['question'],
+                        'less'              => $r['less'],
+                        'name'              => $r['name'],
+                        'reason'            => $r['reason'],
+                        'balance'           => $r['balance'],
+                        'planning'          => $r['planning'],
+                        'finalization'      => $r['finalization'],
+                        'reference'         => $r['reference'],
+                        'reliance'          => $r['reliance'],
+                        'finstate'          => $r['finstate'],
+                        'desc'              => $r['desc'],
+                        'controleffect'     => $r['controleffect'],
+                        'implemented'       => $r['implemented'],
+                        'assessed'          => $r['assessed'],
+                        'yesno'             => $r['yesno'],
+                        'comment'           => $r['comment'],
+                        'corptax'           => $r['corptax'],
+                        'statutory'         => $r['statutory'],
+                        'accountancy'       => $r['accountancy'],
+                        'other'             => $r['other'],
+                        'totalcu'           => $r['totalcu'],
+                        'status'            => $r['status'],
+                        'remarks'           => $r['remarks'],
+                        'added_on'          => $this->date.' '.$this->time
+                    ];
+                    $this->db->table($this->tblc1d)->insert($datac1);
+                }
+                $c2 = $this->db->query("select * from {$this->tblc2} where code = '2.13.1 O2' or code = '2.14 P2' or code = '2.16 R2-1' or code = '2.1 B2' or code = '2.2.1 C2' or code = '2.2.2 C2-1' or code = '2.3 D2' or code = '2.4.1 E2' or code = '2.4.2 E2-1' or code = '2.4.3 E2-2' or code = '2.4.4 E2-3' or code = '2.4.5 E2-4' or code = '2.5 F2' or code = '2.6 H2' or code = '2.7 I2' or code = '2.8 J2' order by code asc");
+                foreach($c2->getResultArray() as $r){
+                    $datac2 = [
+                        'firmID'            => $req['fID'],
+                        'clientID'          => $clID,
+                        'c2tID'             => $r['c2tID'],
+                        'code'              => $r['code'],
+                        'type'              => $r['type'],
+                        'question'          => $r['question'],
+                        'extent'            => $r['extent'],
+                        'reference'         => $r['reference'],
+                        'initials'          => $r['initials'],
+                        'desc'              => $r['desc'],
+                        'controleffect'     => $r['controleffect'],
+                        'assessed'          => $r['assessed'],
+                        'yesno'             => $r['yesno'],
+                        'comment'           => $r['comment'],
+                        'corptax'           => $r['corptax'],
+                        'statutory'         => $r['statutory'],
+                        'accountancy'       => $r['accountancy'],
+                        'other'             => $r['other'],
+                        'totalcu'           => $r['totalcu'],
+                        'status'            => $r['status'],
+                        'remarks'           => $r['remarks'],
+                        'added_on'          => $this->date.' '.$this->time
+                    ];
+                    $this->db->table($this->tblc2d)->insert($datac2);
+                }
+                $c3 = $this->db->query("select * from {$this->tblc3} where code = '3.11' or code = '3.8 Aa10' order by code asc");
+                foreach($c3->getResultArray() as $r){
+                    $datac3 = [
+                        'firmID'            => $req['fID'],
+                        'clientID'          => $clID,
+                        'c3tID'             => $r['c3tID'],
+                        'code'              => $r['code'],
+                        'type'              => $r['type'],
+                        'question'          => $r['question'],
+                        'extent'            => $r['extent'],
+                        'reference'         => $r['reference'],
+                        'initials'          => $r['initials'],
+                        'drps'              => $r['drps'],
+                        'crps'              => $r['crps'],
+                        'drfp'              => $r['drfp'],
+                        'crfp'              => $r['crfp'],
+                        'issue'             => $r['issue'],
+                        'recommendation'    => $r['recommendation'],
+                        'result'            => $r['result'],
+                        'yesno'             => $r['yesno'],
+                        'comment'           => $r['comment'],
+                        'other'             => $r['other'],
+                        'totalcu'           => $r['totalcu'],
+                        'status'            => $r['status'],
+                        'remarks'           => $r['remarks'],
+                        'added_on'          => $this->date.' '.$this->time
+                    ];
+                    $this->db->table($this->tblc3d)->insert($datac3);
+                }
                 $this->logs->log(session()->get('name'). " added a client ".$req['name'].'-'.$req['org']);
                 return 'registered';
             }else{
