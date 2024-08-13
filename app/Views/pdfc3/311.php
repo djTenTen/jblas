@@ -66,19 +66,19 @@ $html =  "
 $html .= '
 <p><b>INDEPENDENT AUDITOR’S REPORT TO THE MEMBERS OF [NAME OF ENTITY] LIMITED</b></p>
 <p><b>Opinion</b></p>
-<p>We have audited the financial statements of [Name of entity]1 (the ‘company’) for the year ended [date]1 which comprise [specify the titles of the primary statements]2 and notes to the financial statements, including a summary of significant accounting policies.</p>
+<p>We have audited the financial statements of [Name of entity]1 (the ‘company’) for the year ended [date]1 which comprise '.$arf['tops'].' and notes to the financial statements, including a summary of significant accounting policies.</p>
 <p>In our opinion, the accompanying financial statements:</p>
 <ul>
-    <li>give a true and fair view of the financial position of the company as at [date] and of its financial performance [and cash flows] for the year then ended;  </li>
-    <li>have been properly prepared in accordance with International Financial Reporting Standards[; and</li>
-    <li>have been properly prepared in accordance with [insert legislation]].3</li>
+    <li>give a true and fair view of the financial position of the company as at '.date('F d, Y', strtotime($arf['afsd'])).' and of its financial performance '.$arf['cf'].' for the year then ended;  </li>
+    <li>have been properly prepared in accordance with International Financial Reporting Standards; and</li>
+    <li>have been properly prepared in accordance with '.$arf['leg1'].'</li>
 </ul>
 <p><b>Basis for opinion</b></p>
 <p>We conducted our audit in accordance with International Standards on Auditing (ISAs).  Our responsibilities under those standards are further described in the Auditor’s Responsibilities for the Audit of the Financial Statements section of our report.  We are independent of the Company in accordance with the International Ethics Standards Board for Accountants Code of Ethics for Professional Accountants (IESBA Code), and we have fulfilled our other ethical responsibilities in accordance with these requirements.  We believe that the audit evidence we have obtained is sufficient and appropriate to provide a basis for our opinion.</p>
-<p><b>[Use of our report</b></p>
-<p>This report, including the opinion, has been prepared for and only for the company’s members as a body in accordance with [insert legislation]3 and for no other purpose.  We do not, in giving these opinions, accept or assume responsibility for any other purpose or to any other person to whom this report is shown or into whose hands it may come save where expressly agreed by our prior consent in writing.]4</p>
+<p><b>Use of our report</b></p>
+<p>This report, including the opinion, has been prepared for and only for the company’s members as a body in accordance with '.$arf['leg2'].' and for no other purpose.  We do not, in giving these opinions, accept or assume responsibility for any other purpose or to any other person to whom this report is shown or into whose hands it may come save where expressly agreed by our prior consent in writing.</p>
 <p><b>Responsibilities of directors for the financial statements</b></p>
-<p>The directors are responsible for the preparation of financial statements that give a true and fair view in accordance with [insert jurisdiction / legislation]3 and International Financial Reporting Standards, and for such internal control as the directors determine is necessary to enable the preparation of financial statements that are free from material misstatement, whether due to fraud or error.</p>
+<p>The directors are responsible for the preparation of financial statements that give a true and fair view in accordance with '.$arf['jurleg'].' and International Financial Reporting Standards, and for such internal control as the directors determine is necessary to enable the preparation of financial statements that are free from material misstatement, whether due to fraud or error.</p>
 <p>In preparing the financial statements, the directors are responsible for assessing the company’s ability to continue as a going concern, disclosing, as applicable, matters related to going concern and using the going concern basis of accounting unless the directors either intend to liquidate the company or to cease operations, or have no realistic alternative but to do so.</p>
 <p><b>Auditor’s responsibilities for the audit of the financial statements</b></p>
 <p>Our objectives are to obtain reasonable assurance about whether the financial statements as a whole are free from material misstatement, whether due to fraud or error, and to issue an auditor’s report that includes our opinion.  Reasonable assurance is a high level of assurance, but is not a guarantee that an audit conducted in accordance with ISAs will always detect a material misstatement when it exists.</p>
@@ -92,22 +92,15 @@ $html .= '
     <li>evaluate the overall presentation, structure and content of the financial statements, including the disclosures, and whether the financial statements represent the underlying transactions and events in a manner that achieves fair presentation.</li>
 </ul>
 <p>We communicate with those charged with governance regarding, among other matters, the planned scope and timing of the audit and significant audit findings, including any significant deficiencies in internal control that we identify during our audit.</p>
-<p><b>[Report on other legal and regulatory requirements</b></p>
-<p><b>Opinions on other matters prescribed by the [insert legislation]3</b></p>
-<p>[Insert opinions required]</p>
+<p><b>Report on other legal and regulatory requirements</b></p>
+<p><b>Opinions on other matters prescribed by the '.$arf['leg3'].'</b></p>
+<p>'.$arf['op1'].'</p>
 <p><b>Matters on which we are required to report by exception</b></p>
-<p>[Insert opinions required]]3</p>
+<p>'.$arf['op2'].'</p>
 <p>[Signature]</p>
 <p>[Address]</p>
 <p>[Signature in the name of the audit firm, the personal name of the auditor, or both, depending on local legislation]3</p>
 <p>[Date]</p>
-<p><b>Notes:</b></p>
-<ol type="1">
-    <li>Amend as appropriate.</li>
-    <li>The audit report should identify the title of each statement comprising the financial statements (ISA 700, para 24c) - references to page numbers are no longer permitted. The terms used to describe the primary statements should be the same as those used by the directors.</li>
-    <li>Where applicable, there should be appropriate reference to local legislation applicable to the financial statements of limited companies, including any additional auditor reporting requirements which may arise.</li>
-    <li>Certain jurisdictions recommend including a disclaimer in the wording of the audit report to highlight that no duty of care is owed to any party other than the addressee of the report.  Such wording should be included if encouraged locally.</li>
-</ol>
 ';
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);

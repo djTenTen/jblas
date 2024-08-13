@@ -787,6 +787,18 @@ class Chapter3Model extends Model{
 
     }
 
+    public function get311($code,$c3tID){
+
+        $where = [
+            'type'      => '311',
+            'code'      => $code,
+            'c3tID'     => $c3tID,
+        ];
+        $query = $this->db->table($this->tblc3)->where($where)->get();
+        return $query->getRowArray();
+
+    }
+
 
     /**
         ----------------------------------------------------------

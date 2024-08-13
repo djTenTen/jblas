@@ -2084,6 +2084,60 @@ class ChapterValuesModel extends Model{
 
     }
 
+
+    /**
+        ----------------------------------------------------------
+        311 FUNCTIONS
+        ----------------------------------------------------------
+        * @method getab1() get the ab1 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @param dcID decrypted client id
+        * @var array-where reference data
+        * @var query result from database
+        * @return result-array
+    */
+    public function get311($code,$c3tID,$dcID){
+
+        $where = [
+            'type'      => '311',
+            'code'      => $code,
+            'c3tID'     => $c3tID,
+            'clientID'  => $dcID,
+        ];
+        $query = $this->db->table($this->tblc3d)->where($where)->get();
+        return $query->getRowArray();
+
+    }
+
+    public function save311($req){
+
+        $where = [
+            'type'      => '311',
+            'code'      => $req['code'],
+            'c3tID'     => $req['c3tID'],
+            'clientID'  => $req['cID'],
+        ];
+        $this->db->table($this->tblc3d)->where($where)->delete();
+        $data = [
+            'question'      => $req['arf'],
+            'type'          => $req['part'],
+            'code'          => $req['code'],
+            'c3tID'         => $req['c3tID'],
+            'clientID'      => $req['cID'],
+            'firmID'        => $req['fID'],
+            'status'        => 'Active',
+            'updated_on'    => $this->date.' '.$this->time
+        ];
+        if($this->db->table($this->tblc3d)->insert($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
     
     /**
         ----------------------------------------------------------

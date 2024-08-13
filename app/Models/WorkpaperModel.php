@@ -3202,6 +3202,51 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    public function get311($code,$dc3tID,$dcID,$dwpID){
+
+        $where = [
+            'type'      => '311',
+            'code'      => $code,
+            'c3tID'     => $dc3tID,
+            'clientID'  => $dcID,
+            'workpaper' => $dwpID,
+        ];
+        $query = $this->db->table($this->tblc3)->where($where)->get();
+        return $query->getRowArray();
+
+    }
+
+
+    public function save311($req){
+
+        $where = [
+            'type'          => $req['part'],
+            'code'          => $req['code'],
+            'c3tID'         => $req['c3tID'],
+            'clientID'      => $req['cID'],
+        ];
+        $this->db->table($this->tblc3)->where($where)->delete();
+        $data = [
+            'question'      => $req['arf'],
+            'type'          => $req['part'],
+            'code'          => $req['code'],
+            'c3tID'         => $req['c3tID'],
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID'],
+            'firmID'        => $req['fID'],
+            'status'        => 'Active',
+            'updated_on'    => $this->date.' '.$this->time
+        ];
+        if($this->db->table($this->tblc3)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
     
     /**
         ----------------------------------------------------------

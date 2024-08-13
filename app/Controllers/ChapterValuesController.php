@@ -1875,6 +1875,41 @@ class ChapterValuesController extends BaseController{
 
     }
 
+    
+    public function save311($code,$c3tID,$cID,$name){
+
+        $arf = [
+            'uqo'    => $this->request->getPost('uqo'),
+            'tops'    => $this->request->getPost('tops'),
+            'afsd'   => $this->request->getPost('afsd'),
+            'cf'   => $this->request->getPost('cf'),
+            'leg1'   => $this->request->getPost('leg1'),
+            'leg2'   => $this->request->getPost('leg2'),
+            'jurleg'   => $this->request->getPost('jurleg'),
+            'leg3'   => $this->request->getPost('leg3'),
+            'op1'   => $this->request->getPost('op1'),
+            'op2'   => $this->request->getPost('op2'),
+        ];
+        $req = [
+            'arf'  => json_encode($arf),
+            'code'  => $code,
+            'part'  => '311',
+            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
+            'uID'       => $this->crypt->decrypt(session()->get('userID')),
+            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+        ];
+        $res = $this->cvmodel->save311($req);
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+        }
+
+    }
+
 
     /**
         ----------------------------------------------------------

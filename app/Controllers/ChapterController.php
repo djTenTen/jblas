@@ -453,6 +453,8 @@ class ChapterController extends BaseController{
                 echo view('pdfc3/AA11-ad', $data);
                 break;   
             case '3.11':
+                $rdata          = $this->c3model->get311($code,$dc3tID);
+                $data['arf']    = json_decode($rdata['question'], true);
                 echo view('pdfc3/311', $data);
                 break;   
             case '3.12':
@@ -1061,6 +1063,8 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break;   
             case '3.11':
+                $rdata          = $this->cvmodel->get311($code,$dc3tID,$dcID);
+                $data['arf']    = json_decode($rdata['question'], true);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/311', $data);
                 echo view('includes/Footer');
@@ -1736,6 +1740,8 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break;   
             case '3.11':
+                $rdata          = $this->wpmodel->get311($code,$dc3tID,$dcID,$dwpID);
+                $data['arf']    = json_decode($rdata['question'], true);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/311', $data);
                 echo view('includes/Footer');

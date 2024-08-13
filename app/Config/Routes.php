@@ -168,6 +168,8 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
         $workp->post('saveab4/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::saveab4/$1/$2/$3/$4/$5');
         $workp->post('saveab1/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::saveab1/$1/$2/$3/$4/$5');
         $workp->post('saveaa5b/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::saveaa5b/$1/$2/$3/$4/$5');
+        $workp->post('save311/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::save311/$1/$2/$3/$4/$5');
+        
         
     });
     
@@ -255,6 +257,7 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
             $sd->post('saveaa11con/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa11con/$1/$2/$3/$4');
             $sd->post('saveaa11ad/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa11ad/$1/$2/$3/$4');
             $sd->post('saveaa11uead/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa11uead/$1/$2/$3/$4');
+            $sd->post('save311/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::save311/$1/$2/$3/$4');
             $sd->post('saveab3/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab3/$1/$2/$3/$4');
             $sd->post('saveab4a/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab4a/$1/$2/$3/$4');
             $sd->post('saveab4checklist/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab4checklist/$1/$2/$3/$4');
