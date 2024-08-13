@@ -217,7 +217,7 @@ $html .= '
             $html .= '
             <tr>
                 <td style="width: 7%;">23.</td>
-                <td style="width: 93%;"><b>We confirm receipt of your planning letter dated '.date('F d, Y', strtotime($aa4['num23d1'])).' and </b> we confirm receipt of your management letter dated '.date('F d, Y', strtotime($aa4['num23d1'])).'.<br></td>
+                <td style="width: 93%;"><b>We confirm receipt of your planning letter dated '.date('F d, Y', strtotime($aa4['num23d1'])).' and </b> we confirm receipt of your management letter dated '.date('F d, Y', strtotime($aa4['num23d2'])).'.<br></td>
             </tr>';
         }
         if($aa4['num23yes2'] != ''){

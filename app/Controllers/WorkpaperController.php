@@ -2066,6 +2066,68 @@ class WorkpaperController extends BaseController{
     
     /**
         ----------------------------------------------------------
+        AA4 FUNCTIONS
+        ----------------------------------------------------------
+        * @method saveaa4() used to save the data of aa4 file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the aa5b file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
+    public function saveaa4($code,$c3tID,$cID,$wpID,$name){
+
+        $aa4 = [
+            'leg1' => $this->request->getPost('leg1'),
+            'leg2' => $this->request->getPost('leg2'),
+            'isa' => $this->request->getPost('isa'),
+            'leg3' => $this->request->getPost('leg3'),
+            'num7' => $this->request->getPost('num7'),
+            'num10yes' => $this->request->getPost('num10yes'),
+            'num11yes' => $this->request->getPost('num11yes'),
+            'num11' => $this->request->getPost('num11'),
+            'num12yes' => $this->request->getPost('num12yes'),
+            'num12' => $this->request->getPost('num12'),
+            'num15' => $this->request->getPost('num15'),
+            'num16' => $this->request->getPost('num16'),
+            'num17' => $this->request->getPost('num17'),
+            'imp' => $this->request->getPost('imp'),
+            'num22yes1' => $this->request->getPost('num22yes1'),
+            'num221' => $this->request->getPost('num221'),
+            'num22yes2' => $this->request->getPost('num22yes2'),
+            'num222' => $this->request->getPost('num222'),
+            'num223' => $this->request->getPost('num223'),
+            'num224' => $this->request->getPost('num224'),
+            'num23yes1' => $this->request->getPost('num23yes1'),
+            'num23d1' => $this->request->getPost('num23d1'),
+            'num23d2' => $this->request->getPost('num23d2'),
+            'num23yes2' => $this->request->getPost('num23yes2'),
+            'num23d' => $this->request->getPost('num23d'),
+        ];
+
+        $req = [
+            'aa4'       => json_encode($aa4),
+            'code'      => $code,
+            'part'      => 'aa4',
+            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
+            'uID'       => $this->crypt->decrypt(session()->get('userID')),
+            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+        ];
+        $res = $this->wpmodel->saveaa4($req);
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
+        }
+
+    }
+
+    
+    /**
+        ----------------------------------------------------------
         AA5b FUNCTIONS
         ----------------------------------------------------------
         * @method saveaa5b() used to save the data of aa5b file
@@ -3232,6 +3294,7 @@ class WorkpaperController extends BaseController{
         $dc3tID         = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID));
         $data['cl']     = $this->wpmodel->getclientinfo($dwpID,$dcID);
         $data['fl']     = $this->wpmodel->getfileinfoc3($dwpID,$dcID,$dc3tID);
+        $data['firm']   = session()->get('firm');
         switch ($code) {
             case '3.1 Aa1':
                 $data['datapl']     = $this->wpmodel->getaa1('planning',$code,$dc3tID,$dcID,$dwpID);
@@ -3262,6 +3325,8 @@ class WorkpaperController extends BaseController{
                 echo view('workpaper/pdfc3/AA3B', $data);
                 break;
             case '3.5 Aa4':
+                $rdata          = $this->wpmodel->getaa4($code,$dc3tID,$dcID,$dwpID);
+                $data['aa4']    = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc3/AA4', $data);
                 break;
             case '3.6.1 Aa5a':

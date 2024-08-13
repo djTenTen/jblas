@@ -2688,6 +2688,44 @@ class WorkpaperModel extends  Model {
 
     }
 
+    /**
+        * @method saveaa4() save the aa4 information
+        * @param req aa4 data
+        * @var data contains aa3b information
+        * @return bool
+    */
+    public function saveaa4($req){
+
+        $where = [
+            'type'          => $req['part'],
+            'code'          => $req['code'],
+            'c3tID'         => $req['c3tID'],
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID']
+        ];
+        $stat = $this->db->table($this->tblc3)->where($where)->get()->getRowArray();
+        $this->db->table($this->tblc3)->where($where)->delete();
+        $data = [
+            'question'      => $req['aa4'],
+            'type'          => $req['part'],
+            'code'          => $req['code'],
+            'c3tID'         => $req['c3tID'],
+            'workpaper'     => $req['wpID'],
+            'clientID'      => $req['cID'],
+            'firmID'        => $req['fID'],
+            'status'        => $stat['status'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
+        ];
+        if($this->db->table($this->tblc3)->insert($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
     
     /**
         ----------------------------------------------------------
@@ -2742,8 +2780,8 @@ class WorkpaperModel extends  Model {
                 'recommendation'    => $req['recommendation'][$i],
                 'yesno'             => $req['yesno'][$i],
                 'result'            => $req['result'][$i],
-                'type'              =>  $req['part'],
-                'code'              =>  $req['code'],
+                'type'              => $req['part'],
+                'code'              => $req['code'],
                 'c3tID'             => $req['c3tID'],
                 'workpaper'         => $req['wpID'],
                 'clientID'          => $req['cID'],

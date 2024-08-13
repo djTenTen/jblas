@@ -58,9 +58,9 @@
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label class="small mb-1" for="leg1">1. We acknowledge, and have fulfilled, as directors, our collective responsibility under:</label>
-                                    <input class="form-control" id="leg1" type="text" placeholder="Insert legislation" name="leg1" value="<?= $aa4['leg1']?>" required/>
+                                    <input class="form-control" id="leg1" type="text" placeholder="Insert legislation" name="leg1" value="<?= $aa4['leg1']?>" />
                                     <label class="small mb-1" for="leg2">for presenting financial statements (in accordance with:</label>
-                                    <input class="form-control" id="leg2" type="text" placeholder="Insert legislation" name="leg2" value="<?= $aa4['leg2']?>" required/>
+                                    <input class="form-control" id="leg2" type="text" placeholder="Insert legislation" name="leg2" value="<?= $aa4['leg2']?>" />
                                     <label class="small mb-1" for="leg2"> and International Financial Reporting Standards), which give a true and fair view of the financial position of the company at the reporting date, and of its result for the period then ended, and for making accurate representations to you.  We confirm that we have approved the financial statements for the year ended [date]. </label>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label class="small mb-1" for="isa">2. We confirm that the accounting policies and estimation techniques:</label>
-                                    <input class="form-control" id="isa" type="text" value="<?= $aa4['isa']?>" placeholder="Insert including significant assumptions used to determine estimates measured at fair value" name="isa" required/>
+                                    <input class="form-control" id="isa" type="text" value="<?= $aa4['isa']?>" placeholder="Insert including significant assumptions used to determine estimates measured at fair value" name="isa" />
                                     <label class="small mb-1" for="isa">adopted for the preparation of the financial statements are the most appropriate to the circumstances in which the company operates.</label>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label class="small mb-1" for="leg3">3. Other than as disclosed in the financial statements, the company has not entered into any transactions involving directors, officers or other related parties, which require disclosure under:</label>
-                                    <input class="form-control" id="leg3" type="text" value="<?= $aa4['leg3']?>" placeholder="Insert legislation" name="leg3" required/>
+                                    <input class="form-control" id="leg3" type="text" value="<?= $aa4['leg3']?>" placeholder="Insert legislation" name="leg3" />
                                     <label class="small mb-1" for="leg3">adopted for the preparation of the financial statements are the most appropriate to the circumstances in which the company operates.</label>
                                 </div>
                             </div>
@@ -157,14 +157,14 @@
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label class="small mb-1" for="num15">15. The company has satisfactory title to all assets and there are no liens or encumbrances on the company’s assets:</label>
-                                    <input class="form-control" id="num15" type="text" value="<?= $aa4['num15']?>" placeholder="Enter except as disclosed in the notes to the financial statements" name="num15" required/>
+                                    <input class="form-control" id="num15" type="text" value="<?= $aa4['num15']?>" placeholder="Enter except as disclosed in the notes to the financial statements" name="num15" />
                                 </div>
                             </div>
                             <hr>
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label class="small mb-1" for="num16">16. We confirm that the functional currency of the company is:</label>
-                                    <input class="form-control" id="num16" type="text" value="<?= $aa4['num16']?>" placeholder="Enter Currency" name="num16" required/>
+                                    <input class="form-control" id="num16" type="text" value="<?= $aa4['num16']?>" placeholder="Enter Currency" name="num16" />
                                 </div>
                             </div>
                             <hr>
@@ -199,7 +199,7 @@
                                         <label class="form-check-label" for="num22yes1">22. We confirm that we have been notified by you that there are no matters which you are required to raise with us to comply with your profession’s ethical guidance which are in addition to the matters included in your planning letter to us dated </label>
                                     </div>
                                     <div class="form-check mb-2">
-                                        <input class="form-control" id="period" type="date" placeholder="Enter Currency" name="num221" value="<?php if($aa4['num22yes1'] != ''){echo $aa4['num221'];}?>" required/>
+                                        <input class="form-control" id="period" type="date" placeholder="Enter Currency" name="num221" value="<?php if($aa4['num22yes1'] != ''){echo $aa4['num221'];}?>" />
                                     </div>
 
                                     <div class="form-check mb-2">
@@ -224,14 +224,14 @@
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <div class="form-check mb-2">
-                                        <input class="form-check-input" id="num23yes1" type="checkbox" name="num23yes" value="num23yes1" <?php if($aa4['num23yes1'] != ''){echo 'checked';}?>/>
+                                        <input class="form-check-input" id="num23yes1" type="checkbox" name="num23yes1" value="num23yes1" <?php if($aa4['num23yes1'] != ''){echo 'checked';}?>/>
                                         <label class="form-check-label" for="num23yes1">23.	We confirm receipt of your planning letter dated [date1] and we confirm receipt of your management letter dated [date2].</label>
                                     </div>
                                     <div class="form-check mb-2">
                                         <label class="small mb-1" for="num23d1">Date1:</label>
-                                        <input class="form-control" id="num23d1" type="date" value="<?php if($aa4['num23yes1'] != ''){echo $aa4['num23d1'];}?>" placeholder="Enter Currency" name="num23d1" required/>
+                                        <input class="form-control" id="num23d1" type="date" value="<?php if($aa4['num23yes1'] != ''){echo $aa4['num23d1'];}?>" placeholder="Enter Currency" name="num23d1" />
                                         <label class="small mb-1" for="num23d2">Date2:</label>
-                                        <input class="form-control" id="num23d2" type="date" value="<?php if($aa4['num23yes1'] != ''){echo $aa4['num23d2'];}?>" placeholder="Enter Currency" name="num23d2" required/>
+                                        <input class="form-control" id="num23d2" type="date" value="<?php if($aa4['num23yes1'] != ''){echo $aa4['num23d2'];}?>" placeholder="Enter Currency" name="num23d2" />
                                     </div>
 
                                     <div class="form-check mb-2">
@@ -240,7 +240,7 @@
                                     </div>
                                     <div class="form-check mb-2">
                                         <label class="small mb-1" for="num23d">Date:</label>
-                                        <input class="form-control" id="num23d" type="date" value="<?php if($aa4['num23yes2'] != ''){echo $aa4['num23d'];}?>" placeholder="Enter Currency" name="num23d" required/>
+                                        <input class="form-control" id="num23d" type="date" value="<?php if($aa4['num23yes2'] != ''){echo $aa4['num23d'];}?>" placeholder="Enter Currency" name="num23d" />
                                     </div>
                                 </div>
                             </div>

@@ -1618,7 +1618,8 @@ class ChapterValuesModel extends Model{
             'clientID'      => $req['cID'],
             'firmID'        => $req['fID'],
             'status'        => 'Active',
-            'updated_on'    => $this->date.' '.$this->time
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'        => $req['uID'],
         ];
         if($this->db->table($this->tblc3d)->insert($data)){
             $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
