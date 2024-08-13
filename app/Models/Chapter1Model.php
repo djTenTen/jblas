@@ -71,39 +71,58 @@ class Chapter1Model extends Model{
 
     }
 
-    
+
     /**
         ----------------------------------------------------------
-        AC1 FUNCTIONS
+        CHAPTER 1 GET FUNCTIONS
         ----------------------------------------------------------
-        * @method getac1() get the ac1 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @var query result from database
+        * @method getvalues_m() get all the multi row data
+        * @param type type or part of the file
+        * @param code code of the file
+        * @param code id of the file
+        * @var where-array reference for the fetch
         * @return result-array
     */
-    public function getac1($code,$c1tID){
+    public function getvalues_m($type,$code,$ctID){
 
-        $query =  $this->db->table($this->tblc1)->where(array('code' => $code, 'type' => 'cacf', 'c1tID' => $c1tID))->get();
+        $where = [
+            'type' => $type, 
+            'code' => $code,
+            'c1tID' => $ctID
+        ];
+        $query =  $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
 
     }
 
     /**
-        * @method getac1eqr() get the ac1 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @var query result from database
+        * @method getvalues_s() get a single row data
+        * @param type type or part of the file
+        * @param code code of the file
+        * @param code id of the file
+        * @var where-array reference for the fetch
         * @return row-array
     */
-    public function getac1eqr($code,$c1tID){
+    public function getvalues_s($type,$code,$ctID){
 
-        $query =  $this->db->table($this->tblc1)->where(array('code' => $code, 'type' => 'eqr', 'c1tID' => $c1tID))->get();
-        return $query->getRowArray();
+        $where = [
+            'type' => $type, 
+            'code' => $code, 
+            'c1tID' => $ctID
+        ];
+        $query =  $this->db->table($this->tblc1)->where($where)->get();
+        return $query->getrowArray();
 
     }
 
+
+
+
+    
     /**
+        ----------------------------------------------------------
+        AC1 FUNCTIONS
+        ----------------------------------------------------------
         * @method saveac1() save the ac1 information
         * @param req ac1 data
         * @var data contains ac1 information
@@ -161,34 +180,6 @@ class Chapter1Model extends Model{
         ----------------------------------------------------------
         AC2 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac2() get the ac2 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @var query result from database
-        * @return result-array
-    */
-    public function getac2($code,$c1tID){
-
-        $query =  $this->db->table($this->tblc1)->where(array('code' => $code, 'type' => 'pans', 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getac2aep() get the ac2 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac2aep($code,$c1tID){
-
-        $query =  $this->db->table($this->tblc1)->where(array('code' => $code, 'type' => 'ac2aep', 'c1tID' => $c1tID))->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveac2() save the ac2 information
         * @param req ac2 data
         * @var data contains ac1 information
@@ -250,21 +241,6 @@ class Chapter1Model extends Model{
         ----------------------------------------------------------
         AC3 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac3() get the ac3 information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @var query result from database
-        * @return result-array
-    */
-    public function getac3($part,$code,$c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
         * @method saveac3() save the ac3 information
         * @param req ac3 data
         * @var data contains ac3 information
@@ -297,34 +273,6 @@ class Chapter1Model extends Model{
         ----------------------------------------------------------
         AC4 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac4ppr() get the ac4 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac4ppr($code,$c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'ppr', 'code' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
-        * @method getac4() get the ac4 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @var query result from database
-        * @return result-array
-    */
-    public function getac4($code,$c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'ac4sod', 'code' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
         * @method saveac4ppr() save the ac4 information
         * @param req ac4 data
         * @var data contains ac4 information
@@ -381,20 +329,6 @@ class Chapter1Model extends Model{
         ----------------------------------------------------------
         AC5 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac5() get the ac5 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac5($code,$c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'rescon', 'code' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveac5() save the ac5 information
         * @param req ac5 data
         * @var data contains ac5 information
@@ -425,35 +359,6 @@ class Chapter1Model extends Model{
         ----------------------------------------------------------
         AC6 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac6() get the ac6 information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @var query result from database
-        * @return result-array
-    */
-    public function getac6($part,$code,$c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method gets12() get the ac6 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @var query result from database
-        * @return row-array
-    */
-    public function gets12($code,$c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'ac6s12', 'code' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveac6ra() save the ac6 information
         * @param req ac6 data
         * @var data contains ac6 information
@@ -492,8 +397,8 @@ class Chapter1Model extends Model{
         $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'], 'c1tID' => $req['c1tID']))->delete();
         $data = [
             'question'      => $req['section'],
-            'type'          =>  $req['part'],
-            'code'          =>  $req['code'],
+            'type'          => $req['part'],
+            'code'          => $req['code'],
             'c1tID'         => $req['c1tID'],
             'status'        => 'Active',
             'updated_on'    => $this->date.' '.$this->time
@@ -543,21 +448,6 @@ class Chapter1Model extends Model{
         ----------------------------------------------------------
         AC7 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac7() get the ac7 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param part specifies the part of the file
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac7($code,$c1tID,$part){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveac7() save the ac7 information
         * @param req ac7 data
         * @var data contains ac7 information
@@ -568,8 +458,8 @@ class Chapter1Model extends Model{
         $this->db->table($this->tblc1)->where(array('type' => $req['part'], 'code' => $req['code'],'c1tID' => $req['c1tID']))->delete();
         $data = [
             'question'      => $req['genyn'],
-            'type'          =>  $req['part'],
-            'code'          =>  $req['code'],
+            'type'          => $req['part'],
+            'code'          => $req['code'],
             'c1tID'         => $req['c1tID'],
             'updated_on'    => $this->date.' '.$this->time
         ];
@@ -587,21 +477,6 @@ class Chapter1Model extends Model{
         ----------------------------------------------------------
         AC8 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac8() get the ac8 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param part specifies the part of the file
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac8($code,$c1tID,$part){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveac8() save the ac8 information
         * @param req ac8 data
         * @var dacid decrypted chapter id
@@ -628,20 +503,6 @@ class Chapter1Model extends Model{
         ----------------------------------------------------------
         AC9 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac9data() get the ac9 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac9data($code,$c1tID){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => 'ac9data', 'code' => $code, 'c1tID' => $c1tID))->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveac9() save the ac9 information
         * @param req ac9 data
         * @var data contains ac9 information
@@ -677,38 +538,16 @@ class Chapter1Model extends Model{
         * @var query result from database
         * @return result-array
     */
-    public function getac10s1data($c1tID,$part){
+    public function getac10data($part,$code,$c1tID,$section){
 
-        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => 'ac10','question' => 'section1', 'c1tID' => $c1tID))->get();
+        $where = [
+            'type' => $part,
+            'code' => $code,
+            'c1tID' => $c1tID,
+            'question' => $section,
+        ];
+        $query = $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getac10s2data() get the ac10 information
-        * @param c1tID chapter 1 title id
-        * @param part specifies the part of the file
-        * @var query result from database
-        * @return result-array
-    */
-    public function getac10s2data($c1tID,$part){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => 'ac10','question' => 'section2', 'c1tID' => $c1tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getac10cu() get the ac10 information
-        * @param c1tID chapter 1 title id
-        * @param part specifies the part of the file
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac10cu($c1tID,$part){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => 'ac10', 'c1tID' => $c1tID))->get();
-        return $query->getRowArray();
 
     }
 
@@ -740,21 +579,6 @@ class Chapter1Model extends Model{
         return $cu['question'] - $total['balance'];
 
     }
-
-    /**
-        * @method getsummarydata() get the ac10 information
-        * @param c1tID chapter 1 title id
-        * @param part specifies the part of the file
-        * @var query result from database
-        * @return row-array
-    */
-    public function getsummarydata($c1tID,$part){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => $part.'data', 'code' => 'ac10', 'c1tID' => $c1tID))->get();
-        return $query->getRowArray();
-
-    }
-
 
     /**
         * @method saveac10summ() save the ac10 information

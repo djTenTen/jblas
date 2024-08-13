@@ -72,39 +72,39 @@ class ChapterController extends BaseController{
         $dc1tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID));
         switch ($code) {
             case 'AC1':
-                $data['ac1'] = $this->c1model->getac1($code,$dc1tID);
-                $rdata = $this->c1model->getac1eqr($code,$dc1tID);
-                $data['eqr'] = json_decode($rdata['question'], true);
+                $data['ac1']  = $this->c1model->getvalues_m('cacf',$code,$dc1tID);
+                $rdata        = $this->c1model->getvalues_s('eqr',$code,$dc1tID);
+                $data['eqr']  = json_decode($rdata['question'], true);
                 echo view('pdfc1/AC1', $data);
                 break;
             case 'AC2':
-                $data['ac2'] = $this->c1model->getac2($code,$dc1tID);
-                $data['aep'] = $this->c1model->getac2aep($code,$dc1tID);
+                $data['ac2'] = $this->c1model->getvalues_m('pans',$code,$dc1tID);
+                $data['aep'] = $this->c1model->getvalues_s('ac2aep',$code,$dc1tID);
                 echo view('pdfc1/AC2', $data);
                 break;
             case 'AC3':
-                $data['ac3genmat'] = $this->c1model->getac3('genmat',$code,$dc1tID);
-                $data['ac3doccors'] = $this->c1model->getac3('doccors',$code,$dc1tID);
-                $data['ac3statutory'] = $this->c1model->getac3('statutory',$code,$dc1tID);
-                $data['ac3accsys'] = $this->c1model->getac3('accsys',$code,$dc1tID);
+                $data['ac3genmat']      = $this->c1model->getvalues_m('genmat',$code,$dc1tID);
+                $data['ac3doccors']     = $this->c1model->getvalues_m('doccors',$code,$dc1tID);
+                $data['ac3statutory']   = $this->c1model->getvalues_m('statutory',$code,$dc1tID);
+                $data['ac3accsys']      = $this->c1model->getvalues_m('accsys',$code,$dc1tID);
                 echo view('pdfc1/AC3', $data);
                 break;
             case 'AC4':
-                $data['ac4'] = $this->c1model->getac4($code,$dc1tID);
-                $rdata = $this->c1model->getac4ppr($code,$dc1tID);
-                $data['ppr'] = json_decode($rdata['question'], true);
+                $data['ac4']  = $this->c1model->getvalues_m('ac4sod',$code,$dc1tID);
+                $rdata        = $this->c1model->getvalues_s('ppr',$code,$dc1tID);
+                $data['ppr']  = json_decode($rdata['question'], true);
                 echo view('pdfc1/AC4', $data);
                 break;
             case 'AC5':
-                $rdata = $this->c1model->getac5($code,$dc1tID);
-                $data['rc'] = json_decode($rdata['question'], true);
+                $rdata       = $this->c1model->getvalues_s('rescon',$code,$dc1tID);
+                $data['rc']  = json_decode($rdata['question'], true);
                 echo view('pdfc1/AC5', $data);
                 break;
             case 'AC6':
-                $data['ac6']    = $this->c1model->getac6('ac6ra',$code,$dc1tID);
-                $rdata          = $this->c1model->gets12($code,$dc1tID);
-                $data['s']      = json_decode($rdata['question'], true);
-                $data['s3']     = $this->c1model->getac6('ac6s3',$code,$dc1tID);
+                $data['ac6']   = $this->c1model->getvalues_m('ac6ra',$code,$dc1tID);
+                $rdata         = $this->c1model->getvalues_s('ac6s12',$code,$dc1tID);
+                $data['s']     = json_decode($rdata['question'], true);
+                $data['s3']    = $this->c1model->getvalues_m('ac6s3',$code,$dc1tID);
                 echo view('pdfc1/AC6', $data);
                 break;
             case 'AC7':
@@ -113,8 +113,8 @@ class ChapterController extends BaseController{
                     'roidata','dcodata','prdata','oadata'
                 ];
                 foreach($rowdata as $row){
-                    $rdata = $this->c1model->getac7($code,$dc1tID, $row);
-                    $data[$row] = json_decode($rdata['question'], true);
+                    $rdata       = $this->c1model->getvalues_s($row,$code,$dc1tID);
+                    $data[$row]  = json_decode($rdata['question'], true);
                 }
                 echo view('pdfc1/AC7', $data);
                 break;
@@ -126,13 +126,13 @@ class ChapterController extends BaseController{
                     'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
                 ];
                 foreach($rowdata as $row){
-                    $data[$row] = $this->c1model->getac8($code,$dc1tID,$row);
+                    $data[$row] = $this->c1model->getvalues_s($row,$code,$dc1tID);
                 }
                 echo view('pdfc1/AC8', $data);
                 break;
             case 'AC9':
-                $rdata = $this->c1model->getac9data($code,$dc1tID);
-                $data['ac9'] = json_decode($rdata['question'], true);
+                $rdata        = $this->c1model->getvalues_s('ac9data',$code,$dc1tID);
+                $data['ac9']  = json_decode($rdata['question'], true);
                 echo view('pdfc1/AC9', $data);
                 break;
             case 'AC10-Tangibles':
@@ -151,9 +151,9 @@ class ChapterController extends BaseController{
                 $s = explode('-', $code);
                 $data ['sheet']  = $s[1];
                 $data['code']    = $s[0];
-                $data['cu']      = $this->c1model->getac10cu($dc1tID,$s[1].'cu');
-                $data['ac10s1']  = $this->c1model->getac10s1data($dc1tID,$s[1]);
-                $data['ac10s2']  = $this->c1model->getac10s2data($dc1tID,$s[1]);
+                $data['cu']      = $this->c1model->getvalues_s($s[1].'cu',$s[0],$dc1tID);
+                $data['ac10s1']  = $this->c1model->getac10data($s[1],$s[0],$dc1tID,'section1');
+                $data['ac10s2']  = $this->c1model->getac10data($s[1],$s[0],$dc1tID,'section2');
                 echo view('pdfc1/AC10', $data);
                 break;
             case 'AC10-Summary':
@@ -186,16 +186,16 @@ class ChapterController extends BaseController{
                 $data['vop_rev']    = $this->c1model->getsumation($dc1tID,'Revenue');
                 $data['vop_cst']    = $this->c1model->getsumation($dc1tID,'Costs');
                 $data['vop_pr']     = $this->c1model->getsumation($dc1tID,'Payroll');
-                $data['mat']        = $this->c1model->getsummarydata($dc1tID,'material');
+                $data['mat']        = $this->c1model->getvalues_s('material',$s[0],$dc1tID);
                 $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
                 foreach($rowdata as $row){
-                    $rdata = $this->c1model->getsummarydata($dc1tID, $row);
-                    $data[$row] = json_decode($rdata['question'], true);
+                    $rdata       = $this->c1model->getvalues_s($row.'data',$s[0],$dc1tID);
+                    $data[$row]  = json_decode($rdata['question'], true);
                 }
                 echo view('pdfc1/AC10Summ', $data);
                 break;
             case 'AC11':
-                $rdata = $this->c1model->getac11data($code,$dc1tID);
+                $rdata = $this->c1model->getvalues_s('ac11data',$code,$dc1tID);
                 $data['ac11'] = json_decode($rdata['question'], true);
                 echo view('pdfc1/AC11', $data);
                 break;
