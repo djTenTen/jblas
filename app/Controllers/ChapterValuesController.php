@@ -59,10 +59,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac1($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -93,10 +93,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac1eqr($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -127,10 +127,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac2($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -156,10 +156,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac2aep($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -187,10 +187,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac3($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -222,10 +222,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac4ppr($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -249,10 +249,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac4($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -284,10 +284,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac5($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -316,10 +316,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac6ra($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -349,10 +349,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac6s12($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -378,7 +378,7 @@ class ChapterValuesController extends BaseController{
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
         $req = [
             'financialstatement'        => $this->request->getPost('financialstatement'),
@@ -398,10 +398,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac6s3($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -454,10 +454,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac7($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -485,10 +485,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac8($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -555,10 +555,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac9($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -836,10 +836,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac10summ($req,$ref);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
         
     }
@@ -860,7 +860,7 @@ class ChapterValuesController extends BaseController{
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
         $req = [
             'less'      => $this->request->getPost('less'),
@@ -876,10 +876,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac10s1($req);
         if($res){
             session()->setFlashdata('success_registration','success_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_registration','failed_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -905,10 +905,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac10cu($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -929,7 +929,7 @@ class ChapterValuesController extends BaseController{
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
         $req = [
             'less'      => $this->request->getPost('less'),
@@ -946,10 +946,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac10s2($req);
         if($res){
             session()->setFlashdata('success_registration','success_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_registration','failed_registration');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1020,10 +1020,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveac11($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1060,10 +1060,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->savequestions($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1088,10 +1088,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaicpppa($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1117,10 +1117,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->savercicp($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1155,10 +1155,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveplaf($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1193,10 +1193,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa1s3($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1234,10 +1234,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa2($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1265,10 +1265,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa3a($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1294,10 +1294,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa3afaf($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1322,10 +1322,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa3air($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1353,10 +1353,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa3b($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1386,10 +1386,71 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa3bp4($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+        }
+
+    }
+
+
+    /**
+        ----------------------------------------------------------
+        AA4 FUNCTIONS
+        ----------------------------------------------------------
+        * @method saveaa4() used to save the data of aa4 file
+        * @var validationRules set to validate the data before saving to database
+        * @var array-req consist the aa5b file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
+    public function saveaa4($code,$c3tID,$cID,$name){
+
+        $aa4 = [
+            'leg1' => $this->request->getPost('leg1'),
+            'leg2' => $this->request->getPost('leg2'),
+            'isa' => $this->request->getPost('isa'),
+            'leg3' => $this->request->getPost('leg3'),
+            'num7' => $this->request->getPost('num7'),
+            'num10yes' => $this->request->getPost('num10yes'),
+            'num11yes' => $this->request->getPost('num11yes'),
+            'num11' => $this->request->getPost('num11'),
+            'num12yes' => $this->request->getPost('num12yes'),
+            'num12' => $this->request->getPost('num12'),
+            'num15' => $this->request->getPost('num15'),
+            'num16' => $this->request->getPost('num16'),
+            'num17' => $this->request->getPost('num17'),
+            'imp' => $this->request->getPost('imp'),
+            'num22yes1' => $this->request->getPost('num22yes1'),
+            'num221' => $this->request->getPost('num221'),
+            'num22yes2' => $this->request->getPost('num22yes2'),
+            'num222' => $this->request->getPost('num222'),
+            'num223' => $this->request->getPost('num223'),
+            'num224' => $this->request->getPost('num224'),
+            'num23yes1' => $this->request->getPost('num23yes1'),
+            'num23d1' => $this->request->getPost('num23d1'),
+            'num23d2' => $this->request->getPost('num23d2'),
+            'num23yes2' => $this->request->getPost('num23yes2'),
+            'num23d' => $this->request->getPost('num23d'),
+        ];
+
+        $req = [
+            'aa4'       => json_encode($aa4),
+            'code'      => $code,
+            'part'      => 'aa4',
+            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
+            'uID'                   => $this->crypt->decrypt(session()->get('userID')),
+            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+        ];
+        $res = $this->cvmodel->saveaa4($req);
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1412,7 +1473,7 @@ class ChapterValuesController extends BaseController{
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
         $req = [
             'reference'             => $this->request->getPost('reference'),
@@ -1431,10 +1492,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa5b($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1457,7 +1518,7 @@ class ChapterValuesController extends BaseController{
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
         $req = [
             'reference'         => $this->request->getPost('reference'),
@@ -1475,10 +1536,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa7isa($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('failed_update','failed_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1503,10 +1564,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa7aepapp($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1542,10 +1603,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa7aep($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1579,10 +1640,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa10($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1617,10 +1678,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa11un($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1651,10 +1712,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa11ad($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1685,10 +1746,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa11ue($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1772,10 +1833,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa11con($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1806,10 +1867,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveaa11ue($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1838,10 +1899,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveab1($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1885,10 +1946,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveab3($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1917,10 +1978,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveab4($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1964,10 +2025,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveab4checklist($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }
@@ -1996,10 +2057,10 @@ class ChapterValuesController extends BaseController{
         $res = $this->cvmodel->saveab4a($req);
         if($res){
             session()->setFlashdata('success_update','success_update');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }

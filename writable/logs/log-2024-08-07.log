@@ -100,3 +100,15 @@ INFO - 2024-08-07 21:07:33 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-08-07 21:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-08-07 21:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-08-07 21:08:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-07 21:47:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-07 21:47:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-07 21:47:20 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-07 21:47:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-07 21:47:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

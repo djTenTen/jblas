@@ -152,6 +152,7 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
         $workp->post('saveaa3air/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::saveaa3air/$1/$2/$3/$4/$5');
         $workp->post('saveaa3b/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::saveaa3b/$1/$2/$3/$4/$5');
         $workp->post('saveaa3bp4/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::saveaa3bp4/$1/$2/$3/$4/$5');
+        $workp->post('saveaa4/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::saveaa4/$1/$2/$3/$4/$5');
         $workp->post('saveaa7aepapp/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::saveaa7aepapp/$1/$2/$3/$4/$5');
         $workp->post('saveaa7isa/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::saveaa7isa/$1/$2/$3/$4/$5');
         $workp->post('saveaa7aep/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::saveaa7aep/$1/$2/$3/$4/$5');
@@ -172,27 +173,27 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
     
     $auth->group('', ['filter' => 'client'], function ($client) {
 
-        $client->group('', ['filter' => 'client_cl'], function ($cl) {
+        $client->group('client', ['filter' => 'client_cl'], function ($cl) {
             /**
                 ----------------------------------------------------------
                 CLIENT MANAGEMENT
                 ----------------------------------------------------------
             */
-            $cl->get('client', 'ClientController::viewclient');
-            $cl->post('client/save', 'ClientController::addclient');
-            $cl->get('client/edit/(:any)', 'ClientController::editclient/$1');
-            $cl->post('client/update/(:any)', 'ClientController::updateclient/$1');
-            $cl->post('client/acin/(:any)', 'ClientController::acin/$1');
+            $cl->get('', 'ClientController::viewclient');
+            $cl->post('save', 'ClientController::addclient');
+            $cl->get('edit/(:any)', 'ClientController::editclient/$1');
+            $cl->post('update/(:any)', 'ClientController::updateclient/$1');
+            $cl->post('acin/(:any)', 'ClientController::acin/$1');
         });
             
-        $client->group('', ['filter' => 'client_sd'], function ($sd) {
+        $client->group('client', ['filter' => 'client_sd'], function ($sd) {
 
-            $sd->get('client/set', 'ClientController::viewclientset');
-            $sd->get('client/files/(:any)/(:any)', 'ClientController::viewfiles/$1/$2');
-            $sd->post('client/setfiles/(:any)/(:any)', 'ClientController::setfiles/$1/$2');
-            $sd->post('client/removefiles/(:any)/(:any)', 'ClientController::removefiles/$1/$2');
-            $sd->get('client/defaultfiles/(:any)/', 'ClientController::getdefaultfiles/$1');
-            $sd->get('client/getfiles/(:any)/(:any)', 'ClientController::getfiles/$1/$2');
+            $sd->get('set', 'ClientController::viewclientset');
+            $sd->get('files/(:any)/(:any)', 'ClientController::viewfiles/$1/$2');
+            $sd->post('setfiles/(:any)/(:any)', 'ClientController::setfiles/$1/$2');
+            $sd->post('removefiles/(:any)/(:any)', 'ClientController::removefiles/$1/$2');
+            $sd->get('defaultfiles/(:any)/', 'ClientController::getdefaultfiles/$1');
+            $sd->get('getfiles/(:any)/(:any)', 'ClientController::getfiles/$1/$2');
             /**
             Client set default value AREA
             */
@@ -244,6 +245,7 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
             $sd->post('saveaa3air/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa3air/$1/$2/$3/$4');
             $sd->post('saveaa3b/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa3b/$1/$2/$3/$4');
             $sd->post('saveaa3bp4/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa3bp4/$1/$2/$3/$4');
+            $sd->post('saveaa4/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa4/$1/$2/$3/$4');
             $sd->post('saveaa7aepapp/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa7aepapp/$1/$2/$3/$4');
             $sd->post('saveaa7isa/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa7isa/$1/$2/$3/$4');
             $sd->post('saveaa7aep/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa7aep/$1/$2/$3/$4');

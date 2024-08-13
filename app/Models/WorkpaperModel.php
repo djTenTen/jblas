@@ -2662,6 +2662,32 @@ class WorkpaperModel extends  Model {
 
     }
 
+
+    /**
+        ----------------------------------------------------------
+        AA4 FUNCTIONS
+        ----------------------------------------------------------
+        * @method getaa4() get the aa4 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return row-array
+    */
+    public function getaa4($code,$c3tID,$dcID,$dwpID){
+
+        $where = [
+            'type' => 'aa4',
+            'code' => $code,
+            'c3tID' => $c3tID,
+            'clientID'  => $dcID,
+            'workpaper' => $dwpID
+        ];
+        $query = $this->db->table($this->tblc3)->where($where)->get();
+        return $query->getRowArray();
+
+    }
+
     
     /**
         ----------------------------------------------------------

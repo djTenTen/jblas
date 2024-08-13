@@ -1570,6 +1570,64 @@ class ChapterValuesModel extends Model{
 
     }
 
+
+    /**
+        ----------------------------------------------------------
+        AA4 FUNCTIONS
+        ----------------------------------------------------------
+        * @method getaa4() get the aa4 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return result-array
+    */
+    public function getaa4($code,$c3tID,$dcID){
+
+        $where = [
+            'type'          => 'aa4',
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID
+        ];
+        $query = $this->db->table($this->tblc3d)->where($where)->get();
+        return $query->getRowArray();
+
+    }
+
+    /**
+        * @method saveaa4() save the aa4 information
+        * @param req aa4 data
+        * @var data contains aa3b information
+        * @return bool
+    */
+    public function saveaa4($req){
+
+        $where = [
+            'type'          => $req['part'],
+            'code'          => $req['code'],
+            'c3tID'         => $req['c3tID'],
+            'clientID'      => $req['cID']
+        ];
+        $this->db->table($this->tblc3d)->where($where)->delete();
+        $data = [
+            'question'      => $req['aa4'],
+            'type'          => $req['part'],
+            'code'          => $req['code'],
+            'c3tID'         => $req['c3tID'],
+            'clientID'      => $req['cID'],
+            'firmID'        => $req['fID'],
+            'status'        => 'Active',
+            'updated_on'    => $this->date.' '.$this->time
+        ];
+        if($this->db->table($this->tblc3d)->insert($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
+            return true;
+        }else{
+            return false;
+        }
+
+    }
     
     /**
         ----------------------------------------------------------
@@ -1621,8 +1679,8 @@ class ChapterValuesModel extends Model{
                 'recommendation'    => $req['recommendation'][$i],
                 'yesno'             => $req['yesno'][$i],
                 'result'            => $req['result'][$i],
-                'type'              =>  $req['part'],
-                'code'              =>  $req['code'],
+                'type'              => $req['part'],
+                'code'              => $req['code'],
                 'c3tID'             => $req['c3tID'],
                 'clientID'          => $req['cID'],
                 'firmID'            => $req['fID'],

@@ -401,6 +401,25 @@ class Chapter3Model extends Model{
 
     /**
         ----------------------------------------------------------
+        AA4 FUNCTIONS
+        ----------------------------------------------------------
+        * @method getaa4() get the aa4 information
+        * @param part specifies the part of the file
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return result-array
+    */
+    public function getaa4($code,$c3tID){
+
+        $query = $this->db->table($this->tblc3)->where(array('type' => 'aa4', 'code' => $code, 'c3tID' => $c3tID))->get();
+        return $query->getRowArray();
+
+    }
+
+
+    /**
+        ----------------------------------------------------------
         AA5b FUNCTIONS
         ----------------------------------------------------------
         * @method getaa5b() get the aa5b information

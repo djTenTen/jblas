@@ -82,15 +82,15 @@ $html .= '
     <tbody>
         <tr>
             <td style="width: 7%;">1.</td>
-            <td style="width: 93%;"><b>We acknowledge, and have fulfilled, as directors, our collective responsibility under [insert legislation] for presenting financial statements (in accordance with [insert legislation] and International Financial Reporting Standards), which give a true and fair view of the financial position of the company at the reporting date, and of its result for the period then ended, and for making accurate representations to you.  We confirm that we have approved the financial statements for the year ended [date].</b> <br></td>
+            <td style="width: 93%;"><b>We acknowledge, and have fulfilled, as directors, our collective responsibility under '.$aa4['leg1'].' for presenting financial statements (in accordance with '.$aa4['leg2'].' and International Financial Reporting Standards), which give a true and fair view of the financial position of the company at the reporting date, and of its result for the period then ended, and for making accurate representations to you.  We confirm that we have approved the financial statements for the year ended [date].</b> <br></td>
         </tr>
         <tr>
             <td style="width: 7%;">2.</td>
-            <td style="width: 93%;"><b>We confirm that the accounting policies and estimation techniques [, including significant assumptions used to determine estimates measured at fair value,] adopted for the preparation of the financial statements are the most appropriate to the circumstances in which the company operates.</b> <br></td>
+            <td style="width: 93%;"><b>We confirm that the accounting policies and estimation techniques '.$aa4['isa'].' adopted for the preparation of the financial statements are the most appropriate to the circumstances in which the company operates.</b> <br></td>
         </tr>
         <tr>
             <td style="width: 7%;">3.</td>
-            <td style="width: 93%;"><b>Other than as disclosed in the financial statements, the company has not entered into any transactions involving directors, officers or other related parties, which require disclosure under [insert legislation] or International Financial Reporting Standards.  Appropriate disclosure has been made of the control of the company.</b><br></td>
+            <td style="width: 93%;"><b>Other than as disclosed in the financial statements, the company has not entered into any transactions involving directors, officers or other related parties, which require disclosure under '.$aa4['leg3'].' or International Financial Reporting Standards.  Appropriate disclosure has been made of the control of the company.</b><br></td>
         </tr>
         <tr>
             <td style="width: 7%;">4.</td>
@@ -106,7 +106,7 @@ $html .= '
         </tr>
         <tr>
             <td style="width: 7%;">7.</td>
-            <td style="width: 93%;"><b>We confirm that we have considered the unadjusted errors advised to us by you as appended to this letter.  It is our view that the cost of making these adjustments to the financial statements outweighs any benefits that will be gained by the users of the financial statements.  The combined effect of the unadjusted errors is not material and we do not consider that their absence from the financial statements affects the true and fair view given.</b> <br> <i>[or]</i> <br> We confirm that we have been notified by you that either no unadjusted or only clearly trivial errors were identified during the audit.<br></td>
+            <td style="width: 93%;"><b>'.$aa4['num7'].'</b><br></td>
         </tr>
         <tr>
             <td style="width: 7%;">8.</td>
@@ -115,26 +115,40 @@ $html .= '
         <tr>
             <td style="width: 7%;">9.</td>
             <td style="width: 93%;">We confirm we have no plans or intentions that may materially affect the carrying value or classification of any assets and liabilities reflected in the financial statements. <br></td>
-        </tr>
-        <tr>
-            <td style="width: 7%;">10.</td>
-            <td style="width: 93%;">With regard to the defined benefit pension plan, we are satisfied that:
-                <ul>
-                    <li>the actuarial assumptions underlying the valuation are consistent with our knowledge of the business;</li>
-                    <li>all significant retirement benefits have been identified and properly accounted for; and</li>
-                    <li>all settlements and curtailments have been identified and properly accounted for.</li>
-                </ul>
-                <br>
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 7%;">11.</td>
-            <td style="width: 93%;">[Where there has been a prior period adjustment as a result of a material error, and comparative information has been restated, a specific representation is required (ISA 710.9).]<br></td>
-        </tr>
-        <tr>
-            <td style="width: 7%;">12.</td>
-            <td style="width: 93%;">[Add any additional representations related to new or revised accounting standards that are being implemented for the first time that have a material impact on financial statements].<br><br> <b>Information provided:</b> <br><br></td>
-        </tr>
+        </tr>';
+
+        if($aa4['num10yes'] != ''){
+            $html .= '
+            <tr>
+                <td style="width: 7%;">10.</td>
+                <td style="width: 93%;">
+                
+                With regard to the defined benefit pension plan, we are satisfied that:
+                    <ul>
+                        <li>the actuarial assumptions underlying the valuation are consistent with our knowledge of the business;</li>
+                        <li>all significant retirement benefits have been identified and properly accounted for; and</li>
+                        <li>all settlements and curtailments have been identified and properly accounted for.</li>
+                    </ul>
+                    <br>
+                </td>
+            </tr>';
+        }
+        if($aa4['num11yes'] != ''){
+            $html .= '
+            <tr>
+                <td style="width: 7%;">11.</td>
+                <td style="width: 93%;">'.$aa4['num11'].'<br></td>
+            </tr>';
+        }
+
+        if($aa4['num12yes'] != ''){
+            $html .= '
+            <tr>
+                <td style="width: 7%;">12.</td>
+                <td style="width: 93%;">'.$aa4['num12'].'<br></td>
+            </tr>';
+        }
+        $html .= '
         <tr>
             <td style="width: 7%;">13.</td>
             <td style="width: 93%;"><b>All the accounting records have been made available to you for the purpose of your audit and all the transactions undertaken by the company have been properly reflected and recorded in the accounting records.  We have provided to you all other information requested and given unrestricted access to persons within the entity from whom you have deemed it necessary to speak to.  All other records and relevant information, including minutes of all management and shareholders\' meetings, have been made available to you.</b><br></td>
@@ -145,19 +159,19 @@ $html .= '
         </tr>
         <tr>
             <td style="width: 7%;">15.</td>
-            <td style="width: 93%;">The company has satisfactory title to all assets and there are no liens or encumbrances on the company’s assets [except as disclosed in the notes to the financial statements].<br></td>
+            <td style="width: 93%;">The company has satisfactory title to all assets and there are no liens or encumbrances on the company’s assets '.$aa4['num15'].'.<br></td>
         </tr>
         <tr>
             <td style="width: 7%;">16.</td>
-            <td style="width: 93%;">We confirm that the functional currency of the company is [insert currency].<br></td>
+            <td style="width: 93%;">We confirm that the functional currency of the company is '.$aa4['num16'].'.<br></td>
         </tr>
         <tr>
             <td style="width: 7%;">17.</td>
-            <td style="width: 93%;">Where investment properties are carried at cost in a portfolio which is valued on a fair value basis or there are unlisted investments (other than investments in subsidiaries, associates and joint ventures) that have been carried at historic cost, we confirm that a reliable estimate of fair value cannot be established for the following reasons [reasons].<br></td>
+            <td style="width: 93%;">Where investment properties are carried at cost in a portfolio which is valued on a fair value basis or there are unlisted investments (other than investments in subsidiaries, associates and joint ventures) that have been carried at historic cost, we confirm that a reliable estimate of fair value cannot be established for the following reasons '.$aa4['num17'].'.<br></td>
         </tr>
         <tr>
             <td style="width: 7%;">18.</td>
-            <td style="width: 93%;">We confirm that we have reviewed all material items of property, plant and equipment and intangible fixed assets and we have assessed the reasonableness of their useful economic lives and residual values.  We have also reviewed all material items of property, plant and equipment, intangible fixed assets and investments (other than those carried at fair value) and consider that [no impairment review was necessary, as there were no indication of impairment / an impairment review was necessary and the results of this review have been provided to you].<br></td>
+            <td style="width: 93%;">We confirm that we have reviewed all material items of property, plant and equipment and intangible fixed assets and we have assessed the reasonableness of their useful economic lives and residual values.  We have also reviewed all material items of property, plant and equipment, intangible fixed assets and investments (other than those carried at fair value) and consider that '.$aa4['imp'].'.<br></td>
         </tr>
         <tr>
             <td style="width: 7%;">19.</td>
@@ -170,25 +184,51 @@ $html .= '
         <tr>
             <td style="width: 7%;">21.</td>
             <td style="width: 93%;"><b>We are unaware of any breaches or possible breaches of statute, regulations, contracts,</b> agreements or the company\'s constitution <b>which might result in the company suffering significant penalties or other loss.</b>  No allegations of such irregularities or breaches have come to our notice.<br></td>
-        </tr>
-        <tr>
-            <td style="width: 7%;">22.</td>
-            <td style="width: 93%;"><b>22.	We confirm that we have been notified by you that there are no matters which you are required to raise with us to comply with your profession’s ethical guidance which are in addition to the matters included in your planning letter to us dated [date].</b> 
-                <br> <i>[or]</i> <br>We confirm that you have notified to us the following matters, which are additional to the matters raised in your planning letter which you are required to raise with us to comply with your profession’s ethical guidance:
-                <ul>
-                    <li><b>[List additional non-audit services now provided];</b></li>
-                    <li><b>[List any change to the member of informed management]; and</b></li>
-                    <li><b>[List any change to interests held in the client’s shares].</b></li>
-                </ul>
-                <br>
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 7%;">23.</td>
-            <td style="width: 93%;"><b>We confirm receipt of your planning letter dated [date] and </b> we confirm receipt of your management letter dated [date].
-                <br> <i>[or]</i> <br><b>We confirm receipt of your planning letter dated [date] and</b> <p>we confirm that we have been notified by you that there are no matters of governance interest (which include deficiencies in internal control, comments regarding accounting policies, estimation techniques and financial statement disclosure, and details of significant difficulties during the audit fieldwork) which you wish to draw to our attention.</p><br>
-            </td>
-        </tr>
+        </tr>';
+
+        if($aa4['num22yes1'] != ''){
+            $html .= '
+            <tr>
+                <td style="width: 7%;">22.</td>
+                <td style="width: 93%;"><b>We confirm that we have been notified by you that there are no matters which you are required to raise with us to comply with your profession’s ethical guidance which are in addition to the matters included in your planning letter to us dated '.date('F d, Y', strtotime($aa4['num221'])).'.</b> <br></td>
+            </tr>
+            ';
+        }
+
+        if($aa4['num22yes2'] != ''){
+            if($aa4['num222'] != ''){$a = $aa4['num222'];}else{$a = '';}
+            if($aa4['num223'] != ''){$b = $aa4['num223'];}else{$b = '';}
+            if($aa4['num224'] != ''){$c = $aa4['num224'];}else{$c = '';}
+            $html .= '
+            <tr>
+                <td style="width: 7%;">22.</td>
+                <td style="width: 93%;"><b>We confirm that you have notified to us the following matters, which are additional to the matters raised in your planning letter which you are required to raise with us to comply with your profession’s ethical guidance:</b>
+                    <ul>
+                        <li><b>'.$a.'</b></li>
+                        <li><b>'.$b.'; and</b></li>
+                        <li><b>'.$c.'.</b></li>
+                    </ul><br>
+                </td>
+            </tr>
+            ';
+        }
+
+        if($aa4['num23yes1'] != ''){
+            $html .= '
+            <tr>
+                <td style="width: 7%;">23.</td>
+                <td style="width: 93%;"><b>We confirm receipt of your planning letter dated '.date('F d, Y', strtotime($aa4['num23d1'])).' and </b> we confirm receipt of your management letter dated '.date('F d, Y', strtotime($aa4['num23d1'])).'.<br></td>
+            </tr>';
+        }
+        if($aa4['num23yes2'] != ''){
+            $html .= '
+            <tr>
+                <td style="width: 7%;">23.</td>
+                <td style="width: 93%;"><b>We confirm receipt of your planning letter dated '.date('F d, Y', strtotime($aa4['num23d'])).' and</b> we confirm that we have been notified by you that there are no matters of governance interest (which include deficiencies in internal control, comments regarding accounting policies, estimation techniques and financial statement disclosure, and details of significant difficulties during the audit fieldwork) which you wish to draw to our attention.<br></td>
+            </tr>';
+        }
+
+        $html .='
     </tbody>
 </table>
 <p>Yours faithfully <br><br></p>

@@ -194,7 +194,7 @@ class WorkpaperController extends BaseController{
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/workpaper/initiate'));
+            return redirect()->to(site_url('auditsystem/wp/initiate'));
         }
         $req = [
             'client'        => $this->crypt->decrypt($this->request->getPost('client')),
@@ -210,13 +210,13 @@ class WorkpaperController extends BaseController{
         $res = $this->wpmodel->saveworkpaper($req);
         if($res == "exist"){
             session()->setFlashdata('exist','exist');
-            return redirect()->to(site_url('auditsystem/workpaper/initiate'));
+            return redirect()->to(site_url('auditsystem/wp/initiate'));
         }elseif($res == "added"){
             session()->setFlashdata('added','added');
-            return redirect()->to(site_url('auditsystem/workpaper/initiate'));
+            return redirect()->to(site_url('auditsystem/wp/initiate'));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/workpaper/initiate'));
+            return redirect()->to(site_url('auditsystem/wp/initiate'));
         }
 
     }
