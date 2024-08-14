@@ -48,25 +48,33 @@ class ChapterValuesModel extends Model{
     }
 
 
+    
+
+
+
+
+
+
+
     /**
         ----------------------------------------------------------
-        CHAPTER 1
-        AC1 FUNCTIONS
+        CHAPTER 1 GET FUNCTIONS
         ----------------------------------------------------------
-        * @method getac1() get the ac1 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @var array-where reference data
-        * @var query result from database
+        * @method getvalues_m() get all the multi row data
+        * @param type type or part of the file
+        * @param code code of the file
+        * @param ctID id of the file
+        * @param cID id of the client
+        * @var where-array reference for the fetch
         * @return result-array
     */
-    public function getac1($code,$c1tID,$dcID){
+    public function getvalues_mc1($type,$code,$ctID,$cID){
 
         $where = [
-            'code'      => $code, 
-            'type'      => 'cacf',
-            'c1tID'     => $c1tID,
-            'clientID'  => $dcID
+            'type'      => $type, 
+            'code'      => $code,
+            'c1tID'     => $ctID,
+            'clientID'  => $cID
         ];
         $query =  $this->db->table($this->tblc1d)->where($where)->get();
         return $query->getResultArray();
@@ -74,28 +82,83 @@ class ChapterValuesModel extends Model{
     }
 
     /**
-        * @method getac1eqr() get the ac1 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
+        * @method getvalues_s() get a single row data
+        * @param type type or part of the file
+        * @param code code of the file
+        * @param ctID id of the file
+        * @param cID id of the client
+        * @var where-array reference for the fetch
         * @return row-array
     */
-    public function getac1eqr($code,$c1tID,$dcID){
-        
+    public function getvalues_sc1($type,$code,$ctID,$cID){
+
         $where = [
-            'code'      => $code, 
-            'type'      => 'eqr', 
-            'c1tID'     => $c1tID, 
-            'clientID'  => $dcID
+            'type'      => $type, 
+            'code'      => $code,
+            'c1tID'     => $ctID,
+            'clientID'  => $cID
         ];
         $query =  $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getRowArray();
+        return $query->getrowArray();
 
     }
 
     /**
+        ----------------------------------------------------------
+        AC10 FUNCTIONS
+        ----------------------------------------------------------
+        * @method getac10s1data() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @var query result from database
+        * @return result-array
+    */
+    public function getac10data($part,$code,$c1tID,$cID,$section){
+
+        $where = [
+            'type' => $part,
+            'code' => $code,
+            'c1tID' => $c1tID,
+            'clientID'  => $cID,
+            'question' => $section,
+        ];
+        $query = $this->db->table($this->tblc1d)->where($where)->get();
+        return $query->getResultArray();
+
+    }
+
+    /**
+        * @method getdatacount() get the ac10 information
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @var query result from database
+        * @return integer
+    */
+    public function getdatacount($c1tID,$part,$cID){
+
+        $query = $this->db->table($this->tblc1d)->where(array('type' => $part, 'code' => 'ac10', 'c1tID' => $c1tID, 'clientID'  => $cID));
+        return $query->countAllResults();
+
+    }
+
+    /**
+        * @method getsumation() Count/Compute the balances
+        * @param c1tID chapter 1 title id
+        * @param part specifies the part of the file
+        * @var total result from database
+        * @return integer
+    */
+    public function getsumation($c1tID,$part,$cID){
+
+        $total = $this->db->table($this->tblc1d)->selectSum('balance')->where(array('type' => $part, 'code' => 'ac10', 'c1tID' => $c1tID, 'clientID'  => $cID))->get()->getRowArray();
+        $cu = $this->db->table($this->tblc1d)->where(array('type' => $part.'cu', 'code' => 'ac10', 'c1tID' => $c1tID))->get()->getRowArray();
+        return $cu['question'] - $total['balance'];
+
+    }
+    /**
+        ----------------------------------------------------------
+        CHAPTER 1 POST FUNCTIONS
+        ----------------------------------------------------------
         * @method saveac1() save the ac1 information
         * @param req ac1 data
         * @var acid decrypted chapter id
@@ -143,55 +206,10 @@ class ChapterValuesModel extends Model{
 
     }
 
-
     /**
         ----------------------------------------------------------
         AC2 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac2() get the ac2 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getac2($code,$c1tID,$dcID){
-
-        $where = [
-            'code'      => $code, 
-            'type'      => 'pans',
-            'c1tID'     => $c1tID, 
-            'clientID'  => $dcID
-        ];
-        $query =  $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getac2aep() get the ac2 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac2aep($code,$c1tID,$dcID){
-
-        $where = [
-            'code'      => $code, 
-            'type'      => 'ac2aep',
-            'c1tID'     => $c1tID, 
-            'clientID'  => $dcID
-        ];
-        $query =  $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveac2() save the ac2 information
         * @param req ac2 data
         * @var acid decrypted chapter id
@@ -243,34 +261,10 @@ class ChapterValuesModel extends Model{
 
     }
 
-    
     /**
         ----------------------------------------------------------
         AC3 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac3() get the ac3 information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getac3($part,$code,$c1tID,$dcID){
-
-        $where = [
-            'code'      => $code, 
-            'type'      => $part,
-            'c1tID'     => $c1tID, 
-            'clientID'  => $dcID
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
         * @method saveac3() save the ac3 information
         * @param req ac3 data
         * @var acid decrypted chapter id
@@ -294,55 +288,10 @@ class ChapterValuesModel extends Model{
 
     }
 
-    
     /**
         ----------------------------------------------------------
         AC4 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac4ppr() get the ac4 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac4ppr($code,$c1tID,$dcID){
-
-        $where = [
-            'code'      => $code, 
-            'type'      => 'ppr',
-            'c1tID'     => $c1tID, 
-            'clientID'  => $dcID
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
-        * @method getac4() get the ac4 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getac4($code,$c1tID,$dcID){
-
-        $where = [
-            'code'      => $code, 
-            'type'      => 'ac4sod',
-            'c1tID'     => $c1tID, 
-            'clientID'  => $dcID
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
         * @method saveac4ppr() save the ac4 information
         * @param req ac4 data
         * @var acid decrypted chapter id
@@ -389,33 +338,10 @@ class ChapterValuesModel extends Model{
 
     }
 
-    
     /**
         ----------------------------------------------------------
         AC5 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac5() get the ac5 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac5($code,$c1tID,$dcID){
-
-        $where = [
-            'code'          => $code, 
-            'type'          => 'rescon',
-            'c1tID'         => $c1tID, 
-            'clientID'      => $dcID
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where )->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveac5() save the ac5 information
         * @param req ac5 data
         * @var acid decrypted chapter id
@@ -439,56 +365,10 @@ class ChapterValuesModel extends Model{
 
     }
 
-    
     /**
         ----------------------------------------------------------
         AC6 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac6() get the ac6 information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getac6($part,$code,$c1tID,$dcID){
-
-        $where = [
-            'code'          => $code, 
-            'type'          => $part,
-            'c1tID'         => $c1tID, 
-            'clientID'      => $dcID
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method gets12() get the ac6 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function gets12($code,$c1tID,$dcID){
-
-        $where = [
-            'code'          => $code, 
-            'type'          => 'ac6s12',
-            'c1tID'         => $c1tID, 
-            'clientID'      => $dcID
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveac6ra() save the ac6 information
         * @param req ac6 data
         * @var acid decrypted chapter id
@@ -578,34 +458,10 @@ class ChapterValuesModel extends Model{
 
     }
 
-    
     /**
         ----------------------------------------------------------
         AC7 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac7() get the ac7 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param part specifies the part of the file
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac7($code,$c1tID,$part,$dcID){
-
-        $where = [
-            'type'          => $part, 
-            'code'          => $code, 
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveac7() save the ac7 information
         * @param req ac7 data
         * @var data contains ac7 information
@@ -633,34 +489,10 @@ class ChapterValuesModel extends Model{
 
     }
 
-    
     /**
         ----------------------------------------------------------
         AC8 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac8() get the ac8 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param part specifies the part of the file
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac8($code,$c1tID,$part,$dcID){
-
-        $where = [
-            'type'      => $part, 
-            'code'      => $code, 
-            'c1tID'     => $c1tID,
-            'clientID'  => $dcID,
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveac8() save the ac8 information
         * @param req ac8 data
         * @var dacid decrypted chapter id
@@ -683,33 +515,10 @@ class ChapterValuesModel extends Model{
 
     }
 
-    
     /**
         ----------------------------------------------------------
         AC9 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac9data() get the ac9 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac9data($code,$c1tID,$dcID){
-
-        $where = [
-            'type'          => 'ac9data', 
-            'code'          => $code, 
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveac9() save the ac9 information
         * @param req ac9 data
         * @var dacid decrypted chapter id
@@ -733,7 +542,6 @@ class ChapterValuesModel extends Model{
 
     }
 
-    
     /**
         ----------------------------------------------------------
         AC10 FUNCTIONS
@@ -744,184 +552,8 @@ class ChapterValuesModel extends Model{
         * @param dcID decrypted client id
         * @var array-where reference data
         * @var query result from database
-        * @return result-array
-    */
-    public function getac10s1data($c1tID,$part,$dcID){
-
-        $where = [
-            'type'          => $part, 
-            'code'          => 'ac10', 
-            'question'      => 'section1',
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getac10s2data() get the ac10 information
-        * @param c1tID chapter 1 title id
-        * @param part specifies the part of the file
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getac10s2data($c1tID,$part,$dcID){
-
-        $where = [
-            'type'          => $part, 
-            'code'          => 'ac10', 
-            'question'      => 'section2',
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getac10cu() get the ac10 information
-        * @param c1tID chapter 1 title id
-        * @param part specifies the part of the file
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac10cu($c1tID,$part,$dcID){
-
-        $where = [
-            'type'          => $part, 
-            'code'          => 'ac10', 
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
-        * @method getdatacount() get the ac10 information
-        * @param c1tID chapter 1 title id
-        * @param part specifies the part of the file
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return integer
-    */
-    public function getdatacount($c1tID,$part,$dcID){
-
-        $where = [
-            'type'          => $part, 
-            'code'          => 'ac10', 
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where);
-        return $query->countAllResults();
-
-    }
-
-    /**
-        * @method getdatacount() get the ac10 information
-        * @param c1tID chapter 1 title id
-        * @param part specifies the part of the file
-        * @param dcID decrypted client id
-        * @var array-where1-where2 reference data
-        * @var query result from database
-        * @return integer
-    */
-    public function getsumation($c1tID,$part,$dcID){
-
-        $where1 = [
-            'type'          => $part, 
-            'code'          => 'ac10', 
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-        ];
-        $where2 = [
-            'type'          => $part.'cu', 
-            'code'          => 'ac10', 
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-        ];
-        $total = $this->db->table($this->tblc1d)->selectSum('balance')->where($where1)->get()->getRowArray();
-        $cu = $this->db->table($this->tblc1d)->where($where2)->get()->getRowArray();
-        return $cu['question'] - $total['balance'];
-
-    }
-
-    /**
-        * @method getsummarydata() get the ac10 information
-        * @param c1tID chapter 1 title id
-        * @param part specifies the part of the file
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getsummarydata($c1tID,$part,$dcID){
-
-        $where = [
-            'type'          => $part.'data', 
-            'code'          => 'ac10', 
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
-        * @method saveac10summ() save the ac10 information
-        * @param req ac10 data
-        * @param ref ac10 reference
-        * @var data contains ac10 information
-        * @var where1-where2 update reference on client files
-        * @return bool
-    */
-    public function saveac10summ($req,$ref){
-
-        foreach ($req as $r => $val){
-            $data = [
-                'question'      => $val,
-                'type'          =>  $r.'data',
-                'updated_on'    => $this->date.' '.$this->time,
-                'updated_by'    => $ref['uID'],
-            ];
-            $where1 = [
-                'type'          => $r.'data',
-                'code'          => $ref['code'],
-                'c1tID'         => $ref['c1tID'],
-                'clientID'      =>$ref['cID'],
-            ];
-            $this->db->table($this->tblc1d)->where($where1)->update($data);
-        }
-        $where2 = [
-            'type'          => 'materialdata',
-            'code'          => $ref['code'],
-            'c1tID'         => $ref['c1tID'],
-            'clientID'      =>$ref['cID'],
-        ];
-        $this->db->table($this->tblc1d)->where($where2)->update(array('question' => $ref['materiality']));
-        $this->logs->log(session()->get('name'). " set a default value on a client file AC10 Chapter 1");
-        return true;
-
-    }
-
-    /**
-        * @method saves1ac10() save the ac10 information
-        * @param req ac10 data
-        * @var where update reference on client files
-        * @var data contains ac10 information
-        * @return bool
-    */
+    **/
+   
     public function saveac10s1($req){
 
         $where = [
@@ -1016,33 +648,10 @@ class ChapterValuesModel extends Model{
         
     }
 
-
     /**
         ----------------------------------------------------------
         AC11 FUNCTIONS
         ----------------------------------------------------------
-        * @method getac11data() get the ac11 information
-        * @param code contains file codes
-        * @param c1tID chapter 1 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getac11data($code,$c1tID,$dcID){
-
-        $where = [
-            'type'          => 'ac11data',
-            'code'          => $code,
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc1d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveac11() save the ac10 information
         * @param req ac10 data
         * @var dacid decrypted chapter id
@@ -1067,76 +676,73 @@ class ChapterValuesModel extends Model{
     }
 
 
-    /**
-        ----------------------------------------------------------
-        CHAPTER 2 FUNCTIONS
-        ----------------------------------------------------------
-        * @method getquestionsdata() get the chapter 2 data information
-        * @param code contains file codes
-        * @param c2tID chapter 2 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getquestionsdata($code,$c2tID,$dcID){
 
-        $where = [
-            'type'          => $code,
-            'code'          => $code,
-            'c2tID'         => $c2tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc2d)->where($where)->get();
-        return $query->getResultArray();
 
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
-        * @method getquestionsaicpppa() get the chapter 2 data information
-        * @param code contains file codes
-        * @param c2tID chapter 2 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
+        ----------------------------------------------------------
+        CHAPTER 2 GET FUNCTIONS
+        ----------------------------------------------------------
+        * @method getvalues_m() get all the multi row data
+        * @param type type or part of the file
+        * @param code code of the file
+        * @param ctID id of the file
+        * @param cID id of the client
+        * @var where-array reference for the fetch
         * @return result-array
     */
-    public function getquestionsaicpppa($code,$c2tID,$dcID){
+    public function getvalues_mc2($type,$code,$ctID,$cID){
 
         $where = [
-            'type'      => 'aicpppa',
+            'type'      => $type, 
             'code'      => $code,
-            'c2tID'     => $c2tID,
-            'clientID'  => $dcID,
+            'c2tID'     => $ctID,
+            'clientID'  => $cID
         ];
-        $query = $this->db->table($this->tblc2d)->where($where)->get();
+        $query =  $this->db->table($this->tblc2d)->where($where)->get();
         return $query->getResultArray();
 
     }
 
     /**
-        * @method getquestionsrcicp() get the chapter 2 data information
-        * @param code contains file codes
-        * @param c2tID chapter 2 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
+        * @method getvalues_s() get a single row data
+        * @param type type or part of the file
+        * @param code code of the file
+        * @param ctID id of the file
+        * @param cID id of the client
+        * @var where-array reference for the fetch
+        * @return row-array
     */
-    public function getquestionsrcicp($code,$c2tID,$dcID){
+    public function getvalues_sc2($type,$code,$ctID,$cID){
 
         $where = [
-            'type'          => 'rcicp',
-            'code'          => $code,
-            'c2tID'         => $c2tID,
-            'clientID'      => $dcID,
+            'type'      => $type, 
+            'code'      => $code,
+            'c2tID'     => $ctID,
+            'clientID'  => $cID
         ];
-        $query = $this->db->table($this->tblc2d)->where($where)->get();
-        return $query->getResultArray();
+        $query =  $this->db->table($this->tblc2d)->where($where)->get();
+        return $query->getrowArray();
 
     }
-   
     /**
+        ----------------------------------------------------------
+        CHAPTER 2 POST FUNCTIONS
+        ----------------------------------------------------------
         * @method savequestions() save the chapter 2
         * @param req chapter 2
         * @var dacid decrypted chapter id
@@ -1208,56 +814,70 @@ class ChapterValuesModel extends Model{
 
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
         ----------------------------------------------------------
-        CHAPTER 3
-        AA1 FUNCTIONS
+        CHAPTER 3 GET FUNCTIONS
         ----------------------------------------------------------
-        * @method getaa1() get the aa1 information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
+        * @method getvalues_m() get all the multi row data
+        * @param type type or part of the file
+        * @param code code of the file
+        * @param ctID id of the file
+        * @param cID id of the client
+        * @var where-array reference for the fetch
         * @return result-array
     */
-    public function getaa1($part,$code,$c3tID,$dcID){
+    public function getvalues_mc3($type,$code,$ctID,$cID){
 
         $where = [
-            'type'      => $part,
+            'type'      => $type, 
             'code'      => $code,
-            'c3tID'     => $c3tID,
-            'clientID'  => $dcID,
+            'c3tID'     => $ctID,
+            'clientID'  => $cID
         ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
+        $query =  $this->db->table($this->tblc3d)->where($where)->get();
         return $query->getResultArray();
 
     }
 
     /**
-        * @method getaa1s3() save the aa1 information
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
+        * @method getvalues_s() get a single row data
+        * @param type type or part of the file
+        * @param code code of the file
+        * @param ctID id of the file
+        * @param cID id of the client
+        * @var where-array reference for the fetch
         * @return row-array
     */
-    public function getaa1s3($code,$c3tID,$dcID){
+    public function getvalues_sc3($type,$code,$ctID,$cID){
 
         $where = [
-            'type'          => 'section3',
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID,
+            'type'      => $type, 
+            'code'      => $code,
+            'c3tID'     => $ctID,
+            'clientID'  => $cID
         ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getRowArray();
+        $query =  $this->db->table($this->tblc3d)->where($where)->get();
+        return $query->getrowArray();
 
     }
-   
+
     /**
+        ----------------------------------------------------------
+        CHAPTER 3 POST FUNCTIONS
+        ----------------------------------------------------------
         * @method savequestions() save the aa1 information
         * @param req aa1 data
         * @var dacid decrypted chapter id
@@ -1310,28 +930,6 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         AA2 FUNCTIONS
         ----------------------------------------------------------
-        * @method getaa2data() get the aa2 information
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getaa2data($code,$c3tID,$dcID){
-
-        $where = [
-            'type'          => 'aa2',
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-   
-    /**
         * @method saveaa2() save the aa2 information
         * @param req aa2 data
         * @var dacid decrypted chapter id
@@ -1359,51 +957,6 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         AA3a FUNCTIONS
         ----------------------------------------------------------
-        * @method getaa3() get the aa3a information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getaa3($part,$code,$c3tID,$dcID){
-
-        $where = [
-            'type'          => $part,
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getaa3air() get the aa3a information
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getaa3air($code,$c3tID,$dcID){
-
-        $where = [
-            'type'          => 'ir',
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveaa3a() save the aa3a information
         * @param req aa3a data
         * @var dacid decrypted chapter id
@@ -1479,51 +1032,6 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         AA3b FUNCTIONS
         ----------------------------------------------------------
-        * @method getaa3b() get the aa3b information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getaa3b($part,$code,$c3tID,$dcID){
-
-        $where = [
-            'type'          => $part,
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getaa3bp4() get the aa3b information
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getaa3bp4($code,$c3tID,$dcID){
-
-        $where = [
-            'type'          => 'p4',
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveaa3b() save the aa3b information
         * @param req aa3b data
         * @var dacid decrypted chapter id
@@ -1575,27 +1083,6 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         AA4 FUNCTIONS
         ----------------------------------------------------------
-        * @method getaa4() get the aa4 information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @var query result from database
-        * @return result-array
-    */
-    public function getaa4($code,$c3tID,$dcID){
-
-        $where = [
-            'type'          => 'aa4',
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveaa4() save the aa4 information
         * @param req aa4 data
         * @var data contains aa3b information
@@ -1609,19 +1096,12 @@ class ChapterValuesModel extends Model{
             'c3tID'         => $req['c3tID'],
             'clientID'      => $req['cID']
         ];
-        $this->db->table($this->tblc3d)->where($where)->delete();
         $data = [
             'question'      => $req['aa4'],
-            'type'          => $req['part'],
-            'code'          => $req['code'],
-            'c3tID'         => $req['c3tID'],
-            'clientID'      => $req['cID'],
-            'firmID'        => $req['fID'],
-            'status'        => 'Active',
             'updated_on'    => $this->date.' '.$this->time,
             'updated_by'        => $req['uID'],
         ];
-        if($this->db->table($this->tblc3d)->insert($data)){
+        if($this->db->table($this->tblc3d)->where($where)->update($data)){
             $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
             return true;
         }else{
@@ -1634,29 +1114,6 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         AA5b FUNCTIONS
         ----------------------------------------------------------
-        * @method getaa5b() get the aa5b information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getaa5b($code,$c3tID,$dcID){
-
-        $where = [
-            'type'          => 'aa5b',
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
         * @method saveaa5b() save the aa5b information
         * @param req aa5b data
         * @var array-where reference data
@@ -1701,52 +1158,6 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         AA7 FUNCTIONS
         ----------------------------------------------------------
-        * @method getaa7() get the aa7 information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getaa7($part,$code,$c3tID,$dcID){
-
-        $where = [
-            'type'      => $part,
-            'code'      => $code,
-            'c3tID'     => $c3tID,
-            'clientID'  => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getaa7aep() get the aa7 information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getaa7aep($part,$code,$c3tID,$dcID){
-
-        $where = [
-            'type'      => $part,
-            'code'      => $code,
-            'c3tID'     => $c3tID,
-            'clientID'  => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveaa7isa() save the aa7 information
         * @param req aa7 data
         * @var array-where reference data
@@ -1837,28 +1248,6 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         AA10 FUNCTIONS
         ----------------------------------------------------------
-        * @method getaa10() get the aa10 information
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getaa10($code,$c3tID,$dcID){
-
-        $where = [
-            'type'          => 'aa10',
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveaa10() save the aa10 information
         * @param req aa10 data
         * @var dacid decrypted chapter id
@@ -1887,75 +1276,6 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         AA11 FUNCTIONS
         ----------------------------------------------------------
-        * @method getaa11p2() get the aa11 information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getaa11p2($part,$code,$c3tID,$dcID){
-
-        $where = [
-            'type'          => $part,
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getaa11p() get the aa11 information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getaa11p($part,$code,$c3tID,$dcID){
-
-        $where = [
-            'type'          => $part,
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
-        * @method getaa11con() get the aa11 information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getaa11con($part,$code,$c3tID,$dcID){
-
-        $where = [
-            'type'          => $part,
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveaa11un() save the aa11 information
         * @param req aa11 data
         * @var array-where reference data
@@ -2089,27 +1409,7 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         311 FUNCTIONS
         ----------------------------------------------------------
-        * @method getab1() get the ab1 information
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
     */
-    public function get311($code,$c3tID,$dcID){
-
-        $where = [
-            'type'      => '311',
-            'code'      => $code,
-            'c3tID'     => $c3tID,
-            'clientID'  => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
     public function save311($req){
 
         $where = [
@@ -2118,18 +1418,12 @@ class ChapterValuesModel extends Model{
             'c3tID'     => $req['c3tID'],
             'clientID'  => $req['cID'],
         ];
-        $this->db->table($this->tblc3d)->where($where)->delete();
         $data = [
             'question'      => $req['arf'],
-            'type'          => $req['part'],
-            'code'          => $req['code'],
-            'c3tID'         => $req['c3tID'],
-            'clientID'      => $req['cID'],
-            'firmID'        => $req['fID'],
-            'status'        => 'Active',
-            'updated_on'    => $this->date.' '.$this->time
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
         ];
-        if($this->db->table($this->tblc3d)->insert($data)){
+        if($this->db->table($this->tblc3d)->where($where)->update($data)){
             $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
             return true;
         }else{
@@ -2143,28 +1437,6 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         AB1 FUNCTIONS
         ----------------------------------------------------------
-        * @method getab1() get the ab1 information
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getab1($code,$c3tID,$dcID){
-
-        $where = [
-            'type'      => 'ab1',
-            'code'      => $code,
-            'c3tID'     => $c3tID,
-            'clientID'  => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
         * @method saveab1() save the ab1 information
         * @param req ab1 data
         * @var dacid decrypted chapter id
@@ -2193,28 +1465,6 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         AB3 FUNCTIONS
         ----------------------------------------------------------
-        * @method getab3() get the ab1 information
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return row-array
-    */
-    public function getab3($code,$c3tID,$dcID){
-
-        $where = [
-            'type'          => 'ab3',
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveab3() save the ab3 information
         * @param req ab3 data
         * @var dacid decrypted chapter id
@@ -2243,52 +1493,6 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         AB4 FUNCTIONS
         ----------------------------------------------------------
-        * @method getab4() get the ab4 information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getab4($part,$code,$c3tID,$dcID){
-        
-        $where = [
-            'type'          => $part,
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getab4checklist() get the ab4 information
-        * @param part specifies the part of the file
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getab4checklist($part,$code,$c3tID,$dcID){
-
-        $where = [
-            'type'          => $part,
-            'code'          => $code,
-            'c3tID'         => $c3tID,
-            'clientID'      => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getRowArray();
-
-    }
-
-    /**
         * @method saveab4() save the ab4 information
         * @param req ab4 data
         * @var dacid decrypted chapter id
@@ -2340,28 +1544,6 @@ class ChapterValuesModel extends Model{
         ----------------------------------------------------------
         AB4a,b,c,d,e,f,g,h FUNCTIONS
         ----------------------------------------------------------
-        * @method getab4a() get the ab4a information
-        * @param code contains file codes
-        * @param c3tID chapter 3 title id
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-        * @return result-array
-    */
-    public function getab4a($part,$code,$c3tID,$dcID){
-
-        $where = [
-            'type'      => $part,
-            'code'      => $code,
-            'c3tID'     => $c3tID,
-            'clientID'  => $dcID,
-        ];
-        $query = $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
         * @method saveab4csaveab4ahecklist() save the ab4a information
         * @param req ab4a data
         * @var dacid decrypted chapter id
