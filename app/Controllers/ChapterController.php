@@ -374,35 +374,35 @@ class ChapterController extends BaseController{
         $dc3tID         = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID));
         switch ($code) {
             case '3.1 Aa1':
-                $data['datapl'] = $this->c3model->getaa1('planning',$code,$dc3tID);
-                $data['dataaf'] = $this->c3model->getaa1('audit finalisation',$code,$dc3tID);
-                $rdata = $this->c3model->getaa1s3($code, $dc3tID);
-                $data['s3'] = json_decode($rdata['question'], true);
+                $data['datapl'] = $this->c3model->getvalues_m('planning',$code,$dc3tID);
+                $data['dataaf'] = $this->c3model->getvalues_m('audit finalisation',$code,$dc3tID);
+                $rdata          = $this->c3model->getvalues_s('section3',$code, $dc3tID);
+                $data['s3']     = json_decode($rdata['question'], true);
                 echo view('pdfc3/AA1', $data);
                 break;
             case '3.2 Aa2':
-                $rdata = $this->c3model->getaa2data($code, $dc3tID);
-                $data['aa2'] = json_decode($rdata['question'], true);
+                $rdata          = $this->c3model->getvalues_s('aa2',$code, $dc3tID);
+                $data['aa2']    = json_decode($rdata['question'], true);
                 echo view('pdfc3/AA2', $data);
                 break;
             case '3.3 Aa3a':
-                $data['cr']     = $this->c3model->getaa3('cr',$code,$dc3tID);
-                $data['dc']     = $this->c3model->getaa3('dc',$code,$dc3tID);
-                $data['faf']    = $this->c3model->getaa3('faf',$code,$dc3tID);
-                $data['ir']     = $this->c3model->getaa3air($code,$dc3tID);
+                $data['cr']     = $this->c3model->getvalues_m('cr',$code,$dc3tID);
+                $data['dc']     = $this->c3model->getvalues_m('dc',$code,$dc3tID);
+                $data['faf']    = $this->c3model->getvalues_m('faf',$code,$dc3tID);
+                $data['ir']     = $this->c3model->getvalues_s('ir',$code,$dc3tID);
                 echo view('pdfc3/AA3A', $data);
                 break;
             case '3.4 Aa3b':
-                $data['bp1']    = $this->c3model->getaa3b('p1',$code,$dc3tID);
-                $data['bp2']    = $this->c3model->getaa3b('p2',$code,$dc3tID);
-                $data['bp3a']   = $this->c3model->getaa3b('p3a',$code,$dc3tID);
-                $data['bp3b']   = $this->c3model->getaa3b('p3b',$code,$dc3tID);
-                $rdata          = $this->c3model->getaa3bp4($code,$dc3tID);
+                $data['bp1']    = $this->c3model->getvalues_m('p1',$code,$dc3tID);
+                $data['bp2']    = $this->c3model->getvalues_m('p2',$code,$dc3tID);
+                $data['bp3a']   = $this->c3model->getvalues_m('p3a',$code,$dc3tID);
+                $data['bp3b']   = $this->c3model->getvalues_m('p3b',$code,$dc3tID);
+                $rdata          = $this->c3model->getvalues_s('p4',$code,$dc3tID);
                 $data['bp4']    = json_decode($rdata['question'], true);
                 echo view('pdfc3/AA3B', $data);
                 break;
             case '3.5 Aa4':
-                $rdata          = $this->c3model->getaa4($code,$dc3tID);
+                $rdata          = $this->c3model->getvalues_s('aa4',$code,$dc3tID);
                 $data['aa4']    = json_decode($rdata['question'], true);
                 echo view('pdfc3/AA4', $data);
                 break;
@@ -410,24 +410,24 @@ class ChapterController extends BaseController{
                 echo view('pdfc3/AA5A', $data);
                 break;
             case '3.6.2 Aa5b':
-                $data['aa5b'] = $this->c3model->getaa5b($code,$dc3tID);
+                $data['aa5b'] = $this->c3model->getvalues_m('aa5b',$code,$dc3tID);
                 echo view('pdfc3/AA5B', $data);
                 break;  
             case '3.7 Aa7':
-                $data['aa7']    = $this->c3model->getaa7('isa315',$code,$dc3tID);
-                $data['cons']   = $this->c3model->getaa7('consultation',$code,$dc3tID);
-                $data['inc']    = $this->c3model->getaa7('inconsistencies',$code,$dc3tID);
-                $data['ref']    = $this->c3model->getaa7('refusal',$code,$dc3tID);
-                $data['dep']    = $this->c3model->getaa7('departures',$code,$dc3tID);
-                $data['oth']    = $this->c3model->getaa7('other',$code,$dc3tID);
-                $data['aepapp'] = $this->c3model->getaa7aep('aepapp',$code,$dc3tID);
-                $rdata          = $this->c3model->getaa7aep('aep',$code,$dc3tID);
+                $data['aa7']    = $this->c3model->getvalues_m('isa315',$code,$dc3tID);
+                $data['cons']   = $this->c3model->getvalues_m('consultation',$code,$dc3tID);
+                $data['inc']    = $this->c3model->getvalues_m('inconsistencies',$code,$dc3tID);
+                $data['ref']    = $this->c3model->getvalues_m('refusal',$code,$dc3tID);
+                $data['dep']    = $this->c3model->getvalues_m('departures',$code,$dc3tID);
+                $data['oth']    = $this->c3model->getvalues_m('other',$code,$dc3tID);
+                $data['aepapp'] = $this->c3model->getvalues_s('aepapp',$code,$dc3tID);
+                $rdata          = $this->c3model->getvalues_s('aep',$code,$dc3tID);
                 $data['aep']    = json_decode($rdata['question'], true);
                 echo view('pdfc3/AA7', $data);
                 break;
             case '3.8 Aa10':
-                $rdata = $this->c3model->getaa10($code,$dc3tID);
-                $data['aa10'] = json_decode($rdata['question'], true);
+                $rdata          = $this->c3model->getvalues_s('aa10',$code,$dc3tID);
+                $data['aa10']   = json_decode($rdata['question'], true);
                 echo view('pdfc3/AA10', $data);
                 break;
             case '3.9':
@@ -435,25 +435,24 @@ class ChapterController extends BaseController{
                 break;
             case '3.10 Aa11-un':
                 $s = explode('-', $code);
-                $data['aef']    = $this->c3model->getaa11p2('aef',$s[0],$dc3tID);
-                $data['aej']    = $this->c3model->getaa11p2('aej',$s[0],$dc3tID);
-                $data['ee']     = $this->c3model->getaa11p2('ee',$s[0],$dc3tID);
-                $data['de']     = $this->c3model->getaa11p2('de',$s[0],$dc3tID);
-                $rdata          = $this->c3model->getaa11p1('aa11ue',$s[0],$dc3tID);
+                $data['aef']    = $this->c3model->getvalues_m('aef',$s[0],$dc3tID);
+                $data['aej']    = $this->c3model->getvalues_m('aej',$s[0],$dc3tID);
+                $data['ee']     = $this->c3model->getvalues_m('ee',$s[0],$dc3tID);
+                $data['de']     = $this->c3model->getvalues_m('de',$s[0],$dc3tID);
+                $rdata          = $this->c3model->getvalues_s('aa11ue',$s[0],$dc3tID);
                 $data['ue']     = json_decode($rdata['question'], true);
-                $rdata2         = $this->c3model->getaa11con('con',$s[0],$dc3tID);
+                $rdata2         = $this->c3model->getvalues_s('con',$s[0],$dc3tID);
                 $data['con']    = json_decode($rdata2['question'], true);    
                 echo view('pdfc3/AA11-un', $data);
             case '3.10 Aa11-ad':
-                $s = explode('-', $code);
-                $data['ad'] = $this->c3model->getaa11p2('ad',$s[0],$dc3tID);
-                $rdata = $this->c3model->getaa11p1('aa11uead',$s[0],$dc3tID);
-                $data['ue'] = json_decode($rdata['question'], true);   
-                $s = explode('-', $code);
+                $s              = explode('-', $code);
+                $data['ad']     = $this->c3model->getvalues_m('ad',$s[0],$dc3tID);
+                $rdata          = $this->c3model->getvalues_s('aa11uead',$s[0],$dc3tID);
+                $data['ue']     = json_decode($rdata['question'], true);   
                 echo view('pdfc3/AA11-ad', $data);
                 break;   
             case '3.11':
-                $rdata          = $this->c3model->get311($code,$dc3tID);
+                $rdata          = $this->c3model->getvalues_s('311',$code,$dc3tID);
                 $data['arf']    = json_decode($rdata['question'], true);
                 echo view('pdfc3/311', $data);
                 break;   
@@ -461,58 +460,58 @@ class ChapterController extends BaseController{
                 echo view('pdfc3/312', $data);
                 break;   
             case '3.13 Ab1':
-                $data['ab1'] = $this->c3model->getab1($code,$dc3tID);
+                $data['ab1']    = $this->c3model->getvalues_m('ab1',$code,$dc3tID);
                 echo view('pdfc3/AB1', $data);
                 break;   
             case '3.14 Ab3':
-                $rdata = $this->c3model->getab3($code,$dc3tID);
-                $data['ab3'] = json_decode($rdata['question'], true);
+                $rdata = $this->c3model->getvalues_s('ab3',$code,$dc3tID);
+                $data['ab3']    = json_decode($rdata['question'], true);
                 echo view('pdfc3/AB3', $data);
                 break; 
             case '3.15 Ab4':
-                $rdata = $this->c3model->getab4checklist('checklist',$code,$dc3tID);
+                $rdata = $this->c3model->getvalues_s('checklist',$code,$dc3tID);
                 $data['sec']  = json_decode($rdata['question'], true);
-                $data['sec1'] = $this->c3model->getab4('section1',$code,$dc3tID);
-                $data['sec2'] = $this->c3model->getab4('section2',$code,$dc3tID);
-                $data['sec3'] = $this->c3model->getab4('section3',$code,$dc3tID);
-                $data['sec4'] = $this->c3model->getab4('section4',$code,$dc3tID);
-                $data['sec5'] = $this->c3model->getab4('section5',$code,$dc3tID);
-                $data['sec6'] = $this->c3model->getab4('section6',$code,$dc3tID);
-                $data['sec7'] = $this->c3model->getab4('section7',$code,$dc3tID);
-                $data['sec8'] = $this->c3model->getab4('section8',$code,$dc3tID);
-                $data['sec9'] = $this->c3model->getab4('section9',$code,$dc3tID);
+                $data['sec1'] = $this->c3model->getvalues_m('section1',$code,$dc3tID);
+                $data['sec2'] = $this->c3model->getvalues_m('section2',$code,$dc3tID);
+                $data['sec3'] = $this->c3model->getvalues_m('section3',$code,$dc3tID);
+                $data['sec4'] = $this->c3model->getvalues_m('section4',$code,$dc3tID);
+                $data['sec5'] = $this->c3model->getvalues_m('section5',$code,$dc3tID);
+                $data['sec6'] = $this->c3model->getvalues_m('section6',$code,$dc3tID);
+                $data['sec7'] = $this->c3model->getvalues_m('section7',$code,$dc3tID);
+                $data['sec8'] = $this->c3model->getvalues_m('section8',$code,$dc3tID);
+                $data['sec9'] = $this->c3model->getvalues_m('section9',$code,$dc3tID);
                 echo view('pdfc3/AB4', $data);
                 break; 
             case '3.15.1 Ab4a':
-                $data['ab4a'] = $this->c3model->getab4a('ab4a',$code,$dc3tID);
+                $data['ab4a'] = $this->c3model->getvalues_m('ab4a',$code,$dc3tID);
                 echo view('pdfc3/AB4A', $data);
                 break; 
             case '3.15.2 Ab4b':
-                $data['ab4b'] = $this->c3model->getab4a('ab4b',$code,$dc3tID);
+                $data['ab4b'] = $this->c3model->getvalues_m('ab4b',$code,$dc3tID);
                 echo view('pdfc3/AB4B', $data);
                 break; 
             case '3.15.3 Ab4c':
-                $data['ab4c'] = $this->c3model->getab4a('ab4c',$code,$dc3tID);
+                $data['ab4c'] = $this->c3model->getvalues_m('ab4c',$code,$dc3tID);
                 echo view('pdfc3/AB4C', $data);
                 break; 
             case '3.15.4 Ab4d':
-                $data['ab4d'] = $this->c3model->getab4a('ab4d',$code,$dc3tID);
+                $data['ab4d'] = $this->c3model->getvalues_m('ab4d',$code,$dc3tID);
                 echo view('pdfc3/AB4D', $data);
                 break; 
             case '3.15.5 Ab4e':
-                $data['ab4e'] = $this->c3model->getab4a('ab4e',$code,$dc3tID);
+                $data['ab4e'] = $this->c3model->getvalues_m('ab4e',$code,$dc3tID);
                 echo view('pdfc3/AB4E', $data);
                 break; 
             case '3.15.6 Ab4f':
-                $data['ab4f'] = $this->c3model->getab4a('ab4f',$code,$dc3tID);
+                $data['ab4f'] = $this->c3model->getvalues_m('ab4f',$code,$dc3tID);
                 echo view('pdfc3/AB4F', $data);
                 break; 
             case '3.15.7 Ab4g':
-                $data['ab4g'] = $this->c3model->getab4a('ab4g',$code,$dc3tID);
+                $data['ab4g'] = $this->c3model->getvalues_m('ab4g',$code,$dc3tID);
                 echo view('pdfc3/AB4G', $data);
                 break; 
             case '3.15.8 Ab4h':
-                $data['ab4h'] = $this->c3model->getab4a('ab4h',$code,$dc3tID);
+                $data['ab4h'] = $this->c3model->getvalues_m('ab4h',$code,$dc3tID);
                 echo view('pdfc3/AB4H', $data);
                 break; 
             default:
