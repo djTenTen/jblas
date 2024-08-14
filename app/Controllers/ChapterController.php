@@ -226,124 +226,124 @@ class ChapterController extends BaseController{
         $dc2tID         = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c2tID));
         switch ($code) {
             case '2.1 B2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/B2', $data);
                 break;
             case '2.2.1 C2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/C2', $data);
                 break;
             case '2.2.2 C2-1':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/C2-1', $data);
                 break;
             case '2.3 D2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/D2', $data);
                 break;
             case '2.4.1 E2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/E2', $data);
                 break;
             case '2.4.2 E2-1':
-                $data['aicpppa'] = $this->c2model->getquestionsaicpppa($code,$dc2tID);
-                $data['rcicp'] = $this->c2model->getquestionsrcicp($code,$dc2tID);
+                $data['aicpppa'] = $this->c2model->getvalues_m('aicpppa',$code,$dc2tID);
+                $data['rcicp'] = $this->c2model->getvalues_m('rcicp',$code,$dc2tID);
                 echo view('pdfc2/E2-1', $data);
                 break;
             case '2.4.3 E2-2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/E2-2', $data);
                 break;
             case '2.4.4 E2-3':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/E2-3', $data);
                 break;
             case '2.4.5 E2-4':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/E2-4', $data);
                 break;
             case '2.5 F2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/F2', $data);
                 break;
             case '2.6 H2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/H2', $data);
                 break;
             case '2.7 I2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/I2', $data);
                 break;
             case '2.8 J2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/J2', $data);
                 break;
             case '2.9 K2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/K2', $data);
                 break;
             case '2.10 L2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/L2', $data);
                 break;
             case '2.11 M2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/M2', $data);
                 break;
             case '2.12 N2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/N2', $data);
                 break;
             case '2.13.1 O2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/O2', $data);
                 break;
             case '2.13.2 O2-1':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/O2-1', $data);
                 break;
             case '2.14 P2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/P2', $data);
                 break;
             case '2.15 Q2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/Q2', $data);
                 break;  
             case '2.16 R2-1':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/R2-1', $data);
                 break;  
             case '2.17 R2-2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/R2-2', $data);
                 break;  
             case '2.18.1 S2-1':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/S2-1', $data);
                 break;  
             case '2.18.2 S2-2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/S2-2', $data);
                 break; 
             case '2.18.3 S2-3':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/S2-3', $data);
                 break;  
             case '2.18.4 S2-4':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/S2-4', $data);
                 break; 
             case '2.19.1 U2-1':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/U2-1', $data);
                 break;   
             case '2.19.2 U2-2':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/U2-2', $data);
                 break; 
             case '2.19.3 U2-3':
-                $data['qdata'] = $this->c2model->getquestionsdata($code,$dc2tID);
+                $data['qdata'] = $this->c2model->getvalues_m($code,$code,$dc2tID);
                 echo view('pdfc2/U2-3', $data);
                 break;   
             default:

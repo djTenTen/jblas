@@ -37,52 +37,29 @@ class Chapter2Model extends Model{
 
     }
 
-    
     /**
         ----------------------------------------------------------
-        CHAPTER 2 FUNCTIONS
+        CHAPTER 2 GET FUNCTIONS
         ----------------------------------------------------------
-        * @method getquestionsdata() get the chapter 2 data information
-        * @param code contains file codes
-        * @param c2tID chapter 2 title id
-        * @var query result from database
+        * @method getvalues_m() get all the multi row data
+        * @param type type or part of the file
+        * @param code code of the file
+        * @param code id of the file
+        * @var where-array reference for the fetch
         * @return result-array
     */
-    public function getquestionsdata($code,$c2tID){
+    public function getvalues_m($type,$code,$ctID){
 
-        $query = $this->db->table($this->tblc2)->where(array('type' => $code, 'code' => $code, 'c2tID' => $c2tID))->get();
+        $where = [
+            'type' => $type, 
+            'code' => $code,
+            'c2tID' => $ctID
+        ];
+        $query =  $this->db->table($this->tblc2)->where($where)->get();
         return $query->getResultArray();
 
     }
 
-    /**
-        * @method getquestionsaicpppa() get the chapter 2 data information
-        * @param code contains file codes
-        * @param c2tID chapter 2 title id
-        * @var query result from database
-        * @return result-array
-    */
-    public function getquestionsaicpppa($code,$c2tID){
-
-        $query = $this->db->table($this->tblc2)->where(array('type' => 'aicpppa', 'code' => $code, 'c2tID' => $c2tID))->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getquestionsrcicp() get the chapter 2 data information
-        * @param code contains file codes
-        * @param c2tID chapter 2 title id
-        * @var query result from database
-        * @return result-array
-    */
-    public function getquestionsrcicp($code,$c2tID){
-
-        $query = $this->db->table($this->tblc2)->where(array('type' => 'rcicp', 'code' => $code, 'c2tID' => $c2tID))->get();
-        return $query->getResultArray();
-
-    }
-   
     /**
         * @method savequestions() save the chapter 2
         * @param req chapter 2
