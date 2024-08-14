@@ -3010,39 +3010,39 @@ class WorkpaperController extends BaseController{
         $data['fl']         = $this->wpmodel->getfileinfoc1($dwpID,$dcID,$dc1tID);
         switch ($code) {
             case 'AC1':
-                $data['ac1']    = $this->wpmodel->getac1($code,$dc1tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getac1eqr($code,$dc1tID,$dcID,$dwpID);
+                $data['ac1']    = $this->wpmodel->getvalues_mc1('cacf',$code,$dc1tID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_sc1('eqr',$code,$dc1tID,$dcID,$dwpID);
                 $data['eqr']    = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc1/AC1', $data);
                 break;
             case 'AC2':
-                $data['ac2']    = $this->wpmodel->getac2($code,$dc1tID,$dcID,$dwpID);
-                $data['aep']    = $this->wpmodel->getac2aep($code,$dc1tID,$dcID,$dwpID);
+                $data['ac2']    = $this->wpmodel->getvalues_mc1('pans',$code,$dc1tID,$dcID,$dwpID);
+                $data['aep']    = $this->wpmodel->getvalues_sc1('ac2aep',$code,$dc1tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc1/AC2', $data);
                 break;
             case 'AC3':
-                $data['ac3genmat']      = $this->wpmodel->getac3('genmat',$code,$dc1tID,$dcID,$dwpID);
-                $data['ac3doccors']     = $this->wpmodel->getac3('doccors',$code,$dc1tID,$dcID,$dwpID);
-                $data['ac3statutory']   = $this->wpmodel->getac3('statutory',$code,$dc1tID,$dcID,$dwpID);
-                $data['ac3accsys']      = $this->wpmodel->getac3('accsys',$code,$dc1tID,$dcID,$dwpID);
+                $data['ac3genmat']      = $this->wpmodel->getvalues_mc1('genmat',$code,$dc1tID,$dcID,$dwpID);
+                $data['ac3doccors']     = $this->wpmodel->getvalues_mc1('doccors',$code,$dc1tID,$dcID,$dwpID);
+                $data['ac3statutory']   = $this->wpmodel->getvalues_mc1('statutory',$code,$dc1tID,$dcID,$dwpID);
+                $data['ac3accsys']      = $this->wpmodel->getvalues_mc1('accsys',$code,$dc1tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc1/AC3', $data);
                 break;
             case 'AC4':
-                $data['ac4']    = $this->wpmodel->getac4($code,$dc1tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getac4ppr($code,$dc1tID,$dcID,$dwpID);
+                $data['ac4']    = $this->wpmodel->getvalues_mc1('ac4sod',$code,$dc1tID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_sc1('ppr',$code,$dc1tID,$dcID,$dwpID);
                 $data['ppr']    = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc1/AC4', $data);
                 break;
             case 'AC5':
-                $rdata          = $this->wpmodel->getac5($code,$dc1tID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_sc1('rescon',$code,$dc1tID,$dcID,$dwpID);
                 $data['rc']     = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc1/AC5', $data);
                 break;
             case 'AC6':
-                $data['ac6']    = $this->wpmodel->getac6('ac6ra',$code,$dc1tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->gets12($code,$dc1tID,$dcID,$dwpID);
+                $data['ac6']    = $this->wpmodel->getvalues_mc1('ac6ra',$code,$dc1tID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_sc1('ac6s12',$code,$dc1tID,$dcID,$dwpID);
                 $data['s']      = json_decode($rdata['question'], true);
-                $data['s3']     = $this->wpmodel->getac6('ac6s3',$code,$dc1tID,$dcID,$dwpID);
+                $data['s3']     = $this->wpmodel->getvalues_mc1('ac6s3',$code,$dc1tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc1/AC6', $data);
                 break;
             case 'AC7':
@@ -3051,7 +3051,7 @@ class WorkpaperController extends BaseController{
                     'roidata','dcodata','prdata','oadata'
                 ];
                 foreach($rowdata as $row){
-                    $rdata = $this->wpmodel->getac7($code,$dc1tID, $row,$dcID,$dwpID);
+                    $rdata = $this->wpmodel->getvalues_sc1($row,$code,$dc1tID,$dcID,$dwpID);
                     $data[$row] = json_decode($rdata['question'], true);
                 }
                 echo view('workpaper/pdfc1/AC7', $data);
@@ -3064,12 +3064,12 @@ class WorkpaperController extends BaseController{
                     'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
                 ];
                 foreach($rowdata as $row){
-                    $data[$row] = $this->wpmodel->getac8($code,$dc1tID,$row,$dcID,$dwpID);
+                    $data[$row] = $this->wpmodel->getvalues_sc1($row,$code,$dc1tID,$dcID,$dwpID);
                 }
                 echo view('workpaper/pdfc1/AC8', $data);
                 break;
             case 'AC9':
-                $rdata = $this->wpmodel->getac9data($code,$dc1tID,$dcID,$dwpID);
+                $rdata = $this->wpmodel->getvalues_sc1('ac9data',$code,$dc1tID,$dcID,$dwpID);
                 $data['ac9'] = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc1/AC9', $data);
                 break;
@@ -3089,9 +3089,9 @@ class WorkpaperController extends BaseController{
                 $s                  = explode('-', $code);
                 $data ['sheet']     = $s[1];
                 $data['code']       = $s[0];
-                $data['cu']         = $this->wpmodel->getac10cu($dc1tID,$s[1].'cu',$dcID,$dwpID);
-                $data['ac10s1']     = $this->wpmodel->getac10s1data($dc1tID,$s[1],$dcID,$dwpID);
-                $data['ac10s2']     = $this->wpmodel->getac10s2data($dc1tID,$s[1],$dcID,$dwpID);
+                $data['cu']         = $this->wpmodel->getvalues_sc1($s[1].'cu',$s[0],$dc1tID,$dcID,$dwpID);
+                $data['ac10s1']     = $this->wpmodel->getac10data($s[1],$s[0],$dc1tID,$dcID,$dwpID,'section1');
+                $data['ac10s2']     = $this->wpmodel->getac10data($s[1],$s[0],$dc1tID,$dcID,$dwpID,'section2');
                 echo view('workpaper/pdfc1/AC10', $data);
                 break;
             case 'AC10-Summary':
@@ -3124,16 +3124,16 @@ class WorkpaperController extends BaseController{
                 $data['vop_rev']    = $this->wpmodel->getsumation($dc1tID,'Revenue',$dcID,$dwpID);
                 $data['vop_cst']    = $this->wpmodel->getsumation($dc1tID,'Costs',$dcID,$dwpID);
                 $data['vop_pr']     = $this->wpmodel->getsumation($dc1tID,'Payroll',$dcID,$dwpID);
-                $data['mat']        = $this->wpmodel->getsummarydata($dc1tID,'material',$dcID,$dwpID);
+                $data['mat']        = $this->wpmodel->getvalues_sc1('materialdata',$s[0],$dc1tID,$dcID,$dwpID);
                 $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
                 foreach($rowdata as $row){
-                    $rdata          = $this->wpmodel->getsummarydata($dc1tID, $row,$dcID,$dwpID);
+                    $rdata          = $this->wpmodel->getvalues_sc1($row.'data',$s[0],$dc1tID,$dcID,$dwpID);
                     $data[$row]     = json_decode($rdata['question'], true);
                 }
                 echo view('workpaper/pdfc1/AC10Summ', $data);
                 break;
             case 'AC11':
-                $rdata = $this->wpmodel->getac11data($code,$dc1tID,$dcID,$dwpID);
+                $rdata = $this->wpmodel->getvalues_sc1('ac11data',$code,$dc1tID,$dcID,$dwpID);
                 $data['ac11'] = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc1/AC11', $data);
                 break;
@@ -3174,124 +3174,124 @@ class WorkpaperController extends BaseController{
         $data['fl']     = $this->wpmodel->getfileinfoc2($dwpID,$dcID,$dc2tID);
         switch ($code) {
             case '2.1 B2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/B2', $data);
                 break;
             case '2.2.1 C2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/C2', $data);
                 break;
             case '2.2.2 C2-1':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/C2-1', $data);
                 break;
             case '2.3 D2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/D2', $data);
                 break;
             case '2.4.1 E2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/E2', $data);
                 break;
             case '2.4.2 E2-1':
-                $data['aicpppa'] = $this->wpmodel->getquestionsaicpppa($code,$dc2tID,$dcID,$dwpID);
-                $data['rcicp'] = $this->wpmodel->getquestionsrcicp($code,$dc2tID,$dcID,$dwpID);
+                $data['aicpppa'] = $this->wpmodel->getvalues_mc2('aicpppa',$code,$dc2tID,$dcID,$dwpID);
+                $data['rcicp'] = $this->wpmodel->getvalues_mc2('rcicp',$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/E2-1', $data);
                 break;
             case '2.4.3 E2-2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/E2-2', $data);
                 break;
             case '2.4.4 E2-3':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/E2-3', $data);
                 break;
             case '2.4.5 E2-4':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/E2-4', $data);
                 break;
             case '2.5 F2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/F2', $data);
                 break;
             case '2.6 H2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/H2', $data);
                 break;
             case '2.7 I2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/I2', $data);
                 break;
             case '2.8 J2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/J2', $data);
                 break;
             case '2.9 K2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/K2', $data);
                 break;
             case '2.10 L2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/L2', $data);
                 break;
             case '2.11 M2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/M2', $data);
                 break;
             case '2.12 N2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/N2', $data);
                 break;
             case '2.13.1 O2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/O2', $data);
                 break;
             case '2.13.2 O2-1':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/O2-1', $data);
                 break;
             case '2.14 P2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/P2', $data);
                 break;
             case '2.15 Q2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/Q2', $data);
                 break;  
             case '2.16 R2-1':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/R2-1', $data);
                 break;  
             case '2.17 R2-2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/R2-2', $data);
                 break;  
             case '2.18.1 S2-1':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/S2-1', $data);
                 break;  
             case '2.18.2 S2-2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/S2-2', $data);
                 break; 
             case '2.18.3 S2-3':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/S2-3', $data);
                 break;  
             case '2.18.4 S2-4':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/S2-4', $data);
                 break; 
             case '2.19.1 U2-1':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/U2-1', $data);
                 break;   
             case '2.19.2 U2-2':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/U2-2', $data);
                 break; 
             case '2.19.3 U2-3':
-                $data['qdata'] = $this->wpmodel->getquestionsdata($code,$dc2tID,$dcID,$dwpID);
+                $data['qdata'] = $this->wpmodel->getvalues_mc2($code,$code,$dc2tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc2/U2-3', $data);
                 break;   
             default:
@@ -3333,35 +3333,35 @@ class WorkpaperController extends BaseController{
         $data['firm']   = session()->get('firm');
         switch ($code) {
             case '3.1 Aa1':
-                $data['datapl']     = $this->wpmodel->getaa1('planning',$code,$dc3tID,$dcID,$dwpID);
-                $data['dataaf']     = $this->wpmodel->getaa1('audit finalisation',$code,$dc3tID,$dcID,$dwpID);
-                $rdata              = $this->wpmodel->getaa1s3($code, $dc3tID,$dcID,$dwpID);
+                $data['datapl']     = $this->wpmodel->getvalues_mc3('planning',$code,$dc3tID,$dcID,$dwpID);
+                $data['dataaf']     = $this->wpmodel->getvalues_mc3('audit finalisation',$code,$dc3tID,$dcID,$dwpID);
+                $rdata              = $this->wpmodel->getvalues_sc3('section3',$code, $dc3tID,$dcID,$dwpID);
                 $data['s3']         = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc3/AA1', $data);
                 break;
             case '3.2 Aa2':
-                $rdata          = $this->wpmodel->getaa2data($code, $dc3tID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_sc3('aa2',$code, $dc3tID,$dcID,$dwpID);
                 $data['aa2']    = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc3/AA2', $data);
                 break;
             case '3.3 Aa3a':
-                $data['cr']     = $this->wpmodel->getaa3('cr',$code,$dc3tID,$dcID,$dwpID);
-                $data['dc']     = $this->wpmodel->getaa3('dc',$code,$dc3tID,$dcID,$dwpID);
-                $data['faf']    = $this->wpmodel->getaa3('faf',$code,$dc3tID,$dcID,$dwpID);
-                $data['ir']     = $this->wpmodel->getaa3air($code,$dc3tID,$dcID,$dwpID);
+                $data['cr']     = $this->wpmodel->getvalues_mc3('cr',$code,$dc3tID,$dcID,$dwpID);
+                $data['dc']     = $this->wpmodel->getvalues_mc3('dc',$code,$dc3tID,$dcID,$dwpID);
+                $data['faf']    = $this->wpmodel->getvalues_mc3('faf',$code,$dc3tID,$dcID,$dwpID);
+                $data['ir']     = $this->wpmodel->getvalues_sc3('ir',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AA3A', $data);
                 break;
             case '3.4 Aa3b':
-                $data['bp1']    = $this->wpmodel->getaa3b('p1',$code,$dc3tID,$dcID,$dwpID);
-                $data['bp2']    = $this->wpmodel->getaa3b('p2',$code,$dc3tID,$dcID,$dwpID);
-                $data['bp3a']   = $this->wpmodel->getaa3b('p3a',$code,$dc3tID,$dcID,$dwpID);
-                $data['bp3b']   = $this->wpmodel->getaa3b('p3b',$code,$dc3tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getaa3bp4($code,$dc3tID,$dcID,$dwpID);
+                $data['bp1']    = $this->wpmodel->getvalues_mc3('p1',$code,$dc3tID,$dcID,$dwpID);
+                $data['bp2']    = $this->wpmodel->getvalues_mc3('p2',$code,$dc3tID,$dcID,$dwpID);
+                $data['bp3a']   = $this->wpmodel->getvalues_mc3('p3a',$code,$dc3tID,$dcID,$dwpID);
+                $data['bp3b']   = $this->wpmodel->getvalues_mc3('p3b',$code,$dc3tID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_sc3('p4',$code,$dc3tID,$dcID,$dwpID);
                 $data['bp4']    = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc3/AA3B', $data);
                 break;
             case '3.5 Aa4':
-                $rdata          = $this->wpmodel->getaa4($code,$dc3tID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_sc3('aa4',$code,$dc3tID,$dcID,$dwpID);
                 $data['aa4']    = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc3/AA4', $data);
                 break;
@@ -3369,23 +3369,23 @@ class WorkpaperController extends BaseController{
                 echo view('workpaper/pdfc3/AA5A', $data);
                 break;
             case '3.6.2 Aa5b':
-                $data['aa5b'] = $this->wpmodel->getaa5b($code,$dc3tID,$dcID,$dwpID);
+                $data['aa5b'] = $this->wpmodel->getvalues_mc3('aa5b',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AA5B', $data);
                 break;  
             case '3.7 Aa7':
-                $data['aa7']    = $this->wpmodel->getaa7('isa315',$code,$dc3tID,$dcID,$dwpID);
-                $data['cons']   = $this->wpmodel->getaa7('consultation',$code,$dc3tID,$dcID,$dwpID);
-                $data['inc']    = $this->wpmodel->getaa7('inconsistencies',$code,$dc3tID,$dcID,$dwpID);
-                $data['ref']    = $this->wpmodel->getaa7('refusal',$code,$dc3tID,$dcID,$dwpID);
-                $data['dep']    = $this->wpmodel->getaa7('departures',$code,$dc3tID,$dcID,$dwpID);
-                $data['oth']    = $this->wpmodel->getaa7('other',$code,$dc3tID,$dcID,$dwpID);
-                $data['aepapp'] = $this->wpmodel->getaa7aep('aepapp',$code,$dc3tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getaa7aep('aep',$code,$dc3tID,$dcID,$dwpID);
+                $data['aa7']    = $this->wpmodel->getvalues_mc3('isa315',$code,$dc3tID,$dcID,$dwpID);
+                $data['cons']   = $this->wpmodel->getvalues_mc3('consultation',$code,$dc3tID,$dcID,$dwpID);
+                $data['inc']    = $this->wpmodel->getvalues_mc3('inconsistencies',$code,$dc3tID,$dcID,$dwpID);
+                $data['ref']    = $this->wpmodel->getvalues_mc3('refusal',$code,$dc3tID,$dcID,$dwpID);
+                $data['dep']    = $this->wpmodel->getvalues_mc3('departures',$code,$dc3tID,$dcID,$dwpID);
+                $data['oth']    = $this->wpmodel->getvalues_mc3('other',$code,$dc3tID,$dcID,$dwpID);
+                $data['aepapp'] = $this->wpmodel->getvalues_sc3('aepapp',$code,$dc3tID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_sc3('aep',$code,$dc3tID,$dcID,$dwpID);
                 $data['aep']    = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc3/AA7', $data);
                 break;
             case '3.8 Aa10':
-                $rdata = $this->wpmodel->getaa10($code,$dc3tID,$dcID,$dwpID);
+                $rdata = $this->wpmodel->getvalues_sc3('aa10',$code,$dc3tID,$dcID,$dwpID);
                 $data['aa10'] = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc3/AA10', $data);
                 break;
@@ -3394,25 +3394,25 @@ class WorkpaperController extends BaseController{
                 break;
             case '3.10 Aa11-un':
                 $s              = explode('-', $code);
-                $data['aef']    = $this->wpmodel->getaa11p2('aef',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['aej']    = $this->wpmodel->getaa11p2('aej',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['ee']     = $this->wpmodel->getaa11p2('ee',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['de']     = $this->wpmodel->getaa11p2('de',$s[0],$dc3tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getaa11p('aa11ue',$s[0],$dc3tID,$dcID,$dwpID);
+                $data['aef']    = $this->wpmodel->getvalues_mc3('aef',$s[0],$dc3tID,$dcID,$dwpID);
+                $data['aej']    = $this->wpmodel->getvalues_mc3('aej',$s[0],$dc3tID,$dcID,$dwpID);
+                $data['ee']     = $this->wpmodel->getvalues_mc3('ee',$s[0],$dc3tID,$dcID,$dwpID);
+                $data['de']     = $this->wpmodel->getvalues_mc3('de',$s[0],$dc3tID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_sc3('aa11ue',$s[0],$dc3tID,$dcID,$dwpID);
                 $data['ue']     = json_decode($rdata['question'], true);
-                $rdata2         = $this->wpmodel->getaa11con('con',$s[0],$dc3tID,$dcID,$dwpID);
+                $rdata2         = $this->wpmodel->getvalues_sc3('con',$s[0],$dc3tID,$dcID,$dwpID);
                 $data['con']    = json_decode($rdata2['question'], true);    
                 echo view('workpaper/pdfc3/AA11-un', $data);
             case '3.10 Aa11-ad':
                 $s = explode('-', $code);
-                $data['ad'] = $this->wpmodel->getaa11p2('ad',$s[0],$dc3tID,$dcID,$dwpID);
-                $rdata = $this->wpmodel->getaa11p('aa11uead',$s[0],$dc3tID,$dcID,$dwpID);
+                $data['ad'] = $this->wpmodel->getvalues_mc3('ad',$s[0],$dc3tID,$dcID,$dwpID);
+                $rdata = $this->wpmodel->getvalues_sc3('aa11uead',$s[0],$dc3tID,$dcID,$dwpID);
                 $data['ue'] = json_decode($rdata['question'], true);   
                 $s = explode('-', $code);
                 echo view('workpaper/pdfc3/AA11-ad', $data);
                 break;   
             case '3.11':
-                $rdata          = $this->wpmodel->get311($code,$dc3tID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_sc3('311',$code,$dc3tID,$dcID,$dwpID);
                 $data['arf']    = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc3/311', $data);
                 break;   
@@ -3420,58 +3420,58 @@ class WorkpaperController extends BaseController{
                 echo view('workpaper/pdfc3/312', $data);
                 break;   
             case '3.13 Ab1':
-                $data['ab1'] = $this->wpmodel->getab1($code,$dc3tID,$dcID,$dwpID);
+                $data['ab1'] = $this->wpmodel->getvalues_mc3('ab1',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB1', $data);
                 break;   
             case '3.14 Ab3':
-                $rdata = $this->wpmodel->getab3($code,$dc3tID,$dcID,$dwpID);
+                $rdata = $this->wpmodel->getvalues_sc3('ab3',$code,$dc3tID,$dcID,$dwpID);
                 $data['ab3'] = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc3/AB3', $data);
                 break; 
             case '3.15 Ab4':
-                $rdata = $this->wpmodel->getab4checklist('checklist',$code,$dc3tID,$dcID,$dwpID);
+                $rdata = $this->wpmodel->getvalues_sc3('checklist',$code,$dc3tID,$dcID,$dwpID);
                 $data['sec']    = json_decode($rdata['question'], true);
-                $data['sec1']   = $this->wpmodel->getab4('section1',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec2']   = $this->wpmodel->getab4('section2',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec3']   = $this->wpmodel->getab4('section3',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec4']   = $this->wpmodel->getab4('section4',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec5']   = $this->wpmodel->getab4('section5',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec6']   = $this->wpmodel->getab4('section6',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec7']   = $this->wpmodel->getab4('section7',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec8']   = $this->wpmodel->getab4('section8',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec9']   = $this->wpmodel->getab4('section9',$code,$dc3tID,$dcID,$dwpID);
+                $data['sec1']   = $this->wpmodel->getvalues_mc3('section1',$code,$dc3tID,$dcID,$dwpID);
+                $data['sec2']   = $this->wpmodel->getvalues_mc3('section2',$code,$dc3tID,$dcID,$dwpID);
+                $data['sec3']   = $this->wpmodel->getvalues_mc3('section3',$code,$dc3tID,$dcID,$dwpID);
+                $data['sec4']   = $this->wpmodel->getvalues_mc3('section4',$code,$dc3tID,$dcID,$dwpID);
+                $data['sec5']   = $this->wpmodel->getvalues_mc3('section5',$code,$dc3tID,$dcID,$dwpID);
+                $data['sec6']   = $this->wpmodel->getvalues_mc3('section6',$code,$dc3tID,$dcID,$dwpID);
+                $data['sec7']   = $this->wpmodel->getvalues_mc3('section7',$code,$dc3tID,$dcID,$dwpID);
+                $data['sec8']   = $this->wpmodel->getvalues_mc3('section8',$code,$dc3tID,$dcID,$dwpID);
+                $data['sec9']   = $this->wpmodel->getvalues_mc3('section9',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4', $data);
                 break; 
             case '3.15.1 Ab4a':
-                $data['ab4a'] = $this->wpmodel->getab4a('ab4a',$code,$dc3tID,$dcID,$dwpID);
+                $data['ab4a'] = $this->wpmodel->getvalues_mc3('ab4a',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4A', $data);
                 break; 
             case '3.15.2 Ab4b':
-                $data['ab4b'] = $this->wpmodel->getab4a('ab4b',$code,$dc3tID,$dcID,$dwpID);
+                $data['ab4b'] = $this->wpmodel->getvalues_mc3('ab4b',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4B', $data);
                 break; 
             case '3.15.3 Ab4c':
-                $data['ab4c'] = $this->wpmodel->getab4a('ab4c',$code,$dc3tID,$dcID,$dwpID);
+                $data['ab4c'] = $this->wpmodel->getvalues_mc3('ab4c',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4C', $data);
                 break; 
             case '3.15.4 Ab4d':
-                $data['ab4d'] = $this->wpmodel->getab4a('ab4d',$code,$dc3tID,$dcID,$dwpID);
+                $data['ab4d'] = $this->wpmodel->getvalues_mc3('ab4d',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4D', $data);
                 break; 
             case '3.15.5 Ab4e':
-                $data['ab4e'] = $this->wpmodel->getab4a('ab4e',$code,$dc3tID,$dcID,$dwpID);
+                $data['ab4e'] = $this->wpmodel->getvalues_mc3('ab4e',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4E', $data);
                 break; 
             case '3.15.6 Ab4f':
-                $data['ab4f'] = $this->wpmodel->getab4a('ab4f',$code,$dc3tID,$dcID,$dwpID);
+                $data['ab4f'] = $this->wpmodel->getvalues_mc3('ab4f',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4F', $data);
                 break; 
             case '3.15.7 Ab4g':
-                $data['ab4g'] = $this->wpmodel->getab4a('ab4g',$code,$dc3tID,$dcID,$dwpID);
+                $data['ab4g'] = $this->wpmodel->getvalues_mc3('ab4g',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4G', $data);
                 break; 
             case '3.15.8 Ab4h':
-                $data['ab4h'] = $this->wpmodel->getab4a('ab4h',$code,$dc3tID,$dcID,$dwpID);
+                $data['ab4h'] = $this->wpmodel->getvalues_mc3('ab4h',$code,$dc3tID,$dcID,$dwpID);
                 echo view('workpaper/pdfc3/AB4H', $data);
                 break; 
             default:
