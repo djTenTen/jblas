@@ -106,49 +106,57 @@
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q1e)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q1e['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q1e['uploaded_on']))?>" data-filename="<?= $q1e['file']?>" data-file="<?= $q1e['type']?>" data-qtr="<?= $q1e['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
                             <form action="<?= base_url()?>auditsystem/wp/index/fstax/upload/<?= $code?>/<?= $cfiID?>/<?= $cID?>/<?= $wpID?>/<?= $index?>/<?= $desc?>/<?= $name?>" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="quarter" value="1st">
                                 <input type="hidden" name="part" value="VAT">
-                                <label class="small mb-1" for="tops" title="Expanded Withholding Tax">VAT</label>
+                                <label class="small mb-1" for="tops" title="Value added tax">VAT</label>
                                 <div class="row">
                                     <div class="col-9">
                                         <input class="form-control" id="fstax" type="file" accept=".pdf"  name="fstax" value="" required/>
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q1v)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q1v['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q1v['uploaded_on']))?>" data-filename="<?= $q1v['file']?>" data-file="<?= $q1v['type']?>" data-qtr="<?= $q1v['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
                             <form action="<?= base_url()?>auditsystem/wp/index/fstax/upload/<?= $code?>/<?= $cfiID?>/<?= $cID?>/<?= $wpID?>/<?= $index?>/<?= $desc?>/<?= $name?>" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="quarter" value="1st">
                                 <input type="hidden" name="part" value="1601C">
-                                <label class="small mb-1" for="tops" title="Expanded Withholding Tax">1601C</label>
+                                <label class="small mb-1" for="tops" title="1601 BIR Form">1601C</label>
                                 <div class="row">
                                     <div class="col-9">
                                         <input class="form-control" id="fstax" type="file" accept=".pdf"  name="fstax" value="" required/>
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q16)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q16['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q16['uploaded_on']))?>" data-filename="<?= $q16['file']?>" data-file="<?= $q16['type']?>" data-qtr="<?= $q16['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
                             <form action="<?= base_url()?>auditsystem/wp/index/fstax/upload/<?= $code?>/<?= $cfiID?>/<?= $cID?>/<?= $wpID?>/<?= $index?>/<?= $desc?>/<?= $name?>" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="quarter" value="1st">
                                 <input type="hidden" name="part" value="1701/1702">
-                                <label class="small mb-1" for="tops" title="Expanded Withholding Tax">1701/1702</label>
+                                <label class="small mb-1" for="tops" title="1701/1702 BIR Form">1701/1702</label>
                                 <div class="row">
                                     <div class="col-9">
                                         <input class="form-control" id="fstax" type="file" accept=".pdf"  name="fstax" value="" required/>
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q17)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q17['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q17['uploaded_on']))?>" data-filename="<?= $q17['file']?>" data-file="<?= $q17['type']?>" data-qtr="<?= $q17['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
@@ -169,7 +177,9 @@
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q2e)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q2e['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q2e['uploaded_on']))?>" data-filename="<?= $q2e['file']?>" data-file="<?= $q2e['type']?>" data-qtr="<?= $q2e['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
@@ -183,7 +193,9 @@
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q2v)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q2v['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q2v['uploaded_on']))?>" data-filename="<?= $q2v['file']?>" data-file="<?= $q2v['type']?>" data-qtr="<?= $q2v['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
@@ -197,7 +209,9 @@
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q26)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q26['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q26['uploaded_on']))?>" data-filename="<?= $q26['file']?>" data-file="<?= $q26['type']?>" data-qtr="<?= $q26['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
@@ -211,7 +225,9 @@
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q27)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q27['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q27['uploaded_on']))?>" data-filename="<?= $q27['file']?>" data-file="<?= $q27['type']?>" data-qtr="<?= $q27['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
@@ -233,7 +249,9 @@
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q3e)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q3e['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q3e['uploaded_on']))?>" data-filename="<?= $q3e['file']?>" data-file="<?= $q3e['type']?>" data-qtr="<?= $q3e['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
@@ -247,7 +265,9 @@
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q3v)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q3v['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q3v['uploaded_on']))?>" data-filename="<?= $q3v['file']?>" data-file="<?= $q3v['type']?>" data-qtr="<?= $q3v['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
@@ -261,7 +281,9 @@
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q36)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q36['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q36['uploaded_on']))?>" data-filename="<?= $q36['file']?>" data-file="<?= $q36['type']?>" data-qtr="<?= $q36['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
@@ -275,7 +297,9 @@
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q37)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q37['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q37['uploaded_on']))?>" data-filename="<?= $q37['file']?>" data-file="<?= $q37['type']?>" data-qtr="<?= $q37['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
@@ -296,7 +320,9 @@
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q4e)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q4e['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q4e['uploaded_on']))?>" data-filename="<?= $q4e['file']?>" data-file="<?= $q4e['type']?>" data-qtr="<?= $q4e['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
@@ -310,7 +336,9 @@
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q4v)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q4v['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q4v['uploaded_on']))?>" data-filename="<?= $q4v['file']?>" data-file="<?= $q4v['type']?>" data-qtr="<?= $q4v['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
@@ -324,7 +352,9 @@
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q46)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q46['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q46['uploaded_on']))?>" data-filename="<?= $q46['file']?>" data-file="<?= $q46['type']?>" data-qtr="<?= $q46['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
@@ -338,7 +368,9 @@
                                     </div>
                                     <div class="col-3">
                                         <button type="submit" class="btn btn-primary btn-sm btn-icon" title="upload"><i class="fas fa-upload"></i></button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon" title="view"><i class="fas fa-eye"></i></button>
+                                        <?php if(!empty($q47)){?>
+                                            <button type="button" class="btn btn-success btn-sm btn-icon viewfile" data-bs-toggle="modal" data-bs-target="#filemodal" title="view" data-pdffile="<?= base_url()?>uploads/pdf/wp/<?= $fID?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $q47['file']?>" data-uploadedon="<?= date('F d, Y', strtotime($q47['uploaded_on']))?>" data-filename="<?= $q47['file']?>" data-file="<?= $q47['type']?>" data-qtr="<?= $q47['quarter']?>"><i class="fas fa-eye"></i></button>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </form>
@@ -351,6 +383,46 @@
     </div>
 </main>
 
+    <!-- Modal Send to Reviewer-->
+    <div class="modal fade" id="filemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle"><span id="mtitle"></span></h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1 id="f"></h1>
+                    <p>Quarter: <b><span id="qtr"></span></b></p>
+                    <p>Uploaded On: <b><span id="uo"></span></b></p>
+                    <p>File Name: <b><span id="fn"></span></b></p>
+                    <object id="objectdata" data="" type="application/pdf" frameborder="0" width="100%" height="1000"> </object>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    $(document).ready(function () {
+        $('.viewfile').on('click', function(){
+            var file = $(this).data('pdffile');
+            var uo = $(this).data('uploadedon');
+            var fn = $(this).data('filename');
+            var qtr = $(this).data('qtr');
+            var f = $(this).data('file');
+            $('#fn').html(fn);
+            $('#uo').html(uo);
+            $('#qtr').html(qtr);
+            $('#f').html(f);
+            $('#mtitle').html(f);
+            $('#objectdata').attr('data',file);
+        });
+    });
+</script>
     
 
 

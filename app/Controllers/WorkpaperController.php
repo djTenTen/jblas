@@ -2864,6 +2864,8 @@ class WorkpaperController extends BaseController{
         $dcfiID     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID));
         $dwpID      = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
         $dindex     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index));
+        $fID        = $this->crypt->decrypt(session()->get('firmID'));
+        $data['fID'] = $fID;
         $data['title'] = $name;
         $data['subt']  = $desc;
         switch ($code) {
@@ -2874,7 +2876,22 @@ class WorkpaperController extends BaseController{
                 echo view('includes/Footer');
             break;
             case 'FSTR':
-                $data['aa']     = 'Hell';
+                $data['q1e']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'1st','EWT');
+                $data['q1v']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'1st','VAT');
+                $data['q16']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'1st','1601C');
+                $data['q17']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'1st','1701/1702');
+                $data['q2e']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'2nd','EWT');
+                $data['q2v']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'2nd','VAT');
+                $data['q26']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'2nd','1601C');
+                $data['q27']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'2nd','1701/1702');
+                $data['q3e']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'3rd','EWT');
+                $data['q3v']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'3rd','VAT');
+                $data['q36']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'3rd','1601C');
+                $data['q37']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'3rd','1701/1702');
+                $data['q4e']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'4th','EWT');
+                $data['q4v']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'4th','VAT');
+                $data['q46']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'4th','1601C');
+                $data['q47']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'4th','1701/1702');
                 echo view('includes/Header', $data);
                 echo view('workpaper/index/FSTR', $data);
                 echo view('includes/Footer');
