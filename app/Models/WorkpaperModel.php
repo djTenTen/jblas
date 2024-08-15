@@ -46,6 +46,7 @@ class WorkpaperModel extends  Model {
     protected $tblfi    = "tbl_file_index";
     protected $tblcfi   = "tbl_client_file_index";
     protected $tbltb    = "tbl_client_trial_balance";
+    protected $tblfst   = "tbl_client_fstax";
     protected $time,$date;
     protected $db;
     protected $crypt;
@@ -534,6 +535,64 @@ class WorkpaperModel extends  Model {
         }
         $this->logs->log(session()->get('name'). " Updated a work paper");
         return 'updated';
+
+    }
+
+
+    public function uploadfstax($req){
+
+        $filename = $req['fstax']->getClientName();
+
+        $pdfPath = ROOTPATH .'/public/uploads/pdf/wp/'.$req['fID'].'/'.$req['wpID'].'/';
+        if (!is_dir($pdfPath)) {
+            mkdir($pdfPath, 0755, true);
+        }
+
+        if($req['fstax'] != ''){
+            $where = [
+                'client'        => $req['cID'],
+                'workpaper'     => $req['wpID'],
+                'firm'          => $req['fID'],
+                'index'         => $req['index'],
+                'quarter'       => $req['quarter'],
+                'type'          => $req['part'],
+            ];
+            $res = $this->db->table($this->tblfst)->where($where)->get();
+            if($res->getNumRows() >= 1){
+                $f = $res->getRowArray();
+
+                $ce = $this->db->table($this->tblfst)->where(array('client' => $req['cID'],'workpaper' => $req['wpID'],'firm' => $req['fID'],'quarter' => $req['quarter']))->get()->getRowArray();
+                if($filename == $ce['file']){
+                    return 'file_exist';
+                }
+                $uploadpath = $pdfPath.$f['file']; 
+                if (file_exists($uploadpath)) {
+                    unlink($uploadpath);
+                }
+                $this->db->table($this->tblfst)->where($where)->update(array('file' => $filename, 'uploaded_on' => $this->date.' '.$this->time,'uploaded_by' => $req['uID']));
+                $req['fstax']->move($pdfPath);
+                $this->logs->log(session()->get('name'). " uploaded a Financial Statement on work paper");
+                return 'uploaded';
+            }else{
+                $data = [
+                    'client'        => $req['cID'],
+                    'workpaper'     => $req['wpID'],
+                    'firm'          => $req['fID'],
+                    'index'         => $req['index'],
+                    'quarter'       => $req['quarter'],
+                    'type'          => $req['part'],
+                    'file'          => $filename,
+                    'uploaded_on'    => $this->date.' '.$this->time,
+                    'uploaded_by'    => $req['uID'],
+                ];
+                $this->db->table($this->tblfst)->insert($data);
+                $req['fstax']->move($pdfPath);
+                $this->logs->log(session()->get('name'). " uploaded a Financial Statement on work paper");
+                return 'uploaded';
+            }
+        }else{
+            return false;
+        }
 
     }
 

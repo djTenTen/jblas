@@ -54,7 +54,7 @@
             <?php  }?>
             <div class="card-body">
                 <h3 class="p-3"><?= $subt?></h3>
-                <form action="<?= base_url()?>auditsystem/wp/index/tb/update/<?= $code?>/<?= $cfiID?>/<?= $cID?>/<?= $wpID?>/<?= $index?>/<?= $desc?>" method="post">
+                <form action="<?= base_url()?>auditsystem/wp/index/tb/update/<?= $code?>/<?= $cfiID?>/<?= $cID?>/<?= $wpID?>/<?= $index?>/<?= $desc?>/<?= $name?>" method="post">
                     <table class="table table-hover table-bordered">
                         <thead>
                             <tr>
@@ -96,7 +96,7 @@
                     </table>
                     
                     <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
-                    <button type="button" id="uploadpdf" data-urlsubmit="<?= base_url()?>auditsystem/wp/index/tb/upload/<?= $code?>/<?= $cfiID?>/<?= $cID?>/<?= $wpID?>/<?= $index?>/<?= $desc?>" class="btn btn-secondary m-1 btn-sm float-end" data-bs-toggle="modal" data-bs-target="#tosend" title="Upload Supporting Documents" ><i class="fas fa-file-pdf m-1"></i>Upload Documents</button>
+                    <button type="button" id="uploadpdf" data-urlsubmit="<?= base_url()?>auditsystem/wp/index/tb/upload/<?= $code?>/<?= $cfiID?>/<?= $cID?>/<?= $wpID?>/<?= $index?>/<?= $desc?>/<?= $name?>" class="btn btn-secondary m-1 btn-sm float-end" data-bs-toggle="modal" data-bs-target="#tosend" title="Upload Supporting Documents" ><i class="fas fa-file-pdf m-1"></i>Upload Documents</button>
 
                 </form>
                 

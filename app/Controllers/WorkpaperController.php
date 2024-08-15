@@ -356,7 +356,7 @@ class WorkpaperController extends BaseController{
         * @var res a return response from the work paper model
         * @return redirect-to-page
     */
-    public function updatetb($code,$cfiID,$cID,$wpID,$index,$desc){
+    public function updatetb($code,$cfiID,$cID,$wpID,$index,$desc,$name){
 
         $req = [
             'tbID'  => $this->request->getPost('tbID'),
@@ -366,10 +366,10 @@ class WorkpaperController extends BaseController{
         $res = $this->wpmodel->updatetb($req);
         if($res == "updated"){
             session()->setFlashdata('updated','updated');
-            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc));
+            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc));
+            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc.'/'.$name));
         }
 
     }
@@ -387,7 +387,7 @@ class WorkpaperController extends BaseController{
         * @var res a return response from the work paper model
         * @return redirect-to-page
     */
-    public function uploadtbfiles($code,$cfiID,$cID,$wpID,$index,$desc){
+    public function uploadtbfiles($code,$cfiID,$cID,$wpID,$index,$desc,$name){
 
         $req = [
             'pdf'       => $this->request->getFile('pdffile'),
@@ -400,10 +400,51 @@ class WorkpaperController extends BaseController{
         $res = $this->wpmodel->uploadtbfiles($req);
         if($res == "uploaded"){
             session()->setFlashdata('uploaded','uploaded');
-            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc));
+            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc));
+            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc.'/'.$name));
+        }
+
+    }
+
+
+    /**
+        * @method uploadfstax() uploading financial statements
+        * @param code file name code
+        * @param cfiID encrypted client file index id
+        * @param cID encrypted client id
+        * @param wpID encrypted work paper id
+        * @param index encrypted index work paper id
+        * @param desc file descryption
+        * @var array-req consist of trial information
+        * @var res a return response from the work paper model
+        * @return redirect-to-page
+    */
+    public function uploadfstax($code,$cfiID,$cID,$wpID,$index,$desc,$name){
+
+        $req = [
+            'fstax'     => $this->request->getFile('fstax'),
+            'part'      => $this->request->getPost('part'),
+            'quarter'   => $this->request->getPost('quarter'),
+            'cfiID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID)),
+            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'index'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index)),
+            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+            'uID'       => $this->crypt->decrypt(session()->get('userID')),
+        ];
+
+        $res = $this->wpmodel->uploadfstax($req);
+        if($res == "uploaded"){
+            session()->setFlashdata('uploaded','uploaded');
+            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc.'/'.$name));
+        }elseif($res == 'file_exist'){
+            session()->setFlashdata('file_exist','file_exist');
+            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc.'/'.$name));
+        }else{
+            session()->setFlashdata('invalid_input','invalid_input');
+            return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc.'/'.$name));
         }
 
     }
@@ -2830,6 +2871,12 @@ class WorkpaperController extends BaseController{
                 $data['aa']     = $this->wpmodel->getabc3values($code,$dcID,$dwpID);
                 echo view('includes/Header', $data);
                 echo view('workpaper/index/CFS', $data);
+                echo view('includes/Footer');
+            break;
+            case 'FSTR':
+                $data['aa']     = 'Hell';
+                echo view('includes/Header', $data);
+                echo view('workpaper/index/FSTR', $data);
                 echo view('includes/Footer');
             break;
             case 'Aa':
