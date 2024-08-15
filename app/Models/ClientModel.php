@@ -167,7 +167,8 @@ class ClientModel extends Model{
         $query = $this->db->query("select DISTINCT title,c1t.code,c1titleID
         from {$this->tblc1t} as c1t, {$this->tblc1d} as cd1t
         where c1t.c1titleID = cd1t.c1tID
-        and cd1t.clientID = {$cID}");
+        and cd1t.clientID = {$cID}
+        order by c1titleID asc");
         return $query->getResultArray();
 
     }
@@ -183,7 +184,8 @@ class ClientModel extends Model{
         $query = $this->db->query("select DISTINCT title,c2t.code,c2titleID
         from {$this->tblc2t} as c2t, {$this->tblc2d} as cd2t
         where c2t.c2titleID = cd2t.c2tID
-        and cd2t.clientID = {$cID}");
+        and cd2t.clientID = {$cID}
+        order by c2titleID asc");
         return $query->getResultArray();
 
     }
@@ -199,7 +201,8 @@ class ClientModel extends Model{
         $query = $this->db->query("select DISTINCT title,c3t.code,c3titleID
         from {$this->tblc3t} as c3t, {$this->tblc3d} as cd3t
         where c3t.c3titleID = cd3t.c3tID
-        and cd3t.clientID = {$cID}");
+        and cd3t.clientID = {$cID}
+        order by c3titleID asc");
         return $query->getResultArray();
 
     }
