@@ -74,11 +74,11 @@ $html .= '
             <table border="1">
                 <tr>
                     <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                    <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                    <td>Date: <br><b>'. date('F d, Y', strtotime($fl['prepared_on'])) .'</b></td>
                 </tr>
                 <tr>
                     <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                    <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                    <td>Date: <br><b>'.date('F d, Y', strtotime($fl['reviewed_on'])).'</b></td>
                 </tr>
             </table>
         </td>

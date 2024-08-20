@@ -1,2 +1,181 @@
 INFO - 2024-08-20 03:53:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-08-20 09:05:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:08:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:08:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:08:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:08:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:08:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:08:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:08:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:09:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:13:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:13:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:17:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:17:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:18:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:21:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:21:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:41:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:42:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-20 09:42:41 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/pdfc1/AC1.php on line 77.
+ 1 APPPATH/Views/workpaper/pdfc1/AC1.php(77): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/pdfc1/AC1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC1', [], true)
+ 5 APPPATH/Controllers/WorkpaperController.php(3106): view('workpaper/pdfc1/AC1', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC1', '6901aa189cc07709bdaf22e4b40c31d86e3e3dd15d387df8767039e5c33d6c16d89c982c2465c77ad5f47b73150e1f1b6b0f580afd442b412b7703a10cb5e6f8efWMxDz~lQ2LsLkW5IeoMFs=', 'f6caaeab6f8178afaf5ca94e1e3528eddeb1471e33928592398cbed66951c244267860d989f4403d653c8b298e7455cc7f0541d1e3b2546b189d71d6b7722a96OG4SMmsCJWlnamGyXwG$GHs=', 'f6689d7b74d5c08f3771245c2022c49c6aeae1254d0fa96561bf4292e2daca6854e9ca6b7ba2295f009ae31c27253e60ebbf52dcc73447454168ab684c265e2fanNIzQXZBLyZxymz$rvp~hw=')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-20 09:42:41 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/pdfc1/AC1.php on line 81.
+ 1 APPPATH/Views/workpaper/pdfc1/AC1.php(81): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/pdfc1/AC1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC1', [], true)
+ 5 APPPATH/Controllers/WorkpaperController.php(3106): view('workpaper/pdfc1/AC1', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC1', '6901aa189cc07709bdaf22e4b40c31d86e3e3dd15d387df8767039e5c33d6c16d89c982c2465c77ad5f47b73150e1f1b6b0f580afd442b412b7703a10cb5e6f8efWMxDz~lQ2LsLkW5IeoMFs=', 'f6caaeab6f8178afaf5ca94e1e3528eddeb1471e33928592398cbed66951c244267860d989f4403d653c8b298e7455cc7f0541d1e3b2546b189d71d6b7722a96OG4SMmsCJWlnamGyXwG$GHs=', 'f6689d7b74d5c08f3771245c2022c49c6aeae1254d0fa96561bf4292e2daca6854e9ca6b7ba2295f009ae31c27253e60ebbf52dcc73447454168ab684c265e2fanNIzQXZBLyZxymz$rvp~hw=')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-20 09:42:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-20 09:42:43 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/pdfc1/AC1.php on line 77.
+ 1 APPPATH/Views/workpaper/pdfc1/AC1.php(77): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/pdfc1/AC1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC1', [], true)
+ 5 APPPATH/Controllers/WorkpaperController.php(3106): view('workpaper/pdfc1/AC1', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC1', '6901aa189cc07709bdaf22e4b40c31d86e3e3dd15d387df8767039e5c33d6c16d89c982c2465c77ad5f47b73150e1f1b6b0f580afd442b412b7703a10cb5e6f8efWMxDz~lQ2LsLkW5IeoMFs=', 'f6caaeab6f8178afaf5ca94e1e3528eddeb1471e33928592398cbed66951c244267860d989f4403d653c8b298e7455cc7f0541d1e3b2546b189d71d6b7722a96OG4SMmsCJWlnamGyXwG$GHs=', 'f6689d7b74d5c08f3771245c2022c49c6aeae1254d0fa96561bf4292e2daca6854e9ca6b7ba2295f009ae31c27253e60ebbf52dcc73447454168ab684c265e2fanNIzQXZBLyZxymz$rvp~hw=')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-20 09:42:43 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/pdfc1/AC1.php on line 81.
+ 1 APPPATH/Views/workpaper/pdfc1/AC1.php(81): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/pdfc1/AC1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC1', [], true)
+ 5 APPPATH/Controllers/WorkpaperController.php(3106): view('workpaper/pdfc1/AC1', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC1', '6901aa189cc07709bdaf22e4b40c31d86e3e3dd15d387df8767039e5c33d6c16d89c982c2465c77ad5f47b73150e1f1b6b0f580afd442b412b7703a10cb5e6f8efWMxDz~lQ2LsLkW5IeoMFs=', 'f6caaeab6f8178afaf5ca94e1e3528eddeb1471e33928592398cbed66951c244267860d989f4403d653c8b298e7455cc7f0541d1e3b2546b189d71d6b7722a96OG4SMmsCJWlnamGyXwG$GHs=', 'f6689d7b74d5c08f3771245c2022c49c6aeae1254d0fa96561bf4292e2daca6854e9ca6b7ba2295f009ae31c27253e60ebbf52dcc73447454168ab684c265e2fanNIzQXZBLyZxymz$rvp~hw=')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-20 09:43:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:44:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:44:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-20 09:44:25 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/pdfc1/AC1.php on line 77.
+ 1 APPPATH/Views/workpaper/pdfc1/AC1.php(77): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/pdfc1/AC1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC1', [], true)
+ 5 APPPATH/Controllers/WorkpaperController.php(3106): view('workpaper/pdfc1/AC1', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC1', '53d40d0ce5ee9f1f27915675a8abf6d44c8dcb347f756b0a90518e17b69e7147ae93bf0b2c2833094d9fc9846831ae94c689b43ed5bd4dbb78d0bc723c833a10maHICcRp1guQyXhTKMzpd78=', 'b9430390c068de94eb73573c38a50b02636e48ab447a273e6f8361edc3cbda216d4f423fc5fec6a843dc7e4d346cc89ac12431e11209d1ca4caf7392b20f52ac7r70dMM~kXIU8YYsbpcgQwU=', '089f032f2b5bc4716888303fce04ff200ed77a80e6a35456d3be5ac2ba908e39b8d458a6b22cfb1bacbc1ad37edf34bd1058b0de574503bcd7b8393ab614422aDB8e3g5~772~xJpDgz6a47s=')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-20 09:44:25 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/pdfc1/AC1.php on line 81.
+ 1 APPPATH/Views/workpaper/pdfc1/AC1.php(81): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/pdfc1/AC1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC1', [], true)
+ 5 APPPATH/Controllers/WorkpaperController.php(3106): view('workpaper/pdfc1/AC1', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC1', '53d40d0ce5ee9f1f27915675a8abf6d44c8dcb347f756b0a90518e17b69e7147ae93bf0b2c2833094d9fc9846831ae94c689b43ed5bd4dbb78d0bc723c833a10maHICcRp1guQyXhTKMzpd78=', 'b9430390c068de94eb73573c38a50b02636e48ab447a273e6f8361edc3cbda216d4f423fc5fec6a843dc7e4d346cc89ac12431e11209d1ca4caf7392b20f52ac7r70dMM~kXIU8YYsbpcgQwU=', '089f032f2b5bc4716888303fce04ff200ed77a80e6a35456d3be5ac2ba908e39b8d458a6b22cfb1bacbc1ad37edf34bd1058b0de574503bcd7b8393ab614422aDB8e3g5~772~xJpDgz6a47s=')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-20 09:45:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-20 09:45:56 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/pdfc1/AC1.php on line 77.
+ 1 APPPATH/Views/workpaper/pdfc1/AC1.php(77): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/pdfc1/AC1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC1', [], true)
+ 5 APPPATH/Controllers/WorkpaperController.php(3106): view('workpaper/pdfc1/AC1', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC1', '53d40d0ce5ee9f1f27915675a8abf6d44c8dcb347f756b0a90518e17b69e7147ae93bf0b2c2833094d9fc9846831ae94c689b43ed5bd4dbb78d0bc723c833a10maHICcRp1guQyXhTKMzpd78=', 'b9430390c068de94eb73573c38a50b02636e48ab447a273e6f8361edc3cbda216d4f423fc5fec6a843dc7e4d346cc89ac12431e11209d1ca4caf7392b20f52ac7r70dMM~kXIU8YYsbpcgQwU=', '089f032f2b5bc4716888303fce04ff200ed77a80e6a35456d3be5ac2ba908e39b8d458a6b22cfb1bacbc1ad37edf34bd1058b0de574503bcd7b8393ab614422aDB8e3g5~772~xJpDgz6a47s=')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-20 09:45:56 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/pdfc1/AC1.php on line 81.
+ 1 APPPATH/Views/workpaper/pdfc1/AC1.php(81): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/pdfc1/AC1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC1', [], true)
+ 5 APPPATH/Controllers/WorkpaperController.php(3106): view('workpaper/pdfc1/AC1', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC1', '53d40d0ce5ee9f1f27915675a8abf6d44c8dcb347f756b0a90518e17b69e7147ae93bf0b2c2833094d9fc9846831ae94c689b43ed5bd4dbb78d0bc723c833a10maHICcRp1guQyXhTKMzpd78=', 'b9430390c068de94eb73573c38a50b02636e48ab447a273e6f8361edc3cbda216d4f423fc5fec6a843dc7e4d346cc89ac12431e11209d1ca4caf7392b20f52ac7r70dMM~kXIU8YYsbpcgQwU=', '089f032f2b5bc4716888303fce04ff200ed77a80e6a35456d3be5ac2ba908e39b8d458a6b22cfb1bacbc1ad37edf34bd1058b0de574503bcd7b8393ab614422aDB8e3g5~772~xJpDgz6a47s=')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-20 09:47:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:47:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:47:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:49:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:49:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:50:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:50:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:50:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:51:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:53:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:54:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:55:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:56:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:56:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:56:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:56:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:56:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-20 09:56:39 --> ErrorException: Undefined array key "code"
+in APPPATH/Models/WorkpaperModel.php on line 1340.
+ 1 APPPATH/Models/WorkpaperModel.php(1340): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/WorkpaperController.php(795): App\Models\WorkpaperModel->saveac1eqr()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->saveac1eqr()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-20 09:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:56:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-20 09:56:54 --> ErrorException: Undefined array key "code"
+in APPPATH/Models/WorkpaperModel.php on line 1340.
+ 1 APPPATH/Models/WorkpaperModel.php(1340): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/WorkpaperController.php(795): App\Models\WorkpaperModel->saveac1eqr()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->saveac1eqr()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-20 09:57:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:57:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:57:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:57:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 09:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:00:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:07:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:07:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:10:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:10:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:52:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:52:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:52:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:52:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:52:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:53:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:53:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:53:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:53:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:55:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:55:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:55:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:56:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-20 10:56:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

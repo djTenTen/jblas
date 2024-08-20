@@ -1148,6 +1148,30 @@ class WorkpaperModel extends  Model {
     }
 
 
+    public function deletefiles($req){
+
+        switch ($req['c']) {
+            case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
+            case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
+            case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
+            case 'index': $table    = $this->tblcfi; $ctID = 'index';break;
+        }
+        $where = [
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID'],
+            $ctID           => $req['ctID'],
+        ];
+
+        if($this->db->table($table)->where($where)->delete()){
+            $this->logs->log(session()->get('name'). " deleted a file from {$req['c']}");
+            return "deleted";
+        }else{
+            return false;
+        }
+
+    }
+
+
 
 
 

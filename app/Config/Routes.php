@@ -86,7 +86,7 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
             $audmanager->post('approved/(:any)', 'WorkpaperController::approvewp/$1');
             $audmanager->get('approved', 'WorkpaperController::approved');
             $audmanager->get('generatepdf/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'ReportController::generatepdf/$1/$2/$3/$4/$5/$6/$7');
-            
+            $audmanager->post('delete/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::deletefiles/$1/$2/$3/$4/$5');
 
         });
 

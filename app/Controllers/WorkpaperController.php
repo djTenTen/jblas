@@ -703,6 +703,35 @@ class WorkpaperController extends BaseController{
     }
 
 
+    public function deletefiles($c,$ctID,$cID,$wpID,$name){
+        $yp = $this->crypt->decrypt(session()->get('pass'));
+        $cpass = $this->request->getPost('cpass');
+        if($yp == $cpass){
+            $req = [
+                'ctID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+                'cpass'     => $this->request->getPost('cpass'),
+                'c'         => $c,
+            ];
+            $res = $this->wpmodel->deletefiles($req);
+            if($res == "deleted"){
+                session()->setFlashdata('file_deleted','file_deleted');
+                return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+            }else{
+                session()->setFlashdata('invalid_input','invalid_input');
+                return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+            }
+        }else{
+
+            session()->setFlashdata('wrong_pass','wrong_pass');
+            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
+
+        }
+
+    }
+
+
     /**
         ALL FUNCTIONS UNDER CHAPTER 1 USES THIS PARAMETERS
         * @param code consist the code of the file name
@@ -752,7 +781,6 @@ class WorkpaperController extends BaseController{
     public function saveac1eqr($code,$c1tID,$cID,$wpID,$name){
 
         $eqr = [
-            'code'      => $code,
             'nameap'    => $this->request->getPost('nameap'),
             'eqr1'      => $this->request->getPost('eqr1'),
             'eqr2'      => $this->request->getPost('eqr2'),
@@ -760,6 +788,7 @@ class WorkpaperController extends BaseController{
         ];
         $req = [
             'question'  => json_encode($eqr),
+            'code'      => $code,
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
             'c1tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID)),
