@@ -35,6 +35,7 @@ class ReportController extends BaseController{
 
         $dwpID          = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
         $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $fID            = $this->crypt->decrypt(session()->get('firmID'));
         $a              = explode('-', $aud);
         $s              = explode('-', $sup);
         $am             = explode('-', $audm);
@@ -55,6 +56,44 @@ class ReportController extends BaseController{
         $data['tb']     = $this->rpmodel->gettrialbalance($dcID,$dwpID);
         $data['cl']     = $this->rpmodel->getclientinfo($dwpID,$dcID);
         $data['fl']     = $this->rpmodel->getfileinfoc1($dwpID,$dcID);
+
+        $q1e            = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'1st','EWT');
+        $data['q1e']    = (empty($q1e['file'])) ? '' : $q1e['file'];
+        $q1v            = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'1st','VAT');
+        $data['q1v']    = (empty($q1v['file'])) ? '' : $q1v['file'];
+        $q16            = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'1st','1601C');
+        $data['q16']    = (empty($q16['file'])) ? '' : $q16['file'];
+        $q17            = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'1st','1701/1702');
+        $data['q17']    = (empty($q17['file'])) ? '' : $q17['file'];
+       
+        $q2e   = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'2nd','EWT');
+        $data['q2e']    = (empty($q2e['file'])) ? '' : $q2e['file'];
+        $q2v            = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'2nd','VAT');
+        $data['q2v']    = (empty($q2v['file'])) ? '' : $q2v['file'];
+        $q26    = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'2nd','1601C');
+        $data['q26']    = (empty($q26['file'])) ? '' : $q26['file'];
+        $q27    = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'2nd','1701/1702');
+        $data['q27']    = (empty($q27['file'])) ? '' : $q27['file'];
+       
+        $q3e            = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'2nd','1701/1702');
+        $data['q3e']    = (empty($q3e['file'])) ? '' : $q3e['file'];
+        $q3e    = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'3rd','EWT');
+        $data['q3e']    = (empty($q3e['file'])) ? '' : $q3e['file'];
+        $q3v    = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'3rd','VAT');
+        $data['q3v']    = (empty($q3v['file'])) ? '' : $q3v['file'];
+        $q36    = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'3rd','1601C');
+        $data['q36']    = (empty($q36['file'])) ? '' : $q36['file'];
+        $q37   = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'3rd','1701/1702');
+        $data['q37']    = (empty($q37['file'])) ? '' : $q37['file'];
+        
+        $q4e    = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'4th','EWT');
+        $data['q4e']    = (empty($q4e['file'])) ? '' : $q4e['file'];
+        $q4v    = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'4th','VAT');
+        $data['q4v']    = (empty($q4v['file'])) ? '' : $q4v['file'];
+        $q46    = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'4th','1601C');
+        $data['q46']    = (empty($q46['file'])) ? '' : $q46['file'];
+        $q47   = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'4th','1701/1702');
+        $data['q47']    = (empty($q47['file'])) ? '' : $q47['file'];
         echo view('workpaper/Report', $data);
 
     }

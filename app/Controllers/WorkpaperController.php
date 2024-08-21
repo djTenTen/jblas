@@ -309,6 +309,7 @@ class WorkpaperController extends BaseController{
             'cID'   => $dcID,
             'wpID'  => $dwpID,
             'file'  => $this->request->getFile('pdf'),
+            'fID'   => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->wpmodel->uploadcfsfiles($req);
         if($res == "uploaded"){
@@ -396,6 +397,7 @@ class WorkpaperController extends BaseController{
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
             'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
             'index'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index)),
+            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->wpmodel->uploadtbfiles($req);
         if($res == "uploaded"){

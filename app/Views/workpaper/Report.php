@@ -160,6 +160,66 @@ $html = '';
                 $html = '';
             break;
 
+            case 'FSTR':
+                $pdf->AddPage('P');
+                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
+                $html .= $style2;
+                $html .= '<hr style="color:blue;">';
+                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:white; background-color:navy">Documents</h2><br><br>';
+                $html .= '
+                    <br> 
+                    <table>
+                        <tr>
+                            <td>
+                                <br>
+                                <ul><b>1st Quarter</b>
+                                    <li>EWT: <b>'.$q1e.'</b></li>
+                                    <li>VAT: <b>'.$q1v.'</b></li>
+                                    <li>1601C: <b>'.$q16.'</b></li>
+                                    <li>1701/2: <b>'.$q17.'</b></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <br>
+                                <ul><b>2nd Quarter</b>
+                                    <li>EWT: <b>'.$q2e.'</b></li>
+                                    <li>VAT: <b>'.$q2v.'</b></li>
+                                    <li>1601C: <b>'.$q26.'</b></li>
+                                    <li>1701/2: <b>'.$q27.'</b></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <br>
+                                <ul><b>3rd Quarter</b>
+                                    <li>EWT: <b>'.$q3e.'</b></li>
+                                    <li>VAT: <b>'.$q3v.'</b></li>
+                                    <li>1601C: <b>'.$q36.'</b></li>
+                                    <li>1701/2: <b>'.$q37.'</b></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <br>
+                                <ul><b>4th Quarter</b>
+                                    <li>EWT: <b>'.$q4e.'</b></li>
+                                    <li>VAT: <b>'.$q4v.'</b></li>
+                                    <li>1601C: <b>'.$q46.'</b></li>
+                                    <li>1701/2: <b>'.$q47.'</b></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                ';
+                $pdf->writeHTML($html, true, false,false, false, '');
+                $html = '';
+            break;
+
             case 'Ac':
                 // $ac     = $rp->getacc1values($f['section'],$dcID,$dwpID);
                 
@@ -172,9 +232,7 @@ $html = '';
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
-            case 'Acd':
-                
-            break;
+
             case 'B':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);

@@ -29,7 +29,7 @@ class ReportModel extends  Model {
     protected $tblfi    = "tbl_file_index";
     protected $tblcfi   = "tbl_client_file_index";
     protected $tbltb    = "tbl_client_trial_balance";
-
+    protected $tblfst   = "tbl_client_fstax";
     protected $logs;
     protected $db;
     protected $time,$date;
@@ -48,6 +48,21 @@ class ReportModel extends  Model {
 
     }
 
+
+    public function getfstax($dcID,$dwpID,$fID,$qtr,$type){
+
+        $where = [
+            'client' => $dcID,
+            'workpaper' => $dwpID,
+            'firm' => $fID,
+            'client' => $dcID,
+            'quarter' => $qtr,
+            'type' => $type,
+        ];
+        $query = $this->db->table($this->tblfst)->where($where)->get();
+        return $query->getRowArray();
+
+    }
     
     /**
         * @method getc1values() get the clients chapter 1

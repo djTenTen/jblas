@@ -625,11 +625,17 @@ class WorkpaperModel extends  Model {
 
         $pdfname = $req['cfiID'].$req['cID'].$req['wpID'].$req['index'].'.pdf';
         if($req['pdf'] != ''){
-            $pdfPath = ROOTPATH .'/public/uploads/pdf/'.$pdfname; 
-            if (file_exists($pdfPath)) {
-                unlink($pdfPath);
+
+            $pdfPath = ROOTPATH .'/public/uploads/pdf/wp/'.$req['fID'].'/'.$req['wpID'].'/';
+            if (!is_dir($pdfPath)) {
+                mkdir($pdfPath, 0755, true);
             }
-            $req['pdf']->move(ROOTPATH .'public/uploads/pdf', $pdfname);
+
+            $pdffile = $pdfPath.$pdfname; 
+            if (file_exists($pdffile)) {
+                unlink($pdffile);
+            }
+            $req['pdf']->move($pdfPath, $pdfname);
         }
         $data = [
             'file'      => $pdfname,
@@ -720,12 +726,16 @@ class WorkpaperModel extends  Model {
     public function uploadcfsfiles($req){
 
         if($req['file'] != ''){
-            $fn = $req['cID'].'-'.$req['wpID'].'.pdf';
-            $pdfpath = ROOTPATH .'public/uploads/pdf/'.$fn; 
-            if(file_exists($pdfpath) && is_file($pdfpath)) {
-                unlink($pdfpath);
+            $pdfPath = ROOTPATH .'/public/uploads/pdf/wp/'.$req['fID'].'/'.$req['wpID'].'/';
+            if (!is_dir($pdfPath)) {
+                mkdir($pdfPath, 0755, true);
             }
-            $req['file']->move(ROOTPATH .'public/uploads/pdf', $fn);
+            $fn = $req['cID'].'-'.$req['wpID'].'.pdf';
+            $pdffile = $pdfPath.$fn; 
+            if(file_exists($pdffile) && is_file($pdffile)) {
+                unlink($pdffile);
+            }
+            $req['file']->move($pdfPath, $fn);
             $this->logs->log(session()->get('name'). " has uploaded a copy signed financial statement on workpaper");
             return 'uploaded';
         }else{

@@ -124,7 +124,7 @@
                             <textarea name="remarks" id="rem" class="form-control" cols="100" rows="10"></textarea>
                         </label>
 
-                        <object data="<?= base_url()?>uploads/pdf/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID))?><?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID))?><?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?><?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index))?>.pdf" type="application/pdf" frameborder="0" width="100%" height="1000"> </object>
+                        <object data="<?= base_url()?>uploads/pdf/wp/<?= $crypt->decrypt(session()->get('firmID'))?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID))?><?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID))?><?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?><?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index))?>.pdf" type="application/pdf" frameborder="0" width="100%" height="1000"> </object>
                         
                 </div>
                 <div class="modal-footer">
