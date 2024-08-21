@@ -52,7 +52,7 @@ class ReportController extends BaseController{
         $data['c2']     = $this->rpmodel->getc2values($dcID,$dwpID);
         $data['c3']     = $this->rpmodel->getc3values($dcID,$dwpID);
         $data['fi']     = $this->rpmodel->getfileindex($dcID,$dwpID);
-        $data['cfi']    = $this->rpmodel->getlatestupload($dcID,$dwpID);
+        // $data['cfi']    = $this->rpmodel->getlatestupload($dcID,$dwpID);
         $data['tb']     = $this->rpmodel->gettrialbalance($dcID,$dwpID);
         $data['cl']     = $this->rpmodel->getclientinfo($dwpID,$dcID);
         $data['fl']     = $this->rpmodel->getfileinfoc1($dwpID,$dcID);

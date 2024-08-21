@@ -125,36 +125,17 @@ $html = '';
         switch ($f['section']) {
 
             case '-':
-                // $aa    = $rp->getabc3values($f['section'],$dcID,$dwpID);
+
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style;
+                $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
 
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'Aa':
-                // $aa     = $rp->getabc3values($f['section'],$dcID,$dwpID);
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'Ab':
-                // $ab     = $rp->getabc3values($f['section'],$dcID,$dwpID);
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -166,7 +147,7 @@ $html = '';
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '<h2 style="color:white; background-color:navy">Documents</h2><br><br>';
+                $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
                 $html .= '
                     <br> 
                     <table>
@@ -290,6 +271,11 @@ $html = '';
                     </table>
                 ';
 
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
+                
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -352,6 +338,11 @@ $html = '';
                     </table>
                 ';
 
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
+
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -413,6 +404,11 @@ $html = '';
                     </table>
                 ';
 
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
+
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -472,6 +468,11 @@ $html = '';
                         </tfoot>
                     </table>
                 ';
+
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -534,6 +535,11 @@ $html = '';
                     </table>
                 ';
 
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
+
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -594,6 +600,11 @@ $html = '';
                         </tfoot>
                     </table>
                 ';
+
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -656,6 +667,11 @@ $html = '';
                     </table>
                 ';
 
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
+
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -717,6 +733,11 @@ $html = '';
                     </table>
                 ';
 
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
+
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -777,6 +798,11 @@ $html = '';
                         </tfoot>
                     </table>
                 ';
+
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -840,6 +866,11 @@ $html = '';
                     </table>
                 ';
 
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
+
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -900,6 +931,11 @@ $html = '';
                         </tfoot>
                     </table>
                 ';
+
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -962,6 +998,11 @@ $html = '';
                     </table>
                 ';
 
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
+
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -1022,6 +1063,11 @@ $html = '';
                         </tfoot>
                     </table>
                 ';
+
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -1084,6 +1130,11 @@ $html = '';
                     </table>
                 ';
 
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
+
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -1144,6 +1195,11 @@ $html = '';
                         </tfoot>
                     </table>
                 ';
+
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
@@ -1206,6 +1262,11 @@ $html = '';
                     </table>
                 ';
 
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
+
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -1266,6 +1327,11 @@ $html = '';
                         </tfoot>
                     </table>
                 ';
+
+                if($f['file'] != ''){
+                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<b>'.$f['file'].'</b><br><br>';
+                }
 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';

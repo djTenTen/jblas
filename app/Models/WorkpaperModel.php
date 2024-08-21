@@ -309,6 +309,31 @@ class WorkpaperModel extends  Model {
     }
 
 
+    public function getcfsvalues($cID,$wpID){
+
+        $where = [
+            'clientID'  => $cID,
+            'workpaper' => $wpID,
+            'index'     => 1,
+        ];
+        $query = $this->db->table($this->tblcfi)->where($where)->get();
+        return $query->getRowArray();
+
+    }
+
+    public function getindexfiles($cID,$wpID,$index){
+
+        $where = [
+            'clientID'  => $cID,
+            'workpaper' => $wpID,
+            'index'     => $index,
+        ];
+        $query = $this->db->table($this->tblcfi)->where($where)->get();
+        return $query->getRowArray();
+
+    }
+
+
     /**
         * @method getabc3values() get the files AB index
         * @param code file code
@@ -623,22 +648,21 @@ class WorkpaperModel extends  Model {
     */
     public function uploadtbfiles($req){
 
-        $pdfname = $req['cfiID'].$req['cID'].$req['wpID'].$req['index'].'.pdf';
+        $filename = $req['pdf']->getClientName();
+        //$pdfname = $req['cfiID'].$req['cID'].$req['wpID'].$req['index'].'.pdf';
         if($req['pdf'] != ''){
-
             $pdfPath = ROOTPATH .'/public/uploads/pdf/wp/'.$req['fID'].'/'.$req['wpID'].'/';
             if (!is_dir($pdfPath)) {
                 mkdir($pdfPath, 0755, true);
             }
-
-            $pdffile = $pdfPath.$pdfname; 
+            $pdffile = $pdfPath.$filename; 
             if (file_exists($pdffile)) {
                 unlink($pdffile);
             }
-            $req['pdf']->move($pdfPath, $pdfname);
+            $req['pdf']->move($pdfPath);
         }
         $data = [
-            'file'      => $pdfname,
+            'file'      => $filename,
             'remarks'   => $req['remarks'],
         ];
         if($this->db->table($this->tblcfi)->where('cfiID', $req['cfiID'])->update($data)){
@@ -725,19 +749,30 @@ class WorkpaperModel extends  Model {
     */
     public function uploadcfsfiles($req){
 
+        $filename = $req['file']->getClientName();
+
         if($req['file'] != ''){
             $pdfPath = ROOTPATH .'/public/uploads/pdf/wp/'.$req['fID'].'/'.$req['wpID'].'/';
             if (!is_dir($pdfPath)) {
                 mkdir($pdfPath, 0755, true);
             }
-            $fn = $req['cID'].'-'.$req['wpID'].'.pdf';
-            $pdffile = $pdfPath.$fn; 
+        
+            $pdffile = $pdfPath.$filename; 
             if(file_exists($pdffile) && is_file($pdffile)) {
                 unlink($pdffile);
             }
-            $req['file']->move($pdfPath, $fn);
-            $this->logs->log(session()->get('name'). " has uploaded a copy signed financial statement on workpaper");
-            return 'uploaded';
+            $req['file']->move($pdfPath);
+            $where = [
+                'clientID'  => $req['cID'],
+                'firm'      => $req['fID'],
+                'workpaper' => $req['wpID'],
+                'index'     => 1,
+            ];
+            $data = ['file' =>  $filename];
+            if($this->db->table($this->tblcfi)->where($where)->update($data)){
+                $this->logs->log(session()->get('name'). " has uploaded a copy signed financial statement on workpaper");
+                return 'uploaded';
+            }
         }else{
             return false;
         }
