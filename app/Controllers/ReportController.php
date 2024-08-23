@@ -35,6 +35,7 @@ class ReportController extends BaseController{
 
         $dwpID          = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
         $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
         $fID            = $this->crypt->decrypt(session()->get('firmID'));
         $a              = explode('-', $aud);
         $s              = explode('-', $sup);
@@ -48,6 +49,7 @@ class ReportController extends BaseController{
         $data['client'] = strtoupper($cname);
         $data['wpID']   = $dwpID;
         $data['cID']    = $dcID;
+        $data['fID']    = $fID;
         $data['c1']     = $this->rpmodel->getc1values($dcID,$dwpID);
         $data['c2']     = $this->rpmodel->getc2values($dcID,$dwpID);
         $data['c3']     = $this->rpmodel->getc3values($dcID,$dwpID);
