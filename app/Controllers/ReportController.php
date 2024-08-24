@@ -96,6 +96,10 @@ class ReportController extends BaseController{
         $data['q46']    = (empty($q46['file'])) ? '' : $q46['file'];
         $q47   = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'4th','1701/1702');
         $data['q47']    = (empty($q47['file'])) ? '' : $q47['file'];
+
+        $data['fst']   = $this->rpmodel->getfstaxgen($dcID,$dwpID,$fID);
+        
+
         echo view('workpaper/Report', $data);
 
     }

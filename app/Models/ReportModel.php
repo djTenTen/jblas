@@ -55,12 +55,23 @@ class ReportModel extends  Model {
             'client' => $dcID,
             'workpaper' => $dwpID,
             'firm' => $fID,
-            'client' => $dcID,
             'quarter' => $qtr,
             'type' => $type,
         ];
         $query = $this->db->table($this->tblfst)->where($where)->get();
         return $query->getRowArray();
+
+    }
+
+    public function getfstaxgen($dcID,$dwpID,$fID){
+
+        $where = [
+            'client' => $dcID,
+            'workpaper' => $dwpID,
+            'firm' => $fID,
+        ];
+        $query = $this->db->table($this->tblfst)->where($where)->get();
+        return $query->getResultArray();
 
     }
     
