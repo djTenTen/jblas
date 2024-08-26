@@ -86,12 +86,34 @@ $html = '';
     */
     $html .= '
         <hr style="color:blue;"> <br><br><br><br><br><br>
-        <h1 style="color:navy; text-align:center;">(Logo)</h1>
-        <h1 style="color:navy; text-align:center;">(Firm)</h1>
-        <br><br><br>
-        <h1 style="color:navy;text-align:center;">'.$client.'</h1>
-        <h3 style="text-align:center;">Workpaper - FY'.$fy.'</h3>
+    ';
+    $image_file = base_url('uploads/img/'.$fID.'/logo/'.$logo);
+    $pdf->Image($image_file, $x = 74, $y = 25, $w = 75, $h = 0 , $type = '', $link = '', $align = 'center', $resize = true, $dpi = 300, $palign = '', $ismask = false, $imgmask = false, $border = 0, $fitbox = true, $hidden = false, $fitonpage = false, $alt = '');
+    $html .= '
+        <table>
+            <tr>
+                <td style="text-align: center;"></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;"><br><br><br><br><br><br><br></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;"><br><br></td>
+            </tr>
+            <tr>
+                <td><h1 style="color:#7752FE; text-align:center;">'.$firm.'</h1><br><br></td>
+            </tr>
+            <tr>
+                <td><h1 style="color:#7752FE; text-align:center;">'.$client.'</h1></td>
+            </tr>
+            <tr>
+                <td><h3 style="text-align:center;">Workpaper - FY'.$fy.'</h3></td>
+            </tr>
         
+        </table>
+    ';
+    $html .='
+        <br><br><br><br><br><br><br>
         <table style="margin-top: 50px;">
             <tbody>
                 <tr>
@@ -112,6 +134,25 @@ $html = '';
     $pdf->writeHTML($html, true, false,false, false, '');
     $html = '';
 
+
+    /**
+        ----------------------------------------------------------
+        INTRODUCTION PDF GENERATOR
+        ---------------------------------------------------------- 
+    */
+
+    $pdf->AddPage('P');
+    $pdf->Bookmark('Introduction',0,0);
+
+    $html .= '<hr style="color:blue;">';
+    $html .= '<h1 style="color:#7752FE;text-align:center;">INTRODUCTION</h1>';
+    $html .= '<hr style="color:blue;">';
+    $html .= '<p style="color:black;">The purpose of this Audit Quality Management System (QMS) Manual is to outline procedures and guidelines for conducting financial audits efficiently and effectively in small and medium audit firms. This manual ensures compliance with the International Standards on Auditing (ISA) and local regulations, despite limited resources.</p>';
+    $pdf->writeHTML($html, true, false,false, false, '');
+    $html = '';
+
+
+
     /**
         ----------------------------------------------------------
         WORKPAPER PDF GENERATOR
@@ -120,8 +161,8 @@ $html = '';
     $pdf->AddPage('P');
     $pdf->Bookmark('Work Paper',0,0);
 
-    $html .= '<hr style="color:blue;">';
-    $html .= '<h1 style="color:navy;text-align:center;">WORK PAPER</h1>';
+    $html .= '<br><br><br><br><br><br><br><hr style="color:blue;">';
+    $html .= '<h1 style="color:#7752FE;text-align:center;">WORK PAPER</h1>';
     $html .= '<hr style="color:blue;">';
     $pdf->writeHTML($html, true, false,false, false, '');
     $html = '';
@@ -134,10 +175,10 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2>';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -150,8 +191,8 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                 $html .= '
                     <br> 
                     <table>
@@ -210,11 +251,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -263,7 +304,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
                 
@@ -276,12 +317,12 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
 
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                            <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -330,7 +371,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -343,11 +384,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -396,7 +437,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -408,11 +449,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -461,7 +502,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -474,11 +515,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -527,7 +568,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -540,11 +581,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -593,7 +634,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -606,11 +647,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -659,7 +700,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -672,11 +713,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -725,7 +766,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -738,11 +779,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -791,7 +832,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -805,11 +846,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -858,7 +899,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -871,11 +912,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -924,7 +965,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -937,11 +978,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -990,7 +1031,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -1003,11 +1044,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -1056,7 +1097,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -1069,11 +1110,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -1122,7 +1163,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -1135,11 +1176,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -1188,7 +1229,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -1201,11 +1242,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -1254,7 +1295,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -1267,11 +1308,11 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
                 $html .= '
                     <table border="1">
                         <thead>
-                            <tr style="background-color: navy; color:white;">
+                           <tr style="background-color: #C2D9FF;">
                                 <th style="width: 30%;"><b>Account</b></th>
                                 <th style="width: 20%;"><b>Balance</b></th>
                                 <th style="width: 20%;"><b>Supp Balance</b></th>
@@ -1320,7 +1361,7 @@ $html = '';
                 ';
 
                 if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:navy">Documents</h5><br><br>';
+                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
 
@@ -1351,7 +1392,7 @@ $html = '';
     $pdf->AddPage('P');
     $pdf->Bookmark('Chapter 1 : Planning',0,0);
     $html .= '<hr style="color:blue;">';
-    $html .= '<h1 style="color:navy;text-align:center;">CHAPTER 1: PLANNING</h1>';
+    $html .= '<h1 style="color:#7752FE;text-align:center;">CHAPTER 1: PLANNING</h1>';
     $html .= '<hr style="color:blue;">';
     $pdf->writeHTML($html, true, false,false, false, '');
     $html = '';
@@ -5410,7 +5451,7 @@ $html = '';
     $pdf->AddPage('P');
     $pdf->Bookmark('Chapter 2 : Detailed Procedure',0,0);
     $html .= '<hr style="color:blue;">';
-    $html .= '<h1 style="color:navy;text-align:center;">CHAPTER 2: DETAILED PROCEDURE</h1>';
+    $html .= '<h1 style="color:#7752FE;text-align:center;">CHAPTER 2: DETAILED PROCEDURE</h1>';
     $html .= '<hr style="color:blue;">';
     $pdf->writeHTML($html, true, false,false, false, '');
     $html = '';
@@ -7744,7 +7785,7 @@ $html = '';
     $pdf->AddPage('P');
     $pdf->Bookmark('Chapter 3 : Conclusion',0,0);
     $html .= '<hr style="color:blue;">';
-    $html .= '<h1 style="color:navy;text-align:center;">CHAPTER 3: CONCLUSION</h1>';
+    $html .= '<h1 style="color:#7752FE;text-align:center;">CHAPTER 3: CONCLUSION</h1>';
     $html .= '<hr style="color:blue;">';
     $pdf->writeHTML($html, true, false,false, false, '');
     $html = '';
@@ -10958,7 +10999,7 @@ $html = '';
     $pdf->AddPage('P');
     $pdf->Bookmark('Document Attachments',0,0);
     $html .= '<hr style="color:blue;">';
-    $html .= '<h1 style="color:navy;text-align:center;">DOCUMENT ATTACHMENTS</h1>';
+    $html .= '<h1 style="color:#7752FE;text-align:center;">DOCUMENT ATTACHMENTS</h1>';
     $html .= '<hr style="color:blue;">';
     $pdf->writeHTML($html, true, false,false, false, '');
     $html = '';
@@ -10971,7 +11012,7 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2>';
                 
                 if($f['file'] != ''){
                     // Set the source PDF file 
@@ -10983,7 +11024,7 @@ $html = '';
                         // Create a new page in TCPDF with the same size as the imported page
                         $pdf->AddPage($size['orientation'], array($size['width'], $size['height']));
                         // Use the imported page as a template
-                        $html .= '<b style="color:navy;">'.$f['file'].'</b><br><br>';
+                        $html .= '<b style="color:#7752FE;">'.$f['file'].'</b><br><br>';
                         $pdf->writeHTMLCell(0, 0, 10, 10, $html, 0, 1, 0, true, '', true);
                         $pdf->useTemplate($templateId, 0, 20);
                         $html = '';
@@ -10997,7 +11038,7 @@ $html = '';
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
+                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2>';
 
                 foreach($fst as $r){
 
@@ -11011,9 +11052,9 @@ $html = '';
                             // Create a new page in TCPDF with the same size as the imported page
                             $pdf->AddPage($size['orientation'], array($size['width'], $size['height']));
                             // Use the imported page as a template
-                            $html .= '<b style="color:navy;">Quarter: '.$r['quarter'].'</b><br>';
-                            $html .= '<b style="color:navy;">File: '.$r['type'].'</b><br>';
-                            $html .= '<b style="color:navy;">File Name: '.$r['file'].'</b><br>';
+                            $html .= '<b style="color:#7752FE;">Quarter: '.$r['quarter'].'</b><br>';
+                            $html .= '<b style="color:#7752FE;">File: '.$r['type'].'</b><br>';
+                            $html .= '<b style="color:#7752FE;">File Name: '.$r['file'].'</b><br>';
                             $pdf->writeHTMLCell(0, 0, 10, 10, $html, 0, 1, 0, true, '', true);
                             $pdf->useTemplate($templateId, 0, 20);
                             $html = '';
@@ -11048,7 +11089,7 @@ $html = '';
                     $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                     $html .= $style2;
                     $html .= '<hr style="color:blue;">';
-                    $html .= '<h2 style="color:navy;">'.$f['section'].': '.$f['desc'].'</h2>';
+                    $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2>';
                     // Set the source PDF file 
                     $pageCount = $pdf->setSourceFile(ROOTPATH.'public/uploads/pdf/wp/'.$fID.'/'.$wpID.'/'.$f['file']);
                     // Iterate through all pages and import them
@@ -11058,7 +11099,7 @@ $html = '';
                         // Create a new page in TCPDF with the same size as the imported page
                         $pdf->AddPage($size['orientation'], array($size['width'], $size['height']));
                         // Use the imported page as a template
-                        $html .= '<b style="color:navy;">'.$f['file'].'</b><br><br>';
+                        $html .= '<b style="color:#7752FE;">'.$f['file'].'</b><br><br>';
                         $pdf->writeHTMLCell(0, 0, 10, 10, $html, 0, 1, 0, true, '', true);
                         $pdf->useTemplate($templateId, 0, 30);
                         $html = '';
@@ -11076,7 +11117,7 @@ $html = '';
     $pdf->addTOCPage('P');
     $toc = '
         <hr style="color:blue;">
-        <h1 style="color:navy; text-align:center;">TABLE OF CONTENTS</h1>
+        <h1 style="color:#7752FE; text-align:center;">TABLE OF CONTENTS</h1>
         <hr style="color:blue;">
     ';
     $pdf->writeHTML($toc, true, false,false, false, '');

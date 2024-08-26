@@ -292,6 +292,7 @@ class UserController extends BaseController{
     public function updatemyinfo($uID){
 
         $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
+        $fID  = $this->crypt->decrypt(session()->get('firmID'));
         $npss = '';
         if(!empty($this->request->getPost('pass'))){
             $npss = $this->crypt->encrypt($this->request->getPost('pass'));
@@ -304,11 +305,14 @@ class UserController extends BaseController{
             'contact'       => $this->request->getPost('contact'),
             'email'         => $this->request->getPost('email'),
             'pass'          => $npss,
+            'logo'          => $this->request->getFile('logo'),
             'photo'         => $this->request->getFile('photo'),
             'signature'     => $this->request->getFile('signature'),
+            'mylogo'        => session()->get('logo'),
             'myphoto'       => session()->get('photo'),
             'mysignature'   => session()->get('signature'),
             'uID'           => $duID,
+            'fID'           => $fID,
         ];
         $res = $this->usermodel->updatemyinfo($req);
         if($res == "updated"){

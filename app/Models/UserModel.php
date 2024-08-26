@@ -148,10 +148,9 @@ class UserModel extends  Model {
             return 'exist';
         }else{
             if($req['logo'] != ''){
-                $newlogoname = $req['logo']->getRandomName();
-                $req['logo']->move(ROOTPATH .'public/uploads/logo', $newlogoname);
+                $logoname = $req['logo']->getRandomName();
             }else{
-                $newlogoname = '';
+                $logoname = '';
             }
             $firm = [
                 'firm'          => $req['firm'], 
@@ -159,13 +158,24 @@ class UserModel extends  Model {
                 'contact'       => $req['contact'],
                 'noemployee'    => $req['noemployee'],
                 'noclient'      => $req['noclient'],
-                'logo'          =>  $newlogoname,
+                'logo'          => $logoname,
                 'status'        => 'Active',
                 'added_on'      => $this->date.' '.$this->time,
                 'exp_on'        => $expdate,
             ];
             $this->db->table($this->tblf)->insert($firm);
             $insertedId = $this->db->insertID();
+            if($logoname != ''){
+                $logopath = ROOTPATH .'/public/uploads/img/'.$insertedId.'/logo/';
+                if (!is_dir($logopath)) {
+                    mkdir($logopath, 0755, true);
+                }
+                $logofile = $logopath.$logoname;
+                if(file_exists($logofile) && is_file($logofile)) {
+                    unlink($logofile);
+                }
+                $req['logo']->move($logopath, $logoname);
+            }
             $data = [
                 'name'          => $req['fname'],
                 'firm'          => $insertedId,
@@ -189,6 +199,12 @@ class UserModel extends  Model {
             }else{
                 return 'failed';
             }
+
+
+            
+
+
+            
         }
 
     }
@@ -314,25 +330,62 @@ class UserModel extends  Model {
             'contact'       => $req['contact'],
             'email'         => $req['email'],
         ];
-        if($req['photo'] != ''){
-            $imagePath = ROOTPATH .'public/uploads/photo/'.$req['myphoto']; 
-            if(file_exists($imagePath) && is_file($imagePath)) {
-                unlink($imagePath);
+        $res = $this->db->table($this->tblu)->where('userID', $req['uID'])->get();
+
+        if($req['logo'] != ''){
+            $f = $this->db->table($this->tblf)->where('firmID', $req['fID'])->get()->getRowArray();
+            $logopath = ROOTPATH .'/public/uploads/img/'.$req['fID'].'/logo/';
+            if($res->getNumRows() >= 1 ){
+                $img = $res->getRowArray();
+                if (!is_dir($logopath)) {
+                    mkdir($logopath, 0755, true);
+                }
+                $logofile = $logopath.$f['logo'];
+                if(file_exists($logofile) && is_file($logofile)) {
+                    unlink($logofile);
+                }
+                $logoname = $req['logo']->getRandomName();
+                $req['logo']->move($logopath, $logoname);
+                $this->db->table($this->tblf)->where('firmID', $req['fID'])->update(array('logo' => $logoname));
+                session()->set('logo', $logoname);
             }
-            $photoname = $req['photo']->getRandomName();
-            $req['photo']->move(ROOTPATH .'public/uploads/photo', $photoname);
-            $data['photo'] = $photoname;
-            session()->set('photo', $photoname);
+        }
+        if($req['photo'] != ''){
+            $photopath = ROOTPATH .'/public/uploads/img/'.$req['fID'].'/photo/';
+            if($res->getNumRows() >= 1 ){
+                $img = $res->getRowArray();
+                if (!is_dir($photopath)) {
+                    mkdir($photopath, 0755, true);
+                }
+                $imgpath = $photopath.$img['photo'];
+                if(file_exists($imgpath) && is_file($imgpath)) {
+                    unlink($imgpath);
+                }
+                $photoname = $req['photo']->getRandomName();
+                $req['photo']->move($photopath, $photoname);
+                $data['photo'] = $photoname;
+                session()->set('photo', $photoname);
+            }
         }
         if($req['signature'] != ''){
-            $imagePath = ROOTPATH .'public/uploads/signature/'.$req['mysignature']; 
-            if (file_exists($imagePath) && is_file($imagePath)) {
-                unlink($imagePath);
+
+            $signpath = ROOTPATH .'/public/uploads/img/'.$req['fID'].'/signature/';
+            
+            if($res->getNumRows() >= 1 ){
+                $img = $res->getRowArray();
+                if (!is_dir($signpath)) {
+                    mkdir($signpath, 0755, true);
+                }
+                $imgpath = $signpath.$img['signature'];
+                if(file_exists($imgpath) && is_file($imgpath)) {
+                    unlink($imgpath);
+                }
+                $signname = $req['signature']->getRandomName();
+                $req['signature']->move($signpath, $signname);
+                $data['signature'] = $signname;
+                session()->set('signature', $signname);
             }
-            $signaturename = $req['signature']->getRandomName();
-            $req['signature']->move(ROOTPATH .'public/uploads/signature', $signaturename);
-            $data['signature'] = $signaturename;
-            session()->set('signature', $signaturename);
+
         }
         if($this->db->table($this->tblu)->where('userID', $req['uID'])->update($data)){
             $this->logs->log($req['name']. " updated his/her information");

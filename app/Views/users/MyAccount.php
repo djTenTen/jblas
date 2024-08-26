@@ -37,15 +37,32 @@
                 <form id="uploadForm" action="<?= base_url('auditsystem/myaccount/update')?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($u['userID']))?>" method="post" enctype="multipart/form-data">
                     <div class="row" id="editform">
                         <div class="col-xl-4">
-                            <!-- Profile picture card-->
+                            <!-- Logo card-->
+                            <?php if(session()->get('type') == 'Auditing Firm'){?>
+                            <div class="card mb-4 mb-xl-0">
+                                <div class="card-header">Logo</div>
+                                <div class="card-body text-center">
+                                    <!-- Profile picture image-->
+                                    <?php if($u['logo'] == '' or empty($u['logo'])){?>
+                                        <img class="img-account-profile mb-2" src="<?= base_url()?>assets/img/illustrations/profiles/profile-1.png" alt="" />
+                                    <?php }else{?>
+                                        <img class="img-account-profile rounded-circle mb-2 logo" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/logo/<?= $u['logo']?>" alt="" />
+                                    <?php }?>
+                                    <!-- <img class="img-account-profile rounded-circle mb-2" src="assets/img/illustrations/profiles/profile-1.png" alt="" /> -->
+                                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB and 2x2 or square size image</div>
+                                    <!-- Profile picture upload button-->
+                                    <input type="file" id="imagelogo" name="logo" accept=".png, .jpg, .jpeg" class="form-control btn btn-primary" >
+                                </div>
+                            </div>
+                            <?php }?>
                             <div class="card mb-4 mb-xl-0">
                                 <div class="card-header">Profile Picture</div>
                                 <div class="card-body text-center">
                                     <!-- Profile picture image-->
                                     <?php if($u['photo'] == '' or empty($u['photo'])){?>
-                                        <img class="img-account-profile rounded-circle mb-2 photo" src="<?= base_url()?>uploads/logo/<?= $u['logo']?>" alt="" />
+                                        <img class="img-account-profile mb-2" src="<?= base_url()?>assets/img/illustrations/profiles/profile-1.png" alt="" />
                                     <?php }else{?>
-                                        <img class="img-account-profile rounded-circle mb-2 photo" src="<?= base_url()?>uploads/photo/<?= $u['photo']?>" alt="" />
+                                        <img class="img-account-profile rounded-circle mb-2 photo" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/photo/<?= $u['photo']?>" alt="" />
                                     <?php }?>
                                     <!-- <img class="img-account-profile rounded-circle mb-2" src="assets/img/illustrations/profiles/profile-1.png" alt="" /> -->
                                     <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB and 2x2 or square size image</div>
@@ -68,7 +85,7 @@
                                     <?php if($u['signature'] == '' or empty($u['signature'])){?>
                                         <img class="img-account-profile mb-2" src="<?= base_url()?>assets/img/illustrations/profiles/profile-1.png" alt="" />
                                     <?php }else{?>
-                                        <img class="img-account-profile mb-2" src="<?= base_url()?>uploads/signature/<?= $u['signature']?>" alt="" />
+                                        <img class="img-account-profile mb-2" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/signature/<?= $u['signature']?>" alt="" />
                                     <?php }?>
                                     <!-- <img class="img-account-profile rounded-circle mb-2" src="assetss/img/illustrations/profiles/profile-1.png" alt="" /> -->
                                     <div class="small font-italic text-muted mb-4">PNG no larger than 5 MB</div>
@@ -155,6 +172,17 @@
 </main>
 <script>
     $(document).ready(function() {
+        $('#imagelogo').change(function() {
+            var maxSizeInBytes = 5 * 1024 * 1024; // 5MB
+            var fileSize = this.files[0].size;
+            if (fileSize > maxSizeInBytes) {
+                $('#errorContainer').show();
+                $(this).val('');
+            } else {
+                $('#errorContainer').hide();
+            }
+        });
+
         $('#imagephoto').change(function() {
             var maxSizeInBytes = 5 * 1024 * 1024; // 5MB
             var fileSize = this.files[0].size;

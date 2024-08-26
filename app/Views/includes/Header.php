@@ -2,6 +2,7 @@
     use \App\Models\SystemModel;
     $sm = new SystemModel;
     $cnf = $sm->countnotif();
+    $crypt = \Config\Services::encrypter();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,39 +75,21 @@
             <!-- User Dropdown-->
             <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
                 <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php if(empty(session()->get('photo'))){
-                            $path = base_url().'uploads/logo/'.session()->get('logo');
-                            if(file_exists($path) && is_file($path)) { ?>
-                                <img class="img-fluid" src="<?= base_url()?>uploads/logo/<?= session()->get('logo')?>" />
-                            <?php }else{?>
-                                <img class="img-fluid" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
-                            <?php }?>
-                    <?php }else{
-                            $path = base_url().'uploads/photo/'.session()->get('photo');
-                            if(file_exists($path) && is_file($path)) { ?>
-                                <img class="img-fluid" src="<?= base_url()?>uploads/photo/<?= session()->get('photo')?>" />
-                            <?php }else{?>
-                                <img class="img-fluid" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
-                            <?php }?>
+                    <?php if(empty(session()->get('photo'))){ ?>
+                         <img class="img-fluid" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
+                    <?php }else{ ?>
+                        <img class="img-fluid" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/photo/<?= session()->get('photo')?>" />
                     <?php }?>
+
+                    
                 </a>
                 <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                     <h6 class="dropdown-header d-flex align-items-center">
 
-                    <?php if(empty(session()->get('photo'))){
-                            $path = base_url().'uploads/logo/'.session()->get('logo');
-                            if(file_exists($path) && is_file($path)) { ?>
-                                <img class="dropdown-user-img" src="<?= base_url()?>uploads/logo/<?= session()->get('logo')?>" />
-                            <?php }else{?>
-                                <img class="dropdown-user-img" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
-                            <?php }?>
-                    <?php }else{
-                            $path = base_url().'uploads/photo/'.session()->get('photo');
-                            if(file_exists($path) && is_file($path)) { ?>
-                                <img class="dropdown-user-img" src="<?= base_url()?>uploads/photo/<?= session()->get('photo')?>" />
-                            <?php }else{?>
-                                <img class="dropdown-user-img" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
-                            <?php }?>
+                    <?php if(empty(session()->get('photo'))){ ?>
+                        <img class="dropdown-user-img" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
+                    <?php }else{?>
+                        <img class="dropdown-user-img" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/photo/<?= session()->get('photo')?>" />
                     <?php }?>
                         
                         <div class="dropdown-user-details">

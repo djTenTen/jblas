@@ -46,6 +46,7 @@ class ReportController extends BaseController{
         $data['fy']     = $fy;
         $data['efy']    = $efy;
         $data['firm']   = session()->get('firm');
+        $data['logo']   = session()->get('logo');
         $data['client'] = strtoupper($cname);
         $data['wpID']   = $dwpID;
         $data['cID']    = $dcID;
