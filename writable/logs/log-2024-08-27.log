@@ -141,3 +141,993 @@ INFO - 2024-08-27 13:19:31 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-08-27 13:19:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-08-27 13:19:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-08-27 13:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:27:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:27:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:27:04 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:27:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:27:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:27:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:28:04 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:28:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:28:07 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:28:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:28:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:28:14 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:28:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:28:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:28:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:28:18 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:28:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:28:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:28:43 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:30:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:30:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:30:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:31:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:34:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:34:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:34:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:34:31 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:34:42 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:34:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:34:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:35:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:36:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-27 13:36:04 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 1425.
+ 1 APPPATH/Views/workpaper/Report.php(1425): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:04 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 2081.
+ 1 APPPATH/Views/workpaper/Report.php(2081): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:04 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 5562.
+ 1 APPPATH/Views/workpaper/Report.php(5562): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:04 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 5639.
+ 1 APPPATH/Views/workpaper/Report.php(5639): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:05 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 5723.
+ 1 APPPATH/Views/workpaper/Report.php(5723): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:05 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 5805.
+ 1 APPPATH/Views/workpaper/Report.php(5805): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:05 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 5882.
+ 1 APPPATH/Views/workpaper/Report.php(5882): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:05 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 5976.
+ 1 APPPATH/Views/workpaper/Report.php(5976): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:05 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6044.
+ 1 APPPATH/Views/workpaper/Report.php(6044): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:05 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6115.
+ 1 APPPATH/Views/workpaper/Report.php(6115): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:05 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6195.
+ 1 APPPATH/Views/workpaper/Report.php(6195): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:06 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6272.
+ 1 APPPATH/Views/workpaper/Report.php(6272): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:06 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6350.
+ 1 APPPATH/Views/workpaper/Report.php(6350): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:06 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6428.
+ 1 APPPATH/Views/workpaper/Report.php(6428): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:06 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6832.
+ 1 APPPATH/Views/workpaper/Report.php(6832): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:06 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6987.
+ 1 APPPATH/Views/workpaper/Report.php(6987): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:06 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 7144.
+ 1 APPPATH/Views/workpaper/Report.php(7144): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 13:36:07 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 9090.
+ 1 APPPATH/Views/workpaper/Report.php(9090): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('f9615cd19904abd1a6aeff81ad0b570f80759934d9a7cff094f84e74a4fed9f39b8b8320b8f43e8972bf3a4bb2bd36c7893c326e4b5400e09035b932893b942duBo8AilngOPcsvt~8s3bscI=', 'd13381cfcdd3b2851efa5941e6fbe3915fd4d706552c91570320a81d2c0a0177c4f83a8ccb330c9dd722b6d411a96d7a85f6594646c79400314d5de7d9a003e129I0VC8qwj8wk0NBLu1f2zI=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:36:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:36:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:36:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:36:57 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:36:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:37:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:37:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:37:04 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:37:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:37:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:37:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:37:18 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:37:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:37:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:37:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:38:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:38:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:38:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:38:19 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:38:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:39:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:39:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:43:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:44:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:44:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:44:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:44:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:44:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:44:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:45:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:45:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:46:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:46:07 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:46:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:46:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:46:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:46:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:47:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:47:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:47:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:47:05 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:47:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:47:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:48:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:48:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:48:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:48:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:48:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:48:18 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:48:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:48:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:49:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:49:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:49:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:49:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:49:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:50:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:50:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:50:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:50:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:51:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:51:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:51:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:52:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:52:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:52:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:53:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:53:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:54:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:54:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:54:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:54:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:55:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:56:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:56:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:56:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:57:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:58:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 13:58:51 --> ArgumentCountError: str_contains() expects exactly 2 arguments, 1 given
+in APPPATH/Views/includes/Header.php on line 165.
+ 1 APPPATH/Views/includes/Header.php(165): str_contains()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/includes/Header.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ClientController.php(122): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewclient()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 13:59:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:59:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 13:59:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:00:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:00:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:00:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:02:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:03:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:03:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:03:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:03:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:03:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:03:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:03:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:03:38 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:04:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:04:00 --> ArgumentCountError: str_contains() expects exactly 2 arguments, 3 given
+in APPPATH/Views/includes/Header.php on line 186.
+ 1 APPPATH/Views/includes/Header.php(186): str_contains()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/includes/Header.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ClientController.php(80): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:04:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:04:02 --> ArgumentCountError: str_contains() expects exactly 2 arguments, 3 given
+in APPPATH/Views/includes/Header.php on line 186.
+ 1 APPPATH/Views/includes/Header.php(186): str_contains()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/includes/Header.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ClientController.php(140): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewclientset()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:04:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:04:04 --> ArgumentCountError: str_contains() expects exactly 2 arguments, 3 given
+in APPPATH/Views/includes/Header.php on line 186.
+ 1 APPPATH/Views/includes/Header.php(186): str_contains()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/includes/Header.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ClientController.php(122): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewclient()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:04:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:04:06 --> ArgumentCountError: str_contains() expects exactly 2 arguments, 3 given
+in APPPATH/Views/includes/Header.php on line 186.
+ 1 APPPATH/Views/includes/Header.php(186): str_contains()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/includes/Header.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ClientController.php(140): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewclientset()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:04:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:04:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:04:26 --> TypeError: str_contains(): Argument #2 ($needle) must be of type string, array given
+in APPPATH/Views/includes/Header.php on line 186.
+ 1 APPPATH/Views/includes/Header.php(186): str_contains()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/includes/Header.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ClientController.php(140): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewclientset()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:04:38 --> TypeError: str_contains(): Argument #2 ($needle) must be of type string, array given
+in APPPATH/Views/includes/Header.php on line 186.
+ 1 APPPATH/Views/includes/Header.php(186): str_contains()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/includes/Header.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ClientController.php(122): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewclient()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:04:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:04:41 --> TypeError: str_contains(): Argument #2 ($needle) must be of type string, array given
+in APPPATH/Views/includes/Header.php on line 186.
+ 1 APPPATH/Views/includes/Header.php(186): str_contains()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/includes/Header.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ClientController.php(140): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewclientset()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:05:18 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:05:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:05:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:05:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:05:52 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:05:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:05:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:05:57 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:07:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:07:34 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:07:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:07:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:07:48 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:07:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:07:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:10:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:11:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:11:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:12:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:12:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:12:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:12:56 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:12:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:14:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:14:31 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:14:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:14:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:14:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:14:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:14:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:14:48 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:14:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:15:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:16:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:16:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:16:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:18:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:18:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:18:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:20:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:20:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:22:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:22:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:22:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:22:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:23:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:23:30 --> TypeError: str_contains(): Argument #2 ($needle) must be of type string, array given
+in APPPATH/Views/includes/Header.php on line 243.
+ 1 APPPATH/Views/includes/Header.php(243): str_contains()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/includes/Header.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/WorkpaperController.php(76): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->prepare()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:23:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:23:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:23:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:23:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:23:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:24:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:24:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:25:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:25:56 --> TypeError: str_contains(): Argument #2 ($needle) must be of type string, array given
+in APPPATH/Views/includes/Header.php on line 243.
+ 1 APPPATH/Views/includes/Header.php(243): str_contains()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/includes/Header.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/DashController.php(116): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:26:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:27:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-27 14:27:49 --> ParseError: Unclosed '{' on line 226
+in APPPATH/Views/includes/Header.php on line 285.
+ 1 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/WorkpaperController.php(97): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->review()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:28:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:28:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:28:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:28:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:28:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:28:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:29:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:29:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:30:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:32:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:32:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:32:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-27 14:32:15 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 1425.
+ 1 APPPATH/Views/workpaper/Report.php(1425): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:15 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 2081.
+ 1 APPPATH/Views/workpaper/Report.php(2081): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:15 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 5562.
+ 1 APPPATH/Views/workpaper/Report.php(5562): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:16 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 5639.
+ 1 APPPATH/Views/workpaper/Report.php(5639): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:16 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 5723.
+ 1 APPPATH/Views/workpaper/Report.php(5723): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:16 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 5805.
+ 1 APPPATH/Views/workpaper/Report.php(5805): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:16 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 5882.
+ 1 APPPATH/Views/workpaper/Report.php(5882): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:16 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 5976.
+ 1 APPPATH/Views/workpaper/Report.php(5976): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:16 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6044.
+ 1 APPPATH/Views/workpaper/Report.php(6044): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:16 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6115.
+ 1 APPPATH/Views/workpaper/Report.php(6115): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:17 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6195.
+ 1 APPPATH/Views/workpaper/Report.php(6195): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:17 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6272.
+ 1 APPPATH/Views/workpaper/Report.php(6272): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:17 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6350.
+ 1 APPPATH/Views/workpaper/Report.php(6350): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:17 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6428.
+ 1 APPPATH/Views/workpaper/Report.php(6428): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:17 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6832.
+ 1 APPPATH/Views/workpaper/Report.php(6832): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:17 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 6987.
+ 1 APPPATH/Views/workpaper/Report.php(6987): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:17 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 7144.
+ 1 APPPATH/Views/workpaper/Report.php(7144): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-27 14:32:18 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/Report.php on line 9090.
+ 1 APPPATH/Views/workpaper/Report.php(9090): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/Report', [], true)
+ 5 APPPATH/Controllers/ReportController.php(104): view('workpaper/Report', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf('0dac11c5be7e2d6c9e3800a42595df0235c61b9c4c6aed0768488d6192e2181b459903acbd72f9e1d851c37d08fa55067953de284b3ff6ac0ecd3e827cbb83dbApes1vDFiMaxEWPk2ayACaY=', '085b70b3235d09bf2978aec35e5760f247b28b454e9122a723c64c5841c2924aa7feffd9c4d97f8608bf2693eb3ea5e048d1e11799476e0795ca415429756657W2mRb$UEWEXo5N~DcqLXKlA=', 'Sample Client 1', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', 'Davies John Boco - Auditing Firm', '2024', '12-31')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-27 14:32:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:32:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:32:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:35:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:35:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:35:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:35:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:35:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:36:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:36:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-27 14:36:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
