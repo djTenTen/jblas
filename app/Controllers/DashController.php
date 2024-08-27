@@ -103,7 +103,7 @@ class DashController extends BaseController{
         $data['auds']       = $this->dmodel->getnumauds($fID);
         $data['prep']       = $this->dmodel->getnumwp($fID,'Preparing');
         $data['rev']        = $this->dmodel->getnumwp($fID,'Reviewing');
-        $data['done']       = $this->dmodel->getnumwp($fID,'Done');
+        $data['approved']   = $this->dmodel->getnumwp($fID,'Approved');
         $data['check']      = $this->dmodel->getnumwp($fID,'Checking');
         $data['aud']        = $this->dmodel->getmyauditors($fID);
         $data['prog']       = $this->dmodel->getwpprogress($fID);

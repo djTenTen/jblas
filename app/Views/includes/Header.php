@@ -172,7 +172,7 @@
  
                         <?php if(session()->get('allowed')->clm == "Yes"){?>
                             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseClient" aria-expanded="false" aria-controls="collapseClient">
-                                <div class="nav-link-icon"><i data-feather="table"></i></div>
+                            <div class="nav-link-icon"><i data-feather="table"></i></div>
                                 Client Management 
                                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>

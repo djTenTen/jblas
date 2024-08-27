@@ -144,8 +144,8 @@
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="me-3">
                                 <i class="feather-xl text-success mb-3" data-feather="check-square"></i>
-                                <h5>Done</h5>
-                                <h1 class="text-xl" id="numdone"><?= $done?></h1>
+                                <h5>Approved</h5>
+                                <h1 class="text-xl" id="numdone"><?= $approved?></h1>
                             </div>
                             <img src="<?= base_url()?>assets/img/illustrations/approve.svg" alt="..." style="width: 8rem"/>
                         </div>
