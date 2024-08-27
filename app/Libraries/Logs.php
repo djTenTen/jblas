@@ -21,12 +21,12 @@ class Logs{
 
         $logPath = WRITEPATH . 'applaudlogs/';
         if(!empty(session()->get('firmID'))){
-            $logFile = $logPath. $this->crypt->decrypt(session()->get('firmID')).'-systems-log-'.date("F d, Y").'.log';
+            $logFile = $logPath. $this->crypt->decrypt(session()->get('firmID')).'-systems-log.log';
         }
         if (!is_dir($logPath)) {
             mkdir($logPath, 0755, true);
         }
-        $logMessage = "[{$this->time}]: {$msg}" . PHP_EOL;
+        $logMessage = "[".$this->date."-".$this->time."]: {$msg}".PHP_EOL;
         file_put_contents($logFile, $logMessage, FILE_APPEND);
 
     }

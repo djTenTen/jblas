@@ -29,7 +29,6 @@ class LogsController extends BaseController{
 
     }
 
-
     /**
         * @method viewlogs() view the system logs
         * @var fID decrypted data of firm id
@@ -40,13 +39,12 @@ class LogsController extends BaseController{
     public function viewlogs(){
 
         $fID = $this->crypt->decrypt(session()->get('firmID'));
-        $logFile = WRITEPATH . 'applaudlogs/'. $fID.'-systems-log-'.date("F d, Y").'.log';
+        $logFile = WRITEPATH . 'applaudlogs/'. $fID.'-systems-log.log';
         if (!file_exists($logFile)) {
             return 'no logs';
         }
         $logs = file_get_contents($logFile);
         $logs = nl2br($logs);
-
         return $logs;
 
     }
