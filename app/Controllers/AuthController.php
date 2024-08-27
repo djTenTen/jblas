@@ -96,7 +96,7 @@ class AuthController extends BaseController{
             ];
             session()->set($user_data);
             $this->logs->log($user_data['name']. " has just Logged-in");
-            return redirect()->to(site_url('/auditsystem'));
+            return redirect()->to(site_url('/auditsystem/dashboard'));
         }else{
             session()->setFlashdata('access_denied','access_denied');
             return redirect()->to(site_url());

@@ -22,7 +22,7 @@
                                 <div class="text-center mt-4">
                                     <img class="img-fluid p-4" src="<?= base_url()?>assets/img/illustrations/403-error.svg" alt="" />
                                     <p class="lead">You do not have permission to get this page from the server.</p>
-                                    <a class="text-arrow-icon" href="<?= base_url('auditsystem')?>">
+                                    <a class="text-arrow-icon" href="<?= base_url('auditsystem/dashboard')?>">
                                         <i class="ms-0 me-1" data-feather="arrow-left"></i>
                                         Return to Dashboard
                                     </a>
