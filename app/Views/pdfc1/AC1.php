@@ -143,78 +143,26 @@ $html .= '
 
 
 $html .= '
-    <p>Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement:<u>'. $eqr['nameap'] .'</u></p>
-    <p><b>Those Charged With Governance and Management:</b></p>
-    <p>PSA 260 / 265 requires different matters to be communicated separately to those charged with governance and to management.  Where those charged with governance and management are the same individuals (for example, all matters are dealt with solely by the directors of the company), it is not necessary for these matters to be communicated twice.</p>
-    <p>[EITHER]</p>
-    <p>The Directors are actively involved in the day-to-day operations of the entity and are therefore considered to be both management and those charged with governance. </p>
-    <p>Name of Informed Management: ……………………………… </p>
-    <p>The Directors are not actively involved in the day-to-day operations of the entity and are therefore considered to be those charged with governance. </p>
-    <p>…………………………………………………………………………………………………………</p>
-    <p>…………………………………………………………………………………………………………</p>
-    <p>Informed management is a “Member of management (or senior employee) of the entity relevant to the engagement who has the authority and capability to make independent management judgments and decisions in relation to non-audit / additional services on the basis of information provided by the firm”</p>
-    <p>Our primary contact (if different from Informed Management) for the audit will be: </p>
-    <p>…………………………………………………………………………………………………………</p>
-    <p>[OR]</p>
-    <p>The Directors are not actively involved in the day-to-day operations of the entity and are therefore considered to be those charged with governance. </p>
-    <p>Management of the entity has been delegated to ………………………………………….</p>
-    <p>Our primary contact of those charged with governance will be……………………………………….</p>
-    <p>Our primary contact within the management team will be……………………………………………</p>
-    <p>Name of Informed Management: ……………………………… </p>
-    <p>Justification of why they can be considered Informed Management:</p>
-    <p>…………………………………………………………………………………………………………</p>
-    <p>…………………………………………………………………………………………………………</p>
-    <p>Communication of certain matters will be required with both those charged with governance AND management. The following documents will evidence this dual communication:</p>
-    <ul>
-        <li>Letter of engagement</li>
-        <li>Preliminary planning procedures</li>
-        <li>Planning letter</li>
-        <li>Letter of representation</li>
-        <li>Management letter</li>
-    </ul>
+    <p>Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement:_______________</p>
     <p><b>ENGAGEMENT QUALITY REVIEW:</b></p>
-    <p>An EQR needs to be undertaken on all audits where:</p>
-    <ul>
-        <li>The firm’s criteria for a review has been met;</li>
-        <li>The A.E.P. deems it necessary for a review to be undertaken; or</li>
-        <li>It is required as a safeguard against threats which have been identified to the firm’s objectivity and independence.  It should be considered on all assignments where non-audit services have been provided.</li>
-    </ul>
-    <p><i>Note that it is necessary for the EQR to be appointed.  The A.E.P. should avoid excessive consultation with the EQR during the assignment, as this may lead to the reviewer’s ability to perform an objective review being impaired.  Where excessive consultation has taken place, the EQR will need to be replaced.</i></p>
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 50%;"><p>*No EQR needs to be performed.</p> <br></td>
-                <td style="width: 50%;"></td>
-            </tr>
-            <tr>
-                <td style="width: 50%;">*It is necessary for an EQR to be performed and this will be performed by <br></td>
-                <td style="width: 50%;" class="cent">'.$eqr['eqr1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 50%;">*Where the EQR is undertaken by an external reviewer the name of the organisation which they work for <br></td>
-                <td style="width: 50%;" class="cent">'.$eqr['eqr2'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <table border="1">
-        <tr>
-            <td><p><b>REASON FOR EQR</b> (If an EQR review was performed in the previous period, but is not being performed in the current period, this decision must also be justified.)  </p>
-                '.$eqr['eqrr'].'
-            </td>
-        </tr>
-        <tr> 
-            <td><p><b>SCOPE OF EQR</b> (PSA 220.20):</p>
-                <ul>
-                    <li>Discussion of significant matters with the A.E.P.;</li>
-                    <li>Review of the financial statements and the proposed auditor’s report;</li>
-                    <li>Review of selected audit documentation relating to the significant judgments the engagement team made and the conclusions it reached; and </li>
-                    <li>Evaluation of the conclusions reached in formulating the auditor’s report and consideration of whether the proposed report is appropriate.</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
+    <p>An EQR needs to be undertaken on all audits where:</p>';
+    switch ($eqr['eqr']) {
+        case 'It is necessary for an EQR to be performed and this will be performed by: ':
+            $html .=  '<ul><li>'.$eqr['eqr'].' '.$eqr['eq1'].'</li></ul>';
+        break;
+        case 'Where the EQR is undertaken by an external reviewer the name of the organisation which they work for ':
+            $html .=  '<ul><li>'.$eqr['eqr'].' '.$eqr['eq2'].'</li></ul>';
+        break;
+        default:
+            $html .=  '<ul><li>'.$eqr['eqr'].'</li></ul>';
+        break;
+    }
+
+$html .= '
+    <p><b>REASON FOR EQR:</b></p>
+    <p>'.$eqr['eqrr'].'</p>
     <p><b>Authority to accept appointment:</b></p>
-    <p>Having completed the checklist I *do / *do not consider that there are any perceived threats to our independence, integrity and objectivity, and believe that we *can accept / *can accept with the stated safeguards / *cannot accept this appointment.</p>
+    <p>Having completed the checklist '.$eqr['hcc'].' consider that there are any perceived threats to our independence, integrity and objectivity, and believe that we '.$eqr['iio'].' this appointment.</p>
     <p>Where necessary, adequate consultation has been undertaken and documented at_______________.</p>
     <table>
         <tbody>
@@ -240,7 +188,7 @@ $html .= '
             </tr>
         </tbody>
     </table>
-    ';
+';
 
 
     

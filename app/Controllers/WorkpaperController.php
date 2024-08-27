@@ -785,10 +785,12 @@ class WorkpaperController extends BaseController{
     public function saveac1eqr($code,$c1tID,$cID,$wpID,$name){
 
         $eqr = [
-            'nameap'    => $this->request->getPost('nameap'),
+            'eqr'       => $this->request->getPost('eqr'),
             'eqr1'      => $this->request->getPost('eqr1'),
             'eqr2'      => $this->request->getPost('eqr2'),
-            'eqrr'      => $this->request->getPost('eqrr')
+            'eqrr'      => $this->request->getPost('eqrr'),
+            'hcc'       => $this->request->getPost('hcc'),
+            'iio'       => $this->request->getPost('iio'),
         ];
         $req = [
             'question'  => json_encode($eqr),
@@ -3121,6 +3123,8 @@ class WorkpaperController extends BaseController{
         $dwpID              = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
         $dc1tID             = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID));
         $data['cl']         = $this->wpmodel->getclientinfo($dwpID,$dcID);
+        $data['firm']       = session()->get('firm');
+        $data['fID']        = $this->crypt->decrypt(session()->get('firmID'));
         $data['fl']         = $this->wpmodel->getfileinfoc1($dwpID,$dcID,$dc1tID);
         switch ($code) {
             case 'AC1':

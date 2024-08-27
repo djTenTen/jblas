@@ -74,6 +74,31 @@ class ReportModel extends  Model {
         return $query->getResultArray();
 
     }
+
+    /**
+        * @method getfileinfo() get the clients file chapter 1
+        * @param wpID workpaper id
+        * @param cID client id
+        * @param ctID chapter title id
+        * @var query contains database result query
+        * @return row-array
+    */
+    public function getfileinfo($c,$wpID,$cID,$ctID){
+
+        switch ($c) {
+            case 'c1': $table = $this->tblc1; $cid = 'c1tID'; break;
+            case 'c2': $table = $this->tblc2; $cid = 'c2tID'; break;
+            case 'c3': $table = $this->tblc3; $cid = 'c3tID'; break;
+        }
+        $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on
+        from {$table} as cc 
+        where cc.workpaper = {$wpID}
+        and cc.clientID = {$cID}
+        and cc.{$cid} = {$ctID} limit 1");
+        return $query->getRowArray();
+
+    }
+
     
     /**
         * @method getc1values() get the clients chapter 1

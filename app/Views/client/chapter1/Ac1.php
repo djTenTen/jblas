@@ -83,80 +83,56 @@
 
                 <br><br><br><hr>
 
-                <div class="mb-3 col-6">
-                    <label class="small mb-1" for="nameap">Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement:</label>
-                    <form action="<?= base_url()?>auditsystem/client/saveac1eqr/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
-                        <input type="hidden" name="acid" value="<?= $acID?>">
-                        <input type="text" class="form-control" id="nameap" name="nameap" value="<?= $eqr['nameap']?>">
+
+                <form action="<?= base_url()?>auditsystem/client/saveac1eqr/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                <input type="hidden" name="acid" value="<?= $acID?>">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="small mb-1" for="eqr"><h4>ENGAGEMENT QUALITY REVIEW:</h4></label>
+                        <select name="eqr" id="eqr" class="form-select">
+                            <option value="<?= $eqr['eqr']?>" selected><?= $eqr['eqr']?></option>
+                            <option value="The firm’s criteria for a review has been met.">The firm’s criteria for a review has been met.</option>
+                            <option value="The A.E.P. deems it necessary for a review to be undertaken.">The A.E.P. deems it necessary for a review to be undertaken.</option>
+                            <option value="It is required as a safeguard against threats which have been identified to the firm’s objectivity and independence.  It should be considered on all assignments where non-audit services have been provided.">It is required as a safeguard against threats which have been identified to the firm’s objectivity and independence.  It should be considered on all assignments where non-audit services have been provided.</option>
+                            <option value="No EQR needs to be performed.">No EQR needs to be performed.</option> 
+                            <option value="It is necessary for an EQR to be performed and this will be performed by: ">It is necessary for an EQR to be performed and this will be performed by: </option>               
+                            <option value="Where the EQR is undertaken by an external reviewer the name of the organisation which they work for ">Where the EQR is undertaken by an external reviewer the name of the organisation which they work for </option>     
+                        </select>
+                        <label class="small mb-1" for="eqr1">It is necessary for an EQR to be performed and this will be performed by:</label>
+                        <input type="text" class="form-control border-dark" id="eqr1" name="eqr1" value="<?= $eqr['eqr1']?>">
+                        <label class="small mb-1" for="eqr2">Where the EQR is undertaken by an external reviewer the name of the organisation which they work for</label>
+                        <input type="text" class="form-control border-dark" id="eqr2" name="eqr2" value="<?= $eqr['eqr2']?>">
+                    </div>
                 </div>
-            
-                <h6>Those Charged With Governance and Management:</h6>
-                <p>PSA 260 / 265 requires different matters to be communicated separately to those charged with governance and to management.  Where those charged with governance and management are the same individuals (for example, all matters are dealt with solely by the directors of the company), it is not necessary for these matters to be communicated twice.</p>
-                <p>[EITHER]</p>
-                <p>The Directors are actively involved in the day-to-day operations of the entity and are therefore considered to be both management and those charged with governance. </p>
-                <p>Name of Informed Management: ……………………………… </p>
-                <p>Justification of why they can be considered Informed Management:
-                    ……………………………………………………………………………………………………………………………………………………………………………………………………………………
-                </p>
-                <p>Informed management is a “Member of management (or senior employee) of the entity relevant to the engagement who has the authority and capability to make independent management judgments and decisions in relation to non-audit / additional services on the basis of information provided by the firm”
-                Our primary contact (if different from Informed Management) for the audit will be: …………………………………………………………………………………………………………
-                </p>
-                <p>[OR]</p>
-                <p>The Directors are not actively involved in the day-to-day operations of the entity and are therefore considered to be those charged with governance. </p>
-                <p>Management of the entity has been delegated to ………………………………………….</p>
-                <p>Our primary contact of those charged with governance will be……………………………………….</p>
-                <p>Our primary contact within the management team will be……………………………………………</p>
-                <p>Name of Informed Management: ……………………………… </p>
-                <p>Justification of why they can be considered Informed Management:
-                ……………………………………………………………………………………………………………………………………………………………………………………………………………………
-                </p>
-                <p>Communication of certain matters will be required with both those charged with governance AND management. The following documents will evidence this dual communication:</p>
-                <ul>
-                    <li>Letter of engagement</li>
-                    <li>Preliminary planning procedures</li>
-                    <li>Planning letter</li>
-                    <li>Letter of representation</li>
-                    <li>Management letter</li>
-                </ul>
 
-                <h4>ENGAGEMENT QUALITY REVIEW:</h4>
-                <p>An EQR needs to be undertaken on all audits where:</p>
-                <ul>
-                    <li>The firm’s criteria for a review has been met;</li>
-                    <li>The A.E.P. deems it necessary for a review to be undertaken; or</li>
-                    <li>It is required as a safeguard against threats which have been identified to the firm’s objectivity and independence.  It should be considered on all assignments where non-audit services have been provided.</li>
-                </ul>
-                <p><i>Note that it is necessary for the EQR to be appointed.  The A.E.P. should avoid excessive consultation with the EQR during the assignment, as this may lead to the reviewer’s ability to perform an objective review being impaired.  Where excessive consultation has taken place, the EQR will need to be replaced.</i></p>
-                <ul>
-                    <li>No EQR needs to be performed.</li>
-                    <li>It is necessary for an EQR to be performed and this will be performed by 
-                        <input type="text" class="form-control" id="eqr" name="eqr1" value="<?= $eqr['eqr1']?>">
-                    </li>
-                    <li>Where the EQR is undertaken by an external reviewer the name of the organisation which they work for
-                        <input type="text" class="form-control" id="eqr" name="eqr2" value="<?= $eqr['eqr2']?>">
-                    </li>
-                </ul>
-
-                <table class="table">
-                    <tr>
-                        <td> REASON FOR EQR (If an EQR review was performed in the previous period, but is not being performed in the current period, this decision must also be justified.)  
-                            <textarea class="form-control" cols="30" rows="3" name="eqrr" required><?= $eqr['eqrr']?></textarea>
-                            <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
-                        </form>
-                        </td>
-                    </tr>
-                    <tr> 
-                        <td>
-                            <h6>SCOPE OF EQR (PSA 220.20):</h6>
-                            <ul>
-                                <li>Discussion of significant matters with the A.E.P.;</li>
-                                <li>Review of the financial statements and the proposed auditor’s report;</li>
-                                <li>Review of selected audit documentation relating to the significant judgments the engagement team made and the conclusions it reached; and </li>
-                                <li>Evaluation of the conclusions reached in formulating the auditor’s report and consideration of whether the proposed report is appropriate.</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </table>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="small mb-1" for="eqrr">REASON FOR EQR (If an EQR review was performed in the previous period, but is not being performed in the current period, this decision must also be justified.)</label>
+                        <textarea class="form-control border-dark" cols="30" rows="5" name="eqrr" required><?= $eqr['eqrr']?></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Authority to accept appointment:</h4>
+                    <div class="mb-3">
+                        <label class="small mb-1" for="hcc">Having completed the checklist</label>
+                        <select name="hcc" id="hcc" class="form-select">
+                            <option value="<?= $eqr['hcc']?>" selected><?= $eqr['hcc']?></option>
+                            <option value="I do">I do</option>
+                            <option value="I do not">I do not</option>
+                        </select>
+                        <label class="small mb-1" for="iio">consider that there are any perceived threats to our independence, integrity and objectivity, and believe that we</label>
+                        <select name="iio" id="iio" class="form-select">
+                            <option value="<?= $eqr['iio']?>" selected><?= $eqr['iio']?></option>
+                            <option value="can accept">can accept</option>
+                            <option value="can accept with the stated safeguards">can accept with the stated safeguards</option>
+                            <option value="cannot accept">cannot accept</option>
+                        </select>
+                        <label class="small mb-1" for="iio">this appointment.</label>
+                    </div>
+                </div>
+                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
+                
             </div>
         </div>
     </div>
