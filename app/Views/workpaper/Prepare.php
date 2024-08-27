@@ -93,7 +93,9 @@
                                     <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button>
                                 <?php }?>
                                 <?php if($r['status'] == 'Preparing'){?>
+                                    <?php if(session()->get('allowed')->edit == "Yes"){?>
                                     <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>/<?= $r['cli'].' - '.$r['org']?>"><i class="fas fa-highlighter"></i></a>
+                                    <?php }?>
                                 <?php }?>
                                 <?php if($p == 70){?>
                                     <?php if($r['status'] == 'Preparing'){?>

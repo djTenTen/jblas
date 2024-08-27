@@ -66,6 +66,7 @@
                                     <td><?= $r['code']?></td>
                                     <td><?= $r['title']?></td>
                                     <td>
+                                    <?php if(session()->get('allowed')->edit == "Yes"){?>
                                         <?php if($r['code'] == 'AC10'){?>
                                             <div class="dropdown">
                                                 <button class="btn btn-primary btn-icon btn-sm" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-tools"></i></button>
@@ -89,7 +90,7 @@
                                         <?php }else{?>
                                             <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                         <?php }?>
-
+                                    <?php }?>
                                     </td>
                                 </tr>
                             <?php }?>
@@ -113,7 +114,9 @@
                                     <td><?= $r['code']?></td>
                                     <td><?= $r['title']?></td>
                                     <td>
+                                    <?php if(session()->get('allowed')->edit == "Yes"){?>
                                         <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter2/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                    <?php }?>
                                     </td>
                                 </tr>
                             <?php }?>
@@ -137,6 +140,7 @@
                                     <td><?= $r['code']?></td>
                                     <td><?= $r['title']?></td>
                                     <td>
+                                    <?php if(session()->get('allowed')->edit == "Yes"){?>
                                         <?php if($r['code'] == '3.10 Aa11'){?>
                                             <div class="dropdown">
                                                 <button class="btn btn-primary btn-icon btn-sm" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-tools"></i></button>
@@ -150,6 +154,7 @@
                                         <?php }else{?>
                                             <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter3/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                         <?php }?>
+                                    <?php }?>
                                     </td>
                                 </tr>
                             <?php }?>

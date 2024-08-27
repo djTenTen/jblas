@@ -64,10 +64,14 @@
                             <tbody>
                             <?php foreach($c1 as $r){?>
                                     <tr>
-                                    <td><input class="form-check-input filecheck" id="add" type="checkbox" name="c1" value="c1" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <td>
+                                    <?php if(session()->get('allowed')->add == "Yes"){?>
+                                        <input class="form-check-input filecheck" id="add" type="checkbox" name="c1" value="c1" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <?php }?>
                                     <td><?= $r['code']?></td>
                                     <td><?= $r['title']?></td>
                                     <td>
+                                    
                                         <?php if($r['code'] == 'AC10'){?>
                                             <div class="dropdown">
                                                 <button class="btn btn-primary btn-icon btn-sm" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-eye"></i></button>
@@ -91,7 +95,6 @@
                                         <?php }else{?>
                                             <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
                                         <?php }?>
-
                                     </td>
                                 </tr>
                             <?php }?>
@@ -113,7 +116,10 @@
                             <tbody>
                             <?php foreach($c2 as $r){?>
                                 <tr>
-                                    <td><input class="form-check-input filecheck" id="add" type="checkbox" name="c2" value="c2" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <td>
+                                    <?php if(session()->get('allowed')->add == "Yes"){?>
+                                        <input class="form-check-input filecheck" id="add" type="checkbox" name="c2" value="c2" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <?php }?>
                                     <td><?= $r['code']?></td>
                                     <td><?= $r['title']?></td>
                                     <td>
@@ -139,7 +145,10 @@
                             <tbody>
                             <?php foreach($c3 as $r){?>
                                 <tr>
-                                    <td><input class="form-check-input filecheck" id="add" type="checkbox" name="c3" value="c3" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <td>
+                                    <?php if(session()->get('allowed')->add == "Yes"){?>
+                                        <input class="form-check-input filecheck" id="add" type="checkbox" name="c3" value="c3" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <?php }?>
                                     <td><?= $r['code']?></td>
                                     <td><?= $r['title']?></td>
                                     <td>
