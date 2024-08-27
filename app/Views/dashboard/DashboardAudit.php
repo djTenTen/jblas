@@ -71,27 +71,7 @@
                 </div>
                 
             </div>
-            <div class="col-xl-3 mb-4">
-                <!-- Dashboard example card 1-->
-                <div class="card lift h-100">
-                    <div class="card-body d-flex justify-content-center flex-column">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <div class="me-3">
-                                <i class="feather-xl text-primary mb-3" data-feather="users"></i>
-                                <h5>Your Employees</h5>
-                                <h1 class="text-xl"><?= $auds?></h1>
-                            </div>
-                            <img src="<?= base_url()?>assets/img/illustrations/employee.svg" alt="..." style="width: 8rem" />
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            
 
-            
-        </div>
-        <div class="row">
             <div class="col-xl-3 mb-4">
                 <!-- Dashboard example card 2-->
                 <div class="card lift h-100">
@@ -118,21 +98,6 @@
                                 <h1 class="text-xl" id="numrev"><?= $rev?></h1>
                             </div>
                             <img src="<?= base_url()?>assets/img/illustrations/review.svg" alt="..." style="width: 8rem" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 mb-4">
-                <!-- Dashboard example card 1-->
-                <div class="card lift h-100">
-                    <div class="card-body d-flex justify-content-center flex-column">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <div class="me-3">
-                                <i class="feather-xl text-primary mb-3" data-feather="check"></i>
-                                <h5>Checking</h5>
-                                <h1 class="text-xl" id="numcheck"><?= $check?></h1>
-                            </div>
-                            <img src="<?= base_url()?>assets/img/illustrations/check.svg" alt="..." style="width: 8rem" />
                         </div>
                     </div>
                 </div>

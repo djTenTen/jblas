@@ -100,11 +100,9 @@ class DashController extends BaseController{
         $data['title']      = session()->get('firm'). ' - Dashboard';
         $fID                = $this->crypt->decrypt(session()->get('firmID'));
         $data['numcli']     = $this->dmodel->getnumclients($fID);
-        $data['auds']       = $this->dmodel->getnumauds($fID);
         $data['prep']       = $this->dmodel->getnumwp($fID,'Preparing');
         $data['rev']        = $this->dmodel->getnumwp($fID,'Reviewing');
         $data['approved']   = $this->dmodel->getnumwp($fID,'Approved');
-        $data['check']      = $this->dmodel->getnumwp($fID,'Checking');
         $data['aud']        = $this->dmodel->getmyauditors($fID);
         $data['prog']       = $this->dmodel->getwpprogress($fID);
         $logs               = $this->lc->viewlogs();
