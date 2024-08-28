@@ -1,0 +1,58 @@
+INFO - 2024-08-28 15:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:30:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:30:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:30:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:30:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:30:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-28 19:30:51 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/pdfc1/AC2.php on line 77.
+ 1 APPPATH/Views/workpaper/pdfc1/AC2.php(77): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/pdfc1/AC2.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 5 APPPATH/Controllers/WorkpaperController.php(3139): view('workpaper/pdfc1/AC2', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '8c85f7621eda09e9f1a08056e2f95cb9f42338a9c74223b774971389be2b149fdfc69541b8f082bbf66e67cdb4364e539b6d89ea21049843cbb806e822d15387d4h5rH6QODi0CXVVkafLXKM=', '744ec281e83e463fd7c20902d09102570485624fa17c1ef43e6a111f89a615ad758a164ec911e16c09a9dfd2195717c10fea6af813c8107c37909fa283ab12afOCSFDp2FQonTxrqAceHdr3s=', 'bbe529d5805be8732f98c00830f5fadaa3c80297622d559de16449036292a6dc90136463fd9307fd22e1b30c74aa8975d24b92fd16207d41e0d78fe186057f967lIs5k1yu2GUqO7jvK7aYds=')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-28 19:30:51 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/pdfc1/AC2.php on line 81.
+ 1 APPPATH/Views/workpaper/pdfc1/AC2.php(81): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/pdfc1/AC2.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 5 APPPATH/Controllers/WorkpaperController.php(3139): view('workpaper/pdfc1/AC2', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', '8c85f7621eda09e9f1a08056e2f95cb9f42338a9c74223b774971389be2b149fdfc69541b8f082bbf66e67cdb4364e539b6d89ea21049843cbb806e822d15387d4h5rH6QODi0CXVVkafLXKM=', '744ec281e83e463fd7c20902d09102570485624fa17c1ef43e6a111f89a615ad758a164ec911e16c09a9dfd2195717c10fea6af813c8107c37909fa283ab12afOCSFDp2FQonTxrqAceHdr3s=', 'bbe529d5805be8732f98c00830f5fadaa3c80297622d559de16449036292a6dc90136463fd9307fd22e1b30c74aa8975d24b92fd16207d41e0d78fe186057f967lIs5k1yu2GUqO7jvK7aYds=')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-28 19:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:31:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:31:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:31:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:31:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 19:31:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-28 19:31:30 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/pdfc1/AC2.php on line 81.
+ 1 APPPATH/Views/workpaper/pdfc1/AC2.php(81): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/pdfc1/AC2.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 5 APPPATH/Controllers/WorkpaperController.php(3139): view('workpaper/pdfc1/AC2', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', 'd0c624c8e9921c41c19964ce7f274347cfa1322b5d6a5d6c7e9ffc2a302110f2072e6b6e1cc09ff214d465e52fe695bb580773b191c33b476d193895a76ddc4buhfc~6fg73ZtS0$5t2XTWx4=', '744ec281e83e463fd7c20902d09102570485624fa17c1ef43e6a111f89a615ad758a164ec911e16c09a9dfd2195717c10fea6af813c8107c37909fa283ab12afOCSFDp2FQonTxrqAceHdr3s=', 'bbe529d5805be8732f98c00830f5fadaa3c80297622d559de16449036292a6dc90136463fd9307fd22e1b30c74aa8975d24b92fd16207d41e0d78fe186057f967lIs5k1yu2GUqO7jvK7aYds=')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-28 19:32:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-28 19:32:20 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Views/workpaper/pdfc1/AC2.php on line 81.
+ 1 APPPATH/Views/workpaper/pdfc1/AC2.php(81): strtotime(null)
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/pdfc1/AC2.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render('workpaper/pdfc1/AC2', [], true)
+ 5 APPPATH/Controllers/WorkpaperController.php(3139): view('workpaper/pdfc1/AC2', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1('AC2', 'd0c624c8e9921c41c19964ce7f274347cfa1322b5d6a5d6c7e9ffc2a302110f2072e6b6e1cc09ff214d465e52fe695bb580773b191c33b476d193895a76ddc4buhfc~6fg73ZtS0$5t2XTWx4=', '744ec281e83e463fd7c20902d09102570485624fa17c1ef43e6a111f89a615ad758a164ec911e16c09a9dfd2195717c10fea6af813c8107c37909fa283ab12afOCSFDp2FQonTxrqAceHdr3s=', 'bbe529d5805be8732f98c00830f5fadaa3c80297622d559de16449036292a6dc90136463fd9307fd22e1b30c74aa8975d24b92fd16207d41e0d78fe186057f967lIs5k1yu2GUqO7jvK7aYds=')
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkpaperController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()

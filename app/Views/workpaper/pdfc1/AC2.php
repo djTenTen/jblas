@@ -254,11 +254,11 @@ $html .= '
     <table>
         <tbody>
             <tr>
-                <td style="width: 50%;"><p>Signature:</p> <b>'.$cl['aud'].'</b> <img src="'.base_url('uploads/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
+                <td style="width: 50%;"><p>Signature:</p> <b>'.$cl['aud'].'</b> <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
                 <td style="width: 50%;">(A.E.P.)</td>
             </tr>
             <tr>
-                <td style="width: 50%;"><p>Date:</p></td>
+                <td style="width: 50%;"><p>Date: '.date('F d, Y', strtotime($fl['prepared_on'])).'</p></td>
                 <td style="width: 50%;" class="cent"></td>
             </tr>
         </tbody>
