@@ -143,7 +143,7 @@ $html .= '
     <table>
         <tbody>
             <tr>
-                <td style="width: 50%;"><p>Signature: <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></p></td>
+                <td style="width: 50%;">Signature: <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
                 <td style="width: 50%;">(A.E.P.)</td>
             </tr>
             <tr>
@@ -155,7 +155,7 @@ $html .= '
                 <td style="width: 50%;" class="cent"></td>
             </tr>
             <tr>
-                <td style="width: 50%;"><p>Signature: <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></p></td>
+                <td style="width: 50%;">Signature: <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
                 <td style="width: 50%;">(EQR) </td>
             </tr>
             <tr>

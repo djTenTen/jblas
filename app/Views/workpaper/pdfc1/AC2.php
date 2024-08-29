@@ -254,7 +254,7 @@ $html .= '
     <table>
         <tbody>
             <tr>
-                <td style="width: 50%;"><p>Signature:</p> <b>'.$cl['aud'].'</b> <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
+                <td style="width: 50%;">Signature:<b> '.$cl['aud'].'</b> <br><img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
                 <td style="width: 50%;">(A.E.P.)</td>
             </tr>
             <tr>

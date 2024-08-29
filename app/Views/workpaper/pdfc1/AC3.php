@@ -196,8 +196,8 @@ $html .= '
     <table>
         <tbody>
             <tr>
-                <td style="width: 50%;"><b>Signed: </b></td>
-                <td style="width: 50%;"><b>Date:</b></td>
+                <td style="width: 50%;">Signed: <b>'.$cl['aud'].'</b><br> <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['supsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
+                <td style="width: 50%;"><p>Date: '.date('F d, Y', strtotime($fl['reviewed_on'])).'</p></td>
             </tr>
         </tbody>
     </table>
@@ -205,8 +205,8 @@ $html .= '
     <table>
         <tbody>
             <tr>
-                <td style="width: 50%;"><b>Signed: </b></td>
-                <td style="width: 50%;"><b>Date:</b></td>
+                <td style="width: 50%;">Signed: <b>'.$cl['aud'].'</b> <br><img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['supsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
+                <td style="width: 50%;"><p>Date: '.date('F d, Y', strtotime($fl['reviewed_on'])).'</p></td>
             </tr>
         </tbody>
     </table>

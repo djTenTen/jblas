@@ -1479,7 +1479,7 @@ $html = '';
                     <table>
                         <tbody>
                             <tr>
-                                <td style="width: 50%;"><p>Signature: <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></p></td>
+                                <td style="width: 50%;">Signature: <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
                                 <td style="width: 50%;">(A.E.P.)</td>
                             </tr>
                             <tr>
@@ -1491,7 +1491,7 @@ $html = '';
                                 <td style="width: 50%;" class="cent"></td>
                             </tr>
                             <tr>
-                                <td style="width: 50%;"><p>Signature: <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></p></td>
+                                <td style="width: 50%;">Signature: <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
                                 <td style="width: 50%;">(EQR) </td>
                             </tr>
                             <tr>
@@ -1510,6 +1510,7 @@ $html = '';
                 $pdf->Bookmark($c['code'].' : PROVISION OF NON-AUDIT SERVICES',1,1);
                 $html .= $style;
                 $html .= $c['code'];
+                $fl    = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
                 $html .= '
                     <table>
                         <tr>
@@ -1632,11 +1633,11 @@ $html = '';
                     <table>
                         <tbody>
                             <tr>
-                                <td style="width: 50%;"><p>Signature:</p> <b>'.$cl['aud'].'</b> <img src="'.base_url('uploads/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
+                                <td style="width: 50%;">Signature:<b> '.$cl['aud'].'</b> <br><img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
                                 <td style="width: 50%;">(A.E.P.)</td>
                             </tr>
                             <tr>
-                                <td style="width: 50%;"><p>Date:</p></td>
+                                <td style="width: 50%;"><p>Date: '.date('F d, Y', strtotime($fl['prepared_on'])).'</p></td>
                                 <td style="width: 50%;" class="cent"></td>
                             </tr>
                         </tbody>
@@ -1692,6 +1693,7 @@ $html = '';
                 $pdf->Bookmark($c['code'].' : PERMANENT FILE CHECKLIST',1,1);
                 $html .= $style;
                 $html .= $c['code'];
+                $fl    = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
                 $html .= '
                     <table>
                         <tr>
@@ -1836,8 +1838,8 @@ $html = '';
                     <table>
                         <tbody>
                             <tr>
-                                <td style="width: 50%;"><b>Signed: </b></td>
-                                <td style="width: 50%;"><b>Date:</b></td>
+                                <td style="width: 50%;"><p>Signed:</p> <b>'.$cl['aud'].'</b> <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['supsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
+                                <td style="width: 50%;"><p>Date: '.date('F d, Y', strtotime($fl['reviewed_on'])).'</p></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1845,8 +1847,8 @@ $html = '';
                     <table>
                         <tbody>
                             <tr>
-                                <td style="width: 50%;"><b>Signed: </b></td>
-                                <td style="width: 50%;"><b>Date:</b></td>
+                                <td style="width: 50%;"><p>Signed:</p> <b>'.$cl['aud'].'</b> <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['supsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
+                                <td style="width: 50%;"><p>Date: '.date('F d, Y', strtotime($fl['reviewed_on'])).'</p></td>
                             </tr>
                         </tbody>
                     </table>
