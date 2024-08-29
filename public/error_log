@@ -1,1 +1,2 @@
 [11-Jul-2024 13:17:14 Asia/Singapore] PHP Fatal error:  'continue' not in the 'loop' or 'switch' context in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/ClientModel.php on line 334
+[29-Aug-2024 18:38:31 Asia/Singapore] PHP Fatal error:  Cannot redeclare App\Controllers\ChapterValuesController::saveaa1s3() in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/ChapterValuesController.php on line 1236

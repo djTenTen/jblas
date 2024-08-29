@@ -610,3 +610,436 @@ WARNING - 2024-08-29 14:04:37 --> [DEPRECATED] strtotime(): Passing null to para
  8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
 INFO - 2024-08-29 14:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 15:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 16:06:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-29 16:06:04 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-29 16:06:04 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 16:06:04 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 16:06:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-29 16:06:06 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/84f64022489869d8e4e2e4fac1062b8cad85f9fb8e817f01429f651dc5cf8b285dec6e374c84786d099416c4d6428e52884eb6b8369ba6441e57042ca3beaef0hiX9MiiQOkpL9KgTjbgNyfo=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-29 16:06:06 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/84f64022489869d8e4e2e4fac1062b8cad85f9fb8e817f01429f651dc5cf8b285dec6e374c84786d099416c4d6428e52884eb6b8369ba6441e57042ca3beaef0hiX9MiiQOkpL9KgTjbgNyfo=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 16:06:06 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 16:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-29 16:06:07 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/84f64022489869d8e4e2e4fac1062b8cad85f9fb8e817f01429f651dc5cf8b285dec6e374c84786d099416c4d6428e52884eb6b8369ba6441e57042ca3beaef0hiX9MiiQOkpL9KgTjbgNyfo=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-29 16:06:07 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/84f64022489869d8e4e2e4fac1062b8cad85f9fb8e817f01429f651dc5cf8b285dec6e374c84786d099416c4d6428e52884eb6b8369ba6441e57042ca3beaef0hiX9MiiQOkpL9KgTjbgNyfo=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 16:06:07 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 16:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-29 16:06:08 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-29 16:06:08 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 16:06:08 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 16:06:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-08-29 16:06:09 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-08-29 16:06:09 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-29 16:06:09 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 16:06:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 16:06:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 16:06:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 16:06:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 16:06:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 16:06:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 16:06:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 16:06:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 16:06:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 16:06:41 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 16:06:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 16:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 17:07:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 17:08:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 17:10:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 17:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 17:34:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 17:34:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 17:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 17:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 17:36:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 17:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 17:40:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 17:40:06 --> ErrorException: Undefined variable $header
+in APPPATH/Views/client/chapter3/31Aa1.php on line 102.
+ 1 APPPATH/Views/client/chapter3/31Aa1.php(102): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter3/31Aa1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(958): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 17:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 17:40:45 --> ErrorException: Undefined variable $header
+in APPPATH/Views/client/chapter3/31Aa1.php on line 102.
+ 1 APPPATH/Views/client/chapter3/31Aa1.php(102): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter3/31Aa1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(958): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 17:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:28:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:28:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 18:28:21 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 18:28:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:28:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:28:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:28:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:28:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 18:28:38 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 18:28:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:28:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:32:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 18:32:30 --> ErrorException: Undefined variable $sec
+in APPPATH/Controllers/ChapterValuesController.php on line 1254.
+ 1 APPPATH/Controllers/ChapterValuesController.php(1254): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->saverceap()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 18:32:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:37:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:38:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 18:38:10 --> ErrorException: Undefined variable $cID
+in APPPATH/Controllers/ChapterValuesController.php on line 1256.
+ 1 APPPATH/Controllers/ChapterValuesController.php(1256): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->saverceap()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 18:38:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 18:38:31 --> ErrorException: Cannot redeclare App\Controllers\ChapterValuesController::saveaa1s3()
+in APPPATH/Controllers/ChapterValuesController.php on line 1236.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-08-29 18:38:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 18:38:43 --> ErrorException: Undefined array key "code"
+in APPPATH/Models/ChapterValuesModel.php on line 943.
+ 1 APPPATH/Models/ChapterValuesModel.php(943): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ChapterValuesController.php(1261): App\Models\ChapterValuesModel->saverceap()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->saverceap()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 18:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 18:39:57 --> ErrorException: Undefined array key "code"
+in APPPATH/Models/ChapterValuesModel.php on line 943.
+ 1 APPPATH/Models/ChapterValuesModel.php(943): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ChapterValuesController.php(1262): App\Models\ChapterValuesModel->saverceap()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->saverceap()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 18:40:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 18:40:00 --> ErrorException: Undefined array key "code"
+in APPPATH/Models/ChapterValuesModel.php on line 943.
+ 1 APPPATH/Models/ChapterValuesModel.php(943): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ChapterValuesController.php(1262): App\Models\ChapterValuesModel->saverceap()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->saverceap()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 18:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:40:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:40:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:41:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:41:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:45:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 18:45:24 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 18:45:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:45:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 18:50:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:01:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:01:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:01:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 19:01:59 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 19:01:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:02:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:06:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:06:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 19:06:26 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 19:06:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:06:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:06:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:07:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:07:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:07:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 19:07:18 --> ErrorException: Undefined array key "awp4"
+in APPPATH/Views/client/chapter3/31Aa1.php on line 89.
+ 1 APPPATH/Views/client/chapter3/31Aa1.php(89): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter3/31Aa1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(961): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 19:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 19:07:23 --> ErrorException: Undefined array key "awp4"
+in APPPATH/Views/client/chapter3/31Aa1.php on line 89.
+ 1 APPPATH/Views/client/chapter3/31Aa1.php(89): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter3/31Aa1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(961): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 19:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:08:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:08:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:08:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 19:08:30 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 19:08:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:08:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:09:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 19:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:15:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 20:15:34 --> ErrorException: Undefined variable $dcID
+in APPPATH/Controllers/ChapterController.php on line 381.
+ 1 APPPATH/Controllers/ChapterController.php(381): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc3pdf()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 20:15:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 20:15:45 --> ErrorException: Undefined array key "a5"
+in APPPATH/Views/pdfc3/AA1.php on line 230.
+ 1 APPPATH/Views/pdfc3/AA1.php(230): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc3/AA1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(383): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc3pdf()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 20:18:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:18:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:19:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:21:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:21:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:29:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:33:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:34:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:37:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 20:37:00 --> ErrorException: Undefined variable $rc
+in APPPATH/Views/workpaper/chapter3/31Aa1.php on line 83.
+ 1 APPPATH/Views/workpaper/chapter3/31Aa1.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/chapter3/31Aa1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(1640): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c3setworkpaper()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 20:38:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:39:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:43:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:51:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:52:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:52:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-29 20:52:18 --> ErrorException: Undefined variable $wpID
+in APPPATH/Controllers/WorkpaperController.php on line 2009.
+ 1 APPPATH/Controllers/WorkpaperController.php(2009): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->saverceap()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-29 20:52:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:52:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:52:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:52:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:53:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:53:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:56:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-29 20:57:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

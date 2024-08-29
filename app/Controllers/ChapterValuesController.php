@@ -1178,13 +1178,33 @@ class ChapterValuesController extends BaseController{
     public function saveaa1s3($code,$c3tID,$cID,$name){
 
         $sec = [
-            'a1'    => $this->request->getPost('a1'),
-            'a2'    => $this->request->getPost('a2'),
-            'a3'    => $this->request->getPost('a3'),
-            'a4'    => $this->request->getPost('a4'),
-            'a5'    => $this->request->getPost('a5'),
-            'a6'    => $this->request->getPost('a6'),
-            'a7'    => $this->request->getPost('a7')
+            'a1' => $this->request->getPost('a1'),
+            'a2' => $this->request->getPost('a2'),
+            'a3' => $this->request->getPost('a3'),
+            'a4' => $this->request->getPost('a4'),
+            'a5' => $this->request->getPost('a5'),
+            'a6' => $this->request->getPost('a6'),
+            'a7' => $this->request->getPost('a7'),
+            'a8' => $this->request->getPost('a8'),
+            'a9' => $this->request->getPost('a9'),
+            'a10' => $this->request->getPost('a10'),
+            'a10d' => $this->request->getPost('a10d'),
+            'a11' => $this->request->getPost('a11'),
+            'a11d' => $this->request->getPost('a11d'),
+            'a12' => $this->request->getPost('a12'),
+            'a13' => $this->request->getPost('a13'),
+            'a14' => $this->request->getPost('a14'),
+            'a14d' => $this->request->getPost('a14d'),
+            'a15' => $this->request->getPost('a15'),
+            'a16' => $this->request->getPost('a16'),
+            'a17' => $this->request->getPost('a17'),
+            'a18' => $this->request->getPost('a18'),
+            'a19' => $this->request->getPost('a19'),
+            'a20' => $this->request->getPost('a20'),
+            'a21' => $this->request->getPost('a21'),
+            'a22' => $this->request->getPost('a22'),
+            'a23' => $this->request->getPost('a23'),
+            'a24' => $this->request->getPost('a24'),
         ];
         $req = [
             'question'  => json_encode($sec),
@@ -1201,6 +1221,57 @@ class ChapterValuesController extends BaseController{
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+        }
+
+    }
+
+
+    /**
+        * @method saverceap() used to save the data of aa1 file
+        * @var array-sec consist the aa1 file information and converted into json data
+        * @var array-req consist the aa1 file information
+        * @var res a return response from the chapter 3 model
+        * @return redirect-to-page
+    */
+    public function saverceap($code,$c3tID,$cID,$name){
+
+        $rc = [
+            'awp1' => $this->request->getPost('awp1'),
+            'awp2' => $this->request->getPost('awp2'),
+            'awp3' => $this->request->getPost('awp3'),
+            'awp4' => $this->request->getPost('awp4'),
+            'awp5' => $this->request->getPost('awp5'),
+            'awp6' => $this->request->getPost('awp6'),
+            'awp7' => $this->request->getPost('awp7'),
+            'rceap1' => $this->request->getPost('rceap1'),
+            'rceap2' => $this->request->getPost('rceap2'),
+            'rceap3' => $this->request->getPost('rceap3'),
+            'rceap4' => $this->request->getPost('rceap4'),
+            'rceap5' => $this->request->getPost('rceap5'),
+            'rceap6' => $this->request->getPost('rceap6'),
+            'rceap7' => $this->request->getPost('rceap7'),
+            'rceap8' => $this->request->getPost('rceap8'),
+            'rceap9' => $this->request->getPost('rceap9'),
+            'rceap10' => $this->request->getPost('rceap10'),
+            'details' => $this->request->getPost('details'),
+            'datereq' => $this->request->getPost('datereq'),
+            'numcop' => $this->request->getPost('numcop'),
+        ];
+        $req = [
+            'question'  => json_encode($rc),
+            'acid'      => $this->request->getPost('acid'),
+            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
+            'uID'       => $this->crypt->decrypt(session()->get('userID')),
+            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+        ];
+        $res = $this->cvmodel->saverceap($req);
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
     }

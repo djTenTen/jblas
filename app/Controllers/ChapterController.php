@@ -378,6 +378,8 @@ class ChapterController extends BaseController{
                 $data['dataaf'] = $this->c3model->getvalues_m('audit finalisation',$code,$dc3tID);
                 $rdata          = $this->c3model->getvalues_s('section3',$code, $dc3tID);
                 $data['s3']     = json_decode($rdata['question'], true);
+                $rdata2         = $this->c3model->getvalues_s('rc',$code,$dc3tID);
+                $data['rc']     = json_decode($rdata2['question'], true);
                 echo view('pdfc3/AA1', $data);
                 break;
             case '3.2 Aa2':
@@ -954,6 +956,9 @@ class ChapterController extends BaseController{
                 $rdata          = $this->cvmodel->getvalues_sc3('section3',$code,$dc3tID,$dcID);
                 $data['s3']     = json_decode($rdata['question'], true);
                 $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $rdata2         = $this->cvmodel->getvalues_sc3('rc',$code,$dc3tID,$dcID);
+                $data['rc']     = json_decode($rdata2['question'], true);
+                $data['acID2']  = $this->crypt->encrypt($rdata2['acID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/31Aa1', $data);
                 echo view('includes/Footer');
@@ -1631,6 +1636,9 @@ class ChapterController extends BaseController{
                 $rdata          = $this->wpmodel->getvalues_sc3('section3',$code, $dc3tID,$dcID,$dwpID);
                 $data['s3']     = json_decode($rdata['question'], true);
                 $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $rdata2         = $this->wpmodel->getvalues_sc3('rc',$code, $dc3tID,$dcID,$dwpID);
+                $data['rc']     = json_decode($rdata2['question'], true);
+                $data['acID2']  = $this->crypt->encrypt($rdata2['acID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/31Aa1', $data);
                 echo view('includes/Footer');

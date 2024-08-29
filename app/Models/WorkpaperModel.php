@@ -2159,6 +2159,31 @@ class WorkpaperModel extends  Model {
 
 
     /**
+        * @method saverceap() save the aa1 information
+        * @param req aa1 data
+        * @var dacid decrypted chapter id
+        * @var data contains aa1 information
+        * @return bool
+    */
+    public function saverceap($req){
+
+        $dacid = $this->crypt->decrypt($req['acid']);
+        $data = [
+            'question'      => $req['question'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
+        ];
+        if($this->db->table($this->tblc3)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+
+    /**
         ----------------------------------------------------------
         AA2 FUNCTIONS
         ----------------------------------------------------------

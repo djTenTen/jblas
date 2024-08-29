@@ -1017,6 +1017,28 @@ class ReportModel extends  Model {
 
 
     /**
+        * @method getrceap() save the aa1 information
+        * @param code contains file codes
+        * @param c3tID chapter 3 title id
+        * @var query result from database
+        * @return row-array
+    */
+    public function getrceap($code,$c3tID,$dcID,$dwpID){
+
+        $where = [
+            'type'          => 'rc',
+            'code'          => $code,
+            'c3tID'         => $c3tID,
+            'clientID'      => $dcID,
+            'workpaper'     => $dwpID
+        ];
+        $query = $this->db->table($this->tblc3)->where($where)->get();
+        return $query->getRowArray();
+
+    }
+
+
+    /**
         ----------------------------------------------------------
         AA2 FUNCTIONS
         ----------------------------------------------------------

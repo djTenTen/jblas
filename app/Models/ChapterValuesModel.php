@@ -927,6 +927,29 @@ class ChapterValuesModel extends Model{
 
 
     /**
+        * @method saverceap() save the aa1 information
+        * @param req aa1 data
+        * @var data contains aa1 information
+        * @return bool
+    */
+    public function saverceap($req){
+
+        $dacid = $this->crypt->decrypt($req['acid']);
+        $data = [
+            'question'      => $req['question'],
+            'updated_on'    => $this->date.' '.$this->time
+        ];
+        if($this->db->table($this->tblc3d)->where('acID', $dacid)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+
+    /**
         ----------------------------------------------------------
         AA2 FUNCTIONS
         ----------------------------------------------------------
