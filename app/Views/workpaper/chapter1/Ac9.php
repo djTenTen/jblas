@@ -132,7 +132,13 @@
                 <table class="table table-bordered">
                     <tr>
                         <td><h4>IS THE FINANCIAL REPORTING FRAMEWORK APPROPRIATE FOR THE ENTITY, BASED ON IT’S CIRCUMSTANCES</h4></td>
-                        <td><h4>YES / NO</h4></td>
+                        <td>
+                            <select name="frfayn" id="" class="form-select">
+                                <option value="<?= $ac9['frfayn']?>" selected><?= $ac9['frfayn']?></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -142,7 +148,13 @@
                     </tr>
                     <tr>
                         <td><h4>ARE THERE ANY OTHER REPORTING REQUIREMENTS (SUCH AS TO A PARENT AUDITOR OR REGULATOR)</h4></td>
-                        <td><h4>YES / NO</h4></td>
+                        <td>
+                            <select name="orryn" id="" class="form-select">
+                                <option value="<?= $ac9['orryn']?>" selected><?= $ac9['orryn']?></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2">

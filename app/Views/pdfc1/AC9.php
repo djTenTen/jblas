@@ -374,7 +374,7 @@ $html .= '
     <thead>
         <tr>
             <th style="width: 80%;"><b>IS THE FINANCIAL REPORTING FRAMEWORK APPROPRIATE FOR THE ENTITY, BASED ON IT’S CIRCUMSTANCES</b></th>
-            <th class="cent" style="width: 20%;"><b>YES / NO</b></th>
+            <th class="cent" style="width: 20%;"><b>'.$ac9['frfayn'].'</b></th>
         </tr>
     </thead>
     <tbody>
@@ -392,7 +392,7 @@ $html .= '
     <thead>
         <tr>
             <th style="width: 80%;"><b>ARE THERE ANY OTHER REPORTING REQUIREMENTS (SUCH AS TO A PARENT AUDITOR OR REGULATOR)</b></th>
-            <th class="cent" style="width: 20%;"><b>YES / NO</b></th>
+            <th class="cent" style="width: 20%;"><b>'.$ac9['orryn'].'</b></th>
         </tr>
     </thead>
     <tbody>
