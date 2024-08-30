@@ -246,13 +246,23 @@ $html .= '
         </tbody>
     </table>
     <p>On the basis of the work recorded above, I consider that:</p>
-    <ul>
-        <li>The financial statements have been correctly prepared on the break-up basis.*</li>
-        <li>The going concern concept is* / is not* correctly applied to this client.</li>
-        <li>There is no concern* / concern* / significant concern* regarding the going concern concept for this client.</li>
-        <li>The notes to the financial statements require* / do not require* additional information regarding the going concern concept.</li>
-        <li>The audit report should be unmodified* / unmodified with a “Material uncertainty related to going concern” paragraph* / qualified with respect to going concern.*</li>
-        <li><i>(If qualification or ”Material uncertainty” paragraph) Consideration has been given as to whether a report to a regulatory authority is required.(* Delete as applicable)</i></li>
+    <ul>';
+        if($bp4['bwr1'] != ''){
+            $html .= '<li>The financial statements have been correctly prepared on the break-up basis.</li>';
+        }
+        if($bp4['bwr2'] != ''){
+            $html .= '<li>The going concern concept '.$bp4['bwr2d'].' correctly applied to this client.</li>';
+        }
+        if($bp4['bwr3'] != ''){
+            $html .= '<li>There is '.$bp4['bwr3d'].' regarding the going concern concept for this client.</li>';
+        }
+        if($bp4['bwr4'] != ''){
+            $html .= '<li>The notes to the financial statements '.$bp4['bwr4d'].' additional information regarding the going concern concept.</li>';
+        }
+        if($bp4['bwr5'] != ''){
+            $html .= '<li>The audit report should be '.$bp4['bwr5d'].' to going concern</li>';
+        }
+$html .='
     </ul>
     <table>
         <tr>

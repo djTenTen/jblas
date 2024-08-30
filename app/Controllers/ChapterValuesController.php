@@ -1455,7 +1455,16 @@ class ChapterValuesController extends BaseController{
 
         $p4 = [
             'p41'   => $this->request->getPost('p41'),
-            'p42'   => $this->request->getPost('p42')
+            'p42'   => $this->request->getPost('p42'),
+            'bwr1'   => $this->request->getPost('bwr1'),
+            'bwr2'   => $this->request->getPost('bwr2'),
+            'bwr2d'   => $this->request->getPost('bwr2d'),
+            'bwr3'   => $this->request->getPost('bwr3'),
+            'bwr3d'   => $this->request->getPost('bwr3d'),
+            'bwr4'   => $this->request->getPost('bwr4'),
+            'bwr4d'   => $this->request->getPost('bwr4d'),
+            'bwr5'   => $this->request->getPost('bwr5'),
+            'bwr5d'   => $this->request->getPost('bwr5d'),
         ];
         $req = [
             'p4'        => json_encode($p4),

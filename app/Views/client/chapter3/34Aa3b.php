@@ -167,20 +167,60 @@
                         </tr>
                         
                     </table>
-                    <button type="submit" class="btn btn-success m-1 btn-sm float-end">Save</button>
-               </form>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="mb-1" for="num10yes">On the basis of the work recorded above, I consider that:</label>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" id="bwr1" type="checkbox" name="bwr1" value="The financial statements have been correctly prepared on the break-up basis." <?php if($bp4['bwr1'] != ''){echo 'checked';}?>/>
+                                <label class="form-check-label" for="bwr1">The financial statements have been correctly prepared on the break-up basis.</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" id="bwr2" type="checkbox" name="bwr2" value="The going concern concept " <?php if($bp4['bwr2'] != ''){echo 'checked';}?>/>
+                                <label class="form-check-label" for="bwr2">The going concern concept  </label>
+                                <select name="bwr2d" id="bwr2d" class="form-select">
+                                    <option value="<?= $bp4['bwr2d'];?>" selected><?= $bp4['bwr2d'];?></option>
+                                    <option value="is">is</option>
+                                    <option value="is not">is not</option>
+                                </select>
+                                <label class="form-check-label" for="bwr2d">correctly applied to this client..</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" id="bwr3" type="checkbox" name="bwr3" value="There is " <?php if($bp4['bwr3'] != ''){echo 'checked';}?>/>
+                                <label class="form-check-label" for="bwr3">There is  </label>
+                                <select name="bwr3d" id="bwr3d" class="form-select">
+                                    <option value="<?= $bp4['bwr3d'];?>" selected><?= $bp4['bwr3d'];?></option>
+                                    <option value="no concern">no concern</option>
+                                    <option value="concern">concern</option>
+                                    <option value="significant concern">significant concern</option>
+                                </select>
+                                <label class="form-check-label" for="bwr3d">regarding the going concern concept for this client.</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" id="bwr4" type="checkbox" name="bwr4" value="The notes to the financial statements " <?php if($bp4['bwr4'] != ''){echo 'checked';}?>/>
+                                <label class="form-check-label" for="bwr4">The notes to the financial statements  </label>
+                                <select name="bwr4d" id="bwr4d" class="form-select">
+                                    <option value="<?= $bp4['bwr4d'];?>" selected><?= $bp4['bwr4d'];?></option>
+                                    <option value="require">require</option>
+                                    <option value="do not require">do not require</option>
+                                </select>
+                                <label class="form-check-label" for="bwr4d">additional information regarding the going concern concept.</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" id="bwr5" type="checkbox" name="bwr5" value="The audit report should be " <?php if($bp4['bwr5'] != ''){echo 'checked';}?>/>
+                                <label class="form-check-label" for="bwr5">The audit report should be  </label>
+                                <select name="bwr5d" id="bwr5d" class="form-select">
+                                    <option value="<?= $bp4['bwr5d'];?>" selected><?= $bp4['bwr5d'];?></option>
+                                    <option value="unmodified">unmodified</option>
+                                    <option value="unmodified with a “Material uncertainty related to going concern” ">unmodified with a “Material uncertainty related to going concern” </option>
+                                    <option value="qualified with respect to going concern">qualified with respect to going concern</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
                 <br><br><br><hr>
-
-
-                <p>On the basis of the work recorded above, I consider that:</p>
-                <ul>
-                    <li>The financial statements have been correctly prepared on the break-up basis.*</li>
-                    <li>The going concern concept is* / is not* correctly applied to this client.</li>
-                    <li>There is no concern* / concern* / significant concern* regarding the going concern concept for this client.</li>
-                    <li>The notes to the financial statements require* / do not require* additional information regarding the going concern concept.</li>
-                    <li>The audit report should be unmodified* / unmodified with a “Material uncertainty related to going concern” paragraph* / qualified with respect to going concern.*</li>
-                    <li><i>(If qualification or ”Material uncertainty” paragraph) Consideration has been given as to whether a report to a regulatory authority is required.(* Delete as applicable)</i></li>
-                </ul>
 
             </div>
         </div>
