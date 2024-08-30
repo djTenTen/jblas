@@ -1450,7 +1450,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $ac1 = $rp->getac1($c['code'],$c['c1tID'],$cID,$wpID);
+                        $ac1 = $rp->getvalues_m('c1','cacf',$c['code'],$c['c1tID'],$cID,$wpID);
                         $cnt = 0;
                         foreach($ac1 as $r){
                             $cnt ++;
@@ -1467,7 +1467,7 @@ $html = '';
                         </tbody>
                     </table>';
 
-                $rdata  = $rp->getac1eqr($c['code'],$c['c1tID'],$cID,$wpID);
+                $rdata  = $rp->getvalues_s('c1','eqr',$c['code'],$c['c1tID'],$cID,$wpID);
                 $eqr    = json_decode($rdata['question'], true);
 
                 $html .= '
@@ -1579,7 +1579,7 @@ $html = '';
                     </thead>
                     <tbody>
                 ';
-                $ac2 = $rp->getac2($c['code'],$c['c1tID'],$cID,$wpID);
+                $ac2 = $rp->getvalues_m('c1','pans',$c['code'],$c['c1tID'],$cID,$wpID);
                 foreach ($ac2 as $r){
                     $html .= '
                         <tr>
@@ -1609,7 +1609,7 @@ $html = '';
                 $pdf->SetXY(50, 205); // Set the position to (50, 160) pixels
                 $html .= $style;
 
-                $aep = $rp->getac2aep($c['code'],$c['c1tID'],$cID,$wpID);
+                $aep = $rp->getvalues_m('c1','ac2aep',$c['code'],$c['c1tID'],$cID,$wpID);
 
                 $html .= '
                     <p><i>* “Substantial” should be considered both in terms of the audit firm and the audit client.1 A self interest threat arises where substantial non-audit fees are ‘regularly’ generated. If it considered that the substantial fee is not ‘regular’ the reason for this should be documented at *** below.</i></p>
@@ -1737,7 +1737,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $ac3genmat = $rp->getac3('genmat',$c['code'],$c['c1tID'],$cID,$wpID);
+                        $ac3genmat = $rp->getvalues_m('c1','genmat',$c['code'],$c['c1tID'],$cID,$wpID);
                         $cnt = 0;
                         foreach($ac3genmat as $r){
                             $cnt ++;
@@ -1765,7 +1765,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $ac3doccors = $rp->getac3('doccors',$c['code'],$c['c1tID'],$cID,$wpID);
+                        $ac3doccors = $rp->getvalues_m('c1','doccors',$c['code'],$c['c1tID'],$cID,$wpID);
                         foreach($ac3doccors as $r){
                             $cnt ++;
                             $html .='
@@ -1792,7 +1792,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $statutory = $rp->getac3('statutory',$c['code'],$c['c1tID'],$cID,$wpID);
+                        $statutory = $rp->getvalues_m('c1','statutory',$c['code'],$c['c1tID'],$cID,$wpID);
                         foreach($statutory as $r){
                             $cnt ++;
                             $html .='
@@ -1819,7 +1819,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $ac3accsys = $rp->getac3('accsys',$c['code'],$c['c1tID'],$cID,$wpID);
+                        $ac3accsys = $rp->getvalues_m('c1','accsys',$c['code'],$c['c1tID'],$cID,$wpID);
                         foreach($ac3accsys as $r){
                             $cnt ++;
                             $html .='
@@ -1889,7 +1889,7 @@ $html = '';
                     </table>
                 ';
 
-                $rdata  = $rp->getac4ppr($c['code'],$c['c1tID'],$cID,$wpID);
+                $rdata  = $rp->getvalues_s('c1','ppr',$c['code'],$c['c1tID'],$cID,$wpID);
                 $ppr    = json_decode($rdata['question'], true);
                 $html .= '
                     <h3>PRELIMINARY PLANNING PROCEDURES – CLIENT INVOLVEMENT IN THE PLANNING PROCESS</h3>
@@ -1914,7 +1914,7 @@ $html = '';
                         <tbody>
                 ';
 
-                $ac4 = $rp->getac4($c['code'],$c['c1tID'],$cID,$wpID);
+                $ac4 = $rp->getvalues_m('c1','ac4sod',$c['code'],$c['c1tID'],$cID,$wpID);
                 foreach($ac4 as $r){
                     $html .= '
                         <tr>
@@ -1963,7 +1963,7 @@ $html = '';
                 ';
                 $space = $pdf->Ln(10);
                 $html .= '<h3>PRELIMINARY ANALYTICAL PROCEDURES</h3>';
-                $rdata = $rp->getac5($c['code'],$c['c1tID'],$cID,$wpID);
+                $rdata =  $rp->getvalues_s('c1','rescon',$c['code'],$c['c1tID'],$cID,$wpID);
                 $rc    = json_decode($rdata['question'], true);
                 $html .= '
                     <table border="1">
@@ -2042,7 +2042,7 @@ $html = '';
                     <tbody>
                 ';
                 $trig = 0;
-                $ac6 = $rp->getac6('ac6ra',$c['code'],$c['c1tID'],$cID,$wpID);
+                $ac6 = $rp->getvalues_m('c1','ac6ra',$c['code'],$c['c1tID'],$cID,$wpID);
                 foreach($ac6 as $r){
                     $html .= '
                         <tr>
@@ -2102,7 +2102,7 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-                $rdata = $rp->gets12($c['code'],$c['c1tID'],$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','ac6s12',$c['code'],$c['c1tID'],$cID,$wpID);
                 $s = json_decode($rdata['question'], true);
                 $html .= '
                     <p><b>Objective:</b> This form is designed to determine the inherent risk of the business as a whole.  PSA 315 implies that all businesses should be high risk unless this can be rebutted.  Completion of this form will help to justify a departure from high risk.</p>
@@ -2211,7 +2211,7 @@ $html = '';
                                 <td>e.g.<br>T6</td>
                                 <td>e.g.<br>No</td>
                             </tr>';
-                            $s3 = $rp->getac6('ac6s3',$c['code'],$c['c1tID'],$cID,$wpID);
+                            $s3 = $rp->getvalues_m('c1','ac6s3',$c['code'],$c['c1tID'],$cID,$wpID);
                             foreach($s3 as $r1){
                                 $html .= '
                                 <tr>
@@ -2324,7 +2324,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
                 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'bacdata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','bacdata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $bacdata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -2409,7 +2409,7 @@ $html = '';
                 $html .= $style;
 
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'trdata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','trdata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $trdata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -2493,7 +2493,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'ordata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','ordata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $ordata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -2577,7 +2577,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'invtrdata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','invtrdata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $invtrdata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -2661,7 +2661,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'invmtdata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','invmtdata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $invmtdata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -2745,7 +2745,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'ppedata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','ppedata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $ppedata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -2829,7 +2829,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'incadata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','incadata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $incadata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -2913,7 +2913,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'tpdata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','tpdata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $tpdata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -2997,7 +2997,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'opdata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','opdata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $opdata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -3081,7 +3081,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'taxdata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','taxdata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $taxdata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -3165,7 +3165,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'provdata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','provdata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $provdata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -3249,7 +3249,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'roidata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','roidata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $roidata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -3333,7 +3333,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'dcodata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','dcodata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $dcodata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -3417,7 +3417,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'prdata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','prdata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $prdata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -3501,7 +3501,7 @@ $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
 
-                $rdata = $rp->getac7($c['code'],$c['c1tID'],'oadata',$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','oadata',$c['code'],$c['c1tID'],$cID,$wpID);
                 $oadata = json_decode($rdata['question'], true);
                 $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
@@ -3635,7 +3635,7 @@ $html = '';
                     'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
                 ];
                 foreach($rowdata as $row){
-                    $data[$row] = $rp->getac8($c['code'],$c['c1tID'],$row,$cID,$wpID);
+                    $data[$row] =  $rp->getvalues_m('c1',$row,$c['code'],$c['c1tID'],$cID,$wpID);
                 }
                 switch ($data['pcu']['question']) {
                     case 'r'    :   $pcupp = 'Revenue';break;
@@ -3993,7 +3993,7 @@ $html = '';
                     </table>
                 ';
 
-                $rdata = $rp->getac9data($c['code'],$c['c1tID'],$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','ac9data',$c['code'],$c['c1tID'],$cID,$wpID);
                 $ac9= json_decode($rdata['question'], true);
                 $html .= '
                     <table border="1">
@@ -5165,7 +5165,7 @@ $html = '';
                         </tr>
                     </table>
                 ';
-                $rdata = $rp->getac11data($c['code'],$c['c1tID'],$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','ac11data',$c['code'],$c['c1tID'],$cID,$wpID);
                 $ac11 = json_decode($rdata['question'], true);
                 $space = $pdf->Ln(10);
                 $html .= '<h3>TEAM DISCUSSIONS AND BRIEFING MEETING</h3>';
@@ -5439,7 +5439,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata =  $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -5516,7 +5516,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -5611,7 +5611,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -5682,7 +5682,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -5759,7 +5759,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -5834,7 +5834,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $aicpppa = $rp->getquestionsaicpppa($c['code'],$c['c2tID'],$cID,$wpID);
+                        $aicpppa = $rp->getvalues_m('c2','aicpppa',$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($aicpppa as $r){
                             $count ++;
                             $html .= '
@@ -5867,7 +5867,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $rcicp = $rp->getquestionsrcicp($c['code'],$c['c2tID'],$cID,$wpID);
+                        $rcicp = $rp->getvalues_m('c2','rcicp',$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($rcicp as $r){
                             $html .= '
                             <tr>
@@ -5931,7 +5931,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -6002,7 +6002,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -6071,7 +6071,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -6149,7 +6149,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -6226,7 +6226,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -6304,7 +6304,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -6382,7 +6382,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -6462,7 +6462,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -6542,7 +6542,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -6620,7 +6620,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -6708,7 +6708,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -6786,7 +6786,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -6874,7 +6874,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -6941,7 +6941,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -7020,7 +7020,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -7098,7 +7098,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -7177,7 +7177,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -7256,7 +7256,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -7325,7 +7325,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -7394,7 +7394,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -7465,7 +7465,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -7533,7 +7533,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -7600,7 +7600,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -7678,7 +7678,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $qdata = $rp->getquestionsdata($c['code'],$c['c2tID'],$cID,$wpID);
+                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                         foreach($qdata as $r){
                             $count ++;
                             $html .= '
@@ -7759,7 +7759,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $datapl     = $rp->getaa1('planning',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $datapl     = $rp->getvalues_m('c3','planning',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($datapl as $r){
                             $count ++;
                             $html .= '
@@ -7776,7 +7776,7 @@ $html = '';
                     </table>
                 ';
 
-                $rdata2     = $rp->getrceap($c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata2     = $rp->getvalues_s('c3','rc',$c['code'],$c['c3tID'],$cID,$wpID);
                 $rc         = json_decode($rdata2['question'], true);
                 $html .= '
                     <p><b>1.  Completion by most senior person completing the fieldwork</b></p>
@@ -7877,7 +7877,7 @@ $html = '';
                         </thead>
                         <tbody>';
                     $count = 0;
-                    $dataaf     = $rp->getaa1('audit finalisation',$c['code'],$c['c3tID'],$cID,$wpID);
+                    $dataaf     = $rp->getvalues_m('c3','audit finalisation',$c['code'],$c['c3tID'],$cID,$wpID);
                     foreach($dataaf as $r){
                         $count ++;
                         $html .= '
@@ -7893,10 +7893,9 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-                $rdata      = $rp->getaa1s3($c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata      = $rp->getvalues_s('c3','section3',$c['code'],$c['c3tID'],$cID,$wpID);
                 $s3         = json_decode($rdata['question'], true);
                
-                
                 $html .= '
                     <p><b>5.  Signed Financial Statements and Audit Opinion</b></p>
                     <p>Have all outstanding matters noted above, including confirming that the financial statements do not contain material errors or misstatements, been cleared to the satisfaction of the originator (and crossed through to demonstrate this)?</p>
@@ -8071,7 +8070,7 @@ $html = '';
                     <p><b>Recording:</b> <br>This form should be completed during the audit, and should cover key matters which are of relevance to next year’s assignment.</p>
                     <p>If information has been included elsewhere on the audit file (for example, Subsequent Events Review, or the ISA Compliance Critical Issues Memorandum), it does not need to be repeated.  Where appropriate, details of suggested improvements should be outlined.</p>
                 ';
-                $rdata  = $rp->getaa2data($c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata  = $rp->getvalues_s('c3','aa2',$c['code'],$c['c3tID'],$cID,$wpID);
                 $aa2    = json_decode($rdata['question'], true);
                 $html .= '
                     <table border="1">
@@ -8192,7 +8191,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $cr     = $rp->getaa3('cr',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $cr     =  $rp->getvalues_m('c3','cr',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($cr as $r){
                             $count ++;
                             $html .= '
@@ -8218,7 +8217,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $dc     = $rp->getaa3('dc',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $dc     = $rp->getvalues_m('c3','dc',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($dc as $r){
                             $count ++;
                             $html .= '
@@ -8249,7 +8248,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $faf    = $rp->getaa3('faf',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $faf    = $rp->getvalues_m('c3','faf',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($faf as $r){
                             $count ++;
                             $html .= '
@@ -8271,7 +8270,7 @@ $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
 
-                $ir     = $rp->getaa3air($c['code'],$c['c3tID'],$cID,$wpID);
+                $ir     = $rp->getvalues_s('c3','ir',$c['code'],$c['c3tID'],$cID,$wpID);
                 $html .= '
                     <h3>Initial Conclusion:</h3>
                     <p>* Delete as applicable </p>
@@ -8381,7 +8380,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $bp1    = $rp->getaa3b('p1',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $bp1    = $rp->getvalues_m('c3','p1',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($bp1 as $r){
                             $count ++;
                             $html .= '
@@ -8408,7 +8407,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $bp2    = $rp->getaa3b('p2',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $bp2    = $rp->getvalues_m('c3','p2',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($bp2 as $r){
                             $count ++;
                             $html .= '
@@ -8436,7 +8435,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $bp3a   = $rp->getaa3b('p3a',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $bp3a   = $rp->getvalues_m('c3','p3a',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($bp3a as $r){
                             $count ++;
                             $html .= '
@@ -8464,7 +8463,7 @@ $html = '';
                         </thead>
                         <tbody>';
                         $count = 0;
-                        $bp3b   = $rp->getaa3b('p3b',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $bp3b   = $rp->getvalues_m('c3','p3b',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($bp3b as $r){
                             $count ++;
                             $html .= '
@@ -8485,7 +8484,7 @@ $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
 
-                $rdata  = $rp->getaa3bp4($c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata  =  $rp->getvalues_s('c3','p4',$c['code'],$c['c3tID'],$cID,$wpID);
                 $bp4    = json_decode($rdata['question'], true);
                 $html .= '
                     <p><b>Part 4 – Conclusion:</b></p>
@@ -8538,7 +8537,7 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUGGESTED LETTER OF REPRESENTATION',1,1);
                 $html .= $style;
-                $rdata  = $rp->getaa4($c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata  =  $rp->getvalues_m('c3','aa4',$c['code'],$c['c3tID'],$cID,$wpID);
                 $aa4    = json_decode($rdata['question'], true);
                 $html .= $c['code'];
                 $html .= '
@@ -8775,7 +8774,7 @@ $html = '';
                         </thead>
                         <tbody>
                         ';
-                        $aa5b = $rp->getaa5b($c['code'],$c['c3tID'],$cID,$wpID);
+                        $aa5b =  $rp->getvalues_m('c3','aa5b',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($aa5b as $r){
                             $html .= '
                             <tr>
@@ -8829,7 +8828,7 @@ $html = '';
                         </tr>
                     </table>
                 ';
-                $aepapp = $rp->getaa7aep('aepapp',$c['code'],$c['c3tID'],$cID,$wpID);
+                $aepapp = $rp->getvalues_s('c3','aepapp',$c['code'],$c['c3tID'],$cID,$wpID);
                 $html .= '
                     <h3>ISA COMPLIANCE CRITICAL ISSUES MEMORANDUM</h3>
                     <p><b>Objective:</b></p>
@@ -8880,7 +8879,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $aa7    = $rp->getaa7('isa315',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $aa7    =  $rp->getvalues_m('c3','isa315',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($aa7 as $r){
                             $html .= '
                             <tr>
@@ -8924,7 +8923,7 @@ $html = '';
                             <tr>
                                 <td colspan="5"><b>Areas where consultation has been undertaken (mandatory section):</b></td>
                             </tr>';
-                    $cons   = $rp->getaa7('consultation',$c['code'],$c['c3tID'],$cID,$wpID);
+                    $cons   =  $rp->getvalues_m('c3','consultation',$c['code'],$c['c3tID'],$cID,$wpID);
                     foreach($cons as $r){
                         $html .= '
                         <tr>
@@ -8939,7 +8938,7 @@ $html = '';
                     <tr>
                         <td colspan="5"><b>Inconsistencies noted between information provided by the client and other findings of the audit team (mandatory section):</b></td>
                     </tr>';
-                    $inc    = $rp->getaa7('inconsistencies',$c['code'],$c['c3tID'],$cID,$wpID);
+                    $inc    =  $rp->getvalues_m('c3','inconsistencies',$c['code'],$c['c3tID'],$cID,$wpID);
                     foreach($inc as $r){
                         $html .= '
                         <tr>
@@ -8955,7 +8954,7 @@ $html = '';
                         <td colspan="5"><b>Areas where management refusal to allow the audit team to send a confirmation request has led to alternative procedures being performed (mandatory section):</b></td>
                     </tr>
                 ';
-                    $ref    = $rp->getaa7('refusal',$c['code'],$c['c3tID'],$cID,$wpID);
+                    $ref    =  $rp->getvalues_m('c3','refusal',$c['code'],$c['c3tID'],$cID,$wpID);
                     foreach($ref as $r){
                         $html .= '
                         <tr>
@@ -8971,7 +8970,7 @@ $html = '';
                         <td colspan="5"><b>Departures from requirements of ISA, reasons for the departure and alternative audit procedures performed (mandatory section):</b></td>
                     </tr>
                 ';
-                    $dep    = $rp->getaa7('departures',$c['code'],$c['c3tID'],$cID,$wpID);
+                    $dep    =  $rp->getvalues_m('c3','departures',$c['code'],$c['c3tID'],$cID,$wpID);
                     foreach($dep as $r){
                         $html .= '
                         <tr>
@@ -9007,7 +9006,7 @@ $html = '';
                         </thead>
                         <tbody>
                         ';
-                        $oth    = $rp->getaa7('other',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $oth    =  $rp->getvalues_m('c3','other',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($oth as $r){
                             $html .= '
                             <tr>
@@ -9023,7 +9022,7 @@ $html = '';
                     </table>
                 ';
 
-                $rdata  = $rp->getaa7aep('aep',$c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata  = $rp->getvalues_s('c3','aep',$c['code'],$c['c3tID'],$cID,$wpID);
                 $aep    = json_decode($rdata['question'], true);
                 $html .= '
                     <p><b>Changes to, or new accounting policies and estimation techniques in the period:</b></p>
@@ -9163,7 +9162,7 @@ $html = '';
                     <p><b><i>Undertaking analytical procedures at finalisation is mandatory; however, the use of this form is optional.</i></b></p>
                 ';
 
-                $rdata = $rp->getaa10($c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata =  $rp->getvalues_s('c3','aa10',$c['code'],$c['c3tID'],$cID,$wpID);
                 $aa10 = json_decode($rdata['question'], true);
 
                 $html .='
@@ -9305,7 +9304,7 @@ $html = '';
                         </tr>
                     </table>
                 ';
-                $rdata          = $rp->getaa11p('aa11ue',$s[0],$c['c3tID'],$cID,$wpID);
+                $rdata          = $rp->getvalues_s('c3','aa11ue',$s[0],$c['c3tID'],$cID,$wpID);
                 $ue     = json_decode($rdata['question'], true);
                 $html .= '
                     <p><b>SUMMARY OF UNADJUSTED ERRORS</b></p>
@@ -9373,7 +9372,7 @@ $html = '';
                             $aef_crps = 0;
                             $aef_drfp = 0;
                             $aef_crfp = 0;
-                            $aef    = $rp->getaa11p2('aef',$s[0],$c['c3tID'],$cID,$wpID);
+                            $aef    = $rp->getvalues_m('c3','aef',$s[0],$c['c3tID'],$cID,$wpID);
                             foreach($aef as $r){
                             $aef_drps += $r['drps'];
                             $aef_crps += $r['crps'];
@@ -9401,7 +9400,7 @@ $html = '';
                         $aej_crps = 0;
                         $aej_drfp = 0;
                         $aej_crfp = 0;
-                        $aej    = $rp->getaa11p2('aej',$s[0],$c['c3tID'],$cID,$wpID);
+                        $aej    = $rp->getvalues_m('c3','aej',$s[0],$c['c3tID'],$cID,$wpID);
                         foreach($aej as $r){
                         $aej_drps += $r['drps'];
                         $aej_crps += $r['crps'];
@@ -9429,7 +9428,7 @@ $html = '';
                         $ee_crps = 0;
                         $ee_drfp = 0;
                         $ee_crfp = 0;
-                        $ee     = $rp->getaa11p2('ee',$s[0],$c['c3tID'],$cID,$wpID);
+                        $ee     = $rp->getvalues_m('c3','ee',$s[0],$c['c3tID'],$cID,$wpID);
                         foreach($ee as $r){
                         $ee_drps += $r['drps'];
                         $ee_crps += $r['crps'];
@@ -9457,7 +9456,7 @@ $html = '';
                         $de_crps = 0;
                         $de_drfp = 0;
                         $de_crfp = 0;
-                        $de     = $rp->getaa11p2('de',$s[0],$c['c3tID'],$cID,$wpID);
+                        $de     = $rp->getvalues_m('c3','de',$s[0],$c['c3tID'],$cID,$wpID);
                         foreach($de as $r){
                         $de_drps += $r['drps'];
                         $de_crps += $r['crps'];
@@ -9488,7 +9487,7 @@ $html = '';
                     </tbody>
                     </table>
                     ';
-                $rdata2         = $rp->getaa11con('con',$s[0],$c['c3tID'],$cID,$wpID);
+                $rdata2         = $rp->getvalues_s('c3','con',$s[0],$c['c3tID'],$cID,$wpID);
                 $con    = json_decode($rdata2['question'], true);
                 $html .= '
                     <p><b>Conclusion (only include errors which remain uncorrected):</b></p>
@@ -9712,7 +9711,7 @@ $html = '';
                             $crps = 0;
                             $drfp = 0;
                             $crfp = 0;
-                            $ad = $rp->getaa11p2('ad',$s[0],$c['c3tID'],$cID,$wpID);
+                            $ad = $rp->getvalues_m('c3','ad',$s[0],$c['c3tID'],$cID,$wpID);
                             foreach($ad as $r){
                                 $drps += $r['drps'];
                                 $crps += $r['crps'];
@@ -9744,7 +9743,7 @@ $html = '';
                     </table>
                     <br><br>
                 ';
-                $rdata = $rp->getaa11p('aa11uead',$s[0],$c['c3tID'],$cID,$wpID);
+                $rdata = $rp->getvalues_s('c3','aa11uead',$s[0],$c['c3tID'],$cID,$wpID);
                 $ue = json_decode($rdata['question'], true);   
                 $html .= '
                     <table>
@@ -9800,7 +9799,7 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $ab1 = $rp->getab1($c['code'],$c['c3tID'],$cID,$wpID);
+                $ab1 = $rp->getvalues_m('c3','ab1',$c['code'],$c['c3tID'],$cID,$wpID);
 
                 $html .= '
                     <table>
@@ -9896,7 +9895,7 @@ $html = '';
                         </tr>
                     </table>
                 ';
-                $rdata = $rp->getab3($c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata = $rp->getvalues_s('c3','ab3',$c['code'],$c['c3tID'],$cID,$wpID);
                 $ab3 = json_decode($rdata['question'], true);
                 $html .= '
                     <h3>FINANCIAL STATEMENTS DISCLOSURE AND COMPLIANCE ANNUAL REVIEW CHECKLIST</h3>
@@ -10048,7 +10047,7 @@ $html = '';
                     <p><b>NB: To ensure that the Checklist is as efficient as possible, areas which are more specialised have been addressed by supplementary disclosure checklists.  <u>These supplementary disclosure checklists should only be completed if the area is relevant.</u></b></p>
                     <p>NB: The checklist does not cover the additional disclosures required by companies which enter into insurance contracts, where these are relevant considerations, then the disclosure requirements of IFRS 4 should be given.  It also does not cover the requirements of IAS 26, which are only relevant to clients who are themselves pension schemes, or IFRIC 2 which is relevant to cooperative entities.  The checklist also does not cover the disclosure requirements of companies with listed equity or debt.</p>
                 ';
-                $rdata = $rp->getab4checklist('checklist',$c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata = $rp->getvalues_s('c3','checklist',$c['code'],$c['c3tID'],$cID,$wpID);
                 $sec    = json_decode($rdata['question'], true);
                 $html .= '
                     <table border="1">
@@ -10194,7 +10193,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $sec1   = $rp->getab4('section1',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $sec1   = $rp->getvalues_m('c3','section1',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($sec1 as $r){
                             $html .= '
                             <tr>
@@ -10229,7 +10228,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $sec2   = $rp->getab4('section2',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $sec2   = $rp->getvalues_m('c3','section2',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($sec2 as $r){
                             $html .= '
                             <tr>
@@ -10264,7 +10263,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $sec3   = $rp->getab4('section3',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $sec3   = $rp->getvalues_m('c3','section3',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($sec3 as $r){
                             $html .= '
                             <tr>
@@ -10303,7 +10302,7 @@ $html = '';
                                 <td colspan="5">IAS 1 paragraph 81A allows the SCI to be presented as either one or two statements (a profit and loss account and a SCI (which is a combination of the profit for the year plus items of other comprehensive income (OCI))).</td>
                             </tr>
                             ';
-                        $sec4   = $rp->getab4('section4',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $sec4   = $rp->getvalues_m('c3','section4',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($sec4 as $r){
                             $html .= '
                             <tr>
@@ -10341,7 +10340,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $sec5   = $rp->getab4('section5',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $sec5   = $rp->getvalues_m('c3','section5',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($sec5 as $r){
                             $html .= '
                             <tr>
@@ -10377,7 +10376,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $sec6   = $rp->getab4('section6',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $sec6   = $rp->getvalues_m('c3','section6',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($sec6 as $r){
                             $html .= '
                             <tr>
@@ -10413,7 +10412,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $sec7   = $rp->getab4('section7',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $sec7   = $rp->getvalues_m('c3','section7',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($sec7 as $r){
                             $html .= '
                             <tr>
@@ -10450,7 +10449,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $sec8   = $rp->getab4('section8',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $sec8   = $rp->getvalues_m('c3','section8',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($sec8 as $r){
                             $html .= '
                             <tr>
@@ -10486,7 +10485,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $sec9   = $rp->getab4('section9',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $sec9   = $rp->getvalues_m('c3','section9',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($sec9 as $r){
                             $html .= '
                             <tr>
@@ -10553,7 +10552,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $ab4a = $rp->getab4a('ab4a',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $ab4a = $rp->getvalues_m('c3','ab4a',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($ab4a as $r){
                             $html .= '
                             <tr>
@@ -10620,7 +10619,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $ab4b = $rp->getab4a('ab4b',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $ab4b = $rp->getvalues_m('c3','ab4b',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($ab4b as $r){
                             $html .= '
                             <tr>
@@ -10687,7 +10686,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $ab4c = $rp->getab4a('ab4c',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $ab4c = $rp->getvalues_m('c3','ab4c',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($ab4c as $r){
                             $html .= '
                             <tr>
@@ -10758,7 +10757,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $ab4d = $rp->getab4a('ab4d',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $ab4d = $rp->getvalues_m('c3','ab4d',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($ab4d as $r){
                 $html .= '
                     <tr>
@@ -10825,7 +10824,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $ab4e = $rp->getab4a('ab4e',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $ab4e = $rp->getvalues_m('c3','ab4e',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($ab4e as $r){
                 $html .= '
                     <tr>
@@ -10892,7 +10891,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $ab4f = $rp->getab4a('ab4f',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $ab4f = $rp->getvalues_m('c3','ab4f',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($ab4f as $r){
                 $html .= '
                     <tr>
@@ -10960,7 +10959,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $ab4g = $rp->getab4a('ab4g',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $ab4g = $rp->getvalues_m('c3','ab4g',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($ab4g as $r){
                 $html .= '
                     <tr>
@@ -11028,7 +11027,7 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>';
-                        $ab4h = $rp->getab4a('ab4h',$c['code'],$c['c3tID'],$cID,$wpID);
+                        $ab4h = $rp->getvalues_m('c3','ab4h',$c['code'],$c['c3tID'],$cID,$wpID);
                         foreach($ab4h as $r){
                 $html .= '
                     <tr>

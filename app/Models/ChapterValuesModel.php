@@ -48,60 +48,53 @@ class ChapterValuesModel extends Model{
     }
 
 
-    
-
-
-
-
 
 
 
     /**
         ----------------------------------------------------------
-        CHAPTER 1 GET FUNCTIONS
+        CHAPTER GET FUNCTIONS
         ----------------------------------------------------------
-        * @method getvalues_m() get all the multi row data
-        * @param type type or part of the file
-        * @param code code of the file
-        * @param ctID id of the file
-        * @param cID id of the client
-        * @var where-array reference for the fetch
-        * @return result-array
     */
-    public function getvalues_mc1($type,$code,$ctID,$cID){
+    public function getvalues_m($c,$type,$code,$ctID,$cID){
 
+        switch ($c) {
+            case 'c1': $table = $this->tblc1d; $cd = 'c1tID'; break;
+            case 'c2': $table = $this->tblc2d; $cd = 'c2tID'; break;
+            case 'c3': $table = $this->tblc3d; $cd = 'c3tID'; break;
+        }
         $where = [
-            'type'      => $type, 
-            'code'      => $code,
-            'c1tID'     => $ctID,
-            'clientID'  => $cID
+            'code'          => $code, 
+            'type'          => $type,
+            $cd             => $ctID,
+            'clientID'      => $cID,
         ];
-        $query =  $this->db->table($this->tblc1d)->where($where)->get();
+        $query =  $this->db->table($table)->where($where)->get();
         return $query->getResultArray();
 
     }
 
-    /**
-        * @method getvalues_s() get a single row data
-        * @param type type or part of the file
-        * @param code code of the file
-        * @param ctID id of the file
-        * @param cID id of the client
-        * @var where-array reference for the fetch
-        * @return row-array
-    */
-    public function getvalues_sc1($type,$code,$ctID,$cID){
+    public function getvalues_s($c,$type,$code,$ctID,$cID){
 
+        switch ($c) {
+            case 'c1': $table = $this->tblc1d; $cd = 'c1tID'; break;
+            case 'c2': $table = $this->tblc2d; $cd = 'c2tID'; break;
+            case 'c3': $table = $this->tblc3d; $cd = 'c3tID'; break;
+        }
         $where = [
-            'type'      => $type, 
-            'code'      => $code,
-            'c1tID'     => $ctID,
-            'clientID'  => $cID
+            'code'          => $code, 
+            'type'          => $type,
+            $cd             => $ctID,
+            'clientID'      => $cID,
         ];
-        $query =  $this->db->table($this->tblc1d)->where($where)->get();
+        $query =  $this->db->table($table)->where($where)->get();
         return $query->getrowArray();
 
     }
+
+
+    
+
 
     /**
         ----------------------------------------------------------
@@ -155,6 +148,8 @@ class ChapterValuesModel extends Model{
         return $cu['question'] - $total['balance'];
 
     }
+
+
     /**
         ----------------------------------------------------------
         CHAPTER 1 POST FUNCTIONS
@@ -693,52 +688,7 @@ class ChapterValuesModel extends Model{
 
 
 
-    /**
-        ----------------------------------------------------------
-        CHAPTER 2 GET FUNCTIONS
-        ----------------------------------------------------------
-        * @method getvalues_m() get all the multi row data
-        * @param type type or part of the file
-        * @param code code of the file
-        * @param ctID id of the file
-        * @param cID id of the client
-        * @var where-array reference for the fetch
-        * @return result-array
-    */
-    public function getvalues_mc2($type,$code,$ctID,$cID){
 
-        $where = [
-            'type'      => $type, 
-            'code'      => $code,
-            'c2tID'     => $ctID,
-            'clientID'  => $cID
-        ];
-        $query =  $this->db->table($this->tblc2d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getvalues_s() get a single row data
-        * @param type type or part of the file
-        * @param code code of the file
-        * @param ctID id of the file
-        * @param cID id of the client
-        * @var where-array reference for the fetch
-        * @return row-array
-    */
-    public function getvalues_sc2($type,$code,$ctID,$cID){
-
-        $where = [
-            'type'      => $type, 
-            'code'      => $code,
-            'c2tID'     => $ctID,
-            'clientID'  => $cID
-        ];
-        $query =  $this->db->table($this->tblc2d)->where($where)->get();
-        return $query->getrowArray();
-
-    }
     /**
         ----------------------------------------------------------
         CHAPTER 2 POST FUNCTIONS
@@ -826,53 +776,6 @@ class ChapterValuesModel extends Model{
 
 
 
-
-    /**
-        ----------------------------------------------------------
-        CHAPTER 3 GET FUNCTIONS
-        ----------------------------------------------------------
-        * @method getvalues_m() get all the multi row data
-        * @param type type or part of the file
-        * @param code code of the file
-        * @param ctID id of the file
-        * @param cID id of the client
-        * @var where-array reference for the fetch
-        * @return result-array
-    */
-    public function getvalues_mc3($type,$code,$ctID,$cID){
-
-        $where = [
-            'type'      => $type, 
-            'code'      => $code,
-            'c3tID'     => $ctID,
-            'clientID'  => $cID
-        ];
-        $query =  $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getvalues_s() get a single row data
-        * @param type type or part of the file
-        * @param code code of the file
-        * @param ctID id of the file
-        * @param cID id of the client
-        * @var where-array reference for the fetch
-        * @return row-array
-    */
-    public function getvalues_sc3($type,$code,$ctID,$cID){
-
-        $where = [
-            'type'      => $type, 
-            'code'      => $code,
-            'c3tID'     => $ctID,
-            'clientID'  => $cID
-        ];
-        $query =  $this->db->table($this->tblc3d)->where($where)->get();
-        return $query->getrowArray();
-
-    }
 
     /**
         ----------------------------------------------------------

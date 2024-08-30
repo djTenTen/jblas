@@ -1220,6 +1220,54 @@ class WorkpaperModel extends  Model {
 
 
 
+
+    /**
+        ----------------------------------------------------------
+        CHAPTER GET FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function getvalues_m($c,$type,$code,$ctID,$cID,$wpID){
+
+        switch ($c) {
+            case 'c1': $table = $this->tblc1; $cd = 'c1tID'; break;
+            case 'c2': $table = $this->tblc2; $cd = 'c2tID'; break;
+            case 'c3': $table = $this->tblc3; $cd = 'c3tID'; break;
+        }
+        $where = [
+            'code'          => $code, 
+            'type'          => $type,
+            $cd             => $ctID,
+            'clientID'      => $cID,
+            'workpaper' => $wpID,
+        ];
+        $query =  $this->db->table($table)->where($where)->get();
+        return $query->getResultArray();
+
+    }
+
+    public function getvalues_s($c,$type,$code,$ctID,$cID,$wpID){
+
+        switch ($c) {
+            case 'c1': $table = $this->tblc1; $cd = 'c1tID'; break;
+            case 'c2': $table = $this->tblc2; $cd = 'c2tID'; break;
+            case 'c3': $table = $this->tblc3; $cd = 'c3tID'; break;
+        }
+        $where = [
+            'code'          => $code, 
+            'type'          => $type,
+            $cd             => $ctID,
+            'clientID'      => $cID,
+            'workpaper' => $wpID,
+        ];
+        $query =  $this->db->table($table)->where($where)->get();
+        return $query->getrowArray();
+
+    }
+
+
+
+
+
     /**
         ----------------------------------------------------------
         CHAPTER 1 GET FUNCTIONS
