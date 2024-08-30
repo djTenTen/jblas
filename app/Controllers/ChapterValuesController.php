@@ -1386,8 +1386,15 @@ class ChapterValuesController extends BaseController{
     */
     public function saveaa3air($code,$c3tID,$cID,$name){
 
-        $req = [
+        $air = [
+            'sia'       => $this->request->getPost('sia'),
+            'seh'       => $this->request->getPost('seh'),
             'ir'        => $this->request->getPost('ir'),
+            'tird'      => $this->request->getPost('tird'),
+            'tfrd'      => $this->request->getPost('tfrd'),
+        ];
+        $req = [
+            'air'       => json_encode($air),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
             'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),

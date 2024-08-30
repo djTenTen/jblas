@@ -130,31 +130,48 @@
                 </form>
                 <br><br><br><hr>
                 <h4>Initial Conclusion:</h4>
-                <p>* Delete as applicable </p>
-                <p>Having completed the above procedures:</p>
-                <p>There were no significant events. *</p>
-                <p>Subsequent events identified above have* / have not* been adequately reflected in the financial statements.</p>
-                <p>Significant events highlighted by this review, including any disagreements with the client have been brought to the A.E.P.'s attention and are noted on schedule ___________ *</p>
-                <h4>Final Conclusion:	</h4>
-                <i>
-                    <p>If there is a significant delay* between the initial subsequent event review and the signing of the audit report:</p>
-                    <ul>
-                        <li>then a detailed subsequent event review will need to be reperformed to this date;</li>
-                        <li>consideration should be given to the reason for the delay, as this may be indicative of potential going concern problems; and</li>
-                        <li>if there is no justifiable reason for the delay, revisit and update the going concern review.</li>
-                    </ul>
-                    <p>* - “Significant delay” is not defined, but a delay in excess of three months is likely to mean that the subsequent events review will need to be reperformed.</p>
-                </i>
-                <p>The initial review was conducted sufficiently close to the proposed date of the audit report not to require the work to be revised.*</p>
-                <p>The initial review has been updated to _____________ (insert date). The work performed is outlined below:*</p>
                 <form action="<?= base_url()?>auditsystem/client/saveaa3air/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
-                    <input type="hidden" name="acid" value="<?= $crypt->encrypt($ir['acID'])?>">
-                    <textarea class="form-control" cols="30" rows="15" name="ir" required><?= $ir['question']?></textarea>
-                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                    <p>Having completed the above procedures:</p>
+                    <p>There were no significant events. </p>
+                    <input type="hidden" name="acid" value="<?= $acID?>">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="mb-1" for="sia">Subsequent events identified above</label>
+                            <select name="sia" id="sia" class="form-select">
+                                <option value="<?= $air['sia']?>" selected><?= $air['sia']?></option>
+                                <option value="have">have</option>
+                                <option value="have not">have not</option>
+                            </select>
+                            <label class="mb-1" for="sia">been adequately reflected in the financial statements.</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="mb-1" for="seh">Significant events highlighted by this review, including any disagreements with the client have been brought to the A.E.P.'s attention and are noted on schedule</label>
+                            <textarea class="form-control" name="seh" id="seh" cols="30" rows="5" placeholder="Insert noted on schedule"><?= $air['seh']?></textarea>
+                        </div>
+                    </div>
+                    <h4>Final Conclusion:	</h4>
+                    <p>The initial review was conducted sufficiently close to the proposed date of the audit report not to require the work to be revised.</p>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="mb-1" for="tird">The initial review has been updated to</label>
+                            <input class="form-control" type="date" name="tird" value="<?= $air['tird']?>">
+                            <label class="mb-1" for="ir">The work performed is outlined below:</label>
+                            <textarea class="form-control" cols="30" rows="5" name="ir" required><?= $air['ir']?></textarea>
+                        </div>
+                    </div>
+                    <p>Having reviewed the above procedures:</p>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="mb-1" for="tfrd">I am satisfied that no further significant events have occurred between the initial review as documented by the conclusion above and (date of the final review)</label>
+                            <input class="form-control" type="date" name="tfrd" value="<?= $air['tfrd']?>">
+                        </div>
+                    </div>
+                    <p>Significant events that have occurred are explained above, have been communicated to the A.E.P., and adequately accounted for / disclosed in the financial statements. *</p>
+            
+                    <button type="submit" class="btn btn-sm btn-success float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                 </form>
-                <p>Having reviewed the above procedures:</p>
-                <p>I am satisfied that no further significant events have occurred between the initial review as documented by the conclusion above and _____________ (date of the final review) *</p>
-                <p>Significant events that have occurred are explained above, have been communicated to the A.E.P., and adequately accounted for / disclosed in the financial statements. *</p>
+                <br><br><br><hr>
+
             </div>
         </div>
     </div>

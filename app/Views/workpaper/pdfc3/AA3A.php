@@ -186,11 +186,10 @@ $html =  "
 ";
 $html .= '
     <h3>Initial Conclusion:</h3>
-    <p>* Delete as applicable </p>
     <p>Having completed the above procedures:</p>
-    <p>There were no significant events. *</p>
-    <p>Subsequent events identified above have* / have not* been adequately reflected in the financial statements.</p>
-    <p>Significant events highlighted by this review, including any disagreements with the client have been brought to the A.E.P.\'s attention and are noted on schedule ___________ *</p>
+    <p>There were no significant events.</p>
+    <p>Subsequent events identified above '.$air['sia'].' been adequately reflected in the financial statements.</p>
+    <p>Significant events highlighted by this review, including any disagreements with the client have been brought to the A.E.P.\'s attention and are noted on schedule '.$air['seh'].'</p>
     <table>
         <tr>
             <td style="width: 50%;">Prepared by:___________</td>
@@ -202,28 +201,22 @@ $html .= '
         </tr>
     </table>
     <h3>Final Conclusion:</h3>
-    <p><i>If there is a significant delay* between the initial subsequent event review and the signing of the audit report:</i></p>
-    <ul>
-        <li><i>then a detailed subsequent event review will need to be reperformed to this date;</i></li>
-        <li><i>consideration should be given to the reason for the delay, as this may be indicative of potential going concern problems; and</i></li>
-        <li><i>if there is no justifiable reason for the delay, revisit and update the going concern review.</i></li>
-    </ul>
-    <p><i>* - “Significant delay” is not defined, but a delay in excess of three months is likely to mean that the subsequent events review will need to be reperformed.</i></p>
-    <p>The initial review was conducted sufficiently close to the proposed date of the audit report not to require the work to be revised.*</p>
-    <p>The initial review has been updated to _____________ (insert date). The work performed is outlined below:*</p>
+    
+    <p>The initial review was conducted sufficiently close to the proposed date of the audit report not to require the work to be revised.</p>
+    <p>The initial review has been updated to '.$air['tird'].'. The work performed is outlined below:</p>
     <table>
         <tbody>
             <tr>
                 <td class="bo">
                     <br><br><br>
-                    '.$ir['question'].'
+                    '.$air['ir'].'
                     <br><br><br>
                 </td>
             </tr>
         </tbody>
     </table>
     <p>Having reviewed the above procedures:</p>
-    <p>I am satisfied that no further significant events have occurred between the initial review as documented by the conclusion above and _____________ (date of the final review) * <br> Significant events that have occurred are explained above, have been communicated to the A.E.P., and adequately accounted for / disclosed in the financial statements. *</p>
+    <p>I am satisfied that no further significant events have occurred between the initial review as documented by the conclusion above and '.$air['tfrd'].' <br> Significant events that have occurred are explained above, have been communicated to the A.E.P., and adequately accounted for / disclosed in the financial statements. </p>
     <table>
         <tr>
             <td style="width: 50%;">Prepared by:___________</td>

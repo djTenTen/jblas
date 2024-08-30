@@ -2127,9 +2127,16 @@ class WorkpaperController extends BaseController{
     */
     public function saveaa3air($code,$c3tID,$cID,$wpID,$name){
 
+        $air = [
+            'sia'       => $this->request->getPost('sia'),
+            'seh'       => $this->request->getPost('seh'),
+            'ir'        => $this->request->getPost('ir'),
+            'tird'      => $this->request->getPost('tird'),
+            'tfrd'      => $this->request->getPost('tfrd'),
+        ];
         $req = [
             'code'      => $code,
-            'ir'        => $this->request->getPost('ir'),
+            'air'       => json_encode($air),
             'acid'      => $this->request->getPost('acid'),
             'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
             'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
@@ -3542,7 +3549,8 @@ class WorkpaperController extends BaseController{
                 $data['cr']     = $this->wpmodel->getvalues_m('c3','cr',$code,$dc3tID,$dcID,$dwpID);
                 $data['dc']     = $this->wpmodel->getvalues_m('c3','dc',$code,$dc3tID,$dcID,$dwpID);
                 $data['faf']    = $this->wpmodel->getvalues_m('c3','faf',$code,$dc3tID,$dcID,$dwpID);
-                $data['ir']     = $this->wpmodel->getvalues_s('c3','ir',$code,$dc3tID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_s('c3','air',$code,$dc3tID,$dcID,$dwpID);
+                $data['air']    = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc3/AA3A', $data);
                 break;
             case '3.4 Aa3b':

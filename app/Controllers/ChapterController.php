@@ -975,7 +975,9 @@ class ChapterController extends BaseController{
                 $data['cr']     = $this->cvmodel->getvalues_m('c3','cr',$code,$dc3tID,$dcID);
                 $data['dc']     = $this->cvmodel->getvalues_m('c3','dc',$code,$dc3tID,$dcID);
                 $data['faf']    = $this->cvmodel->getvalues_m('c3','faf',$code,$dc3tID,$dcID);
-                $data['ir']     = $this->cvmodel->getvalues_s('c3','ir',$code,$dc3tID,$dcID);
+                $rdata          = $this->cvmodel->getvalues_s('c3','air',$code,$dc3tID,$dcID);
+                $data['air']    = json_decode($rdata['question'], true);
+                $data['acID']  = $this->crypt->encrypt($rdata['acID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/33Aa3a', $data);
                 echo view('includes/Footer');
@@ -1655,7 +1657,9 @@ class ChapterController extends BaseController{
                 $data['cr']     = $this->wpmodel->getvalues_m('c3','cr',$code,$dc3tID,$dcID,$dwpID);
                 $data['dc']     = $this->wpmodel->getvalues_m('c3','dc',$code,$dc3tID,$dcID,$dwpID);
                 $data['faf']    = $this->wpmodel->getvalues_m('c3','faf',$code,$dc3tID,$dcID,$dwpID);
-                $data['ir']     = $this->wpmodel->getvalues_s('c3','ir',$code,$dc3tID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_s('c3','air',$code,$dc3tID,$dcID,$dwpID);
+                $data['air']    = json_decode($rdata['question'], true);
+                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/33Aa3a', $data);
                 echo view('includes/Footer');

@@ -2320,7 +2320,7 @@ class WorkpaperModel extends  Model {
 
         $dacid = $this->crypt->decrypt($req['acid']);
         $data = [
-            'question'      => $req['ir'],
+            'question'      => $req['air'],
             'updated_on'    => $this->date.' '.$this->time,
             'updated_by'    => $req['uID'],
         ];
