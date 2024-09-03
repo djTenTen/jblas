@@ -1218,6 +1218,28 @@ class WorkpaperModel extends  Model {
     }
 
 
+    public function deleteworkpaper($req){
+
+        $where = [
+            'clientID'      => $req['cID'],
+            'workpaper'     => $req['wpID'],
+        ];
+        
+        $this->db->table($this->tblwp)->where(array('wpID' => $req['wpID']))->delete();
+        $this->db->table($this->tblc1)->where($where)->delete();
+        $this->db->table($this->tblc2)->where($where)->delete();
+        $this->db->table($this->tblc3)->where($where)->delete();
+        $this->db->table($this->tblcfi)->where($where)->delete();
+        $this->db->table($this->tbltb)->where(array('client' => $req['cID'], 'workpaper' => $req['wpID']))->delete();
+        $this->db->table($this->tblfst)->where(array('client' => $req['cID'], 'workpaper' => $req['wpID']))->delete();
+
+        return "deleted";
+
+    }
+
+
+
+
 
 
 

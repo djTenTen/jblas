@@ -78,7 +78,6 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
         });
 
         $workp->group('', ['filter' => 'audmanager'], function ($audmanager) {
-
             $audmanager->get('initiate', 'WorkpaperController::initiate');
             $audmanager->post('sendtoapprove/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::sendtoapprove/$1/$2/$3/$4/$5');
             $audmanager->post('save', 'WorkpaperController::saveworkpaper');
@@ -87,7 +86,7 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
             $audmanager->get('approved', 'WorkpaperController::approved');
             $audmanager->get('generatepdf/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'ReportController::generatepdf/$1/$2/$3/$4/$5/$6/$7');
             $audmanager->post('delete/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::deletefiles/$1/$2/$3/$4/$5');
-
+            $audmanager->post('delete/(:any)/(:any)', 'WorkpaperController::deleteworkpaper/$1/$2');
         });
 
         $workp->get('getfiles/(:any)/(:any)/(:any)', 'WorkpaperController::getfiles/$1/$2/$3');

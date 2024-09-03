@@ -46,6 +46,7 @@ class WorkpaperController extends BaseController{
 
         $data['title']  = "Work Paper";
         $data['subt']   = "Initiate your work paper";
+        $data['type']   = session()->get('type');
         $fID            = $this->crypt->decrypt(session()->get('firmID'));
         $data['aud']    = $this->wpmodel->getauditors($fID,'Preparer');
         $data['sup']    = $this->wpmodel->getauditors($fID,'Reviewer');
@@ -734,6 +735,33 @@ class WorkpaperController extends BaseController{
         }
 
     }
+
+
+    public function deleteworkpaper($cID,$wpID){
+
+        $yp = $this->crypt->decrypt(session()->get('pass'));
+        $cpass = $this->request->getPost('cpass');
+        if($yp == $cpass){
+            $req = [
+                'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+                'cpass'     => $this->request->getPost('cpass'),
+            ];
+            $res = $this->wpmodel->deleteworkpaper($req);
+            if($res == "deleted"){
+                session()->setFlashdata('file_deleted','file_deleted');
+                return redirect()->to(site_url('auditsystem/wp/initiate'));
+            }else{
+                session()->setFlashdata('invalid_input','invalid_input');
+                return redirect()->to(site_url('auditsystem/wp/initiate'));
+            }
+        }else{
+            session()->setFlashdata('wrong_pass','wrong_pass');
+            return redirect()->to(site_url('auditsystem/wp/initiate'));
+        }
+
+    }
+    
 
 
     /**

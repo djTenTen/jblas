@@ -63,6 +63,25 @@
                     </div>
                 </div>
             <?php  }?>
+            <?php if (session()->get('wrong_pass')) { ?>
+                <div class="alert alert-danger alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Error.</h6>
+                        Wrong Password.
+                    </div>
+                </div>
+            <?php  }?>
+            <?php if (session()->get('file_deleted')) { ?>
+                <div class="alert alert-success alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Success.</h6>
+                        The file Has been Deleted.
+                    </div>
+                </div>
+            <?php  }?>
+
         <div class="card">
             <div class="card-body">
             <?php if(session()->get('allowed')->add == "Yes"){?>
@@ -138,6 +157,9 @@
                                     <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendbacktoreviewer/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
                                     <button class="btn btn-success btn-icon btn-sm approved" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/approved/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
                                 <?php }?>
+                                <?php if($type == 'Auditing Firm' or $type == 'Audit Manager' or $type == 'Admin'){?>
+                                    <button class="btn btn-danger btn-icon btn-sm todelete" type="button" data-file="<?= $r['cli'].'-'.$r['org']?>" data-urlsubmit="<?= base_url('auditsystem/wp/delete/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#todelete" title="Delete File"><i class="fas fa-trash"></i></button>
+                                <?php }?>
                             </td>
                         </tr>
                     <?php }?>
@@ -146,6 +168,27 @@
         </div>
     </div>
 </main>
+<!-- Modal Delete-->
+<div class="modal fade" id="todelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="todform" action="" method="post">
+                    Are you sure to delete this file: <b><span id="deletefile"></span></b>?<br> Deleting this will erase all your progress on this workpaper. <br>Please confirm by entering your password. <br>
+                    <input class="form-control" id="cpass" type="password" name="cpass" required/>
+            </div>
+            <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Modal add-->
 <div class="modal fade" id="adduser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable" role="document">
@@ -319,6 +362,15 @@
 </div>
 <script>
 $(document).ready(function () {
+
+    $('.todelete').on('click', function () {
+        var file = $(this).data('file');
+        var urlsubmit = $(this).data('urlsubmit');
+        $('#deletefile').html(file);
+        $('#todform').attr('action',urlsubmit);
+        console.log(urlsubmit);
+    });  
+
     $('.sendbacktoreviewer').on('click', function () {
         var file = $(this).data('file');
         var urlsubmit = $(this).data('urlsubmit');
