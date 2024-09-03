@@ -2291,6 +2291,49 @@ class WorkpaperController extends BaseController{
 
     }
 
+
+
+    public function saveaa5a($code,$c3tID,$cID,$wpID,$name){
+
+        $aa5 = [
+            'aa51d' => $this->request->getPost('aa51d'),
+            'ml1' => $this->request->getPost('ml1'),
+            'ml1d' => $this->request->getPost('ml1d'),
+            'ml2' => $this->request->getPost('ml2'),
+            'ml3' => $this->request->getPost('ml3'),
+            'ml4' => $this->request->getPost('ml4'),
+            'ml4d' => $this->request->getPost('ml4d'),
+            'ml5' => $this->request->getPost('ml5'),
+            'ml5d' => $this->request->getPost('ml5d'),
+            'ml6' => $this->request->getPost('ml6'),
+            'ml6d' => $this->request->getPost('ml6d'),
+            'ml7' => $this->request->getPost('ml7'),
+            'ml7d' => $this->request->getPost('ml7d'),
+            'ml8' => $this->request->getPost('ml8'),
+        ];
+        $req = [
+            'aa5a'       => json_encode($aa5),
+            'code'      => $code,
+            'part'      => 'aa5a',
+            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
+            'uID'       => $this->crypt->decrypt(session()->get('userID')),
+            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+        ];
+
+        $res = $this->wpmodel->saveaa5a($req);
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
+        }
+
+    }
+
+
     
     /**
         ----------------------------------------------------------
@@ -3577,6 +3620,8 @@ class WorkpaperController extends BaseController{
                 echo view('workpaper/pdfc3/AA4', $data);
                 break;
             case '3.6.1 Aa5a':
+                $rdata          = $this->wpmodel->getvalues_s('c3','aa5a',$code,$dc3tID,$dcID,$dwpID);
+                $data['aa5a']   = json_decode($rdata['question'], true);
                 echo view('workpaper/pdfc3/AA5A', $data);
                 break;
             case '3.6.2 Aa5b':

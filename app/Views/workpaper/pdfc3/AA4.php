@@ -67,13 +67,13 @@ $html .= '
 <p class="cent"><b>SUGGESTED LETTER OF REPRESENTATION</b> <br><br><br></p>
 <table>
     <tr>
-        <td>'.$aud.'</td>
+        <td>'.$cl['aud'].'</td>
     </tr>
      <tr>
-        <td>'.$sup.'</td>
+        <td>'.$cl['sup'].'</td>
     </tr>
     <tr>
-        <td>'.$audm.'</td>
+        <td>'.$cl['audm'].'</td>
     </tr>
     <tr>
         <td>'.$firm.'</td>

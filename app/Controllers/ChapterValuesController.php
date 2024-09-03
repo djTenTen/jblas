@@ -1547,6 +1547,46 @@ class ChapterValuesController extends BaseController{
     }
 
 
+    public function saveaa5a($code,$c3tID,$cID,$name){
+
+        $aa5 = [
+            'aa51d' => $this->request->getPost('aa51d'),
+            'ml1' => $this->request->getPost('ml1'),
+            'ml1d' => $this->request->getPost('ml1d'),
+            'ml2' => $this->request->getPost('ml2'),
+            'ml3' => $this->request->getPost('ml3'),
+            'ml4' => $this->request->getPost('ml4'),
+            'ml4d' => $this->request->getPost('ml4d'),
+            'ml5' => $this->request->getPost('ml5'),
+            'ml5d' => $this->request->getPost('ml5d'),
+            'ml6' => $this->request->getPost('ml6'),
+            'ml6d' => $this->request->getPost('ml6d'),
+            'ml7' => $this->request->getPost('ml7'),
+            'ml7d' => $this->request->getPost('ml7d'),
+            'ml8' => $this->request->getPost('ml8'),
+        ];
+        $req = [
+            'aa5a'       => json_encode($aa5),
+            'code'      => $code,
+            'part'      => 'aa5a',
+            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
+            'uID'       => $this->crypt->decrypt(session()->get('userID')),
+            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+        ];
+
+        $res = $this->cvmodel->saveaa5a($req);
+        if($res){
+            session()->setFlashdata('success_update','success_update');
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+        }else{
+            session()->setFlashdata('failed_update','failed_update');
+            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
+        }
+
+    }
+
+
     /**
         ----------------------------------------------------------
         AA5b FUNCTIONS

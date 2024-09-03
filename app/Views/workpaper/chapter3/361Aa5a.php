@@ -7,9 +7,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
-                            <?= $title?>
+                            <?= $name?>
                         </h1>
-                        <div class="page-header-subtitle"><?= $code.' - '.$header?></div>
+                        <div class="page-header-subtitle"><?= $title?></div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -42,73 +42,129 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <h4>Private and Confidential</h4>
-                <input type="text" class="form-control form control-sm" placeholder="[Name of Client]">
-                <input type="text" class="form-control form control-sm" placeholder="[Address]">
-                <input type="date" class="form-control form control-sm" placeholder="[date]">
-                <br>
-                <p>Dear Sirs</p>
-                <h4>Management Letter</h4>
-                <h6>Financial statements for the <input type="text" class="form-control form control-sm" placeholder="[year/period]"> ending <input type="date" class="form-control form control-sm" placeholder="[date]"></h6>
-                <p>Following our recent <input type="text" class="form-control form control-sm" placeholder="[interim/final]">  audit in connection with the financial statements of <input type="text" class="form-control form control-sm" placeholder="[client name]">  for the <input type="text" class="form-control form control-sm" placeholder="[year/period]"> ending <input type="date" class="form-control form control-sm" placeholder="[year/period]">, we are writing to bring to your attention certain matters that arose during the course of our work, together with suggestions for improvements of controls and procedures operated by the company.  We hope you will find our comments helpful and constructive.</p>
-                <p>Our work during the audit included an examination of some of the company’s transactions, procedures <input type="text" class="form-control form control-sm" placeholder="[and controls]"> with a view to expressing an opinion on the financial statements for the <input type="text" class="form-control form control-sm" placeholder="[year/period]">.  This work was not directed primarily towards discovering deficiencies in, or the operating effectiveness of your internal controls <textarea class="form-control form-control-sm"name="" id="" cols="30" rows="10" placeholder="[other than those that would affect our audit opinion]"></textarea> or towards the detection of fraud.  We have included in this letter only matters that have come to our attention as a result of our normal audit procedures and consequently our comments should not be regarded as a comprehensive record of all deficiencies in internal control that may exist, of all improvements that might be made, or of the operating effectiveness of your internal controls.</p>
-                <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="[Small organisations or clients with a few accounting staff:We recognise that the number of your [accounting] staff makes a complete system of internal control impracticable and that the directors [or named client officials] exercise close personal supervision, which we consider reasonable in the circumstances.  We have taken this into account in conducting our audit and in preparing this letter]."></textarea>
-                <p><input type="text" class="form-control form control-sm" placeholder="[Final audit only]"> Our work also included a review of the adequacy of disclosures in the financial statements and consideration of the appropriateness of the accounting policies and estimation techniques adopted by the company. This review identified no significant matters, which we believe are necessary to draw to your attention. <input type="text" class="form-control form control-sm" placeholder="[amend as required]">.</p>
-                <h6>Summary</h6>
-                The important matters that arose as a result of our work are set out in detail 
-                <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="[below]/[in the attached memorandum]. [Matters of less significance are included in an appendix………..] [The attached memorandum and appendix collectively form part of this letter.]"></textarea>
-                <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="[For groups or large organisations:
-                We have prepared a separate memorandum for each subsidiary, division or different level of functional responsibility, as set out below:]
-                "></textarea>
-                <p>We would particularly draw your attention to the following matters:</p>
-                <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="[Significant qualitative aspects of the entity’s accounting practices, including accounting policies, accounting estimates and financial statement disclosures:"></textarea>
-                <i>
-                    <p>Summary list of key matters:</p>
-                    <ul>
-                        <li><input type="text" class="form-control form control-sm"></li>
-                    </ul>
-                </i>
-                <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="[Other matters, if any, arising from the audit that in our professional judgment, are significant to the oversight of the financial reporting process:"></textarea>
-                <i>
-                    <p>Summary list of key matters:</p>
-                    <ul>
-                        <li><input type="text" class="form-control form control-sm"></li>
-                    </ul>
-                </i>
-                <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="[Where matters included in previous management letters have not been fully resolved:
-                We wrote to you previously on [date(s)] following our [interim/final audit(s)] for the [year/period] ending [date].  We are pleased to record that many of the matters raised have been dealt with satisfactorily [although we appreciate that you are still carefully considering the implementation of [specific recommendation(s)]].
-                "></textarea>
-                <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="[Significant matters previously brought to your attention that, in our opinion, have not been effectively dealt with are summarised as follows:"></textarea>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Date of Letter</th>
-                            <th>Paragrap Ref.</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="text" class="form-control"></td>
-                            <td><input type="text" class="form-control"></td>
-                            <td><input type="text" class="form-control"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" class="form-control"></td>
-                            <td><input type="text" class="form-control"></td>
-                            <td><input type="text" class="form-control"></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="Any matters of particular significance should be repeated in detail.]"></textarea>
-                <h6>Conclusion</h6>
-                <p>If you require any further information or assistance, we shall be very pleased to help you.
-                We would appreciate an acknowledgement of the receipt of this letter and look forward to receiving your comments when you have had the opportunity of considering the matters that we have raised. <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="[You have agreed that the contents of this letter will be minuted by the company after due consideration by the board]."></textarea> </p>
-                <p>This letter is for your private use only.  It has been prepared on the understanding that it will not be disclosed to any third party, or quoted to or referred to, without our prior written consent and we assume no responsibility to any other party.</p>
-                <p>We should like to take this opportunity of thanking you and your staff for the assistance and co-operation we have received during the course of our work.  The contents of this letter were discussed with and have been approved by <input type="text" class="form-control form control-sm" placeholder="[name of client official(s)]"> on <input type="date" class="form-control form control-sm" placeholder="[date]">.</p>  
-                <p>Yours faithfully</p>
-                <p>………………………………………………………</p>
-                <p>Signed for and on behalf of <input type="text" class="form-control form control-sm" placeholder="[name of client official(s)]"> on <input type="text" class="form-control form control-sm" placeholder="[Audit Firm]"></p>
+                <form class="form-inline" action="<?= base_url()?>auditsystem/wp/saveaa5a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    
+                    <div class="row justify-content-center">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <h4>Specimen Management Letter – points arising</h4>
+                            <h4>Private and Confidential</h4>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label class="mb-1" for="aa51d">Date</label><br>
+                                    <input class="form-control" id="aa51d" type="date" placeholder="Insert legislation" name="aa51d" value="<?= $aa5a['aa51d']?>" />
+                                </div>
+                            </div>
+                            <h6 class="text-center">Management Letter</h6>
+                            <h6 class="text-center">Financial statements for the [year/period] ending [date]</h6>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label class="mb-1" for="ml1">Introduction</label> <br>
+                                    <label class="mb-1" for="ml1">Following our recent </label>
+                                    <select name="ml1" id="ml1" class="form-select">
+                                        <option value="<?= $aa5a['ml1']?>" selected><?= $aa5a['ml1']?></option>
+                                        <option value="interim">interim</option>
+                                        <option value="final">final</option>
+                                    </select>
+                                    <label class="mb-1" for="ml1d">ending</label>
+                                    <input class="form-control" id="ml1d" type="date" placeholder="Insert legislation" name="ml1d" value="<?= $aa5a['ml1d']?>"/>
+                                    <label class="mb-1" for="ml1d">we are writing to bring to your attention certain matters that arose during the course of our work, together with suggestions for improvements of controls and procedures operated by the company.  We hope you will find our comments helpful and constructive.</label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-check mb-2">
+                                <label class="mb-1" for="ml2"><i>(Small organisations or clients with a few accounting staff:)</i></label> <br>
+                                <div class="mb-3">
+                                    <input class="form-check-input" id="ml2" type="checkbox" name="ml2" value="We recognise that the number of your accounting staff makes a complete system of internal control impracticable and that the directors or named client officials exercise close personal supervision, which we consider reasonable in the circumstances.  We have taken this into account in conducting our audit and in preparing this letter." <?php if($aa5a['ml2'] != ''){echo 'checked';}?>/>
+                                    <label class="form-check-label" for="ml2">We recognise that the number of your accounting staff makes a complete system of internal control impracticable and that the directors or named client officials exercise close personal supervision, which we consider reasonable in the circumstances.  We have taken this into account in conducting our audit and in preparing this letter. </label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label class="mb-1" for="leg3">Our work also included a review of the adequacy of disclosures in the financial statements and consideration of the appropriateness of the accounting policies and estimation techniques adopted by the company. This review identified no significant matters, which we believe are necessary to draw to your attention. </label>
+                                </div>
+                            </div>
+                            <hr>
+                            <h6>Summary</h6>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label class="mb-1">The important matters that arose as a result of our work are set out in detail in the attached memorandum</label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-check mb-2">
+                                <label class="mb-1" for="ml3"><i>(For groups or large organisations:)</i></label> <br>
+                                <div class="mb-3">
+                                    <input class="form-check-input" id="ml3" type="checkbox" name="ml3" value="We have prepared a separate memorandum for each subsidiary, division or different level of functional responsibility, as set out below:" <?php if($aa5a['ml3'] != ''){echo 'checked';}?>/>
+                                    <label class="form-check-label" for="ml3">We have prepared a separate memorandum for each subsidiary, division or different level of functional responsibility, as set out below: </label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label class="mb-1">We would particularly draw your attention to the following matters:</label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="col-md-12">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" id="ml4" type="checkbox" name="ml4" value="Significant qualitative aspects of the entity’s accounting practices, including accounting policies, accounting estimates and financial statement disclosures:" <?php if($aa5a['ml4'] != ''){echo 'checked';}?>/>
+                                    <label class="form-check-label" for="ml4">Significant qualitative aspects of the entity’s accounting practices, including accounting policies, accounting estimates and financial statement disclosures: </label>
+                                    <textarea class="form-control form-control-sm" name="ml4d" id="ml4d" cols="30" rows="5" placeholder="Insert Summary list of key matters"><?php if($aa5a['ml4'] != ''){echo $aa5a['ml4d'];}?></textarea>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="col-md-12">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" id="ml5" type="checkbox" name="ml5" value="Significant difficulties encountered during the audit:" <?php if($aa5a['ml5'] != ''){echo 'checked';}?>/>
+                                    <label class="form-check-label" for="ml5">Significant difficulties encountered during the audit: </label>
+                                    <textarea class="form-control form-control-sm" name="ml5d" id="ml5d" cols="30" rows="5" placeholder="Insert Summary list of key matters"><?php if($aa5a['ml5'] != ''){echo $aa5a['ml5d'];}?></textarea>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="col-md-12">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" id="ml6" type="checkbox" name="ml6" value="Other matters, if any, arising from the audit that in our professional judgment, are significant to the oversight of the financial reporting process:" <?php if($aa5a['ml6'] != ''){echo 'checked';}?>/>
+                                    <label class="form-check-label" for="ml6">Other matters, if any, arising from the audit that in our professional judgment, are significant to the oversight of the financial reporting process: </label>
+                                    <textarea class="form-control form-control-sm" name="ml6d" id="ml6d" cols="30" rows="5" placeholder="Insert Summary list of key matters"><?php if($aa5a['ml6'] != ''){echo $aa5a['ml6d'];}?></textarea>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-check mb-2">
+                                <label class="mb-1" for="leg1"><i>(Where matters included in previous management letters have not been fully resolved:)</i></label> <br>
+                                <div class="mb-3">
+                                    <input class="form-check-input" id="ml7" type="checkbox" name="ml7" value="We wrote to you previously on " <?php if($aa5a['ml7'] != ''){echo 'checked';}?>/>
+                                    <label class="form-check-label" for="ml7">We wrote to you previously on  </label>
+                                    <input class="form-control" id="ml7d" type="date" placeholder="Insert legislation" name="ml7d" value="<?php if($aa5a['ml7'] != ''){echo $aa5a['ml7d'];}?>"/>
+                                    <label class="form-check-label" for="ml8">following our</label>
+                                    <select name="ml8" id="ml8" class="form-select">
+                                        <option value="<?= $aa5a['ml8']?>" selected><?= $aa5a['ml8']?></option>
+                                        <option value="interim">interim</option>
+                                        <option value="final">final</option>
+                                    </select>
+                                    <label class="form-check-label" for="ml8">audit for the [year/period] ending [date]. We are pleased to record that many of the matters raised have been dealt with satisfactorily.</label>
+                                </div>
+                            </div>
+                            <hr>
+                            <h6>Conclusion</h6>
+                            <div class="form-check mb-2">
+                                <div class="mb-3">
+                                    <label class="form-check-label" for="bwr4">If you require any further information or assistance, we shall be very pleased to help you.</label><br>
+                                    <label class="form-check-label" for="bwr4">We would appreciate an acknowledgement of the receipt of this letter and look forward to receiving your comments when you have had the opportunity of considering the matters that we have raised.</label><br>
+                                    <label class="form-check-label" for="bwr4">This letter is for your private use only.  It has been prepared on the understanding that it will not be disclosed to any third party, or quoted to or referred to, without our prior written consent and we assume no responsibility to any other party.</label><br>
+                                    <label class="form-check-label" for="bwr4">We should like to take this opportunity of thanking you and your staff for the assistance and co-operation we have received during the course of our work.  The contents of this letter were discussed with and have been approved by [name of client official(s)] on [date].</label><br>
+                                </div>
+                            </div>
+                            
+                                    
+                        </div>
+                        <div class="col-2"></div>
+                        
+                    </div>
+
+                    <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
+                </form>
             </div>
         </div>
     </div>

@@ -409,6 +409,8 @@ class ChapterController extends BaseController{
                 echo view('pdfc3/AA4', $data);
                 break;
             case '3.6.1 Aa5a':
+                $rdata          = $this->c3model->getvalues_s('aa5a',$code,$dc3tID);
+                $data['aa5a']    = json_decode($rdata['question'], true);
                 echo view('pdfc3/AA5A', $data);
                 break;
             case '3.6.2 Aa5b':
@@ -1002,6 +1004,8 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break;
             case '3.6.1 Aa5a':
+                $rdata          = $this->cvmodel->getvalues_s('c3','aa5a',$code,$dc3tID,$dcID);
+                $data['aa5a']    = json_decode($rdata['question'], true);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/361Aa5a', $data);
                 echo view('includes/Footer');
@@ -1684,6 +1688,9 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break;
             case '3.6.1 Aa5a':
+
+                $rdata          = $this->wpmodel->getvalues_s('c3','aa5a',$code,$dc3tID,$dcID,$dwpID);
+                $data['aa5a']    = json_decode($rdata['question'], true);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/361Aa5a', $data);
                 echo view('includes/Footer');

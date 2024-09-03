@@ -124,7 +124,8 @@ class WorkpaperModel extends  Model {
         (select signature from {$this->tblu} as tu where tu.userID = wp.auditor) as audsign,
         (select signature from {$this->tblu} as tu where tu.userID = wp.supervisor) as supsign,
         (select signature from {$this->tblu} as tu where tu.userID = wp.audmanager) as mansign,
-        tc.name as clientname
+        tc.name as clientname,
+        tc.address as clientaddress
         from {$this->tblwp} as wp, {$this->tblc} as tc
         where tc.cID = wp.client
         and wp.wpID = {$wpID}
@@ -2405,6 +2406,31 @@ class WorkpaperModel extends  Model {
         ];
         $data = [
             'question'      => $req['aa4'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
+        ];
+        if($this->db->table($this->tblc3)->where($where)->update($data)){
+            $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 3 on work paper");
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+
+    public function saveaa5a($req){
+
+        $where = [
+            'type'          => $req['part'],
+            'code'          => $req['code'],
+            'c3tID'         => $req['c3tID'],
+            'clientID'      => $req['cID'],
+            'firmID'        => $req['fID'],
+            'workpaper'     => $req['wpID'],
+        ];
+        $data = [
+            'question'      => $req['aa5a'],
             'updated_on'    => $this->date.' '.$this->time,
             'updated_by'    => $req['uID'],
         ];

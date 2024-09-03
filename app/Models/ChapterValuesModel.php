@@ -1035,6 +1035,29 @@ class ChapterValuesModel extends Model{
         }
 
     }
+
+    public function saveaa5a($req){
+
+        $where = [
+            'type'          => $req['part'],
+            'code'          => $req['code'],
+            'c3tID'         => $req['c3tID'],
+            'clientID'      => $req['cID'],
+            'firmID'        => $req['fID'],
+        ];
+        $data = [
+            'question'      => $req['aa5a'],
+            'updated_on'    => $this->date.' '.$this->time,
+            'updated_by'    => $req['uID'],
+        ];
+        if($this->db->table($this->tblc3d)->where($where)->update($data)){
+            $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 3");
+            return true;
+        }else{
+            return false;
+        }
+
+    }
     
     /**
         ----------------------------------------------------------
