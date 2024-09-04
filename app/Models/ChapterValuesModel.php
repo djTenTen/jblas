@@ -645,6 +645,46 @@ class ChapterValuesModel extends Model{
 
     /**
         ----------------------------------------------------------
+        AC10 FUNCTIONS
+        ----------------------------------------------------------
+        * @method saveac10summ() save the ac10 information
+        * @param req ac10 data
+        * @param ref ac10 reference
+        * @var data contains ac10 information
+        * @var where1-where2 update reference on client files
+        * @return bool
+    */
+    public function saveac10summ($req,$ref){
+
+        foreach ($req as $r => $val){
+            $data = [
+                'question'      => $val,
+                'type'          =>  $r.'data',
+                'updated_on'    => $this->date.' '.$this->time,
+                'updated_by'    => $ref['uID'],
+            ];
+            $where1 = [
+                'type'          => $r.'data',
+                'code'          => $ref['code'],
+                'c1tID'         => $ref['c1tID'],
+                'clientID'      =>$ref['cID'],
+            ];
+            $this->db->table($this->tblc1d)->where($where1)->update($data);
+        }
+        $where2 = [
+            'type'          => 'materialdata',
+            'code'          => $ref['code'],
+            'c1tID'         => $ref['c1tID'],
+            'clientID'      =>$ref['cID'],
+        ];
+        $this->db->table($this->tblc1d)->where($where2)->update(array('question' => $ref['materiality']));
+        $this->logs->log(session()->get('name'). " set a default value on a client file AC10 Chapter 1");
+        return true;
+
+    }
+
+    /**
+        ----------------------------------------------------------
         AC11 FUNCTIONS
         ----------------------------------------------------------
         * @method saveac11() save the ac10 information

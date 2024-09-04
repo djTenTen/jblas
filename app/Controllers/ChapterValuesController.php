@@ -58,10 +58,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac1($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -94,10 +94,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac1eqr($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -128,10 +128,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac2($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -157,10 +157,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac2aep($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -188,10 +188,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac3($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -223,10 +223,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac4ppr($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -250,10 +250,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac4($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -285,10 +285,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac5($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -317,10 +317,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac6ra($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -350,10 +350,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac6s12($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -399,10 +399,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac6s3($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -455,10 +455,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac7($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -486,10 +486,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac8($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -558,10 +558,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac9($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -839,10 +839,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac10summ($req,$ref);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
         
@@ -879,10 +879,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac10s1($req);
         if($res){
-            session()->setFlashdata('success_registration','success_registration');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_registration','failed_registration');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -908,10 +908,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac10cu($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -949,10 +949,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac10s2($req);
         if($res){
-            session()->setFlashdata('success_registration','success_registration');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_registration','failed_registration');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -1023,10 +1023,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveac11($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
         }
 
@@ -1063,7 +1063,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->savequestions($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1091,7 +1091,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaicpppa($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1120,7 +1120,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->savercicp($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1158,7 +1158,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveplaf($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1216,7 +1216,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa1s3($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1267,10 +1267,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saverceap($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
              return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
              return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
@@ -1308,7 +1308,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa2($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1339,7 +1339,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa3a($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1368,7 +1368,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa3afaf($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1403,7 +1403,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa3air($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1434,7 +1434,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa3b($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1476,7 +1476,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa3bp4($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1537,7 +1537,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa4($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1577,10 +1577,10 @@ class ChapterValuesController extends BaseController{
 
         $res = $this->cvmodel->saveaa5a($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
@@ -1622,7 +1622,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa5b($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1666,10 +1666,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa7isa($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
@@ -1694,7 +1694,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa7aepapp($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1733,7 +1733,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa7aep($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1770,7 +1770,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa10($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1808,7 +1808,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa11un($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1842,7 +1842,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa11ad($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1876,7 +1876,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa11ue($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1963,7 +1963,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa11con($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -1997,7 +1997,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveaa11ue($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -2032,10 +2032,10 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->save311($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_update','failed_update');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }
 
@@ -2064,7 +2064,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveab1($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -2111,7 +2111,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveab3($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -2143,7 +2143,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveab4($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -2190,7 +2190,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveab4checklist($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
@@ -2222,7 +2222,7 @@ class ChapterValuesController extends BaseController{
         ];
         $res = $this->cvmodel->saveab4a($req);
         if($res){
-            session()->setFlashdata('success_update','success_update');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
         }else{
             session()->setFlashdata('invalid_input','invalid_input');
