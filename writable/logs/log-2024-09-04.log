@@ -6243,3 +6243,515 @@ INFO - 2024-09-04 12:06:55 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-09-04 12:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-09-04 12:07:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-09-04 12:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 12:57:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-09-04 14:37:20 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/chapter2/setvalues/2.1%20B2/7958d824432828497c80eb3877f5d0d065ee0674fad2fc814f9c7f6f9aea4963506eb4db10e3fd9e7e67a8dafe9329deb84779b69b0de537a065c8e8c564280apcdyEG7QjOvWLDpdkwbArMFk/ac7c6eb98461aafc3d7c5c8e9f0573baa89dd953c097469d906ec9e05256352cfe7675eddd2a9b28c390fcafcde1a3122646e6bc138e82d72400261dfb1c7652aSWUXy~4C2V1jZkeN3$avXk=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-09-04 14:37:20 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/chapter2/setvalues/2.1%20B2/7958d824432828497c80eb3877f5d0d065ee0674fad2fc814f9c7f6f9aea4963506eb4db10e3fd9e7e67a8dafe9329deb84779b69b0de537a065c8e8c564280apcdyEG7QjOvWLDpdkwbArMFk/ac7c6eb98461aafc3d7c5c8e9f0573baa89dd953c097469d906ec9e05256352cfe7675eddd2a9b28c390fcafcde1a3122646e6bc138e82d72400261dfb1c7652aSWUXy~4C2V1jZkeN3$avXk=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:37:20 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-09-04 14:37:26 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/chapter1/setvalues/AC1/c5af823248b1ba311259aa650cc26124df1334dcaaeebfe2a436ed017aebb3a7d196af818374dbdbcc8ad697605c96729bc55e759cd84543475943ccba52a2afXbaNk3H9e$mzSmigp9fE92c=/ac7c6eb98461aafc3d7c5c8e9f0573baa89dd953c097469d906ec9e05256352cfe7675eddd2a9b28c390fcafcde1a3122646e6bc138e82d72400261dfb1c7652aSWUXy~4C2V1jZkeN3$avXk=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-09-04 14:37:26 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/chapter1/setvalues/AC1/c5af823248b1ba311259aa650cc26124df1334dcaaeebfe2a436ed017aebb3a7d196af818374dbdbcc8ad697605c96729bc55e759cd84543475943ccba52a2afXbaNk3H9e$mzSmigp9fE92c=/ac7c6eb98461aafc3d7c5c8e9f0573baa89dd953c097469d906ec9e05256352cfe7675eddd2a9b28c390fcafcde1a3122646e6bc138e82d72400261dfb1c7652aSWUXy~4C2V1jZkeN3$avXk=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:37:26 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:37:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-09-04 14:37:29 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/ac7c6eb98461aafc3d7c5c8e9f0573baa89dd953c097469d906ec9e05256352cfe7675eddd2a9b28c390fcafcde1a3122646e6bc138e82d72400261dfb1c7652aSWUXy~4C2V1jZkeN3$avXk=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-09-04 14:37:29 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/ac7c6eb98461aafc3d7c5c8e9f0573baa89dd953c097469d906ec9e05256352cfe7675eddd2a9b28c390fcafcde1a3122646e6bc138e82d72400261dfb1c7652aSWUXy~4C2V1jZkeN3$avXk=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:37:29 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:37:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-09-04 14:37:31 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-09-04 14:37:31 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:37:31 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-09-04 14:37:32 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-09-04 14:37:32 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:37:32 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:37:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-09-04 14:37:33 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/ac7c6eb98461aafc3d7c5c8e9f0573baa89dd953c097469d906ec9e05256352cfe7675eddd2a9b28c390fcafcde1a3122646e6bc138e82d72400261dfb1c7652aSWUXy~4C2V1jZkeN3$avXk=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-09-04 14:37:33 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/ac7c6eb98461aafc3d7c5c8e9f0573baa89dd953c097469d906ec9e05256352cfe7675eddd2a9b28c390fcafcde1a3122646e6bc138e82d72400261dfb1c7652aSWUXy~4C2V1jZkeN3$avXk=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:37:33 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-09-04 14:37:34 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-09-04 14:37:34 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:37:34 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-09-04 14:37:34 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/files/56978250ed72f6769de4a957f75ab8f66543bc3386e9f8310d86045679c1663fe2074f773c2af09dff07973b41d485e3036a6edac7b54eb05c81acb1dc5042bc3Iyg3ZcX68k~0KfxbRp8g1I=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-09-04 14:37:34 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/files/56978250ed72f6769de4a957f75ab8f66543bc3386e9f8310d86045679c1663fe2074f773c2af09dff07973b41d485e3036a6edac7b54eb05c81acb1dc5042bc3Iyg3ZcX68k~0KfxbRp8g1I=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:37:34 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:37:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-09-04 14:37:35 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-09-04 14:37:35 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:37:35 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:37:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-09-04 14:37:35 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/544d89a2cedab3dd843f4a12abd8aea5262cf8147ab0e0ca8d0b6d6ce270c6b4329db93c1e3b576e842aa7288d6b3a5babaf9629d2e1e4ca47aa6e63c5b626e774wVPRC98P0gIdqZg2~Sz~0=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-09-04 14:37:35 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/544d89a2cedab3dd843f4a12abd8aea5262cf8147ab0e0ca8d0b6d6ce270c6b4329db93c1e3b576e842aa7288d6b3a5babaf9629d2e1e4ca47aa6e63c5b626e774wVPRC98P0gIdqZg2~Sz~0=/DJ%20metal%20works%20-%20Bbbbb', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:37:35 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:37:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-09-04 14:37:36 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-09-04 14:37:36 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:37:36 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(104): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:37:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:38:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:38:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:40:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:40:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:40:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:40:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-04 14:40:57 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:40:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-04 14:41:01 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(72): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-04 14:42:20 --> Error: Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+in APPPATH/Models/ClientModel.php on line 128.
+ 1 APPPATH/Controllers/ClientController.php(77): App\Models\ClientModel->getc1()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-04 14:42:21 --> Error: Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+in APPPATH/Models/ClientModel.php on line 128.
+ 1 APPPATH/Controllers/ClientController.php(77): App\Models\ClientModel->getc1()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-04 14:42:36 --> Error: Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+in APPPATH/Models/ClientModel.php on line 128.
+ 1 APPPATH/Controllers/ClientController.php(77): App\Models\ClientModel->getc1()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:42:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:43:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:43:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-04 14:43:14 --> Error: Cannot throw objects that do not implement Throwable
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 APPPATH/Controllers/ClientController.php(72): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:43:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-04 14:43:30 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and c1t.c1titleID = c1tcd.c1tID) > 0, 'Yes', 'No') as yn from tbl_c1_titles a...' at line 1 in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/ClientModel.php(128): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/ClientController.php(77): App\Models\ClientModel->getc1()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-09-04 14:43:30 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and c1t.c1titleID = c1tcd.c1tID) > 0, 'Yes', 'No') as yn from tbl_c1_titles a...' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/ClientModel.php(128): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/ClientController.php(77): App\Models\ClientModel->getc1()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:43:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and c1t.c1titleID = c1tcd.c1tID) > 0, 'Yes', 'No') as yn from tbl_c1_titles a...' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/ClientModel.php(128): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/ClientController.php(77): App\Models\ClientModel->getc1()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:43:30 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and c1t.c1titleID = c1tcd.c1tID) > 0, 'Yes', 'No') as yn from tbl_c1_titles a...' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/ClientModel.php(128): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/ClientController.php(77): App\Models\ClientModel->getc1()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:43:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-04 14:43:51 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(72): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:43:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-04 14:44:39 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(72): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:46:44 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(72): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:47:00 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-04 14:47:04 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(72): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->viewfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:47:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:47:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:47:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-04 14:47:40 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(56): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:47:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:47:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:47:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:48:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-04 14:48:37 --> ErrorException: Undefined variable $c1tID
+in APPPATH/Views/client/chapter2/21B2.php on line 47.
+ 1 APPPATH/Views/client/chapter2/21B2.php(47): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/21B2.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(745): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-04 14:48:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:48:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:48:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:49:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:49:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:49:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:49:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:53:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:53:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:56:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:59:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 14:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 15:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 15:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 15:02:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 15:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 15:07:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 15:12:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 15:12:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 15:23:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 15:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 15:23:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
