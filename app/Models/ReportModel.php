@@ -254,7 +254,8 @@ class ReportModel extends  Model {
         (select signature from {$this->tblu} as tu where tu.userID = wp.auditor) as audsign,
         (select signature from {$this->tblu} as tu where tu.userID = wp.supervisor) as supsign,
         (select signature from {$this->tblu} as tu where tu.userID = wp.audmanager) as mansign,
-        tc.name as clientname
+        tc.name as clientname,
+        tc.address as clientaddress
         from {$this->tblwp} as wp, {$this->tblc} as tc
         where tc.cID = wp.client
         and wp.wpID = {$wpID}

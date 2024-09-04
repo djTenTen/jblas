@@ -1609,7 +1609,7 @@ $html = '';
                 $pdf->SetXY(50, 205); // Set the position to (50, 160) pixels
                 $html .= $style;
 
-                $aep = $rp->getvalues_m('c1','ac2aep',$c['code'],$c['c1tID'],$cID,$wpID);
+                $aep = $rp->getvalues_s('c1','ac2aep',$c['code'],$c['c1tID'],$cID,$wpID);
 
                 $html .= '
                     <p><i>* “Substantial” should be considered both in terms of the audit firm and the audit client.1 A self interest threat arises where substantial non-audit fees are ‘regularly’ generated. If it considered that the substantial fee is not ‘regular’ the reason for this should be documented at *** below.</i></p>
@@ -3635,7 +3635,7 @@ $html = '';
                     'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
                 ];
                 foreach($rowdata as $row){
-                    $data[$row] =  $rp->getvalues_m('c1',$row,$c['code'],$c['c1tID'],$cID,$wpID);
+                    $data[$row] =  $rp->getvalues_s('c1',$row,$c['code'],$c['c1tID'],$cID,$wpID);
                 }
                 switch ($data['pcu']['question']) {
                     case 'r'    :   $pcupp = 'Revenue';break;
@@ -8269,8 +8269,10 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
+                
+                $rdata  = $rp->getvalues_s('c3','air',$c['code'],$c['c3tID'],$cID,$wpID);
+                $air    = json_decode($rdata['question'], true);
 
-                $air   = $rp->getvalues_s('c3','air',$c['code'],$c['c3tID'],$cID,$wpID);
                 $html .= '
                     <h3>Initial Conclusion:</h3>
                     <p>Having completed the above procedures:</p>
@@ -8540,7 +8542,7 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUGGESTED LETTER OF REPRESENTATION',1,1);
                 $html .= $style;
-                $rdata  =  $rp->getvalues_m('c3','aa4',$c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata  =  $rp->getvalues_s('c3','aa4',$c['code'],$c['c3tID'],$cID,$wpID);
                 $aa4    = json_decode($rdata['question'], true);
                 $html .= $c['code'];
                 $html .= '
@@ -8732,7 +8734,9 @@ $html = '';
                 $pdf->Bookmark($c['code'].' : MANAGEMENT LETTER',1,1);
                 $html .= $style;
                 $html .= $c['code'];
-                $aa5a = $rp->getvalues_s('c3','aa5a',$c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata   = $rp->getvalues_s('c3','aa5a',$c['code'],$c['c3tID'],$cID,$wpID);
+                $aa5a    = json_decode($rdata['question'], true);
+
                 $html .= '
                     <p><b>Private and Confidential</b> <br></p>
                     <table>
@@ -9866,7 +9870,8 @@ $html = '';
                 $html .= $style;
                 $html .= $c['code'];
 
-                $arf = $rp->getvalues_s('c3','311',$c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata = $rp->getvalues_s('c3','311',$c['code'],$c['c3tID'],$cID,$wpID);
+                $arf    = json_decode($rdata['question'], true);
 
                 $html .= '
                     <p><b>INDEPENDENT AUDITOR’S REPORT TO THE MEMBERS OF '.$cl['clientname'].' LIMITED</b></p>
