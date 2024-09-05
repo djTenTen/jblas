@@ -194,7 +194,7 @@ class WorkpaperController extends BaseController{
             'audmanager'    => 'required',
         ];
         if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/initiate'));
         }
         $req = [
@@ -216,7 +216,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('added','added');
             return redirect()->to(site_url('auditsystem/wp/initiate'));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/initiate'));
         }
 
@@ -264,7 +264,7 @@ class WorkpaperController extends BaseController{
             'fileindex'     => 'required',
         ];
         if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }
         $req = [
@@ -284,7 +284,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('excel_upload','excel_upload');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -319,7 +319,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('cfs_upload','cfs_upload');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -372,7 +372,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('updated','updated');
             return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc.'/'.$name));
         }
 
@@ -407,7 +407,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('uploaded','uploaded');
             return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc.'/'.$name));
         }
 
@@ -448,7 +448,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('file_exist','file_exist');
             return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/index/setvalues/'.$code.'/'.$cfiID.'/'.$cID.'/'.$wpID.'/'.$index.'/'.$desc.'/'.$name));
         }
 
@@ -480,7 +480,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('senttosup','senttosup');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -512,7 +512,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('senttoaud','senttoaud');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -544,7 +544,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('sentoman','sentoman');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -576,7 +576,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('sentapprove','sentapprove');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -601,7 +601,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('sent','sent');
             return redirect()->to(site_url('auditsystem/wp/prepare'));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/prepare'));
         }
 
@@ -626,7 +626,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('senttoaud','senttoaud');
             return redirect()->to(site_url('auditsystem/wp/review'));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/review'));
         }
 
@@ -651,7 +651,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('senttoaud','senttoaud');
             return redirect()->to(site_url('auditsystem/wp/review'));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/review'));
         }
 
@@ -676,7 +676,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('senttorev','senttorev');
             return redirect()->to(site_url('auditsystem/wp/initiate'));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/initiate'));
         }
 
@@ -701,7 +701,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('approved','approved');
             return redirect()->to(site_url('auditsystem/wp/initiate'));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/initiate'));
         }
 
@@ -724,7 +724,7 @@ class WorkpaperController extends BaseController{
                 session()->setFlashdata('file_deleted','file_deleted');
                 return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
             }else{
-                session()->setFlashdata('invalid_input','invalid_input');
+                session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
                 return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
             }
         }else{
@@ -752,7 +752,7 @@ class WorkpaperController extends BaseController{
                 session()->setFlashdata('file_deleted','file_deleted');
                 return redirect()->to(site_url('auditsystem/wp/initiate'));
             }else{
-                session()->setFlashdata('invalid_input','invalid_input');
+                session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
                 return redirect()->to(site_url('auditsystem/wp/initiate'));
             }
         }else{
@@ -1123,7 +1123,7 @@ class WorkpaperController extends BaseController{
             'reliancecontrol'       => 'required'
         ];
         if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
         $req = [
@@ -1615,7 +1615,7 @@ class WorkpaperController extends BaseController{
             'namedesc' => 'required'
         ];
         if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
         $req = [
@@ -1633,10 +1633,10 @@ class WorkpaperController extends BaseController{
         ];
         $res = $this->wpmodel->saveac10s1($req);
         if($res){
-            session()->setFlashdata('success_registration','success_registration');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_registration','failed_registration');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -1688,7 +1688,7 @@ class WorkpaperController extends BaseController{
             'namedesc' => 'required'
         ];
         if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
         $req = [
@@ -1706,10 +1706,10 @@ class WorkpaperController extends BaseController{
         ];
         $res = $this->wpmodel->saveac10s2($req);
         if($res){
-            session()->setFlashdata('success_registration','success_registration');
+            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('failed_registration','failed_registration');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'-'.$sheet.'/'.$c1tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -1826,7 +1826,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -1855,7 +1855,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -1885,7 +1885,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -1925,7 +1925,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -1984,7 +1984,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2078,7 +2078,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2110,7 +2110,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2140,7 +2140,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2176,7 +2176,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2208,7 +2208,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2251,7 +2251,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2313,7 +2313,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2379,7 +2379,7 @@ class WorkpaperController extends BaseController{
             'reference' => 'required'
         ];
         if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
         $req = [
@@ -2402,7 +2402,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2425,7 +2425,7 @@ class WorkpaperController extends BaseController{
             'reference' => 'required'
         ];
         if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
         $req = [
@@ -2476,7 +2476,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2516,7 +2516,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2554,7 +2554,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2593,7 +2593,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2627,7 +2627,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2662,7 +2662,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2750,7 +2750,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2785,7 +2785,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2854,7 +2854,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2902,7 +2902,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2935,7 +2935,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -2983,7 +2983,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 
@@ -3016,7 +3016,7 @@ class WorkpaperController extends BaseController{
             session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }else{
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
             return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$wpID.'/'.$name));
         }
 

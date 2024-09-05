@@ -21,31 +21,27 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
-            <?php if (session()->get('success_update')) { ?>
+            <?php if (session()->get('success')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
-                        <h6 class="alert-heading">Success Update</h6>
-                        Contents has been successfully updated.
+                        <h6 class="alert-heading">Success!</h6>
+                        <?= session()->get('success')?>
                     </div>
                 </div>
             <?php  }?>
-            <?php if (session()->get('failed_update')) { ?>
+            <?php if (session()->get('failed')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
-                        <h6 class="alert-heading">Failed update</h6>
-                        Error registering contents.
+                        <h6 class="alert-heading">Error!</h6>
+                        <?= session()->get('failed')?>
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
-                
                 <nav class="nav nav-borders">
                     <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'checklist')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/3.15 Ab4-checklist/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Checklist</a>
                     <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section1')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/3.15 Ab4-section1/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Section 1</a>
