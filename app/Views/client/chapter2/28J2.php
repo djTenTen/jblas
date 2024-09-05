@@ -21,7 +21,6 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
             <?php if (session()->get('success')) { ?>

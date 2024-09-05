@@ -23,62 +23,67 @@
     </header>
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-            <?php if (session()->get('invalid_input')) { ?>
-                <div class="alert alert-danger alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Invalid Input</h6>
-                        Something wrong with your data inputd, please try again.
-                    </div>
-                </div>
-            <?php  }?>
-            <?php if (session()->get('success_update')) { ?>
+            <?php if (session()->get('success')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
-                        <h6 class="alert-heading">Success Update</h6>
-                        Contents has been successfully updated.
+                        <h6 class="alert-heading">Success!</h6>
+                        <?= session()->get('success')?>
+                    </div>
+                </div>
+            <?php  }?>
+            <?php if (session()->get('failed')) { ?>
+                <div class="alert alert-danger alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Error!</h6>
+                        <?= session()->get('failed')?>
                     </div>
                 </div>
             <?php  }?>
             <div class="card-body">
-                <hr>
-                <h4>INVENTORY APPENDIX 3 – ALTERNATIVE PROCEDURES</h4>
-                <p>Alternative procedures will be required if no inventory count has taken place at the period-end.  If an inventory count has taken place but was not attended, the file should indicate why, and assess the possible impact on the audit report.</p>
-                <h6>Note that ISA 501 states that the auditor shall attend the inventory count if inventory is material.</h6>
-                <form action="<?= base_url()?>auditsystem/wp/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                    <table class="table table-sm table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th style="width: 50%;">Existence/Completeness</th>
-                                <th style="width: 10%;">Yes/No/N/A</th>
-                                <th style="width: 20%;">Reference</th>
-                                <th style="width: 20%;">Completed By</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody">
-                            <?php foreach($qdata as $r){?>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc2/')?><?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <hr style="color: #7752FE;" class="m-5">
+                <div class="m-5">
+                    <h4>INVENTORY APPENDIX 3 – ALTERNATIVE PROCEDURES</h4>
+                    <p>Alternative procedures will be required if no inventory count has taken place at the period-end.  If an inventory count has taken place but was not attended, the file should indicate why, and assess the possible impact on the audit report.</p>
+                    <h6>Note that ISA 501 states that the auditor shall attend the inventory count if inventory is material.</h6>
+                    <form action="<?= base_url()?>auditsystem/wp/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                        <table class="table table-sm table-bordered table-hover">
+                            <thead>
                                 <tr>
-                                    <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td>
-                                        <select name="extent[]" id="" class="form-select">
-                                            <option value="<?= $r['extent']?>" selected><?= $r['extent']?></option>
-                                            <option value="Yes">Yes</option>
-                                            <option value="No">No</option>
-                                            <option value="N/A">N/A</option>
-                                        </select>
-                                    </td>
-                                    <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
-                                    <td><textarea class="form-control" cols="30" rows="3" name="initials[]"><?= $r['initials']?></textarea></td>
+                                    <th style="width: 50%;">Existence/Completeness</th>
+                                    <th style="width: 10%;">Yes/No/N/A</th>
+                                    <th style="width: 20%;">Reference</th>
+                                    <th style="width: 20%;">Completed By</th>
                                 </tr>
-                            <?php }?>
-                        </tbody>
-                    </table>
-                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-                </form>
+                            </thead>
+                            <tbody id="tbody">
+                                <?php foreach($qdata as $r){?>
+                                    <tr>
+                                        <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
+                                        <td>
+                                            <select name="extent[]" id="" class="form-select">
+                                                <option value="<?= $r['extent']?>" selected><?= $r['extent']?></option>
+                                                <option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                                <option value="N/A">N/A</option>
+                                            </select>
+                                        </td>
+                                        <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
+                                        <td><textarea class="form-control" cols="30" rows="3" name="initials[]"><?= $r['initials']?></textarea></td>
+                                    </tr>
+                                <?php }?>
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                    </form>
+                    <br><br><br><hr style="color: #7752FE;">
+                </div> 
             </div>
         </div>
     </div>
+
 </main>
 
 
