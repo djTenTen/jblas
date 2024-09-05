@@ -23,69 +23,72 @@
     </header>
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-            <?php if (session()->get('invalid_input')) { ?>
-                <div class="alert alert-danger alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Invalid Input</h6>
-                        Something wrong with your data inputd, please try again.
-                    </div>
-                </div>
-            <?php  }?>
-            <?php if (session()->get('success_update')) { ?>
+            <?php if (session()->get('success')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
-                        <h6 class="alert-heading">Success Update</h6>
-                        Contents has been successfully updated.
+                        <h6 class="alert-heading">Success!</h6>
+                        <?= session()->get('success')?>
+                    </div>
+                </div>
+            <?php  }?>
+            <?php if (session()->get('failed')) { ?>
+                <div class="alert alert-danger alert-icon" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="alert-icon-content">
+                        <h6 class="alert-heading">Error!</h6>
+                        <?= session()->get('failed')?>
                     </div>
                 </div>
             <?php  }?>
             <div class="card-body">
-                <hr>
-                <h4>PRELIMINARY PLANNING PROCEDURES – CLIENT INVOLVEMENT IN THE PLANNING PROCESS</h4>
-                <h6>NB: The key issues noted from this document must be recorded in the relevant areas of the audit file or the PAF and should feed through into the risk assessment, audit approach and fieldwork.</h6>
-                <form action="<?= base_url()?>auditsystem/wp/saveac4ppr/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                    <input type="hidden" name="acid" value="<?= $acID?>">
-                    <table class="table table-bordered">
-                        <tr>
-                            <td>
-                                <h6>Which members of the client staff and the audit team have been involved in the preplanning process and what are their roles?</h6>
-                                <textarea class="form-control" cols="30" rows="3" name="ppr1" required><?= $ppr['ppr1']?></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h6>How was the communication undertaken and on what date? </h6>
-                                <textarea class="form-control" cols="30" rows="3" name="ppr2" required><?= $ppr['ppr2']?></textarea>
-                            </td>
-                        </tr>
-                    </table>
-                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-                </form>
-                <br><br><br><hr>
-                <p>In respect of a new audit assignment, where the discussion points below request “changes” to be noted, full information should be documented, as the working papers will not document “existing” issues affecting the client.</p>
-                <form action="<?= base_url()?>auditsystem/wp/saveac4/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                    <input type="hidden" name="part" value="ac4sod">
-                    <table class="table table-hover">
-                        <thead>
+            <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <hr style="color: #7752FE;" class="m-5">
+                <div class="m-5">
+                    <h4>PRELIMINARY PLANNING PROCEDURES – CLIENT INVOLVEMENT IN THE PLANNING PROCESS</h4>
+                    <h6>NB: The key issues noted from this document must be recorded in the relevant areas of the audit file or the PAF and should feed through into the risk assessment, audit approach and fieldwork.</h6>
+                    <form action="<?= base_url()?>auditsystem/wp/saveac4ppr/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                        <input type="hidden" name="acid" value="<?= $acID?>">
+                        <table class="table table-bordered">
                             <tr>
-                                <th style="width: 50%;">Scope of discussion (add additional points as appropriate) ~ note that all points should be discussed, and key issues highlighted:</th>
-                                <th style="width: 50%;"></th>
+                                <td>
+                                    <h6>Which members of the client staff and the audit team have been involved in the preplanning process and what are their roles?</h6>
+                                    <textarea class="form-control" cols="30" rows="3" name="ppr1" required><?= $ppr['ppr1']?></textarea>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody class="tbody">
-                            <?php foreach($ac4 as $r){?>
+                            <tr>
+                                <td>
+                                    <h6>How was the communication undertaken and on what date? </h6>
+                                    <textarea class="form-control" cols="30" rows="3" name="ppr2" required><?= $ppr['ppr2']?></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                        <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                    </form>
+                    <br><br><br><hr style="color: #7752FE;">
+                    <p>In respect of a new audit assignment, where the discussion points below request “changes” to be noted, full information should be documented, as the working papers will not document “existing” issues affecting the client.</p>
+                    <form action="<?= base_url()?>auditsystem/wp/saveac4/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                        <input type="hidden" name="part" value="ac4sod">
+                        <table class="table table-hover">
+                            <thead>
                                 <tr>
-                                    <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
+                                    <th style="width: 50%;">Scope of discussion (add additional points as appropriate) ~ note that all points should be discussed, and key issues highlighted:</th>
+                                    <th style="width: 50%;"></th>
                                 </tr>
-                            <?php }?>
-                        </tbody>
-                    </table>
-                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-                </form>
-                <br><br><br><hr>
+                            </thead>
+                            <tbody class="tbody">
+                                <?php foreach($ac4 as $r){?>
+                                    <tr>
+                                        <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
+                                        <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
+                                    </tr>
+                                <?php }?>
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                    </form>
+                    <br><br><br><hr style="color: #7752FE;">
+                </div>
             </div>
         </div>
     </div>

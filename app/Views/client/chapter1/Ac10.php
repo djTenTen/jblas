@@ -175,6 +175,7 @@
                                 </tfoot>
                             </table>
                         </form>
+                        <br><br><br><hr style="color: #7752FE;">
                     </div>
                 </div>
             </div>
