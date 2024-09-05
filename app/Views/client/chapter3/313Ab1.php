@@ -21,64 +21,55 @@
             </div>
         </div>
     </header>
-
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-
-            <?php if (session()->get('success_update')) { ?>
+            <?php if (session()->get('success')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
-                        <h6 class="alert-heading">Success Update</h6>
-                        Contents has been successfully updated.
+                        <h6 class="alert-heading">Success!</h6>
+                        <?= session()->get('success')?>
                     </div>
                 </div>
             <?php  }?>
-            <?php if (session()->get('failed_update')) { ?>
+            <?php if (session()->get('failed')) { ?>
                 <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
-                        <h6 class="alert-heading">Failed update</h6>
-                        Error registering contents.
+                        <h6 class="alert-heading">Error!</h6>
+                        <?= session()->get('failed')?>
                     </div>
                 </div>
             <?php  }?>
-
             <div class="card-body">
-                <hr>
-                <h4>CRITICAL REVIEW OF THE FINANCIAL STATEMENTS</h4>
-               
-
-                <form action="<?= base_url()?>auditsystem/client/saveab1/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th style="width: 50%;">Question</th>
-                                <th>Yes/No</th>
-                                <th>Comment</th>
-                            </tr>
-                        </thead>
-                        <tbody class="tbody">
-                            <?php foreach($ab1 as $r){?>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $c3tID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <hr style="color: #7752FE;" class="m-5">
+                <div class="m-5">
+                    <h4>CRITICAL REVIEW OF THE FINANCIAL STATEMENTS</h4>
+                    <form action="<?= base_url()?>auditsystem/client/saveab1/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <table class="table table-bordered">
+                            <thead>
                                 <tr>
-                                    <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><textarea class="form-control yesno" id="yesno" cols="30" rows="3" name="yesno[]"><?= $r['yesno']?></textarea></td>
-                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
+                                    <th style="width: 50%;">Question</th>
+                                    <th>Yes/No</th>
+                                    <th>Comment</th>
                                 </tr>
-                            
-                            <?php }?>
-                        </tbody>
-                    </table>
-                
-                    <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
-
-                </form>
-            
-            
-                <p>The tests above were undertaken on draft financial statements sent to the client.</p>
-            
-            
-            
+                            </thead>
+                            <tbody class="tbody">
+                                <?php foreach($ab1 as $r){?>
+                                    <tr>
+                                        <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
+                                        <td><textarea class="form-control yesno" id="yesno" cols="30" rows="3" name="yesno[]"><?= $r['yesno']?></textarea></td>
+                                        <td><textarea class="form-control comment" id="comment" cols="30" rows="3" name="comment[]"><?= $r['comment']?></textarea></td>
+                                    </tr>
+                                <?php }?>
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
+                    </form>
+                    <p>The tests above were undertaken on draft financial statements sent to the client.</p>
+                    <br><br><br><hr style="color: #7752FE;">
+                </div>
             </div>
         </div>
     </div>

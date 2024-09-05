@@ -391,7 +391,8 @@ class ChapterController extends BaseController{
                 $data['cr']     = $this->c3model->getvalues_m('cr',$code,$dc3tID);
                 $data['dc']     = $this->c3model->getvalues_m('dc',$code,$dc3tID);
                 $data['faf']    = $this->c3model->getvalues_m('faf',$code,$dc3tID);
-                $data['ir']     = $this->c3model->getvalues_s('ir',$code,$dc3tID);
+                $rdata          = $this->c3model->getvalues_s('air',$code,$dc3tID);
+                $data['air']    = json_decode($rdata['question'], true);
                 echo view('pdfc3/AA3A', $data);
                 break;
             case '3.4 Aa3b':
