@@ -31,6 +31,37 @@ class ChapterValuesController extends BaseController{
     }
 
 
+    public function resultpage($c,$res,$code,$ctID,$cID,$name){
+
+        switch ($c) {
+            case 'c1':
+                if($res){
+                    session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
+                }else{
+                    session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+                }
+                return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$ctID.'/'.$cID.'/'.$name));
+            break;
+            case 'c2':
+                if($res){
+                    session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
+                }else{
+                    session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+                }
+                return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$ctID.'/'.$cID.'/'.$name));
+            break;
+            case 'c3':
+                if($res){
+                    session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
+                }else{
+                    session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+                }
+                return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$ctID.'/'.$cID.'/'.$name));
+            break;
+        }
+
+    }
+
     /**
         ALL FUNCTIONS UNDER CHAPTER 1 USES THIS PARAMETERS
         * @param code consist the code of the file name
@@ -57,13 +88,7 @@ class ChapterValuesController extends BaseController{
             'uID'       => $this->crypt->decrypt(session()->get('userID')),
         ];
         $res = $this->cvmodel->saveac1($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -93,13 +118,7 @@ class ChapterValuesController extends BaseController{
             'uID'       => $this->crypt->decrypt(session()->get('userID')),
         ];
         $res = $this->cvmodel->saveac1eqr($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -127,13 +146,7 @@ class ChapterValuesController extends BaseController{
             'uID'           => $this->crypt->decrypt(session()->get('userID')),
         ];
         $res = $this->cvmodel->saveac2($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -156,13 +169,7 @@ class ChapterValuesController extends BaseController{
             'uID'       => $this->crypt->decrypt(session()->get('userID')),
         ];
         $res = $this->cvmodel->saveac2aep($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -187,13 +194,7 @@ class ChapterValuesController extends BaseController{
             'uID'           => $this->crypt->decrypt(session()->get('userID')),
         ];
         $res = $this->cvmodel->saveac3($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -222,13 +223,7 @@ class ChapterValuesController extends BaseController{
             'uID'       => $this->crypt->decrypt(session()->get('userID')),
         ];
         $res = $this->cvmodel->saveac4ppr($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -249,13 +244,7 @@ class ChapterValuesController extends BaseController{
             'uID'       => $this->crypt->decrypt(session()->get('userID')),
         ];
         $res = $this->cvmodel->saveac4($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -284,13 +273,7 @@ class ChapterValuesController extends BaseController{
             'uID'       => $this->crypt->decrypt(session()->get('userID')),
         ];
         $res = $this->cvmodel->saveac5($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -316,13 +299,7 @@ class ChapterValuesController extends BaseController{
             'uID'               => $this->crypt->decrypt(session()->get('userID')),
         ];
         $res = $this->cvmodel->saveac6ra($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -349,13 +326,7 @@ class ChapterValuesController extends BaseController{
             'uID'           => $this->crypt->decrypt(session()->get('userID')),
         ];
         $res = $this->cvmodel->saveac6s12($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -379,8 +350,7 @@ class ChapterValuesController extends BaseController{
             'reliancecontrol'       => 'required'
         ];
         if (!$this->validate($validationRules)) {
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
+            return $this->resultpage(false,$code,$c1tID,$cID,$name);
         }
         $req = [
             'financialstatement'        => $this->request->getPost('financialstatement'),
@@ -398,13 +368,7 @@ class ChapterValuesController extends BaseController{
             'fID'                       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveac6s3($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -454,13 +418,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveac7($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -485,13 +443,7 @@ class ChapterValuesController extends BaseController{
             'fID'           => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveac8($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -557,13 +509,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveac9($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -1022,13 +968,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveac11($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter1/setvalues/'.$code.'/'.$c1tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c1',$res,$code,$c1tID,$cID,$name);
 
     }
 
@@ -1062,13 +1002,7 @@ class ChapterValuesController extends BaseController{
             'fID'           => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->savequestions($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c2',$res,$code,$c2tID,$cID,$name);
 
     }
 
@@ -1090,13 +1024,7 @@ class ChapterValuesController extends BaseController{
             'fID'           => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaicpppa($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c2',$res,$code,$c2tID,$cID,$name);
 
     }
 
@@ -1119,13 +1047,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->savercicp($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter2/setvalues/'.$code.'/'.$c2tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c2',$res,$code,$c2tID,$cID,$name);
 
     }
     
@@ -1157,13 +1079,7 @@ class ChapterValuesController extends BaseController{
             'fID'           => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveplaf($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -1215,13 +1131,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaa1s3($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -1307,13 +1217,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaa2($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -1338,13 +1242,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaa3a($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -1367,13 +1265,7 @@ class ChapterValuesController extends BaseController{
             'fID'           => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaa3afaf($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -1402,13 +1294,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaa3air($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -1433,13 +1319,7 @@ class ChapterValuesController extends BaseController{
             'fID'           => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaa3b($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -1475,13 +1355,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaa3bp4($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -1536,13 +1410,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaa4($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -1576,13 +1444,7 @@ class ChapterValuesController extends BaseController{
         ];
 
         $res = $this->cvmodel->saveaa5a($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -1621,13 +1483,7 @@ class ChapterValuesController extends BaseController{
             'fID'                   => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaa5b($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -1665,13 +1521,7 @@ class ChapterValuesController extends BaseController{
             'fID'               => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaa7isa($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
     
@@ -1693,13 +1543,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaa7aepapp($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -1732,13 +1576,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaa7aep($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -1769,13 +1607,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveaa10($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -2031,13 +1863,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->save311($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -2063,13 +1889,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveab1($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -2110,13 +1930,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveab3($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -2142,13 +1956,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveab4($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -2189,13 +1997,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveab4checklist($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
@@ -2221,13 +2023,7 @@ class ChapterValuesController extends BaseController{
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cvmodel->saveab4a($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
+        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
