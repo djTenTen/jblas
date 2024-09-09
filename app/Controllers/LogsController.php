@@ -29,6 +29,21 @@ class LogsController extends BaseController{
 
     }
 
+    public function logs(){
+
+        $data['title'] = session()->get('firm'). ' - Logs';
+        $logs = $this->viewlogs();
+        if($logs == 'no logs'){
+            $data['logs'] = 'No Logs';
+        }else{
+            $data['logs'] = $logs;
+        }
+        echo view('includes/Header', $data);
+        echo view('logs/Logs', $data);
+        echo view('includes/Footer');
+
+    }
+
     /**
         * @method viewlogs() view the system logs
         * @var fID decrypted data of firm id
@@ -36,16 +51,25 @@ class LogsController extends BaseController{
         * @var log contains log information
         * @return @var logs
     */
-    public function viewlogs(){
-
+    public function viewlogs($lines = 0){
+    
         $fID = $this->crypt->decrypt(session()->get('firmID'));
         $logFile = WRITEPATH . 'applaudlogs/'. $fID.'-systems-log.log';
         if (!file_exists($logFile)) {
             return 'no logs';
         }
-        $logs = file_get_contents($logFile);
-        $logs = nl2br($logs);
-        return $logs;
+
+        $logsArray = file($logFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+        if ($lines == 0 || $lines > count($logsArray)) {
+            $logsToDisplay = $logsArray;
+        } else {
+            // Get only the last $lines number of lines
+            $logsToDisplay = array_slice($logsArray, -$lines);
+        }
+
+        $logs = implode(PHP_EOL, $logsToDisplay);
+        return nl2br($logs);
 
     }
     

@@ -166,10 +166,9 @@
                     <div class="card-body py-5">
                         <div class="d-flex flex-column justify-content-center">
                             <!-- <img class="img-fluid mb-4" src="assets/img/illustrations/data-report.svg" alt="" style="height: 10rem" /> -->
-                            <img class="img-fluid mb-4" src="assets/img/illustrations/team-spirit.svg" alt="" style="height: 10rem" />
+                            <img class="img-fluid mb-4" src="<?= base_url()?>assets/img/illustrations/team-spirit.svg" alt="" style="height: 10rem" />
                             <div class="px-0 px-lg-5">
-                    
-                                <h5>Team Access</h5>
+                                <a href="<?= base_url("auditsystem/logs")?>"><h5>Team Access</h5></a>
                                 <p class="mb-4"><?= $logs ?></p>
                             </div>
                         </div>

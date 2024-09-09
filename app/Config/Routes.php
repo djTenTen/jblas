@@ -33,7 +33,7 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
     $auth->get('dashboard', 'DashController::auditsystem');
     $auth->get('dashboard/wp/(:any)', 'DashController::getwpp/$1');
     $auth->get('dashboard/numwpp/(:any)', 'DashController::getnumwpp/$1');
-    
+    $auth->get('logs', 'LogsController::logs');
 
     /**
         ----------------------------------------------------------

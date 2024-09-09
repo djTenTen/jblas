@@ -32,8 +32,7 @@
         <!-- * * * * * * When using an image, we recommend the SVG format.-->
         <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
         <img src="<?= base_url()?>img/bg/APPLAUD1.png" alt="" style="width: 40px;" >
-        <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="<?= base_url()?>auditsystem">ApplAud - <?= session()->get('firm')?></a>
-       
+        <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="<?= base_url()?>auditsystem/dashboard">ApplAud</a>
         <!-- Navbar Items-->
         <ul class="navbar-nav align-items-center ms-auto">
            
@@ -141,23 +140,12 @@
             <nav class="sidenav shadow-right sidenav-light">
                 <div class="sidenav-menu">
                     <div class="nav accordion" id="accordionSidenav">
-                        <!-- Sidenav Menu Heading (Account)-->
-                        <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-                        <div class="sidenav-menu-heading d-sm-none">Account</div>
-                        <!-- Sidenav Link (Alerts)-->
-                        <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-                        <a class="nav-link d-sm-none" href="#!">
-                            <div class="nav-link-icon"><i data-feather="bell"></i></div>
-                            Alerts
-                            <span class="badge bg-warning-soft text-warning ms-auto">4 New!</span>
-                        </a>
-                        <!-- Sidenav Link (Messages)-->
-                        <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-                        <a class="nav-link d-sm-none" href="#!">
-                            <div class="nav-link-icon"><i data-feather="mail"></i></div>
-                            Messages
-                            <span class="badge bg-success-soft text-success ms-auto">2 New!</span>
-                        </a>
+                        
+                        <div class="mt-3 container row justify-content-center">
+                            <img class="" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/logo/<?= session()->get('logo')?>" alt="Firm Logo" style="width: 60%;" >
+                            <h6 class="text-center m-1"><?= session()->get('firm')?></h6>
+                        </div>
+                        
                         <!-- Sidenav Menu Heading (Core)-->
                         <div class="sidenav-menu-heading">Core</div>
                         <!-- Sidenav Accordion (Dashboard)-->
@@ -181,7 +169,7 @@
                             <div class="collapse <?php if(str_contains(uri_string(),'auditsystem/client')){echo 'show';}?>" id="collapseClient" data-bs-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
                                 <?php if(session()->get('allowed')->cl == "Yes"){?>
-                                    <a class="nav-link <?php foreach($carr as $str){if(str_contains(uri_string(),$str)){echo '';}else{echo 'active';}}?>" href="<?= base_url()?>auditsystem/client">
+                                    <a class="nav-link <?php foreach($carr as $str){if(str_contains(uri_string(),$str)){$res = true;}else{$res = false;continue;}}if($res == true){echo 'active';}?>" href="<?= base_url()?>auditsystem/client">
                                     <div class="nav-link-icon"><i data-feather="users"></i></div>Clients</a>
                                 <?php }?>
                                 <?php if(session()->get('allowed')->sd == "Yes"){?>
@@ -254,6 +242,13 @@
                                 </nav>
                             </div>
                             <?php }?>
+                        <?php }?>
+                        <div class="sidenav-menu-heading">System </div>
+                        <?php if(session()->get('allowed')->dash == "Yes"){?>
+                        <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/logs')){echo 'active';}?>" href="<?= base_url('auditsystem/logs')?>">
+                            <div class="nav-link-icon"><i data-feather="edit-3"></i></div>
+                            Logs
+                        </a>
                         <?php }?>
 
                     </div>

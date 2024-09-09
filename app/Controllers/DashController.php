@@ -105,7 +105,7 @@ class DashController extends BaseController{
         $data['approved']   = $this->dmodel->getnumwp($fID,'Approved');
         $data['aud']        = $this->dmodel->getmyauditors($fID);
         $data['prog']       = $this->dmodel->getwpprogress($fID);
-        $logs               = $this->lc->viewlogs();
+        $logs               = $this->lc->viewlogs(5);
         if($logs == 'no logs'){
             $data['logs'] = 'No Logs';
         }else{
