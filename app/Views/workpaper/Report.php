@@ -4,17 +4,15 @@ use setasign\Fpdi\Tcpdf\Fpdi;
 $rp = new ReportModel;
 // create new PDF document
 $pageLayout = array(21, 29.7);
-
 $pdf = new Fpdi('P', 'mm', 'A4');
-
 // $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('ApplAud');
-$pdf->SetTitle('Report');
-$pdf->SetSubject('TCPDF');
-$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
+$pdf->SetAuthor('ApplAud: '.$firm);
+$pdf->SetTitle('Workpaper: '.$client);
+$pdf->SetSubject('Workpaper: '.$client);
+$pdf->SetKeywords($firm);
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
 // set header and footer fonts
@@ -38,8 +36,8 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
+$pdf->setPrintFooter(true);
 // ---------------------------------------------------------
-// set font
 // add a page
 $pdf->AddPage('P');
 //$pdf->SetPageSize('A4');
@@ -140,17 +138,14 @@ $html = '';
         INTRODUCTION PDF GENERATOR
         ---------------------------------------------------------- 
     */
-
     $pdf->AddPage('P');
     $pdf->Bookmark('Introduction',0,0);
-
     $html .= '<hr style="color:blue;">';
     $html .= '<h1 style="color:#7752FE;text-align:center;">INTRODUCTION</h1>';
     $html .= '<hr style="color:blue;">';
     $html .= '<p style="color:black;">The purpose of this Audit Quality Management System (QMS) Manual is to outline procedures and guidelines for conducting financial audits efficiently and effectively in small and medium audit firms. This manual ensures compliance with the International Standards on Auditing (ISA) and local regulations, despite limited resources.</p>';
     $pdf->writeHTML($html, true, false,false, false, '');
     $html = '';
-
 
 
     /**
@@ -160,7 +155,6 @@ $html = '';
     */
     $pdf->AddPage('P');
     $pdf->Bookmark('Work Paper',0,0);
-
     $html .= '<br><br><br><br><br><br><br><hr style="color:blue;">';
     $html .= '<h1 style="color:#7752FE;text-align:center;">WORK PAPER</h1>';
     $html .= '<hr style="color:blue;">';
@@ -170,18 +164,15 @@ $html = '';
         switch ($f['section']) {
 
             case '-':
-
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2>';
-
                 if($f['file'] != ''){
                     $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -246,12 +237,16 @@ $html = '';
                 $html = '';
             break;
 
-            case 'B':
+            case 'B': case 'C': case 'DG': case 'E': case 'F': case 'H': case 'I': case 'J': case 'K': case 'L': case 'M': case 'N': case 'O': case 'P': case 'Q': case 'R': case 'S':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+                $b = 0;
+                $va = 0;
+                $sv = 0;
+                $ind = $rp->gettbindex($cID,$wpID,$f['index']);
                 $html .= '
                     <table border="1">
                         <thead>
@@ -263,25 +258,22 @@ $html = '';
                                 <th style="width: 10%;"><b>Diff %</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,6);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
+                        <tbody>
+                ';
+                    foreach($ind as $r){
+                        $b += ($r['debit'] - $r['credit']);
+                        $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
+                        $sv += $r['supp_bal'];
+                        $html .= '  
+                            <tr>
+                                <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
+                                <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
+                                <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
+                                <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
+                                <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
+                            </tr>
+                        ';
+                    }
                 $html .= '             
                             <tr>
                                 <th></th>
@@ -302,1085 +294,18 @@ $html = '';
                         </tfoot>
                     </table>
                 ';
-
                 if($f['file'] != ''){
                     $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
                     $html .= '<b>'.$f['file'].'</b><br><br>';
                 }
-                
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
 
-            case 'C':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
+            case 'T': break;
+            case 'U': break;
+            case 'V': break;
 
-                $html .= '
-                    <table border="1">
-                        <thead>
-                            <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,7);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'DG':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,8);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-            case 'E':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,9);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'F':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,10);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'H':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,11);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'I':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,12);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'J':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,13);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'K':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,14);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'L':
-                
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,15);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'M':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,16);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'N':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,17);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'O':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,18);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'P':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,19);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'Q':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,20);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'R':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,21);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'S':
-                $pdf->AddPage('P');
-                $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
-                $html .= $style2;
-                $html .= '<hr style="color:blue;">';
-                $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2><br><br>';
-                $html .= '
-                    <table border="1">
-                        <thead>
-                           <tr style="background-color: #C2D9FF;">
-                                <th style="width: 30%;"><b>Account</b></th>
-                                <th style="width: 20%;"><b>Balance</b></th>
-                                <th style="width: 20%;"><b>Supp Balance</b></th>
-                                <th style="width: 20%;"><b>Diff Amount</b></th>
-                                <th style="width: 10%;"><b>Diff %</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                            $b = 0;
-                            $va = 0;
-                            $sv = 0;
-                            $ind = $rp->gettbindex($cID,$wpID,22);
-                            foreach($ind as $r){
-                                $b += ($r['debit'] - $r['credit']);
-                                $va += ($r['debit'] - $r['credit']) - $r['supp_bal'];
-                                $sv += $r['supp_bal'];
-                                $html .= '  
-                                    <tr>
-                                        <td style="width: 30%;">'.$r['account_code'].' - '.$r['account'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format($r['debit'] - $r['credit'], 2).'</td>
-                                        <td style="width: 20%;">₱ '.$r['supp_bal'].'</td>
-                                        <td style="width: 20%;">₱ '.number_format(($r['debit'] - $r['credit']) - $r['supp_bal'], 2).'</td>
-                                        <td style="width: 10%;">%'.round(((($r['debit'] - $r['credit']) - $r['supp_bal']) / ($r['debit'] - $r['credit'])) * 100).'</td>
-                                    </tr>
-                                ';
-                            }
-                $html .= '             
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th><b>Total</b></th>
-                                <th><b>₱ '.number_format($b,2).'</b></th>
-                                <th><b>₱ '.number_format($sv,2).'</b></th>
-                                <th><b>₱ '.number_format($va,2).'</b></th>
-                                <th><b>%'; if($b == 0 or $va == 0 ){$html .= 0;}else{$html .= round(($va / $b) * 100);} $html .='</b></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                ';
-
-                if($f['file'] != ''){
-                    $html .= '<br><h5 style="color:white; background-color:#8E8FFA">Documents</h5><br><br>';
-                    $html .= '<b>'.$f['file'].'</b><br><br>';
-                }
-
-                $pdf->writeHTML($html, true, false,false, false, '');
-                $html = '';
-            break;
-
-            case 'T':
-
-                
-            break;
-            case 'U':
-
-                
-            break;
-            case 'V':
-                
-                
-            break;
         }
     }
 
@@ -1399,14 +324,17 @@ $html = '';
 
     foreach($c1 as $c){
         switch ($c['code']) {
+
             case 'AC1':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : Client Acceptance or Continuance Form',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
-                $fl    = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
-                $html .= '
+                $html  .= $style;
+                $fl     = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
+                $ac1    = $rp->getvalues_m('c1','cacf',$c['code'],$c['c1tID'],$cID,$wpID);
+                $cnt    = 0;
+                $rdata  = $rp->getvalues_s('c1','eqr',$c['code'],$c['c1tID'],$cID,$wpID);
+                $eqr    = json_decode($rdata['question'], true);
+                $html  .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -1430,16 +358,11 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <h3>Client Acceptance or Continuance Form</h3>
                     <p><b>This form must be completed by the A.E.P. before any work is undertaken on the file.</b></p>
                     <p>While answering these questions the following matters should be fully considered for the audit firm and any network firm: independence, integrity, conflicts of interest with other clients, economic dependence, trusts, matters arising with regulatory authorities, ability to service the client, other services provided to the client and hospitality. Additional guidance is available in legislation and the Code of Ethics issued by the International Ethics Standards Board for Accountants.  </p>
                     <p><b>Any YES answers should be fully explained along with the safeguards, which will enable us to accept / continue with the appointment. </b></p>
                     <p><b>Significant issues must be discussed with the <span style="color: red;">Ethics Partner</span>  and details of the discussion documented on file.</b></p>
-                ';
-
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -1449,28 +372,22 @@ $html = '';
                                 <th style="width: 20%" class="cent bo"><b>COMMENTS</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $ac1 = $rp->getvalues_m('c1','cacf',$c['code'],$c['c1tID'],$cID,$wpID);
-                        $cnt = 0;
-                        foreach($ac1 as $r){
-                            $cnt ++;
-                            $html .='
-                                <tr>
-                                    <td style="width: 10%">'.$cnt.'</td>
-                                    <td style="width: 50%;">'.$r['question'].'</td>
-                                    <td style="width: 20%" class="cent bo">'.$r['yesno'].'</td>
-                                    <td style="width: 20%" class="cent bo">'.$r['comment'].'</td>
-                                </tr>
-                            ';
-                        }
+                        <tbody>
+                ';
+                    foreach($ac1 as $r){
+                        $cnt ++;
+                        $html .='
+                            <tr>
+                                <td style="width: 10%">'.$cnt.'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 20%" class="cent bo">'.$r['yesno'].'</td>
+                                <td style="width: 20%" class="cent bo">'.$r['comment'].'</td>
+                            </tr>
+                        ';
+                    }
                 $html .= '   
                         </tbody>
-                    </table>';
-
-                $rdata  = $rp->getvalues_s('c1','eqr',$c['code'],$c['c1tID'],$cID,$wpID);
-                $eqr    = json_decode($rdata['question'], true);
-
-                $html .= '
+                    </table>
                     <p><b>REASON FOR EQR:</b></p>
                     <p>'.$eqr['eqrr'].'</p>
                     <p><b>Authority to accept appointment:</b></p>
@@ -1509,8 +426,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : PROVISION OF NON-AUDIT SERVICES',1,1);
                 $html .= $style;
-                $html .= $c['code'];
                 $fl    = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
+                $ac2   = $rp->getvalues_m('c1','pans',$c['code'],$c['c1tID'],$cID,$wpID);
+                $aep   = $rp->getvalues_s('c1','ac2aep',$c['code'],$c['c1tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -1535,9 +453,6 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-
-                $html .= '
                     <h3>PROVISION OF NON-AUDIT SERVICES</h3>
                     <p><b>Aim:</b></p>
                     <p>To give adequate consideration of the acceptability of providing non-audit services to entities which are not listed (or affiliates of such an entity).</p>
@@ -1554,15 +469,12 @@ $html = '';
                     <p><b><i>NB: If the client does not have ‘informed management’ the provision of both audit and non-audit services is not permitted.</i></b></p>
                     <p><b>Section 1 – Consideration of Prohibited Services</b></p>
                 ';
-
                 $image_file = base_url('img/ac2/ac2-f1.jpg');
                 $pdf->Image($image_file, $x = 20, $y = 190, $w = 180, $h = 180, $type = '', $link = '', $align = '', $resize = true, $dpi = 300, $palign = '', $ismask = false, $imgmask = false, $border = 0, $fitbox = true, $hidden = false, $fitonpage = false, $alt = '');
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('L');
-                
                 $html .= $style;
-
                 $html .= '
                     <p><b>Section 2 – Consideration of the Type of Non-Audit Services Provided and Safeguards in Place </b></p>
                     <p><i>N.B. Complete multiple sheets if more than four different types of non-audit service are provided<br>N.B. Audit related non-audit services (for example, a separate report to a regulator, (e.g. that on client money handled by a solicitor)) should still be treated as a non-audit service, but it is not necessary for safeguards to be put in place, as threats to independence are insignificant</i></p>
@@ -1579,7 +491,6 @@ $html = '';
                     </thead>
                     <tbody>
                 ';
-                $ac2 = $rp->getvalues_m('c1','pans',$c['code'],$c['c1tID'],$cID,$wpID);
                 foreach ($ac2 as $r){
                     $html .= '
                         <tr>
@@ -1595,12 +506,10 @@ $html = '';
                 $html .= '    
                     </tbody>
                 </table>';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
                 $html .= '<p><b>Section 2 – Consideration of the Type of Non-Audit Services Provided and Safeguards in Place </b></p>';
                 $image_file = base_url('img/ac2/ac2-f2.jpg');
                 $pdf->Image($image_file, $x = 20, $y = 30, $w = 180, $h = 180, $type = '', $link = '', $align = '', $resize = true, $dpi = 300, $palign = '', $ismask = false, $imgmask = false, $border = 0, $fitbox = true, $hidden = false, $fitonpage = false, $alt = '');
@@ -1608,9 +517,6 @@ $html = '';
                 $html = '';
                 $pdf->SetXY(50, 205); // Set the position to (50, 160) pixels
                 $html .= $style;
-
-                $aep = $rp->getvalues_s('c1','ac2aep',$c['code'],$c['c1tID'],$cID,$wpID);
-
                 $html .= '
                     <p><i>* “Substantial” should be considered both in terms of the audit firm and the audit client.1 A self interest threat arises where substantial non-audit fees are ‘regularly’ generated. If it considered that the substantial fee is not ‘regular’ the reason for this should be documented at *** below.</i></p>
                     <table border="1">
@@ -1621,12 +527,10 @@ $html = '';
                         </tr>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
                 $html .= '
                     <h3>Conclusion</h3>
                     <p>'.$aep['name'].'</p>
@@ -1682,8 +586,6 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-                
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -1691,10 +593,14 @@ $html = '';
             case 'AC3':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : PERMANENT FILE CHECKLIST',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-                $fl    = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
-                $html .= '
+                $html       .= $style;
+                $fl          = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
+                $ac3genmat   = $rp->getvalues_m('c1','genmat',$c['code'],$c['c1tID'],$cID,$wpID);
+                $ac3doccors  = $rp->getvalues_m('c1','doccors',$c['code'],$c['c1tID'],$cID,$wpID);
+                $statutory   = $rp->getvalues_m('c1','statutory',$c['code'],$c['c1tID'],$cID,$wpID);
+                $ac3accsys   = $rp->getvalues_m('c1','accsys',$c['code'],$c['c1tID'],$cID,$wpID);
+                $cnt         = 0;
+                $html       .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -1718,15 +624,10 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <h3>PERMANENT FILE CHECKLIST</h3>
                     <p>Objective: This form is to be used to ensure the permanent file contains sufficient background information about the client.</p>
                     <p>This is a mandatory form.  Any “no” answers indicate a deficiency on the permanent file and a comment should be made as to how this will be addressed.</p>
                     <p>Per PSA 315, para A128c, “Disclosures in the financial statements of smaller entities may be less detailed or less complex (e.g., some financial reporting frameworks allow smaller entities to provide fewer disclosures in the financial statements). However, this does not relieve the auditor of the responsibility to obtain an understanding of the entity and its environment, including internal control, as it relates to disclosures.”</p>
-                ';
-
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -1736,25 +637,22 @@ $html = '';
                                 <th style="width: 17%" class="cent bo"><b>COMMENTS</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $ac3genmat = $rp->getvalues_m('c1','genmat',$c['code'],$c['c1tID'],$cID,$wpID);
-                        $cnt = 0;
-                        foreach($ac3genmat as $r){
-                            $cnt ++;
-                            $html .='
-                                <tr>
-                                    <td style="width: 5%">'.$cnt.'</td>
-                                    <td style="width: 60%;">'.$r['question'].'</td>
-                                    <td style="width: 17%" class="cent bo">'.$r['yesno'].'</td>
-                                    <td style="width: 17%" class="cent bo">'.$r['comment'].'</td>
-                                </tr>
-                            ';
-                        }
+                        <tbody>
+                ';
+                    foreach($ac3genmat as $r){
+                        $cnt ++;
+                        $html .='
+                            <tr>
+                                <td style="width: 5%">'.$cnt.'</td>
+                                <td style="width: 60%;">'.$r['question'].'</td>
+                                <td style="width: 17%" class="cent bo">'.$r['yesno'].'</td>
+                                <td style="width: 17%" class="cent bo">'.$r['comment'].'</td>
+                            </tr>
+                        ';
+                    }
                 $html .= '   
                         </tbody>
-                    </table>';
-
-                $html .= '
+                    </table>
                     <table>
                         <thead>
                             <tr>
@@ -1764,24 +662,22 @@ $html = '';
                                 <th style="width: 17%" class="cent bo"><b>COMMENTS</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $ac3doccors = $rp->getvalues_m('c1','doccors',$c['code'],$c['c1tID'],$cID,$wpID);
-                        foreach($ac3doccors as $r){
-                            $cnt ++;
-                            $html .='
-                                <tr>
-                                    <td style="width: 5%">'.$cnt.'</td>
-                                    <td style="width: 60%;">'.$r['question'].'</td>
-                                    <td style="width: 17%" class="cent bo">'.$r['yesno'].'</td>
-                                    <td style="width: 17%" class="cent bo">'.$r['comment'].'</td>
-                                </tr>
-                            ';
-                        }
+                        <tbody>
+                ';
+                    foreach($ac3doccors as $r){
+                        $cnt ++;
+                        $html .='
+                            <tr>
+                                <td style="width: 5%">'.$cnt.'</td>
+                                <td style="width: 60%;">'.$r['question'].'</td>
+                                <td style="width: 17%" class="cent bo">'.$r['yesno'].'</td>
+                                <td style="width: 17%" class="cent bo">'.$r['comment'].'</td>
+                            </tr>
+                        ';
+                    }
                 $html .= '   
                         </tbody>
-                    </table>';
-
-                $html .= '
+                    </table>
                     <table>
                         <thead>
                             <tr>
@@ -1791,24 +687,22 @@ $html = '';
                                 <th style="width: 17%" class="cent bo"><b>COMMENTS</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $statutory = $rp->getvalues_m('c1','statutory',$c['code'],$c['c1tID'],$cID,$wpID);
-                        foreach($statutory as $r){
-                            $cnt ++;
-                            $html .='
-                                <tr>
-                                    <td style="width: 5%">'.$cnt.'</td>
-                                    <td style="width: 60%;">'.$r['question'].'</td>
-                                    <td style="width: 17%" class="cent bo">'.$r['yesno'].'</td>
-                                    <td style="width: 17%" class="cent bo">'.$r['comment'].'</td>
-                                </tr>
-                            ';
-                        }
+                        <tbody>
+                ';
+                    foreach($statutory as $r){
+                        $cnt ++;
+                        $html .='
+                            <tr>
+                                <td style="width: 5%">'.$cnt.'</td>
+                                <td style="width: 60%;">'.$r['question'].'</td>
+                                <td style="width: 17%" class="cent bo">'.$r['yesno'].'</td>
+                                <td style="width: 17%" class="cent bo">'.$r['comment'].'</td>
+                            </tr>
+                        ';
+                    }
                 $html .= '   
                         </tbody>
-                    </table>';
-
-                $html .= '
+                    </table>
                     <table>
                         <thead>
                             <tr>
@@ -1818,19 +712,19 @@ $html = '';
                                 <th style="width: 17%" class="cent bo"><b>COMMENTS</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $ac3accsys = $rp->getvalues_m('c1','accsys',$c['code'],$c['c1tID'],$cID,$wpID);
-                        foreach($ac3accsys as $r){
-                            $cnt ++;
-                            $html .='
-                                <tr>
-                                    <td style="width: 5%">'.$cnt.'</td>
-                                    <td style="width: 60%;">'.$r['question'].'</td>
-                                    <td style="width: 17%" class="cent bo">'.$r['yesno'].'</td>
-                                    <td style="width: 17%" class="cent bo">'.$r['comment'].'</td>
-                                </tr>
-                            ';
-                        }
+                        <tbody>
+                ';
+                    foreach($ac3accsys as $r){
+                        $cnt ++;
+                        $html .='
+                            <tr>
+                                <td style="width: 5%">'.$cnt.'</td>
+                                <td style="width: 60%;">'.$r['question'].'</td>
+                                <td style="width: 17%" class="cent bo">'.$r['yesno'].'</td>
+                                <td style="width: 17%" class="cent bo">'.$r['comment'].'</td>
+                            </tr>
+                        ';
+                    }
                 $html .= '   
                     </tbody>
                     </table>
@@ -1853,7 +747,6 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -1861,9 +754,12 @@ $html = '';
             case 'AC4':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : PRELIMINARY PLANNING PROCEDURES – CLIENT INVOLVEMENT IN THE PLANNING PROCESS',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-                $html .= '
+                $html  .= $style;
+                $fl     = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
+                $rdata  = $rp->getvalues_s('c1','ppr',$c['code'],$c['c1tID'],$cID,$wpID);
+                $ppr    = json_decode($rdata['question'], true);
+                $ac4    = $rp->getvalues_m('c1','ac4sod',$c['code'],$c['c1tID'],$cID,$wpID);
+                $html  .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -1887,11 +783,6 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-
-                $rdata  = $rp->getvalues_s('c1','ppr',$c['code'],$c['c1tID'],$cID,$wpID);
-                $ppr    = json_decode($rdata['question'], true);
-                $html .= '
                     <h3>PRELIMINARY PLANNING PROCEDURES – CLIENT INVOLVEMENT IN THE PLANNING PROCESS</h3>
                     <p><b>NB: The key issues noted from this document must be recorded in the relevant areas of the audit file or the PAF and should feed through into the risk assessment, audit approach and fieldwork.</b></p>
                     <table border="1"\>
@@ -1907,26 +798,21 @@ $html = '';
                         </tr>
                     </table>
                     <p><i>In respect of a new audit assignment, where the discussion points below request “changes” to be noted, full information should be documented, as the working papers will not document “existing” issues affecting the client.</i></p>
-                ';
-                $html .= '
                     <p class="bo"><b>Scope of discussion (add additional points as appropriate) ~ note that all points should be discussed, and key issues highlighted:</b></p>
                     <table border="1">
                         <tbody>
                 ';
-
-                $ac4 = $rp->getvalues_m('c1','ac4sod',$c['code'],$c['c1tID'],$cID,$wpID);
-                foreach($ac4 as $r){
-                    $html .= '
-                        <tr>
-                            <td>'.$r['question'].'<br></td>
-                            <td>'.$r['comment'].'</td>
-                        </tr>
-                    ';
-                }
+                    foreach($ac4 as $r){
+                        $html .= '
+                            <tr>
+                                <td>'.$r['question'].'<br></td>
+                                <td>'.$r['comment'].'</td>
+                            </tr>
+                        ';
+                    }
                 $html .= '</tbody>
-                </table>';
-                
-
+                    </table>
+                ';
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -1935,7 +821,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : PRELIMINARY ANALYTICAL PROCEDURES',1,1);
                 $html .= $style;
-                $html .= $c['code'];
+                $fl    = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
+                $rdata =  $rp->getvalues_s('c1','rescon',$c['code'],$c['c1tID'],$cID,$wpID);
+                $rc    = json_decode($rdata['question'], true);
                 $html .= '
                     <table>
                         <tr>
@@ -1963,8 +851,6 @@ $html = '';
                 ';
                 $space = $pdf->Ln(10);
                 $html .= '<h3>PRELIMINARY ANALYTICAL PROCEDURES</h3>';
-                $rdata =  $rp->getvalues_s('c1','rescon',$c['code'],$c['c1tID'],$cID,$wpID);
-                $rc    = json_decode($rdata['question'], true);
                 $html .= '
                     <table border="1">
                         <tbody>
@@ -1995,7 +881,12 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : RISK SUMMARY',1,1);
                 $html .= $style;
-                $html .= $c['code'];
+                $fl    = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
+                $trig  = 0;
+                $ac6   = $rp->getvalues_m('c1','ac6ra',$c['code'],$c['c1tID'],$cID,$wpID);
+                $rdata = $rp->getvalues_s('c1','ac6s12',$c['code'],$c['c1tID'],$cID,$wpID);
+                $s     = json_decode($rdata['question'], true);
+                $s3    = $rp->getvalues_m('c1','ac6s3',$c['code'],$c['c1tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -2020,29 +911,23 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-
-                $html .= '<h3>RISK SUMMARY</h3>';
-                $html .= '<p><b>This form should be completed when a narrative approach to inherent business risk assessment is undertaken. </b> If more than one risk level applies, add additional lines as appropriate.</p>';
-                $html .= '
+                    <h3>RISK SUMMARY</h3><p><b>This form should be completed when a narrative approach to inherent business risk assessment is undertaken. </b> If more than one risk level applies, add additional lines as appropriate.</p>
                     <table>
-                    <thead >
-                        <tr>
-                            <th></th>
-                            <th  colspan="2" class="cent">Risk Assessment</th>
-                            <th class="cent">Reference</th>
-                        </tr>
-                        <tr>
-                            <th class="cent" style="width: 50%;">Question</th>
-                            <th class="cent" style="width: 16%;">Planning</th>
-                            <th class="cent" style="width: 16%;">Finalization</th>
-                            <th style="width: 16%;"></th>
-                        </tr>
-                    </thead>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th  colspan="2" class="cent">Risk Assessment</th>
+                                <th class="cent">Reference</th>
+                            </tr>
+                            <tr>
+                                <th class="cent" style="width: 50%;">Question</th>
+                                <th class="cent" style="width: 16%;">Planning</th>
+                                <th class="cent" style="width: 16%;">Finalization</th>
+                                <th style="width: 16%;"></th>
+                            </tr>
+                        </thead>
                     <tbody>
                 ';
-                $trig = 0;
-                $ac6 = $rp->getvalues_m('c1','ac6ra',$c['code'],$c['c1tID'],$cID,$wpID);
                 foreach($ac6 as $r){
                     $html .= '
                         <tr>
@@ -2069,8 +954,8 @@ $html = '';
                 }
                 $html .= '
                         </tbody>
-                    </table>';
-
+                    </table>
+                ';
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
@@ -2102,8 +987,6 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-                $rdata = $rp->getvalues_s('c1','ac6s12',$c['code'],$c['c1tID'],$cID,$wpID);
-                $s = json_decode($rdata['question'], true);
                 $html .= '
                     <p><b>Objective:</b> This form is designed to determine the inherent risk of the business as a whole.  PSA 315 implies that all businesses should be high risk unless this can be rebutted.  Completion of this form will help to justify a departure from high risk.</p>
                     <h3>Section 1 – INHERENT BUSINESS RISK</h3>
@@ -2210,21 +1093,21 @@ $html = '';
                                 <td>e.g.<br>Despite this being noted as a control in the client’s systems notes, the warehouse team often do not evidence that the check has taken place. </td>
                                 <td>e.g.<br>T6</td>
                                 <td>e.g.<br>No</td>
-                            </tr>';
-                            $s3 = $rp->getvalues_m('c1','ac6s3',$c['code'],$c['c1tID'],$cID,$wpID);
-                            foreach($s3 as $r1){
-                                $html .= '
-                                <tr>
-                                    <td>'.$r1['finstate'].'</td>
-                                    <td>'.$r1['desc'].'</td>
-                                    <td>'.$r1['controleffect'].'</td>
-                                    <td>'.$r1['implemented'].'</td>
-                                    <td>'.$r1['assessed'].'</td>
-                                    <td>'.$r1['reference'].'</td>
-                                    <td>'.$r1['reliance'].'</td>
-                                </tr>
-                                ';
-                            }
+                            </tr>
+                ';
+                        foreach($s3 as $r1){
+                            $html .= '
+                            <tr>
+                                <td>'.$r1['finstate'].'</td>
+                                <td>'.$r1['desc'].'</td>
+                                <td>'.$r1['controleffect'].'</td>
+                                <td>'.$r1['implemented'].'</td>
+                                <td>'.$r1['assessed'].'</td>
+                                <td>'.$r1['reference'].'</td>
+                                <td>'.$r1['reliance'].'</td>
+                            </tr>
+                            ';
+                        }
                 $html .='
                         </tbody>
                     </table>
@@ -2242,8 +1125,6 @@ $html = '';
                         <li>Paragraph 31 of PSA 240 states "Management is in a unique position to perpetrate fraud because of management’s ability to manipulate accounting records and prepare fraudulent financial statements by overriding controls that otherwise appear to be operating effectively. Although the level of risk of management override of controls will vary from entity to entity, the risk is nevertheless present in all entities. Due to the unpredictable way in which such override could occur, it is a risk of material misstatement due to fraud and thus a significant risk". <br></li>
                     </ol>
                 ';
-
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -2251,10 +1132,39 @@ $html = '';
             case 'AC7':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SPECIFIC AREA NARRATIVE INHERENT RISK ASSESSMENT',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
-                $html .= '
+                $html      .= $style;
+                $fl         = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
+                $databac    = $rp->getvalues_s('c1','bacdata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $bacdata    = json_decode($databac['question'], true);
+                $datatr     = $rp->getvalues_s('c1','trdata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $trdata     = json_decode($datatr['question'], true);
+                $dataor     = $rp->getvalues_s('c1','ordata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $ordata     = json_decode($dataor['question'], true);
+                $datainvtr  = $rp->getvalues_s('c1','invtrdata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $invtrdata  = json_decode($datainvtr['question'], true);
+                $datainvmt  = $rp->getvalues_s('c1','invmtdata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $invmtdata  = json_decode($datainvmt['question'], true);
+                $datappe    = $rp->getvalues_s('c1','ppedata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $ppedata    = json_decode($datappe['question'], true);
+                $datainca   = $rp->getvalues_s('c1','incadata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $incadata   = json_decode($datainca['question'], true);
+                $datatp     = $rp->getvalues_s('c1','tpdata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $tpdata     = json_decode($datatp['question'], true);
+                $dataop     = $rp->getvalues_s('c1','opdata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $opdata     = json_decode($dataop['question'], true);
+                $datatax    = $rp->getvalues_s('c1','taxdata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $taxdata    = json_decode($datatax['question'], true);
+                $dataprov   = $rp->getvalues_s('c1','provdata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $provdata   = json_decode($dataprov['question'], true);
+                $dataroi    = $rp->getvalues_s('c1','roidata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $roidata    = json_decode($dataroi['question'], true);
+                $datadco    = $rp->getvalues_s('c1','dcodata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $dcodata    = json_decode($datadco['question'], true);
+                $datapr     = $rp->getvalues_s('c1','prdata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $prdata     = json_decode($datapr['question'], true);
+                $dataoa     = $rp->getvalues_s('c1','oadata',$c['code'],$c['c1tID'],$cID,$wpID);
+                $oadata     = json_decode($dataoa['question'], true);
+                $html      .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -2278,10 +1188,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-
-                $html .= '<h3>SPECIFIC AREA NARRATIVE INHERENT RISK ASSESSMENT</h3>';
-                $html .= '
+                    <h3>SPECIFIC AREA NARRATIVE INHERENT RISK ASSESSMENT</h3>
                     <p><b>Objective:</b> This form is designed to assess the risk for each audit assertion relevant to each audit area.  PSA 315 implies that all areas and all assertions are high risk unless this can be rebutted.  Completion of this form will help to justify a departure from high risk.</p>
                     <p>The risk forms should not be completed until –</p>
                     <ul>
@@ -2318,16 +1225,12 @@ $html = '';
                         <li>How the risk has been addressed during the assignment should be summarized on the PSA Compliance Critical Issues Memorandum.</li>
                     </ul>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-                
-                $rdata = $rp->getvalues_s('c1','bacdata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $bacdata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -2407,12 +1310,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-
-                $rdata = $rp->getvalues_s('c1','trdata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $trdata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE RECEIVABLES:</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -2492,11 +1391,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $rdata = $rp->getvalues_s('c1','ordata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $ordata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER RECEIVABLES (INCLUDING PREPAYMENTS):</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -2576,11 +1472,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $rdata = $rp->getvalues_s('c1','invtrdata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $invtrdata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVENTORIES:</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -2660,11 +1553,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $rdata = $rp->getvalues_s('c1','invmtdata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $invmtdata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVESTMENTS:</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -2744,11 +1634,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $rdata = $rp->getvalues_s('c1','ppedata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $ppedata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROPERTY, PLANT AND EQUIPMENT:</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -2828,11 +1715,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $rdata = $rp->getvalues_s('c1','incadata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $incadata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INTANGIBLE NON-CURRENT ASSETS:</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -2912,11 +1796,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $rdata = $rp->getvalues_s('c1','tpdata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $tpdata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE PAYABLES:</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -2996,11 +1877,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $rdata = $rp->getvalues_s('c1','opdata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $opdata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER PAYABLES (INCLUDING ACCRUALS):</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -3080,11 +1958,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $rdata = $rp->getvalues_s('c1','taxdata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $taxdata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TAXATION:</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -3164,11 +2039,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $rdata = $rp->getvalues_s('c1','provdata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $provdata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROVISIONS FOR LIABILITIES:</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -3248,11 +2120,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $rdata = $rp->getvalues_s('c1','roidata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $roidata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – REVENUE / OTHER INCOME:</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -3332,11 +2201,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $rdata = $rp->getvalues_s('c1','dcodata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $dcodata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – DIRECT COSTS / OTHER EXPENSES:</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -3416,11 +2282,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $rdata = $rp->getvalues_s('c1','prdata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $prdata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PAYROLL:</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -3500,11 +2363,8 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $rdata = $rp->getvalues_s('c1','oadata',$c['code'],$c['c1tID'],$cID,$wpID);
-                $oadata = json_decode($rdata['question'], true);
-                $html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
                 $html .= '
+                    <h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER AREA:</h3>
                     <table>
                         <tbody>
                             <tr>
@@ -3580,7 +2440,6 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-                
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -3589,7 +2448,6 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : ASSESSMENT OF MATERIALITY',1,1);
                 $html .= $style;
-                $html .= $c['code'];
                 $html .= '
                     <table>
                         <tr>
@@ -3620,14 +2478,12 @@ $html = '';
                         </tr>
                     </table>
                 ';
-                
                 $space = $pdf->Ln(10);
-                $html .= '<h3>ASSESSMENT OF MATERIALITY (INCLUDING PERFORMANCE MATERIALITY)</h3>';
                 $html .= '
+                    <h3>ASSESSMENT OF MATERIALITY (INCLUDING PERFORMANCE MATERIALITY)</h3>
                     <p><b>OBJECTIVE: </b> To assess materiality for the financial statements as a whole, performance materiality and other quantitative benchmarks based on materiality, which will reduce the risk of material misstatements in the financial statements to an acceptable level.</p> 
                     <p><b>OVERALL MATERIALITY</b></p>
                 ';
-
                 $rowdata = [
                     'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
                     'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
@@ -3882,7 +2738,6 @@ $html = '';
                             </tr>
                         </tbody>
                     </table>
-
                     <p><b>SPECIFIC PERFORMANCE MATERIALITY LEVELS FOR CLASSES OF TRANSACTIONS, ACCOUNT BALANCES OR DISCLOSURES (Notes 9 and 10):</b></p>
                     <p>Factors that may indicate the existence of one or more particular classes of transactions, account balances or disclosures for which a lower level of materiality should be applied include the following:</p>
                     <ol type="a">
@@ -3954,9 +2809,7 @@ $html = '';
                         <li>The accuracy of accounting estimates needs to be established.  Estimates are "soft" figures in financial statements, and as such, have a level of risk attached to them.  The level of estimation uncertainty for accounting estimates should be documented and should be set at a level lower than performance materiality.</li>
                         <li>Document reasons for not using a materiality level based on the amounts calculated, reasons for setting different levels for individual items in the financial statements and reasons why the final materiality level differs from the planning materiality level.</li>
                     </ol>
-                    ';
-
-
+                ';
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -3965,8 +2818,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : APPROVAL OF PLANNING',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-                
+                $fl    = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
+                $rdata = $rp->getvalues_s('c1','ac9data',$c['code'],$c['c1tID'],$cID,$wpID);
+                $ac9   = json_decode($rdata['question'], true);
                 $html .= '
                     <table>
                         <tr>
@@ -3991,11 +2845,6 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-
-                $rdata = $rp->getvalues_s('c1','ac9data',$c['code'],$c['c1tID'],$cID,$wpID);
-                $ac9= json_decode($rdata['question'], true);
-                $html .= '
                     <table border="1">
                         <tbody>
                             <tr>
@@ -4077,7 +2926,6 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
@@ -4120,7 +2968,6 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
@@ -4146,7 +2993,6 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
@@ -4206,7 +3052,6 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
@@ -4295,9 +3140,6 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
-
-                
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -4305,9 +3147,30 @@ $html = '';
             case 'AC10':
                 $pdf->AddPage('L');
                 $pdf->Bookmark($c['code'].' : AUDIT APPROACH AND SAMPLE SIZE CALCULATION',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-                
+                $html .=  "
+                    <style>
+                        *{
+                            font-family: 'Times New Roman', Times, serif;
+                            font-size: 11px;
+                        }
+                        h3{
+                            font-size: 15px;
+                        }
+                        .cent{
+                            text-align: center;
+                        }
+                        .bo{
+                            border: 1px solid black;
+                        }
+                        p,li{
+                            text-align: justify;
+                        }
+                        .bb{
+                            border-bottom: 1px solid black;
+                        }
+                    </style>
+                ";
+                $fl    = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
                 $html .= '
                     <table>
                         <tr>
@@ -4332,51 +3195,46 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-
-                $html .= '<p><b>AUDIT APPROACH AND SAMPLE SIZE CALCULATION</b></p>';
-                $html .= ' <p><i>To complete the table below enter the risk level as per Ac6 and the materiality level as documented at Ac8. Where a different risk level is relevant for different assertions the table can be expanded as indicated on the lefthand margin. The audit approach should be selected by entering \'Y\' or \'N\' as appropriate. Where sampling is not required under the approach selected the remainder of the row will be greyed out. 
+                    <p><b>AUDIT APPROACH AND SAMPLE SIZE CALCULATION</b></p>
+                    <p><i>To complete the table below enter the risk level as per Ac6 and the materiality level as documented at Ac8. Where a different risk level is relevant for different assertions the table can be expanded as indicated on the lefthand margin. The audit approach should be selected by entering \'Y\' or \'N\' as appropriate. Where sampling is not required under the approach selected the remainder of the row will be greyed out. 
                     <br>Where substantive testing is to be undertaken document whether this will be supported by controls testing or supportive analytical procedures. For each area, enter the population and any large or key items on the appropriate supporting schedule. The residual sample size will then be automatically calculated by dividing the residual population (after large and key items) by materiality and multiplying this by the risk factor which is determined by the audit approach as documented on the reference table below.
-                    <br>Where transaction testing is to be undertaken select the approximate number of transactions from the drop down. This together with the risk level entered will calculate the appropriate sample size, again based on the information on the reference table below.
-                </i></p> ';
-                $html .= '
-                <table border="1">
-                    <thead>
-                        <tr class="cent">
-                            <th colspan="3" style="width: 27%;"></th>
-                            <th colspan="5" style="width: 25%;">A</th>
-                            <th style="width: 5%;">B</th>
-                            <th style="width: 5%;">C</th>
-                            <th style="width: 35%;" colspan="5"></th>
-                        </tr>
-                        <tr class="cent">
-                            <th colspan="8" style="width: 52%;">General</th>
-                            <th colspan="7" style="width: 35%;">Substantive</th>
-                            <th colspan="2" style="width: 10%;">Transaction</th>
-                        </tr>
-                        <tr>
-                            <th style="width: 10%;">Audit Area</th>
-                            <th style="width: 10%;">Audit Assertion (1) (Expand if different risks apply to different assertions)</th>
-                            <th style="width: 7%;" class="cent">Risk per Ac10</th>
-                            <th style="width: 5%;" class="cent">I</th>
-                            <th style="width: 5%;" class="cent">P</th>
-                            <th style="width: 5%;" class="cent">%</th>
-                            <th style="width: 5%;" class="cent">S</th>
-                            <th style="width: 5%;" class="cent">T</th>
-                            <th style="width: 5%;">Tests of control  # (2) @</th>
-                            <th style="width: 5%;">Supportive analytical procedures #</th>
-                            <th style="width: 5%;">Risk factor (as below)</th>
-                            <th style="width: 5%;">Value of population after large and key items</th>
-                            <th style="width: 5%;">Section Ref</th>
-                            <th style="width: 5%;">Residual sample size</th>
-                            <th style="width: 5%;">No of material / key items to be tested </th>
-                            <th style="width: 5%;">Approximate number of transactions</th>
-                            <th style="width: 5%;">Transaction sample size from table B</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tbody">
+                    <br>Where transaction testing is to be undertaken select the approximate number of transactions from the drop down. This together with the risk level entered will calculate the appropriate sample size, again based on the information on the reference table below.</i></p>
+                    <table border="1">
+                        <thead>
+                            <tr class="cent">
+                                <th colspan="3" style="width: 27%;"></th>
+                                <th colspan="5" style="width: 25%;">A</th>
+                                <th style="width: 5%;">B</th>
+                                <th style="width: 5%;">C</th>
+                                <th style="width: 35%;" colspan="5"></th>
+                            </tr>
+                            <tr class="cent">
+                                <th colspan="8" style="width: 52%;">General</th>
+                                <th colspan="7" style="width: 35%;">Substantive</th>
+                                <th colspan="2" style="width: 10%;">Transaction</th>
+                            </tr>
+                            <tr>
+                                <th style="width: 10%;">Audit Area</th>
+                                <th style="width: 10%;">Audit Assertion (1) (Expand if different risks apply to different assertions)</th>
+                                <th style="width: 7%;" class="cent">Risk per Ac10</th>
+                                <th style="width: 5%;" class="cent">I</th>
+                                <th style="width: 5%;" class="cent">P</th>
+                                <th style="width: 5%;" class="cent">%</th>
+                                <th style="width: 5%;" class="cent">S</th>
+                                <th style="width: 5%;" class="cent">T</th>
+                                <th style="width: 5%;">Tests of control  # (2) @</th>
+                                <th style="width: 5%;">Supportive analytical procedures #</th>
+                                <th style="width: 5%;">Risk factor (as below)</th>
+                                <th style="width: 5%;">Value of population after large and key items</th>
+                                <th style="width: 5%;">Section Ref</th>
+                                <th style="width: 5%;">Residual sample size</th>
+                                <th style="width: 5%;">No of material / key items to be tested </th>
+                                <th style="width: 5%;">Approximate number of transactions</th>
+                                <th style="width: 5%;">Transaction sample size from table B</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
                 ';
-
                 $nmk_tgb    = $rp->getdatacount($c['c1tID'],'Tangibles',$cID,$wpID);
                 $nmk_ppe    = $rp->getdatacount($c['c1tID'],'PPE',$cID,$wpID);
                 $nmk_invmt  = $rp->getdatacount($c['c1tID'],'Investments',$cID,$wpID);
@@ -4409,199 +3267,200 @@ $html = '';
                     $rdata          = $rp->getsummarydata($c['c1tID'], $row,$cID,$wpID);
                     $data[$row]     = json_decode($rdata['question'], true);
                 }
-
-                $html .='
-                        <tr>
-                            <td style="width: 10%;">Intangible Assets</td>
-                            <td style="width: 10%;">All</td>
-                            <td style="width: 7%;">';
-                            switch ($data['tgb']['tgb_rpac10']) {
-                                case '1.2':$html .= 'Low';break;
-                                case '1.8':$html .= 'Medium';break;
-                                case '2.5':$html .= 'High';break;
-                                default:break;
-                            }
-                $html .= '
+                    $html .='
+                            <tr>
+                                <td style="width: 10%;">Intangible Assets</td>
+                                <td style="width: 10%;">All</td>
+                                <td style="width: 7%;">';
+                                switch ($data['tgb']['tgb_rpac10']) {
+                                    case '1.2':$html .= 'Low';break;
+                                    case '1.8':$html .= 'Medium';break;
+                                    case '2.5':$html .= 'High';break;
+                                    default:break;
+                                }
+                    $html .= '
+                                </td>
+                                <td style="width: 5%;">'.$data['tgb']['tgb_i'].'</td>
+                                <td style="width: 5%;">'.$data['tgb']['tgb_p'].'</td>
+                                <td style="width: 5%;">'.$data['tgb']['tgb_pcnt'].'</td>
+                                <td style="width: 5%;">'.$data['tgb']['tgb_s'].'</td>
+                                <td style="width: 5%;">'.$data['tgb']['tgb_t'].'</td>
+                                <td style="width: 5%;">';
+                                    switch ($data['tgb']['tgb_ctrf']) {
+                                        case '0.5':$html .= 'Yes';break;
+                                        case '1':$html .= 'No';break;
+                                        default:break;
+                                    }
+                    $html .='   </td>
+                                <td style="width: 5%;">';
+                                    switch ($data['tgb']['tgb_arf']) {
+                                        case '0.67':$html .='Yes';break;
+                                        case '1':$html .='No';break;
+                                        default:break;
+                                    }
+                    $html .='   </td>
+                                <td style="width: 5%;">'.$data['tgb']['tgb_rf'].'</td>
+                                <td style="width: 5%;">'.$vop_tgb.'</td>
+                                <td style="width: 5%;">'.$data['tgb']['tgb_secref'].'</td>
+                                <td style="width: 5%;">'.$data['tgb']['tgb_rss'].'</td>
+                                <td style="width: 5%;">'.$nmk_tgb.'</td>
+                                <td style="width: 5%;">'.$data['tgb']['tgb_ant'].'</td>
+                                <td style="width: 5%;">'.$data['tgb']['tgb_tss'].'</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10%;">PPE</td>
+                                <td style="width: 10%;">All</td>
+                                <td style="width: 7%;">';
+                                switch ($data['ppe']['ppe_rpac10']) {
+                                    case '1.2':$html .= 'Low';break;
+                                    case '1.8':$html .= 'Medium';break;
+                                    case '2.5':$html .= 'High';break;
+                                    default:break;
+                                }
+                    $html .= '
+                                </td>
+                                <td style="width: 5%;">'.$data['ppe']['ppe_i'].'</td>
+                                <td style="width: 5%;">'.$data['ppe']['ppe_p'].'</td>
+                                <td style="width: 5%;">'.$data['ppe']['ppe_pcnt'].'</td>
+                                <td style="width: 5%;">'.$data['ppe']['ppe_s'].'</td>
+                                <td style="width: 5%;">'.$data['ppe']['ppe_t'].'</td>
+                                <td style="width: 5%;">';
+                                    switch ($data['ppe']['ppe_ctrf']) {
+                                        case '0.5':$html .= 'Yes';break;
+                                        case '1':$html .= 'No';break;
+                                        default:break;
+                                    }
+                    $html .='   </td>
+                                <td style="width: 5%;">';
+                                    switch ($data['ppe']['ppe_arf']) {
+                                        case '0.67':$html .='Yes';break;
+                                        case '1':$html .='No';break;
+                                        default:break;
+                                    }
+                    $html .='   </td>
+                                <td style="width: 5%;">'.$data['ppe']['ppe_rf'].'</td>
+                                <td style="width: 5%;">'.$vop_ppe.'</td>
+                                <td style="width: 5%;">'.$data['ppe']['ppe_secref'].'</td>
+                                <td style="width: 5%;">'.$data['ppe']['ppe_rss'].'</td>
+                                <td style="width: 5%;">'.$nmk_ppe.'</td>
+                                <td style="width: 5%;">'.$data['ppe']['ppe_ant'].'</td>
+                                <td style="width: 5%;">'.$data['ppe']['ppe_tss'].'</td>
+                            </tr> 
+                            <tr>
+                                <td style="width: 10%;">Investments</td>
+                                <td style="width: 10%;">All</td>
+                                <td style="width: 7%;">';
+                                switch ($data['invmt']['invmt_rpac10']) {
+                                    case '1.2':$html .= 'Low';break;
+                                    case '1.8':$html .= 'Medium';break;
+                                    case '2.5':$html .= 'High';break;
+                                    default:break;
+                                }
+                    $html .= '
+                                </td>
+                                <td style="width: 5%;">'.$data['invmt']['invmt_i'].'</td>
+                                <td style="width: 5%;">'.$data['invmt']['invmt_p'].'</td>
+                                <td style="width: 5%;">'.$data['invmt']['invmt_pcnt'].'</td>
+                                <td style="width: 5%;">'.$data['invmt']['invmt_s'].'</td>
+                                <td style="width: 5%;">'.$data['invmt']['invmt_t'].'</td>
+                                <td style="width: 5%;">';
+                                    switch ($data['invmt']['invmt_ctrf']) {
+                                        case '0.5':$html .= 'Yes';break;
+                                        case '1':$html .= 'No';break;
+                                        default:break;
+                                    }
+                    $html .='   
+                                </td>
+                                <td style="width: 5%;">';
+                                    switch ($data['invmt']['invmt_arf']) {
+                                        case '0.67':$html .='Yes';break;
+                                        case '1':$html .='No';break;
+                                        default:break;
+                                    }
+                    $html .='   
+                                </td>
+                                <td style="width: 5%;">'.$data['invmt']['invmt_rf'].'</td>
+                                <td style="width: 5%;">'.$vop_invmt.'</td>
+                                <td style="width: 5%;">'.$data['invmt']['invmt_secref'].'</td>
+                                <td style="width: 5%;">'.$data['invmt']['invmt_rss'].'</td>
+                                <td style="width: 5%;">'.$nmk_invmt.'</td>
+                                <td style="width: 5%;">'.$data['invmt']['invmt_ant'].'</td>
+                                <td style="width: 5%;">'.$data['invmt']['invmt_tss'].'</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10%;">Inventories</td>
+                                <td style="width: 10%;">All</td>
+                                <td style="width: 7%;">';
+                                switch ($data['invtr']['invtr_rpac10']) {
+                                    case '1.2':$html .= 'Low';break;
+                                    case '1.8':$html .= 'Medium';break;
+                                    case '2.5':$html .= 'High';break;
+                                    default:break;
+                                }
+                    $html .= '
+                                </td>
+                                <td style="width: 5%;">'.$data['invtr']['invtr_i'].'</td>
+                                <td style="width: 5%;">'.$data['invtr']['invtr_p'].'</td>
+                                <td style="width: 5%;">'.$data['invtr']['invtr_pcnt'].'</td>
+                                <td style="width: 5%;">'.$data['invtr']['invtr_s'].'</td>
+                                <td style="width: 5%;">'.$data['invtr']['invtr_t'].'</td>
+                                <td style="width: 5%;">';
+                                    switch ($data['invtr']['invtr_ctrf']) {
+                                        case '0.5':$html .= 'Yes';break;
+                                        case '1':$html .= 'No';break;
+                                        default:break;
+                                    }
+                    $html .='   
+                                </td>
+                                <td style="width: 5%;">';
+                                    switch ($data['invtr']['invtr_arf']) {
+                                        case '0.67':$html .='Yes';break;
+                                        case '1':$html .='No';break;
+                                        default:break;
+                                    }
+                    $html .='   
+                                </td>
+                                <td style="width: 5%;">'.$data['invtr']['invtr_rf'].'</td>
+                                <td style="width: 5%;">'.$vop_invtr.'</td>
+                                <td style="width: 5%;">'.$data['invtr']['invtr_secref'].'</td>
+                                <td style="width: 5%;">'.$data['invtr']['invtr_rss'].'</td>
+                                <td style="width: 5%;">'.$nmk_invtr.'</td>
+                                <td style="width: 5%;">'.$data['invtr']['invtr_ant'].'</td>
+                                <td style="width: 5%;">'.$data['invtr']['invtr_tss'].'</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10%;">Trade Receivables</td>
+                                <td style="width: 10%;">All</td>
+                                <td style="width: 7%;">';
+                                switch ($data['tr']['tr_rpac10']) {
+                                    case '1.2':$html .= 'Low';break;
+                                    case '1.8':$html .= 'Medium';break;
+                                    case '2.5':$html .= 'High';break;
+                                    default:break;
+                                }
+                    $html .= '
+                                </td>
+                                <td style="width: 5%;">'.$data['tr']['tr_i'].'</td>
+                                <td style="width: 5%;">'.$data['tr']['tr_p'].'</td>
+                                <td style="width: 5%;">'.$data['tr']['tr_pcnt'].'</td>
+                                <td style="width: 5%;">'.$data['tr']['tr_s'].'</td>
+                                <td style="width: 5%;">'.$data['tr']['tr_t'].'</td>
+                                <td style="width: 5%;">';
+                                    switch ($data['tr']['tr_ctrf']) {
+                                        case '0.5':$html .= 'Yes';break;
+                                        case '1':$html .= 'No';break;
+                                        default:break;
+                                    }
+                    $html .='   
+                                </td>
+                                <td style="width: 5%;">';
+                                    switch ($data['tr']['tr_arf']) {
+                                        case '0.67':$html .='Yes';break;
+                                        case '1':$html .='No';break;
+                                        default:break;
+                                    }
+                    $html .='   
                             </td>
-                            <td style="width: 5%;">'.$data['tgb']['tgb_i'].'</td>
-                            <td style="width: 5%;">'.$data['tgb']['tgb_p'].'</td>
-                            <td style="width: 5%;">'.$data['tgb']['tgb_pcnt'].'</td>
-                            <td style="width: 5%;">'.$data['tgb']['tgb_s'].'</td>
-                            <td style="width: 5%;">'.$data['tgb']['tgb_t'].'</td>
-                            <td style="width: 5%;">';
-                                switch ($data['tgb']['tgb_ctrf']) {
-                                    case '0.5':$html .= 'Yes';break;
-                                    case '1':$html .= 'No';break;
-                                    default:break;
-                                }
-                $html .='   </td>
-                            <td style="width: 5%;">';
-                                switch ($data['tgb']['tgb_arf']) {
-                                    case '0.67':$html .='Yes';break;
-                                    case '1':$html .='No';break;
-                                    default:break;
-                                }
-                $html .='   </td>
-                            <td style="width: 5%;">'.$data['tgb']['tgb_rf'].'</td>
-                            <td style="width: 5%;">'.$vop_tgb.'</td>
-                            <td style="width: 5%;">'.$data['tgb']['tgb_secref'].'</td>
-                            <td style="width: 5%;">'.$data['tgb']['tgb_rss'].'</td>
-                            <td style="width: 5%;">'.$nmk_tgb.'</td>
-                            <td style="width: 5%;">'.$data['tgb']['tgb_ant'].'</td>
-                            <td style="width: 5%;">'.$data['tgb']['tgb_tss'].'</td>
-                        </tr>';
-                $html .='
-                        <tr>
-                            <td style="width: 10%;">PPE</td>
-                            <td style="width: 10%;">All</td>
-                            <td style="width: 7%;">';
-                            switch ($data['ppe']['ppe_rpac10']) {
-                                case '1.2':$html .= 'Low';break;
-                                case '1.8':$html .= 'Medium';break;
-                                case '2.5':$html .= 'High';break;
-                                default:break;
-                            }
-                $html .= '
-                            </td>
-                            <td style="width: 5%;">'.$data['ppe']['ppe_i'].'</td>
-                            <td style="width: 5%;">'.$data['ppe']['ppe_p'].'</td>
-                            <td style="width: 5%;">'.$data['ppe']['ppe_pcnt'].'</td>
-                            <td style="width: 5%;">'.$data['ppe']['ppe_s'].'</td>
-                            <td style="width: 5%;">'.$data['ppe']['ppe_t'].'</td>
-                            <td style="width: 5%;">';
-                                switch ($data['ppe']['ppe_ctrf']) {
-                                    case '0.5':$html .= 'Yes';break;
-                                    case '1':$html .= 'No';break;
-                                    default:break;
-                                }
-                $html .='   </td>
-                            <td style="width: 5%;">';
-                                switch ($data['ppe']['ppe_arf']) {
-                                    case '0.67':$html .='Yes';break;
-                                    case '1':$html .='No';break;
-                                    default:break;
-                                }
-                $html .='   </td>
-                            <td style="width: 5%;">'.$data['ppe']['ppe_rf'].'</td>
-                            <td style="width: 5%;">'.$vop_ppe.'</td>
-                            <td style="width: 5%;">'.$data['ppe']['ppe_secref'].'</td>
-                            <td style="width: 5%;">'.$data['ppe']['ppe_rss'].'</td>
-                            <td style="width: 5%;">'.$nmk_ppe.'</td>
-                            <td style="width: 5%;">'.$data['ppe']['ppe_ant'].'</td>
-                            <td style="width: 5%;">'.$data['ppe']['ppe_tss'].'</td>
-                        </tr>';
-                        $html .='
-                        <tr>
-                            <td style="width: 10%;">Investments</td>
-                            <td style="width: 10%;">All</td>
-                            <td style="width: 7%;">';
-                            switch ($data['invmt']['invmt_rpac10']) {
-                                case '1.2':$html .= 'Low';break;
-                                case '1.8':$html .= 'Medium';break;
-                                case '2.5':$html .= 'High';break;
-                                default:break;
-                            }
-                $html .= '
-                            </td>
-                            <td style="width: 5%;">'.$data['invmt']['invmt_i'].'</td>
-                            <td style="width: 5%;">'.$data['invmt']['invmt_p'].'</td>
-                            <td style="width: 5%;">'.$data['invmt']['invmt_pcnt'].'</td>
-                            <td style="width: 5%;">'.$data['invmt']['invmt_s'].'</td>
-                            <td style="width: 5%;">'.$data['invmt']['invmt_t'].'</td>
-                            <td style="width: 5%;">';
-                                switch ($data['invmt']['invmt_ctrf']) {
-                                    case '0.5':$html .= 'Yes';break;
-                                    case '1':$html .= 'No';break;
-                                    default:break;
-                                }
-                $html .='   </td>
-                            <td style="width: 5%;">';
-                                switch ($data['invmt']['invmt_arf']) {
-                                    case '0.67':$html .='Yes';break;
-                                    case '1':$html .='No';break;
-                                    default:break;
-                                }
-                $html .='   </td>
-                            <td style="width: 5%;">'.$data['invmt']['invmt_rf'].'</td>
-                            <td style="width: 5%;">'.$vop_invmt.'</td>
-                            <td style="width: 5%;">'.$data['invmt']['invmt_secref'].'</td>
-                            <td style="width: 5%;">'.$data['invmt']['invmt_rss'].'</td>
-                            <td style="width: 5%;">'.$nmk_invmt.'</td>
-                            <td style="width: 5%;">'.$data['invmt']['invmt_ant'].'</td>
-                            <td style="width: 5%;">'.$data['invmt']['invmt_tss'].'</td>
-                        </tr>';
-                        $html .='
-                        <tr>
-                            <td style="width: 10%;">Inventories</td>
-                            <td style="width: 10%;">All</td>
-                            <td style="width: 7%;">';
-                            switch ($data['invtr']['invtr_rpac10']) {
-                                case '1.2':$html .= 'Low';break;
-                                case '1.8':$html .= 'Medium';break;
-                                case '2.5':$html .= 'High';break;
-                                default:break;
-                            }
-                $html .= '
-                            </td>
-                            <td style="width: 5%;">'.$data['invtr']['invtr_i'].'</td>
-                            <td style="width: 5%;">'.$data['invtr']['invtr_p'].'</td>
-                            <td style="width: 5%;">'.$data['invtr']['invtr_pcnt'].'</td>
-                            <td style="width: 5%;">'.$data['invtr']['invtr_s'].'</td>
-                            <td style="width: 5%;">'.$data['invtr']['invtr_t'].'</td>
-                            <td style="width: 5%;">';
-                                switch ($data['invtr']['invtr_ctrf']) {
-                                    case '0.5':$html .= 'Yes';break;
-                                    case '1':$html .= 'No';break;
-                                    default:break;
-                                }
-                $html .='   </td>
-                            <td style="width: 5%;">';
-                                switch ($data['invtr']['invtr_arf']) {
-                                    case '0.67':$html .='Yes';break;
-                                    case '1':$html .='No';break;
-                                    default:break;
-                                }
-                $html .='   </td>
-                            <td style="width: 5%;">'.$data['invtr']['invtr_rf'].'</td>
-                            <td style="width: 5%;">'.$vop_invtr.'</td>
-                            <td style="width: 5%;">'.$data['invtr']['invtr_secref'].'</td>
-                            <td style="width: 5%;">'.$data['invtr']['invtr_rss'].'</td>
-                            <td style="width: 5%;">'.$nmk_invtr.'</td>
-                            <td style="width: 5%;">'.$data['invtr']['invtr_ant'].'</td>
-                            <td style="width: 5%;">'.$data['invtr']['invtr_tss'].'</td>
-                        </tr>';
-                        $html .='
-                        <tr>
-                            <td style="width: 10%;">Trade Receivables</td>
-                            <td style="width: 10%;">All</td>
-                            <td style="width: 7%;">';
-                            switch ($data['tr']['tr_rpac10']) {
-                                case '1.2':$html .= 'Low';break;
-                                case '1.8':$html .= 'Medium';break;
-                                case '2.5':$html .= 'High';break;
-                                default:break;
-                            }
-                $html .= '
-                            </td>
-                            <td style="width: 5%;">'.$data['tr']['tr_i'].'</td>
-                            <td style="width: 5%;">'.$data['tr']['tr_p'].'</td>
-                            <td style="width: 5%;">'.$data['tr']['tr_pcnt'].'</td>
-                            <td style="width: 5%;">'.$data['tr']['tr_s'].'</td>
-                            <td style="width: 5%;">'.$data['tr']['tr_t'].'</td>
-                            <td style="width: 5%;">';
-                                switch ($data['tr']['tr_ctrf']) {
-                                    case '0.5':$html .= 'Yes';break;
-                                    case '1':$html .= 'No';break;
-                                    default:break;
-                                }
-                $html .='   </td>
-                            <td style="width: 5%;">';
-                                switch ($data['tr']['tr_arf']) {
-                                    case '0.67':$html .='Yes';break;
-                                    case '1':$html .='No';break;
-                                    default:break;
-                                }
-                $html .='   </td>
                             <td style="width: 5%;">'.$data['tr']['tr_rf'].'</td>
                             <td style="width: 5%;">'.$vop_tr.'</td>
                             <td style="width: 5%;">'.$data['tr']['tr_secref'].'</td>
@@ -4609,8 +3468,7 @@ $html = '';
                             <td style="width: 5%;">'.$nmk_tr.'</td>
                             <td style="width: 5%;">'.$data['tr']['tr_ant'].'</td>
                             <td style="width: 5%;">'.$data['tr']['tr_tss'].'</td>
-                        </tr>';
-                        $html .='
+                        </tr>
                         <tr>
                             <td style="width: 10%;">All Other Receivables</td>
                             <td style="width: 10%;">All</td>
@@ -4621,7 +3479,7 @@ $html = '';
                                 case '2.5':$html .= 'High';break;
                                 default:break;
                             }
-                $html .= '
+                    $html .= '  
                             </td>
                             <td style="width: 5%;">'.$data['or']['or_i'].'</td>
                             <td style="width: 5%;">'.$data['or']['or_p'].'</td>
@@ -4634,14 +3492,16 @@ $html = '';
                                     case '1':$html .= 'No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">';
                                 switch ($data['or']['or_arf']) {
                                     case '0.67':$html .='Yes';break;
                                     case '1':$html .='No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">'.$data['or']['or_rf'].'</td>
                             <td style="width: 5%;">'.$vop_or.'</td>
                             <td style="width: 5%;">'.$data['or']['or_secref'].'</td>
@@ -4649,8 +3509,7 @@ $html = '';
                             <td style="width: 5%;">'.$nmk_or.'</td>
                             <td style="width: 5%;">'.$data['or']['or_ant'].'</td>
                             <td style="width: 5%;">'.$data['or']['or_tss'].'</td>
-                        </tr>';
-                        $html .='
+                        </tr>
                         <tr>
                             <td style="width: 10%;">Bank and Cash</td>
                             <td style="width: 10%;">All</td>
@@ -4661,7 +3520,7 @@ $html = '';
                                 case '2.5':$html .= 'High';break;
                                 default:break;
                             }
-                $html .= '
+                    $html .= '  
                             </td>
                             <td style="width: 5%;">'.$data['bac']['bac_i'].'</td>
                             <td style="width: 5%;">'.$data['bac']['bac_p'].'</td>
@@ -4674,14 +3533,16 @@ $html = '';
                                     case '1':$html .= 'No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">';
                                 switch ($data['bac']['bac_arf']) {
                                     case '0.67':$html .='Yes';break;
                                     case '1':$html .='No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">'.$data['bac']['bac_rf'].'</td>
                             <td style="width: 5%;">'.$vop_bac.'</td>
                             <td style="width: 5%;">'.$data['bac']['bac_secref'].'</td>
@@ -4689,8 +3550,7 @@ $html = '';
                             <td style="width: 5%;">'.$nmk_bac.'</td>
                             <td style="width: 5%;">'.$data['bac']['bac_ant'].'</td>
                             <td style="width: 5%;">'.$data['bac']['bac_tss'].'</td>
-                        </tr>';
-                        $html .='
+                        </tr>
                         <tr>
                             <td style="width: 10%;">Trade Payables</td>
                             <td style="width: 10%;">All</td>
@@ -4701,7 +3561,7 @@ $html = '';
                                 case '2.5':$html .= 'High';break;
                                 default:break;
                             }
-                $html .= '
+                    $html .= '
                             </td>
                             <td style="width: 5%;">'.$data['tp']['tp_i'].'</td>
                             <td style="width: 5%;">'.$data['tp']['tp_p'].'</td>
@@ -4714,14 +3574,16 @@ $html = '';
                                     case '1':$html .= 'No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">';
                                 switch ($data['tp']['tp_arf']) {
                                     case '0.67':$html .='Yes';break;
                                     case '1':$html .='No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">'.$data['tp']['tp_rf'].'</td>
                             <td style="width: 5%;">'.$vop_tp.'</td>
                             <td style="width: 5%;">'.$data['tp']['tp_secref'].'</td>
@@ -4729,8 +3591,7 @@ $html = '';
                             <td style="width: 5%;">'.$nmk_tp.'</td>
                             <td style="width: 5%;">'.$data['tp']['tp_ant'].'</td>
                             <td style="width: 5%;">'.$data['tp']['tp_tss'].'</td>
-                        </tr>';
-                        $html .='
+                        </tr>
                         <tr>
                             <td style="width: 10%;">All Other Payables</td>
                             <td style="width: 10%;">All</td>
@@ -4741,7 +3602,7 @@ $html = '';
                                 case '2.5':$html .= 'High';break;
                                 default:break;
                             }
-                $html .= '
+                    $html .= '
                             </td>
                             <td style="width: 5%;">'.$data['op']['op_i'].'</td>
                             <td style="width: 5%;">'.$data['op']['op_p'].'</td>
@@ -4754,14 +3615,16 @@ $html = '';
                                     case '1':$html .= 'No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">';
                                 switch ($data['op']['op_arf']) {
                                     case '0.67':$html .='Yes';break;
                                     case '1':$html .='No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">'.$data['op']['op_rf'].'</td>
                             <td style="width: 5%;">'.$vop_op.'</td>
                             <td style="width: 5%;">'.$data['op']['op_secref'].'</td>
@@ -4769,8 +3632,7 @@ $html = '';
                             <td style="width: 5%;">'.$nmk_op.'</td>
                             <td style="width: 5%;">'.$data['op']['op_ant'].'</td>
                             <td style="width: 5%;">'.$data['op']['op_tss'].'</td>
-                        </tr>';
-                $html .='
+                        </tr>
                         <tr>
                             <td style="width: 10%;">Provisions</td>
                             <td style="width: 10%;">All</td>
@@ -4781,7 +3643,7 @@ $html = '';
                                 case '2.5':$html .= 'High';break;
                                 default:break;
                             }
-                $html .= '
+                    $html .= '
                             </td>
                             <td style="width: 5%;">'.$data['prov']['prov_i'].'</td>
                             <td style="width: 5%;">'.$data['prov']['prov_p'].'</td>
@@ -4794,14 +3656,16 @@ $html = '';
                                     case '1':$html .= 'No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">';
                                 switch ($data['prov']['prov_arf']) {
                                     case '0.67':$html .='Yes';break;
                                     case '1':$html .='No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">'.$data['prov']['prov_rf'].'</td>
                             <td style="width: 5%;">'.$vop_prov.'</td>
                             <td style="width: 5%;">'.$data['prov']['prov_secref'].'</td>
@@ -4809,11 +3673,10 @@ $html = '';
                             <td style="width: 5%;">'.$nmk_prov.'</td>
                             <td style="width: 5%;">'.$data['prov']['prov_ant'].'</td>
                             <td style="width: 5%;">'.$data['prov']['prov_tss'].'</td>
-                        </tr>';
-                $html .= '<tr>
+                        </tr>
+                        <tr>
                             <td colspan="17"></td>
-                    </tr>';
-                $html .='
+                        </tr>
                         <tr>
                             <td style="width: 10%;">Revenue</td>
                             <td style="width: 10%;">All</td>
@@ -4824,7 +3687,7 @@ $html = '';
                                 case '2.5':$html .= 'High';break;
                                 default:break;
                             }
-                $html .= '
+                    $html .= '
                             </td>
                             <td style="width: 5%;">'.$data['rev']['rev_i'].'</td>
                             <td style="width: 5%;">'.$data['rev']['rev_p'].'</td>
@@ -4837,14 +3700,16 @@ $html = '';
                                     case '1':$html .= 'No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">';
                                 switch ($data['rev']['rev_arf']) {
                                     case '0.67':$html .='Yes';break;
                                     case '1':$html .='No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">'.$data['rev']['rev_rf'].'</td>
                             <td style="width: 5%;">'.$vop_rev.'</td>
                             <td style="width: 5%;">'.$data['rev']['rev_secref'].'</td>
@@ -4852,8 +3717,7 @@ $html = '';
                             <td style="width: 5%;">'.$nmk_rev.'</td>
                             <td style="width: 5%;">'.$data['rev']['rev_ant'].'</td>
                             <td style="width: 5%;">'.$data['rev']['rev_tss'].'</td>
-                        </tr>';
-                        $html .='
+                        </tr>
                         <tr>
                             <td style="width: 10%;">Costs</td>
                             <td style="width: 10%;">All</td>
@@ -4864,7 +3728,7 @@ $html = '';
                                 case '2.5':$html .= 'High';break;
                                 default:break;
                             }
-                $html .= '
+                    $html .= '
                             </td>
                             <td style="width: 5%;">'.$data['cst']['cst_i'].'</td>
                             <td style="width: 5%;">'.$data['cst']['cst_p'].'</td>
@@ -4877,14 +3741,16 @@ $html = '';
                                     case '1':$html .= 'No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">';
                                 switch ($data['cst']['cst_arf']) {
                                     case '0.67':$html .='Yes';break;
                                     case '1':$html .='No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">'.$data['cst']['cst_rf'].'</td>
                             <td style="width: 5%;">'.$vop_cst.'</td>
                             <td style="width: 5%;">'.$data['cst']['cst_secref'].'</td>
@@ -4892,8 +3758,7 @@ $html = '';
                             <td style="width: 5%;">'.$nmk_cst.'</td>
                             <td style="width: 5%;">'.$data['cst']['cst_ant'].'</td>
                             <td style="width: 5%;">'.$data['cst']['cst_tss'].'</td>
-                        </tr>';
-                $html .='
+                        </tr>
                         <tr>
                             <td style="width: 10%;">Payroll</td>
                             <td style="width: 10%;">All</td>
@@ -4904,7 +3769,7 @@ $html = '';
                                 case '2.5':$html .= 'High';break;
                                 default:break;
                             }
-                $html .= '
+                    $html .= '
                             </td>
                             <td style="width: 5%;">'.$data['pr']['pr_i'].'</td>
                             <td style="width: 5%;">'.$data['pr']['pr_p'].'</td>
@@ -4917,14 +3782,16 @@ $html = '';
                                     case '1':$html .= 'No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">';
                                 switch ($data['pr']['pr_arf']) {
                                     case '0.67':$html .='Yes';break;
                                     case '1':$html .='No';break;
                                     default:break;
                                 }
-                $html .='   </td>
+                    $html .='   
+                            </td>
                             <td style="width: 5%;">'.$data['pr']['pr_rf'].'</td>
                             <td style="width: 5%;">'.$vop_pr.'</td>
                             <td style="width: 5%;">'.$data['pr']['pr_secref'].'</td>
@@ -4932,15 +3799,13 @@ $html = '';
                             <td style="width: 5%;">'.$nmk_pr.'</td>
                             <td style="width: 5%;">'.$data['pr']['pr_ant'].'</td>
                             <td style="width: 5%;">'.$data['pr']['pr_tss'].'</td>
-                        </tr>';
-                $html .='
+                        </tr>
                     </tbody>   
                 </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
-                $pdf->AddPage('P');
+                $pdf->AddPage('L');
                 $html .= $style;
                 $html .= '
                     <ol>
@@ -5149,10 +4014,10 @@ $html = '';
             case 'AC11':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : TEAM DISCUSSIONS AND BRIEFING MEETING',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-                
-                $html .= '
+                $html  .= $style;
+                $rdata  = $rp->getvalues_s('c1','ac11data',$c['code'],$c['c1tID'],$cID,$wpID);
+                $ac11   = json_decode($rdata['question'], true);
+                $html  .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -5165,12 +4030,10 @@ $html = '';
                         </tr>
                     </table>
                 ';
-                $rdata = $rp->getvalues_s('c1','ac11data',$c['code'],$c['c1tID'],$cID,$wpID);
-                $ac11 = json_decode($rdata['question'], true);
                 $space = $pdf->Ln(10);
-                $html .= '<h3>TEAM DISCUSSIONS AND BRIEFING MEETING</h3>';
                 $html .= '
-                    <p> <b>Objective:</b> <br>To document a team discussion covering fraud and risk as required by PSA 240, 315 and 550 and to demonstrate that an adequate staff briefing has occurred.</p>
+                    <h3>TEAM DISCUSSIONS AND BRIEFING MEETING</h3>
+                    <p><b>Objective:</b> <br>To document a team discussion covering fraud and risk as required by PSA 240, 315 and 550 and to demonstrate that an adequate staff briefing has occurred.</p>
                     <table>
                         <tr>
                             <td style="width: 20%;">
@@ -5240,7 +4103,6 @@ $html = '';
                     <p><i>The team discussions on fraud, risk and related party transactions should be chaired by the A.E.P. (although the general briefing can be performed by another team member, i.e. the manager) and it should be undertaken ensuring that, when considering fraud, professional scepticism is applied. <u><b>Team members should set aside the belief that the client is honest and acts with integrity.</b></u></i></p>
                     <p><i>Where junior staff are briefed separately, this should be clearly documented.</i></p>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('L');
@@ -5369,7 +4231,6 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -5393,12 +4254,14 @@ $html = '';
     $html = '';
     foreach($c2 as $c){
         switch ($c['code']) {
+
             case '2.1 B2':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : INTANGIBLE NON-CURRENT ASSETS AND GOODWILL',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata =  $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -5423,10 +4286,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-
-                $html .= '<h3>INTANGIBLE NON-CURRENT ASSETS AND GOODWILL</h3>';
-                $html .= '
+                    <h3>INTANGIBLE NON-CURRENT ASSETS AND GOODWILL</h3>
                     <table>
                         <thead>
                             <tr>
@@ -5437,12 +4297,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata =  $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -5450,8 +4309,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -5467,7 +4326,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -5476,7 +4334,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : PROPERTY, PLANT AND EQUIPMENT',1,1);
                 $html .= $style;
-                $html .= $c['code'];
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -5501,9 +4361,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>PROPERTY, PLANT AND EQUIPMENT</h3>';
-                $html .= '
+                    <h3>PROPERTY, PLANT AND EQUIPMENT</h3>
                     <table>
                         <thead>
                             <tr>
@@ -5514,12 +4372,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -5527,8 +4384,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -5544,7 +4401,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-               
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -5553,7 +4409,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : PROPERTY, PLANT AND EQUIPMENT – TOP UP PROGRAMME',1,1);
                 $html .= $style;
-                $html .= $c['code'];
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -5578,14 +4436,12 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>PROPERTY, PLANT AND EQUIPMENT – TOP UP PROGRAMME</h3>';
-                $html .= '
-                        <p>This programme includes “top up” tests to be completed when the entity has the following:</i></p>
-                        <ul>
-                            <li><i>Leased assets</i></li>
-                            <li><i>Assets financed by capital grants</i></li>
-                        </ul>
+                    <h3>PROPERTY, PLANT AND EQUIPMENT – TOP UP PROGRAMME</h3>
+                    <p>This programme includes “top up” tests to be completed when the entity has the following:</i></p>
+                    <ul>
+                        <li><i>Leased assets</i></li>
+                        <li><i>Assets financed by capital grants</i></li>
+                    </ul>
                     <p><b>SPECIFIC AREA 1 – LEASED ASSETS </b></p>
                     <p><i>IFRS 16 ‘Leases’ is a brand-new Standard and is mandatory for accounting periods commencing on/after 1 January 2019. </i></p>
                     <p><i>IFRS 16 fundamentally affects the way in which <u><b>lessees</b></u> account for leases; all leases (except those which are short term (i.e. 12 months or less) or those for which the underlying asset is of low value) now result in the recognition of a “right of use” asset and a corresponding lease liability. </i></p>
@@ -5597,8 +4453,6 @@ $html = '';
                     </ul>
                     <p><i>Audit work will be required on the transition adjustments made. </i></p>
                     <p><i>Auditors must read IFRS 16, the accompanying application guidance (Appendix B of IFRS 16) and the transition requirements (Appendix C of IFRS 16) to gain a full understanding of the accounting requirements. </i></p>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -5609,12 +4463,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -5622,13 +4475,12 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
-                    ';
-               
+                ';
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -5637,7 +4489,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : INVESTMENTS',1,1);
                 $html .= $style;
-                $html .= $c['code'];
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -5662,14 +4516,10 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>INVESTMENTS</h3>';
-                $html .= '
+                    <h3>INVESTMENTS</h3>
                     <p><i>This programme <b><u>does not</u></b>  include tests relating to investment properties. These tests are included on the C audit programme.</i></p>
                     <p><i>Tests on this programme relate solely to listed and non-listed equity instruments.  Where investments are debt instruments the appropriate tests on the F audit programme should be completed. If an entity has physical investments, such as wine, works of art or commodities such as precious metals, it would seem appropriate that these are carried at fair value. Tests 16 and 18 to 23 could be completed when auditing such investments</i></p>
                     <p><i>This programme does not cover complex financial instruments: interest rates swaps are addressed on the I audit programme and forward exchange contracts are addressed on the L audit programme. If the entity has other types of complex financial instrument then additional tests must be added to an appropriate audit programme.</i></p>
-                    ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -5680,12 +4530,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -5693,8 +4542,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -5710,7 +4559,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-                
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -5719,7 +4567,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : INVENTORIES',1,1);
                 $html .= $style;
-                $html .= $c['code'];
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -5744,9 +4594,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>INVENTORIES</h3>';
-                $html .= '
+                    <h3>INVENTORIES</h3>
                     <table>
                         <thead>
                             <tr>
@@ -5757,12 +4605,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -5770,8 +4617,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -5787,7 +4634,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -5795,9 +4641,12 @@ $html = '';
             case '2.4.2 E2-1':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : INVENTORY APPENDIX 1 – INVENTORY COUNT PLANNING',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-                $html .= '
+                $html   .= $style;
+                $fl      = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count   = 0;
+                $aicpppa = $rp->getvalues_m('c2','aicpppa',$c['code'],$c['c2tID'],$cID,$wpID);
+                $rcicp   = $rp->getvalues_m('c2','rcicp',$c['code'],$c['c2tID'],$cID,$wpID);
+                $html   .= '
                     <table>
                         <tr>
                             <td style="width: 50%;">
@@ -5821,9 +4670,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                    ';
-                $html .= '<h3>INVENTORY APPENDIX 1 – INVENTORY COUNT PLANNING</h3>';
-                $html .= '
+                    <h3>INVENTORY APPENDIX 1 – INVENTORY COUNT PLANNING</h3>
                     <table>
                         <thead>
                             <tr>
@@ -5832,19 +4679,18 @@ $html = '';
                                 <th class="cent bo" style="width: 36%;"><b>Comments/Reference</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $aicpppa = $rp->getvalues_m('c2','aicpppa',$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($aicpppa as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($aicpppa as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
                                 <td class="cent bo" style="width: 36%;">'.$r['reference'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -5853,11 +4699,10 @@ $html = '';
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $html .= '
                     <center><p><b>Review of client’s inventory count procedures</b></p></center>
                     <p>This review should be completed before attending the client’s inventory count in conjunction with a copy of the client’s inventory count instructions.  Section 1 deals with overall controls, and sections 2 to 4 with inventory count instructions and procedures, section 5 covers inventory counts performed by independent inventory counters and section 6 covers clients that operate a cyclical inventory count system.</p>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -5866,17 +4711,17 @@ $html = '';
                                 <th class="cent bo" style="width: 18%;"><b>Comments/<br>Reference</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $rcicp = $rp->getvalues_m('c2','rcicp',$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($rcicp as $r){
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($rcicp as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 66%;">'.$r['question'].'<br></td>
                                 <td class="cent bo" style="width: 18%;">'.$r['extent'].'</td>
                                 <td class="cent bo" style="width: 18%;">'.$r['reference'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -5889,8 +4734,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : INVENTORY APPENDIX 2 – TESTS AT INVENTORY COUNT',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -5915,10 +4761,8 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>INVENTORY APPENDIX 2 – TESTS AT INVENTORY COUNT</h3>';
-                $html .= '<p><b>N.B. If inventory count is solely undertaken by a 3rd party, this does not negate the need to carry out audit procedures identical to that carried out if the client had undertaken the procedures.  Consideration should be given as to the integrity and independence of the 3rd party.</b></p>';
-                $html .= '
+                    <h3>INVENTORY APPENDIX 2 – TESTS AT INVENTORY COUNT</h3>
+                    <p><b>N.B. If inventory count is solely undertaken by a 3rd party, this does not negate the need to carry out audit procedures identical to that carried out if the client had undertaken the procedures.  Consideration should be given as to the integrity and independence of the 3rd party.</b></p>
                     <table>
                         <thead>
                             <tr>
@@ -5929,12 +4773,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Completed by</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -5942,13 +4785,12 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -5957,8 +4799,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : INVENTORY APPENDIX 3 – ALTERNATIVE PROCEDURES',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -5983,13 +4826,9 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>INVENTORY APPENDIX 3 – ALTERNATIVE PROCEDURES</h3>';
-                $html .= '
+                    <h3>INVENTORY APPENDIX 3 – ALTERNATIVE PROCEDURES</h3>
                     <p>Alternative procedures will be required if no inventory count has taken place at the period-end.  If an inventory count has taken place but was not attended, the file should indicate why, and assess the possible impact on the audit report.</p>
                     <p><b>Note that ISA 501 states that the auditor shall attend the inventory count if inventory is material.</b></p>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -6000,12 +4839,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Completed by</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -6013,13 +4851,12 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6028,8 +4865,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : INVENTORY TOP UP PROGRAMME: CONSTRUCTION CONTRACTS',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -6054,11 +4892,8 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>INVENTORY TOP UP PROGRAMME: CONSTRUCTION CONTRACTS</h3>
+                    <h3>INVENTORY TOP UP PROGRAMME: CONSTRUCTION CONTRACTS</h3>
                     <p><b>Complete this programme when the audited entity has Construction Contracts (or other contracts accounted for on a Percentage Completion basis). </b></p>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -6069,12 +4904,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -6082,8 +4916,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -6099,7 +4933,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
- 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6108,8 +4941,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : RECEIVABLES',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -6134,9 +4968,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>RECEIVABLES</h3>';
-                $html .= '
+                    <h3>RECEIVABLES</h3>
                     <table>
                         <thead>
                             <tr>
@@ -6147,12 +4979,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -6160,8 +4991,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -6177,7 +5008,7 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
- 
+
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6186,7 +5017,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : BANK AND CASH',1,1);
                 $html .= $style;
-                $html .= $c['code'];
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -6211,9 +5044,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>BANK AND CASH</h3>';
-                $html .= '
+                    <h3>BANK AND CASH</h3>
                     <table>
                         <thead>
                             <tr>
@@ -6224,12 +5055,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -6237,8 +5067,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -6254,7 +5084,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-                    
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6263,8 +5092,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : PAYABLES',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -6289,9 +5119,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>PAYABLES</h3>';
-                $html .= '
+                    <h3>PAYABLES</h3>
                     <table>
                         <thead>
                             <tr>
@@ -6302,12 +5130,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -6315,8 +5142,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -6332,7 +5159,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-       
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6341,8 +5167,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : TAXATION ~ INCLUDING DEFERRED TAXATION',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -6367,9 +5194,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>TAXATION ~ INCLUDING DEFERRED TAXATION</h3>';
-                $html .= '
+                    <h3>TAXATION ~ INCLUDING DEFERRED TAXATION</h3>
                     <table>
                         <thead>
                             <tr>
@@ -6380,12 +5205,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -6393,8 +5217,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -6410,7 +5234,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-      
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6419,8 +5242,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : TRANSACTIONS WITH RELATED PARTIES',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -6445,11 +5269,8 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>TRANSACTIONS WITH RELATED PARTIES</h3>
+                    <h3>TRANSACTIONS WITH RELATED PARTIES</h3>
                     <p>NB: Tests covering directors’ remuneration, key management* compensation (KMC) and the identification of key management are noted on the R2 audit programme.</p>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -6460,12 +5281,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -6473,8 +5293,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -6490,7 +5310,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-         
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6499,8 +5318,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : PROVISIONS, CONTINGENCIES AND FINANCIAL COMMITMENTS',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -6525,11 +5345,8 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>PROVISIONS, CONTINGENCIES AND FINANCIAL COMMITMENTS</h3>
+                    <h3>PROVISIONS, CONTINGENCIES AND FINANCIAL COMMITMENTS</h3>
                     <p><i>Audit work on deferred taxation is included in the J audit programme. It should also be noted that deferred tax provisions cannot be discounted.</i></p>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -6540,12 +5357,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -6553,8 +5369,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -6570,7 +5386,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6579,8 +5394,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : EQUITY AND STATUTORY INFORMATION',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -6605,9 +5421,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>EQUITY AND STATUTORY INFORMATION</h3>';
-                $html .= '
+                    <h3>EQUITY AND STATUTORY INFORMATION</h3>
                     <table>
                         <thead>
                             <tr>
@@ -6618,12 +5432,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -6631,8 +5444,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -6648,7 +5461,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6657,8 +5469,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : OTHER AUDIT AREAS INCLUDING',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-                
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -6683,8 +5496,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>OTHER AUDIT AREAS INCLUDING:</h3>
+                    <h3>OTHER AUDIT AREAS INCLUDING:</h3>
                     <p><i>Audit work on deferred taxation is included in the J audit programme. It should also be noted that deferred tax provisions cannot be discounted.</i></p>
                     <ul>
                         <li><b>ACCOUNTING ESTIMATES</b></li>
@@ -6694,8 +5506,6 @@ $html = '';
                         <li><b>AUDIT EXPERTS</b></li>
                         <li><b>RELIANCE ON OTHER AUDITORS AND INTERNAL AUDITORS</b></li>
                     </ul>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -6706,12 +5516,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -6719,8 +5528,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -6736,7 +5545,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6745,8 +5553,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : REVENUE',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -6771,9 +5580,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>REVENUE</h3>';
-                $html .= '
+                    <h3>REVENUE</h3>
                     <table>
                         <thead>
                             <tr>
@@ -6784,12 +5591,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -6797,8 +5603,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -6814,7 +5620,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-      
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6823,8 +5628,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : IFRS 15 CONSIDERATIONS',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -6849,8 +5655,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>IFRS 15 CONSIDERATIONS</h3>
+                    <h3>IFRS 15 CONSIDERATIONS</h3>
                     <p><i>IFRS 15 ‘Revenue from Contracts with Customers’ became mandatory for accounting periods commencing on/after 1 January 2018. </i></p>
                     <p><i>The core principle of IFRS 15 is that “an entity shall recognise revenue to depict the transfer of promised goods or services to customers in an amount that reflects the consideration to which the entity expects to be entitled in exchange for those goods or services”. </i></p>
                     <p><i>The 5-step approach to recognising revenue is as follows:<br>
@@ -6860,8 +5665,6 @@ $html = '';
                     Step 4: Allocate the transaction price to the performance obligations in the contract.<br>
                     Step 5: Recognise revenue when (or as) the entity satisfies a performance obligation.</i></p>
                     <p><i>Auditors must read IFRS 15, the accompanying application guidance (Appendix B of IFRS 15) and the transition requirements (Appendix C of IFRS 15) to gain a full understanding of the accounting requirements. </i></p>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -6872,12 +5675,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -6885,13 +5687,12 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6900,8 +5701,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : DIRECT COSTS',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -6926,9 +5728,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>DIRECT COSTS</h3>';
-                $html .= '
+                    <h3>DIRECT COSTS</h3>
                     <table>
                         <thead>
                             <tr>
@@ -6939,12 +5739,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -6952,8 +5751,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -6969,7 +5768,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-  
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -6978,8 +5776,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : OTHER INCOME AND GAINS',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -7004,10 +5803,8 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>OTHER INCOME AND GAINS</h3>
-                    <p>This audit programme should only cover items recognised in profit or loss, items recognised in other comprehensive income should be addressed by the S Audit Programme.</p>';
-                $html .= '
+                    <h3>OTHER INCOME AND GAINS</h3>
+                    <p>This audit programme should only cover items recognised in profit or loss, items recognised in other comprehensive income should be addressed by the S Audit Programme.</p>
                     <table>
                         <thead>
                             <tr>
@@ -7018,12 +5815,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -7031,8 +5827,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -7048,7 +5844,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-     
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;  
@@ -7057,8 +5852,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : OTHER EXPENDITURE AND LOSSES',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -7083,9 +5879,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                    ';
-                    $html .= '<h3>OTHER EXPENDITURE AND LOSSES</h3>';
-                    $html .= '
+                    <h3>OTHER EXPENDITURE AND LOSSES</h3>
                     <table>
                         <thead>
                             <tr>
@@ -7096,12 +5890,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -7109,8 +5902,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -7126,7 +5919,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-         
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;  
@@ -7135,8 +5927,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : PAYROLL COSTS',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -7161,10 +5954,8 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>PAYROLL COSTS</h3>
-                    <p>Where the entity operates a defined benefit pension scheme ensure the S2/2 audit programme is completed and where employees receive share-based payments ensure the S2/3 audit programme is completed.</p>';
-                $html .= '
+                    <h3>PAYROLL COSTS</h3>
+                    <p>Where the entity operates a defined benefit pension scheme ensure the S2/2 audit programme is completed and where employees receive share-based payments ensure the S2/3 audit programme is completed.</p>
                     <table>
                         <thead>
                             <tr>
@@ -7175,12 +5966,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -7188,8 +5978,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -7205,7 +5995,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;  
@@ -7214,8 +6003,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : DISCLOSURE AUDIT PROGRAMME ~ Covering the Directors’ Report and Financial Statements',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -7240,10 +6030,8 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>DISCLOSURE AUDIT PROGRAMME ~ Covering the Directors’ Report and Financial Statements</h3>
-                    <p><i>Additional audit programmes will be needed where the entity operates a defined benefit pension, has share-based payments or hedge accounts. Complete Appendices 2.18.2, 2.18.3 and 2.18.4 as necessary.</i></p>';
-                $html .= '
+                    <h3>DISCLOSURE AUDIT PROGRAMME ~ Covering the Directors’ Report and Financial Statements</h3>
+                    <p><i>Additional audit programmes will be needed where the entity operates a defined benefit pension, has share-based payments or hedge accounts. Complete Appendices 2.18.2, 2.18.3 and 2.18.4 as necessary.</i></p>
                     <table>
                         <thead>
                             <tr>
@@ -7254,12 +6042,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -7267,13 +6054,12 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;  
@@ -7282,8 +6068,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : DEFINED BENEFIT PENSION SCHEMES',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -7308,11 +6095,9 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>DEFINED BENEFIT PENSION SCHEMES</h3>
+                    <h3>DEFINED BENEFIT PENSION SCHEMES</h3>
                     <p><i>Multi-employer schemes contributed to by a number of related or group entities must be split at entity level and it is not possible just to account for these schemes on consolidation.</i></p>
-                    <p><i>NB: The valuation of an actuarial liability cannot be undertaken by the auditor. It is unlikely that most audit firms could demonstrate competency in this area and unless the actuarial liability was immaterial it would also be a breach of the IESBA’s Code of Ethics. </i></p>';
-                $html .= '
+                    <p><i>NB: The valuation of an actuarial liability cannot be undertaken by the auditor. It is unlikely that most audit firms could demonstrate competency in this area and unless the actuarial liability was immaterial it would also be a breach of the IESBA’s Code of Ethics. </i></p>
                     <table>
                         <thead>
                             <tr>
@@ -7323,12 +6108,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -7336,13 +6120,12 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
- 
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break; 
@@ -7351,8 +6134,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SHARE-BASED PAYMENTS',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -7377,11 +6161,9 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>SHARE-BASED PAYMENTS</h3>
+                    <h3>SHARE-BASED PAYMENTS</h3>
                     <p><i>This work programme should be used when an entity has share-based payment transactions that fall within the scope of IFRS 2.  Typically share-based payments are offered to employees as an incentive to remain with the entity, but they can be offered to third parties in return for the provision of goods and services.  The corresponding disclosure requirements of IFRS 2 are set out in a Supplementary Checklist to the full Corporate Disclosure Checklist, see Appendix 3.15.3.</i></p>
-                    <p><i>NB: The valuation of share-based payments cannot be undertaken by the auditor. It is unlikely that most audit firms could demonstrate competency in this area and unless the fair value was immaterial it would also be a breach of the IESBA’s Code of Ethics. </i></p>';
-                $html .= '
+                    <p><i>NB: The valuation of share-based payments cannot be undertaken by the auditor. It is unlikely that most audit firms could demonstrate competency in this area and unless the fair value was immaterial it would also be a breach of the IESBA’s Code of Ethics. </i></p>
                     <table>
                         <thead>
                             <tr>
@@ -7392,12 +6174,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -7405,13 +6186,12 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-        
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;  
@@ -7420,8 +6200,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : HEDGE ACCOUNTING',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -7446,13 +6227,10 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>HEDGE ACCOUNTING</h3>
+                    <h3>HEDGE ACCOUNTING</h3>
                     <p><i>See Chapter 6 of IFRS 9 for detail. </i></p>
                     <p><i>On first time application, IFRS 9 permits an entity to choose as its accounting policy either to apply the hedge accounting requirements of IFRS 9 or to continue to apply the IAS 39 requirements.</i></p>
                     <p><i>This programme is to be used when the entity has entered into hedge relationships and is applying <b>hedge accounting</b>. The application of hedge accounting is <b>optional</b> – many clients take out financial instruments to “hedge” risks (such as forward foreign currency contracts to mitigate the risks arising from exposure to fluctuating exchange rates), but this does not necessitate the application of hedge accounting. Hedge accounting is a choice, and can only be applied when certain criteria have been met.</i></p>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -7463,12 +6241,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -7476,13 +6253,12 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-       
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break; 
@@ -7491,9 +6267,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : NOMINAL LEDGER',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-                
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -7518,9 +6294,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>NOMINAL LEDGER</h3>';
-                $html .= '
+                    <h3>NOMINAL LEDGER</h3>
                     <table>
                         <thead>
                             <tr>
@@ -7531,12 +6305,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -7544,13 +6317,12 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;   
@@ -7559,8 +6331,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : NEW CLIENT – PRIOR PERIOD AUDITED',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -7585,9 +6358,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>NEW CLIENT – PRIOR PERIOD AUDITED</h3>';
-                $html .= '
+                    <h3>NEW CLIENT – PRIOR PERIOD AUDITED</h3>
                     <table>
                         <thead>
                             <tr>
@@ -7598,12 +6369,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -7611,8 +6381,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -7628,7 +6398,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-    
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break; 
@@ -7637,8 +6406,9 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : PRIOR PERIOD UNAUDITED ~ NEW OR EXISTING CLIENT',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
+                $count = 0;
+                $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -7663,9 +6433,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>PRIOR PERIOD UNAUDITED ~ NEW OR EXISTING CLIENT</h3>';
-                $html .= '
+                    <h3>PRIOR PERIOD UNAUDITED ~ NEW OR EXISTING CLIENT</h3>
                     <table>
                         <thead>
                             <tr>
@@ -7676,12 +6444,11 @@ $html = '';
                                 <th class="cent bo" style="width: 12%;"><b>Initals/<br>Date</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $qdata = $rp->getvalues_m('c2',$c['code'],$c['code'],$c['c2tID'],$cID,$wpID);
-                        foreach($qdata as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($qdata as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -7689,8 +6456,8 @@ $html = '';
                                 <td class="cent bo" style="width: 12%;">'.$r['reference'].'</td>
                                 <td class="cent bo" style="width: 12%;">'.$r['initials'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
@@ -7706,7 +6473,6 @@ $html = '';
                     CL = Classification.<br>
                     </p>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break; 
@@ -7727,13 +6493,19 @@ $html = '';
     $html = '';
     foreach($c3 as $c){
         switch($c['code']){
+
             case '3.1 Aa1':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : AUDIT CONTROL RECORD',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
-                $html .= '
+                $html   .= $style;
+                $fl      = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $datapl  = $rp->getvalues_m('c3','planning',$c['code'],$c['c3tID'],$cID,$wpID);
+                $dataaf  = $rp->getvalues_m('c3','audit finalisation',$c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata2  = $rp->getvalues_s('c3','rc',$c['code'],$c['c3tID'],$cID,$wpID);
+                $rc      = json_decode($rdata2['question'], true);
+                $rdata   = $rp->getvalues_s('c3','section3',$c['code'],$c['c3tID'],$cID,$wpID);
+                $s3      = json_decode($rdata['question'], true);
+                $html   .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -7745,9 +6517,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>AUDIT CONTROL RECORD</h3>';
-                $html .= '
+                    <h3>AUDIT CONTROL RECORD</h3>
                     <table>
                         <thead>
                             <tr>
@@ -7757,28 +6527,23 @@ $html = '';
                                 <th class="cent bo" style="width: 18%;"><b>WP Ref / Comment</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $datapl     = $rp->getvalues_m('c3','planning',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($datapl as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    $count   = 0;
+                    foreach($datapl as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
                                 <td class="cent bo" style="width: 18%;">'.$r['extent'].'</td>
                                 <td class="cent bo" style="width: 18%;">'.$r['reference'].'</td>
                             </tr>
-                            ';
+                        ';
                     }
                 $html .= '
                         </tbody>
                     </table>
-                ';
-
-                $rdata2     = $rp->getvalues_s('c3','rc',$c['code'],$c['c3tID'],$cID,$wpID);
-                $rc         = json_decode($rdata2['question'], true);
-                $html .= '
                     <p><b>1.  Completion by most senior person completing the fieldwork</b></p>
                     <p>I have completed my work as summarised above, and consider that the working papers adequately support our proposed opinion, except for the outstanding points listed on </p>
                     <p>-'.$rc['awp4'].'</p>
@@ -7812,7 +6577,7 @@ $html = '';
                                 if($rc['awp3'] != ''){
                                     $html .= '<li>'.$rc['awp3'].'</li>';
                                 }
-                    $html .= '
+                $html .= '
                             </ul>
                         </li>
                         <li>the financial statements / set of financial statements sent to the directors and consider that they support the proposed opinion to be given except for the matters noted on '.$rc['awp7'].' and the audit has been carried out in accordance with International Standards on Auditing.</li>
@@ -7849,9 +6614,8 @@ $html = '';
                         if($rc['rceap10'] != ''){
                             $html .= '<li>'.$rc['rceap10'].'</li>';
                         }
-                    $html .= '
+                $html .= '
                     </ul>
-                    
                     <table>
                         <tr>
                             <td style="width: 50%;">Signed:	</td>
@@ -7864,8 +6628,6 @@ $html = '';
                     <p>Date required by client: '.date('F d, Y', strtotime($rc['datereq'])) .'</p>
                     <p>Number of copies required: '.$rc['numcop'].'</p>
                     <p><b>4.	Pre-sign off completion by Audit Engagement Partner</b></p>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -7875,9 +6637,9 @@ $html = '';
                                 <th class="cent bo" style="width: 18%;"><b>WP Ref / Comment</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
+                        <tbody>
+                ';
                     $count = 0;
-                    $dataaf     = $rp->getvalues_m('c3','audit finalisation',$c['code'],$c['c3tID'],$cID,$wpID);
                     foreach($dataaf as $r){
                         $count ++;
                         $html .= '
@@ -7892,11 +6654,6 @@ $html = '';
                 $html .= '
                         </tbody>
                     </table>
-                ';
-                $rdata      = $rp->getvalues_s('c3','section3',$c['code'],$c['c3tID'],$cID,$wpID);
-                $s3         = json_decode($rdata['question'], true);
-               
-                $html .= '
                     <p><b>5.  Signed Financial Statements and Audit Opinion</b></p>
                     <p>Have all outstanding matters noted above, including confirming that the financial statements do not contain material errors or misstatements, been cleared to the satisfaction of the originator (and crossed through to demonstrate this)?</p>
                     <p>-'.$s3['a1'].'</p>
@@ -7922,7 +6679,6 @@ $html = '';
                 $html .= '
                     </ul>
                     <p>I approve the signing of an '.$s3['a9'].' audit opinion.</p>';
-                
                     if($s3['a10'] != ''){
                         $html .= '<p>'.$s3['a10'].'</p>';
                         $html .= '<p>-'.$s3['a10d'].'</p>';
@@ -7934,7 +6690,6 @@ $html = '';
                     if($s3['a12'] != ''){
                         $html .= '<p>'.$s3['a12'].'</p>';
                     }
-                
                 $html .= '
                     <table>
                         <tr>
@@ -7955,7 +6710,6 @@ $html = '';
                     if($s3['a16'] != ''){
                         $html .= '<p>'.$s3['a16'].'</p>';
                     }
-                
                 $html .='
                     <table>
                         <tr>
@@ -8027,8 +6781,7 @@ $html = '';
                             </tr>
                         </tbody>
                     </table>
-                    ';
-
+                ';
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -8036,9 +6789,10 @@ $html = '';
             case '3.2 Aa2':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : POINTS FORWARD',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
+                $html  .= $style;
+                $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $rdata  = $rp->getvalues_s('c3','aa2',$c['code'],$c['c3tID'],$cID,$wpID);
+                $aa2    = json_decode($rdata['question'], true);
                 $html .= '
                     <table>
                         <tr>
@@ -8063,16 +6817,11 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>POINTS FORWARD</h3>
+                    <h3>POINTS FORWARD</h3>
                     <p><b>Objective: </b> <br>
                         To provide a summary of the key points arising from the audit, where it is possible for improvements to the efficiency of the audit to be made, and should include both financial and non-financial matters. <br><i>The use of this form is optional.</i></p>
                     <p><b>Recording:</b> <br>This form should be completed during the audit, and should cover key matters which are of relevance to next year’s assignment.</p>
                     <p>If information has been included elsewhere on the audit file (for example, Subsequent Events Review, or the ISA Compliance Critical Issues Memorandum), it does not need to be repeated.  Where appropriate, details of suggested improvements should be outlined.</p>
-                ';
-                $rdata  = $rp->getvalues_s('c3','aa2',$c['code'],$c['c3tID'],$cID,$wpID);
-                $aa2    = json_decode($rdata['question'], true);
-                $html .= '
                     <table border="1">
                         <tbody>
                             <tr>
@@ -8114,12 +6863,10 @@ $html = '';
                     </table>
                     <br><br>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
                 $html .= '
                     <table border="1">
                         <tbody>
@@ -8151,7 +6898,6 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -8160,8 +6906,11 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUBSEQUENT EVENTS REVIEW',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $cr    = $rp->getvalues_m('c3','cr',$c['code'],$c['c3tID'],$cID,$wpID);
+                $dc    = $rp->getvalues_m('c3','dc',$c['code'],$c['c3tID'],$cID,$wpID);
+                $faf   = $rp->getvalues_m('c3','faf',$c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata = $rp->getvalues_s('c3','air',$c['code'],$c['c3tID'],$cID,$wpID);
+                $air   = json_decode($rdata['question'], true);
                 $html .= '
                     <table>
                         <tr>
@@ -8174,13 +6923,10 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>SUBSEQUENT EVENTS REVIEW</h3>
+                    <h3>SUBSEQUENT EVENTS REVIEW</h3>
                     <p><b>Objective: </b> <br>
                     To determine whether any material adjustment or disclosure is required to the financial statements as a result of events occurring between the end of the accounting period and the date of signing the audit report and to ensure the requirements of ISA 560 regarding subsequent events are met.</p>
                     <p class="bo"><b>NB: An adjusting event is an event that provides evidence of a condition that existed at the reporting date.  A non-adjusting event is an event that arose solely after the reporting date, however, its disclosure is necessary to give a true and fair view.</b></p>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -8189,24 +6935,22 @@ $html = '';
                                 <th class="cent bo" style="width: 47%;"><b>Working Paper Reference or Comment</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $cr     =  $rp->getvalues_m('c3','cr',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($cr as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    $count = 0;
+                    foreach($cr as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 47%;">'.$r['question'].'<br></td>
                                 <td class="cent bo" style="width: 47%;">'.$r['reference'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -8215,28 +6959,24 @@ $html = '';
                                 <th class="cent bo" style="width: 47%;"><b>Working Paper Reference or Comment</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $dc     = $rp->getvalues_m('c3','dc',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($dc as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    $count = 0;
+                    foreach($dc as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 47%;">'.$r['question'].'<br></td>
                                 <td class="cent bo" style="width: 47%;">'.$r['reference'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
-                ';
-                $html .= '
                     <p><b>Finalisation of the Audit File</b></p>
                     <p>This section should also detail any other work done on subsequent events not covered by the questions below.</p>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -8246,33 +6986,28 @@ $html = '';
                                 <th class="cent bo" style="width: 18%;"><b>WP Ref / Comment</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $faf    = $rp->getvalues_m('c3','faf',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($faf as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    $count = 0;
+                    foreach($faf as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
                                 <td class="cent bo" style="width: 18%;">'.$r['extent'].'</td>
                                 <td class="cent bo" style="width: 18%;">'.$r['reference'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-                    
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-                
-                $rdata  = $rp->getvalues_s('c3','air',$c['code'],$c['c3tID'],$cID,$wpID);
-                $air    = json_decode($rdata['question'], true);
-
                 $html .= '
                     <h3>Initial Conclusion:</h3>
                     <p>Having completed the above procedures:</p>
@@ -8290,7 +7025,6 @@ $html = '';
                         </tr>
                     </table>
                     <h3>Final Conclusion:</h3>
-                    
                     <p>The initial review was conducted sufficiently close to the proposed date of the audit report not to require the work to be revised.</p>
                     <p>The initial review has been updated to '.$air['tird'].'. The work performed is outlined below:</p>
                     <table>
@@ -8323,7 +7057,6 @@ $html = '';
                         <li><i>Taking appropriate action.</i></li>
                     </ul>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -8331,8 +7064,13 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : GOING CONCERN CHECKLIST',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $bp1   = $rp->getvalues_m('c3','p1',$c['code'],$c['c3tID'],$cID,$wpID);
+                $bp2   = $rp->getvalues_m('c3','p2',$c['code'],$c['c3tID'],$cID,$wpID);
+                $bp3a  = $rp->getvalues_m('c3','p3a',$c['code'],$c['c3tID'],$cID,$wpID);
+                $bp3b  = $rp->getvalues_m('c3','p3b',$c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata = $rp->getvalues_s('c3','p4',$c['code'],$c['c3tID'],$cID,$wpID);
+                $bp4   = json_decode($rdata['question'], true);
                 $html .= '
                     <table>
                         <tr>
@@ -8357,13 +7095,10 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '<h3>GOING CONCERN CHECKLIST</h3>
+                    <h3>GOING CONCERN CHECKLIST</h3>
                     <p><b>Objective: </b> <br>
                     To ensure that the fundamental concept of going concern is fully considered and that the requirements of ISA 570 are met.</p>
                     <p class="bo"><b>Overview:  Under the going concern assumption, an entity is viewed as continuing in business for the foreseeable future.  Financial statements are prepared on a going concern basis, unless management either intends to liquidate the entity or to cease to operate, or has no realistic alternative to do so (in these circumstances the financial statements are prepared on a break-up basis).</b></p>
-                ';
-                $html .= '
                     <br><br><br>
                     <table>
                         <thead>
@@ -8373,39 +7108,12 @@ $html = '';
                                 <th class="cent" style="width: 29%;"><b></b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $bp1    = $rp->getvalues_m('c3','p1',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($bp1 as $r){
-                            $count ++;
-                            $html .= '
-                            <tr>
-                                <td style="width: 6%;">'.$count.'.<br></td>
-                                <td style="width: 65%;">'.$r['question'].'</td>
-                                <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
-                            </tr>
-                            ';
-                        }
-                $html .= '
-                        </tbody>
-                    </table>
+                        <tbody>
                 ';
-                $html .= '
-                    <br><br>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="width: 6%;"></th>
-                                <th style="width: 65%;"><b>Part 2 – The Auditor’s Assessment ~ General Considerations:</b></th>
-                                <th class="cent bo" style="width: 29%;"><b>Comments / Ref</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                        $count = 0;
-                        $bp2    = $rp->getvalues_m('c3','p2',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($bp2 as $r){
-                            $count ++;
-                            $html .= '
+                    $count = 0;
+                    foreach($bp1 as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 65%;">'.$r['question'].'</td>
@@ -8416,8 +7124,31 @@ $html = '';
                 $html .= '
                         </tbody>
                     </table>
+                    <br><br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;"></th>
+                                <th style="width: 65%;"><b>Part 2 – The Auditor’s Assessment ~ General Considerations:</b></th>
+                                <th class="cent bo" style="width: 29%;"><b>Comments / Ref</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
                 ';
+                    $count = 0;
+                    foreach($bp2 as $r){
+                        $count ++;
+                        $html .= '
+                            <tr>
+                                <td style="width: 6%;">'.$count.'.<br></td>
+                                <td style="width: 65%;">'.$r['question'].'</td>
+                                <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
+                            </tr>
+                        ';
+                    }
                 $html .= '
+                        </tbody>
+                    </table>
                     <br><br>
                     <p><b>Part 3a – The Auditor’s Assessment ~ Specific Concerns: <br><i>Completion of this section is optional unless potential issues regarding the going concern presumption have been identified in Parts 1 or 2 above. </i></b></p>
                     <table>
@@ -8428,12 +7159,12 @@ $html = '';
                                 <th class="cent bo" style="width: 29%;"><b>Comments / Ref</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $bp3a   = $rp->getvalues_m('c3','p3a',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($bp3a as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    $count = 0;
+                    foreach($bp3a as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 65%;">'.$r['question'].'</td>
@@ -8444,8 +7175,6 @@ $html = '';
                 $html .= '
                         </tbody>
                     </table>
-                ';
-                $html .= '
                     <br><br>
                     <p><b>Part 3b – The Auditor’s Assessment ~ Disclosure considerations:</b></p>
                     <table>
@@ -8456,12 +7185,12 @@ $html = '';
                                 <th class="cent bo" style="width: 29%;"><b>Comments / Ref</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        $bp3b   = $rp->getvalues_m('c3','p3b',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($bp3b as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    $count = 0;
+                    foreach($bp3b as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 65%;">'.$r['question'].'</td>
@@ -8473,14 +7202,10 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
-                $rdata  =  $rp->getvalues_s('c3','p4',$c['code'],$c['c3tID'],$cID,$wpID);
-                $bp4    = json_decode($rdata['question'], true);
                 $html .= '
                     <p><b>Part 4 – Conclusion:</b></p>
                     <p>Where potential problems with the going concern presumption have been identified, summarise the issue and resolution:</p>
@@ -8533,7 +7258,6 @@ $html = '';
                     </table>
                     <p><i>There is more guidance on the impact on the financial statements and audit report of going concern issues in Chapter 3, paragraph 5.4 of the Manual, as well as in ISA 570.</i></p>
                 ';
-                
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -8541,11 +7265,10 @@ $html = '';
             case '3.5 Aa4':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUGGESTED LETTER OF REPRESENTATION',1,1);
-                $html .= $style;
-                $rdata  =  $rp->getvalues_s('c3','aa4',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html  .= $style;
+                $rdata  = $rp->getvalues_s('c3','aa4',$c['code'],$c['c3tID'],$cID,$wpID);
                 $aa4    = json_decode($rdata['question'], true);
-                $html .= $c['code'];
-                $html .= '
+                $html  .= '
                     <p class="cent"><b>SUGGESTED LETTER OF REPRESENTATION</b> <br><br><br></p>
                     <table>
                         <tr>
@@ -8603,40 +7326,42 @@ $html = '';
                             <tr>
                                 <td style="width: 7%;">9.</td>
                                 <td style="width: 93%;">We confirm we have no plans or intentions that may materially affect the carrying value or classification of any assets and liabilities reflected in the financial statements. <br></td>
-                            </tr>';
-
-                            if($aa4['num10yes'] != ''){
-                                $html .= '
-                                <tr>
-                                    <td style="width: 7%;">10.</td>
-                                    <td style="width: 93%;">
-                                    
-                                    With regard to the defined benefit pension plan, we are satisfied that:
-                                        <ul>
-                                            <li>the actuarial assumptions underlying the valuation are consistent with our knowledge of the business;</li>
-                                            <li>all significant retirement benefits have been identified and properly accounted for; and</li>
-                                            <li>all settlements and curtailments have been identified and properly accounted for.</li>
-                                        </ul>
-                                        <br>
-                                    </td>
-                                </tr>';
-                            }
-                            if($aa4['num11yes'] != ''){
-                                $html .= '
-                                <tr>
-                                    <td style="width: 7%;">11.</td>
-                                    <td style="width: 93%;">'.$aa4['num11'].'<br></td>
-                                </tr>';
-                            }
-
-                            if($aa4['num12yes'] != ''){
-                                $html .= '
-                                <tr>
-                                    <td style="width: 7%;">12.</td>
-                                    <td style="width: 93%;">'.$aa4['num12'].'<br></td>
-                                </tr>';
-                            }
-                            $html .= '
+                            </tr>
+                ';
+                    if($aa4['num10yes'] != ''){
+                        $html .= '
+                            <tr>
+                                <td style="width: 7%;">10.</td>
+                                <td style="width: 93%;">
+                                
+                                With regard to the defined benefit pension plan, we are satisfied that:
+                                    <ul>
+                                        <li>the actuarial assumptions underlying the valuation are consistent with our knowledge of the business;</li>
+                                        <li>all significant retirement benefits have been identified and properly accounted for; and</li>
+                                        <li>all settlements and curtailments have been identified and properly accounted for.</li>
+                                    </ul>
+                                    <br>
+                                </td>
+                            </tr>
+                        ';
+                    }
+                    if($aa4['num11yes'] != ''){
+                        $html .= '
+                            <tr>
+                                <td style="width: 7%;">11.</td>
+                                <td style="width: 93%;">'.$aa4['num11'].'<br></td>
+                            </tr>
+                        ';
+                    }
+                    if($aa4['num12yes'] != ''){
+                        $html .= '
+                            <tr>
+                                <td style="width: 7%;">12.</td>
+                                <td style="width: 93%;">'.$aa4['num12'].'<br></td>
+                            </tr>
+                        ';
+                    }
+                    $html .= '
                             <tr>
                                 <td style="width: 7%;">13.</td>
                                 <td style="width: 93%;"><b>All the accounting records have been made available to you for the purpose of your audit and all the transactions undertaken by the company have been properly reflected and recorded in the accounting records.  We have provided to you all other information requested and given unrestricted access to persons within the entity from whom you have deemed it necessary to speak to.  All other records and relevant information, including minutes of all management and shareholders\' meetings, have been made available to you.</b><br></td>
@@ -8672,51 +7397,51 @@ $html = '';
                             <tr>
                                 <td style="width: 7%;">21.</td>
                                 <td style="width: 93%;"><b>We are unaware of any breaches or possible breaches of statute, regulations, contracts,</b> agreements or the company\'s constitution <b>which might result in the company suffering significant penalties or other loss.</b>  No allegations of such irregularities or breaches have come to our notice.<br></td>
-                            </tr>';
+                            </tr>
+                    ';
+                    if($aa4['num22yes1'] != ''){
+                        $html .= '
+                            <tr>
+                                <td style="width: 7%;">22.</td>
+                                <td style="width: 93%;"><b>We confirm that we have been notified by you that there are no matters which you are required to raise with us to comply with your profession’s ethical guidance which are in addition to the matters included in your planning letter to us dated '.date('F d, Y', strtotime($aa4['num221'])).'.</b> <br></td>
+                            </tr>
+                        ';
+                    }
+                    if($aa4['num22yes2'] != ''){
+                        if($aa4['num222'] != ''){$a = $aa4['num222'];}else{$a = '';}
+                        if($aa4['num223'] != ''){$b = $aa4['num223'];}else{$b = '';}
+                        if($aa4['num224'] != ''){$c = $aa4['num224'];}else{$c = '';}
+                        $html .= '
+                            <tr>
+                                <td style="width: 7%;">22.</td>
+                                <td style="width: 93%;"><b>We confirm that you have notified to us the following matters, which are additional to the matters raised in your planning letter which you are required to raise with us to comply with your profession’s ethical guidance:</b>
+                                    <ul>
+                                        <li><b>'.$a.'</b></li>
+                                        <li><b>'.$b.'; and</b></li>
+                                        <li><b>'.$c.'.</b></li>
+                                    </ul><br>
+                                </td>
+                            </tr>
+                        ';
+                    }
 
-                            if($aa4['num22yes1'] != ''){
-                                $html .= '
-                                <tr>
-                                    <td style="width: 7%;">22.</td>
-                                    <td style="width: 93%;"><b>We confirm that we have been notified by you that there are no matters which you are required to raise with us to comply with your profession’s ethical guidance which are in addition to the matters included in your planning letter to us dated '.date('F d, Y', strtotime($aa4['num221'])).'.</b> <br></td>
-                                </tr>
-                                ';
-                            }
-
-                            if($aa4['num22yes2'] != ''){
-                                if($aa4['num222'] != ''){$a = $aa4['num222'];}else{$a = '';}
-                                if($aa4['num223'] != ''){$b = $aa4['num223'];}else{$b = '';}
-                                if($aa4['num224'] != ''){$c = $aa4['num224'];}else{$c = '';}
-                                $html .= '
-                                <tr>
-                                    <td style="width: 7%;">22.</td>
-                                    <td style="width: 93%;"><b>We confirm that you have notified to us the following matters, which are additional to the matters raised in your planning letter which you are required to raise with us to comply with your profession’s ethical guidance:</b>
-                                        <ul>
-                                            <li><b>'.$a.'</b></li>
-                                            <li><b>'.$b.'; and</b></li>
-                                            <li><b>'.$c.'.</b></li>
-                                        </ul><br>
-                                    </td>
-                                </tr>
-                                ';
-                            }
-
-                            if($aa4['num23yes1'] != ''){
-                                $html .= '
-                                <tr>
-                                    <td style="width: 7%;">23.</td>
-                                    <td style="width: 93%;"><b>We confirm receipt of your planning letter dated '.date('F d, Y', strtotime($aa4['num23d1'])).' and </b> we confirm receipt of your management letter dated '.date('F d, Y', strtotime($aa4['num23d2'])).'.<br></td>
-                                </tr>';
-                            }
-                            if($aa4['num23yes2'] != ''){
-                                $html .= '
-                                <tr>
-                                    <td style="width: 7%;">23.</td>
-                                    <td style="width: 93%;"><b>We confirm receipt of your planning letter dated '.date('F d, Y', strtotime($aa4['num23d'])).' and</b> we confirm that we have been notified by you that there are no matters of governance interest (which include deficiencies in internal control, comments regarding accounting policies, estimation techniques and financial statement disclosure, and details of significant difficulties during the audit fieldwork) which you wish to draw to our attention.<br></td>
-                                </tr>';
-                            }
-
-                            $html .='
+                    if($aa4['num23yes1'] != ''){
+                        $html .= '
+                            <tr>
+                                <td style="width: 7%;">23.</td>
+                                <td style="width: 93%;"><b>We confirm receipt of your planning letter dated '.date('F d, Y', strtotime($aa4['num23d1'])).' and </b> we confirm receipt of your management letter dated '.date('F d, Y', strtotime($aa4['num23d2'])).'.<br></td>
+                            </tr>
+                        ';
+                    }
+                    if($aa4['num23yes2'] != ''){
+                        $html .= '
+                            <tr>
+                                <td style="width: 7%;">23.</td>
+                                <td style="width: 93%;"><b>We confirm receipt of your planning letter dated '.date('F d, Y', strtotime($aa4['num23d'])).' and</b> we confirm that we have been notified by you that there are no matters of governance interest (which include deficiencies in internal control, comments regarding accounting policies, estimation techniques and financial statement disclosure, and details of significant difficulties during the audit fieldwork) which you wish to draw to our attention.<br></td>
+                            </tr>
+                        ';
+                    }
+                $html .='
                         </tbody>
                     </table>
                     <p>Yours faithfully <br><br></p>
@@ -8724,7 +7449,6 @@ $html = '';
                     <p><i>The following signature is only required where management differ from those charged with governance, as were identified on the Regulation of Auditor’s Checklist.  (Separate letters may be considered appropriate if there are representations which those charged with governance wish to remain confidential from management):</i> <br><br></p>
                     <p>[Name] <br>Signed on behalf of management</p>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -8732,12 +7456,10 @@ $html = '';
             case '3.6.1 Aa5a':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : MANAGEMENT LETTER',1,1);
-                $html .= $style;
-                $html .= $c['code'];
+                $html   .= $style;
                 $rdata   = $rp->getvalues_s('c3','aa5a',$c['code'],$c['c3tID'],$cID,$wpID);
                 $aa5a    = json_decode($rdata['question'], true);
-
-                $html .= '
+                $html   .= '
                     <p><b>Private and Confidential</b> <br></p>
                     <table>
                         <tr>
@@ -8758,16 +7480,15 @@ $html = '';
                     <p><b>Introduction</b></p>
                     <p>Following our recent '.$aa5a['ml1'].' audit in connection with the financial statements of '.$cl['clientname'].' for the '.$cl['financial_year'].' ending '.date('F d, Y', strtotime($aa5a['ml1d'])).', we are writing to bring to your attention certain matters that arose during the course of our work, together with suggestions for improvements of controls and procedures operated by the company.  We hope you will find our comments helpful and constructive.</p>
                     <p>Our work during the audit included an examination of some of the company’s transactions, procedures and controls with a view to expressing an opinion on the financial statements for the '.$cl['financial_year'].'.  This work was not directed primarily towards discovering deficiencies in, or the operating effectiveness of your internal controls other than those that would affect our audit opinion or towards the detection of fraud.  We have included in this letter only matters that have come to our attention as a result of our normal audit procedures and consequently our comments should not be regarded as a comprehensive record of all deficiencies in internal control that may exist, of all improvements that might be made, or of the operating effectiveness of your internal controls.</p>';
-                
                     if($aa5a['ml2'] != ''){
                         $html .= '<p>'.$aa5a['ml2'].'</p>';
                     }
                 
-                    $html .='
+                $html .='
                     <p>Our work also included a review of the adequacy of disclosures in the financial statements and consideration of the appropriateness of the accounting policies and estimation techniques adopted by the company. This review identified no significant matters, which we believe are necessary to draw to your attention.</p>
                     <p><b>Summary</b></p>
-                    <p>The important matters that arose as a result of our work are set out in detail in the attached memorandum.</p>';
-                
+                    <p>The important matters that arose as a result of our work are set out in detail in the attached memorandum.</p>
+                ';
                     if($aa5a['ml3'] != ''){
                         $html .= '<p>'.$aa5a['ml3'].'</p>';
                     }
@@ -8788,8 +7509,7 @@ $html = '';
                     if($aa5a['ml7'] != ''){
                         $html .= '<p>We wrote to you previously on '.date('F d, Y', strtotime($aa5a['ml7d'])).' following our '.$aa5a['ml8'].' audit for the [year/period] ending [date]. We are pleased to record that many of the matters raised have been dealt with satisfactorily.</p>';
                     }
-                
-                    $html .='
+                $html .='
                     <p><b>Conclusion</b></p>
                     <p>If you require any further information or assistance, we shall be very pleased to help you.</p>
                     <p>We would appreciate an acknowledgement of the receipt of this letter and look forward to receiving your comments when you have had the opportunity of considering the matters that we have raised. </p>
@@ -8799,9 +7519,7 @@ $html = '';
                     <p>……………………………………………………… <br>
                         Signed for and on behalf of '.$firm.'
                     </p>
-                
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -8810,8 +7528,8 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : MANAGEMENT LETTER WORKSHEET',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $fl    = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $aa5b  =  $rp->getvalues_m('c3','aa5b',$c['code'],$c['c3tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -8836,8 +7554,6 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <h3>MANAGEMENT LETTER WORKSHEET [INTERIM / FINAL AUDIT]</h3>
                     <table border="1" class="cent">
                         <thead>
@@ -8851,10 +7567,9 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>
-                        ';
-                        $aa5b =  $rp->getvalues_m('c3','aa5b',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($aa5b as $r){
-                            $html .= '
+                ';
+                    foreach($aa5b as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 7%;"><br><br>'.$r['reference'].'<br></td>
                                 <td style="width: 18.6%;"><br><br>'.$r['issue'].'<br></td>
@@ -8862,15 +7577,15 @@ $html = '';
                                 <td style="width: 18.6%;"><br><br>'.$r['recommendation'].'<br></td>
                                 <td style="width: 18.6%;"><br><br>'.$r['yesno'].'<br></td>
                                 <td style="width: 18.6%;"><br><br>'.$r['result'].'<br></td>
-                            </tr>';
-                        }
+                            </tr>
+                        ';
+                    }
                 $html .='
                         </tbody>
                     </table>
                     <p>This should cover weaknesses in the accounting system and control environment plus comments on the qualitative aspects of the financial statements and the appropriateness of the accounting policies and estimation techniques adopted by the client.</p>
                     <p>All significant issues should be included in the management letter.  For other issues verbal communication is adequate.  If there are no significant issues then this can be confirmed in a “voluntary” management letter or alternatively, the letter of representation can note that a management letter is not necessary ~ note, however, that this is likely to be a rare occurrence when applying IFRS.</p>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -8878,10 +7593,18 @@ $html = '';
             case '3.7 Aa7':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : ISA COMPLIANCE CRITICAL ISSUES MEMORANDUM',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
-                $html .= '
+                $html   .= $style;
+                $fl      = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $aepapp  = $rp->getvalues_s('c3','aepapp',$c['code'],$c['c3tID'],$cID,$wpID);
+                $aa7     = $rp->getvalues_m('c3','isa315',$c['code'],$c['c3tID'],$cID,$wpID);
+                $cons    = $rp->getvalues_m('c3','consultation',$c['code'],$c['c3tID'],$cID,$wpID);
+                $inc     = $rp->getvalues_m('c3','inconsistencies',$c['code'],$c['c3tID'],$cID,$wpID);
+                $ref     = $rp->getvalues_m('c3','refusal',$c['code'],$c['c3tID'],$cID,$wpID);
+                $dep     = $rp->getvalues_m('c3','departures',$c['code'],$c['c3tID'],$cID,$wpID);
+                $oth     = $rp->getvalues_m('c3','other',$c['code'],$c['c3tID'],$cID,$wpID);
+                $rdata   = $rp->getvalues_s('c3','aep',$c['code'],$c['c3tID'],$cID,$wpID);
+                $aep     = json_decode($rdata['question'], true);
+                $html   .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -8905,9 +7628,6 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $aepapp = $rp->getvalues_s('c3','aepapp',$c['code'],$c['c3tID'],$cID,$wpID);
-                $html .= '
                     <h3>ISA COMPLIANCE CRITICAL ISSUES MEMORANDUM</h3>
                     <p><b>Objective:</b></p>
                     <p>To ensure compliance with ISA by providing a summary of critical audit issues and how these have been resolved. When read in conjunction with final analytical procedures, completion of this memorandum should provide the Audit Engagement Partner with an executive summary of the key points arising from the assignment.</p>
@@ -8934,17 +7654,13 @@ $html = '';
                         </tr>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
                 $html .= '
                     <p><b>I have considered the requirements of ISA 315 and specifically, the definition of a significant risk being, “an identified and assessed risk of material misstatement that, in the auditor’s judgment, requires special audit consideration”.</b></p>
                     <p><b>A summary of significant risks identified, the outcome from audit tests performed on those risks, and the conclusions reached (mandatory section):</b> <br> <i>(Insert additional rows as required)</i></p>
-                ';
-                $html .= '
                     <h3>MANAGEMENT LETTER WORKSHEET [INTERIM / FINAL AUDIT]</h3>
                     <table border="1" class="cent">
                         <thead>
@@ -8956,22 +7672,22 @@ $html = '';
                                 <th style="width: 20%;"><b>Conclusions</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $aa7    =  $rp->getvalues_m('c3','isa315',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($aa7 as $r){
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($aa7 as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 15%;"><br><br>'.$r['reference'].'<br></td>
                                 <td style="width: 30%;"><br><br>'.$r['issue'].'<br></td>
                                 <td style="width: 10%;"><br><br>'.$r['comment'].'<br></td>
                                 <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
                                 <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
-                            </tr>';
+                            </tr>
+                        ';
                     }
                 $html .='
                         </tbody>
-                    </table>';
-                $html .= '
+                    </table>
                     <p>I consider that significant risks have been identified and adequately addressed by this assignment, and have been appropriately communicated to the client in the Planning Letter (or, for significant risks identified at a later stage of the assignment, via alternative, appropriate documentation).</p>
                     <table>
                         <tr>
@@ -8980,12 +7696,10 @@ $html = '';
                         </tr>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
                 $html .= '
                     <table border="1" >
                         <thead>
@@ -9000,78 +7714,77 @@ $html = '';
                         <tbody>
                             <tr>
                                 <td colspan="5"><b>Areas where consultation has been undertaken (mandatory section):</b></td>
-                            </tr>';
-                    $cons   =  $rp->getvalues_m('c3','consultation',$c['code'],$c['c3tID'],$cID,$wpID);
+                            </tr>
+                ';
                     foreach($cons as $r){
                         $html .= '
-                        <tr>
-                            <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
-                        </tr>';
+                            <tr>
+                                <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+                            </tr>
+                        ';
                     }
                 $html .= '
                     <tr>
                         <td colspan="5"><b>Inconsistencies noted between information provided by the client and other findings of the audit team (mandatory section):</b></td>
-                    </tr>';
-                    $inc    =  $rp->getvalues_m('c3','inconsistencies',$c['code'],$c['c3tID'],$cID,$wpID);
+                    </tr>
+                ';
                     foreach($inc as $r){
                         $html .= '
-                        <tr>
-                            <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
-                        </tr>';
+                            <tr>
+                                <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+                            </tr>
+                        ';
                     }
                 $html .= '
                     <tr>
                         <td colspan="5"><b>Areas where management refusal to allow the audit team to send a confirmation request has led to alternative procedures being performed (mandatory section):</b></td>
                     </tr>
                 ';
-                    $ref    =  $rp->getvalues_m('c3','refusal',$c['code'],$c['c3tID'],$cID,$wpID);
                     foreach($ref as $r){
                         $html .= '
-                        <tr>
-                            <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
-                        </tr>';
+                            <tr>
+                                <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+                            </tr>
+                        ';
                     }
                 $html .= '
                     <tr>
                         <td colspan="5"><b>Departures from requirements of ISA, reasons for the departure and alternative audit procedures performed (mandatory section):</b></td>
                     </tr>
                 ';
-                    $dep    =  $rp->getvalues_m('c3','departures',$c['code'],$c['c3tID'],$cID,$wpID);
                     foreach($dep as $r){
                         $html .= '
-                        <tr>
-                            <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
-                            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
-                        </tr>';
+                            <tr>
+                                <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
+                                <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+                            </tr>
+                        ';
                     }
                 $html .='
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
-                $html .= '<p><b>Other Issues (including any key outstanding audit matters):</b></p>';
-
                 $html .= '
+                    <p><b>Other Issues (including any key outstanding audit matters):</b></p>
                     <table border="1" >
                         <thead>
                             <tr>
@@ -9083,26 +7796,21 @@ $html = '';
                             </tr>
                         </thead>
                         <tbody>
-                        ';
-                        $oth    =  $rp->getvalues_m('c3','other',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($oth as $r){
-                            $html .= '
+                ';
+                    foreach($oth as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
                                 <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
                                 <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
                                 <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
                                 <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
-                            </tr>';
-                        }
+                            </tr>
+                        ';
+                    }
                 $html .='
                         </tbody>
                     </table>
-                ';
-
-                $rdata  = $rp->getvalues_s('c3','aep',$c['code'],$c['c3tID'],$cID,$wpID);
-                $aep    = json_decode($rdata['question'], true);
-                $html .= '
                     <p><b>Changes to, or new accounting policies and estimation techniques in the period:</b></p>
                     <table border="1">
                         <thead>
@@ -9196,7 +7904,6 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-                                
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -9204,9 +7911,10 @@ $html = '';
             case '3.8 Aa10':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : FINAL ANALYTICAL PROCEDURES',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
+                $html  .= $style;
+                $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $rdata  =  $rp->getvalues_s('c3','aa10',$c['code'],$c['c3tID'],$cID,$wpID);
+                $aa10   = json_decode($rdata['question'], true);
                 $html .= '
                     <table>
                         <tr>
@@ -9231,19 +7939,11 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <h3>FINAL ANALYTICAL PROCEDURES</h3>
                     <p><b>Objective:</b> <br> To carry out a review of the financial statements such that the results obtained, together with the conclusions drawn from other audit tests, give a basis for the opinion on the financial statements.</p>
                     <p><b>Recording:</b> <br> Review key ratios of most significance to the entity. Any large or unexpected movements in these ratios should be explained. This section should also contain details of significant or unexpected changes in major Statement of Financial Position and Performance Statement items.</p>
                     <p><b>Comparisons should be made of current period figures with prior period and / or budgeted figures.  Explanations obtained for significant or unexpected changes in key business ratios and items in the financial statements must be corroborated by other evidence. A conclusion should then be reached. </b></p>
                     <p><b><i>Undertaking analytical procedures at finalisation is mandatory; however, the use of this form is optional.</i></b></p>
-                ';
-
-                $rdata =  $rp->getvalues_s('c3','aa10',$c['code'],$c['c3tID'],$cID,$wpID);
-                $aa10 = json_decode($rdata['question'], true);
-
-                $html .='
                     <table border="1">
                         <tbody>
                             <tr>
@@ -9268,12 +7968,10 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
                 $html .='
                     <table border="1">
                         <tbody>
@@ -9299,12 +7997,10 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('L');
                 $html .= $style;
-
                 $html .='
                     <table border="1">
                         <tbody>
@@ -9341,7 +8037,6 @@ $html = '';
                         </tr>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -9353,9 +8048,16 @@ $html = '';
             case '3.10 Aa11-un':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUMMARY OF UNADJUSTED ERRORS',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
+                $html  .= $style;
+                $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $aef    = $rp->getvalues_m('c3','aef',$s[0],$c['c3tID'],$cID,$wpID);
+                $aej    = $rp->getvalues_m('c3','aej',$s[0],$c['c3tID'],$cID,$wpID);
+                $ee     = $rp->getvalues_m('c3','ee',$s[0],$c['c3tID'],$cID,$wpID);
+                $de     = $rp->getvalues_m('c3','de',$s[0],$c['c3tID'],$cID,$wpID);
+                $rdata  = $rp->getvalues_s('c3','aa11ue',$s[0],$c['c3tID'],$cID,$wpID);
+                $ue     = json_decode($rdata['question'], true);
+                $rdata2 = $rp->getvalues_s('c3','con',$s[0],$c['c3tID'],$cID,$wpID);
+                $con    = json_decode($rdata2['question'], true);
                 $s      = explode('-', $code);
                 $html .= '
                     <table>
@@ -9381,10 +8083,6 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $rdata          = $rp->getvalues_s('c3','aa11ue',$s[0],$c['c3tID'],$cID,$wpID);
-                $ue     = json_decode($rdata['question'], true);
-                $html .= '
                     <p><b>SUMMARY OF UNADJUSTED ERRORS</b></p>
                     <p>If, during the assignment, either the aggregate of accumulated misstatements approaches performance materiality, or the nature of identified misstatements indicate that other misstatements may exist which would lead to accumulated misstatements exceeding performance materiality, it shall be determined whether the overall audit strategy and audit plan need to be revised.</p>
                     <p><b>Objective:</b> <br>This summary of errors is to determine whether any errors, including disclosure errors, which have not yet been corrected (including uncorrected misstatements relating to prior periods), are individually or in total, sufficiently material to warrant correction in the financial statements and to ensure, if appropriate, that they are communicated to the client.  Where applicable, the effect of taxation should also be documented.</p>
@@ -9415,8 +8113,6 @@ $html = '';
                         </tbody>
                     </table>
                     <br><br> 
-                ';
-                $html .= '
                     <table border="1">
                         <thead>
                             <tr>
@@ -9445,41 +8141,40 @@ $html = '';
                                 <th colspan="7"><b>ACTUAL ERRORS - FACTUAL</b></th>
                             </tr>
                         </thead>
-                        <tbody> ';
-                            $aef_drps = 0;
-                            $aef_crps = 0;
-                            $aef_drfp = 0;
-                            $aef_crfp = 0;
-                            $aef    = $rp->getvalues_m('c3','aef',$s[0],$c['c3tID'],$cID,$wpID);
-                            foreach($aef as $r){
-                            $aef_drps += $r['drps'];
-                            $aef_crps += $r['crps'];
-                            $aef_drfp += $r['drfp'];
-                            $aef_crfp += $r['crfp'];
-                            $html .= '
-                                <tr>
-                                    <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
-                                    <td style="width: 40%;">'.$r['initials'].'</td>
-                                    <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
-                                    <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
-                                    <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
-                                    <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
-                                    <td style="width: 10%;" class="cent">'.$r['yesno'].'</td>
-                                </tr>
-                            ';
-                            }
-                $html .= '
-                        <tr>
-                            <td colspan="6" style="width: 90%;"><b>ACTUAL ERRORS - JUDGMENTAL</b></td>
-                            <td style="width: 10%;"><b>Adjust?</b></td>
-                        </tr>
+                        <tbody> 
                 ';
-                        $aej_drps = 0;
-                        $aej_crps = 0;
-                        $aej_drfp = 0;
-                        $aej_crfp = 0;
-                        $aej    = $rp->getvalues_m('c3','aej',$s[0],$c['c3tID'],$cID,$wpID);
-                        foreach($aej as $r){
+                    $aef_drps = 0;
+                    $aef_crps = 0;
+                    $aef_drfp = 0;
+                    $aef_crfp = 0;
+                    foreach($aef as $r){
+                        $aef_drps += $r['drps'];
+                        $aef_crps += $r['crps'];
+                        $aef_drfp += $r['drfp'];
+                        $aef_crfp += $r['crfp'];
+                        $html .= '
+                            <tr>
+                                <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
+                                <td style="width: 40%;">'.$r['initials'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['yesno'].'</td>
+                            </tr>
+                        ';
+                    }
+                $html .= '
+                            <tr>
+                                <td colspan="6" style="width: 90%;"><b>ACTUAL ERRORS - JUDGMENTAL</b></td>
+                                <td style="width: 10%;"><b>Adjust?</b></td>
+                            </tr>
+                ';
+                    $aej_drps = 0;
+                    $aej_crps = 0;
+                    $aej_drfp = 0;
+                    $aej_crfp = 0;
+                    foreach($aej as $r){
                         $aej_drps += $r['drps'];
                         $aej_crps += $r['crps'];
                         $aej_drfp += $r['drfp'];
@@ -9495,19 +8190,18 @@ $html = '';
                                 <td style="width: 10%;" class="cent">'.$r['yesno'].'</td>
                             </tr>
                         ';
-                        }
+                    }
                 $html .= '
                         <tr>
                             <td colspan="6" style="width: 90%;"><b>EXTRAPOLATED ERRORS</b></td>
                             <td style="width: 10%;"><b>Adjust?</b></td>
                         </tr>
                 ';
-                        $ee_drps = 0;
-                        $ee_crps = 0;
-                        $ee_drfp = 0;
-                        $ee_crfp = 0;
-                        $ee     = $rp->getvalues_m('c3','ee',$s[0],$c['c3tID'],$cID,$wpID);
-                        foreach($ee as $r){
+                    $ee_drps = 0;
+                    $ee_crps = 0;
+                    $ee_drfp = 0;
+                    $ee_crfp = 0;
+                    foreach($ee as $r){
                         $ee_drps += $r['drps'];
                         $ee_crps += $r['crps'];
                         $ee_drfp += $r['drfp'];
@@ -9523,19 +8217,18 @@ $html = '';
                                 <td style="width: 10%;" class="cent">'.$r['yesno'].'</td>
                             </tr>
                         ';
-                        }
+                    }
                 $html .= '
                         <tr>
                             <td colspan="6" style="width: 90%;"><b>DISCLOSURE ERRORS</b></td>
                             <td style="width: 10%;"><b>Adjust?</b></td>
                         </tr>
                 ';
-                        $de_drps = 0;
-                        $de_crps = 0;
-                        $de_drfp = 0;
-                        $de_crfp = 0;
-                        $de     = $rp->getvalues_m('c3','de',$s[0],$c['c3tID'],$cID,$wpID);
-                        foreach($de as $r){
+                    $de_drps = 0;
+                    $de_crps = 0;
+                    $de_drfp = 0;
+                    $de_crfp = 0;
+                    foreach($de as $r){
                         $de_drps += $r['drps'];
                         $de_crps += $r['crps'];
                         $de_drfp += $r['drfp'];
@@ -9551,23 +8244,17 @@ $html = '';
                                 <td style="width: 10%;" class="cent">'.$r['yesno'].'</td>
                             </tr>
                         ';
-                        }
+                    }
                 $html .= '
-                        <tr>
-                            <td colspan="6" style="width: 50%;"><b>Total Effect of Unadjusted Errors</b></td>
-                            <td style="width: 10%;" class="cent">'.$aef_drps + $aej_drps + $ee_drps + $de_drps.'</td>
-                            <td style="width: 10%;" class="cent">'.$aef_crps + $aej_crps + $ee_crps + $de_crps.'</td>
-                            <td style="width: 10%;" class="cent">'.$aef_drfp + $aej_drfp + $ee_drfp + $de_drfp.'</td>
-                            <td style="width: 10%;" class="cent">'.$aef_crfp + $aej_crfp + $ee_crfp + $de_crfp.'</td>
-                        </tr>
-                ';
-                $html .= '
-                    </tbody>
+                            <tr>
+                                <td colspan="6" style="width: 50%;"><b>Total Effect of Unadjusted Errors</b></td>
+                                <td style="width: 10%;" class="cent">'.$aef_drps + $aej_drps + $ee_drps + $de_drps.'</td>
+                                <td style="width: 10%;" class="cent">'.$aef_crps + $aej_crps + $ee_crps + $de_crps.'</td>
+                                <td style="width: 10%;" class="cent">'.$aef_drfp + $aej_drfp + $ee_drfp + $de_drfp.'</td>
+                                <td style="width: 10%;" class="cent">'.$aef_crfp + $aej_crfp + $ee_crfp + $de_crfp.'</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    ';
-                $rdata2         = $rp->getvalues_s('c3','con',$s[0],$c['c3tID'],$cID,$wpID);
-                $con    = json_decode($rdata2['question'], true);
-                $html .= '
                     <p><b>Conclusion (only include errors which remain uncorrected):</b></p>
                     <table border="1">
                         <thead>
@@ -9718,8 +8405,6 @@ $html = '';
                             </tfoot>
                         </tbody>
                     </table>
-                    ';
-                $html .= '
                     <p>The errors in total are clearly trivial (as defined by the planning letter) and have not been communicated to the directors.*</p>
                     <p>The errors in total are not trivial and the directors have confirmed verbally that they do not want to adjust them and this will be confirmed in the letter of representation.*</p>
                     <p>I am satisfied that the combined effect of the above errors is below performance materiality for the financial statements as a whole**, and therefore does not warrant correction.*</p>
@@ -9737,7 +8422,6 @@ $html = '';
                     <p>However, misstatements relating to amounts may not be clearly trivial when judged on criteria of nature or circumstance. If this is the case, the misstatements should be accumulated as unadjusted errors.</p>
                     <p>Misstatements in disclosures may also be clearly trivial whether taken individually or in aggregate, and whether judged by any criteria of size, nature or circumstances. Misstatements in disclosures that are not clearly trivial are also accumulated to assist the auditor in evaluating the effect of such misstatements on the relevant disclosures and the financial statements as a whole. Paragraph A13a of ISA 450 provides examples of where misstatements in qualitative disclosures may be material.</p>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;
@@ -9746,18 +8430,16 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT\'S FINANCIAL STATEMENTS',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
-                $s = explode('-', $code);
-
+                $ad    = $rp->getvalues_m('c3','ad',$s[0],$c['c3tID'],$cID,$wpID);
+                $rdata = $rp->getvalues_s('c3','aa11uead',$s[0],$c['c3tID'],$cID,$wpID);
+                $ue    = json_decode($rdata['question'], true);   
+                $s     = explode('-', $code);
                 $html .= '
                     <p><b>SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT\'S FINANCIAL STATEMENTS</b></p>
                     <p><b>Objective:</b> <br> To carry out a review of the financial statements such that the results obtained, together with the conclusions drawn from other audit tests, give a basis for the opinion on the financial statements.</p>
                     <p><b>Recording:</b> <br> Review key ratios of most significance to the entity. Any large or unexpected movements in these ratios should be explained. This section should also contain details of significant or unexpected changes in major Statement of Financial Position and Performance Statement items.</p>
                     <p><b>Comparisons should be made of current period figures with prior period and / or budgeted figures.  Explanations obtained for significant or unexpected changes in key business ratios and items in the financial statements must be corroborated by other evidence. A conclusion should then be reached. </b></p>
                     <p><b><i>Undertaking analytical procedures at finalisation is mandatory; however, the use of this form is optional.</i></b></p>
-                ';
-                $html .= '
                     <table border="1">
                         <thead>
                             <tr>
@@ -9784,46 +8466,40 @@ $html = '';
                                 <th colspan="6"><b>ADJUSTMENTS MADE BY AUDITORS</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                            $drps = 0;
-                            $crps = 0;
-                            $drfp = 0;
-                            $crfp = 0;
-                            $ad = $rp->getvalues_m('c3','ad',$s[0],$c['c3tID'],$cID,$wpID);
-                            foreach($ad as $r){
-                                $drps += $r['drps'];
-                                $crps += $r['crps'];
-                                $drfp += $r['drfp'];
-                                $crfp += $r['crfp'];
+                        <tbody>
+                ';
+                    $drps = 0;
+                    $crps = 0;
+                    $drfp = 0;
+                    $crfp = 0;
+                    foreach($ad as $r){
+                        $drps += $r['drps'];
+                        $crps += $r['crps'];
+                        $drfp += $r['drfp'];
+                        $crfp += $r['crfp'];
 
-                                $html .= '
-                                <tr>
-                                    <td style="width: 10%;">'.$r['reference'].'</td>
-                                    <td style="width: 40%;">'.$r['initials'].'</td>
-                                    <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
-                                    <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
-                                    <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
-                                    <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
-                                </tr>
-                            ';
+                        $html .= '
+                            <tr>
+                                <td style="width: 10%;">'.$r['reference'].'</td>
+                                <td style="width: 40%;">'.$r['initials'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
+                                <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
+                            </tr>
+                        ';
                     }
                 $html .= '
-                        <tr>
-                            <td colspan="6" style="width: 50%;"><b>Total Effect of Unadjusted Errors</b></td>
-                            <td style="width: 10%;" class="cent">'.$drps.'</td>
-                            <td style="width: 10%;" class="cent">'.$crps.'</td>
-                            <td style="width: 10%;" class="cent">'.$drfp.'</td>
-                            <td style="width: 10%;" class="cent">'.$crfp.'</td>
-                        </tr>
-                ';
-                $html .= '
+                            <tr>
+                                <td colspan="6" style="width: 50%;"><b>Total Effect of Unadjusted Errors</b></td>
+                                <td style="width: 10%;" class="cent">'.$drps.'</td>
+                                <td style="width: 10%;" class="cent">'.$crps.'</td>
+                                <td style="width: 10%;" class="cent">'.$drfp.'</td>
+                                <td style="width: 10%;" class="cent">'.$crfp.'</td>
+                            </tr>
                         </tbody>
                     </table>
                     <br><br>
-                ';
-                $rdata = $rp->getvalues_s('c3','aa11uead',$s[0],$c['c3tID'],$cID,$wpID);
-                $ue = json_decode($rdata['question'], true);   
-                $html .= '
                     <table>
                         <tbody>
                             <tr>
@@ -9859,7 +8535,6 @@ $html = '';
                     </table>
                     <p>* Delete as appropriate</p>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break; 
@@ -9867,13 +8542,10 @@ $html = '';
             case '3.11':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : INDEPENDENT AUDITOR’S REPORT TO THE MEMBERS OF '.$cl['clientname'].' LIMITED',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
-                $rdata = $rp->getvalues_s('c3','311',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html  .= $style;
+                $rdata  = $rp->getvalues_s('c3','311',$c['code'],$c['c3tID'],$cID,$wpID);
                 $arf    = json_decode($rdata['question'], true);
-
-                $html .= '
+                $html  .= '
                     <p><b>INDEPENDENT AUDITOR’S REPORT TO THE MEMBERS OF '.$cl['clientname'].' LIMITED</b></p>
                     <p><b>Opinion</b></p>
                     <p>We have audited the financial statements of '.$cl['clientname'].' (the ‘company’) for the year ended '.strtoupper(date('F d', strtotime($cl['financial_year'].'-'.$cl['end_financial_year']))).' which comprise '.$arf['tops'].' and notes to the financial statements, including a summary of significant accounting policies.</p>
@@ -9912,12 +8584,10 @@ $html = '';
                     <p>[Signature in the name of the audit firm, the personal name of the auditor, or both, depending on local legislation]3</p>
                     <p>[Date]</p>
                 ';
-                
-                
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;   
+
             case '3.12':
                 
             break;  
@@ -9926,10 +8596,7 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : CRITICAL REVIEW OF THE FINANCIAL STATEMENTS',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
                 $ab1 = $rp->getvalues_m('c3','ab1',$c['code'],$c['c3tID'],$cID,$wpID);
-
                 $html .= '
                     <table>
                         <tr>
@@ -9942,11 +8609,7 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <h3>CRITICAL REVIEW OF THE FINANCIAL STATEMENTS</h3>
-                ';
-                $html .= '
                     <table>
                         <thead>
                             <tr>
@@ -9957,11 +8620,12 @@ $html = '';
 
                             </tr>
                         </thead>
-                        <tbody>';
-                        $count = 0;
-                        foreach($ab1 as $r){
-                            $count ++;
-                            $html .= '
+                        <tbody>
+                ';
+                    $count = 0;
+                    foreach($ab1 as $r){
+                        $count ++;
+                        $html .= '
                             <tr>
                                 <td style="width: 6%;">'.$count.'.<br></td>
                                 <td style="width: 60%;">'.$r['question'].'<br></td>
@@ -9988,7 +8652,6 @@ $html = '';
                         </tr>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break; ;   
@@ -9996,10 +8659,11 @@ $html = '';
             case '3.14 Ab3':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : FINANCIAL STATEMENTS DISCLOSURE AND COMPLIANCE ANNUAL REVIEW CHECKLIST',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
-                $html .= '
+                $html  .= $style;
+                $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $rdata  = $rp->getvalues_s('c3','ab3',$c['code'],$c['c3tID'],$cID,$wpID);
+                $ab3    = json_decode($rdata['question'], true);
+                $html  .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -10023,10 +8687,6 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $rdata = $rp->getvalues_s('c3','ab3',$c['code'],$c['c3tID'],$cID,$wpID);
-                $ab3 = json_decode($rdata['question'], true);
-                $html .= '
                     <h3>FINANCIAL STATEMENTS DISCLOSURE AND COMPLIANCE ANNUAL REVIEW CHECKLIST</h3>
                     <p>This checklist should be used to evidence the checking of disclosure and compliance matters for \'uncomplex companies\' where the appropriate (i.e. IFRS) disclosure checklist has been completed within the last three years and the size and complexity of the company means that the firm does not consider that a full disclosure checklist needs to be completed every year.</p>
                     <table>
@@ -10129,7 +8789,6 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break; 
@@ -10137,9 +8796,19 @@ $html = '';
             case '3.15 Ab4':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : CORPORATE DISCLOSURE CHECKLIST (IFRS)',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
+                $html  .= $style;
+                $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $rdata  = $rp->getvalues_s('c3','checklist',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec    = json_decode($rdata['question'], true);
+                $sec1   = $rp->getvalues_m('c3','section1',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec2   = $rp->getvalues_m('c3','section2',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec3   = $rp->getvalues_m('c3','section3',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec4   = $rp->getvalues_m('c3','section4',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec5   = $rp->getvalues_m('c3','section5',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec6   = $rp->getvalues_m('c3','section6',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec7   = $rp->getvalues_m('c3','section7',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec8   = $rp->getvalues_m('c3','section8',$c['code'],$c['c3tID'],$cID,$wpID);
+                $sec9   = $rp->getvalues_m('c3','section9',$c['code'],$c['c3tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -10164,8 +8833,6 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <p><b>CORPORATE DISCLOSURE CHECKLIST (IFRS)</b></p>
                     <p><b><u>Scope</u></b></p>
                     <p>This checklist should be completed for every corporate entity where International Financial Reporting Standards (IFRS) are being followed and it is not appropriate to complete Appendix 3.14 – Financial Statements Disclosure and Compliance Annual Review Checklist.</p>
@@ -10175,10 +8842,6 @@ $html = '';
                     <p>IFRS 16 Leases is mandatory for accounting periods commencing on or after 1 January 2019. This fundamentally alters the accounting treatment for lessees, with consequential disclosure amendments.</p>
                     <p><b>NB: To ensure that the Checklist is as efficient as possible, areas which are more specialised have been addressed by supplementary disclosure checklists.  <u>These supplementary disclosure checklists should only be completed if the area is relevant.</u></b></p>
                     <p>NB: The checklist does not cover the additional disclosures required by companies which enter into insurance contracts, where these are relevant considerations, then the disclosure requirements of IFRS 4 should be given.  It also does not cover the requirements of IAS 26, which are only relevant to clients who are themselves pension schemes, or IFRIC 2 which is relevant to cooperative entities.  The checklist also does not cover the disclosure requirements of companies with listed equity or debt.</p>
-                ';
-                $rdata = $rp->getvalues_s('c3','checklist',$c['code'],$c['c3tID'],$cID,$wpID);
-                $sec    = json_decode($rdata['question'], true);
-                $html .= '
                     <table border="1">
                         <thead>
                             <tr class="cent">
@@ -10240,12 +8903,10 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
                 $html .= '
                     <p>For areas which are relevant, “Supplementary Checklist Completed” should be marked ‘Yes’, ‘No’ or ‘Not Applicable’ as appropriate.  Any ‘No’ answers must be fully explained.</p>
                     <p><b>Contents</b></p>
@@ -10303,12 +8964,10 @@ $html = '';
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
                 $html .= '
                     <table border="1">
                         <thead>
@@ -10321,10 +8980,10 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $sec1   = $rp->getvalues_m('c3','section1',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($sec1 as $r){
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($sec1 as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 13%;">'.$r['reference'].'</td>
                                 <td style="width: 7%;">'.$r['extent'].'</td>
@@ -10332,18 +8991,16 @@ $html = '';
                                 <td style="width: 15%;">'.$r['yesno'].'</td>
                                 <td style="width: 15%;">'.$r['comment'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
                 $html .= '
                     <table border="1">
                         <thead>
@@ -10356,10 +9013,10 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $sec2   = $rp->getvalues_m('c3','section2',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($sec2 as $r){
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($sec2 as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 13%;">'.$r['reference'].'</td>
                                 <td style="width: 7%;">'.$r['extent'].'</td>
@@ -10367,18 +9024,16 @@ $html = '';
                                 <td style="width: 15%;">'.$r['yesno'].'</td>
                                 <td style="width: 15%;">'.$r['comment'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
                 $html .= '
                     <table border="1">
                         <thead>
@@ -10391,10 +9046,10 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $sec3   = $rp->getvalues_m('c3','section3',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($sec3 as $r){
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($sec3 as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 13%;">'.$r['reference'].'</td>
                                 <td style="width: 7%;">'.$r['extent'].'</td>
@@ -10402,18 +9057,16 @@ $html = '';
                                 <td style="width: 15%;">'.$r['yesno'].'</td>
                                 <td style="width: 15%;">'.$r['comment'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
                 $html .= '
                     <table border="1">
                         <thead>
@@ -10430,10 +9083,10 @@ $html = '';
                             <tr>
                                 <td colspan="5">IAS 1 paragraph 81A allows the SCI to be presented as either one or two statements (a profit and loss account and a SCI (which is a combination of the profit for the year plus items of other comprehensive income (OCI))).</td>
                             </tr>
-                            ';
-                        $sec4   = $rp->getvalues_m('c3','section4',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($sec4 as $r){
-                            $html .= '
+                ';
+                        
+                    foreach($sec4 as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 13%;">'.$r['reference'].'</td>
                                 <td style="width: 7%;">'.$r['extent'].'</td>
@@ -10441,18 +9094,16 @@ $html = '';
                                 <td style="width: 15%;">'.$r['yesno'].'</td>
                                 <td style="width: 15%;">'.$r['comment'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
                 $html .= '
                     <table border="1">
                         <thead>
@@ -10468,10 +9119,10 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $sec5   = $rp->getvalues_m('c3','section5',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($sec5 as $r){
-                            $html .= '
+                        <tbody>
+                '; 
+                    foreach($sec5 as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 13%;">'.$r['reference'].'</td>
                                 <td style="width: 7%;">'.$r['extent'].'</td>
@@ -10479,18 +9130,16 @@ $html = '';
                                 <td style="width: 15%;">'.$r['yesno'].'</td>
                                 <td style="width: 15%;">'.$r['comment'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
                 $html .= '
                     <table border="1">
                         <thead>
@@ -10504,10 +9153,10 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $sec6   = $rp->getvalues_m('c3','section6',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($sec6 as $r){
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($sec6 as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 13%;">'.$r['reference'].'</td>
                                 <td style="width: 7%;">'.$r['extent'].'</td>
@@ -10515,18 +9164,16 @@ $html = '';
                                 <td style="width: 15%;">'.$r['yesno'].'</td>
                                 <td style="width: 15%;">'.$r['comment'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
                 $html .= '
                     <table border="1">
                         <thead>
@@ -10540,10 +9187,10 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $sec7   = $rp->getvalues_m('c3','section7',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($sec7 as $r){
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($sec7 as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 13%;">'.$r['reference'].'</td>
                                 <td style="width: 7%;">'.$r['extent'].'</td>
@@ -10551,18 +9198,16 @@ $html = '';
                                 <td style="width: 15%;">'.$r['yesno'].'</td>
                                 <td style="width: 15%;">'.$r['comment'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
                 $html .= '
                     <table border="1">
                         <thead>
@@ -10577,10 +9222,10 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $sec8   = $rp->getvalues_m('c3','section8',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($sec8 as $r){
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($sec8 as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 13%;">'.$r['reference'].'</td>
                                 <td style="width: 7%;">'.$r['extent'].'</td>
@@ -10588,18 +9233,16 @@ $html = '';
                                 <td style="width: 15%;">'.$r['yesno'].'</td>
                                 <td style="width: 15%;">'.$r['comment'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
                 $pdf->AddPage('P');
                 $html .= $style;
-
                 $html .= '
                     <table border="1">
                         <thead>
@@ -10613,10 +9256,10 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $sec9   = $rp->getvalues_m('c3','section9',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($sec9 as $r){
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($sec9 as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 13%;">'.$r['reference'].'</td>
                                 <td style="width: 7%;">'.$r['extent'].'</td>
@@ -10624,13 +9267,12 @@ $html = '';
                                 <td style="width: 15%;">'.$r['yesno'].'</td>
                                 <td style="width: 15%;">'.$r['comment'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break; 
@@ -10638,10 +9280,10 @@ $html = '';
             case '3.15.1 Ab4a':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures for an Entity Involved in Exploration for and Evaluation of Mineral Resources',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
-                $html .= '
+                $html  .= $style;
+                $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $ab4a   = $rp->getvalues_m('c3','ab4a',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html  .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -10665,13 +9307,9 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) <br>
                         ~ Additional Disclosures for an Entity Involved in Exploration for and Evaluation of Mineral Resources
                     </b></p>
-                ';
-                $html .= '
                     <table border="1">
                         <thead>
                             <tr>
@@ -10680,10 +9318,10 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $ab4a = $rp->getvalues_m('c3','ab4a',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($ab4a as $r){
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($ab4a as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 13%;">'.$r['reference'].'</td>
                                 <td style="width: 7%;">'.$r['extent'].'</td>
@@ -10691,13 +9329,12 @@ $html = '';
                                 <td style="width: 15%;">'.$r['yesno'].'</td>
                                 <td style="width: 15%;">'.$r['comment'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break; 
@@ -10705,10 +9342,10 @@ $html = '';
             case '3.15.2 Ab4b':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
-                $html .= '
+                $html  .= $style;
+                $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $ab4b   = $rp->getvalues_m('c3','ab4b',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html  .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -10732,13 +9369,9 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)<br>
                     ~ Additional Disclosures for an Entity with a Defined Benefit Pension Plan(s) (including those Accounted for on a Defined Contribution Basis)
                     </b></p>
-                ';
-                $html .= '
                     <table border="1">
                         <thead>
                             <tr>
@@ -10747,10 +9380,10 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $ab4b = $rp->getvalues_m('c3','ab4b',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($ab4b as $r){
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($ab4b as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 13%;">'.$r['reference'].'</td>
                                 <td style="width: 7%;">'.$r['extent'].'</td>
@@ -10758,13 +9391,12 @@ $html = '';
                                 <td style="width: 15%;">'.$r['yesno'].'</td>
                                 <td style="width: 15%;">'.$r['comment'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;  
@@ -10772,10 +9404,10 @@ $html = '';
             case '3.15.3 Ab4c':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
-                $html .= '
+                $html  .= $style;
+                $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $ab4c   = $rp->getvalues_m('c3','ab4c',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html  .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -10799,13 +9431,9 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)<br>
                     ~ Additional Disclosures for an Entity with Share-Based Payments
                     </b></p>
-                ';
-                $html .= '
                     <table border="1">
                         <thead>
                             <tr>
@@ -10814,10 +9442,10 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $ab4c = $rp->getvalues_m('c3','ab4c',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($ab4c as $r){
-                            $html .= '
+                        <tbody>
+                ';
+                    foreach($ab4c as $r){
+                        $html .= '
                             <tr>
                                 <td style="width: 13%;">'.$r['reference'].'</td>
                                 <td style="width: 7%;">'.$r['extent'].'</td>
@@ -10825,13 +9453,12 @@ $html = '';
                                 <td style="width: 15%;">'.$r['yesno'].'</td>
                                 <td style="width: 15%;">'.$r['comment'].'</td>
                             </tr>
-                            ';
-                        }
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;  
@@ -10839,10 +9466,10 @@ $html = '';
             case '3.15.4 Ab4d':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures for an Entity with Agricultural Activities',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
-                $html .= '
+                $html  .= $style;
+                $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $ab4d   = $rp->getvalues_m('c3','ab4d',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html  .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -10866,8 +9493,6 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)<br>
                     ~ Additional Disclosures for an Entity with Agricultural Activities
                     </b></p>
@@ -10875,8 +9500,6 @@ $html = '';
                     <p><b>Agricultural Activities </b>are defined as ‘The management by an entity of the biological transformation and harvest of biological assets for sale or for conversion into agricultural produce or into additional biological assets’.</p>
                     <p><b>Agricultural Produce </b> is defined as ‘The harvested product of the entity’s biological assets’.</p>
                     <p><b>Biological Assets </b> are defined as ‘A living animal or plant’.</p>
-                ';
-                $html .= '
                     <table border="1">
                         <thead>
                             <tr>
@@ -10885,23 +9508,23 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $ab4d = $rp->getvalues_m('c3','ab4d',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($ab4d as $r){
-                $html .= '
-                    <tr>
-                        <td style="width: 13%;">'.$r['reference'].'</td>
-                        <td style="width: 7%;">'.$r['extent'].'</td>
-                        <td style="width: 50%;">'.$r['question'].'</td>
-                        <td style="width: 15%;">'.$r['yesno'].'</td>
-                        <td style="width: 15%;">'.$r['comment'].'</td>
-                    </tr>';
-                        }
+                        <tbody>
+                ';
+                    foreach($ab4d as $r){
+                        $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;  
@@ -10909,10 +9532,10 @@ $html = '';
             case '3.15.5 Ab4e':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures for First Time Adopters of IFRS',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
-                $html .= '
+                $html  .= $style;
+                $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $ab4e   = $rp->getvalues_m('c3','ab4e',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html  .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -10936,14 +9559,10 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)<br>
                     ~ Additional Disclosures for First Time Adopters of IFRS
                     </b></p>
                     <p><b><u>Scope</u></b> <br>This checklist should be completed for all entities that are adopting IFRS for the first time.</p>
-                ';
-                $html .= '
                     <table border="1">
                         <thead>
                             <tr>
@@ -10952,24 +9571,23 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $ab4e = $rp->getvalues_m('c3','ab4e',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($ab4e as $r){
-                $html .= '
-                    <tr>
-                        <td style="width: 13%;">'.$r['reference'].'</td>
-                        <td style="width: 7%;">'.$r['extent'].'</td>
-                        <td style="width: 50%;">'.$r['question'].'</td>
-                        <td style="width: 15%;">'.$r['yesno'].'</td>
-                        <td style="width: 15%;">'.$r['comment'].'</td>
-                    </tr>
+                        <tbody>
                 ';
-                        }
+                    foreach($ab4e as $r){
+                        $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-                
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;  
@@ -10977,10 +9595,10 @@ $html = '';
             case '3.15.6 Ab4f':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosure for Parent Undertakings that are Not Consolidating',1,1);
-                $html .= $style;
-                $html .= $c['code'];
-
-                $html .= '
+                $html  .= $style;
+                $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
+                $ab4f   = $rp->getvalues_m('c3','ab4f',$c['code'],$c['c3tID'],$cID,$wpID);
+                $html  .= '
                     <table>
                         <tr>
                             <td style="width: 60%;">
@@ -11004,13 +9622,9 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)<br>
                     ~ Additional Disclosure for Parent Undertakings that are Not Consolidating
                     </b></p>
-                ';
-                $html .= '
                     <table border="1">
                         <thead>
                             <tr>
@@ -11019,24 +9633,24 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $ab4f = $rp->getvalues_m('c3','ab4f',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($ab4f as $r){
-                $html .= '
-                    <tr>
-                        <td style="width: 13%;">'.$r['reference'].'</td>
-                        <td style="width: 7%;">'.$r['extent'].'</td>
-                        <td style="width: 50%;">'.$r['question'].'</td>
-                        <td style="width: 15%;">'.$r['yesno'].'</td>
-                        <td style="width: 15%;">'.$r['comment'].'</td>
-                    </tr>
+                        <tbody>
                 ';
-                }
+                        
+                    foreach($ab4f as $r){
+                        $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break; 
@@ -11045,8 +9659,7 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures on transition to IFRS 15 and IFRS 9',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $ab4g = $rp->getvalues_m('c3','ab4g',$c['code'],$c['c3tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -11071,14 +9684,10 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS AND FRS 101)<br>
                     ~ Additional Disclosures on transition to IFRS 15 and IFRS 9
                     </b></p>
                     <p><b><u>Scope:</u></b> <br>This checklist should be completed for all entities that are applying IFRS 15 <i>Revenue from Contracts with Customers</i> and IFRS 9 <i>Financial Instruments</i> for the first time. Both Standards are mandatory for accounting periods commencing on/after 1 January 2018.</p>
-                ';
-                $html .= '
                     <table border="1">
                         <thead>
                             <tr>
@@ -11087,24 +9696,23 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $ab4g = $rp->getvalues_m('c3','ab4g',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($ab4g as $r){
-                $html .= '
-                    <tr>
-                        <td style="width: 13%;">'.$r['reference'].'</td>
-                        <td style="width: 7%;">'.$r['extent'].'</td>
-                        <td style="width: 50%;">'.$r['question'].'</td>
-                        <td style="width: 15%;">'.$r['yesno'].'</td>
-                        <td style="width: 15%;">'.$r['comment'].'</td>
-                    </tr>
+                        <tbody>
                 ';
-                }
+                    foreach($ab4g as $r){
+                        $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break; 
@@ -11113,8 +9721,7 @@ $html = '';
                 $pdf->AddPage('P');
                 $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures on transition to IFRS 16',1,1);
                 $html .= $style;
-                $html .= $c['code'];
-
+                $ab4h = $rp->getvalues_m('c3','ab4h',$c['code'],$c['c3tID'],$cID,$wpID);
                 $html .= '
                     <table>
                         <tr>
@@ -11139,14 +9746,10 @@ $html = '';
                             </td>
                         </tr>
                     </table>
-                ';
-                $html .= '
                     <p><b>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS AND FRS 101)<br>
                     ~ Additional Disclosures on transition to IFRS 16
                     </b></p>
                     <p><b><u>Scope:</u></b> <br>This checklist should be completed for all entities that are applying IFRS 16 Leases for the first time, which is mandatory for accounting periods commencing on/after 1 January 2019.</p>
-                ';
-                $html .= '
                     <table border="1">
                         <thead>
                             <tr>
@@ -11155,24 +9758,23 @@ $html = '';
                                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
                             </tr>
                         </thead>
-                        <tbody>';
-                        $ab4h = $rp->getvalues_m('c3','ab4h',$c['code'],$c['c3tID'],$cID,$wpID);
-                        foreach($ab4h as $r){
-                $html .= '
-                    <tr>
-                        <td style="width: 13%;">'.$r['reference'].'</td>
-                        <td style="width: 7%;">'.$r['extent'].'</td>
-                        <td style="width: 50%;">'.$r['question'].'</td>
-                        <td style="width: 15%;">'.$r['yesno'].'</td>
-                        <td style="width: 15%;">'.$r['comment'].'</td>
-                    </tr>
+                        <tbody>
                 ';
-                }
+                    foreach($ab4h as $r){
+                        $html .= '
+                            <tr>
+                                <td style="width: 13%;">'.$r['reference'].'</td>
+                                <td style="width: 7%;">'.$r['extent'].'</td>
+                                <td style="width: 50%;">'.$r['question'].'</td>
+                                <td style="width: 15%;">'.$r['yesno'].'</td>
+                                <td style="width: 15%;">'.$r['comment'].'</td>
+                            </tr>
+                        ';
+                    }
                 $html .= '
                         </tbody>
                     </table>
                 ';
-
                 $pdf->writeHTML($html, true, false,false, false, '');
                 $html = '';
             break;  
@@ -11197,12 +9799,10 @@ $html = '';
         switch ($f['section']) {
 
             case '-':
-
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2>';
-                
                 if($f['file'] != ''){
                     // Set the source PDF file 
                     $pageCount = $pdf->setSourceFile(ROOTPATH.'public/uploads/pdf/wp/'.$fID.'/'.$wpID.'/'.$f['file']);
@@ -11219,18 +9819,14 @@ $html = '';
                         $html = '';
                     }
                 }
-                
             break;
 
             case 'FSTR':
-
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;
                 $html .= '<hr style="color:blue;">';
                 $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2>';
-
                 foreach($fst as $r){
-
                     if($r['file'] != ''){
                         // Set the source PDF file 
                         $pageCount = $pdf->setSourceFile(ROOTPATH.'public/uploads/pdf/wp/'.$fID.'/'.$wpID.'/'.$r['file']);
@@ -11248,11 +9844,8 @@ $html = '';
                             $pdf->useTemplate($templateId, 0, 20);
                             $html = '';
                         }
-    
                     }
-                    
                 }
-
             break;
 
             case 'B':
@@ -11274,7 +9867,6 @@ $html = '';
             case 'S':
 
                 if($f['file'] != ''){
-
                     $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                     $html .= $style2;
                     $html .= '<hr style="color:blue;">';

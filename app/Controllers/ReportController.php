@@ -39,7 +39,6 @@ class ReportController extends BaseController{
         $a              = explode('-', $aud);
         $s              = explode('-', $sup);
         $am             = explode('-', $audm);
-        $data['cl']     = $this->rpmodel->getclientinfo($dwpID,$dcID);
         $data['aud']    = $a[0];
         $data['sup']    = $s[0];
         $data['audm']   = $am[0];
@@ -58,7 +57,7 @@ class ReportController extends BaseController{
         // $data['cfi']    = $this->rpmodel->getlatestupload($dcID,$dwpID);
         $data['tb']     = $this->rpmodel->gettrialbalance($dcID,$dwpID);
         $data['cl']     = $this->rpmodel->getclientinfo($dwpID,$dcID);
-        $data['fl']     = $this->rpmodel->getfileinfoc1($dwpID,$dcID);
+        // $data['fl']     = $this->rpmodel->getfileinfoc1($dwpID,$dcID);
 
         $q1e            = $this->rpmodel->getfstax($dcID,$dwpID,$fID ,'1st','EWT');
         $data['q1e']    = (empty($q1e['file'])) ? '' : $q1e['file'];

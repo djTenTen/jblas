@@ -679,7 +679,7 @@ class TCPDF {
 	 * @var int[]
 	 * @phpstan-var array{0: int, 1: int, 2: int}
 	 */
-	protected $header_line_color = array(0,0,0);
+	protected $header_line_color = array(119, 82, 254);
 
 	/**
 	 * Color for footer text (RGB array).
@@ -688,7 +688,7 @@ class TCPDF {
 	 * @var int[]
 	 * @phpstan-var array{0: int, 1: int, 2: int}
 	 */
-	protected $footer_text_color = array(0,0,0);
+	protected $footer_text_color = array(119, 82, 254);
 
 	/**
 	 * Color for footer line (RGB array).
@@ -697,7 +697,7 @@ class TCPDF {
 	 * @var int[]
 	 * @phpstan-var array{0: int, 1: int, 2: int}
 	 */
-	protected $footer_line_color = array(0,0,0);
+	protected $footer_line_color = array(119, 82, 254);
 
 	/**
 	 * Text shadow data array.
