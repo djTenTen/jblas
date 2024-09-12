@@ -53,7 +53,7 @@
                         <li>To ensure that risks identified are transferred to the risk assessment and into the audit approach / work programmes as required and are cross referenced to indicate this.</li>
                         <li>Where a parent company produces consolidated financial statements, consideration must be given to the parent company figures and the consolidated figures.</li>
                     </ul>
-                    <form action="<?= base_url()?>auditsystem/client/saveac5/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac5/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" name="acid" value="<?= $acID?>">
                         <h4>Results:</h4>
                         <textarea class="form-control" cols="30" rows="20" name="res" required><?= $rc['res']?></textarea>

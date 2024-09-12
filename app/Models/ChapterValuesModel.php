@@ -93,9 +93,6 @@ class ChapterValuesModel extends Model{
     }
 
 
-    
-
-
     /**
         ----------------------------------------------------------
         AC10 FUNCTIONS
@@ -149,563 +146,447 @@ class ChapterValuesModel extends Model{
 
     }
 
+    
 
-    /**
-        ----------------------------------------------------------
-        CHAPTER 1 POST FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveac1() save the ac1 information
-        * @param req ac1 data
-        * @var acid decrypted chapter id
-        * @var data contains ac1 information
-        * @return bool
-    */
-    public function saveac1($req){
+    public function savevalues($param,$req){
 
-        foreach($req['yesno'] as $i => $val){
-            $acid = $this->crypt->decrypt($req['acid'][$i]);
-            $data = [
-                'yesno'             => $req['yesno'][$i],
-                'comment'           => $req['comment'][$i],
-                'updated_on'        => $this->date.' '.$this->time,
-                'updated_by'        => $req['uID'],
-            ];
-            $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
-        }
-        $this->logs->log(session()->get('name'). " set a default value on a client file AC1 Chapter 1");
-        return true;
-      
-    }
+        switch ($param['chapter']) {
+            case 'c1':
+                switch($param['code']) {
+                    case 'AC1':
+                        switch ($param['save']) {
+                            case 'saveac1':
+                                foreach($req['yesno'] as $i => $val){
+                                    $acid = $this->crypt->decrypt($req['acid'][$i]);
+                                    $data = [
+                                        'yesno'             => $req['yesno'][$i],
+                                        'comment'           => $req['comment'][$i],
+                                        'updated_on'        => $this->date.' '.$this->time,
+                                        'updated_by'        => $req['uID'],
+                                    ];
+                                    $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                                }
+                            break;
+                            case 'saveac1eqr':
+                                $acid = $this->crypt->decrypt($req['acid']);
+                                $data = [
+                                    'question'      => $req['question'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $req['uID'],
+                                ];
+                                $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        return true;
+                    break;
+                    case 'AC2':
+                        switch ($param['save']) {
+                            case 'saveac2':
+                                foreach($req['corptax'] as $i => $val){
+                                    $acid = $this->crypt->decrypt($req['acid'][$i]);
+                                    $data = [
+                                        'corptax'           => $req['corptax'][$i],
+                                        'statutory'         => $req['statutory'][$i],
+                                        'accountancy'       => $req['accountancy'][$i],
+                                        'other'             => $req['other'][$i],
+                                        'totalcu'           => $req['totalcu'][$i],
+                                        'updated_on'        => $this->date.' '.$this->time,
+                                        'updated_by'        => $req['uID'],
+                                    ];
+                                    $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                                }
+                            break;
+                            case 'saveac2aep':
+                                $acid = $this->crypt->decrypt($req['acid']);
+                                $data = [
+                                    'question'      => $req['eap'],
+                                    'name'          => $req['concl'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $req['uID'],
+                                ];
+                                $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        return true;
+                    break;
+                    case 'AC3':
+                        switch ($param['save']) {
+                            case 'saveac3':
+                                foreach($req['yesno'] as $i => $val){
+                                    $acid = $this->crypt->decrypt($req['acid'][$i]);
+                                    $data = [
+                                        'yesno'         => $req['yesno'][$i],
+                                        'comment'       => $req['comment'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $req['uID'],
+                                    ];
+                                    $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                                }
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        return true;
+                    break;
+                    case 'AC4':
+                        switch ($param['save']) {
+                            case 'saveac3':
+                                foreach($req['comment'] as $i => $val){
+                                    $acid = $this->crypt->decrypt($req['acid'][$i]);
+                                    $data = [
+                                        'comment'       => $req['comment'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $req['uID'],
+                                    ];
+                                    $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                                }
+                            break;
+                            case 'saveac4ppr':
+                                $acid = $this->crypt->decrypt($req['acid']);
+                                $data = [
+                                    'question'      => $req['ppr'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $req['uID'],
+                                ];
+                                $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        return true;
+                    break;
+                    case 'AC5':
+                        switch ($param['save']) {
+                            case 'saveac5':
+                                $acid = $this->crypt->decrypt($req['acid']);
+                                $data = [
+                                    'question'      => $req['rescon'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $req['uID'],
+                                ];
+                                $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        return true;
+                    break;
+                    case 'AC6':
+                        switch ($param['save']) {
+                            case 'saveac6ra':
+                                foreach($req['planning'] as $i => $val){
+                                    $acid = $this->crypt->decrypt($req['acid'][$i]);
+                                    $data = [
+                                        'planning'          => $req['planning'][$i],
+                                        'finalization'      => $req['finalization'][$i],
+                                        'reference'         => $req['reference'][$i],
+                                        'updated_on'        => $this->date.' '.$this->time,
+                                        'updated_by'        => $req['uID'],
+                                    ];
+                                    $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                                }
+                            break;
+                            case 'saveac6s12':
+                                $acid = $this->crypt->decrypt($req['acid']);
+                                $data = [
+                                    'question'      => $req['section'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $req['uID'],
+                                ];
+                                $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                            break;
+                            case 'saveac6s3':
+                                $where = [
+                                    'type'          => $req['part'], 
+                                    'code'          => $req['code'], 
+                                    'c1tID'         => $req['c1tID'],
+                                    'clientID'      => $req['cID'],
+                                ];
+                                $this->db->table($this->tblc1d)->where($where)->delete();
+                                foreach($req['financialstatement'] as $i => $val){
+                                    $data = [
+                                        'finstate'          => $req['financialstatement'][$i],
+                                        'desc'              => $req['descriptioncontrol'][$i],
+                                        'controleffect'     => $req['controleffective'][$i],
+                                        'implemented'       => $req['controlimplemented'][$i],
+                                        'assessed'          => $req['assesed'][$i],
+                                        'reference'         => $req['crosstesting'][$i],
+                                        'reliance'          => $req['reliancecontrol'][$i],
+                                        'code'              => $req['code'],
+                                        'c1tID'             => $req['c1tID'],
+                                        'firmID'            => $req['fID'],
+                                        'clientID'          => $req['cID'],
+                                        'type'              => $req['part'],
+                                        'status'            => 'Active',
+                                        'updated_on'        => $this->date.' '.$this->time,
+                                        'updated_by'        => $req['uID'],
+                                    ];
+                                    $this->db->table($this->tblc1d)->insert($data);
+                                }
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        return true;
+                    break;
+                    case 'AC7':
+                        switch ($param['save']) {
+                            case 'saveac7':
+                                $data = [
+                                    'question'      => $req['genyn'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $req['uID'],
+                                ];
+                                $where = [
+                                    'type'          => $req['part'],
+                                    'c1tID'         => $req['c1tID'],
+                                    'clientID'      => $req['cID'],
+                                ];
+                                $this->db->table($this->tblc1d)->where($where)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        return true;
+                    break;
+                    case 'AC8':
+                        switch ($param['save']) {
+                            case 'saveac8':
+                                foreach($req['question'] as $i => $val){
+                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
+                                    $data = [
+                                        'question'          => $req['question'][$i],
+                                        'updated_on'        => $this->date.' '.$this->time,
+                                        'updated_by'        => $req['uID'],
+                                    ];
+                                    $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
+                                }
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        return true;
+                    break;
+                    case 'AC9':
+                        switch ($param['save']) {
+                            case 'saveac9':
+                                $dacid = $this->crypt->decrypt($req['acid']);
+                                $data = [
+                                    'question'      => $req['ac9'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $req['uID'],
+                                ];
+                                $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        return true;
+                    break;
+                    case 'AC10-Tangibles':
+                    case 'AC10-PPE':
+                    case 'AC10-Investments':
+                    case 'AC10-Inventory':
+                    case 'AC10-Trade Receivables':
+                    case 'AC10-Other Receivables':
+                    case 'AC10-Bank and Cash':
+                    case 'AC10-Other Payables':
+                    case 'AC10-Provisions':        
+                    case 'AC10-Revenue':
+                    case 'AC10-Costs':
+                    case 'AC10-Payroll':
+                    case 'AC10-Summary':
+                        switch ($param['save']) {
+                            case 'saveac10summ':
+                                foreach ($req as $r => $val){
+                                    $data = [
+                                        'question'      => $val,
+                                        'type'          => $r.'data',
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $req['uID'],
+                                    ];
+                                    $where1 = [
+                                        'type'          => $r.'data',
+                                        'code'          => $req['code'],
+                                        'c1tID'         => $req['c1tID'],
+                                        'clientID'      => $req['cID'],
+                                    ];
+                                    $this->db->table($this->tblc1d)->where($where1)->update($data);
+                                }
+                                $where2 = [
+                                    'type'          => 'materialdata',
+                                    'code'          => $req['code'],
+                                    'c1tID'         => $req['c1tID'],
+                                    'clientID'      => $req['cID'],
+                                ];
+                                $this->db->table($this->tblc1d)->where($where2)->update(array('question' => $req['materiality']));
+                            break;
+                            case 'saveac10s1':
+                                $where = [
+                                    'type'          => $req['type'], 
+                                    'code'          => $req['code'],
+                                    'question'      => 'section1',
+                                    'c1tID'         => $req['c1tID'],
+                                    'clientID'      => $req['cID'],
+                                ];
+                                $this->db->table($this->tblc1d)->where($where)->delete();
+                                foreach($req['name'] as $i => $val){
+                                    $data = [
+                                        'less'          => $req['less'][$i],
+                                        'name'          => $req['name'][$i],
+                                        'balance'       => $req['balance'][$i],
+                                        'type'          => $req['type'],
+                                        'code'          => $req['code'],
+                                        'c1tID'         => $req['c1tID'],
+                                        'clientID'      => $req['cID'],
+                                        'firmID'        => $req['fID'],
+                                        'question'      => 'section1',
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $req['uID'],
+                                    ];
+                                    $this->db->table($this->tblc1d)->insert($data);
+                                }
+                            break;
+                            case 'saveac10s2':
+                                $where = [
+                                    'type'          => $req['type'], 
+                                    'code'          => $req['code'],
+                                    'question'      => 'section2',
+                                    'c1tID'         => $req['c1tID'],
+                                    'clientID'      => $req['cID'],
+                                ];
+                                $this->db->table($this->tblc1d)->where($where)->delete();
+                                foreach($req['name'] as $i => $val){
+                                    $data = [
+                                        'less'          => $req['less'][$i],
+                                        'name'          => $req['name'][$i],
+                                        'reason'        => $req['reason'][$i],
+                                        'balance'       => $req['balance'][$i],
+                                        'type'          =>  $req['type'],
+                                        'code'          =>  $req['code'],
+                                        'c1tID'         => $req['c1tID'],
+                                        'clientID'      => $req['cID'],
+                                        'firmID'        => $req['fID'],
+                                        'question'      => 'section2',
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $req['uID'],
+                                    ];
+                                    $this->db->table($this->tblc1d)->insert($data);
+                                }
+                            break;
+                            case 'saveac10cu':
+                                $dacid = $this->crypt->decrypt($req['acid']);
+                                $data = [
+                                    'question'      => $req['question'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $req['uID'],
+                                ];
+                                $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        return true;
+                    break;
+                    case 'AC11':
+                        switch ($param['save']) {
+                            case 'saveac11':
+                                $dacid = $this->crypt->decrypt($req['acid']);
+                                $data = [
+                                    'question'      => $req['ac11'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $req['uID'],
+                                ];
+                                $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        return true;
+                    break;
+                }
+            break;
 
-    /**
-        * @method saveeqr() save the ac1 information
-        * @param req ac1 data
-        * @var acid decrypted chapter id
-        * @var data contains ac1 information
-        * @return bool
-    */
-    public function saveac1eqr($req){
+            case 'c2':
+                switch($param['code']) {
+                    case '2.1 B2':
+                    case '2.2.1 C2':   
+                    case '2.2.2 C2-1':  
+                    case '2.3 D2':
+                    case '2.4.1 E2':   
+                    case '2.4.3 E2-2': 
+                    case '2.4.4 E2-3': 
+                    case '2.4.5 E2-4':
+                    case '2.5 F2':
+                    case '2.6 H2':
+                    case '2.7 I2':
+                    case '2.8 J2':
+                    case '2.9 K2':
+                    case '2.10 L2': 
+                    case '2.11 M2':
+                    case '2.12 N2':
+                    case '2.13.1 O2':
+                    case '2.13.2 O2-1':
+                    case '2.14 P2':
+                    case '2.15 Q2':
+                    case '2.16 R2-1':
+                    case '2.17 R2-2':
+                    case '2.18.1 S2-1':
+                    case '2.18.2 S2-2': 
+                    case '2.18.3 S2-3':
+                    case '2.18.4 S2-4':
+                    case '2.19.1 U2-1':
+                    case '2.19.2 U2-2':
+                    case '2.19.3 U2-3':  
+                    case '2.4.2 E2-1':
+                        switch ($param['save']) {
+                            case 'savec2':
+                                foreach($req['extent'] as $i => $val){
+                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
+                                    $data = [
+                                        'extent'        => $req['extent'][$i],
+                                        'reference'     => $req['reference'][$i],
+                                        'initials'      => $req['initials'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $req['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
+                                }
+                            break;
+                            case 'aicpppa':
+                                foreach($req['comment'] as $i => $val){
+                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
+                                    $data = [
+                                        'reference'     => $req['comment'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $req['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
+                                }
+                            break;
+                            case 'rcicp':
+                                foreach($req['extent'] as $i => $val){
+                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
+                                    $data = [
+                                        'extent'        => $req['extent'][$i],
+                                        'reference'     => $req['comment'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $req['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
+                                }
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        return true;
+                    break;
+                }
+            break;
 
-        $acid = $this->crypt->decrypt($req['acid']);
-        $data = [
-            'question'      => $req['question'],
-            'updated_on'    => $this->date.' '.$this->time,
-            'updated_by'    => $req['uID'],
-        ];
-        if($this->db->table($this->tblc1d)->where('acID', $acid)->update($data)){
-            $this->logs->log(session()->get('name'). " set a default value on a client file AC1 Chapter 1");
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-
-    /**
-        ----------------------------------------------------------
-        AC2 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveac2() save the ac2 information
-        * @param req ac2 data
-        * @var acid decrypted chapter id
-        * @var data contains ac1 information
-        * @return bool
-    */
-    public function saveac2($req){
-
-        foreach($req['corptax'] as $i => $val){
-            $acid = $this->crypt->decrypt($req['acid'][$i]);
-            $data = [
-                'corptax'           => $req['corptax'][$i],
-                'statutory'         => $req['statutory'][$i],
-                'accountancy'       => $req['accountancy'][$i],
-                'other'             => $req['other'][$i],
-                'totalcu'           => $req['totalcu'][$i],
-                'updated_on'        => $this->date.' '.$this->time,
-                'updated_by'        => $req['uID'],
-            ];
-            $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
-        }
-        $this->logs->log(session()->get('name'). " set a default value on a client file AC2 Chapter 1");
-        return true;
-
-    }
-
-    /**
-        * @method saveac2aep() save the ac2 information
-        * @param req ac2 data
-        * @var acid decrypted chapter id
-        * @var data contains ac2 information
-        * @return bool
-    */
-    public function saveac2aep($req){
-
-        $acid = $this->crypt->decrypt($req['acid']);
-        $data = [
-            'question'      => $req['eap'],
-            'name'          => $req['concl'],
-            'updated_on'    => $this->date.' '.$this->time,
-            'updated_by'    => $req['uID'],
-        ];
-        if($this->db->table($this->tblc1d)->where('acID', $acid)->update($data)){
-            $this->logs->log(session()->get('name'). " set a default value on a client file AC2 Chapter 1");
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-
-    /**
-        ----------------------------------------------------------
-        AC3 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveac3() save the ac3 information
-        * @param req ac3 data
-        * @var acid decrypted chapter id
-        * @var data contains ac3 information
-        * @return bool
-    */
-    public function saveac3($req){
-
-        foreach($req['yesno'] as $i => $val){
-            $acid = $this->crypt->decrypt($req['acid'][$i]);
-            $data = [
-                'yesno'         => $req['yesno'][$i],
-                'comment'       => $req['comment'][$i],
-                'updated_on'    => $this->date.' '.$this->time,
-                'updated_by'    => $req['uID'],
-            ];
-            $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
-        }
-        $this->logs->log(session()->get('name'). " set a default value on a client file AC3 Chapter 1");
-        return true;
-
-    }
-
-    /**
-        ----------------------------------------------------------
-        AC4 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveac4ppr() save the ac4 information
-        * @param req ac4 data
-        * @var acid decrypted chapter id
-        * @var data contains ac4 information
-        * @return bool
-    */
-    public function saveac4ppr($req){
-
-        $acid = $this->crypt->decrypt($req['acid']);
-        $data = [
-            'question'      => $req['ppr'],
-            'updated_on'    => $this->date.' '.$this->time,
-            'updated_by'    => $req['uID'],
-        ];
-        if($this->db->table($this->tblc1d)->where('acID', $acid)->update($data)){
-            $this->logs->log(session()->get('name'). " set a default value on a client file AC4 Chapter 1");
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-
-    /**
-        * @method saveac4() save the ac4 information
-        * @param req ac4 data
-        * @var acid decrypted chapter id
-        * @var data contains ac4 information
-        * @return bool
-    */
-    public function saveac4($req){
-
-        foreach($req['comment'] as $i => $val){
-            $acid = $this->crypt->decrypt($req['acid'][$i]);
-            $data = [
-                'comment'       => $req['comment'][$i],
-                'updated_on'    => $this->date.' '.$this->time,
-                'updated_by'    => $req['uID'],
-            ];
-            $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
-        }
-        $this->logs->log(session()->get('name'). " set a default value on a client file AC4 Chapter 1");
-        return true;
-
-    }
-
-    /**
-        ----------------------------------------------------------
-        AC5 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveac5() save the ac5 information
-        * @param req ac5 data
-        * @var acid decrypted chapter id
-        * @var data contains ac5 information
-        * @return bool
-    */
-    public function saveac5($req){
-
-        $acid = $this->crypt->decrypt($req['acid']);
-        $data = [
-            'question'      => $req['rescon'],
-            'updated_on'    => $this->date.' '.$this->time,
-            'updated_by'    => $req['uID'],
-        ];
-        if($this->db->table($this->tblc1d)->where('acID', $acid)->update($data)){
-            $this->logs->log(session()->get('name'). " set a default value on a client file AC5 Chapter 1");
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-
-    /**
-        ----------------------------------------------------------
-        AC6 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveac6ra() save the ac6 information
-        * @param req ac6 data
-        * @var acid decrypted chapter id
-        * @var data contains ac6 information
-        * @return bool
-    */
-    public function saveac6ra($req){
-
-        foreach($req['planning'] as $i => $val){
-            $acid = $this->crypt->decrypt($req['acid'][$i]);
-            $data = [
-                'planning'          => $req['planning'][$i],
-                'finalization'      => $req['finalization'][$i],
-                'reference'         => $req['reference'][$i],
-                'updated_on'        => $this->date.' '.$this->time,
-                'updated_by'        => $req['uID'],
-            ];
-            $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
-        }
-        $this->logs->log(session()->get('name'). " set a default value on a client file AC6 Chapter 1");
-        return true;
-
-    }
-
-    /**
-        * @method saveac6s12() save the ac6 information
-        * @param req ac6 data
-        * @var acid decrypted chapter id
-        * @var data contains ac6 information
-        * @return bool
-    */
-    public function saveac6s12($req){
-
-        $acid = $this->crypt->decrypt($req['acid']);
-        $data = [
-            'question'      => $req['section'],
-            'updated_on'    => $this->date.' '.$this->time,
-            'updated_by'    => $req['uID'],
-        ];
-        if($this->db->table($this->tblc1d)->where('acID', $acid)->update($data)){
-            $this->logs->log(session()->get('name'). " set a default value on a client file AC6 Chapter 1");
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-
-    /**
-        * @method saveac6s3() save the ac6 information
-        * @param req ac6 data
-        * @var array-where reference data
-        * @var acid decrypted chapter id
-        * @var data contains ac6 information
-        * @return bool
-    */
-    public function saveac6s3($req){
-        $where = [
-            'type'          => $req['part'], 
-            'code'          => $req['code'], 
-            'c1tID'         => $req['c1tID'],
-            'clientID'      => $req['cID'],
-        ];
-        $this->db->table($this->tblc1d)->where($where)->delete();
-        foreach($req['financialstatement'] as $i => $val){
-            $data = [
-                'finstate'          => $req['financialstatement'][$i],
-                'desc'              => $req['descriptioncontrol'][$i],
-                'controleffect'     => $req['controleffective'][$i],
-                'implemented'       => $req['controlimplemented'][$i],
-                'assessed'          => $req['assesed'][$i],
-                'reference'         => $req['crosstesting'][$i],
-                'reliance'          => $req['reliancecontrol'][$i],
-                'code'              => $req['code'],
-                'c1tID'             => $req['c1tID'],
-                'firmID'            => $req['fID'],
-                'clientID'          => $req['cID'],
-                'type'              => $req['part'],
-                'status'            => 'Active',
-                'updated_on'        => $this->date.' '.$this->time,
-                'updated_by'        => $req['uID'],
-            ];
-            $this->db->table($this->tblc1d)->insert($data);
-        }
-        $this->logs->log(session()->get('name'). " set a default value on a client file AC6 Chapter 1");
-        return true;
-
-    }
-
-    /**
-        ----------------------------------------------------------
-        AC7 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveac7() save the ac7 information
-        * @param req ac7 data
-        * @var data contains ac7 information
-        * @var array-where reference data
-        * @return bool
-    */
-    public function saveac7($req){
-
-        $data = [
-            'question'      => $req['genyn'],
-            'updated_on'    => $this->date.' '.$this->time,
-            'updated_by'    => $req['uID'],
-        ];
-        $where = [
-            'type'          => $req['part'],
-            'c1tID'         => $req['c1tID'],
-            'clientID'      => $req['cID'],
-        ];
-        if($this->db->table($this->tblc1d)->where($where)->update($data)){
-            $this->logs->log(session()->get('name'). " set a default value on a client file AC7 Chapter 1");
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-
-    /**
-        ----------------------------------------------------------
-        AC8 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveac8() save the ac8 information
-        * @param req ac8 data
-        * @var dacid decrypted chapter id
-        * @var data contains ac4 information
-        * @return bool
-    */
-    public function saveac8($req){
-
-        foreach($req['question'] as $i => $val){
-            $dacid = $this->crypt->decrypt($req['acid'][$i]);
-            $data = [
-                'question'          => $req['question'][$i],
-                'updated_on'        => $this->date.' '.$this->time,
-                'updated_by'        => $req['uID'],
-            ];
-            $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
-        }
-        $this->logs->log(session()->get('name'). " set a default value on a client file AC8 Chapter 1");
-        return true;
-
-    }
-
-    /**
-        ----------------------------------------------------------
-        AC9 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveac9() save the ac9 information
-        * @param req ac9 data
-        * @var dacid decrypted chapter id
-        * @var data contains ac9 information
-        * @return bool
-    */
-    public function saveac9($req){
-
-        $dacid = $this->crypt->decrypt($req['acid']);
-        $data = [
-            'question'      => $req['ac9'],
-            'updated_on'    => $this->date.' '.$this->time,
-            'updated_by'    => $req['uID'],
-        ];
-        if($this->db->table($this->tblc1d)->where('acID', $dacid)->update($data)){
-            $this->logs->log(session()->get('name'). " set a default value on a client file AC9 Chapter 1");
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-
-    /**
-        ----------------------------------------------------------
-        AC10 FUNCTIONS
-        ----------------------------------------------------------
-        * @method getac10s1data() get the ac10 information
-        * @param c1tID chapter 1 title id
-        * @param part specifies the part of the file
-        * @param dcID decrypted client id
-        * @var array-where reference data
-        * @var query result from database
-    **/
-   
-    public function saveac10s1($req){
-
-        $where = [
-            'type'          => $req['type'], 
-            'code'          => $req['code'],
-            'question'      => 'section1',
-            'c1tID'         => $req['c1tID'],
-            'clientID'      => $req['cID'],
-        ];
-        $this->db->table($this->tblc1d)->where($where)->delete();
-        foreach($req['name'] as $i => $val){
-            $data = [
-                'less'          => $req['less'][$i],
-                'name'          => $req['name'][$i],
-                'balance'       => $req['balance'][$i],
-                'type'          =>  $req['type'],
-                'code'          =>  $req['code'],
-                'c1tID'         => $req['c1tID'],
-                'clientID'      => $req['cID'],
-                'firmID'        => $req['fID'],
-                'question'      => 'section1',
-                'updated_on'    => $this->date.' '.$this->time,
-                'updated_by'    => $req['uID'],
-            ];
-            $this->db->table($this->tblc1d)->insert($data);
-        }
-        $this->logs->log(session()->get('name'). " set a default value on a client file AC10 Chapter 1");
-        return true;
-
-    }
-
-    /**
-        * @method saveac10s2() save the ac10 information
-        * @param req ac10 data
-        * @var where update reference on client files
-        * @var data contains ac10 information
-        * @return bool
-    */
-    public function saveac10s2($req){
-
-        $where = [
-            'type'          => $req['type'], 
-            'code'          => $req['code'],
-            'question'      => 'section2',
-            'c1tID'         => $req['c1tID'],
-            'clientID'      => $req['cID'],
-        ];
-        $this->db->table($this->tblc1d)->where($where)->delete();
-        foreach($req['name'] as $i => $val){
-            $data = [
-                'less'          => $req['less'][$i],
-                'name'          => $req['name'][$i],
-                'reason'        => $req['reason'][$i],
-                'balance'       => $req['balance'][$i],
-                'type'          =>  $req['type'],
-                'code'          =>  $req['code'],
-                'c1tID'         => $req['c1tID'],
-                'clientID'      => $req['cID'],
-                'firmID'        => $req['fID'],
-                'question'      => 'section2',
-                'updated_on'    => $this->date.' '.$this->time,
-                'updated_by'    => $req['uID'],
-            ];
-            $this->db->table($this->tblc1d)->insert($data);
-        }
-        $this->logs->log(session()->get('name'). " set a default value on a client file AC10 Chapter 1");
-        return true;
-
-    }
-
-    /**
-        * @method saveac10cu() save the ac10 information
-        * @param req ac10 data
-        * @var dacid decrypted chapter id
-        * @var data contains ac10 information
-        * @return bool
-    */
-    public function saveac10cu($req){
-
-        $dacid = $this->crypt->decrypt($req['acid']);
-        $data = [
-            'question'      => $req['question'],
-            'updated_on'    => $this->date.' '.$this->time,
-            'updated_by'    => $req['uID'],
-        ];
-        if($this->db->table($this->tblc1d)->where('acID', $dacid)->update($data)){
-            $this->logs->log(session()->get('name'). " set a default value on a client file AC10 Chapter 1");
-            return true;
-        }else{
-            return false;
-        }
-        
-    }
-
-    /**
-        ----------------------------------------------------------
-        AC10 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveac10summ() save the ac10 information
-        * @param req ac10 data
-        * @param ref ac10 reference
-        * @var data contains ac10 information
-        * @var where1-where2 update reference on client files
-        * @return bool
-    */
-    public function saveac10summ($req,$ref){
-
-        foreach ($req as $r => $val){
-            $data = [
-                'question'      => $val,
-                'type'          =>  $r.'data',
-                'updated_on'    => $this->date.' '.$this->time,
-                'updated_by'    => $ref['uID'],
-            ];
-            $where1 = [
-                'type'          => $r.'data',
-                'code'          => $ref['code'],
-                'c1tID'         => $ref['c1tID'],
-                'clientID'      =>$ref['cID'],
-            ];
-            $this->db->table($this->tblc1d)->where($where1)->update($data);
-        }
-        $where2 = [
-            'type'          => 'materialdata',
-            'code'          => $ref['code'],
-            'c1tID'         => $ref['c1tID'],
-            'clientID'      =>$ref['cID'],
-        ];
-        $this->db->table($this->tblc1d)->where($where2)->update(array('question' => $ref['materiality']));
-        $this->logs->log(session()->get('name'). " set a default value on a client file AC10 Chapter 1");
-        return true;
-
-    }
-
-    /**
-        ----------------------------------------------------------
-        AC11 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveac11() save the ac10 information
-        * @param req ac10 data
-        * @var dacid decrypted chapter id
-        * @var data contains ac10 information
-        * @return bool
-    */
-    public function saveac11($req){
-
-        $dacid = $this->crypt->decrypt($req['acid']);
-        $data = [
-            'question'      => $req['ac11'],
-            'updated_on'    => $this->date.' '.$this->time,
-            'updated_by'    => $req['uID'],
-        ];
-        if($this->db->table($this->tblc1d)->where('acID', $dacid)->update($data)){
-            $this->logs->log(session()->get('name'). " set a default value on a client file AC11 Chapter 1");
-            return true;
-        }else{
-            return false;
+            case 'c3':
+                switch ($code) {
+                    case '' :
+                        switch ($save) {
+                            case '' :
+                            
+                            break;
+                        }
+                    break;
+                }
+            break;
         }
 
     }
@@ -720,89 +601,6 @@ class ChapterValuesModel extends Model{
 
 
 
-
-
-
-
-
-
-
-
-
-    /**
-        ----------------------------------------------------------
-        CHAPTER 2 POST FUNCTIONS
-        ----------------------------------------------------------
-        * @method savequestions() save the chapter 2
-        * @param req chapter 2
-        * @var dacid decrypted chapter id
-        * @var data contains chapter 2
-        * @return bool
-    */
-    public function savequestions($req){
-
-        foreach($req['extent'] as $i => $val){
-            $dacid = $this->crypt->decrypt($req['acid'][$i]);
-            $data = [
-                'extent'        => $req['extent'][$i],
-                'reference'     => $req['reference'][$i],
-                'initials'      => $req['initials'][$i],
-                'updated_on'    => $this->date.' '.$this->time,
-                'updated_by'    => $req['uID'],
-            ];
-            $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
-        }
-        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 2");
-        return true;
-
-    }
-
-    /**
-        * @method saveaicpppa() save the chapter 2
-        * @param req chapter 2
-        * @var dacid decrypted chapter id
-        * @var data contains chapter 2
-        * @return bool
-    */
-    public function saveaicpppa($req){
-
-        foreach($req['comment'] as $i => $val){
-            $dacid = $this->crypt->decrypt($req['acid'][$i]);
-            $data = [
-                'reference'     => $req['comment'][$i],
-                'updated_on'    => $this->date.' '.$this->time,
-                'updated_by'    => $req['uID'],
-            ];
-            $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
-        }
-        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 2");
-        return true;
-
-    }
-
-    /**
-        * @method savercicp() save the chapter 2
-        * @param req chapter 2
-        * @var dacid decrypted chapter id
-        * @var data contains chapter 2
-        * @return bool
-    */
-    public function savercicp($req){
-
-        foreach($req['extent'] as $i => $val){
-            $dacid = $this->crypt->decrypt($req['acid'][$i]);
-            $data = [
-                'extent'        => $req['extent'][$i],
-                'reference'     => $req['comment'][$i],
-                'updated_on'    => $this->date.' '.$this->time,
-                'updated_by'    => $req['uID'],
-            ];
-            $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
-        }
-        $this->logs->log(session()->get('name'). " set a default value on a client file Chapter 2");
-        return true;
-
-    }
 
 
 

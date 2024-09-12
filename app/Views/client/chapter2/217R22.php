@@ -47,7 +47,7 @@
                 <div class="m-5">
                     <h4>PAYROLL COSTS</h4>
                     <p>Where the entity operates a defined benefit pension scheme ensure the S2/2 audit programme is completed and where employees receive share-based payments ensure the S2/3 audit programme is completed.</p>
-                    <form action="<?= base_url()?>auditsystem/client/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <table class="table table-sm table-bordered table-hover">
                             <thead>
                                 <tr>

@@ -46,7 +46,7 @@
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>PAYABLES</h4>
-                    <form action="<?= base_url()?>auditsystem/client/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <table class="table table-sm table-bordered table-hover">
                             <thead>
                                 <tr>

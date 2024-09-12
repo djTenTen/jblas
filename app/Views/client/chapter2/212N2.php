@@ -54,7 +54,7 @@
                         <li><h6>AUDIT EXPERTS</h6></li>
                         <li><h6>RELIANCE ON OTHER AUDITORS AND INTERNAL AUDITORS</h6></li>
                     </ul>
-                    <form action="<?= base_url()?>auditsystem/client/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <table class="table table-sm table-bordered table-hover">
                             <thead>
                                 <tr>

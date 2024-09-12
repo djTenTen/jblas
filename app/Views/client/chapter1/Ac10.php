@@ -62,7 +62,7 @@
                 <br>
                 <div class="m-5">
                     <div class="table-responsive">
-                        <form action="<?= base_url()?>auditsystem/client/saveac10cu/<?= $code?>/<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac10cu/<?= $code?>-<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered table-sm">
                                 <thead>
                                     <tr>
@@ -85,7 +85,7 @@
                                 </tbody>
                             </table> 
                         </form>
-                        <form action="<?= base_url()?>auditsystem/client/saveac10s1/<?= $code?>/<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac10s1/<?= $code?>-<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered table-sm">
                                 <thead> 
                                     <tr>
@@ -121,7 +121,7 @@
                                     </tr>
                             </table>
                         </form>
-                        <form action="<?= base_url()?>auditsystem/client/saveac10s2/<?= $code?>/<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac10s2/<?= $code?>-<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered table-sm">
                                 <thead>
                                     <tr>

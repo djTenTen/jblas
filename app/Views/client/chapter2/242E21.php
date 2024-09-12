@@ -46,7 +46,7 @@
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>INVENTORY APPENDIX 1 – INVENTORY COUNT PLANNING</h4>
-                    <form action="<?= base_url()?>auditsystem/client/aicpppa/save/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/aicpppa/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <table class="table table-sm table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -68,7 +68,7 @@
                     <br><br><br><hr style="color: #7752FE;">
                     <h6>Review of client’s inventory count procedures</h6>
                     <p>This review should be completed before attending the client’s inventory count in conjunction with a copy of the client’s inventory count instructions.  Section 1 deals with overall controls, and sections 2 to 4 with inventory count instructions and procedures, section 5 covers inventory counts performed by independent inventory counters and section 6 covers clients that operate a cyclical inventory count system.</p>
-                    <form action="<?= base_url()?>auditsystem/client/rcicp/save/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/rcicp/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <table class="table table-sm table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -83,7 +83,7 @@
                                         <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r1['acID'])?>"><?= $r1['question']?></td>
                                         <td>
                                             <select name="yesno[]" id="" class="form-select">
-                                                <option value="<?= $r['extent']?>" selected><?= $r['extent']?></option>
+                                                <option value="<?= $r1['extent']?>" selected><?= $r1['extent']?></option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
                                                 <option value="N/A">N/A</option>

@@ -47,7 +47,7 @@
                 <div class="m-5">
                     <h4>INVENTORY APPENDIX 2 – TESTS AT INVENTORY COUNT</h4>
                     <h6>N.B. If inventory count is solely undertaken by a 3rd party, this does not negate the need to carry out audit procedures identical to that carried out if the client had undertaken the procedures.  Consideration should be given as to the integrity and independence of the 3rd party.</h6>
-                    <form action="<?= base_url()?>auditsystem/client/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <table class="table table-sm table-bordered table-hover">
                             <thead>
                                 <tr>

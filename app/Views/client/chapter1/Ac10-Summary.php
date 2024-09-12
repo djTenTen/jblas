@@ -63,7 +63,7 @@
                 <div class="m-5">
                     <h4>AUDIT APPROACH AND SAMPLE SIZE CALCULATION</h4>
                     <div class="table-responsive">
-                        <form action="<?= base_url()?>auditsystem/client/saveac10summ/<?= $code?>/<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac10summ/<?= $code?>-<?= $sheet?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered table-sm" style="width: 2000px;">
                                 <thead>
                                     <tr class="text-center">

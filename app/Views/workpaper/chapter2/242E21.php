@@ -83,7 +83,7 @@
                                         <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r1['acID'])?>"><?= $r1['question']?></td>
                                         <td>
                                             <select name="yesno[]" id="" class="form-select">
-                                                <option value="<?= $r['extent']?>" selected><?= $r['extent']?></option>
+                                                <option value="<?= $r1['extent']?>" selected><?= $r1['extent']?></option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
                                                 <option value="N/A">N/A</option>

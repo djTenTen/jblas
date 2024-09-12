@@ -45,7 +45,7 @@
                 <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $code?>/<?= $c1tID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
-                    <form action="<?= base_url()?>auditsystem/client/saveac9/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac9/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" value="ac9data" name="part">
                         <input type="hidden" name="acid" value="<?= $acID?>">
                         <h4>CONSIDERATION OF SPECIFIC SKILLS REQUIRED FOR THIS ASSIGNMENT </h4>

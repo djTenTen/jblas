@@ -51,7 +51,7 @@
                     <p>While answering these questions the following matters should be fully considered for the audit firm and any network firm: independence, integrity, conflicts of interest with other clients, economic dependence, trusts, matters arising with regulatory authorities, ability to service the client, other services provided to the client and hospitality. Additional guidance is available in legislation and the Code of Ethics issued by the International Ethics Standards Board for Accountants.  </p>
                     <p>Any YES answers should be fully explained along with the safeguards, which will enable us to accept / continue with the appointment. </p>
                     <p>Significant issues must be discussed with the <span class="text-danger">Ethics Partner</span> and details of the discussion documented on file.</p>
-                    <form action="<?= base_url()?>auditsystem/client/saveac1/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac1/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <table class="table table-hover table-sm table-bordered">
                             <thead>
                                 <tr>
@@ -79,7 +79,7 @@
                         <button type="submit" class="btn btn-success m-1 float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
-                    <form action="<?= base_url()?>auditsystem/client/saveac1eqr/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac1eqr/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" name="acid" value="<?= $acID?>">
                         <div class="col-md-6">
                             <div class="mb-3">

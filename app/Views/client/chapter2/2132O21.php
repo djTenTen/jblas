@@ -55,7 +55,7 @@
                     <p><i>Step 4: Allocate the transaction price to the performance obligations in the contract.</i></p>
                     <p><i>Step 5: Recognise revenue when (or as) the entity satisfies a performance obligation.</i></p>
                     <p><i>Auditors must read IFRS 15, the accompanying application guidance (Appendix B of IFRS 15) and the transition requirements (Appendix C of IFRS 15) to gain a full understanding of the accounting requirements. </i></p>
-                    <form action="<?= base_url()?>auditsystem/client/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <table class="table table-sm table-bordered table-hover">
                             <thead>
                                 <tr>
