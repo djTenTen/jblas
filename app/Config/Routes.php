@@ -213,40 +213,7 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
             /**
                 Saving Values chapter 1,2,3
             */
-
             $sd->post('savevalues/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::savevalues/$1/$2/$3/$4/$5/$6');
-
-            /**
-                Saving Values chapter 3
-            */
-            $sd->post('saveplaf/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveplaf/$1/$2/$3/$4');
-            $sd->post('saveaa1s3/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa1s3/$1/$2/$3/$4');
-            $sd->post('saverceap/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saverceap/$1/$2/$3/$4');
-            $sd->post('saveaa2/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa2/$1/$2/$3/$4');
-            $sd->post('saveaa3a/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa3a/$1/$2/$3/$4');
-            $sd->post('saveaa3afaf/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa3afaf/$1/$2/$3/$4');
-            $sd->post('saveaa3air/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa3air/$1/$2/$3/$4');
-            $sd->post('saveaa3b/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa3b/$1/$2/$3/$4');
-            $sd->post('saveaa3bp4/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa3bp4/$1/$2/$3/$4');
-            $sd->post('saveaa4/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa4/$1/$2/$3/$4');
-            $sd->post('saveaa7aepapp/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa7aepapp/$1/$2/$3/$4');
-            $sd->post('saveaa7isa/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa7isa/$1/$2/$3/$4');
-            $sd->post('saveaa7aep/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa7aep/$1/$2/$3/$4');
-            $sd->post('saveaa10/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa10/$1/$2/$3/$4');
-            $sd->post('saveaa11ue/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa11ue/$1/$2/$3/$4');
-            $sd->post('saveaa11un/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa11un/$1/$2/$3/$4');
-            $sd->post('saveaa11con/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa11con/$1/$2/$3/$4');
-            $sd->post('saveaa11ad/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa11ad/$1/$2/$3/$4');
-            $sd->post('saveaa11uead/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa11uead/$1/$2/$3/$4');
-            $sd->post('save311/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::save311/$1/$2/$3/$4');
-            $sd->post('saveab3/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab3/$1/$2/$3/$4');
-            $sd->post('saveab4a/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab4a/$1/$2/$3/$4');
-            $sd->post('saveab4checklist/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab4checklist/$1/$2/$3/$4');
-            $sd->post('saveab4/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab4/$1/$2/$3/$4');
-            $sd->post('saveab1/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveab1/$1/$2/$3/$4');
-            $sd->post('saveaa5b/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa5b/$1/$2/$3/$4');
-            $sd->post('saveaa5a/(:any)/(:any)/(:any)/(:any)', 'ChapterValuesController::saveaa5a/$1/$2/$3/$4');
-            
         });
     });
     

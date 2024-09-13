@@ -47,7 +47,7 @@
                 <div class="m-5">
                     <h6>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)</h6>
                     <h6> ~ Additional Disclosures for an Entity with a Defined Benefit Pension Plan(s) (including those Accounted for on a Defined Contribution Basis)</h6>
-                    <form action="<?= base_url()?>auditsystem/client/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="ab4b">
                         <table class="table table-bordered">
                             <thead>

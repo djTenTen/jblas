@@ -46,7 +46,7 @@
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>AUDIT CONTROL RECORD</h4>
-                    <form action="<?= base_url()?>auditsystem/client/saveplaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveplaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <table class="table table-sm table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -75,7 +75,7 @@
                         <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
-                    <form action="<?= base_url()?>auditsystem/client/saverceap/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saverceap/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" name="acid" value="<?= $acID2?>">
                         <h6>Completion by most senior person completing the fieldwork</h6>
                         <div class="col-md-12">
@@ -182,7 +182,7 @@
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
                     <h6>4.	Pre-sign off completion by Audit Engagement Partner</h6>
-                    <form action="<?= base_url()?>auditsystem/client/saveplaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveplaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <table class="table table-sm table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -211,7 +211,7 @@
                         <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
-                    <form action="<?= base_url()?>auditsystem/client/saveaa1s3/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa1s3/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" name="acid" value="<?= $acID?>">
                         <h6>Signed Financial Statements and Audit Opinion</h6>
                         <div class="col-md-12">
@@ -302,7 +302,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="form-check mb-2">
-                                    <input class="form-check-input" id="a14" type="checkbox" name="a14" value="I am satisfied that all points raised in my review on <?php if($s3['a14'] != ''){echo 'checked';}?>"/>
+                                    <input class="form-check-input" id="a14" type="checkbox" name="a14" value="I am satisfied that all points raised in my review on" <?php if($s3['a14'] != ''){echo 'checked';}?>/>
                                     <label class="form-check-label" for="a14">I am satisfied that all points raised in my review on </label>
                                 </div>
                                 <textarea class="form-control form-control-sm" name="a14d" id="a14d" cols="30" rows="5" placeholder="Insert review on"><?php if($s3['a14'] != ''){echo $s3['a14d'];}?></textarea>

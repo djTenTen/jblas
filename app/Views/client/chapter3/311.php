@@ -46,7 +46,7 @@
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h1 class="text-center">AUDITOR’S REPORT ON FINANCIAL STATEMENTS </h1>
-                    <form class="form-inline" action="<?= base_url()?>auditsystem/client/save311/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form class="form-inline" action="<?= base_url()?>auditsystem/client/savevalues/c3/save311/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <div class="row justify-content-center">
                             <div class="col-2"></div>
                             <div class="col-8">

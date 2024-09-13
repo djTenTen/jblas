@@ -811,7 +811,7 @@ class ChapterValuesController extends BaseController{
                                     'comment'   => $this->request->getPost('comment'),
                                     'acid'      => $this->request->getPost('acid'),
                                     'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-                                    'c1tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'ctID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
                                     'uID'       => $this->crypt->decrypt(session()->get('userID')),
                                     'fID'       => $this->crypt->decrypt(session()->get('firmID')),
                                 ];
@@ -825,997 +825,704 @@ class ChapterValuesController extends BaseController{
 
             case 'c3':
                 switch ($code) {
-                    case '' :
+                    case '3.1 Aa1':
                         switch ($save) {
-                            case '' :
-                            
+                            case 'saveplaf' :
+                                $req = [
+                                    'extent'        => $this->request->getPost('extent'),
+                                    'reference'     => $this->request->getPost('reference'),
+                                    'acid'          => $this->request->getPost('acid'),
+                                    'cID'           => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'         => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'           => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'           => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                            case 'saveaa1s3' :
+                                $sec = [
+                                    'a1'    => $this->request->getPost('a1'),
+                                    'a2'    => $this->request->getPost('a2'),
+                                    'a3'    => $this->request->getPost('a3'),
+                                    'a4'    => $this->request->getPost('a4'),
+                                    'a5'    => $this->request->getPost('a5'),
+                                    'a6'    => $this->request->getPost('a6'),
+                                    'a7'    => $this->request->getPost('a7'),
+                                    'a8'    => $this->request->getPost('a8'),
+                                    'a9'    => $this->request->getPost('a9'),
+                                    'a10'   => $this->request->getPost('a10'),
+                                    'a10d'  => $this->request->getPost('a10d'),
+                                    'a11'   => $this->request->getPost('a11'),
+                                    'a11d'  => $this->request->getPost('a11d'),
+                                    'a12'   => $this->request->getPost('a12'),
+                                    'a13'   => $this->request->getPost('a13'),
+                                    'a14'   => $this->request->getPost('a14'),
+                                    'a14d'  => $this->request->getPost('a14d'),
+                                    'a15'   => $this->request->getPost('a15'),
+                                    'a16'   => $this->request->getPost('a16'),
+                                    'a17'   => $this->request->getPost('a17'),
+                                    'a18'   => $this->request->getPost('a18'),
+                                    'a19'   => $this->request->getPost('a19'),
+                                    'a20'   => $this->request->getPost('a20'),
+                                    'a21'   => $this->request->getPost('a21'),
+                                    'a22'   => $this->request->getPost('a22'),
+                                    'a23'   => $this->request->getPost('a23'),
+                                    'a24'   => $this->request->getPost('a24'),
+                                ];
+                                $req = [
+                                    'question'  => json_encode($sec),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                            case 'saverceap' :
+                                $rc = [
+                                    'awp1'      => $this->request->getPost('awp1'),
+                                    'awp2'      => $this->request->getPost('awp2'),
+                                    'awp3'      => $this->request->getPost('awp3'),
+                                    'awp4'      => $this->request->getPost('awp4'),
+                                    'awp5'      => $this->request->getPost('awp5'),
+                                    'awp6'      => $this->request->getPost('awp6'),
+                                    'awp7'      => $this->request->getPost('awp7'),
+                                    'rceap1'    => $this->request->getPost('rceap1'),
+                                    'rceap2'    => $this->request->getPost('rceap2'),
+                                    'rceap3'    => $this->request->getPost('rceap3'),
+                                    'rceap4'    => $this->request->getPost('rceap4'),
+                                    'rceap5'    => $this->request->getPost('rceap5'),
+                                    'rceap6'    => $this->request->getPost('rceap6'),
+                                    'rceap7'    => $this->request->getPost('rceap7'),
+                                    'rceap8'    => $this->request->getPost('rceap8'),
+                                    'rceap9'    => $this->request->getPost('rceap9'),
+                                    'rceap10'   => $this->request->getPost('rceap10'),
+                                    'details'   => $this->request->getPost('details'),
+                                    'datereq'   => $this->request->getPost('datereq'),
+                                    'numcop'    => $this->request->getPost('numcop'),
+                                ];
+                                $req = [
+                                    'question'  => json_encode($rc),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
                             break;
                         }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.2 Aa2':
+                        switch ($save) {
+                            case 'saveaa2' :
+                                $aa2 = [
+                                    'rat'       => $this->request->getPost('rat'),
+                                    'rcae'      => $this->request->getPost('rcae'),
+                                    'atriaq'    => $this->request->getPost('atriaq'),
+                                    'kcapet'    => $this->request->getPost('kcapet'),
+                                    'fd'        => $this->request->getPost('fd'),
+                                    'fs'        => $this->request->getPost('fs'),
+                                    'oi'        => $this->request->getPost('oi')
+                                ];
+                                $req = [
+                                    'aa2'       => json_encode($aa2),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.3 Aa3a':
+                        switch ($save) {
+                            case 'saveaa3a' :
+                                $req = [
+                                    'comment'   => $this->request->getPost('comment'),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                            case 'saveaa3afaf' :
+                                $req = [
+                                    'extent'        => $this->request->getPost('extent'),
+                                    'reference'     => $this->request->getPost('reference'),
+                                    'acid'          => $this->request->getPost('acid'),
+                                    'cID'           => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'         => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'           => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'           => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                            case 'saveaa3air' :
+                                $air = [
+                                    'sia'       => $this->request->getPost('sia'),
+                                    'seh'       => $this->request->getPost('seh'),
+                                    'ir'        => $this->request->getPost('ir'),
+                                    'tird'      => $this->request->getPost('tird'),
+                                    'tfrd'      => $this->request->getPost('tfrd'),
+                                ];
+                                $req = [
+                                    'air'       => json_encode($air),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.4 Aa3b':
+                        switch ($save) {
+                            case 'saveaa3b' :
+                                $req = [
+                                    'reference'     => $this->request->getPost('reference'),
+                                    'acid'          => $this->request->getPost('acid'),
+                                    'cID'           => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'         => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'           => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'           => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                            case 'saveaa3bp4' :
+                                $p4 = [
+                                    'p41'   => $this->request->getPost('p41'),
+                                    'p42'   => $this->request->getPost('p42'),
+                                    'bwr1'   => $this->request->getPost('bwr1'),
+                                    'bwr2'   => $this->request->getPost('bwr2'),
+                                    'bwr2d'   => $this->request->getPost('bwr2d'),
+                                    'bwr3'   => $this->request->getPost('bwr3'),
+                                    'bwr3d'   => $this->request->getPost('bwr3d'),
+                                    'bwr4'   => $this->request->getPost('bwr4'),
+                                    'bwr4d'   => $this->request->getPost('bwr4d'),
+                                    'bwr5'   => $this->request->getPost('bwr5'),
+                                    'bwr5d'   => $this->request->getPost('bwr5d'),
+                                ];
+                                $req = [
+                                    'p4'        => json_encode($p4),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.5 Aa4':
+                        switch ($save) {
+                            case 'saveaa4' :
+                                $aa4 = [
+                                    'leg1' => $this->request->getPost('leg1'),
+                                    'leg2' => $this->request->getPost('leg2'),
+                                    'isa' => $this->request->getPost('isa'),
+                                    'leg3' => $this->request->getPost('leg3'),
+                                    'num7' => $this->request->getPost('num7'),
+                                    'num10yes' => $this->request->getPost('num10yes'),
+                                    'num11yes' => $this->request->getPost('num11yes'),
+                                    'num11' => $this->request->getPost('num11'),
+                                    'num12yes' => $this->request->getPost('num12yes'),
+                                    'num12' => $this->request->getPost('num12'),
+                                    'num15' => $this->request->getPost('num15'),
+                                    'num16' => $this->request->getPost('num16'),
+                                    'num17' => $this->request->getPost('num17'),
+                                    'imp' => $this->request->getPost('imp'),
+                                    'num22yes1' => $this->request->getPost('num22yes1'),
+                                    'num221' => $this->request->getPost('num221'),
+                                    'num22yes2' => $this->request->getPost('num22yes2'),
+                                    'num222' => $this->request->getPost('num222'),
+                                    'num223' => $this->request->getPost('num223'),
+                                    'num224' => $this->request->getPost('num224'),
+                                    'num23yes1' => $this->request->getPost('num23yes1'),
+                                    'num23d1' => $this->request->getPost('num23d1'),
+                                    'num23d2' => $this->request->getPost('num23d2'),
+                                    'num23yes2' => $this->request->getPost('num23yes2'),
+                                    'num23d' => $this->request->getPost('num23d'),
+                                ];
+                                $req = [
+                                    'aa4'       => json_encode($aa4),
+                                    'code'      => $code,
+                                    'part'      => 'aa4',
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'                   => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.6.1 Aa5a':
+                        switch ($save) {
+                            case 'saveaa5a' :
+                                $aa5 = [
+                                    'aa51d' => $this->request->getPost('aa51d'),
+                                    'ml1' => $this->request->getPost('ml1'),
+                                    'ml1d' => $this->request->getPost('ml1d'),
+                                    'ml2' => $this->request->getPost('ml2'),
+                                    'ml3' => $this->request->getPost('ml3'),
+                                    'ml4' => $this->request->getPost('ml4'),
+                                    'ml4d' => $this->request->getPost('ml4d'),
+                                    'ml5' => $this->request->getPost('ml5'),
+                                    'ml5d' => $this->request->getPost('ml5d'),
+                                    'ml6' => $this->request->getPost('ml6'),
+                                    'ml6d' => $this->request->getPost('ml6d'),
+                                    'ml7' => $this->request->getPost('ml7'),
+                                    'ml7d' => $this->request->getPost('ml7d'),
+                                    'ml8' => $this->request->getPost('ml8'),
+                                ];
+                                $req = [
+                                    'aa5a'       => json_encode($aa5),
+                                    'code'      => $code,
+                                    'part'      => 'aa5a',
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.6.2 Aa5b':
+                        switch ($save) {
+                            case 'saveaa5b' :
+                                $validationRules = [
+                                    'reference' => 'required'
+                                ];
+                                if (!$this->validate($validationRules)) {
+                                    session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+                                    return $this->resultpage($chapter,false,$code,$ctID,$cID,$name);
+                                }
+                                $req = [
+                                    'reference'             => $this->request->getPost('reference'),
+                                    'issue'                 => $this->request->getPost('issue'),
+                                    'comment'               => $this->request->getPost('comment'),
+                                    'recommendation'        => $this->request->getPost('recommendation'),
+                                    'yesno'                 => $this->request->getPost('yesno'),
+                                    'result'                => $this->request->getPost('result'),
+                                    'code'                  => $code,
+                                    'part'                  => $this->request->getPost('part'),
+                                    'cID'                   => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'                 => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'                   => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'                   => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.7 Aa7':
+                        switch ($save) {
+                            case 'saveaa7isa' :
+                                $validationRules = [
+                                    'reference' => 'required'
+                                ];
+                                if (!$this->validate($validationRules)) {
+                                    session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+                                    return $this->resultpage($chapter,false,$code,$ctID,$cID,$name);
+                                }
+                                $req = [
+                                    'reference'         => $this->request->getPost('reference'),
+                                    'issue'             => $this->request->getPost('issue'),
+                                    'comment'           => $this->request->getPost('comment'),
+                                    'recommendation'    => $this->request->getPost('recommendation'),
+                                    'result'            => $this->request->getPost('result'),
+                                    'code'              => $code,
+                                    'part'              => $this->request->getPost('part'),
+                                    'cID'               => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'             => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'               => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'               => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                            case 'saveaa7aepapp' :
+                                $req = [
+                                    'aep'       => $this->request->getPost('question'),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                            case 'saveaa7aep' :
+                                $aep = [
+                                    'ch1'   => $this->request->getPost('ch1'),
+                                    'ch2'   => $this->request->getPost('ch2'),
+                                    'dev1'  => $this->request->getPost('dev1'),
+                                    'dev2'  => $this->request->getPost('dev2'),
+                                    'fut1'  => $this->request->getPost('fut1'),
+                                    'fut2'  => $this->request->getPost('fut2'),
+                                    'cst1'  => $this->request->getPost('cst1'),
+                                    'cst2'  => $this->request->getPost('cst2')
+                                ];
+                                $req = [
+                                    'aep'       => json_encode($aep),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.8 Aa10':
+                        switch ($save) {
+                            case 'saveaa10' :
+                                $aa10 = [
+                                    'sum'   => $this->request->getPost('sum'),
+                                    'comp'  => $this->request->getPost('comp'),
+                                    'exp'   => $this->request->getPost('exp')
+                                ];
+                                $req = [
+                                    'aa10'      => json_encode($aa10),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.10 Aa11-un':
+                    case '3.10 Aa11-ad':
+                        $s = explode('-', $code);
+                        switch ($save) {
+                            case 'saveaa11un' :
+                                $req = [
+                                    'reference'     => $this->request->getPost('reference'),
+                                    'desc'          => $this->request->getPost('desc'),
+                                    'drps'          => $this->request->getPost('drps'),
+                                    'crps'          => $this->request->getPost('crps'),
+                                    'drfp'          => $this->request->getPost('drfp'),
+                                    'crfp'          => $this->request->getPost('crfp'),
+                                    'yesno'         => $this->request->getPost('yesno'),
+                                    'code'          => $s[0],
+                                    'part'          => $this->request->getPost('part'),
+                                    'cID'           => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'         => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'           => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'           => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                            case 'saveaa11ad' :
+                                $req = [
+                                    'reference'     => $this->request->getPost('reference'),
+                                    'desc'          => $this->request->getPost('desc'),
+                                    'drps'          => $this->request->getPost('drps'),
+                                    'crps'          => $this->request->getPost('crps'),
+                                    'drfp'          => $this->request->getPost('drfp'),
+                                    'crfp'          => $this->request->getPost('crfp'),
+                                    'code'          => $s[0],
+                                    'part'          => 'ad',
+                                    'cID'           => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'         => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'           => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'           => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                            case 'saveaa11ue' :
+                                $aa11 = [
+                                    'cta'   => $this->request->getPost('cta'),
+                                    'fpm'   => $this->request->getPost('fpm'),
+                                    'fma'   => $this->request->getPost('fma')
+                                ];
+                                $req = [
+                                    'aa11'      => json_encode($aa11),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                                
+                            break;
+                            case 'saveaa11con' :
+                                $aa11con = [
+                                    'bdr1'      => $this->request->getPost('bdr1'),
+                                    'bcr1'      => $this->request->getPost('bcr1'),
+                                    'bdr2'      => $this->request->getPost('bdr2'),
+                                    'bcr2'      => $this->request->getPost('bcr2'),
+                                    'cdr1'      => $this->request->getPost('cdr1'),
+                                    'ccr1'      => $this->request->getPost('ccr1'),
+                                    'cdr2'      => $this->request->getPost('cdr2'),
+                                    'ccr2'      => $this->request->getPost('ccr2'),
+                                    'ddr1'      => $this->request->getPost('ddr1'),
+                                    'dcr1'      => $this->request->getPost('dcr1'),
+                                    'ddr2'      => $this->request->getPost('ddr2'),
+                                    'dcr2'      => $this->request->getPost('dcr2'),
+                                    'edr1'      => $this->request->getPost('edr1'),
+                                    'ecr1'      => $this->request->getPost('ecr1'),
+                                    'edr2'      => $this->request->getPost('edr2'),
+                                    'ecr2'      => $this->request->getPost('ecr2'),
+                                    'fdr1'      => $this->request->getPost('fdr1'),
+                                    'fcr1'      => $this->request->getPost('fcr1'),
+                                    'fdr2'      => $this->request->getPost('fdr2'),
+                                    'fcr2'      => $this->request->getPost('fcr2'),
+                                    'hdr1'      => $this->request->getPost('hdr1'),
+                                    'hcr1'      => $this->request->getPost('hcr1'),
+                                    'hdr2'      => $this->request->getPost('hdr2'),
+                                    'hcr2'      => $this->request->getPost('hcr2'),
+                                    'idr1'      => $this->request->getPost('idr1'),
+                                    'icr1'      => $this->request->getPost('icr1'),
+                                    'idr2'      => $this->request->getPost('idr2'),
+                                    'icr2'      => $this->request->getPost('icr2'),
+                                    'jdr1'      => $this->request->getPost('jdr1'),
+                                    'jcr1'      => $this->request->getPost('jcr1'),
+                                    'jdr2'      => $this->request->getPost('jdr2'),
+                                    'jcr2'      => $this->request->getPost('jcr2'),
+                                    'ldr1'      => $this->request->getPost('ldr1'),
+                                    'lcr1'      => $this->request->getPost('lcr1'),
+                                    'ldr2'      => $this->request->getPost('ldr2'),
+                                    'lcr2'      => $this->request->getPost('lcr2'),
+                                    'mdr1'      => $this->request->getPost('mdr1'),
+                                    'mcr1'      => $this->request->getPost('mcr1'),
+                                    'mdr2'      => $this->request->getPost('mdr2'),
+                                    'mcr2'      => $this->request->getPost('mcr2'),
+                                    'odr1'      => $this->request->getPost('odr1'),
+                                    'ocr1'      => $this->request->getPost('ocr1'),
+                                    'odr2'      => $this->request->getPost('odr2'),
+                                    'ocr2'      => $this->request->getPost('ocr2'),
+                                    'pdr1'      => $this->request->getPost('pdr1'),
+                                    'pcr1'      => $this->request->getPost('pcr1'),
+                                    'pdr2'      => $this->request->getPost('pdr2'),
+                                    'pcr2'      => $this->request->getPost('pcr2'),
+                                    'qdr1'      => $this->request->getPost('qdr1'),
+                                    'qcr1'      => $this->request->getPost('qcr1'),
+                                    'qdr2'      => $this->request->getPost('qdr2'),
+                                    'qcr2'      => $this->request->getPost('qcr2'),
+                                    'rdr1'      => $this->request->getPost('rdr1'),
+                                    'rcr1'      => $this->request->getPost('rcr1'),
+                                    'rdr2'      => $this->request->getPost('rdr2'),
+                                    'rcr2'      => $this->request->getPost('rcr2'),
+                                ];
+                                $req = [
+                                    'aa11'      => json_encode($aa11con),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                            case 'saveaa11uead' :
+                                $aa11 = [
+                                    'pl'    => $this->request->getPost('pl'),
+                                    'na'    => $this->request->getPost('na'),
+                                    'pl2'   => $this->request->getPost('pl2')
+                                ];
+                                $req = [
+                                    'aa11'      => json_encode($aa11),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.11':
+                        switch ($save) {
+                            case 'save311' :
+                                $arf = [
+                                    'uqo'    => $this->request->getPost('uqo'),
+                                    'tops'    => $this->request->getPost('tops'),
+                                    'afsd'   => $this->request->getPost('afsd'),
+                                    'cf'   => $this->request->getPost('cf'),
+                                    'leg1'   => $this->request->getPost('leg1'),
+                                    'leg2'   => $this->request->getPost('leg2'),
+                                    'jurleg'   => $this->request->getPost('jurleg'),
+                                    'leg3'   => $this->request->getPost('leg3'),
+                                    'op1'   => $this->request->getPost('op1'),
+                                    'op2'   => $this->request->getPost('op2'),
+                                ];
+                                $req = [
+                                    'arf'  => json_encode($arf),
+                                    'code'  => $code,
+                                    'part'  => '311',
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.13 Ab1':
+                        switch ($save) {
+                            case 'saveab1' :
+                                $req = [
+                                    'yesno'     => $this->request->getPost('yesno'),
+                                    'comment'   => $this->request->getPost('comment'),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.13 Ab1':
+                        switch ($save) {
+                            case 'saveab1' :
+                                $req = [
+                                    'yesno'     => $this->request->getPost('yesno'),
+                                    'comment'   => $this->request->getPost('comment'),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.14 Ab3':
+                        switch ($save) {
+                            case 'saveab3' :
+                                $ab3 = [
+                                    'aby1'      => $this->request->getPost('aby1'),
+                                    'aby2'      => $this->request->getPost('aby2'),
+                                    'aby3'      => $this->request->getPost('aby3'),
+                                    'aby4'      => $this->request->getPost('aby4'),
+                                    'frs1'      => $this->request->getPost('frs1'),
+                                    'ed1'       => $this->request->getPost('ed1'),
+                                    'frs2'      => $this->request->getPost('frs2'),
+                                    'ed2'       => $this->request->getPost('ed2'),
+                                    'frs3'      => $this->request->getPost('frs3'),
+                                    'ed3'       => $this->request->getPost('ed3'),
+                                    'frs4'      => $this->request->getPost('frs4'),
+                                    'ed4'       => $this->request->getPost('ed4'),
+                                    'frs5'      => $this->request->getPost('frs5'),
+                                    'ed5'       => $this->request->getPost('ed5')
+                                ];
+                                $req = [
+                                    'question'  => json_encode($ab3),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.15 Ab4-checklist':
+                    case '3.15 Ab4-section1':
+                    case '3.15 Ab4-section2':
+                    case '3.15 Ab4-section3':
+                    case '3.15 Ab4-section4':
+                    case '3.15 Ab4-section5':
+                    case '3.15 Ab4-section6':
+                    case '3.15 Ab4-section7':
+                    case '3.15 Ab4-section8':
+                    case '3.15 Ab4-section9':
+                        switch ($save) {
+                            case 'saveab4' :
+                                $req = [
+                                    'yesno'     => $this->request->getPost('yesno'),
+                                    'comment'   => $this->request->getPost('comment'),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                            case 'saveab4checklist' :
+                                $chlst = [
+                                    'y1'    => $this->request->getPost('y1'),
+                                    'y2'    => $this->request->getPost('y2'),
+                                    'y3'    => $this->request->getPost('y3'),
+                                    'y4'    => $this->request->getPost('y4'),
+                                    'y5'    => $this->request->getPost('y5'),
+                                    'y6'    => $this->request->getPost('y6'),
+                                    'y7'    => $this->request->getPost('y7'),
+                                    'y8'    => $this->request->getPost('y8'),
+                                    'y9'    => $this->request->getPost('y9'),
+                                    'y10'   => $this->request->getPost('y10'),
+                                    'y11'   => $this->request->getPost('y11'),
+                                    'y12'   => $this->request->getPost('y12'),
+                                    'y13'   => $this->request->getPost('y13'),
+                                    'y14'   => $this->request->getPost('y14'),
+                                    'y15'   => $this->request->getPost('y15'),
+                                    'y16'   => $this->request->getPost('y16')
+                                ];
+                                $req = [
+                                    'chlst'     => json_encode($chlst),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
+                    break;
+                    case '3.15.1 Ab4a':
+                    case '3.15.2 Ab4b':
+                    case '3.15.3 Ab4c':
+                    case '3.15.4 Ab4d':
+                    case '3.15.5 Ab4e':
+                    case '3.15.6 Ab4f':
+                    case '3.15.7 Ab4g':
+                    case '3.15.8 Ab4h':
+                        switch ($save) {
+                            case 'saveab4a' :
+                                $req = [
+                                    'yesno'     => $this->request->getPost('yesno'),
+                                    'comment'   => $this->request->getPost('comment'),
+                                    'acid'      => $this->request->getPost('acid'),
+                                    'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
+                                    'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+                                    'uID'       => $this->crypt->decrypt(session()->get('userID')),
+                                    'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
                     break;
                 }
             break;
             
         }
-
-    }
-
-
-
-
-
-
-
-    /**
-         ALL FUNCTIONS UNDER CHAPTER 3 USES THIS PARAMETERS
-        * @param code consist the code of the file name
-        * @param head consist the name of the file
-        * @param c3tID consist the encrypted data of title id from the title file name
-        ----------------------------------------------------------
-        CHAPTER 3
-        AA1 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveaa1plaf() used to save the data of aa1 file
-        * @var array-req consist the aa1 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveplaf($code,$c3tID,$cID,$name){
-
-        $req = [
-            'extent'        => $this->request->getPost('extent'),
-            'reference'     => $this->request->getPost('reference'),
-            'acid'          => $this->request->getPost('acid'),
-            'cID'           => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'         => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'           => $this->crypt->decrypt(session()->get('userID')),
-            'fID'           => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveplaf($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        * @method saveaa1s3() used to save the data of aa1 file
-        * @var array-sec consist the aa1 file information and converted into json data
-        * @var array-req consist the aa1 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa1s3($code,$c3tID,$cID,$name){
-
-        $sec = [
-            'a1' => $this->request->getPost('a1'),
-            'a2' => $this->request->getPost('a2'),
-            'a3' => $this->request->getPost('a3'),
-            'a4' => $this->request->getPost('a4'),
-            'a5' => $this->request->getPost('a5'),
-            'a6' => $this->request->getPost('a6'),
-            'a7' => $this->request->getPost('a7'),
-            'a8' => $this->request->getPost('a8'),
-            'a9' => $this->request->getPost('a9'),
-            'a10' => $this->request->getPost('a10'),
-            'a10d' => $this->request->getPost('a10d'),
-            'a11' => $this->request->getPost('a11'),
-            'a11d' => $this->request->getPost('a11d'),
-            'a12' => $this->request->getPost('a12'),
-            'a13' => $this->request->getPost('a13'),
-            'a14' => $this->request->getPost('a14'),
-            'a14d' => $this->request->getPost('a14d'),
-            'a15' => $this->request->getPost('a15'),
-            'a16' => $this->request->getPost('a16'),
-            'a17' => $this->request->getPost('a17'),
-            'a18' => $this->request->getPost('a18'),
-            'a19' => $this->request->getPost('a19'),
-            'a20' => $this->request->getPost('a20'),
-            'a21' => $this->request->getPost('a21'),
-            'a22' => $this->request->getPost('a22'),
-            'a23' => $this->request->getPost('a23'),
-            'a24' => $this->request->getPost('a24'),
-        ];
-        $req = [
-            'question'  => json_encode($sec),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa1s3($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        * @method saverceap() used to save the data of aa1 file
-        * @var array-sec consist the aa1 file information and converted into json data
-        * @var array-req consist the aa1 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saverceap($code,$c3tID,$cID,$name){
-
-        $rc = [
-            'awp1' => $this->request->getPost('awp1'),
-            'awp2' => $this->request->getPost('awp2'),
-            'awp3' => $this->request->getPost('awp3'),
-            'awp4' => $this->request->getPost('awp4'),
-            'awp5' => $this->request->getPost('awp5'),
-            'awp6' => $this->request->getPost('awp6'),
-            'awp7' => $this->request->getPost('awp7'),
-            'rceap1' => $this->request->getPost('rceap1'),
-            'rceap2' => $this->request->getPost('rceap2'),
-            'rceap3' => $this->request->getPost('rceap3'),
-            'rceap4' => $this->request->getPost('rceap4'),
-            'rceap5' => $this->request->getPost('rceap5'),
-            'rceap6' => $this->request->getPost('rceap6'),
-            'rceap7' => $this->request->getPost('rceap7'),
-            'rceap8' => $this->request->getPost('rceap8'),
-            'rceap9' => $this->request->getPost('rceap9'),
-            'rceap10' => $this->request->getPost('rceap10'),
-            'details' => $this->request->getPost('details'),
-            'datereq' => $this->request->getPost('datereq'),
-            'numcop' => $this->request->getPost('numcop'),
-        ];
-        $req = [
-            'question'  => json_encode($rc),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saverceap($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-             return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
-
-    }
-
-
-    /**
-        ----------------------------------------------------------
-        AA2 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveaa2() used to save the data of aa2 file
-        * @var array-aa2 consist the aa2 file information and converted into json data
-        * @var array-req consist the aa2 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa2($code,$c3tID,$cID,$name){
-
-        $aa2 = [
-            'rat'       => $this->request->getPost('rat'),
-            'rcae'      => $this->request->getPost('rcae'),
-            'atriaq'    => $this->request->getPost('atriaq'),
-            'kcapet'    => $this->request->getPost('kcapet'),
-            'fd'        => $this->request->getPost('fd'),
-            'fs'        => $this->request->getPost('fs'),
-            'oi'        => $this->request->getPost('oi')
-        ];
-        $req = [
-            'aa2'       => json_encode($aa2),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa2($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        ----------------------------------------------------------
-        AA3a FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveaa3a() used to save the data of aa3a file
-        * @var array-req consist the aa3a file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa3a($code,$c3tID,$cID,$name){
-
-        $req = [
-            'comment'   => $this->request->getPost('comment'),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa3a($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        * @method saveaa3afaf() used to save the data of aa3a file
-        * @var array-req consist the aa3a file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa3afaf($code,$c3tID,$cID,$name){
-
-        $req = [
-            'extent'        => $this->request->getPost('extent'),
-            'reference'     => $this->request->getPost('reference'),
-            'acid'          => $this->request->getPost('acid'),
-            'cID'           => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'         => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'           => $this->crypt->decrypt(session()->get('userID')),
-            'fID'           => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa3afaf($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        * @method saveaa3afaf() used to save the data of aa3a file
-        * @var array-req consist the aa3a file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa3air($code,$c3tID,$cID,$name){
-
-        $air = [
-            'sia'       => $this->request->getPost('sia'),
-            'seh'       => $this->request->getPost('seh'),
-            'ir'        => $this->request->getPost('ir'),
-            'tird'      => $this->request->getPost('tird'),
-            'tfrd'      => $this->request->getPost('tfrd'),
-        ];
-        $req = [
-            'air'       => json_encode($air),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa3air($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        ----------------------------------------------------------
-        AA3b FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveaa3b() used to save the data of aa3b file
-        * @var array-req consist the aa3b file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa3b($code,$c3tID,$cID,$name){
-
-        $req = [
-            'reference'     => $this->request->getPost('reference'),
-            'acid'          => $this->request->getPost('acid'),
-            'cID'           => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'         => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'           => $this->crypt->decrypt(session()->get('userID')),
-            'fID'           => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa3b($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        * @method saveaa3bp4() used to save the data of aa3b file
-        * @var array-p4 consist the aa3b file information and converted into json data
-        * @var array-req consist the aa3b file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa3bp4($code,$c3tID,$cID,$name){
-
-        $p4 = [
-            'p41'   => $this->request->getPost('p41'),
-            'p42'   => $this->request->getPost('p42'),
-            'bwr1'   => $this->request->getPost('bwr1'),
-            'bwr2'   => $this->request->getPost('bwr2'),
-            'bwr2d'   => $this->request->getPost('bwr2d'),
-            'bwr3'   => $this->request->getPost('bwr3'),
-            'bwr3d'   => $this->request->getPost('bwr3d'),
-            'bwr4'   => $this->request->getPost('bwr4'),
-            'bwr4d'   => $this->request->getPost('bwr4d'),
-            'bwr5'   => $this->request->getPost('bwr5'),
-            'bwr5d'   => $this->request->getPost('bwr5d'),
-        ];
-        $req = [
-            'p4'        => json_encode($p4),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa3bp4($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        ----------------------------------------------------------
-        AA4 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveaa4() used to save the data of aa4 file
-        * @var validationRules set to validate the data before saving to database
-        * @var array-req consist the aa5b file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa4($code,$c3tID,$cID,$name){
-
-        $aa4 = [
-            'leg1' => $this->request->getPost('leg1'),
-            'leg2' => $this->request->getPost('leg2'),
-            'isa' => $this->request->getPost('isa'),
-            'leg3' => $this->request->getPost('leg3'),
-            'num7' => $this->request->getPost('num7'),
-            'num10yes' => $this->request->getPost('num10yes'),
-            'num11yes' => $this->request->getPost('num11yes'),
-            'num11' => $this->request->getPost('num11'),
-            'num12yes' => $this->request->getPost('num12yes'),
-            'num12' => $this->request->getPost('num12'),
-            'num15' => $this->request->getPost('num15'),
-            'num16' => $this->request->getPost('num16'),
-            'num17' => $this->request->getPost('num17'),
-            'imp' => $this->request->getPost('imp'),
-            'num22yes1' => $this->request->getPost('num22yes1'),
-            'num221' => $this->request->getPost('num221'),
-            'num22yes2' => $this->request->getPost('num22yes2'),
-            'num222' => $this->request->getPost('num222'),
-            'num223' => $this->request->getPost('num223'),
-            'num224' => $this->request->getPost('num224'),
-            'num23yes1' => $this->request->getPost('num23yes1'),
-            'num23d1' => $this->request->getPost('num23d1'),
-            'num23d2' => $this->request->getPost('num23d2'),
-            'num23yes2' => $this->request->getPost('num23yes2'),
-            'num23d' => $this->request->getPost('num23d'),
-        ];
-
-        $req = [
-            'aa4'       => json_encode($aa4),
-            'code'      => $code,
-            'part'      => 'aa4',
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'                   => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa4($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    public function saveaa5a($code,$c3tID,$cID,$name){
-
-        $aa5 = [
-            'aa51d' => $this->request->getPost('aa51d'),
-            'ml1' => $this->request->getPost('ml1'),
-            'ml1d' => $this->request->getPost('ml1d'),
-            'ml2' => $this->request->getPost('ml2'),
-            'ml3' => $this->request->getPost('ml3'),
-            'ml4' => $this->request->getPost('ml4'),
-            'ml4d' => $this->request->getPost('ml4d'),
-            'ml5' => $this->request->getPost('ml5'),
-            'ml5d' => $this->request->getPost('ml5d'),
-            'ml6' => $this->request->getPost('ml6'),
-            'ml6d' => $this->request->getPost('ml6d'),
-            'ml7' => $this->request->getPost('ml7'),
-            'ml7d' => $this->request->getPost('ml7d'),
-            'ml8' => $this->request->getPost('ml8'),
-        ];
-        $req = [
-            'aa5a'       => json_encode($aa5),
-            'code'      => $code,
-            'part'      => 'aa5a',
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-
-        $res = $this->cvmodel->saveaa5a($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        ----------------------------------------------------------
-        AA5b FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveaa5b() used to save the data of aa5b file
-        * @var validationRules set to validate the data before saving to database
-        * @var array-req consist the aa5b file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa5b($code,$c3tID,$cID,$name){
-
-        $validationRules = [
-            'reference' => 'required'
-        ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
-        $req = [
-            'reference'             => $this->request->getPost('reference'),
-            'issue'                 => $this->request->getPost('issue'),
-            'comment'               => $this->request->getPost('comment'),
-            'recommendation'        => $this->request->getPost('recommendation'),
-            'yesno'                 => $this->request->getPost('yesno'),
-            'result'                => $this->request->getPost('result'),
-            'code'                  => $code,
-            'part'                  => $this->request->getPost('part'),
-            'cID'                   => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'                 => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'                   => $this->crypt->decrypt(session()->get('userID')),
-            'fID'                   => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa5b($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        ----------------------------------------------------------
-        AA7 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveaa7isa() used to save the data of aa7 file
-        * @var validationRules set to validate the data before saving to database
-        * @var array-req consist the aa7 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa7isa($code,$c3tID,$cID,$name){
-
-        $validationRules = [
-            'reference' => 'required'
-        ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'/'.$c3tID.'/'.$cID.'/'.$name));
-        }
-        $req = [
-            'reference'         => $this->request->getPost('reference'),
-            'issue'             => $this->request->getPost('issue'),
-            'comment'           => $this->request->getPost('comment'),
-            'recommendation'    => $this->request->getPost('recommendation'),
-            'result'            => $this->request->getPost('result'),
-            'code'              => $code,
-            'part'              => $this->request->getPost('part'),
-            'cID'               => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'             => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'               => $this->crypt->decrypt(session()->get('userID')),
-            'fID'               => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa7isa($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-    
-
-    /**
-        * @method saveaa7aepapp() used to save the data of aa7 file
-        * @var array-req consist the aa7 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa7aepapp($code,$c3tID,$cID,$name){
-        
-        $req = [
-            'aep'       => $this->request->getPost('question'),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa7aepapp($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        * @method saveaa7aep() used to save the data of aa7 file
-        * @var array-aep consist the aa7 file information and converted into json data
-        * @var array-req consist the aa7 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa7aep($code,$c3tID,$cID,$name){
-
-        $aep = [
-            'ch1'   => $this->request->getPost('ch1'),
-            'ch2'   => $this->request->getPost('ch2'),
-            'dev1'  => $this->request->getPost('dev1'),
-            'dev2'  => $this->request->getPost('dev2'),
-            'fut1'  => $this->request->getPost('fut1'),
-            'fut2'  => $this->request->getPost('fut2'),
-            'cst1'  => $this->request->getPost('cst1'),
-            'cst2'  => $this->request->getPost('cst2')
-        ];
-        $req = [
-            'aep'       => json_encode($aep),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa7aep($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        ----------------------------------------------------------
-        AA10 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveaa10() used to save the data of aa10 file
-        * @var array-aa10 consist the aa10 file information and converted into json data
-        * @var array-req consist the aa10 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa10($code,$c3tID,$cID,$name){
-
-        $aa10 = [
-            'sum'   => $this->request->getPost('sum'),
-            'comp'  => $this->request->getPost('comp'),
-            'exp'   => $this->request->getPost('exp')
-        ];
-        $req = [
-            'aa10'      => json_encode($aa10),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa10($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        ----------------------------------------------------------
-        AA11 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveaa11un() used to save the data of aa11 file
-        * @var array-req consist the aa11 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa11un($code,$c3tID,$cID,$name){
-
-        $req = [
-            'reference'     => $this->request->getPost('reference'),
-            'desc'          => $this->request->getPost('desc'),
-            'drps'          => $this->request->getPost('drps'),
-            'crps'          => $this->request->getPost('crps'),
-            'drfp'          => $this->request->getPost('drfp'),
-            'crfp'          => $this->request->getPost('crfp'),
-            'yesno'         => $this->request->getPost('yesno'),
-            'code'          => $code,
-            'part'          => $this->request->getPost('part'),
-            'cID'           => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'         => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'           => $this->crypt->decrypt(session()->get('userID')),
-            'fID'           => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa11un($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
-        }
-
-    }
-
-
-    /**
-        * @method saveaa11ad() used to save the data of aa11 file
-        * @var array-req consist the aa11 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa11ad($code,$c3tID,$cID,$name){
-
-        $req = [
-            'reference'     => $this->request->getPost('reference'),
-            'desc'          => $this->request->getPost('desc'),
-            'drps'          => $this->request->getPost('drps'),
-            'crps'          => $this->request->getPost('crps'),
-            'drfp'          => $this->request->getPost('drfp'),
-            'crfp'          => $this->request->getPost('crfp'),
-            'code'          => $code,
-            'part'          => 'ad',
-            'cID'           => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'         => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'           => $this->crypt->decrypt(session()->get('userID')),
-            'fID'           => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa11ad($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
-        }
-
-    }
-    
-
-    /**
-        * @method saveaa11ad() used to save the data of aa11 file
-        * @var array-aa11 consist the aa11 file information and converted into json data
-        * @var array-req consist the aa11 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa11ue($code,$c3tID,$cID,$name){
-
-        $aa11 = [
-            'cta'   => $this->request->getPost('cta'),
-            'fpm'   => $this->request->getPost('fpm'),
-            'fma'   => $this->request->getPost('fma')
-        ];
-        $req = [
-            'aa11'      => json_encode($aa11),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa11ue($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
-        }
-
-    }
-
-
-    /**
-        * @method saveaa11con() used to save the data of aa11 file
-        * @var array-aa11con consist the aa11 file information and converted into json data
-        * @var array-req consist the aa11 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa11con($code,$c3tID,$cID,$name){
-
-        $aa11con = [
-            'bdr1'      => $this->request->getPost('bdr1'),
-            'bcr1'      => $this->request->getPost('bcr1'),
-            'bdr2'      => $this->request->getPost('bdr2'),
-            'bcr2'      => $this->request->getPost('bcr2'),
-            'cdr1'      => $this->request->getPost('cdr1'),
-            'ccr1'      => $this->request->getPost('ccr1'),
-            'cdr2'      => $this->request->getPost('cdr2'),
-            'ccr2'      => $this->request->getPost('ccr2'),
-            'ddr1'      => $this->request->getPost('ddr1'),
-            'dcr1'      => $this->request->getPost('dcr1'),
-            'ddr2'      => $this->request->getPost('ddr2'),
-            'dcr2'      => $this->request->getPost('dcr2'),
-            'edr1'      => $this->request->getPost('edr1'),
-            'ecr1'      => $this->request->getPost('ecr1'),
-            'edr2'      => $this->request->getPost('edr2'),
-            'ecr2'      => $this->request->getPost('ecr2'),
-            'fdr1'      => $this->request->getPost('fdr1'),
-            'fcr1'      => $this->request->getPost('fcr1'),
-            'fdr2'      => $this->request->getPost('fdr2'),
-            'fcr2'      => $this->request->getPost('fcr2'),
-            'hdr1'      => $this->request->getPost('hdr1'),
-            'hcr1'      => $this->request->getPost('hcr1'),
-            'hdr2'      => $this->request->getPost('hdr2'),
-            'hcr2'      => $this->request->getPost('hcr2'),
-            'idr1'      => $this->request->getPost('idr1'),
-            'icr1'      => $this->request->getPost('icr1'),
-            'idr2'      => $this->request->getPost('idr2'),
-            'icr2'      => $this->request->getPost('icr2'),
-            'jdr1'      => $this->request->getPost('jdr1'),
-            'jcr1'      => $this->request->getPost('jcr1'),
-            'jdr2'      => $this->request->getPost('jdr2'),
-            'jcr2'      => $this->request->getPost('jcr2'),
-            'ldr1'      => $this->request->getPost('ldr1'),
-            'lcr1'      => $this->request->getPost('lcr1'),
-            'ldr2'      => $this->request->getPost('ldr2'),
-            'lcr2'      => $this->request->getPost('lcr2'),
-            'mdr1'      => $this->request->getPost('mdr1'),
-            'mcr1'      => $this->request->getPost('mcr1'),
-            'mdr2'      => $this->request->getPost('mdr2'),
-            'mcr2'      => $this->request->getPost('mcr2'),
-            'odr1'      => $this->request->getPost('odr1'),
-            'ocr1'      => $this->request->getPost('ocr1'),
-            'odr2'      => $this->request->getPost('odr2'),
-            'ocr2'      => $this->request->getPost('ocr2'),
-            'pdr1'      => $this->request->getPost('pdr1'),
-            'pcr1'      => $this->request->getPost('pcr1'),
-            'pdr2'      => $this->request->getPost('pdr2'),
-            'pcr2'      => $this->request->getPost('pcr2'),
-            'qdr1'      => $this->request->getPost('qdr1'),
-            'qcr1'      => $this->request->getPost('qcr1'),
-            'qdr2'      => $this->request->getPost('qdr2'),
-            'qcr2'      => $this->request->getPost('qcr2'),
-            'rdr1'      => $this->request->getPost('rdr1'),
-            'rcr1'      => $this->request->getPost('rcr1'),
-            'rdr2'      => $this->request->getPost('rdr2'),
-            'rcr2'      => $this->request->getPost('rcr2'),
-        ];
-        $req = [
-            'aa11'      => json_encode($aa11con),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa11con($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-un/'.$c3tID.'/'.$cID.'/'.$name));
-        }
-
-    }
-
-
-    /**
-        * @method saveaa11uead() used to save the data of aa11 file
-        * @var array-aa11 consist the aa11 file information and converted into json data
-        * @var array-req consist the aa11 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveaa11uead($code,$c3tID,$cID,$name){
-
-        $aa11 = [
-            'pl'    => $this->request->getPost('pl'),
-            'na'    => $this->request->getPost('na'),
-            'pl2'   => $this->request->getPost('pl2')
-        ];
-        $req = [
-            'aa11'      => json_encode($aa11),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveaa11ue($req);
-        if($res){
-            session()->setFlashdata('success','The update on file '.$code.' has been successfully posted');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/client/chapter3/setvalues/'.$code.'-ad/'.$c3tID.'/'.$cID.'/'.$name));
-        }
-
-    }
-
-    
-    public function save311($code,$c3tID,$cID,$name){
-
-        $arf = [
-            'uqo'    => $this->request->getPost('uqo'),
-            'tops'    => $this->request->getPost('tops'),
-            'afsd'   => $this->request->getPost('afsd'),
-            'cf'   => $this->request->getPost('cf'),
-            'leg1'   => $this->request->getPost('leg1'),
-            'leg2'   => $this->request->getPost('leg2'),
-            'jurleg'   => $this->request->getPost('jurleg'),
-            'leg3'   => $this->request->getPost('leg3'),
-            'op1'   => $this->request->getPost('op1'),
-            'op2'   => $this->request->getPost('op2'),
-        ];
-        $req = [
-            'arf'  => json_encode($arf),
-            'code'  => $code,
-            'part'  => '311',
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->save311($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        ----------------------------------------------------------
-        AB1 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveab1() used to save the data of ab1 file
-        * @var array-req consist the aa11 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveab1($code,$c3tID,$cID,$name){
-
-        $req = [
-            'yesno'     => $this->request->getPost('yesno'),
-            'comment'   => $this->request->getPost('comment'),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveab1($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        ----------------------------------------------------------
-        AB3 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveab3() used to save the data of ab3 file
-        * @var array-req consist the aa11 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveab3($code,$c3tID,$cID,$name){
-
-        $ab3 = [
-            'aby1'      => $this->request->getPost('aby1'),
-            'aby2'      => $this->request->getPost('aby2'),
-            'aby3'      => $this->request->getPost('aby3'),
-            'aby4'      => $this->request->getPost('aby4'),
-            'frs1'      => $this->request->getPost('frs1'),
-            'ed1'       => $this->request->getPost('ed1'),
-            'frs2'      => $this->request->getPost('frs2'),
-            'ed2'       => $this->request->getPost('ed2'),
-            'frs3'      => $this->request->getPost('frs3'),
-            'ed3'       => $this->request->getPost('ed3'),
-            'frs4'      => $this->request->getPost('frs4'),
-            'ed4'       => $this->request->getPost('ed4'),
-            'frs5'      => $this->request->getPost('frs5'),
-            'ed5'       => $this->request->getPost('ed5')
-        ];
-        $req = [
-            'question'  => json_encode($ab3),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveab3($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-    
-    /**
-        ----------------------------------------------------------
-        AB4 FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveab4checklist() used to save data of ab4 file
-        * @var array-req consist the ab4 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveab4($code,$c3tID,$cID,$name){
-
-        $req = [
-            'yesno'     => $this->request->getPost('yesno'),
-            'comment'   => $this->request->getPost('comment'),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveab4($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        * @method saveab4checklist() used to save data of ab4 file
-        * @var array-chlst consist the ab4 file information and converted into json data
-        * @var array-req consist the ab4 file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveab4checklist($code,$c3tID,$cID,$name){
-
-        $chlst = [
-            'y1'    => $this->request->getPost('y1'),
-            'y2'    => $this->request->getPost('y2'),
-            'y3'    => $this->request->getPost('y3'),
-            'y4'    => $this->request->getPost('y4'),
-            'y5'    => $this->request->getPost('y5'),
-            'y6'    => $this->request->getPost('y6'),
-            'y7'    => $this->request->getPost('y7'),
-            'y8'    => $this->request->getPost('y8'),
-            'y9'    => $this->request->getPost('y9'),
-            'y10'   => $this->request->getPost('y10'),
-            'y11'   => $this->request->getPost('y11'),
-            'y12'   => $this->request->getPost('y12'),
-            'y13'   => $this->request->getPost('y13'),
-            'y14'   => $this->request->getPost('y14'),
-            'y15'   => $this->request->getPost('y15'),
-            'y16'   => $this->request->getPost('y16')
-        ];
-        $req = [
-            'chlst'     => json_encode($chlst),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveab4checklist($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
-
-    }
-
-
-    /**
-        ----------------------------------------------------------
-        AB4a,b,c,d,e,f,g,h FUNCTIONS
-        ----------------------------------------------------------
-        * @method saveab4a() used to save data of ab4a file
-        * @var array-req consist the ab4a file information
-        * @var res a return response from the chapter 3 model
-        * @return redirect-to-page
-    */
-    public function saveab4a($code,$c3tID,$cID,$name){
-
-        $req = [
-            'yesno'     => $this->request->getPost('yesno'),
-            'comment'   => $this->request->getPost('comment'),
-            'acid'      => $this->request->getPost('acid'),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'c3tID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID)),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-        ];
-        $res = $this->cvmodel->saveab4a($req);
-        return $this->resultpage('c3',$res,$code,$c3tID,$cID,$name);
 
     }
 
