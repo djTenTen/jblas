@@ -47,7 +47,7 @@
                 <div class="m-5">
                     <h4>PRELIMINARY PLANNING PROCEDURES – CLIENT INVOLVEMENT IN THE PLANNING PROCESS</h4>
                     <h6>NB: The key issues noted from this document must be recorded in the relevant areas of the audit file or the PAF and should feed through into the risk assessment, audit approach and fieldwork.</h6>
-                    <form action="<?= base_url()?>auditsystem/wp/saveac4ppr/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c1/saveac4ppr/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="acid" value="<?= $acID?>">
                         <table class="table table-bordered">
                             <tr>
@@ -67,7 +67,7 @@
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
                     <p>In respect of a new audit assignment, where the discussion points below request “changes” to be noted, full information should be documented, as the working papers will not document “existing” issues affecting the client.</p>
-                    <form action="<?= base_url()?>auditsystem/wp/saveac4/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c1/saveac4/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="ac4sod">
                         <table class="table table-hover">
                             <thead>

@@ -48,7 +48,7 @@
                     <h4>TEAM DISCUSSIONS AND BRIEFING MEETING</h4>
                     <h6>Objective:</h6>
                     <p>To document a team discussion covering fraud and risk as required by PSA 240, 315 and 550 and to demonstrate that an adequate staff briefing has occurred.</p>
-                    <form action="<?= base_url()?>auditsystem/client/saveac11/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c1/saveac11/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" name="acid" value="<?= $acID?>">
                         <label for="">Date of the meeting: <input type="date" class="form-control" name="datem" value="<?= $ac11['datem']?>" required></label>
                         <h6>Details of the assignment team:</h6>

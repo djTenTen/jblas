@@ -50,7 +50,7 @@
                     <p>To determine whether any material adjustment or disclosure is required to the financial statements as a result of events occurring between the end of the accounting period and the date of signing the audit report and to ensure the requirements of ISA 560 regarding subsequent events are met.</p>
                     <h6>NB: An adjusting event is an event that provides evidence of a condition that existed at the reporting date.  A non-adjusting event is an event that arose solely after the reporting date, however, its disclosure is necessary to give a true and fair view.</h6>
                     <h6>Review of Clients Records</h6>
-                    <form action="<?= base_url()?>auditsystem/wp/saveaa3a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa3a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" value="cr" name="part">
                         <table class="table table-hover table-sm table-bordered">
                             <thead>
@@ -72,7 +72,7 @@
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
                     <h6>Discussion with Client</h6>
-                    <form action="<?= base_url()?>auditsystem/wp/saveaa3a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa3a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" value="dc" name="part">
                         <table class="table table-hover table-sm table-bordered">
                             <thead>
@@ -95,7 +95,7 @@
                     <br><br><br><hr style="color: #7752FE;">
                     <h6>Finalisation of the Audit File</h6>
                     <p>This section should also detail any other work done on subsequent events not covered by the questions below.</p>
-                    <form action="<?= base_url()?>auditsystem/wp/saveaa3afaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa3afaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" value="faf" name="part">
                         <table class="table table-hover table-sm table-bordered">
                             <thead>
@@ -119,7 +119,7 @@
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
                     <h4>Initial Conclusion:</h4>
-                    <form action="<?= base_url()?>auditsystem/wp/saveaa3air/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa3air/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <p>Having completed the above procedures:</p>
                         <p>There were no significant events. </p>
                         <input type="hidden" name="acid" value="<?= $acID?>">

@@ -47,7 +47,7 @@
                 <div class="m-5">
                     <h4>PROVISIONS, CONTINGENCIES AND FINANCIAL COMMITMENTS</h4>
                     <i>Audit work on deferred taxation is included in the J audit programme. It should also be noted that deferred tax provisions cannot be discounted.</i>
-                    <form action="<?= base_url()?>auditsystem/wp/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c2/savec2/<?= $code?>/<?= $c2tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <table class="table table-sm table-bordered table-hover">
                             <thead>
                                 <tr>

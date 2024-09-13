@@ -84,9 +84,7 @@ class ChapterValuesController extends BaseController{
                                     'acid'      => $this->request->getPost('acid'),
                                     'yesno'     => $this->request->getPost('yesno'),
                                     'comment'   => $this->request->getPost('comment'),
-                                    'cID'       => $param['cID'],
                                     'c1tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
                                 ];
                             break;
                             case 'saveac1eqr':
@@ -101,9 +99,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'question'  => json_encode($eqr),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c1tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
                                 ];
                             break;
                         }
@@ -120,9 +116,7 @@ class ChapterValuesController extends BaseController{
                                     'other'         => $this->request->getPost('other'),
                                     'totalcu'       => $this->request->getPost('totalcu'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'cID'           => $param['cID'],
                                     'c1tID'         => $param['ctID'],
-                                    'uID'           => $param['uID'],
                                 ];
                             break;
                             case 'saveac2aep':
@@ -131,9 +125,7 @@ class ChapterValuesController extends BaseController{
                                     'concl' => $this->request->getPost('concl'),
                                     'concl'     => $this->request->getPost('concl'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c1tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
                                 ];
                             break;
                         }
@@ -147,9 +139,7 @@ class ChapterValuesController extends BaseController{
                                     'yesno'         => $this->request->getPost('yesno'),
                                     'comment'       => $this->request->getPost('comment'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'cID'           => $param['cID'],
                                     'c1tID'         => $param['ctID'],
-                                    'uID'           => $param['uID'],
                                 ];
                             break;
                         }
@@ -162,9 +152,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'comment'   => $this->request->getPost('comment'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c1tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
                                 ];
                             break;
                             case 'saveac4ppr':
@@ -175,9 +163,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'ppr'       => json_encode($ppr),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c1tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
                                 ];
                             break;
                         }
@@ -194,9 +180,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'rescon'    => json_encode($rc),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c1tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
                                 ];
                             break;
                         }
@@ -211,9 +195,7 @@ class ChapterValuesController extends BaseController{
                                     'finalization'      => $this->request->getPost('finalization'),
                                     'reference'         => $this->request->getPost('reference'),
                                     'acid'              => $this->request->getPost('acid'),
-                                    'cID'               => $param['cID'],
                                     'c1tID'             => $param['ctID'],
-                                    'uID'               => $param['uID'],
                                 ];
                             break;
                             case 'saveac6s12':
@@ -225,9 +207,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'section'       => json_encode($s),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'cID'           => $param['cID'],
                                     'c1tID'         => $param['ctID'],
-                                    'uID'           => $param['uID'],
                                 ];
                             break;
                             case 'saveac6s3':
@@ -253,10 +233,7 @@ class ChapterValuesController extends BaseController{
                                     'reliancecontrol'           => $this->request->getPost('reliancecontrol'),
                                     'code'                      => $code,
                                     'part'                      => $this->request->getPost('part'),
-                                    'cID'                       => $param['cID'],
                                     'c1tID'                     => $param['ctID'],
-                                    'uID'                       => $param['uID'],
-                                    'fID'                       => $param['fID'],
                                 ];
                             break;
                         }
@@ -293,10 +270,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'genyn'     => json_encode($genyn),
                                     'part'      => $this->request->getPost('part'),
-                                    'cID'       => $param['cID'],
                                     'c1tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -309,10 +283,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'question'      => $this->request->getPost('question'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'cID'           => $param['cID'],
                                     'c1tID'         => $param['ctID'],
-                                    'uID'           => $param['uID'],
-                                    'fID'           => $param['fID'],
                                 ];
                             break;
                         }
@@ -365,10 +336,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'ac9'       => json_encode($ac9),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c1tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -628,10 +596,7 @@ class ChapterValuesController extends BaseController{
                                     'pr'        => json_encode($pr),
                                     'materiality'   => $this->request->getPost('materiality'),
                                     'code'          => 'AC10',
-                                    'cID'           => $param['cID'],
                                     'c1tID'         => $param['ctID'],
-                                    'uID'           => $param['uID'],
-                                    'fID'           => $param['fID'],
                                 ];
                                 
                             break;
@@ -649,10 +614,7 @@ class ChapterValuesController extends BaseController{
                                     'balance'   => $this->request->getPost('balance'),
                                     'type'      => $s[1],
                                     'code'      => $s[0],
-                                    'cID'       => $param['cID'],
                                     'c1tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                             case 'saveac10s2':
@@ -670,20 +632,14 @@ class ChapterValuesController extends BaseController{
                                     'balance'   => $this->request->getPost('balance'),
                                     'type'      => $s[1],
                                     'code'      => $s[0],
-                                    'cID'       => $param['cID'],
                                     'c1tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                             case 'saveac10cu':
                                 $req = [
                                     'question'      => $this->request->getPost('question'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'cID'           => $param['cID'],
                                     'c1tID'         => $param['ctID'],
-                                    'uID'           => $param['uID'],
-                                    'fID'           => $param['fID'],
                                 ];
                             break;
                         }
@@ -738,10 +694,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'ac11'      => json_encode($ac11),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c1tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -790,20 +743,14 @@ class ChapterValuesController extends BaseController{
                                     'reference'     => $this->request->getPost('reference'),
                                     'initials'      => $this->request->getPost('initials'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'cID'           => $param['cID'],
                                     'c1tID'         => $param['ctID'],
-                                    'uID'           => $param['uID'],
-                                    'fID'           => $param['fID'],
                                 ];
                             break;
                             case 'aicpppa':
                                 $req = [
                                     'comment'       => $this->request->getPost('comment'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'cID'           => $param['cID'],
                                     'c1tID'         => $param['ctID'],
-                                    'uID'           => $param['uID'],
-                                    'fID'           => $param['fID'],
                                 ];
                             break;
                             case 'rcicp':
@@ -811,10 +758,7 @@ class ChapterValuesController extends BaseController{
                                     'extent'    => $this->request->getPost('yesno'),
                                     'comment'   => $this->request->getPost('comment'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'ctID'      => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -833,10 +777,7 @@ class ChapterValuesController extends BaseController{
                                     'extent'        => $this->request->getPost('extent'),
                                     'reference'     => $this->request->getPost('reference'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'cID'           => $param['cID'],
                                     'c3tID'         => $param['ctID'],
-                                    'uID'           => $param['uID'],
-                                    'fID'           => $param['fID'],
                                 ];
                             break;
                             case 'saveaa1s3' :
@@ -872,10 +813,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'question'  => json_encode($sec),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                             case 'saverceap' :
@@ -904,10 +842,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'question'  => json_encode($rc),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -929,10 +864,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'aa2'       => json_encode($aa2),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -945,10 +877,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'comment'   => $this->request->getPost('comment'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                             case 'saveaa3afaf' :
@@ -956,10 +885,7 @@ class ChapterValuesController extends BaseController{
                                     'extent'        => $this->request->getPost('extent'),
                                     'reference'     => $this->request->getPost('reference'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'cID'           => $param['cID'],
                                     'c3tID'         => $param['ctID'],
-                                    'uID'           => $param['uID'],
-                                    'fID'           => $param['fID'],
                                 ];
                             break;
                             case 'saveaa3air' :
@@ -973,10 +899,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'air'       => json_encode($air),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -989,10 +912,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'reference'     => $this->request->getPost('reference'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'cID'           => $param['cID'],
                                     'c3tID'         => $param['ctID'],
-                                    'uID'           => $param['uID'],
-                                    'fID'           => $param['fID'],
                                 ];
                             break;
                             case 'saveaa3bp4' :
@@ -1012,10 +932,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'p4'        => json_encode($p4),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -1056,10 +973,7 @@ class ChapterValuesController extends BaseController{
                                     'aa4'       => json_encode($aa4),
                                     'code'      => $code,
                                     'part'      => 'aa4',
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'                   => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -1089,10 +1003,7 @@ class ChapterValuesController extends BaseController{
                                     'aa5a'       => json_encode($aa5),
                                     'code'      => $code,
                                     'part'      => 'aa5a',
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -1118,10 +1029,7 @@ class ChapterValuesController extends BaseController{
                                     'result'                => $this->request->getPost('result'),
                                     'code'                  => $code,
                                     'part'                  => $this->request->getPost('part'),
-                                    'cID'                   => $param['cID'],
                                     'c3tID'                 => $param['ctID'],
-                                    'uID'                   => $param['uID'],
-                                    'fID'                   => $param['fID'],
                                 ];
                             break;
                         }
@@ -1146,10 +1054,7 @@ class ChapterValuesController extends BaseController{
                                     'result'            => $this->request->getPost('result'),
                                     'code'              => $code,
                                     'part'              => $this->request->getPost('part'),
-                                    'cID'               => $param['cID'],
                                     'c3tID'             => $param['ctID'],
-                                    'uID'               => $param['uID'],
-                                    'fID'               => $param['fID'],
                                 ];
                             break;
                             case 'saveaa7aepapp' :
@@ -1176,10 +1081,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'aep'       => json_encode($aep),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -1197,10 +1099,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'aa10'      => json_encode($aa10),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -1222,10 +1121,7 @@ class ChapterValuesController extends BaseController{
                                     'yesno'         => $this->request->getPost('yesno'),
                                     'code'          => $s[0],
                                     'part'          => $this->request->getPost('part'),
-                                    'cID'           => $param['cID'],
                                     'c3tID'         => $param['ctID'],
-                                    'uID'           => $param['uID'],
-                                    'fID'           => $param['fID'],
                                 ];
                             break;
                             case 'saveaa11ad' :
@@ -1238,10 +1134,7 @@ class ChapterValuesController extends BaseController{
                                     'crfp'          => $this->request->getPost('crfp'),
                                     'code'          => $s[0],
                                     'part'          => 'ad',
-                                    'cID'           => $param['cID'],
                                     'c3tID'         => $param['ctID'],
-                                    'uID'           => $param['uID'],
-                                    'fID'           => $param['fID'],
                                 ];
                             break;
                             case 'saveaa11ue' :
@@ -1253,10 +1146,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'aa11'      => json_encode($aa11),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                                 
                             break;
@@ -1322,10 +1212,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'aa11'      => json_encode($aa11con),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                             case 'saveaa11uead' :
@@ -1337,10 +1224,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'aa11'      => json_encode($aa11),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -1366,10 +1250,7 @@ class ChapterValuesController extends BaseController{
                                     'arf'  => json_encode($arf),
                                     'code'  => $code,
                                     'part'  => '311',
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -1383,10 +1264,7 @@ class ChapterValuesController extends BaseController{
                                     'yesno'     => $this->request->getPost('yesno'),
                                     'comment'   => $this->request->getPost('comment'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -1400,10 +1278,7 @@ class ChapterValuesController extends BaseController{
                                     'yesno'     => $this->request->getPost('yesno'),
                                     'comment'   => $this->request->getPost('comment'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -1432,10 +1307,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'question'  => json_encode($ab3),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -1458,10 +1330,7 @@ class ChapterValuesController extends BaseController{
                                     'yesno'     => $this->request->getPost('yesno'),
                                     'comment'   => $this->request->getPost('comment'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                             case 'saveab4checklist' :
@@ -1486,10 +1355,7 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'chlst'     => json_encode($chlst),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }
@@ -1510,10 +1376,7 @@ class ChapterValuesController extends BaseController{
                                     'yesno'     => $this->request->getPost('yesno'),
                                     'comment'   => $this->request->getPost('comment'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
                                     'c3tID'     => $param['ctID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
                                 ];
                             break;
                         }

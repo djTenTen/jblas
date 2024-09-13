@@ -50,7 +50,7 @@
                 <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <div class="m-5">
                     <h4><?= $sectiontitle?></h4>
-                    <form action="<?= base_url()?>auditsystem/wp/saveaa11ad/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa11ad/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -112,7 +112,7 @@
                         <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
-                    <form action="<?= base_url()?>auditsystem/wp/saveaa11uead/3.10 Aa11/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa11uead/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="aa11uead">
                         <input type="hidden" name="acid" value="<?= $ueacID?>">
                         <table class="table">

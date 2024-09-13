@@ -49,7 +49,7 @@
                     <h6> ~ Additional Disclosures for First Time Adopters of IFRS</h6>
                     <h6><u>Scope</u></h6>
                     <p>This checklist should be completed for all entities that are adopting IFRS for the first time.</p>
-                    <form action="<?= base_url()?>auditsystem/wp/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="ab4e">
                         <table class="table table-bordered">
                             <thead>

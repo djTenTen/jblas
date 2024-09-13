@@ -46,7 +46,7 @@
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>CRITICAL REVIEW OF THE FINANCIAL STATEMENTS</h4>
-                    <form action="<?= base_url()?>auditsystem/wp/saveab1/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveab1/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>

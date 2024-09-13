@@ -47,7 +47,7 @@
                 <div class="m-5">
                     <h6>SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)</h6>
                     <h6>~ Additional Disclosures for an Entity Involved in Exploration for and Evaluation of Mineral Resources</h6>
-                    <form action="<?= base_url()?>auditsystem/wp/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="ab4a">
                         <table class="table table-bordered">
                             <thead>

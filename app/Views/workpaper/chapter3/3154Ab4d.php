@@ -52,7 +52,7 @@
                     <p> <b> Agricultural Activities </b> are defined as ‘The management by an entity of the biological transformation and harvest of biological assets for sale or for conversion into agricultural produce or into additional biological assets’.</p>
                     <p><b>Agricultural Produce </b> is defined as ‘The harvested product of the entity’s biological assets’.</p>
                     <p><b>Biological Assets </b> are defined as ‘A living animal or plant’.</p>
-                    <form action="<?= base_url()?>auditsystem/wp/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveab4a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="ab4d">
                         <table class="table table-bordered">
                             <thead>

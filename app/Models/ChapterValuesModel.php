@@ -162,7 +162,7 @@ class ChapterValuesModel extends Model{
                                         'yesno'             => $req['yesno'][$i],
                                         'comment'           => $req['comment'][$i],
                                         'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $req['uID'],
+                                        'updated_by'        => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
                                 }
@@ -172,7 +172,7 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['question'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
                             break;
@@ -192,7 +192,7 @@ class ChapterValuesModel extends Model{
                                         'other'             => $req['other'][$i],
                                         'totalcu'           => $req['totalcu'][$i],
                                         'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $req['uID'],
+                                        'updated_by'        => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
                                 }
@@ -203,7 +203,7 @@ class ChapterValuesModel extends Model{
                                     'question'      => $req['eap'],
                                     'name'          => $req['concl'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
                             break;
@@ -220,7 +220,7 @@ class ChapterValuesModel extends Model{
                                         'yesno'         => $req['yesno'][$i],
                                         'comment'       => $req['comment'][$i],
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
                                 }
@@ -231,13 +231,13 @@ class ChapterValuesModel extends Model{
                     break;
                     case 'AC4':
                         switch ($param['save']) {
-                            case 'saveac3':
+                            case 'saveac4':
                                 foreach($req['comment'] as $i => $val){
                                     $acid = $this->crypt->decrypt($req['acid'][$i]);
                                     $data = [
                                         'comment'       => $req['comment'][$i],
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
                                 }
@@ -247,7 +247,7 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['ppr'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
                             break;
@@ -262,7 +262,7 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['rescon'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
                             break;
@@ -280,7 +280,7 @@ class ChapterValuesModel extends Model{
                                         'finalization'      => $req['finalization'][$i],
                                         'reference'         => $req['reference'][$i],
                                         'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $req['uID'],
+                                        'updated_by'        => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
                                 }
@@ -290,7 +290,7 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['section'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
                             break;
@@ -299,7 +299,7 @@ class ChapterValuesModel extends Model{
                                     'type'          => $req['part'], 
                                     'code'          => $req['code'], 
                                     'c1tID'         => $req['c1tID'],
-                                    'clientID'      => $req['cID'],
+                                    'clientID'      => $param['cID'],
                                 ];
                                 $this->db->table($this->tblc1d)->where($where)->delete();
                                 foreach($req['financialstatement'] as $i => $val){
@@ -313,12 +313,12 @@ class ChapterValuesModel extends Model{
                                         'reliance'          => $req['reliancecontrol'][$i],
                                         'code'              => $req['code'],
                                         'c1tID'             => $req['c1tID'],
-                                        'firmID'            => $req['fID'],
-                                        'clientID'          => $req['cID'],
+                                        'firmID'            => $param['fID'],
+                                        'clientID'          => $param['cID'],
                                         'type'              => $req['part'],
                                         'status'            => 'Active',
                                         'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $req['uID'],
+                                        'updated_by'        => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc1d)->insert($data);
                                 }
@@ -333,12 +333,12 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['genyn'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $where = [
                                     'type'          => $req['part'],
                                     'c1tID'         => $req['c1tID'],
-                                    'clientID'      => $req['cID'],
+                                    'clientID'      => $param['cID'],
                                 ];
                                 $this->db->table($this->tblc1d)->where($where)->update($data);
                             break;
@@ -354,7 +354,7 @@ class ChapterValuesModel extends Model{
                                     $data = [
                                         'question'          => $req['question'][$i],
                                         'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $req['uID'],
+                                        'updated_by'        => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
                                 }
@@ -370,7 +370,7 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['ac9'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
                             break;
@@ -398,13 +398,13 @@ class ChapterValuesModel extends Model{
                                         'question'      => $val,
                                         'type'          => $r.'data',
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $where1 = [
                                         'type'          => $r.'data',
                                         'code'          => $req['code'],
                                         'c1tID'         => $req['c1tID'],
-                                        'clientID'      => $req['cID'],
+                                        'clientID'      => $param['cID'],
                                     ];
                                     $this->db->table($this->tblc1d)->where($where1)->update($data);
                                 }
@@ -412,7 +412,7 @@ class ChapterValuesModel extends Model{
                                     'type'          => 'materialdata',
                                     'code'          => $req['code'],
                                     'c1tID'         => $req['c1tID'],
-                                    'clientID'      => $req['cID'],
+                                    'clientID'      => $param['cID'],
                                 ];
                                 $this->db->table($this->tblc1d)->where($where2)->update(array('question' => $req['materiality']));
                             break;
@@ -422,7 +422,7 @@ class ChapterValuesModel extends Model{
                                     'code'          => $req['code'],
                                     'question'      => 'section1',
                                     'c1tID'         => $req['c1tID'],
-                                    'clientID'      => $req['cID'],
+                                    'clientID'      => $param['cID'],
                                 ];
                                 $this->db->table($this->tblc1d)->where($where)->delete();
                                 foreach($req['name'] as $i => $val){
@@ -433,11 +433,11 @@ class ChapterValuesModel extends Model{
                                         'type'          => $req['type'],
                                         'code'          => $req['code'],
                                         'c1tID'         => $req['c1tID'],
-                                        'clientID'      => $req['cID'],
-                                        'firmID'        => $req['fID'],
+                                        'clientID'      => $param['cID'],
+                                        'firmID'        => $param['fID'],
                                         'question'      => 'section1',
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc1d)->insert($data);
                                 }
@@ -448,7 +448,7 @@ class ChapterValuesModel extends Model{
                                     'code'          => $req['code'],
                                     'question'      => 'section2',
                                     'c1tID'         => $req['c1tID'],
-                                    'clientID'      => $req['cID'],
+                                    'clientID'      => $param['cID'],
                                 ];
                                 $this->db->table($this->tblc1d)->where($where)->delete();
                                 foreach($req['name'] as $i => $val){
@@ -460,11 +460,11 @@ class ChapterValuesModel extends Model{
                                         'type'          => $req['type'],
                                         'code'          => $req['code'],
                                         'c1tID'         => $req['c1tID'],
-                                        'clientID'      => $req['cID'],
-                                        'firmID'        => $req['fID'],
+                                        'clientID'      => $param['cID'],
+                                        'firmID'        => $param['fID'],
                                         'question'      => 'section2',
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc1d)->insert($data);
                                 }
@@ -474,7 +474,7 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['question'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
                             break;
@@ -489,7 +489,7 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['ac11'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
                             break;
@@ -541,7 +541,7 @@ class ChapterValuesModel extends Model{
                                         'reference'     => $req['reference'][$i],
                                         'initials'      => $req['initials'][$i],
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
                                 }
@@ -552,7 +552,7 @@ class ChapterValuesModel extends Model{
                                     $data = [
                                         'reference'     => $req['comment'][$i],
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
                                 }
@@ -564,13 +564,13 @@ class ChapterValuesModel extends Model{
                                         'extent'        => $req['extent'][$i],
                                         'reference'     => $req['comment'][$i],
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
                                 }
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 2");
                         return true;
                     break;
                 }
@@ -587,7 +587,7 @@ class ChapterValuesModel extends Model{
                                         'extent'        => $req['extent'][$i],
                                         'reference'     => $req['reference'][$i],
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                                 }
@@ -597,7 +597,7 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['question'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                             break;
@@ -606,12 +606,12 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['question'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.2 Aa2':
@@ -621,12 +621,12 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['aa2'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.3 Aa3a':
@@ -637,7 +637,7 @@ class ChapterValuesModel extends Model{
                                     $data = [
                                         'reference'         => $req['comment'][$i],
                                         'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $req['uID'],
+                                        'updated_by'        => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                                 }
@@ -649,7 +649,7 @@ class ChapterValuesModel extends Model{
                                         'extent'        => $req['extent'][$i],
                                         'reference'     => $req['reference'][$i],
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                                 }
@@ -659,12 +659,12 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['air'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.4 Aa3b':
@@ -675,7 +675,7 @@ class ChapterValuesModel extends Model{
                                     $data = [
                                         'reference'     => $req['reference'][$i],
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                                 }
@@ -685,12 +685,12 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['p4'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.5 Aa4':
@@ -700,17 +700,17 @@ class ChapterValuesModel extends Model{
                                     'type'          => $req['part'],
                                     'code'          => $req['code'],
                                     'c3tID'         => $req['c3tID'],
-                                    'clientID'      => $req['cID']
+                                    'clientID'      => $param['cID']
                                 ];
                                 $data = [
                                     'question'      => $req['aa4'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'        => $req['uID'],
+                                    'updated_by'        => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where($where)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.6.1 Aa5a':
@@ -720,18 +720,18 @@ class ChapterValuesModel extends Model{
                                     'type'          => $req['part'],
                                     'code'          => $req['code'],
                                     'c3tID'         => $req['c3tID'],
-                                    'clientID'      => $req['cID'],
-                                    'firmID'        => $req['fID'],
+                                    'clientID'      => $param['cID'],
+                                    'firmID'        => $param['fID'],
                                 ];
                                 $data = [
                                     'question'      => $req['aa5a'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where($where)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.6.2 Aa5b':
@@ -741,7 +741,7 @@ class ChapterValuesModel extends Model{
                                     'type'          => $req['part'],
                                     'code'          => $req['code'],
                                     'c3tID'         => $req['c3tID'],
-                                    'clientID'      => $req['cID']
+                                    'clientID'      => $param['cID']
                                 ];
                                 $this->db->table($this->tblc3d)->where($where)->delete();
                                 foreach($req['reference'] as $i => $val){
@@ -755,17 +755,17 @@ class ChapterValuesModel extends Model{
                                         'type'              => $req['part'],
                                         'code'              => $req['code'],
                                         'c3tID'             => $req['c3tID'],
-                                        'clientID'          => $req['cID'],
-                                        'firmID'            => $req['fID'],
+                                        'clientID'          => $param['cID'],
+                                        'firmID'            => $param['fID'],
                                         'status'            => 'Active',
                                         'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $req['uID'],
+                                        'updated_by'        => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc3d)->insert($data);
                                 }
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.7 Aa7':
@@ -775,7 +775,7 @@ class ChapterValuesModel extends Model{
                                     'type'          => $req['part'],
                                     'code'          => $req['code'],
                                     'c3tID'         => $req['c3tID'],
-                                    'clientID'      => $req['cID'],
+                                    'clientID'      => $param['cID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where($where)->delete();
                                 foreach($req['reference'] as $i => $val){
@@ -788,8 +788,8 @@ class ChapterValuesModel extends Model{
                                         'type'              =>  $req['part'],
                                         'code'              =>  $req['code'],
                                         'c3tID'             => $req['c3tID'],
-                                        'clientID'          => $req['cID'],
-                                        'firmID'            => $req['fID'],
+                                        'clientID'          => $param['cID'],
+                                        'firmID'            => $param['fID'],
                                         'status'            => 'Active',
                                         'updated_on'        => $this->date.' '.$this->time
                                     ];
@@ -801,7 +801,7 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['aep'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                             break;
@@ -810,12 +810,12 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['aep'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.8 Aa10':
@@ -825,12 +825,12 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['aa10'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.10 Aa11-un':
@@ -841,7 +841,7 @@ class ChapterValuesModel extends Model{
                                     'type'          => $req['part'],
                                     'code'          => $req['code'],
                                     'c3tID'         => $req['c3tID'],
-                                    'clientID'      => $req['cID'],
+                                    'clientID'      => $param['cID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where($where)->delete();
                                 foreach($req['reference'] as $i => $val){
@@ -856,11 +856,11 @@ class ChapterValuesModel extends Model{
                                         'type'              =>  $req['part'],
                                         'code'              =>  $req['code'],
                                         'c3tID'             => $req['c3tID'],
-                                        'clientID'          => $req['cID'],
-                                        'firmID'            => $req['fID'],
+                                        'clientID'          => $param['cID'],
+                                        'firmID'            => $param['fID'],
                                         'status'            => 'Active',
                                         'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $req['uID'],
+                                        'updated_by'        => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc3d)->insert($data);
                                 }
@@ -870,7 +870,7 @@ class ChapterValuesModel extends Model{
                                     'type'          => $req['part'],
                                     'code'          => $req['code'],
                                     'c3tID'         => $req['c3tID'],
-                                    'clientID'      => $req['cID'],
+                                    'clientID'      => $param['cID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where($where)->delete();
                                 foreach($req['reference'] as $i => $val){
@@ -884,11 +884,11 @@ class ChapterValuesModel extends Model{
                                         'type'          => $req['part'],
                                         'code'          => $req['code'],
                                         'c3tID'         => $req['c3tID'],
-                                        'clientID'      => $req['cID'],
-                                        'firmID'        => $req['fID'],
+                                        'clientID'      => $param['cID'],
+                                        'firmID'        => $param['fID'],
                                         'status'        => 'Active',
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc3d)->insert($data);
                                 }
@@ -899,7 +899,7 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['aa11'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                             break;
@@ -908,12 +908,12 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['aa11'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.11':
@@ -923,17 +923,17 @@ class ChapterValuesModel extends Model{
                                     'type'      => '311',
                                     'code'      => $req['code'],
                                     'c3tID'     => $req['c3tID'],
-                                    'clientID'  => $req['cID'],
+                                    'clientID'  => $param['cID'],
                                 ];
                                 $data = [
                                     'question'      => $req['arf'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where($where)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.13 Ab1':
@@ -945,13 +945,13 @@ class ChapterValuesModel extends Model{
                                         'yesno'         => $req['yesno'][$i],
                                         'comment'       => $req['comment'][$i],
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                                 }
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.14 Ab3':
@@ -961,12 +961,12 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['question'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.15 Ab4-checklist':
@@ -987,7 +987,7 @@ class ChapterValuesModel extends Model{
                                         'yesno'         => $req['yesno'][$i],
                                         'comment'       => $req['comment'][$i],
                                         'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $req['uID'],
+                                        'updated_by'    => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                                 }
@@ -997,12 +997,12 @@ class ChapterValuesModel extends Model{
                                 $data = [
                                     'question'      => $req['chlst'],
                                     'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $req['uID'],
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                     case '3.15.1 Ab4a':
@@ -1021,13 +1021,13 @@ class ChapterValuesModel extends Model{
                                         'yesno'             => $req['yesno'][$i],
                                         'comment'           => $req['comment'][$i],
                                         'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $req['uID'],
+                                        'updated_by'        => $param['uID'],
                                     ];
                                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
                                 }
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
                         return true;
                     break;
                 }
@@ -1035,5 +1035,5 @@ class ChapterValuesModel extends Model{
         }
 
     }
-    
+
 }

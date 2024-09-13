@@ -57,7 +57,7 @@
                 <hr class="mt-0 mb-4" style="color: #7752FE;"/>
                 <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc3/')?>3.15 Ab4/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <div class="m-5">
-                    <form action="<?= base_url()?>auditsystem/wp/saveab4/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveab4/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="<?= $section?>">
                         <table class="table table-bordered">
                             <thead>
