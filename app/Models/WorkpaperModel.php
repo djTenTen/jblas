@@ -803,7 +803,6 @@ class WorkpaperModel extends  Model {
         $where = [
             'client'                => $req['client'],
             'financial_year'        => $req['fy'],
-            'end_financial_year'    => $req['efy'],
             'firm'                  => $req['firm'],
         ];
         $checkexist = $this->db->table($this->tblwp)->where($where)->get()->getNumRows();
@@ -843,7 +842,7 @@ class WorkpaperModel extends  Model {
                 'firmID'    => $req['firm'],
                 'clientID'  => $req['client'],
             ];
-            $c1df = $this->db->table($this->tblc1)->where($wherec1)->get();
+            $c1df = $this->db->table($this->tblc1d)->where($wherec1)->get();
             if($c1df->getNumRows() >= 1){
                 foreach($c1df->getResultArray() as $r){
                     $datac1 = [
@@ -885,7 +884,7 @@ class WorkpaperModel extends  Model {
                 'firmID'    => $req['firm'],
                 'clientID'  => $req['client'],
             ];
-            $c2df = $this->db->table($this->tblc2)->where($wherec2)->get();
+            $c2df = $this->db->table($this->tblc2d)->where($wherec2)->get();
             if($c2df->getNumRows() >= 1){
                 foreach($c2df->getResultArray() as $r){
                     $datac2 = [
@@ -920,7 +919,7 @@ class WorkpaperModel extends  Model {
                 'firmID'    => $req['firm'],
                 'clientID'  => $req['client'],
             ];
-            $c3df = $this->db->table($this->tblc3)->where($wherec3)->get();
+            $c3df = $this->db->table($this->tblc3d)->where($wherec3)->get();
             if($c3df->getNumRows() >= 1){
                 foreach($c3df->getResultArray() as $r){
                     $datac3 = [
@@ -974,7 +973,7 @@ class WorkpaperModel extends  Model {
             case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
             case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
             case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
-            case 'index': $table    = $this->tblcfi; $ctID = 'index';break;
+            case 'index': $table    = $this->tblcfi; $ctID = 'cfiID';break;
         }
         $where = [
             'clientID'      => $req['cID'],
@@ -1011,7 +1010,7 @@ class WorkpaperModel extends  Model {
             case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
             case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
             case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
-            case 'index': $table    = $this->tblcfi; $ctID = 'index';break;
+            case 'index': $table    = $this->tblcfi; $ctID = 'cfiID';break;
         }
         $where = [
             'clientID'      => $req['cID'],
@@ -1047,7 +1046,7 @@ class WorkpaperModel extends  Model {
             case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
             case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
             case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
-            case 'index': $table    = $this->tblcfi; $ctID = 'index';break;
+            case 'index': $table    = $this->tblcfi; $ctID = 'cfiID';break;
         }
         $where = [
             'clientID'      => $req['cID'],
@@ -1084,7 +1083,7 @@ class WorkpaperModel extends  Model {
             case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
             case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
             case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
-            case 'index': $table    = $this->tblcfi; $ctID = 'index';break;
+            case 'index': $table    = $this->tblcfi; $ctID = 'cfiID';break;
         }
         $where = [
             'clientID'      => $req['cID'],
@@ -1200,7 +1199,7 @@ class WorkpaperModel extends  Model {
             case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
             case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
             case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
-            case 'index': $table    = $this->tblcfi; $ctID = 'index';break;
+            case 'index': $table    = $this->tblcfi; $ctID = 'cfiID';break;
         }
         $where = [
             'clientID'      => $req['cID'],

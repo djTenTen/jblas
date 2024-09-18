@@ -822,6 +822,7 @@ class WorkpaperController extends BaseController{
                                     'yesno'     => $this->request->getPost('yesno'),
                                     'comment'   => $this->request->getPost('comment'),
                                     'c1tID'     => $param['ctID'],
+                                    'code'      => $param['code'],
                                 ];
                             break;
                             case 'saveac1eqr':

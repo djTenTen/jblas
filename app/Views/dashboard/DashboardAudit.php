@@ -130,13 +130,19 @@
                                     Work Paper Progress
                                 </div>
                                 <div class="card-body" id="progress">
+                                    
                                     <?php foreach($prog as $r){
                                         $x = $r['x1'] + $r['x2'] + $r['x3'];
                                         $y = $r['y1'] + $r['y2'] + $r['y3'];
                                         if($x == 0 or $y == 0){
                                             $p = 1;
                                         }else{
+                                            $ir = ($r['ir'] * 50) /  $r['ti'];
+                                            $ic = ($r['ic'] * 75) /  $r['ti'];
+                                            $ia = ($r['ia'] * 100) /  $r['ti'];
+                                            $z = round($ir + $ic + $ia, 2);
                                             $p = round($y / $x, 2) * 100;
+                                            $p = round(($p * .75) + ($z * .25));
                                         }
                                         if($p <= 25){
                                             $badge = 'danger';
@@ -146,7 +152,7 @@
                                             $badge = 'secondary';
                                         }elseif($p <= 85 and $p >= 76){
                                             $badge = 'primary';
-                                        }elseif($p <= 100 and $p >= 86){
+                                        }elseif($p >= 86){
                                             $badge = 'success';
                                         }
                                         ?>
@@ -258,11 +264,17 @@ $(document).ready(function () {
                 $.each(data, function(i, r) {
                     var x = parseInt(r.x1) + parseInt(r.x2) + parseInt(r.x3);
                     var y = parseInt(r.y1) + parseInt(r.y2) + parseInt(r.y3);
+                    var p;
                     var badge = '';
                     if(x == 0 || y == 0){
-                        var p = 1;
+                        p = 1;
                     }else{
+                        var ir = (parseInt(r.ir) * 50) / parseInt(r.ti);
+                        var ic = (parseInt(r.ic) * 75) / parseInt(r.ti);
+                        var ia = (parseInt(r.ia) * 100) / parseInt(r.ti);
+                        var z = Math.round(ir + ic + ia);
                         p = Math.round((y / x) * 100) ;
+                        p = Math.round((p * .75) + (z * .25));
                     }
                     if(p <= 25){
                         badge = 'danger';
