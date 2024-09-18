@@ -83,10 +83,10 @@ $html = '';
         ---------------------------------------------------------- 
     */
     $html .= '
-        <hr style="color:blue;"> <br><br><br><br><br><br>
+        <hr style="color:blue;"> <br><br><br><br><br><br><br><br><br><br><br><br>
     ';
     $image_file = base_url('uploads/img/'.$fID.'/logo/'.$logo);
-    $pdf->Image($image_file, $x = 74, $y = 25, $w = 75, $h = 0 , $type = '', $link = '', $align = 'center', $resize = true, $dpi = 300, $palign = '', $ismask = false, $imgmask = false, $border = 0, $fitbox = true, $hidden = false, $fitonpage = false, $alt = '');
+    $pdf->Image($image_file, $x = 74, $y = 50, $w = 75, $h = 0 , $type = '', $link = '', $align = 'center', $resize = true, $dpi = 300, $palign = '', $ismask = false, $imgmask = false, $border = 0, $fitbox = true, $hidden = false, $fitonpage = false, $alt = '');
     $html .= '
         <table>
             <tr>
@@ -111,6 +111,7 @@ $html = '';
         </table>
     ';
     $html .='
+        <br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br>
         <table style="margin-top: 50px;">
             <tbody>
@@ -337,22 +338,22 @@ $html = '';
                 $html  .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -432,22 +433,22 @@ $html = '';
                 $html .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -603,22 +604,22 @@ $html = '';
                 $html       .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -762,22 +763,22 @@ $html = '';
                 $html  .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -827,22 +828,22 @@ $html = '';
                 $html .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -890,22 +891,22 @@ $html = '';
                 $html .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -1167,22 +1168,22 @@ $html = '';
                 $html      .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -2824,22 +2825,22 @@ $html = '';
                 $html .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -3174,22 +3175,22 @@ $html = '';
                 $html .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -6796,22 +6797,22 @@ $html = '';
                 $html .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -7074,22 +7075,22 @@ $html = '';
                 $html .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -7533,22 +7534,22 @@ $html = '';
                 $html .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -7607,22 +7608,22 @@ $html = '';
                 $html   .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -7918,22 +7919,22 @@ $html = '';
                 $html .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -8062,22 +8063,22 @@ $html = '';
                 $html .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -8666,22 +8667,22 @@ $html = '';
                 $html  .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -8812,22 +8813,22 @@ $html = '';
                 $html .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -9286,22 +9287,22 @@ $html = '';
                 $html  .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -9348,22 +9349,22 @@ $html = '';
                 $html  .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -9410,22 +9411,22 @@ $html = '';
                 $html  .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -9472,22 +9473,22 @@ $html = '';
                 $html  .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -9538,22 +9539,22 @@ $html = '';
                 $html  .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -9601,22 +9602,22 @@ $html = '';
                 $html  .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -9663,22 +9664,22 @@ $html = '';
                 $html .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>
@@ -9725,22 +9726,22 @@ $html = '';
                 $html .= '
                     <table>
                         <tr>
-                            <td style="width: 60%;">
+                            <td style="width: 55%;">
                                 <table>
                                     <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                                     <tr><td></td></tr>
                                     <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
                                 </table>
                             </td>
-                            <td style="width: 40%;">
+                            <td style="width: 45%;">
                                 <table border="1">
                                     <tr>
                                         <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                     <tr>
                                         <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                                        <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                                     </tr>
                                 </table>
                             </td>

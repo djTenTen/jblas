@@ -35,21 +35,6 @@
         <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="<?= base_url()?>auditsystem/dashboard">ApplAud</a>
         <!-- Navbar Items-->
         <ul class="navbar-nav align-items-center ms-auto">
-           
-            <!-- Navbar Search Dropdown-->
-            <!-- * * Note: * * Visible only below the lg breakpoint-->
-            <li class="nav-item dropdown no-caret me-3 d-lg-none">
-                <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="searchDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="search"></i></a>
-                <!-- Dropdown - Search-->
-                <div class="dropdown-menu dropdown-menu-end p-3 shadow animated--fade-in-up" aria-labelledby="searchDropdown">
-                    <form class="form-inline me-auto w-100">
-                        <div class="input-group input-group-joined input-group-solid">
-                            <input class="form-control pe-0" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                            <div class="input-group-text"><i data-feather="search"></i></div>
-                        </div>
-                    </form>
-                </div>
-            </li>
             <!-- Alerts Dropdown-->
             <li class="nav-item dropdown no-caret d-none d-sm-block me-3 dropdown-notifications">
                 <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownAlerts" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="bell"></i><span class="badge bg-red text-white" id="notiffirm"><?php if($cnf == 0){echo '';}else{echo $cnf;}?></span></a>
@@ -70,27 +55,26 @@
                     <a class="dropdown-item dropdown-notifications-footer" href="<?= base_url()?>auditsystem/notif">View All Alerts</a>
                 </div>
             </li>
-            
             <!-- User Dropdown-->
             <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
                 <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php if(empty(session()->get('photo'))){ ?>
-                         <img class="img-fluid" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
-                    <?php }else{ ?>
+                    <?php if(!empty(session()->get('photo'))){ ?>
                         <img class="img-fluid" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/photo/<?= session()->get('photo')?>" />
+                    <?php }elseif(!empty(session()->get('logo'))){ ?>
+                         <img class="img-fluid" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/logo/<?= session()->get('logo')?>" />
+                    <?php }elseif(empty(session()->get('photo')) and empty(session()->get('logo'))){ ?>
+                        <img class="img-fluid" src="<?= base_url()?>img/bg/APPLAUD1.png" />
                     <?php }?>
-
-                    
                 </a>
                 <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                     <h6 class="dropdown-header d-flex align-items-center">
-
-                    <?php if(empty(session()->get('photo'))){ ?>
-                        <img class="dropdown-user-img" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
-                    <?php }else{?>
+                    <?php if(!empty(session()->get('photo'))){ ?>
                         <img class="dropdown-user-img" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/photo/<?= session()->get('photo')?>" />
+                    <?php }elseif(!empty(session()->get('logo'))){ ?>
+                        <img class="dropdown-user-img" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/logo/<?= session()->get('logo')?>" />
+                    <?php }elseif(empty(session()->get('photo')) and empty(session()->get('logo'))){ ?>
+                        <img class="dropdown-user-img" src="<?= base_url()?>img/bg/APPLAUD1.png" />
                     <?php }?>
-                        
                         <div class="dropdown-user-details">
                             <div class="dropdown-user-details-name"><?= session()->get('name') ?></div>
                             <div class="dropdown-user-details-email"><?= session()->get('email') ?></div>
@@ -140,12 +124,14 @@
             <nav class="sidenav shadow-right sidenav-light">
                 <div class="sidenav-menu">
                     <div class="nav accordion" id="accordionSidenav">
-                        
                         <div class="mt-3 container row justify-content-center">
+                        <?php if(!empty(session()->get('logo'))){ ?>
                             <img class="" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/logo/<?= session()->get('logo')?>" alt="Firm Logo" style="width: 60%;" >
+                        <?php }else{ ?>
+                            <img class="" src="<?= base_url()?>img/bg/APPLAUD1.png" alt="Firm Logo" style="width: 60%;" >
+                        <?php }?>
                             <h6 class="text-center m-1"><?= session()->get('firm')?></h6>
                         </div>
-                        
                         <!-- Sidenav Menu Heading (Core)-->
                         <div class="sidenav-menu-heading">Core</div>
                         <!-- Sidenav Accordion (Dashboard)-->
