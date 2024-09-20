@@ -46,21 +46,19 @@
                 <tbody>
                     <?php 
                         foreach($wp as $r){
-                        $x = $r['x1'] + $r['x2'] + $r['x3'];
-                        $y = $r['y1'] + $r['y2'] + $r['y3'];
-                        if($x == 0 or $y == 0){
-                            $p = 1;
-                        }else{
-                            $p = round($y / $x, 2) * 70;
-                        }
-                        $pcnt = 0;
-                        switch ($r['status']) {
-                            case 'Preparing': $pcnt = 0; break;
-                            case 'Reviewing': $pcnt = 10; break;
-                            case 'Checking' : $pcnt = 20; break;
-                            case 'Approved' : $pcnt = 30; break;
-                        }
-                        ?>
+                            $x = $r['x1'] + $r['x2'] + $r['x3'];
+                            $y = $r['y1'] + $r['y2'] + $r['y3'];
+                            if($x == 0 or $y == 0){
+                                $p = 1;
+                            }else{
+                                $ir = ($r['ir'] * 50) /  $r['ti'];
+                                $ic = ($r['ic'] * 75) /  $r['ti'];
+                                $ia = ($r['ia'] * 100) /  $r['ti'];
+                                $z = round($ir + $ic + $ia, 2);
+                                $p = round($y / $x, 2) * 100;
+                                $p = round(($p * .75) + ($z * .25));
+                            }
+                    ?>
                         <tr>
                             <td><?= $r['cli']?></td>
                             <td><?= $r['financial_year']?></td>
@@ -83,7 +81,7 @@
                             </td>
                             <td>
                                 <div class="progress mt-1">
-                                    <span class="progress-bar" style="width:<?= $p + $pcnt?>%"><?= $p + $pcnt?>%</span>
+                                    <span class="progress-bar" style="width:<?= $p?>%"><?= $p?>%</span>
                                 </div>
                             </td>
                             <td><?= date('F d, Y h:i A', strtotime($r['added_on']))?></td>

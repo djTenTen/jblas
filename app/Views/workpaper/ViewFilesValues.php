@@ -134,10 +134,9 @@
                 </div>
             </div>
             <div class="card-body">
-
                 <div class="tab-content" id="cardTabContent">
                     <!-- Wizard tab pane item 1-->
-                    <div class="tab-pane py-5 fade show active animated--fade-in-up" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
+                    <div class="tab-pane py-1 fade show active animated--fade-in-up" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
                         <div class="row justify-content-center">
                             <h3>Workpaper</h3>
                             <table class="table table-hover table-sm" >
@@ -220,7 +219,7 @@
                         </div>
                     </div>
                     <!-- Wizard tab pane item 2-->
-                    <div class="tab-pane py-5 fade animated--fade-in-up" id="wizard2" role="tabpanel" aria-labelledby="wizard2-tab">
+                    <div class="tab-pane py-1 fade animated--fade-in-up" id="wizard2" role="tabpanel" aria-labelledby="wizard2-tab">
                         <div class="row justify-content-center">
                             <h3>HAT Chapter 1 : Planing</h3>
                             <table class="table table-hover table-sm" >
@@ -323,7 +322,7 @@
                         </div>
                     </div>
                     <!-- Wizard tab pane item 3-->
-                    <div class="tab-pane py-5 fade animated--fade-in-up" id="wizard3" role="tabpanel" aria-labelledby="wizard3-tab">
+                    <div class="tab-pane py-1 fade animated--fade-in-up" id="wizard3" role="tabpanel" aria-labelledby="wizard3-tab">
                         <div class="row justify-content-center">
                             <h3>HAT Chapter 2: Detailed Procedure</h3>
                             <table class="table table-hover table-sm" >
@@ -410,7 +409,7 @@
                         </div>
                     </div>
                     <!-- Wizard tab pane item 4-->
-                    <div class="tab-pane py-5 fade animated--fade-in-up" id="wizard4" role="tabpanel" aria-labelledby="wizard4-tab">
+                    <div class="tab-pane py-1 fade animated--fade-in-up" id="wizard4" role="tabpanel" aria-labelledby="wizard4-tab">
                         <div class="row justify-content-center">
                         <h3>HAT Chapter 3 : Conclusion</h3>
                             <table class="table table-hover table-sm" >
@@ -520,7 +519,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane py-5 fade animated--fade-in-up" id="wizard5" role="tabpanel" aria-labelledby="wizard5-tab">
+                    <div class="tab-pane py-1 fade animated--fade-in-up" id="wizard5" role="tabpanel" aria-labelledby="wizard5-tab">
 
                         <?php if(!empty($cfi)){?>
                             <h5>Latest upload:</h5>
