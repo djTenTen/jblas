@@ -43,7 +43,7 @@ class HomeController extends BaseController{
         $res = $this->homeModel->getdbexist();
         if($res){
             if(session()->get('authentication')){
-                return redirect()->to(site_url('auditsystem')); 
+                return redirect()->to(site_url('auditsystem/dashboard')); 
             }else{
                 $data['title'] = 'Login';
                 return view('index/Login', $data);

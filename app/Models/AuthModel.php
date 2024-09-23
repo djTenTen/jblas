@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
+use App\Libraries\Logs;
 class AuthModel extends  Model {
 
 
@@ -19,6 +20,7 @@ class AuthModel extends  Model {
     protected $tblpos   = "tbl_position";
     protected $db;
     protected $crypt;
+    protected $logs;
 
 
     /**
@@ -29,6 +31,7 @@ class AuthModel extends  Model {
         \Config\Services::session();
         $this->db    = \Config\Database::connect('default'); 
         $this->crypt = \Config\Services::encrypter();
+        $this->logs  = new Logs();
 
     }
 
@@ -60,34 +63,45 @@ class AuthModel extends  Model {
             $dpss = $this->crypt->decrypt($ud['pass']);
             if($ud['verified'] == "Yes"){
                 if($ud['status'] == "Active"){
-                    if($pass == $dpss){
-                        $arr = [
-                            'userID'        => $ud['userID'],
-                            'name'          => $ud['name'],
-                            'email'         => $ud['email'],
-                            'pass'          => $ud['pass'],
-                            'firm'          => $ud['firmname'],
-                            'firmID'        => $ud['firmID'],
-                            'pos'           => $ud['pos'],
-                            'posID'         => $ud['posID'],
-                            'type'          => $ud['type'],
-                            'photo'         => $ud['photo'],
-                            'signature'     => $ud['signature'],
-                            'logo'          => $ud['logo'],
-                            'allowed'       => json_decode($ud['allowed']),
-                        ];
-                        return $arr;
+                    if($ud['logattempts'] < 5 or $ud['status'] == 'Locked'){
+                        if($pass == $dpss){
+                            $arr = [
+                                'userID'        => $ud['userID'],
+                                'name'          => $ud['name'],
+                                'email'         => $ud['email'],
+                                'pass'          => $ud['pass'],
+                                'firm'          => $ud['firmname'],
+                                'firmID'        => $ud['firmID'],
+                                'pos'           => $ud['pos'],
+                                'posID'         => $ud['posID'],
+                                'type'          => $ud['type'],
+                                'photo'         => $ud['photo'],
+                                'signature'     => $ud['signature'],
+                                'logo'          => $ud['logo'],
+                                'allowed'       => json_decode($ud['allowed']),
+                            ];
+                            $this->db->table($this->tbluser)->where(array('userID' => $ud['userID']))->update(array('logattempts' => 0));
+                            return $arr;
+                        }else{
+                            $cnt = $ud['logattempts'] + 1;
+                            $this->db->table($this->tbluser)->where(array('userID' => $ud['userID']))->update(array('logattempts' => $cnt));
+                            $this->logs->authlog("userid:".$ud['userID']." has ".$cnt." failed login attemps");
+                            return false;
+                        }
                     }else{
-                        return 'wrongpassword';
+                        $cnt = $ud['logattempts'] + 1;
+                        $this->db->table($this->tbluser)->where(array('userID' => $ud['userID']))->update(array('logattempts' => $cnt, 'status' => 'Locked'));
+                        $this->logs->authlog("userid:".$ud['userID']." has been Locked");
+                        return 'Locked';
                     }
                 }else{
-                    return 'userinactive';
+                    return false;
                 }
             }else{
-                return 'userunverified';
+                return false;
             }
         }else{
-            return 'usernotexist';
+            return false;
         }
 
     }

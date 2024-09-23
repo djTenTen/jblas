@@ -1271,20 +1271,6 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
                     break;
-                    case '3.13 Ab1':
-                        switch ($save) {
-                            case 'saveab1' :
-                                $req = [
-                                    'yesno'     => $this->request->getPost('yesno'),
-                                    'comment'   => $this->request->getPost('comment'),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$name);
-                    break;
                     case '3.14 Ab3':
                         switch ($save) {
                             case 'saveab3' :

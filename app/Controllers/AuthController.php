@@ -47,8 +47,8 @@ class AuthController extends BaseController{
     public function auth(){
 
         $validationRules = [
-            'email'     => 'required',
-            'password'  => 'required'
+            'email'     => 'required|valid_email',
+            'password'  => 'required|min_length[8]'
         ];
         if (!$this->validate($validationRules)) {
             session()->setFlashdata('access_denied','access_denied');
@@ -59,48 +59,36 @@ class AuthController extends BaseController{
             'password'  => $this->request->getPost('password')
         ];
         $res = $this->authModel->authenticate($req);
-        switch ($res) {
-            case 'usernotexist':
-                session()->setFlashdata('accountnotexist','accountnotexist');
-                return redirect()->to(site_url());
-            break;
-            case 'userinactive':
-                session()->setFlashdata('accountinactive','accountinactive');
-                return redirect()->to(site_url());
-            break;
-            case 'userunverified':
-                session()->setFlashdata('accountunverified','accountunverified');
-                return redirect()->to(site_url());
-            break;
-            case 'wrongpassword':
+        if($res == "Locked"){
+            session()->setFlashdata('Locked','Locked');
+            return redirect()->to(site_url());
+        }else{
+            if(!empty($res)){
+                $user_data = [
+                    'authentication'    => true,
+                    'userID'            => $this->crypt->encrypt($res['userID']),
+                    'name'              => $res['name'],
+                    'email'             => $res['email'],
+                    'pass'              => $res['pass'],
+                    'firm'              => $res['firm'],
+                    'firmID'            => $this->crypt->encrypt($res['firmID']),
+                    'pos'               => $res['pos'],
+                    'type'              => $res['type'],
+                    'photo'             => $res['photo'],
+                    'signature'         => $res['signature'],
+                    'logo'              => $res['logo'],
+                    'posID'             => $this->crypt->encrypt($res['posID']),
+                    'allowed'           => $res['allowed'],
+                ];
+                session()->set($user_data);
+                $this->logs->log($user_data['name']. " has just Logged-in");
+                return redirect()->to(site_url('/auditsystem/dashboard'));
+            }else{
                 session()->setFlashdata('access_denied','access_denied');
                 return redirect()->to(site_url());
-            break;
+            }
         }
-        if(!empty($res)){
-            $user_data = [
-                'authentication'    => true,
-                'userID'            => $this->crypt->encrypt($res['userID']),
-                'name'              => $res['name'],
-                'email'             => $res['email'],
-                'pass'              => $res['pass'],
-                'firm'              => $res['firm'],
-                'firmID'            => $this->crypt->encrypt($res['firmID']),
-                'pos'               => $res['pos'],
-                'type'              => $res['type'],
-                'photo'             => $res['photo'],
-                'signature'         => $res['signature'],
-                'logo'              => $res['logo'],
-                'posID'             => $this->crypt->encrypt($res['posID']),
-                'allowed'           => $res['allowed'],
-            ];
-            session()->set($user_data);
-            $this->logs->log($user_data['name']. " has just Logged-in");
-            return redirect()->to(site_url('/auditsystem/dashboard'));
-        }else{
-            session()->setFlashdata('access_denied','access_denied');
-            return redirect()->to(site_url());
-        }
+        
 
     }
 

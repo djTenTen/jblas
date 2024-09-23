@@ -44,34 +44,16 @@
                                         <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                                         <div class="alert-icon-content">
                                             <h6 class="alert-heading">Access Denied</h6>
-                                            Invalid email or password, Please try again.
+                                            Invalid user credentials. Please try again.
                                         </div>
                                     </div>
                                 <?php  }?>
-                                <?php if (session()->get('accountnotexist')) { ?>
+                                <?php if (session()->get('Locked')) { ?>
                                     <div class="alert alert-danger alert-icon" role="alert">
                                         <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                                         <div class="alert-icon-content">
-                                            <h6 class="alert-heading">Account does not Exist</h6>
-                                            the account you have been using does not exist
-                                        </div>
-                                    </div>
-                                <?php  }?>
-                                <?php if (session()->get('accountinactive')) { ?>
-                                    <div class="alert alert-danger alert-icon" role="alert">
-                                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                                        <div class="alert-icon-content">
-                                            <h6 class="alert-heading">Account Inactive</h6>
-                                            Your account is inactive, PLease contact your administrator for further actions.
-                                        </div>
-                                    </div>
-                                <?php  }?>
-                                <?php if (session()->get('accountunverified')) { ?>
-                                    <div class="alert alert-danger alert-icon" role="alert">
-                                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                                        <div class="alert-icon-content">
-                                            <h6 class="alert-heading">Account Unverified</h6>
-                                            Your account is not yet verified, Please wait until it verifies or contact the administrator for further actions
+                                            <h6 class="alert-heading">Account Locked</h6>
+                                            Your account has been Locked for more than 5 times failed attempts to authenticate. Please contact the System Administrator for further actions.
                                         </div>
                                     </div>
                                 <?php  }?>
