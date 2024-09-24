@@ -22,7 +22,7 @@
                 background-attachment: fixed;
                 background-position: center;
                 background-size: cover;
-                overflow-x: hidden; >
+                overflow-x: hidden;">
 
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
