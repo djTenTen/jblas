@@ -88,6 +88,15 @@ class DashController extends BaseController{
     }
 
 
+    public function documentation(){
+
+        $data['title']  = 'Process - Documentation';
+        echo view('includes/Header', $data);
+        echo view('dashboard/Documentation', $data);
+        echo view('includes/Footer');
+
+    }
+
     /**
         * @method auditsystem() view the audit dashboard
         * @var fID decrypted data of firm id

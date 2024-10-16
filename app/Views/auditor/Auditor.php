@@ -143,16 +143,16 @@
                     <div class="row gx-3">
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="small mb-1" for="email">Email</label>
+                                <label class="small mb-1" for="email">Email:</label>
                                 <input class="form-control" id="email" type="email" aria-describedby="emailHelp" placeholder="Enter email address" name="email" required/>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="small mb-1" for="type">Type</label>
+                                <label class="small mb-1" for="type">Role:</label>
                                 <select name="type" id="type" class="form-control form-select" required>
-                                    <option value="" selected>Select Type</option>
+                                    <option value="" selected>Select Role</option>
                                     <option value="Preparer">Preparer</option>
                                     <option value="Reviewer">Reviewer</option>
                                     <option value="Audit Manager">Audit Manager</option>
@@ -161,6 +161,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
+                                <label class="small mb-1" for="type">Signature</label>
                                 <div class="small font-italic text-muted mb-4">The file must be PNG, no larger than 5 MB and 2x2 or square size image</div>
                                 <!-- Profile picture upload button-->
                                 <input type="file" id="imageInput" name="signature" class="form-control btn btn-primary">

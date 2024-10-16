@@ -32,6 +32,13 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
     $auth->get('logs', 'LogsController::logs');
     /**
         ----------------------------------------------------------
+        DOCUMENTATION
+        ----------------------------------------------------------
+    */
+    $auth->get('documentation', 'DashController::documentation');
+    
+    /**
+        ----------------------------------------------------------
         ACCOUNT PROFILE MANAGEMENT
         ----------------------------------------------------------
     */

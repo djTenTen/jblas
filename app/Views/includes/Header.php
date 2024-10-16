@@ -36,6 +36,21 @@
         <!-- Navbar Items-->
         <ul class="navbar-nav align-items-center ms-auto">
             <!-- Alerts Dropdown-->
+            <li class="nav-item dropdown no-caret d-none d-md-block me-3">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="fw-500">Documentation</div>
+                    <i class="fas fa-chevron-right dropdown-arrow"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end py-0 me-sm-n15 me-lg-0 o-hidden animated--fade-in-up" aria-labelledby="navbarDropdownDocs">
+                    <a class="dropdown-item py-3" href="<?= base_url()?>auditsystem/documentation" target="_blank">
+                        <div class="icon-stack bg-primary-soft text-primary me-4"><i data-feather="book"></i></div>
+                        <div>
+                            <div class="small text-gray-500">Documentation</div>
+                            Usage instructions and reference
+                        </div>
+                    </a>
+                </div>
+            </li>
             <li class="nav-item dropdown no-caret d-none d-sm-block me-3 dropdown-notifications">
                 <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownAlerts" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="bell"></i><span class="badge bg-red text-white" id="notiffirm"><?php if($cnf == 0){echo '';}else{echo $cnf;}?></span></a>
                 <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownAlerts">
