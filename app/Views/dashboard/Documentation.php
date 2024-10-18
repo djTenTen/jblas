@@ -53,13 +53,6 @@
                             <div class="wizard-step-text-name">FAQs</div>
                         </div>
                     </a>
-                    <!-- Wizard navigation item 4-->
-                    <a class="nav-item nav-link" id="wizard4-tab" href="#wizard5" data-bs-toggle="tab" role="tab" aria-controls="wizard4" aria-selected="true">
-                        <div class="wizard-step-icon">5</div>
-                        <div class="wizard-step-text">
-                            <div class="wizard-step-text-name">Review &amp; Submit</div>
-                        </div>
-                    </a>
                 </div>
             </div>
             <div class="card-body">
