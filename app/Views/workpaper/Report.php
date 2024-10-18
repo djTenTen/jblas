@@ -331,7 +331,7 @@ $html = '';
 
             case 'AC1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : Client Acceptance or Continuance Form',1,1);
+                $pdf->Bookmark($c['code'].' : Client acceptance or continuance form',1,1);
                 $html  .= $style;
                 $fl     = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
                 $ac1    = $rp->getvalues_m('c1','cacf',$c['code'],$c['c1tID'],$cID,$wpID);
@@ -428,7 +428,7 @@ $html = '';
 
             case 'AC2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : PROVISION OF NON-AUDIT SERVICES',1,1);
+                $pdf->Bookmark($c['code'].' : Provision of non-audit services',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
                 $ac2   = $rp->getvalues_m('c1','pans',$c['code'],$c['c1tID'],$cID,$wpID);
@@ -557,7 +557,7 @@ $html = '';
 
             case 'AC3':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : PERMANENT FILE CHECKLIST',1,1);
+                $pdf->Bookmark($c['code'].' : Permanent file checklist',1,1);
                 $html       .= $style;
                 $fl          = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
                 $ac3genmat   = $rp->getvalues_m('c1','genmat',$c['code'],$c['c1tID'],$cID,$wpID);
@@ -718,7 +718,7 @@ $html = '';
 
             case 'AC4':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : PRELIMINARY PLANNING PROCEDURES – CLIENT INVOLVEMENT IN THE PLANNING PROCESS',1,1);
+                $pdf->Bookmark($c['code'].' : Preliminary planning procedures - Client involvement in the planning process',1,1);
                 $html  .= $style;
                 $fl     = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
                 $rdata  = $rp->getvalues_s('c1','ppr',$c['code'],$c['c1tID'],$cID,$wpID);
@@ -784,7 +784,7 @@ $html = '';
 
             case 'AC5':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : PRELIMINARY ANALYTICAL PROCEDURES',1,1);
+                $pdf->Bookmark($c['code'].' : Preliminary analytical procedures',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
                 $rdata =  $rp->getvalues_s('c1','rescon',$c['code'],$c['c1tID'],$cID,$wpID);
@@ -844,7 +844,7 @@ $html = '';
 
             case 'AC6':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : RISK SUMMARY',1,1);
+                $pdf->Bookmark($c['code'].' : Risk summary',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
                 $trig  = 0;
@@ -1096,7 +1096,7 @@ $html = '';
             
             case 'AC7':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : SPECIFIC AREA NARRATIVE INHERENT RISK ASSESSMENT',1,1);
+                $pdf->Bookmark($c['code'].' : Specific area narrative inherent risk management',1,1);
                 $html      .= $style;
                 $fl         = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
                 $databac    = $rp->getvalues_s('c1','bacdata',$c['code'],$c['c1tID'],$cID,$wpID);
@@ -2411,7 +2411,7 @@ $html = '';
 
             case 'AC8':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : ASSESSMENT OF MATERIALITY',1,1);
+                $pdf->Bookmark($c['code'].' : Assessment of materiality',1,1);
                 $html .= $style;
                 $html .= '
                     <table>
@@ -2781,7 +2781,7 @@ $html = '';
 
             case 'AC9':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : APPROVAL OF PLANNING',1,1);
+                $pdf->Bookmark($c['code'].' : Approval of planning',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c1',$wpID,$cID,$c['c1tID']);
                 $rdata = $rp->getvalues_s('c1','ac9data',$c['code'],$c['c1tID'],$cID,$wpID);
@@ -3111,7 +3111,7 @@ $html = '';
 
             case 'AC10':
                 $pdf->AddPage('L');
-                $pdf->Bookmark($c['code'].' : AUDIT APPROACH AND SAMPLE SIZE CALCULATION',1,1);
+                $pdf->Bookmark($c['code'].' : Audit Approach and Sample Size Calculation',1,1);
                 $html .=  "
                     <style>
                         *{
@@ -3978,7 +3978,7 @@ $html = '';
 
             case 'AC11':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : TEAM DISCUSSIONS AND BRIEFING MEETING',1,1);
+                $pdf->Bookmark($c['code'].' : Team discussions and briefing meeting',1,1);
                 $html  .= $style;
                 $rdata  = $rp->getvalues_s('c1','ac11data',$c['code'],$c['c1tID'],$cID,$wpID);
                 $ac11   = json_decode($rdata['question'], true);
@@ -4222,7 +4222,7 @@ $html = '';
 
             case '2.1 B2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : INTANGIBLE NON-CURRENT ASSETS AND GOODWILL',1,1);
+                $pdf->Bookmark($c['code'].' : Intangible non-current assets and goodwill',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -4297,7 +4297,7 @@ $html = '';
 
             case '2.2.1 C2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : PROPERTY, PLANT AND EQUIPMENT',1,1);
+                $pdf->Bookmark($c['code'].' : Property, plant and equipment',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -4372,7 +4372,7 @@ $html = '';
 
             case '2.2.2 C2-1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : PROPERTY, PLANT AND EQUIPMENT – TOP UP PROGRAMME',1,1);
+                $pdf->Bookmark($c['code'].' : Property, plant, and equipment - Top up programme',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -4452,7 +4452,7 @@ $html = '';
 
             case '2.3 D2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : INVESTMENTS',1,1);
+                $pdf->Bookmark($c['code'].' : Investments',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -4530,7 +4530,7 @@ $html = '';
 
             case '2.4.1 E2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : INVENTORIES',1,1);
+                $pdf->Bookmark($c['code'].' : Inventories',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -4605,7 +4605,7 @@ $html = '';
 
             case '2.4.2 E2-1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : INVENTORY APPENDIX 1 – INVENTORY COUNT PLANNING',1,1);
+                $pdf->Bookmark($c['code'].' : Inventory appendix 1 - Inventory count planning',1,1);
                 $html   .= $style;
                 $fl      = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count   = 0;
@@ -4697,7 +4697,7 @@ $html = '';
 
             case '2.4.3 E2-2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : INVENTORY APPENDIX 2 – TESTS AT INVENTORY COUNT',1,1);
+                $pdf->Bookmark($c['code'].' : Inventory appendix 2 - Tests at inventory count',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -4762,7 +4762,7 @@ $html = '';
 
             case '2.4.4 E2-3':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : INVENTORY APPENDIX 3 – ALTERNATIVE PROCEDURES',1,1);
+                $pdf->Bookmark($c['code'].' : Inventory appendix 3 - Alternative procedures',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -4828,7 +4828,7 @@ $html = '';
 
             case '2.4.5 E2-4':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : INVENTORY TOP UP PROGRAMME: CONSTRUCTION CONTRACTS',1,1);
+                $pdf->Bookmark($c['code'].' : Inventory top up programme: Construction contracts',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -4904,7 +4904,7 @@ $html = '';
 
             case '2.5 F2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : RECEIVABLES',1,1);
+                $pdf->Bookmark($c['code'].' : Receivables',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -4980,7 +4980,7 @@ $html = '';
 
             case '2.6 H2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : BANK AND CASH',1,1);
+                $pdf->Bookmark($c['code'].' : Bank and Cash',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -5055,7 +5055,7 @@ $html = '';
 
             case '2.7 I2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : PAYABLES',1,1);
+                $pdf->Bookmark($c['code'].' : Payables',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -5130,7 +5130,7 @@ $html = '';
 
             case '2.8 J2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : TAXATION ~ INCLUDING DEFERRED TAXATION',1,1);
+                $pdf->Bookmark($c['code'].' : Taxation ~ Including deferred taxation',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -5205,7 +5205,7 @@ $html = '';
 
             case '2.9 K2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : TRANSACTIONS WITH RELATED PARTIES',1,1);
+                $pdf->Bookmark($c['code'].' : Transactions with related parties',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -5281,7 +5281,7 @@ $html = '';
 
             case '2.10 L2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : PROVISIONS, CONTINGENCIES AND FINANCIAL COMMITMENTS',1,1);
+                $pdf->Bookmark($c['code'].' : Provisions, contingencies and financial commitments',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -5357,7 +5357,7 @@ $html = '';
 
             case '2.11 M2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : EQUITY AND STATUTORY INFORMATION',1,1);
+                $pdf->Bookmark($c['code'].' : Equity and statutory information ',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -5432,7 +5432,7 @@ $html = '';
 
             case '2.12 N2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : OTHER AUDIT AREAS INCLUDING',1,1);
+                $pdf->Bookmark($c['code'].' : Other audit areas including',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -5516,7 +5516,7 @@ $html = '';
 
             case '2.13.1 O2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : REVENUE',1,1);
+                $pdf->Bookmark($c['code'].' : Revenue',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -5591,7 +5591,7 @@ $html = '';
 
             case '2.13.2 O2-1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : IFRS 15 CONSIDERATIONS',1,1);
+                $pdf->Bookmark($c['code'].' : IFRS 15 Considerations',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -5664,7 +5664,7 @@ $html = '';
 
             case '2.14 P2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : DIRECT COSTS',1,1);
+                $pdf->Bookmark($c['code'].' : Direct costs',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -5739,7 +5739,7 @@ $html = '';
 
             case '2.15 Q2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : OTHER INCOME AND GAINS',1,1);
+                $pdf->Bookmark($c['code'].' : Other income and gains',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -5815,7 +5815,7 @@ $html = '';
 
             case '2.16 R2-1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : OTHER EXPENDITURE AND LOSSES',1,1);
+                $pdf->Bookmark($c['code'].' : Other expenditure and losses',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -5890,7 +5890,7 @@ $html = '';
 
             case '2.17 R2-2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : PAYROLL COSTS',1,1);
+                $pdf->Bookmark($c['code'].' : Payroll costs',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -5966,7 +5966,7 @@ $html = '';
 
             case '2.18.1 S2-1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : DISCLOSURE AUDIT PROGRAMME ~ Covering the Directors’ Report and Financial Statements',1,1);
+                $pdf->Bookmark($c['code'].' : Disclosure audit programme ~ Covering the director’s report and financial statements',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -6031,7 +6031,7 @@ $html = '';
 
             case '2.18.2 S2-2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : DEFINED BENEFIT PENSION SCHEMES',1,1);
+                $pdf->Bookmark($c['code'].' : Defined benefit pension schemes',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -6097,7 +6097,7 @@ $html = '';
 
             case '2.18.3 S2-3':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : SHARE-BASED PAYMENTS',1,1);
+                $pdf->Bookmark($c['code'].' : Share-based payments',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -6163,7 +6163,7 @@ $html = '';
 
             case '2.18.4 S2-4':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : HEDGE ACCOUNTING',1,1);
+                $pdf->Bookmark($c['code'].' : Hedge accounting',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -6230,7 +6230,7 @@ $html = '';
 
             case '2.19.1 U2-1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : NOMINAL LEDGER',1,1);
+                $pdf->Bookmark($c['code'].' : Nominal ledger',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -6294,7 +6294,7 @@ $html = '';
 
             case '2.19.2 U2-2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : NEW CLIENT – PRIOR PERIOD AUDITED',1,1);
+                $pdf->Bookmark($c['code'].' : New client - Prior period audited',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -6369,7 +6369,7 @@ $html = '';
 
             case '2.19.3 U2-3':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : PRIOR PERIOD UNAUDITED ~ NEW OR EXISTING CLIENT',1,1);
+                $pdf->Bookmark($c['code'].' : Prior period unaudited ~ New or existing client',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c2',$wpID,$cID,$c['c2tID']);
                 $count = 0;
@@ -6461,7 +6461,7 @@ $html = '';
 
             case '3.1 Aa1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : AUDIT CONTROL RECORD',1,1);
+                $pdf->Bookmark($c['code'].' : Audit control record',1,1);
                 $html   .= $style;
                 $fl      = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $datapl  = $rp->getvalues_m('c3','planning',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -6753,7 +6753,7 @@ $html = '';
 
             case '3.2 Aa2':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : POINTS FORWARD',1,1);
+                $pdf->Bookmark($c['code'].' : Points forward',1,1);
                 $html  .= $style;
                 $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $rdata  = $rp->getvalues_s('c3','aa2',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -6869,7 +6869,7 @@ $html = '';
 
             case '3.3 Aa3a':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : SUBSEQUENT EVENTS REVIEW',1,1);
+                $pdf->Bookmark($c['code'].' : Subsequent events review',1,1);
                 $html .= $style;
                 $cr    = $rp->getvalues_m('c3','cr',$c['code'],$c['c3tID'],$cID,$wpID);
                 $dc    = $rp->getvalues_m('c3','dc',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -7027,7 +7027,7 @@ $html = '';
             break;
             case '3.4 Aa3b':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : GOING CONCERN CHECKLIST',1,1);
+                $pdf->Bookmark($c['code'].' : Going concern checklist',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $bp1   = $rp->getvalues_m('c3','p1',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -7229,7 +7229,7 @@ $html = '';
 
             case '3.5 Aa4':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : SUGGESTED LETTER OF REPRESENTATION',1,1);
+                $pdf->Bookmark($c['code'].' : Suggested letter of representation',1,1);
                 $html  .= $style;
                 $rdata  = $rp->getvalues_s('c3','aa4',$c['code'],$c['c3tID'],$cID,$wpID);
                 $aa4    = json_decode($rdata['question'], true);
@@ -7420,7 +7420,7 @@ $html = '';
 
             case '3.6.1 Aa5a':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : MANAGEMENT LETTER',1,1);
+                $pdf->Bookmark($c['code'].' : Management letter',1,1);
                 $html   .= $style;
                 $rdata   = $rp->getvalues_s('c3','aa5a',$c['code'],$c['c3tID'],$cID,$wpID);
                 $aa5a    = json_decode($rdata['question'], true);
@@ -7491,7 +7491,7 @@ $html = '';
 
             case '3.6.2 Aa5b':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : MANAGEMENT LETTER WORKSHEET',1,1);
+                $pdf->Bookmark($c['code'].' : Management letter worksheet',1,1);
                 $html .= $style;
                 $fl    = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $aa5b  =  $rp->getvalues_m('c3','aa5b',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -7557,7 +7557,7 @@ $html = '';
 
             case '3.7 Aa7':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : ISA COMPLIANCE CRITICAL ISSUES MEMORANDUM',1,1);
+                $pdf->Bookmark($c['code'].' : ISA Compliance critical issues memorandum',1,1);
                 $html   .= $style;
                 $fl      = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $aepapp  = $rp->getvalues_s('c3','aepapp',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -7875,7 +7875,7 @@ $html = '';
 
             case '3.8 Aa10':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : FINAL ANALYTICAL PROCEDURES',1,1);
+                $pdf->Bookmark($c['code'].' : Final analutical Procedures',1,1);
                 $html  .= $style;
                 $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $rdata  =  $rp->getvalues_s('c3','aa10',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -8012,7 +8012,7 @@ $html = '';
 
             case '3.10 Aa11-un':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : SUMMARY OF UNADJUSTED ERRORS',1,1);
+                $pdf->Bookmark($c['code'].' : Summary of unadjusted errors',1,1);
                 $html  .= $style;
                 $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $aef    = $rp->getvalues_m('c3','aef',$s[0],$c['c3tID'],$cID,$wpID);
@@ -8393,7 +8393,7 @@ $html = '';
 
             case '3.10 Aa11-ad':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT\'S FINANCIAL STATEMENTS',1,1);
+                $pdf->Bookmark($c['code'].' : Summary of adjustments mate to the client\'s financial statements',1,1);
                 $html .= $style;
                 $ad    = $rp->getvalues_m('c3','ad',$s[0],$c['c3tID'],$cID,$wpID);
                 $rdata = $rp->getvalues_s('c3','aa11uead',$s[0],$c['c3tID'],$cID,$wpID);
@@ -8506,7 +8506,7 @@ $html = '';
 
             case '3.11':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : INDEPENDENT AUDITOR’S REPORT TO THE MEMBERS OF '.$cl['clientname'].' LIMITED',1,1);
+                $pdf->Bookmark($c['code'].' : Independent auditor\'s report to the members of '.$cl['clientname'].' limited',1,1);
                 $html  .= $style;
                 $rdata  = $rp->getvalues_s('c3','311',$c['code'],$c['c3tID'],$cID,$wpID);
                 $arf    = json_decode($rdata['question'], true);
@@ -8559,7 +8559,7 @@ $html = '';
 
             case '3.13 Ab1':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : CRITICAL REVIEW OF THE FINANCIAL STATEMENTS',1,1);
+                $pdf->Bookmark($c['code'].' : Critical review of the financial statements',1,1);
                 $html .= $style;
                 $ab1 = $rp->getvalues_m('c3','ab1',$c['code'],$c['c3tID'],$cID,$wpID);
                 $html .= '
@@ -8623,7 +8623,7 @@ $html = '';
             
             case '3.14 Ab3':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : FINANCIAL STATEMENTS DISCLOSURE AND COMPLIANCE ANNUAL REVIEW CHECKLIST',1,1);
+                $pdf->Bookmark($c['code'].' : Financial statements disclosure and compliance annual review checklist',1,1);
                 $html  .= $style;
                 $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $rdata  = $rp->getvalues_s('c3','ab3',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -8760,7 +8760,7 @@ $html = '';
 
             case '3.15 Ab4':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : CORPORATE DISCLOSURE CHECKLIST (IFRS)',1,1);
+                $pdf->Bookmark($c['code'].' : Corporate disclosure checklist (IFRS)',1,1);
                 $html  .= $style;
                 $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $rdata  = $rp->getvalues_s('c3','checklist',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -9244,7 +9244,7 @@ $html = '';
 
             case '3.15.1 Ab4a':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures for an Entity Involved in Exploration for and Evaluation of Mineral Resources',1,1);
+                $pdf->Bookmark($c['code'].' : Supplementary corporate disclosure checklist (IFRS) ~ Additional Disclosures for an Entity Involved in Exploration for and Evaluation of Mineral Resources',1,1);
                 $html  .= $style;
                 $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $ab4a   = $rp->getvalues_m('c3','ab4a',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -9306,7 +9306,7 @@ $html = '';
 
             case '3.15.2 Ab4b':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)',1,1);
+                $pdf->Bookmark($c['code'].' : Supplementary corporate disclosure checklist (IFRS)',1,1);
                 $html  .= $style;
                 $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $ab4b   = $rp->getvalues_m('c3','ab4b',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -9368,7 +9368,7 @@ $html = '';
 
             case '3.15.3 Ab4c':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS)',1,1);
+                $pdf->Bookmark($c['code'].' : Supplementary corporate disclosure checklist (IFRS)',1,1);
                 $html  .= $style;
                 $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $ab4c   = $rp->getvalues_m('c3','ab4c',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -9430,7 +9430,7 @@ $html = '';
 
             case '3.15.4 Ab4d':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures for an Entity with Agricultural Activities',1,1);
+                $pdf->Bookmark($c['code'].' : Supplementary corporate disclosure checklist (IFRS) ~ Additional Disclosures for an Entity with Agricultural Activities',1,1);
                 $html  .= $style;
                 $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $ab4d   = $rp->getvalues_m('c3','ab4d',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -9496,7 +9496,7 @@ $html = '';
 
             case '3.15.5 Ab4e':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures for First Time Adopters of IFRS',1,1);
+                $pdf->Bookmark($c['code'].' : Supplementary corporate disclosure checklist (IFRS) ~ Additional Disclosures for First Time Adopters of IFRS',1,1);
                 $html  .= $style;
                 $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $ab4e   = $rp->getvalues_m('c3','ab4e',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -9559,7 +9559,7 @@ $html = '';
 
             case '3.15.6 Ab4f':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosure for Parent Undertakings that are Not Consolidating',1,1);
+                $pdf->Bookmark($c['code'].' : Supplementary corporate disclosure checklist (IFRS) ~ Additional Disclosure for Parent Undertakings that are Not Consolidating',1,1);
                 $html  .= $style;
                 $fl     = $rp->getfileinfo('c3',$wpID,$cID,$c['c3tID']);
                 $ab4f   = $rp->getvalues_m('c3','ab4f',$c['code'],$c['c3tID'],$cID,$wpID);
@@ -9684,7 +9684,7 @@ $html = '';
 
             case '3.15.8 Ab4h':
                 $pdf->AddPage('P');
-                $pdf->Bookmark($c['code'].' : SUPPLEMENTARY CORPORATE DISCLOSURE CHECKLIST (IFRS) ~ Additional Disclosures on transition to IFRS 16',1,1);
+                $pdf->Bookmark($c['code'].' : Supplementary corporate disclosure checklist (IFRS) ~ Additional Disclosures on transition to IFRS 16',1,1);
                 $html .= $style;
                 $ab4h = $rp->getvalues_m('c3','ab4h',$c['code'],$c['c3tID'],$cID,$wpID);
                 $html .= '
