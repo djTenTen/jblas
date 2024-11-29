@@ -18,6 +18,7 @@ class UserController extends BaseController{
     */
     protected $usermodel;
     protected $crypt;
+    protected $token = 'Anti-CSRF tokens';
 
 
     /**
@@ -39,6 +40,7 @@ class UserController extends BaseController{
     */
     public function register(){
 
+        $data['token'] = $this->crypt->encrypt($this->token);
         $data['title'] = 'Sign-up';
         echo view('users/Signup', $data);
 
@@ -121,14 +123,18 @@ class UserController extends BaseController{
     */
     public function signup(){
 
+        if( $this->crypt->decrypt($this->request->getpost('token')) != $this->token){
+            session()->setFlashdata('error','There is something wrong with your request, Please try again.');
+            return redirect()->to(site_url('register'));
+        }
         $validationRules = [
-            'fname'     => 'required',
-            'firm'      => 'required',
+            'fname'     => 'required|string|max:255',
+            'firm'      => 'required|string|max:255',
             'email'     => 'required',
             'pass'      => 'required',
         ];
         if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
+            session()->setFlashdata('error','There is something wrong with your request, Please try again.');
             return redirect()->to(site_url('register'));
         }
         $pss = $this->request->getPost('pass');
@@ -146,17 +152,17 @@ class UserController extends BaseController{
         if($this->request->getPost('pass') == $this->request->getPost('cpass')){
             $res = $this->usermodel->signin($req);
             if($res == 'exist'){
-                session()->setFlashdata('exist','exist');
+                session()->setFlashdata('error','Account already exist.');
                 return redirect()->to(site_url('register'));
             }else if($res == "registered"){
-                session()->setFlashdata('success_registration','success_registration');
+                session()->setFlashdata('success','We have received your registration, PLease wait a email confirmation before signing in.');
                 return redirect()->to(site_url('register'));
             }else{
-                session()->setFlashdata('failed_registration','failed_registration');
+                session()->setFlashdata('error','There is something wrong with your request, Please try again.');
                 return redirect()->to(site_url('register'));
             }
         }else{
-            session()->setFlashdata('passnotmatch','passnotmatch');
+            session()->setFlashdata('error','The password confirmation did not match, please try again.');
             return redirect()->to(site_url('register'));
         }
 

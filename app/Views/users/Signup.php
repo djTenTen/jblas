@@ -53,53 +53,27 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header justify-content-center"><h3 class="fw-light my-4">Create Account</h3></div>
                                     <div class="card-body">
-                                        <?php if (session()->get('invalidimage')) { ?>
-                                            <div class="alert alert-danger alert-icon" role="alert">
-                                                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                <div class="alert-icon-content">
-                                                    <h6 class="alert-heading">Invalid Image</h6>
-                                                    Something went wrong on your image uploading
-                                                </div>
-                                            </div>
-                                        <?php  }?>
-                                        <?php if (session()->get('invalid_input')) { ?>
-                                            <div class="alert alert-danger alert-icon" role="alert">
-                                                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                <div class="alert-icon-content">
-                                                    <h6 class="alert-heading">Invalid Input</h6>
-                                                    Something wrong with your data inputd, please try again.
-                                                </div>
-                                            </div>
-                                        <?php  }?>
-                                        <?php if (session()->get('exist')) { ?>
-                                            <div class="alert alert-danger alert-icon" role="alert">
-                                                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                <div class="alert-icon-content">
-                                                    <h6 class="alert-heading">Data already Exist</h6>
-                                                    Your data has been already exist to our system, Please try forgot password or contact the administrator for further actions.
-                                                </div>
-                                            </div>
-                                        <?php  }?>
-                                        <?php if (session()->get('success_registration')) { ?>
+                                        <?php if (session()->get('success')) { ?>
                                             <div class="alert alert-success alert-icon" role="alert">
                                                 <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 <div class="alert-icon-content">
-                                                    <h6 class="alert-heading">Success Registration</h6>
-                                                    We have received your registration, PLease wait a email confirmation before signing in.
+                                                    <h6 class="alert-heading">Success!</h6>
+                                                    <?= session()->get('success')?>
                                                 </div>
                                             </div>
                                         <?php  }?>
-                                        <?php if (session()->get('passnotmatch')) { ?>
+                                        <?php if (session()->get('error')) { ?>
                                             <div class="alert alert-danger alert-icon" role="alert">
                                                 <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 <div class="alert-icon-content">
-                                                    <h6 class="alert-heading">Password did not matched</h6>
-                                                    The password confirmation did not match, please try again.
+                                                    <h6 class="alert-heading">Error!</h6>
+                                                    <?= session()->get('error')?>
                                                 </div>
                                             </div>
                                         <?php  }?>
                                         <!-- Registration form-->
-                                        <form id="uploadForm" action="<?= base_url('signup')?>" method="post" enctype="multipart/form-data">
+                                        <form id="uploadForm" action="signup" method="post" enctype="multipart/form-data">
+                                            <input type="hidden" name="token" value="<?= $token?>">
                                             <div class="row" id="editform">
                                                 <div class="col-xl-4">
                                                     <!-- Profile picture card-->
