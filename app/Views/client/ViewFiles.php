@@ -27,30 +27,325 @@
             <div class="card-header border-bottom">
                 <!-- Wizard navigation-->
                 <div class="nav nav-pills nav-justified flex-column flex-xl-row" id="cardTab" role="tablist">
-                    <!-- Wizard navigation item 1-->
                     <a class="nav-item nav-link active" id="wizard1-tab" href="#wizard1" data-bs-toggle="tab" role="tab" aria-controls="wizard1" aria-selected="true">
                         <div class="wizard-step-text">
-                            <div class="wizard-step-text-name">Chapter 1: Planning</div>
+                            <div class="wizard-step-text-name">Module 1</div>
                         </div>
                     </a>
-                    <!-- Wizard navigation item 2-->
                     <a class="nav-item nav-link" id="wizard2-tab" href="#wizard2" data-bs-toggle="tab" role="tab" aria-controls="wizard2" aria-selected="true">
                         <div class="wizard-step-text">
-                            <div class="wizard-step-text-name">Chapter 2: Detailed Procedure</div>
+                            <div class="wizard-step-text-name">Module 2</div>
                         </div>
                     </a>
-                    <!-- Wizard navigation item 3-->
                     <a class="nav-item nav-link" id="wizard3-tab" href="#wizard3" data-bs-toggle="tab" role="tab" aria-controls="wizard3" aria-selected="true">
                         <div class="wizard-step-text">
-                            <div class="wizard-step-text-name">Chapter 3: Conclusion</div>
+                            <div class="wizard-step-text-name">Module 3</div>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link" id="wizard4-tab" href="#wizard4" data-bs-toggle="tab" role="tab" aria-controls="wizard4" aria-selected="true">
+                        <div class="wizard-step-text">
+                            <div class="wizard-step-text-name">Module 4</div>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link" id="wizard5-tab" href="#wizard5" data-bs-toggle="tab" role="tab" aria-controls="wizard5" aria-selected="true">
+                        <div class="wizard-step-text">
+                            <div class="wizard-step-text-name">Module 5</div>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link" id="wizard6-tab" href="#wizard6" data-bs-toggle="tab" role="tab" aria-controls="wizard6" aria-selected="true">
+                        <div class="wizard-step-text">
+                            <div class="wizard-step-text-name">Module 6</div>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link" id="wizard7-tab" href="#wizard7" data-bs-toggle="tab" role="tab" aria-controls="wizard7" aria-selected="true">
+                        <div class="wizard-step-text">
+                            <div class="wizard-step-text-name">Module 7</div>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link" id="wizard8-tab" href="#wizard8" data-bs-toggle="tab" role="tab" aria-controls="wizard8" aria-selected="true">
+                        <div class="wizard-step-text">
+                            <div class="wizard-step-text-name">Module 8</div>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link" id="wizard9-tab" href="#wizard9" data-bs-toggle="tab" role="tab" aria-controls="wizard9" aria-selected="true">
+                        <div class="wizard-step-text">
+                            <div class="wizard-step-text-name">Module 9</div>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link" id="wizards1-tab" href="#wizards1" data-bs-toggle="tab" role="tab" aria-controls="wizards1" aria-selected="true">
+                        <div class="wizard-step-text">
+                            <div class="wizard-step-text-name">c1</div>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link" id="wizards2-tab" href="#wizards2" data-bs-toggle="tab" role="tab" aria-controls="wizards2" aria-selected="true">
+                        <div class="wizard-step-text">
+                            <div class="wizard-step-text-name">c2</div>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link" id="wizards3-tab" href="#wizards3" data-bs-toggle="tab" role="tab" aria-controls="wizards3" aria-selected="true">
+                        <div class="wizard-step-text">
+                            <div class="wizard-step-text-name">c3</div>
                         </div>
                     </a>
                 </div>
             </div>
             <div class="card-body">
                 <div class="tab-content" id="cardTabContent">
-                    <!-- Wizard tab pane item 1-->
-                    <div class="tab-pane py-5 fade show active" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
+     
+                    <div class="tab-pane py-3 fade show active" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
+                        <h4>Refresher to the QAR Program</h4>
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;">Select</th>
+                                    <th style="width: 10%;">Code</th>
+                                    <th style="width: 60%;">Title</th>
+                                    <th style="width: 20%;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($m1 as $r){?>
+                                    <tr>
+                                    <td>
+                                    <?php if(session()->get('allowed')->add == "Yes"){?>
+                                        <input class="form-check-input filecheck" id="add" type="checkbox" name="c1" value="c1" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <?php }?>
+                                    <td><?= $r['code']?></td>
+                                    <td><?= $r['title']?></td>
+                                    <td>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                            <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane py-3 fade show" id="wizard2" role="tabpanel" aria-labelledby="wizard2-tab">
+                        <h4>Pre-engagement activities</h4>
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;">Select</th>
+                                    <th style="width: 10%;">Code</th>
+                                    <th style="width: 60%;">Title</th>
+                                    <th style="width: 20%;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($m2 as $r){?>
+                                    <tr>
+                                    <td>
+                                    <?php if(session()->get('allowed')->add == "Yes"){?>
+                                        <input class="form-check-input filecheck" id="add" type="checkbox" name="c1" value="c1" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <?php }?>
+                                    <td><?= $r['code']?></td>
+                                    <td><?= $r['title']?></td>
+                                    <td>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                            <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane py-3 fade show" id="wizard3" role="tabpanel" aria-labelledby="wizard3-tab">
+                        <h4>Audit Planning</h4>
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;">Select</th>
+                                    <th style="width: 10%;">Code</th>
+                                    <th style="width: 60%;">Title</th>
+                                    <th style="width: 20%;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($m3 as $r){?>
+                                    <tr>
+                                    <td>
+                                    <?php if(session()->get('allowed')->add == "Yes"){?>
+                                        <input class="form-check-input filecheck" id="add" type="checkbox" name="c1" value="c1" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <?php }?>
+                                    <td><?= $r['code']?></td>
+                                    <td><?= $r['title']?></td>
+                                    <td>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                            <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane py-3 fade show" id="wizard4" role="tabpanel" aria-labelledby="wizard4-tab">
+                        <h4>Cash</h4>
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;">Select</th>
+                                    <th style="width: 10%;">Code</th>
+                                    <th style="width: 60%;">Title</th>
+                                    <th style="width: 20%;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($m4 as $r){?>
+                                    <tr>
+                                    <td>
+                                    <?php if(session()->get('allowed')->add == "Yes"){?>
+                                        <input class="form-check-input filecheck" id="add" type="checkbox" name="c1" value="c1" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <?php }?>
+                                    <td><?= $r['code']?></td>
+                                    <td><?= $r['title']?></td>
+                                    <td>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                            <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane py-3 fade show" id="wizard5" role="tabpanel" aria-labelledby="wizard5-tab">
+                        <h4>Auditing Revenues and Receivables</h4>
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;">Select</th>
+                                    <th style="width: 10%;">Code</th>
+                                    <th style="width: 60%;">Title</th>
+                                    <th style="width: 20%;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($m5 as $r){?>
+                                    <tr>
+                                    <td>
+                                    <?php if(session()->get('allowed')->add == "Yes"){?>
+                                        <input class="form-check-input filecheck" id="add" type="checkbox" name="c1" value="c1" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <?php }?>
+                                    <td><?= $r['code']?></td>
+                                    <td><?= $r['title']?></td>
+                                    <td>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                            <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane py-3 fade show" id="wizard6" role="tabpanel" aria-labelledby="wizard6-tab">
+                        <h4>Inventories</h4>
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;">Select</th>
+                                    <th style="width: 10%;">Code</th>
+                                    <th style="width: 60%;">Title</th>
+                                    <th style="width: 20%;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($m6 as $r){?>
+                                    <tr>
+                                    <td>
+                                    <?php if(session()->get('allowed')->add == "Yes"){?>
+                                        <input class="form-check-input filecheck" id="add" type="checkbox" name="c1" value="c1" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <?php }?>
+                                    <td><?= $r['code']?></td>
+                                    <td><?= $r['title']?></td>
+                                    <td>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                            <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane py-3 fade show" id="wizard7" role="tabpanel" aria-labelledby="wizard7-tab">
+                        <h4>Property, plant, and equipment</h4>
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;">Select</th>
+                                    <th style="width: 10%;">Code</th>
+                                    <th style="width: 60%;">Title</th>
+                                    <th style="width: 20%;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($m7 as $r){?>
+                                    <tr>
+                                    <td>
+                                    <?php if(session()->get('allowed')->add == "Yes"){?>
+                                        <input class="form-check-input filecheck" id="add" type="checkbox" name="c1" value="c1" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <?php }?>
+                                    <td><?= $r['code']?></td>
+                                    <td><?= $r['title']?></td>
+                                    <td>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                            <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane py-3 fade show" id="wizard8" role="tabpanel" aria-labelledby="wizard8-tab">
+                        <h4>Expense</h4>
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;">Select</th>
+                                    <th style="width: 10%;">Code</th>
+                                    <th style="width: 60%;">Title</th>
+                                    <th style="width: 20%;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($m8 as $r){?>
+                                    <tr>
+                                    <td>
+                                    <?php if(session()->get('allowed')->add == "Yes"){?>
+                                        <input class="form-check-input filecheck" id="add" type="checkbox" name="c1" value="c1" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <?php }?>
+                                    <td><?= $r['code']?></td>
+                                    <td><?= $r['title']?></td>
+                                    <td>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                            <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane py-3 fade show" id="wizard9" role="tabpanel" aria-labelledby="wizard9-tab">
+                        <h4>Concluding the audit</h4>
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;">Select</th>
+                                    <th style="width: 10%;">Code</th>
+                                    <th style="width: 60%;">Title</th>
+                                    <th style="width: 20%;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($m9 as $r){?>
+                                    <tr>
+                                    <td>
+                                    <?php if(session()->get('allowed')->add == "Yes"){?>
+                                        <input class="form-check-input filecheck" id="add" type="checkbox" name="c1" value="c1" data-urladd="<?= base_url('auditsystem/client/setfiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" data-urlremove="<?= base_url('auditsystem/client/removefiles')?>/<?= $cID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" <?php if($r['yn'] == 'Yes'){echo 'checked';}?>/></td>
+                                    <?php }?>
+                                    <td><?= $r['code']?></td>
+                                    <td><?= $r['title']?></td>
+                                    <td>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                            <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane py-5 fade show" id="wizards1" role="tabpanel" aria-labelledby="wizards1-tab">
                         <h4>Chapter 1</h4>
                         <table class="table table-hover table-sm">
                             <thead>
@@ -102,7 +397,7 @@
                         </table>
                     </div>
                     <!-- Wizard tab pane item 2-->
-                    <div class="tab-pane py-5 fade" id="wizard2" role="tabpanel" aria-labelledby="wizard2-tab">
+                    <div class="tab-pane py-5 fade" id="wizards2" role="tabpanel" aria-labelledby="wizards2-tab">
                         <h4>Chapter 2</h4>
                         <table class="table table-hover table-sm">
                             <thead>
@@ -131,7 +426,7 @@
                         </table>
                     </div>
                     <!-- Wizard tab pane item 3-->
-                    <div class="tab-pane py-5 fade" id="wizard3" role="tabpanel" aria-labelledby="wizard3-tab">
+                    <div class="tab-pane py-5 fade" id="wizards3" role="tabpanel" aria-labelledby="wizards3-tab">
                         <h4>Chapter 3</h4>
                         <table class="table table-hover table-sm">
                             <thead>

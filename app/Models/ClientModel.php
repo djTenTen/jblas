@@ -37,6 +37,37 @@ class ClientModel extends Model{
     protected $tblc1d   = "tbl_client_dfiles_c1";
     protected $tblc2d   = "tbl_client_dfiles_c2";
     protected $tblc3d   = "tbl_client_dfiles_c3";
+
+
+
+    protected $m1       = "tbl_module1";
+    protected $m1d      = "tbl_module1_data";
+    protected $m1cdf    = "tbl_client_dfiles_m1";
+    protected $m2       = "tbl_module2";
+    protected $m2d      = "tbl_module2_data";
+    protected $m2cdf    = "tbl_client_dfiles_m2";
+    protected $m3       = "tbl_module3";
+    protected $m3d      = "tbl_module3_data";
+    protected $m3cdf    = "tbl_client_dfiles_m3";
+    protected $m4       = "tbl_module4";
+    protected $m4d      = "tbl_module4_data";
+    protected $m4cdf    = "tbl_client_dfiles_m4";
+    protected $m5       = "tbl_module5";
+    protected $m5d      = "tbl_module5_data";
+    protected $m5cdf    = "tbl_client_dfiles_m5";
+    protected $m6       = "tbl_module6";
+    protected $m6d      = "tbl_module6_data";
+    protected $m6cdf    = "tbl_client_dfiles_m6";
+    protected $m7       = "tbl_module7";
+    protected $m7d      = "tbl_module7_data";
+    protected $m7cdf    = "tbl_client_dfiles_m7";
+    protected $m8       = "tbl_module8";
+    protected $m8d      = "tbl_module8_data";
+    protected $m8cdf    = "tbl_client_dfiles_m8";
+    protected $m9       = "tbl_module9";
+    protected $m9d      = "tbl_module9_data";
+    protected $m9cdf    = "tbl_client_dfiles_m9";
+
     protected $time,$date;
     protected $db;
     protected $crypt;
@@ -54,6 +85,26 @@ class ClientModel extends Model{
         date_default_timezone_set("Asia/Singapore"); 
         $this->time     = date("H:i:s");
         $this->date     = date("Y-m-d");
+
+    }
+
+
+    public function getmodule($m,$cID){
+
+        switch ($m) {
+            case 'm1': $tblm = $this->m1; $cdf = $this->m1cdf; break;
+            case 'm2': $tblm = $this->m2; $cdf = $this->m2cdf; break;
+            case 'm3': $tblm = $this->m3; $cdf = $this->m3cdf; break;
+            case 'm4': $tblm = $this->m4; $cdf = $this->m4cdf; break;
+            case 'm5': $tblm = $this->m5; $cdf = $this->m5cdf; break;
+            case 'm6': $tblm = $this->m6; $cdf = $this->m6cdf; break;
+            case 'm7': $tblm = $this->m7; $cdf = $this->m7cdf; break;
+            case 'm8': $tblm = $this->m8; $cdf = $this->m8cdf; break;
+            case 'm9': $tblm = $this->m9; $cdf = $this->m9cdf; break;
+            default: $tblm = ''; $cdf = '' ; break;
+        }
+        $query = $this->db->query("select *, if((select count(DISTINCT mtID) from {$cdf} as df where cID = {$cID} and mt.mtID = df.mtID) > 0, 'Yes', 'No') as yn from {$tblm} as mt where mt.status = 'Active'");
+        return $query->getResultArray();
 
     }
 

@@ -29,6 +29,14 @@ class ClientController extends BaseController{
         $this->crypt    = \Config\Services::encrypter();
 
     }
+
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ecr));
+    }
     
 
     /**
@@ -67,16 +75,27 @@ class ClientController extends BaseController{
         * @var array-data consist of data and display it on the page
         * @return view
     */
-    public function viewfiles($cID,$name){
+    public function viewfiles($clientID,$name){
 
-        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $cID = $this->decr($clientID);
         $data['title']  = 'HAT Audit Files';
         $data['subt']   = 'Select HAT files for '.$name;
         $data['cID']    = $cID;
         $data['name']   = $name;
-        $data['c1']     = $this->cmodel->getc1($dcID);
-        $data['c2']     = $this->cmodel->getc2($dcID);
-        $data['c3']     = $this->cmodel->getc3($dcID);
+        
+        $data['m1']     = $this->cmodel->getmodule('m1',$cID);
+        $data['m2']     = $this->cmodel->getmodule('m2',$cID);
+        $data['m3']     = $this->cmodel->getmodule('m3',$cID);
+        $data['m4']     = $this->cmodel->getmodule('m4',$cID);
+        $data['m5']     = $this->cmodel->getmodule('m5',$cID);
+        $data['m6']     = $this->cmodel->getmodule('m6',$cID);
+        $data['m7']     = $this->cmodel->getmodule('m7',$cID);
+        $data['m8']     = $this->cmodel->getmodule('m8',$cID);
+        $data['m9']     = $this->cmodel->getmodule('m9',$cID);
+
+        $data['c1']     = $this->cmodel->getc1($cID);
+        $data['c2']     = $this->cmodel->getc2($cID);
+        $data['c3']     = $this->cmodel->getc3($cID);
         echo view('includes/Header', $data);
         echo view('client/ViewFiles', $data);
         echo view('includes/Footer');
