@@ -47,7 +47,7 @@ class ClientController extends BaseController{
     */
     public function editclient($cID){
 
-        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dcID = $this->decr($cID);
         return $this->cmodel->editclient($dcID);
 
     }
@@ -61,7 +61,7 @@ class ClientController extends BaseController{
     */
     public function getdefaultfiles($cID){
 
-        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dcID = $this->decr($cID);
         return $this->cmodel->getdefaultfiles($dcID);
 
     }
@@ -75,27 +75,16 @@ class ClientController extends BaseController{
         * @var array-data consist of data and display it on the page
         * @return view
     */
-    public function viewfiles($clientID,$name){
+    public function viewfiles($cID,$name){
 
-        $cID = $this->decr($clientID);
+        $dcID = $this->decr($cID);
         $data['title']  = 'HAT Audit Files';
         $data['subt']   = 'Select HAT files for '.$name;
         $data['cID']    = $cID;
         $data['name']   = $name;
-        
-        $data['m1']     = $this->cmodel->getmodule('m1',$cID);
-        $data['m2']     = $this->cmodel->getmodule('m2',$cID);
-        $data['m3']     = $this->cmodel->getmodule('m3',$cID);
-        $data['m4']     = $this->cmodel->getmodule('m4',$cID);
-        $data['m5']     = $this->cmodel->getmodule('m5',$cID);
-        $data['m6']     = $this->cmodel->getmodule('m6',$cID);
-        $data['m7']     = $this->cmodel->getmodule('m7',$cID);
-        $data['m8']     = $this->cmodel->getmodule('m8',$cID);
-        $data['m9']     = $this->cmodel->getmodule('m9',$cID);
-
-        $data['c1']     = $this->cmodel->getc1($cID);
-        $data['c2']     = $this->cmodel->getc2($cID);
-        $data['c3']     = $this->cmodel->getc3($cID);
+        $data['c1']     = $this->cmodel->getc1($dcID);
+        $data['c2']     = $this->cmodel->getc2($dcID);
+        $data['c3']     = $this->cmodel->getc3($dcID);
         echo view('includes/Header', $data);
         echo view('client/ViewFiles', $data);
         echo view('includes/Footer');
@@ -112,14 +101,14 @@ class ClientController extends BaseController{
     */
     public function getfiles($cID,$name){
 
-        $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dcID           = $this->decr($cID);
         $data['title']  = 'HAT Audit Files';
         $data['subt']   = 'Set default data on '.$name;
         $data['cID']    = $cID;
         $data['name']   = $name;
-        $data['c1']     = $this->cmodel->getc1values($dcID);
-        $data['c2']     = $this->cmodel->getc2values($dcID);
-        $data['c3']     = $this->cmodel->getc3values($dcID);
+        $data['c1']     = $this->cmodel->getchaptervalues('c1',$dcID);
+        $data['c2']     = $this->cmodel->getchaptervalues('c2',$dcID);
+        $data['c3']     = $this->cmodel->getchaptervalues('c3',$dcID);
         echo view('includes/Header', $data);
         echo view('client/ViewFilesValues', $data);
         echo view('includes/Footer');
@@ -217,7 +206,7 @@ class ClientController extends BaseController{
     */
     public function updateclient($cID){
 
-        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dcID = $this->decr($cID);
         $validationRules = [
             'name'      => 'required',
             'org'       => 'required',
@@ -259,15 +248,13 @@ class ClientController extends BaseController{
         * @var res a return response from the client model
         * @return json-response
     */
-    public function setfiles($cID,$ctID){
+    public function setfiles($cID,$mtID){
 
-        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $dctID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID));
         $req = [
             'cval'      => $this->request->getPost('checked'),
-            'clientID'  => $dcID,
-            'ctID'      => $dctID,
-            'firmID'    => $this->crypt->decrypt(session()->get('firmID')),
+            'cID'       => $this->decr($cID),
+            'mtID'      => $this->decr($mtID),
+            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cmodel->setfiles($req);
         return $this->response->setJSON(['message' => $res]);
@@ -283,15 +270,13 @@ class ClientController extends BaseController{
         * @var res a return response from the client model
         * @return json-response
     */
-    public function removefiles($cID,$ctID){
+    public function removefiles($cID,$mtID){
 
-        $dcID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $dctID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID));
         $req = [
             'cval'      => $this->request->getPost('checked'),
-            'clientID'  => $dcID,
-            'ctID'      => $dctID,
-            'firmID'    => $this->crypt->decrypt(session()->get('firmID')),
+            'cID'       => $this->decr($cID),
+            'mtID'      => $this->decr($mtID),
+            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->cmodel->removefiles($req);
         return $this->response->setJSON(['message' => $res]);
@@ -307,7 +292,7 @@ class ClientController extends BaseController{
     */
     public function acin($cID){
 
-        $dcID  = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
+        $dcID  = $this->decr($cID);
         $res   = $this->cmodel->acin($dcID);
         if($res){
             session()->setFlashdata('updated','updated');

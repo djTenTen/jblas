@@ -34,6 +34,7 @@
                             <div class="my-5 ">
                                 <h1 class="text-secondary display-6 animated--fade-in-up"><b>Welcome to</b></h1>
                                 <h1 class="text-secondary display-1 animated--fade-in-up"><b>APPLAUD SYSTEM</b></h1>
+                                <h1 class="text-secondary display-6 animated--fade-in-up text-center"><b>Audit made Easy</b></h1>
                             </div>
                         </div>
 

@@ -24,9 +24,9 @@ class ChapterValuesModel extends Model{
     protected $tblc1    = "tbl_c1";
     protected $tblc2    = "tbl_c2";
     protected $tblc3    = "tbl_c3";
-    protected $tblc1d   = "tbl_client_dfiles_c1";
-    protected $tblc2d   = "tbl_client_dfiles_c2";
-    protected $tblc3d   = "tbl_client_dfiles_c3";
+    protected $tblc1d   = "tbl_dclient_c1";
+    protected $tblc2d   = "tbl_dclient_c2";
+    protected $tblc3d   = "tbl_dclient_c3";
     protected $time,$date;
     protected $db;
     protected $crypt;
@@ -56,36 +56,36 @@ class ChapterValuesModel extends Model{
         CHAPTER GET FUNCTIONS
         ----------------------------------------------------------
     */
-    public function getvalues_m($c,$type,$code,$ctID,$cID){
+    public function getvalues_m($c,$type,$code,$mtID,$cID){
 
         switch ($c) {
-            case 'c1': $table = $this->tblc1d; $cd = 'c1tID'; break;
-            case 'c2': $table = $this->tblc2d; $cd = 'c2tID'; break;
-            case 'c3': $table = $this->tblc3d; $cd = 'c3tID'; break;
+            case 'c1': $table = $this->tblc1d; break;
+            case 'c2': $table = $this->tblc2d; break;
+            case 'c3': $table = $this->tblc3d; break;
         }
         $where = [
-            'code'          => $code, 
-            'type'          => $type,
-            $cd             => $ctID,
-            'clientID'      => $cID,
+            'code'  => $code, 
+            'type'  => $type,
+            'mtID'  => $mtID,
+            'cID'   => $cID,
         ];
         $query =  $this->db->table($table)->where($where)->get();
         return $query->getResultArray();
 
     }
 
-    public function getvalues_s($c,$type,$code,$ctID,$cID){
+    public function getvalues_s($c,$type,$code,$mtID,$cID){
 
         switch ($c) {
-            case 'c1': $table = $this->tblc1d; $cd = 'c1tID'; break;
-            case 'c2': $table = $this->tblc2d; $cd = 'c2tID'; break;
-            case 'c3': $table = $this->tblc3d; $cd = 'c3tID'; break;
+            case 'c1': $table = $this->tblc1d; break;
+            case 'c2': $table = $this->tblc2d; break;
+            case 'c3': $table = $this->tblc3d; break;
         }
         $where = [
-            'code'          => $code, 
-            'type'          => $type,
-            $cd             => $ctID,
-            'clientID'      => $cID,
+            'code'  => $code, 
+            'type'  => $type,
+            'mtID'  => $mtID,
+            'cID'   => $cID,
         ];
         $query =  $this->db->table($table)->where($where)->get();
         return $query->getrowArray();

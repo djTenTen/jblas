@@ -130,9 +130,9 @@ $html .= '
         $html .='
             <tr>
                 <td style="width: 10%">'.$c.'</td>
-                <td style="width: 50%;">'.$r['question'].'</td>
-                <td style="width: 20%" class="cent bo">'.$r['yesno'].'</td>
-                <td style="width: 20%" class="cent bo">'.$r['comment'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 20%" class="cent bo">'.$r['field2'].'</td>
+                <td style="width: 20%" class="cent bo">'.$r['field3'].'</td>
             </tr>
         ';
     }

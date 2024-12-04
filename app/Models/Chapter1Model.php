@@ -48,12 +48,12 @@ class Chapter1Model extends Model{
         * @var where-array reference for the fetch
         * @return result-array
     */
-    public function getvalues_m($type,$code,$ctID){
+    public function getvalues_m($type,$code,$mtID){
 
         $where = [
             'type' => $type, 
             'code' => $code,
-            'c1tID' => $ctID
+            'mtID' => $mtID
         ];
         $query =  $this->db->table($this->tblc1)->where($where)->get();
         return $query->getResultArray();
@@ -68,12 +68,12 @@ class Chapter1Model extends Model{
         * @var where-array reference for the fetch
         * @return row-array
     */
-    public function getvalues_s($type,$code,$ctID){
+    public function getvalues_s($type,$code,$mtID){
 
         $where = [
             'type' => $type, 
             'code' => $code, 
-            'c1tID' => $ctID
+            'mtID' => $mtID
         ];
         $query =  $this->db->table($this->tblc1)->where($where)->get();
         return $query->getrowArray();
@@ -86,17 +86,17 @@ class Chapter1Model extends Model{
         AC10 FUNCTIONS
         ----------------------------------------------------------
         * @method getac10s1data() get the ac10 information
-        * @param c1tID chapter 1 title id
+        * @param mtID chapter 1 title id
         * @param part specifies the part of the file
         * @var query result from database
         * @return result-array
     */
-    public function getac10data($part,$code,$c1tID,$section){
+    public function getac10data($part,$code,$mtID,$section){
 
         $where = [
             'type' => $part,
             'code' => $code,
-            'c1tID' => $c1tID,
+            'mtID' => $mtID,
             'question' => $section,
         ];
         $query = $this->db->table($this->tblc1)->where($where)->get();
@@ -106,29 +106,29 @@ class Chapter1Model extends Model{
 
     /**
         * @method getdatacount() get the ac10 information
-        * @param c1tID chapter 1 title id
+        * @param mtID chapter 1 title id
         * @param part specifies the part of the file
         * @var query result from database
         * @return integer
     */
-    public function getdatacount($c1tID,$part){
+    public function getdatacount($mtID,$part){
 
-        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => 'ac10', 'c1tID' => $c1tID));
+        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => 'ac10', 'mtID' => $mtID));
         return $query->countAllResults();
 
     }
 
     /**
         * @method getsumation() Count/Compute the balances
-        * @param c1tID chapter 1 title id
+        * @param mtID chapter 1 title id
         * @param part specifies the part of the file
         * @var total result from database
         * @return integer
     */
-    public function getsumation($c1tID,$part){
+    public function getsumation($mtID,$part){
 
-        $total = $this->db->table($this->tblc1)->selectSum('balance')->where(array('type' => $part, 'code' => 'ac10', 'c1tID' => $c1tID))->get()->getRowArray();
-        $cu = $this->db->table($this->tblc1)->where(array('type' => $part.'cu', 'code' => 'ac10', 'c1tID' => $c1tID))->get()->getRowArray();
+        $total = $this->db->table($this->tblc1)->selectSum('balance')->where(array('type' => $part, 'code' => 'ac10', 'mtID' => $mtID))->get()->getRowArray();
+        $cu = $this->db->table($this->tblc1)->where(array('type' => $part.'cu', 'code' => 'ac10', 'mtID' => $mtID))->get()->getRowArray();
         return $cu['question'] - $total['balance'];
 
     }

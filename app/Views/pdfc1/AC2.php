@@ -174,12 +174,12 @@ $html .= '
 foreach ($ac2 as $r){
     $html .= '
         <tr>
-            <td style="width: 45%;">'.$r['question'].'</td>
-            <td style="width: 10%;" class="cent">'.$r['corptax'].'</td>
-            <td style="width: 10%;" class="cent">'.$r['statutory'].'</td>
-            <td style="width: 10%;" class="cent">'.$r['accountancy'].' </td>
-            <td style="width: 10%;" class="cent">'.$r['other'].'</td>
-            <td style="width: 10%;" class="cent">'.$r['totalcu'].'</td>
+            <td style="width: 45%;">'.$r['field1'].'</td>
+            <td style="width: 10%;" class="cent">'.$r['field2'].'</td>
+            <td style="width: 10%;" class="cent">'.$r['field3'].'</td>
+            <td style="width: 10%;" class="cent">'.$r['field4'].' </td>
+            <td style="width: 10%;" class="cent">'.$r['field5'].'</td>
+            <td style="width: 10%;" class="cent">'.$r['field6'].'</td>
         </tr>
     ';
 }
@@ -244,7 +244,7 @@ $html .= '
 <table border="1">
     <tr>
         <td><p><b>***(Where appropriate): Documentation by the A.E.P. of how the self interest threat has been reduced to an acceptable level / details of communication with the Ethics Partner / Details of which services (audit or non-audit) will not be provided:</b> </p>
-            '.$aep['question'].'
+            '.$aep['field1'].'
         </td>
     </tr>
 </table>
@@ -279,7 +279,7 @@ $html =  "
 
 $html .= '
     <h3>Conclusion</h3>
-    <p>'.$aep['name'].'</p>
+    <p>'.$aep['field2'].'</p>
     <table>
         <tbody>
             <tr>

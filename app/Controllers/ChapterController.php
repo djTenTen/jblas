@@ -74,7 +74,7 @@ class ChapterController extends BaseController{
             case 'AC1':
                 $data['ac1']  = $this->c1model->getvalues_m('cacf',$code,$dc1tID);
                 $rdata        = $this->c1model->getvalues_s('eqr',$code,$dc1tID);
-                $data['eqr']  = json_decode($rdata['question'], true);
+                $data['eqr']  = json_decode($rdata['field1'], true);
                 echo view('pdfc1/AC1', $data);
                 break;
             case 'AC2':
@@ -92,18 +92,18 @@ class ChapterController extends BaseController{
             case 'AC4':
                 $data['ac4']  = $this->c1model->getvalues_m('ac4sod',$code,$dc1tID);
                 $rdata        = $this->c1model->getvalues_s('ppr',$code,$dc1tID);
-                $data['ppr']  = json_decode($rdata['question'], true);
+                $data['ppr']  = json_decode($rdata['field1'], true);
                 echo view('pdfc1/AC4', $data);
                 break;
             case 'AC5':
                 $rdata       = $this->c1model->getvalues_s('rescon',$code,$dc1tID);
-                $data['rc']  = json_decode($rdata['question'], true);
+                $data['rc']  = json_decode($rdata['field1'], true);
                 echo view('pdfc1/AC5', $data);
                 break;
             case 'AC6':
                 $data['ac6']   = $this->c1model->getvalues_m('ac6ra',$code,$dc1tID);
                 $rdata         = $this->c1model->getvalues_s('ac6s12',$code,$dc1tID);
-                $data['s']     = json_decode($rdata['question'], true);
+                $data['s']     = json_decode($rdata['field1'], true);
                 $data['s3']    = $this->c1model->getvalues_m('ac6s3',$code,$dc1tID);
                 echo view('pdfc1/AC6', $data);
                 break;
@@ -114,7 +114,7 @@ class ChapterController extends BaseController{
                 ];
                 foreach($rowdata as $row){
                     $rdata       = $this->c1model->getvalues_s($row,$code,$dc1tID);
-                    $data[$row]  = json_decode($rdata['question'], true);
+                    $data[$row]  = json_decode($rdata['field1'], true);
                 }
                 echo view('pdfc1/AC7', $data);
                 break;
@@ -132,7 +132,7 @@ class ChapterController extends BaseController{
                 break;
             case 'AC9':
                 $rdata        = $this->c1model->getvalues_s('ac9data',$code,$dc1tID);
-                $data['ac9']  = json_decode($rdata['question'], true);
+                $data['ac9']  = json_decode($rdata['field1'], true);
                 echo view('pdfc1/AC9', $data);
                 break;
             case 'AC10-Tangibles':
@@ -190,13 +190,13 @@ class ChapterController extends BaseController{
                 $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
                 foreach($rowdata as $row){
                     $rdata       = $this->c1model->getvalues_s($row.'data',$s[0],$dc1tID);
-                    $data[$row]  = json_decode($rdata['question'], true);
+                    $data[$row]  = json_decode($rdata['field1'], true);
                 }
                 echo view('pdfc1/AC10Summ', $data);
                 break;
             case 'AC11':
                 $rdata = $this->c1model->getvalues_s('ac11data',$code,$dc1tID);
-                $data['ac11'] = json_decode($rdata['question'], true);
+                $data['ac11'] = json_decode($rdata['field1'], true);
                 echo view('pdfc1/AC11', $data);
                 break;
             default:
@@ -377,14 +377,14 @@ class ChapterController extends BaseController{
                 $data['datapl'] = $this->c3model->getvalues_m('planning',$code,$dc3tID);
                 $data['dataaf'] = $this->c3model->getvalues_m('audit finalisation',$code,$dc3tID);
                 $rdata          = $this->c3model->getvalues_s('section3',$code, $dc3tID);
-                $data['s3']     = json_decode($rdata['question'], true);
+                $data['s3']     = json_decode($rdata['field1'], true);
                 $rdata2         = $this->c3model->getvalues_s('rc',$code,$dc3tID);
-                $data['rc']     = json_decode($rdata2['question'], true);
+                $data['rc']     = json_decode($rdata2['field1'], true);
                 echo view('pdfc3/AA1', $data);
                 break;
             case '3.2 Aa2':
                 $rdata          = $this->c3model->getvalues_s('aa2',$code, $dc3tID);
-                $data['aa2']    = json_decode($rdata['question'], true);
+                $data['aa2']    = json_decode($rdata['field1'], true);
                 echo view('pdfc3/AA2', $data);
                 break;
             case '3.3 Aa3a':
@@ -392,7 +392,7 @@ class ChapterController extends BaseController{
                 $data['dc']     = $this->c3model->getvalues_m('dc',$code,$dc3tID);
                 $data['faf']    = $this->c3model->getvalues_m('faf',$code,$dc3tID);
                 $rdata          = $this->c3model->getvalues_s('air',$code,$dc3tID);
-                $data['air']    = json_decode($rdata['question'], true);
+                $data['air']    = json_decode($rdata['field1'], true);
                 echo view('pdfc3/AA3A', $data);
                 break;
             case '3.4 Aa3b':
@@ -401,17 +401,17 @@ class ChapterController extends BaseController{
                 $data['bp3a']   = $this->c3model->getvalues_m('p3a',$code,$dc3tID);
                 $data['bp3b']   = $this->c3model->getvalues_m('p3b',$code,$dc3tID);
                 $rdata          = $this->c3model->getvalues_s('p4',$code,$dc3tID);
-                $data['bp4']    = json_decode($rdata['question'], true);
+                $data['bp4']    = json_decode($rdata['field1'], true);
                 echo view('pdfc3/AA3B', $data);
                 break;
             case '3.5 Aa4':
                 $rdata          = $this->c3model->getvalues_s('aa4',$code,$dc3tID);
-                $data['aa4']    = json_decode($rdata['question'], true);
+                $data['aa4']    = json_decode($rdata['field1'], true);
                 echo view('pdfc3/AA4', $data);
                 break;
             case '3.6.1 Aa5a':
                 $rdata          = $this->c3model->getvalues_s('aa5a',$code,$dc3tID);
-                $data['aa5a']    = json_decode($rdata['question'], true);
+                $data['aa5a']    = json_decode($rdata['field1'], true);
                 echo view('pdfc3/AA5A', $data);
                 break;
             case '3.6.2 Aa5b':
@@ -427,12 +427,12 @@ class ChapterController extends BaseController{
                 $data['oth']    = $this->c3model->getvalues_m('other',$code,$dc3tID);
                 $data['aepapp'] = $this->c3model->getvalues_s('aepapp',$code,$dc3tID);
                 $rdata          = $this->c3model->getvalues_s('aep',$code,$dc3tID);
-                $data['aep']    = json_decode($rdata['question'], true);
+                $data['aep']    = json_decode($rdata['field1'], true);
                 echo view('pdfc3/AA7', $data);
                 break;
             case '3.8 Aa10':
                 $rdata          = $this->c3model->getvalues_s('aa10',$code,$dc3tID);
-                $data['aa10']   = json_decode($rdata['question'], true);
+                $data['aa10']   = json_decode($rdata['field1'], true);
                 echo view('pdfc3/AA10', $data);
                 break;
             case '3.9':
@@ -445,20 +445,20 @@ class ChapterController extends BaseController{
                 $data['ee']     = $this->c3model->getvalues_m('ee',$s[0],$dc3tID);
                 $data['de']     = $this->c3model->getvalues_m('de',$s[0],$dc3tID);
                 $rdata          = $this->c3model->getvalues_s('aa11ue',$s[0],$dc3tID);
-                $data['ue']     = json_decode($rdata['question'], true);
+                $data['ue']     = json_decode($rdata['field1'], true);
                 $rdata2         = $this->c3model->getvalues_s('con',$s[0],$dc3tID);
-                $data['con']    = json_decode($rdata2['question'], true);    
+                $data['con']    = json_decode($rdata2['field1'], true);    
                 echo view('pdfc3/AA11-un', $data);
             case '3.10 Aa11-ad':
                 $s              = explode('-', $code);
                 $data['ad']     = $this->c3model->getvalues_m('ad',$s[0],$dc3tID);
                 $rdata          = $this->c3model->getvalues_s('aa11uead',$s[0],$dc3tID);
-                $data['ue']     = json_decode($rdata['question'], true);   
+                $data['ue']     = json_decode($rdata['field1'], true);   
                 echo view('pdfc3/AA11-ad', $data);
                 break;   
             case '3.11':
                 $rdata          = $this->c3model->getvalues_s('311',$code,$dc3tID);
-                $data['arf']    = json_decode($rdata['question'], true);
+                $data['arf']    = json_decode($rdata['field1'], true);
                 echo view('pdfc3/311', $data);
                 break;   
             case '3.12':
@@ -470,12 +470,12 @@ class ChapterController extends BaseController{
                 break;   
             case '3.14 Ab3':
                 $rdata = $this->c3model->getvalues_s('ab3',$code,$dc3tID);
-                $data['ab3']    = json_decode($rdata['question'], true);
+                $data['ab3']    = json_decode($rdata['field1'], true);
                 echo view('pdfc3/AB3', $data);
                 break; 
             case '3.15 Ab4':
                 $rdata = $this->c3model->getvalues_s('checklist',$code,$dc3tID);
-                $data['sec']  = json_decode($rdata['question'], true);
+                $data['sec']  = json_decode($rdata['field1'], true);
                 $data['sec1'] = $this->c3model->getvalues_m('section1',$code,$dc3tID);
                 $data['sec2'] = $this->c3model->getvalues_m('section2',$code,$dc3tID);
                 $data['sec3'] = $this->c3model->getvalues_m('section3',$code,$dc3tID);
@@ -554,8 +554,8 @@ class ChapterController extends BaseController{
             case 'AC1':
                 $data['ac1']    = $this->cvmodel->getvalues_m('c1','cacf',$code,$dc1tID,$dcID);
                 $rdata          = $this->cvmodel->getvalues_s('c1','eqr',$code,$dc1tID,$dcID);
-                $data['eqr']    = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['eqr']    = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/Ac1', $data);
                 echo view('includes/Footer');
@@ -579,16 +579,16 @@ class ChapterController extends BaseController{
             case 'AC4':
                 $data['ac4']    = $this->cvmodel->getvalues_m('c1','ac4sod',$code,$dc1tID,$dcID);
                 $rdata          = $this->cvmodel->getvalues_s('c1','ppr',$code,$dc1tID,$dcID);
-                $data['ppr']    = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['ppr']    = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/Ac4', $data);
                 echo view('includes/Footer');
                 break;
             case 'AC5':
                 $rdata          = $this->cvmodel->getvalues_s('c1','rescon',$code,$dc1tID,$dcID);
-                $data['rc']     = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['rc']     = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/Ac5', $data);
                 echo view('includes/Footer');
@@ -596,8 +596,8 @@ class ChapterController extends BaseController{
             case 'AC6':
                 $data['ac6']    = $this->cvmodel->getvalues_m('c1','ac6ra',$code,$dc1tID,$dcID);
                 $rdata          = $this->cvmodel->getvalues_s('c1','ac6s12',$code,$dc1tID,$dcID);
-                $data['s']      = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['s']      = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 $data['s3']     = $this->cvmodel->getvalues_m('c1','ac6s3',$code,$dc1tID,$dcID);
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/Ac6', $data);
@@ -610,7 +610,7 @@ class ChapterController extends BaseController{
                 ];
                 foreach($rowdata as $row){
                     $rdata       = $this->cvmodel->getvalues_s('c1',$row,$code,$dc1tID,$dcID);
-                    $data[$row]  = json_decode($rdata['question'], true);
+                    $data[$row]  = json_decode($rdata['field1'], true);
                 }
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/Ac7', $data);
@@ -632,8 +632,8 @@ class ChapterController extends BaseController{
                 break;
             case 'AC9':
                 $rdata = $this->cvmodel->getvalues_s('c1','ac9data',$code,$dc1tID,$dcID);
-                $data['ac9'] = json_decode($rdata['question'], true);
-                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
+                $data['ac9'] = json_decode($rdata['field1'], true);
+                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/Ac9', $data);
                 echo view('includes/Footer');
@@ -695,7 +695,7 @@ class ChapterController extends BaseController{
                 $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
                 foreach($rowdata as $row){
                     $rdata = $this->cvmodel->getvalues_s('c1',$row.'data',$s[0],$dc1tID,$dcID);
-                    $data[$row] = json_decode($rdata['question'], true);
+                    $data[$row] = json_decode($rdata['field1'], true);
                 }
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/Ac10-Summary', $data);
@@ -703,8 +703,8 @@ class ChapterController extends BaseController{
                 break;
             case 'AC11':
                 $rdata = $this->cvmodel->getvalues_s('c1','ac11data',$code,$dc1tID,$dcID);
-                $data['ac11'] = json_decode($rdata['question'], true);
-                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
+                $data['ac11'] = json_decode($rdata['field1'], true);
+                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter1/Ac11', $data);
                 echo view('includes/Footer');
@@ -957,19 +957,19 @@ class ChapterController extends BaseController{
                 $data['datapl'] = $this->cvmodel->getvalues_m('c3','planning',$code,$dc3tID,$dcID);
                 $data['dataaf'] = $this->cvmodel->getvalues_m('c3','audit finalisation',$code,$dc3tID,$dcID);
                 $rdata          = $this->cvmodel->getvalues_s('c3','section3',$code,$dc3tID,$dcID);
-                $data['s3']     = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['s3']     = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 $rdata2         = $this->cvmodel->getvalues_s('c3','rc',$code,$dc3tID,$dcID);
-                $data['rc']     = json_decode($rdata2['question'], true);
-                $data['acID2']  = $this->crypt->encrypt($rdata2['acID']);
+                $data['rc']     = json_decode($rdata2['field1'], true);
+                $data['acID2']  = $this->crypt->encrypt($rdata2['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/31Aa1', $data);
                 echo view('includes/Footer');
                 break;
             case '3.2 Aa2':
                 $rdata          = $this->cvmodel->getvalues_s('c3','aa2',$code,$dc3tID,$dcID);
-                $data['aa2']    = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['aa2']    = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/32Aa2', $data);
                 echo view('includes/Footer');
@@ -979,8 +979,8 @@ class ChapterController extends BaseController{
                 $data['dc']     = $this->cvmodel->getvalues_m('c3','dc',$code,$dc3tID,$dcID);
                 $data['faf']    = $this->cvmodel->getvalues_m('c3','faf',$code,$dc3tID,$dcID);
                 $rdata          = $this->cvmodel->getvalues_s('c3','air',$code,$dc3tID,$dcID);
-                $data['air']    = json_decode($rdata['question'], true);
-                $data['acID']  = $this->crypt->encrypt($rdata['acID']);
+                $data['air']    = json_decode($rdata['field1'], true);
+                $data['mtID']  = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/33Aa3a', $data);
                 echo view('includes/Footer');
@@ -991,22 +991,22 @@ class ChapterController extends BaseController{
                 $data['bp3a']   = $this->cvmodel->getvalues_m('c3','p3a',$code,$dc3tID,$dcID);
                 $data['bp3b']   = $this->cvmodel->getvalues_m('c3','p3b',$code,$dc3tID,$dcID);
                 $rdata          = $this->cvmodel->getvalues_s('c3','p4',$code,$dc3tID,$dcID);
-                $data['bp4']    = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['bp4']    = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/34Aa3b', $data);
                 echo view('includes/Footer');
                 break;
             case '3.5 Aa4':
                 $rdata          = $this->cvmodel->getvalues_s('c3','aa4',$code,$dc3tID,$dcID);
-                $data['aa4']    = json_decode($rdata['question'], true);
+                $data['aa4']    = json_decode($rdata['field1'], true);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/35Aa4', $data);
                 echo view('includes/Footer');
                 break;
             case '3.6.1 Aa5a':
                 $rdata          = $this->cvmodel->getvalues_s('c3','aa5a',$code,$dc3tID,$dcID);
-                $data['aa5a']    = json_decode($rdata['question'], true);
+                $data['aa5a']    = json_decode($rdata['field1'], true);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/361Aa5a', $data);
                 echo view('includes/Footer');
@@ -1026,16 +1026,16 @@ class ChapterController extends BaseController{
                 $data['oth']    = $this->cvmodel->getvalues_m('c3','other',$code,$dc3tID,$dcID);
                 $data['aepapp'] = $this->cvmodel->getvalues_s('c3','aepapp',$code,$dc3tID,$dcID);
                 $rdata          = $this->cvmodel->getvalues_s('c3','aep',$code,$dc3tID,$dcID);
-                $data['aep']    = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['aep']    = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/37Aa7', $data);
                 echo view('includes/Footer');
                 break;
             case '3.8 Aa10':
                 $rdata          = $this->cvmodel->getvalues_s('c3','aa10',$code,$dc3tID,$dcID);
-                $data['aa10']   = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['aa10']   = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/38Aa10', $data);
                 echo view('includes/Footer');
@@ -1053,11 +1053,11 @@ class ChapterController extends BaseController{
                 $data['ee']             = $this->cvmodel->getvalues_m('c3','ee',$s[0],$dc3tID,$dcID);
                 $data['de']             = $this->cvmodel->getvalues_m('c3','de',$s[0],$dc3tID,$dcID);
                 $rdata                  = $this->cvmodel->getvalues_s('c3','aa11ue',$s[0],$dc3tID,$dcID);
-                $data['ue']             = json_decode($rdata['question'], true);    
-                $data['ueacID']         = $this->crypt->encrypt($rdata['acID']);
+                $data['ue']             = json_decode($rdata['field1'], true);    
+                $data['ueacID']         = $this->crypt->encrypt($rdata['mtID']);
                 $rdata2                 = $this->cvmodel->getvalues_s('c3','con',$s[0],$dc3tID,$dcID);
-                $data['con']            = json_decode($rdata2['question'], true);   
-                $data['conacID']        = $this->crypt->encrypt($rdata2['acID']);
+                $data['con']            = json_decode($rdata2['field1'], true);   
+                $data['conacID']        = $this->crypt->encrypt($rdata2['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/310Aa11_un', $data); 
                 echo view('includes/Footer');
@@ -1067,15 +1067,15 @@ class ChapterController extends BaseController{
                 $data['sectiontitle']   = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";
                 $data['ad']             = $this->cvmodel->getvalues_m('c3','ad',$s[0],$dc3tID,$dcID);
                 $rdata                  = $this->cvmodel->getvalues_s('c3','aa11uead',$s[0],$dc3tID,$dcID);
-                $data['ue']             = json_decode($rdata['question'], true);    
-                $data['ueacID']         = $this->crypt->encrypt($rdata['acID']);
+                $data['ue']             = json_decode($rdata['field1'], true);    
+                $data['ueacID']         = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/310Aa11_ad', $data);
                 echo view('includes/Footer');
                 break;   
             case '3.11':
                 $rdata          = $this->cvmodel->getvalues_s('c3','311',$code,$dc3tID,$dcID);
-                $data['arf']    = json_decode($rdata['question'], true);
+                $data['arf']    = json_decode($rdata['field1'], true);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/311', $data);
                 echo view('includes/Footer');
@@ -1093,8 +1093,8 @@ class ChapterController extends BaseController{
                 break;   
             case '3.14 Ab3':
                 $rdata = $this->cvmodel->getvalues_s('c3','ab3',$code,$dc3tID ,$dcID);
-                $data['ab3'] = json_decode($rdata['question'], true);
-                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
+                $data['ab3'] = json_decode($rdata['field1'], true);
+                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('client/chapter3/314Ab3', $data);
                 echo view('includes/Footer');
@@ -1128,8 +1128,8 @@ class ChapterController extends BaseController{
                 $data['code']       = $code;
                 if($s[1] == "checklist"){
                     $rdata = $this->cvmodel->getvalues_s('c3',$s[1],$s[0],$dc3tID,$dcID);
-                    $data['sec'] = json_decode($rdata['question'], true);
-                    $data['acID'] = $this->crypt->encrypt($rdata['acID']);
+                    $data['sec'] = json_decode($rdata['field1'], true);
+                    $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
                     echo view('includes/Header', $data);
                     echo view('client/chapter3/315Ab4_checklist', $data);
                     echo view('includes/Footer');
@@ -1228,8 +1228,8 @@ class ChapterController extends BaseController{
             case 'AC1':
                 $data['ac1']    = $this->wpmodel->getvalues_m('c1','cacf',$code,$dc1tID,$dcID,$dwpID);
                 $rdata          = $this->wpmodel->getvalues_s('c1','eqr',$code,$dc1tID,$dcID,$dwpID);
-                $data['eqr']    = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['eqr']    = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac1', $data);
                 echo view('includes/Footer');
@@ -1253,16 +1253,16 @@ class ChapterController extends BaseController{
             case 'AC4':
                 $data['ac4']    = $this->wpmodel->getvalues_m('c1','ac4sod',$code,$dc1tID,$dcID,$dwpID);
                 $rdata          = $this->wpmodel->getvalues_s('c1','ppr',$code,$dc1tID,$dcID,$dwpID);
-                $data['ppr']    = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['ppr']    = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac4', $data);
                 echo view('includes/Footer');
                 break;
             case 'AC5':
                 $rdata          = $this->wpmodel->getvalues_s('c1','rescon',$code,$dc1tID,$dcID,$dwpID);
-                $data['rc']     = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['rc']     = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac5', $data);
                 echo view('includes/Footer');
@@ -1270,8 +1270,8 @@ class ChapterController extends BaseController{
             case 'AC6':
                 $data['ac6']    = $this->wpmodel->getvalues_m('c1','ac6ra',$code,$dc1tID,$dcID,$dwpID);
                 $rdata          = $this->wpmodel->getvalues_s('c1','ac6s12',$code,$dc1tID,$dcID,$dwpID);
-                $data['s']      = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['s']      = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 $data['s3']     = $this->wpmodel->getvalues_m('c1','ac6s3',$code,$dc1tID,$dcID,$dwpID);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac6', $data);
@@ -1284,7 +1284,7 @@ class ChapterController extends BaseController{
                 ];
                 foreach($rowdata as $row){
                     $rdata      = $this->wpmodel->getvalues_s('c1',$row,$code,$dc1tID,$dcID,$dwpID);
-                    $data[$row] = json_decode($rdata['question'], true);
+                    $data[$row] = json_decode($rdata['field1'], true);
                 }
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac7', $data);
@@ -1306,8 +1306,8 @@ class ChapterController extends BaseController{
                 break;
             case 'AC9':
                 $rdata = $this->wpmodel->getvalues_s('c1','ac9data',$code,$dc1tID,$dcID,$dwpID);
-                $data['ac9'] = json_decode($rdata['question'], true);
-                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
+                $data['ac9'] = json_decode($rdata['field1'], true);
+                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac9', $data);
                 echo view('includes/Footer');
@@ -1369,7 +1369,7 @@ class ChapterController extends BaseController{
                 $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
                 foreach($rowdata as $row){
                     $rdata = $this->wpmodel->getvalues_s('c1',$row.'data',$s[0],$dc1tID,$dcID,$dwpID);
-                    $data[$row] = json_decode($rdata['question'], true);
+                    $data[$row] = json_decode($rdata['field1'], true);
                 }
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac10-Summary', $data);
@@ -1377,8 +1377,8 @@ class ChapterController extends BaseController{
                 break;
             case 'AC11':
                 $rdata = $this->wpmodel->getvalues_s('c1','ac11data',$code,$dc1tID,$dcID,$dwpID);
-                $data['ac11'] = json_decode($rdata['question'], true);
-                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
+                $data['ac11'] = json_decode($rdata['field1'], true);
+                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac11', $data);
                 echo view('includes/Footer');
@@ -1641,19 +1641,19 @@ class ChapterController extends BaseController{
                 $data['datapl'] = $this->wpmodel->getvalues_m('c3','planning',$code,$dc3tID,$dcID,$dwpID);
                 $data['dataaf'] = $this->wpmodel->getvalues_m('c3','audit finalisation',$code,$dc3tID,$dcID,$dwpID);
                 $rdata          = $this->wpmodel->getvalues_s('c3','section3',$code, $dc3tID,$dcID,$dwpID);
-                $data['s3']     = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['s3']     = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 $rdata2         = $this->wpmodel->getvalues_s('c3','rc',$code, $dc3tID,$dcID,$dwpID);
-                $data['rc']     = json_decode($rdata2['question'], true);
-                $data['acID2']  = $this->crypt->encrypt($rdata2['acID']);
+                $data['rc']     = json_decode($rdata2['field1'], true);
+                $data['acID2']  = $this->crypt->encrypt($rdata2['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/31Aa1', $data);
                 echo view('includes/Footer');
                 break;
             case '3.2 Aa2':
                 $rdata          = $this->wpmodel->getvalues_s('c3','aa2',$code, $dc3tID,$dcID,$dwpID);
-                $data['aa2']    = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['aa2']    = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/32Aa2', $data);
                 echo view('includes/Footer');
@@ -1663,8 +1663,8 @@ class ChapterController extends BaseController{
                 $data['dc']     = $this->wpmodel->getvalues_m('c3','dc',$code,$dc3tID,$dcID,$dwpID);
                 $data['faf']    = $this->wpmodel->getvalues_m('c3','faf',$code,$dc3tID,$dcID,$dwpID);
                 $rdata          = $this->wpmodel->getvalues_s('c3','air',$code,$dc3tID,$dcID,$dwpID);
-                $data['air']    = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['air']    = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/33Aa3a', $data);
                 echo view('includes/Footer');
@@ -1675,15 +1675,15 @@ class ChapterController extends BaseController{
                 $data['bp3a']   = $this->wpmodel->getvalues_m('c3','p3a',$code,$dc3tID,$dcID,$dwpID);
                 $data['bp3b']   = $this->wpmodel->getvalues_m('c3','p3b',$code,$dc3tID,$dcID,$dwpID);
                 $rdata          = $this->wpmodel->getvalues_s('c3','p4',$code,$dc3tID,$dcID,$dwpID);
-                $data['bp4']    = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['bp4']    = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/34Aa3b', $data);
                 echo view('includes/Footer');
                 break;
             case '3.5 Aa4':
                 $rdata          = $this->wpmodel->getvalues_s('c3','aa4',$code,$dc3tID,$dcID,$dwpID);
-                $data['aa4']    = json_decode($rdata['question'], true);
+                $data['aa4']    = json_decode($rdata['field1'], true);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/35Aa4', $data);
                 echo view('includes/Footer');
@@ -1691,7 +1691,7 @@ class ChapterController extends BaseController{
             case '3.6.1 Aa5a':
 
                 $rdata          = $this->wpmodel->getvalues_s('c3','aa5a',$code,$dc3tID,$dcID,$dwpID);
-                $data['aa5a']    = json_decode($rdata['question'], true);
+                $data['aa5a']    = json_decode($rdata['field1'], true);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/361Aa5a', $data);
                 echo view('includes/Footer');
@@ -1711,16 +1711,16 @@ class ChapterController extends BaseController{
                 $data['oth']    = $this->wpmodel->getvalues_m('c3','other',$code,$dc3tID,$dcID,$dwpID);
                 $data['aepapp'] = $this->wpmodel->getvalues_s('c3','aepapp',$code,$dc3tID,$dcID,$dwpID);
                 $rdata          = $this->wpmodel->getvalues_s('c3','aep',$code,$dc3tID,$dcID,$dwpID);
-                $data['aep']    = json_decode($rdata['question'], true);
-                $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                $data['aep']    = json_decode($rdata['field1'], true);
+                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/37Aa7', $data);
                 echo view('includes/Footer');
                 break;
             case '3.8 Aa10':
                 $rdata = $this->wpmodel->getvalues_s('c3','aa10',$code,$dc3tID,$dcID,$dwpID);
-                $data['aa10'] = json_decode($rdata['question'], true);
-                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
+                $data['aa10'] = json_decode($rdata['field1'], true);
+                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/38Aa10', $data);
                 echo view('includes/Footer');
@@ -1738,11 +1738,11 @@ class ChapterController extends BaseController{
                 $data['ee']     = $this->wpmodel->getvalues_m('c3','ee',$s[0],$dc3tID,$dcID,$dwpID);
                 $data['de']     = $this->wpmodel->getvalues_m('c3','de',$s[0],$dc3tID,$dcID,$dwpID);
                 $rdata          = $this->wpmodel->getvalues_s('c3','aa11ue',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['ue']     = json_decode($rdata['question'], true);    
-                $data['ueacID'] = $this->crypt->encrypt($rdata['acID']);
+                $data['ue']     = json_decode($rdata['field1'], true);    
+                $data['ueacID'] = $this->crypt->encrypt($rdata['mtID']);
                 $rdata2         = $this->wpmodel->getvalues_s('c3','con',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['con']    = json_decode($rdata2['question'], true);   
-                $data['conacID'] = $this->crypt->encrypt($rdata2['acID']);
+                $data['con']    = json_decode($rdata2['field1'], true);   
+                $data['conacID'] = $this->crypt->encrypt($rdata2['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/310Aa11_un', $data); 
                 echo view('includes/Footer');
@@ -1752,15 +1752,15 @@ class ChapterController extends BaseController{
                 $data['sectiontitle'] = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";
                 $data['ad'] = $this->wpmodel->getvalues_m('c3','ad',$s[0],$dc3tID,$dcID,$dwpID);
                 $rdata      = $this->wpmodel->getvalues_s('c3','aa11uead',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['ue'] = json_decode($rdata['question'], true);    
-                $data['ueacID'] = $this->crypt->encrypt($rdata['acID']);
+                $data['ue'] = json_decode($rdata['field1'], true);    
+                $data['ueacID'] = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/310Aa11_ad', $data);
                 echo view('includes/Footer');
                 break;   
             case '3.11':
                 $rdata          = $this->wpmodel->getvalues_s('c3','311',$code,$dc3tID,$dcID,$dwpID);
-                $data['arf']    = json_decode($rdata['question'], true);
+                $data['arf']    = json_decode($rdata['field1'], true);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/311', $data);
                 echo view('includes/Footer');
@@ -1778,8 +1778,8 @@ class ChapterController extends BaseController{
                 break;   
             case '3.14 Ab3':
                 $rdata = $this->wpmodel->getvalues_s('c3','ab3',$code,$dc3tID,$dcID,$dwpID);
-                $data['ab3'] = json_decode($rdata['question'], true);
-                $data['acID'] = $this->crypt->encrypt($rdata['acID']);
+                $data['ab3'] = json_decode($rdata['field1'], true);
+                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter3/314Ab3', $data);
                 echo view('includes/Footer');
@@ -1813,8 +1813,8 @@ class ChapterController extends BaseController{
                 $data['code']       = $code;
                 if($s[1] == "checklist"){
                     $rdata          = $this->wpmodel->getvalues_s('c3',$s[1],$s[0],$dc3tID,$dcID,$dwpID);
-                    $data['sec']    = json_decode($rdata['question'], true);
-                    $data['acID']   = $this->crypt->encrypt($rdata['acID']);
+                    $data['sec']    = json_decode($rdata['field1'], true);
+                    $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                     echo view('includes/Header', $data);
                     echo view('workpaper/chapter3/315Ab4_checklist', $data);
                     echo view('includes/Footer');
