@@ -1,669 +1,9 @@
-INFO - 2024-12-05 09:44:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 09:44:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2024-12-05 09:44:44 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-WARNING - 2024-12-05 09:44:44 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 09:44:44 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before()
- 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 09:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2024-12-05 09:56:48 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/files/f04b653267d9383127a28090790197b1e7f443c753222fdf7ad6f24f9aac53ab71cb2d8c4ead679d188d1423d7035dec998b93f0755573b3b730418503fdfb0dyvWUpg8RQWqcanzGTBsWx84=/Sample%20user%20-%20Aaaa', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-WARNING - 2024-12-05 09:56:48 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/files/f04b653267d9383127a28090790197b1e7f443c753222fdf7ad6f24f9aac53ab71cb2d8c4ead679d188d1423d7035dec998b93f0755573b3b730418503fdfb0dyvWUpg8RQWqcanzGTBsWx84=/Sample%20user%20-%20Aaaa', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 09:56:48 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
- 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 09:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2024-12-05 09:56:49 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-WARNING - 2024-12-05 09:56:49 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 09:56:49 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
- 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 09:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2024-12-05 09:56:50 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-WARNING - 2024-12-05 09:56:50 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 09:56:50 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
- 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 09:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2024-12-05 09:56:51 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-WARNING - 2024-12-05 09:56:51 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/set', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 09:56:51 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
- 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 09:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2024-12-05 09:56:52 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-WARNING - 2024-12-05 09:56:52 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 09:56:52 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before()
- 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 09:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2024-12-05 09:56:53 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-WARNING - 2024-12-05 09:56:53 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 09:56:53 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before()
- 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 09:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2024-12-05 09:56:53 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-WARNING - 2024-12-05 09:56:53 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 09:56:53 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before()
- 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 09:56:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2024-12-05 09:56:54 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-WARNING - 2024-12-05 09:56:54 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 09:56:54 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
- 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before()
- 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 09:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2024-12-05 09:56:55 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/7fb9a4d181f126f4d9cea6b0321a90e2e104333b4ead89c49c05372a740b9319aa19c56781526686833ff941d7577df869c7b1f7b1916bf8540f868902a4f58eJ6zaoUfytqGCVjL3SJ~UJLU=/Juan%20Dela%20Cruz%20-%20DJ%20Metal%20Works', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-WARNING - 2024-12-05 09:56:55 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
- 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
- 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
- 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
- 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
- 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/7fb9a4d181f126f4d9cea6b0321a90e2e104333b4ead89c49c05372a740b9319aa19c56781526686833ff941d7577df869c7b1f7b1916bf8540f868902a4f58eJ6zaoUfytqGCVjL3SJ~UJLU=/Juan%20Dela%20Cruz%20-%20DJ%20Metal%20Works', 'before')
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 09:56:55 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
- 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
- 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 09:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:37:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:37:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-12-05 11:37:56 --> mysqli_sql_exception: Table 'as.tbl_client_files_c1' doesn't exist in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
-Stack trace:
-#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
-#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
-#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
-#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
-#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
-#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
-#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
-#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
-#9 {main}
-CRITICAL - 2024-12-05 11:37:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'as.tbl_client_files_c1' doesn't exist
-in SYSTEMPATH/Database/BaseConnection.php on line 647.
- 1 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 2 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:37:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'as.tbl_client_files_c1' doesn't exist
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
- 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 3 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 4 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:37:56 --> [Caused by] mysqli_sql_exception: Table 'as.tbl_client_files_c1' doesn't exist
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
- 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
- 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 5 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-12-05 11:37:58 --> mysqli_sql_exception: Table 'as.tbl_client_files_c1' doesn't exist in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
-Stack trace:
-#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
-#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
-#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
-#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
-#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
-#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
-#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
-#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
-#9 {main}
-CRITICAL - 2024-12-05 11:37:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'as.tbl_client_files_c1' doesn't exist
-in SYSTEMPATH/Database/BaseConnection.php on line 647.
- 1 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 2 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:37:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'as.tbl_client_files_c1' doesn't exist
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
- 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 3 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 4 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:37:58 --> [Caused by] mysqli_sql_exception: Table 'as.tbl_client_files_c1' doesn't exist
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
- 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
- 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 5 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:38:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-12-05 11:38:00 --> mysqli_sql_exception: Table 'as.tbl_client_files_c1' doesn't exist in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
-Stack trace:
-#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
-#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
-#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
-#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
-#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
-#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
-#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
-#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
-#9 {main}
-CRITICAL - 2024-12-05 11:38:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'as.tbl_client_files_c1' doesn't exist
-in SYSTEMPATH/Database/BaseConnection.php on line 647.
- 1 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 2 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:38:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'as.tbl_client_files_c1' doesn't exist
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
- 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 3 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 4 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:38:00 --> [Caused by] mysqli_sql_exception: Table 'as.tbl_client_files_c1' doesn't exist
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
- 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
- 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 5 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:38:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-12-05 11:38:11 --> mysqli_sql_exception: Table 'as.tbl_client_files_c1' doesn't exist in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
-Stack trace:
-#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
-#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
-#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
-#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
-#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
-#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
-#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
-#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
-#9 {main}
-CRITICAL - 2024-12-05 11:38:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'as.tbl_client_files_c1' doesn't exist
-in SYSTEMPATH/Database/BaseConnection.php on line 647.
- 1 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 2 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:38:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'as.tbl_client_files_c1' doesn't exist
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
- 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 3 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 4 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:38:11 --> [Caused by] mysqli_sql_exception: Table 'as.tbl_client_files_c1' doesn't exist
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
- 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
- 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 5 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-12-05 11:39:02 --> mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'where clause' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
-Stack trace:
-#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
-#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
-#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
-#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
-#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
-#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
-#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
-#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
-#9 {main}
-CRITICAL - 2024-12-05 11:39:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'where clause'
-in SYSTEMPATH/Database/BaseConnection.php on line 647.
- 1 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 2 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:39:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'where clause'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
- 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 3 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 4 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:39:02 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'where clause'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
- 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
- 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 5 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-12-05 11:39:36 --> mysqli_sql_exception: Unknown column 'tc1.clientID' in 'where clause' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
-Stack trace:
-#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
-#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
-#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
-#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
-#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
-#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
-#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
-#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
-#9 {main}
-CRITICAL - 2024-12-05 11:39:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.clientID' in 'where clause'
-in SYSTEMPATH/Database/BaseConnection.php on line 647.
- 1 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 2 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:39:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.clientID' in 'where clause'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
- 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 3 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 4 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:39:36 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.clientID' in 'where clause'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
- 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
- 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 5 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-12-05 11:39:44 --> mysqli_sql_exception: Unknown column 'cfi.wpID' in 'where clause' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
-Stack trace:
-#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
-#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
-#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
-#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
-#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
-#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
-#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
-#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
-#9 {main}
-CRITICAL - 2024-12-05 11:39:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cfi.wpID' in 'where clause'
-in SYSTEMPATH/Database/BaseConnection.php on line 647.
- 1 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 2 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:39:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cfi.wpID' in 'where clause'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
- 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 3 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 4 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:39:44 --> [Caused by] mysqli_sql_exception: Unknown column 'cfi.wpID' in 'where clause'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
- 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
- 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 5 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-12-05 11:40:11 --> mysqli_sql_exception: Unknown column 'wp.cID' in 'field list' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
-Stack trace:
-#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
-#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
-#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
-#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
-#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
-#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
-#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
-#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
-#9 {main}
-CRITICAL - 2024-12-05 11:40:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'wp.cID' in 'field list'
-in SYSTEMPATH/Database/BaseConnection.php on line 647.
- 1 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 2 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:40:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'wp.cID' in 'field list'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
- 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 3 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 4 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:40:11 --> [Caused by] mysqli_sql_exception: Unknown column 'wp.cID' in 'field list'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
- 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
- 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 5 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:42:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-12-05 11:42:00 --> mysqli_sql_exception: Unknown column 'cfi.wpID' in 'where clause' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
-Stack trace:
-#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
-#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
-#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
-#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
-#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
-#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
-#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
-#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
-#9 {main}
-CRITICAL - 2024-12-05 11:42:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cfi.wpID' in 'where clause'
-in SYSTEMPATH/Database/BaseConnection.php on line 647.
- 1 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 2 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:42:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cfi.wpID' in 'where clause'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
- 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 3 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 4 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 11:42:00 --> [Caused by] mysqli_sql_exception: Unknown column 'cfi.wpID' in 'where clause'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
- 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
- 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 APPPATH/Models/DashModel.php(120): CodeIgniter\Database\BaseConnection->query()
- 5 APPPATH/Controllers/DashController.php(116): App\Models\DashModel->getwpprogress()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->auditsystem()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:43:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:43:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:43:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 11:43:15 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+INFO - 2024-12-05 14:51:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:51:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:51:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:51:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 14:52:01 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
 in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
  1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
  2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
@@ -672,1013 +12,183 @@ in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
  5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
  6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:43:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:43:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 11:43:17 --> ErrorException: Undefined array key "acID"
-in APPPATH/Views/client/chapter1/Ac1.php on line 66.
- 1 APPPATH/Views/client/chapter1/Ac1.php(66): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter1/Ac1.php')
+INFO - 2024-12-05 14:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:52:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:52:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:52:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 14:52:34 --> ErrorException: Allowed memory size of 1073741824 bytes exhausted (tried to allocate 4096 bytes)
+in SYSTEMPATH/Encryption/Encryption.php on line 132.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-12-05 14:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:53:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 14:53:42 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 884.
+ 1 SYSTEMPATH/Model.php(662): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/ChapterController.php(176): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 14:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 14:53:58 --> ArgumentCountError: Too few arguments to function App\Models\ChapterValuesModel::getvalues_c2(), 4 passed in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/ChapterController.php on line 176 and exactly 5 expected
+in APPPATH/Models/ChapterValuesModel.php on line 85.
+ 1 APPPATH/Controllers/ChapterController.php(176): App\Models\ChapterValuesModel->getvalues_c2()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 14:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 14:54:07 --> ErrorException: Undefined variable $header
+in APPPATH/Views/client/chapter2/AB4A.php on line 48.
+ 1 APPPATH/Views/client/chapter2/AB4A.php(48): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AB4A.php')
  3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ChapterController.php(560): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
+ 5 APPPATH/Controllers/ChapterController.php(318): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
  7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
  8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:43:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 11:43:32 --> ErrorException: Undefined array key "acID"
-in APPPATH/Views/client/chapter1/Ac1.php on line 66.
- 1 APPPATH/Views/client/chapter1/Ac1.php(66): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter1/Ac1.php')
+INFO - 2024-12-05 14:54:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 14:54:35 --> ErrorException: Undefined variable $header
+in APPPATH/Views/client/chapter2/AB4A.php on line 48.
+ 1 APPPATH/Views/client/chapter2/AB4A.php(48): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AB4A.php')
  3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ChapterController.php(560): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
+ 5 APPPATH/Controllers/ChapterController.php(318): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
  7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
  8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:45:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 11:45:16 --> ErrorException: Undefined variable $acID
-in APPPATH/Views/client/chapter1/Ac1.php on line 83.
- 1 APPPATH/Views/client/chapter1/Ac1.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter1/Ac1.php')
+INFO - 2024-12-05 14:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 14:55:32 --> ErrorException: Undefined variable $header
+in APPPATH/Views/client/chapter2/AB4A.php on line 48.
+ 1 APPPATH/Views/client/chapter2/AB4A.php(48): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AB4A.php')
  3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ChapterController.php(560): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
+ 5 APPPATH/Controllers/ChapterController.php(318): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
  7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
  8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:51:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 11:51:59 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:52:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 11:52:04 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:52:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:53:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:55:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 11:55:27 --> ErrorException: Undefined variable $c1tID
-in APPPATH/Views/client/chapter1/Ac1.php on line 46.
- 1 APPPATH/Views/client/chapter1/Ac1.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter1/Ac1.php')
+INFO - 2024-12-05 14:56:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:56:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:56:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:57:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 14:57:29 --> ErrorException: Allowed memory size of 1073741824 bytes exhausted (tried to allocate 4096 bytes)
+in SYSTEMPATH/Encryption/Encryption.php on line 132.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-12-05 14:57:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:57:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 14:58:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 14:58:17 --> ErrorException: Undefined variable $ac3genmat
+in APPPATH/Views/client/chapter2/AB4.php on line 68.
+ 1 APPPATH/Views/client/chapter2/AB4.php(68): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AB4.php')
  3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ChapterController.php(560): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
+ 5 APPPATH/Controllers/ChapterController.php(323): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
  7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
  8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:57:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:57:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 11:57:20 --> ErrorException: Undefined variable $c1tID
-in APPPATH/Views/client/chapter1/Ac1.php on line 46.
- 1 APPPATH/Views/client/chapter1/Ac1.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter1/Ac1.php')
+INFO - 2024-12-05 14:58:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 14:59:22 --> ErrorException: Allowed memory size of 1073741824 bytes exhausted (tried to allocate 4096 bytes)
+in SYSTEMPATH/Encryption/Encryption.php on line 132.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-12-05 15:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:00:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 15:00:55 --> ArgumentCountError: Too few arguments to function App\Models\ChapterValuesModel::getvalues_c2(), 4 passed in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/ChapterController.php on line 173 and exactly 5 expected
+in APPPATH/Models/ChapterValuesModel.php on line 85.
+ 1 APPPATH/Controllers/ChapterController.php(173): App\Models\ChapterValuesModel->getvalues_c2()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 15:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:02:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 15:02:17 --> ErrorException: Undefined variable $ac3genmat
+in APPPATH/Views/client/chapter2/AB4.php on line 68.
+ 1 APPPATH/Views/client/chapter2/AB4.php(68): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AB4.php')
  3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ChapterController.php(93): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
+ 5 APPPATH/Controllers/ChapterController.php(317): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
  7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
  8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 11:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 11:57:49 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(271): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:57:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 11:57:56 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(271): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 11:58:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 11:58:04 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(271): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:00:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:00:17 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(270): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:01:40 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(54): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterController.php(270): App\Controllers\ChapterController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:01:41 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(54): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterController.php(270): App\Controllers\ChapterController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:07:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:07:09 --> ErrorException: Undefined variable $crypt
-in APPPATH/Views/client/ViewFilesValues.php on line 101.
- 1 APPPATH/Views/client/ViewFilesValues.php(101): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/ViewFilesValues.php')
+INFO - 2024-12-05 15:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:02:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:03:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 15:04:12 --> ErrorException: Allowed memory size of 1073741824 bytes exhausted (tried to allocate 4096 bytes)
+in SYSTEMPATH/Encryption/Encryption.php on line 132.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-12-05 15:04:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 15:04:12 --> ErrorException: Undefined variable $ac3genmat
+in APPPATH/Views/client/chapter2/AB4.php on line 68.
+ 1 APPPATH/Views/client/chapter2/AB4.php(68): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AB4.php')
  3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ClientController.php(113): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getfiles()
+ 5 APPPATH/Controllers/ChapterController.php(315): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
  7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
  8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:08:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:08:06 --> ErrorException: Undefined variable $crypt
-in APPPATH/Views/client/ViewFilesValues.php on line 101.
- 1 APPPATH/Views/client/ViewFilesValues.php(101): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/ViewFilesValues.php')
+INFO - 2024-12-05 15:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 15:04:14 --> ErrorException: Undefined variable $ac3genmat
+in APPPATH/Views/client/chapter2/AB4.php on line 68.
+ 1 APPPATH/Views/client/chapter2/AB4.php(68): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AB4.php')
  3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ClientController.php(113): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getfiles()
+ 5 APPPATH/Controllers/ChapterController.php(315): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
  7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
  8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:08:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:08:07 --> ErrorException: Undefined variable $crypt
-in APPPATH/Views/client/ViewFilesValues.php on line 101.
- 1 APPPATH/Views/client/ViewFilesValues.php(101): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/ViewFilesValues.php')
+INFO - 2024-12-05 15:04:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 15:04:15 --> ErrorException: Undefined variable $ac3genmat
+in APPPATH/Views/client/chapter2/AB4.php on line 68.
+ 1 APPPATH/Views/client/chapter2/AB4.php(68): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AB4.php')
  3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ClientController.php(113): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getfiles()
+ 5 APPPATH/Controllers/ChapterController.php(315): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
  7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
  8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:08:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:08:07 --> ErrorException: Undefined variable $crypt
-in APPPATH/Views/client/ViewFilesValues.php on line 101.
- 1 APPPATH/Views/client/ViewFilesValues.php(101): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/ViewFilesValues.php')
+INFO - 2024-12-05 15:04:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 15:04:21 --> ErrorException: Undefined variable $ac3genmat
+in APPPATH/Views/client/chapter2/AB4.php on line 68.
+ 1 APPPATH/Views/client/chapter2/AB4.php(68): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AB4.php')
  3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ClientController.php(113): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getfiles()
+ 5 APPPATH/Controllers/ChapterController.php(315): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
  7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
  8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:08:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:08:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:08:17 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:08:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:08:17 --> ErrorException: Undefined variable $crypt
-in APPPATH/Views/client/ViewFilesValues.php on line 101.
- 1 APPPATH/Views/client/ViewFilesValues.php(101): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/ViewFilesValues.php')
+INFO - 2024-12-05 15:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 15:05:04 --> ErrorException: Undefined variable $ac3genmat
+in APPPATH/Views/client/chapter2/AB4.php on line 68.
+ 1 APPPATH/Views/client/chapter2/AB4.php(68): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AB4.php')
  3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ClientController.php(113): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getfiles()
+ 5 APPPATH/Controllers/ChapterController.php(315): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
  7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
  8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:08:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:08:59 --> ErrorException: Undefined variable $crypt
-in APPPATH/Views/client/ViewFilesValues.php on line 101.
- 1 APPPATH/Views/client/ViewFilesValues.php(101): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/ViewFilesValues.php')
- 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ClientController.php(113): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getfiles()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:09:00 --> ErrorException: Undefined variable $crypt
-in APPPATH/Views/client/ViewFilesValues.php on line 101.
- 1 APPPATH/Views/client/ViewFilesValues.php(101): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/ViewFilesValues.php')
- 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ClientController.php(113): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getfiles()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:11:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:12:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:12:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:12:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:15:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:15:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:15:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:16:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:16:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:17:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:18:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:21:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:21:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:22:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:22:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:22:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:24:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:25:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:26:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:41:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:41:11 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:41:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:41:13 --> ErrorException: Undefined variable $c1tID
-in APPPATH/Views/client/chapter1/Ac2.php on line 46.
- 1 APPPATH/Views/client/chapter1/Ac2.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter1/Ac2.php')
- 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ChapterController.php(101): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:41:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:45:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:46:09 --> Error: Call to undefined function App\Controllers\decr()
-in APPPATH/Controllers/ChapterValuesController.php on line 79.
- 1 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 4 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:47:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:47:07 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterValuesController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterValuesController.php(79): App\Controllers\ChapterValuesController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:47:25 --> ParseError: syntax error, unexpected token "switch", expecting ";"
-in APPPATH/Controllers/ChapterValuesController.php on line 86.
- 1 SYSTEMPATH/Autoloader/Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile()
- 2 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
- 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
- 4 SYSTEMPATH/CodeIgniter.php(899): class_exists()
- 5 SYSTEMPATH/CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:47:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:47:35 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterValuesController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterValuesController.php(79): App\Controllers\ChapterValuesController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:47:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:47:41 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterValuesController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterValuesController.php(79): App\Controllers\ChapterValuesController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:47:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:48:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:48:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:48:27 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterValuesController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterValuesController.php(79): App\Controllers\ChapterValuesController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:48:34 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterValuesController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterValuesController.php(80): App\Controllers\ChapterValuesController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:48:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:48:36 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterValuesController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterValuesController.php(80): App\Controllers\ChapterValuesController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:50:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:50:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:51:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:51:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:52:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:52:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:52:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-12-05 12:52:49 --> mysqli_sql_exception: Unknown column 'comment' in 'field list' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
-Stack trace:
-#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
-#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
-#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
-#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
-#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/ChapterValuesModel.php(174): CodeIgniter\Database\BaseBuilder->update()
-#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/ChapterValuesController.php(114): App\Models\ChapterValuesModel->savevalues()
-#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
-#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
-#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-#9 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
-#10 {main}
-CRITICAL - 2024-12-05 12:52:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'comment' in 'field list'
-in SYSTEMPATH/Database/BaseConnection.php on line 647.
- 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
- 2 APPPATH/Models/ChapterValuesModel.php(174): CodeIgniter\Database\BaseBuilder->update()
- 3 APPPATH/Controllers/ChapterValuesController.php(114): App\Models\ChapterValuesModel->savevalues()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 12:52:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'comment' in 'field list'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
- 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
- 4 APPPATH/Models/ChapterValuesModel.php(174): CodeIgniter\Database\BaseBuilder->update()
- 5 APPPATH/Controllers/ChapterValuesController.php(114): App\Models\ChapterValuesModel->savevalues()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 12:52:50 --> [Caused by] mysqli_sql_exception: Unknown column 'comment' in 'field list'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
- 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
- 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
- 5 APPPATH/Models/ChapterValuesModel.php(174): CodeIgniter\Database\BaseBuilder->update()
- 6 APPPATH/Controllers/ChapterValuesController.php(114): App\Models\ChapterValuesModel->savevalues()
- 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-10 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:55:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-12-05 12:55:20 --> mysqli_sql_exception: Unknown column 'updated_by' in 'field list' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
-Stack trace:
-#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
-#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
-#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
-#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
-#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/ChapterValuesModel.php(174): CodeIgniter\Database\BaseBuilder->update()
-#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/ChapterValuesController.php(114): App\Models\ChapterValuesModel->savevalues()
-#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
-#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
-#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-#9 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
-#10 {main}
-CRITICAL - 2024-12-05 12:55:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_by' in 'field list'
-in SYSTEMPATH/Database/BaseConnection.php on line 647.
- 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
- 2 APPPATH/Models/ChapterValuesModel.php(174): CodeIgniter\Database\BaseBuilder->update()
- 3 APPPATH/Controllers/ChapterValuesController.php(114): App\Models\ChapterValuesModel->savevalues()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 12:55:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_by' in 'field list'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
- 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
- 4 APPPATH/Models/ChapterValuesModel.php(174): CodeIgniter\Database\BaseBuilder->update()
- 5 APPPATH/Controllers/ChapterValuesController.php(114): App\Models\ChapterValuesModel->savevalues()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 12:55:20 --> [Caused by] mysqli_sql_exception: Unknown column 'updated_by' in 'field list'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
- 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
- 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
- 5 APPPATH/Models/ChapterValuesModel.php(174): CodeIgniter\Database\BaseBuilder->update()
- 6 APPPATH/Controllers/ChapterValuesController.php(114): App\Models\ChapterValuesModel->savevalues()
- 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-10 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:56:55 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterValuesController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterValuesController.php(80): App\Controllers\ChapterValuesController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:57:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:57:11 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterValuesController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterValuesController.php(79): App\Controllers\ChapterValuesController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 12:57:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 12:57:22 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterValuesController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterValuesController.php(79): App\Controllers\ChapterValuesController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 12:59:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:00:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:00:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:00:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:00:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:00:14 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterValuesController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterValuesController.php(80): App\Controllers\ChapterValuesController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:01:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:01:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:01:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:01:35 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:01:44 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:01:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:02:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:02:19 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:02:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:02:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:03:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:03:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:03:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:03:27 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:03:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:03:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:04:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:04:06 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(54): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterController.php(271): App\Controllers\ChapterController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:05:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:05:19 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "client/chapter1/Ac1.php"
-in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
- 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
- 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 3 APPPATH/Controllers/ChapterController.php(560): view()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:07:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:07:11 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "client/chapter1/Ac1.php"
-in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
- 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
- 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 3 APPPATH/Controllers/ChapterController.php(85): view()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:07:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "client/chapter1/Ac1.php"
-in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
- 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
- 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 3 APPPATH/Controllers/ChapterController.php(85): view()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:07:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:07:21 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(262): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:08:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:08:03 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(262): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:08:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:08:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:08:09 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(262): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:08:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:08:38 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(262): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:08:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:08:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:08:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:08:50 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:08:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:08:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:09:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:09:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:09:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:09:14 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:09:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:09:18 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(262): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:09:42 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterValuesController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterValuesController.php(79): App\Controllers\ChapterValuesController->decr()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:09:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:10:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:10:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:10:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:11:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:11:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:11:11 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(262): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:11:18 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(262): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:13:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:13:52 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Controllers/ChapterController.php(262): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:17:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:17:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:18:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:18:03 --> ErrorException: Undefined array key "acid"
-in APPPATH/Models/ChapterValuesModel.php on line 167.
- 1 APPPATH/Models/ChapterValuesModel.php(167): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 APPPATH/Controllers/ChapterValuesController.php(114): App\Models\ChapterValuesModel->savevalues()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:18:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:19:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:19:33 --> ErrorException: Undefined array key "acid"
-in APPPATH/Models/ChapterValuesModel.php on line 167.
- 1 APPPATH/Models/ChapterValuesModel.php(167): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 APPPATH/Controllers/ChapterValuesController.php(114): App\Models\ChapterValuesModel->savevalues()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:19:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:20:32 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Models/ChapterValuesModel.php(167): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterValuesController.php(114): App\Models\ChapterValuesModel->savevalues()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:20:41 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
-in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
- 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
- 2 APPPATH/Models/ChapterValuesModel.php(167): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
- 3 APPPATH/Controllers/ChapterValuesController.php(114): App\Models\ChapterValuesModel->savevalues()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:22:43 --> ErrorException: Undefined variable $crypt
-in APPPATH/Controllers/ChapterController.php on line 59.
- 1 APPPATH/Controllers/ChapterController.php(59): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 APPPATH/Controllers/ChapterController.php(92): App\Controllers\ChapterController->encr()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:23:04 --> ErrorException: Undefined variable $crypt
-in APPPATH/Controllers/ChapterController.php on line 59.
- 1 APPPATH/Controllers/ChapterController.php(59): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 APPPATH/Controllers/ChapterController.php(92): App\Controllers\ChapterController->encr()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:23:04 --> ErrorException: Undefined variable $crypt
-in APPPATH/Controllers/ChapterController.php on line 59.
- 1 APPPATH/Controllers/ChapterController.php(59): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 APPPATH/Controllers/ChapterController.php(92): App\Controllers\ChapterController->encr()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:23:05 --> ErrorException: Undefined variable $crypt
-in APPPATH/Controllers/ChapterController.php on line 59.
- 1 APPPATH/Controllers/ChapterController.php(59): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 APPPATH/Controllers/ChapterController.php(92): App\Controllers\ChapterController->encr()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:23:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:23:07 --> ErrorException: Undefined variable $crypt
-in APPPATH/Controllers/ChapterController.php on line 59.
- 1 APPPATH/Controllers/ChapterController.php(59): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 APPPATH/Controllers/ChapterController.php(92): App\Controllers\ChapterController->encr()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:23:21 --> ErrorException: Undefined variable $crypt
-in APPPATH/Controllers/ChapterController.php on line 59.
- 1 APPPATH/Controllers/ChapterController.php(59): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 APPPATH/Controllers/ChapterController.php(92): App\Controllers\ChapterController->encr()
- 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
- 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:23:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:23:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:23:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:24:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:24:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:24:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:24:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:24:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:29:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:29:37 --> ErrorException: Undefined variable $c1tID
-in APPPATH/Views/client/chapter1/Ac2.php on line 46.
- 1 APPPATH/Views/client/chapter1/Ac2.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter1/Ac2.php')
- 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ChapterController.php(101): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:30:13 --> ErrorException: Undefined variable $c1tID
-in APPPATH/Views/client/chapter1/AC2.php on line 46.
- 1 APPPATH/Views/client/chapter1/AC2.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter1/AC2.php')
- 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ChapterController.php(101): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-12-05 13:32:14 --> ErrorException: Undefined array key "question"
-in APPPATH/Views/client/chapter1/AC2.php on line 92.
- 1 APPPATH/Views/client/chapter1/AC2.php(92): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter1/AC2.php')
- 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
- 5 APPPATH/Controllers/ChapterController.php(101): view()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setvalues()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:32:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:32:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:32:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:36:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-12-05 13:36:06 --> mysqli_sql_exception: Unknown column 'acID' in 'where clause' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
-Stack trace:
-#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
-#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
-#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
-#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
-#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/ChapterValuesModel.php(204): CodeIgniter\Database\BaseBuilder->update()
-#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/ChapterValuesController.php(139): App\Models\ChapterValuesModel->savevalues()
-#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
-#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
-#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-#9 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
-#10 {main}
-CRITICAL - 2024-12-05 13:36:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'acID' in 'where clause'
-in SYSTEMPATH/Database/BaseConnection.php on line 647.
- 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
- 2 APPPATH/Models/ChapterValuesModel.php(204): CodeIgniter\Database\BaseBuilder->update()
- 3 APPPATH/Controllers/ChapterValuesController.php(139): App\Models\ChapterValuesModel->savevalues()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 13:36:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'acID' in 'where clause'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
- 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
- 4 APPPATH/Models/ChapterValuesModel.php(204): CodeIgniter\Database\BaseBuilder->update()
- 5 APPPATH/Controllers/ChapterValuesController.php(139): App\Models\ChapterValuesModel->savevalues()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 13:36:06 --> [Caused by] mysqli_sql_exception: Unknown column 'acID' in 'where clause'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
- 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
- 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
- 5 APPPATH/Models/ChapterValuesModel.php(204): CodeIgniter\Database\BaseBuilder->update()
- 6 APPPATH/Controllers/ChapterValuesController.php(139): App\Models\ChapterValuesModel->savevalues()
- 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-10 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:36:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:36:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:36:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:36:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-12-05 13:36:42 --> mysqli_sql_exception: Unknown column 'question' in 'field list' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
-Stack trace:
-#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
-#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
-#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
-#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
-#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/ChapterValuesModel.php(215): CodeIgniter\Database\BaseBuilder->update()
-#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/ChapterValuesController.php(139): App\Models\ChapterValuesModel->savevalues()
-#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
-#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
-#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-#9 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
-#10 {main}
-CRITICAL - 2024-12-05 13:36:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'question' in 'field list'
-in SYSTEMPATH/Database/BaseConnection.php on line 647.
- 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
- 2 APPPATH/Models/ChapterValuesModel.php(215): CodeIgniter\Database\BaseBuilder->update()
- 3 APPPATH/Controllers/ChapterValuesController.php(139): App\Models\ChapterValuesModel->savevalues()
- 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 13:36:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'question' in 'field list'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
- 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
- 4 APPPATH/Models/ChapterValuesModel.php(215): CodeIgniter\Database\BaseBuilder->update()
- 5 APPPATH/Controllers/ChapterValuesController.php(139): App\Models\ChapterValuesModel->savevalues()
- 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
- 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2024-12-05 13:36:42 --> [Caused by] mysqli_sql_exception: Unknown column 'question' in 'field list'
-in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
- 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
- 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
- 5 APPPATH/Models/ChapterValuesModel.php(215): CodeIgniter\Database\BaseBuilder->update()
- 6 APPPATH/Controllers/ChapterValuesController.php(139): App\Models\ChapterValuesModel->savevalues()
- 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
- 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
- 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
-10 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
-INFO - 2024-12-05 13:37:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:37:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:37:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:37:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-12-05 13:37:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:05:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 15:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

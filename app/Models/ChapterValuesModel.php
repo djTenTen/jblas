@@ -63,23 +63,42 @@ class ChapterValuesModel extends Model{
         CHAPTER GET FUNCTIONS
         ----------------------------------------------------------
     */
-    public function getvalues_m($c,$type,$code,$mtID,$cID){
+    public function getvalues_c1($m,$type,$code,$mtID,$cID){
 
-        switch ($c) {
-            case 'c1': $table = $this->tblc1d; break;
-            case 'c2': $table = $this->tblc2d; break;
-            case 'c3': $table = $this->tblc3d; break;
-        }
         $where = [
             'code'  => $code, 
             'type'  => $type,
             'mtID'  => $mtID,
             'cID'   => $cID,
         ];
-        $query =  $this->db->table($table)->where($where)->get();
-        return $query->getResultArray();
+        $query =  $this->db->table($this->tblc1d)->where($where)->get();
+
+        if($m == 'm'){
+            return $query->getResultArray();
+        }else{
+            return $query->getrowArray();
+        }
 
     }
+
+
+    public function getvalues_c2($m,$type,$code,$mtID,$cID){
+
+        $where = [
+            'code'  => $code, 
+            'type'  => $type,
+            'mtID'  => $mtID,
+            'cID'   => $cID,
+        ];
+        $query =  $this->db->table($this->tblc2d)->where($where)->get();
+        if($m == 'm'){
+            return $query->getResultArray();
+        }else{
+            return $query->getrowArray();
+        }
+
+    }
+
 
     public function getvalues_s($c,$type,$code,$mtID,$cID){
 
