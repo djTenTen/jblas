@@ -42,7 +42,9 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <hr>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter2/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <hr style="color: #7752FE;" class="m-5">
+                <div class="m-5">
                     <h4>PERMANENT FILE DIVIDERS</h4>
                     <p>REVIEW DETAILS</p>
                     <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveab4a/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
@@ -74,7 +76,8 @@
                         <button class="btn btn-primary btn-sm m-1 float-end" type="button" id="add-field1"><i class="fas fa-plus-square m-1"></i>Add Field</button>
                         <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
                     </form>
-                <br><br><br><hr>
+                    <br><br><br><hr style="color: #7752FE;">
+                </div>
             </div>
         </div>
     </div>

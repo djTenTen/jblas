@@ -328,7 +328,7 @@ class ChapterController extends BaseController{
           THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
         * @return pdf-view
     */
-    public function viewc2pdf($code,$c2tID){
+    public function viewc2pdf($code,$mtID){
 
         $data['title']  = $code;
         $data['mtID']   = $mtID;
@@ -340,25 +340,29 @@ class ChapterController extends BaseController{
                 $data['ac3doccors']     = $this->c2model->getvalues_m('doccors',$code,$dmtID);
                 $data['ac3statutory']   = $this->c2model->getvalues_m('statutory',$code,$dmtID);
                 $data['ac3accsys']      = $this->c2model->getvalues_m('accsys',$code,$dmtID);
-                echo view('pdfc1/AC3', $data);
+                echo view('pdfc2/AC3', $data);
+                break;
+            case 'AB4A':
+                $data['rd']      = $this->c2model->getvalues_m('rd',$code,$dmtID);
+                echo view('pdfc2/AB4A', $data);
                 break;
             case 'AC4':
                 $data['ac4']  = $this->c2model->getvalues_m('ac4sod',$code,$dmtID);
                 $rdata        = $this->c2model->getvalues_s('ppr',$code,$dmtID);
                 $data['ppr']  = json_decode($rdata['field1'], true);
-                echo view('pdfc1/AC4', $data);
+                echo view('pdfc2/AC4', $data);
                 break;
             case 'AC5':
                 $rdata       = $this->c2model->getvalues_s('rescon',$code,$dmtID);
                 $data['rc']  = json_decode($rdata['field1'], true);
-                echo view('pdfc1/AC5', $data);
+                echo view('pdfc2/AC5', $data);
                 break;
             case 'AC6':
                 $data['ac6']   = $this->c2model->getvalues_m('ac6ra',$code,$dmtID);
                 $rdata         = $this->c2model->getvalues_s('ac6s12',$code,$dmtID);
                 $data['s']     = json_decode($rdata['field1'], true);
                 $data['s3']    = $this->c2model->getvalues_m('ac6s3',$code,$dmtID);
-                echo view('pdfc1/AC6', $data);
+                echo view('pdfc2/AC6', $data);
                 break;
             case 'AC7':
                 $rowdata = [
@@ -369,7 +373,7 @@ class ChapterController extends BaseController{
                     $rdata       = $this->c2model->getvalues_s($row,$code,$dmtID);
                     $data[$row]  = json_decode($rdata['field1'], true);
                 }
-                echo view('pdfc1/AC7', $data);
+                echo view('pdfc2/AC7', $data);
                 break;
             case 'AC8':
                 $rowdata = [
@@ -381,12 +385,12 @@ class ChapterController extends BaseController{
                 foreach($rowdata as $row){
                     $data[$row] = $this->c2model->getvalues_s($row,$code,$dmtID);
                 }
-                echo view('pdfc1/AC8', $data);
+                echo view('pdfc2/AC8', $data);
                 break;
             case 'AC9':
                 $rdata        = $this->c2model->getvalues_s('ac9data',$code,$dmtID);
                 $data['ac9']  = json_decode($rdata['field1'], true);
-                echo view('pdfc1/AC9', $data);
+                echo view('pdfc2/AC9', $data);
                 break;
             case 'AC10-Tangibles':
             case 'AC10-PPE':
@@ -407,7 +411,7 @@ class ChapterController extends BaseController{
                 $data['cu']      = $this->c2model->getvalues_s($s[1].'cu',$s[0],$dmtID);
                 $data['ac10s1']  = $this->c2model->getac10data($s[1],$s[0],$dmtID,'section1');
                 $data['ac10s2']  = $this->c2model->getac10data($s[1],$s[0],$dmtID,'section2');
-                echo view('pdfc1/AC10', $data);
+                echo view('pdfc2/AC10', $data);
                 break;
             case 'AC10-Summary':
                 $s = explode('-', $code);
@@ -445,12 +449,12 @@ class ChapterController extends BaseController{
                     $rdata       = $this->c2model->getvalues_s($row.'data',$s[0],$dmtID);
                     $data[$row]  = json_decode($rdata['field1'], true);
                 }
-                echo view('pdfc1/AC10Summ', $data);
+                echo view('pdfc2/AC10Summ', $data);
                 break;
             case 'AC11':
                 $rdata = $this->c2model->getvalues_s('ac11data',$code,$dmtID);
                 $data['ac11'] = json_decode($rdata['field1'], true);
-                echo view('pdfc1/AC11', $data);
+                echo view('pdfc2/AC11', $data);
                 break;
             default:
             break;

@@ -237,6 +237,12 @@ class ChapterValuesModel extends Model{
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Pre-Engagement Activities");
                         return true;
                     break;
+                   
+                }
+            break;
+
+            case 'c2':
+                switch($param['code']) {
                     // case 'AC3':
                     //     switch ($param['save']) {
                     //         case 'saveac3':
@@ -255,6 +261,33 @@ class ChapterValuesModel extends Model{
                     //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
                     //     return true;
                     // break;
+                    case 'AB4A':
+                        switch ($param['save']) {
+                            case 'saveab4a':
+                                $this->db->table($this->tblc2d)->where(array('type' => $req['part'], 'code' => $param['code'], 'mtID' => $param['mtID'], 'cID' => $param['cID']))->delete();
+                                foreach($req['yearto'] as $i => $val){
+                                    $data = [
+                                        'field1'        => $req['yearto'][$i],
+                                        'field2'        => $req['preparedby'][$i],
+                                        'field3'        => $req['date1'][$i],
+                                        'field4'        => $req['reviewedby'][$i],
+                                        'field5'        => $req['date2'][$i],
+                                        'code'          => $param['code'],
+                                        'mtID'          => $param['mtID'],
+                                        'cID'           => $param['cID'],
+                                        'fID'           => $param['fID'],
+                                        'type'          => $req['part'],
+                                        'status'        => 'Active',
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2d)->insert($data);
+                                }
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        return true;
+                    break;
                     // case 'AC4':
                     //     switch ($param['save']) {
                     //         case 'saveac4':
@@ -523,82 +556,6 @@ class ChapterValuesModel extends Model{
                     //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
                     //     return true;
                     // break;
-                }
-            break;
-
-            case 'c2':
-                switch($param['code']) {
-                    case '2.1 B2':
-                    case '2.2.1 C2':   
-                    case '2.2.2 C2-1':  
-                    case '2.3 D2':
-                    case '2.4.1 E2':   
-                    case '2.4.3 E2-2': 
-                    case '2.4.4 E2-3': 
-                    case '2.4.5 E2-4':
-                    case '2.5 F2':
-                    case '2.6 H2':
-                    case '2.7 I2':
-                    case '2.8 J2':
-                    case '2.9 K2':
-                    case '2.10 L2': 
-                    case '2.11 M2':
-                    case '2.12 N2':
-                    case '2.13.1 O2':
-                    case '2.13.2 O2-1':
-                    case '2.14 P2':
-                    case '2.15 Q2':
-                    case '2.16 R2-1':
-                    case '2.17 R2-2':
-                    case '2.18.1 S2-1':
-                    case '2.18.2 S2-2': 
-                    case '2.18.3 S2-3':
-                    case '2.18.4 S2-4':
-                    case '2.19.1 U2-1':
-                    case '2.19.2 U2-2':
-                    case '2.19.3 U2-3':  
-                    case '2.4.2 E2-1':
-                        switch ($param['save']) {
-                            case 'savec2':
-                                foreach($req['extent'] as $i => $val){
-                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
-                                    $data = [
-                                        'extent'        => $req['extent'][$i],
-                                        'reference'     => $req['reference'][$i],
-                                        'initials'      => $req['initials'][$i],
-                                        'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
-                                }
-                            break;
-                            case 'aicpppa':
-                                foreach($req['comment'] as $i => $val){
-                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
-                                    $data = [
-                                        'reference'     => $req['comment'][$i],
-                                        'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
-                                }
-                            break;
-                            case 'rcicp':
-                                foreach($req['extent'] as $i => $val){
-                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
-                                    $data = [
-                                        'extent'        => $req['extent'][$i],
-                                        'reference'     => $req['comment'][$i],
-                                        'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
-                                }
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 2");
-                        return true;
-                    break;
                 }
             break;
 

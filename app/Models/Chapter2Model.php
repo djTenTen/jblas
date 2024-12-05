@@ -48,12 +48,12 @@ class Chapter2Model extends Model{
         * @var where-array reference for the fetch
         * @return result-array
     */
-    public function getvalues_m($type,$code,$ctID){
+    public function getvalues_m($type,$code,$mtID){
 
         $where = [
             'type' => $type, 
             'code' => $code,
-            'c2tID' => $ctID
+            'mtID' => $mtID
         ];
         $query =  $this->db->table($this->tblc2)->where($where)->get();
         return $query->getResultArray();

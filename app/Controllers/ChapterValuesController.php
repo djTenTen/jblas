@@ -139,6 +139,12 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
+                    
+                }
+            break;
+           
+            case 'c2':
+                switch ($code) {
                     // case 'AC3':
                     //     switch ($save) {
                     //         case 'saveac3':
@@ -153,6 +159,22 @@ class ChapterValuesController extends BaseController{
                     //     $res = $this->cvmodel->savevalues($param,$req);
                     //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     // break;
+                    case 'AB4A':
+                        switch ($save) {
+                            case 'saveab4a':
+                                $req = [
+                                    'yearto'        => $this->request->getPost('yearto'),
+                                    'preparedby'    => $this->request->getPost('preparedby'),
+                                    'date1'         => $this->request->getPost('date1'),
+                                    'reviewedby'    => $this->request->getPost('reviewedby'),
+                                    'date2'         => $this->request->getPost('date2'),
+                                    'part'          => $this->request->getPost('part'),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    break;
                     // case 'AC4':
                     //     switch ($save) {
                     //         case 'saveac4':
@@ -708,70 +730,6 @@ class ChapterValuesController extends BaseController{
                     //     $res = $this->cvmodel->savevalues($param,$req);
                     //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     // break;
-                }
-            break;
-           
-            case 'c2':
-                switch ($code) {
-                    case '2.1 B2':
-                    case '2.2.1 C2':   
-                    case '2.2.2 C2-1':  
-                    case '2.3 D2':
-                    case '2.4.1 E2':   
-                    case '2.4.3 E2-2': 
-                    case '2.4.4 E2-3': 
-                    case '2.4.5 E2-4':
-                    case '2.5 F2':
-                    case '2.6 H2':
-                    case '2.7 I2':
-                    case '2.8 J2':
-                    case '2.9 K2':
-                    case '2.10 L2': 
-                    case '2.11 M2':
-                    case '2.12 N2':
-                    case '2.13.1 O2':
-                    case '2.13.2 O2-1':
-                    case '2.14 P2':
-                    case '2.15 Q2':
-                    case '2.16 R2-1':
-                    case '2.17 R2-2':
-                    case '2.18.1 S2-1':
-                    case '2.18.2 S2-2': 
-                    case '2.18.3 S2-3':
-                    case '2.18.4 S2-4':
-                    case '2.19.1 U2-1':
-                    case '2.19.2 U2-2':
-                    case '2.19.3 U2-3':  
-                    case '2.4.2 E2-1':
-                        switch ($save) {
-                            case 'savec2':
-                                $req = [
-                                    'extent'        => $this->request->getPost('extent'),
-                                    'reference'     => $this->request->getPost('reference'),
-                                    'initials'      => $this->request->getPost('initials'),
-                                    'acid'          => $this->request->getPost('acid'),
-                                    'mtID'         => $param['mtID'],
-                                ];
-                            break;
-                            case 'aicpppa':
-                                $req = [
-                                    'comment'       => $this->request->getPost('comment'),
-                                    'acid'          => $this->request->getPost('acid'),
-                                    'mtID'         => $param['mtID'],
-                                ];
-                            break;
-                            case 'rcicp':
-                                $req = [
-                                    'extent'    => $this->request->getPost('yesno'),
-                                    'comment'   => $this->request->getPost('comment'),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'mtID'      => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
                 }
             break;
 
