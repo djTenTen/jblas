@@ -1,4 +1,9 @@
-<?php  $crypt = \Config\Services::encrypter();?>
+<?php  
+    function encr($ecr){
+        $crypt = \Config\Services::encrypter();
+        return str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ecr));
+    }
+?>
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -42,12 +47,12 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $code?>/<?= $c1tID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter2/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>RISK SUMMARY</h4>
                     <p>This form should be completed when a narrative approach to inherent business risk assessment is undertaken. If more than one risk level applies, add additional lines as appropriate.</p>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac6ra/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac6ra/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="ac6ra">
                         <table class="table table-hover table-bordered">
                             <thead class="text-center">
@@ -66,10 +71,10 @@
                             <tbody class="tbody text-center">
                                 <?php foreach($ac6 as $r){?>
                                     <tr>
-                                        <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                        <td><input class="form-control" type="text" name="planning[]" value="<?= $r['planning']?>"></td>
-                                        <td><input class="form-control" type="text" name="finalization[]" value="<?= $r['finalization']?>"></td>
-                                        <td><input class="form-control" type="text" name="reference[]" value="<?= $r['reference']?>"></td>
+                                        <td><input type="hidden" name="acid[]" value="<?= encr($r['mdID'])?>"><?= $r['field1']?></td>
+                                        <td><input class="form-control" type="text" name="planning[]" value="<?= $r['field2']?>"></td>
+                                        <td><input class="form-control" type="text" name="finalization[]" value="<?= $r['field3']?>"></td>
+                                        <td><input class="form-control" type="text" name="reference[]" value="<?= $r['field4']?>"></td>
                                     </tr>
                                 <?php }?>
                             </tbody>
@@ -80,8 +85,8 @@
                     <p>Objective: This form is designed to determine the inherent risk of the business as a whole.  PSA 315 implies that all businesses should be high risk unless this can be rebutted.  Completion of this form will help to justify a departure from high risk.</p>
                     <h4>Section 1 – INHERENT BUSINESS RISK </h4>
                     <p>The inherent business risk of the client is deemed to be low / medium / high* for the following reasons:</p>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac6s12/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
-                        <input type="hidden" name="acid" value="<?= $acID?>">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac6s12/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <input type="hidden" name="acid" value="<?= $mdID?>">
                         <textarea class="form-control" cols="30" rows="20" name="s1" required><?= $s['s1']?></textarea>
                         <p>Comprehensive consideration should be given to all clients even those deemed to be low risk. As part of this review consideration must be given to the Company’s going concern status and I.T. risk.</p>
                         <p>Objective: This form is designed to assess the adequacy of the entity’s control environment as a whole to determine whether a control based audit approach is appropriate. Section 3 looks at internal controls specific to the audit. To comply with PSA 315, both sections must be completed regardless of whether you intend to test, and if successful, place reliance on the entity’s controls.</p>
@@ -113,7 +118,7 @@
                         <li>Tracing transactions through the information system relevant to financial reporting.</li>
                     </ul>
                     <p>NB: this requirement exists irrespective of whether the overall control environment has been deemed to be ineffective in section 2b above. </p>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac6s3/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac6s3/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="ac6s3">
                         <table class="table table-hover table-bordered">
                             <thead>
@@ -151,13 +156,13 @@
                                 </tr>
                                 <?php foreach($s3 as $r){?>
                                     <tr>
-                                        <td><textarea class="form-control" id="" name="financialstatement[]" cols="30" rows="5"><?= $r['finstate']?></textarea> </td>
-                                        <td><textarea class="form-control" id="" name="descriptioncontrol[]" cols="30" rows="5"><?= $r['desc']?></textarea> </td>
-                                        <td><textarea class="form-control" id="" name="controleffective[]" cols="30" rows="5"><?= $r['controleffect']?></textarea> </td>
-                                        <td><textarea class="form-control" id="" name="controlimplemented[]" cols="30" rows="5"><?= $r['implemented']?></textarea> </td>
-                                        <td><textarea class="form-control" id="" name="assesed[]" cols="30" rows="5"><?= $r['assessed']?></textarea> </td>
-                                        <td><textarea class="form-control" id="" name="crosstesting[]" cols="30" rows="5"><?= $r['reference']?></textarea> </td>
-                                        <td><textarea class="form-control" id="" name="reliancecontrol[]" cols="30" rows="5"><?= $r['reliance']?></textarea> </td>
+                                        <td><textarea class="form-control" id="" name="financialstatement[]" cols="30" rows="5"><?= $r['field1']?></textarea> </td>
+                                        <td><textarea class="form-control" id="" name="descriptioncontrol[]" cols="30" rows="5"><?= $r['field2']?></textarea> </td>
+                                        <td><textarea class="form-control" id="" name="controleffective[]" cols="30" rows="5"><?= $r['field3']?></textarea> </td>
+                                        <td><textarea class="form-control" id="" name="controlimplemented[]" cols="30" rows="5"><?= $r['field4']?></textarea> </td>
+                                        <td><textarea class="form-control" id="" name="assesed[]" cols="30" rows="5"><?= $r['field5']?></textarea> </td>
+                                        <td><textarea class="form-control" id="" name="crosstesting[]" cols="30" rows="5"><?= $r['field6']?></textarea> </td>
+                                        <td><textarea class="form-control" id="" name="reliancecontrol[]" cols="30" rows="5"><?= $r['field7']?></textarea> </td>
                                         <td>
                                             <button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button>
                                         </td>

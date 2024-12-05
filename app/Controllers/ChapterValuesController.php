@@ -274,59 +274,55 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
-                    // case 'AC6':
-                    //     switch ($save) {
-                    //         case 'saveac6ra':
-                    //             $req = [
-                    //                 'planning'          => $this->request->getPost('planning'),
-                    //                 'finalization'      => $this->request->getPost('finalization'),
-                    //                 'reference'         => $this->request->getPost('reference'),
-                    //                 'acid'              => $this->request->getPost('acid'),
-                    //                 'mtID'             => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //         case 'saveac6s12':
-                    //             $s = [
-                    //                 's1'        => $this->request->getPost('s1'),
-                    //                 's2a'       => $this->request->getPost('s2a'),
-                    //                 's2b'       => $this->request->getPost('s2b')
-                    //             ];
-                    //             $req = [
-                    //                 'section'       => json_encode($s),
-                    //                 'acid'          => $this->request->getPost('acid'),
-                    //                 'mtID'         => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //         case 'saveac6s3':
-                    //             $validationRules = [
-                    //                 'financialstatement'    => 'required',
-                    //                 'descriptioncontrol'    => 'required',
-                    //                 'controleffective'      => 'required',
-                    //                 'controlimplemented'    => 'required',
-                    //                 'assesed'               => 'required',
-                    //                 'crosstesting'          => 'required',
-                    //                 'reliancecontrol'       => 'required'
-                    //             ];
-                    //             if (!$this->validate($validationRules)) {
-                    //                 return $this->resultpage($chapter,false,$code,$mtID,$cID,$name);
-                    //             }
-                    //             $req = [
-                    //                 'financialstatement'        => $this->request->getPost('financialstatement'),
-                    //                 'descriptioncontrol'        => $this->request->getPost('descriptioncontrol'),
-                    //                 'controleffective'          => $this->request->getPost('controleffective'),
-                    //                 'controlimplemented'        => $this->request->getPost('controlimplemented'),
-                    //                 'assesed'                   => $this->request->getPost('assesed'),
-                    //                 'crosstesting'              => $this->request->getPost('crosstesting'),
-                    //                 'reliancecontrol'           => $this->request->getPost('reliancecontrol'),
-                    //                 'code'                      => $code,
-                    //                 'part'                      => $this->request->getPost('part'),
-                    //                 'mtID'                     => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //     }
-                    //     $res = $this->cvmodel->savevalues($param,$req);
-                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    // break;
+                    case 'AC7':
+                        switch ($save) {
+                            case 'saveac6ra':
+                                $req = [
+                                    'planning'          => $this->request->getPost('planning'),
+                                    'finalization'      => $this->request->getPost('finalization'),
+                                    'reference'         => $this->request->getPost('reference'),
+                                    'acid'              => $this->request->getPost('acid'),
+                                ];
+                            break;
+                            case 'saveac6s12':
+                                $s = [
+                                    's1'        => $this->request->getPost('s1'),
+                                    's2a'       => $this->request->getPost('s2a'),
+                                    's2b'       => $this->request->getPost('s2b')
+                                ];
+                                $req = [
+                                    'section'       => json_encode($s),
+                                    'acid'          => $this->request->getPost('acid'),
+                                ];
+                            break;
+                            case 'saveac6s3':
+                                $validationRules = [
+                                    'financialstatement'    => 'required',
+                                    'descriptioncontrol'    => 'required',
+                                    'controleffective'      => 'required',
+                                    'controlimplemented'    => 'required',
+                                    'assesed'               => 'required',
+                                    'crosstesting'          => 'required',
+                                    'reliancecontrol'       => 'required'
+                                ];
+                                if (!$this->validate($validationRules)) {
+                                    return $this->resultpage($chapter,false,$code,$mtID,$cID,$name);
+                                }
+                                $req = [
+                                    'financialstatement'        => $this->request->getPost('financialstatement'),
+                                    'descriptioncontrol'        => $this->request->getPost('descriptioncontrol'),
+                                    'controleffective'          => $this->request->getPost('controleffective'),
+                                    'controlimplemented'        => $this->request->getPost('controlimplemented'),
+                                    'assesed'                   => $this->request->getPost('assesed'),
+                                    'crosstesting'              => $this->request->getPost('crosstesting'),
+                                    'reliancecontrol'           => $this->request->getPost('reliancecontrol'),
+                                    'part'                      => $this->request->getPost('part'),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    break;
                     // case 'AC7':
                     //     switch ($save) {
                     //         case 'saveac7':

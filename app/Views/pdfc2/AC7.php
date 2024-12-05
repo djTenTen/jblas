@@ -1,21 +1,28 @@
 <?php
+
+
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
+
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
+
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
+
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
 // set margins
 $pdf->SetMargins(25,15,15);  
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
@@ -25,18 +32,27 @@ $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 $pdf->setPrintHeader(false);
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
+
+
 // ---------------------------------------------------------
 // set font
+
+
+
 // add a page
 $pdf->AddPage();
 //$pdf->SetPageSize('A4');
+
+
 $html =  "
     <style>
         *{
@@ -57,9 +73,11 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
+            
         }
     </style>
 ";
+
 $html .= '
 <table>
     <tr>
@@ -85,1066 +103,61 @@ $html .= '
     </tr>
 </table>
 ';
-$html .= '<h3>SPECIFIC AREA NARRATIVE INHERENT RISK ASSESSMENT</h3>';
-$html .= '
-    <p><b>Objective:</b> This form is designed to assess the risk for each audit assertion relevant to each audit area.  PSA 315 implies that all areas and all assertions are high risk unless this can be rebutted.  Completion of this form will help to justify a departure from high risk.</p>
-    <p>The risk forms should not be completed until –</p>
-    <ul>
-        <li>Appropriate enquiries have been made of management;</li>
-        <li>Points forward from last year have been considered;</li>
-        <li>The permanent audit file has been reviewed; and</li>
-        <li>Preliminary analytical procedures have been carried out.</li>
-    </ul>
-    <p>Notes on completion of this document –</p>
-    <ul>
-        <li>A list of possible risk factors has been collated (Appendix 1.14.1) can be used as an aide memoire;</li>
-        <li>An answer of “Yes” to one of the preliminary questions on each audit area will mean that there are potential risks associated with that area, and therefore a full commentary for that audit area will be required; and</li>
-        <li>Sections which are less than expected performance materiality or are not applicable should be deleted.</li>
-    </ul>
-    <p><b>Specific Considerations relating to Revenue</b></p>
-    <p>Per PSA 240, paragraph 26 <i>“the auditor shall, based on a presumption that there are risks of fraud in revenue recognition, evaluate which types of revenue, revenue transactions or assertions give rise to such risks”.  Paragraph 47 states “if the auditor has concluded that the presumption that there is a risk of material misstatement due to fraud related to revenue recognition is not applicable in the circumstances of the engagement, the auditor shall include in the audit documentation the reasons for that conclusion”. </i></p>
-    <p>It is therefore expected that the risk attributed to Revenue will be high unless there is sufficient justification given to rebut the presumption of high risk. Paragraphs A28 to A30 of the Application and Other Explanatory Material of PSA 240 should be referred to for additional guidance.</p>
-    <p>If the risk of fraud in revenue recognition cannot be rebutted, it is a significant risk (see below).</p>
-    <p><b>Significant risks: </b><br> All risks which are deemed to be significant should be specifically highlighted.  A significant risk is one which would be a “blockbuster”.  A risk may be deemed to be significant for the following reasons:</p>
-    <ul>
-        <li>The risk is a risk of fraud;</li>
-        <li>The risk is related to significant economic, accounting or other developments, and therefore, requiring specific attention;</li>
-        <li>The complexity of transactions;</li>
-        <li>Whether the risk involves significant transactions with related parties;</li>
-        <li>The degree of subjectivity in the measurement of the financial information related to the risk; </li>
-        <li>Whether the risk involves significant transactions (including those with related parties) that are outside the normal course of business; and</li>
-    </ul>
-    <p>Where significant risks have been identified:</p>
-    <ul>
-        <li>At the assertion level, substantive procedures specific to that risk need to be performed;</li>
-        <li>The entity\'s controls relevant to those risks should be understood; </li>
-        <li>They will automatically be deemed to be “high risk”, and other risks will be deemed to be “low risk”.  The “default” risk can (and should) be over-ridden if it is deemed to be appropriate.  Reasons should be fully documented;</li>
-        <li>They will be communicated to the client at the planning stage in the Planning Letter; and</li>
-        <li>How the risk has been addressed during the assignment should be summarized on the PSA Compliance Critical Issues Memorandum.</li>
-    </ul>
-';
-$pdf->writeHTML($html, true, false,false, false, '');
-$pdf->AddPage('L');
-$html =  "
-    <style>
-        *{
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 13px;
-        }
-        h3{
-            font-size: 15px;
-        }
-        .cent{
-            text-align: center;
-        }
-        .bo{
-            border: 1px solid black;
-        }
-        p,li{
-            text-align: justify;
-        }
-        .bb{
-            border-bottom: 1px solid black;
-        }
-    </style>
-";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h3>';
+
+
+$html .= '<h3>RISK SUMMARY</h3>';
+$html .= '<p><b>This form should be completed when a narrative approach to inherent business risk assessment is undertaken. </b> If more than one risk level applies, add additional lines as appropriate.</p>';
+
 $html .= '
     <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$bacdata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$bacdata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$bacdata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$bacdata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$bacdata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$bacdata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$bacdata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$bacdata['e1'].'</td>
-                <td>'.$bacdata['e2'].'</td>
-                <td>'.$bacdata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$bacdata['ro1'].'</td>
-                <td>'.$bacdata['ro2'].'</td>
-                <td>'.$bacdata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$bacdata['c1'].'</td>
-                <td>'.$bacdata['c2'].'</td>
-                <td>'.$bacdata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$bacdata['va1'].'</td>
-                <td>'.$bacdata['va2'].'</td>
-                <td>'.$bacdata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$bacdata['pd1'].'</td>
-                <td>'.$bacdata['pd2'].'</td>
-                <td>'.$bacdata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
+    <thead >
+        <tr>
+            <th></th>
+            <th  colspan="2" class="cent">Risk Assessment</th>
+            <th class="cent">Reference</th>
+
+        </tr>
+        <tr>
+            <th class="cent" style="width: 50%;">Question</th>
+            <th class="cent" style="width: 16%;">Planning</th>
+            <th class="cent" style="width: 16%;">Finalization</th>
+            <th style="width: 16%;"></th>
+        </tr>
+    </thead>
+    <tbody>
 ';
-$pdf->writeHTML($html, true, false,false, false, '');
-$pdf->AddPage('L');
-$html =  "
-    <style>
-        *{
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 13px;
+    $trig = 0;
+    foreach($ac6 as $r){
+        $html .= '
+        <tr>
+            <td style="width: 50%;">'.$r['field1'].'</td>
+            <td class="bo" style="width: 16%;">'.$r['field2'].'</td>
+            <td class="bo" style="width: 16%;">'.$r['field3'].'</td>
+            <td class="bo" style="width: 16%;">'.$r['field4'].'</td>
+        </tr>
+        ';
+
+        if($r['field1'] == 'Control environment'){
+            $html .= '
+            <tr>
+                <td colspan="3"><b>Inherent risk assessment of specific areas</b></td>
+            </tr>
+            ';
+        }elseif($r['field1'] == 'Payroll' and $trig == 0){
+            $html .= '
+            <tr>
+                <td colspan="3"><b>Control risk assessment of specific areas</b></td>
+            </tr>
+            ';
+            $trig = 1;
         }
-        h3{
-            font-size: 15px;
-        }
-        .cent{
-            text-align: center;
-        }
-        .bo{
-            border: 1px solid black;
-        }
-        p,li{
-            text-align: justify;
-        }
-        .bb{
-            border-bottom: 1px solid black;
-        }
-    </style>
-";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE RECEIVABLES:</h3>';
+    }
 $html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$trdata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$trdata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$trdata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$trdata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$trdata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$trdata['y6'].'</td>
-            </tr>
         </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$trdata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$trdata['e1'].'</td>
-                <td>'.$trdata['e2'].'</td>
-                <td>'.$trdata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$trdata['ro1'].'</td>
-                <td>'.$trdata['ro2'].'</td>
-                <td>'.$trdata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$trdata['c1'].'</td>
-                <td>'.$trdata['c2'].'</td>
-                <td>'.$trdata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$trdata['va1'].'</td>
-                <td>'.$trdata['va2'].'</td>
-                <td>'.$trdata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$trdata['pd1'].'</td>
-                <td>'.$trdata['pd2'].'</td>
-                <td>'.$trdata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
-';
+    </table>';
 $pdf->writeHTML($html, true, false,false, false, '');
-$pdf->AddPage('L');
-$html =  "
-    <style>
-        *{
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 13px;
-        }
-        h3{
-            font-size: 15px;
-        }
-        .cent{
-            text-align: center;
-        }
-        .bo{
-            border: 1px solid black;
-        }
-        p,li{
-            text-align: justify;
-        }
-        .bb{
-            border-bottom: 1px solid black;
-        }
-    </style>
-";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER RECEIVABLES (INCLUDING PREPAYMENTS):</h3>';
-$html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$ordata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$ordata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$ordata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$ordata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$ordata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$ordata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$ordata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$ordata['e1'].'</td>
-                <td>'.$ordata['e2'].'</td>
-                <td>'.$ordata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$ordata['ro1'].'</td>
-                <td>'.$ordata['ro2'].'</td>
-                <td>'.$ordata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$ordata['c1'].'</td>
-                <td>'.$ordata['c2'].'</td>
-                <td>'.$ordata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$ordata['va1'].'</td>
-                <td>'.$ordata['va2'].'</td>
-                <td>'.$ordata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$ordata['pd1'].'</td>
-                <td>'.$ordata['pd2'].'</td>
-                <td>'.$ordata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
-';
-$pdf->writeHTML($html, true, false,false, false, '');
-$pdf->AddPage('L');
-$html =  "
-    <style>
-        *{
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 13px;
-        }
-        h3{
-            font-size: 15px;
-        }
-        .cent{
-            text-align: center;
-        }
-        .bo{
-            border: 1px solid black;
-        }
-        p,li{
-            text-align: justify;
-        }
-        .bb{
-            border-bottom: 1px solid black;
-        }
-    </style>
-";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVENTORIES:</h3>';
-$html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$invtrdata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$invtrdata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$invtrdata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$invtrdata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$invtrdata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$invtrdata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$invtrdata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$invtrdata['e1'].'</td>
-                <td>'.$invtrdata['e2'].'</td>
-                <td>'.$invtrdata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$invtrdata['ro1'].'</td>
-                <td>'.$invtrdata['ro2'].'</td>
-                <td>'.$invtrdata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$invtrdata['c1'].'</td>
-                <td>'.$invtrdata['c2'].'</td>
-                <td>'.$invtrdata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$invtrdata['va1'].'</td>
-                <td>'.$invtrdata['va2'].'</td>
-                <td>'.$invtrdata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$invtrdata['pd1'].'</td>
-                <td>'.$invtrdata['pd2'].'</td>
-                <td>'.$invtrdata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
-';
-$pdf->writeHTML($html, true, false,false, false, '');
-$pdf->AddPage('L');
-$html =  "
-    <style>
-        *{
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 13px;
-        }
-        h3{
-            font-size: 15px;
-        }
-        .cent{
-            text-align: center;
-        }
-        .bo{
-            border: 1px solid black;
-        }
-        p,li{
-            text-align: justify;
-        }
-        .bb{
-            border-bottom: 1px solid black;
-        }
-    </style>
-";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVESTMENTS:</h3>';
-$html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$invmtdata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$invmtdata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$invmtdata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$invmtdata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$invmtdata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$invmtdata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$invmtdata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$invmtdata['e1'].'</td>
-                <td>'.$invmtdata['e2'].'</td>
-                <td>'.$invmtdata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$invmtdata['ro1'].'</td>
-                <td>'.$invmtdata['ro2'].'</td>
-                <td>'.$invmtdata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$invmtdata['c1'].'</td>
-                <td>'.$invmtdata['c2'].'</td>
-                <td>'.$invmtdata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$invmtdata['va1'].'</td>
-                <td>'.$invmtdata['va2'].'</td>
-                <td>'.$invmtdata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$invmtdata['pd1'].'</td>
-                <td>'.$invmtdata['pd2'].'</td>
-                <td>'.$invmtdata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
-';
-$pdf->writeHTML($html, true, false,false, false, '');
-$pdf->AddPage('L');
-$html =  "
-    <style>
-        *{
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 13px;
-        }
-        h3{
-            font-size: 15px;
-        }
-        .cent{
-            text-align: center;
-        }
-        .bo{
-            border: 1px solid black;
-        }
-        p,li{
-            text-align: justify;
-        }
-        .bb{
-            border-bottom: 1px solid black;
-        }
-    </style>
-";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROPERTY, PLANT AND EQUIPMENT:</h3>';
-$html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$ppedata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$ppedata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$ppedata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$ppedata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$ppedata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$ppedata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$ppedata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$ppedata['e1'].'</td>
-                <td>'.$ppedata['e2'].'</td>
-                <td>'.$ppedata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$ppedata['ro1'].'</td>
-                <td>'.$ppedata['ro2'].'</td>
-                <td>'.$ppedata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$ppedata['c1'].'</td>
-                <td>'.$ppedata['c2'].'</td>
-                <td>'.$ppedata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$ppedata['va1'].'</td>
-                <td>'.$ppedata['va2'].'</td>
-                <td>'.$ppedata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$ppedata['pd1'].'</td>
-                <td>'.$ppedata['pd2'].'</td>
-                <td>'.$ppedata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
-';
-$pdf->writeHTML($html, true, false,false, false, '');
-$pdf->AddPage('L');
-$html =  "
-    <style>
-        *{
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 13px;
-        }
-        h3{
-            font-size: 15px;
-        }
-        .cent{
-            text-align: center;
-        }
-        .bo{
-            border: 1px solid black;
-        }
-        p,li{
-            text-align: justify;
-        }
-        .bb{
-            border-bottom: 1px solid black;
-        }
-    </style>
-";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INTANGIBLE NON-CURRENT ASSETS:</h3>';
-$html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$incadata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$incadata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$incadata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$incadata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$incadata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$incadata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$incadata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$incadata['e1'].'</td>
-                <td>'.$incadata['e2'].'</td>
-                <td>'.$incadata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$incadata['ro1'].'</td>
-                <td>'.$incadata['ro2'].'</td>
-                <td>'.$incadata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$incadata['c1'].'</td>
-                <td>'.$incadata['c2'].'</td>
-                <td>'.$incadata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$incadata['va1'].'</td>
-                <td>'.$incadata['va2'].'</td>
-                <td>'.$incadata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$incadata['pd1'].'</td>
-                <td>'.$incadata['pd2'].'</td>
-                <td>'.$incadata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
-';
-$pdf->writeHTML($html, true, false,false, false, '');
-$pdf->AddPage('L');
-$html =  "
-    <style>
-        *{
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 13px;
-        }
-        h3{
-            font-size: 15px;
-        }
-        .cent{
-            text-align: center;
-        }
-        .bo{
-            border: 1px solid black;
-        }
-        p,li{
-            text-align: justify;
-        }
-        .bb{
-            border-bottom: 1px solid black;
-        }
-    </style>
-";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE PAYABLES:</h3>';
-$html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$tpdata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$tpdata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$tpdata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$tpdata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$tpdata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$tpdata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$tpdata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$tpdata['e1'].'</td>
-                <td>'.$tpdata['e2'].'</td>
-                <td>'.$tpdata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$tpdata['ro1'].'</td>
-                <td>'.$tpdata['ro2'].'</td>
-                <td>'.$tpdata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$tpdata['c1'].'</td>
-                <td>'.$tpdata['c2'].'</td>
-                <td>'.$tpdata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$tpdata['va1'].'</td>
-                <td>'.$tpdata['va2'].'</td>
-                <td>'.$tpdata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$tpdata['pd1'].'</td>
-                <td>'.$tpdata['pd2'].'</td>
-                <td>'.$tpdata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
-';
-$pdf->writeHTML($html, true, false,false, false, '');
-$pdf->AddPage('L');
-$html =  "
-    <style>
-        *{
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 13px;
-        }
-        h3{
-            font-size: 15px;
-        }
-        .cent{
-            text-align: center;
-        }
-        .bo{
-            border: 1px solid black;
-        }
-        p,li{
-            text-align: justify;
-        }
-        .bb{
-            border-bottom: 1px solid black;
-        }
-    </style>
-";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER PAYABLES (INCLUDING ACCRUALS):</h3>';
-$html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$opdata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$opdata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$opdata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$opdata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$opdata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$opdata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$opdata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$opdata['e1'].'</td>
-                <td>'.$opdata['e2'].'</td>
-                <td>'.$opdata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$opdata['ro1'].'</td>
-                <td>'.$opdata['ro2'].'</td>
-                <td>'.$opdata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$opdata['c1'].'</td>
-                <td>'.$opdata['c2'].'</td>
-                <td>'.$opdata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$opdata['va1'].'</td>
-                <td>'.$opdata['va2'].'</td>
-                <td>'.$opdata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$opdata['pd1'].'</td>
-                <td>'.$opdata['pd2'].'</td>
-                <td>'.$opdata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
-';
-$pdf->writeHTML($html, true, false,false, false, '');
-$pdf->AddPage('L');
-$html =  "
-    <style>
-        *{
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 13px;
-        }
-        h3{
-            font-size: 15px;
-        }
-        .cent{
-            text-align: center;
-        }
-        .bo{
-            border: 1px solid black;
-        }
-        p,li{
-            text-align: justify;
-        }
-        .bb{
-            border-bottom: 1px solid black;
-        }
-    </style>
-";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TAXATION:</h3>';
-$html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$taxdata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$taxdata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$taxdata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$taxdata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$taxdata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$taxdata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$taxdata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$taxdata['e1'].'</td>
-                <td>'.$taxdata['e2'].'</td>
-                <td>'.$taxdata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$taxdata['ro1'].'</td>
-                <td>'.$taxdata['ro2'].'</td>
-                <td>'.$taxdata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$taxdata['c1'].'</td>
-                <td>'.$taxdata['c2'].'</td>
-                <td>'.$taxdata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$taxdata['va1'].'</td>
-                <td>'.$taxdata['va2'].'</td>
-                <td>'.$taxdata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$taxdata['pd1'].'</td>
-                <td>'.$taxdata['pd2'].'</td>
-                <td>'.$taxdata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
-';
-$pdf->writeHTML($html, true, false,false, false, '');
-$pdf->AddPage('L');
+
+$pdf->AddPage();
 $html =  "
     <style>
         *{
@@ -1169,85 +182,34 @@ $html =  "
         }
     </style>
 ";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROVISIONS FOR LIABILITIES:</h3>';
+
 $html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$provdata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$provdata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$provdata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$provdata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$provdata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$provdata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$provdata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$provdata['e1'].'</td>
-                <td>'.$provdata['e2'].'</td>
-                <td>'.$provdata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$provdata['ro1'].'</td>
-                <td>'.$provdata['ro2'].'</td>
-                <td>'.$provdata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$provdata['c1'].'</td>
-                <td>'.$provdata['c2'].'</td>
-                <td>'.$provdata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$provdata['va1'].'</td>
-                <td>'.$provdata['va2'].'</td>
-                <td>'.$provdata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$provdata['pd1'].'</td>
-                <td>'.$provdata['pd2'].'</td>
-                <td>'.$provdata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
+<h3>NARRATIVE RISK ASSESSMENTINHERENT BUSINESS RISK AND CONTROL ENVIRONMENT ASSESSMENT</h3>
+<p>The risk forms should not be completed until –</p>
+<ul>
+    <li>Appropriate enquiries have been made of management;</li>
+    <li>Points forward from last year have been considered;</li>
+    <li>The permanent audit file has been reviewed; and</li>
+    <li>Preliminary analytical procedures have been carried out.</li>
+</ul>
+<p>Notes on completion of this document –</p>
+<ul>
+    <li>Where significant risks have been identified, the entity \'s controls relevant to those risks should be understood;</li>
+    <li>Items marked * should be appropriately tailored.</li>
+</ul>
+<p>It should be ensured that appropriate consideration should be given to –</p>
+<ul>
+    <li>Events and conditions that cast significant doubt on the entity’s ability to continue as a Going Concern;</li>
+    <li>The client’s use of Service Organisations and Experts;</li>
+    <li>The impact of litigation, claims and areas of non-compliance with law and regulations on the financial statements;</li>
+    <li>The extent to which transactions with related parties are incorporated into the financial statements;</li>
+    <li>The extent to which there are material figures in the financial statements which are derived from Accounting Estimates.</li>
+</ul>
 ';
 $pdf->writeHTML($html, true, false,false, false, '');
+
 $pdf->AddPage('L');
+
 $html =  "
     <style>
         *{
@@ -1268,88 +230,41 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
+            
         }
     </style>
 ";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – REVENUE / OTHER INCOME:</h3>';
 $html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$roidata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$roidata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$roidata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$roidata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$roidata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$roidata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$roidata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$roidata['e1'].'</td>
-                <td>'.$roidata['e2'].'</td>
-                <td>'.$roidata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$roidata['ro1'].'</td>
-                <td>'.$roidata['ro2'].'</td>
-                <td>'.$roidata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$roidata['c1'].'</td>
-                <td>'.$roidata['c2'].'</td>
-                <td>'.$roidata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$roidata['va1'].'</td>
-                <td>'.$roidata['va2'].'</td>
-                <td>'.$roidata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$roidata['pd1'].'</td>
-                <td>'.$roidata['pd2'].'</td>
-                <td>'.$roidata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
+<p><b>Objective:</b> This form is designed to determine the inherent risk of the business as a whole.  PSA 315 implies that all businesses should be high risk unless this can be rebutted.  Completion of this form will help to justify a departure from high risk.</p>
+<h3>Section 1 – INHERENT BUSINESS RISK</h3>
+<table border="1">
+    <tbody>
+        <tr>
+            <td><p>The inherent business risk of the client is deemed to be low / medium / high* for the following reasons:</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>'.$s['s1'].'</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
+<p>Comprehensive consideration should be given to all clients even those deemed to be low risk. As part of this review consideration must be given to the Company’s going concern status and I.T. risk.</p>
 ';
 $pdf->writeHTML($html, true, false,false, false, '');
+
 $pdf->AddPage('L');
+
 $html =  "
     <style>
         *{
@@ -1370,88 +285,63 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
+            
         }
     </style>
 ";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – DIRECT COSTS / OTHER EXPENSES:</h3>';
-$html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$dcodata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$dcodata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$dcodata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$dcodata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$dcodata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$dcodata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$dcodata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$dcodata['e1'].'</td>
-                <td>'.$dcodata['e2'].'</td>
-                <td>'.$dcodata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$dcodata['ro1'].'</td>
-                <td>'.$dcodata['ro2'].'</td>
-                <td>'.$dcodata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$dcodata['c1'].'</td>
-                <td>'.$dcodata['c2'].'</td>
-                <td>'.$dcodata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$dcodata['va1'].'</td>
-                <td>'.$dcodata['va2'].'</td>
-                <td>'.$dcodata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$dcodata['pd1'].'</td>
-                <td>'.$dcodata['pd2'].'</td>
-                <td>'.$dcodata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
+$html .= '<p><b>Objective:</b> This form is designed to assess the adequacy of the entity’s control environment as a whole to determine whether a control based audit approach is appropriate. Section 3 looks at internal controls specific to the audit. To comply with PSA 315, both sections must be completed regardless of whether you intend to test, and if successful, place reliance on the entity’s controls.</p>
+<p>In addition, this form should document the considerations of the risks related to management override of controls.</p>
+<h3>Section 2a – CONSIDERATION OF THE RISK OF MANAGEMENT OVERRIDE OF CONTROLS </h3>
+<table border="1">
+    <tbody>
+        <tr>
+            <td><p>The risk of management override is present in <b>ALL</b> entities. However, the level of that risk will vary from entity to entity. Where management can override key controls, document here the considerations relating to the level of risk posed by management override and the audit procedures planned to address this risk:</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>'.$s['s2a'].'</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
+<h3>Section 2b – CONSIDERATION OF THE CONTROL ENVIRONMENT </h3>
+<table border="1">
+    <tbody>
+        <tr>
+            <td><p>The control environment of the client deemed to be effective / ineffective* for the following reasons: </p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>'.$s['s2b'].'</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>Based on the above assessment control testing is / is not * going to be undertaken </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
 ';
 $pdf->writeHTML($html, true, false,false, false, '');
+
 $pdf->AddPage('L');
+
 $html =  "
     <style>
         *{
@@ -1472,88 +362,34 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
+            
         }
     </style>
 ";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PAYROLL:</h3>';
+
 $html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$prdata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$prdata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$prdata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$prdata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$prdata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$prdata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">'.$prdata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$prdata['e1'].'</td>
-                <td>'.$prdata['e2'].'</td>
-                <td>'.$prdata['e3'].'</td>
-            </tr>
-            <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$prdata['ro1'].'</td>
-                <td>'.$prdata['ro2'].'</td>
-                <td>'.$prdata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$prdata['c1'].'</td>
-                <td>'.$prdata['c2'].'</td>
-                <td>'.$prdata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$prdata['va1'].'</td>
-                <td>'.$prdata['va2'].'</td>
-                <td>'.$prdata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$prdata['pd1'].'</td>
-                <td>'.$prdata['pd2'].'</td>
-                <td>'.$prdata['pd3'].'</td>
-            </tr>
-        </tbody>
-    </table>
+    <h3>Section 3 - UNDERSTANDING THE DESIGN AND IMPLEMENTATION OF INTERNAL CONTROLS</h3>
+    <p><b>Objective:</b><br>The auditor is required to “obtain an understanding of internal control relevant to the audit. Although most controls relevant to the audit are likely to relate to financial reporting, not all controls that relate to financial reporting are relevant to the audit.” (paragraph 12 of PSA 315).</p>
+    <p>The auditor is required to evaluate the design of these controls and determine whether they have been appropriately implemented.  Per paragraph A74 of PSA 315:</p>
+    <ul>
+        <li><b><u>Evaluating</u></b> the design of a control involves “considering whether the control, individually or in combination with other controls, is capable of effectively preventing, or detecting and correcting, material misstatements;</li>
+        <li><b><u>Implementation</u></b> of a control means that the control exists, and the entity is using it”.</li>
+    </ul>
+    <p><b>Requirement:</b><br>Summarise below the internal controls that are <b><u>relevant to the audit</u></b> and evaluate whether those controls are effective. If the controls are considered effective, test that the controls are being used by the entity.   </p>
+    <p>As per paragraph A75 of PSA 315, the following procedures may be carried out to obtain evidence about the design and implementation of controls: </p>
+    <ul>
+        <li>Inquiry of entity personnel;</li>
+        <li>Observing the application of specific controls;</li>
+        <li>Inspecting documents and reports;</li>
+        <li>Tracing transactions through the information system relevant to financial reporting.</li>
+    </ul>
+    <p>NB: this requirement exists irrespective of whether the overall control environment has been deemed to be ineffective in section 2b above. </p>
 ';
+
 $pdf->writeHTML($html, true, false,false, false, '');
+
 $pdf->AddPage('L');
+
 $html =  "
     <style>
         *{
@@ -1574,86 +410,125 @@ $html =  "
         }
         .bb{
             border-bottom: 1px solid black;
+            
         }
     </style>
 ";
-$html .= '<h3>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER AREA:</h3>';
+
 $html .= '
-    <table>
-        <tbody>
-            <tr>
-                <td style="width: 90%;">1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
-                <td style="width: 10%;">'.$oadata['y1'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">2.	Are any figures in the financial statements in this area derived from related party transactions or accounting estimates?</td>
-                <td style="width: 10%;">'.$oadata['y2'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">3.	Do any figures in the financial statements in this area require reliance on a service organisation# or expert?</td>
-                <td style="width: 10%;">'.$oadata['y3'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">4.	Have discussions with the client or preliminary analytical procedures highlighted any cause for concern in this area?</td>
-                <td style="width: 10%;">'.$oadata['y4'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">5.	Are there any concerns regarding the credit-worthiness of institutions at which accounts are held?</td>
-                <td style="width: 10%;">'.$oadata['y5'].'</td>
-            </tr>
-            <tr>
-                <td style="width: 90%;">6.	Are there any indications that accounting policies in this area may not comply with the financial reporting framework?</td>
-                <td style="width: 10%;">'.$oadata['y6'].'</td>
-            </tr>
-        </tbody>
-    </table>
-    <p># - The use of a regulated clearing bank would not be deemed to be a service organisation for this purpose.</p>
-    <p>An answer of “Yes” to one of questions above will mean that there are potential risks associated with this area.  Other risks may also exist, and should be fully explained.</p>
     <table border="1">
         <thead>
             <tr>
-                <th>General inherent risks relevant to the area / Conclusion (Low / Med. / High) </th>
-                <th>Assertion</th>
-                <th>Specific inherent risks relevant to audit assertions / Conclusion (Low / Med. / High)</th>
-                <th>Impact on the audit including how risk has been addressed</th>
-                <th>Audit test reference</th>
+                <th><b>Financial Statement Area</b></th>
+                <th><b>Description of the control </b></th>
+                <th><b>Is the control effective?</b></th>
+                <th><b>Has the control been implemented effectively?</b></th>
+                <th><b>How has this been assessed?</b></th>
+                <th><b>Cross reference to testing </b></th>
+                <th><b>Reliance to be placed on control? (*)</b></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tbody1" class="tbody">
             <tr>
-                <td rowspan="5">'.$oadata['gen'].'</td>
-                <td>Existence</td>
-                <td>'.$oadata['e1'].'</td>
-                <td>'.$oadata['e2'].'</td>
-                <td>'.$oadata['e3'].'</td>
+                <td>e.g. <br> Trade Debtors</td>
+                <td>e.g.<br> All new customers are subject to credit checks and credit limits restricted to £50k.</td>
+                <td>e.g.<br> Yes</td>
+                <td>e.g.<br> Yes</td>
+                <td>e.g.<br> The risk of bad debts has been reduced. Inquired with the sales ledger team about the process and seen evidence of this by performing a walkthrough of a new customer set up.</td>
+                <td>e.g.<br> T4</td>
+                <td>e.g.<br> No</td>
             </tr>
             <tr>
-                <td>Rights / Obligations</td>
-                <td>'.$oadata['ro1'].'</td>
-                <td>'.$oadata['ro2'].'</td>
-                <td>'.$oadata['ro3'].'</td>
-            </tr>
-            <tr>
-                <td>Completeness</td>
-                <td>'.$oadata['c1'].'</td>
-                <td>'.$oadata['c2'].'</td>
-                <td>'.$oadata['c3'].'</td>
-            </tr>
-            <tr>
-                <td>Valuation / Allocation</td>
-                <td>'.$oadata['va1'].'</td>
-                <td>'.$oadata['va2'].'</td>
-                <td>'.$oadata['va3'].'</td>
-            </tr>
-            <tr>
-                <td>Presentation and Disclosure</td>
-                <td>'.$oadata['pd1'].'</td>
-                <td>'.$oadata['pd2'].'</td>
-                <td>'.$oadata['pd3'].'</td>
-            </tr>
+                <td>e.g.<br>Creditors and Stock</td>
+                <td>e.g.<br>All goods received are matched to purchase orders before being booked into stock.</td>
+                <td>e.g.<br>Yes</td>
+                <td>e.g.<br>No</td>
+                <td>e.g.<br>Despite this being noted as a control in the client’s systems notes, the warehouse team often do not evidence that the check has taken place. </td>
+                <td>e.g.<br>T6</td>
+                <td>e.g.<br>No</td>
+            </tr>';
+             foreach($s3 as $r1){
+                $html .= '
+                <tr>
+                    <td>'.$r1['field1'].'</td>
+                    <td>'.$r1['field2'].'</td>
+                    <td>'.$r1['field3'].'</td>
+                    <td>'.$r1['field4'].'</td>
+                    <td>'.$r1['field5'].'</td>
+                    <td>'.$r1['field6'].'</td>
+                    <td>'.$r1['field7'].'</td>
+                </tr>
+                ';
+            }
+$html .='
         </tbody>
     </table>
 ';
+$pdf->writeHTML($html, true, false,false, false, '');
+
+$pdf->AddPage('L');
+
+$html =  "
+    <style>
+        *{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+        }
+        h3{
+            font-size: 15px;
+        }
+        .cent{
+            text-align: center;
+        }
+        .bo{
+            border: 1px solid black;
+        }
+        p,li{
+            text-align: justify;
+        }
+        .bb{
+            border-bottom: 1px solid black;
+            
+        }
+    </style>
+";
+$html .= '
+<p><b>Notes Regarding Assessment of Controls:	</b></p>
+<ol>
+    <li>The audit approach section of the assignment plan should include details of how the risk and control environment assessment have influenced the design of the audit programmes and have identified key items and key audit issues. <br></li>
+    <li>Where it is unlikely that sufficient, appropriate audit evidence can be obtained solely from substantive procedures, it is necessary to obtain an understanding of the controls over risks which may arise.  In such circumstances, it is necessary for controls testing to be performed (for example, a company which sells goods and services over the internet, where the process is highly automated, and relies on little or no human input).  In such cases, the entity\'s controls over such risks are relevant to the audit.  (PSA 315.30, PSA 315.A140-142). <br></li>
+    <li>Where significant risks have been identified, the entity\'s controls relevant to those risks should be understood. <br></li>
+    <li>Paragraph 31 of PSA 240 states "Management is in a unique position to perpetrate fraud because of management’s ability to manipulate accounting records and prepare fraudulent financial statements by overriding controls that otherwise appear to be operating effectively. Although the level of risk of management override of controls will vary from entity to entity, the risk is nevertheless present in all entities. Due to the unpredictable way in which such override could occur, it is a risk of material misstatement due to fraud and thus a significant risk". <br></li>
+</ol>
+';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,false, false, '');

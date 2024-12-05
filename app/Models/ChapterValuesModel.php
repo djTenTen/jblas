@@ -361,64 +361,63 @@ class ChapterValuesModel extends Model{
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                         return true;
                     break;
-
-                    // case 'AC6':
-                    //     switch ($param['save']) {
-                    //         case 'saveac6ra':
-                    //             foreach($req['planning'] as $i => $val){
-                    //                 $acid = $this->crypt->decrypt($req['acid'][$i]);
-                    //                 $data = [
-                    //                     'planning'          => $req['planning'][$i],
-                    //                     'finalization'      => $req['finalization'][$i],
-                    //                     'reference'         => $req['reference'][$i],
-                    //                     'updated_on'        => $this->date.' '.$this->time,
-                    //                     'updated_by'        => $param['uID'],
-                    //                 ];
-                    //                 $this->db->table($this->tblc2d)->where('acID', $acid)->update($data);
-                    //             }
-                    //         break;
-                    //         case 'saveac6s12':
-                    //             $acid = $this->crypt->decrypt($req['acid']);
-                    //             $data = [
-                    //                 'question'      => $req['section'],
-                    //                 'updated_on'    => $this->date.' '.$this->time,
-                    //                 'updated_by'    => $param['uID'],
-                    //             ];
-                    //             $this->db->table($this->tblc2d)->where('acID', $acid)->update($data);
-                    //         break;
-                    //         case 'saveac6s3':
-                    //             $where = [
-                    //                 'type'          => $req['part'], 
-                    //                 'code'          => $req['code'], 
-                    //                 'c1tID'         => $req['c1tID'],
-                    //                 'clientID'      => $param['cID'],
-                    //             ];
-                    //             $this->db->table($this->tblc2d)->where($where)->delete();
-                    //             foreach($req['financialstatement'] as $i => $val){
-                    //                 $data = [
-                    //                     'finstate'          => $req['financialstatement'][$i],
-                    //                     'desc'              => $req['descriptioncontrol'][$i],
-                    //                     'controleffect'     => $req['controleffective'][$i],
-                    //                     'implemented'       => $req['controlimplemented'][$i],
-                    //                     'assessed'          => $req['assesed'][$i],
-                    //                     'reference'         => $req['crosstesting'][$i],
-                    //                     'reliance'          => $req['reliancecontrol'][$i],
-                    //                     'code'              => $req['code'],
-                    //                     'c1tID'             => $req['c1tID'],
-                    //                     'firmID'            => $param['fID'],
-                    //                     'clientID'          => $param['cID'],
-                    //                     'type'              => $req['part'],
-                    //                     'status'            => 'Active',
-                    //                     'updated_on'        => $this->date.' '.$this->time,
-                    //                     'updated_by'        => $param['uID'],
-                    //                 ];
-                    //                 $this->db->table($this->tblc2d)->insert($data);
-                    //             }
-                    //         break;
-                    //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
-                    //     return true;
-                    // break;
+                    case 'AC7':
+                        switch ($param['save']) {
+                            case 'saveac6ra':
+                                foreach($req['planning'] as $i => $val){
+                                    $acid = $this->decr($req['acid'][$i]);
+                                    $data = [
+                                        'field2'        => $req['planning'][$i],
+                                        'field3'        => $req['finalization'][$i],
+                                        'field4'        => $req['reference'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2d)->where('mdID', $acid)->update($data);
+                                }
+                            break;
+                            case 'saveac6s12':
+                                $acid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['section'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc2d)->where('mdID', $acid)->update($data);
+                            break;
+                            case 'saveac6s3':
+                                $where = [
+                                    'type'      => $req['part'], 
+                                    'code'      => $param['code'], 
+                                    'mtID'      => $param['mtID'],
+                                    'cID'       => $param['cID'],
+                                ];
+                                $this->db->table($this->tblc2d)->where($where)->delete();
+                                foreach($req['financialstatement'] as $i => $val){
+                                    $data = [
+                                        'field1'            => $req['financialstatement'][$i],
+                                        'field2'            => $req['descriptioncontrol'][$i],
+                                        'field3'            => $req['controleffective'][$i],
+                                        'field4'            => $req['controlimplemented'][$i],
+                                        'field5'            => $req['assesed'][$i],
+                                        'field6'            => $req['crosstesting'][$i],
+                                        'field7'            => $req['reliancecontrol'][$i],
+                                        'code'              => $param['code'],
+                                        'mtID'              => $param['mtID'],
+                                        'fID'               => $param['fID'],
+                                        'cID'               => $param['cID'],
+                                        'type'              => $req['part'],
+                                        'status'            => 'Active',
+                                        'updated_on'        => $this->date.' '.$this->time,
+                                        'updated_by'        => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2d)->insert($data);
+                                }
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
+                        return true;
+                    break;
                     // case 'AC7':
                     //     switch ($param['save']) {
                     //         case 'saveac7':
