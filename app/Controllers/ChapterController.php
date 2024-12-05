@@ -164,16 +164,13 @@ class ChapterController extends BaseController{
                 $data['ab4a']      = $this->cvmodel->getvalues_c2('m','rd',$code,$dmtID,$dcID);
                 $page = $code;
             break;
-            
-            // case 'AB4AAC':
-            //     $data['ac4']    = $this->cvmodel->getvalues_m('c2','ac4sod',$code,$dmtID,$dcID);
-            //     $rdata          = $this->cvmodel->getvalues_s('c2','ppr',$code,$dmtID,$dcID);
-            //     $data['ppr']    = json_decode($rdata['field1'], true);
-            //     $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter2/AB4A', $data);
-            //     echo view('includes/Footer');
-            //     break;
+            case 'AC3':
+                $data['ac4']    = $this->cvmodel->getvalues_c2('m','ac4sod',$code,$dmtID,$dcID);
+                $rdata          = $this->cvmodel->getvalues_c2('s','ppr',$code,$dmtID,$dcID);
+                $data['ppr']    = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
+            break;
             // case 'AC3':
             //     $rdata          = $this->cvmodel->getvalues_s('c2','rescon',$code,$dmtID,$dcID);
             //     $data['rc']     = json_decode($rdata['field1'], true);
@@ -340,118 +337,117 @@ class ChapterController extends BaseController{
             case 'AB4A':
                 $data['rd']      = $this->c2model->getvalues_m('rd',$code,$dmtID);
                 break;
-            case 'AC4':
+            case 'AC3':
                 $data['ac4']  = $this->c2model->getvalues_m('ac4sod',$code,$dmtID);
                 $rdata        = $this->c2model->getvalues_s('ppr',$code,$dmtID);
                 $data['ppr']  = json_decode($rdata['field1'], true);
-                echo view('pdfc2/AC4', $data);
                 break;
-            case 'AC5':
-                $rdata       = $this->c2model->getvalues_s('rescon',$code,$dmtID);
-                $data['rc']  = json_decode($rdata['field1'], true);
-                echo view('pdfc2/AC5', $data);
-                break;
-            case 'AC6':
-                $data['ac6']   = $this->c2model->getvalues_m('ac6ra',$code,$dmtID);
-                $rdata         = $this->c2model->getvalues_s('ac6s12',$code,$dmtID);
-                $data['s']     = json_decode($rdata['field1'], true);
-                $data['s3']    = $this->c2model->getvalues_m('ac6s3',$code,$dmtID);
-                echo view('pdfc2/AC6', $data);
-                break;
-            case 'AC7':
-                $rowdata = [
-                    'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
-                    'roidata','dcodata','prdata','oadata'
-                ];
-                foreach($rowdata as $row){
-                    $rdata       = $this->c2model->getvalues_s($row,$code,$dmtID);
-                    $data[$row]  = json_decode($rdata['field1'], true);
-                }
-                echo view('pdfc2/AC7', $data);
-                break;
-            case 'AC8':
-                $rowdata = [
-                    'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
-                    'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
-                    'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
-                    'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
-                ];
-                foreach($rowdata as $row){
-                    $data[$row] = $this->c2model->getvalues_s($row,$code,$dmtID);
-                }
-                echo view('pdfc2/AC8', $data);
-                break;
-            case 'AC9':
-                $rdata        = $this->c2model->getvalues_s('ac9data',$code,$dmtID);
-                $data['ac9']  = json_decode($rdata['field1'], true);
-                echo view('pdfc2/AC9', $data);
-                break;
-            case 'AC10-Tangibles':
-            case 'AC10-PPE':
-            case 'AC10-Investments':
-            case 'AC10-Inventory':
-            case 'AC10-Trade Receivables':
-            case 'AC10-Other Receivables':
-            case 'AC10-Bank and Cash':
-            case 'AC10-Trade Payables':
-            case 'AC10-Other Payables':
-            case 'AC10-Provisions':
-            case 'AC10-Revenue':
-            case 'AC10-Costs':
-            case 'AC10-Payroll':
-                $s = explode('-', $code);
-                $data ['sheet']  = $s[1];
-                $data['code']    = $s[0];
-                $data['cu']      = $this->c2model->getvalues_s($s[1].'cu',$s[0],$dmtID);
-                $data['ac10s1']  = $this->c2model->getac10data($s[1],$s[0],$dmtID,'section1');
-                $data['ac10s2']  = $this->c2model->getac10data($s[1],$s[0],$dmtID,'section2');
-                echo view('pdfc2/AC10', $data);
-                break;
-            case 'AC10-Summary':
-                $s = explode('-', $code);
-                $data ['sheet']     = $s[1];
-                $data['code']       = $s[0];
-                $data['nmk_tgb']    = $this->c2model->getdatacount($dmtID,'Tangibles');
-                $data['nmk_ppe']    = $this->c2model->getdatacount($dmtID,'PPE');
-                $data['nmk_invmt']  = $this->c2model->getdatacount($dmtID,'Investments');
-                $data['nmk_invtr']  = $this->c2model->getdatacount($dmtID,'Inventory');
-                $data['nmk_tr']     = $this->c2model->getdatacount($dmtID,'Trade Receivables');
-                $data['nmk_or']     = $this->c2model->getdatacount($dmtID,'Other Receivables');
-                $data['nmk_bac']    = $this->c2model->getdatacount($dmtID,'Bank and Cash');
-                $data['nmk_tp']     = $this->c2model->getdatacount($dmtID,'Trade Payables');
-                $data['nmk_op']     = $this->c2model->getdatacount($dmtID,'Other Payables');
-                $data['nmk_prov']   = $this->c2model->getdatacount($dmtID,'Provisions');
-                $data['nmk_rev']    = $this->c2model->getdatacount($dmtID,'Revenue');
-                $data['nmk_cst']    = $this->c2model->getdatacount($dmtID,'Costs');
-                $data['nmk_pr']     = $this->c2model->getdatacount($dmtID,'Payroll');
-                $data['vop_tgb']    = $this->c2model->getsumation($dmtID,'Tangibles');
-                $data['vop_ppe']    = $this->c2model->getsumation($dmtID,'PPE');
-                $data['vop_invmt']  = $this->c2model->getsumation($dmtID,'Investments');
-                $data['vop_invtr']  = $this->c2model->getsumation($dmtID,'Inventory');
-                $data['vop_tr']     = $this->c2model->getsumation($dmtID,'Trade Receivables');
-                $data['vop_or']     = $this->c2model->getsumation($dmtID,'Other Receivables');
-                $data['vop_bac']    = $this->c2model->getsumation($dmtID,'Bank and Cash');
-                $data['vop_tp']     = $this->c2model->getsumation($dmtID,'Trade Payables');
-                $data['vop_op']     = $this->c2model->getsumation($dmtID,'Other Payables');
-                $data['vop_prov']   = $this->c2model->getsumation($dmtID,'Provisions');
-                $data['vop_rev']    = $this->c2model->getsumation($dmtID,'Revenue');
-                $data['vop_cst']    = $this->c2model->getsumation($dmtID,'Costs');
-                $data['vop_pr']     = $this->c2model->getsumation($dmtID,'Payroll');
-                $data['mat']        = $this->c2model->getvalues_s('materialdata',$s[0],$dmtID);
-                $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
-                foreach($rowdata as $row){
-                    $rdata       = $this->c2model->getvalues_s($row.'data',$s[0],$dmtID);
-                    $data[$row]  = json_decode($rdata['field1'], true);
-                }
-                echo view('pdfc2/AC10Summ', $data);
-                break;
-            case 'AC11':
-                $rdata = $this->c2model->getvalues_s('ac11data',$code,$dmtID);
-                $data['ac11'] = json_decode($rdata['field1'], true);
-                echo view('pdfc2/AC11', $data);
-                break;
-            default:
-            break;
+            // case 'AC5':
+            //     $rdata       = $this->c2model->getvalues_s('rescon',$code,$dmtID);
+            //     $data['rc']  = json_decode($rdata['field1'], true);
+            //     echo view('pdfc2/AC5', $data);
+            //     break;
+            // case 'AC6':
+            //     $data['ac6']   = $this->c2model->getvalues_m('ac6ra',$code,$dmtID);
+            //     $rdata         = $this->c2model->getvalues_s('ac6s12',$code,$dmtID);
+            //     $data['s']     = json_decode($rdata['field1'], true);
+            //     $data['s3']    = $this->c2model->getvalues_m('ac6s3',$code,$dmtID);
+            //     echo view('pdfc2/AC6', $data);
+            //     break;
+            // case 'AC7':
+            //     $rowdata = [
+            //         'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
+            //         'roidata','dcodata','prdata','oadata'
+            //     ];
+            //     foreach($rowdata as $row){
+            //         $rdata       = $this->c2model->getvalues_s($row,$code,$dmtID);
+            //         $data[$row]  = json_decode($rdata['field1'], true);
+            //     }
+            //     echo view('pdfc2/AC7', $data);
+            //     break;
+            // case 'AC8':
+            //     $rowdata = [
+            //         'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
+            //         'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
+            //         'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
+            //         'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
+            //     ];
+            //     foreach($rowdata as $row){
+            //         $data[$row] = $this->c2model->getvalues_s($row,$code,$dmtID);
+            //     }
+            //     echo view('pdfc2/AC8', $data);
+            //     break;
+            // case 'AC9':
+            //     $rdata        = $this->c2model->getvalues_s('ac9data',$code,$dmtID);
+            //     $data['ac9']  = json_decode($rdata['field1'], true);
+            //     echo view('pdfc2/AC9', $data);
+            //     break;
+            // case 'AC10-Tangibles':
+            // case 'AC10-PPE':
+            // case 'AC10-Investments':
+            // case 'AC10-Inventory':
+            // case 'AC10-Trade Receivables':
+            // case 'AC10-Other Receivables':
+            // case 'AC10-Bank and Cash':
+            // case 'AC10-Trade Payables':
+            // case 'AC10-Other Payables':
+            // case 'AC10-Provisions':
+            // case 'AC10-Revenue':
+            // case 'AC10-Costs':
+            // case 'AC10-Payroll':
+            //     $s = explode('-', $code);
+            //     $data ['sheet']  = $s[1];
+            //     $data['code']    = $s[0];
+            //     $data['cu']      = $this->c2model->getvalues_s($s[1].'cu',$s[0],$dmtID);
+            //     $data['ac10s1']  = $this->c2model->getac10data($s[1],$s[0],$dmtID,'section1');
+            //     $data['ac10s2']  = $this->c2model->getac10data($s[1],$s[0],$dmtID,'section2');
+            //     echo view('pdfc2/AC10', $data);
+            //     break;
+            // case 'AC10-Summary':
+            //     $s = explode('-', $code);
+            //     $data ['sheet']     = $s[1];
+            //     $data['code']       = $s[0];
+            //     $data['nmk_tgb']    = $this->c2model->getdatacount($dmtID,'Tangibles');
+            //     $data['nmk_ppe']    = $this->c2model->getdatacount($dmtID,'PPE');
+            //     $data['nmk_invmt']  = $this->c2model->getdatacount($dmtID,'Investments');
+            //     $data['nmk_invtr']  = $this->c2model->getdatacount($dmtID,'Inventory');
+            //     $data['nmk_tr']     = $this->c2model->getdatacount($dmtID,'Trade Receivables');
+            //     $data['nmk_or']     = $this->c2model->getdatacount($dmtID,'Other Receivables');
+            //     $data['nmk_bac']    = $this->c2model->getdatacount($dmtID,'Bank and Cash');
+            //     $data['nmk_tp']     = $this->c2model->getdatacount($dmtID,'Trade Payables');
+            //     $data['nmk_op']     = $this->c2model->getdatacount($dmtID,'Other Payables');
+            //     $data['nmk_prov']   = $this->c2model->getdatacount($dmtID,'Provisions');
+            //     $data['nmk_rev']    = $this->c2model->getdatacount($dmtID,'Revenue');
+            //     $data['nmk_cst']    = $this->c2model->getdatacount($dmtID,'Costs');
+            //     $data['nmk_pr']     = $this->c2model->getdatacount($dmtID,'Payroll');
+            //     $data['vop_tgb']    = $this->c2model->getsumation($dmtID,'Tangibles');
+            //     $data['vop_ppe']    = $this->c2model->getsumation($dmtID,'PPE');
+            //     $data['vop_invmt']  = $this->c2model->getsumation($dmtID,'Investments');
+            //     $data['vop_invtr']  = $this->c2model->getsumation($dmtID,'Inventory');
+            //     $data['vop_tr']     = $this->c2model->getsumation($dmtID,'Trade Receivables');
+            //     $data['vop_or']     = $this->c2model->getsumation($dmtID,'Other Receivables');
+            //     $data['vop_bac']    = $this->c2model->getsumation($dmtID,'Bank and Cash');
+            //     $data['vop_tp']     = $this->c2model->getsumation($dmtID,'Trade Payables');
+            //     $data['vop_op']     = $this->c2model->getsumation($dmtID,'Other Payables');
+            //     $data['vop_prov']   = $this->c2model->getsumation($dmtID,'Provisions');
+            //     $data['vop_rev']    = $this->c2model->getsumation($dmtID,'Revenue');
+            //     $data['vop_cst']    = $this->c2model->getsumation($dmtID,'Costs');
+            //     $data['vop_pr']     = $this->c2model->getsumation($dmtID,'Payroll');
+            //     $data['mat']        = $this->c2model->getvalues_s('materialdata',$s[0],$dmtID);
+            //     $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
+            //     foreach($rowdata as $row){
+            //         $rdata       = $this->c2model->getvalues_s($row.'data',$s[0],$dmtID);
+            //         $data[$row]  = json_decode($rdata['field1'], true);
+            //     }
+            //     echo view('pdfc2/AC10Summ', $data);
+            //     break;
+            // case 'AC11':
+            //     $rdata = $this->c2model->getvalues_s('ac11data',$code,$dmtID);
+            //     $data['ac11'] = json_decode($rdata['field1'], true);
+            //     echo view('pdfc2/AC11', $data);
+            //     break;
+            // default:
+            // break;
         }
 
         echo view('pdfc2/'.$code, $data);

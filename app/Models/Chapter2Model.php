@@ -60,4 +60,16 @@ class Chapter2Model extends Model{
 
     }
 
+    public function getvalues_s($type,$code,$mtID){
+
+        $where = [
+            'type' => $type, 
+            'code' => $code, 
+            'mtID' => $mtID
+        ];
+        $query =  $this->db->table($this->tblc2)->where($where)->get();
+        return $query->getrowArray();
+
+    }
+
 }

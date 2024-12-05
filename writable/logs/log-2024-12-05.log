@@ -846,3 +846,329 @@ in APPPATH/Views/pdfc2/AB4.php on line 132.
  8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
 INFO - 2024-12-05 17:37:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:38:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 17:38:42 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 17:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:38:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:51:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 17:51:50 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 17:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:51:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 17:51:54 --> ErrorException: Undefined variable $c1tID
+in APPPATH/Views/client/chapter2/AC3.php on line 45.
+ 1 APPPATH/Views/client/chapter2/AC3.php(45): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AC3.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(303): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 17:52:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 17:52:14 --> ErrorException: Undefined variable $acID
+in APPPATH/Views/client/chapter2/AC3.php on line 51.
+ 1 APPPATH/Views/client/chapter2/AC3.php(51): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AC3.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(303): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 17:52:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 17:52:41 --> ErrorException: Undefined array key "acID"
+in APPPATH/Views/client/chapter2/AC3.php on line 82.
+ 1 APPPATH/Views/client/chapter2/AC3.php(82): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AC3.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(303): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 17:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 17:53:33 --> ErrorException: Undefined array key "question"
+in APPPATH/Views/client/chapter2/AC3.php on line 87.
+ 1 APPPATH/Views/client/chapter2/AC3.php(87): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AC3.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(303): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 17:53:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:53:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 17:53:50 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pdfc1/AC3.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/ChapterController.php(135): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc1pdf()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 17:54:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:54:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 17:54:10 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ChapterController.php(329): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 17:55:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:55:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:56:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:56:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-05 17:56:16 --> mysqli_sql_exception: Unknown column 'acID' in 'where clause' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/ChapterValuesModel.php(311): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/ChapterValuesController.php(198): App\Models\ChapterValuesModel->savevalues()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-12-05 17:56:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'acID' in 'where clause'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/ChapterValuesModel.php(311): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/ChapterValuesController.php(198): App\Models\ChapterValuesModel->savevalues()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-05 17:56:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'acID' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/ChapterValuesModel.php(311): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/ChapterValuesController.php(198): App\Models\ChapterValuesModel->savevalues()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-05 17:56:16 --> [Caused by] mysqli_sql_exception: Unknown column 'acID' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/ChapterValuesModel.php(311): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/ChapterValuesController.php(198): App\Models\ChapterValuesModel->savevalues()
+ 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterValuesController->savevalues()
+ 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 17:56:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:57:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:57:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:57:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:57:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 17:58:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:00:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:00:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:00:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:00:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:01:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:01:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:01:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:02:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:03:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:03:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:06:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:06:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:07:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:07:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:08:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:08:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:08:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:08:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:08:35 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:08:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:08:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:09:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:09:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:10:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:10:54 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pdfc2/AC3.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/ChapterController.php(454): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:11:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:11:21 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 884.
+ 1 SYSTEMPATH/Model.php(662): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/ChapterController.php(342): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:11:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:11:42 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 884.
+ 1 SYSTEMPATH/Model.php(662): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/ChapterController.php(342): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:11:45 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 884.
+ 1 SYSTEMPATH/Model.php(662): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/ChapterController.php(342): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:12:25 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 884.
+ 1 SYSTEMPATH/Model.php(662): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/ChapterController.php(342): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:12:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pdfc2/AC3.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/ChapterController.php(453): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:13:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:13:00 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 884.
+ 1 SYSTEMPATH/Model.php(662): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/ChapterController.php(342): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:13:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:13:02 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 884.
+ 1 SYSTEMPATH/Model.php(662): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/ChapterController.php(342): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:13:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:13:07 --> ErrorException: Undefined variable $ppr
+in APPPATH/Views/pdfc2/AC3.php on line 113.
+ 1 APPPATH/Views/pdfc2/AC3.php(113): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC3.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(451): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:14:11 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 884.
+ 1 SYSTEMPATH/Model.php(662): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(864): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/ChapterController.php(342): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:14:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:14:20 --> ErrorException: Undefined variable $ppr
+in APPPATH/Views/pdfc2/AC3.php on line 113.
+ 1 APPPATH/Views/pdfc2/AC3.php(113): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC3.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(453): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:15:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:15:11 --> ErrorException: Undefined array key "question"
+in APPPATH/Views/pdfc2/AC3.php on line 135.
+ 1 APPPATH/Views/pdfc2/AC3.php(135): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC3.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(453): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

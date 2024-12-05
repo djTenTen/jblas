@@ -92,7 +92,6 @@ class ChapterValuesController extends BaseController{
                                     'acid'      => $this->request->getPost('acid'),
                                     'yesno'     => $this->request->getPost('yesno'),
                                     'comment'   => $this->request->getPost('comment'),
-                                    'mtID'      => $param['mtID'],
                                 ];
                             break;
                             case 'saveac1eqr':
@@ -107,7 +106,6 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'question'  => json_encode($eqr),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'mtID'     => $param['mtID'],
                                 ];
                             break;
                         }
@@ -124,7 +122,6 @@ class ChapterValuesController extends BaseController{
                                     'other'         => $this->request->getPost('other'),
                                     'totalcu'       => $this->request->getPost('totalcu'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'mtID'          => $param['mtID'],
                                 ];
                             break;
                             case 'saveac2aep':
@@ -132,7 +129,6 @@ class ChapterValuesController extends BaseController{
                                     'eap'       => $this->request->getPost('eap'),
                                     'concl'     => $this->request->getPost('concl'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'mtID'      => $param['mtID'],
                                 ];
                             break;
                         }
@@ -174,30 +170,28 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
-                    // case 'AC4':
-                    //     switch ($save) {
-                    //         case 'saveac4':
-                    //             $req = [
-                    //                 'comment'   => $this->request->getPost('comment'),
-                    //                 'acid'      => $this->request->getPost('acid'),
-                    //                 'mtID'     => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //         case 'saveac4ppr':
-                    //             $ppr = [
-                    //                 'ppr1'  => $this->request->getPost('ppr1'),
-                    //                 'ppr2'  => $this->request->getPost('ppr2')
-                    //             ];
-                    //             $req = [
-                    //                 'ppr'       => json_encode($ppr),
-                    //                 'acid'      => $this->request->getPost('acid'),
-                    //                 'mtID'     => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //     }
-                    //     $res = $this->cvmodel->savevalues($param,$req);
-                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    // break;
+                    case 'AC3':
+                        switch ($save) {
+                            case 'saveac4':
+                                $req = [
+                                    'comment'   => $this->request->getPost('comment'),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                            case 'saveac4ppr':
+                                $ppr = [
+                                    'ppr1'      => $this->request->getPost('ppr1'),
+                                    'ppr2'      => $this->request->getPost('ppr2')
+                                ];
+                                $req = [
+                                    'ppr'       => json_encode($ppr),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    break;
                     // case 'AC5':
                     //     switch ($save) {
                     //         case 'saveac5':

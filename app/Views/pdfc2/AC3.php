@@ -132,8 +132,8 @@ $html .= '
 foreach($ac4 as $r){
     $html .= '
         <tr>
-            <td>'.$r['question'].'<br></td>
-            <td>'.$r['comment'].'</td>
+            <td>'.$r['field1'].'<br></td>
+            <td>'.$r['field2'].'</td>
         </tr>
     ';
 }

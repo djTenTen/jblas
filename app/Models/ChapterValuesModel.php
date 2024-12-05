@@ -288,32 +288,32 @@ class ChapterValuesModel extends Model{
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                         return true;
                     break;
-                    // case 'AC4':
-                    //     switch ($param['save']) {
-                    //         case 'saveac4':
-                    //             foreach($req['comment'] as $i => $val){
-                    //                 $acid = $this->crypt->decrypt($req['acid'][$i]);
-                    //                 $data = [
-                    //                     'comment'       => $req['comment'][$i],
-                    //                     'updated_on'    => $this->date.' '.$this->time,
-                    //                     'updated_by'    => $param['uID'],
-                    //                 ];
-                    //                 $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
-                    //             }
-                    //         break;
-                    //         case 'saveac4ppr':
-                    //             $acid = $this->crypt->decrypt($req['acid']);
-                    //             $data = [
-                    //                 'question'      => $req['ppr'],
-                    //                 'updated_on'    => $this->date.' '.$this->time,
-                    //                 'updated_by'    => $param['uID'],
-                    //             ];
-                    //             $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
-                    //         break;
-                    //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
-                    //     return true;
-                    // break;
+                    case 'AC3':
+                        switch ($param['save']) {
+                            case 'saveac4':
+                                foreach($req['comment'] as $i => $val){
+                                    $acid = $this->decr($req['acid'][$i]);
+                                    $data = [
+                                        'field2'        => $req['comment'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2d)->where('mdID', $acid)->update($data);
+                                }
+                            break;
+                            case 'saveac4ppr':
+                                $acid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['ppr'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc2d)->where('mdID', $acid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
+                        return true;
+                    break;
                     // case 'AC5':
                     //     switch ($param['save']) {
                     //         case 'saveac5':
