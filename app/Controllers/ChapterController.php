@@ -183,6 +183,18 @@ class ChapterController extends BaseController{
                 $data['mdID']   = $this->encr($rdata['mdID']);
                 $page = $code;
                 break;
+            case 'AC6':
+                $rowdata = [
+                    'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
+                    'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
+                    'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
+                    'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
+                ];
+                foreach($rowdata as $row){
+                    $data[$row] = $this->cvmodel->getvalues_c2('s',$row,$code,$dmtID,$dcID);
+                }
+                $page = $code;
+                break;
             // case 'AC6':
             //     $data['ac6']    = $this->cvmodel->getvalues_m('c2','ac6ra',$code,$dmtID,$dcID);
             //     $rdata          = $this->cvmodel->getvalues_s('c2','ac6s12',$code,$dmtID,$dcID);
@@ -206,20 +218,7 @@ class ChapterController extends BaseController{
             //     echo view('client/chapter2/Ac7', $data);
             //     echo view('includes/Footer');
             //     break;
-            // case 'AC8':
-            //     $rowdata = [
-            //         'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
-            //         'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
-            //         'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
-            //         'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
-            //     ];
-            //     foreach($rowdata as $row){
-            //         $data[$row] = $this->cvmodel->getvalues_s('c2',$row,$code,$dmtID,$dcID);
-            //     }
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter2/Ac8', $data);
-            //     echo view('includes/Footer');
-            //     break;
+
             // case 'AC9':
             //     $rdata = $this->cvmodel->getvalues_s('c2','ac9data',$code,$dmtID,$dcID);
             //     $data['ac9'] = json_decode($rdata['field1'], true);
@@ -354,6 +353,17 @@ class ChapterController extends BaseController{
                 $rdata       = $this->c2model->getvalues_s('td',$code,$dmtID);
                 $data['td']  = json_decode($rdata['field1'], true);
                 break;
+            case 'AC6':
+                $rowdata = [
+                    'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
+                    'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
+                    'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
+                    'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
+                ];
+                foreach($rowdata as $row){
+                    $data[$row] = $this->c2model->getvalues_s($row,$code,$dmtID);
+                }
+                break;
             // case 'AC6':
             //     $data['ac6']   = $this->c2model->getvalues_m('ac6ra',$code,$dmtID);
             //     $rdata         = $this->c2model->getvalues_s('ac6s12',$code,$dmtID);
@@ -372,18 +382,7 @@ class ChapterController extends BaseController{
             //     }
             //     echo view('pdfc2/AC7', $data);
             //     break;
-            // case 'AC8':
-            //     $rowdata = [
-            //         'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
-            //         'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
-            //         'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
-            //         'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
-            //     ];
-            //     foreach($rowdata as $row){
-            //         $data[$row] = $this->c2model->getvalues_s($row,$code,$dmtID);
-            //     }
-            //     echo view('pdfc2/AC8', $data);
-            //     break;
+            
             // case 'AC9':
             //     $rdata        = $this->c2model->getvalues_s('ac9data',$code,$dmtID);
             //     $data['ac9']  = json_decode($rdata['field1'], true);

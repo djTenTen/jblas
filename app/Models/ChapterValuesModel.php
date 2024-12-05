@@ -344,6 +344,24 @@ class ChapterValuesModel extends Model{
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                         return true;
                     break;
+                    case 'AC6':
+                        switch ($param['save']) {
+                            case 'saveac8':
+                                foreach($req['question'] as $i => $val){
+                                    $dacid = $this->decr($req['acid'][$i]);
+                                    $data = [
+                                        'field1'        => $req['question'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2d)->where('mdID', $dacid)->update($data);
+                                }
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
+                        return true;
+                    break;
+
                     // case 'AC6':
                     //     switch ($param['save']) {
                     //         case 'saveac6ra':
@@ -420,23 +438,7 @@ class ChapterValuesModel extends Model{
                     //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                     //     return true;
                     // break;
-                    // case 'AC8':
-                    //     switch ($param['save']) {
-                    //         case 'saveac8':
-                    //             foreach($req['question'] as $i => $val){
-                    //                 $dacid = $this->crypt->decrypt($req['acid'][$i]);
-                    //                 $data = [
-                    //                     'question'          => $req['question'][$i],
-                    //                     'updated_on'        => $this->date.' '.$this->time,
-                    //                     'updated_by'        => $param['uID'],
-                    //                 ];
-                    //                 $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
-                    //             }
-                    //         break;
-                    //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
-                    //     return true;
-                    // break;
+                    
                     // case 'AC9':
                     //     switch ($param['save']) {
                     //         case 'saveac9':

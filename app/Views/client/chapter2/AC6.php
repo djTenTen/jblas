@@ -1,4 +1,9 @@
-<?php  $crypt = \Config\Services::encrypter();?>
+<?php  
+    function encr($ecr){
+        $crypt = \Config\Services::encrypter();
+        return str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ecr));
+    }
+?>
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -42,13 +47,13 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $code?>/<?= $c1tID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter2/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>ASSESSMENT OF MATERIALITY (INCLUDING PERFORMANCE MATERIALITY)</h4>
                     <p>OBJECTIVE: To assess materiality for the financial statements as a whole, performance materiality and other quantitative benchmarks based on materiality, which will reduce the risk of material misstatements in the financial statements to an acceptable level.</p>
                     <h4>OVERALL MATERIALITY</h4>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac8/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac8/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -64,71 +69,71 @@
                                 <tr>
                                     <td>Revenue</td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($revp['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control revp" name="question[]" value="<?= $revp['question']?>">
+                                        <input type="hidden" value="<?= encr($revp['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control revp" name="question[]" value="<?= $revp['field1']?>">
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($revf['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control revf" name="question[]" value="<?= $revf['question']?>">
+                                        <input type="hidden" value="<?= encr($revf['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control revf" name="question[]" value="<?= $revf['field1']?>">
                                     </td>
                                     <td>1%</td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($revpr['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control revpr" name="question[]" value="<?= $revpr['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($revpr['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control revpr" name="question[]" value="<?= $revpr['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($revfr['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control revfr" name="question[]" value="<?= $revfr['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($revfr['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control revfr" name="question[]" value="<?= $revfr['field1']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Profit Before Tax 2</td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($prop['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control prop" name="question[]" value="<?= $prop['question']?>">
+                                        <input type="hidden" value="<?= encr($prop['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control prop" name="question[]" value="<?= $prop['field1']?>">
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($prof['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control prof" name="question[]" value="<?= $prof['question']?>">
+                                        <input type="hidden" value="<?= encr($prof['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control prof" name="question[]" value="<?= $prof['field1']?>">
                                     </td>
                                     <td>10%</td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($propr['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control propr" name="question[]" value="<?= $propr['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($propr['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control propr" name="question[]" value="<?= $propr['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($profr['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control profr" name="question[]" value="<?= $profr['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($profr['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control profr" name="question[]" value="<?= $profr['field1']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Gross Assets</td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($grop['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control grop" name="question[]" value="<?= $grop['question']?>">
+                                        <input type="hidden" value="<?= encr($grop['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control grop" name="question[]" value="<?= $grop['field1']?>">
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($grof['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control grof" name="question[]" value="<?= $grof['question']?>">
+                                        <input type="hidden" value="<?= encr($grof['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control grof" name="question[]" value="<?= $grof['field1']?>">
                                     </td>
                                     <td>2%</td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($gropr['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control gropr" name="question[]" value="<?= $gropr['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($gropr['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control gropr" name="question[]" value="<?= $gropr['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($grofr['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control grofr" name="question[]" value="<?= $grofr['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($grofr['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control grofr" name="question[]" value="<?= $grofr['field1']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="4">Select the most appropriate benchmark for this entity</td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($pcu['acID'])?>" name="acid[]">
+                                        <input type="hidden" value="<?= encr($pcu['mdID'])?>" name="acid[]">
                                         <select name="question[]" id="" class="form-control form-select pcu">
-                                            <option value="<?= $pcu['question']?>" selected>
+                                            <option value="<?= $pcu['field1']?>" selected>
                                             <?php
-                                                switch ($pcu['question']) {
+                                                switch ($pcu['field1']) {
                                                     case 'r':echo 'Revenue';break;
                                                     case 'pbt':echo 'Profit Before Tax';break;
                                                     case 'ga':echo 'Gross Assets';break;
@@ -143,11 +148,11 @@
                                         </select>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($fcu['acID'])?>" name="acid[]">
+                                        <input type="hidden" value="<?= encr($fcu['mdID'])?>" name="acid[]">
                                         <select name="question[]" id="" class="form-control form-select fcu">
-                                            <option value="<?= $fcu['question']?>" selected>
+                                            <option value="<?= $fcu['field1']?>" selected>
                                             <?php
-                                                switch ($fcu['question']) {
+                                                switch ($fcu['field1']) {
                                                     case 'r':echo 'Revenue';break;
                                                     case 'pbt':echo 'Profit Before Tax';break;
                                                     case 'ga':echo 'Gross Assets';break;
@@ -168,20 +173,20 @@
                                 </tr>
                                 <tr>
                                     <td colspan="6"> 
-                                        <input type="hidden" value="<?= $crypt->encrypt($justn45['acID'])?>" name="acid[]">
-                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $justn45['question']?></textarea>
+                                        <input type="hidden" value="<?= encr($justn45['mdID'])?>" name="acid[]">
+                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $justn45['field1']?></textarea>
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td colspan="4"><h6>Initial suggested Materiality Level:</h6></td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($pcur['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control pcur" name="question[]" value="<?= $pcur['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($pcur['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control pcur" name="question[]" value="<?= $pcur['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($fcur['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control fcur" name="question[]" value="<?= $fcur['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($fcur['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control fcur" name="question[]" value="<?= $fcur['field1']?>" readonly>
                                     </td>
                                 </tr>
 
@@ -192,45 +197,45 @@
                                 </tr>
                                 <tr>
                                     <td colspan="4">
-                                        <input type="hidden" value="<?= $crypt->encrypt($adja['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control adja" name="question[]" value="<?= $adja['question']?>" >
+                                        <input type="hidden" value="<?= encr($adja['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control adja" name="question[]" value="<?= $adja['field1']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($adjap['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control adjap" name="question[]" value="<?= $adjap['question']?>" >
+                                        <input type="hidden" value="<?= encr($adjap['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control adjap" name="question[]" value="<?= $adjap['field1']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($adjaf['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control adjaf" name="question[]" value="<?= $adjaf['question']?>" >
+                                        <input type="hidden" value="<?= encr($adjaf['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control adjaf" name="question[]" value="<?= $adjaf['field1']?>" >
                                     </td>
                                     
                                 </tr>
                                 <tr>
                                     <td colspan="4">
-                                        <input type="hidden" value="<?= $crypt->encrypt($adjb['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control adjb" name="question[]" value="<?= $adjb['question']?>" >
+                                        <input type="hidden" value="<?= encr($adjb['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control adjb" name="question[]" value="<?= $adjb['field1']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($adjbp['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control adjbp" name="question[]" value="<?= $adjbp['question']?>" >
+                                        <input type="hidden" value="<?= encr($adjbp['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control adjbp" name="question[]" value="<?= $adjbp['field1']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($adjbf['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control adjbf" name="question[]" value="<?= $adjbf['question']?>" >
+                                        <input type="hidden" value="<?= encr($adjbf['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control adjbf" name="question[]" value="<?= $adjbf['field1']?>" >
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="4">
-                                        <input type="hidden" value="<?= $crypt->encrypt($adjc['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control adjc" name="question[]" value="<?= $adjc['question']?>" >
+                                        <input type="hidden" value="<?= encr($adjc['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control adjc" name="question[]" value="<?= $adjc['field1']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($adjcp['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control adjcp" name="question[]" value="<?= $adjcp['question']?>" >
+                                        <input type="hidden" value="<?= encr($adjcp['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control adjcp" name="question[]" value="<?= $adjcp['field1']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($adjcf['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control adjcf" name="question[]" value="<?= $adjcf['question']?>" >
+                                        <input type="hidden" value="<?= encr($adjcf['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control adjcf" name="question[]" value="<?= $adjcf['field1']?>" >
                                     </td>
                                 </tr>
                                 <tr>
@@ -239,19 +244,19 @@
                                 <tr>
                                     <td colspan="4"><h6>Assessed Overall Materiality</h6></td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($aomp['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control aomp" name="question[]" value="<?= $aomp['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($aomp['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control aomp" name="question[]" value="<?= $aomp['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($aomf['acID'])?>" name="acid[]">
-                                        <input type="number" class="form-control aomf" name="question[]" value="<?= $aomf['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($aomf['mdID'])?>" name="acid[]">
+                                        <input type="number" class="form-control aomf" name="question[]" value="<?= $aomf['field1']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="4"><p>Materiality Level for previous period (for information only):</p></td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($mlpinfo['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control mlpinfo" name="question[]" value="<?= $mlpinfo['question']?>" >
+                                        <input type="hidden" value="<?= encr($mlpinfo['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control mlpinfo" name="question[]" value="<?= $mlpinfo['field1']?>" >
                                     </td>
                                     <td></td> 
                                 </tr>
@@ -264,8 +269,8 @@
                                 </tr>
                                 <tr>
                                     <td colspan="6"> 
-                                        <input type="hidden" value="<?= $crypt->encrypt($conplst['acID'])?>" name="acid[]">
-                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $conplst['question']?></textarea>
+                                        <input type="hidden" value="<?= encr($conplst['mdID'])?>" name="acid[]">
+                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $conplst['field1']?></textarea>
                                     </td>
                                 </tr>
 
@@ -273,8 +278,8 @@
                                     <td colspan="6">
                                         <h6>Conclusion at finalisation stage</h6>
                                         <p>Document reasons for any revision to the materiality assessed at planning stage and the impact on the audit procedures undertaken:</p>
-                                        <input type="hidden" value="<?= $crypt->encrypt($confnst['acID'])?>" name="acid[]">
-                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $confnst['question']?></textarea>
+                                        <input type="hidden" value="<?= encr($confnst['mdID'])?>" name="acid[]">
+                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $confnst['field1']?></textarea>
                                     </td>
                                 </tr>
                                 <tr>
@@ -284,18 +289,18 @@
                                 <tr>
                                     <td colspan="4">Select Overall Inherent Risk (Low / Medium / High):</td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($oirp['acID'])?>" name="acid[]">
+                                        <input type="hidden" value="<?= encr($oirp['mdID'])?>" name="acid[]">
                                         <select name="question[]" id="" class="form-control form-select oirp">
-                                            <option value="<?= $oirp['question']?>" selected><?= $oirp['question']?></option>
+                                            <option value="<?= $oirp['field1']?>" selected><?= $oirp['field1']?></option>
                                             <option value="Low">Low</option>
                                             <option value="Medium">Medium</option>
                                             <option value="High">High</option>
                                         </select>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($oirf['acID'])?>" name="acid[]">
+                                        <input type="hidden" value="<?= encr($oirf['mdID'])?>" name="acid[]">
                                         <select name="question[]" id="" class="form-control form-select oirf">
-                                            <option value="<?= $oirf['question']?>" selected><?= $oirf['question']?></option>
+                                            <option value="<?= $oirf['field1']?>" selected><?= $oirf['field1']?></option>
                                             <option value="Low">Low</option>
                                             <option value="Medium">Medium</option>
                                             <option value="High">High</option>
@@ -305,24 +310,24 @@
                                 <tr>
                                     <td colspan="4">Performance Materiality Percentage (Note 7):</td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($pmpp['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control pmpp" name="question[]" value="<?= $pmpp['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($pmpp['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control pmpp" name="question[]" value="<?= $pmpp['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($pmpf['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control pmpf" name="question[]" value="<?= $pmpf['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($pmpf['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control pmpf" name="question[]" value="<?= $pmpf['field1']?>" readonly>
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td colspan="4">Assessed Performance Materiality</td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($apmp['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control apmp" name="question[]" value="<?= $apmp['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($apmp['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control apmp" name="question[]" value="<?= $apmp['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($apmf['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control apmf" name="question[]" value="<?= $apmf['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($apmf['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control apmf" name="question[]" value="<?= $apmf['field1']?>" readonly>
                                     </td>
                                 </tr>
 
@@ -330,8 +335,8 @@
                                     <td colspan="6">
                                         <h6>Conclusion at planning stage</h6>
                                         <p>The performance materiality level calculated above is deemed to be appropriate because:</p>
-                                        <input type="hidden" value="<?= $crypt->encrypt($conplst2['acID'])?>" name="acid[]">
-                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $conplst2['question']?></textarea>
+                                        <input type="hidden" value="<?= encr($conplst2['mdID'])?>" name="acid[]">
+                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $conplst2['field1']?></textarea>
                                     </td>
                                 </tr>
 
@@ -339,8 +344,8 @@
                                     <td colspan="6">
                                         <h6>Conclusion at finalisation stage</h6>
                                         <p>Document reasons for any revision to the perfomance materiality assessed at planning stage and the impact on the audit procedures undertaken:</p>
-                                        <input type="hidden" value="<?= $crypt->encrypt($confnst2['acID'])?>" name="acid[]">
-                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $confnst2['question']?></textarea>
+                                        <input type="hidden" value="<?= encr($confnst2['mdID'])?>" name="acid[]">
+                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $confnst2['field1']?></textarea>
                                     </td>
                                 </tr>
 
@@ -351,20 +356,20 @@
                                     <td colspan="3">Level at which errors are considered trivial (Note 8)</td>
                                     <td>1%</td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($ctp['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control ctp" name="question[]" value="<?= $ctp['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($ctp['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control ctp" name="question[]" value="<?= $ctp['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($ctf['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control ctf" name="question[]" value="<?= $ctf['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($ctf['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control ctf" name="question[]" value="<?= $ctf['field1']?>" readonly>
                                     </td>
                                 </tr>rsp
 
                                 <tr>
                                     <td colspan="6">
                                         <h6>Document reasons for any revision to the suggested percentage </h6>
-                                        <input type="hidden" value="<?= $crypt->encrypt($rsp['acID'])?>" name="acid[]">
-                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $rsp['question']?></textarea>
+                                        <input type="hidden" value="<?= encr($rsp['mdID'])?>" name="acid[]">
+                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $rsp['field1']?></textarea>
                             
                                     </td>
                                 </tr>
@@ -393,81 +398,81 @@
                                     <td colspan="3">Related party transactions and Remuneration of key management</td>
                                     <td>5%</td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($rptp['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control rptp" name="question[]" value="<?= $rptp['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($rptp['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control rptp" name="question[]" value="<?= $rptp['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($rptf['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control rptf" name="question[]" value="<?= $rptf['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($rptf['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control rptf" name="question[]" value="<?= $rptf['field1']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="3">Accounting estimates</td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($aest['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control aest" name="question[]" value="<?= $aest['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($aest['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control aest" name="question[]" value="<?= $aest['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($aestp['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control aestp" name="question[]" value="<?= $aestp['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($aestp['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control aestp" name="question[]" value="<?= $aestp['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($aestf['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control aestf" name="question[]" value="<?= $aestf['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($aestf['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control aestf" name="question[]" value="<?= $aestf['field1']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="3">
-                                        <input type="hidden" value="<?= $crypt->encrypt($itbdae1['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control" name="question[]" value="<?= $itbdae1['question']?>">
+                                        <input type="hidden" value="<?= encr($itbdae1['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control" name="question[]" value="<?= $itbdae1['field1']?>">
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($itbd1['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd1" name="question[]" value="<?= $itbd1['question']?>" >
+                                        <input type="hidden" value="<?= encr($itbd1['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control itbd1" name="question[]" value="<?= $itbd1['field1']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($itbd1p['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd1p" name="question[]" value="<?= $itbd1p['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($itbd1p['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control itbd1p" name="question[]" value="<?= $itbd1p['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($itbd1f['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd1f" name="question[]" value="<?= $itbd1f['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($itbd1f['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control itbd1f" name="question[]" value="<?= $itbd1f['field1']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="3">
-                                        <input type="hidden" value="<?= $crypt->encrypt($itbdae2['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control" name="question[]" value="<?= $itbdae2['question']?>">
+                                        <input type="hidden" value="<?= encr($itbdae2['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control" name="question[]" value="<?= $itbdae2['field1']?>">
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($itbd2['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd2" name="question[]" value="<?= $itbd2['question']?>" >
+                                        <input type="hidden" value="<?= encr($itbd2['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control itbd2" name="question[]" value="<?= $itbd2['field1']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($itbd2p['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd2p" name="question[]" value="<?= $itbd2p['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($itbd2p['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control itbd2p" name="question[]" value="<?= $itbd2p['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($itbd2f['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd2f" name="question[]" value="<?= $itbd2f['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($itbd2f['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control itbd2f" name="question[]" value="<?= $itbd2f['field1']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="3">
-                                        <input type="hidden" value="<?= $crypt->encrypt($itbdae3['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control" name="question[]" value="<?= $itbdae3['question']?>">
+                                        <input type="hidden" value="<?= encr($itbdae3['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control" name="question[]" value="<?= $itbdae3['field1']?>">
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($itbd3['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd3" name="question[]" value="<?= $itbd3['question']?>" >
+                                        <input type="hidden" value="<?= encr($itbd3['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control itbd3" name="question[]" value="<?= $itbd3['field1']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($itbd3p['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd3p" name="question[]" value="<?= $itbd3p['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($itbd3p['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control itbd3p" name="question[]" value="<?= $itbd3p['field1']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= $crypt->encrypt($itbd3f['acID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd3f" name="question[]" value="<?= $itbd3f['question']?>" readonly>
+                                        <input type="hidden" value="<?= encr($itbd3f['mdID'])?>" name="acid[]">
+                                        <input type="text" class="form-control itbd3f" name="question[]" value="<?= $itbd3f['field1']?>" readonly>
                                     </td>
                                 </tr>
 
