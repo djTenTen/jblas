@@ -314,21 +314,21 @@ class ChapterValuesModel extends Model{
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                         return true;
                     break;
-                    // case 'AC5':
-                    //     switch ($param['save']) {
-                    //         case 'saveac5':
-                    //             $acid = $this->crypt->decrypt($req['acid']);
-                    //             $data = [
-                    //                 'question'      => $req['rescon'],
-                    //                 'updated_on'    => $this->date.' '.$this->time,
-                    //                 'updated_by'    => $param['uID'],
-                    //             ];
-                    //             $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
-                    //         break;
-                    //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
-                    //     return true;
-                    // break;
+                    case 'AC4':
+                        switch ($param['save']) {
+                            case 'saveac5':
+                                $acid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['rescon'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc2d)->where('mdID', $acid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
+                        return true;
+                    break;
                     // case 'AC6':
                     //     switch ($param['save']) {
                     //         case 'saveac6ra':
@@ -341,7 +341,7 @@ class ChapterValuesModel extends Model{
                     //                     'updated_on'        => $this->date.' '.$this->time,
                     //                     'updated_by'        => $param['uID'],
                     //                 ];
-                    //                 $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                    //                 $this->db->table($this->tblc2d)->where('acID', $acid)->update($data);
                     //             }
                     //         break;
                     //         case 'saveac6s12':
@@ -351,7 +351,7 @@ class ChapterValuesModel extends Model{
                     //                 'updated_on'    => $this->date.' '.$this->time,
                     //                 'updated_by'    => $param['uID'],
                     //             ];
-                    //             $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                    //             $this->db->table($this->tblc2d)->where('acID', $acid)->update($data);
                     //         break;
                     //         case 'saveac6s3':
                     //             $where = [
@@ -360,7 +360,7 @@ class ChapterValuesModel extends Model{
                     //                 'c1tID'         => $req['c1tID'],
                     //                 'clientID'      => $param['cID'],
                     //             ];
-                    //             $this->db->table($this->tblc1d)->where($where)->delete();
+                    //             $this->db->table($this->tblc2d)->where($where)->delete();
                     //             foreach($req['financialstatement'] as $i => $val){
                     //                 $data = [
                     //                     'finstate'          => $req['financialstatement'][$i],
@@ -379,7 +379,7 @@ class ChapterValuesModel extends Model{
                     //                     'updated_on'        => $this->date.' '.$this->time,
                     //                     'updated_by'        => $param['uID'],
                     //                 ];
-                    //                 $this->db->table($this->tblc1d)->insert($data);
+                    //                 $this->db->table($this->tblc2d)->insert($data);
                     //             }
                     //         break;
                     //     }
@@ -399,7 +399,7 @@ class ChapterValuesModel extends Model{
                     //                 'c1tID'         => $req['c1tID'],
                     //                 'clientID'      => $param['cID'],
                     //             ];
-                    //             $this->db->table($this->tblc1d)->where($where)->update($data);
+                    //             $this->db->table($this->tblc2d)->where($where)->update($data);
                     //         break;
                     //     }
                     //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
@@ -415,7 +415,7 @@ class ChapterValuesModel extends Model{
                     //                     'updated_on'        => $this->date.' '.$this->time,
                     //                     'updated_by'        => $param['uID'],
                     //                 ];
-                    //                 $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
+                    //                 $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
                     //             }
                     //         break;
                     //     }
@@ -431,7 +431,7 @@ class ChapterValuesModel extends Model{
                     //                 'updated_on'    => $this->date.' '.$this->time,
                     //                 'updated_by'    => $param['uID'],
                     //             ];
-                    //             $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
+                    //             $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
                     //         break;
                     //     }
                     //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
@@ -465,7 +465,7 @@ class ChapterValuesModel extends Model{
                     //                     'c1tID'         => $req['c1tID'],
                     //                     'clientID'      => $param['cID'],
                     //                 ];
-                    //                 $this->db->table($this->tblc1d)->where($where1)->update($data);
+                    //                 $this->db->table($this->tblc2d)->where($where1)->update($data);
                     //             }
                     //             $where2 = [
                     //                 'type'          => 'materialdata',
@@ -473,7 +473,7 @@ class ChapterValuesModel extends Model{
                     //                 'c1tID'         => $req['c1tID'],
                     //                 'clientID'      => $param['cID'],
                     //             ];
-                    //             $this->db->table($this->tblc1d)->where($where2)->update(array('question' => $req['materiality']));
+                    //             $this->db->table($this->tblc2d)->where($where2)->update(array('question' => $req['materiality']));
                     //         break;
                     //         case 'saveac10s1':
                     //             $where = [
@@ -483,7 +483,7 @@ class ChapterValuesModel extends Model{
                     //                 'c1tID'         => $req['c1tID'],
                     //                 'clientID'      => $param['cID'],
                     //             ];
-                    //             $this->db->table($this->tblc1d)->where($where)->delete();
+                    //             $this->db->table($this->tblc2d)->where($where)->delete();
                     //             foreach($req['name'] as $i => $val){
                     //                 $data = [
                     //                     'less'          => $req['less'][$i],
@@ -498,7 +498,7 @@ class ChapterValuesModel extends Model{
                     //                     'updated_on'    => $this->date.' '.$this->time,
                     //                     'updated_by'    => $param['uID'],
                     //                 ];
-                    //                 $this->db->table($this->tblc1d)->insert($data);
+                    //                 $this->db->table($this->tblc2d)->insert($data);
                     //             }
                     //         break;
                     //         case 'saveac10s2':
@@ -509,7 +509,7 @@ class ChapterValuesModel extends Model{
                     //                 'c1tID'         => $req['c1tID'],
                     //                 'clientID'      => $param['cID'],
                     //             ];
-                    //             $this->db->table($this->tblc1d)->where($where)->delete();
+                    //             $this->db->table($this->tblc2d)->where($where)->delete();
                     //             foreach($req['name'] as $i => $val){
                     //                 $data = [
                     //                     'less'          => $req['less'][$i],
@@ -525,7 +525,7 @@ class ChapterValuesModel extends Model{
                     //                     'updated_on'    => $this->date.' '.$this->time,
                     //                     'updated_by'    => $param['uID'],
                     //                 ];
-                    //                 $this->db->table($this->tblc1d)->insert($data);
+                    //                 $this->db->table($this->tblc2d)->insert($data);
                     //             }
                     //         break;
                     //         case 'saveac10cu':
@@ -535,7 +535,7 @@ class ChapterValuesModel extends Model{
                     //                 'updated_on'    => $this->date.' '.$this->time,
                     //                 'updated_by'    => $param['uID'],
                     //             ];
-                    //             $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
+                    //             $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
                     //         break;
                     //     }
                     //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
@@ -550,7 +550,7 @@ class ChapterValuesModel extends Model{
                     //                 'updated_on'    => $this->date.' '.$this->time,
                     //                 'updated_by'    => $param['uID'],
                     //             ];
-                    //             $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
+                    //             $this->db->table($this->tblc2d)->where('acID', $dacid)->update($data);
                     //         break;
                     //     }
                     //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");

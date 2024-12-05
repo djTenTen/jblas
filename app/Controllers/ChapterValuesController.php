@@ -192,23 +192,22 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
-                    // case 'AC5':
-                    //     switch ($save) {
-                    //         case 'saveac5':
-                    //             $rc = [
-                    //                 'res'   => $this->request->getPost('res'),
-                    //                 'con'   => $this->request->getPost('con')
-                    //             ];
-                    //             $req = [
-                    //                 'rescon'    => json_encode($rc),
-                    //                 'acid'      => $this->request->getPost('acid'),
-                    //                 'mtID'     => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //     }
-                    //     $res = $this->cvmodel->savevalues($param,$req);
-                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    // break;
+                    case 'AC4':
+                        switch ($save) {
+                            case 'saveac5':
+                                $rc = [
+                                    'res'   => $this->request->getPost('res'),
+                                    'con'   => $this->request->getPost('con')
+                                ];
+                                $req = [
+                                    'rescon'    => json_encode($rc),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    break;
                     // case 'AC6':
                     //     switch ($save) {
                     //         case 'saveac6ra':
