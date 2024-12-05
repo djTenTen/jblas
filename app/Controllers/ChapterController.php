@@ -177,6 +177,12 @@ class ChapterController extends BaseController{
                 $data['mdID']   = $this->encr($rdata['mdID']);
                 $page = $code;
                 break;
+            case 'AC5':
+                $rdata          = $this->cvmodel->getvalues_c2('s','td',$code,$dmtID,$dcID);
+                $data['td']     = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
+                break;
             // case 'AC6':
             //     $data['ac6']    = $this->cvmodel->getvalues_m('c2','ac6ra',$code,$dmtID,$dcID);
             //     $rdata          = $this->cvmodel->getvalues_s('c2','ac6s12',$code,$dmtID,$dcID);
@@ -343,6 +349,10 @@ class ChapterController extends BaseController{
             case 'AC4':
                 $rdata       = $this->c2model->getvalues_s('rescon',$code,$dmtID);
                 $data['rc']  = json_decode($rdata['field1'], true);
+                break;
+            case 'AC5':
+                $rdata       = $this->c2model->getvalues_s('td',$code,$dmtID);
+                $data['td']  = json_decode($rdata['field1'], true);
                 break;
             // case 'AC6':
             //     $data['ac6']   = $this->c2model->getvalues_m('ac6ra',$code,$dmtID);

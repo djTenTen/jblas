@@ -1316,3 +1316,390 @@ in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
  6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
 INFO - 2024-12-05 18:33:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:39:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:39:30 --> ArgumentCountError: Too few arguments to function App\Models\ChapterValuesModel::getvalues_c2(), 4 passed in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/ChapterController.php on line 181 and exactly 5 expected
+in APPPATH/Models/ChapterValuesModel.php on line 85.
+ 1 APPPATH/Controllers/ChapterController.php(181): App\Models\ChapterValuesModel->getvalues_c2()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:39:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:39:54 --> ErrorException: Undefined variable $header
+in APPPATH/Views/client/chapter2/AC5.php on line 51.
+ 1 APPPATH/Views/client/chapter2/AC5.php(51): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter2/AC5.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(306): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c2setvalues()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:50:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:55:33 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pdfc2/AC5.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/ChapterController.php(457): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:57:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:58:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 18:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 18:59:32 --> ErrorException: Undefined variable $td
+in APPPATH/Views/pdfc2/AC5.php on line 100.
+ 1 APPPATH/Views/pdfc2/AC5.php(100): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(460): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 18:59:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:03:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:10:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:11:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:14:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:14:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:14:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:14:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:15:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:15:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:18:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:18:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:18:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:19:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:20:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:23:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:24:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:24:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:27:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:28:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:29:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:29:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:54:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:55:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 19:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 19:58:38 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(248): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 19:59:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 19:59:03 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(250): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 19:59:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 19:59:05 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(250): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 19:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 19:59:23 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(250): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 19:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 19:59:32 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(250): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 20:00:06 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(193): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:00:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 20:00:55 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(250): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:01:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 20:01:05 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(250): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:01:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 20:01:14 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(191): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:01:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 20:01:31 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(183): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 20:01:35 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(183): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:02:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 20:02:36 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(183): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:02:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:02:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 20:02:45 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(183): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:03:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 20:03:10 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(250): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:04:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:04:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:05:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:05:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:06:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:06:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:06:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:06:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:07:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:08:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:09:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 20:09:51 --> ErrorException: Undefined array key "cols"
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 17119.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(17119): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(17408): TCPDF->getHtmlDomArray()
+ 3 APPPATH/Views/pdfc2/AC5.php(252): TCPDF->writeHTML()
+ 4 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/ChapterController.php(460): view()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:12:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:12:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:12:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:15:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 20:15:11 --> ErrorException: Undefined variable $html
+in APPPATH/Views/pdfc2/AC5.php on line 83.
+ 1 APPPATH/Views/pdfc2/AC5.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(460): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:15:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:16:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:19:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 20:19:26 --> ErrorException: Undefined array key 0
+in APPPATH/Libraries/tcpdf/tcpdf.php on line 19235.
+ 1 APPPATH/Libraries/tcpdf/tcpdf.php(19235): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/tcpdf/tcpdf.php(18488): TCPDF->openHTMLTagHandler()
+ 3 APPPATH/Libraries/tcpdf/tcpdf.php(5941): TCPDF->writeHTML()
+ 4 APPPATH/Libraries/tcpdf/tcpdf.php(18420): TCPDF->MultiCell()
+ 5 APPPATH/Views/pdfc2/AC5.php(292): TCPDF->writeHTML()
+ 6 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/pdfc2/AC5.php')
+ 7 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/ChapterController.php(460): view()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc2pdf()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:21:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:24:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:24:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:24:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:24:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:25:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:25:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:25:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:26:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:27:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:28:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:28:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 20:28:05 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-05 20:28:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-05 20:28:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

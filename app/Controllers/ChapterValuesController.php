@@ -208,6 +208,60 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
+                    case 'AC5':
+                        switch ($save) {
+                            case 'savetdabm':
+                                $td = [
+                                    'dom'       => $this->request->getPost('dom'),
+                                    'aepname'   => $this->request->getPost('aepname'),
+                                    'aepca'     => $this->request->getPost('aepca'),
+                                    'aepcup'    => $this->request->getPost('aepcup'),
+                                    'eqrname'   => $this->request->getPost('eqrname'),
+                                    'eqrca'     => $this->request->getPost('eqrca'),
+                                    'eqrcup'    => $this->request->getPost('eqrcup'),
+                                    'manname'   => $this->request->getPost('manname'),
+                                    'manca'     => $this->request->getPost('manca'),
+                                    'mancup'    => $this->request->getPost('mancup'),
+                                    'supname'   => $this->request->getPost('supname'),
+                                    'supca'     => $this->request->getPost('supca'),
+                                    'supcup'    => $this->request->getPost('supcup'),
+                                    'senname'   => $this->request->getPost('senname'),
+                                    'senca'     => $this->request->getPost('senca'),
+                                    'sencup'    => $this->request->getPost('sencup'),
+                                    'j1name'    => $this->request->getPost('j1name'),
+                                    'j1ca'      => $this->request->getPost('j1ca'),
+                                    'j1cup'     => $this->request->getPost('j1cup'),
+                                    'j2name'    => $this->request->getPost('j2name'),
+                                    'j2ca'      => $this->request->getPost('j2ca'),
+                                    'j2cup'     => $this->request->getPost('j2cup'),
+                                    'dsfr1'     => $this->request->getPost('dsfr1'),
+                                    'dsfr2'     => $this->request->getPost('dsfr2'),
+                                    'dsfr3'     => $this->request->getPost('dsfr3'),
+                                    'dsfr4'     => $this->request->getPost('dsfr4'),
+                                    'dsfr5'     => $this->request->getPost('dsfr5'),
+                                    'dsfr6'     => $this->request->getPost('dsfr6'),
+                                    'dsfr7'     => $this->request->getPost('dsfr7'),
+                                    'dsfr8'     => $this->request->getPost('dsfr8'),
+                                    'dsfr9'     => $this->request->getPost('dsfr9'),
+                                    'sacb1yn1'  => $this->request->getPost('sacb1yn1'),
+                                    'sacb1yn2'  => $this->request->getPost('sacb1yn2'),
+                                    'sacb1yn3'  => $this->request->getPost('sacb1yn3'),
+                                    'sacb1yn4'  => $this->request->getPost('sacb1yn4'),
+                                    'sacb2yn'   => $this->request->getPost('sacb2yn'),
+                                    'sacb3'     => $this->request->getPost('sacb3'),
+                                    'sacb4'     => $this->request->getPost('sacb4'),
+                                    'sacb5'     => $this->request->getPost('sacb5'),
+                                    'sacb6'     => $this->request->getPost('sacb6'),
+                                ];
+                                $req = [
+                                    'td'        => json_encode($td),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    break;
                     // case 'AC6':
                     //     switch ($save) {
                     //         case 'saveac6ra':

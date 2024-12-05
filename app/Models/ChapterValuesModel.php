@@ -329,6 +329,21 @@ class ChapterValuesModel extends Model{
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                         return true;
                     break;
+                    case 'AC5':
+                        switch ($param['save']) {
+                            case 'savetdabm':
+                                $acid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['td'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc2d)->where('mdID', $acid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
+                        return true;
+                    break;
                     // case 'AC6':
                     //     switch ($param['save']) {
                     //         case 'saveac6ra':
