@@ -78,8 +78,8 @@ class ClientController extends BaseController{
     public function viewfiles($cID,$name){
 
         $dcID = $this->decr($cID);
-        $data['title']  = 'HAT Audit Files';
-        $data['subt']   = 'Select HAT files for '.$name;
+        $data['title']  = 'Audit Files';
+        $data['subt']   = 'Select Audit files for '.$name;
         $data['cID']    = $cID;
         $data['name']   = $name;
         $data['c1']     = $this->cmodel->getc1($dcID);
@@ -102,7 +102,7 @@ class ClientController extends BaseController{
     public function getfiles($cID,$name){
 
         $dcID           = $this->decr($cID);
-        $data['title']  = 'HAT Audit Files';
+        $data['title']  = 'Audit Files';
         $data['subt']   = 'Set default data on '.$name;
         $data['cID']    = $cID;
         $data['name']   = $name;

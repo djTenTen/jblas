@@ -51,156 +51,355 @@ class ChapterController extends BaseController{
     }
 
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
+
+    /** 
+        ----------------------------------------------------------
+        CHAPTER 1 VALUES
+        ----------------------------------------------------------
+        * @method c1setvalues() used view the default values file of Chapter 1
+        * @param code consists of file code
+        * @param mtID encrypted of title id
+        * @param cID encrypted of client id
+        * @param name client name
+        * @var dmtID decrypted id of @param mtID
+        * @var rdata contains raw json data from database
+        * @param array-data consist the data from database to display on the page
+          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
+        * @return pdf-view
+    */
+    public function c1setvalues($code,$mtID,$cID,$name){
+
+        $data['title']  = $code. ' - Pre-Engagement Activities';
+        $data['name']   = $name;
+        $data['cID']    = $cID;
+        $data['mtID']   = $mtID;
+        $data['code']   = $code;
+        $dcID           = $this->decr($cID);
+        $dmtID          = $this->decr($mtID);
+        switch ($code) {
+            case 'AC1':
+                $data['ac1']    = $this->cvmodel->getvalues_m('c1','cacf',$code,$dmtID,$dcID);
+                $rdata          = $this->cvmodel->getvalues_s('c1','eqr',$code,$dmtID,$dcID);
+                $data['eqr']    = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                echo view('includes/Header', $data);
+                echo view('client/chapter1/AC1', $data);
+                echo view('includes/Footer');
+                break;
+            case 'AC2':
+                $data['ac2'] = $this->cvmodel->getvalues_m('c1','pans',$code,$dmtID,$dcID);
+                $data['aep'] = $this->cvmodel->getvalues_s('c1','ac2aep',$code,$dmtID,$dcID);
+                echo view('includes/Header', $data);
+                echo view('client/chapter1/Ac2', $data);
+                echo view('includes/Footer');
+                break;
+            // case 'AC3':
+            //     $data['ac3genmat']      = $this->cvmodel->getvalues_m('c1','genmat',$code,$dmtID,$dcID);
+            //     $data['ac3doccors']     = $this->cvmodel->getvalues_m('c1','doccors',$code,$dmtID,$dcID);
+            //     $data['ac3statutory']   = $this->cvmodel->getvalues_m('c1','statutory',$code,$dmtID,$dcID);
+            //     $data['ac3accsys']      = $this->cvmodel->getvalues_m('c1','accsys',$code,$dmtID,$dcID);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter1/Ac3', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case 'AC4':
+            //     $data['ac4']    = $this->cvmodel->getvalues_m('c1','ac4sod',$code,$dmtID,$dcID);
+            //     $rdata          = $this->cvmodel->getvalues_s('c1','ppr',$code,$dmtID,$dcID);
+            //     $data['ppr']    = json_decode($rdata['field1'], true);
+            //     $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter1/Ac4', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case 'AC5':
+            //     $rdata          = $this->cvmodel->getvalues_s('c1','rescon',$code,$dmtID,$dcID);
+            //     $data['rc']     = json_decode($rdata['field1'], true);
+            //     $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter1/Ac5', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case 'AC6':
+            //     $data['ac6']    = $this->cvmodel->getvalues_m('c1','ac6ra',$code,$dmtID,$dcID);
+            //     $rdata          = $this->cvmodel->getvalues_s('c1','ac6s12',$code,$dmtID,$dcID);
+            //     $data['s']      = json_decode($rdata['field1'], true);
+            //     $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
+            //     $data['s3']     = $this->cvmodel->getvalues_m('c1','ac6s3',$code,$dmtID,$dcID);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter1/Ac6', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case 'AC7':
+            //     $rowdata = [
+            //         'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
+            //         'roidata','dcodata','prdata','oadata'
+            //     ];
+            //     foreach($rowdata as $row){
+            //         $rdata       = $this->cvmodel->getvalues_s('c1',$row,$code,$dmtID,$dcID);
+            //         $data[$row]  = json_decode($rdata['field1'], true);
+            //     }
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter1/Ac7', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case 'AC8':
+            //     $rowdata = [
+            //         'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
+            //         'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
+            //         'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
+            //         'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
+            //     ];
+            //     foreach($rowdata as $row){
+            //         $data[$row] = $this->cvmodel->getvalues_s('c1',$row,$code,$dmtID,$dcID);
+            //     }
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter1/Ac8', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case 'AC9':
+            //     $rdata = $this->cvmodel->getvalues_s('c1','ac9data',$code,$dmtID,$dcID);
+            //     $data['ac9'] = json_decode($rdata['field1'], true);
+            //     $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter1/Ac9', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case 'AC10-Tangibles':
+            // case 'AC10-PPE':
+            // case 'AC10-Investments':
+            // case 'AC10-Inventory':
+            // case 'AC10-Trade Receivables':
+            // case 'AC10-Other Receivables':
+            // case 'AC10-Bank and Cash':
+            // case 'AC10-Trade Payables':
+            // case 'AC10-Other Payables':
+            // case 'AC10-Provisions':
+            // case 'AC10-Revenue':
+            // case 'AC10-Costs':
+            // case 'AC10-Payroll':
+            //     $s = explode('-', $code);
+            //     $data ['sheet']     = $s[1];
+            //     $data['code']       = $s[0];
+            //     $data['cu']         = $this->cvmodel->getvalues_s('c1',$s[1].'cu',$s[0],$dmtID,$dcID);
+            //     $data['ac10s1']     = $this->cvmodel->getac10data($s[1],$s[0],$dmtID,$dcID,'section1');
+            //     $data['ac10s2']     = $this->cvmodel->getac10data($s[1],$s[0],$dmtID,$dcID,'section2');
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter1/Ac10', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case 'AC10-Summary':
+            //     $s = explode('-', $code);
+            //     $data ['sheet']     = $s[1];
+            //     $data['code']       = $s[0];
+            //     $data['nmk_tgb']    = $this->cvmodel->getdatacount($dmtID,'Tangibles',$dcID);
+            //     $data['nmk_ppe']    = $this->cvmodel->getdatacount($dmtID,'PPE',$dcID);
+            //     $data['nmk_invmt']  = $this->cvmodel->getdatacount($dmtID,'Investments',$dcID);
+            //     $data['nmk_invtr']  = $this->cvmodel->getdatacount($dmtID,'Inventory',$dcID);
+            //     $data['nmk_tr']     = $this->cvmodel->getdatacount($dmtID,'Trade Receivables',$dcID);
+            //     $data['nmk_or']     = $this->cvmodel->getdatacount($dmtID,'Other Receivables',$dcID);
+            //     $data['nmk_bac']    = $this->cvmodel->getdatacount($dmtID,'Bank and Cash',$dcID);
+            //     $data['nmk_tp']     = $this->cvmodel->getdatacount($dmtID,'Trade Payables',$dcID);
+            //     $data['nmk_op']     = $this->cvmodel->getdatacount($dmtID,'Other Payables',$dcID);
+            //     $data['nmk_prov']   = $this->cvmodel->getdatacount($dmtID,'Provisions',$dcID);
+            //     $data['nmk_rev']    = $this->cvmodel->getdatacount($dmtID,'Revenue',$dcID);
+            //     $data['nmk_cst']    = $this->cvmodel->getdatacount($dmtID,'Costs',$dcID);
+            //     $data['nmk_pr']     = $this->cvmodel->getdatacount($dmtID,'Payroll',$dcID);
+            //     $data['vop_tgb']    = $this->cvmodel->getsumation($dmtID,'Tangibles',$dcID);
+            //     $data['vop_ppe']    = $this->cvmodel->getsumation($dmtID,'PPE',$dcID);
+            //     $data['vop_invmt']  = $this->cvmodel->getsumation($dmtID,'Investments',$dcID);
+            //     $data['vop_invtr']  = $this->cvmodel->getsumation($dmtID,'Inventory',$dcID);
+            //     $data['vop_tr']     = $this->cvmodel->getsumation($dmtID,'Trade Receivables',$dcID);
+            //     $data['vop_or']     = $this->cvmodel->getsumation($dmtID,'Other Receivables',$dcID);
+            //     $data['vop_bac']    = $this->cvmodel->getsumation($dmtID,'Bank and Cash',$dcID);
+            //     $data['vop_tp']     = $this->cvmodel->getsumation($dmtID,'Trade Payables',$dcID);
+            //     $data['vop_op']     = $this->cvmodel->getsumation($dmtID,'Other Payables',$dcID);
+            //     $data['vop_prov']   = $this->cvmodel->getsumation($dmtID,'Provisions',$dcID);
+            //     $data['vop_rev']    = $this->cvmodel->getsumation($dmtID,'Revenue',$dcID);
+            //     $data['vop_cst']    = $this->cvmodel->getsumation($dmtID,'Costs',$dcID);
+            //     $data['vop_pr']     = $this->cvmodel->getsumation($dmtID,'Payroll',$dcID);
+            //     $data['mat']        = $this->cvmodel->getvalues_s('c1','materialdata',$s[0],$dmtID,$dcID);
+            //     $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
+            //     foreach($rowdata as $row){
+            //         $rdata = $this->cvmodel->getvalues_s('c1',$row.'data',$s[0],$dmtID,$dcID);
+            //         $data[$row] = json_decode($rdata['field1'], true);
+            //     }
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter1/Ac10-Summary', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case 'AC11':
+            //     $rdata = $this->cvmodel->getvalues_s('c1','ac11data',$code,$dmtID,$dcID);
+            //     $data['ac11'] = json_decode($rdata['field1'], true);
+            //     $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter1/Ac11', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // default:
+            // break;
+        }
+
+    }
+
+
     /** 
         ----------------------------------------------------------
         PDF VIEW CHAPTER 1
         ----------------------------------------------------------
         * @method viewc1pdf() used to generate a pdf file of Chapter 1
         * @param code consists of file code
-        * @param c1tID encrypted of title id
-        * @var dc1tID decrypted id of @param c1tID
+        * @param mtID encrypted of title id
+        * @var dmtID decrypted id of @param mtID
         * @var rdata contains raw json data from database
         * @param array-data consist the data from database to display on the page
           THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
         * @return pdf-view
     */
-    public function viewc1pdf($code,$c1tID){
+    public function viewc1pdf($code,$mtID){
 
         $data['title']  = $code;
-        $data['c1tID']  = $c1tID;
+        $data['mtID']   = $mtID;
         $data['code']   = $code;
-        $dc1tID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID));
+        $dmtID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$mtID));
         switch ($code) {
             case 'AC1':
-                $data['ac1']  = $this->c1model->getvalues_m('cacf',$code,$dc1tID);
-                $rdata        = $this->c1model->getvalues_s('eqr',$code,$dc1tID);
+                $data['ac1']  = $this->c1model->getvalues_m('cacf',$code,$dmtID);
+                $rdata        = $this->c1model->getvalues_s('eqr',$code,$dmtID);
                 $data['eqr']  = json_decode($rdata['field1'], true);
                 echo view('pdfc1/AC1', $data);
                 break;
             case 'AC2':
-                $data['ac2'] = $this->c1model->getvalues_m('pans',$code,$dc1tID);
-                $data['aep'] = $this->c1model->getvalues_s('ac2aep',$code,$dc1tID);
+                $data['ac2'] = $this->c1model->getvalues_m('pans',$code,$dmtID);
+                $data['aep'] = $this->c1model->getvalues_s('ac2aep',$code,$dmtID);
                 echo view('pdfc1/AC2', $data);
                 break;
-            case 'AC3':
-                $data['ac3genmat']      = $this->c1model->getvalues_m('genmat',$code,$dc1tID);
-                $data['ac3doccors']     = $this->c1model->getvalues_m('doccors',$code,$dc1tID);
-                $data['ac3statutory']   = $this->c1model->getvalues_m('statutory',$code,$dc1tID);
-                $data['ac3accsys']      = $this->c1model->getvalues_m('accsys',$code,$dc1tID);
-                echo view('pdfc1/AC3', $data);
-                break;
-            case 'AC4':
-                $data['ac4']  = $this->c1model->getvalues_m('ac4sod',$code,$dc1tID);
-                $rdata        = $this->c1model->getvalues_s('ppr',$code,$dc1tID);
-                $data['ppr']  = json_decode($rdata['field1'], true);
-                echo view('pdfc1/AC4', $data);
-                break;
-            case 'AC5':
-                $rdata       = $this->c1model->getvalues_s('rescon',$code,$dc1tID);
-                $data['rc']  = json_decode($rdata['field1'], true);
-                echo view('pdfc1/AC5', $data);
-                break;
-            case 'AC6':
-                $data['ac6']   = $this->c1model->getvalues_m('ac6ra',$code,$dc1tID);
-                $rdata         = $this->c1model->getvalues_s('ac6s12',$code,$dc1tID);
-                $data['s']     = json_decode($rdata['field1'], true);
-                $data['s3']    = $this->c1model->getvalues_m('ac6s3',$code,$dc1tID);
-                echo view('pdfc1/AC6', $data);
-                break;
-            case 'AC7':
-                $rowdata = [
-                    'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
-                    'roidata','dcodata','prdata','oadata'
-                ];
-                foreach($rowdata as $row){
-                    $rdata       = $this->c1model->getvalues_s($row,$code,$dc1tID);
-                    $data[$row]  = json_decode($rdata['field1'], true);
-                }
-                echo view('pdfc1/AC7', $data);
-                break;
-            case 'AC8':
-                $rowdata = [
-                    'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
-                    'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
-                    'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
-                    'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
-                ];
-                foreach($rowdata as $row){
-                    $data[$row] = $this->c1model->getvalues_s($row,$code,$dc1tID);
-                }
-                echo view('pdfc1/AC8', $data);
-                break;
-            case 'AC9':
-                $rdata        = $this->c1model->getvalues_s('ac9data',$code,$dc1tID);
-                $data['ac9']  = json_decode($rdata['field1'], true);
-                echo view('pdfc1/AC9', $data);
-                break;
-            case 'AC10-Tangibles':
-            case 'AC10-PPE':
-            case 'AC10-Investments':
-            case 'AC10-Inventory':
-            case 'AC10-Trade Receivables':
-            case 'AC10-Other Receivables':
-            case 'AC10-Bank and Cash':
-            case 'AC10-Trade Payables':
-            case 'AC10-Other Payables':
-            case 'AC10-Provisions':
-            case 'AC10-Revenue':
-            case 'AC10-Costs':
-            case 'AC10-Payroll':
-                $s = explode('-', $code);
-                $data ['sheet']  = $s[1];
-                $data['code']    = $s[0];
-                $data['cu']      = $this->c1model->getvalues_s($s[1].'cu',$s[0],$dc1tID);
-                $data['ac10s1']  = $this->c1model->getac10data($s[1],$s[0],$dc1tID,'section1');
-                $data['ac10s2']  = $this->c1model->getac10data($s[1],$s[0],$dc1tID,'section2');
-                echo view('pdfc1/AC10', $data);
-                break;
-            case 'AC10-Summary':
-                $s = explode('-', $code);
-                $data ['sheet']     = $s[1];
-                $data['code']       = $s[0];
-                $data['nmk_tgb']    = $this->c1model->getdatacount($dc1tID,'Tangibles');
-                $data['nmk_ppe']    = $this->c1model->getdatacount($dc1tID,'PPE');
-                $data['nmk_invmt']  = $this->c1model->getdatacount($dc1tID,'Investments');
-                $data['nmk_invtr']  = $this->c1model->getdatacount($dc1tID,'Inventory');
-                $data['nmk_tr']     = $this->c1model->getdatacount($dc1tID,'Trade Receivables');
-                $data['nmk_or']     = $this->c1model->getdatacount($dc1tID,'Other Receivables');
-                $data['nmk_bac']    = $this->c1model->getdatacount($dc1tID,'Bank and Cash');
-                $data['nmk_tp']     = $this->c1model->getdatacount($dc1tID,'Trade Payables');
-                $data['nmk_op']     = $this->c1model->getdatacount($dc1tID,'Other Payables');
-                $data['nmk_prov']   = $this->c1model->getdatacount($dc1tID,'Provisions');
-                $data['nmk_rev']    = $this->c1model->getdatacount($dc1tID,'Revenue');
-                $data['nmk_cst']    = $this->c1model->getdatacount($dc1tID,'Costs');
-                $data['nmk_pr']     = $this->c1model->getdatacount($dc1tID,'Payroll');
-                $data['vop_tgb']    = $this->c1model->getsumation($dc1tID,'Tangibles');
-                $data['vop_ppe']    = $this->c1model->getsumation($dc1tID,'PPE');
-                $data['vop_invmt']  = $this->c1model->getsumation($dc1tID,'Investments');
-                $data['vop_invtr']  = $this->c1model->getsumation($dc1tID,'Inventory');
-                $data['vop_tr']     = $this->c1model->getsumation($dc1tID,'Trade Receivables');
-                $data['vop_or']     = $this->c1model->getsumation($dc1tID,'Other Receivables');
-                $data['vop_bac']    = $this->c1model->getsumation($dc1tID,'Bank and Cash');
-                $data['vop_tp']     = $this->c1model->getsumation($dc1tID,'Trade Payables');
-                $data['vop_op']     = $this->c1model->getsumation($dc1tID,'Other Payables');
-                $data['vop_prov']   = $this->c1model->getsumation($dc1tID,'Provisions');
-                $data['vop_rev']    = $this->c1model->getsumation($dc1tID,'Revenue');
-                $data['vop_cst']    = $this->c1model->getsumation($dc1tID,'Costs');
-                $data['vop_pr']     = $this->c1model->getsumation($dc1tID,'Payroll');
-                $data['mat']        = $this->c1model->getvalues_s('materialdata',$s[0],$dc1tID);
-                $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
-                foreach($rowdata as $row){
-                    $rdata       = $this->c1model->getvalues_s($row.'data',$s[0],$dc1tID);
-                    $data[$row]  = json_decode($rdata['field1'], true);
-                }
-                echo view('pdfc1/AC10Summ', $data);
-                break;
-            case 'AC11':
-                $rdata = $this->c1model->getvalues_s('ac11data',$code,$dc1tID);
-                $data['ac11'] = json_decode($rdata['field1'], true);
-                echo view('pdfc1/AC11', $data);
-                break;
-            default:
-            break;
+            // case 'AC3':
+            //     $data['ac3genmat']      = $this->c1model->getvalues_m('genmat',$code,$dmtID);
+            //     $data['ac3doccors']     = $this->c1model->getvalues_m('doccors',$code,$dmtID);
+            //     $data['ac3statutory']   = $this->c1model->getvalues_m('statutory',$code,$dmtID);
+            //     $data['ac3accsys']      = $this->c1model->getvalues_m('accsys',$code,$dmtID);
+            //     echo view('pdfc1/AC3', $data);
+            //     break;
+            // case 'AC4':
+            //     $data['ac4']  = $this->c1model->getvalues_m('ac4sod',$code,$dmtID);
+            //     $rdata        = $this->c1model->getvalues_s('ppr',$code,$dmtID);
+            //     $data['ppr']  = json_decode($rdata['field1'], true);
+            //     echo view('pdfc1/AC4', $data);
+            //     break;
+            // case 'AC5':
+            //     $rdata       = $this->c1model->getvalues_s('rescon',$code,$dmtID);
+            //     $data['rc']  = json_decode($rdata['field1'], true);
+            //     echo view('pdfc1/AC5', $data);
+            //     break;
+            // case 'AC6':
+            //     $data['ac6']   = $this->c1model->getvalues_m('ac6ra',$code,$dmtID);
+            //     $rdata         = $this->c1model->getvalues_s('ac6s12',$code,$dmtID);
+            //     $data['s']     = json_decode($rdata['field1'], true);
+            //     $data['s3']    = $this->c1model->getvalues_m('ac6s3',$code,$dmtID);
+            //     echo view('pdfc1/AC6', $data);
+            //     break;
+            // case 'AC7':
+            //     $rowdata = [
+            //         'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
+            //         'roidata','dcodata','prdata','oadata'
+            //     ];
+            //     foreach($rowdata as $row){
+            //         $rdata       = $this->c1model->getvalues_s($row,$code,$dmtID);
+            //         $data[$row]  = json_decode($rdata['field1'], true);
+            //     }
+            //     echo view('pdfc1/AC7', $data);
+            //     break;
+            // case 'AC8':
+            //     $rowdata = [
+            //         'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
+            //         'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
+            //         'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
+            //         'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
+            //     ];
+            //     foreach($rowdata as $row){
+            //         $data[$row] = $this->c1model->getvalues_s($row,$code,$dmtID);
+            //     }
+            //     echo view('pdfc1/AC8', $data);
+            //     break;
+            // case 'AC9':
+            //     $rdata        = $this->c1model->getvalues_s('ac9data',$code,$dmtID);
+            //     $data['ac9']  = json_decode($rdata['field1'], true);
+            //     echo view('pdfc1/AC9', $data);
+            //     break;
+            // case 'AC10-Tangibles':
+            // case 'AC10-PPE':
+            // case 'AC10-Investments':
+            // case 'AC10-Inventory':
+            // case 'AC10-Trade Receivables':
+            // case 'AC10-Other Receivables':
+            // case 'AC10-Bank and Cash':
+            // case 'AC10-Trade Payables':
+            // case 'AC10-Other Payables':
+            // case 'AC10-Provisions':
+            // case 'AC10-Revenue':
+            // case 'AC10-Costs':
+            // case 'AC10-Payroll':
+            //     $s = explode('-', $code);
+            //     $data ['sheet']  = $s[1];
+            //     $data['code']    = $s[0];
+            //     $data['cu']      = $this->c1model->getvalues_s($s[1].'cu',$s[0],$dmtID);
+            //     $data['ac10s1']  = $this->c1model->getac10data($s[1],$s[0],$dmtID,'section1');
+            //     $data['ac10s2']  = $this->c1model->getac10data($s[1],$s[0],$dmtID,'section2');
+            //     echo view('pdfc1/AC10', $data);
+            //     break;
+            // case 'AC10-Summary':
+            //     $s = explode('-', $code);
+            //     $data ['sheet']     = $s[1];
+            //     $data['code']       = $s[0];
+            //     $data['nmk_tgb']    = $this->c1model->getdatacount($dmtID,'Tangibles');
+            //     $data['nmk_ppe']    = $this->c1model->getdatacount($dmtID,'PPE');
+            //     $data['nmk_invmt']  = $this->c1model->getdatacount($dmtID,'Investments');
+            //     $data['nmk_invtr']  = $this->c1model->getdatacount($dmtID,'Inventory');
+            //     $data['nmk_tr']     = $this->c1model->getdatacount($dmtID,'Trade Receivables');
+            //     $data['nmk_or']     = $this->c1model->getdatacount($dmtID,'Other Receivables');
+            //     $data['nmk_bac']    = $this->c1model->getdatacount($dmtID,'Bank and Cash');
+            //     $data['nmk_tp']     = $this->c1model->getdatacount($dmtID,'Trade Payables');
+            //     $data['nmk_op']     = $this->c1model->getdatacount($dmtID,'Other Payables');
+            //     $data['nmk_prov']   = $this->c1model->getdatacount($dmtID,'Provisions');
+            //     $data['nmk_rev']    = $this->c1model->getdatacount($dmtID,'Revenue');
+            //     $data['nmk_cst']    = $this->c1model->getdatacount($dmtID,'Costs');
+            //     $data['nmk_pr']     = $this->c1model->getdatacount($dmtID,'Payroll');
+            //     $data['vop_tgb']    = $this->c1model->getsumation($dmtID,'Tangibles');
+            //     $data['vop_ppe']    = $this->c1model->getsumation($dmtID,'PPE');
+            //     $data['vop_invmt']  = $this->c1model->getsumation($dmtID,'Investments');
+            //     $data['vop_invtr']  = $this->c1model->getsumation($dmtID,'Inventory');
+            //     $data['vop_tr']     = $this->c1model->getsumation($dmtID,'Trade Receivables');
+            //     $data['vop_or']     = $this->c1model->getsumation($dmtID,'Other Receivables');
+            //     $data['vop_bac']    = $this->c1model->getsumation($dmtID,'Bank and Cash');
+            //     $data['vop_tp']     = $this->c1model->getsumation($dmtID,'Trade Payables');
+            //     $data['vop_op']     = $this->c1model->getsumation($dmtID,'Other Payables');
+            //     $data['vop_prov']   = $this->c1model->getsumation($dmtID,'Provisions');
+            //     $data['vop_rev']    = $this->c1model->getsumation($dmtID,'Revenue');
+            //     $data['vop_cst']    = $this->c1model->getsumation($dmtID,'Costs');
+            //     $data['vop_pr']     = $this->c1model->getsumation($dmtID,'Payroll');
+            //     $data['mat']        = $this->c1model->getvalues_s('materialdata',$s[0],$dmtID);
+            //     $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
+            //     foreach($rowdata as $row){
+            //         $rdata       = $this->c1model->getvalues_s($row.'data',$s[0],$dmtID);
+            //         $data[$row]  = json_decode($rdata['field1'], true);
+            //     }
+            //     echo view('pdfc1/AC10Summ', $data);
+            //     break;
+            // case 'AC11':
+            //     $rdata = $this->c1model->getvalues_s('ac11data',$code,$dmtID);
+            //     $data['ac11'] = json_decode($rdata['field1'], true);
+            //     echo view('pdfc1/AC11', $data);
+            //     break;
+            // default:
+            // break;
         }
 
     }
@@ -526,194 +725,7 @@ class ChapterController extends BaseController{
     }
 
 
-    /** 
-        ----------------------------------------------------------
-        CHAPTER 1 VALUES
-        ----------------------------------------------------------
-        * @method c1setvalues() used view the default values file of Chapter 1
-        * @param code consists of file code
-        * @param c1tID encrypted of title id
-        * @param cID encrypted of client id
-        * @param name client name
-        * @var dc1tID decrypted id of @param c1tID
-        * @var rdata contains raw json data from database
-        * @param array-data consist the data from database to display on the page
-          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
-        * @return pdf-view
-    */
-    public function c1setvalues($code,$c1tID,$cID,$name){
-
-        $data['title']  = $code. ' - Chapter 1 Management';
-        $data['name']   = $name;
-        $data['cID']    = $cID;
-        $data['c1tID']  = $c1tID;
-        $data['code']   = $code;
-        $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $dc1tID         = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID));
-        switch ($code) {
-            case 'AC1':
-                $data['ac1']    = $this->cvmodel->getvalues_m('c1','cacf',$code,$dc1tID,$dcID);
-                $rdata          = $this->cvmodel->getvalues_s('c1','eqr',$code,$dc1tID,$dcID);
-                $data['eqr']    = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter1/Ac1', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC2':
-                $data['ac2'] = $this->cvmodel->getvalues_m('c1','pans',$code,$dc1tID,$dcID);
-                $data['aep'] = $this->cvmodel->getvalues_s('c1','ac2aep',$code,$dc1tID,$dcID);
-                echo view('includes/Header', $data);
-                echo view('client/chapter1/Ac2', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC3':
-                $data['ac3genmat']      = $this->cvmodel->getvalues_m('c1','genmat',$code,$dc1tID,$dcID);
-                $data['ac3doccors']     = $this->cvmodel->getvalues_m('c1','doccors',$code,$dc1tID,$dcID);
-                $data['ac3statutory']   = $this->cvmodel->getvalues_m('c1','statutory',$code,$dc1tID,$dcID);
-                $data['ac3accsys']      = $this->cvmodel->getvalues_m('c1','accsys',$code,$dc1tID,$dcID);
-                echo view('includes/Header', $data);
-                echo view('client/chapter1/Ac3', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC4':
-                $data['ac4']    = $this->cvmodel->getvalues_m('c1','ac4sod',$code,$dc1tID,$dcID);
-                $rdata          = $this->cvmodel->getvalues_s('c1','ppr',$code,$dc1tID,$dcID);
-                $data['ppr']    = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter1/Ac4', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC5':
-                $rdata          = $this->cvmodel->getvalues_s('c1','rescon',$code,$dc1tID,$dcID);
-                $data['rc']     = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter1/Ac5', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC6':
-                $data['ac6']    = $this->cvmodel->getvalues_m('c1','ac6ra',$code,$dc1tID,$dcID);
-                $rdata          = $this->cvmodel->getvalues_s('c1','ac6s12',$code,$dc1tID,$dcID);
-                $data['s']      = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                $data['s3']     = $this->cvmodel->getvalues_m('c1','ac6s3',$code,$dc1tID,$dcID);
-                echo view('includes/Header', $data);
-                echo view('client/chapter1/Ac6', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC7':
-                $rowdata = [
-                    'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
-                    'roidata','dcodata','prdata','oadata'
-                ];
-                foreach($rowdata as $row){
-                    $rdata       = $this->cvmodel->getvalues_s('c1',$row,$code,$dc1tID,$dcID);
-                    $data[$row]  = json_decode($rdata['field1'], true);
-                }
-                echo view('includes/Header', $data);
-                echo view('client/chapter1/Ac7', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC8':
-                $rowdata = [
-                    'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
-                    'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
-                    'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
-                    'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
-                ];
-                foreach($rowdata as $row){
-                    $data[$row] = $this->cvmodel->getvalues_s('c1',$row,$code,$dc1tID,$dcID);
-                }
-                echo view('includes/Header', $data);
-                echo view('client/chapter1/Ac8', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC9':
-                $rdata = $this->cvmodel->getvalues_s('c1','ac9data',$code,$dc1tID,$dcID);
-                $data['ac9'] = json_decode($rdata['field1'], true);
-                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter1/Ac9', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC10-Tangibles':
-            case 'AC10-PPE':
-            case 'AC10-Investments':
-            case 'AC10-Inventory':
-            case 'AC10-Trade Receivables':
-            case 'AC10-Other Receivables':
-            case 'AC10-Bank and Cash':
-            case 'AC10-Trade Payables':
-            case 'AC10-Other Payables':
-            case 'AC10-Provisions':
-            case 'AC10-Revenue':
-            case 'AC10-Costs':
-            case 'AC10-Payroll':
-                $s = explode('-', $code);
-                $data ['sheet']     = $s[1];
-                $data['code']       = $s[0];
-                $data['cu']         = $this->cvmodel->getvalues_s('c1',$s[1].'cu',$s[0],$dc1tID,$dcID);
-                $data['ac10s1']     = $this->cvmodel->getac10data($s[1],$s[0],$dc1tID,$dcID,'section1');
-                $data['ac10s2']     = $this->cvmodel->getac10data($s[1],$s[0],$dc1tID,$dcID,'section2');
-                echo view('includes/Header', $data);
-                echo view('client/chapter1/Ac10', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC10-Summary':
-                $s = explode('-', $code);
-                $data ['sheet']     = $s[1];
-                $data['code']       = $s[0];
-                $data['nmk_tgb']    = $this->cvmodel->getdatacount($dc1tID,'Tangibles',$dcID);
-                $data['nmk_ppe']    = $this->cvmodel->getdatacount($dc1tID,'PPE',$dcID);
-                $data['nmk_invmt']  = $this->cvmodel->getdatacount($dc1tID,'Investments',$dcID);
-                $data['nmk_invtr']  = $this->cvmodel->getdatacount($dc1tID,'Inventory',$dcID);
-                $data['nmk_tr']     = $this->cvmodel->getdatacount($dc1tID,'Trade Receivables',$dcID);
-                $data['nmk_or']     = $this->cvmodel->getdatacount($dc1tID,'Other Receivables',$dcID);
-                $data['nmk_bac']    = $this->cvmodel->getdatacount($dc1tID,'Bank and Cash',$dcID);
-                $data['nmk_tp']     = $this->cvmodel->getdatacount($dc1tID,'Trade Payables',$dcID);
-                $data['nmk_op']     = $this->cvmodel->getdatacount($dc1tID,'Other Payables',$dcID);
-                $data['nmk_prov']   = $this->cvmodel->getdatacount($dc1tID,'Provisions',$dcID);
-                $data['nmk_rev']    = $this->cvmodel->getdatacount($dc1tID,'Revenue',$dcID);
-                $data['nmk_cst']    = $this->cvmodel->getdatacount($dc1tID,'Costs',$dcID);
-                $data['nmk_pr']     = $this->cvmodel->getdatacount($dc1tID,'Payroll',$dcID);
-                $data['vop_tgb']    = $this->cvmodel->getsumation($dc1tID,'Tangibles',$dcID);
-                $data['vop_ppe']    = $this->cvmodel->getsumation($dc1tID,'PPE',$dcID);
-                $data['vop_invmt']  = $this->cvmodel->getsumation($dc1tID,'Investments',$dcID);
-                $data['vop_invtr']  = $this->cvmodel->getsumation($dc1tID,'Inventory',$dcID);
-                $data['vop_tr']     = $this->cvmodel->getsumation($dc1tID,'Trade Receivables',$dcID);
-                $data['vop_or']     = $this->cvmodel->getsumation($dc1tID,'Other Receivables',$dcID);
-                $data['vop_bac']    = $this->cvmodel->getsumation($dc1tID,'Bank and Cash',$dcID);
-                $data['vop_tp']     = $this->cvmodel->getsumation($dc1tID,'Trade Payables',$dcID);
-                $data['vop_op']     = $this->cvmodel->getsumation($dc1tID,'Other Payables',$dcID);
-                $data['vop_prov']   = $this->cvmodel->getsumation($dc1tID,'Provisions',$dcID);
-                $data['vop_rev']    = $this->cvmodel->getsumation($dc1tID,'Revenue',$dcID);
-                $data['vop_cst']    = $this->cvmodel->getsumation($dc1tID,'Costs',$dcID);
-                $data['vop_pr']     = $this->cvmodel->getsumation($dc1tID,'Payroll',$dcID);
-                $data['mat']        = $this->cvmodel->getvalues_s('c1','materialdata',$s[0],$dc1tID,$dcID);
-                $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
-                foreach($rowdata as $row){
-                    $rdata = $this->cvmodel->getvalues_s('c1',$row.'data',$s[0],$dc1tID,$dcID);
-                    $data[$row] = json_decode($rdata['field1'], true);
-                }
-                echo view('includes/Header', $data);
-                echo view('client/chapter1/Ac10-Summary', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC11':
-                $rdata = $this->cvmodel->getvalues_s('c1','ac11data',$code,$dc1tID,$dcID);
-                $data['ac11'] = json_decode($rdata['field1'], true);
-                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter1/Ac11', $data);
-                echo view('includes/Footer');
-                break;
-            default:
-            break;
-        }
-
-    }
+    
 
 
     /** 
@@ -1201,11 +1213,11 @@ class ChapterController extends BaseController{
         ----------------------------------------------------------
         * @method c1setworkpaper() used view the workpaper values file of Chapter 1
         * @param code consists of file code
-        * @param c1tID encrypted of title id
+        * @param mtID encrypted of title id
         * @param cID encrypted of client id
         * @param wpID encrypted of work paper id
         * @param name client name
-        * @var dc1tID decrypted id of @param c1tID
+        * @var dmtID decrypted id of @param mtID
         * @var dcID decrypted id of @param cID
         * @var dwpID decrypted id of @param wpID
         * @var rdata contains raw json data from database
@@ -1213,21 +1225,21 @@ class ChapterController extends BaseController{
           THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
         * @return view
     */
-    public function c1setworkpaper($code,$c1tID,$cID,$wpID,$name){
+    public function c1setworkpaper($code,$mtID,$cID,$wpID,$name){
 
         $data['title']  = $code. ' - Chapter 1 Management';
         $data['name']   = $name;
         $data['cID']    = $cID;
         $data['wpID']   = $wpID;
-        $data['c1tID']  = $c1tID;
+        $data['mtID']  = $mtID;
         $data['code']   = $code;
         $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
         $dwpID          = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
-        $dc1tID         = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c1tID));
+        $dmtID         = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$mtID));
         switch ($code) {
             case 'AC1':
-                $data['ac1']    = $this->wpmodel->getvalues_m('c1','cacf',$code,$dc1tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c1','eqr',$code,$dc1tID,$dcID,$dwpID);
+                $data['ac1']    = $this->wpmodel->getvalues_m('c1','cacf',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_s('c1','eqr',$code,$dmtID,$dcID,$dwpID);
                 $data['eqr']    = json_decode($rdata['field1'], true);
                 $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
@@ -1235,24 +1247,24 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break;
             case 'AC2':
-                $data['ac2'] = $this->wpmodel->getvalues_m('c1','pans',$code,$dc1tID,$dcID,$dwpID);
-                $data['aep'] = $this->wpmodel->getvalues_s('c1','ac2aep',$code,$dc1tID,$dcID,$dwpID);
+                $data['ac2'] = $this->wpmodel->getvalues_m('c1','pans',$code,$dmtID,$dcID,$dwpID);
+                $data['aep'] = $this->wpmodel->getvalues_s('c1','ac2aep',$code,$dmtID,$dcID,$dwpID);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac2', $data);
                 echo view('includes/Footer');
                 break;
             case 'AC3':
-                $data['ac3genmat']      = $this->wpmodel->getvalues_m('c1','genmat',$code,$dc1tID,$dcID,$dwpID);
-                $data['ac3doccors']     = $this->wpmodel->getvalues_m('c1','doccors',$code,$dc1tID,$dcID,$dwpID);
-                $data['ac3statutory']   = $this->wpmodel->getvalues_m('c1','statutory',$code,$dc1tID,$dcID,$dwpID);
-                $data['ac3accsys']      = $this->wpmodel->getvalues_m('c1','accsys',$code,$dc1tID,$dcID,$dwpID);
+                $data['ac3genmat']      = $this->wpmodel->getvalues_m('c1','genmat',$code,$dmtID,$dcID,$dwpID);
+                $data['ac3doccors']     = $this->wpmodel->getvalues_m('c1','doccors',$code,$dmtID,$dcID,$dwpID);
+                $data['ac3statutory']   = $this->wpmodel->getvalues_m('c1','statutory',$code,$dmtID,$dcID,$dwpID);
+                $data['ac3accsys']      = $this->wpmodel->getvalues_m('c1','accsys',$code,$dmtID,$dcID,$dwpID);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac3', $data);
                 echo view('includes/Footer');
                 break;
             case 'AC4':
-                $data['ac4']    = $this->wpmodel->getvalues_m('c1','ac4sod',$code,$dc1tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c1','ppr',$code,$dc1tID,$dcID,$dwpID);
+                $data['ac4']    = $this->wpmodel->getvalues_m('c1','ac4sod',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_s('c1','ppr',$code,$dmtID,$dcID,$dwpID);
                 $data['ppr']    = json_decode($rdata['field1'], true);
                 $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
@@ -1260,7 +1272,7 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break;
             case 'AC5':
-                $rdata          = $this->wpmodel->getvalues_s('c1','rescon',$code,$dc1tID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_s('c1','rescon',$code,$dmtID,$dcID,$dwpID);
                 $data['rc']     = json_decode($rdata['field1'], true);
                 $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
@@ -1268,11 +1280,11 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break;
             case 'AC6':
-                $data['ac6']    = $this->wpmodel->getvalues_m('c1','ac6ra',$code,$dc1tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c1','ac6s12',$code,$dc1tID,$dcID,$dwpID);
+                $data['ac6']    = $this->wpmodel->getvalues_m('c1','ac6ra',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_s('c1','ac6s12',$code,$dmtID,$dcID,$dwpID);
                 $data['s']      = json_decode($rdata['field1'], true);
                 $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                $data['s3']     = $this->wpmodel->getvalues_m('c1','ac6s3',$code,$dc1tID,$dcID,$dwpID);
+                $data['s3']     = $this->wpmodel->getvalues_m('c1','ac6s3',$code,$dmtID,$dcID,$dwpID);
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac6', $data);
                 echo view('includes/Footer');
@@ -1283,7 +1295,7 @@ class ChapterController extends BaseController{
                     'roidata','dcodata','prdata','oadata'
                 ];
                 foreach($rowdata as $row){
-                    $rdata      = $this->wpmodel->getvalues_s('c1',$row,$code,$dc1tID,$dcID,$dwpID);
+                    $rdata      = $this->wpmodel->getvalues_s('c1',$row,$code,$dmtID,$dcID,$dwpID);
                     $data[$row] = json_decode($rdata['field1'], true);
                 }
                 echo view('includes/Header', $data);
@@ -1298,14 +1310,14 @@ class ChapterController extends BaseController{
                     'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
                 ];
                 foreach($rowdata as $row){
-                    $data[$row] = $this->wpmodel->getvalues_s('c1',$row,$code,$dc1tID,$dcID,$dwpID);
+                    $data[$row] = $this->wpmodel->getvalues_s('c1',$row,$code,$dmtID,$dcID,$dwpID);
                 }
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac8', $data);
                 echo view('includes/Footer');
                 break;
             case 'AC9':
-                $rdata = $this->wpmodel->getvalues_s('c1','ac9data',$code,$dc1tID,$dcID,$dwpID);
+                $rdata = $this->wpmodel->getvalues_s('c1','ac9data',$code,$dmtID,$dcID,$dwpID);
                 $data['ac9'] = json_decode($rdata['field1'], true);
                 $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);
@@ -1328,9 +1340,9 @@ class ChapterController extends BaseController{
                 $s              = explode('-', $code);
                 $data ['sheet'] = $s[1];
                 $data['code']   = $s[0];
-                $data['cu']     = $this->wpmodel->getvalues_s('c1',$s[1].'cu',$s[0],$dc1tID,$dcID,$dwpID);
-                $data['ac10s1'] = $this->wpmodel->getac10data($s[1],$s[0],$dc1tID,$dcID,$dwpID,'section1');
-                $data['ac10s2'] = $this->wpmodel->getac10data($s[1],$s[0],$dc1tID,$dcID,$dwpID,'section2');
+                $data['cu']     = $this->wpmodel->getvalues_s('c1',$s[1].'cu',$s[0],$dmtID,$dcID,$dwpID);
+                $data['ac10s1'] = $this->wpmodel->getac10data($s[1],$s[0],$dmtID,$dcID,$dwpID,'section1');
+                $data['ac10s2'] = $this->wpmodel->getac10data($s[1],$s[0],$dmtID,$dcID,$dwpID,'section2');
                 echo view('includes/Header', $data);
                 echo view('workpaper/chapter1/Ac10', $data);
                 echo view('includes/Footer');
@@ -1339,36 +1351,36 @@ class ChapterController extends BaseController{
                 $s                  = explode('-', $code);
                 $data ['sheet']     = $s[1];
                 $data['code']       = $s[0];
-                $data['nmk_tgb']    = $this->wpmodel->getdatacount($dc1tID,'Tangibles',$dcID,$dwpID);
-                $data['nmk_ppe']    = $this->wpmodel->getdatacount($dc1tID,'PPE',$dcID,$dwpID);
-                $data['nmk_invmt']  = $this->wpmodel->getdatacount($dc1tID,'Investments',$dcID,$dwpID);
-                $data['nmk_invtr']  = $this->wpmodel->getdatacount($dc1tID,'Inventory',$dcID,$dwpID);
-                $data['nmk_tr']     = $this->wpmodel->getdatacount($dc1tID,'Trade Receivables',$dcID,$dwpID);
-                $data['nmk_or']     = $this->wpmodel->getdatacount($dc1tID,'Other Receivables',$dcID,$dwpID);
-                $data['nmk_bac']    = $this->wpmodel->getdatacount($dc1tID,'Bank and Cash',$dcID,$dwpID);
-                $data['nmk_tp']     = $this->wpmodel->getdatacount($dc1tID,'Trade Payables',$dcID,$dwpID);
-                $data['nmk_op']     = $this->wpmodel->getdatacount($dc1tID,'Other Payables',$dcID,$dwpID);
-                $data['nmk_prov']   = $this->wpmodel->getdatacount($dc1tID,'Provisions',$dcID,$dwpID);
-                $data['nmk_rev']    = $this->wpmodel->getdatacount($dc1tID,'Revenue',$dcID,$dwpID);
-                $data['nmk_cst']    = $this->wpmodel->getdatacount($dc1tID,'Costs',$dcID,$dwpID);
-                $data['nmk_pr']     = $this->wpmodel->getdatacount($dc1tID,'Payroll',$dcID,$dwpID);
-                $data['vop_tgb']    = $this->wpmodel->getsumation($dc1tID,'Tangibles',$dcID,$dwpID);
-                $data['vop_ppe']    = $this->wpmodel->getsumation($dc1tID,'PPE',$dcID,$dwpID);
-                $data['vop_invmt']  = $this->wpmodel->getsumation($dc1tID,'Investments',$dcID,$dwpID);
-                $data['vop_invtr']  = $this->wpmodel->getsumation($dc1tID,'Inventory',$dcID,$dwpID);
-                $data['vop_tr']     = $this->wpmodel->getsumation($dc1tID,'Trade Receivables',$dcID,$dwpID);
-                $data['vop_or']     = $this->wpmodel->getsumation($dc1tID,'Other Receivables',$dcID,$dwpID);
-                $data['vop_bac']    = $this->wpmodel->getsumation($dc1tID,'Bank and Cash',$dcID,$dwpID);
-                $data['vop_tp']     = $this->wpmodel->getsumation($dc1tID,'Trade Payables',$dcID,$dwpID);
-                $data['vop_op']     = $this->wpmodel->getsumation($dc1tID,'Other Payables',$dcID,$dwpID);
-                $data['vop_prov']   = $this->wpmodel->getsumation($dc1tID,'Provisions',$dcID,$dwpID);
-                $data['vop_rev']    = $this->wpmodel->getsumation($dc1tID,'Revenue',$dcID,$dwpID);
-                $data['vop_cst']    = $this->wpmodel->getsumation($dc1tID,'Costs',$dcID,$dwpID);
-                $data['vop_pr']     = $this->wpmodel->getsumation($dc1tID,'Payroll',$dcID,$dwpID);
-                $data['mat']        = $this->wpmodel->getvalues_s('c1','materialdata',$s[0],$dc1tID,$dcID,$dwpID);
+                $data['nmk_tgb']    = $this->wpmodel->getdatacount($dmtID,'Tangibles',$dcID,$dwpID);
+                $data['nmk_ppe']    = $this->wpmodel->getdatacount($dmtID,'PPE',$dcID,$dwpID);
+                $data['nmk_invmt']  = $this->wpmodel->getdatacount($dmtID,'Investments',$dcID,$dwpID);
+                $data['nmk_invtr']  = $this->wpmodel->getdatacount($dmtID,'Inventory',$dcID,$dwpID);
+                $data['nmk_tr']     = $this->wpmodel->getdatacount($dmtID,'Trade Receivables',$dcID,$dwpID);
+                $data['nmk_or']     = $this->wpmodel->getdatacount($dmtID,'Other Receivables',$dcID,$dwpID);
+                $data['nmk_bac']    = $this->wpmodel->getdatacount($dmtID,'Bank and Cash',$dcID,$dwpID);
+                $data['nmk_tp']     = $this->wpmodel->getdatacount($dmtID,'Trade Payables',$dcID,$dwpID);
+                $data['nmk_op']     = $this->wpmodel->getdatacount($dmtID,'Other Payables',$dcID,$dwpID);
+                $data['nmk_prov']   = $this->wpmodel->getdatacount($dmtID,'Provisions',$dcID,$dwpID);
+                $data['nmk_rev']    = $this->wpmodel->getdatacount($dmtID,'Revenue',$dcID,$dwpID);
+                $data['nmk_cst']    = $this->wpmodel->getdatacount($dmtID,'Costs',$dcID,$dwpID);
+                $data['nmk_pr']     = $this->wpmodel->getdatacount($dmtID,'Payroll',$dcID,$dwpID);
+                $data['vop_tgb']    = $this->wpmodel->getsumation($dmtID,'Tangibles',$dcID,$dwpID);
+                $data['vop_ppe']    = $this->wpmodel->getsumation($dmtID,'PPE',$dcID,$dwpID);
+                $data['vop_invmt']  = $this->wpmodel->getsumation($dmtID,'Investments',$dcID,$dwpID);
+                $data['vop_invtr']  = $this->wpmodel->getsumation($dmtID,'Inventory',$dcID,$dwpID);
+                $data['vop_tr']     = $this->wpmodel->getsumation($dmtID,'Trade Receivables',$dcID,$dwpID);
+                $data['vop_or']     = $this->wpmodel->getsumation($dmtID,'Other Receivables',$dcID,$dwpID);
+                $data['vop_bac']    = $this->wpmodel->getsumation($dmtID,'Bank and Cash',$dcID,$dwpID);
+                $data['vop_tp']     = $this->wpmodel->getsumation($dmtID,'Trade Payables',$dcID,$dwpID);
+                $data['vop_op']     = $this->wpmodel->getsumation($dmtID,'Other Payables',$dcID,$dwpID);
+                $data['vop_prov']   = $this->wpmodel->getsumation($dmtID,'Provisions',$dcID,$dwpID);
+                $data['vop_rev']    = $this->wpmodel->getsumation($dmtID,'Revenue',$dcID,$dwpID);
+                $data['vop_cst']    = $this->wpmodel->getsumation($dmtID,'Costs',$dcID,$dwpID);
+                $data['vop_pr']     = $this->wpmodel->getsumation($dmtID,'Payroll',$dcID,$dwpID);
+                $data['mat']        = $this->wpmodel->getvalues_s('c1','materialdata',$s[0],$dmtID,$dcID,$dwpID);
                 $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
                 foreach($rowdata as $row){
-                    $rdata = $this->wpmodel->getvalues_s('c1',$row.'data',$s[0],$dc1tID,$dcID,$dwpID);
+                    $rdata = $this->wpmodel->getvalues_s('c1',$row.'data',$s[0],$dmtID,$dcID,$dwpID);
                     $data[$row] = json_decode($rdata['field1'], true);
                 }
                 echo view('includes/Header', $data);
@@ -1376,7 +1388,7 @@ class ChapterController extends BaseController{
                 echo view('includes/Footer');
                 break;
             case 'AC11':
-                $rdata = $this->wpmodel->getvalues_s('c1','ac11data',$code,$dc1tID,$dcID,$dwpID);
+                $rdata = $this->wpmodel->getvalues_s('c1','ac11data',$code,$dmtID,$dcID,$dwpID);
                 $data['ac11'] = json_decode($rdata['field1'], true);
                 $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
                 echo view('includes/Header', $data);

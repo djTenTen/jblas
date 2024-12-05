@@ -20,9 +20,9 @@ class DashModel extends Model{
         * @property time-date-year to load the date and time
         * @property db to load the data base
     */
-    protected $tblc1    = "tbl_client_files_c1";
-    protected $tblc2    = "tbl_client_files_c2";
-    protected $tblc3    = "tbl_client_files_c3";
+    protected $tblc1    = "tbl_client_c1";
+    protected $tblc2    = "tbl_client_c2";
+    protected $tblc3    = "tbl_client_c3";
     protected $tblcfi   = "tbl_client_file_index";
     protected $tblc     = "tbl_clients";
     protected $tblwp    = "tbl_workpaper";
@@ -118,16 +118,16 @@ class DashModel extends Model{
     public function getwpprogress($fID){
 
         $query = $this->db->query("select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
-        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.workpaper = wp.wpID and tc1.clientID = wp.client) as x1,
-        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.workpaper = wp.wpID and tc2.clientID = wp.client) as x2,
-        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.workpaper = wp.wpID and tc3.clientID = wp.client) as x3,
-        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.workpaper = wp.wpID and tc1.clientID = wp.client and updated_on IS NOT NULL) as y1,
-        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.workpaper = wp.wpID and tc2.clientID = wp.client and updated_on IS NOT NULL) as y2,
-        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.workpaper = wp.wpID and tc3.clientID = wp.client and updated_on IS NOT NULL) as y3,
-        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.workpaper = wp.wpID and cfi.clientID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Reviewing') as ir,
-        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.workpaper = wp.wpID and cfi.clientID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Checking') as ic,
-        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.workpaper = wp.wpID and cfi.clientID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Approved') as ia,
-        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.workpaper = wp.wpID and cfi.clientID = wp.client and cfi.acquired = 'Yes') as ti,
+        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.wpID = wp.wpID and tc1.cID = wp.client) as x1,
+        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.wpID = wp.wpID and tc2.cID = wp.client) as x2,
+        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.wpID = wp.wpID and tc3.cID = wp.client) as x3,
+        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.wpID = wp.wpID and tc1.cID = wp.client and updated_on IS NOT NULL) as y1,
+        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.wpID = wp.wpID and tc2.cID = wp.client and updated_on IS NOT NULL) as y2,
+        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.wpID = wp.wpID and tc3.cID = wp.client and updated_on IS NOT NULL) as y3,
+        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.wpID = wp.wpID and cfi.cID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Reviewing') as ir,
+        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.wpID = wp.wpID and cfi.cID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Checking') as ic,
+        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.wpID = wp.wpID and cfi.cID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Approved') as ia,
+        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.wpID = wp.wpID and cfi.cID = wp.client and cfi.acquired = 'Yes') as ti,
         tc.name as cli,
         tc.org
         from {$this->tblwp} as wp, {$this->tblc} as tc

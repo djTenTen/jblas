@@ -1,4 +1,9 @@
-<?php  $crypt = \Config\Services::encrypter();?>
+<?php  
+    function encr($ecr){
+        $crypt = \Config\Services::encrypter();
+        return str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ecr));
+    }
+?>
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -67,16 +72,7 @@
                                     <td><?= $r['title']?></td>
                                     <td>
                                     <?php if(session()->get('allowed')->edit == "Yes"){?>
-                                        <?php if($r['code'] == 'AC10'){?>
-                                            <div class="dropdown">
-                                                <button class="btn btn-primary btn-icon btn-sm" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-tools"></i></button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/client/chapter1/setvalues/')?><?= $r['code']?>-Tangibles/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>/<?= $cID?>/<?= $name?>">Tangibles</a>
-                                                </div>
-                                            </div>
-                                        <?php }else{?>
-                                            <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
-                                        <?php }?>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/setvalues/')?><?= $r['code']?>/<?= encr($r['mtID'])?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                     <?php }?>
                                     </td>
                                 </tr>
@@ -102,7 +98,7 @@
                                     <td><?= $r['title']?></td>
                                     <td>
                                     <?php if(session()->get('allowed')->edit == "Yes"){?>
-                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter2/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter2/setvalues/')?><?= $r['code']?>/<?= encr($r['mtID'])?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                     <?php }?>
                                     </td>
                                 </tr>
@@ -132,14 +128,14 @@
                                             <div class="dropdown">
                                                 <button class="btn btn-primary btn-icon btn-sm" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-tools"></i></button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/client/chapter3/setvalues/')?><?= $r['code']?>-un/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>/<?= $cID?>/<?= $name?>">Unadjusted Errors</a>
-                                                    <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/client/chapter3/setvalues/')?><?= $r['code']?>-ad/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>/<?= $cID?>/<?= $name?>">Adjusted Mades</a>
+                                                    <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/client/chapter3/setvalues/')?><?= $r['code']?>-un/<?= encr($r['mtID'])?>/<?= $cID?>/<?= $name?>">Unadjusted Errors</a>
+                                                    <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/client/chapter3/setvalues/')?><?= $r['code']?>-ad/<?= encr($r['mtID'])?>/<?= $cID?>/<?= $name?>">Adjusted Mades</a>
                                                 </div>
                                             </div>
                                         <?php }elseif($r['code'] == '3.15 Ab4'){?>
-                                            <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter3/setvalues/')?><?= $r['code']?>-checklist/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                            <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter3/setvalues/')?><?= $r['code']?>-checklist/<?= encr($r['mtID'])?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                         <?php }else{?>
-                                            <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter3/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['mtID']))?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                            <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter3/setvalues/')?><?= $r['code']?>/<?= encr($r['mtID'])?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                         <?php }?>
                                     <?php }?>
                                     </td>
