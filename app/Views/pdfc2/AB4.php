@@ -129,9 +129,9 @@ $html .= '
         $html .='
             <tr>
                 <td style="width: 5%">'.$c.'</td>
-                <td style="width: 60%;">'.$r['question'].'</td>
-                <td style="width: 17%" class="cent bo">'.$r['yesno'].'</td>
-                <td style="width: 17%" class="cent bo">'.$r['comment'].'</td>
+                <td style="width: 60%;">'.$r['field1'].'</td>
+                <td style="width: 17%" class="cent bo">'.$r['field2'].'</td>
+                <td style="width: 17%" class="cent bo">'.$r['field3'].'</td>
             </tr>
         ';
     }
@@ -154,9 +154,9 @@ $html .= '
         $html .='
             <tr>
                 <td style="width: 5%">'.$c.'</td>
-                <td style="width: 60%;">'.$r['question'].'</td>
-                <td style="width: 17%" class="cent bo">'.$r['yesno'].'</td>
-                <td style="width: 17%" class="cent bo">'.$r['comment'].'</td>
+                <td style="width: 60%;">'.$r['field1'].'</td>
+                <td style="width: 17%" class="cent bo">'.$r['field2'].'</td>
+                <td style="width: 17%" class="cent bo">'.$r['field3'].'</td>
             </tr>
         ';
     }
@@ -179,9 +179,9 @@ $html .= '
         $html .='
             <tr>
                 <td style="width: 5%">'.$c.'</td>
-                <td style="width: 60%;">'.$r['question'].'</td>
-                <td style="width: 17%" class="cent bo">'.$r['yesno'].'</td>
-                <td style="width: 17%" class="cent bo">'.$r['comment'].'</td>
+                <td style="width: 60%;">'.$r['field1'].'</td>
+                <td style="width: 17%" class="cent bo">'.$r['field2'].'</td>
+                <td style="width: 17%" class="cent bo">'.$r['field3'].'</td>
             </tr>
         ';
     }
@@ -204,9 +204,9 @@ $html .= '
         $html .='
             <tr>
                 <td style="width: 5%">'.$c.'</td>
-                <td style="width: 60%;">'.$r['question'].'</td>
-                <td style="width: 17%" class="cent bo">'.$r['yesno'].'</td>
-                <td style="width: 17%" class="cent bo">'.$r['comment'].'</td>
+                <td style="width: 60%;">'.$r['field1'].'</td>
+                <td style="width: 17%" class="cent bo">'.$r['field2'].'</td>
+                <td style="width: 17%" class="cent bo">'.$r['field3'].'</td>
             </tr>
         ';
     }

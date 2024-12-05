@@ -243,24 +243,24 @@ class ChapterValuesModel extends Model{
 
             case 'c2':
                 switch($param['code']) {
-                    // case 'AC3':
-                    //     switch ($param['save']) {
-                    //         case 'saveac3':
-                    //             foreach($req['yesno'] as $i => $val){
-                    //                 $acid = $this->crypt->decrypt($req['acid'][$i]);
-                    //                 $data = [
-                    //                     'yesno'         => $req['yesno'][$i],
-                    //                     'comment'       => $req['comment'][$i],
-                    //                     'updated_on'    => $this->date.' '.$this->time,
-                    //                     'updated_by'    => $param['uID'],
-                    //                 ];
-                    //                 $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
-                    //             }
-                    //         break;
-                    //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
-                    //     return true;
-                    // break;
+                    case 'AB4':
+                        switch ($param['save']) {
+                            case 'saveac3':
+                                foreach($req['yesno'] as $i => $val){
+                                    $acid = $this->decr($req['acid'][$i]);
+                                    $data = [
+                                        'field2'        => $req['yesno'][$i],
+                                        'field3'        => $req['comment'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2d)->where('mdID', $acid)->update($data);
+                                }
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
+                        return true;
+                    break;
                     case 'AB4A':
                         switch ($param['save']) {
                             case 'saveab4a':
@@ -285,7 +285,7 @@ class ChapterValuesModel extends Model{
                                 }
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                         return true;
                     break;
                     // case 'AC4':
@@ -311,7 +311,7 @@ class ChapterValuesModel extends Model{
                     //             $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
                     //         break;
                     //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                     //     return true;
                     // break;
                     // case 'AC5':
@@ -326,7 +326,7 @@ class ChapterValuesModel extends Model{
                     //             $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
                     //         break;
                     //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                     //     return true;
                     // break;
                     // case 'AC6':
@@ -383,7 +383,7 @@ class ChapterValuesModel extends Model{
                     //             }
                     //         break;
                     //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                     //     return true;
                     // break;
                     // case 'AC7':
@@ -402,7 +402,7 @@ class ChapterValuesModel extends Model{
                     //             $this->db->table($this->tblc1d)->where($where)->update($data);
                     //         break;
                     //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                     //     return true;
                     // break;
                     // case 'AC8':
@@ -419,7 +419,7 @@ class ChapterValuesModel extends Model{
                     //             }
                     //         break;
                     //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                     //     return true;
                     // break;
                     // case 'AC9':
@@ -434,7 +434,7 @@ class ChapterValuesModel extends Model{
                     //             $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
                     //         break;
                     //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                     //     return true;
                     // break;
                     // case 'AC10-Tangibles':
@@ -538,7 +538,7 @@ class ChapterValuesModel extends Model{
                     //             $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
                     //         break;
                     //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                     //     return true;
                     // break;
                     // case 'AC11':
@@ -553,7 +553,7 @@ class ChapterValuesModel extends Model{
                     //             $this->db->table($this->tblc1d)->where('acID', $dacid)->update($data);
                     //         break;
                     //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 1");
+                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                     //     return true;
                     // break;
                 }

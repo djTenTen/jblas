@@ -145,20 +145,19 @@ class ChapterValuesController extends BaseController{
            
             case 'c2':
                 switch ($code) {
-                    // case 'AC3':
-                    //     switch ($save) {
-                    //         case 'saveac3':
-                    //             $req = [
-                    //                 'yesno'         => $this->request->getPost('yesno'),
-                    //                 'comment'       => $this->request->getPost('comment'),
-                    //                 'acid'          => $this->request->getPost('acid'),
-                    //                 'mtID'         => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //     }
-                    //     $res = $this->cvmodel->savevalues($param,$req);
-                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    // break;
+                    case 'AB4':
+                        switch ($save) {
+                            case 'saveac3':
+                                $req = [
+                                    'yesno'         => $this->request->getPost('yesno'),
+                                    'comment'       => $this->request->getPost('comment'),
+                                    'acid'          => $this->request->getPost('acid'),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    break;
                     case 'AB4A':
                         switch ($save) {
                             case 'saveab4a':
