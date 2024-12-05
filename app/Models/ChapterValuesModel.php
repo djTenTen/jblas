@@ -418,25 +418,25 @@ class ChapterValuesModel extends Model{
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
                         return true;
                     break;
-                    // case 'AC7':
-                    //     switch ($param['save']) {
-                    //         case 'saveac7':
-                    //             $data = [
-                    //                 'question'      => $req['genyn'],
-                    //                 'updated_on'    => $this->date.' '.$this->time,
-                    //                 'updated_by'    => $param['uID'],
-                    //             ];
-                    //             $where = [
-                    //                 'type'          => $req['part'],
-                    //                 'c1tID'         => $req['c1tID'],
-                    //                 'clientID'      => $param['cID'],
-                    //             ];
-                    //             $this->db->table($this->tblc2d)->where($where)->update($data);
-                    //         break;
-                    //     }
-                    //     $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
-                    //     return true;
-                    // break;
+                    case 'AC8':
+                        switch ($param['save']) {
+                            case 'saveac7':
+                                $data = [
+                                    'field1'        => $req['genyn'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $where = [
+                                    'type'     => $req['part'],
+                                    'mtID'     => $param['mtID'],
+                                    'cID'      => $param['cID'],
+                                ];
+                                $this->db->table($this->tblc2d)->where($where)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Audit Planning");
+                        return true;
+                    break;
                     
                     // case 'AC9':
                     //     switch ($param['save']) {

@@ -203,19 +203,17 @@ class ChapterController extends BaseController{
                 $data['s3']     = $this->cvmodel->getvalues_c2('m','ac6s3',$code,$dmtID,$dcID);
                 $page = $code;
                 break;
-            // case 'AC7':
-            //     $rowdata = [
-            //         'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
-            //         'roidata','dcodata','prdata','oadata'
-            //     ];
-            //     foreach($rowdata as $row){
-            //         $rdata       = $this->cvmodel->getvalues_s('c2',$row,$code,$dmtID,$dcID);
-            //         $data[$row]  = json_decode($rdata['field1'], true);
-            //     }
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter2/Ac7', $data);
-            //     echo view('includes/Footer');
-            //     break;
+            case 'AC8':
+                $rowdata = [
+                    'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
+                    'roidata','dcodata','prdata','oadata'
+                ];
+                foreach($rowdata as $row){
+                    $rdata       = $this->cvmodel->getvalues_c2('s',$row,$code,$dmtID,$dcID);
+                    $data[$row]  = json_decode($rdata['field1'], true);
+                }
+                $page = $code;
+                break;
 
             // case 'AC9':
             //     $rdata = $this->cvmodel->getvalues_s('c2','ac9data',$code,$dmtID,$dcID);
@@ -368,17 +366,16 @@ class ChapterController extends BaseController{
                 $data['s']     = json_decode($rdata['field1'], true);
                 $data['s3']    = $this->c2model->getvalues_m('ac6s3',$code,$dmtID);
                 break;
-            // case 'AC7':
-            //     $rowdata = [
-            //         'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
-            //         'roidata','dcodata','prdata','oadata'
-            //     ];
-            //     foreach($rowdata as $row){
-            //         $rdata       = $this->c2model->getvalues_s($row,$code,$dmtID);
-            //         $data[$row]  = json_decode($rdata['field1'], true);
-            //     }
-            //     echo view('pdfc2/AC7', $data);
-            //     break;
+            case 'AC8':
+                $rowdata = [
+                    'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
+                    'roidata','dcodata','prdata','oadata'
+                ];
+                foreach($rowdata as $row){
+                    $rdata       = $this->c2model->getvalues_s($row,$code,$dmtID);
+                    $data[$row]  = json_decode($rdata['field1'], true);
+                }
+                break;
             
             // case 'AC9':
             //     $rdata        = $this->c2model->getvalues_s('ac9data',$code,$dmtID);

@@ -123,7 +123,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $code?>/<?= $c1tID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter2/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <h4>SPECIFIC AREA NARRATIVE INHERENT RISK ASSESSMENT</h4>
                 <p>Objective: This form is designed to assess the risk for each audit assertion relevant to each audit area.  PSA 315 implies that all areas and all assertions are high risk unless this can be rebutted.  Completion of this form will help to justify a departure from high risk.</p>
@@ -131,7 +131,7 @@
                     <!-- Wizard tab pane item 1-->
                     <div class="tab-pane fade show active m-5" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
                         <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – BANK AND CASH:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -246,7 +246,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard2" role="tabpanel" aria-labelledby="wizard2-tab">
                         <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE RECEIVABLES:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -361,7 +361,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard3" role="tabpanel" aria-labelledby="wizard3-tab">
                         <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER RECEIVABLES (INCLUDING PREPAYMENTS):</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -476,7 +476,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard4" role="tabpanel" aria-labelledby="wizard4-tab">
                         <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVENTORIES:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -591,7 +591,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard5" role="tabpanel" aria-labelledby="wizard5-tab">
                         <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INVESTMENTS:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -706,7 +706,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard6" role="tabpanel" aria-labelledby="wizard6-tab">
                         <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROPERTY, PLANT AND EQUIPMENT:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -821,7 +821,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard7" role="tabpanel" aria-labelledby="wizard7-tab">
                         <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – INTANGIBLE NON-CURRENT ASSETS:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -936,7 +936,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard8" role="tabpanel" aria-labelledby="wizard8-tab">
                         <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TRADE PAYABLES:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1051,7 +1051,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard9" role="tabpanel" aria-labelledby="wizard9-tab">
                     <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER PAYABLES (INCLUDING ACCRUALS):</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1166,7 +1166,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard10" role="tabpanel" aria-labelledby="wizard10-tab">
                     <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – TAXATION:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1281,7 +1281,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard11" role="tabpanel" aria-labelledby="wizard11-tab">
                         <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PROVISIONS FOR LIABILITIES:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1396,7 +1396,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard12" role="tabpanel" aria-labelledby="wizard12-tab">
                         <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – REVENUE / OTHER INCOME:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1511,7 +1511,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard13" role="tabpanel" aria-labelledby="wizard13-tab">
                     <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – DIRECT COSTS / OTHER EXPENSES:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1626,7 +1626,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard14" role="tabpanel" aria-labelledby="wizard14-tab">
                         <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – PAYROLL:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
@@ -1741,7 +1741,7 @@
                     </div>
                     <div class="tab-pane fade m-5" id="wizard15" role="tabpanel" aria-labelledby="wizard15-tab">
                         <h6>ASSERTION LEVEL RISK ASSESSMENT FOR INHERENT RISK – OTHER AREA:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac7/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac7/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                             <table class="table table-bordered">
                                 <tr>
                                     <td>1.	Have there been audit adjustments, unadjusted errors or qualifications of the audit report in this area in prior periods?</td>
