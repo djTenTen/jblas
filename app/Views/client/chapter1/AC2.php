@@ -1,4 +1,9 @@
-<?php  $crypt = \Config\Services::encrypter();?>
+<?php  
+    function encr($ecr){
+        $crypt = \Config\Services::encrypter();
+        return str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ecr));
+    }
+?>
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -43,13 +48,13 @@
             <?php  }?>
             <div class="card-body">
                <!-- Contents Here -->
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $code?>/<?= $c1tID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>PROVISION OF NON-AUDIT SERVICES</h4>
                     <h6>Section 2 – Consideration of the Type of Non-Audit Services Provided and Safeguards in Place </h6>
                     <p>N.B. Complete multiple sheets if more than four different types of non-audit service are provided N.B. Audit related non-audit services (for example, a separate report to a regulator, (e.g. that on client money handled by a solicitor)) should still be treated as a non-audit service, but it is not necessary for safeguards to be put in place, as threats to independence are insignificant</p>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac2/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac2/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="pans">
                         <table class="table table-hover table-bordered">
                             <thead>
@@ -66,12 +71,12 @@
                             <tbody class="tbody">
                                 <?php foreach($ac2 as $r){?>
                                     <tr >
-                                        <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                        <td><input class="form-control" type="text" name="corptax[]" value="<?= $r['corptax']?>"></td>
-                                        <td><input class="form-control" type="text" name="statutory[]" value="<?= $r['statutory']?>"></td>
-                                        <td><input class="form-control" type="text" name="accountancy[]" value="<?= $r['accountancy']?>" ></td>
-                                        <td><input class="form-control" type="text" name="other[]" value="<?= $r['other']?>"></td>
-                                        <td><input class="form-control" type="text" name="totalcu[]" value="<?= $r['totalcu']?>"></td>
+                                        <td><input type="hidden" name="acid[]" value="<?= encr($r['mdID'])?>"><?= $r['field1']?></td>
+                                        <td><input class="form-control" type="text" name="corptax[]" value="<?= $r['field2']?>"></td>
+                                        <td><input class="form-control" type="text" name="statutory[]" value="<?= $r['field3']?>"></td>
+                                        <td><input class="form-control" type="text" name="accountancy[]" value="<?= $r['field4']?>" ></td>
+                                        <td><input class="form-control" type="text" name="other[]" value="<?= $r['field5']?>"></td>
+                                        <td><input class="form-control" type="text" name="totalcu[]" value="<?= $r['field6']?>"></td>
                                     </tr>
                                 <?php }?>
                             </tbody>
@@ -82,12 +87,12 @@
                     <h4>Section 3 – Consideration of Self Interest Threat Arising from Substantial Fees from Non Audit Services</h4>
                     <div class="container border-dark">
                         <h6>***(Where appropriate): Documentation by the A.E.P. of how the self interest threat has been reduced to an acceptable level / details of communication with the Ethics Partner / Details of which services (audit or non-audit) will not be provided:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac2aep/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
-                            <input type="hidden" name="acid" value="<?= $crypt->encrypt($aep['acID'])?>">
-                            <textarea class="form-control" cols="30" rows="3" name="eap" required><?= $aep['question']?></textarea>
+                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac2aep/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                            <input type="hidden" name="acid" value="<?= encr($aep['mdID'])?>">
+                            <textarea class="form-control" cols="30" rows="3" name="eap" required><?= $aep['field1']?></textarea>
                             <h4>Conclusion</h4>
                             <select name="concl" id="" class="form-control form-select" required>
-                                <option value="<?= $aep['name']?>" selected><?= $aep['name']?></option>
+                                <option value="<?= $aep['field2']?>" selected><?= $aep['field2']?></option>
                                 <option value="The client has informed management.  I consider that there are no threats arising from fee income from the non-audit services provided / to be provided to the client and that the services can be provided.">The client has informed management.  I consider that there are no threats arising from fee income from the non-audit services provided / to be provided to the client and that the services can be provided.</option>
                                 <option value="The client has informed management. I consider that the threats imposed by the non-audit services provided / to be provided to the client and the resulting level of fee income have been reduced to an acceptable level as documented above.">The client has informed management. I consider that the threats imposed by the non-audit services provided / to be provided to the client and the resulting level of fee income have been reduced to an acceptable level as documented above.</option>
                                 <option value="We will not provide other services as it is not possible to put sufficient safeguards in place and we wish to remain as auditor">We will not provide other services as it is not possible to put sufficient safeguards in place and we wish to remain as auditor</option>

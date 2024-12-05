@@ -98,7 +98,7 @@ class ChapterController extends BaseController{
                 $data['ac2'] = $this->cvmodel->getvalues_m('c1','pans',$code,$dmtID,$dcID);
                 $data['aep'] = $this->cvmodel->getvalues_s('c1','ac2aep',$code,$dmtID,$dcID);
                 echo view('includes/Header', $data);
-                echo view('client/chapter1/Ac2', $data);
+                echo view('client/chapter1/AC2', $data);
                 echo view('includes/Footer');
                 break;
             // case 'AC3':

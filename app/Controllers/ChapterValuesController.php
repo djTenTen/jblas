@@ -124,16 +124,15 @@ class ChapterValuesController extends BaseController{
                                     'other'         => $this->request->getPost('other'),
                                     'totalcu'       => $this->request->getPost('totalcu'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'mtID'         => $param['mtID'],
+                                    'mtID'          => $param['mtID'],
                                 ];
                             break;
                             case 'saveac2aep':
                                 $req = [
                                     'eap'       => $this->request->getPost('eap'),
-                                    'concl' => $this->request->getPost('concl'),
                                     'concl'     => $this->request->getPost('concl'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'mtID'     => $param['mtID'],
+                                    'mtID'      => $param['mtID'],
                                 ];
                             break;
                         }

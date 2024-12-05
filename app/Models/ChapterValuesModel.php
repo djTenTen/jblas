@@ -175,7 +175,7 @@ class ChapterValuesModel extends Model{
                                 }
                             break;
                             case 'saveac1eqr':
-                                $acid = $this->crypt->decrypt($req['acid']);
+                                $acid = $this->decr($req['acid']);
                                 $data = [
                                     'field1'        => $req['question'],
                                     'updated_on'    => $this->date.' '.$this->time,
@@ -191,28 +191,28 @@ class ChapterValuesModel extends Model{
                         switch ($param['save']) {
                             case 'saveac2':
                                 foreach($req['corptax'] as $i => $val){
-                                    $acid = $this->crypt->decrypt($req['acid'][$i]);
+                                    $acid = $this->decr($req['acid'][$i]);
                                     $data = [
-                                        'corptax'           => $req['corptax'][$i],
-                                        'statutory'         => $req['statutory'][$i],
-                                        'accountancy'       => $req['accountancy'][$i],
-                                        'other'             => $req['other'][$i],
-                                        'totalcu'           => $req['totalcu'][$i],
-                                        'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $param['uID'],
+                                        'field2'        => $req['corptax'][$i],
+                                        'field3'        => $req['statutory'][$i],
+                                        'field4'        => $req['accountancy'][$i],
+                                        'field5'        => $req['other'][$i],
+                                        'field6'        => $req['totalcu'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
                                     ];
-                                    $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                                    $this->db->table($this->tblc1d)->where('mdID', $acid)->update($data);
                                 }
                             break;
                             case 'saveac2aep':
-                                $acid = $this->crypt->decrypt($req['acid']);
+                                $acid = $this->decr($req['acid']);
                                 $data = [
-                                    'question'      => $req['eap'],
-                                    'name'          => $req['concl'],
+                                    'field1'        => $req['eap'],
+                                    'field2'        => $req['concl'],
                                     'updated_on'    => $this->date.' '.$this->time,
                                     'updated_by'    => $param['uID'],
                                 ];
-                                $this->db->table($this->tblc1d)->where('acID', $acid)->update($data);
+                                $this->db->table($this->tblc1d)->where('mdID', $acid)->update($data);
                             break;
                         }
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Pre-Engagement Activities");
