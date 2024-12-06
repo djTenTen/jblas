@@ -214,15 +214,12 @@ class ChapterController extends BaseController{
                 }
                 $page = $code;
                 break;
-
-            // case 'AC9':
-            //     $rdata = $this->cvmodel->getvalues_s('c2','ac9data',$code,$dmtID,$dcID);
-            //     $data['ac9'] = json_decode($rdata['field1'], true);
-            //     $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter2/Ac9', $data);
-            //     echo view('includes/Footer');
-            //     break;
+            case 'AC9':
+                $rdata = $this->cvmodel->getvalues_c2('s','ac9data',$code,$dmtID,$dcID);
+                $data['ac9']    = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
+                break;
             // case 'AC10-Tangibles':
             // case 'AC10-PPE':
             // case 'AC10-Investments':

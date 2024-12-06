@@ -42,12 +42,12 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $code?>/<?= $c1tID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter2/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac9/<?= $code?>/<?= $c1tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac9/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" value="ac9data" name="part">
-                        <input type="hidden" name="acid" value="<?= $acID?>">
+                        <input type="hidden" name="acid" value="<?= $mdID?>">
                         <h4>CONSIDERATION OF SPECIFIC SKILLS REQUIRED FOR THIS ASSIGNMENT </h4>
                         <h6>(SHOULD COVER ALL MEMBERS OF THE TEAM OTHER THAN JUNIORS, INCLUDING THE EQR)</h6>
                         <textarea class="form-control" cols="30" rows="20" name="coss"><?= $ac9['coss']?></textarea>
