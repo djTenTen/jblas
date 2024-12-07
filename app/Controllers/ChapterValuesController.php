@@ -966,58 +966,51 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
-                    // case '3.7 Aa7':
-                    //     switch ($save) {
-                    //         case 'saveaa7isa' :
-                    //             $validationRules = [
-                    //                 'reference' => 'required'
-                    //             ];
-                    //             if (!$this->validate($validationRules)) {
-                    //                 session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-                    //                 return $this->resultpage($chapter,false,$code,$mtID,$cID,$name);
-                    //             }
-                    //             $req = [
-                    //                 'reference'         => $this->request->getPost('reference'),
-                    //                 'issue'             => $this->request->getPost('issue'),
-                    //                 'comment'           => $this->request->getPost('comment'),
-                    //                 'recommendation'    => $this->request->getPost('recommendation'),
-                    //                 'result'            => $this->request->getPost('result'),
-                    //                 'code'              => $code,
-                    //                 'part'              => $this->request->getPost('part'),
-                    //                 'c3tID'             => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //         case 'saveaa7aepapp' :
-                    //             $req = [
-                    //                 'aep'       => $this->request->getPost('question'),
-                    //                 'acid'      => $this->request->getPost('acid'),
-                    //                 'cID'       => $param['cID'],
-                    //                 'c3tID'     => $param['mtID'],
-                    //                 'uID'       => $param['uID'],
-                    //                 'fID'       => $param['fID'],
-                    //             ];
-                    //         break;
-                    //         case 'saveaa7aep' :
-                    //             $aep = [
-                    //                 'ch1'   => $this->request->getPost('ch1'),
-                    //                 'ch2'   => $this->request->getPost('ch2'),
-                    //                 'dev1'  => $this->request->getPost('dev1'),
-                    //                 'dev2'  => $this->request->getPost('dev2'),
-                    //                 'fut1'  => $this->request->getPost('fut1'),
-                    //                 'fut2'  => $this->request->getPost('fut2'),
-                    //                 'cst1'  => $this->request->getPost('cst1'),
-                    //                 'cst2'  => $this->request->getPost('cst2')
-                    //             ];
-                    //             $req = [
-                    //                 'aep'       => json_encode($aep),
-                    //                 'acid'      => $this->request->getPost('acid'),
-                    //                 'c3tID'     => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //     }
-                    //     $res = $this->cvmodel->savevalues($param,$req);
-                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    // break;
+                    case 'AA6':
+                        switch ($save) {
+                            case 'saveaa7isa' :
+                                $validationRules = [
+                                    'reference' => 'required'
+                                ];
+                                if (!$this->validate($validationRules)) {
+                                    session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+                                    return $this->resultpage($chapter,false,$code,$mtID,$cID,$name);
+                                }
+                                $req = [
+                                    'reference'         => $this->request->getPost('reference'),
+                                    'issue'             => $this->request->getPost('issue'),
+                                    'comment'           => $this->request->getPost('comment'),
+                                    'recommendation'    => $this->request->getPost('recommendation'),
+                                    'result'            => $this->request->getPost('result'),
+                                    'part'              => $this->request->getPost('part'),
+                                ];
+                            break;
+                            case 'saveaa7aepapp' :
+                                $req = [
+                                    'aep'       => $this->request->getPost('question'),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                            case 'saveaa7aep' :
+                                $aep = [
+                                    'ch1'   => $this->request->getPost('ch1'),
+                                    'ch2'   => $this->request->getPost('ch2'),
+                                    'dev1'  => $this->request->getPost('dev1'),
+                                    'dev2'  => $this->request->getPost('dev2'),
+                                    'fut1'  => $this->request->getPost('fut1'),
+                                    'fut2'  => $this->request->getPost('fut2'),
+                                    'cst1'  => $this->request->getPost('cst1'),
+                                    'cst2'  => $this->request->getPost('cst2')
+                                ];
+                                $req = [
+                                    'aep'       => json_encode($aep),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    break;
                     // case '3.8 Aa10':
                     //     switch ($save) {
                     //         case 'saveaa10' :

@@ -101,7 +101,7 @@ $html .= '
         <tr>
             <td><b>Summary and Impact of Changes Made to Audit Planning After the Date of the A.E.P’s Approval:</b>
                 <br><br><br>
-                '.$aepapp['question'].'
+                '.$aepapp['field1'].'
                 <br><br><br>
             </td>
         </tr>
@@ -161,11 +161,11 @@ $html .= '
     foreach($aa7 as $r){
         $html .= '
         <tr>
-            <td style="width: 15%;"><br><br>'.$r['reference'].'<br></td>
-            <td style="width: 30%;"><br><br>'.$r['issue'].'<br></td>
-            <td style="width: 10%;"><br><br>'.$r['comment'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+            <td style="width: 15%;"><br><br>'.$r['field1'].'<br></td>
+            <td style="width: 30%;"><br><br>'.$r['field2'].'<br></td>
+            <td style="width: 10%;"><br><br>'.$r['field3'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field4'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field5'].'<br></td>
         </tr>';
     }
 $html .='
@@ -224,11 +224,11 @@ $html .= '
     foreach($cons as $r){
         $html .= '
         <tr>
-            <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field1'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field2'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field3'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field4'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field5'].'<br></td>
         </tr>';
     }
 $html .= '
@@ -238,11 +238,11 @@ $html .= '
     foreach($inc as $r){
         $html .= '
         <tr>
-            <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field1'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field2'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field3'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field4'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field5'].'<br></td>
         </tr>';
     }
 $html .= '
@@ -252,11 +252,11 @@ $html .= '
     foreach($ref as $r){
         $html .= '
         <tr>
-            <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field1'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field2'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field3'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field4'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field5'].'<br></td>
         </tr>';
     }
 $html .= '
@@ -266,11 +266,11 @@ $html .= '
     foreach($dep as $r){
         $html .= '
         <tr>
-            <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field1'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field2'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field3'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field4'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field5'].'<br></td>
         </tr>';
     }
 $html .='
@@ -318,11 +318,11 @@ $html .= '
     foreach($oth as $r){
         $html .= '
         <tr>
-            <td style="width: 20%;"><br><br>'.$r['reference'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['issue'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['comment'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['recommendation'].'<br></td>
-            <td style="width: 20%;"><br><br>'.$r['result'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field1'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field2'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field3'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field4'].'<br></td>
+            <td style="width: 20%;"><br><br>'.$r['field5'].'<br></td>
         </tr>';
     }
 $html .='

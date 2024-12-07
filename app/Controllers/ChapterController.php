@@ -486,21 +486,19 @@ class ChapterController extends BaseController{
                 $data['aa5b']   = $this->cvmodel->getvalues_c3('m','aa5b',$code,$dmtID,$dcID);
                 $page = $code;
                 break;  
-            // case '3.7 Aa7':
-            //     $data['aa7']    = $this->cvmodel->getvalues_m('c3','isa315',$code,$dmtID,$dcID);
-            //     $data['cons']   = $this->cvmodel->getvalues_m('c3','consultation',$code,$dmtID,$dcID);
-            //     $data['inc']    = $this->cvmodel->getvalues_m('c3','inconsistencies',$code,$dmtID,$dcID);
-            //     $data['ref']    = $this->cvmodel->getvalues_m('c3','refusal',$code,$dmtID,$dcID);
-            //     $data['dep']    = $this->cvmodel->getvalues_m('c3','departures',$code,$dmtID,$dcID);
-            //     $data['oth']    = $this->cvmodel->getvalues_m('c3','other',$code,$dmtID,$dcID);
-            //     $data['aepapp'] = $this->cvmodel->getvalues_s('c3','aepapp',$code,$dmtID,$dcID);
-            //     $rdata          = $this->cvmodel->getvalues_s('c3','aep',$code,$dmtID,$dcID);
-            //     $data['aep']    = json_decode($rdata['field1'], true);
-            //     $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter3/37Aa7', $data);
-            //     echo view('includes/Footer');
-            //     break;
+            case 'AA6':
+                $data['aa7']    = $this->cvmodel->getvalues_c3('m','isa315',$code,$dmtID,$dcID);
+                $data['cons']   = $this->cvmodel->getvalues_c3('m','consultation',$code,$dmtID,$dcID);
+                $data['inc']    = $this->cvmodel->getvalues_c3('m','inconsistencies',$code,$dmtID,$dcID);
+                $data['ref']    = $this->cvmodel->getvalues_c3('m','refusal',$code,$dmtID,$dcID);
+                $data['dep']    = $this->cvmodel->getvalues_c3('m','departures',$code,$dmtID,$dcID);
+                $data['oth']    = $this->cvmodel->getvalues_c3('m','other',$code,$dmtID,$dcID);
+                $data['aepapp'] = $this->cvmodel->getvalues_c3('s','aepapp',$code,$dmtID,$dcID);
+                $rdata          = $this->cvmodel->getvalues_c3('s','aep',$code,$dmtID,$dcID);
+                $data['aep']    = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
+                break;
             // case '3.8 Aa10':
             //     $rdata          = $this->cvmodel->getvalues_s('c3','aa10',$code,$dmtID,$dcID);
             //     $data['aa10']   = json_decode($rdata['field1'], true);
@@ -725,18 +723,18 @@ class ChapterController extends BaseController{
                 $data['aa5b']   = $this->c3model->getvalues_m('aa5b',$code,$dmtID);
                 $page = $code;
                 break;  
-            // case '3.7 Aa7':
-            //     $data['aa7']    = $this->c3model->getvalues_m('isa315',$code,$dmtID);
-            //     $data['cons']   = $this->c3model->getvalues_m('consultation',$code,$dmtID);
-            //     $data['inc']    = $this->c3model->getvalues_m('inconsistencies',$code,$dmtID);
-            //     $data['ref']    = $this->c3model->getvalues_m('refusal',$code,$dmtID);
-            //     $data['dep']    = $this->c3model->getvalues_m('departures',$code,$dmtID);
-            //     $data['oth']    = $this->c3model->getvalues_m('other',$code,$dmtID);
-            //     $data['aepapp'] = $this->c3model->getvalues_s('aepapp',$code,$dmtID);
-            //     $rdata          = $this->c3model->getvalues_s('aep',$code,$dmtID);
-            //     $data['aep']    = json_decode($rdata['field1'], true);
-            //     echo view('pdfc3/AA7', $data);
-            //     break;
+            case 'AA6':
+                $data['aa7']    = $this->c3model->getvalues_m('isa315',$code,$dmtID);
+                $data['cons']   = $this->c3model->getvalues_m('consultation',$code,$dmtID);
+                $data['inc']    = $this->c3model->getvalues_m('inconsistencies',$code,$dmtID);
+                $data['ref']    = $this->c3model->getvalues_m('refusal',$code,$dmtID);
+                $data['dep']    = $this->c3model->getvalues_m('departures',$code,$dmtID);
+                $data['oth']    = $this->c3model->getvalues_m('other',$code,$dmtID);
+                $data['aepapp'] = $this->c3model->getvalues_s('aepapp',$code,$dmtID);
+                $rdata          = $this->c3model->getvalues_s('aep',$code,$dmtID);
+                $data['aep']    = json_decode($rdata['field1'], true);
+                $page = $code;
+                break;
             // case '3.8 Aa10':
             //     $rdata          = $this->c3model->getvalues_s('aa10',$code,$dmtID);
             //     $data['aa10']   = json_decode($rdata['field1'], true);
