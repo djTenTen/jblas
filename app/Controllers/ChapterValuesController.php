@@ -715,14 +715,13 @@ class ChapterValuesController extends BaseController{
 
             case 'c3':
                 switch ($code) {
-                    case '3.1 Aa1':
+                    case 'AA1':
                         switch ($save) {
                             case 'saveplaf' :
                                 $req = [
                                     'extent'        => $this->request->getPost('extent'),
                                     'reference'     => $this->request->getPost('reference'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'c3tID'         => $param['mtID'],
                                 ];
                             break;
                             case 'saveaa1s3' :
@@ -758,7 +757,6 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'question'  => json_encode($sec),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
                                 ];
                             break;
                             case 'saverceap' :
@@ -787,7 +785,6 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'question'  => json_encode($rc),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
                                 ];
                             break;
                         }

@@ -48,12 +48,12 @@ class Chapter3Model extends Model{
         * @var where-array reference for the fetch
         * @return result-array
     */
-    public function getvalues_m($type,$code,$ctID){
+    public function getvalues_m($type,$code,$mtID){
 
         $where = [
             'type' => $type, 
             'code' => $code,
-            'c3tID' => $ctID
+            'mtID' => $mtID
         ];
         $query =  $this->db->table($this->tblc3)->where($where)->get();
         return $query->getResultArray();
@@ -68,12 +68,12 @@ class Chapter3Model extends Model{
         * @var where-array reference for the fetch
         * @return row-array
     */
-    public function getvalues_s($type,$code,$ctID){
+    public function getvalues_s($type,$code,$mtID){
 
         $where = [
             'type' => $type, 
             'code' => $code, 
-            'c3tID' => $ctID
+            'mtID' => $mtID
         ];
         $query =  $this->db->table($this->tblc3)->where($where)->get();
         return $query->getrowArray();

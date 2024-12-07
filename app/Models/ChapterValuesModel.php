@@ -100,21 +100,20 @@ class ChapterValuesModel extends Model{
     }
 
 
-    public function getvalues_s($c,$type,$code,$mtID,$cID){
+    public function getvalues_c3($m,$type,$code,$mtID,$cID){
 
-        switch ($c) {
-            case 'c1': $table = $this->tblc1d; break;
-            case 'c2': $table = $this->tblc2d; break;
-            case 'c3': $table = $this->tblc3d; break;
-        }
         $where = [
             'code'  => $code, 
             'type'  => $type,
             'mtID'  => $mtID,
             'cID'   => $cID,
         ];
-        $query =  $this->db->table($table)->where($where)->get();
-        return $query->getrowArray();
+        $query =  $this->db->table($this->tblc3d)->where($where)->get();
+        if($m == 'm'){
+            return $query->getResultArray();
+        }else{
+            return $query->getrowArray();
+        }
 
     }
 
@@ -567,37 +566,37 @@ class ChapterValuesModel extends Model{
 
             case 'c3':
                 switch ($param['code']) {
-                    case '3.1 Aa1':
+                    case 'AA1':
                         switch ($param['save']) {
                             case 'saveplaf' :
                                 foreach($req['extent'] as $i => $val){
-                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
+                                    $dacid = $this->decr($req['acid'][$i]);
                                     $data = [
-                                        'extent'        => $req['extent'][$i],
-                                        'reference'     => $req['reference'][$i],
+                                        'field2'        => $req['extent'][$i],
+                                        'field3'        => $req['reference'][$i],
                                         'updated_on'    => $this->date.' '.$this->time,
                                         'updated_by'    => $param['uID'],
                                     ];
-                                    $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+                                    $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
                                 }
                             break;
                             case 'saveaa1s3' :
-                                $dacid = $this->crypt->decrypt($req['acid']);
+                                $dacid = $this->decr($req['acid']);
                                 $data = [
-                                    'question'      => $req['question'],
+                                    'field1'        => $req['question'],
                                     'updated_on'    => $this->date.' '.$this->time,
                                     'updated_by'    => $param['uID'],
                                 ];
-                                $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+                                $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
                             break;
                             case 'saverceap' :
-                                $dacid = $this->crypt->decrypt($req['acid']);
+                                $dacid = $this->decr($req['acid']);
                                 $data = [
-                                    'question'      => $req['question'],
+                                    'field1'        => $req['question'],
                                     'updated_on'    => $this->date.' '.$this->time,
                                     'updated_by'    => $param['uID'],
                                 ];
-                                $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+                                $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
                             break;
                         }
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");

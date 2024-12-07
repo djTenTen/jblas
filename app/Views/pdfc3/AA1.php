@@ -91,9 +91,9 @@ $html .= '
         $html .= '
         <tr>
             <td style="width: 6%;">'.$count.'.<br></td>
-            <td style="width: 60%;">'.$r['question'].'<br></td>
-            <td class="cent bo" style="width: 18%;">'.$r['extent'].'</td>
-            <td class="cent bo" style="width: 18%;">'.$r['reference'].'</td>
+            <td style="width: 60%;">'.$r['field1'].'<br></td>
+            <td class="cent bo" style="width: 18%;">'.$r['field2'].'</td>
+            <td class="cent bo" style="width: 18%;">'.$r['field3'].'</td>
         </tr>
         ';
     }
@@ -205,9 +205,9 @@ $html .= '
         $html .= '
         <tr>
             <td style="width: 6%;">'.$count.'.<br></td>
-            <td style="width: 60%;">'.$r['question'].'<br></td>
-            <td class="cent bo" style="width: 18%;">'.$r['extent'].'</td>
-            <td class="cent bo" style="width: 18%;">'.$r['reference'].'</td>
+            <td style="width: 60%;">'.$r['field1'].'<br></td>
+            <td class="cent bo" style="width: 18%;">'.$r['field2'].'</td>
+            <td class="cent bo" style="width: 18%;">'.$r['field3'].'</td>
         </tr>
         ';
     }

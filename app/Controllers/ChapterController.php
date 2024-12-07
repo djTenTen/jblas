@@ -434,244 +434,245 @@ class ChapterController extends BaseController{
         $dcID           = $this->decr($cID);
         $dmtID          = $this->decr($mtID);
         switch ($code) {
-            case '3.1 Aa1':
-                $data['datapl'] = $this->cvmodel->getvalues_m('c3','planning',$code,$dmtID,$dcID);
-                $data['dataaf'] = $this->cvmodel->getvalues_m('c3','audit finalisation',$code,$dmtID,$dcID);
-                $rdata          = $this->cvmodel->getvalues_s('c3','section3',$code,$dmtID,$dcID);
+            case 'AA1':
+                $data['datapl'] = $this->cvmodel->getvalues_c3('m','planning',$code,$dmtID,$dcID);
+                $data['dataaf'] = $this->cvmodel->getvalues_c3('m','audit finalisation',$code,$dmtID,$dcID);
+                $rdata          = $this->cvmodel->getvalues_c3('s','section3',$code,$dmtID,$dcID);
                 $data['s3']     = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                $rdata2         = $this->cvmodel->getvalues_s('c3','rc',$code,$dmtID,$dcID);
+                $data['mdID']   = $this->crypt->encrypt($rdata['mdID']);
+                $rdata2         = $this->cvmodel->getvalues_c3('s','rc',$code,$dmtID,$dcID);
                 $data['rc']     = json_decode($rdata2['field1'], true);
-                $data['acID2']  = $this->crypt->encrypt($rdata2['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/31Aa1', $data);
-                echo view('includes/Footer');
+                $data['mdID2']  = $this->crypt->encrypt($rdata2['mdID']);
+                $page = $code;
                 break;
-            case '3.2 Aa2':
-                $rdata          = $this->cvmodel->getvalues_s('c3','aa2',$code,$dmtID,$dcID);
-                $data['aa2']    = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/32Aa2', $data);
-                echo view('includes/Footer');
-                break;
-            case '3.3 Aa3a':
-                $data['cr']     = $this->cvmodel->getvalues_m('c3','cr',$code,$dmtID,$dcID);
-                $data['dc']     = $this->cvmodel->getvalues_m('c3','dc',$code,$dmtID,$dcID);
-                $data['faf']    = $this->cvmodel->getvalues_m('c3','faf',$code,$dmtID,$dcID);
-                $rdata          = $this->cvmodel->getvalues_s('c3','air',$code,$dmtID,$dcID);
-                $data['air']    = json_decode($rdata['field1'], true);
-                $data['mtID']  = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/33Aa3a', $data);
-                echo view('includes/Footer');
-                break;
-            case '3.4 Aa3b':
-                $data['bp1']    = $this->cvmodel->getvalues_m('c3','p1',$code,$dmtID,$dcID);
-                $data['bp2']    = $this->cvmodel->getvalues_m('c3','p2',$code,$dmtID,$dcID);
-                $data['bp3a']   = $this->cvmodel->getvalues_m('c3','p3a',$code,$dmtID,$dcID);
-                $data['bp3b']   = $this->cvmodel->getvalues_m('c3','p3b',$code,$dmtID,$dcID);
-                $rdata          = $this->cvmodel->getvalues_s('c3','p4',$code,$dmtID,$dcID);
-                $data['bp4']    = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/34Aa3b', $data);
-                echo view('includes/Footer');
-                break;
-            case '3.5 Aa4':
-                $rdata          = $this->cvmodel->getvalues_s('c3','aa4',$code,$dmtID,$dcID);
-                $data['aa4']    = json_decode($rdata['field1'], true);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/35Aa4', $data);
-                echo view('includes/Footer');
-                break;
-            case '3.6.1 Aa5a':
-                $rdata          = $this->cvmodel->getvalues_s('c3','aa5a',$code,$dmtID,$dcID);
-                $data['aa5a']    = json_decode($rdata['field1'], true);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/361Aa5a', $data);
-                echo view('includes/Footer');
-                break;
-            case '3.6.2 Aa5b':
-                $data['aa5b'] = $this->cvmodel->getvalues_m('c3','aa5b',$code,$dmtID,$dcID);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/362Aa5b', $data);
-                echo view('includes/Footer');
-                break;  
-            case '3.7 Aa7':
-                $data['aa7']    = $this->cvmodel->getvalues_m('c3','isa315',$code,$dmtID,$dcID);
-                $data['cons']   = $this->cvmodel->getvalues_m('c3','consultation',$code,$dmtID,$dcID);
-                $data['inc']    = $this->cvmodel->getvalues_m('c3','inconsistencies',$code,$dmtID,$dcID);
-                $data['ref']    = $this->cvmodel->getvalues_m('c3','refusal',$code,$dmtID,$dcID);
-                $data['dep']    = $this->cvmodel->getvalues_m('c3','departures',$code,$dmtID,$dcID);
-                $data['oth']    = $this->cvmodel->getvalues_m('c3','other',$code,$dmtID,$dcID);
-                $data['aepapp'] = $this->cvmodel->getvalues_s('c3','aepapp',$code,$dmtID,$dcID);
-                $rdata          = $this->cvmodel->getvalues_s('c3','aep',$code,$dmtID,$dcID);
-                $data['aep']    = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/37Aa7', $data);
-                echo view('includes/Footer');
-                break;
-            case '3.8 Aa10':
-                $rdata          = $this->cvmodel->getvalues_s('c3','aa10',$code,$dmtID,$dcID);
-                $data['aa10']   = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/38Aa10', $data);
-                echo view('includes/Footer');
-                break;
-            case '3.9':
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/39', $data);
-                echo view('includes/Footer');
-                break;
-            case '3.10 Aa11-un':
-                $s                      = explode('-', $code);
-                $data['sectiontitle']   = "SUMMARY OF UNADJUSTED ERRORS";
-                $data['aef']            = $this->cvmodel->getvalues_m('c3','aef',$s[0],$dmtID,$dcID);
-                $data['aej']            = $this->cvmodel->getvalues_m('c3','aej',$s[0],$dmtID,$dcID);
-                $data['ee']             = $this->cvmodel->getvalues_m('c3','ee',$s[0],$dmtID,$dcID);
-                $data['de']             = $this->cvmodel->getvalues_m('c3','de',$s[0],$dmtID,$dcID);
-                $rdata                  = $this->cvmodel->getvalues_s('c3','aa11ue',$s[0],$dmtID,$dcID);
-                $data['ue']             = json_decode($rdata['field1'], true);    
-                $data['ueacID']         = $this->crypt->encrypt($rdata['mtID']);
-                $rdata2                 = $this->cvmodel->getvalues_s('c3','con',$s[0],$dmtID,$dcID);
-                $data['con']            = json_decode($rdata2['field1'], true);   
-                $data['conacID']        = $this->crypt->encrypt($rdata2['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/310Aa11_un', $data); 
-                echo view('includes/Footer');
-                break;   
-            case '3.10 Aa11-ad':
-                $s                      = explode('-', $code);
-                $data['sectiontitle']   = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";
-                $data['ad']             = $this->cvmodel->getvalues_m('c3','ad',$s[0],$dmtID,$dcID);
-                $rdata                  = $this->cvmodel->getvalues_s('c3','aa11uead',$s[0],$dmtID,$dcID);
-                $data['ue']             = json_decode($rdata['field1'], true);    
-                $data['ueacID']         = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/310Aa11_ad', $data);
-                echo view('includes/Footer');
-                break;   
-            case '3.11':
-                $rdata          = $this->cvmodel->getvalues_s('c3','311',$code,$dmtID,$dcID);
-                $data['arf']    = json_decode($rdata['field1'], true);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/311', $data);
-                echo view('includes/Footer');
-                break;   
-            case '3.12':
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/312', $data);
-                echo view('includes/Footer');
-                break;   
-            case '3.13 Ab1':
-                $data['ab1'] = $this->cvmodel->getvalues_m('c3','ab1',$code,$dmtID,$dcID);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/313Ab1', $data);
-                echo view('includes/Footer');
-                break;   
-            case '3.14 Ab3':
-                $rdata = $this->cvmodel->getvalues_s('c3','ab3',$code,$dmtID ,$dcID);
-                $data['ab3'] = json_decode($rdata['field1'], true);
-                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/314Ab3', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15 Ab4-checklist':
-            case '3.15 Ab4-section1':
-            case '3.15 Ab4-section2':
-            case '3.15 Ab4-section3':
-            case '3.15 Ab4-section4':
-            case '3.15 Ab4-section5':
-            case '3.15 Ab4-section6':
-            case '3.15 Ab4-section7':
-            case '3.15 Ab4-section8':
-            case '3.15 Ab4-section9':
-                $s = explode('-', $code);
-                switch ($s[1]) {
-                    case 'checklist':$data['sectiontitle']  = 'CORPORATE DISCLOSURE CHECKLIST (IFRS)';break;
-                    case 'section1':$data['sectiontitle']   = 'Format of the Annual Report and Generic Information';break;
-                    case 'section2':$data['sectiontitle']   = 'Directors Report (Review of the Business) ~ Best Practice Disclosures';break;
-                    case 'section3':$data['sectiontitle']   = 'Directors Report ~ Best Practice Disclosures';break;
-                    case 'section4':$data['sectiontitle']   = 'Statement of Comprehensive Income (SCI) and Related Notes';break;
-                    case 'section5':$data['sectiontitle']   = 'Statement of Changes in Equity';break;
-                    case 'section6':$data['sectiontitle']   = 'Statement of Financial Position and Related Notes';break;
-                    case 'section7':$data['sectiontitle']   = 'Statement of Cash Flows';break;
-                    case 'section8':$data['sectiontitle']   = 'Accounting Policies and Estimation Techniques';break;
-                    case 'section9':$data['sectiontitle']   = 'Notes and Other Disclosures';break;
-                }
-                $data['title']      = $code. ' - Chapter 3 Management';
-                $data['section']    = $s[1];
-                $data['mtID']      = $mtID;
-                $data['code']       = $code;
-                if($s[1] == "checklist"){
-                    $rdata = $this->cvmodel->getvalues_s('c3',$s[1],$s[0],$dmtID,$dcID);
-                    $data['sec'] = json_decode($rdata['field1'], true);
-                    $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
-                    echo view('includes/Header', $data);
-                    echo view('client/chapter3/315Ab4_checklist', $data);
-                    echo view('includes/Footer');
-                }else{
-                    $data['sec'] = $this->cvmodel->getvalues_m('c3',$s[1],$s[0],$dmtID,$dcID);
-                    echo view('includes/Header', $data);
-                    echo view('client/chapter3/315Ab4_section', $data);
-                    echo view('includes/Footer');
-                }
-                break; 
-            case '3.15.1 Ab4a':
-                $data['ab4a'] = $this->cvmodel->getvalues_m('c3','ab4a',$code,$dmtID,$dcID);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/3151Ab4a', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.2 Ab4b':
-                $data['ab4b'] = $this->cvmodel->getvalues_m('c3','ab4b',$code,$dmtID,$dcID);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/3152Ab4b', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.3 Ab4c':
-                $data['ab4c'] = $this->cvmodel->getvalues_m('c3','ab4c',$code,$dmtID,$dcID);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/3153Ab4c', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.4 Ab4d':
-                $data['ab4d'] = $this->cvmodel->getvalues_m('c3','ab4d',$code,$dmtID,$dcID);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/3154Ab4d', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.5 Ab4e':
-                $data['ab4e'] = $this->cvmodel->getvalues_m('c3','ab4e',$code,$dmtID,$dcID);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/3155Ab4e', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.6 Ab4f':
-                $data['ab4f'] = $this->cvmodel->getvalues_m('c3','ab4f',$code,$dmtID,$dcID);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/3156Ab4f', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.7 Ab4g':
-                $data['ab4g'] = $this->cvmodel->getvalues_m('c3','ab4g',$code,$dmtID,$dcID);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/3157Ab4g', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.8 Ab4h':
-                $data['ab4h'] = $this->cvmodel->getvalues_m('c3','ab4h',$code,$dmtID,$dcID);
-                echo view('includes/Header', $data);
-                echo view('client/chapter3/3158Ab4h', $data);
-                echo view('includes/Footer');
-                break; 
-            default:
-                break;
+            // case '3.2 Aa2':
+            //     $rdata          = $this->cvmodel->getvalues_s('c3','aa2',$code,$dmtID,$dcID);
+            //     $data['aa2']    = json_decode($rdata['field1'], true);
+            //     $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/32Aa2', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case '3.3 Aa3a':
+            //     $data['cr']     = $this->cvmodel->getvalues_m('c3','cr',$code,$dmtID,$dcID);
+            //     $data['dc']     = $this->cvmodel->getvalues_m('c3','dc',$code,$dmtID,$dcID);
+            //     $data['faf']    = $this->cvmodel->getvalues_m('c3','faf',$code,$dmtID,$dcID);
+            //     $rdata          = $this->cvmodel->getvalues_s('c3','air',$code,$dmtID,$dcID);
+            //     $data['air']    = json_decode($rdata['field1'], true);
+            //     $data['mtID']  = $this->crypt->encrypt($rdata['mtID']);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/33Aa3a', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case '3.4 Aa3b':
+            //     $data['bp1']    = $this->cvmodel->getvalues_m('c3','p1',$code,$dmtID,$dcID);
+            //     $data['bp2']    = $this->cvmodel->getvalues_m('c3','p2',$code,$dmtID,$dcID);
+            //     $data['bp3a']   = $this->cvmodel->getvalues_m('c3','p3a',$code,$dmtID,$dcID);
+            //     $data['bp3b']   = $this->cvmodel->getvalues_m('c3','p3b',$code,$dmtID,$dcID);
+            //     $rdata          = $this->cvmodel->getvalues_s('c3','p4',$code,$dmtID,$dcID);
+            //     $data['bp4']    = json_decode($rdata['field1'], true);
+            //     $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/34Aa3b', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case '3.5 Aa4':
+            //     $rdata          = $this->cvmodel->getvalues_s('c3','aa4',$code,$dmtID,$dcID);
+            //     $data['aa4']    = json_decode($rdata['field1'], true);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/35Aa4', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case '3.6.1 Aa5a':
+            //     $rdata          = $this->cvmodel->getvalues_s('c3','aa5a',$code,$dmtID,$dcID);
+            //     $data['aa5a']    = json_decode($rdata['field1'], true);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/361Aa5a', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case '3.6.2 Aa5b':
+            //     $data['aa5b'] = $this->cvmodel->getvalues_m('c3','aa5b',$code,$dmtID,$dcID);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/362Aa5b', $data);
+            //     echo view('includes/Footer');
+            //     break;  
+            // case '3.7 Aa7':
+            //     $data['aa7']    = $this->cvmodel->getvalues_m('c3','isa315',$code,$dmtID,$dcID);
+            //     $data['cons']   = $this->cvmodel->getvalues_m('c3','consultation',$code,$dmtID,$dcID);
+            //     $data['inc']    = $this->cvmodel->getvalues_m('c3','inconsistencies',$code,$dmtID,$dcID);
+            //     $data['ref']    = $this->cvmodel->getvalues_m('c3','refusal',$code,$dmtID,$dcID);
+            //     $data['dep']    = $this->cvmodel->getvalues_m('c3','departures',$code,$dmtID,$dcID);
+            //     $data['oth']    = $this->cvmodel->getvalues_m('c3','other',$code,$dmtID,$dcID);
+            //     $data['aepapp'] = $this->cvmodel->getvalues_s('c3','aepapp',$code,$dmtID,$dcID);
+            //     $rdata          = $this->cvmodel->getvalues_s('c3','aep',$code,$dmtID,$dcID);
+            //     $data['aep']    = json_decode($rdata['field1'], true);
+            //     $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/37Aa7', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case '3.8 Aa10':
+            //     $rdata          = $this->cvmodel->getvalues_s('c3','aa10',$code,$dmtID,$dcID);
+            //     $data['aa10']   = json_decode($rdata['field1'], true);
+            //     $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/38Aa10', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case '3.9':
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/39', $data);
+            //     echo view('includes/Footer');
+            //     break;
+            // case '3.10 Aa11-un':
+            //     $s                      = explode('-', $code);
+            //     $data['sectiontitle']   = "SUMMARY OF UNADJUSTED ERRORS";
+            //     $data['aef']            = $this->cvmodel->getvalues_m('c3','aef',$s[0],$dmtID,$dcID);
+            //     $data['aej']            = $this->cvmodel->getvalues_m('c3','aej',$s[0],$dmtID,$dcID);
+            //     $data['ee']             = $this->cvmodel->getvalues_m('c3','ee',$s[0],$dmtID,$dcID);
+            //     $data['de']             = $this->cvmodel->getvalues_m('c3','de',$s[0],$dmtID,$dcID);
+            //     $rdata                  = $this->cvmodel->getvalues_s('c3','aa11ue',$s[0],$dmtID,$dcID);
+            //     $data['ue']             = json_decode($rdata['field1'], true);    
+            //     $data['ueacID']         = $this->crypt->encrypt($rdata['mtID']);
+            //     $rdata2                 = $this->cvmodel->getvalues_s('c3','con',$s[0],$dmtID,$dcID);
+            //     $data['con']            = json_decode($rdata2['field1'], true);   
+            //     $data['conacID']        = $this->crypt->encrypt($rdata2['mtID']);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/310Aa11_un', $data); 
+            //     echo view('includes/Footer');
+            //     break;   
+            // case '3.10 Aa11-ad':
+            //     $s                      = explode('-', $code);
+            //     $data['sectiontitle']   = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";
+            //     $data['ad']             = $this->cvmodel->getvalues_m('c3','ad',$s[0],$dmtID,$dcID);
+            //     $rdata                  = $this->cvmodel->getvalues_s('c3','aa11uead',$s[0],$dmtID,$dcID);
+            //     $data['ue']             = json_decode($rdata['field1'], true);    
+            //     $data['ueacID']         = $this->crypt->encrypt($rdata['mtID']);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/310Aa11_ad', $data);
+            //     echo view('includes/Footer');
+            //     break;   
+            // case '3.11':
+            //     $rdata          = $this->cvmodel->getvalues_s('c3','311',$code,$dmtID,$dcID);
+            //     $data['arf']    = json_decode($rdata['field1'], true);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/311', $data);
+            //     echo view('includes/Footer');
+            //     break;   
+            // case '3.12':
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/312', $data);
+            //     echo view('includes/Footer');
+            //     break;   
+            // case '3.13 Ab1':
+            //     $data['ab1'] = $this->cvmodel->getvalues_m('c3','ab1',$code,$dmtID,$dcID);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/313Ab1', $data);
+            //     echo view('includes/Footer');
+            //     break;   
+            // case '3.14 Ab3':
+            //     $rdata = $this->cvmodel->getvalues_s('c3','ab3',$code,$dmtID ,$dcID);
+            //     $data['ab3'] = json_decode($rdata['field1'], true);
+            //     $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/314Ab3', $data);
+            //     echo view('includes/Footer');
+            //     break; 
+            // case '3.15 Ab4-checklist':
+            // case '3.15 Ab4-section1':
+            // case '3.15 Ab4-section2':
+            // case '3.15 Ab4-section3':
+            // case '3.15 Ab4-section4':
+            // case '3.15 Ab4-section5':
+            // case '3.15 Ab4-section6':
+            // case '3.15 Ab4-section7':
+            // case '3.15 Ab4-section8':
+            // case '3.15 Ab4-section9':
+            //     $s = explode('-', $code);
+            //     switch ($s[1]) {
+            //         case 'checklist':$data['sectiontitle']  = 'CORPORATE DISCLOSURE CHECKLIST (IFRS)';break;
+            //         case 'section1':$data['sectiontitle']   = 'Format of the Annual Report and Generic Information';break;
+            //         case 'section2':$data['sectiontitle']   = 'Directors Report (Review of the Business) ~ Best Practice Disclosures';break;
+            //         case 'section3':$data['sectiontitle']   = 'Directors Report ~ Best Practice Disclosures';break;
+            //         case 'section4':$data['sectiontitle']   = 'Statement of Comprehensive Income (SCI) and Related Notes';break;
+            //         case 'section5':$data['sectiontitle']   = 'Statement of Changes in Equity';break;
+            //         case 'section6':$data['sectiontitle']   = 'Statement of Financial Position and Related Notes';break;
+            //         case 'section7':$data['sectiontitle']   = 'Statement of Cash Flows';break;
+            //         case 'section8':$data['sectiontitle']   = 'Accounting Policies and Estimation Techniques';break;
+            //         case 'section9':$data['sectiontitle']   = 'Notes and Other Disclosures';break;
+            //     }
+            //     $data['title']      = $code. ' - Chapter 3 Management';
+            //     $data['section']    = $s[1];
+            //     $data['mtID']      = $mtID;
+            //     $data['code']       = $code;
+            //     if($s[1] == "checklist"){
+            //         $rdata = $this->cvmodel->getvalues_s('c3',$s[1],$s[0],$dmtID,$dcID);
+            //         $data['sec'] = json_decode($rdata['field1'], true);
+            //         $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
+            //         echo view('includes/Header', $data);
+            //         echo view('client/chapter3/315Ab4_checklist', $data);
+            //         echo view('includes/Footer');
+            //     }else{
+            //         $data['sec'] = $this->cvmodel->getvalues_m('c3',$s[1],$s[0],$dmtID,$dcID);
+            //         echo view('includes/Header', $data);
+            //         echo view('client/chapter3/315Ab4_section', $data);
+            //         echo view('includes/Footer');
+            //     }
+            //     break; 
+            // case '3.15.1 Ab4a':
+            //     $data['ab4a'] = $this->cvmodel->getvalues_m('c3','ab4a',$code,$dmtID,$dcID);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/3151Ab4a', $data);
+            //     echo view('includes/Footer');
+            //     break; 
+            // case '3.15.2 Ab4b':
+            //     $data['ab4b'] = $this->cvmodel->getvalues_m('c3','ab4b',$code,$dmtID,$dcID);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/3152Ab4b', $data);
+            //     echo view('includes/Footer');
+            //     break; 
+            // case '3.15.3 Ab4c':
+            //     $data['ab4c'] = $this->cvmodel->getvalues_m('c3','ab4c',$code,$dmtID,$dcID);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/3153Ab4c', $data);
+            //     echo view('includes/Footer');
+            //     break; 
+            // case '3.15.4 Ab4d':
+            //     $data['ab4d'] = $this->cvmodel->getvalues_m('c3','ab4d',$code,$dmtID,$dcID);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/3154Ab4d', $data);
+            //     echo view('includes/Footer');
+            //     break; 
+            // case '3.15.5 Ab4e':
+            //     $data['ab4e'] = $this->cvmodel->getvalues_m('c3','ab4e',$code,$dmtID,$dcID);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/3155Ab4e', $data);
+            //     echo view('includes/Footer');
+            //     break; 
+            // case '3.15.6 Ab4f':
+            //     $data['ab4f'] = $this->cvmodel->getvalues_m('c3','ab4f',$code,$dmtID,$dcID);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/3156Ab4f', $data);
+            //     echo view('includes/Footer');
+            //     break; 
+            // case '3.15.7 Ab4g':
+            //     $data['ab4g'] = $this->cvmodel->getvalues_m('c3','ab4g',$code,$dmtID,$dcID);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/3157Ab4g', $data);
+            //     echo view('includes/Footer');
+            //     break; 
+            // case '3.15.8 Ab4h':
+            //     $data['ab4h'] = $this->cvmodel->getvalues_m('c3','ab4h',$code,$dmtID,$dcID);
+            //     echo view('includes/Header', $data);
+            //     echo view('client/chapter3/3158Ab4h', $data);
+            //     echo view('includes/Footer');
+            //     break; 
+
         }
+
+        echo view('includes/Header', $data);
+        echo view('client/chapter3/'.$page, $data);
+        echo view('includes/Footer');
 
     }
 
@@ -689,155 +690,157 @@ class ChapterController extends BaseController{
         $data['code']   = $code;
         $dmtID         = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$mtID));
         switch ($code) {
-            case '3.1 Aa1':
+            case 'AA1':
                 $data['datapl'] = $this->c3model->getvalues_m('planning',$code,$dmtID);
                 $data['dataaf'] = $this->c3model->getvalues_m('audit finalisation',$code,$dmtID);
                 $rdata          = $this->c3model->getvalues_s('section3',$code, $dmtID);
                 $data['s3']     = json_decode($rdata['field1'], true);
                 $rdata2         = $this->c3model->getvalues_s('rc',$code,$dmtID);
                 $data['rc']     = json_decode($rdata2['field1'], true);
-                echo view('pdfc3/AA1', $data);
+                $page = $code;
                 break;
-            case '3.2 Aa2':
-                $rdata          = $this->c3model->getvalues_s('aa2',$code, $dmtID);
-                $data['aa2']    = json_decode($rdata['field1'], true);
-                echo view('pdfc3/AA2', $data);
-                break;
-            case '3.3 Aa3a':
-                $data['cr']     = $this->c3model->getvalues_m('cr',$code,$dmtID);
-                $data['dc']     = $this->c3model->getvalues_m('dc',$code,$dmtID);
-                $data['faf']    = $this->c3model->getvalues_m('faf',$code,$dmtID);
-                $rdata          = $this->c3model->getvalues_s('air',$code,$dmtID);
-                $data['air']    = json_decode($rdata['field1'], true);
-                echo view('pdfc3/AA3A', $data);
-                break;
-            case '3.4 Aa3b':
-                $data['bp1']    = $this->c3model->getvalues_m('p1',$code,$dmtID);
-                $data['bp2']    = $this->c3model->getvalues_m('p2',$code,$dmtID);
-                $data['bp3a']   = $this->c3model->getvalues_m('p3a',$code,$dmtID);
-                $data['bp3b']   = $this->c3model->getvalues_m('p3b',$code,$dmtID);
-                $rdata          = $this->c3model->getvalues_s('p4',$code,$dmtID);
-                $data['bp4']    = json_decode($rdata['field1'], true);
-                echo view('pdfc3/AA3B', $data);
-                break;
-            case '3.5 Aa4':
-                $rdata          = $this->c3model->getvalues_s('aa4',$code,$dmtID);
-                $data['aa4']    = json_decode($rdata['field1'], true);
-                echo view('pdfc3/AA4', $data);
-                break;
-            case '3.6.1 Aa5a':
-                $rdata          = $this->c3model->getvalues_s('aa5a',$code,$dmtID);
-                $data['aa5a']    = json_decode($rdata['field1'], true);
-                echo view('pdfc3/AA5A', $data);
-                break;
-            case '3.6.2 Aa5b':
-                $data['aa5b'] = $this->c3model->getvalues_m('aa5b',$code,$dmtID);
-                echo view('pdfc3/AA5B', $data);
-                break;  
-            case '3.7 Aa7':
-                $data['aa7']    = $this->c3model->getvalues_m('isa315',$code,$dmtID);
-                $data['cons']   = $this->c3model->getvalues_m('consultation',$code,$dmtID);
-                $data['inc']    = $this->c3model->getvalues_m('inconsistencies',$code,$dmtID);
-                $data['ref']    = $this->c3model->getvalues_m('refusal',$code,$dmtID);
-                $data['dep']    = $this->c3model->getvalues_m('departures',$code,$dmtID);
-                $data['oth']    = $this->c3model->getvalues_m('other',$code,$dmtID);
-                $data['aepapp'] = $this->c3model->getvalues_s('aepapp',$code,$dmtID);
-                $rdata          = $this->c3model->getvalues_s('aep',$code,$dmtID);
-                $data['aep']    = json_decode($rdata['field1'], true);
-                echo view('pdfc3/AA7', $data);
-                break;
-            case '3.8 Aa10':
-                $rdata          = $this->c3model->getvalues_s('aa10',$code,$dmtID);
-                $data['aa10']   = json_decode($rdata['field1'], true);
-                echo view('pdfc3/AA10', $data);
-                break;
-            case '3.9':
-                echo view('pdfc3/39', $data);
-                break;
-            case '3.10 Aa11-un':
-                $s = explode('-', $code);
-                $data['aef']    = $this->c3model->getvalues_m('aef',$s[0],$dmtID);
-                $data['aej']    = $this->c3model->getvalues_m('aej',$s[0],$dmtID);
-                $data['ee']     = $this->c3model->getvalues_m('ee',$s[0],$dmtID);
-                $data['de']     = $this->c3model->getvalues_m('de',$s[0],$dmtID);
-                $rdata          = $this->c3model->getvalues_s('aa11ue',$s[0],$dmtID);
-                $data['ue']     = json_decode($rdata['field1'], true);
-                $rdata2         = $this->c3model->getvalues_s('con',$s[0],$dmtID);
-                $data['con']    = json_decode($rdata2['field1'], true);    
-                echo view('pdfc3/AA11-un', $data);
-            case '3.10 Aa11-ad':
-                $s              = explode('-', $code);
-                $data['ad']     = $this->c3model->getvalues_m('ad',$s[0],$dmtID);
-                $rdata          = $this->c3model->getvalues_s('aa11uead',$s[0],$dmtID);
-                $data['ue']     = json_decode($rdata['field1'], true);   
-                echo view('pdfc3/AA11-ad', $data);
-                break;   
-            case '3.11':
-                $rdata          = $this->c3model->getvalues_s('311',$code,$dmtID);
-                $data['arf']    = json_decode($rdata['field1'], true);
-                echo view('pdfc3/311', $data);
-                break;   
-            case '3.12':
-                echo view('pdfc3/312', $data);
-                break;   
-            case '3.13 Ab1':
-                $data['ab1']    = $this->c3model->getvalues_m('ab1',$code,$dmtID);
-                echo view('pdfc3/AB1', $data);
-                break;   
-            case '3.14 Ab3':
-                $rdata = $this->c3model->getvalues_s('ab3',$code,$dmtID);
-                $data['ab3']    = json_decode($rdata['field1'], true);
-                echo view('pdfc3/AB3', $data);
-                break; 
-            case '3.15 Ab4':
-                $rdata = $this->c3model->getvalues_s('checklist',$code,$dmtID);
-                $data['sec']  = json_decode($rdata['field1'], true);
-                $data['sec1'] = $this->c3model->getvalues_m('section1',$code,$dmtID);
-                $data['sec2'] = $this->c3model->getvalues_m('section2',$code,$dmtID);
-                $data['sec3'] = $this->c3model->getvalues_m('section3',$code,$dmtID);
-                $data['sec4'] = $this->c3model->getvalues_m('section4',$code,$dmtID);
-                $data['sec5'] = $this->c3model->getvalues_m('section5',$code,$dmtID);
-                $data['sec6'] = $this->c3model->getvalues_m('section6',$code,$dmtID);
-                $data['sec7'] = $this->c3model->getvalues_m('section7',$code,$dmtID);
-                $data['sec8'] = $this->c3model->getvalues_m('section8',$code,$dmtID);
-                $data['sec9'] = $this->c3model->getvalues_m('section9',$code,$dmtID);
-                echo view('pdfc3/AB4', $data);
-                break; 
-            case '3.15.1 Ab4a':
-                $data['ab4a'] = $this->c3model->getvalues_m('ab4a',$code,$dmtID);
-                echo view('pdfc3/AB4A', $data);
-                break; 
-            case '3.15.2 Ab4b':
-                $data['ab4b'] = $this->c3model->getvalues_m('ab4b',$code,$dmtID);
-                echo view('pdfc3/AB4B', $data);
-                break; 
-            case '3.15.3 Ab4c':
-                $data['ab4c'] = $this->c3model->getvalues_m('ab4c',$code,$dmtID);
-                echo view('pdfc3/AB4C', $data);
-                break; 
-            case '3.15.4 Ab4d':
-                $data['ab4d'] = $this->c3model->getvalues_m('ab4d',$code,$dmtID);
-                echo view('pdfc3/AB4D', $data);
-                break; 
-            case '3.15.5 Ab4e':
-                $data['ab4e'] = $this->c3model->getvalues_m('ab4e',$code,$dmtID);
-                echo view('pdfc3/AB4E', $data);
-                break; 
-            case '3.15.6 Ab4f':
-                $data['ab4f'] = $this->c3model->getvalues_m('ab4f',$code,$dmtID);
-                echo view('pdfc3/AB4F', $data);
-                break; 
-            case '3.15.7 Ab4g':
-                $data['ab4g'] = $this->c3model->getvalues_m('ab4g',$code,$dmtID);
-                echo view('pdfc3/AB4G', $data);
-                break; 
-            case '3.15.8 Ab4h':
-                $data['ab4h'] = $this->c3model->getvalues_m('ab4h',$code,$dmtID);
-                echo view('pdfc3/AB4H', $data);
-                break; 
-            default:
-                break;
+            // case '3.2 Aa2':
+            //     $rdata          = $this->c3model->getvalues_s('aa2',$code, $dmtID);
+            //     $data['aa2']    = json_decode($rdata['field1'], true);
+            //     echo view('pdfc3/AA2', $data);
+            //     break;
+            // case '3.3 Aa3a':
+            //     $data['cr']     = $this->c3model->getvalues_m('cr',$code,$dmtID);
+            //     $data['dc']     = $this->c3model->getvalues_m('dc',$code,$dmtID);
+            //     $data['faf']    = $this->c3model->getvalues_m('faf',$code,$dmtID);
+            //     $rdata          = $this->c3model->getvalues_s('air',$code,$dmtID);
+            //     $data['air']    = json_decode($rdata['field1'], true);
+            //     echo view('pdfc3/AA3A', $data);
+            //     break;
+            // case '3.4 Aa3b':
+            //     $data['bp1']    = $this->c3model->getvalues_m('p1',$code,$dmtID);
+            //     $data['bp2']    = $this->c3model->getvalues_m('p2',$code,$dmtID);
+            //     $data['bp3a']   = $this->c3model->getvalues_m('p3a',$code,$dmtID);
+            //     $data['bp3b']   = $this->c3model->getvalues_m('p3b',$code,$dmtID);
+            //     $rdata          = $this->c3model->getvalues_s('p4',$code,$dmtID);
+            //     $data['bp4']    = json_decode($rdata['field1'], true);
+            //     echo view('pdfc3/AA3B', $data);
+            //     break;
+            // case '3.5 Aa4':
+            //     $rdata          = $this->c3model->getvalues_s('aa4',$code,$dmtID);
+            //     $data['aa4']    = json_decode($rdata['field1'], true);
+            //     echo view('pdfc3/AA4', $data);
+            //     break;
+            // case '3.6.1 Aa5a':
+            //     $rdata          = $this->c3model->getvalues_s('aa5a',$code,$dmtID);
+            //     $data['aa5a']    = json_decode($rdata['field1'], true);
+            //     echo view('pdfc3/AA5A', $data);
+            //     break;
+            // case '3.6.2 Aa5b':
+            //     $data['aa5b'] = $this->c3model->getvalues_m('aa5b',$code,$dmtID);
+            //     echo view('pdfc3/AA5B', $data);
+            //     break;  
+            // case '3.7 Aa7':
+            //     $data['aa7']    = $this->c3model->getvalues_m('isa315',$code,$dmtID);
+            //     $data['cons']   = $this->c3model->getvalues_m('consultation',$code,$dmtID);
+            //     $data['inc']    = $this->c3model->getvalues_m('inconsistencies',$code,$dmtID);
+            //     $data['ref']    = $this->c3model->getvalues_m('refusal',$code,$dmtID);
+            //     $data['dep']    = $this->c3model->getvalues_m('departures',$code,$dmtID);
+            //     $data['oth']    = $this->c3model->getvalues_m('other',$code,$dmtID);
+            //     $data['aepapp'] = $this->c3model->getvalues_s('aepapp',$code,$dmtID);
+            //     $rdata          = $this->c3model->getvalues_s('aep',$code,$dmtID);
+            //     $data['aep']    = json_decode($rdata['field1'], true);
+            //     echo view('pdfc3/AA7', $data);
+            //     break;
+            // case '3.8 Aa10':
+            //     $rdata          = $this->c3model->getvalues_s('aa10',$code,$dmtID);
+            //     $data['aa10']   = json_decode($rdata['field1'], true);
+            //     echo view('pdfc3/AA10', $data);
+            //     break;
+            // case '3.9':
+            //     echo view('pdfc3/39', $data);
+            //     break;
+            // case '3.10 Aa11-un':
+            //     $s = explode('-', $code);
+            //     $data['aef']    = $this->c3model->getvalues_m('aef',$s[0],$dmtID);
+            //     $data['aej']    = $this->c3model->getvalues_m('aej',$s[0],$dmtID);
+            //     $data['ee']     = $this->c3model->getvalues_m('ee',$s[0],$dmtID);
+            //     $data['de']     = $this->c3model->getvalues_m('de',$s[0],$dmtID);
+            //     $rdata          = $this->c3model->getvalues_s('aa11ue',$s[0],$dmtID);
+            //     $data['ue']     = json_decode($rdata['field1'], true);
+            //     $rdata2         = $this->c3model->getvalues_s('con',$s[0],$dmtID);
+            //     $data['con']    = json_decode($rdata2['field1'], true);    
+            //     echo view('pdfc3/AA11-un', $data);
+            // case '3.10 Aa11-ad':
+            //     $s              = explode('-', $code);
+            //     $data['ad']     = $this->c3model->getvalues_m('ad',$s[0],$dmtID);
+            //     $rdata          = $this->c3model->getvalues_s('aa11uead',$s[0],$dmtID);
+            //     $data['ue']     = json_decode($rdata['field1'], true);   
+            //     echo view('pdfc3/AA11-ad', $data);
+            //     break;   
+            // case '3.11':
+            //     $rdata          = $this->c3model->getvalues_s('311',$code,$dmtID);
+            //     $data['arf']    = json_decode($rdata['field1'], true);
+            //     echo view('pdfc3/311', $data);
+            //     break;   
+            // case '3.12':
+            //     echo view('pdfc3/312', $data);
+            //     break;   
+            // case '3.13 Ab1':
+            //     $data['ab1']    = $this->c3model->getvalues_m('ab1',$code,$dmtID);
+            //     echo view('pdfc3/AB1', $data);
+            //     break;   
+            // case '3.14 Ab3':
+            //     $rdata = $this->c3model->getvalues_s('ab3',$code,$dmtID);
+            //     $data['ab3']    = json_decode($rdata['field1'], true);
+            //     echo view('pdfc3/AB3', $data);
+            //     break; 
+            // case '3.15 Ab4':
+            //     $rdata = $this->c3model->getvalues_s('checklist',$code,$dmtID);
+            //     $data['sec']  = json_decode($rdata['field1'], true);
+            //     $data['sec1'] = $this->c3model->getvalues_m('section1',$code,$dmtID);
+            //     $data['sec2'] = $this->c3model->getvalues_m('section2',$code,$dmtID);
+            //     $data['sec3'] = $this->c3model->getvalues_m('section3',$code,$dmtID);
+            //     $data['sec4'] = $this->c3model->getvalues_m('section4',$code,$dmtID);
+            //     $data['sec5'] = $this->c3model->getvalues_m('section5',$code,$dmtID);
+            //     $data['sec6'] = $this->c3model->getvalues_m('section6',$code,$dmtID);
+            //     $data['sec7'] = $this->c3model->getvalues_m('section7',$code,$dmtID);
+            //     $data['sec8'] = $this->c3model->getvalues_m('section8',$code,$dmtID);
+            //     $data['sec9'] = $this->c3model->getvalues_m('section9',$code,$dmtID);
+            //     echo view('pdfc3/AB4', $data);
+            //     break; 
+            // case '3.15.1 Ab4a':
+            //     $data['ab4a'] = $this->c3model->getvalues_m('ab4a',$code,$dmtID);
+            //     echo view('pdfc3/AB4A', $data);
+            //     break; 
+            // case '3.15.2 Ab4b':
+            //     $data['ab4b'] = $this->c3model->getvalues_m('ab4b',$code,$dmtID);
+            //     echo view('pdfc3/AB4B', $data);
+            //     break; 
+            // case '3.15.3 Ab4c':
+            //     $data['ab4c'] = $this->c3model->getvalues_m('ab4c',$code,$dmtID);
+            //     echo view('pdfc3/AB4C', $data);
+            //     break; 
+            // case '3.15.4 Ab4d':
+            //     $data['ab4d'] = $this->c3model->getvalues_m('ab4d',$code,$dmtID);
+            //     echo view('pdfc3/AB4D', $data);
+            //     break; 
+            // case '3.15.5 Ab4e':
+            //     $data['ab4e'] = $this->c3model->getvalues_m('ab4e',$code,$dmtID);
+            //     echo view('pdfc3/AB4E', $data);
+            //     break; 
+            // case '3.15.6 Ab4f':
+            //     $data['ab4f'] = $this->c3model->getvalues_m('ab4f',$code,$dmtID);
+            //     echo view('pdfc3/AB4F', $data);
+            //     break; 
+            // case '3.15.7 Ab4g':
+            //     $data['ab4g'] = $this->c3model->getvalues_m('ab4g',$code,$dmtID);
+            //     echo view('pdfc3/AB4G', $data);
+            //     break; 
+            // case '3.15.8 Ab4h':
+            //     $data['ab4h'] = $this->c3model->getvalues_m('ab4h',$code,$dmtID);
+            //     echo view('pdfc3/AB4H', $data);
+            //     break; 
+            // default:
+            //     break;
         }
+
+        echo view('pdfc3/'.$page, $data);
 
     }
 
