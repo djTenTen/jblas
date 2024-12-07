@@ -476,13 +476,12 @@ class ChapterController extends BaseController{
                 $data['mdID']   = $this->encr($rdata['mdID']);
                 $page = $code;
                 break;
-            // case '3.6.1 Aa5a':
-            //     $rdata          = $this->cvmodel->getvalues_s('c3','aa5a',$code,$dmtID,$dcID);
-            //     $data['aa5a']    = json_decode($rdata['field1'], true);
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter3/361Aa5a', $data);
-            //     echo view('includes/Footer');
-            //     break;
+            case 'AA5A':
+                $rdata          = $this->cvmodel->getvalues_c3('s','aa5a',$code,$dmtID,$dcID);
+                $data['aa5a']   = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
+                break;
             // case '3.6.2 Aa5b':
             //     $data['aa5b'] = $this->cvmodel->getvalues_m('c3','aa5b',$code,$dmtID,$dcID);
             //     echo view('includes/Header', $data);
@@ -719,11 +718,11 @@ class ChapterController extends BaseController{
                 $data['aa4']    = json_decode($rdata['field1'], true);
                 $page = $code;
                 break;
-            // case '3.6.1 Aa5a':
-            //     $rdata          = $this->c3model->getvalues_s('aa5a',$code,$dmtID);
-            //     $data['aa5a']    = json_decode($rdata['field1'], true);
-            //     echo view('pdfc3/AA5A', $data);
-            //     break;
+            case 'AA5A':
+                $rdata          = $this->c3model->getvalues_s('aa5a',$code,$dmtID);
+                $data['aa5a']   = json_decode($rdata['field1'], true);
+                $page = $code;
+                break;
             // case '3.6.2 Aa5b':
             //     $data['aa5b'] = $this->c3model->getvalues_m('aa5b',$code,$dmtID);
             //     echo view('pdfc3/AA5B', $data);

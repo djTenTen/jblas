@@ -907,7 +907,6 @@ class ChapterValuesController extends BaseController{
                                 ];
                                 $req = [
                                     'aa4'       => json_encode($aa4),
-                                    'part'      => 'aa4',
                                     'acid'      =>  $this->request->getPost('acid'),
                                 ];
                             break;
@@ -915,36 +914,34 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
-                    // case '3.6.1 Aa5a':
-                    //     switch ($save) {
-                    //         case 'saveaa5a' :
-                    //             $aa5 = [
-                    //                 'aa51d' => $this->request->getPost('aa51d'),
-                    //                 'ml1' => $this->request->getPost('ml1'),
-                    //                 'ml1d' => $this->request->getPost('ml1d'),
-                    //                 'ml2' => $this->request->getPost('ml2'),
-                    //                 'ml3' => $this->request->getPost('ml3'),
-                    //                 'ml4' => $this->request->getPost('ml4'),
-                    //                 'ml4d' => $this->request->getPost('ml4d'),
-                    //                 'ml5' => $this->request->getPost('ml5'),
-                    //                 'ml5d' => $this->request->getPost('ml5d'),
-                    //                 'ml6' => $this->request->getPost('ml6'),
-                    //                 'ml6d' => $this->request->getPost('ml6d'),
-                    //                 'ml7' => $this->request->getPost('ml7'),
-                    //                 'ml7d' => $this->request->getPost('ml7d'),
-                    //                 'ml8' => $this->request->getPost('ml8'),
-                    //             ];
-                    //             $req = [
-                    //                 'aa5a'       => json_encode($aa5),
-                    //                 'code'      => $code,
-                    //                 'part'      => 'aa5a',
-                    //                 'c3tID'     => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //     }
-                    //     $res = $this->cvmodel->savevalues($param,$req);
-                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    // break;
+                    case 'AA5A':
+                        switch ($save) {
+                            case 'saveaa5a' :
+                                $aa5 = [
+                                    'aa51d'     => $this->request->getPost('aa51d'),
+                                    'ml1'       => $this->request->getPost('ml1'),
+                                    'ml1d'      => $this->request->getPost('ml1d'),
+                                    'ml2'       => $this->request->getPost('ml2'),
+                                    'ml3'       => $this->request->getPost('ml3'),
+                                    'ml4'       => $this->request->getPost('ml4'),
+                                    'ml4d'      => $this->request->getPost('ml4d'),
+                                    'ml5'       => $this->request->getPost('ml5'),
+                                    'ml5d'      => $this->request->getPost('ml5d'),
+                                    'ml6'       => $this->request->getPost('ml6'),
+                                    'ml6d'      => $this->request->getPost('ml6d'),
+                                    'ml7'       => $this->request->getPost('ml7'),
+                                    'ml7d'      => $this->request->getPost('ml7d'),
+                                    'ml8'       => $this->request->getPost('ml8'),
+                                ];
+                                $req = [
+                                    'aa5a'       => json_encode($aa5),
+                                    'acid'      =>  $this->request->getPost('acid'),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    break;
                     // case '3.6.2 Aa5b':
                     //     switch ($save) {
                     //         case 'saveaa5b' :
