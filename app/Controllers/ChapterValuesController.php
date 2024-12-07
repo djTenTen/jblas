@@ -791,7 +791,7 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
-                    case '3.2 Aa2':
+                    case 'AA2':
                         switch ($save) {
                             case 'saveaa2' :
                                 $aa2 = [
@@ -806,511 +806,510 @@ class ChapterValuesController extends BaseController{
                                 $req = [
                                     'aa2'       => json_encode($aa2),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
                                 ];
                             break;
                         }
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
-                    case '3.3 Aa3a':
-                        switch ($save) {
-                            case 'saveaa3a' :
-                                $req = [
-                                    'comment'   => $this->request->getPost('comment'),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                            case 'saveaa3afaf' :
-                                $req = [
-                                    'extent'        => $this->request->getPost('extent'),
-                                    'reference'     => $this->request->getPost('reference'),
-                                    'acid'          => $this->request->getPost('acid'),
-                                    'c3tID'         => $param['mtID'],
-                                ];
-                            break;
-                            case 'saveaa3air' :
-                                $air = [
-                                    'sia'       => $this->request->getPost('sia'),
-                                    'seh'       => $this->request->getPost('seh'),
-                                    'ir'        => $this->request->getPost('ir'),
-                                    'tird'      => $this->request->getPost('tird'),
-                                    'tfrd'      => $this->request->getPost('tfrd'),
-                                ];
-                                $req = [
-                                    'air'       => json_encode($air),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
-                    case '3.4 Aa3b':
-                        switch ($save) {
-                            case 'saveaa3b' :
-                                $req = [
-                                    'reference'     => $this->request->getPost('reference'),
-                                    'acid'          => $this->request->getPost('acid'),
-                                    'c3tID'         => $param['mtID'],
-                                ];
-                            break;
-                            case 'saveaa3bp4' :
-                                $p4 = [
-                                    'p41'   => $this->request->getPost('p41'),
-                                    'p42'   => $this->request->getPost('p42'),
-                                    'bwr1'   => $this->request->getPost('bwr1'),
-                                    'bwr2'   => $this->request->getPost('bwr2'),
-                                    'bwr2d'   => $this->request->getPost('bwr2d'),
-                                    'bwr3'   => $this->request->getPost('bwr3'),
-                                    'bwr3d'   => $this->request->getPost('bwr3d'),
-                                    'bwr4'   => $this->request->getPost('bwr4'),
-                                    'bwr4d'   => $this->request->getPost('bwr4d'),
-                                    'bwr5'   => $this->request->getPost('bwr5'),
-                                    'bwr5d'   => $this->request->getPost('bwr5d'),
-                                ];
-                                $req = [
-                                    'p4'        => json_encode($p4),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
-                    case '3.5 Aa4':
-                        switch ($save) {
-                            case 'saveaa4' :
-                                $aa4 = [
-                                    'leg1' => $this->request->getPost('leg1'),
-                                    'leg2' => $this->request->getPost('leg2'),
-                                    'isa' => $this->request->getPost('isa'),
-                                    'leg3' => $this->request->getPost('leg3'),
-                                    'num7' => $this->request->getPost('num7'),
-                                    'num10yes' => $this->request->getPost('num10yes'),
-                                    'num11yes' => $this->request->getPost('num11yes'),
-                                    'num11' => $this->request->getPost('num11'),
-                                    'num12yes' => $this->request->getPost('num12yes'),
-                                    'num12' => $this->request->getPost('num12'),
-                                    'num15' => $this->request->getPost('num15'),
-                                    'num16' => $this->request->getPost('num16'),
-                                    'num17' => $this->request->getPost('num17'),
-                                    'imp' => $this->request->getPost('imp'),
-                                    'num22yes1' => $this->request->getPost('num22yes1'),
-                                    'num221' => $this->request->getPost('num221'),
-                                    'num22yes2' => $this->request->getPost('num22yes2'),
-                                    'num222' => $this->request->getPost('num222'),
-                                    'num223' => $this->request->getPost('num223'),
-                                    'num224' => $this->request->getPost('num224'),
-                                    'num23yes1' => $this->request->getPost('num23yes1'),
-                                    'num23d1' => $this->request->getPost('num23d1'),
-                                    'num23d2' => $this->request->getPost('num23d2'),
-                                    'num23yes2' => $this->request->getPost('num23yes2'),
-                                    'num23d' => $this->request->getPost('num23d'),
-                                ];
-                                $req = [
-                                    'aa4'       => json_encode($aa4),
-                                    'code'      => $code,
-                                    'part'      => 'aa4',
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
-                    case '3.6.1 Aa5a':
-                        switch ($save) {
-                            case 'saveaa5a' :
-                                $aa5 = [
-                                    'aa51d' => $this->request->getPost('aa51d'),
-                                    'ml1' => $this->request->getPost('ml1'),
-                                    'ml1d' => $this->request->getPost('ml1d'),
-                                    'ml2' => $this->request->getPost('ml2'),
-                                    'ml3' => $this->request->getPost('ml3'),
-                                    'ml4' => $this->request->getPost('ml4'),
-                                    'ml4d' => $this->request->getPost('ml4d'),
-                                    'ml5' => $this->request->getPost('ml5'),
-                                    'ml5d' => $this->request->getPost('ml5d'),
-                                    'ml6' => $this->request->getPost('ml6'),
-                                    'ml6d' => $this->request->getPost('ml6d'),
-                                    'ml7' => $this->request->getPost('ml7'),
-                                    'ml7d' => $this->request->getPost('ml7d'),
-                                    'ml8' => $this->request->getPost('ml8'),
-                                ];
-                                $req = [
-                                    'aa5a'       => json_encode($aa5),
-                                    'code'      => $code,
-                                    'part'      => 'aa5a',
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
-                    case '3.6.2 Aa5b':
-                        switch ($save) {
-                            case 'saveaa5b' :
-                                $validationRules = [
-                                    'reference' => 'required'
-                                ];
-                                if (!$this->validate($validationRules)) {
-                                    session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-                                    return $this->resultpage($chapter,false,$code,$mtID,$cID,$name);
-                                }
-                                $req = [
-                                    'reference'             => $this->request->getPost('reference'),
-                                    'issue'                 => $this->request->getPost('issue'),
-                                    'comment'               => $this->request->getPost('comment'),
-                                    'recommendation'        => $this->request->getPost('recommendation'),
-                                    'yesno'                 => $this->request->getPost('yesno'),
-                                    'result'                => $this->request->getPost('result'),
-                                    'code'                  => $code,
-                                    'part'                  => $this->request->getPost('part'),
-                                    'c3tID'                 => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
-                    case '3.7 Aa7':
-                        switch ($save) {
-                            case 'saveaa7isa' :
-                                $validationRules = [
-                                    'reference' => 'required'
-                                ];
-                                if (!$this->validate($validationRules)) {
-                                    session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-                                    return $this->resultpage($chapter,false,$code,$mtID,$cID,$name);
-                                }
-                                $req = [
-                                    'reference'         => $this->request->getPost('reference'),
-                                    'issue'             => $this->request->getPost('issue'),
-                                    'comment'           => $this->request->getPost('comment'),
-                                    'recommendation'    => $this->request->getPost('recommendation'),
-                                    'result'            => $this->request->getPost('result'),
-                                    'code'              => $code,
-                                    'part'              => $this->request->getPost('part'),
-                                    'c3tID'             => $param['mtID'],
-                                ];
-                            break;
-                            case 'saveaa7aepapp' :
-                                $req = [
-                                    'aep'       => $this->request->getPost('question'),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'cID'       => $param['cID'],
-                                    'c3tID'     => $param['mtID'],
-                                    'uID'       => $param['uID'],
-                                    'fID'       => $param['fID'],
-                                ];
-                            break;
-                            case 'saveaa7aep' :
-                                $aep = [
-                                    'ch1'   => $this->request->getPost('ch1'),
-                                    'ch2'   => $this->request->getPost('ch2'),
-                                    'dev1'  => $this->request->getPost('dev1'),
-                                    'dev2'  => $this->request->getPost('dev2'),
-                                    'fut1'  => $this->request->getPost('fut1'),
-                                    'fut2'  => $this->request->getPost('fut2'),
-                                    'cst1'  => $this->request->getPost('cst1'),
-                                    'cst2'  => $this->request->getPost('cst2')
-                                ];
-                                $req = [
-                                    'aep'       => json_encode($aep),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
-                    case '3.8 Aa10':
-                        switch ($save) {
-                            case 'saveaa10' :
-                                $aa10 = [
-                                    'sum'   => $this->request->getPost('sum'),
-                                    'comp'  => $this->request->getPost('comp'),
-                                    'exp'   => $this->request->getPost('exp')
-                                ];
-                                $req = [
-                                    'aa10'      => json_encode($aa10),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
-                    case '3.10 Aa11-un':
-                    case '3.10 Aa11-ad':
-                        $s = explode('-', $code);
-                        switch ($save) {
-                            case 'saveaa11un' :
-                                $req = [
-                                    'reference'     => $this->request->getPost('reference'),
-                                    'desc'          => $this->request->getPost('desc'),
-                                    'drps'          => $this->request->getPost('drps'),
-                                    'crps'          => $this->request->getPost('crps'),
-                                    'drfp'          => $this->request->getPost('drfp'),
-                                    'crfp'          => $this->request->getPost('crfp'),
-                                    'yesno'         => $this->request->getPost('yesno'),
-                                    'code'          => $s[0],
-                                    'part'          => $this->request->getPost('part'),
-                                    'c3tID'         => $param['mtID'],
-                                ];
-                            break;
-                            case 'saveaa11ad' :
-                                $req = [
-                                    'reference'     => $this->request->getPost('reference'),
-                                    'desc'          => $this->request->getPost('desc'),
-                                    'drps'          => $this->request->getPost('drps'),
-                                    'crps'          => $this->request->getPost('crps'),
-                                    'drfp'          => $this->request->getPost('drfp'),
-                                    'crfp'          => $this->request->getPost('crfp'),
-                                    'code'          => $s[0],
-                                    'part'          => 'ad',
-                                    'c3tID'         => $param['mtID'],
-                                ];
-                            break;
-                            case 'saveaa11ue' :
-                                $aa11 = [
-                                    'cta'   => $this->request->getPost('cta'),
-                                    'fpm'   => $this->request->getPost('fpm'),
-                                    'fma'   => $this->request->getPost('fma')
-                                ];
-                                $req = [
-                                    'aa11'      => json_encode($aa11),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
-                                ];
+                    // case '3.3 Aa3a':
+                    //     switch ($save) {
+                    //         case 'saveaa3a' :
+                    //             $req = [
+                    //                 'comment'   => $this->request->getPost('comment'),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //         case 'saveaa3afaf' :
+                    //             $req = [
+                    //                 'extent'        => $this->request->getPost('extent'),
+                    //                 'reference'     => $this->request->getPost('reference'),
+                    //                 'acid'          => $this->request->getPost('acid'),
+                    //                 'c3tID'         => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //         case 'saveaa3air' :
+                    //             $air = [
+                    //                 'sia'       => $this->request->getPost('sia'),
+                    //                 'seh'       => $this->request->getPost('seh'),
+                    //                 'ir'        => $this->request->getPost('ir'),
+                    //                 'tird'      => $this->request->getPost('tird'),
+                    //                 'tfrd'      => $this->request->getPost('tfrd'),
+                    //             ];
+                    //             $req = [
+                    //                 'air'       => json_encode($air),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->cvmodel->savevalues($param,$req);
+                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    // break;
+                    // case '3.4 Aa3b':
+                    //     switch ($save) {
+                    //         case 'saveaa3b' :
+                    //             $req = [
+                    //                 'reference'     => $this->request->getPost('reference'),
+                    //                 'acid'          => $this->request->getPost('acid'),
+                    //                 'c3tID'         => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //         case 'saveaa3bp4' :
+                    //             $p4 = [
+                    //                 'p41'   => $this->request->getPost('p41'),
+                    //                 'p42'   => $this->request->getPost('p42'),
+                    //                 'bwr1'   => $this->request->getPost('bwr1'),
+                    //                 'bwr2'   => $this->request->getPost('bwr2'),
+                    //                 'bwr2d'   => $this->request->getPost('bwr2d'),
+                    //                 'bwr3'   => $this->request->getPost('bwr3'),
+                    //                 'bwr3d'   => $this->request->getPost('bwr3d'),
+                    //                 'bwr4'   => $this->request->getPost('bwr4'),
+                    //                 'bwr4d'   => $this->request->getPost('bwr4d'),
+                    //                 'bwr5'   => $this->request->getPost('bwr5'),
+                    //                 'bwr5d'   => $this->request->getPost('bwr5d'),
+                    //             ];
+                    //             $req = [
+                    //                 'p4'        => json_encode($p4),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->cvmodel->savevalues($param,$req);
+                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    // break;
+                    // case '3.5 Aa4':
+                    //     switch ($save) {
+                    //         case 'saveaa4' :
+                    //             $aa4 = [
+                    //                 'leg1' => $this->request->getPost('leg1'),
+                    //                 'leg2' => $this->request->getPost('leg2'),
+                    //                 'isa' => $this->request->getPost('isa'),
+                    //                 'leg3' => $this->request->getPost('leg3'),
+                    //                 'num7' => $this->request->getPost('num7'),
+                    //                 'num10yes' => $this->request->getPost('num10yes'),
+                    //                 'num11yes' => $this->request->getPost('num11yes'),
+                    //                 'num11' => $this->request->getPost('num11'),
+                    //                 'num12yes' => $this->request->getPost('num12yes'),
+                    //                 'num12' => $this->request->getPost('num12'),
+                    //                 'num15' => $this->request->getPost('num15'),
+                    //                 'num16' => $this->request->getPost('num16'),
+                    //                 'num17' => $this->request->getPost('num17'),
+                    //                 'imp' => $this->request->getPost('imp'),
+                    //                 'num22yes1' => $this->request->getPost('num22yes1'),
+                    //                 'num221' => $this->request->getPost('num221'),
+                    //                 'num22yes2' => $this->request->getPost('num22yes2'),
+                    //                 'num222' => $this->request->getPost('num222'),
+                    //                 'num223' => $this->request->getPost('num223'),
+                    //                 'num224' => $this->request->getPost('num224'),
+                    //                 'num23yes1' => $this->request->getPost('num23yes1'),
+                    //                 'num23d1' => $this->request->getPost('num23d1'),
+                    //                 'num23d2' => $this->request->getPost('num23d2'),
+                    //                 'num23yes2' => $this->request->getPost('num23yes2'),
+                    //                 'num23d' => $this->request->getPost('num23d'),
+                    //             ];
+                    //             $req = [
+                    //                 'aa4'       => json_encode($aa4),
+                    //                 'code'      => $code,
+                    //                 'part'      => 'aa4',
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->cvmodel->savevalues($param,$req);
+                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    // break;
+                    // case '3.6.1 Aa5a':
+                    //     switch ($save) {
+                    //         case 'saveaa5a' :
+                    //             $aa5 = [
+                    //                 'aa51d' => $this->request->getPost('aa51d'),
+                    //                 'ml1' => $this->request->getPost('ml1'),
+                    //                 'ml1d' => $this->request->getPost('ml1d'),
+                    //                 'ml2' => $this->request->getPost('ml2'),
+                    //                 'ml3' => $this->request->getPost('ml3'),
+                    //                 'ml4' => $this->request->getPost('ml4'),
+                    //                 'ml4d' => $this->request->getPost('ml4d'),
+                    //                 'ml5' => $this->request->getPost('ml5'),
+                    //                 'ml5d' => $this->request->getPost('ml5d'),
+                    //                 'ml6' => $this->request->getPost('ml6'),
+                    //                 'ml6d' => $this->request->getPost('ml6d'),
+                    //                 'ml7' => $this->request->getPost('ml7'),
+                    //                 'ml7d' => $this->request->getPost('ml7d'),
+                    //                 'ml8' => $this->request->getPost('ml8'),
+                    //             ];
+                    //             $req = [
+                    //                 'aa5a'       => json_encode($aa5),
+                    //                 'code'      => $code,
+                    //                 'part'      => 'aa5a',
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->cvmodel->savevalues($param,$req);
+                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    // break;
+                    // case '3.6.2 Aa5b':
+                    //     switch ($save) {
+                    //         case 'saveaa5b' :
+                    //             $validationRules = [
+                    //                 'reference' => 'required'
+                    //             ];
+                    //             if (!$this->validate($validationRules)) {
+                    //                 session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+                    //                 return $this->resultpage($chapter,false,$code,$mtID,$cID,$name);
+                    //             }
+                    //             $req = [
+                    //                 'reference'             => $this->request->getPost('reference'),
+                    //                 'issue'                 => $this->request->getPost('issue'),
+                    //                 'comment'               => $this->request->getPost('comment'),
+                    //                 'recommendation'        => $this->request->getPost('recommendation'),
+                    //                 'yesno'                 => $this->request->getPost('yesno'),
+                    //                 'result'                => $this->request->getPost('result'),
+                    //                 'code'                  => $code,
+                    //                 'part'                  => $this->request->getPost('part'),
+                    //                 'c3tID'                 => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->cvmodel->savevalues($param,$req);
+                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    // break;
+                    // case '3.7 Aa7':
+                    //     switch ($save) {
+                    //         case 'saveaa7isa' :
+                    //             $validationRules = [
+                    //                 'reference' => 'required'
+                    //             ];
+                    //             if (!$this->validate($validationRules)) {
+                    //                 session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+                    //                 return $this->resultpage($chapter,false,$code,$mtID,$cID,$name);
+                    //             }
+                    //             $req = [
+                    //                 'reference'         => $this->request->getPost('reference'),
+                    //                 'issue'             => $this->request->getPost('issue'),
+                    //                 'comment'           => $this->request->getPost('comment'),
+                    //                 'recommendation'    => $this->request->getPost('recommendation'),
+                    //                 'result'            => $this->request->getPost('result'),
+                    //                 'code'              => $code,
+                    //                 'part'              => $this->request->getPost('part'),
+                    //                 'c3tID'             => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //         case 'saveaa7aepapp' :
+                    //             $req = [
+                    //                 'aep'       => $this->request->getPost('question'),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'cID'       => $param['cID'],
+                    //                 'c3tID'     => $param['mtID'],
+                    //                 'uID'       => $param['uID'],
+                    //                 'fID'       => $param['fID'],
+                    //             ];
+                    //         break;
+                    //         case 'saveaa7aep' :
+                    //             $aep = [
+                    //                 'ch1'   => $this->request->getPost('ch1'),
+                    //                 'ch2'   => $this->request->getPost('ch2'),
+                    //                 'dev1'  => $this->request->getPost('dev1'),
+                    //                 'dev2'  => $this->request->getPost('dev2'),
+                    //                 'fut1'  => $this->request->getPost('fut1'),
+                    //                 'fut2'  => $this->request->getPost('fut2'),
+                    //                 'cst1'  => $this->request->getPost('cst1'),
+                    //                 'cst2'  => $this->request->getPost('cst2')
+                    //             ];
+                    //             $req = [
+                    //                 'aep'       => json_encode($aep),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->cvmodel->savevalues($param,$req);
+                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    // break;
+                    // case '3.8 Aa10':
+                    //     switch ($save) {
+                    //         case 'saveaa10' :
+                    //             $aa10 = [
+                    //                 'sum'   => $this->request->getPost('sum'),
+                    //                 'comp'  => $this->request->getPost('comp'),
+                    //                 'exp'   => $this->request->getPost('exp')
+                    //             ];
+                    //             $req = [
+                    //                 'aa10'      => json_encode($aa10),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->cvmodel->savevalues($param,$req);
+                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    // break;
+                    // case '3.10 Aa11-un':
+                    // case '3.10 Aa11-ad':
+                    //     $s = explode('-', $code);
+                    //     switch ($save) {
+                    //         case 'saveaa11un' :
+                    //             $req = [
+                    //                 'reference'     => $this->request->getPost('reference'),
+                    //                 'desc'          => $this->request->getPost('desc'),
+                    //                 'drps'          => $this->request->getPost('drps'),
+                    //                 'crps'          => $this->request->getPost('crps'),
+                    //                 'drfp'          => $this->request->getPost('drfp'),
+                    //                 'crfp'          => $this->request->getPost('crfp'),
+                    //                 'yesno'         => $this->request->getPost('yesno'),
+                    //                 'code'          => $s[0],
+                    //                 'part'          => $this->request->getPost('part'),
+                    //                 'c3tID'         => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //         case 'saveaa11ad' :
+                    //             $req = [
+                    //                 'reference'     => $this->request->getPost('reference'),
+                    //                 'desc'          => $this->request->getPost('desc'),
+                    //                 'drps'          => $this->request->getPost('drps'),
+                    //                 'crps'          => $this->request->getPost('crps'),
+                    //                 'drfp'          => $this->request->getPost('drfp'),
+                    //                 'crfp'          => $this->request->getPost('crfp'),
+                    //                 'code'          => $s[0],
+                    //                 'part'          => 'ad',
+                    //                 'c3tID'         => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //         case 'saveaa11ue' :
+                    //             $aa11 = [
+                    //                 'cta'   => $this->request->getPost('cta'),
+                    //                 'fpm'   => $this->request->getPost('fpm'),
+                    //                 'fma'   => $this->request->getPost('fma')
+                    //             ];
+                    //             $req = [
+                    //                 'aa11'      => json_encode($aa11),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
                                 
-                            break;
-                            case 'saveaa11con' :
-                                $aa11con = [
-                                    'bdr1'      => $this->request->getPost('bdr1'),
-                                    'bcr1'      => $this->request->getPost('bcr1'),
-                                    'bdr2'      => $this->request->getPost('bdr2'),
-                                    'bcr2'      => $this->request->getPost('bcr2'),
-                                    'cdr1'      => $this->request->getPost('cdr1'),
-                                    'ccr1'      => $this->request->getPost('ccr1'),
-                                    'cdr2'      => $this->request->getPost('cdr2'),
-                                    'ccr2'      => $this->request->getPost('ccr2'),
-                                    'ddr1'      => $this->request->getPost('ddr1'),
-                                    'dcr1'      => $this->request->getPost('dcr1'),
-                                    'ddr2'      => $this->request->getPost('ddr2'),
-                                    'dcr2'      => $this->request->getPost('dcr2'),
-                                    'edr1'      => $this->request->getPost('edr1'),
-                                    'ecr1'      => $this->request->getPost('ecr1'),
-                                    'edr2'      => $this->request->getPost('edr2'),
-                                    'ecr2'      => $this->request->getPost('ecr2'),
-                                    'fdr1'      => $this->request->getPost('fdr1'),
-                                    'fcr1'      => $this->request->getPost('fcr1'),
-                                    'fdr2'      => $this->request->getPost('fdr2'),
-                                    'fcr2'      => $this->request->getPost('fcr2'),
-                                    'hdr1'      => $this->request->getPost('hdr1'),
-                                    'hcr1'      => $this->request->getPost('hcr1'),
-                                    'hdr2'      => $this->request->getPost('hdr2'),
-                                    'hcr2'      => $this->request->getPost('hcr2'),
-                                    'idr1'      => $this->request->getPost('idr1'),
-                                    'icr1'      => $this->request->getPost('icr1'),
-                                    'idr2'      => $this->request->getPost('idr2'),
-                                    'icr2'      => $this->request->getPost('icr2'),
-                                    'jdr1'      => $this->request->getPost('jdr1'),
-                                    'jcr1'      => $this->request->getPost('jcr1'),
-                                    'jdr2'      => $this->request->getPost('jdr2'),
-                                    'jcr2'      => $this->request->getPost('jcr2'),
-                                    'ldr1'      => $this->request->getPost('ldr1'),
-                                    'lcr1'      => $this->request->getPost('lcr1'),
-                                    'ldr2'      => $this->request->getPost('ldr2'),
-                                    'lcr2'      => $this->request->getPost('lcr2'),
-                                    'mdr1'      => $this->request->getPost('mdr1'),
-                                    'mcr1'      => $this->request->getPost('mcr1'),
-                                    'mdr2'      => $this->request->getPost('mdr2'),
-                                    'mcr2'      => $this->request->getPost('mcr2'),
-                                    'odr1'      => $this->request->getPost('odr1'),
-                                    'ocr1'      => $this->request->getPost('ocr1'),
-                                    'odr2'      => $this->request->getPost('odr2'),
-                                    'ocr2'      => $this->request->getPost('ocr2'),
-                                    'pdr1'      => $this->request->getPost('pdr1'),
-                                    'pcr1'      => $this->request->getPost('pcr1'),
-                                    'pdr2'      => $this->request->getPost('pdr2'),
-                                    'pcr2'      => $this->request->getPost('pcr2'),
-                                    'qdr1'      => $this->request->getPost('qdr1'),
-                                    'qcr1'      => $this->request->getPost('qcr1'),
-                                    'qdr2'      => $this->request->getPost('qdr2'),
-                                    'qcr2'      => $this->request->getPost('qcr2'),
-                                    'rdr1'      => $this->request->getPost('rdr1'),
-                                    'rcr1'      => $this->request->getPost('rcr1'),
-                                    'rdr2'      => $this->request->getPost('rdr2'),
-                                    'rcr2'      => $this->request->getPost('rcr2'),
-                                ];
-                                $req = [
-                                    'aa11'      => json_encode($aa11con),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                            case 'saveaa11uead' :
-                                $aa11 = [
-                                    'pl'    => $this->request->getPost('pl'),
-                                    'na'    => $this->request->getPost('na'),
-                                    'pl2'   => $this->request->getPost('pl2')
-                                ];
-                                $req = [
-                                    'aa11'      => json_encode($aa11),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
-                    case '3.11':
-                        switch ($save) {
-                            case 'save311' :
-                                $arf = [
-                                    'uqo'    => $this->request->getPost('uqo'),
-                                    'tops'    => $this->request->getPost('tops'),
-                                    'afsd'   => $this->request->getPost('afsd'),
-                                    'cf'   => $this->request->getPost('cf'),
-                                    'leg1'   => $this->request->getPost('leg1'),
-                                    'leg2'   => $this->request->getPost('leg2'),
-                                    'jurleg'   => $this->request->getPost('jurleg'),
-                                    'leg3'   => $this->request->getPost('leg3'),
-                                    'op1'   => $this->request->getPost('op1'),
-                                    'op2'   => $this->request->getPost('op2'),
-                                ];
-                                $req = [
-                                    'arf'  => json_encode($arf),
-                                    'code'  => $code,
-                                    'part'  => '311',
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
-                    case '3.13 Ab1':
-                        switch ($save) {
-                            case 'saveab1' :
-                                $req = [
-                                    'yesno'     => $this->request->getPost('yesno'),
-                                    'comment'   => $this->request->getPost('comment'),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
-                    case '3.14 Ab3':
-                        switch ($save) {
-                            case 'saveab3' :
-                                $ab3 = [
-                                    'aby1'      => $this->request->getPost('aby1'),
-                                    'aby2'      => $this->request->getPost('aby2'),
-                                    'aby3'      => $this->request->getPost('aby3'),
-                                    'aby4'      => $this->request->getPost('aby4'),
-                                    'frs1'      => $this->request->getPost('frs1'),
-                                    'ed1'       => $this->request->getPost('ed1'),
-                                    'frs2'      => $this->request->getPost('frs2'),
-                                    'ed2'       => $this->request->getPost('ed2'),
-                                    'frs3'      => $this->request->getPost('frs3'),
-                                    'ed3'       => $this->request->getPost('ed3'),
-                                    'frs4'      => $this->request->getPost('frs4'),
-                                    'ed4'       => $this->request->getPost('ed4'),
-                                    'frs5'      => $this->request->getPost('frs5'),
-                                    'ed5'       => $this->request->getPost('ed5')
-                                ];
-                                $req = [
-                                    'question'  => json_encode($ab3),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
-                    case '3.15 Ab4-checklist':
-                    case '3.15 Ab4-section1':
-                    case '3.15 Ab4-section2':
-                    case '3.15 Ab4-section3':
-                    case '3.15 Ab4-section4':
-                    case '3.15 Ab4-section5':
-                    case '3.15 Ab4-section6':
-                    case '3.15 Ab4-section7':
-                    case '3.15 Ab4-section8':
-                    case '3.15 Ab4-section9':
-                        switch ($save) {
-                            case 'saveab4' :
-                                $req = [
-                                    'yesno'     => $this->request->getPost('yesno'),
-                                    'comment'   => $this->request->getPost('comment'),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                            case 'saveab4checklist' :
-                                $chlst = [
-                                    'y1'    => $this->request->getPost('y1'),
-                                    'y2'    => $this->request->getPost('y2'),
-                                    'y3'    => $this->request->getPost('y3'),
-                                    'y4'    => $this->request->getPost('y4'),
-                                    'y5'    => $this->request->getPost('y5'),
-                                    'y6'    => $this->request->getPost('y6'),
-                                    'y7'    => $this->request->getPost('y7'),
-                                    'y8'    => $this->request->getPost('y8'),
-                                    'y9'    => $this->request->getPost('y9'),
-                                    'y10'   => $this->request->getPost('y10'),
-                                    'y11'   => $this->request->getPost('y11'),
-                                    'y12'   => $this->request->getPost('y12'),
-                                    'y13'   => $this->request->getPost('y13'),
-                                    'y14'   => $this->request->getPost('y14'),
-                                    'y15'   => $this->request->getPost('y15'),
-                                    'y16'   => $this->request->getPost('y16')
-                                ];
-                                $req = [
-                                    'chlst'     => json_encode($chlst),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
-                    case '3.15.1 Ab4a':
-                    case '3.15.2 Ab4b':
-                    case '3.15.3 Ab4c':
-                    case '3.15.4 Ab4d':
-                    case '3.15.5 Ab4e':
-                    case '3.15.6 Ab4f':
-                    case '3.15.7 Ab4g':
-                    case '3.15.8 Ab4h':
-                        switch ($save) {
-                            case 'saveab4a' :
-                                $req = [
-                                    'yesno'     => $this->request->getPost('yesno'),
-                                    'comment'   => $this->request->getPost('comment'),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['mtID'],
-                                ];
-                            break;
-                        }
-                        $res = $this->cvmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    break;
+                    //         break;
+                    //         case 'saveaa11con' :
+                    //             $aa11con = [
+                    //                 'bdr1'      => $this->request->getPost('bdr1'),
+                    //                 'bcr1'      => $this->request->getPost('bcr1'),
+                    //                 'bdr2'      => $this->request->getPost('bdr2'),
+                    //                 'bcr2'      => $this->request->getPost('bcr2'),
+                    //                 'cdr1'      => $this->request->getPost('cdr1'),
+                    //                 'ccr1'      => $this->request->getPost('ccr1'),
+                    //                 'cdr2'      => $this->request->getPost('cdr2'),
+                    //                 'ccr2'      => $this->request->getPost('ccr2'),
+                    //                 'ddr1'      => $this->request->getPost('ddr1'),
+                    //                 'dcr1'      => $this->request->getPost('dcr1'),
+                    //                 'ddr2'      => $this->request->getPost('ddr2'),
+                    //                 'dcr2'      => $this->request->getPost('dcr2'),
+                    //                 'edr1'      => $this->request->getPost('edr1'),
+                    //                 'ecr1'      => $this->request->getPost('ecr1'),
+                    //                 'edr2'      => $this->request->getPost('edr2'),
+                    //                 'ecr2'      => $this->request->getPost('ecr2'),
+                    //                 'fdr1'      => $this->request->getPost('fdr1'),
+                    //                 'fcr1'      => $this->request->getPost('fcr1'),
+                    //                 'fdr2'      => $this->request->getPost('fdr2'),
+                    //                 'fcr2'      => $this->request->getPost('fcr2'),
+                    //                 'hdr1'      => $this->request->getPost('hdr1'),
+                    //                 'hcr1'      => $this->request->getPost('hcr1'),
+                    //                 'hdr2'      => $this->request->getPost('hdr2'),
+                    //                 'hcr2'      => $this->request->getPost('hcr2'),
+                    //                 'idr1'      => $this->request->getPost('idr1'),
+                    //                 'icr1'      => $this->request->getPost('icr1'),
+                    //                 'idr2'      => $this->request->getPost('idr2'),
+                    //                 'icr2'      => $this->request->getPost('icr2'),
+                    //                 'jdr1'      => $this->request->getPost('jdr1'),
+                    //                 'jcr1'      => $this->request->getPost('jcr1'),
+                    //                 'jdr2'      => $this->request->getPost('jdr2'),
+                    //                 'jcr2'      => $this->request->getPost('jcr2'),
+                    //                 'ldr1'      => $this->request->getPost('ldr1'),
+                    //                 'lcr1'      => $this->request->getPost('lcr1'),
+                    //                 'ldr2'      => $this->request->getPost('ldr2'),
+                    //                 'lcr2'      => $this->request->getPost('lcr2'),
+                    //                 'mdr1'      => $this->request->getPost('mdr1'),
+                    //                 'mcr1'      => $this->request->getPost('mcr1'),
+                    //                 'mdr2'      => $this->request->getPost('mdr2'),
+                    //                 'mcr2'      => $this->request->getPost('mcr2'),
+                    //                 'odr1'      => $this->request->getPost('odr1'),
+                    //                 'ocr1'      => $this->request->getPost('ocr1'),
+                    //                 'odr2'      => $this->request->getPost('odr2'),
+                    //                 'ocr2'      => $this->request->getPost('ocr2'),
+                    //                 'pdr1'      => $this->request->getPost('pdr1'),
+                    //                 'pcr1'      => $this->request->getPost('pcr1'),
+                    //                 'pdr2'      => $this->request->getPost('pdr2'),
+                    //                 'pcr2'      => $this->request->getPost('pcr2'),
+                    //                 'qdr1'      => $this->request->getPost('qdr1'),
+                    //                 'qcr1'      => $this->request->getPost('qcr1'),
+                    //                 'qdr2'      => $this->request->getPost('qdr2'),
+                    //                 'qcr2'      => $this->request->getPost('qcr2'),
+                    //                 'rdr1'      => $this->request->getPost('rdr1'),
+                    //                 'rcr1'      => $this->request->getPost('rcr1'),
+                    //                 'rdr2'      => $this->request->getPost('rdr2'),
+                    //                 'rcr2'      => $this->request->getPost('rcr2'),
+                    //             ];
+                    //             $req = [
+                    //                 'aa11'      => json_encode($aa11con),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //         case 'saveaa11uead' :
+                    //             $aa11 = [
+                    //                 'pl'    => $this->request->getPost('pl'),
+                    //                 'na'    => $this->request->getPost('na'),
+                    //                 'pl2'   => $this->request->getPost('pl2')
+                    //             ];
+                    //             $req = [
+                    //                 'aa11'      => json_encode($aa11),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->cvmodel->savevalues($param,$req);
+                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    // break;
+                    // case '3.11':
+                    //     switch ($save) {
+                    //         case 'save311' :
+                    //             $arf = [
+                    //                 'uqo'    => $this->request->getPost('uqo'),
+                    //                 'tops'    => $this->request->getPost('tops'),
+                    //                 'afsd'   => $this->request->getPost('afsd'),
+                    //                 'cf'   => $this->request->getPost('cf'),
+                    //                 'leg1'   => $this->request->getPost('leg1'),
+                    //                 'leg2'   => $this->request->getPost('leg2'),
+                    //                 'jurleg'   => $this->request->getPost('jurleg'),
+                    //                 'leg3'   => $this->request->getPost('leg3'),
+                    //                 'op1'   => $this->request->getPost('op1'),
+                    //                 'op2'   => $this->request->getPost('op2'),
+                    //             ];
+                    //             $req = [
+                    //                 'arf'  => json_encode($arf),
+                    //                 'code'  => $code,
+                    //                 'part'  => '311',
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->cvmodel->savevalues($param,$req);
+                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    // break;
+                    // case '3.13 Ab1':
+                    //     switch ($save) {
+                    //         case 'saveab1' :
+                    //             $req = [
+                    //                 'yesno'     => $this->request->getPost('yesno'),
+                    //                 'comment'   => $this->request->getPost('comment'),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->cvmodel->savevalues($param,$req);
+                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    // break;
+                    // case '3.14 Ab3':
+                    //     switch ($save) {
+                    //         case 'saveab3' :
+                    //             $ab3 = [
+                    //                 'aby1'      => $this->request->getPost('aby1'),
+                    //                 'aby2'      => $this->request->getPost('aby2'),
+                    //                 'aby3'      => $this->request->getPost('aby3'),
+                    //                 'aby4'      => $this->request->getPost('aby4'),
+                    //                 'frs1'      => $this->request->getPost('frs1'),
+                    //                 'ed1'       => $this->request->getPost('ed1'),
+                    //                 'frs2'      => $this->request->getPost('frs2'),
+                    //                 'ed2'       => $this->request->getPost('ed2'),
+                    //                 'frs3'      => $this->request->getPost('frs3'),
+                    //                 'ed3'       => $this->request->getPost('ed3'),
+                    //                 'frs4'      => $this->request->getPost('frs4'),
+                    //                 'ed4'       => $this->request->getPost('ed4'),
+                    //                 'frs5'      => $this->request->getPost('frs5'),
+                    //                 'ed5'       => $this->request->getPost('ed5')
+                    //             ];
+                    //             $req = [
+                    //                 'question'  => json_encode($ab3),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->cvmodel->savevalues($param,$req);
+                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    // break;
+                    // case '3.15 Ab4-checklist':
+                    // case '3.15 Ab4-section1':
+                    // case '3.15 Ab4-section2':
+                    // case '3.15 Ab4-section3':
+                    // case '3.15 Ab4-section4':
+                    // case '3.15 Ab4-section5':
+                    // case '3.15 Ab4-section6':
+                    // case '3.15 Ab4-section7':
+                    // case '3.15 Ab4-section8':
+                    // case '3.15 Ab4-section9':
+                    //     switch ($save) {
+                    //         case 'saveab4' :
+                    //             $req = [
+                    //                 'yesno'     => $this->request->getPost('yesno'),
+                    //                 'comment'   => $this->request->getPost('comment'),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //         case 'saveab4checklist' :
+                    //             $chlst = [
+                    //                 'y1'    => $this->request->getPost('y1'),
+                    //                 'y2'    => $this->request->getPost('y2'),
+                    //                 'y3'    => $this->request->getPost('y3'),
+                    //                 'y4'    => $this->request->getPost('y4'),
+                    //                 'y5'    => $this->request->getPost('y5'),
+                    //                 'y6'    => $this->request->getPost('y6'),
+                    //                 'y7'    => $this->request->getPost('y7'),
+                    //                 'y8'    => $this->request->getPost('y8'),
+                    //                 'y9'    => $this->request->getPost('y9'),
+                    //                 'y10'   => $this->request->getPost('y10'),
+                    //                 'y11'   => $this->request->getPost('y11'),
+                    //                 'y12'   => $this->request->getPost('y12'),
+                    //                 'y13'   => $this->request->getPost('y13'),
+                    //                 'y14'   => $this->request->getPost('y14'),
+                    //                 'y15'   => $this->request->getPost('y15'),
+                    //                 'y16'   => $this->request->getPost('y16')
+                    //             ];
+                    //             $req = [
+                    //                 'chlst'     => json_encode($chlst),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->cvmodel->savevalues($param,$req);
+                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    // break;
+                    // case '3.15.1 Ab4a':
+                    // case '3.15.2 Ab4b':
+                    // case '3.15.3 Ab4c':
+                    // case '3.15.4 Ab4d':
+                    // case '3.15.5 Ab4e':
+                    // case '3.15.6 Ab4f':
+                    // case '3.15.7 Ab4g':
+                    // case '3.15.8 Ab4h':
+                    //     switch ($save) {
+                    //         case 'saveab4a' :
+                    //             $req = [
+                    //                 'yesno'     => $this->request->getPost('yesno'),
+                    //                 'comment'   => $this->request->getPost('comment'),
+                    //                 'acid'      => $this->request->getPost('acid'),
+                    //                 'c3tID'     => $param['mtID'],
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->cvmodel->savevalues($param,$req);
+                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    // break;
                 }
             break;
             

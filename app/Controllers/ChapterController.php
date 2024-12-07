@@ -439,20 +439,18 @@ class ChapterController extends BaseController{
                 $data['dataaf'] = $this->cvmodel->getvalues_c3('m','audit finalisation',$code,$dmtID,$dcID);
                 $rdata          = $this->cvmodel->getvalues_c3('s','section3',$code,$dmtID,$dcID);
                 $data['s3']     = json_decode($rdata['field1'], true);
-                $data['mdID']   = $this->crypt->encrypt($rdata['mdID']);
+                $data['mdID']   = $this->encr($rdata['mdID']);
                 $rdata2         = $this->cvmodel->getvalues_c3('s','rc',$code,$dmtID,$dcID);
                 $data['rc']     = json_decode($rdata2['field1'], true);
-                $data['mdID2']  = $this->crypt->encrypt($rdata2['mdID']);
+                $data['mdID2']  = $this->encr($rdata2['mdID']);
                 $page = $code;
                 break;
-            // case '3.2 Aa2':
-            //     $rdata          = $this->cvmodel->getvalues_s('c3','aa2',$code,$dmtID,$dcID);
-            //     $data['aa2']    = json_decode($rdata['field1'], true);
-            //     $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter3/32Aa2', $data);
-            //     echo view('includes/Footer');
-            //     break;
+            case 'AA2':
+                $rdata          = $this->cvmodel->getvalues_c3('s','aa2',$code,$dmtID,$dcID);
+                $data['aa2']    = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
+                break;
             // case '3.3 Aa3a':
             //     $data['cr']     = $this->cvmodel->getvalues_m('c3','cr',$code,$dmtID,$dcID);
             //     $data['dc']     = $this->cvmodel->getvalues_m('c3','dc',$code,$dmtID,$dcID);
@@ -699,11 +697,11 @@ class ChapterController extends BaseController{
                 $data['rc']     = json_decode($rdata2['field1'], true);
                 $page = $code;
                 break;
-            // case '3.2 Aa2':
-            //     $rdata          = $this->c3model->getvalues_s('aa2',$code, $dmtID);
-            //     $data['aa2']    = json_decode($rdata['field1'], true);
-            //     echo view('pdfc3/AA2', $data);
-            //     break;
+            case 'AA2':
+                $rdata          = $this->c3model->getvalues_s('aa2',$code, $dmtID);
+                $data['aa2']    = json_decode($rdata['field1'], true);
+                $page = $code;
+                break;
             // case '3.3 Aa3a':
             //     $data['cr']     = $this->c3model->getvalues_m('cr',$code,$dmtID);
             //     $data['dc']     = $this->c3model->getvalues_m('dc',$code,$dmtID);

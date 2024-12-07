@@ -599,427 +599,427 @@ class ChapterValuesModel extends Model{
                                 $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
                         return true;
                     break;
-                    case '3.2 Aa2':
+                    case 'AA2':
                         switch ($param['save']) {
                             case 'saveaa2' :
-                                $dacid = $this->crypt->decrypt($req['acid']);
+                                $dacid = $this->decr($req['acid']);
                                 $data = [
-                                    'question'      => $req['aa2'],
+                                    'field1'        => $req['aa2'],
                                     'updated_on'    => $this->date.' '.$this->time,
                                     'updated_by'    => $param['uID'],
                                 ];
-                                $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+                                $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
                         return true;
                     break;
-                    case '3.3 Aa3a':
-                        switch ($param['save']) {
-                            case 'saveaa3a' :
-                                foreach($req['comment'] as $i => $val){
-                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
-                                    $data = [
-                                        'reference'         => $req['comment'][$i],
-                                        'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                                }
-                            break;
-                            case 'saveaa3afaf' :
-                                foreach($req['extent'] as $i => $val){
-                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
-                                    $data = [
-                                        'extent'        => $req['extent'][$i],
-                                        'reference'     => $req['reference'][$i],
-                                        'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                                }
-                            break;
-                            case 'saveaa3air' :
-                                $dacid = $this->crypt->decrypt($req['acid']);
-                                $data = [
-                                    'question'      => $req['air'],
-                                    'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $param['uID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
-                        return true;
-                    break;
-                    case '3.4 Aa3b':
-                        switch ($param['save']) {
-                            case 'saveaa3b' :
-                                foreach($req['reference'] as $i => $val){
-                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
-                                    $data = [
-                                        'reference'     => $req['reference'][$i],
-                                        'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                                }
-                            break;
-                            case 'saveaa3bp4' :
-                                $dacid = $this->crypt->decrypt($req['acid']);
-                                $data = [
-                                    'question'      => $req['p4'],
-                                    'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $param['uID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
-                        return true;
-                    break;
-                    case '3.5 Aa4':
-                        switch ($param['save']) {
-                            case 'saveaa4' :
-                                $where = [
-                                    'type'          => $req['part'],
-                                    'code'          => $req['code'],
-                                    'c3tID'         => $req['c3tID'],
-                                    'clientID'      => $param['cID']
-                                ];
-                                $data = [
-                                    'question'      => $req['aa4'],
-                                    'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'        => $param['uID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where($where)->update($data);
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
-                        return true;
-                    break;
-                    case '3.6.1 Aa5a':
-                        switch ($param['save']) {
-                            case 'saveaa5a' :
-                                $where = [
-                                    'type'          => $req['part'],
-                                    'code'          => $req['code'],
-                                    'c3tID'         => $req['c3tID'],
-                                    'clientID'      => $param['cID'],
-                                    'firmID'        => $param['fID'],
-                                ];
-                                $data = [
-                                    'question'      => $req['aa5a'],
-                                    'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $param['uID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where($where)->update($data);
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
-                        return true;
-                    break;
-                    case '3.6.2 Aa5b':
-                        switch ($param['save']) {
-                            case 'saveaa5b' :
-                                $where = [
-                                    'type'          => $req['part'],
-                                    'code'          => $req['code'],
-                                    'c3tID'         => $req['c3tID'],
-                                    'clientID'      => $param['cID']
-                                ];
-                                $this->db->table($this->tblc3d)->where($where)->delete();
-                                foreach($req['reference'] as $i => $val){
-                                    $data = [
-                                        'reference'         => $req['reference'][$i],
-                                        'issue'             => $req['issue'][$i],
-                                        'comment'           => $req['comment'][$i],
-                                        'recommendation'    => $req['recommendation'][$i],
-                                        'yesno'             => $req['yesno'][$i],
-                                        'result'            => $req['result'][$i],
-                                        'type'              => $req['part'],
-                                        'code'              => $req['code'],
-                                        'c3tID'             => $req['c3tID'],
-                                        'clientID'          => $param['cID'],
-                                        'firmID'            => $param['fID'],
-                                        'status'            => 'Active',
-                                        'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc3d)->insert($data);
-                                }
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
-                        return true;
-                    break;
-                    case '3.7 Aa7':
-                        switch ($param['save']) {
-                            case 'saveaa7isa' :
-                                $where = [
-                                    'type'          => $req['part'],
-                                    'code'          => $req['code'],
-                                    'c3tID'         => $req['c3tID'],
-                                    'clientID'      => $param['cID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where($where)->delete();
-                                foreach($req['reference'] as $i => $val){
-                                    $data = [
-                                        'reference'         => $req['reference'][$i],
-                                        'issue'             => $req['issue'][$i],
-                                        'comment'           => $req['comment'][$i],
-                                        'recommendation'    => $req['recommendation'][$i],
-                                        'result'            => $req['result'][$i],
-                                        'type'              =>  $req['part'],
-                                        'code'              =>  $req['code'],
-                                        'c3tID'             => $req['c3tID'],
-                                        'clientID'          => $param['cID'],
-                                        'firmID'            => $param['fID'],
-                                        'status'            => 'Active',
-                                        'updated_on'        => $this->date.' '.$this->time
-                                    ];
-                                    $this->db->table($this->tblc3d)->insert($data);
-                                }
-                            break;
-                            case 'saveaa7aepapp' :
-                                $dacid = $this->crypt->decrypt($req['acid']);
-                                $data = [
-                                    'question'      => $req['aep'],
-                                    'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $param['uID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                            break;
-                            case 'saveaa7aep' :
-                                $dacid = $this->crypt->decrypt($req['acid']);
-                                $data = [
-                                    'question'      => $req['aep'],
-                                    'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $param['uID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
-                        return true;
-                    break;
-                    case '3.8 Aa10':
-                        switch ($param['save']) {
-                            case 'saveaa10' :
-                                $dacid = $this->crypt->decrypt($req['acid']);
-                                $data = [
-                                    'question'      => $req['aa10'],
-                                    'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $param['uID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
-                        return true;
-                    break;
-                    case '3.10 Aa11-un':
-                    case '3.10 Aa11-ad':
-                        switch ($param['save']) {
-                            case 'saveaa11un' :
-                                $where = [
-                                    'type'          => $req['part'],
-                                    'code'          => $req['code'],
-                                    'c3tID'         => $req['c3tID'],
-                                    'clientID'      => $param['cID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where($where)->delete();
-                                foreach($req['reference'] as $i => $val){
-                                    $data = [
-                                        'reference'         => $req['reference'][$i],
-                                        'initials'          => $req['desc'][$i],
-                                        'drps'              => $req['drps'][$i],
-                                        'crps'              => $req['crps'][$i],
-                                        'drfp'              => $req['drfp'][$i],
-                                        'crfp'              => $req['crfp'][$i],
-                                        'yesno'             => $req['yesno'][$i],
-                                        'type'              =>  $req['part'],
-                                        'code'              =>  $req['code'],
-                                        'c3tID'             => $req['c3tID'],
-                                        'clientID'          => $param['cID'],
-                                        'firmID'            => $param['fID'],
-                                        'status'            => 'Active',
-                                        'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc3d)->insert($data);
-                                }
-                            break;
-                            case 'saveaa11ad' :
-                                $where = [
-                                    'type'          => $req['part'],
-                                    'code'          => $req['code'],
-                                    'c3tID'         => $req['c3tID'],
-                                    'clientID'      => $param['cID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where($where)->delete();
-                                foreach($req['reference'] as $i => $val){
-                                    $data = [
-                                        'reference'     => $req['reference'][$i],
-                                        'initials'      => $req['desc'][$i],
-                                        'drps'          => $req['drps'][$i],
-                                        'crps'          => $req['crps'][$i],
-                                        'drfp'          => $req['drfp'][$i],
-                                        'crfp'          => $req['crfp'][$i],
-                                        'type'          => $req['part'],
-                                        'code'          => $req['code'],
-                                        'c3tID'         => $req['c3tID'],
-                                        'clientID'      => $param['cID'],
-                                        'firmID'        => $param['fID'],
-                                        'status'        => 'Active',
-                                        'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc3d)->insert($data);
-                                }
-                            break;
-                            case 'saveaa11uead' :
-                            case 'saveaa11ue' :
-                                $dacid = $this->crypt->decrypt($req['acid']);
-                                $data = [
-                                    'question'      => $req['aa11'],
-                                    'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $param['uID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                            break;
-                            case 'saveaa11con' :
-                                $dacid = $this->crypt->decrypt($req['acid']);
-                                $data = [
-                                    'question'      => $req['aa11'],
-                                    'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $param['uID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
-                        return true;
-                    break;
-                    case '3.11':
-                        switch ($param['save']) {
-                            case 'save311' :
-                                $where = [
-                                    'type'      => '311',
-                                    'code'      => $req['code'],
-                                    'c3tID'     => $req['c3tID'],
-                                    'clientID'  => $param['cID'],
-                                ];
-                                $data = [
-                                    'question'      => $req['arf'],
-                                    'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $param['uID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where($where)->update($data);
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
-                        return true;
-                    break;
-                    case '3.13 Ab1':
-                        switch ($param['save']) {
-                            case 'saveab1' :
-                                foreach ($req['yesno'] as $i => $val){
-                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
-                                    $data = [
-                                        'yesno'         => $req['yesno'][$i],
-                                        'comment'       => $req['comment'][$i],
-                                        'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                                }
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
-                        return true;
-                    break;
-                    case '3.14 Ab3':
-                        switch ($param['save']) {
-                            case 'saveab3' :
-                                $dacid = $this->crypt->decrypt($req['acid']);
-                                $data = [
-                                    'question'      => $req['question'],
-                                    'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $param['uID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
-                        return true;
-                    break;
-                    case '3.15 Ab4-checklist':
-                    case '3.15 Ab4-section1':
-                    case '3.15 Ab4-section2':
-                    case '3.15 Ab4-section3':
-                    case '3.15 Ab4-section4':
-                    case '3.15 Ab4-section5':
-                    case '3.15 Ab4-section6':
-                    case '3.15 Ab4-section7':
-                    case '3.15 Ab4-section8':
-                    case '3.15 Ab4-section9':
-                        switch ($param['save']) {
-                            case 'saveab4' :
-                                foreach($req['yesno'] as $i => $val){
-                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
-                                    $data = [
-                                        'yesno'         => $req['yesno'][$i],
-                                        'comment'       => $req['comment'][$i],
-                                        'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                                }
-                            break;
-                            case 'saveab4checklist' :
-                                $dacid = $this->crypt->decrypt($req['acid']);
-                                $data = [
-                                    'question'      => $req['chlst'],
-                                    'updated_on'    => $this->date.' '.$this->time,
-                                    'updated_by'    => $param['uID'],
-                                ];
-                                $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
-                        return true;
-                    break;
-                    case '3.15.1 Ab4a':
-                    case '3.15.2 Ab4b':
-                    case '3.15.3 Ab4c':
-                    case '3.15.4 Ab4d':
-                    case '3.15.5 Ab4e':
-                    case '3.15.6 Ab4f':
-                    case '3.15.7 Ab4g':
-                    case '3.15.8 Ab4h':
-                        switch ($param['save']) {
-                            case 'saveab4a' :
-                                foreach($req['yesno'] as $i => $val){
-                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
-                                    $data = [
-                                        'yesno'             => $req['yesno'][$i],
-                                        'comment'           => $req['comment'][$i],
-                                        'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-                                }
-                            break;
-                        }
-                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Chapter 3");
-                        return true;
-                    break;
-                }
-            break;
+            //         case '3.3 Aa3a':
+            //             switch ($param['save']) {
+            //                 case 'saveaa3a' :
+            //                     foreach($req['comment'] as $i => $val){
+            //                         $dacid = $this->crypt->decrypt($req['acid'][$i]);
+            //                         $data = [
+            //                             'reference'         => $req['comment'][$i],
+            //                             'updated_on'        => $this->date.' '.$this->time,
+            //                             'updated_by'        => $param['uID'],
+            //                         ];
+            //                         $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                     }
+            //                 break;
+            //                 case 'saveaa3afaf' :
+            //                     foreach($req['extent'] as $i => $val){
+            //                         $dacid = $this->crypt->decrypt($req['acid'][$i]);
+            //                         $data = [
+            //                             'extent'        => $req['extent'][$i],
+            //                             'reference'     => $req['reference'][$i],
+            //                             'updated_on'    => $this->date.' '.$this->time,
+            //                             'updated_by'    => $param['uID'],
+            //                         ];
+            //                         $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                     }
+            //                 break;
+            //                 case 'saveaa3air' :
+            //                     $dacid = $this->crypt->decrypt($req['acid']);
+            //                     $data = [
+            //                         'question'      => $req['air'],
+            //                         'updated_on'    => $this->date.' '.$this->time,
+            //                         'updated_by'    => $param['uID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                 break;
+            //             }
+            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+            //             return true;
+            //         break;
+            //         case '3.4 Aa3b':
+            //             switch ($param['save']) {
+            //                 case 'saveaa3b' :
+            //                     foreach($req['reference'] as $i => $val){
+            //                         $dacid = $this->crypt->decrypt($req['acid'][$i]);
+            //                         $data = [
+            //                             'reference'     => $req['reference'][$i],
+            //                             'updated_on'    => $this->date.' '.$this->time,
+            //                             'updated_by'    => $param['uID'],
+            //                         ];
+            //                         $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                     }
+            //                 break;
+            //                 case 'saveaa3bp4' :
+            //                     $dacid = $this->crypt->decrypt($req['acid']);
+            //                     $data = [
+            //                         'question'      => $req['p4'],
+            //                         'updated_on'    => $this->date.' '.$this->time,
+            //                         'updated_by'    => $param['uID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                 break;
+            //             }
+            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+            //             return true;
+            //         break;
+            //         case '3.5 Aa4':
+            //             switch ($param['save']) {
+            //                 case 'saveaa4' :
+            //                     $where = [
+            //                         'type'          => $req['part'],
+            //                         'code'          => $req['code'],
+            //                         'c3tID'         => $req['c3tID'],
+            //                         'clientID'      => $param['cID']
+            //                     ];
+            //                     $data = [
+            //                         'question'      => $req['aa4'],
+            //                         'updated_on'    => $this->date.' '.$this->time,
+            //                         'updated_by'        => $param['uID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where($where)->update($data);
+            //                 break;
+            //             }
+            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+            //             return true;
+            //         break;
+            //         case '3.6.1 Aa5a':
+            //             switch ($param['save']) {
+            //                 case 'saveaa5a' :
+            //                     $where = [
+            //                         'type'          => $req['part'],
+            //                         'code'          => $req['code'],
+            //                         'c3tID'         => $req['c3tID'],
+            //                         'clientID'      => $param['cID'],
+            //                         'firmID'        => $param['fID'],
+            //                     ];
+            //                     $data = [
+            //                         'question'      => $req['aa5a'],
+            //                         'updated_on'    => $this->date.' '.$this->time,
+            //                         'updated_by'    => $param['uID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where($where)->update($data);
+            //                 break;
+            //             }
+            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+            //             return true;
+            //         break;
+            //         case '3.6.2 Aa5b':
+            //             switch ($param['save']) {
+            //                 case 'saveaa5b' :
+            //                     $where = [
+            //                         'type'          => $req['part'],
+            //                         'code'          => $req['code'],
+            //                         'c3tID'         => $req['c3tID'],
+            //                         'clientID'      => $param['cID']
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where($where)->delete();
+            //                     foreach($req['reference'] as $i => $val){
+            //                         $data = [
+            //                             'reference'         => $req['reference'][$i],
+            //                             'issue'             => $req['issue'][$i],
+            //                             'comment'           => $req['comment'][$i],
+            //                             'recommendation'    => $req['recommendation'][$i],
+            //                             'yesno'             => $req['yesno'][$i],
+            //                             'result'            => $req['result'][$i],
+            //                             'type'              => $req['part'],
+            //                             'code'              => $req['code'],
+            //                             'c3tID'             => $req['c3tID'],
+            //                             'clientID'          => $param['cID'],
+            //                             'firmID'            => $param['fID'],
+            //                             'status'            => 'Active',
+            //                             'updated_on'        => $this->date.' '.$this->time,
+            //                             'updated_by'        => $param['uID'],
+            //                         ];
+            //                         $this->db->table($this->tblc3d)->insert($data);
+            //                     }
+            //                 break;
+            //             }
+            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+            //             return true;
+            //         break;
+            //         case '3.7 Aa7':
+            //             switch ($param['save']) {
+            //                 case 'saveaa7isa' :
+            //                     $where = [
+            //                         'type'          => $req['part'],
+            //                         'code'          => $req['code'],
+            //                         'c3tID'         => $req['c3tID'],
+            //                         'clientID'      => $param['cID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where($where)->delete();
+            //                     foreach($req['reference'] as $i => $val){
+            //                         $data = [
+            //                             'reference'         => $req['reference'][$i],
+            //                             'issue'             => $req['issue'][$i],
+            //                             'comment'           => $req['comment'][$i],
+            //                             'recommendation'    => $req['recommendation'][$i],
+            //                             'result'            => $req['result'][$i],
+            //                             'type'              =>  $req['part'],
+            //                             'code'              =>  $req['code'],
+            //                             'c3tID'             => $req['c3tID'],
+            //                             'clientID'          => $param['cID'],
+            //                             'firmID'            => $param['fID'],
+            //                             'status'            => 'Active',
+            //                             'updated_on'        => $this->date.' '.$this->time
+            //                         ];
+            //                         $this->db->table($this->tblc3d)->insert($data);
+            //                     }
+            //                 break;
+            //                 case 'saveaa7aepapp' :
+            //                     $dacid = $this->crypt->decrypt($req['acid']);
+            //                     $data = [
+            //                         'question'      => $req['aep'],
+            //                         'updated_on'    => $this->date.' '.$this->time,
+            //                         'updated_by'    => $param['uID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                 break;
+            //                 case 'saveaa7aep' :
+            //                     $dacid = $this->crypt->decrypt($req['acid']);
+            //                     $data = [
+            //                         'question'      => $req['aep'],
+            //                         'updated_on'    => $this->date.' '.$this->time,
+            //                         'updated_by'    => $param['uID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                 break;
+            //             }
+            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+            //             return true;
+            //         break;
+            //         case '3.8 Aa10':
+            //             switch ($param['save']) {
+            //                 case 'saveaa10' :
+            //                     $dacid = $this->crypt->decrypt($req['acid']);
+            //                     $data = [
+            //                         'question'      => $req['aa10'],
+            //                         'updated_on'    => $this->date.' '.$this->time,
+            //                         'updated_by'    => $param['uID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                 break;
+            //             }
+            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+            //             return true;
+            //         break;
+            //         case '3.10 Aa11-un':
+            //         case '3.10 Aa11-ad':
+            //             switch ($param['save']) {
+            //                 case 'saveaa11un' :
+            //                     $where = [
+            //                         'type'          => $req['part'],
+            //                         'code'          => $req['code'],
+            //                         'c3tID'         => $req['c3tID'],
+            //                         'clientID'      => $param['cID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where($where)->delete();
+            //                     foreach($req['reference'] as $i => $val){
+            //                         $data = [
+            //                             'reference'         => $req['reference'][$i],
+            //                             'initials'          => $req['desc'][$i],
+            //                             'drps'              => $req['drps'][$i],
+            //                             'crps'              => $req['crps'][$i],
+            //                             'drfp'              => $req['drfp'][$i],
+            //                             'crfp'              => $req['crfp'][$i],
+            //                             'yesno'             => $req['yesno'][$i],
+            //                             'type'              =>  $req['part'],
+            //                             'code'              =>  $req['code'],
+            //                             'c3tID'             => $req['c3tID'],
+            //                             'clientID'          => $param['cID'],
+            //                             'firmID'            => $param['fID'],
+            //                             'status'            => 'Active',
+            //                             'updated_on'        => $this->date.' '.$this->time,
+            //                             'updated_by'        => $param['uID'],
+            //                         ];
+            //                         $this->db->table($this->tblc3d)->insert($data);
+            //                     }
+            //                 break;
+            //                 case 'saveaa11ad' :
+            //                     $where = [
+            //                         'type'          => $req['part'],
+            //                         'code'          => $req['code'],
+            //                         'c3tID'         => $req['c3tID'],
+            //                         'clientID'      => $param['cID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where($where)->delete();
+            //                     foreach($req['reference'] as $i => $val){
+            //                         $data = [
+            //                             'reference'     => $req['reference'][$i],
+            //                             'initials'      => $req['desc'][$i],
+            //                             'drps'          => $req['drps'][$i],
+            //                             'crps'          => $req['crps'][$i],
+            //                             'drfp'          => $req['drfp'][$i],
+            //                             'crfp'          => $req['crfp'][$i],
+            //                             'type'          => $req['part'],
+            //                             'code'          => $req['code'],
+            //                             'c3tID'         => $req['c3tID'],
+            //                             'clientID'      => $param['cID'],
+            //                             'firmID'        => $param['fID'],
+            //                             'status'        => 'Active',
+            //                             'updated_on'    => $this->date.' '.$this->time,
+            //                             'updated_by'    => $param['uID'],
+            //                         ];
+            //                         $this->db->table($this->tblc3d)->insert($data);
+            //                     }
+            //                 break;
+            //                 case 'saveaa11uead' :
+            //                 case 'saveaa11ue' :
+            //                     $dacid = $this->crypt->decrypt($req['acid']);
+            //                     $data = [
+            //                         'question'      => $req['aa11'],
+            //                         'updated_on'    => $this->date.' '.$this->time,
+            //                         'updated_by'    => $param['uID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                 break;
+            //                 case 'saveaa11con' :
+            //                     $dacid = $this->crypt->decrypt($req['acid']);
+            //                     $data = [
+            //                         'question'      => $req['aa11'],
+            //                         'updated_on'    => $this->date.' '.$this->time,
+            //                         'updated_by'    => $param['uID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                 break;
+            //             }
+            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+            //             return true;
+            //         break;
+            //         case '3.11':
+            //             switch ($param['save']) {
+            //                 case 'save311' :
+            //                     $where = [
+            //                         'type'      => '311',
+            //                         'code'      => $req['code'],
+            //                         'c3tID'     => $req['c3tID'],
+            //                         'clientID'  => $param['cID'],
+            //                     ];
+            //                     $data = [
+            //                         'question'      => $req['arf'],
+            //                         'updated_on'    => $this->date.' '.$this->time,
+            //                         'updated_by'    => $param['uID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where($where)->update($data);
+            //                 break;
+            //             }
+            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+            //             return true;
+            //         break;
+            //         case '3.13 Ab1':
+            //             switch ($param['save']) {
+            //                 case 'saveab1' :
+            //                     foreach ($req['yesno'] as $i => $val){
+            //                         $dacid = $this->crypt->decrypt($req['acid'][$i]);
+            //                         $data = [
+            //                             'yesno'         => $req['yesno'][$i],
+            //                             'comment'       => $req['comment'][$i],
+            //                             'updated_on'    => $this->date.' '.$this->time,
+            //                             'updated_by'    => $param['uID'],
+            //                         ];
+            //                         $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                     }
+            //                 break;
+            //             }
+            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+            //             return true;
+            //         break;
+            //         case '3.14 Ab3':
+            //             switch ($param['save']) {
+            //                 case 'saveab3' :
+            //                     $dacid = $this->crypt->decrypt($req['acid']);
+            //                     $data = [
+            //                         'question'      => $req['question'],
+            //                         'updated_on'    => $this->date.' '.$this->time,
+            //                         'updated_by'    => $param['uID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                 break;
+            //             }
+            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+            //             return true;
+            //         break;
+            //         case '3.15 Ab4-checklist':
+            //         case '3.15 Ab4-section1':
+            //         case '3.15 Ab4-section2':
+            //         case '3.15 Ab4-section3':
+            //         case '3.15 Ab4-section4':
+            //         case '3.15 Ab4-section5':
+            //         case '3.15 Ab4-section6':
+            //         case '3.15 Ab4-section7':
+            //         case '3.15 Ab4-section8':
+            //         case '3.15 Ab4-section9':
+            //             switch ($param['save']) {
+            //                 case 'saveab4' :
+            //                     foreach($req['yesno'] as $i => $val){
+            //                         $dacid = $this->crypt->decrypt($req['acid'][$i]);
+            //                         $data = [
+            //                             'yesno'         => $req['yesno'][$i],
+            //                             'comment'       => $req['comment'][$i],
+            //                             'updated_on'    => $this->date.' '.$this->time,
+            //                             'updated_by'    => $param['uID'],
+            //                         ];
+            //                         $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                     }
+            //                 break;
+            //                 case 'saveab4checklist' :
+            //                     $dacid = $this->crypt->decrypt($req['acid']);
+            //                     $data = [
+            //                         'question'      => $req['chlst'],
+            //                         'updated_on'    => $this->date.' '.$this->time,
+            //                         'updated_by'    => $param['uID'],
+            //                     ];
+            //                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                 break;
+            //             }
+            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+            //             return true;
+            //         break;
+            //         case '3.15.1 Ab4a':
+            //         case '3.15.2 Ab4b':
+            //         case '3.15.3 Ab4c':
+            //         case '3.15.4 Ab4d':
+            //         case '3.15.5 Ab4e':
+            //         case '3.15.6 Ab4f':
+            //         case '3.15.7 Ab4g':
+            //         case '3.15.8 Ab4h':
+            //             switch ($param['save']) {
+            //                 case 'saveab4a' :
+            //                     foreach($req['yesno'] as $i => $val){
+            //                         $dacid = $this->crypt->decrypt($req['acid'][$i]);
+            //                         $data = [
+            //                             'yesno'             => $req['yesno'][$i],
+            //                             'comment'           => $req['comment'][$i],
+            //                             'updated_on'        => $this->date.' '.$this->time,
+            //                             'updated_by'        => $param['uID'],
+            //                         ];
+            //                         $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
+            //                     }
+            //                 break;
+            //             }
+            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+            //             return true;
+            //         break;
+                    }
+                break;
         }
 
     }
