@@ -2201,3 +2201,1597 @@ in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
 13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
 INFO - 2024-12-07 14:32:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-12-07 14:32:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:34:14 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:34:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:34:36 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:34:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:34:59 --> ErrorException: Undefined variable $page
+in APPPATH/Controllers/ChapterController.php on line 837.
+ 1 APPPATH/Controllers/ChapterController.php(837): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc3pdf()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:35:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:35:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:36:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:36:28 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Controllers/ClientController.php(34): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Controllers/ClientController.php(64): App\Controllers\ClientController->decr()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ClientController->getdefaultfiles()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:36:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:36:32 --> ErrorException: Undefined variable $page
+in APPPATH/Controllers/ChapterController.php on line 668.
+ 1 APPPATH/Controllers/ChapterController.php(668): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:36:46 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:36:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:36:47 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:36:47 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:36:47 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:36:47 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:36:47 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:36:47 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:36:53 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:36:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:37:00 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:37:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:37:29 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:37:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:37:32 --> ErrorException: Undefined variable $page
+in APPPATH/Controllers/ChapterController.php on line 665.
+ 1 APPPATH/Controllers/ChapterController.php(665): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:37:37 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:37:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:37:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "client/chapter3/AA4.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/ChapterController.php(666): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:38:02 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:38:06 --> ErrorException: Undefined variable $c3tID
+in APPPATH/Views/client/chapter3/AA4.php on line 45.
+ 1 APPPATH/Views/client/chapter3/AA4.php(45): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/client/chapter3/AA4.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(666): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c3setvalues()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:38:13 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:38:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:38:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:38:22 --> ErrorException: Undefined variable $page
+in APPPATH/Controllers/ChapterController.php on line 835.
+ 1 APPPATH/Controllers/ChapterController.php(835): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc3pdf()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:38:58 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:38:58 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:38:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:38:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:07 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:08 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:10 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:11 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:17 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:17 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:20 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:20 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:30 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:31 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:33 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:34 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:35 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:35 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:37 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:38 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:50 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:50 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:56 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:39:57 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:11 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:12 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:30 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:30 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:33 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:33 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:35 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:36 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:37 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:38 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:40 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:41 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:43 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:44 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:46 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:47 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:50 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:40:51 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:40:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:41:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:41:38 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:41:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:41:38 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:41:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:41:41 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:41:42 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:41:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:41:43 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:41:43 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:41:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:41:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:41:44 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:41:44 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:41:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:41:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:41:52 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:41:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:41:52 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:41:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:41:57 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:41:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:41:57 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:41:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:01 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:01 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:07 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:07 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:10 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:10 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:11 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:12 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:13 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:14 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:22 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:22 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:23 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:29 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:29 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:33 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:42:33 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:42:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:43:12 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:43:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:43:12 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:43:12 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:43:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:43:12 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:43:15 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:43:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:43:16 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:43:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:43:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:43:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:47:29 --> ErrorException: Undefined variable $page
+in APPPATH/Controllers/ChapterController.php on line 836.
+ 1 APPPATH/Controllers/ChapterController.php(836): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc3pdf()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:47:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:47:31 --> ErrorException: Undefined variable $page
+in APPPATH/Controllers/ChapterController.php on line 836.
+ 1 APPPATH/Controllers/ChapterController.php(836): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->viewc3pdf()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:47:40 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:47:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 14:47:40 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:47:40 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-07 14:47:40 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(72): ini_set()
+ 3 SYSTEMPATH/Config/Services.php(686): CodeIgniter\Session\Handlers\FileHandler->__construct()
+ 4 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(664): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::session()
+ 8 APPPATH/Models/AuthModel.php(31): CodeIgniter\Config\BaseService::__callStatic()
+ 9 APPPATH/Filters/Auth.php(15): App\Models\AuthModel->__construct()
+10 SYSTEMPATH/Filters/Filters.php(175): App\Filters\Auth->__construct()
+11 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-07 14:47:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 14:47:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
