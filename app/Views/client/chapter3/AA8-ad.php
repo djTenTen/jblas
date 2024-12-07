@@ -43,14 +43,14 @@
             <?php  }?>
             <div class="card-body">
                 <nav class="nav nav-borders">
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-un')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/3.10 Aa11-un/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Unadjusted Errors</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Aa11-ad')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/3.10 Aa11-ad/<?= $c3tID?>/<?= $cID?>/<?= $name?>">Adjustments Made</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'AA8-un')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AA8-un/<?= $mtID?>/<?= $cID?>/<?= $name?>">Unadjusted Errors</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'AA8-ad')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AA8-ad/<?= $mtID?>/<?= $cID?>/<?= $name?>">Adjustments Made</a>
                 </nav>
                 <hr class="mt-0 mb-4" style="color: #7752FE;"/>
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $c3tID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <div class="m-5">
                     <h4><?= $sectiontitle?></h4>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa11ad/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa11ad/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -81,18 +81,18 @@
                                     $drfp = 0;
                                     $crfp = 0; 
                                     foreach($ad as $r){
-                                        $drps += $r['drps'];
-                                        $crps += $r['crps'];
-                                        $drfp += $r['drfp'];
-                                        $crfp += $r['crfp'];
+                                        $drps += $r['field3'];
+                                        $crps += $r['field4'];
+                                        $drfp += $r['field5'];
+                                        $crfp += $r['field6'];
                                 ?>
                                     <tr>
-                                        <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
-                                        <td><textarea class="form-control desc" id="desc" cols="30" rows="3" name="desc[]"><?= $r['initials']?></textarea></td>
-                                        <td><textarea class="form-control drps" id="drps" cols="30" rows="3" name="drps[]"><?= $r['drps']?></textarea></td>
-                                        <td><textarea class="form-control crps" id="crps" cols="30" rows="3" name="crps[]"><?= $r['crps']?></textarea></td>
-                                        <td><textarea class="form-control drfp" id="drfp" cols="30" rows="3" name="drfp[]"><?= $r['drfp']?></textarea></td>
-                                        <td><textarea class="form-control crfp" id="crfp" cols="30" rows="3" name="crfp[]"><?= $r['crfp']?></textarea></td>
+                                        <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"><?= $r['field1']?></textarea></td>
+                                        <td><textarea class="form-control desc" id="desc" cols="30" rows="3" name="desc[]"><?= $r['field2']?></textarea></td>
+                                        <td> <input type="number" class="form-control drps" name="drps[]" id="drps" value="<?= $r['field3']?>"> </td>
+                                        <td> <input type="number" class="form-control crps" name="crps[]" id="crps" value="<?= $r['field4']?>"> </td>
+                                        <td> <input type="number" class="form-control drfp" name="drfp[]" id="drfp" value="<?= $r['field5']?>"> </td>
+                                        <td> <input type="number" class="form-control crfp" name="crfp[]" id="crfp" value="<?= $r['field6']?>"> </td>
                                         <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
                                     </tr>
                                 <?php }?>
@@ -112,7 +112,7 @@
                         <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa11uead/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa11uead/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="aa11uead">
                         <input type="hidden" name="acid" value="<?= $ueacID?>">
                         <table class="table">
@@ -202,10 +202,10 @@ $(document).ready(function () {
         <tr>
             <td><textarea class="form-control reference" id="reference" cols="30" rows="3" name="reference[]"></textarea></td>
             <td><textarea class="form-control desc" id="desc" cols="30" rows="3" name="desc[]"></textarea></td>
-            <td><textarea class="form-control drps" id="drps" cols="30" rows="3" name="drps[]"></textarea></td>
-            <td><textarea class="form-control crps" id="crps" cols="30" rows="3" name="crps[]"></textarea></td>
-            <td><textarea class="form-control drfp" id="drfp" cols="30" rows="3" name="drfp[]"></textarea></td>
-            <td><textarea class="form-control crfp" id="crfp" cols="30" rows="3" name="crfp[]"></textarea></td>
+            <td> <input type="number" class="form-control drps" name="drps[]" id="drps" > </td>
+            <td> <input type="number" class="form-control crps" name="crps[]" id="crps" > </td>
+            <td> <input type="number" class="form-control drfp" name="drfp[]" id="drfp" > </td>
+            <td> <input type="number" class="form-control crfp" name="crfp[]" id="crfp" > </td>
             <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
         </tr>`);
     });

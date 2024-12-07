@@ -154,26 +154,26 @@ $html .= '
         $aef_drfp = 0;
         $aef_crfp = 0;
         foreach($aef as $r){
-        $aef_drps += $r['drps'];
-        $aef_crps += $r['crps'];
-        $aef_drfp += $r['drfp'];
-        $aef_crfp += $r['crfp'];
+        $aef_drps += $r['field3'];
+        $aef_crps += $r['field4'];
+        $aef_drfp += $r['field5'];
+        $aef_crfp += $r['field6'];
         $html .= '
             <tr>
-                <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
-                <td style="width: 40%;">'.$r['initials'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['yesno'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field1'].'</td>
+                <td style="width: 40%;">'.$r['field2'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field3'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field4'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field5'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field6'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field7'].'</td>
             </tr>
         ';
         }
 $html .= '
         <tr>
             <td colspan="6" style="width: 90%;"><b>ACTUAL ERRORS - JUDGMENTAL</b></td>
-            <td style="width: 10%;"><b>Adjust?</b></td>
+            <td style="width: 10%;"></td>
         </tr>
 ';
         $aej_drps = 0;
@@ -181,26 +181,26 @@ $html .= '
         $aej_drfp = 0;
         $aej_crfp = 0; 
         foreach($aej as $r){
-        $aej_drps += $r['drps'];
-        $aej_crps += $r['crps'];
-        $aej_drfp += $r['drfp'];
-        $aej_crfp += $r['crfp'];     
+        $aej_drps += $r['field3'];
+        $aej_crps += $r['field4'];
+        $aej_drfp += $r['field5'];
+        $aej_crfp += $r['field6'];     
         $html .= '
             <tr>
-                <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
-                <td style="width: 40%;">'.$r['initials'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['yesno'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field1'].'</td>
+                <td style="width: 40%;">'.$r['field2'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field3'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field4'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field5'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field6'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field7'].'</td>
             </tr>
         ';
         }
 $html .= '
         <tr>
             <td colspan="6" style="width: 90%;"><b>EXTRAPOLATED ERRORS</b></td>
-            <td style="width: 10%;"><b>Adjust?</b></td>
+            <td style="width: 10%;"></td>
         </tr>
 ';
         $ee_drps = 0;
@@ -208,26 +208,26 @@ $html .= '
         $ee_drfp = 0;
         $ee_crfp = 0; 
         foreach($ee as $r){
-        $ee_drps += $r['drps'];
-        $ee_crps += $r['crps'];
-        $ee_drfp += $r['drfp'];
-        $ee_crfp += $r['crfp'];
+        $ee_drps += $r['field3'];
+        $ee_crps += $r['field4'];
+        $ee_drfp += $r['field5'];
+        $ee_crfp += $r['field6'];
         $html .= '
             <tr>
-                <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
-                <td style="width: 40%;">'.$r['initials'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['yesno'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field1'].'</td>
+                <td style="width: 40%;">'.$r['field2'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field3'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field4'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field5'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field6'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field7'].'</td>
             </tr>
         ';
         }
 $html .= '
         <tr>
             <td colspan="6" style="width: 90%;"><b>DISCLOSURE ERRORS</b></td>
-            <td style="width: 10%;"><b>Adjust?</b></td>
+            <td style="width: 10%;"></td>
         </tr>
 ';
         $de_drps = 0;
@@ -235,19 +235,19 @@ $html .= '
         $de_drfp = 0;
         $de_crfp = 0; 
         foreach($de as $r){
-        $de_drps += $r['drps'];
-        $de_crps += $r['crps'];
-        $de_drfp += $r['drfp'];
-        $de_crfp += $r['crfp'];
+        $de_drps += $r['field3'];
+        $de_crps += $r['field4'];
+        $de_drfp += $r['field5'];
+        $de_crfp += $r['field6'];
         $html .= '
             <tr>
-                <td style="width: 10%;" class="cent">'.$r['reference'].'</td>
-                <td style="width: 40%;">'.$r['initials'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['yesno'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field1'].'</td>
+                <td style="width: 40%;">'.$r['field2'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field3'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field4'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field5'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field6'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field7'].'</td>
             </tr>
         ';
         }

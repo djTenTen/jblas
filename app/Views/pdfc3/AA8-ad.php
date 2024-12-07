@@ -103,18 +103,18 @@ $html .= '
         $drfp = 0;
         $crfp = 0; 
         foreach($ad as $r){
-            $drps += $r['drps'];
-            $crps += $r['crps'];
-            $drfp += $r['drfp'];
-            $crfp += $r['crfp'];
+            $drps += $r['field3'];
+            $crps += $r['field4'];
+            $drfp += $r['field5'];
+            $crfp += $r['field6'];
             $html .= '
             <tr>
-                <td style="width: 10%;">'.$r['reference'].'</td>
-                <td style="width: 40%;">'.$r['initials'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['drps'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['crps'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['drfp'].'</td>
-                <td style="width: 10%;" class="cent">'.$r['crfp'].'</td>
+                <td style="width: 10%;">'.$r['field1'].'</td>
+                <td style="width: 40%;">'.$r['field2'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field3'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field4'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field5'].'</td>
+                <td style="width: 10%;" class="cent">'.$r['field6'].'</td>
             </tr>
         ';
     }

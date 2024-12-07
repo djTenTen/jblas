@@ -505,39 +505,30 @@ class ChapterController extends BaseController{
                 $data['mdID']   = $this->encr($rdata['mdID']);
                 $page = $code;
                 break;
-            // case '3.9':
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter3/39', $data);
-            //     echo view('includes/Footer');
-            //     break;
-            // case '3.10 Aa11-un':
-            //     $s                      = explode('-', $code);
-            //     $data['sectiontitle']   = "SUMMARY OF UNADJUSTED ERRORS";
-            //     $data['aef']            = $this->cvmodel->getvalues_m('c3','aef',$s[0],$dmtID,$dcID);
-            //     $data['aej']            = $this->cvmodel->getvalues_m('c3','aej',$s[0],$dmtID,$dcID);
-            //     $data['ee']             = $this->cvmodel->getvalues_m('c3','ee',$s[0],$dmtID,$dcID);
-            //     $data['de']             = $this->cvmodel->getvalues_m('c3','de',$s[0],$dmtID,$dcID);
-            //     $rdata                  = $this->cvmodel->getvalues_s('c3','aa11ue',$s[0],$dmtID,$dcID);
-            //     $data['ue']             = json_decode($rdata['field1'], true);    
-            //     $data['ueacID']         = $this->crypt->encrypt($rdata['mtID']);
-            //     $rdata2                 = $this->cvmodel->getvalues_s('c3','con',$s[0],$dmtID,$dcID);
-            //     $data['con']            = json_decode($rdata2['field1'], true);   
-            //     $data['conacID']        = $this->crypt->encrypt($rdata2['mtID']);
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter3/310Aa11_un', $data); 
-            //     echo view('includes/Footer');
-            //     break;   
-            // case '3.10 Aa11-ad':
-            //     $s                      = explode('-', $code);
-            //     $data['sectiontitle']   = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";
-            //     $data['ad']             = $this->cvmodel->getvalues_m('c3','ad',$s[0],$dmtID,$dcID);
-            //     $rdata                  = $this->cvmodel->getvalues_s('c3','aa11uead',$s[0],$dmtID,$dcID);
-            //     $data['ue']             = json_decode($rdata['field1'], true);    
-            //     $data['ueacID']         = $this->crypt->encrypt($rdata['mtID']);
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter3/310Aa11_ad', $data);
-            //     echo view('includes/Footer');
-            //     break;   
+            case 'AA8-un':
+                $s                      = explode('-', $code);
+                $data['sectiontitle']   = "SUMMARY OF UNADJUSTED ERRORS";
+                $data['aef']            = $this->cvmodel->getvalues_c3('m','aef',$s[0],$dmtID,$dcID);
+                $data['aej']            = $this->cvmodel->getvalues_c3('m','aej',$s[0],$dmtID,$dcID);
+                $data['ee']             = $this->cvmodel->getvalues_c3('m','ee',$s[0],$dmtID,$dcID);
+                $data['de']             = $this->cvmodel->getvalues_c3('m','de',$s[0],$dmtID,$dcID);
+                $rdata                  = $this->cvmodel->getvalues_c3('s','aa11ue',$s[0],$dmtID,$dcID);
+                $data['ue']             = json_decode($rdata['field1'], true);    
+                $data['ueacID']         = $this->encr($rdata['mdID']);
+                $rdata2                 = $this->cvmodel->getvalues_c3('s','con',$s[0],$dmtID,$dcID);
+                $data['con']            = json_decode($rdata2['field1'], true);   
+                $data['conacID']        = $this->encr($rdata2['mdID']);
+                $page = $code;
+                break;   
+            case 'AA8-ad':
+                $s                      = explode('-', $code);
+                $data['sectiontitle']   = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";
+                $data['ad']             = $this->cvmodel->getvalues_c3('m','ad',$s[0],$dmtID,$dcID);
+                $rdata                  = $this->cvmodel->getvalues_c3('s','aa11uead',$s[0],$dmtID,$dcID);
+                $data['ue']             = json_decode($rdata['field1'], true);    
+                $data['ueacID']         = $this->encr($rdata['mdID']);
+                $page = $code;
+                break;   
             // case '3.11':
             //     $rdata          = $this->cvmodel->getvalues_s('c3','311',$code,$dmtID,$dcID);
             //     $data['arf']    = json_decode($rdata['field1'], true);
@@ -738,27 +729,25 @@ class ChapterController extends BaseController{
                 $data['aa10']   = json_decode($rdata['field1'], true);
                 $page = $code;
                 break;
-            // case '3.9':
-            //     echo view('pdfc3/39', $data);
-            //     break;
-            // case '3.10 Aa11-un':
-            //     $s = explode('-', $code);
-            //     $data['aef']    = $this->c3model->getvalues_m('aef',$s[0],$dmtID);
-            //     $data['aej']    = $this->c3model->getvalues_m('aej',$s[0],$dmtID);
-            //     $data['ee']     = $this->c3model->getvalues_m('ee',$s[0],$dmtID);
-            //     $data['de']     = $this->c3model->getvalues_m('de',$s[0],$dmtID);
-            //     $rdata          = $this->c3model->getvalues_s('aa11ue',$s[0],$dmtID);
-            //     $data['ue']     = json_decode($rdata['field1'], true);
-            //     $rdata2         = $this->c3model->getvalues_s('con',$s[0],$dmtID);
-            //     $data['con']    = json_decode($rdata2['field1'], true);    
-            //     echo view('pdfc3/AA11-un', $data);
-            // case '3.10 Aa11-ad':
-            //     $s              = explode('-', $code);
-            //     $data['ad']     = $this->c3model->getvalues_m('ad',$s[0],$dmtID);
-            //     $rdata          = $this->c3model->getvalues_s('aa11uead',$s[0],$dmtID);
-            //     $data['ue']     = json_decode($rdata['field1'], true);   
-            //     echo view('pdfc3/AA11-ad', $data);
-            //     break;   
+            case 'AA8-un':
+                $s = explode('-', $code);
+                $data['aef']    = $this->c3model->getvalues_m('aef',$s[0],$dmtID);
+                $data['aej']    = $this->c3model->getvalues_m('aej',$s[0],$dmtID);
+                $data['ee']     = $this->c3model->getvalues_m('ee',$s[0],$dmtID);
+                $data['de']     = $this->c3model->getvalues_m('de',$s[0],$dmtID);
+                $rdata          = $this->c3model->getvalues_s('aa11ue',$s[0],$dmtID);
+                $data['ue']     = json_decode($rdata['field1'], true);
+                $rdata2         = $this->c3model->getvalues_s('con',$s[0],$dmtID);
+                $data['con']    = json_decode($rdata2['field1'], true);  
+                $page = $code;
+                break;
+            case 'AA8-ad':
+                $s              = explode('-', $code);
+                $data['ad']     = $this->c3model->getvalues_m('ad',$s[0],$dmtID);
+                $rdata          = $this->c3model->getvalues_s('aa11uead',$s[0],$dmtID);
+                $data['ue']     = json_decode($rdata['field1'], true);   
+                $page = $code;
+                break;   
             // case '3.11':
             //     $rdata          = $this->c3model->getvalues_s('311',$code,$dmtID);
             //     $data['arf']    = json_decode($rdata['field1'], true);

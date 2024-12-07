@@ -128,7 +128,7 @@
                                     <td><?= $r['title']?></td>
                                     <td>
                                     <?php if(session()->get('allowed')->edit == "Yes"){?>
-                                        <?php if($r['code'] == '3.10 Aa11'){?>
+                                        <?php if($r['code'] == 'AA8'){?>
                                             <div class="dropdown">
                                                 <button class="btn btn-primary btn-icon btn-sm" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-tools"></i></button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
