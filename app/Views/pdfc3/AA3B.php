@@ -106,8 +106,8 @@ $html .= '
         $html .= '
         <tr>
             <td style="width: 6%;">'.$count.'.<br></td>
-            <td style="width: 65%;">'.$r['question'].'</td>
-            <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
+            <td style="width: 65%;">'.$r['field1'].'</td>
+            <td class="cent bo" style="width: 29%;">'.$r['field2'].'</td>
         </tr>
         ';
     }
@@ -132,8 +132,8 @@ $html .= '
         $html .= '
         <tr>
             <td style="width: 6%;">'.$count.'.<br></td>
-            <td style="width: 65%;">'.$r['question'].'</td>
-            <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
+            <td style="width: 65%;">'.$r['field1'].'</td>
+            <td class="cent bo" style="width: 29%;">'.$r['field2'].'</td>
         </tr>
         ';
     }
@@ -159,8 +159,8 @@ $html .= '
         $html .= '
         <tr>
             <td style="width: 6%;">'.$count.'.<br></td>
-            <td style="width: 65%;">'.$r['question'].'</td>
-            <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
+            <td style="width: 65%;">'.$r['field1'].'</td>
+            <td class="cent bo" style="width: 29%;">'.$r['field2'].'</td>
         </tr>
         ';
     }
@@ -186,8 +186,8 @@ $html .= '
         $html .= '
         <tr>
             <td style="width: 6%;">'.$count.'.<br></td>
-            <td style="width: 65%;">'.$r['question'].'</td>
-            <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
+            <td style="width: 65%;">'.$r['field1'].'</td>
+            <td class="cent bo" style="width: 29%;">'.$r['field2'].'</td>
         </tr>
         ';
     }
