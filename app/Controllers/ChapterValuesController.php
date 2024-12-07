@@ -812,41 +812,38 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
-                    // case '3.3 Aa3a':
-                    //     switch ($save) {
-                    //         case 'saveaa3a' :
-                    //             $req = [
-                    //                 'comment'   => $this->request->getPost('comment'),
-                    //                 'acid'      => $this->request->getPost('acid'),
-                    //                 'c3tID'     => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //         case 'saveaa3afaf' :
-                    //             $req = [
-                    //                 'extent'        => $this->request->getPost('extent'),
-                    //                 'reference'     => $this->request->getPost('reference'),
-                    //                 'acid'          => $this->request->getPost('acid'),
-                    //                 'c3tID'         => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //         case 'saveaa3air' :
-                    //             $air = [
-                    //                 'sia'       => $this->request->getPost('sia'),
-                    //                 'seh'       => $this->request->getPost('seh'),
-                    //                 'ir'        => $this->request->getPost('ir'),
-                    //                 'tird'      => $this->request->getPost('tird'),
-                    //                 'tfrd'      => $this->request->getPost('tfrd'),
-                    //             ];
-                    //             $req = [
-                    //                 'air'       => json_encode($air),
-                    //                 'acid'      => $this->request->getPost('acid'),
-                    //                 'c3tID'     => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //     }
-                    //     $res = $this->cvmodel->savevalues($param,$req);
-                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    // break;
+                    case 'AA3A':
+                        switch ($save) {
+                            case 'saveaa3a' :
+                                $req = [
+                                    'comment'   => $this->request->getPost('comment'),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                            case 'saveaa3afaf' :
+                                $req = [
+                                    'extent'        => $this->request->getPost('extent'),
+                                    'reference'     => $this->request->getPost('reference'),
+                                    'acid'          => $this->request->getPost('acid'),
+                                ];
+                            break;
+                            case 'saveaa3air' :
+                                $air = [
+                                    'sia'       => $this->request->getPost('sia'),
+                                    'seh'       => $this->request->getPost('seh'),
+                                    'ir'        => $this->request->getPost('ir'),
+                                    'tird'      => $this->request->getPost('tird'),
+                                    'tfrd'      => $this->request->getPost('tfrd'),
+                                ];
+                                $req = [
+                                    'air'       => json_encode($air),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    break;
                     // case '3.4 Aa3b':
                     //     switch ($save) {
                     //         case 'saveaa3b' :

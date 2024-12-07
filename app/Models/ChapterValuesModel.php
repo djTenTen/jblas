@@ -617,44 +617,44 @@ class ChapterValuesModel extends Model{
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
                         return true;
                     break;
-            //         case '3.3 Aa3a':
-            //             switch ($param['save']) {
-            //                 case 'saveaa3a' :
-            //                     foreach($req['comment'] as $i => $val){
-            //                         $dacid = $this->crypt->decrypt($req['acid'][$i]);
-            //                         $data = [
-            //                             'reference'         => $req['comment'][$i],
-            //                             'updated_on'        => $this->date.' '.$this->time,
-            //                             'updated_by'        => $param['uID'],
-            //                         ];
-            //                         $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-            //                     }
-            //                 break;
-            //                 case 'saveaa3afaf' :
-            //                     foreach($req['extent'] as $i => $val){
-            //                         $dacid = $this->crypt->decrypt($req['acid'][$i]);
-            //                         $data = [
-            //                             'extent'        => $req['extent'][$i],
-            //                             'reference'     => $req['reference'][$i],
-            //                             'updated_on'    => $this->date.' '.$this->time,
-            //                             'updated_by'    => $param['uID'],
-            //                         ];
-            //                         $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-            //                     }
-            //                 break;
-            //                 case 'saveaa3air' :
-            //                     $dacid = $this->crypt->decrypt($req['acid']);
-            //                     $data = [
-            //                         'question'      => $req['air'],
-            //                         'updated_on'    => $this->date.' '.$this->time,
-            //                         'updated_by'    => $param['uID'],
-            //                     ];
-            //                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-            //                 break;
-            //             }
-            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
-            //             return true;
-            //         break;
+                    case 'AA3A':
+                        switch ($param['save']) {
+                            case 'saveaa3a' :
+                                foreach($req['comment'] as $i => $val){
+                                    $dacid = $this->decr($req['acid'][$i]);
+                                    $data = [
+                                        'field2'        => $req['comment'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
+                                }
+                            break;
+                            case 'saveaa3afaf' :
+                                foreach($req['extent'] as $i => $val){
+                                    $dacid = $this->decr($req['acid'][$i]);
+                                    $data = [
+                                        'field2'        => $req['extent'][$i],
+                                        'field3'        => $req['reference'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
+                                }
+                            break;
+                            case 'saveaa3air' :
+                                $dacid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['air'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+                        return true;
+                    break;
             //         case '3.4 Aa3b':
             //             switch ($param['save']) {
             //                 case 'saveaa3b' :

@@ -1,4 +1,9 @@
-<?php  $crypt = \Config\Services::encrypter();?>
+<?php  
+    function encr($ecr){
+        $crypt = \Config\Services::encrypter();
+        return str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ecr));
+    }
+?>
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -42,7 +47,7 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $c3tID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>SUBSEQUENT EVENTS REVIEW</h4>
@@ -50,7 +55,7 @@
                     <p>To determine whether any material adjustment or disclosure is required to the financial statements as a result of events occurring between the end of the accounting period and the date of signing the audit report and to ensure the requirements of ISA 560 regarding subsequent events are met.</p>
                     <h6>NB: An adjusting event is an event that provides evidence of a condition that existed at the reporting date.  A non-adjusting event is an event that arose solely after the reporting date, however, its disclosure is necessary to give a true and fair view.</h6>
                     <h6>Review of Clients Records</h6>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa3a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa3a/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" value="cr" name="part">
                         <table class="table table-hover table-sm table-bordered">
                             <thead>
@@ -62,8 +67,8 @@
                             <tbody id="tbody">
                                 <?php foreach($cr as $r){?>
                                 <tr>
-                                    <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><textarea class="form-control question" id="question" cols="30" rows="3" name="comment[]"><?= $r['reference']?></textarea></td>
+                                    <td><input type="hidden" name="acid[]" value="<?= encr($r['mdID'])?>"><?= $r['field1']?></td>
+                                    <td><textarea class="form-control question" id="question" cols="30" rows="3" name="comment[]"><?= $r['field2']?></textarea></td>
                                 </tr>
                                 <?php }?>
                             </tbody>
@@ -72,7 +77,7 @@
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
                     <h6>Discussion with Client</h6>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa3a/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa3a/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" value="dc" name="part">
                         <table class="table table-hover table-sm table-bordered">
                             <thead>
@@ -84,8 +89,8 @@
                             <tbody id="tbody1">
                                 <?php foreach($dc as $r){?>
                                 <tr>
-                                    <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><textarea class="form-control question" id="question" cols="30" rows="3" name="comment[]"><?= $r['reference']?></textarea></td>
+                                    <td><input type="hidden" name="acid[]" value="<?= encr($r['mdID'])?>"><?= $r['field1']?></td>
+                                    <td><textarea class="form-control question" id="question" cols="30" rows="3" name="comment[]"><?= $r['field2']?></textarea></td>
                                 </tr>
                                 <?php }?>
                             </tbody>
@@ -95,7 +100,7 @@
                     <br><br><br><hr style="color: #7752FE;">
                     <h6>Finalisation of the Audit File</h6>
                     <p>This section should also detail any other work done on subsequent events not covered by the questions below.</p>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa3afaf/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa3afaf/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" value="faf" name="part">
                         <table class="table table-hover table-sm table-bordered">
                             <thead>
@@ -108,9 +113,9 @@
                             <tbody id="tbody2">
                                 <?php foreach($faf as $r){?>
                                 <tr>
-                                    <td><input type="hidden" name="acid[]" value="<?= $crypt->encrypt($r['acID'])?>"><?= $r['question']?></td>
-                                    <td><textarea class="form-control question" id="question" cols="30" rows="3" name="extent[]"><?= $r['extent']?></textarea></td>
-                                    <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['reference']?></textarea></td>
+                                    <td><input type="hidden" name="acid[]" value="<?= encr($r['mdID'])?>"><?= $r['field1']?></td>
+                                    <td><textarea class="form-control question" id="question" cols="30" rows="3" name="extent[]"><?= $r['field2']?></textarea></td>
+                                    <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['field3']?></textarea></td>
                                 </tr>
                                 <?php }?>
                             </tbody>
@@ -119,10 +124,10 @@
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
                     <h4>Initial Conclusion:</h4>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa3air/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa3air/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                         <p>Having completed the above procedures:</p>
                         <p>There were no significant events. </p>
-                        <input type="hidden" name="acid" value="<?= $acID?>">
+                        <input type="hidden" name="acid" value="<?= $mdID?>">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="mb-1" for="sia">Subsequent events identified above</label>
