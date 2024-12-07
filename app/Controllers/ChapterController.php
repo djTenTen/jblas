@@ -482,12 +482,10 @@ class ChapterController extends BaseController{
                 $data['mdID']   = $this->encr($rdata['mdID']);
                 $page = $code;
                 break;
-            // case '3.6.2 Aa5b':
-            //     $data['aa5b'] = $this->cvmodel->getvalues_m('c3','aa5b',$code,$dmtID,$dcID);
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter3/362Aa5b', $data);
-            //     echo view('includes/Footer');
-            //     break;  
+            case 'AA5B':
+                $data['aa5b']   = $this->cvmodel->getvalues_c3('m','aa5b',$code,$dmtID,$dcID);
+                $page = $code;
+                break;  
             // case '3.7 Aa7':
             //     $data['aa7']    = $this->cvmodel->getvalues_m('c3','isa315',$code,$dmtID,$dcID);
             //     $data['cons']   = $this->cvmodel->getvalues_m('c3','consultation',$code,$dmtID,$dcID);
@@ -723,10 +721,10 @@ class ChapterController extends BaseController{
                 $data['aa5a']   = json_decode($rdata['field1'], true);
                 $page = $code;
                 break;
-            // case '3.6.2 Aa5b':
-            //     $data['aa5b'] = $this->c3model->getvalues_m('aa5b',$code,$dmtID);
-            //     echo view('pdfc3/AA5B', $data);
-            //     break;  
+            case 'AA5B':
+                $data['aa5b']   = $this->c3model->getvalues_m('aa5b',$code,$dmtID);
+                $page = $code;
+                break;  
             // case '3.7 Aa7':
             //     $data['aa7']    = $this->c3model->getvalues_m('isa315',$code,$dmtID);
             //     $data['cons']   = $this->c3model->getvalues_m('consultation',$code,$dmtID);

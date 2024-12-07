@@ -942,32 +942,30 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
-                    // case '3.6.2 Aa5b':
-                    //     switch ($save) {
-                    //         case 'saveaa5b' :
-                    //             $validationRules = [
-                    //                 'reference' => 'required'
-                    //             ];
-                    //             if (!$this->validate($validationRules)) {
-                    //                 session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-                    //                 return $this->resultpage($chapter,false,$code,$mtID,$cID,$name);
-                    //             }
-                    //             $req = [
-                    //                 'reference'             => $this->request->getPost('reference'),
-                    //                 'issue'                 => $this->request->getPost('issue'),
-                    //                 'comment'               => $this->request->getPost('comment'),
-                    //                 'recommendation'        => $this->request->getPost('recommendation'),
-                    //                 'yesno'                 => $this->request->getPost('yesno'),
-                    //                 'result'                => $this->request->getPost('result'),
-                    //                 'code'                  => $code,
-                    //                 'part'                  => $this->request->getPost('part'),
-                    //                 'c3tID'                 => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //     }
-                    //     $res = $this->cvmodel->savevalues($param,$req);
-                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    // break;
+                    case 'AA5B':
+                        switch ($save) {
+                            case 'saveaa5b' :
+                                $validationRules = [
+                                    'reference' => 'required'
+                                ];
+                                if (!$this->validate($validationRules)) {
+                                    session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+                                    return $this->resultpage($chapter,false,$code,$mtID,$cID,$name);
+                                }
+                                $req = [
+                                    'reference'             => $this->request->getPost('reference'),
+                                    'issue'                 => $this->request->getPost('issue'),
+                                    'comment'               => $this->request->getPost('comment'),
+                                    'recommendation'        => $this->request->getPost('recommendation'),
+                                    'yesno'                 => $this->request->getPost('yesno'),
+                                    'result'                => $this->request->getPost('result'),
+                                    'part'                  => $this->request->getPost('part'),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    break;
                     // case '3.7 Aa7':
                     //     switch ($save) {
                     //         case 'saveaa7isa' :

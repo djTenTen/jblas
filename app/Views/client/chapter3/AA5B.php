@@ -42,11 +42,11 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $c3tID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>MANAGEMENT LETTER WORKSHEET INTERIM / FINAL AUDIT</h4>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa5b/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa5b/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="aa5b">
                         <table class="table table-bordered">
                             <thead>
@@ -63,12 +63,18 @@
                             <tbody id="tbody">
                             <?php foreach($aa5b as $r){?>
                                 <tr>
-                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['reference']?></textarea></td>
-                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="5" name="issue[]"><?= $r['issue']?></textarea></td>
-                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="5" name="comment[]"><?= $r['comment']?></textarea></td>
-                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="5" name="recommendation[]"><?= $r['recommendation']?></textarea></td>
-                                    <td><textarea class="form-control yesno" id="yesno" cols="30" rows="5" name="yesno[]"><?= $r['yesno']?></textarea></td>
-                                    <td><textarea class="form-control result" id="result" cols="30" rows="5" name="result[]"><?= $r['result']?></textarea></td>
+                                    <td><textarea class="form-control reference" id="reference" cols="30" rows="5" name="reference[]"><?= $r['field1']?></textarea></td>
+                                    <td><textarea class="form-control issue" id="issue" cols="30" rows="5" name="issue[]"><?= $r['field2']?></textarea></td>
+                                    <td><textarea class="form-control comment" id="comment" cols="30" rows="5" name="comment[]"><?= $r['field3']?></textarea></td>
+                                    <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="5" name="recommendation[]"><?= $r['field4']?></textarea></td>
+                                    <td>
+                                        <select name="yesno[] yesno" id="" class="form-select">
+                                            <option value="<?= $r['field5']?>"><?= $r['field5']?></option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </td>
+                                    <td><textarea class="form-control result" id="result" cols="30" rows="5" name="result[]"><?= $r['field6']?></textarea></td>
                                     <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
                                 </tr>
                             <?php }?>
@@ -102,7 +108,12 @@ $(document).ready(function () {
             <td><textarea class="form-control issue" id="issue" cols="30" rows="5" name="issue[]"></textarea></td>
             <td><textarea class="form-control comment" id="comment" cols="30" rows="5" name="comment[]"></textarea></td>
             <td><textarea class="form-control recommendation" id="recommendation" cols="30" rows="5" name="recommendation[]"></textarea></td>
-            <td><textarea class="form-control yesno" id="yesno" cols="30" rows="5" name="yesno[]"></textarea></td>
+            <td>
+                <select name="yesno[] yesno" id="" class="form-select">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </td>
             <td><textarea class="form-control result" id="result" cols="30" rows="5" name="result[]"></textarea></td>
             <td><button class="btn btn-danger btn-icon btn-sm remove" type="button" data-action="remove"><i class="fas fa-trash"></i></button></td>
         </tr>`);
