@@ -80,58 +80,6 @@ class Chapter1Model extends Model{
 
     }
 
-
-    /**
-        ----------------------------------------------------------
-        AC10 FUNCTIONS
-        ----------------------------------------------------------
-        * @method getac10s1data() get the ac10 information
-        * @param mtID chapter 1 title id
-        * @param part specifies the part of the file
-        * @var query result from database
-        * @return result-array
-    */
-    public function getac10data($part,$code,$mtID,$section){
-
-        $where = [
-            'type' => $part,
-            'code' => $code,
-            'mtID' => $mtID,
-            'question' => $section,
-        ];
-        $query = $this->db->table($this->tblc1)->where($where)->get();
-        return $query->getResultArray();
-
-    }
-
-    /**
-        * @method getdatacount() get the ac10 information
-        * @param mtID chapter 1 title id
-        * @param part specifies the part of the file
-        * @var query result from database
-        * @return integer
-    */
-    public function getdatacount($mtID,$part){
-
-        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => 'ac10', 'mtID' => $mtID));
-        return $query->countAllResults();
-
-    }
-
-    /**
-        * @method getsumation() Count/Compute the balances
-        * @param mtID chapter 1 title id
-        * @param part specifies the part of the file
-        * @var total result from database
-        * @return integer
-    */
-    public function getsumation($mtID,$part){
-
-        $total = $this->db->table($this->tblc1)->selectSum('balance')->where(array('type' => $part, 'code' => 'ac10', 'mtID' => $mtID))->get()->getRowArray();
-        $cu = $this->db->table($this->tblc1)->where(array('type' => $part.'cu', 'code' => 'ac10', 'mtID' => $mtID))->get()->getRowArray();
-        return $cu['question'] - $total['balance'];
-
-    }
     
 
 }

@@ -98,7 +98,11 @@
                                     <td><?= $r['title']?></td>
                                     <td>
                                     <?php if(session()->get('allowed')->edit == "Yes"){?>
-                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter2/setvalues/')?><?= $r['code']?>/<?= encr($r['mtID'])?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                        <?php if($r['code'] == 'AC10'){?>
+                                            <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter2/setvalues/')?><?= $r['code']?>-Summary/<?= encr($r['mtID'])?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                        <?php }else{?>
+                                            <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter2/setvalues/')?><?= $r['code']?>/<?= encr($r['mtID'])?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                        <?php }?>
                                     <?php }?>
                                     </td>
                                 </tr>

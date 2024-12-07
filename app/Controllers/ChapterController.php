@@ -220,79 +220,65 @@ class ChapterController extends BaseController{
                 $data['mdID']   = $this->encr($rdata['mdID']);
                 $page = $code;
                 break;
-            // case 'AC10-Tangibles':
-            // case 'AC10-PPE':
-            // case 'AC10-Investments':
-            // case 'AC10-Inventory':
-            // case 'AC10-Trade Receivables':
-            // case 'AC10-Other Receivables':
-            // case 'AC10-Bank and Cash':
-            // case 'AC10-Trade Payables':
-            // case 'AC10-Other Payables':
-            // case 'AC10-Provisions':
-            // case 'AC10-Revenue':
-            // case 'AC10-Costs':
-            // case 'AC10-Payroll':
-            //     $s = explode('-', $code);
-            //     $data ['sheet']     = $s[1];
-            //     $data['code']       = $s[0];
-            //     $data['cu']         = $this->cvmodel->getvalues_s('c2',$s[1].'cu',$s[0],$dmtID,$dcID);
-            //     $data['ac10s1']     = $this->cvmodel->getac10data($s[1],$s[0],$dmtID,$dcID,'section1');
-            //     $data['ac10s2']     = $this->cvmodel->getac10data($s[1],$s[0],$dmtID,$dcID,'section2');
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter2/Ac10', $data);
-            //     echo view('includes/Footer');
-            //     break;
-            // case 'AC10-Summary':
-            //     $s = explode('-', $code);
-            //     $data ['sheet']     = $s[1];
-            //     $data['code']       = $s[0];
-            //     $data['nmk_tgb']    = $this->cvmodel->getdatacount($dmtID,'Tangibles',$dcID);
-            //     $data['nmk_ppe']    = $this->cvmodel->getdatacount($dmtID,'PPE',$dcID);
-            //     $data['nmk_invmt']  = $this->cvmodel->getdatacount($dmtID,'Investments',$dcID);
-            //     $data['nmk_invtr']  = $this->cvmodel->getdatacount($dmtID,'Inventory',$dcID);
-            //     $data['nmk_tr']     = $this->cvmodel->getdatacount($dmtID,'Trade Receivables',$dcID);
-            //     $data['nmk_or']     = $this->cvmodel->getdatacount($dmtID,'Other Receivables',$dcID);
-            //     $data['nmk_bac']    = $this->cvmodel->getdatacount($dmtID,'Bank and Cash',$dcID);
-            //     $data['nmk_tp']     = $this->cvmodel->getdatacount($dmtID,'Trade Payables',$dcID);
-            //     $data['nmk_op']     = $this->cvmodel->getdatacount($dmtID,'Other Payables',$dcID);
-            //     $data['nmk_prov']   = $this->cvmodel->getdatacount($dmtID,'Provisions',$dcID);
-            //     $data['nmk_rev']    = $this->cvmodel->getdatacount($dmtID,'Revenue',$dcID);
-            //     $data['nmk_cst']    = $this->cvmodel->getdatacount($dmtID,'Costs',$dcID);
-            //     $data['nmk_pr']     = $this->cvmodel->getdatacount($dmtID,'Payroll',$dcID);
-            //     $data['vop_tgb']    = $this->cvmodel->getsumation($dmtID,'Tangibles',$dcID);
-            //     $data['vop_ppe']    = $this->cvmodel->getsumation($dmtID,'PPE',$dcID);
-            //     $data['vop_invmt']  = $this->cvmodel->getsumation($dmtID,'Investments',$dcID);
-            //     $data['vop_invtr']  = $this->cvmodel->getsumation($dmtID,'Inventory',$dcID);
-            //     $data['vop_tr']     = $this->cvmodel->getsumation($dmtID,'Trade Receivables',$dcID);
-            //     $data['vop_or']     = $this->cvmodel->getsumation($dmtID,'Other Receivables',$dcID);
-            //     $data['vop_bac']    = $this->cvmodel->getsumation($dmtID,'Bank and Cash',$dcID);
-            //     $data['vop_tp']     = $this->cvmodel->getsumation($dmtID,'Trade Payables',$dcID);
-            //     $data['vop_op']     = $this->cvmodel->getsumation($dmtID,'Other Payables',$dcID);
-            //     $data['vop_prov']   = $this->cvmodel->getsumation($dmtID,'Provisions',$dcID);
-            //     $data['vop_rev']    = $this->cvmodel->getsumation($dmtID,'Revenue',$dcID);
-            //     $data['vop_cst']    = $this->cvmodel->getsumation($dmtID,'Costs',$dcID);
-            //     $data['vop_pr']     = $this->cvmodel->getsumation($dmtID,'Payroll',$dcID);
-            //     $data['mat']        = $this->cvmodel->getvalues_s('c2','materialdata',$s[0],$dmtID,$dcID);
-            //     $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
-            //     foreach($rowdata as $row){
-            //         $rdata = $this->cvmodel->getvalues_s('c2',$row.'data',$s[0],$dmtID,$dcID);
-            //         $data[$row] = json_decode($rdata['field1'], true);
-            //     }
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter2/Ac10-Summary', $data);
-            //     echo view('includes/Footer');
-            //     break;
-            // case 'AC11':
-            //     $rdata = $this->cvmodel->getvalues_s('c2','ac11data',$code,$dmtID,$dcID);
-            //     $data['ac11'] = json_decode($rdata['field1'], true);
-            //     $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
-            //     echo view('includes/Header', $data);
-            //     echo view('client/chapter2/Ac11', $data);
-            //     echo view('includes/Footer');
-            //     break;
-            // default:
-            // break;
+            case 'AC10-Tangibles':
+            case 'AC10-PPE':
+            case 'AC10-Investments':
+            case 'AC10-Inventory':
+            case 'AC10-Trade Receivables':
+            case 'AC10-Other Receivables':
+            case 'AC10-Bank and Cash':
+            case 'AC10-Trade Payables':
+            case 'AC10-Other Payables':
+            case 'AC10-Provisions':
+            case 'AC10-Revenue':
+            case 'AC10-Costs':
+            case 'AC10-Payroll':
+                $s = explode('-', $code);
+                $data ['sheet']     = $s[1];
+                $data['code']       = $s[0];
+                $data['cu']         = $this->cvmodel->getvalues_c2('s',$s[1].'cu',$s[0],$dmtID,$dcID);
+                $data['ac10s1']     = $this->cvmodel->getac10data($s[1],$s[0],$dmtID,$dcID,'section1');
+                $data['ac10s2']     = $this->cvmodel->getac10data($s[1],$s[0],$dmtID,$dcID,'section2');
+                $page = $s[0];
+                break;
+            case 'AC10-Summary':
+                $s = explode('-', $code);
+                $data ['sheet']     = $s[1];
+                $data['code']       = $s[0];
+                $data['nmk_tgb']    = $this->cvmodel->getdatacount($dmtID,'Tangibles',$dcID);
+                $data['nmk_ppe']    = $this->cvmodel->getdatacount($dmtID,'PPE',$dcID);
+                $data['nmk_invmt']  = $this->cvmodel->getdatacount($dmtID,'Investments',$dcID);
+                $data['nmk_invtr']  = $this->cvmodel->getdatacount($dmtID,'Inventory',$dcID);
+                $data['nmk_tr']     = $this->cvmodel->getdatacount($dmtID,'Trade Receivables',$dcID);
+                $data['nmk_or']     = $this->cvmodel->getdatacount($dmtID,'Other Receivables',$dcID);
+                $data['nmk_bac']    = $this->cvmodel->getdatacount($dmtID,'Bank and Cash',$dcID);
+                $data['nmk_tp']     = $this->cvmodel->getdatacount($dmtID,'Trade Payables',$dcID);
+                $data['nmk_op']     = $this->cvmodel->getdatacount($dmtID,'Other Payables',$dcID);
+                $data['nmk_prov']   = $this->cvmodel->getdatacount($dmtID,'Provisions',$dcID);
+                $data['nmk_rev']    = $this->cvmodel->getdatacount($dmtID,'Revenue',$dcID);
+                $data['nmk_cst']    = $this->cvmodel->getdatacount($dmtID,'Costs',$dcID);
+                $data['nmk_pr']     = $this->cvmodel->getdatacount($dmtID,'Payroll',$dcID);
+                $data['vop_tgb']    = $this->cvmodel->getsumation($dmtID,'Tangibles',$dcID);
+                $data['vop_ppe']    = $this->cvmodel->getsumation($dmtID,'PPE',$dcID);
+                $data['vop_invmt']  = $this->cvmodel->getsumation($dmtID,'Investments',$dcID);
+                $data['vop_invtr']  = $this->cvmodel->getsumation($dmtID,'Inventory',$dcID);
+                $data['vop_tr']     = $this->cvmodel->getsumation($dmtID,'Trade Receivables',$dcID);
+                $data['vop_or']     = $this->cvmodel->getsumation($dmtID,'Other Receivables',$dcID);
+                $data['vop_bac']    = $this->cvmodel->getsumation($dmtID,'Bank and Cash',$dcID);
+                $data['vop_tp']     = $this->cvmodel->getsumation($dmtID,'Trade Payables',$dcID);
+                $data['vop_op']     = $this->cvmodel->getsumation($dmtID,'Other Payables',$dcID);
+                $data['vop_prov']   = $this->cvmodel->getsumation($dmtID,'Provisions',$dcID);
+                $data['vop_rev']    = $this->cvmodel->getsumation($dmtID,'Revenue',$dcID);
+                $data['vop_cst']    = $this->cvmodel->getsumation($dmtID,'Costs',$dcID);
+                $data['vop_pr']     = $this->cvmodel->getsumation($dmtID,'Payroll',$dcID);
+                $data['mat']        = $this->cvmodel->getvalues_s('c2','materialdata',$s[0],$dmtID,$dcID);
+                $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
+                foreach($rowdata as $row){
+                    $rdata = $this->cvmodel->getvalues_c2('s',$row.'data',$s[0],$dmtID,$dcID);
+                    $data[$row] = json_decode($rdata['field1'], true);
+                }
+                $page = $code;
+                break;
         }
 
         echo view('includes/Header', $data);
@@ -373,78 +359,69 @@ class ChapterController extends BaseController{
                     $data[$row]  = json_decode($rdata['field1'], true);
                 }
                 break;
-            
-            // case 'AC9':
-            //     $rdata        = $this->c2model->getvalues_s('ac9data',$code,$dmtID);
-            //     $data['ac9']  = json_decode($rdata['field1'], true);
-            //     echo view('pdfc2/AC9', $data);
-            //     break;
-            // case 'AC10-Tangibles':
-            // case 'AC10-PPE':
-            // case 'AC10-Investments':
-            // case 'AC10-Inventory':
-            // case 'AC10-Trade Receivables':
-            // case 'AC10-Other Receivables':
-            // case 'AC10-Bank and Cash':
-            // case 'AC10-Trade Payables':
-            // case 'AC10-Other Payables':
-            // case 'AC10-Provisions':
-            // case 'AC10-Revenue':
-            // case 'AC10-Costs':
-            // case 'AC10-Payroll':
-            //     $s = explode('-', $code);
-            //     $data ['sheet']  = $s[1];
-            //     $data['code']    = $s[0];
-            //     $data['cu']      = $this->c2model->getvalues_s($s[1].'cu',$s[0],$dmtID);
-            //     $data['ac10s1']  = $this->c2model->getac10data($s[1],$s[0],$dmtID,'section1');
-            //     $data['ac10s2']  = $this->c2model->getac10data($s[1],$s[0],$dmtID,'section2');
-            //     echo view('pdfc2/AC10', $data);
-            //     break;
-            // case 'AC10-Summary':
-            //     $s = explode('-', $code);
-            //     $data ['sheet']     = $s[1];
-            //     $data['code']       = $s[0];
-            //     $data['nmk_tgb']    = $this->c2model->getdatacount($dmtID,'Tangibles');
-            //     $data['nmk_ppe']    = $this->c2model->getdatacount($dmtID,'PPE');
-            //     $data['nmk_invmt']  = $this->c2model->getdatacount($dmtID,'Investments');
-            //     $data['nmk_invtr']  = $this->c2model->getdatacount($dmtID,'Inventory');
-            //     $data['nmk_tr']     = $this->c2model->getdatacount($dmtID,'Trade Receivables');
-            //     $data['nmk_or']     = $this->c2model->getdatacount($dmtID,'Other Receivables');
-            //     $data['nmk_bac']    = $this->c2model->getdatacount($dmtID,'Bank and Cash');
-            //     $data['nmk_tp']     = $this->c2model->getdatacount($dmtID,'Trade Payables');
-            //     $data['nmk_op']     = $this->c2model->getdatacount($dmtID,'Other Payables');
-            //     $data['nmk_prov']   = $this->c2model->getdatacount($dmtID,'Provisions');
-            //     $data['nmk_rev']    = $this->c2model->getdatacount($dmtID,'Revenue');
-            //     $data['nmk_cst']    = $this->c2model->getdatacount($dmtID,'Costs');
-            //     $data['nmk_pr']     = $this->c2model->getdatacount($dmtID,'Payroll');
-            //     $data['vop_tgb']    = $this->c2model->getsumation($dmtID,'Tangibles');
-            //     $data['vop_ppe']    = $this->c2model->getsumation($dmtID,'PPE');
-            //     $data['vop_invmt']  = $this->c2model->getsumation($dmtID,'Investments');
-            //     $data['vop_invtr']  = $this->c2model->getsumation($dmtID,'Inventory');
-            //     $data['vop_tr']     = $this->c2model->getsumation($dmtID,'Trade Receivables');
-            //     $data['vop_or']     = $this->c2model->getsumation($dmtID,'Other Receivables');
-            //     $data['vop_bac']    = $this->c2model->getsumation($dmtID,'Bank and Cash');
-            //     $data['vop_tp']     = $this->c2model->getsumation($dmtID,'Trade Payables');
-            //     $data['vop_op']     = $this->c2model->getsumation($dmtID,'Other Payables');
-            //     $data['vop_prov']   = $this->c2model->getsumation($dmtID,'Provisions');
-            //     $data['vop_rev']    = $this->c2model->getsumation($dmtID,'Revenue');
-            //     $data['vop_cst']    = $this->c2model->getsumation($dmtID,'Costs');
-            //     $data['vop_pr']     = $this->c2model->getsumation($dmtID,'Payroll');
-            //     $data['mat']        = $this->c2model->getvalues_s('materialdata',$s[0],$dmtID);
-            //     $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
-            //     foreach($rowdata as $row){
-            //         $rdata       = $this->c2model->getvalues_s($row.'data',$s[0],$dmtID);
-            //         $data[$row]  = json_decode($rdata['field1'], true);
-            //     }
-            //     echo view('pdfc2/AC10Summ', $data);
-            //     break;
-            // case 'AC11':
-            //     $rdata = $this->c2model->getvalues_s('ac11data',$code,$dmtID);
-            //     $data['ac11'] = json_decode($rdata['field1'], true);
-            //     echo view('pdfc2/AC11', $data);
-            //     break;
-            // default:
-            // break;
+            case 'AC9':
+                $rdata        = $this->c2model->getvalues_s('ac9data',$code,$dmtID);
+                $data['ac9']  = json_decode($rdata['field1'], true);
+                break;
+            case 'AC10-Tangibles':
+            case 'AC10-PPE':
+            case 'AC10-Investments':
+            case 'AC10-Inventory':
+            case 'AC10-Trade Receivables':
+            case 'AC10-Other Receivables':
+            case 'AC10-Bank and Cash':
+            case 'AC10-Trade Payables':
+            case 'AC10-Other Payables':
+            case 'AC10-Provisions':
+            case 'AC10-Revenue':
+            case 'AC10-Costs':
+            case 'AC10-Payroll':
+                $s = explode('-', $code);
+                $data ['sheet']  = $s[1];
+                $data['code']    = $s[0];
+                $data['cu']      = $this->c2model->getvalues_s($s[1].'cu',$s[0],$dmtID);
+                $data['ac10s1']  = $this->c2model->getac10data($s[1],$s[0],$dmtID,'section1');
+                $data['ac10s2']  = $this->c2model->getac10data($s[1],$s[0],$dmtID,'section2');
+                echo view('pdfc2/AC10', $data);
+                exit;
+                break;
+            case 'AC10-Summary':
+                $s = explode('-', $code);
+                $data ['sheet']     = $s[1];
+                $data['code']       = $s[0];
+                $data['nmk_tgb']    = $this->c2model->getdatacount($dmtID,'Tangibles');
+                $data['nmk_ppe']    = $this->c2model->getdatacount($dmtID,'PPE');
+                $data['nmk_invmt']  = $this->c2model->getdatacount($dmtID,'Investments');
+                $data['nmk_invtr']  = $this->c2model->getdatacount($dmtID,'Inventory');
+                $data['nmk_tr']     = $this->c2model->getdatacount($dmtID,'Trade Receivables');
+                $data['nmk_or']     = $this->c2model->getdatacount($dmtID,'Other Receivables');
+                $data['nmk_bac']    = $this->c2model->getdatacount($dmtID,'Bank and Cash');
+                $data['nmk_tp']     = $this->c2model->getdatacount($dmtID,'Trade Payables');
+                $data['nmk_op']     = $this->c2model->getdatacount($dmtID,'Other Payables');
+                $data['nmk_prov']   = $this->c2model->getdatacount($dmtID,'Provisions');
+                $data['nmk_rev']    = $this->c2model->getdatacount($dmtID,'Revenue');
+                $data['nmk_cst']    = $this->c2model->getdatacount($dmtID,'Costs');
+                $data['nmk_pr']     = $this->c2model->getdatacount($dmtID,'Payroll');
+                $data['vop_tgb']    = $this->c2model->getsumation($dmtID,'Tangibles');
+                $data['vop_ppe']    = $this->c2model->getsumation($dmtID,'PPE');
+                $data['vop_invmt']  = $this->c2model->getsumation($dmtID,'Investments');
+                $data['vop_invtr']  = $this->c2model->getsumation($dmtID,'Inventory');
+                $data['vop_tr']     = $this->c2model->getsumation($dmtID,'Trade Receivables');
+                $data['vop_or']     = $this->c2model->getsumation($dmtID,'Other Receivables');
+                $data['vop_bac']    = $this->c2model->getsumation($dmtID,'Bank and Cash');
+                $data['vop_tp']     = $this->c2model->getsumation($dmtID,'Trade Payables');
+                $data['vop_op']     = $this->c2model->getsumation($dmtID,'Other Payables');
+                $data['vop_prov']   = $this->c2model->getsumation($dmtID,'Provisions');
+                $data['vop_rev']    = $this->c2model->getsumation($dmtID,'Revenue');
+                $data['vop_cst']    = $this->c2model->getsumation($dmtID,'Costs');
+                $data['vop_pr']     = $this->c2model->getsumation($dmtID,'Payroll');
+                $data['mat']        = $this->c2model->getvalues_s('materialdata',$s[0],$dmtID);
+                $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
+                foreach($rowdata as $row){
+                    $rdata       = $this->c2model->getvalues_s($row.'data',$s[0],$dmtID);
+                    $data[$row]  = json_decode($rdata['field1'], true);
+                }
+                break;
         }
 
         echo view('pdfc2/'.$code, $data);
