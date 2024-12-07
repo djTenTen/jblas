@@ -73,11 +73,7 @@
                                     <td><?= $r['code']?></td>
                                     <td><?= $r['title']?></td>
                                     <td>
-                                        <?php if($r['code'] == 'AC10'){?>
-                                            <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $r['code']?>-Tangibles/<?= encr($r['mtID'])?>">Tangibles</a>
-                                        <?php }else{?>
-                                            <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $r['code']?>/<?= encr($r['mtID'])?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
-                                        <?php }?>
+                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $r['code']?>/<?= encr($r['mtID'])?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
                                     </td>
                                 </tr>
                             <?php }?>
@@ -106,7 +102,12 @@
                                     <td><?= $r['code']?></td>
                                     <td><?= $r['title']?></td>
                                     <td>
-                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter2/view/')?><?= $r['code']?>/<?= encr($r['mtID'])?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                        <?php if($r['code'] == 'AC10'){?>
+                                            <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter2/view/')?><?= $r['code']?>-Summary/<?= encr($r['mtID'])?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                        <?php }else{?>
+                                            <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter2/view/')?><?= $r['code']?>/<?= encr($r['mtID'])?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                        <?php }?>
+                                       
                                     </td>
                                 </tr>
                             <?php }?>
