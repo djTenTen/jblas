@@ -795,21 +795,21 @@ class ChapterValuesModel extends Model{
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
                         return true;
                     break;
-            //         case '3.8 Aa10':
-            //             switch ($param['save']) {
-            //                 case 'saveaa10' :
-            //                     $dacid = $this->crypt->decrypt($req['acid']);
-            //                     $data = [
-            //                         'question'      => $req['aa10'],
-            //                         'updated_on'    => $this->date.' '.$this->time,
-            //                         'updated_by'    => $param['uID'],
-            //                     ];
-            //                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-            //                 break;
-            //             }
-            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
-            //             return true;
-            //         break;
+                    case 'AA7':
+                        switch ($param['save']) {
+                            case 'saveaa10' :
+                                $dacid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['aa10'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+                        return true;
+                    break;
             //         case '3.10 Aa11-un':
             //         case '3.10 Aa11-ad':
             //             switch ($param['save']) {

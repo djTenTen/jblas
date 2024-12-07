@@ -42,7 +42,7 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $c3tID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>FINAL ANALYTICAL PROCEDURES</h4>
@@ -52,8 +52,8 @@
                     <p>Review key ratios of most significance to the entity. Any large or unexpected movements in these ratios should be explained. This section should also contain details of significant or unexpected changes in major Statement of Financial Position and Performance Statement items.</p>
                     <h6>Comparisons should be made of current period figures with prior period and / or budgeted figures.  Explanations obtained for significant or unexpected changes in key business ratios and items in the financial statements must be corroborated by other evidence. A conclusion should then be reached. </h6>
                     <h6><i>Undertaking analytical procedures at finalisation is mandatory; however, the use of this form is optional.</i></h6>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa10/<?= $code?>/<?= $c3tID?>/<?= $cID?>/<?= $name?>" method="post">
-                        <input type="hidden" name="acid" value="<?= $acID?>">
+                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa10/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <input type="hidden" name="acid" value="<?= $mdID?>">
                         <p>Summary of key ratios which may be calculated or printed from a relevant software package (add others which are specifically relevant to the entity):</p>
                         <i>
                             <ul>
