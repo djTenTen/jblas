@@ -911,21 +911,21 @@ class ChapterValuesModel extends Model{
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
                         return true;
                     break;
-            //         case '3.14 Ab3':
-            //             switch ($param['save']) {
-            //                 case 'saveab3' :
-            //                     $dacid = $this->crypt->decrypt($req['acid']);
-            //                     $data = [
-            //                         'question'      => $req['question'],
-            //                         'updated_on'    => $this->date.' '.$this->time,
-            //                         'updated_by'    => $param['uID'],
-            //                     ];
-            //                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-            //                 break;
-            //             }
-            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
-            //             return true;
-            //         break;
+                    case 'AB2':
+                        switch ($param['save']) {
+                            case 'saveab3' :
+                                $dacid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['question'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+                        return true;
+                    break;
             //         case '3.15 Ab4-checklist':
             //         case '3.15 Ab4-section1':
             //         case '3.15 Ab4-section2':

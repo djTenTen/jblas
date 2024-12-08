@@ -1160,35 +1160,34 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
-                    // case '3.14 Ab3':
-                    //     switch ($save) {
-                    //         case 'saveab3' :
-                    //             $ab3 = [
-                    //                 'aby1'      => $this->request->getPost('aby1'),
-                    //                 'aby2'      => $this->request->getPost('aby2'),
-                    //                 'aby3'      => $this->request->getPost('aby3'),
-                    //                 'aby4'      => $this->request->getPost('aby4'),
-                    //                 'frs1'      => $this->request->getPost('frs1'),
-                    //                 'ed1'       => $this->request->getPost('ed1'),
-                    //                 'frs2'      => $this->request->getPost('frs2'),
-                    //                 'ed2'       => $this->request->getPost('ed2'),
-                    //                 'frs3'      => $this->request->getPost('frs3'),
-                    //                 'ed3'       => $this->request->getPost('ed3'),
-                    //                 'frs4'      => $this->request->getPost('frs4'),
-                    //                 'ed4'       => $this->request->getPost('ed4'),
-                    //                 'frs5'      => $this->request->getPost('frs5'),
-                    //                 'ed5'       => $this->request->getPost('ed5')
-                    //             ];
-                    //             $req = [
-                    //                 'question'  => json_encode($ab3),
-                    //                 'acid'      => $this->request->getPost('acid'),
-                    //                 'c3tID'     => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //     }
-                    //     $res = $this->cvmodel->savevalues($param,$req);
-                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    // break;
+                    case 'AB2':
+                        switch ($save) {
+                            case 'saveab3' :
+                                $ab3 = [
+                                    'aby1'      => $this->request->getPost('aby1'),
+                                    'aby2'      => $this->request->getPost('aby2'),
+                                    'aby3'      => $this->request->getPost('aby3'),
+                                    'aby4'      => $this->request->getPost('aby4'),
+                                    'frs1'      => $this->request->getPost('frs1'),
+                                    'ed1'       => $this->request->getPost('ed1'),
+                                    'frs2'      => $this->request->getPost('frs2'),
+                                    'ed2'       => $this->request->getPost('ed2'),
+                                    'frs3'      => $this->request->getPost('frs3'),
+                                    'ed3'       => $this->request->getPost('ed3'),
+                                    'frs4'      => $this->request->getPost('frs4'),
+                                    'ed4'       => $this->request->getPost('ed4'),
+                                    'frs5'      => $this->request->getPost('frs5'),
+                                    'ed5'       => $this->request->getPost('ed5')
+                                ];
+                                $req = [
+                                    'question'  => json_encode($ab3),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    break;
                     // case '3.15 Ab4-checklist':
                     // case '3.15 Ab4-section1':
                     // case '3.15 Ab4-section2':
