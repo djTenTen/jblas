@@ -926,42 +926,42 @@ class ChapterValuesModel extends Model{
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
                         return true;
                     break;
-            //         case '3.15 Ab4-checklist':
-            //         case '3.15 Ab4-section1':
-            //         case '3.15 Ab4-section2':
-            //         case '3.15 Ab4-section3':
-            //         case '3.15 Ab4-section4':
-            //         case '3.15 Ab4-section5':
-            //         case '3.15 Ab4-section6':
-            //         case '3.15 Ab4-section7':
-            //         case '3.15 Ab4-section8':
-            //         case '3.15 Ab4-section9':
-            //             switch ($param['save']) {
-            //                 case 'saveab4' :
-            //                     foreach($req['yesno'] as $i => $val){
-            //                         $dacid = $this->crypt->decrypt($req['acid'][$i]);
-            //                         $data = [
-            //                             'yesno'         => $req['yesno'][$i],
-            //                             'comment'       => $req['comment'][$i],
-            //                             'updated_on'    => $this->date.' '.$this->time,
-            //                             'updated_by'    => $param['uID'],
-            //                         ];
-            //                         $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-            //                     }
-            //                 break;
-            //                 case 'saveab4checklist' :
-            //                     $dacid = $this->crypt->decrypt($req['acid']);
-            //                     $data = [
-            //                         'question'      => $req['chlst'],
-            //                         'updated_on'    => $this->date.' '.$this->time,
-            //                         'updated_by'    => $param['uID'],
-            //                     ];
-            //                     $this->db->table($this->tblc3d)->where('acID', $dacid)->update($data);
-            //                 break;
-            //             }
-            //             $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
-            //             return true;
-            //         break;
+                    case 'AB3-checklist':
+                    case 'AB3-section1':
+                    case 'AB3-section2':
+                    case 'AB3-section3':
+                    case 'AB3-section4':
+                    case 'AB3-section5':
+                    case 'AB3-section6':
+                    case 'AB3-section7':
+                    case 'AB3-section8':
+                    case 'AB3-section9':
+                        switch ($param['save']) {
+                            case 'saveab4' :
+                                foreach($req['yesno'] as $i => $val){
+                                    $dacid = $this->decr($req['acid'][$i]);
+                                    $data = [
+                                        'field2'        => $req['yesno'][$i],
+                                        'field3'        => $req['comment'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
+                                }
+                            break;
+                            case 'saveab4checklist' :
+                                $dacid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['chlst'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+                        return true;
+                    break;
             //         case '3.15.1 Ab4a':
             //         case '3.15.2 Ab4b':
             //         case '3.15.3 Ab4c':

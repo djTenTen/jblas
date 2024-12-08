@@ -136,7 +136,7 @@
                                                     <a target="_blank" class="dropdown-item" href="<?= base_url('auditsystem/client/chapter3/setvalues/')?><?= $r['code']?>-ad/<?= encr($r['mtID'])?>/<?= $cID?>/<?= $name?>">Adjusted Mades</a>
                                                 </div>
                                             </div>
-                                        <?php }elseif($r['code'] == '3.15 Ab4'){?>
+                                        <?php }elseif($r['code'] == 'AB3'){?>
                                             <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter3/setvalues/')?><?= $r['code']?>-checklist/<?= encr($r['mtID'])?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                         <?php }else{?>
                                             <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/client/chapter3/setvalues/')?><?= $r['code']?>/<?= encr($r['mtID'])?>/<?= $cID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>

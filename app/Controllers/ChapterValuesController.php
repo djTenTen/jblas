@@ -1188,54 +1188,52 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
-                    // case '3.15 Ab4-checklist':
-                    // case '3.15 Ab4-section1':
-                    // case '3.15 Ab4-section2':
-                    // case '3.15 Ab4-section3':
-                    // case '3.15 Ab4-section4':
-                    // case '3.15 Ab4-section5':
-                    // case '3.15 Ab4-section6':
-                    // case '3.15 Ab4-section7':
-                    // case '3.15 Ab4-section8':
-                    // case '3.15 Ab4-section9':
-                    //     switch ($save) {
-                    //         case 'saveab4' :
-                    //             $req = [
-                    //                 'yesno'     => $this->request->getPost('yesno'),
-                    //                 'comment'   => $this->request->getPost('comment'),
-                    //                 'acid'      => $this->request->getPost('acid'),
-                    //                 'c3tID'     => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //         case 'saveab4checklist' :
-                    //             $chlst = [
-                    //                 'y1'    => $this->request->getPost('y1'),
-                    //                 'y2'    => $this->request->getPost('y2'),
-                    //                 'y3'    => $this->request->getPost('y3'),
-                    //                 'y4'    => $this->request->getPost('y4'),
-                    //                 'y5'    => $this->request->getPost('y5'),
-                    //                 'y6'    => $this->request->getPost('y6'),
-                    //                 'y7'    => $this->request->getPost('y7'),
-                    //                 'y8'    => $this->request->getPost('y8'),
-                    //                 'y9'    => $this->request->getPost('y9'),
-                    //                 'y10'   => $this->request->getPost('y10'),
-                    //                 'y11'   => $this->request->getPost('y11'),
-                    //                 'y12'   => $this->request->getPost('y12'),
-                    //                 'y13'   => $this->request->getPost('y13'),
-                    //                 'y14'   => $this->request->getPost('y14'),
-                    //                 'y15'   => $this->request->getPost('y15'),
-                    //                 'y16'   => $this->request->getPost('y16')
-                    //             ];
-                    //             $req = [
-                    //                 'chlst'     => json_encode($chlst),
-                    //                 'acid'      => $this->request->getPost('acid'),
-                    //                 'c3tID'     => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //     }
-                    //     $res = $this->cvmodel->savevalues($param,$req);
-                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    // break;
+                    case 'AB3-checklist':
+                    case 'AB3-section1':
+                    case 'AB3-section2':
+                    case 'AB3-section3':
+                    case 'AB3-section4':
+                    case 'AB3-section5':
+                    case 'AB3-section6':
+                    case 'AB3-section7':
+                    case 'AB3-section8':
+                    case 'AB3-section9':
+                        switch ($save) {
+                            case 'saveab4' :
+                                $req = [
+                                    'yesno'     => $this->request->getPost('yesno'),
+                                    'comment'   => $this->request->getPost('comment'),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                            case 'saveab4checklist' :
+                                $chlst = [
+                                    'y1'    => $this->request->getPost('y1'),
+                                    'y2'    => $this->request->getPost('y2'),
+                                    'y3'    => $this->request->getPost('y3'),
+                                    'y4'    => $this->request->getPost('y4'),
+                                    'y5'    => $this->request->getPost('y5'),
+                                    'y6'    => $this->request->getPost('y6'),
+                                    'y7'    => $this->request->getPost('y7'),
+                                    'y8'    => $this->request->getPost('y8'),
+                                    'y9'    => $this->request->getPost('y9'),
+                                    'y10'   => $this->request->getPost('y10'),
+                                    'y11'   => $this->request->getPost('y11'),
+                                    'y12'   => $this->request->getPost('y12'),
+                                    'y13'   => $this->request->getPost('y13'),
+                                    'y14'   => $this->request->getPost('y14'),
+                                    'y15'   => $this->request->getPost('y15'),
+                                    'y16'   => $this->request->getPost('y16')
+                                ];
+                                $req = [
+                                    'chlst'     => json_encode($chlst),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    break;
                     // case '3.15.1 Ab4a':
                     // case '3.15.2 Ab4b':
                     // case '3.15.3 Ab4c':

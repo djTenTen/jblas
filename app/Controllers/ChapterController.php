@@ -539,47 +539,41 @@ class ChapterController extends BaseController{
                 $data['mdID']   = $this->encr($rdata['mdID']);
                 $page = $code;
                 break; 
-            // case '3.15 Ab4-checklist':
-            // case '3.15 Ab4-section1':
-            // case '3.15 Ab4-section2':
-            // case '3.15 Ab4-section3':
-            // case '3.15 Ab4-section4':
-            // case '3.15 Ab4-section5':
-            // case '3.15 Ab4-section6':
-            // case '3.15 Ab4-section7':
-            // case '3.15 Ab4-section8':
-            // case '3.15 Ab4-section9':
-            //     $s = explode('-', $code);
-            //     switch ($s[1]) {
-            //         case 'checklist':$data['sectiontitle']  = 'CORPORATE DISCLOSURE CHECKLIST (IFRS)';break;
-            //         case 'section1':$data['sectiontitle']   = 'Format of the Annual Report and Generic Information';break;
-            //         case 'section2':$data['sectiontitle']   = 'Directors Report (Review of the Business) ~ Best Practice Disclosures';break;
-            //         case 'section3':$data['sectiontitle']   = 'Directors Report ~ Best Practice Disclosures';break;
-            //         case 'section4':$data['sectiontitle']   = 'Statement of Comprehensive Income (SCI) and Related Notes';break;
-            //         case 'section5':$data['sectiontitle']   = 'Statement of Changes in Equity';break;
-            //         case 'section6':$data['sectiontitle']   = 'Statement of Financial Position and Related Notes';break;
-            //         case 'section7':$data['sectiontitle']   = 'Statement of Cash Flows';break;
-            //         case 'section8':$data['sectiontitle']   = 'Accounting Policies and Estimation Techniques';break;
-            //         case 'section9':$data['sectiontitle']   = 'Notes and Other Disclosures';break;
-            //     }
-            //     $data['title']      = $code. ' - Chapter 3 Management';
-            //     $data['section']    = $s[1];
-            //     $data['mtID']      = $mtID;
-            //     $data['code']       = $code;
-            //     if($s[1] == "checklist"){
-            //         $rdata = $this->cvmodel->getvalues_s('c3',$s[1],$s[0],$dmtID,$dcID);
-            //         $data['sec'] = json_decode($rdata['field1'], true);
-            //         $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
-            //         echo view('includes/Header', $data);
-            //         echo view('client/chapter3/315Ab4_checklist', $data);
-            //         echo view('includes/Footer');
-            //     }else{
-            //         $data['sec'] = $this->cvmodel->getvalues_m('c3',$s[1],$s[0],$dmtID,$dcID);
-            //         echo view('includes/Header', $data);
-            //         echo view('client/chapter3/315Ab4_section', $data);
-            //         echo view('includes/Footer');
-            //     }
-            //     break; 
+            case 'AB3-checklist':
+            case 'AB3-section1':
+            case 'AB3-section2':
+            case 'AB3-section3':
+            case 'AB3-section4':
+            case 'AB3-section5':
+            case 'AB3-section6':
+            case 'AB3-section7':
+            case 'AB3-section8':
+            case 'AB3-section9':
+                $s = explode('-', $code);
+                switch ($s[1]) {
+                    case 'checklist':$data['sectiontitle']  = 'CORPORATE DISCLOSURE CHECKLIST (IFRS)';break;
+                    case 'section1':$data['sectiontitle']   = 'Format of the Annual Report and Generic Information';break;
+                    case 'section2':$data['sectiontitle']   = 'Statement of Comprehensive Income (SCI) and Related Notes';break;
+                    case 'section3':$data['sectiontitle']   = 'Statement of Changes in Equity';break;
+                    case 'section4':$data['sectiontitle']   = 'Statement of Financial Position and Related Notes';break;
+                    case 'section5':$data['sectiontitle']   = 'Statement of Cash Flows'; break;
+                    case 'section6':$data['sectiontitle']   = 'Accounting Policies and Estimation Techniques';break;
+                    case 'section7':$data['sectiontitle']   = 'Notes and Other Disclosures';break;
+                }
+                $data['title']      = $code. ' - Chapter 3 Management';
+                $data['section']    = $s[1];
+                $data['mtID']       = $mtID;
+                $data['code']       = $code;
+                if($s[1] == "checklist"){
+                    $rdata = $this->cvmodel->getvalues_c3('s',$s[1],$s[0],$dmtID,$dcID);
+                    $data['sec']    = json_decode($rdata['field1'], true);
+                    $data['mdID']   = $this->encr($rdata['mdID']);
+                    $page = $code;
+                }else{
+                    $data['sec'] = $this->cvmodel->getvalues_c3('m',$s[1],$s[0],$dmtID,$dcID);
+                    $page = 'AB3-section';
+                }
+                break;
             // case '3.15.1 Ab4a':
             //     $data['ab4a'] = $this->cvmodel->getvalues_m('c3','ab4a',$code,$dmtID,$dcID);
             //     echo view('includes/Header', $data);
@@ -741,20 +735,18 @@ class ChapterController extends BaseController{
                 $data['ab3']    = json_decode($rdata['field1'], true);
                 $page = $code;
                 break; 
-            // case '3.15 Ab4':
-            //     $rdata = $this->c3model->getvalues_s('checklist',$code,$dmtID);
-            //     $data['sec']  = json_decode($rdata['field1'], true);
-            //     $data['sec1'] = $this->c3model->getvalues_m('section1',$code,$dmtID);
-            //     $data['sec2'] = $this->c3model->getvalues_m('section2',$code,$dmtID);
-            //     $data['sec3'] = $this->c3model->getvalues_m('section3',$code,$dmtID);
-            //     $data['sec4'] = $this->c3model->getvalues_m('section4',$code,$dmtID);
-            //     $data['sec5'] = $this->c3model->getvalues_m('section5',$code,$dmtID);
-            //     $data['sec6'] = $this->c3model->getvalues_m('section6',$code,$dmtID);
-            //     $data['sec7'] = $this->c3model->getvalues_m('section7',$code,$dmtID);
-            //     $data['sec8'] = $this->c3model->getvalues_m('section8',$code,$dmtID);
-            //     $data['sec9'] = $this->c3model->getvalues_m('section9',$code,$dmtID);
-            //     echo view('pdfc3/AB4', $data);
-            //     break; 
+            case 'AB3':
+                $rdata = $this->c3model->getvalues_s('checklist',$code,$dmtID);
+                $data['sec']  = json_decode($rdata['field1'], true);
+                $data['sec1'] = $this->c3model->getvalues_m('section1',$code,$dmtID);
+                $data['sec2'] = $this->c3model->getvalues_m('section2',$code,$dmtID);
+                $data['sec3'] = $this->c3model->getvalues_m('section3',$code,$dmtID);
+                $data['sec4'] = $this->c3model->getvalues_m('section4',$code,$dmtID);
+                $data['sec5'] = $this->c3model->getvalues_m('section5',$code,$dmtID);
+                $data['sec6'] = $this->c3model->getvalues_m('section6',$code,$dmtID);
+                $data['sec7'] = $this->c3model->getvalues_m('section7',$code,$dmtID);
+                $page = $code;
+                break; 
             // case '3.15.1 Ab4a':
             //     $data['ab4a'] = $this->c3model->getvalues_m('ab4a',$code,$dmtID);
             //     echo view('pdfc3/AB4A', $data);

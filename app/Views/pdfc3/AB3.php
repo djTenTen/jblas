@@ -177,34 +177,26 @@ $html .= '
             </tr>
             <tr>
                 <td style="width: 15%;"><b>Section 2</b></td>
-                <td style="width: 85%;"><b style="color: blue;">Directors Report (Review of the Business) ~ Best Practice Disclosures</b><br></td>
-            </tr>
-            <tr>
-                <td style="width: 15%;"><b>Section 3</b></td>
-                <td style="width: 85%;"><b style="color: blue;">Directors Report ~ Best Practice Disclosures</b><br></td>
-            </tr>
-            <tr>
-                <td style="width: 15%;"><b>Section 4</b></td>
                 <td style="width: 85%;"><b style="color: blue;">Statement of Comprehensive Income (SCI) and Related Notes</b><br></td>
             </tr>
             <tr>
-                <td style="width: 15%;"><b>Section 5</b></td>
+                <td style="width: 15%;"><b>Section 3</b></td>
                 <td style="width: 85%;"><b style="color: blue;">Statement of Changes in Equity</b><br></td>
             </tr>
             <tr>
-                <td style="width: 15%;"><b>Section 6</b></td>
+                <td style="width: 15%;"><b>Section 4</b></td>
                 <td style="width: 85%;"><b style="color: blue;">Statement of Financial Position and Related Notes</b><br></td>
             </tr>
             <tr>
-                <td style="width: 15%;"><b>Section 7</b></td>
+                <td style="width: 15%;"><b>Section 5</b></td>
                 <td style="width: 85%;"><b style="color: blue;">Statement of Cash Flows</b><br></td>
             </tr>
             <tr>
-                <td style="width: 15%;"><b>Section 8</b></td>
+                <td style="width: 15%;"><b>Section 6</b></td>
                 <td style="width: 85%;"><b style="color: blue;">Accounting Policies and Estimation Techniques</b><br></td>
             </tr>
             <tr>
-                <td style="width: 15%;"><b>Section 9</b></td>
+                <td style="width: 15%;"><b>Section 7</b></td>
                 <td style="width: 85%;"><b style="color: blue;">Notes and Other Disclosures</b><br></td>
             </tr>
         </tbody>
@@ -243,11 +235,11 @@ $html .= '
         foreach($sec1 as $r){
             $html .= '
             <tr>
-                <td style="width: 13%;">'.$r['reference'].'</td>
-                <td style="width: 7%;">'.$r['extent'].'</td>
-                <td style="width: 50%;">'.$r['question'].'</td>
-                <td style="width: 15%;">'.$r['yesno'].'</td>
-                <td style="width: 15%;">'.$r['comment'].'</td>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
             </tr>
             ';
         }
@@ -263,23 +255,27 @@ $html .= '
     <table border="1">
         <thead>
             <tr>
-                <th  colspan="5"><b>Section 2– Directors’ Report (Review of the Business) ~ Best Practice Disclosures</b></th>
+                <th  colspan="5"><b>Section 2 – Statement of Comprehensive Income (SCI) and Related Notes</b></th>
             </tr>
             <tr>
                 <th style="width: 70%;" colspan="3"><b>Reference</b></th>
                 <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
                 <th style="width: 15%;" class="cent"><b>Comments</b></th>
             </tr>
+            
         </thead>
-        <tbody>';
+        <tbody>
+            <tr>
+                <td colspan="5">IAS 1 paragraph 81A allows the SCI to be presented as either one or two statements (a profit and loss account and a SCI (which is a combination of the profit for the year plus items of other comprehensive income (OCI))).</td>
+            </tr>';
         foreach($sec2 as $r){
             $html .= '
             <tr>
-                <td style="width: 13%;">'.$r['reference'].'</td>
-                <td style="width: 7%;">'.$r['extent'].'</td>
-                <td style="width: 50%;">'.$r['question'].'</td>
-                <td style="width: 15%;">'.$r['yesno'].'</td>
-                <td style="width: 15%;">'.$r['comment'].'</td>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
             </tr>
             ';
         }
@@ -295,7 +291,10 @@ $html .= '
     <table border="1">
         <thead>
             <tr>
-                <th  colspan="5"><b>Section 3 – Directors’ Report (Other) ~ Best Practice Disclosures</b></th>
+                <th  colspan="5"><b>Section 3 – Statement of Changes in Equity</b><br>
+                    NB1: This must be presented as a primary statement and not as a note to the financial statements.<br>
+                    NB2: Per IAS 21 paragraph 52(a) there should be a column for foreign exchange differences that pass through OCI and accumulate in equity.
+                </th>
             </tr>
             <tr>
                 <th style="width: 70%;" colspan="3"><b>Reference</b></th>
@@ -307,11 +306,11 @@ $html .= '
         foreach($sec3 as $r){
             $html .= '
             <tr>
-                <td style="width: 13%;">'.$r['reference'].'</td>
-                <td style="width: 7%;">'.$r['extent'].'</td>
-                <td style="width: 50%;">'.$r['question'].'</td>
-                <td style="width: 15%;">'.$r['yesno'].'</td>
-                <td style="width: 15%;">'.$r['comment'].'</td>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
             </tr>
             ';
         }
@@ -327,7 +326,7 @@ $html .= '
     <table border="1">
         <thead>
             <tr>
-                <th  colspan="5"><b>Section 4 – Statement of Comprehensive Income (SCI) and Related Notes</b></th>
+                <th  colspan="5"><b>Section 4 – Statement of Financial Position and Related Notes</b></th>
             </tr>
             <tr>
                 <th style="width: 70%;" colspan="3"><b>Reference</b></th>
@@ -337,17 +336,17 @@ $html .= '
         </thead>
         <tbody>
             <tr>
-                <td colspan="5">IAS 1 paragraph 81A allows the SCI to be presented as either one or two statements (a profit and loss account and a SCI (which is a combination of the profit for the year plus items of other comprehensive income (OCI))).</td>
+                <td  colspan="5"><b>Impairment ~ Goodwill and Intangible Fixed Assets with Indefinite Useful Lives</b></td>
             </tr>
-            ';
+        ';
         foreach($sec4 as $r){
             $html .= '
             <tr>
-                <td style="width: 13%;">'.$r['reference'].'</td>
-                <td style="width: 7%;">'.$r['extent'].'</td>
-                <td style="width: 50%;">'.$r['question'].'</td>
-                <td style="width: 15%;">'.$r['yesno'].'</td>
-                <td style="width: 15%;">'.$r['comment'].'</td>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
             </tr>
             ';
         }
@@ -363,9 +362,7 @@ $html .= '
     <table border="1">
         <thead>
             <tr>
-                <th  colspan="5"><b>Section 5 – Statement of Changes in Equity</b>
-                <p>NB1: This must be presented as a primary statement and not as a note to the financial statements.</p>
-                <p>NB2: Per IAS 21 paragraph 52(a) there should be a column for foreign exchange differences that pass through OCI and accumulate in equity.</p>
+                <th  colspan="5"><b>Section 5 – Statement of Cash Flows</b>
             </th>
             </tr>
             <tr>
@@ -379,11 +376,11 @@ $html .= '
         foreach($sec5 as $r){
             $html .= '
             <tr>
-                <td style="width: 13%;">'.$r['reference'].'</td>
-                <td style="width: 7%;">'.$r['extent'].'</td>
-                <td style="width: 50%;">'.$r['question'].'</td>
-                <td style="width: 15%;">'.$r['yesno'].'</td>
-                <td style="width: 15%;">'.$r['comment'].'</td>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
             </tr>
             ';
         }
@@ -399,7 +396,8 @@ $html .= '
     <table border="1">
         <thead>
             <tr>
-                <th  colspan="5"><b>Section 6 – Statement of Financial Position and Related Notes</b>
+                <th  colspan="5"><b>Section 6 – Accounting Policies and Estimation Techniques</b>
+                <p>The following disclosures can be show as part of the notes to the financial statements or as a specific section in the financial statements [IAS 1.116].</p>
             </th>
             </tr>
             <tr>
@@ -413,11 +411,11 @@ $html .= '
         foreach($sec6 as $r){
             $html .= '
             <tr>
-                <td style="width: 13%;">'.$r['reference'].'</td>
-                <td style="width: 7%;">'.$r['extent'].'</td>
-                <td style="width: 50%;">'.$r['question'].'</td>
-                <td style="width: 15%;">'.$r['yesno'].'</td>
-                <td style="width: 15%;">'.$r['comment'].'</td>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
             </tr>
             ';
         }
@@ -433,7 +431,7 @@ $html .= '
     <table border="1">
         <thead>
             <tr>
-                <th  colspan="5"><b>Section 7 – Statement of Cash Flows</b>
+                <th  colspan="5"><b>Section 7 – Notes and Other Disclosures</b>
             </th>
             </tr>
             <tr>
@@ -447,11 +445,11 @@ $html .= '
         foreach($sec7 as $r){
             $html .= '
             <tr>
-                <td style="width: 13%;">'.$r['reference'].'</td>
-                <td style="width: 7%;">'.$r['extent'].'</td>
-                <td style="width: 50%;">'.$r['question'].'</td>
-                <td style="width: 15%;">'.$r['yesno'].'</td>
-                <td style="width: 15%;">'.$r['comment'].'</td>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
             </tr>
             ';
         }
@@ -459,75 +457,7 @@ $html .= '
         </tbody>
     </table>
 ';
-$pdf->writeHTML($html, true, false,false, false, '');
-$pdf->AddPage();
-$html = "";
-$html .= $style;
-$html .= '
-    <table border="1">
-        <thead>
-            <tr>
-                <th  colspan="5"><b>Section 8 – Accounting Policies and Estimation Techniques</b>
-                <p>The following disclosures can be show as part of the notes to the financial statements or as a specific section in the financial statements [IAS 1.116].</p>
-            </th>
-            </tr>
-            <tr>
-                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
-                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
-                <th style="width: 15%;" class="cent"><b>Comments</b></th>
-            </tr>
-        </thead>
-        <tbody>
-            ';
-        foreach($sec8 as $r){
-            $html .= '
-            <tr>
-                <td style="width: 13%;">'.$r['reference'].'</td>
-                <td style="width: 7%;">'.$r['extent'].'</td>
-                <td style="width: 50%;">'.$r['question'].'</td>
-                <td style="width: 15%;">'.$r['yesno'].'</td>
-                <td style="width: 15%;">'.$r['comment'].'</td>
-            </tr>
-            ';
-        }
-$html .= '
-        </tbody>
-    </table>
-';
-$pdf->writeHTML($html, true, false,false, false, '');
-$pdf->AddPage();
-$html = "";
-$html .= $style;
-$html .= '
-    <table border="1">
-        <thead>
-            <tr>
-                <th  colspan="5"><b>Section 9– Notes and Other Disclosures </b>
-            </th>
-            </tr>
-            <tr>
-                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
-                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
-                <th style="width: 15%;" class="cent"><b>Comments</b></th>
-            </tr>
-        </thead>
-        <tbody>
-            ';
-        foreach($sec9 as $r){
-            $html .= '
-            <tr>
-                <td style="width: 13%;">'.$r['reference'].'</td>
-                <td style="width: 7%;">'.$r['extent'].'</td>
-                <td style="width: 50%;">'.$r['question'].'</td>
-                <td style="width: 15%;">'.$r['yesno'].'</td>
-                <td style="width: 15%;">'.$r['comment'].'</td>
-            </tr>
-            ';
-        }
-$html .= '
-        </tbody>
-    </table>
-';
+
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,false, false, '');
