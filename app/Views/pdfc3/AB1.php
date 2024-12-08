@@ -96,9 +96,9 @@ $html .= '
         $html .= '
         <tr>
             <td style="width: 6%;">'.$count.'.<br></td>
-            <td style="width: 60%;">'.$r['question'].'<br></td>
-            <td class="cent bo" style="width: 18%;">'.$r['yesno'].'</td>
-            <td class="cent bo" style="width: 18%;">'.$r['comment'].'</td>
+            <td style="width: 60%;">'.$r['field1'].'<br></td>
+            <td class="cent bo" style="width: 18%;">'.$r['field2'].'</td>
+            <td class="cent bo" style="width: 18%;">'.$r['field3'].'</td>
         </tr>
         ';
     }
