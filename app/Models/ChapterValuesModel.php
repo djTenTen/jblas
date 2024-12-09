@@ -951,16 +951,13 @@ class ChapterValuesModel extends Model{
                     case 'AA12':
                         switch ($param['save']) {
                             case 'saveaa12' :
-                                $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $param['code'], 'mtID' => $param['mtID']))->delete();
+                                $dacid = $this->decr($req['acid']);
                                 $data = [
                                     'field1'        => $req['aa12'],
-                                    'type'          => $req['part'],
-                                    'code'          => $param['code'],
-                                    'mtID'          => $param['mtID'],
-                                    'status'        => 'Active',
-                                    'updated_on'    => $this->date.' '.$this->time
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
                                 ];
-                                $this->db->table($this->tblc3d)->insert($data);
+                                $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
                             break;
                         }
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
