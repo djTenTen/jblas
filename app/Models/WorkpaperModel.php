@@ -37,12 +37,12 @@ class WorkpaperModel extends  Model {
     protected $tblc1t   = "tbl_c1_titles";
     protected $tblc2t   = "tbl_c2_titles";
     protected $tblc3t   = "tbl_c3_titles";
-    protected $tblc1d   = "tbl_client_dfiles_c1";
-    protected $tblc2d   = "tbl_client_dfiles_c2";
-    protected $tblc3d   = "tbl_client_dfiles_c3";
-    protected $tblc1    = "tbl_client_files_c1";
-    protected $tblc2    = "tbl_client_files_c2";
-    protected $tblc3    = "tbl_client_files_c3";
+    protected $tblc1d   = "tbl_dclient_c1";
+    protected $tblc2d   = "tbl_dclient_c2";
+    protected $tblc3d   = "tbl_dclient_c3";
+    protected $tblc1    = "tbl_client_c1";
+    protected $tblc2    = "tbl_client_c2";
+    protected $tblc3    = "tbl_client_c3";
     protected $tblfi    = "tbl_file_index";
     protected $tblcfi   = "tbl_client_file_index";
     protected $tbltb    = "tbl_client_trial_balance";
@@ -65,6 +65,15 @@ class WorkpaperModel extends  Model {
         $this->time     = date("H:i:s");
         $this->date     = date("Y-m-d");
 
+    }
+
+
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
 
 
@@ -208,8 +217,8 @@ class WorkpaperModel extends  Model {
         $query = $this->db->query("select *
         from {$this->tblcfi} as cfi, {$this->tblfi} as fi
         where cfi.index = fi.fiID
-        and cfi.workpaper = {$wpID}
-        and cfi.clientID = {$cID}");
+        and cfi.wpID = {$wpID}
+        and cfi.cID = {$cID}");
         return $query->getResultArray();
 
     }
@@ -225,14 +234,14 @@ class WorkpaperModel extends  Model {
     */
     public function getc1values($cID,$wpID,$status){
 
-        $query = $this->db->query("select DISTINCT title,c1t.code,c1titleID,c1.remarks,c1.status,
-        (select COUNT(*) from {$this->tblc1} WHERE {$this->tblc1}.c1tID = c1.c1tID and {$this->tblc1}.workpaper = {$wpID} and {$this->tblc1}.clientID = {$cID}) as x , 
-        (select COUNT(*) from {$this->tblc1} WHERE {$this->tblc1}.c1tID = c1.c1tID and {$this->tblc1}.workpaper = {$wpID} and {$this->tblc1}.clientID = {$cID} and `updated_on` IS NOT NULL) as y
+        $query = $this->db->query("select DISTINCT title,c1t.code,c1t.mtID,c1.remarks,c1.status,
+        (select COUNT(*) from {$this->tblc1} WHERE {$this->tblc1}.mtID = c1.mtID and {$this->tblc1}.wpID = {$wpID} and {$this->tblc1}.cID = {$cID}) as x , 
+        (select COUNT(*) from {$this->tblc1} WHERE {$this->tblc1}.mtID = c1.mtID and {$this->tblc1}.wpID = {$wpID} and {$this->tblc1}.cID = {$cID} and `updated_on` IS NOT NULL) as y
         from {$this->tblc1t} as c1t, {$this->tblc1} as c1
-        where c1t.c1titleID = c1.c1tID
-        and c1.clientID = {$cID}
-        and c1.workpaper = {$wpID}
-        order by c1titleID asc");
+        where c1t.mtID = c1.mtID
+        and c1.cID = {$cID}
+        and c1.wpID = {$wpID}
+        order by mtID asc");
         return $query->getResultArray();
 
     }
@@ -273,14 +282,14 @@ class WorkpaperModel extends  Model {
     public function getc2values($cID,$wpID,$status){
 
         
-        $query = $this->db->query("select DISTINCT title,c2t.code,c2titleID,c2.remarks,c2.status,
-        (select COUNT(*) from {$this->tblc2} WHERE {$this->tblc2}.c2tID = c2.c2tID and {$this->tblc2}.workpaper = {$wpID} and {$this->tblc2}.clientID = {$cID}) as x ,
-        (select COUNT(*) from {$this->tblc2} WHERE {$this->tblc2}.c2tID = c2.c2tID and {$this->tblc2}.workpaper = {$wpID} and {$this->tblc2}.clientID = {$cID} and `updated_on` IS NOT NULL) as y
-        from {$this->tblc2t} as c2t, {$this->tblc2} as c2
-        where c2t.c2titleID = c2.c2tID
-        and c2.clientID = {$cID}
-        and c2.workpaper = {$wpID}
-        order by c2titleID asc");
+        $query = $this->db->query("select DISTINCT title,c1t.code,c1t.mtID,c1.remarks,c1.status,
+        (select COUNT(*) from {$this->tblc2} WHERE {$this->tblc2}.mtID = c1.mtID and {$this->tblc2}.wpID = {$wpID} and {$this->tblc2}.cID = {$cID}) as x , 
+        (select COUNT(*) from {$this->tblc2} WHERE {$this->tblc2}.mtID = c1.mtID and {$this->tblc2}.wpID = {$wpID} and {$this->tblc2}.cID = {$cID} and `updated_on` IS NOT NULL) as y
+        from {$this->tblc2t} as c1t, {$this->tblc2} as c1
+        where c1t.mtID = c1.mtID
+        and c1.cID = {$cID}
+        and c1.wpID = {$wpID}
+        order by mtID asc");
         return $query->getResultArray();
 
     }
@@ -297,14 +306,14 @@ class WorkpaperModel extends  Model {
     public function getc3values($cID,$wpID,$status){
 
         
-        $query = $this->db->query("select DISTINCT title,c3t.code,c3titleID,c3.remarks,c3.status,
-        (select COUNT(*) from {$this->tblc3} WHERE {$this->tblc3}.c3tID = c3.c3tID and {$this->tblc3}.workpaper = {$wpID} and {$this->tblc3}.clientID = {$cID}) as x ,
-        (select COUNT(*) from {$this->tblc3} WHERE {$this->tblc3}.c3tID = c3.c3tID and {$this->tblc3}.workpaper = {$wpID} and {$this->tblc3}.clientID = {$cID} and `updated_on` IS NOT NULL) as y
-        from {$this->tblc3t} as c3t, {$this->tblc3} as c3
-        where c3t.c3titleID = c3.c3tID
-        and c3.clientID = {$cID}
-        and c3.workpaper = '{$wpID}'
-        order by c3titleID asc");
+        $query = $this->db->query("select DISTINCT title,c1t.code,c1t.mtID,c1.remarks,c1.status,
+        (select COUNT(*) from {$this->tblc3} WHERE {$this->tblc3}.mtID = c1.mtID and {$this->tblc3}.wpID = {$wpID} and {$this->tblc3}.cID = {$cID}) as x , 
+        (select COUNT(*) from {$this->tblc3} WHERE {$this->tblc3}.mtID = c1.mtID and {$this->tblc3}.wpID = {$wpID} and {$this->tblc3}.cID = {$cID} and `updated_on` IS NOT NULL) as y
+        from {$this->tblc3t} as c1t, {$this->tblc3} as c1
+        where c1t.mtID = c1.mtID
+        and c1.cID = {$cID}
+        and c1.wpID = {$wpID}
+        order by mtID asc");
         return $query->getResultArray();
 
     }
@@ -313,9 +322,9 @@ class WorkpaperModel extends  Model {
     public function getcfsvalues($cID,$wpID){
 
         $where = [
-            'clientID'  => $cID,
-            'workpaper' => $wpID,
-            'index'     => 1,
+            'cID'   => $cID,
+            'wpID'  => $wpID,
+            'index' => 1,
         ];
         $query = $this->db->table($this->tblcfi)->where($where)->get();
         return $query->getRowArray();
@@ -325,8 +334,8 @@ class WorkpaperModel extends  Model {
     public function getindexfiles($cID,$wpID,$index){
 
         $where = [
-            'clientID'  => $cID,
-            'workpaper' => $wpID,
+            'cID'       => $cID,
+            'wpID'      => $wpID,
             'index'     => $index,
         ];
         $query = $this->db->table($this->tblcfi)->where($where)->get();
@@ -371,16 +380,16 @@ class WorkpaperModel extends  Model {
     public function getworkpaperspe($pos,$fID,$uID,$status){
 
         $query = $this->db->query("select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
-        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.workpaper = wp.wpID and tc1.clientID = wp.client) as x1,
-        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.workpaper = wp.wpID and tc2.clientID = wp.client) as x2,
-        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.workpaper = wp.wpID and tc3.clientID = wp.client) as x3,
-        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.workpaper = wp.wpID and tc1.clientID = wp.client and updated_on IS NOT NULL) as y1,
-        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.workpaper = wp.wpID and tc2.clientID = wp.client and updated_on IS NOT NULL) as y2,
-        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.workpaper = wp.wpID and tc3.clientID = wp.client and updated_on IS NOT NULL) as y3,
-        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.workpaper = wp.wpID and cfi.clientID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Reviewing') as ir,
-        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.workpaper = wp.wpID and cfi.clientID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Checking') as ic,
-        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.workpaper = wp.wpID and cfi.clientID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Approved') as ia,
-        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.workpaper = wp.wpID and cfi.clientID = wp.client and cfi.acquired = 'Yes') as ti,
+        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.wpID = wp.wpID and tc1.cID = wp.client) as x1,
+        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.wpID = wp.wpID and tc2.cID = wp.client) as x2,
+        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.wpID = wp.wpID and tc3.cID = wp.client) as x3,
+        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.wpID = wp.wpID and tc1.cID = wp.client and updated_on IS NOT NULL) as y1,
+        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.wpID = wp.wpID and tc2.cID = wp.client and updated_on IS NOT NULL) as y2,
+        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.wpID = wp.wpID and tc3.cID = wp.client and updated_on IS NOT NULL) as y3,
+        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.wpID = wp.wpID and cfi.cID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Reviewing') as ir,
+        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.wpID = wp.wpID and cfi.cID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Checking') as ic,
+        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.wpID = wp.wpID and cfi.cID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Approved') as ia,
+        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.wpID = wp.wpID and cfi.cID = wp.client and cfi.acquired = 'Yes') as ti,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.added_by) as added,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.auditor) as aud,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.supervisor) as sup,
@@ -406,16 +415,16 @@ class WorkpaperModel extends  Model {
     public function getworkpaper($fID){
 
         $query = $this->db->query("select wpID,wp.added_by,wp.client, wp.auditor, wp.supervisor,wp.audmanager, wp.firm,wp.jobdur,wp.financial_year,wp.end_financial_year,wp.status,wp.remarks,wp.added_on,
-        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.workpaper = wp.wpID and tc1.clientID = wp.client) as x1,
-        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.workpaper = wp.wpID and tc2.clientID = wp.client) as x2,
-        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.workpaper = wp.wpID and tc3.clientID = wp.client) as x3,
-        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.workpaper = wp.wpID and tc1.clientID = wp.client and updated_on IS NOT NULL) as y1,
-        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.workpaper = wp.wpID and tc2.clientID = wp.client and updated_on IS NOT NULL) as y2,
-        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.workpaper = wp.wpID and tc3.clientID = wp.client and updated_on IS NOT NULL) as y3,
-        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.workpaper = wp.wpID and cfi.clientID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Reviewing') as ir,
-        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.workpaper = wp.wpID and cfi.clientID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Checking') as ic,
-        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.workpaper = wp.wpID and cfi.clientID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Approved') as ia,
-        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.workpaper = wp.wpID and cfi.clientID = wp.client and cfi.acquired = 'Yes') as ti,
+        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.wpID = wp.wpID and tc1.cID = wp.client) as x1,
+        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.wpID = wp.wpID and tc2.cID = wp.client) as x2,
+        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.wpID = wp.wpID and tc3.cID = wp.client) as x3,
+        (select COUNT(*) from {$this->tblc1} as tc1 where tc1.wpID = wp.wpID and tc1.cID = wp.client and updated_on IS NOT NULL) as y1,
+        (select COUNT(*) from {$this->tblc2} as tc2 where tc2.wpID = wp.wpID and tc2.cID = wp.client and updated_on IS NOT NULL) as y2,
+        (select COUNT(*) from {$this->tblc3} as tc3 where tc3.wpID = wp.wpID and tc3.cID = wp.client and updated_on IS NOT NULL) as y3,
+        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.wpID = wp.wpID and cfi.cID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Reviewing') as ir,
+        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.wpID = wp.wpID and cfi.cID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Checking') as ic,
+        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.wpID = wp.wpID and cfi.cID = wp.client and cfi.acquired = 'Yes' and cfi.status = 'Approved') as ia,
+        (select COUNT(*) from {$this->tblcfi} as cfi where cfi.wpID = wp.wpID and cfi.cID = wp.client and cfi.acquired = 'Yes') as ti,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.added_by) as added,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.auditor) as aud,
         (select CONCAT(name,' - ',type) from {$this->tblu} as tu where tu.userID = wp.supervisor) as sup,
@@ -467,8 +476,8 @@ class WorkpaperModel extends  Model {
         $query = $this->db->query("select DISTINCT cfi.added_on,cfi.added_by,tu.name
         from {$this->tblu} as tu, {$this->tbltb} as cfi
         where tu.userID = cfi.added_by
-        and cfi.workpaper = {$wpID}
-        and cfi.client = {$cID}");
+        and cfi.wpID = {$wpID}
+        and cfi.cID = {$cID}");
         return $query->getRowArray();
 
     }
@@ -486,8 +495,8 @@ class WorkpaperModel extends  Model {
         $query = $this->db->query("select *
         from {$this->tbltb} as cfi, {$this->tblfi} as fi
         where cfi.index = fi.fiID
-        and cfi.workpaper = {$wpID}
-        and cfi.client = {$cID}");
+        and cfi.wpID = {$wpID}
+        and cfi.cID = {$cID}");
         return $query->getResultArray();
 
     }
@@ -522,8 +531,8 @@ class WorkpaperModel extends  Model {
 
         $query = $this->db->query("select * 
         from {$this->tblfi} as fi
-        where fi.fiID >= 6
-        and fi.fiID <= 22");
+        where fi.fiID >= 2
+        and fi.fiID <= 7");
         return $query->getResultArray();
 
     }
@@ -695,49 +704,38 @@ class WorkpaperModel extends  Model {
     public function importtb($req){
 
         $where = [
-            'client'        => $req['client'],
-            'firm'          => $req['firm'],
-            'workpaper'     => $req['workpaper'],
+            'cID'      => $req['cID'],
+            'fID'      => $req['fID'],
+            'wpID'     => $req['wpID'],
         ];
         $this->db->table($this->tbltb)->where($where)->delete();
         foreach($req['account_code'] as $i => $val){
-            $index = $this->crypt->decrypt($req['fileindex'][$i]);
+            $index = $this->decr($req['index'][$i]);
             switch ($index) {
-                case '6'    : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'tangiblescu']; break;
-                case '7'    : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'ppecu']; break;
-                case '8'    : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'investmentscu']; break;
-                case '9'    : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'inventorycu']; break;
-                case '10'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'trade receivablescu']; break;
-                //case '20'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'other receivablescu']; break;
-                case '11'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'bank and cashcu']; break;
-                case '12'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'trade payablescu']; break;
-                //case '21'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'other payablescu']; break;
-                case '15'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'provisionscu']; break;
-                case '18'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'revenuecu']; break;
-                case '19'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'costscu']; break;
-                //case '17'   : $refaut = ['clientID' => $req['client'], 'firmID' => $req['firm'], 'code' => 'AC10', 'type' => 'payrollcu']; break;
+                case '2'    : $refaut = ['cID' => $req['cID'], 'fID' => $req['fID'], 'code' => 'AC10', 'type' => 'costscu']; break;
+                case '3'    : $refaut = ['cID' => $req['cID'], 'fID' => $req['fID'], 'code' => 'AC10', 'type' => 'ppecu']; break;
+                case '4'    : $refaut = ['cID' => $req['cID'], 'fID' => $req['fID'], 'code' => 'AC10', 'type' => 'inventorycu']; break;
+                case '5'    : $refaut = ['cID' => $req['cID'], 'fID' => $req['fID'], 'code' => 'AC10', 'type' => 'trade receivablescu']; break;
+                case '6'    : $refaut = ['cID' => $req['cID'], 'fID' => $req['fID'], 'code' => 'AC10', 'type' => 'bank and cashcu']; break;
+                case '7'    : $refaut = ['cID' => $req['cID'], 'fID' => $req['fID'], 'code' => 'AC10', 'type' => 'revenuecu']; break;
             }
-            $balcu = $this->db->table($this->tblc1)->where($refaut)->get()->getRowArray();
+            $balcu = $this->db->table($this->tblc2)->where($refaut)->get()->getRowArray();
             if(!empty($balcu)){
-                // if($balcu['question'] != 0){
-                //     $cal = ['question' => $req['debit'][$i] - $req['credit'][$i]];
-                // }else{
-                    $cal = ['question' => $balcu['question'] + ($req['debit'][$i] - $req['credit'][$i])];
-                //}
-                $this->db->table($this->tblc1)->where($refaut)->update($cal);
+                $cal = ['field1' => $balcu['field1'] + $req['ytd'][$i]];
+                $this->db->table($this->tblc2)->where($refaut)->update($cal);
             }
             
-            $this->db->table($this->tblcfi)->where(array('clientID' => $req['client'], 'firm' => $req['firm'], 'workpaper' => $req['workpaper'], 'index' => $index))->update(array('acquired' => 'Yes'));
+            $this->db->table($this->tblcfi)->where(array('cID' => $req['cID'], 'fID' => $req['fID'], 'wpID' => $req['wpID'], 'index' => $index))->update(array('acquired' => 'Yes'));
             $data = [
-                'client'        => $req['client'],
-                'firm'          => $req['firm'],
-                'workpaper'     => $req['workpaper'],
+                'cID'           => $req['cID'],
+                'fID'           => $req['fID'],
+                'wpID'          => $req['wpID'],
                 'index'         => $index,
                 'account_code'  => $req['account_code'][$i],
                 'account'       => $req['account'][$i],
                 'account_type'  => $req['account_type'][$i],
-                'debit'         => $req['debit'][$i],
-                'credit'        => $req['credit'][$i],
+                'ytd'           => $req['ytd'][$i],
+                'py'            => $req['py'][$i],
                 'added_on'      => $this->date.' '.$this->time,
                 'added_by'      => $req['uID'],
             ];
@@ -836,9 +834,9 @@ class WorkpaperModel extends  Model {
             $index = $this->db->table($this->tblfi)->get();
             foreach($index->getResultArray() as $i){
                 $ind = [
-                    'clientID'        => $req['client'],
-                    'firm'          => $req['firm'],
-                    'workpaper'     => $wpid,
+                    'cID'           => $req['client'],
+                    'fID'           => $req['firm'],
+                    'wpID'          => $wpid,
                     'index'         => $i['fiID'],
                     'acquired'      => 'No',
                     'added_on'      => $this->date.' '.$this->time,
@@ -847,114 +845,94 @@ class WorkpaperModel extends  Model {
                 $this->db->table($this->tblcfi)->insert($ind);
             }
             $wherec1 = [
-                'firmID'    => $req['firm'],
-                'clientID'  => $req['client'],
+                'fID'   => $req['firm'],
+                'cID'   => $req['client'],
             ];
             $c1df = $this->db->table($this->tblc1d)->where($wherec1)->get();
             if($c1df->getNumRows() >= 1){
                 foreach($c1df->getResultArray() as $r){
                     $datac1 = [
-                        'firmID'            => $req['firm'],
-                        'workpaper'         => $wpid,
-                        'clientID'          => $req['client'],
-                        'c1tID'             => $r['c1tID'],
-                        'code'              => $r['code'],
-                        'type'              => $r['type'],
-                        'question'          => $r['question'],
-                        'less'              => $r['less'],
-                        'name'              => $r['name'],
-                        'reason'            => $r['reason'],
-                        'balance'           => $r['balance'],
-                        'planning'          => $r['planning'],
-                        'finalization'      => $r['finalization'],
-                        'reference'         => $r['reference'],
-                        'reliance'          => $r['reliance'],
-                        'finstate'          => $r['finstate'],
-                        'desc'              => $r['desc'],
-                        'controleffect'     => $r['controleffect'],
-                        'implemented'       => $r['implemented'],
-                        'assessed'          => $r['assessed'],
-                        'yesno'             => $r['yesno'],
-                        'comment'           => $r['comment'],
-                        'corptax'           => $r['corptax'],
-                        'statutory'         => $r['statutory'],
-                        'accountancy'       => $r['accountancy'],
-                        'other'             => $r['other'],
-                        'totalcu'           => $r['totalcu'],
-                        'status'            => 'Preparing',
-                        'remarks'           => $r['remarks'],
-                        'added_on'          => $this->date.' '.$this->time
+                        'wpID'      => $wpid,
+                        'fID'       => $req['firm'],
+                        'cID'       => $req['client'],
+                        'mtID'      => $r['mtID'],
+                        'code'      => $r['code'],
+                        'type'      => $r['type'],
+                        'field1'    => $r['field1'],
+                        'field2'    => $r['field2'],
+                        'field3'    => $r['field3'],
+                        'field4'    => $r['field4'],
+                        'field5'    => $r['field5'],
+                        'field6'    => $r['field6'],
+                        'field7'    => $r['field7'],
+                        'field8'    => $r['field8'],
+                        'field9'    => $r['field9'],
+                        'field10'   => $r['field10'],
+                        'status'    => 'Preparing',
+                        'remarks'   => $r['remarks'],
+                        'added_on'  => $this->date.' '.$this->time
                     ];
                     $this->db->table($this->tblc1)->insert($datac1);
                 }
             }
             $wherec2 = [
-                'firmID'    => $req['firm'],
-                'clientID'  => $req['client'],
+                'fID'   => $req['firm'],
+                'cID'   => $req['client'],
             ];
             $c2df = $this->db->table($this->tblc2d)->where($wherec2)->get();
             if($c2df->getNumRows() >= 1){
                 foreach($c2df->getResultArray() as $r){
                     $datac2 = [
-                        'firmID'            => $req['firm'],
-                        'workpaper'         => $wpid,
-                        'clientID'          => $req['client'],
-                        'c2tID'             => $r['c2tID'],
-                        'code'              => $r['code'],
-                        'type'              => $r['type'],
-                        'question'          => $r['question'],
-                        'extent'            => $r['extent'],
-                        'reference'         => $r['reference'],
-                        'initials'          => $r['initials'],
-                        'desc'              => $r['desc'],
-                        'controleffect'     => $r['controleffect'],
-                        'assessed'          => $r['assessed'],
-                        'yesno'             => $r['yesno'],
-                        'comment'           => $r['comment'],
-                        'corptax'           => $r['corptax'],
-                        'statutory'         => $r['statutory'],
-                        'accountancy'       => $r['accountancy'],
-                        'other'             => $r['other'],
-                        'totalcu'           => $r['totalcu'],
-                        'status'            => 'Preparing',
-                        'remarks'           => $r['remarks'],
-                        'added_on'          => $this->date.' '.$this->time
+                        'wpID'      => $wpid,
+                        'fID'       => $req['firm'],
+                        'cID'       => $req['client'],
+                        'mtID'      => $r['mtID'],
+                        'code'      => $r['code'],
+                        'type'      => $r['type'],
+                        'field1'    => $r['field1'],
+                        'field2'    => $r['field2'],
+                        'field3'    => $r['field3'],
+                        'field4'    => $r['field4'],
+                        'field5'    => $r['field5'],
+                        'field6'    => $r['field6'],
+                        'field7'    => $r['field7'],
+                        'field8'    => $r['field8'],
+                        'field9'    => $r['field9'],
+                        'field10'   => $r['field10'],
+                        'status'    => 'Preparing',
+                        'remarks'   => $r['remarks'],
+                        'added_on'  => $this->date.' '.$this->time
                     ];
                     $this->db->table($this->tblc2)->insert($datac2);
                 }
             }
             $wherec3 = [
-                'firmID'    => $req['firm'],
-                'clientID'  => $req['client'],
+                'fID'   => $req['firm'],
+                'cID'   => $req['client'],
             ];
             $c3df = $this->db->table($this->tblc3d)->where($wherec3)->get();
             if($c3df->getNumRows() >= 1){
                 foreach($c3df->getResultArray() as $r){
                     $datac3 = [
-                        'firmID'            => $req['firm'],
-                        'workpaper'         => $wpid,
-                        'clientID'          => $req['client'],
-                        'c3tID'             => $r['c3tID'],
-                        'code'              => $r['code'],
-                        'type'              => $r['type'],
-                        'question'          => $r['question'],
-                        'extent'            => $r['extent'],
-                        'reference'         => $r['reference'],
-                        'initials'          => $r['initials'],
-                        'drps'              => $r['drps'],
-                        'crps'              => $r['crps'],
-                        'drfp'              => $r['drfp'],
-                        'crfp'              => $r['crfp'],
-                        'issue'             => $r['issue'],
-                        'recommendation'    => $r['recommendation'],
-                        'result'            => $r['result'],
-                        'yesno'             => $r['yesno'],
-                        'comment'           => $r['comment'],
-                        'other'             => $r['other'],
-                        'totalcu'           => $r['totalcu'],
-                        'status'            => 'Preparing',
-                        'remarks'           => $r['remarks'],
-                        'added_on'          => $this->date.' '.$this->time
+                        'wpID'      => $wpid,
+                        'fID'       => $req['firm'],
+                        'cID'       => $req['client'],
+                        'mtID'      => $r['mtID'],
+                        'code'      => $r['code'],
+                        'type'      => $r['type'],
+                        'field1'    => $r['field1'],
+                        'field2'    => $r['field2'],
+                        'field3'    => $r['field3'],
+                        'field4'    => $r['field4'],
+                        'field5'    => $r['field5'],
+                        'field6'    => $r['field6'],
+                        'field7'    => $r['field7'],
+                        'field8'    => $r['field8'],
+                        'field9'    => $r['field9'],
+                        'field10'   => $r['field10'],
+                        'status'    => 'Preparing',
+                        'remarks'   => $r['remarks'],
+                        'added_on'  => $this->date.' '.$this->time
                     ];
                     $this->db->table($this->tblc3)->insert($datac3);
                 }

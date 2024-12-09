@@ -36,6 +36,15 @@ class WorkpaperController extends BaseController{
     }
 
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
+
     
 
 
@@ -259,8 +268,8 @@ class WorkpaperController extends BaseController{
     */
     public function importtb($cID,$wpID,$name){
 
-        $dcID               = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $dwpID              = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
+        $dcID               = $this->decr($cID);
+        $dwpID              = $this->decr($wpID);
         $fID                = $this->crypt->decrypt(session()->get('firmID'));
         $uID                = $this->crypt->decrypt(session()->get('userID'));
         $validationRules    = [
@@ -271,15 +280,15 @@ class WorkpaperController extends BaseController{
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
         }
         $req = [
-            'client'        => $dcID,
-            'firm'          => $fID,
-            'workpaper'     => $dwpID,
-            'fileindex'     => $this->request->getPost('fileindex'),
+            'cID'           => $dcID,
+            'fID'           => $fID,
+            'wpID'          => $dwpID,
+            'index'         => $this->request->getPost('fileindex'),
             'account_code'  => $this->request->getPost('account_code'),
             'account'       => $this->request->getPost('account'),
             'account_type'  => $this->request->getPost('account_type'),
-            'debit'         => $this->request->getPost('debit'),
-            'credit'        => $this->request->getPost('credit'),
+            'ytd'           => $this->request->getPost('ytd'),
+            'py'            => $this->request->getPost('py'),
             'uID'           => $uID,
         ];
         $res = $this->wpmodel->importtb($req);

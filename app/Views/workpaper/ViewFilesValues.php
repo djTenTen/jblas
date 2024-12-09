@@ -1,5 +1,8 @@
 <?php  
-    $crypt = \Config\Services::encrypter();
+    function encr($ecr){
+        $crypt = \Config\Services::encrypter();
+        return str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ecr));
+    }
 ?>
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
@@ -103,125 +106,142 @@
                 <!-- Wizard navigation-->
                 <div class="nav nav-pills nav-justified flex-column flex-xl-row" id="cardTab" role="tablist">
                     <!-- Wizard navigation item 1-->
-                    <a class="nav-item nav-link active" id="wizard1-tab" href="#wizard1" data-bs-toggle="tab" role="tab" aria-controls="wizard1" aria-selected="true">
+                    <a class="nav-item nav-link active" id="wizard5-tab" href="#wizard5" data-bs-toggle="tab" role="tab" aria-controls="wizard4" aria-selected="true">
                         <div class="wizard-step-text">
-                            <div class="wizard-step-text-name">Workpaper</div>
+                            <div class="wizard-step-text-name">Trial Balance</div>
                         </div>
                     </a>
                     <!-- Wizard navigation item 2-->
                     <a class="nav-item nav-link" id="wizard2-tab" href="#wizard2" data-bs-toggle="tab" role="tab" aria-controls="wizard2" aria-selected="true">
                         <div class="wizard-step-text">
-                            <div class="wizard-step-text-name">Planning</div>
+                            <div class="wizard-step-text-name">Pre-Engagement</div>
                         </div>
                     </a>
+
                     <!-- Wizard navigation item 3-->
                     <a class="nav-item nav-link" id="wizard3-tab" href="#wizard3" data-bs-toggle="tab" role="tab" aria-controls="wizard3" aria-selected="true">
                         <div class="wizard-step-text">
-                            <div class="wizard-step-text-name">Detailed Procedure</div>
+                            <div class="wizard-step-text-name">Audit Planning</div>
                         </div>
                     </a>
+
+                    <a class="nav-item nav-link" id="wizard1-tab" href="#wizard1" data-bs-toggle="tab" role="tab" aria-controls="wizard1" aria-selected="true">
+                        <div class="wizard-step-text">
+                            <div class="wizard-step-text-name">Workpaper</div>
+                        </div>
+                    </a>
+                    
+                    
                     <!-- Wizard navigation item 4-->
                     <a class="nav-item nav-link" id="wizard4-tab" href="#wizard4" data-bs-toggle="tab" role="tab" aria-controls="wizard4" aria-selected="true">
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name">Conclusion</div>
                         </div>
                     </a>
-                    <a class="nav-item nav-link" id="wizard5-tab" href="#wizard5" data-bs-toggle="tab" role="tab" aria-controls="wizard4" aria-selected="true">
-                        <div class="wizard-step-text">
-                            <div class="wizard-step-text-name">Import Trial Balance</div>
-                        </div>
-                    </a>
+                    
                 </div>
             </div>
             <div class="card-body">
                 <div class="tab-content" id="cardTabContent">
                     <!-- Wizard tab pane item 1-->
-                    <div class="tab-pane py-1 fade show active animated--fade-in-up" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
-                        <div class="row justify-content-center">
-                            <h3>Workpaper</h3>
-                            <table class="table table-hover table-sm" >
-                                <thead>
+                    <div class="tab-pane py-1 fade show active animated--fade-in-up" id="wizard5" role="tabpanel" aria-labelledby="wizard5-tab">
+
+                        <?php if(!empty($cfi)){?>
+                            <h5>Latest upload:</h5>
+                            <p>Added on: <b><?= date('F d, Y h:i A', strtotime($cfi['added_on']))?></b></p>
+                            <p>Uploaded by: <b><?= $cfi['name']?></b></p>
+                            <br><br>
+                        <?php }?>
+
+
+                        <div class="row">
+                            <div class="col-3">
+                                <h3>Import Trial Balance</h3>
+                                <input type="file" name="" id="excelInput" accept=".xlsx, .xls" class="form form-control">
+                            </div>
+                            <div class="col-7">
+                            <?php if(!empty($cfi)){?>
+                                <div class="alert alert-warning alert-icon" role="alert">
+                                    <div class="alert-icon-content">
+                                        <b>Note:</b> If you imported a file again, it will overwrite your previous data, all old data will be erased.
+                                    </div>
+                                </div> 
+                            <?php }?>
+                            </div>
+                            <div class="col-2">
+                                <a href="<?= base_url('auditsystem/wp/downloadexcel/trialbalanceformat.xlsx'); ?>" class="btn btn-primary">Download xls format:</a>
+                            </div>
+                        </div>
+                        <br>
+                        <form action="<?= base_url()?>auditsystem/wp/importtb/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                            <table class="table table-hover table-bordered table-sm">
+                                <thead id="tbhead">
                                     <tr>
-                                        <th style="width: 5%;" class="text-center"></th>
-                                        <th style="width: 10%;" class="text-center">Section</th>
-                                        <th style="width: 45%;">Desc</th>
-                                        <th style="width: 15%;" class="text-center">Status</th>
-                                        <th style="width: 10%;" class="text-center">Progress</th>
-                                        <th style="width: 15%;" class="text-center">Actions</th>
+                                        <th>Account Code</th>
+                                        <th>Account</th>
+                                        <th>Account Type</th>
+                                        <th>Year to Date</th>
+                                        <th>Past Year</th>
+                                        <th>Index</th>
                                     </tr>
                                 </thead>
-                                <tbody class="tbody">
-                                    <?php foreach($fi as $r){
-                                        $pcnt = 0;
-                                        switch ($r['status']) {
-                                            case 'Preparing': $pcnt = 0; break;
-                                            case 'Reviewing': $pcnt = 50; break;
-                                            case 'Checking' : $pcnt = 75; break;
-                                            case 'Approved' : $pcnt = 100; break;
-                                        }
+                                <tbody id="tbbody">
+                                    <?php if(!empty($tb)){?>
+                                        <?php 
+                                            $ytd = 0;
+                                            $py = 0;
+                                            foreach($tb as $r){
+                                                $ytd += $r['ytd'];
+                                                $py += $r['py'];
                                         ?>
+                                            <tr>
+                                                <td><?= $r['account_code']?></td>
+                                                <td><?= $r['account']?></td>
+                                                <td><?= $r['account_type']?></td>
+                                                <td><?= $r['ytd']?></td>
+                                                <td><?= $r['py']?></td>
+                                                <td><?= $r['desc']?></td>
+                                            </tr>
+                                        <?php }?>
                                         <tr>
-                                            <td class="text-center"><input class="form-check-input ficheck" id="add" type="checkbox" name="c1[]" value="<?= $crypt->encrypt($r['cfiID'])?>" data-url="<?= base_url()?>auditsystem/wp/updateindex/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>" <?php if($r['acquired'] == 'Yes'){echo 'checked';} ?>/></td>
-                                            <td class="text-center"><?= $r['section']?></td>
-                                            <td><?= $r['desc']?></td>
-                                            <td class="text-center">
-                                                <?php if($r['acquired'] == 'Yes'){?>
-                                                    <?php if($r['status'] == 'Preparing'){?>
-                                                        <span class="badge bg-danger"><?= $r['status']?></span>
-                                                    <?php }elseif($r['status'] == 'Reviewing'){?>
-                                                        <span class="badge bg-primary"><?= $r['status']?></span>
-                                                    <?php }elseif($r['status'] == 'Checking'){?>
-                                                        <span class="badge bg-secondary"><?= $r['status']?></span>
-                                                    <?php }elseif($r['status'] == 'Approved'){?>
-                                                        <span class="badge bg-success"><?= $r['status']?></span>
-                                                    <?php }?>
-                                                <?php }?>
-                                            </td>
+                                            <td colspan="3" class="text-end"><b>Total</b></td>
+                                            <td><b>₱ <?= number_format($ytd,2)?></b></td>
+                                            <td><b>₱ <?= number_format($py,2)?></b></td>
                                             <td>
-                                                <?php if($r['acquired'] == 'Yes'){?>
-                                                    <div class="progress mt-1">
-                                                        <span class="progress-bar bg-success" style="width:<?= $pcnt?>%"><?= $pcnt?>%</span>
-                                                    </div>
-                                                <?php }?>
+                                                <?php if(number_format($ytd,2) != 0){?>
+                                                    <div class="alert alert-danger alert-icon" role="alert">
+                                                        <div class="alert-icon-content">
+                                                            <h6 class="alert-heading">Balance Out!</h6>
+                                                            Please check your Year to Date trial balance.
+                                                        </div>
+                                                    </div>     
+                                                <?php }?> 
+                                                <?php if(number_format($py,2) != 0){?>
+                                                    <div class="alert alert-danger alert-icon" role="alert">
+                                                        <div class="alert-icon-content">
+                                                            <h6 class="alert-heading">Balance Out!</h6>
+                                                            Please check your Past Year trial balance.
+                                                        </div>
+                                                    </div>     
+                                                <?php }?> 
                                             </td>
-                                            <td class="text-center">
-                                                <?php if($r['remarks'] != 'Not Submitted' and $r['remarks'] != ''){?>
-                                                    <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" data-pdf="<?= base_url()?>uploads/pdf/<?= $r['file']?>" title="View Remarks"><i class="fas fa-flag"></i></button>
-                                                <?php }?>
-                                                <?php if($type == 'Reviewer' and $r['status'] == 'Reviewing'){?>
-                                                    <a href="<?= base_url()?>auditsystem/wp/index/setvalues/<?= $r['section']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['index']))?>/<?= $r['desc']?>/<?= $name?>" class="btn btn-icon btn-sm btn-primary cfi" target="_blank" title="Set Values" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?> ><i class="fas fa-tools"></i></a>
-                                                    <button class="btn btn-warning btn-icon btn-sm sendtoauditor sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/index/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-undo"></i></button>
-                                                    <button class="btn btn-success btn-icon btn-sm sendtomanager sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/index/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
-                                                <?php }?>
-                                                <?php if($type == 'Preparer' and $r['status'] == 'Preparing'){?>
-                                                    <a href="<?= base_url()?>auditsystem/wp/index/setvalues/<?= $r['section']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['index']))?>/<?= $r['desc']?>/<?= $name?>" class="btn btn-icon btn-sm btn-primary cfi" target="_blank" title="Set Values" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?> ><i class="fas fa-tools"></i></a>
-                                                    <button class="btn btn-success btn-icon btn-sm sendtoreviewer sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/index/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
-                                                <?php }?>
-                                                <?php if($type == 'Auditing Firm' or $type == 'Audit Manager' or $type == 'Admin'){?>
-                                                    <a href="<?= base_url()?>auditsystem/wp/index/setvalues/<?= $r['section']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['index']))?>/<?= $r['desc']?>/<?= $name?>" class="btn btn-icon btn-sm btn-primary cfi" target="_blank" title="Set Values" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?> ><i class="fas fa-tools"></i></a>
-                                                    <?php if($r['status'] == 'Checking'){?>
-                                                        <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/index/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to back to Reviewer" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-undo"></i></button>
-                                                        <button class="btn btn-success btn-icon btn-sm approve sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprove/index/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-thumbs-up"></i></button>
-                                                    <?php }?>
-                                                    <?php if($r['status'] == 'Preparing'){?>
-                                                        <button class="btn btn-success btn-icon btn-sm sendtoreviewer sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/index/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
-                                                    <?php }?>
-                                                    <?php if($r['status'] == 'Reviewing'){?>
-                                                        <button class="btn btn-warning btn-icon btn-sm sendtoauditor sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/index/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-undo"></i></button>
-                                                        <button class="btn btn-success btn-icon btn-sm sendtomanager sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/index/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['cfiID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
-                                                    <?php }?>
-                                                <?php }?>
-                                            </td>
+                                        </tr>
+                                    <?php }else{?>
+                                        <tr class="table-danger">
+                                            <td colspan="7" class="text-center"><h3>No Data Yet</h3></td>
                                         </tr>
                                     <?php }?>
                                 </tbody>
                             </table>
-                        </div>
+
+                            <button type="submit"  id="imp" class="btn btn-primary float-end">Import</button>
+                        </form>
                     </div>
+
                     <!-- Wizard tab pane item 2-->
                     <div class="tab-pane py-1 fade animated--fade-in-up" id="wizard2" role="tabpanel" aria-labelledby="wizard2-tab">
                         <div class="row justify-content-center">
-                            <h3>HAT Chapter 1 : Planing</h3>
+                            <h3>Module 2 : Pre-Engagement Activities</h3>
                             <table class="table table-hover table-sm" >
                                 <thead>
                                     <tr>
@@ -270,48 +290,48 @@
                                                 
                                                 <?php if($type == 'Reviewer' and $r['status'] == 'Reviewing'){?>
                                                     <?php if($r['code'] == 'AC10'){?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>-Tangibles/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>-Tangibles/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }else{?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }?>
-                                                    <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/c1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
-                                                    <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/c1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
+                                                    <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/c1/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
+                                                    <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/c1/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
                                                 <?php }?>
                                                 <?php if($type == 'Preparer' and $r['status'] == 'Preparing'){?>
                                                     <?php if($r['code'] == 'AC10'){?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>-Tangibles/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>-Tangibles/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }else{?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }?>
                                                     <?php if($p == 70){?>
-                                                        <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                                        <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c1/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                                     <?php }?>
                                                 <?php }?>
                                                 <?php if($type == 'Auditing Firm' or $type == 'Audit Manager' or $type == 'Admin'){?>
                                                     <?php if($r['code'] == 'AC10'){?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>-Tangibles/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>-Tangibles/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }else{?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter1/setvalues/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }?>
                                                     <?php if($r['status'] == 'Checking'){?>
-                                                        <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to back to Reviewer"><i class="fas fa-undo"></i></button>
-                                                        <button class="btn btn-success btn-icon btn-sm approve" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprove/c1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
+                                                        <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c1/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to back to Reviewer"><i class="fas fa-undo"></i></button>
+                                                        <button class="btn btn-success btn-icon btn-sm approve" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprove/c1/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
                                                     <?php }?>
                                                     <?php if($r['status'] == 'Preparing'){?>
                                                         <?php if($p == 70){?>
-                                                            <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                                            <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c1/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                                         <?php }?>
                                                     <?php }?>
                                                     <?php if($r['status'] == 'Reviewing'){?>
-                                                        <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/c1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
-                                                        <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/c1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
+                                                        <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/c1/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
+                                                        <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/c1/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
                                                     <?php }?>
-                                                    <button class="btn btn-danger btn-icon btn-sm todelete" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/delete/c1/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#todelete" title="Delete File"><i class="fas fa-trash"></i></button>
+                                                    <button class="btn btn-danger btn-icon btn-sm todelete" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/delete/c1/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#todelete" title="Delete File"><i class="fas fa-trash"></i></button>
                                                 <?php }?>
                                                 <?php if($r['code'] == 'AC10'){?>
-                                                    <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Summary/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                                    <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>-Summary/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
                                                 <?php }else{?>
-                                                    <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c1titleID']))?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                                    <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
                                                 <?php }?>
 
                                             </td>
@@ -321,10 +341,12 @@
                             </table>
                         </div>
                     </div>
+
+
                     <!-- Wizard tab pane item 3-->
                     <div class="tab-pane py-1 fade animated--fade-in-up" id="wizard3" role="tabpanel" aria-labelledby="wizard3-tab">
                         <div class="row justify-content-center">
-                            <h3>HAT Chapter 2: Detailed Procedure</h3>
+                            <h3>Module 3 : Audit Planning</h3>
                             <table class="table table-hover table-sm" >
                                 <thead>
                                     <tr>
@@ -371,35 +393,35 @@
                                                 <?php }?>
 
                                                 <?php if($type == 'Reviewer' and $r['status'] == 'Reviewing'){?>
-                                                    <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter2/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
-                                                    <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/c2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
-                                                    <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/c2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
+                                                    <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter2/setvalues/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                    <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/c2/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
+                                                    <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/c2/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
                                                 <?php }?>
                                                 <?php if($type == 'Preparer' and $r['status'] == 'Preparing'){?>
-                                                    <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter2/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                    <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter2/setvalues/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php if($p == 70){?>
-                                                        <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                                        <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c2/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                                     <?php }?>
                                                 <?php }?>
                                                 <?php if($type == 'Auditing Firm' or $type == 'Audit Manager' or $type == 'Admin'){?>
-                                                    <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter2/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                    <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter2/setvalues/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php if($r['status'] == 'Checking'){?>
-                                                        <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to back to Reviewer"><i class="fas fa-undo"></i></button>
-                                                        <button class="btn btn-success btn-icon btn-sm approve" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprove/c2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
+                                                        <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c2/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to back to Reviewer"><i class="fas fa-undo"></i></button>
+                                                        <button class="btn btn-success btn-icon btn-sm approve" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprove/c2/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
                                                     <?php }?>
                                                     <?php if($r['status'] == 'Preparing'){?>
                                                         <?php if($p == 70){?>
-                                                            <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                                            <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c2/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                                         <?php }?>
                                                     <?php }?>
                                                     <?php if($r['status'] == 'Reviewing'){?>
-                                                        <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/c2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
-                                                        <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/c2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
+                                                        <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/c2/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
+                                                        <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/c2/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
                                                     <?php }?>
-                                                    <button class="btn btn-danger btn-icon btn-sm todelete" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/delete/c2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#todelete" title="Delete File"><i class="fas fa-trash"></i></button>
+                                                    <button class="btn btn-danger btn-icon btn-sm todelete" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/delete/c2/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#todelete" title="Delete File"><i class="fas fa-trash"></i></button>
                                                 <?php }?>
 
-                                                <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc2/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c2titleID']))?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                                <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc2/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
 
                                             </td>
                                         </tr>
@@ -408,10 +430,96 @@
                             </table>
                         </div>
                     </div>
+
+                    
+                    <div class="tab-pane py-1 fade animated--fade-in-up" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
+                        <div class="row justify-content-center">
+                            <h3>Module 4 - 8 : Workpaper</h3>
+                            <table class="table table-hover table-sm" >
+                                <thead>
+                                    <tr>
+                                        <th style="width: 5%;" class="text-center"></th>
+                                        <th style="width: 10%;" class="text-center">Section</th>
+                                        <th style="width: 45%;">Desc</th>
+                                        <th style="width: 15%;" class="text-center">Status</th>
+                                        <th style="width: 10%;" class="text-center">Progress</th>
+                                        <th style="width: 15%;" class="text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="tbody">
+                                    <?php foreach($fi as $r){
+                                        $pcnt = 0;
+                                        switch ($r['status']) {
+                                            case 'Preparing': $pcnt = 0; break;
+                                            case 'Reviewing': $pcnt = 50; break;
+                                            case 'Checking' : $pcnt = 75; break;
+                                            case 'Approved' : $pcnt = 100; break;
+                                        }
+                                        ?>
+                                        <tr>
+                                            <td class="text-center"><input class="form-check-input ficheck" id="add" type="checkbox" name="c1[]" value="<?= encr($r['cfiID'])?>" data-url="<?= base_url()?>auditsystem/wp/updateindex/<?=encr($r['cfiID'])?>" <?php if($r['acquired'] == 'Yes'){echo 'checked';} ?>/></td>
+                                            <td class="text-center"><?= $r['section']?></td>
+                                            <td><?= $r['desc']?></td>
+                                            <td class="text-center">
+                                                <?php if($r['acquired'] == 'Yes'){?>
+                                                    <?php if($r['status'] == 'Preparing'){?>
+                                                        <span class="badge bg-danger"><?= $r['status']?></span>
+                                                    <?php }elseif($r['status'] == 'Reviewing'){?>
+                                                        <span class="badge bg-primary"><?= $r['status']?></span>
+                                                    <?php }elseif($r['status'] == 'Checking'){?>
+                                                        <span class="badge bg-secondary"><?= $r['status']?></span>
+                                                    <?php }elseif($r['status'] == 'Approved'){?>
+                                                        <span class="badge bg-success"><?= $r['status']?></span>
+                                                    <?php }?>
+                                                <?php }?>
+                                            </td>
+                                            <td>
+                                                <?php if($r['acquired'] == 'Yes'){?>
+                                                    <div class="progress mt-1">
+                                                        <span class="progress-bar bg-success" style="width:<?= $pcnt?>%"><?= $pcnt?>%</span>
+                                                    </div>
+                                                <?php }?>
+                                            </td>
+                                            <td class="text-center">
+                                                <?php if($r['remarks'] != 'Not Submitted' and $r['remarks'] != ''){?>
+                                                    <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" data-pdf="<?= base_url()?>uploads/pdf/<?= $r['file']?>" title="View Remarks"><i class="fas fa-flag"></i></button>
+                                                <?php }?>
+                                                <?php if($type == 'Reviewer' and $r['status'] == 'Reviewing'){?>
+                                                    <a href="<?= base_url()?>auditsystem/wp/index/setvalues/<?= $r['section']?>/<?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?=encr($r['index'])?>/<?= $r['desc']?>/<?= $name?>" class="btn btn-icon btn-sm btn-primary cfi" target="_blank" title="Set Values" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?> ><i class="fas fa-tools"></i></a>
+                                                    <button class="btn btn-warning btn-icon btn-sm sendtoauditor sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-undo"></i></button>
+                                                    <button class="btn btn-success btn-icon btn-sm sendtomanager sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
+                                                <?php }?>
+                                                <?php if($type == 'Preparer' and $r['status'] == 'Preparing'){?>
+                                                    <a href="<?= base_url()?>auditsystem/wp/index/setvalues/<?= $r['section']?>/<?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?=encr($r['index'])?>/<?= $r['desc']?>/<?= $name?>" class="btn btn-icon btn-sm btn-primary cfi" target="_blank" title="Set Values" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?> ><i class="fas fa-tools"></i></a>
+                                                    <button class="btn btn-success btn-icon btn-sm sendtoreviewer sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
+                                                <?php }?>
+                                                <?php if($type == 'Auditing Firm' or $type == 'Audit Manager' or $type == 'Admin'){?>
+                                                    <a href="<?= base_url()?>auditsystem/wp/index/setvalues/<?= $r['section']?>/<?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?=encr($r['index'])?>/<?= $r['desc']?>/<?= $name?>" class="btn btn-icon btn-sm btn-primary cfi" target="_blank" title="Set Values" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?> ><i class="fas fa-tools"></i></a>
+                                                    <?php if($r['status'] == 'Checking'){?>
+                                                        <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to back to Reviewer" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-undo"></i></button>
+                                                        <button class="btn btn-success btn-icon btn-sm approve sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprove/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-thumbs-up"></i></button>
+                                                    <?php }?>
+                                                    <?php if($r['status'] == 'Preparing'){?>
+                                                        <button class="btn btn-success btn-icon btn-sm sendtoreviewer sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
+                                                    <?php }?>
+                                                    <?php if($r['status'] == 'Reviewing'){?>
+                                                        <button class="btn btn-warning btn-icon btn-sm sendtoauditor sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-undo"></i></button>
+                                                        <button class="btn btn-success btn-icon btn-sm sendtomanager sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
+                                                    <?php }?>
+                                                <?php }?>
+                                            </td>
+                                        </tr>
+                                    <?php }?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    
                     <!-- Wizard tab pane item 4-->
                     <div class="tab-pane py-1 fade animated--fade-in-up" id="wizard4" role="tabpanel" aria-labelledby="wizard4-tab">
                         <div class="row justify-content-center">
-                        <h3>HAT Chapter 3 : Conclusion</h3>
+                        <h3>Module 9 : Concluding the Audit</h3>
                             <table class="table table-hover table-sm" >
                                 <thead>
                                     <tr>
@@ -460,55 +568,55 @@
 
                                                 <?php if($type == 'Reviewer' and $r['status'] == 'Reviewing'){?>
                                                     <?php if($r['code'] == '3.10 Aa11'){?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>-un/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>-un/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }elseif($r['code'] == '3.15 Ab4'){?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>-checklist/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>-checklist/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }else{?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }?>
-                                                    <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/c3/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
-                                                    <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/c3/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
+                                                    <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/c3/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
+                                                    <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/c3/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
                                                 <?php }?>
                                                 <?php if($type == 'Preparer' and $r['status'] == 'Preparing'){?>
                                                     <?php if($r['code'] == '3.10 Aa11'){?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>-un/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>-un/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }elseif($r['code'] == '3.15 Ab4'){?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>-checklist/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>-checklist/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }else{?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }?>
                                                     <?php if($p == 70){?>
-                                                        <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c3/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                                        <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c3/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                                     <?php }?>
                                                 <?php }?>
                                                 <?php if($type == 'Auditing Firm' or $type == 'Audit Manager' or $type == 'Admin'){?>
                                                     <?php if($r['code'] == '3.10 Aa11'){?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>-un/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>-un/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }elseif($r['code'] == '3.15 Ab4'){?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>-checklist/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>-checklist/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }else{?>
-                                                        <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
+                                                        <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }?>
                                                     <?php if($r['status'] == 'Checking'){?>
-                                                        <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c3/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to back to Reviewer"><i class="fas fa-undo"></i></button>
-                                                        <button class="btn btn-success btn-icon btn-sm approve" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprove/c3/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
+                                                        <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c3/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to back to Reviewer"><i class="fas fa-undo"></i></button>
+                                                        <button class="btn btn-success btn-icon btn-sm approve" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprove/c3/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
                                                     <?php }?>
                                                     <?php if($r['status'] == 'Preparing'){?>
                                                         <?php if($p == 70){?>
-                                                            <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c3/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                                            <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c3/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                                         <?php }?>
                                                     <?php }?>
                                                     <?php if($r['status'] == 'Reviewing'){?>
-                                                        <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/c3/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
-                                                        <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/c3/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
+                                                        <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/c3/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
+                                                        <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtomanager/c3/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
                                                     <?php }?>
-                                                    <button class="btn btn-danger btn-icon btn-sm todelete" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/delete/c2/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#todelete" title="Delete File"><i class="fas fa-trash"></i></button>
+                                                    <button class="btn btn-danger btn-icon btn-sm todelete" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/delete/c2/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#todelete" title="Delete File"><i class="fas fa-trash"></i></button>
                                                 <?php }?>
 
                                                 <?php if($r['code'] == '3.10 Aa11'){?>
-                                                    <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $r['code']?>-un/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                                    <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $r['code']?>-un/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
                                                 <?php }else{?>
-                                                    <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $r['code']?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['c3titleID']))?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
+                                                    <a class="btn btn-secondary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i></a>
                                                 <?php }?>
 
                                             </td>
@@ -519,96 +627,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane py-1 fade animated--fade-in-up" id="wizard5" role="tabpanel" aria-labelledby="wizard5-tab">
-
-                        <?php if(!empty($cfi)){?>
-                            <h5>Latest upload:</h5>
-                            <p>Added on: <b><?= date('F d, Y h:i A', strtotime($cfi['added_on']))?></b></p>
-                            <p>Uploaded by: <b><?= $cfi['name']?></b></p>
-                            <br><br>
-                        <?php }?>
-
-                        
-                        <div class="row">
-                            <div class="col-3">
-                                <h3>Import Trial Balance</h3>
-                                <input type="file" name="" id="excelInput" accept=".xlsx, .xls" class="form form-control">
-                            </div>
-                            <div class="col-7">
-                            <?php if(!empty($cfi)){?>
-                                <div class="alert alert-warning alert-icon" role="alert">
-                                    <div class="alert-icon-content">
-                                        <b>Note:</b> If you imported a file again, it will overwrite your previous data, all old data will be erased.
-                                    </div>
-                                </div> 
-                            <?php }?>
-                            </div>
-                            <div class="col-2">
-                                <a href="<?= base_url('auditsystem/wp/downloadexcel/trialbalanceformat.xlsx'); ?>" class="btn btn-primary">Download xls format:</a>
-                            </div>
-                        </div>
-                        
-
-                        <br>
-
-                        <form action="<?= base_url()?>auditsystem/wp/importtb/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
-                            <table class="table table-hover table-bordered table-sm">
-                                <thead id="tbhead">
-                                    <tr>
-                                        <th>Account Code</th>
-                                        <th>Account</th>
-                                        <th>Account Type</th>
-                                        <th>Debit</th>
-                                        <th>Credit</th>
-                                        <th>Index</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tbbody">
-                                    <?php if(!empty($tb)){?>
-                                        <?php 
-                                            $d = 0;
-                                            $c = 0;
-                                            foreach($tb as $r){
-                                                $d += $r['debit'];
-                                                $c += $r['credit'];
-                                        ?>
-                                            <tr>
-                                                <td><?= $r['account_code']?></td>
-                                                <td><?= $r['account']?></td>
-                                                <td><?= $r['account_type']?></td>
-                                                <td><?= $r['debit']?></td>
-                                                <td><?= $r['credit']?></td>
-                                                <td><?= $r['desc']?></td>
-                                            </tr>
-                                        <?php }?>
-                                        <tr>
-                                            <td colspan="3" class="text-end"><b>Total</b></td>
-                                            <td><b>₱ <?= number_format($d,2)?></b></td>
-                                            <td><b>₱ <?= number_format($c,2)?></b></td>
-                                            <td>
-                                                <?php if(($d - $c) != 0){?>
-                                                    <div class="alert alert-danger alert-icon" role="alert">
-                                                        <div class="alert-icon-content">
-                                                            <h6 class="alert-heading">Balance Out!</h6>
-                                                            Please check your trial balance file.
-                                                        </div>
-                                                    </div>     
-                                                <?php }?> 
-                                            </td>
-                                        </tr>
-                                    <?php }else{?>
-                                        <tr class="table-danger">
-                                            <td colspan="7" class="text-center"><h3>No Data Yet</h3></td>
-                                        </tr>
-                                    <?php }?>
-                                </tbody>
-                            </table>
-
-                            <button type="submit"  id="imp" class="btn btn-primary float-end">Import</button>
-                        </form>
-                        
                     
-                    </div>
                 </div>
             </div>
         </div>
@@ -722,11 +741,9 @@
                 var data = new Uint8Array(reader.result);
                 var workbook = XLSX.read(data, { type: 'array' });
 
-                // Assume the first sheet is the one we want to display
                 var sheetName = workbook.SheetNames[0];
                 var sheet = workbook.Sheets[sheetName];
 
-                // Convert the sheet data to JSON
                 var jsonData = XLSX.utils.sheet_to_json(sheet, { header: 'A' });
                 jsonData = jsonData.slice(1);
                     
@@ -735,8 +752,8 @@
                         'account_code' : cell.A ,
                         'account' : cell.B, 
                         'account_type': cell.C,
-                        'debit':cell.D,
-                        'credit' : cell.E,
+                        'ytd': cell.D,
+                        'py' : cell.E,
                     };
                     tb.push(rd);
                 });
@@ -762,23 +779,23 @@
                 }
 
                 var row = '';
-                let debit = 0;
-                let credit = 0;
+                let ytd = 0;
+                let py = 0;
                 tb.forEach(function(r){
-                    debit += parseFloat(r.debit);
-                    credit += parseFloat(r.credit);
+                    ytd += parseFloat(r.ytd);
+                    py += parseFloat(r.py);
                     row += `
                         <tr>
                             <td><input type="text" class="form form-control" name="account_code[]" value="`+r.account_code+`" readonly></td>
                             <td><input type="text" class="form form-control" name="account[]" value="`+r.account+`" readonly></td>
                             <td><input type="text" class="form form-control" name="account_type[]" value="`+r.account_type+`" readonly></td>
-                            <td><input type="number" class="form form-control" name="debit[]" value="`+r.debit+`" readonly></td>
-                            <td><input type="number" class="form form-control" name="credit[]" value="`+r.credit+`" readonly></td>
+                            <td><input type="number" class="form form-control" name="ytd[]" value="`+r.ytd+`" readonly></td>
+                            <td><input type="number" class="form form-control" name="py[]" value="`+r.py+`" readonly></td>
                             <td>
                                 <select name="fileindex[]" id="" class="form form-select" required>
                                     <option value="" selected>Select Index</option>
                                 <?php foreach($if as $r){?>
-                                    <option value="<?= $crypt->encrypt($r['fiID'])?>" ><?= $r['section'].' - '.$r['desc']?></option>
+                                    <option value="<?= encr($r['fiID'])?>" ><?= $r['section'].' - '.$r['desc']?></option>
                                 <?php }?>
                                 </select>
                             </td>
@@ -786,13 +803,26 @@
                     `;
                 });
 
+                console.log(ytd);
+
                 var msg = '';
-                if((debit - credit) != 0) {
+                if(ytd.toLocaleString('en-PH') != 0) {
                     msg += `
                         <div class="alert alert-danger alert-icon" role="alert">
                             <div class="alert-icon-content">
                                 <h6 class="alert-heading">Balance Out!</h6>
-                                Please check your trial balance file.
+                                Please check your Year to Date trial balance.
+                            </div>
+                        </div>     
+                    `;
+                    $('#imp').hide();
+                }
+                if(py.toLocaleString('en-PH') != 0) {
+                    msg += `
+                        <div class="alert alert-danger alert-icon" role="alert">
+                            <div class="alert-icon-content">
+                                <h6 class="alert-heading">Balance Out!</h6>
+                                Please check your Past Year trial balance.
                             </div>
                         </div>     
                     `;
@@ -812,9 +842,9 @@
                 }
                 row += `
                     <tr>
-                        <td colspan="3" class="text-end"><b>Total</b></td>
-                        <td><b>₱ `+debit.toLocaleString('en-PH')+`</b></td>
-                        <td><b>₱ `+credit.toLocaleString('en-PH')+`</b></td>
+                        <td colspan="3" class="text-end"><b>Difference</b></td>
+                        <td><b>₱ `+ ytd.toLocaleString('en-PH') +`</b></td>
+                        <td><b>₱ `+ py.toLocaleString('en-PH') +`</b></td>
                         <td>`+msg+`</td>
                     </tr>
                 `;
