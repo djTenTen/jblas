@@ -911,14 +911,11 @@ class ChapterValuesModel extends Model{
                     case 'AA10':
                         switch ($param['save']) {
                             case 'saveaa10' :
-                                $this->db_applaud->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $param['code'], 'mtID' => $param['mtID']))->delete();
+                                $dacid = $this->decr($req['acid']);
                                 $data = [
                                     'field1'        => $req['aa10'],
-                                    'type'          => $req['part'],
-                                    'code'          => $param['code'],
-                                    'mtID'          => $param['mtID'],
-                                    'status'        => 'Active',
-                                    'updated_on'    => $this->date.' '.$this->time
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
                                 ];
                                 $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
                             break;
