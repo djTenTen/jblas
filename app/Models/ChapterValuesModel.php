@@ -893,6 +893,79 @@ class ChapterValuesModel extends Model{
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
                         return true;
                     break;
+                    case 'AA9':
+                        switch ($param['save']) {
+                            case 'saveaa9' :
+                                $dacid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['aa9'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+                        return true;
+                    break; 
+                    case 'AA10':
+                        switch ($param['save']) {
+                            case 'saveaa10' :
+                                $this->db_applaud->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $param['code'], 'mtID' => $param['mtID']))->delete();
+                                $data = [
+                                    'field1'        => $req['aa10'],
+                                    'type'          => $req['part'],
+                                    'code'          => $param['code'],
+                                    'mtID'          => $param['mtID'],
+                                    'status'        => 'Active',
+                                    'updated_on'    => $this->date.' '.$this->time
+                                ];
+                                $this->db->table($this->tblc3d)->where('mdID', $dacid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+                        return true;
+                    break; 
+                    case 'AA11':
+                        switch ($param['save']) {
+                            case 'saveaa11' :
+                                $this->db_applaud->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $param['code'], 'mtID' => $param['mtID']))->delete();
+                                foreach ($req['matter'] as $i => $val){
+                                    $data = [
+                                        'field1'      => $req['matter'][$i],
+                                        'field2'      => $req['notperv'][$i],
+                                        'field3'      => $req['perv'][$i],
+                                        'type'        => $req['part'],
+                                        'code'        => $param['code'],
+                                        'mtID'        => $param['mtID'],
+                                        'status'      => 'Active',
+                                        'updated_on'  => $this->date.' '.$this->time
+                                    ];
+                                    $this->db_applaud->table($this->tblc3)->insert($data);
+                                }
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+                        return true;
+                    break; 
+                    case 'AA12':
+                        switch ($param['save']) {
+                            case 'saveaa12' :
+                                $this->db_applaud->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $param['code'], 'mtID' => $param['mtID']))->delete();
+                                $data = [
+                                    'field1'        => $req['aa12'],
+                                    'type'          => $req['part'],
+                                    'code'          => $param['code'],
+                                    'mtID'          => $param['mtID'],
+                                    'status'        => 'Active',
+                                    'updated_on'    => $this->date.' '.$this->time
+                                ];
+                                $this->db_applaud->table($this->tblc3)->insert($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
+                        return true;
+                    break; 
                     case 'AB1':
                         switch ($param['save']) {
                             case 'saveab1' :

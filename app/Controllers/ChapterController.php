@@ -519,7 +519,29 @@ class ChapterController extends BaseController{
                 $data['con']            = json_decode($rdata2['field1'], true);   
                 $data['conacID']        = $this->encr($rdata2['mdID']);
                 $page = $code;
-                break;   
+                break;
+            case 'AA9':
+                $rdata                  = $this->cvmodel->getvalues_c3('s','aa9',$code,$dmtID,$dcID);
+                $data['a9']             = json_decode($rdata['field1'], true);    
+                $data['mdID']           = $this->encr($rdata['mdID']);
+                $page = $code;
+                break; 
+            case 'AA10':
+                $rdata                  = $this->cvmodel->getvalues_c3('s','aa10',$code,$dmtID,$dcID);
+                $data['a10']            = json_decode($rdata['field1'], true); 
+                $data['mdID']           = $this->encr($rdata['mdID']);   
+                $page = $code;
+                break; 
+            case 'AA11':
+                $data['a11'] = $this->cvmodel->getvalues_c3('m','aa11',$code,$dmtID,$dcID);
+                $page = $code;
+                break; 
+            case 'AA12':
+                $rdata                  = $this->cvmodel->getvalues_c3('s','aa12',$code,$dmtID,$dcID);
+                $data['a12']            = json_decode($rdata['field1'], true);   
+                $data['mdID']           = $this->encr($rdata['mdID']);
+                $page = $code;
+                break; 
             case 'AA8-ad':
                 $s                      = explode('-', $code);
                 $data['sectiontitle']   = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";
@@ -724,6 +746,25 @@ class ChapterController extends BaseController{
                 $data['ad']     = $this->c3model->getvalues_m('ad',$s[0],$dmtID);
                 $rdata          = $this->c3model->getvalues_s('aa11uead',$s[0],$dmtID);
                 $data['ue']     = json_decode($rdata['field1'], true);   
+                $page = $code;
+                break; 
+            case 'AA9':
+                $rdata              = $this->c3model->getvalues_s('aa9',$code,$dmtID);
+                $data['a9']         = json_decode($rdata['field1'], true);    
+                $page = $code;
+                break; 
+            case 'AA10':
+                $rdata              = $this->c3model->getvalues_s('aa10',$code,$dmtID);
+                $data['a10']        = json_decode($rdata['field1'], true); 
+                $page = $code;
+                break; 
+            case 'AA11':
+                $data['a11'] = $this->c3model->getvalues_m('aa11',$code,$dmtID);
+                $page = $code;
+                break; 
+            case 'AA12':
+                $rdata               = $this->c3model->getvalues_s('aa12',$code,$dmtID);
+                $data['a12']         = json_decode($rdata['field1'], true);   
                 $page = $code;
                 break;   
             case 'AB1':

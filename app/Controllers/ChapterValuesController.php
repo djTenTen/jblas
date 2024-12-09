@@ -1147,6 +1147,92 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
+                    case 'AA9':
+                        switch ($save) {
+                            case 'saveaa9' :
+                                $aa9 = [
+                                    'wpref1'    => $this->request->getPost('wpref1'),
+                                    'doneby1'   => $this->request->getPost('doneby1'),
+                                    'wpref2'    => $this->request->getPost('wpref2'),
+                                    'doneby2'   => $this->request->getPost('doneby2'),
+                                    'wpref3'    => $this->request->getPost('wpref3'),
+                                    'doneby3'   => $this->request->getPost('doneby3'),
+                                    'wpref4'    => $this->request->getPost('wpref4'),
+                                    'doneby4'   => $this->request->getPost('doneby4'),
+                                    'wpref5'    => $this->request->getPost('wpref5'),
+                                    'doneby5'   => $this->request->getPost('doneby5'),
+                                    'wpref6'    => $this->request->getPost('wpref6'),
+                                    'doneby6'   => $this->request->getPost('doneby6')
+                                ];
+                                $req = [
+                                    'aa9'       => json_encode($aa9),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                        }
+                        $res = $this->cvmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
+                    break; 
+                    // case 'AA10':
+                    //     switch ($save) {
+                    //         case 'saveaa10' :
+                    //             $aa10 = [
+                    //                 'wpref1'    => $this->request->getPost('wpref1'),
+                    //                 'doneby1'   => $this->request->getPost('doneby1'),
+                    //                 'wpref2'    => $this->request->getPost('wpref2'),
+                    //                 'doneby2'   => $this->request->getPost('doneby2'),
+                    //                 'wpref3'    => $this->request->getPost('wpref3'),
+                    //                 'doneby3'   => $this->request->getPost('doneby3'),
+                    //                 'wpref4'    => $this->request->getPost('wpref4'),
+                    //                 'doneby4'   => $this->request->getPost('doneby4'),
+                    //             ];
+                    //             $req = [
+                    //                 'aa10'      => json_encode($aa10),
+                    //                 'part'      => 'aa10',
+                    //                 'code'      => $code,
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->c3model->savevalues($param,$req);
+                    //     return $this->resultpage($res,$code,$head,$mtID);
+                    // break; 
+                    // case 'AA11':
+                    //     switch ($save) {
+                    //         case 'saveaa11' :
+                    //             $req = [
+                    //                 'matter'     => $this->request->getPost('matter'),
+                    //                 'notperv'    => $this->request->getPost('notperv'),
+                    //                 'perv'       => $this->request->getPost('perv'),
+                    //                 'part'       => 'aa11',
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->c3model->savevalues($param,$req);
+                    //     return $this->resultpage($res,$code,$head,$mtID);
+                    // break; 
+                    // case 'AA12':
+                    //     switch ($save) {
+                    //         case 'saveaa12' :
+                    //             $aa12 = [
+                    //                 'wpref1'    => $this->request->getPost('wpref1'),
+                    //                 'doneby1'   => $this->request->getPost('doneby1'),
+                    //                 'wpref2'    => $this->request->getPost('wpref2'),
+                    //                 'doneby2'   => $this->request->getPost('doneby2'),
+                    //                 'wpref3'    => $this->request->getPost('wpref3'),
+                    //                 'doneby3'   => $this->request->getPost('doneby3'),
+                    //                 'wpref4'    => $this->request->getPost('wpref4'),
+                    //                 'doneby4'   => $this->request->getPost('doneby4'),
+                    //             ];
+                    //             $req = [
+                    //                 'aa12'      => json_encode($aa12),
+                    //                 'part'      => 'aa12',
+                    //                 'code'      => $code,
+                    //             ];
+                    //         break;
+                    //     }
+                    //     $res = $this->c3model->savevalues($param,$req);
+                    //     return $this->resultpage($res,$code,$head,$mtID);
+                    // break; 
                     case 'AB1':
                         switch ($save) {
                             case 'saveab1' :
