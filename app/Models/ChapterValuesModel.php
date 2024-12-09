@@ -926,19 +926,22 @@ class ChapterValuesModel extends Model{
                     case 'AA11':
                         switch ($param['save']) {
                             case 'saveaa11' :
-                                $this->db_applaud->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $param['code'], 'mtID' => $param['mtID']))->delete();
+                                $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $param['code'], 'mtID' => $param['mtID']))->delete();
                                 foreach ($req['matter'] as $i => $val){
                                     $data = [
-                                        'field1'      => $req['matter'][$i],
-                                        'field2'      => $req['notperv'][$i],
-                                        'field3'      => $req['perv'][$i],
-                                        'type'        => $req['part'],
-                                        'code'        => $param['code'],
-                                        'mtID'        => $param['mtID'],
-                                        'status'      => 'Active',
-                                        'updated_on'  => $this->date.' '.$this->time
+                                        'field1'        => $req['matter'][$i],
+                                        'field2'        => $req['notperv'][$i],
+                                        'field3'        => $req['perv'][$i],
+                                        'type'          => $req['part'],
+                                        'code'          => $param['code'],
+                                        'mtID'          => $param['mtID'],
+                                        'cID'           => $param['cID'],
+                                        'fID'           => $param['fID'],
+                                        'status'        => 'Active',
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
                                     ];
-                                    $this->db_applaud->table($this->tblc3)->insert($data);
+                                    $this->db->table($this->tblc3d)->insert($data);
                                 }
                             break;
                         }
@@ -948,7 +951,7 @@ class ChapterValuesModel extends Model{
                     case 'AA12':
                         switch ($param['save']) {
                             case 'saveaa12' :
-                                $this->db_applaud->table($this->tblc3)->where(array('type' => $req['part'], 'code' => $param['code'], 'mtID' => $param['mtID']))->delete();
+                                $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $param['code'], 'mtID' => $param['mtID']))->delete();
                                 $data = [
                                     'field1'        => $req['aa12'],
                                     'type'          => $req['part'],
@@ -957,7 +960,7 @@ class ChapterValuesModel extends Model{
                                     'status'        => 'Active',
                                     'updated_on'    => $this->date.' '.$this->time
                                 ];
-                                $this->db_applaud->table($this->tblc3)->insert($data);
+                                $this->db->table($this->tblc3d)->insert($data);
                             break;
                         }
                         $this->logs->log(session()->get('name'). " set a default value on a client file {$param['code']} Concluding the Audit");
