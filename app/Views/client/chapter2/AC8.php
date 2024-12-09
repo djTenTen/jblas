@@ -141,6 +141,7 @@
                                             <option value="<?= $bacdata['y1']?>" selected><?= $bacdata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -151,6 +152,7 @@
                                             <option value="<?= $bacdata['y2']?>" selected><?= $bacdata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -161,6 +163,7 @@
                                             <option value="<?= $bacdata['y3']?>" selected><?= $bacdata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -171,6 +174,7 @@
                                             <option value="<?= $bacdata['y4']?>" selected><?= $bacdata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -181,6 +185,7 @@
                                             <option value="<?= $bacdata['y5']?>" selected><?= $bacdata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -191,6 +196,7 @@
                                             <option value="<?= $bacdata['y6']?>" selected><?= $bacdata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -256,6 +262,7 @@
                                             <option value="<?= $trdata['y1']?>" selected><?= $trdata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -266,6 +273,7 @@
                                             <option value="<?= $trdata['y2']?>" selected><?= $trdata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -276,6 +284,7 @@
                                             <option value="<?= $trdata['y3']?>" selected><?= $trdata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -286,6 +295,7 @@
                                             <option value="<?= $trdata['y4']?>" selected><?= $trdata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -296,6 +306,7 @@
                                             <option value="<?= $trdata['y5']?>" selected><?= $trdata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -306,6 +317,7 @@
                                             <option value="<?= $trdata['y6']?>" selected><?= $trdata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -371,6 +383,7 @@
                                             <option value="<?= $ordata['y1']?>" selected><?= $ordata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -381,6 +394,7 @@
                                             <option value="<?= $ordata['y2']?>" selected><?= $ordata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -391,6 +405,7 @@
                                             <option value="<?= $ordata['y3']?>" selected><?= $ordata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -401,6 +416,7 @@
                                             <option value="<?= $ordata['y4']?>" selected><?= $ordata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -411,6 +427,7 @@
                                             <option value="<?= $ordata['y5']?>" selected><?= $ordata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -421,6 +438,7 @@
                                             <option value="<?= $ordata['y6']?>" selected><?= $ordata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -486,6 +504,7 @@
                                             <option value="<?= $invtrdata['y1']?>" selected><?= $invtrdata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -496,6 +515,7 @@
                                             <option value="<?= $invtrdata['y2']?>" selected><?= $invtrdata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -506,6 +526,7 @@
                                             <option value="<?= $invtrdata['y3']?>" selected><?= $invtrdata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -516,6 +537,7 @@
                                             <option value="<?= $invtrdata['y4']?>" selected><?= $invtrdata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -526,6 +548,7 @@
                                             <option value="<?= $invtrdata['y5']?>" selected><?= $invtrdata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -536,6 +559,7 @@
                                             <option value="<?= $invtrdata['y6']?>" selected><?= $invtrdata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -601,6 +625,7 @@
                                             <option value="<?= $invmtdata['y1']?>" selected><?= $invmtdata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -611,6 +636,7 @@
                                             <option value="<?= $invmtdata['y2']?>" selected><?= $invmtdata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -621,6 +647,7 @@
                                             <option value="<?= $invmtdata['y3']?>" selected><?= $invmtdata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -631,6 +658,7 @@
                                             <option value="<?= $invmtdata['y4']?>" selected><?= $invmtdata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -641,6 +669,7 @@
                                             <option value="<?= $invmtdata['y5']?>" selected><?= $invmtdata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -651,6 +680,7 @@
                                             <option value="<?= $invmtdata['y6']?>" selected><?= $invmtdata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -716,6 +746,7 @@
                                             <option value="<?= $ppedata['y1']?>" selected><?= $ppedata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -726,6 +757,7 @@
                                             <option value="<?= $ppedata['y2']?>" selected><?= $ppedata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -736,6 +768,7 @@
                                             <option value="<?= $ppedata['y3']?>" selected><?= $ppedata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -746,6 +779,7 @@
                                             <option value="<?= $ppedata['y4']?>" selected><?= $ppedata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -756,6 +790,7 @@
                                             <option value="<?= $ppedata['y5']?>" selected><?= $ppedata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -766,6 +801,7 @@
                                             <option value="<?= $ppedata['y6']?>" selected><?= $ppedata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -831,6 +867,7 @@
                                             <option value="<?= $incadata['y1']?>" selected><?= $incadata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -841,6 +878,7 @@
                                             <option value="<?= $incadata['y2']?>" selected><?= $incadata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -851,6 +889,7 @@
                                             <option value="<?= $incadata['y3']?>" selected><?= $incadata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -861,6 +900,7 @@
                                             <option value="<?= $incadata['y4']?>" selected><?= $incadata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -871,6 +911,7 @@
                                             <option value="<?= $incadata['y5']?>" selected><?= $incadata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -881,6 +922,7 @@
                                             <option value="<?= $incadata['y6']?>" selected><?= $incadata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -946,6 +988,7 @@
                                             <option value="<?= $tpdata['y1']?>" selected><?= $tpdata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -956,6 +999,7 @@
                                             <option value="<?= $tpdata['y2']?>" selected><?= $tpdata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -966,6 +1010,7 @@
                                             <option value="<?= $tpdata['y3']?>" selected><?= $tpdata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -976,6 +1021,7 @@
                                             <option value="<?= $tpdata['y4']?>" selected><?= $tpdata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -986,6 +1032,7 @@
                                             <option value="<?= $tpdata['y5']?>" selected><?= $tpdata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -996,6 +1043,7 @@
                                             <option value="<?= $tpdata['y6']?>" selected><?= $tpdata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1061,6 +1109,7 @@
                                             <option value="<?= $opdata['y1']?>" selected><?= $opdata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1071,6 +1120,7 @@
                                             <option value="<?= $opdata['y2']?>" selected><?= $opdata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1081,6 +1131,7 @@
                                             <option value="<?= $opdata['y3']?>" selected><?= $opdata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1091,6 +1142,7 @@
                                             <option value="<?= $opdata['y4']?>" selected><?= $opdata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1101,6 +1153,7 @@
                                             <option value="<?= $opdata['y5']?>" selected><?= $opdata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1111,6 +1164,7 @@
                                             <option value="<?= $opdata['y6']?>" selected><?= $opdata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1176,6 +1230,7 @@
                                             <option value="<?= $taxdata['y1']?>" selected><?= $taxdata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1186,6 +1241,7 @@
                                             <option value="<?= $taxdata['y2']?>" selected><?= $taxdata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1196,6 +1252,7 @@
                                             <option value="<?= $taxdata['y3']?>" selected><?= $taxdata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1206,6 +1263,7 @@
                                             <option value="<?= $taxdata['y4']?>" selected><?= $taxdata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1216,6 +1274,7 @@
                                             <option value="<?= $taxdata['y5']?>" selected><?= $taxdata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1226,6 +1285,7 @@
                                             <option value="<?= $taxdata['y6']?>" selected><?= $taxdata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1291,6 +1351,7 @@
                                             <option value="<?= $provdata['y1']?>" selected><?= $provdata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1301,6 +1362,7 @@
                                             <option value="<?= $provdata['y2']?>" selected><?= $provdata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1311,6 +1373,7 @@
                                             <option value="<?= $provdata['y3']?>" selected><?= $provdata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1321,6 +1384,7 @@
                                             <option value="<?= $provdata['y4']?>" selected><?= $provdata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1331,6 +1395,7 @@
                                             <option value="<?= $provdata['y5']?>" selected><?= $provdata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1341,6 +1406,7 @@
                                             <option value="<?= $provdata['y6']?>" selected><?= $provdata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1406,6 +1472,7 @@
                                             <option value="<?= $roidata['y1']?>" selected><?= $roidata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1416,6 +1483,7 @@
                                             <option value="<?= $roidata['y2']?>" selected><?= $roidata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1426,6 +1494,7 @@
                                             <option value="<?= $roidata['y3']?>" selected><?= $roidata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1436,6 +1505,7 @@
                                             <option value="<?= $roidata['y4']?>" selected><?= $roidata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1446,6 +1516,7 @@
                                             <option value="<?= $roidata['y5']?>" selected><?= $roidata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1456,6 +1527,7 @@
                                             <option value="<?= $roidata['y6']?>" selected><?= $roidata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1521,6 +1593,7 @@
                                             <option value="<?= $dcodata['y1']?>" selected><?= $dcodata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1531,6 +1604,7 @@
                                             <option value="<?= $dcodata['y2']?>" selected><?= $dcodata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1541,6 +1615,7 @@
                                             <option value="<?= $dcodata['y3']?>" selected><?= $dcodata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1551,6 +1626,7 @@
                                             <option value="<?= $dcodata['y4']?>" selected><?= $dcodata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1561,6 +1637,7 @@
                                             <option value="<?= $dcodata['y5']?>" selected><?= $dcodata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1571,6 +1648,7 @@
                                             <option value="<?= $dcodata['y6']?>" selected><?= $dcodata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1636,6 +1714,7 @@
                                             <option value="<?= $prdata['y1']?>" selected><?= $prdata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1646,6 +1725,7 @@
                                             <option value="<?= $prdata['y2']?>" selected><?= $prdata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1656,6 +1736,7 @@
                                             <option value="<?= $prdata['y3']?>" selected><?= $prdata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1666,6 +1747,7 @@
                                             <option value="<?= $prdata['y4']?>" selected><?= $prdata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1676,6 +1758,7 @@
                                             <option value="<?= $prdata['y5']?>" selected><?= $prdata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1686,6 +1769,7 @@
                                             <option value="<?= $prdata['y6']?>" selected><?= $prdata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1751,6 +1835,7 @@
                                             <option value="<?= $oadata['y1']?>" selected><?= $oadata['y1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1761,6 +1846,7 @@
                                             <option value="<?= $oadata['y2']?>" selected><?= $oadata['y2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1771,6 +1857,7 @@
                                             <option value="<?= $oadata['y3']?>" selected><?= $oadata['y3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1781,6 +1868,7 @@
                                             <option value="<?= $oadata['y4']?>" selected><?= $oadata['y4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1791,6 +1879,7 @@
                                             <option value="<?= $oadata['y5']?>" selected><?= $oadata['y5']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1801,6 +1890,7 @@
                                             <option value="<?= $oadata['y6']?>" selected><?= $oadata['y6']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>

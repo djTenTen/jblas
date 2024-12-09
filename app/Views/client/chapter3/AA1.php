@@ -70,6 +70,7 @@
                                                 <option value="<?= $r['field2']?>" selected><?= $r['field2']?></option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
+                                                <option value="N/A">N/A</option>
                                             </select>
                                         </td>
                                         <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['field3']?></textarea></td>
@@ -206,6 +207,7 @@
                                                 <option value="<?= $r['field2']?>" selected><?= $r['field2']?></option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
+                                                <option value="N/A">N/A</option>
                                             </select>
                                         </td>
                                         <td><textarea class="form-control" cols="30" rows="3" name="reference[]"><?= $r['field3']?></textarea></td>
@@ -346,6 +348,7 @@
                                             <option value="<?= $s3['a17'];?>" selected><?= $s3['a17'];?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="a18"><?= $s3['a18'];?></textarea></td>
@@ -361,6 +364,7 @@
                                             <option value="<?= $s3['a20'];?>" selected><?= $s3['a20'];?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="a21"><?= $s3['a21'];?></textarea></td>
@@ -372,6 +376,7 @@
                                             <option value="<?= $s3['a22'];?>" selected><?= $s3['a22'];?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                     <td><textarea class="form-control" cols="30" rows="3" name="a23"><?= $s3['a23'];?></textarea></td>

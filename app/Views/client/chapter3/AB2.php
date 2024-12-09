@@ -70,6 +70,7 @@
                                             <option value="<?= $ab3['aby1']?>" selected><?= $ab3['aby1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>   
                                 </tr>
@@ -80,6 +81,7 @@
                                             <option value="<?= $ab3['aby2']?>" selected><?= $ab3['aby2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>   
                                 </tr>
@@ -90,6 +92,7 @@
                                         <option value="<?= $ab3['aby3']?>" selected><?= $ab3['aby3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>   
                                 </tr>
@@ -100,6 +103,7 @@
                                             <option value="<?= $ab3['aby4']?>" selected><?= $ab3['aby4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>   
                                 </tr>

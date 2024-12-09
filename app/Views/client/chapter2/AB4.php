@@ -73,6 +73,7 @@
                                                 <option value="<?= $r['field2']?>" selected><?= $r['field2']?></option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
+                                                <option value="N/A">N/A</option>
                                             </select>
                                         </td>
                                         <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['field3']?></textarea></td>
@@ -103,6 +104,7 @@
                                                 <option value="<?= $r['field2']?>" selected><?= $r['field2']?></option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
+                                                <option value="N/A">N/A</option>
                                             </select>
                                         </td>
                                         <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['field3']?></textarea></td>
@@ -133,6 +135,7 @@
                                                 <option value="<?= $r['field2']?>" selected><?= $r['field2']?></option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
+                                                <option value="N/A">N/A</option>
                                             </select>
                                         </td>
                                         <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['field3']?></textarea></td>
@@ -163,6 +166,7 @@
                                                 <option value="<?= $r['field2']?>" selected><?= $r['field2']?></option>
                                                 <option value="Yes">Yes</option>
                                                 <option value="No">No</option>
+                                                <option value="N/A">N/A</option>
                                             </select>
                                         </td>
                                         <td><textarea class="form-control" cols="30" rows="3" name="comment[]"><?= $r['field3']?></textarea></td>

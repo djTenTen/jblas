@@ -202,6 +202,7 @@
                                             <option value="<?= $td['sacb1yn1']?>" selected><?= $td['sacb1yn1']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -212,6 +213,7 @@
                                             <option value="<?= $td['sacb1yn2']?>" selected><?= $td['sacb1yn2']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -222,6 +224,7 @@
                                             <option value="<?= $td['sacb1yn3']?>" selected><?= $td['sacb1yn3']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -232,6 +235,7 @@
                                             <option value="<?= $td['sacb1yn4']?>" selected><?= $td['sacb1yn4']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -242,6 +246,7 @@
                                             <option value="<?= $td['sacb2yn']?>" selected><?= $td['sacb2yn']?></option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
                                         </select>
                                     </td>
                                 </tr>
