@@ -1234,43 +1234,107 @@ class WorkpaperModel extends  Model {
         CHAPTER GET FUNCTIONS
         ----------------------------------------------------------
     */
-    public function getvalues_m($c,$type,$code,$ctID,$cID,$wpID){
 
-        switch ($c) {
-            case 'c1': $table = $this->tblc1; $cd = 'c1tID'; break;
-            case 'c2': $table = $this->tblc2; $cd = 'c2tID'; break;
-            case 'c3': $table = $this->tblc3; $cd = 'c3tID'; break;
-        }
+    /**
+        ----------------------------------------------------------
+        CHAPTER GET FUNCTIONS
+        ----------------------------------------------------------
+    */
+    public function getvalues_c1($m,$type,$code,$mtID,$cID,$wpID){
+
         $where = [
-            'code'          => $code, 
-            'type'          => $type,
-            $cd             => $ctID,
-            'clientID'      => $cID,
-            'workpaper' => $wpID,
+            'code'  => $code, 
+            'type'  => $type,
+            'mtID'  => $mtID,
+            'cID'   => $cID,
+            'wpID'  => $wpID
         ];
-        $query =  $this->db->table($table)->where($where)->get();
-        return $query->getResultArray();
+        $query =  $this->db->table($this->tblc1)->where($where)->get();
+
+        if($m == 'm'){
+            return $query->getResultArray();
+        }else{
+            return $query->getrowArray();
+        }
 
     }
 
-    public function getvalues_s($c,$type,$code,$ctID,$cID,$wpID){
 
-        switch ($c) {
-            case 'c1': $table = $this->tblc1; $cd = 'c1tID'; break;
-            case 'c2': $table = $this->tblc2; $cd = 'c2tID'; break;
-            case 'c3': $table = $this->tblc3; $cd = 'c3tID'; break;
-        }
+    public function getvalues_c2($m,$type,$code,$mtID,$cID,$wpID){
+
         $where = [
-            'code'          => $code, 
-            'type'          => $type,
-            $cd             => $ctID,
-            'clientID'      => $cID,
-            'workpaper' => $wpID,
+           'code'  => $code, 
+            'type'  => $type,
+            'mtID'  => $mtID,
+            'cID'   => $cID,
+            'wpID'  => $wpID
         ];
-        $query =  $this->db->table($table)->where($where)->get();
-        return $query->getrowArray();
+        $query =  $this->db->table($this->tblc2)->where($where)->get();
+        if($m == 'm'){
+            return $query->getResultArray();
+        }else{
+            return $query->getrowArray();
+        }
 
     }
+
+
+    public function getvalues_c3($m,$type,$code,$mtID,$cID,$wpID){
+
+        $where = [
+            'code'  => $code, 
+            'type'  => $type,
+            'mtID'  => $mtID,
+            'cID'   => $cID,
+            'wpID'  => $wpID
+        ];
+        $query =  $this->db->table($this->tblc3)->where($where)->get();
+        if($m == 'm'){
+            return $query->getResultArray();
+        }else{
+            return $query->getrowArray();
+        }
+
+    }
+
+
+    // public function getvalues_m($c,$type,$code,$ctID,$cID,$wpID){
+
+    //     switch ($c) {
+    //         case 'c1': $table = $this->tblc1; $cd = 'c1tID'; break;
+    //         case 'c2': $table = $this->tblc2; $cd = 'c2tID'; break;
+    //         case 'c3': $table = $this->tblc3; $cd = 'c3tID'; break;
+    //     }
+    //     $where = [
+    //         'code'          => $code, 
+    //         'type'          => $type,
+    //         $cd             => $ctID,
+    //         'clientID'      => $cID,
+    //         'workpaper' => $wpID,
+    //     ];
+    //     $query =  $this->db->table($table)->where($where)->get();
+    //     return $query->getResultArray();
+
+    // }
+
+    // public function getvalues_s($c,$type,$code,$ctID,$cID,$wpID){
+
+    //     switch ($c) {
+    //         case 'c1': $table = $this->tblc1; $cd = 'c1tID'; break;
+    //         case 'c2': $table = $this->tblc2; $cd = 'c2tID'; break;
+    //         case 'c3': $table = $this->tblc3; $cd = 'c3tID'; break;
+    //     }
+    //     $where = [
+    //         'code'          => $code, 
+    //         'type'          => $type,
+    //         $cd             => $ctID,
+    //         'clientID'      => $cID,
+    //         'workpaper' => $wpID,
+    //     ];
+    //     $query =  $this->db->table($table)->where($where)->get();
+    //     return $query->getrowArray();
+
+    // }
 
     /**
         ----------------------------------------------------------
@@ -1350,58 +1414,58 @@ class WorkpaperModel extends  Model {
                         switch ($param['save']) {
                             case 'saveac1':
                                 foreach($req['yesno'] as $i => $val){
-                                    $acid = $this->crypt->decrypt($req['acid'][$i]);
+                                    $acid = $this->decr($req['acid'][$i]);
                                     $data = [
-                                        'yesno'             => $req['yesno'][$i],
-                                        'comment'           => $req['comment'][$i],
-                                        'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $param['uID'],
+                                        'field2'        => $req['yesno'][$i],
+                                        'field3'        => $req['comment'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
                                     ];
-                                    $this->db->table($this->tblc1)->where('acID', $acid)->update($data);
+                                    $this->db->table($this->tblc1)->where('mdID', $acid)->update($data);
                                 }
                             break;
                             case 'saveac1eqr':
-                                $acid = $this->crypt->decrypt($req['acid']);
+                                $acid = $this->decr($req['acid']);
                                 $data = [
-                                    'question'      => $req['question'],
+                                    'field1'        => $req['question'],
                                     'updated_on'    => $this->date.' '.$this->time,
                                     'updated_by'    => $param['uID'],
                                 ];
-                                $this->db->table($this->tblc1)->where('acID', $acid)->update($data);
+                                $this->db->table($this->tblc1)->where('mdID', $acid)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
+                        $this->logs->log(session()->get('name'). " save a file {$param['code']} Pre-Engagement Activities on work paper");
                         return true;
                     break;
                     case 'AC2':
                         switch ($param['save']) {
                             case 'saveac2':
                                 foreach($req['corptax'] as $i => $val){
-                                    $acid = $this->crypt->decrypt($req['acid'][$i]);
+                                    $acid = $this->decr($req['acid'][$i]);
                                     $data = [
-                                        'corptax'           => $req['corptax'][$i],
-                                        'statutory'         => $req['statutory'][$i],
-                                        'accountancy'       => $req['accountancy'][$i],
-                                        'other'             => $req['other'][$i],
-                                        'totalcu'           => $req['totalcu'][$i],
-                                        'updated_on'        => $this->date.' '.$this->time,
-                                        'updated_by'        => $param['uID'],
+                                        'field2'        => $req['corptax'][$i],
+                                        'field3'        => $req['statutory'][$i],
+                                        'field4'        => $req['accountancy'][$i],
+                                        'field5'        => $req['other'][$i],
+                                        'field6'        => $req['totalcu'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
                                     ];
-                                    $this->db->table($this->tblc1)->where('acID', $acid)->update($data);
+                                    $this->db->table($this->tblc1)->where('mdID', $acid)->update($data);
                                 }
                             break;
                             case 'saveac2aep':
-                                $acid = $this->crypt->decrypt($req['acid']);
+                                $acid = $this->decr($req['acid']);
                                 $data = [
-                                    'question'      => $req['eap'],
-                                    'name'          => $req['concl'],
+                                    'field1'        => $req['eap'],
+                                    'field2'        => $req['concl'],
                                     'updated_on'    => $this->date.' '.$this->time,
                                     'updated_by'    => $param['uID'],
                                 ];
-                                $this->db->table($this->tblc1)->where('acID', $acid)->update($data);
+                                $this->db->table($this->tblc1)->where('mdID', $acid)->update($data);
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 1 on work paper");
+                        $this->logs->log(session()->get('name'). " save a file {$param['code']} Pre-Engagement Activities on work paper");
                         return true;
                     break;
                     case 'AC3':

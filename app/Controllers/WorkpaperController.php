@@ -807,15 +807,15 @@ class WorkpaperController extends BaseController{
     }
 
 
-    public function savevalues($chapter,$save,$code,$ctID,$cID,$wpID,$name){
+    public function savevalues($chapter,$save,$code,$mtID,$cID,$wpID,$name){
 
         $param = [
             'chapter'   => $chapter,
             'save'      => $save,
             'code'      => $code,
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
-            'ctID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
+            'cID'       => $this->decr($cID),
+            'wpID'      => $this->decr($wpID),
+            'mtID'      => $this->decr($mtID),
             'uID'       => $this->crypt->decrypt(session()->get('userID')),
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
@@ -830,8 +830,6 @@ class WorkpaperController extends BaseController{
                                     'acid'      => $this->request->getPost('acid'),
                                     'yesno'     => $this->request->getPost('yesno'),
                                     'comment'   => $this->request->getPost('comment'),
-                                    'c1tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                             case 'saveac1eqr':
@@ -846,13 +844,11 @@ class WorkpaperController extends BaseController{
                                 $req = [
                                     'question'  => json_encode($eqr),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c1tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                         }
                         $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
                     case 'AC2':
                         switch ($save) {
@@ -864,23 +860,18 @@ class WorkpaperController extends BaseController{
                                     'other'         => $this->request->getPost('other'),
                                     'totalcu'       => $this->request->getPost('totalcu'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'c1tID'         => $param['ctID'],
-                                    'code'          => $param['code'],
                                 ];
                             break;
                             case 'saveac2aep':
                                 $req = [
                                     'eap'       => $this->request->getPost('eap'),
                                     'concl'     => $this->request->getPost('concl'),
-                                    'concl'     => $this->request->getPost('concl'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c1tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                         }
                         $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
                     case 'AC3':
                         switch ($save) {
@@ -2442,6 +2433,22 @@ class WorkpaperController extends BaseController{
         $data['firm']       = session()->get('firm');
         $data['fID']        = $this->crypt->decrypt(session()->get('firmID'));
         $data['fl']         = $this->wpmodel->getfileinfoc1($dwpID,$dcID,$dc1tID);
+
+
+        switch ($code) {
+            case 'AC1':
+                $data['ac1']  = $this->wpmodel->getvalues_m('cacf',$code,$dmtID);
+                $rdata        = $this->wpmodel->getvalues_s('eqr',$code,$dmtID);
+                $data['eqr']  = json_decode($rdata['field1'], true);
+            break;
+            case 'AC2':
+                $data['ac2'] = $this->wpmodel->getvalues_m('pans',$code,$dmtID);
+                $data['aep'] = $this->wpmodel->getvalues_s('ac2aep',$code,$dmtID);
+            break;
+        }
+        echo view('workpaper/pdfc1/'.$code, $data);
+
+
         switch ($code) {
             case 'AC1':
                 $data['ac1']    = $this->wpmodel->getvalues_m('c1','cacf',$code,$dc1tID,$dcID,$dwpID);

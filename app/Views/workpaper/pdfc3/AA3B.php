@@ -61,139 +61,139 @@ $html =  "
     </style>
 ";
 $html .= '
-    <table>
-        <tr>
-            <td style="width: 60%;">
-                <table>
-                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
-                    <tr><td></td></tr>
-                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
-                </table>
-            </td>
-            <td style="width: 40%;">
-                <table border="1">
-                    <tr>
-                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
-                    </tr>
-                    <tr>
-                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+<table>
+    <tr>
+        <td style="width: 60%;">
+            <table>
+                <tr><td class="bb">Client:</td></tr>
+                <tr><td></td></tr>
+                <tr><td class="bb">Period:</td></tr>
+            </table>
+        </td>
+        <td style="width: 40%;">
+            <table border="1">
+                <tr>
+                    <td>Prepared by: <br></td>
+                    <td>Date: <br></td>
+                </tr>
+                <tr>
+                    <td>Reviewed by: <br></td>
+                    <td>Date: <br></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
 ';
 $html .= '<h3>GOING CONCERN CHECKLIST</h3>
-    <p><b>Objective: </b> <br>
-    To ensure that the fundamental concept of going concern is fully considered and that the requirements of ISA 570 are met.</p>
-    <p class="bo"><b>Overview:  Under the going concern assumption, an entity is viewed as continuing in business for the foreseeable future.  Financial statements are prepared on a going concern basis, unless management either intends to liquidate the entity or to cease to operate, or has no realistic alternative to do so (in these circumstances the financial statements are prepared on a break-up basis).</b></p>';
+<p><b>Objective: </b> <br>
+To ensure that the fundamental concept of going concern is fully considered and that the requirements of ISA 570 are met.</p>
+<p class="bo"><b>Overview:  Under the going concern assumption, an entity is viewed as continuing in business for the foreseeable future.  Financial statements are prepared on a going concern basis, unless management either intends to liquidate the entity or to cease to operate, or has no realistic alternative to do so (in these circumstances the financial statements are prepared on a break-up basis).</b></p>';
 $html .= '
-    <br><br><br>
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 6%;"></th>
-                <th style="width: 65%;"><b>Part 1 – Discussion with the Client Regarding Going Concern:</b></th>
-                <th class="cent" style="width: 29%;"><b></b></th>
-            </tr>
-        </thead>
-        <tbody>';
-        $count = 0;
-        foreach($bp1 as $r){
-            $count ++;
-            $html .= '
-            <tr>
-                <td style="width: 6%;">'.$count.'.<br></td>
-                <td style="width: 65%;">'.$r['question'].'</td>
-                <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
-            </tr>
-            ';
-        }
+<br><br><br>
+<table>
+    <thead>
+        <tr>
+            <th style="width: 6%;"></th>
+            <th style="width: 65%;"><b>Part 1 – Discussion with the Client Regarding Going Concern:</b></th>
+            <th class="cent" style="width: 29%;"><b></b></th>
+        </tr>
+    </thead>
+    <tbody>';
+    $count = 0;
+    foreach($bp1 as $r){
+        $count ++;
+        $html .= '
+        <tr>
+            <td style="width: 6%;">'.$count.'.<br></td>
+            <td style="width: 65%;">'.$r['field1'].'</td>
+            <td class="cent bo" style="width: 29%;">'.$r['field2'].'</td>
+        </tr>
+        ';
+    }
 $html .= '
     </tbody>
 </table>
 ';
 $html .= '
-    <br><br>
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 6%;"></th>
-                <th style="width: 65%;"><b>Part 2 – The Auditor’s Assessment ~ General Considerations:</b></th>
-                <th class="cent bo" style="width: 29%;"><b>Comments / Ref</b></th>
-            </tr>
-        </thead>
-        <tbody>';
-        $count = 0;
-        foreach($bp2 as $r){
-            $count ++;
-            $html .= '
-            <tr>
-                <td style="width: 6%;">'.$count.'.<br></td>
-                <td style="width: 65%;">'.$r['question'].'</td>
-                <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
-            </tr>
+<br><br>
+<table>
+    <thead>
+        <tr>
+            <th style="width: 6%;"></th>
+            <th style="width: 65%;"><b>Part 2 – The Auditor’s Assessment ~ General Considerations:</b></th>
+            <th class="cent bo" style="width: 29%;"><b>Comments / Ref</b></th>
+        </tr>
+    </thead>
+    <tbody>';
+    $count = 0;
+    foreach($bp2 as $r){
+        $count ++;
+        $html .= '
+        <tr>
+            <td style="width: 6%;">'.$count.'.<br></td>
+            <td style="width: 65%;">'.$r['field1'].'</td>
+            <td class="cent bo" style="width: 29%;">'.$r['field2'].'</td>
+        </tr>
         ';
     }
 $html .= '
-        </tbody>
-    </table>
+    </tbody>
+</table>
 ';
 $html .= '
-    <br><br>
-    <p><b>Part 3a – The Auditor’s Assessment ~ Specific Concerns: <br><i>Completion of this section is optional unless potential issues regarding the going concern presumption have been identified in Parts 1 or 2 above. </i></b></p>
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 6%;"></th>
-                <th style="width: 65%;"><b></b></th>
-                <th class="cent bo" style="width: 29%;"><b>Comments / Ref</b></th>
-            </tr>
-        </thead>
-        <tbody>';
-        $count = 0;
-        foreach($bp3a as $r){
-            $count ++;
-            $html .= '
-            <tr>
-                <td style="width: 6%;">'.$count.'.<br></td>
-                <td style="width: 65%;">'.$r['question'].'</td>
-                <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
-            </tr>
+<br><br>
+<p><b>Part 3a – The Auditor’s Assessment ~ Specific Concerns: <br><i>Completion of this section is optional unless potential issues regarding the going concern presumption have been identified in Parts 1 or 2 above. </i></b></p>
+<table>
+    <thead>
+        <tr>
+            <th style="width: 6%;"></th>
+            <th style="width: 65%;"><b></b></th>
+            <th class="cent bo" style="width: 29%;"><b>Comments / Ref</b></th>
+        </tr>
+    </thead>
+    <tbody>';
+    $count = 0;
+    foreach($bp3a as $r){
+        $count ++;
+        $html .= '
+        <tr>
+            <td style="width: 6%;">'.$count.'.<br></td>
+            <td style="width: 65%;">'.$r['field1'].'</td>
+            <td class="cent bo" style="width: 29%;">'.$r['field2'].'</td>
+        </tr>
         ';
     }
 $html .= '
-        </tbody>
-    </table>
+    </tbody>
+</table>
 ';
 $html .= '
-    <br><br>
-    <p><b>Part 3b – The Auditor’s Assessment ~ Disclosure considerations:</b></p>
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 6%;"></th>
-                <th style="width: 65%;"><b></b></th>
-                <th class="cent bo" style="width: 29%;"><b>Comments / Ref</b></th>
-            </tr>
-        </thead>
-        <tbody>';
-        $count = 0;
-        foreach($bp3b as $r){
-            $count ++;
-            $html .= '
-            <tr>
-                <td style="width: 6%;">'.$count.'.<br></td>
-                <td style="width: 65%;">'.$r['question'].'</td>
-                <td class="cent bo" style="width: 29%;">'.$r['reference'].'</td>
-            </tr>
+<br><br>
+<p><b>Part 3b – The Auditor’s Assessment ~ Disclosure considerations:</b></p>
+<table>
+    <thead>
+        <tr>
+            <th style="width: 6%;"></th>
+            <th style="width: 65%;"><b></b></th>
+            <th class="cent bo" style="width: 29%;"><b>Comments / Ref</b></th>
+        </tr>
+    </thead>
+    <tbody>';
+    $count = 0;
+    foreach($bp3b as $r){
+        $count ++;
+        $html .= '
+        <tr>
+            <td style="width: 6%;">'.$count.'.<br></td>
+            <td style="width: 65%;">'.$r['field1'].'</td>
+            <td class="cent bo" style="width: 29%;">'.$r['field2'].'</td>
+        </tr>
         ';
     }
 $html .= '
-        </tbody>
-    </table>
+    </tbody>
+</table>
 ';
 $pdf->writeHTML($html, true, false,false, false, '');
 $pdf->AddPage();

@@ -27,7 +27,6 @@ $pdf->setPrintHeader(false);
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
@@ -62,103 +61,103 @@ $html =  "
     </style>
 ";
 $html .= '
-    <table>
-        <tr>
-            <td style="width: 60%;">
-                <table>
-                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
-                    <tr><td></td></tr>
-                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-    ';
+<table>
+    <tr>
+        <td style="width: 60%;">
+            <table>
+                <tr><td class="bb">Client:</td></tr>
+                <tr><td></td></tr>
+                <tr><td class="bb">Period:</td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+';
 $html .= '<h3>SUBSEQUENT EVENTS REVIEW</h3>
-    <p><b>Objective: </b> <br>
-    To determine whether any material adjustment or disclosure is required to the financial statements as a result of events occurring between the end of the accounting period and the date of signing the audit report and to ensure the requirements of ISA 560 regarding subsequent events are met.</p>
-    <p class="bo"><b>NB: An adjusting event is an event that provides evidence of a condition that existed at the reporting date.  A non-adjusting event is an event that arose solely after the reporting date, however, its disclosure is necessary to give a true and fair view.</b></p>';
+<p><b>Objective: </b> <br>
+To determine whether any material adjustment or disclosure is required to the financial statements as a result of events occurring between the end of the accounting period and the date of signing the audit report and to ensure the requirements of ISA 560 regarding subsequent events are met.</p>
+<p class="bo"><b>NB: An adjusting event is an event that provides evidence of a condition that existed at the reporting date.  A non-adjusting event is an event that arose solely after the reporting date, however, its disclosure is necessary to give a true and fair view.</b></p>';
 $html .= '
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 6%;"></th>
-                <th style="width: 47%;"><b>Review of Clients Records</b></th>
-                <th class="cent bo" style="width: 47%;"><b>Working Paper Reference or Comment</b></th>
-            </tr>
-        </thead>
-        <tbody>';
-        $count = 0;
-        foreach($cr as $r){
-            $count ++;
-            $html .= '
-            <tr>
-                <td style="width: 6%;">'.$count.'.<br></td>
-                <td style="width: 47%;">'.$r['question'].'<br></td>
-                <td class="cent bo" style="width: 47%;">'.$r['reference'].'</td>
-            </tr>
-            ';
-        }
+<table>
+    <thead>
+        <tr>
+            <th style="width: 6%;"></th>
+            <th style="width: 47%;"><b>Review of Clients Records</b></th>
+            <th class="cent bo" style="width: 47%;"><b>Working Paper Reference or Comment</b></th>
+        </tr>
+    </thead>
+    <tbody>';
+    $count = 0;
+    foreach($cr as $r){
+        $count ++;
+        $html .= '
+        <tr>
+            <td style="width: 6%;">'.$count.'.<br></td>
+            <td style="width: 47%;">'.$r['field1'].'<br></td>
+            <td class="cent bo" style="width: 47%;">'.$r['field2'].'</td>
+        </tr>
+        ';
+    }
 $html .= '
-        </tbody>
-    </table>
-    ';
+    </tbody>
+</table>
+';
 $html .= '
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 6%;"></th>
-                <th style="width: 47%;"><b>Discussion with Client</b></th>
-                <th class="cent bo" style="width: 47%;"><b>Working Paper Reference or Comment</b></th>
-            </tr>
-        </thead>
-        <tbody>';
-        $count = 0;
-        foreach($dc as $r){
-            $count ++;
-            $html .= '
-            <tr>
-                <td style="width: 6%;">'.$count.'.<br></td>
-                <td style="width: 47%;">'.$r['question'].'<br></td>
-                <td class="cent bo" style="width: 47%;">'.$r['reference'].'</td>
-            </tr>
-            ';
-        }
+<table>
+    <thead>
+        <tr>
+            <th style="width: 6%;"></th>
+            <th style="width: 47%;"><b>Discussion with Client</b></th>
+            <th class="cent bo" style="width: 47%;"><b>Working Paper Reference or Comment</b></th>
+        </tr>
+    </thead>
+    <tbody>';
+    $count = 0;
+    foreach($dc as $r){
+        $count ++;
+        $html .= '
+        <tr>
+            <td style="width: 6%;">'.$count.'.<br></td>
+            <td style="width: 47%;">'.$r['field1'].'<br></td>
+            <td class="cent bo" style="width: 47%;">'.$r['field2'].'</td>
+        </tr>
+        ';
+    }
 $html .= '
-        </tbody>
-    </table>
-    ';
+    </tbody>
+</table>
+';
 $html .= '
     <p><b>Finalisation of the Audit File</b></p>
     <p>This section should also detail any other work done on subsequent events not covered by the questions below.</p>
 ';
 $html .= '
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 6%;"></th>
-                <th style="width: 60%;"><b></b></th>
-                <th class="cent bo" style="width: 18%;"><b>Initial & Date</b></th>
-                <th class="cent bo" style="width: 18%;"><b>WP Ref / Comment</b></th>
-            </tr>
-        </thead>
-        <tbody>';
-        $count = 0;
-        foreach($faf as $r){
-            $count ++;
-            $html .= '
-            <tr>
-                <td style="width: 6%;">'.$count.'.<br></td>
-                <td style="width: 60%;">'.$r['question'].'<br></td>
-                <td class="cent bo" style="width: 18%;">'.$r['extent'].'</td>
-                <td class="cent bo" style="width: 18%;">'.$r['reference'].'</td>
-            </tr>
-            ';
-        }
+<table>
+    <thead>
+        <tr>
+            <th style="width: 6%;"></th>
+            <th style="width: 60%;"><b></b></th>
+            <th class="cent bo" style="width: 18%;"><b>Initial & Date</b></th>
+            <th class="cent bo" style="width: 18%;"><b>WP Ref / Comment</b></th>
+        </tr>
+    </thead>
+    <tbody>';
+    $count = 0;
+    foreach($faf as $r){
+        $count ++;
+        $html .= '
+        <tr>
+            <td style="width: 6%;">'.$count.'.<br></td>
+            <td style="width: 60%;">'.$r['field1'].'<br></td>
+            <td class="cent bo" style="width: 18%;">'.$r['field2'].'</td>
+            <td class="cent bo" style="width: 18%;">'.$r['field3'].'</td>
+        </tr>
+        ';
+    }
 $html .= '
-        </tbody>
-    </table>
-    ';
+    </tbody>
+</table>
+';
 $pdf->writeHTML($html, true, false,false, false, '');
 $pdf->AddPage();
 $html =  "

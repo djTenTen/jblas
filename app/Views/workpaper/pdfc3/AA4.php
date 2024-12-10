@@ -67,21 +67,15 @@ $html .= '
 <p class="cent"><b>SUGGESTED LETTER OF REPRESENTATION</b> <br><br><br></p>
 <table>
     <tr>
-        <td>'.$cl['aud'].'</td>
-    </tr>
-     <tr>
-        <td>'.$cl['sup'].'</td>
+        <td>[Name of the auditors] <br><br></td>
     </tr>
     <tr>
-        <td>'.$cl['audm'].'</td>
-    </tr>
-    <tr>
-        <td>'.$firm.'</td>
+        <td>[Address of the auditors]<br><br></td>
     </tr>
 </table>
 <p>Dear Sirs</p>
-<p class="ind"><b>LETTER OF REPRESENTATION FOR THE '.strtoupper($cl['financial_year']).' ENDED '.strtoupper(date('F d', strtotime($cl['financial_year'].'-'.$cl['end_financial_year'])) ).'</b></p>
-<p>We confirm that the following representations are made on the basis of enquiries of management and staff with relevant knowledge and experience and where appropriate, of inspection of supporting documentation, sufficient to satisfy ourselves that we can properly make each of the following representations to you in connection with your audit of the company\'s financial statements for the year ended '.date('F d, Y', strtotime($cl['financial_year'].'-'.$cl['end_financial_year'])).'.</p>
+<p class="ind"><b>LETTER OF REPRESENTATION FOR THE [YEAR / PERIOD] ENDED [DATE]</b></p>
+<p>We confirm that the following representations are made on the basis of enquiries of management and staff with relevant knowledge and experience and where appropriate, of inspection of supporting documentation, sufficient to satisfy ourselves that we can properly make each of the following representations to you in connection with your audit of the company\'s financial statements for the year ended [date].</p>
 <p>We acknowledge our legal responsibilities regarding disclosure of information to you as auditors and confirm that so far as we are aware, there is no relevant audit information needed by you in connection with preparing your audit report of which you are unaware.  Each director has taken all the steps that they ought to have taken as a director in order to make themselves aware of any relevant audit information and to establish that you are aware of that information.</p>
 <p><b>Financial Statements:</b></p>
 <table>

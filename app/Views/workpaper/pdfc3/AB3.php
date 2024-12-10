@@ -37,160 +37,427 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // add a page
 $pdf->AddPage();
 //$pdf->SetPageSize('A4');
-$html =  "
-    <style>
-        *{
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 14px;
-        }
-        h3{
-            font-size: 16px;
-        }
-        .cent{
-            text-align: center;
-        }
-        .bo{
-            border: 1px solid black;
-        }
-        p,li{
-            text-align: justify;
-        }
-        .bb{
-            border-bottom: 1px solid black;
-        }
-        .ind{
-            text-indent: 20px;
-        }
-    </style>
-";
+$style = "<style>
+*{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+h3{
+    font-size: 16px;
+}
+.cent{
+    text-align: center;
+}
+.bo{
+    border: 1px solid black;
+}
+p,li{
+    text-align: justify;
+}
+.bb{
+    border-bottom: 1px solid black;
+    
+}
+.ind{
+    text-indent: 20px;
+}
+</style>";
+$html =  "";
+$html .= $style;
 $html .= '
-    <table>
-        <tr>
-            <td style="width: 60%;">
-                <table>
-                    <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
-                    <tr><td></td></tr>
-                    <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
-                </table>
-            </td>
-            <td style="width: 40%;">
-                <table border="1">
-                    <tr>
-                        <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                        <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
-                    </tr>
-                    <tr>
-                        <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                        <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+<table>
+    <tr>
+        <td style="width: 60%;">
+            <table>
+                <tr><td class="bb">Client:</td></tr>
+                <tr><td></td></tr>
+                <tr><td class="bb">Period:</td></tr>
+            </table>
+        </td>
+        <td style="width: 40%;">
+            <table border="1">
+                <tr>
+                    <td>Prepared by: <br></td>
+                    <td>Date: <br></td>
+                </tr>
+                <tr>
+                    <td>Reviewed by: <br></td>
+                    <td>Date: <br></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
 ';
 $html .= '
-    <h3>FINANCIAL STATEMENTS DISCLOSURE AND COMPLIANCE ANNUAL REVIEW CHECKLIST</h3>
-    <p>This checklist should be used to evidence the checking of disclosure and compliance matters for \'uncomplex companies\' where the appropriate (i.e. IFRS) disclosure checklist has been completed within the last three years and the size and complexity of the company means that the firm does not consider that a full disclosure checklist needs to be completed every year.</p>
+<p><b>CORPORATE DISCLOSURE CHECKLIST (IFRS)</b></p>
+<p><b><u>Scope</u></b></p>
+<p>This checklist should be completed for every corporate entity where International Financial Reporting Standards (IFRS) are being followed and it is not appropriate to complete Appendix 3.14 – Financial Statements Disclosure and Compliance Annual Review Checklist.</p>
+<p>This checklist can be used for any entity that adopts IFRS, and includes a number of “best practice” disclosures which are commonly included within financial statements as a result of local legislative requirements.  If such best practice disclosures are not required, or are prohibited by legislation, it would be necessary to disregard these, and where relevant, to replace these disclosures with those disclosures required by the relevant legislation.</p>
+<p>The requirements of IFRS only apply to material items.  Immaterial balances can be aggregated into other account headings and immaterial notes and accounting policies can be, and should ideally be, removed [IAS 1 paragraphs 29-31].</p>
+<p>IFRS 15 <i>Revenue from Contracts with Customers</i> and IFRS 9 <i>Financial Instruments</i> became mandatory for accounting periods commencing on or after 1 January 2018. These resulted in significant additional disclosure requirements compared to the superseded standards dealing with these areas. </p>
+<p>IFRS 16 Leases is mandatory for accounting periods commencing on or after 1 January 2019. This fundamentally alters the accounting treatment for lessees, with consequential disclosure amendments.</p>
+<p><b>NB: To ensure that the Checklist is as efficient as possible, areas which are more specialised have been addressed by supplementary disclosure checklists.  <u>These supplementary disclosure checklists should only be completed if the area is relevant.</u></b></p>
+<p>NB: The checklist does not cover the additional disclosures required by companies which enter into insurance contracts, where these are relevant considerations, then the disclosure requirements of IFRS 4 should be given.  It also does not cover the requirements of IAS 26, which are only relevant to clients who are themselves pension schemes, or IFRIC 2 which is relevant to cooperative entities.  The checklist also does not cover the disclosure requirements of companies with listed equity or debt.</p>
+';
+$html .= '
+<table border="1">
+    <thead>
+        <tr class="cent">
+            <th style="width: 55%;"><b>Specialist Area ~ Additional Disclosures Relating to:-</b></th>
+            <th style="width: 15%;"><b>Reference in this Manual</b></th>
+            <th style="width: 15%;"><b>Is this Area Relevant?(Y/N)</b></th>
+            <th style="width: 15%;"><b>Supplementary Checklist Completed?(Y/N/NA)</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="cent">
+            <td style="width: 55%;">Exploration for and Evaluation of Mineral Resources</td>
+            <td style="width: 15%;">App. 3.15.1</td>
+            <td style="width: 15%;">'.$sec['y1'].'</td>
+            <td style="width: 15%;">'.$sec['y2'].'</td>
+        </tr>
+        <tr class="cent">
+            <td style="width: 55%;">Defined Benefit Pension Plans</td>
+            <td style="width: 15%;">App. 3.15.2</td>
+            <td style="width: 15%;">'.$sec['y3'].'</td>
+            <td style="width: 15%;">'.$sec['y4'].'</td>
+        </tr>
+        <tr class="cent">
+            <td style="width: 55%;">Share-Based Payments</td>
+            <td style="width: 15%;">App. 3.15.3</td>
+            <td style="width: 15%;">'.$sec['y5'].'</td>
+            <td style="width: 15%;">'.$sec['y6'].'</td>
+        </tr>
+        <tr class="cent">
+            <td style="width: 55%;">Agricultural Activitiess</td>
+            <td style="width: 15%;">App. 3.15.4</td>
+            <td style="width: 15%;">'.$sec['y7'].'</td>
+            <td style="width: 15%;">'.$sec['y8'].'</td>
+        </tr>
+        <tr class="cent">
+            <td style="width: 55%;">First Time Adoption of IFRS</td>
+            <td style="width: 15%;">App. 3.15.5</td>
+            <td style="width: 15%;">'.$sec['y9'].'</td>
+            <td style="width: 15%;">'.$sec['y10'].'</td>
+        </tr>
+        <tr class="cent">
+            <td style="width: 55%;">Parent where Consolidated Financial Statements are not Prepared</td>
+            <td style="width: 15%;">App. 3.15.6</td>
+            <td style="width: 15%;">'.$sec['y11'].'</td>
+            <td style="width: 15%;">'.$sec['y12'].'</td>
+        </tr>
+        <tr class="cent">
+            <td style="width: 55%;">First Time Adoption of IFRS 15 / 9</td>
+            <td style="width: 15%;">App. 3.15.7</td>
+            <td style="width: 15%;">'.$sec['y13'].'</td>
+            <td style="width: 15%;">'.$sec['y14'].'</td>
+        </tr>
+        <tr class="cent">
+            <td style="width: 55%;">First Time Adoption of IFRS 16</td>
+            <td style="width: 15%;">App. 3.15.8</td>
+            <td style="width: 15%;">'.$sec['y15'].'</td>
+            <td style="width: 15%;">'.$sec['y16'].'</td>
+        </tr>
+    </tbody>
+</table>
+';
+$pdf->writeHTML($html, true, false,false, false, '');
+$pdf->AddPage();
+$html = "";
+$html .= $style;
+$html .= '
+    <p>For areas which are relevant, “Supplementary Checklist Completed” should be marked ‘Yes’, ‘No’ or ‘Not Applicable’ as appropriate.  Any ‘No’ answers must be fully explained.</p>
+    <p><b>Contents</b></p>
     <table>
         <tbody>
             <tr>
-                <td style="width: 7%;"><b>1.</b></td>
-                <td style="width: 93%;"><b>Use of Disclosure Checklists</b>
-                    <p>The appropriate disclosure checklist must be completed in the following circumstances:</p>
-                    <ul>
-                        <li>First year of engagement;</li>
-                        <li>Every three years;</li>
-                        <li>Where the financial statements are not prepared via a computerised accounts production package;</li>
-                        <li>Where there have been significant changes in the client\'s business or accounting policies;</li>
-                        <li>Where there have been significant changes in financial reporting standards (including First Time Adoption of / Amendments to IFRS) or legislative requirements;</li>
-                        <li>Where there has been a significant transaction which would require additional disclosure in the financial statements (for example, a change to Equity (other than the profit for the year), the introduction of a new type of asset or liability, or acquiring a new source of income or expenditure).</li>
-                    </ul>
-                    <br>
-                </td>
+                <td style="width: 15%;"><b>Section 1</b></td>
+                <td style="width: 85%;"><b style="color: blue;">Format of the Annual Report and Generic Information</b><br></td>
             </tr>
             <tr>
-                <td style="width: 7%;"><b>2.</b></td>
-                <td style="width: 93%;"><b>Common Changes</b>
-                    <p>Have any of the following points arisen during the period, resulting in disclosure or compliance changes:</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="width: 80%;"></th>
-                                <th class="bo cent" style="width: 20%;"><b>Yes/No</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>•  Are disclosure exemptions available in legislation / IFRS now being taken / lost?</td>
-                                <td class="bo cent">'.$ab3['aby1'].'</td>
-                            </tr>
-                            <tr>
-                                <td>•  Was the company required to produce consolidated financial statements in the previous period but not in this period?</td>
-                                <td class="bo cent">'.$ab3['aby2'].'</td>
-                            </tr>
-                            <tr>
-                                <td>•  Is the company required to prepare consolidated financial statements this period (but has not in the previous period)?</td>
-                                <td class="bo cent">'.$ab3['aby3'].'</td>
-                            </tr>
-                            <tr>
-                                <td>•  Is the company adopting a new accounting framework for the first time?</td>
-                                <td class="bo cent">'.$ab3['aby4'].'</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <p>If the answer to any of the above is yes, a full disclosure checklist needs to be completed.</p>
-                </td>
+                <td style="width: 15%;"><b>Section 2</b></td>
+                <td style="width: 85%;"><b style="color: blue;">Statement of Comprehensive Income (SCI) and Related Notes</b><br></td>
             </tr>
             <tr>
-                <td style="width: 7%;"><b>3.</b></td>
-                <td style="width: 93%;"><b>New Financial Reporting Standards </b>
-                    <p>The most recently completed disclosure checklist was for the period ending_________________</p>
-                    <p>Since then, no further* / the following* Accounting / Financial Reporting Standards or amendments (IFRS*) have become mandatory, with a commentary of the effect on disclosure in the financial statements being shown <i>(or included on a separate, cross-referenced schedule)(*delete as applicable):</i></p>
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th class="cent"><b>Financial Reporting Standard </b></th>
-                                <th class="cent"><b>Effect on disclosures</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="cent">
-                                <td>'.$ab3['frs1'].'</td>
-                                <td>'.$ab3['ed1'].'</td>
-                            </tr>
-                            <tr class="cent">
-                                <td>'.$ab3['frs2'].'</td>
-                                <td>'.$ab3['ed2'].'</td>
-                            </tr>
-                            <tr class="cent">
-                                <td>'.$ab3['frs3'].'</td>
-                                <td>'.$ab3['ed3'].'</td>
-                            </tr>
-                            <tr class="cent">
-                                <td>'.$ab3['frs4'].'</td>
-                                <td>'.$ab3['ed4'].'</td>
-                            </tr>
-                            <tr class="cent">
-                                <td>'.$ab3['frs5'].'</td>
-                                <td>'.$ab3['ed5'].'</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                </td>
+                <td style="width: 15%;"><b>Section 3</b></td>
+                <td style="width: 85%;"><b style="color: blue;">Statement of Changes in Equity</b><br></td>
             </tr>
             <tr>
-                <td style="width: 7%;"><b>4.</b></td>
-                <td style="width: 93%;"><b>Conclusion</b>
-                    <p>It is unnecessary to complete the relevant disclosure checklist for the current period.</p>
-                    <p>The financial statements have been reviewed with reference to the previously completed disclosure checklist and the requirements of any new financial reporting standards or amendments, and disclosures are considered to be adequate.</p>
-                    <br>
-                </td>
+                <td style="width: 15%;"><b>Section 4</b></td>
+                <td style="width: 85%;"><b style="color: blue;">Statement of Financial Position and Related Notes</b><br></td>
+            </tr>
+            <tr>
+                <td style="width: 15%;"><b>Section 5</b></td>
+                <td style="width: 85%;"><b style="color: blue;">Statement of Cash Flows</b><br></td>
+            </tr>
+            <tr>
+                <td style="width: 15%;"><b>Section 6</b></td>
+                <td style="width: 85%;"><b style="color: blue;">Accounting Policies and Estimation Techniques</b><br></td>
+            </tr>
+            <tr>
+                <td style="width: 15%;"><b>Section 7</b></td>
+                <td style="width: 85%;"><b style="color: blue;">Notes and Other Disclosures</b><br></td>
+            </tr>
+        </tbody>
+    </table>
+    <p><b>Key to abbreviations used in the “Reference” column:</b></p>
+    <table style="width: 50%;">
+        <tbody>
+            <tr>
+                <td>IAS 1.82</td>
+                <td>Paragraph 82 of IAS 1</td>
+            </tr>
+            <tr>
+                <td>IFRS 15.110</td>
+                <td>Paragraph 110 of IFRS 15</td>
             </tr>
         </tbody>
     </table>
 ';
+$pdf->writeHTML($html, true, false,false, false, '');
+$pdf->AddPage();
+$html = "";
+$html .= $style;
+$html .= '
+    <table border="1">
+        <thead>
+            <tr>
+                <th  colspan="5"><b>Section 1 – Format of the Annual Report and Generic Information</b></th>
+            </tr>
+            <tr>
+                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+            </tr>
+        </thead>
+        <tbody>';
+        foreach($sec1 as $r){
+            $html .= '
+            <tr>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
+            </tr>
+            ';
+        }
+$html .= '
+        </tbody>
+    </table>
+';
+$pdf->writeHTML($html, true, false,false, false, '');
+$pdf->AddPage();
+$html = "";
+$html .= $style;
+$html .= '
+    <table border="1">
+        <thead>
+            <tr>
+                <th  colspan="5"><b>Section 2 – Statement of Comprehensive Income (SCI) and Related Notes</b></th>
+            </tr>
+            <tr>
+                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="5">IAS 1 paragraph 81A allows the SCI to be presented as either one or two statements (a profit and loss account and a SCI (which is a combination of the profit for the year plus items of other comprehensive income (OCI))).</td>
+            </tr>';
+        foreach($sec2 as $r){
+            $html .= '
+            <tr>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
+            </tr>
+            ';
+        }
+$html .= '
+        </tbody>
+    </table>
+';
+$pdf->writeHTML($html, true, false,false, false, '');
+$pdf->AddPage();
+$html = "";
+$html .= $style;
+$html .= '
+    <table border="1">
+        <thead>
+            <tr>
+                <th  colspan="5"><b>Section 3 – Statement of Changes in Equity</b><br>
+                    NB1: This must be presented as a primary statement and not as a note to the financial statements.<br>
+                    NB2: Per IAS 21 paragraph 52(a) there should be a column for foreign exchange differences that pass through OCI and accumulate in equity.
+                </th>
+            </tr>
+            <tr>
+                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+            </tr>
+        </thead>
+        <tbody>';
+        foreach($sec3 as $r){
+            $html .= '
+            <tr>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
+            </tr>
+            ';
+        }
+$html .= '
+        </tbody>
+    </table>
+';
+$pdf->writeHTML($html, true, false,false, false, '');
+$pdf->AddPage();
+$html = "";
+$html .= $style;
+$html .= '
+    <table border="1">
+        <thead>
+            <tr>
+                <th  colspan="5"><b>Section 4 – Statement of Financial Position and Related Notes</b></th>
+            </tr>
+            <tr>
+                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td  colspan="5"><b>Impairment ~ Goodwill and Intangible Fixed Assets with Indefinite Useful Lives</b></td>
+            </tr>
+        ';
+        foreach($sec4 as $r){
+            $html .= '
+            <tr>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
+            </tr>
+            ';
+        }
+$html .= '
+        </tbody>
+    </table>
+';
+$pdf->writeHTML($html, true, false,false, false, '');
+$pdf->AddPage();
+$html = "";
+$html .= $style;
+$html .= '
+    <table border="1">
+        <thead>
+            <tr>
+                <th  colspan="5"><b>Section 5 – Statement of Cash Flows</b>
+            </th>
+            </tr>
+            <tr>
+                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            ';
+        foreach($sec5 as $r){
+            $html .= '
+            <tr>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
+            </tr>
+            ';
+        }
+$html .= '
+        </tbody>
+    </table>
+';
+$pdf->writeHTML($html, true, false,false, false, '');
+$pdf->AddPage();
+$html = "";
+$html .= $style;
+$html .= '
+    <table border="1">
+        <thead>
+            <tr>
+                <th  colspan="5"><b>Section 6 – Accounting Policies and Estimation Techniques</b>
+                <p>The following disclosures can be show as part of the notes to the financial statements or as a specific section in the financial statements [IAS 1.116].</p>
+            </th>
+            </tr>
+            <tr>
+                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            ';
+        foreach($sec6 as $r){
+            $html .= '
+            <tr>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
+            </tr>
+            ';
+        }
+$html .= '
+        </tbody>
+    </table>
+';
+$pdf->writeHTML($html, true, false,false, false, '');
+$pdf->AddPage();
+$html = "";
+$html .= $style;
+$html .= '
+    <table border="1">
+        <thead>
+            <tr>
+                <th  colspan="5"><b>Section 7 – Notes and Other Disclosures</b>
+            </th>
+            </tr>
+            <tr>
+                <th style="width: 70%;" colspan="3"><b>Reference</b></th>
+                <th style="width: 15%;" class="cent"><b>Y/N/NA</b></th>
+                <th style="width: 15%;" class="cent"><b>Comments</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            ';
+        foreach($sec7 as $r){
+            $html .= '
+            <tr>
+                <td style="width: 13%;">'.$r['field4'].'</td>
+                <td style="width: 7%;">'.$r['field5'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 15%;">'.$r['field2'].'</td>
+                <td style="width: 15%;">'.$r['field3'].'</td>
+            </tr>
+            ';
+        }
+$html .= '
+        </tbody>
+    </table>
+';
+
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,false, false, '');

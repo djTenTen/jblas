@@ -1,42 +1,58 @@
 <?php
+
+
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
+
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
+
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
+
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 $pdf->setPrintHeader(false);
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
 // set margins
 $pdf->SetMargins(25,15,15);   
 //$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP-60, PDF_MARGIN_RIGHT);
 //$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
 $pdf->SetHeaderMargin(0);   
 $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+
 // set auto page breaks
 $pdf->SetAutoPageBreak(FALSE, PDF_MARGIN_BOTTOM);
+
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
+
+
 // ---------------------------------------------------------
 // set font
+
+
+
 // add a page
 $pdf->AddPage('P');
 //$pdf->SetPageSize('A4');
+
+
 $html =  "
     <style>
          *{
@@ -60,37 +76,34 @@ $html =  "
         }
     </style>
 ";
+
 $html .= '
 <table>
     <tr>
         <td style="width: 60%;">
             <table>
-                <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                <tr><td class="bb">Client:</td></tr>
                 <tr><td></td></tr>
-                <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                <tr><td class="bb">Period:</td></tr>
             </table>
         </td>
         <td style="width: 40%;">
             <table border="1">
                 <tr>
-                    <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                    <td>Date: <br><b>'. date('F d,Y', strtotime($fl['prepared_on'])) .'</b></td>
+                    <td>Prepared by: <br></td>
+                    <td>Date: <br></td>
                 </tr>
                 <tr>
-                    <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                    <td>Date: <br><b>'.date('F d,Y', strtotime($fl['reviewed_on'])).'</b></td>
+                    <td>Reviewed by: <br></td>
+                    <td>Date: <br></td>
                 </tr>
             </table>
         </td>
     </tr>
 </table>
 ';
-$html .= '
-';
-//$image_file = base_url('uploads/signature/'.$cl['audsign']) ;
-//$pdf->Image($image_file, $x = 20, $y = 190, $w = 180, $h = 180, $type = '', $link = '', $align = '', $resize = true, $dpi = 300, $palign = '', $ismask = false, $imgmask = false, $border = 0, $fitbox = true, $hidden = false, $fitonpage = false, $alt = '');
-//$image_file = base_url('uploads/sinature/'.$cl['audsign']);
-//pdf->Image($image_file, $x = 20, $y = 190, $w = 180, $h = 180, $type = '', $link = '', $align = '', $resize = true, $dpi = 300, $palign = '', $ismask = false, $imgmask = false, $border = 0, $fitbox = true, $hidden = false, $fitonpage = false, $alt = '');
+
+
 $html .= '
 <h3>PROVISION OF NON-AUDIT SERVICES</h3>
 <p><b>Aim:</b></p>
@@ -108,10 +121,15 @@ $html .= '
 <p><b><i>NB: If the client does not have ‘informed management’ the provision of both audit and non-audit services is not permitted.</i></b></p>
 <p><b>Section 1 – Consideration of Prohibited Services</b></p>
 ';
+
+
 $image_file = base_url('img/ac2/ac2-f1.jpg');
 $pdf->Image($image_file, $x = 20, $y = 190, $w = 180, $h = 180, $type = '', $link = '', $align = '', $resize = true, $dpi = 300, $palign = '', $ismask = false, $imgmask = false, $border = 0, $fitbox = true, $hidden = false, $fitonpage = false, $alt = '');
 $pdf->writeHTML($html, true, false,false, false, '');
+
+
 $pdf->AddPage('L');
+
 $html =  "
     <style>
          *{
@@ -135,6 +153,7 @@ $html =  "
         }
     </style>
 ";
+
 $html .= '
     <p><b>Section 2 – Consideration of the Type of Non-Audit Services Provided and Safeguards in Place </b></p>
     <p><i>N.B. Complete multiple sheets if more than four different types of non-audit service are provided<br>N.B. Audit related non-audit services (for example, a separate report to a regulator, (e.g. that on client money handled by a solicitor)) should still be treated as a non-audit service, but it is not necessary for safeguards to be put in place, as threats to independence are insignificant</i></p>
@@ -151,23 +170,28 @@ $html .= '
     </thead>
     <tbody>
     ';
+
 foreach ($ac2 as $r){
     $html .= '
         <tr>
-            <td style="width: 45%;">'.$r['question'].'</td>
-            <td style="width: 10%;" class="cent">'.$r['corptax'].'</td>
-            <td style="width: 10%;" class="cent">'.$r['statutory'].'</td>
-            <td style="width: 10%;" class="cent">'.$r['accountancy'].' </td>
-            <td style="width: 10%;" class="cent">'.$r['other'].'</td>
-            <td style="width: 10%;" class="cent">'.$r['totalcu'].'</td>
+            <td style="width: 45%;">'.$r['field1'].'</td>
+            <td style="width: 10%;" class="cent">'.$r['field2'].'</td>
+            <td style="width: 10%;" class="cent">'.$r['field3'].'</td>
+            <td style="width: 10%;" class="cent">'.$r['field4'].' </td>
+            <td style="width: 10%;" class="cent">'.$r['field5'].'</td>
+            <td style="width: 10%;" class="cent">'.$r['field6'].'</td>
         </tr>
     ';
 }
+
 $html .= '    
     </tbody>
 </table>';
+
+
 $pdf->writeHTML($html, true, false,false, false, '');
 $pdf->AddPage('P');
+
 $html =  "
     <style>
          *{
@@ -188,10 +212,12 @@ $html =  "
         }
     </style>
 ";
+
 $html .= '<p><b>Section 2 – Consideration of the Type of Non-Audit Services Provided and Safeguards in Place </b></p>';
 $image_file = base_url('img/ac2/ac2-f2.jpg');
 $pdf->Image($image_file, $x = 20, $y = 30, $w = 180, $h = 180, $type = '', $link = '', $align = '', $resize = true, $dpi = 300, $palign = '', $ismask = false, $imgmask = false, $border = 0, $fitbox = true, $hidden = false, $fitonpage = false, $alt = '');
 $pdf->writeHTML($html, true, false,false, false, '');
+
 $pdf->SetXY(50, 205); // Set the position to (50, 160) pixels
 $html =  "
     <style>
@@ -218,11 +244,13 @@ $html .= '
 <table border="1">
     <tr>
         <td><p><b>***(Where appropriate): Documentation by the A.E.P. of how the self interest threat has been reduced to an acceptable level / details of communication with the Ethics Partner / Details of which services (audit or non-audit) will not be provided:</b> </p>
-            '.$aep['question'].'
+            '.$aep['field1'].'
         </td>
     </tr>
 </table>
 ';
+
+
 $pdf->writeHTML($html, true, false,false, false, '');
 $pdf->AddPage('P');
 $html =  "
@@ -248,17 +276,18 @@ $html =  "
         }
     </style>
 ";
+
 $html .= '
     <h3>Conclusion</h3>
-    <p>'.$aep['name'].'</p>
+    <p>'.$aep['field2'].'</p>
     <table>
         <tbody>
             <tr>
-                <td style="width: 50%;">Signature:<b> '.$cl['aud'].'</b> <br><img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
+                <td style="width: 50%;"><p>Signature:</p></td>
                 <td style="width: 50%;">(A.E.P.)</td>
             </tr>
             <tr>
-                <td style="width: 50%;"><p>Date: '.date('F d, Y', strtotime($fl['prepared_on'])).'</p></td>
+                <td style="width: 50%;"><p>Date:</p></td>
                 <td style="width: 50%;" class="cent"></td>
             </tr>
         </tbody>
@@ -304,6 +333,10 @@ $html .= '
     </table>
 ';
 $pdf->writeHTML($html, true, false,false, false, '');
+
+
+
+
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->Output('stocktransfer.pdf','I');

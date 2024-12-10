@@ -1,0 +1,195 @@
+INFO - 2024-12-10 09:43:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 09:43:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 09:43:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-12-10 09:43:10 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 0, 128, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(134): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 0, 128)
+ 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/fc8e97f742e58e9c0897e07d46a84e5dd3e66f4f0164e5b97c131224af5b88783035b529ffb83fc456ba4c56b5bcf1eace918fd6fb1f2281cc7201079d7daa46K8q8gn~dMcw$dOO6$CFHg5k=/Juan%20Dela%20Cruz%20-%20DJ%20Metal%20Works', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-12-10 09:43:10 --> [DEPRECATED] mb_substr(): Passing null to parameter #1 ($string) of type string is deprecated in SYSTEMPATH/Encryption/Handlers/BaseHandler.php on line 48.
+ 1 SYSTEMPATH/Encryption/Handlers/BaseHandler.php(48): mb_substr(null, 128, null, '8bit')
+ 2 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(135): CodeIgniter\Encryption\Handlers\BaseHandler::substr(null, 128)
+ 3 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt(null)
+ 4 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('auditsystem/client/getfiles/fc8e97f742e58e9c0897e07d46a84e5dd3e66f4f0164e5b97c131224af5b88783035b529ffb83fc456ba4c56b5bcf1eace918fd6fb1f2281cc7201079d7daa46K8q8gn~dMcw$dOO6$CFHg5k=/Juan%20Dela%20Cruz%20-%20DJ%20Metal%20Works', 'before')
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-10 09:43:10 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(118): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Filters/Client_sd.php(22): App\Models\AuthModel->getUserAccess()
+ 4 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_sd->before()
+ 5 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-10 09:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 09:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 09:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 09:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 09:48:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 09:49:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 09:49:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:02:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-10 10:02:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "workpaper/chapter1AC1.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/ChapterController.php(788): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setworkpaper()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-10 10:02:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:06:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-10 10:06:37 --> ErrorException: Undefined variable $wpID
+in APPPATH/Views/workpaper/chapter1/AC1.php on line 51.
+ 1 APPPATH/Views/workpaper/chapter1/AC1.php(51): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/chapter1/AC1.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ChapterController.php(788): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ChapterController->c1setworkpaper()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-10 10:07:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:07:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-10 10:07:15 --> mysqli_sql_exception: Unknown column 'c1.workpaper' in 'where clause' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/WorkpaperModel.php(157): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/WorkpaperController.php(2444): App\Models\WorkpaperModel->getfileinfoc1()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-10 10:07:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c1.workpaper' in 'where clause'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/WorkpaperModel.php(157): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/WorkpaperController.php(2444): App\Models\WorkpaperModel->getfileinfoc1()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-10 10:07:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c1.workpaper' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/WorkpaperModel.php(157): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/WorkpaperController.php(2444): App\Models\WorkpaperModel->getfileinfoc1()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-10 10:07:15 --> [Caused by] mysqli_sql_exception: Unknown column 'c1.workpaper' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/WorkpaperModel.php(157): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/WorkpaperController.php(2444): App\Models\WorkpaperModel->getfileinfoc1()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-10 10:15:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:15:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-10 10:15:25 --> ErrorException: Undefined variable $mtID
+in APPPATH/Controllers/WorkpaperController.php on line 818.
+ 1 APPPATH/Controllers/WorkpaperController.php(818): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->savevalues()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-10 10:15:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:15:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-10 10:15:50 --> ErrorException: Undefined array key "code"
+in APPPATH/Models/WorkpaperModel.php on line 1437.
+ 1 APPPATH/Models/WorkpaperModel.php(1437): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/WorkpaperController.php(850): App\Models\WorkpaperModel->savevalues()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->savevalues()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-10 10:16:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-10 10:16:22 --> ErrorException: Undefined array key "code"
+in APPPATH/Models/WorkpaperModel.php on line 1437.
+ 1 APPPATH/Models/WorkpaperModel.php(1437): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/WorkpaperController.php(850): App\Models\WorkpaperModel->savevalues()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->savevalues()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-10 10:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:16:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-10 10:16:53 --> ErrorException: Undefined variable $ctID
+in APPPATH/Controllers/WorkpaperController.php on line 851.
+ 1 APPPATH/Controllers/WorkpaperController.php(851): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->savevalues()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2024-12-10 10:17:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:17:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:17:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:17:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:17:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:17:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-10 10:17:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-10 10:17:37 --> mysqli_sql_exception: Unknown column 'c1.workpaper' in 'where clause' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/WorkpaperModel.php(157): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/WorkpaperController.php(2435): App\Models\WorkpaperModel->getfileinfoc1()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-10 10:17:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c1.workpaper' in 'where clause'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/WorkpaperModel.php(157): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/WorkpaperController.php(2435): App\Models\WorkpaperModel->getfileinfoc1()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-10 10:17:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c1.workpaper' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/WorkpaperModel.php(157): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/WorkpaperController.php(2435): App\Models\WorkpaperModel->getfileinfoc1()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-10 10:17:37 --> [Caused by] mysqli_sql_exception: Unknown column 'c1.workpaper' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/WorkpaperModel.php(157): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/WorkpaperController.php(2435): App\Models\WorkpaperModel->getfileinfoc1()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\WorkpaperController->viewpdfc1()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()

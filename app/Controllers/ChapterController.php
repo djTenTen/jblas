@@ -102,7 +102,7 @@ class ChapterController extends BaseController{
         $data['title']  = $code;
         $data['mtID']   = $mtID;
         $data['code']   = $code;
-        $dmtID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$mtID));
+        $dmtID = $this->decr($mtID);
         switch ($code) {
             case 'AC1':
                 $data['ac1']  = $this->c1model->getvalues_m('cacf',$code,$dmtID);
@@ -760,98 +760,86 @@ class ChapterController extends BaseController{
         ----------------------------------------------------------
         WORK PAPER CHAPTER 1 VALUES
         ----------------------------------------------------------
-        * @method c1setworkpaper() used view the workpaper values file of Chapter 1
-        * @param code consists of file code
-        * @param mtID encrypted of title id
-        * @param cID encrypted of client id
-        * @param wpID encrypted of work paper id
-        * @param name client name
-        * @var dmtID decrypted id of @param mtID
-        * @var dcID decrypted id of @param cID
-        * @var dwpID decrypted id of @param wpID
-        * @var rdata contains raw json data from database
-        * @param array-data consist the data from database to display on the page
-          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
-        * @return view
     */
     public function c1setworkpaper($code,$mtID,$cID,$wpID,$name){
 
-        $data['title']  = $code. ' - Chapter 1 Management';
+        $data['title']  = $code. ' - Pre-Engagement Activities';
         $data['name']   = $name;
         $data['cID']    = $cID;
+        $data['mtID']   = $mtID;
         $data['wpID']   = $wpID;
-        $data['mtID']  = $mtID;
         $data['code']   = $code;
-        $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $dwpID          = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
-        $dmtID         = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$mtID));
+        $dcID           = $this->decr($cID);
+        $dwpID          = $this->decr($wpID);
+        $dmtID          = $this->decr($mtID);
+        
         switch ($code) {
             case 'AC1':
-                $data['ac1']    = $this->wpmodel->getvalues_m('c1','cacf',$code,$dmtID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c1','eqr',$code,$dmtID,$dcID,$dwpID);
+                $data['ac1']    = $this->wpmodel->getvalues_c1('m','cacf',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_c1('s','eqr',$code,$dmtID,$dcID,$dwpID);
                 $data['eqr']    = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter1/Ac1', $data);
-                echo view('includes/Footer');
-                break;
+                $data['mdID']   = $this->encr($rdata['mdID']);
+            break;
             case 'AC2':
-                $data['ac2'] = $this->wpmodel->getvalues_m('c1','pans',$code,$dmtID,$dcID,$dwpID);
-                $data['aep'] = $this->wpmodel->getvalues_s('c1','ac2aep',$code,$dmtID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter1/Ac2', $data);
-                echo view('includes/Footer');
-                break;
+                $data['ac2'] = $this->wpmodel->getvalues_c1('m','pans',$code,$dmtID,$dcID,$dwpID);
+                $data['aep'] = $this->wpmodel->getvalues_c1('s','ac2aep',$code,$dmtID,$dcID,$dwpID);
+            break;
+        }
+        echo view('includes/Header', $data);
+        echo view('workpaper/chapter1/'.$code, $data);
+        echo view('includes/Footer');
+
+    }
+
+
+    /** 
+        ----------------------------------------------------------
+        WORK PAPER CHAPTER 2 VALUES
+        ----------------------------------------------------------
+    */
+    public function c2setworkpaper($code,$c2tID,$cID,$wpID,$name){
+
+        $data['title']  = $code. ' - Audit Planning';
+        $data['name']   = $name;
+        $data['cID']    = $cID;
+        $data['mtID']   = $mtID;
+        $data['wpID']   = $wpID;
+        $data['code']   = $code;
+        $dcID           = $this->decr($cID);
+        $dwpID          = $this->decr($wpID);
+        $dmtID          = $this->decr($mtID);
+        switch ($code) {
+            case 'AB4':
+                $data['ac3genmat']      = $this->wpmodel->getvalues_c2('m','genmat',$code,$dmtID,$dcID,$dwpID);
+                $data['ac3doccors']     = $this->wpmodel->getvalues_c2('m','doccors',$code,$dmtID,$dcID,$dwpID);
+                $data['ac3statutory']   = $this->wpmodel->getvalues_c2('m','statutory',$code,$dmtID,$dcID,$dwpID);
+                $data['ac3accsys']      = $this->wpmodel->getvalues_c2('m','accsys',$code,$dmtID,$dcID,$dwpID);
+                $page = $code;
+            break;
+            case 'AB4A':
+                $data['ab4a']      = $this->wpmodel->getvalues_c2('m','rd',$code,$dmtID,$dcID,$dwpID);
+                $page = $code;
+            break;
             case 'AC3':
-                $data['ac3genmat']      = $this->wpmodel->getvalues_m('c1','genmat',$code,$dmtID,$dcID,$dwpID);
-                $data['ac3doccors']     = $this->wpmodel->getvalues_m('c1','doccors',$code,$dmtID,$dcID,$dwpID);
-                $data['ac3statutory']   = $this->wpmodel->getvalues_m('c1','statutory',$code,$dmtID,$dcID,$dwpID);
-                $data['ac3accsys']      = $this->wpmodel->getvalues_m('c1','accsys',$code,$dmtID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter1/Ac3', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC4':
-                $data['ac4']    = $this->wpmodel->getvalues_m('c1','ac4sod',$code,$dmtID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c1','ppr',$code,$dmtID,$dcID,$dwpID);
+                $data['ac4']    = $this->wpmodel->getvalues_c2('m','ac4sod',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_c2('s','ppr',$code,$dmtID,$dcID,$dwpID);
                 $data['ppr']    = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter1/Ac4', $data);
-                echo view('includes/Footer');
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
+            break;
+            case 'AC4':
+                $rdata          = $this->wpmodel->getvalues_c2('s','rescon',$code,$dmtID,$dcID,$dwpID);
+                $data['rc']     = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
                 break;
             case 'AC5':
-                $rdata          = $this->wpmodel->getvalues_s('c1','rescon',$code,$dmtID,$dcID,$dwpID);
-                $data['rc']     = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter1/Ac5', $data);
-                echo view('includes/Footer');
+                $rdata          = $this->wpmodel->getvalues_c2('s','td',$code,$dmtID,$dcID,$dwpID);
+                $data['td']     = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
                 break;
             case 'AC6':
-                $data['ac6']    = $this->wpmodel->getvalues_m('c1','ac6ra',$code,$dmtID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c1','ac6s12',$code,$dmtID,$dcID,$dwpID);
-                $data['s']      = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                $data['s3']     = $this->wpmodel->getvalues_m('c1','ac6s3',$code,$dmtID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter1/Ac6', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC7':
-                $rowdata = [
-                    'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
-                    'roidata','dcodata','prdata','oadata'
-                ];
-                foreach($rowdata as $row){
-                    $rdata      = $this->wpmodel->getvalues_s('c1',$row,$code,$dmtID,$dcID,$dwpID);
-                    $data[$row] = json_decode($rdata['field1'], true);
-                }
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter1/Ac7', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC8':
                 $rowdata = [
                     'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
                     'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
@@ -859,19 +847,34 @@ class ChapterController extends BaseController{
                     'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
                 ];
                 foreach($rowdata as $row){
-                    $data[$row] = $this->wpmodel->getvalues_s('c1',$row,$code,$dmtID,$dcID,$dwpID);
+                    $data[$row] = $this->wpmodel->getvalues_c2('s',$row,$code,$dmtID,$dcID,$dwpID);
                 }
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter1/Ac8', $data);
-                echo view('includes/Footer');
+                $page = $code;
+                break;
+            case 'AC7':
+                $data['ac6']    = $this->wpmodel->getvalues_c2('m','ac6ra',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_c2('s','ac6s12',$code,$dmtID,$dcID,$dwpID);
+                $data['s']      = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $data['s3']     = $this->wpmodel->getvalues_c2('m','ac6s3',$code,$dmtID,$dcID,$dwpID);
+                $page = $code;
+                break;
+            case 'AC8':
+                $rowdata = [
+                    'bacdata','trdata','ordata','invtrdata','invmtdata','ppedata','incadata','tpdata','opdata','taxdata','provdata',
+                    'roidata','dcodata','prdata','oadata'
+                ];
+                foreach($rowdata as $row){
+                    $rdata       = $this->wpmodel->getvalues_c2('s',$row,$code,$dmtID,$dcID,$dwpID);
+                    $data[$row]  = json_decode($rdata['field1'], true);
+                }
+                $page = $code;
                 break;
             case 'AC9':
-                $rdata = $this->wpmodel->getvalues_s('c1','ac9data',$code,$dmtID,$dcID,$dwpID);
-                $data['ac9'] = json_decode($rdata['field1'], true);
-                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter1/Ac9', $data);
-                echo view('includes/Footer');
+                $rdata = $this->wpmodel->getvalues_c2('s','ac9data',$code,$dmtID,$dcID,$dwpID);
+                $data['ac9']    = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
                 break;
             case 'AC10-Tangibles':
             case 'AC10-PPE':
@@ -886,18 +889,16 @@ class ChapterController extends BaseController{
             case 'AC10-Revenue':
             case 'AC10-Costs':
             case 'AC10-Payroll':
-                $s              = explode('-', $code);
-                $data ['sheet'] = $s[1];
-                $data['code']   = $s[0];
-                $data['cu']     = $this->wpmodel->getvalues_s('c1',$s[1].'cu',$s[0],$dmtID,$dcID,$dwpID);
-                $data['ac10s1'] = $this->wpmodel->getac10data($s[1],$s[0],$dmtID,$dcID,$dwpID,'section1');
-                $data['ac10s2'] = $this->wpmodel->getac10data($s[1],$s[0],$dmtID,$dcID,$dwpID,'section2');
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter1/Ac10', $data);
-                echo view('includes/Footer');
+                $s = explode('-', $code);
+                $data ['sheet']     = $s[1];
+                $data['code']       = $s[0];
+                $data['cu']         = $this->wpmodel->getvalues_c2('s',$s[1].'cu',$s[0],$dmtID,$dcID,$dwpID);
+                $data['ac10s1']     = $this->wpmodel->getac10data($s[1],$s[0],$dmtID,$dcID,'section1');
+                $data['ac10s2']     = $this->wpmodel->getac10data($s[1],$s[0],$dmtID,$dcID,'section2');
+                $page = $s[0];
                 break;
             case 'AC10-Summary':
-                $s                  = explode('-', $code);
+                $s = explode('-', $code);
                 $data ['sheet']     = $s[1];
                 $data['code']       = $s[0];
                 $data['nmk_tgb']    = $this->wpmodel->getdatacount($dmtID,'Tangibles',$dcID,$dwpID);
@@ -926,244 +927,19 @@ class ChapterController extends BaseController{
                 $data['vop_rev']    = $this->wpmodel->getsumation($dmtID,'Revenue',$dcID,$dwpID);
                 $data['vop_cst']    = $this->wpmodel->getsumation($dmtID,'Costs',$dcID,$dwpID);
                 $data['vop_pr']     = $this->wpmodel->getsumation($dmtID,'Payroll',$dcID,$dwpID);
-                $data['mat']        = $this->wpmodel->getvalues_s('c1','materialdata',$s[0],$dmtID,$dcID,$dwpID);
+                $data['mat']        = $this->wpmodel->getvalues_c2('s','materialdata',$s[0],$dmtID,$dcID,$dwpID);
                 $rowdata            = ['tgb','ppe','invmt','invtr','tr','or','bac','tp','op','prov','rev','cst','pr'];
                 foreach($rowdata as $row){
-                    $rdata = $this->wpmodel->getvalues_s('c1',$row.'data',$s[0],$dmtID,$dcID,$dwpID);
+                    $rdata = $this->wpmodel->getvalues_c2('s',$row.'data',$s[0],$dmtID,$dcID,$dwpID);
                     $data[$row] = json_decode($rdata['field1'], true);
                 }
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter1/Ac10-Summary', $data);
-                echo view('includes/Footer');
-                break;
-            case 'AC11':
-                $rdata = $this->wpmodel->getvalues_s('c1','ac11data',$code,$dmtID,$dcID,$dwpID);
-                $data['ac11'] = json_decode($rdata['field1'], true);
-                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter1/Ac11', $data);
-                echo view('includes/Footer');
-                break;
-            default:
-            break;
-        }
-
-    }
-
-
-    /** 
-        ----------------------------------------------------------
-        WORK PAPER CHAPTER 2 VALUES
-        ----------------------------------------------------------
-        * @method c2setworkpaper() used view the workpaper values file of Chapter 2
-        * @param code consists of file code
-        * @param c2tID encrypted of title id
-        * @param cID encrypted of client id
-        * @param wpID encrypted of work paper id
-        * @param name client name
-        * @var dc2tID decrypted id of @param c2tID
-        * @var dcID decrypted id of @param cID
-        * @var dwpID decrypted id of @param wpID
-        * @param array-data consist the data from database to display on the page
-          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
-        * @return view
-    */
-    public function c2setworkpaper($code,$c2tID,$cID,$wpID,$name){
-
-        $data['title']  = $code. ' - Chapter 2 Management';
-        $data['name']   = $name;
-        $data['cID']    = $cID;
-        $data['wpID']   = $wpID;
-        $data['c2tID']  = $c2tID;
-        $data['code']   = $code;
-        $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $dwpID          = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
-        $dc2tID         = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c2tID));
-        switch ($code) {
-            case '2.1 B2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/21B2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.2.1 C2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/221C2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.2.2 C2-1':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/222C21', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.3 D2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/23D2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.4.1 E2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/241E2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.4.2 E2-1':
-                $data['aicpppa'] = $this->wpmodel->getvalues_m('c2','aicpppa',$code,$dc2tID,$dcID,$dwpID);
-                $data['rcicp'] = $this->wpmodel->getvalues_m('c2','rcicp',$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/242E21', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.4.3 E2-2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/243E22', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.4.4 E2-3':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/243E23', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.4.5 E2-4':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/245E24', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.5 F2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/25F2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.6 H2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/26H2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.7 I2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/27I2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.8 J2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/28J2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.9 K2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/29K2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.10 L2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/210L2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.11 M2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/211M2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.12 N2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/212N2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.13.1 O2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/2131O2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.13.2 O2-1':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/2132O21', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.14 P2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/214P2', $data);
-                echo view('includes/Footer');
-                break;
-            case '2.15 Q2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/215Q2', $data);
-                echo view('includes/Footer');
-                break;  
-            case '2.16 R2-1':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/216R21', $data);
-                echo view('includes/Footer');
-                break;  
-            case '2.17 R2-2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/217R22', $data);
-                echo view('includes/Footer');
-                break;  
-            case '2.18.1 S2-1':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/2181S21', $data);
-                echo view('includes/Footer');
-                break;  
-            case '2.18.2 S2-2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/2182S22', $data);
-                echo view('includes/Footer');
-                break; 
-            case '2.18.3 S2-3':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/2183S23', $data);
-                echo view('includes/Footer');
-                break;  
-            case '2.18.4 S2-4':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/2184S24', $data);
-                echo view('includes/Footer');
-                break; 
-            case '2.19.1 U2-1':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/2191U21', $data);
-                echo view('includes/Footer');
-                break;   
-            case '2.19.2 U2-2':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/2192U22', $data);
-                echo view('includes/Footer');
-                break; 
-            case '2.19.3 U2-3':
-                $data['qdata'] = $this->wpmodel->getvalues_m('c2',$code,$code,$dc2tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter2/2193U23', $data);
-                echo view('includes/Footer');
-                break;   
-            default:
+                $page = $code;
                 break;
         }
+
+        echo view('includes/Header', $data);
+        echo view('workpaper/chapter2'.$code, $data);
+        echo view('includes/Footer');
 
     }
 

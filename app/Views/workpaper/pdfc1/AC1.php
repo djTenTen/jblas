@@ -1,19 +1,25 @@
 <?php
+
+
 // create new PDF document
 $pageLayout = array(21, 29.7);
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 $pdf->setPrintFooter(false);
+
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ApplAud');
 $pdf->SetTitle($code);
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
+
 // set default header data
 //$pdf->SetHeaderData("headerdispatch.png", 65);
+
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+
 // set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 $pdf->setPrintHeader(false);
@@ -23,20 +29,30 @@ $pdf->SetMargins(25,15,15);
 //$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
 $pdf->SetHeaderMargin(0);   
 $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     require_once(dirname(__FILE__).'/lang/eng.php');
     $pdf->setLanguageArray($l);
 }
+
+
 // ---------------------------------------------------------
 // set font
+
+
+
 // add a page
 $pdf->AddPage();
 //$pdf->SetPageSize('A4');
+
+
 $html =  "
     <style>
         *{
@@ -60,38 +76,43 @@ $html =  "
         }
     </style>
 ";
+
 $html .= '
 <table>
     <tr>
         <td style="width: 60%;">
             <table>
-                <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
+                <tr><td class="bb">Client:</td></tr>
                 <tr><td></td></tr>
-                <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
+                <tr><td class="bb">Period:</td></tr>
             </table>
         </td>
         <td style="width: 40%;">
             <table border="1">
                 <tr>
-                    <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
-                    <td>Date: <br><b>'. date('F d, Y', strtotime($fl['prepared_on'])) .'</b></td>
+                    <td>Prepared by: <br></td>
+                    <td>Date: <br></td>
                 </tr>
                 <tr>
-                    <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
-                    <td>Date: <br><b>'.date('F d, Y', strtotime($fl['reviewed_on'])).'</b></td>
+                    <td>Reviewed by: <br></td>
+                    <td>Date: <br></td>
                 </tr>
             </table>
         </td>
     </tr>
 </table>
 ';
+
+
 $html .= '
 <h3>Client Acceptance or Continuance Form</h3>
 <p><b>This form must be completed by the A.E.P. before any work is undertaken on the file.</b></p>
 <p>While answering these questions the following matters should be fully considered for the audit firm and any network firm: independence, integrity, conflicts of interest with other clients, economic dependence, trusts, matters arising with regulatory authorities, ability to service the client, other services provided to the client and hospitality. Additional guidance is available in legislation and the Code of Ethics issued by the International Ethics Standards Board for Accountants.  </p>
 <p><b>Any YES answers should be fully explained along with the safeguards, which will enable us to accept / continue with the appointment. </b></p>
 <p><b>Significant issues must be discussed with the <span style="color: red;">Ethics Partner</span>  and details of the discussion documented on file.</b></p>
+
 ';
+
 $html .= '
 <table>
     <thead>
@@ -109,17 +130,20 @@ $html .= '
         $html .='
             <tr>
                 <td style="width: 10%">'.$c.'</td>
-                <td style="width: 50%;">'.$r['question'].'</td>
-                <td style="width: 20%" class="cent bo">'.$r['yesno'].'</td>
-                <td style="width: 20%" class="cent bo">'.$r['comment'].'</td>
+                <td style="width: 50%;">'.$r['field1'].'</td>
+                <td style="width: 20%" class="cent bo">'.$r['field2'].'</td>
+                <td style="width: 20%" class="cent bo">'.$r['field3'].'</td>
             </tr>
         ';
     }
+
 $html .= '   
     </tbody>
 </table>';
+
+
 $html .= '
-    <p>Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement: '.$cl['audm'].'</p>
+    <p>Name of A.P., not connected with this assignment, to whom staff may bring any grievances related to this engagement:_______________</p>
     <p><b>ENGAGEMENT QUALITY REVIEW:</b></p>
     <p>An EQR needs to be undertaken on all audits where:</p>';
     switch ($eqr['eqr']) {
@@ -139,15 +163,15 @@ $html .= '
     <p>'.$eqr['eqrr'].'</p>
     <p><b>Authority to accept appointment:</b></p>
     <p>Having completed the checklist '.$eqr['hcc'].' consider that there are any perceived threats to our independence, integrity and objectivity, and believe that we '.$eqr['iio'].' this appointment.</p>
-    <p>Where necessary, adequate consultation has been undertaken and documented at '.$firm.'.</p>
+    <p>Where necessary, adequate consultation has been undertaken and documented at_______________.</p>
     <table>
         <tbody>
             <tr>
-                <td style="width: 50%;">Signature: <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
+                <td style="width: 50%;"><p>Signature: </p></td>
                 <td style="width: 50%;">(A.E.P.)</td>
             </tr>
             <tr>
-                <td style="width: 50%;"><p>Date: '.date('F d, Y', strtotime($fl['prepared_on'])).'</p><br></td>
+                <td style="width: 50%;"><p>Date:</p><br></td>
                 <td style="width: 50%;" class="cent"></td>
             </tr>
             <tr>
@@ -155,16 +179,26 @@ $html .= '
                 <td style="width: 50%;" class="cent"></td>
             </tr>
             <tr>
-                <td style="width: 50%;">Signature: <img src="'.base_url('uploads/img/'.$fID.'/signature/'.$cl['audsign']).'" alt="" srcset="" style="width: 100px; align-self: center;"></td>
+                <td style="width: 50%;"><p>Signature: </p></td>
                 <td style="width: 50%;">(EQR) </td>
             </tr>
             <tr>
-                <td style="width: 50%;"><p>Date:  '.date('F d, Y', strtotime($fl['approved_on'])).'</p></td>
+                <td style="width: 50%;"><p>Date:</p></td>
                 <td style="width: 50%;" class="cent"></td>
             </tr>
         </tbody>
     </table>
 ';
+
+
+    
+    
+
+
+
+
+
+
 //$pdf->write1DBarcode($rdata['reservation_id'], 'S25+', '', '', '', 18, 0.4, $style, 'N');
 //$pdf->Write(0, $html, '', 0, 'J', true);
 $pdf->writeHTML($html, true, false,false, false, '');
