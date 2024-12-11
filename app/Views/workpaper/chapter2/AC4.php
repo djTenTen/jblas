@@ -42,7 +42,7 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter2/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc2/')?><?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>PRELIMINARY ANALYTICAL PROCEDURES</h4>
@@ -53,7 +53,7 @@
                         <li>To ensure that risks identified are transferred to the risk assessment and into the audit approach / work programmes as required and are cross referenced to indicate this.</li>
                         <li>Where a parent company produces consolidated financial statements, consideration must be given to the parent company figures and the consolidated figures.</li>
                     </ul>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac5/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c2/saveac5/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="acid" value="<?= $mdID?>">
                         <h4>Results:</h4>
                         <textarea class="form-control" cols="30" rows="20" name="res" required><?= $rc['res']?></textarea>

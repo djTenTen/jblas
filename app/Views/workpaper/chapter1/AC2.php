@@ -48,13 +48,13 @@
             <?php  }?>
             <div class="card-body">
                <!-- Contents Here -->
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter1/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc1/')?><?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>PROVISION OF NON-AUDIT SERVICES</h4>
                     <h6>Section 2 – Consideration of the Type of Non-Audit Services Provided and Safeguards in Place </h6>
                     <p>N.B. Complete multiple sheets if more than four different types of non-audit service are provided N.B. Audit related non-audit services (for example, a separate report to a regulator, (e.g. that on client money handled by a solicitor)) should still be treated as a non-audit service, but it is not necessary for safeguards to be put in place, as threats to independence are insignificant</p>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac2/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c1/saveac2/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="pans">
                         <table class="table table-hover table-bordered">
                             <thead>
@@ -87,7 +87,7 @@
                     <h4>Section 3 – Consideration of Self Interest Threat Arising from Substantial Fees from Non Audit Services</h4>
                     <div class="container border-dark">
                         <h6>***(Where appropriate): Documentation by the A.E.P. of how the self interest threat has been reduced to an acceptable level / details of communication with the Ethics Partner / Details of which services (audit or non-audit) will not be provided:</h6>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c1/saveac2aep/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/wp/savevalues/c1/saveac2aep/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                             <input type="hidden" name="acid" value="<?= encr($aep['mdID'])?>">
                             <textarea class="form-control" cols="30" rows="3" name="eap" required><?= $aep['field1']?></textarea>
                             <h4>Conclusion</h4>

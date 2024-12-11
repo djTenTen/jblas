@@ -47,12 +47,12 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter2/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc2/')?><?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>RISK SUMMARY</h4>
                     <p>This form should be completed when a narrative approach to inherent business risk assessment is undertaken. If more than one risk level applies, add additional lines as appropriate.</p>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac6ra/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c2/saveac6ra/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="ac6ra">
                         <table class="table table-hover table-bordered">
                             <thead class="text-center">
@@ -85,7 +85,8 @@
                     <p>Objective: This form is designed to determine the inherent risk of the business as a whole.  PSA 315 implies that all businesses should be high risk unless this can be rebutted.  Completion of this form will help to justify a departure from high risk.</p>
                     <h4>Section 1 – INHERENT BUSINESS RISK </h4>
                     <p>The inherent business risk of the client is deemed to be low / medium / high* for the following reasons:</p>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac6s12/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                   
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c2/saveac6s12/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="acid" value="<?= $mdID?>">
                         <textarea class="form-control" cols="30" rows="20" name="s1" required><?= $s['s1']?></textarea>
                         <p>Comprehensive consideration should be given to all clients even those deemed to be low risk. As part of this review consideration must be given to the Company’s going concern status and I.T. risk.</p>
@@ -118,7 +119,7 @@
                         <li>Tracing transactions through the information system relevant to financial reporting.</li>
                     </ul>
                     <p>NB: this requirement exists irrespective of whether the overall control environment has been deemed to be ineffective in section 2b above. </p>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac6s3/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c2/saveac6s3/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="ac6s3">
                         <table class="table table-hover table-bordered">
                             <thead>

@@ -797,7 +797,7 @@ class ChapterController extends BaseController{
         WORK PAPER CHAPTER 2 VALUES
         ----------------------------------------------------------
     */
-    public function c2setworkpaper($code,$c2tID,$cID,$wpID,$name){
+    public function c2setworkpaper($code,$mtID,$cID,$wpID,$name){
 
         $data['title']  = $code. ' - Audit Planning';
         $data['name']   = $name;
@@ -893,8 +893,8 @@ class ChapterController extends BaseController{
                 $data ['sheet']     = $s[1];
                 $data['code']       = $s[0];
                 $data['cu']         = $this->wpmodel->getvalues_c2('s',$s[1].'cu',$s[0],$dmtID,$dcID,$dwpID);
-                $data['ac10s1']     = $this->wpmodel->getac10data($s[1],$s[0],$dmtID,$dcID,'section1');
-                $data['ac10s2']     = $this->wpmodel->getac10data($s[1],$s[0],$dmtID,$dcID,'section2');
+                $data['ac10s1']     = $this->wpmodel->getac10data($s[1],$s[0],$dmtID,$dcID,$dwpID,'section1');
+                $data['ac10s2']     = $this->wpmodel->getac10data($s[1],$s[0],$dmtID,$dcID,$dwpID,'section2');
                 $page = $s[0];
                 break;
             case 'AC10-Summary':
@@ -938,7 +938,7 @@ class ChapterController extends BaseController{
         }
 
         echo view('includes/Header', $data);
-        echo view('workpaper/chapter2'.$code, $data);
+        echo view('workpaper/chapter2/'.$page, $data);
         echo view('includes/Footer');
 
     }

@@ -48,26 +48,26 @@
             <?php  }?>
             <div class="card-body">
                 <nav class="nav nav-borders">
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Tangibles')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-Tangibles/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">Tangibles</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'PPE')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-PPE/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">PPE</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Investments')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-Investments/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">Investments</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Inventory')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-Inventory/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">Inventory</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Trade%20Receivables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-Trade Receivables/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">Trade Receivables</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Other%20Receivables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-Other Receivables/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">Other Receivables</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Bank%20and%20Cash')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-Bank and Cash/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">Bank and Cash</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Trade%20Payables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-Trade Payables/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">Trade Payables</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Other%20Payables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-Other Payables/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">Other Payables</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Provisions')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-Provisions/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">Provisions</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Revenue')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-Revenue/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">Revenue</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Costs')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-Costs/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">Costs</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Payroll')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-Payroll/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">Payroll</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Summary')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter2/setvalues/<?= $code?>-Summary/<?= $mtID; ?>/<?= $cID?>/<?= $name?>">Summary</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Tangibles')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-Tangibles/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Tangibles</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'PPE')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-PPE/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">PPE</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Investments')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-Investments/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Investments</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Inventory')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-Inventory/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Inventory</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Trade%20Receivables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-Trade Receivables/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Trade Receivables</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Other%20Receivables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-Other Receivables/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Other Receivables</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Bank%20and%20Cash')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-Bank and Cash/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Bank and Cash</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Trade%20Payables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-Trade Payables/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Trade Payables</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Other%20Payables')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-Other Payables/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Other Payables</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Provisions')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-Provisions/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Provisions</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Revenue')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-Revenue/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Revenue</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Costs')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-Costs/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Costs</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Payroll')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-Payroll/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Payroll</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'Summary')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter2/setvalues/<?= $code?>-Summary/<?= $mtID; ?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Summary</a>
                 </nav>
                 <hr style="color: #7752FE;" class="mt-0 mb-4" />
                 <br>
                 <div class="m-5">
                     <div class="table-responsive">
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac10cu/<?= $code?>-<?= $sheet?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/wp/savevalues/c2/saveac10cu/<?= $code?>-<?= $sheet?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                             <table class="table table-bordered table-sm">
                                 <thead>
                                     <tr>
@@ -90,7 +90,7 @@
                                 </tbody>
                             </table> 
                         </form>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac10s1/<?= $code?>-<?= $sheet?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/wp/savevalues/c2/saveac10s1/<?= $code?>-<?= $sheet?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                             <table class="table table-bordered table-sm">
                                 <thead> 
                                     <tr>
@@ -126,7 +126,7 @@
                                     </tr>
                             </table>
                         </form>
-                        <form action="<?= base_url()?>auditsystem/client/savevalues/c2/saveac10s2/<?= $code?>-<?= $sheet?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                        <form action="<?= base_url()?>auditsystem/wp/savevalues/c2/saveac10s2/<?= $code?>-<?= $sheet?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                             <table class="table table-bordered table-sm">
                                 <thead>
                                     <tr>

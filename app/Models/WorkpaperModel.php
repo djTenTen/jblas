@@ -152,13 +152,13 @@ class WorkpaperModel extends  Model {
         * @var query contains database result query
         * @return row-array
     */
-    public function getfileinfoc1($wpID,$cID,$ctID){
+    public function getfileinfoc1($wpID,$cID,$mtID){
 
         $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on
         from {$this->tblc1} as c1 
-        where c1.workpaper = {$wpID}
-        and c1.clientID = {$cID}
-        and c1.c1tID = {$ctID} limit 1");
+        where c1.wpID = {$wpID}
+        and c1.cID = {$cID}
+        and c1.mtID = {$mtID} limit 1");
         return $query->getRowArray();
 
     }
@@ -172,13 +172,13 @@ class WorkpaperModel extends  Model {
         * @var query contains database result query
         * @return row-array
     */
-    public function getfileinfoc2($wpID,$cID,$ctID){
+    public function getfileinfoc2($wpID,$cID,$mtID){
 
         $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on 
         from {$this->tblc2} as c2 
-        where c2.workpaper = {$wpID}
-        and c2.clientID = {$cID}
-        and c2.c2tID = {$ctID} limit 1");
+        where c2.wpID = {$wpID}
+        and c2.cID = {$cID}
+        and c2.mtID = {$mtID} limit 1");
         return $query->getRowArray();
 
     }
@@ -192,13 +192,13 @@ class WorkpaperModel extends  Model {
         * @var query contains database result query
         * @return row-array
     */
-    public function getfileinfoc3($wpID,$cID,$ctID){
+    public function getfileinfoc3($wpID,$cID,$mtID){
 
         $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on 
         from {$this->tblc3} as c3 
-        where c3.workpaper = {$wpID}
-        and c3.clientID = {$cID}
-        and c3.c3tID = {$ctID} limit 1");
+        where c3.wpID = {$wpID}
+        and c3.cID = {$cID}
+        and c3.mtID = {$mtID} limit 1");
         return $query->getRowArray();
 
     }
@@ -879,7 +879,7 @@ class WorkpaperModel extends  Model {
                 'fID'   => $req['firm'],
                 'cID'   => $req['client'],
             ];
-            $c2df = $this->db->table($this->tblc2d)->where($wherec2)->get();
+            $c2df = $this->db->table($this->tblc2)->where($wherec2)->get();
             if($c2df->getNumRows() >= 1){
                 foreach($c2df->getResultArray() as $r){
                     $datac2 = [
@@ -1298,44 +1298,6 @@ class WorkpaperModel extends  Model {
     }
 
 
-    // public function getvalues_m($c,$type,$code,$ctID,$cID,$wpID){
-
-    //     switch ($c) {
-    //         case 'c1': $table = $this->tblc1; $cd = 'c1tID'; break;
-    //         case 'c2': $table = $this->tblc2; $cd = 'c2tID'; break;
-    //         case 'c3': $table = $this->tblc3; $cd = 'c3tID'; break;
-    //     }
-    //     $where = [
-    //         'code'          => $code, 
-    //         'type'          => $type,
-    //         $cd             => $ctID,
-    //         'clientID'      => $cID,
-    //         'workpaper' => $wpID,
-    //     ];
-    //     $query =  $this->db->table($table)->where($where)->get();
-    //     return $query->getResultArray();
-
-    // }
-
-    // public function getvalues_s($c,$type,$code,$ctID,$cID,$wpID){
-
-    //     switch ($c) {
-    //         case 'c1': $table = $this->tblc1; $cd = 'c1tID'; break;
-    //         case 'c2': $table = $this->tblc2; $cd = 'c2tID'; break;
-    //         case 'c3': $table = $this->tblc3; $cd = 'c3tID'; break;
-    //     }
-    //     $where = [
-    //         'code'          => $code, 
-    //         'type'          => $type,
-    //         $cd             => $ctID,
-    //         'clientID'      => $cID,
-    //         'workpaper' => $wpID,
-    //     ];
-    //     $query =  $this->db->table($table)->where($where)->get();
-    //     return $query->getrowArray();
-
-    // }
-
     /**
         ----------------------------------------------------------
         AC10 FUNCTIONS
@@ -1346,17 +1308,17 @@ class WorkpaperModel extends  Model {
         * @var query result from database
         * @return result-array
     */
-    public function getac10data($part,$code,$c1tID,$cID,$wpID,$section){
+    public function getac10data($part,$code,$mtID,$cID,$wpID,$section){
 
         $where = [
-            'type' => $part,
-            'code' => $code,
-            'c1tID' => $c1tID,
-            'clientID'  => $cID,
-            'question' => $section,
-            'workpaper' => $wpID,
+            'type'      => $part,
+            'code'      => $code,
+            'mtID'      => $mtID,
+            'cID'       => $cID,
+            'field1'    => $section,
+            'wpID'      => $wpID,
         ];
-        $query = $this->db->table($this->tblc1)->where($where)->get();
+        $query = $this->db->table($this->tblc2)->where($where)->get();
         return $query->getResultArray();
 
     }
@@ -1368,9 +1330,9 @@ class WorkpaperModel extends  Model {
         * @var query result from database
         * @return integer
     */
-    public function getdatacount($c1tID,$part,$cID,$wpID){
+    public function getdatacount($mtID,$part,$cID,$wpID){
 
-        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => 'ac10', 'c1tID' => $c1tID, 'clientID'  => $cID));
+        $query = $this->db->table($this->tblc1)->where(array('type' => $part, 'code' => 'ac10', 'mtID' => $mtID, 'cID'  => $cID));
         return $query->countAllResults();
 
     }
@@ -1382,25 +1344,25 @@ class WorkpaperModel extends  Model {
         * @var total result from database
         * @return integer
     */
-    public function getsumation($c1tID,$part,$cID,$wpID){
+    public function getsumation($mtID,$part,$cID,$wpID){
 
         $where1 = [
             'type'          => $part, 
             'code'          => 'ac10', 
-            'c1tID'         => $c1tID,
-            'clientID'      => $cID,
-            'workpaper'     => $wpID,
+            'mtID'          => $mtID,
+            'cID'           => $cID,
+            'wpID'          => $wpID,
         ];
         $where2 = [
             'type'          => $part.'cu', 
             'code'          => 'ac10', 
-            'c1tID'         => $c1tID,
-            'clientID'      => $cID,
-            'workpaper'     => $wpID,
+            'mtID'          => $mtID,
+            'cID'           => $cID,
+            'wpID'          => $wpID,
         ];
-        $total = $this->db->table($this->tblc1)->selectSum('balance')->where($where1)->get()->getRowArray();
-        $cu = $this->db->table($this->tblc1)->where($where2)->get()->getRowArray();
-        return $cu['question'] - $total['balance'];
+        $total = $this->db->table($this->tblc2)->selectSum('field2')->where($where1)->get()->getRowArray();
+        $cu = $this->db->table($this->tblc2)->where($where2)->get()->getRowArray();
+        return $cu['field1'] - $total['field2'];
 
     }
 
@@ -1768,75 +1730,325 @@ class WorkpaperModel extends  Model {
 
             case 'c2':
                 switch($param['code']) {
-                    case '2.1 B2':
-                    case '2.2.1 C2':   
-                    case '2.2.2 C2-1':  
-                    case '2.3 D2':
-                    case '2.4.1 E2':   
-                    case '2.4.3 E2-2': 
-                    case '2.4.4 E2-3': 
-                    case '2.4.5 E2-4':
-                    case '2.5 F2':
-                    case '2.6 H2':
-                    case '2.7 I2':
-                    case '2.8 J2':
-                    case '2.9 K2':
-                    case '2.10 L2': 
-                    case '2.11 M2':
-                    case '2.12 N2':
-                    case '2.13.1 O2':
-                    case '2.13.2 O2-1':
-                    case '2.14 P2':
-                    case '2.15 Q2':
-                    case '2.16 R2-1':
-                    case '2.17 R2-2':
-                    case '2.18.1 S2-1':
-                    case '2.18.2 S2-2': 
-                    case '2.18.3 S2-3':
-                    case '2.18.4 S2-4':
-                    case '2.19.1 U2-1':
-                    case '2.19.2 U2-2':
-                    case '2.19.3 U2-3':  
-                    case '2.4.2 E2-1':
+                    case 'AB4':
                         switch ($param['save']) {
-                            case 'savec2':
-                                foreach($req['extent'] as $i => $val){
-                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
+                            case 'saveac3':
+                                foreach($req['yesno'] as $i => $val){
+                                    $acid = $this->decr($req['acid'][$i]);
                                     $data = [
-                                        'extent'        => $req['extent'][$i],
-                                        'reference'     => $req['reference'][$i],
-                                        'initials'      => $req['initials'][$i],
+                                        'field2'        => $req['yesno'][$i],
+                                        'field3'        => $req['comment'][$i],
                                         'updated_on'    => $this->date.' '.$this->time,
                                         'updated_by'    => $param['uID'],
                                     ];
-                                    $this->db->table($this->tblc2)->where('acID', $dacid)->update($data);
-                                }
-                            break;
-                            case 'aicpppa':
-                                foreach($req['comment'] as $i => $val){
-                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
-                                    $data = [
-                                        'reference'     => $req['comment'][$i],
-                                        'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc2)->where('acID', $dacid)->update($data);
-                                }
-                            break;
-                            case 'rcicp':
-                                foreach($req['extent'] as $i => $val){
-                                    $dacid = $this->crypt->decrypt($req['acid'][$i]);
-                                    $data = [
-                                        'extent'        => $req['extent'][$i],
-                                        'reference'     => $req['comment'][$i],
-                                        'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc2)->where('acID', $dacid)->update($data);
+                                    $this->db->table($this->tblc2)->where('mdID', $acid)->update($data);
                                 }
                             break;
                         }
-                        $this->logs->log(session()->get('name'). " save a file {$req['code']} Chapter 2 on work paper");
+                        $this->logs->log(session()->get('name'). " save a file {$param['code']} Audit Planning on work paper");
+                        return true;
+                    break;
+                    case 'AB4A':
+                        switch ($param['save']) {
+                            case 'saveab4a':
+                                $this->db->table($this->tblc2)->where(array('type' => $req['part'], 'code' => $param['code'], 'mtID' => $param['mtID'], 'cID' => $param['cID'], 'wpID' => $param['wpID']))->delete();
+                                foreach($req['yearto'] as $i => $val){
+                                    $data = [
+                                        'field1'        => $req['yearto'][$i],
+                                        'field2'        => $req['preparedby'][$i],
+                                        'field3'        => $req['date1'][$i],
+                                        'field4'        => $req['reviewedby'][$i],
+                                        'field5'        => $req['date2'][$i],
+                                        'code'          => $param['code'],
+                                        'mtID'          => $param['mtID'],
+                                        'cID'           => $param['cID'],
+                                        'fID'           => $param['fID'],
+                                        'wpID'          => $param['wpID'],
+                                        'type'          => $req['part'],
+                                        'status'        => 'Preparing',
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2)->insert($data);
+                                }
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " save a file {$param['code']} Audit Planning on work paper");
+                        return true;
+                    break;
+                    case 'AC3':
+                        switch ($param['save']) {
+                            case 'saveac4':
+                                foreach($req['comment'] as $i => $val){
+                                    $acid = $this->decr($req['acid'][$i]);
+                                    $data = [
+                                        'field2'        => $req['comment'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2)->where('mdID', $acid)->update($data);
+                                }
+                            break;
+                            case 'saveac4ppr':
+                                $acid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['ppr'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc2)->where('mdID', $acid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " save a file {$param['code']} Audit Planning on work paper");
+                        return true;
+                    break;
+                    case 'AC4':
+                        switch ($param['save']) {
+                            case 'saveac5':
+                                $acid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['rescon'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc2)->where('mdID', $acid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " save a file {$param['code']} Audit Planning on work paper");
+                        return true;
+                    break;
+                    case 'AC5':
+                        switch ($param['save']) {
+                            case 'savetdabm':
+                                $acid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['td'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc2)->where('mdID', $acid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " save a file {$param['code']} Audit Planning on work paper");
+                        return true;
+                    break;
+                    case 'AC6':
+                        switch ($param['save']) {
+                            case 'saveac8':
+                                foreach($req['question'] as $i => $val){
+                                    $dacid = $this->decr($req['acid'][$i]);
+                                    $data = [
+                                        'field1'        => $req['question'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2)->where('mdID', $dacid)->update($data);
+                                }
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " save a file {$param['code']} Audit Planning on work paper");
+                        return true;
+                    break;
+                    case 'AC7':
+                        switch ($param['save']) {
+                            case 'saveac6ra':
+                                foreach($req['planning'] as $i => $val){
+                                    $acid = $this->decr($req['acid'][$i]);
+                                    $data = [
+                                        'field2'        => $req['planning'][$i],
+                                        'field3'        => $req['finalization'][$i],
+                                        'field4'        => $req['reference'][$i],
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2)->where('mdID', $acid)->update($data);
+                                }
+                            break;
+                            case 'saveac6s12':
+                                $acid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['section'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc2)->where('mdID', $acid)->update($data);
+                            break;
+                            case 'saveac6s3':
+                                $where = [
+                                    'type'      => $req['part'], 
+                                    'code'      => $param['code'], 
+                                    'mtID'      => $param['mtID'],
+                                    'cID'       => $param['cID'],
+                                    'wpID'      => $param['wpID'],
+                                ];
+                                $this->db->table($this->tblc2)->where($where)->delete();
+                                foreach($req['financialstatement'] as $i => $val){
+                                    $data = [
+                                        'field1'            => $req['financialstatement'][$i],
+                                        'field2'            => $req['descriptioncontrol'][$i],
+                                        'field3'            => $req['controleffective'][$i],
+                                        'field4'            => $req['controlimplemented'][$i],
+                                        'field5'            => $req['assesed'][$i],
+                                        'field6'            => $req['crosstesting'][$i],
+                                        'field7'            => $req['reliancecontrol'][$i],
+                                        'code'              => $param['code'],
+                                        'mtID'              => $param['mtID'],
+                                        'fID'               => $param['fID'],
+                                        'cID'               => $param['cID'],
+                                        'type'              => $req['part'],
+                                        'status'            => 'Active',
+                                        'updated_on'        => $this->date.' '.$this->time,
+                                        'updated_by'        => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2)->insert($data);
+                                }
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " save a file {$param['code']} Audit Planning on work paper");
+                        return true;
+                    break;
+                    case 'AC8':
+                        switch ($param['save']) {
+                            case 'saveac7':
+                                $data = [
+                                    'field1'        => $req['genyn'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $where = [
+                                    'type'     => $req['part'],
+                                    'mtID'     => $param['mtID'],
+                                    'cID'      => $param['cID'],
+                                ];
+                                $this->db->table($this->tblc2)->where($where)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " save a file {$param['code']} Audit Planning on work paper");
+                        return true;
+                    break;
+                    case 'AC9':
+                        switch ($param['save']) {
+                            case 'saveac9':
+                                $dacid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['ac9'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc2)->where('mdID', $dacid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " save a file {$param['code']} Audit Planning on work paper");
+                        return true;
+                    break;
+                    case 'AC10-Tangibles':
+                    case 'AC10-PPE':
+                    case 'AC10-Investments':
+                    case 'AC10-Inventory':
+                    case 'AC10-Trade Receivables':
+                    case 'AC10-Other Receivables':
+                    case 'AC10-Bank and Cash':
+                    case 'AC10-Other Payables':
+                    case 'AC10-Provisions':        
+                    case 'AC10-Revenue':
+                    case 'AC10-Costs':
+                    case 'AC10-Payroll':
+                    case 'AC10-Summary':
+                        switch ($param['save']) {
+                            case 'saveac10summ':
+                                foreach ($req as $r => $val){
+                                    $data = [
+                                        'field1'        => $val,
+                                        'type'          => $r.'data',
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $where1 = [
+                                        'type'          => $r.'data',
+                                        'code'          => $req['code'],
+                                        'mtID'          => $param['mtID'],
+                                        'cID'           => $param['cID'],
+                                        'wpID'          => $param['wpID'],
+                                    ];
+                                    $this->db->table($this->tblc2)->where($where1)->update($data);
+                                }
+                                $where2 = [
+                                    'type'          => 'materialdata',
+                                    'code'          => $req['code'],
+                                    'mtID'          => $param['mtID'],
+                                    'cID'           => $param['cID'],
+                                    'wpID'          => $param['wpID'],
+                                ];
+                                $this->db->table($this->tblc2)->where($where2)->update(array('field1' => $req['materiality']));
+                            break;
+                            case 'saveac10s1':
+                                $where = [
+                                    'type'          => $req['type'], 
+                                    'code'          => $req['code'],
+                                    'field1'        => 'section1',
+                                    'mtID'          => $param['mtID'],
+                                    'cID'           => $param['cID'],
+                                    'wpID'          => $param['wpID'],
+                                ];
+                                $this->db->table($this->tblc2)->where($where)->delete();
+                                foreach($req['name'] as $i => $val){
+                                    $data = [
+                                        'field3'        => $req['less'][$i],
+                                        'field4'        => $req['name'][$i],
+                                        'field2'        => $req['balance'][$i],
+                                        'type'          => $req['type'],
+                                        'code'          => $req['code'],
+                                        'mtID'          => $param['mtID'],
+                                        'cID'           => $param['cID'],
+                                        'fID'           => $param['fID'],
+                                        'wpID'          => $param['wpID'],
+                                        'field1'        => 'section1',
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2)->insert($data);
+                                }
+                            break;
+                            case 'saveac10s2':
+                                $where = [
+                                    'type'          => $req['type'], 
+                                    'code'          => $req['code'],
+                                    'field1'        => 'section2',
+                                    'mtID'          => $param['mtID'],
+                                    'cID'           => $param['cID'],
+                                    'wpID'          => $param['wpID'],
+                                ];
+                                $this->db->table($this->tblc2)->where($where)->delete();
+                                foreach($req['name'] as $i => $val){
+                                    $data = [
+                                        'field3'        => $req['less'][$i],
+                                        'field4'        => $req['name'][$i],
+                                        'field5'        => $req['reason'][$i],
+                                        'field2'        => $req['balance'][$i],
+                                        'type'          => $req['type'],
+                                        'code'          => $req['code'],
+                                        'mtID'          => $param['mtID'],
+                                        'cID'           => $param['cID'],
+                                        'fID'           => $param['fID'],
+                                        'wpID'          => $param['wpID'],
+                                        'field1'        => 'section2',
+                                        'updated_on'    => $this->date.' '.$this->time,
+                                        'updated_by'    => $param['uID'],
+                                    ];
+                                    $this->db->table($this->tblc2)->insert($data);
+                                }
+                            break;
+                            case 'saveac10cu':
+                                $dacid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['question'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc2)->where('mdID', $dacid)->update($data);
+                            break;
+                        }
+                        $this->logs->log(session()->get('name'). " save a file {$param['code']} Audit Planning on work paper");
                         return true;
                     break;
                 }
