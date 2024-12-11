@@ -617,7 +617,7 @@ class ChapterController extends BaseController{
         $data['title']  = $code;
         $data['mtID']  = $mtID;
         $data['code']   = $code;
-        $dmtID         = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$mtID));
+        $dmtID         = $this->decr($mtID);
         switch ($code) {
             case 'AA1':
                 $data['datapl'] = $this->c3model->getvalues_m('planning',$code,$dmtID);
@@ -962,257 +962,427 @@ class ChapterController extends BaseController{
           THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
         * @return view
     */
-    public function c3setworkpaper($code,$c3tID,$cID,$wpID,$name){
+    public function c3setworkpaper($code,$mtID,$cID,$wpID,$name){
 
         $data['title']  = $code. ' - Chapter 3 Management';
         $data['name']   = $name;
         $data['cID']    = $cID;
         $data['wpID']   = $wpID;
-        $data['c3tID']  = $c3tID;
+        $data['mtID']   = $mtID;
         $data['code']   = $code;
-        $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $dwpID          = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
-        $dc3tID         = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID));
+        $dcID           = $this->decr($cID);
+        $dwpID          = $this->decr($wpID);
+        $dmtID          = $this->decr($mtID);
         switch ($code) {
-            case '3.1 Aa1':
-                $data['datapl'] = $this->wpmodel->getvalues_m('c3','planning',$code,$dc3tID,$dcID,$dwpID);
-                $data['dataaf'] = $this->wpmodel->getvalues_m('c3','audit finalisation',$code,$dc3tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c3','section3',$code, $dc3tID,$dcID,$dwpID);
+            case 'AA1':
+                $data['datapl'] = $this->wpmodel->getvalues_c3('m','planning',$code,$dmtID,$dcID,$dwpID);
+                $data['dataaf'] = $this->wpmodel->getvalues_c3('m','audit finalisation',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_c3('s','section3',$code,$dmtID,$dcID,$dwpID);
                 $data['s3']     = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                $rdata2         = $this->wpmodel->getvalues_s('c3','rc',$code, $dc3tID,$dcID,$dwpID);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $rdata2         = $this->wpmodel->getvalues_c3('s','rc',$code,$dmtID,$dcID,$dwpID);
                 $data['rc']     = json_decode($rdata2['field1'], true);
-                $data['acID2']  = $this->crypt->encrypt($rdata2['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/31Aa1', $data);
-                echo view('includes/Footer');
+                $data['mdID2']  = $this->encr($rdata2['mdID']);
+                $page = $code;
                 break;
-            case '3.2 Aa2':
-                $rdata          = $this->wpmodel->getvalues_s('c3','aa2',$code, $dc3tID,$dcID,$dwpID);
+            case 'AA2':
+                $rdata          = $this->wpmodel->getvalues_c3('s','aa2',$code,$dmtID,$dcID,$dwpID);
                 $data['aa2']    = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/32Aa2', $data);
-                echo view('includes/Footer');
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
                 break;
-            case '3.3 Aa3a':
-                $data['cr']     = $this->wpmodel->getvalues_m('c3','cr',$code,$dc3tID,$dcID,$dwpID);
-                $data['dc']     = $this->wpmodel->getvalues_m('c3','dc',$code,$dc3tID,$dcID,$dwpID);
-                $data['faf']    = $this->wpmodel->getvalues_m('c3','faf',$code,$dc3tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c3','air',$code,$dc3tID,$dcID,$dwpID);
+            case 'AA3A':
+                $data['cr']     = $this->wpmodel->getvalues_c3('m','cr',$code,$dmtID,$dcID,$dwpID);
+                $data['dc']     = $this->wpmodel->getvalues_c3('m','dc',$code,$dmtID,$dcID,$dwpID);
+                $data['faf']    = $this->wpmodel->getvalues_c3('m','faf',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_c3('s','air',$code,$dmtID,$dcID,$dwpID);
                 $data['air']    = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/33Aa3a', $data);
-                echo view('includes/Footer');
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
                 break;
-            case '3.4 Aa3b':
-                $data['bp1']    = $this->wpmodel->getvalues_m('c3','p1',$code,$dc3tID,$dcID,$dwpID);
-                $data['bp2']    = $this->wpmodel->getvalues_m('c3','p2',$code,$dc3tID,$dcID,$dwpID);
-                $data['bp3a']   = $this->wpmodel->getvalues_m('c3','p3a',$code,$dc3tID,$dcID,$dwpID);
-                $data['bp3b']   = $this->wpmodel->getvalues_m('c3','p3b',$code,$dc3tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c3','p4',$code,$dc3tID,$dcID,$dwpID);
+            case 'AA3B':
+                $data['bp1']    = $this->wpmodel->getvalues_c3('m','p1',$code,$dmtID,$dcID,$dwpID);
+                $data['bp2']    = $this->wpmodel->getvalues_c3('m','p2',$code,$dmtID,$dcID,$dwpID);
+                $data['bp3a']   = $this->wpmodel->getvalues_c3('m','p3a',$code,$dmtID,$dcID,$dwpID);
+                $data['bp3b']   = $this->wpmodel->getvalues_c3('m','p3b',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_c3('s','p4',$code,$dmtID,$dcID,$dwpID);
                 $data['bp4']    = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/34Aa3b', $data);
-                echo view('includes/Footer');
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
                 break;
-            case '3.5 Aa4':
-                $rdata          = $this->wpmodel->getvalues_s('c3','aa4',$code,$dc3tID,$dcID,$dwpID);
+            case 'AA4':
+                $rdata          = $this->wpmodel->getvalues_c3('s','aa4',$code,$dmtID,$dcID,$dwpID);
                 $data['aa4']    = json_decode($rdata['field1'], true);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/35Aa4', $data);
-                echo view('includes/Footer');
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
                 break;
-            case '3.6.1 Aa5a':
-
-                $rdata          = $this->wpmodel->getvalues_s('c3','aa5a',$code,$dc3tID,$dcID,$dwpID);
-                $data['aa5a']    = json_decode($rdata['field1'], true);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/361Aa5a', $data);
-                echo view('includes/Footer');
+            case 'AA5A':
+                $rdata          = $this->wpmodel->getvalues_c3('s','aa5a',$code,$dmtID,$dcID,$dwpID);
+                $data['aa5a']   = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
                 break;
-            case '3.6.2 Aa5b':
-                $data['aa5b'] = $this->wpmodel->getvalues_m('c3','aa5b',$code,$dc3tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/362Aa5b', $data);
-                echo view('includes/Footer');
+            case 'AA5B':
+                $data['aa5b']   = $this->wpmodel->getvalues_c3('m','aa5b',$code,$dmtID,$dcID,$dwpID);
+                $page = $code;
                 break;  
-            case '3.7 Aa7':
-                $data['aa7']    = $this->wpmodel->getvalues_m('c3','isa315',$code,$dc3tID,$dcID,$dwpID);
-                $data['cons']   = $this->wpmodel->getvalues_m('c3','consultation',$code,$dc3tID,$dcID,$dwpID);
-                $data['inc']    = $this->wpmodel->getvalues_m('c3','inconsistencies',$code,$dc3tID,$dcID,$dwpID);
-                $data['ref']    = $this->wpmodel->getvalues_m('c3','refusal',$code,$dc3tID,$dcID,$dwpID);
-                $data['dep']    = $this->wpmodel->getvalues_m('c3','departures',$code,$dc3tID,$dcID,$dwpID);
-                $data['oth']    = $this->wpmodel->getvalues_m('c3','other',$code,$dc3tID,$dcID,$dwpID);
-                $data['aepapp'] = $this->wpmodel->getvalues_s('c3','aepapp',$code,$dc3tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c3','aep',$code,$dc3tID,$dcID,$dwpID);
+            case 'AA6':
+                $data['aa7']    = $this->wpmodel->getvalues_c3('m','isa315',$code,$dmtID,$dcID,$dwpID);
+                $data['cons']   = $this->wpmodel->getvalues_c3('m','consultation',$code,$dmtID,$dcID,$dwpID);
+                $data['inc']    = $this->wpmodel->getvalues_c3('m','inconsistencies',$code,$dmtID,$dcID,$dwpID);
+                $data['ref']    = $this->wpmodel->getvalues_c3('m','refusal',$code,$dmtID,$dcID,$dwpID);
+                $data['dep']    = $this->wpmodel->getvalues_c3('m','departures',$code,$dmtID,$dcID,$dwpID);
+                $data['oth']    = $this->wpmodel->getvalues_c3('m','other',$code,$dmtID,$dcID,$dwpID);
+                $data['aepapp'] = $this->wpmodel->getvalues_c3('s','aepapp',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_c3('s','aep',$code,$dmtID,$dcID,$dwpID);
                 $data['aep']    = json_decode($rdata['field1'], true);
-                $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/37Aa7', $data);
-                echo view('includes/Footer');
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
                 break;
-            case '3.8 Aa10':
-                $rdata = $this->wpmodel->getvalues_s('c3','aa10',$code,$dc3tID,$dcID,$dwpID);
-                $data['aa10'] = json_decode($rdata['field1'], true);
-                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/38Aa10', $data);
-                echo view('includes/Footer');
+            case 'AA7':
+                $rdata          = $this->wpmodel->getvalues_c3('s','aa10',$code,$dmtID,$dcID,$dwpID);
+                $data['aa10']   = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
                 break;
-            case '3.9':
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/39', $data);
-                echo view('includes/Footer');
+            case 'AA8-un':
+                $s                      = explode('-', $code);
+                $data['sectiontitle']   = "SUMMARY OF UNADJUSTED ERRORS";
+                $data['aef']            = $this->wpmodel->getvalues_c3('m','aef',$s[0],$dmtID,$dcID,$dwpID);
+                $data['aej']            = $this->wpmodel->getvalues_c3('m','aej',$s[0],$dmtID,$dcID,$dwpID);
+                $data['ee']             = $this->wpmodel->getvalues_c3('m','ee',$s[0],$dmtID,$dcID,$dwpID);
+                $data['de']             = $this->wpmodel->getvalues_c3('m','de',$s[0],$dmtID,$dcID,$dwpID);
+                $rdata                  = $this->wpmodel->getvalues_c3('s','aa11ue',$s[0],$dmtID,$dcID,$dwpID);
+                $data['ue']             = json_decode($rdata['field1'], true);    
+                $data['ueacID']         = $this->encr($rdata['mdID']);
+                $rdata2                 = $this->wpmodel->getvalues_c3('s','con',$s[0],$dmtID,$dcID,$dwpID);
+                $data['con']            = json_decode($rdata2['field1'], true);   
+                $data['conacID']        = $this->encr($rdata2['mdID']);
+                $page = $code;
                 break;
-            case '3.10 Aa11-un':
-                $s = explode('-', $code);
-                $data['sectiontitle'] = "SUMMARY OF UNADJUSTED ERRORS";
-                $data['aef']    = $this->wpmodel->getvalues_m('c3','aef',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['aej']    = $this->wpmodel->getvalues_m('c3','aej',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['ee']     = $this->wpmodel->getvalues_m('c3','ee',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['de']     = $this->wpmodel->getvalues_m('c3','de',$s[0],$dc3tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c3','aa11ue',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['ue']     = json_decode($rdata['field1'], true);    
-                $data['ueacID'] = $this->crypt->encrypt($rdata['mtID']);
-                $rdata2         = $this->wpmodel->getvalues_s('c3','con',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['con']    = json_decode($rdata2['field1'], true);   
-                $data['conacID'] = $this->crypt->encrypt($rdata2['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/310Aa11_un', $data); 
-                echo view('includes/Footer');
-                break;   
-            case '3.10 Aa11-ad':
-                $s = explode('-', $code);
-                $data['sectiontitle'] = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";
-                $data['ad'] = $this->wpmodel->getvalues_m('c3','ad',$s[0],$dc3tID,$dcID,$dwpID);
-                $rdata      = $this->wpmodel->getvalues_s('c3','aa11uead',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['ue'] = json_decode($rdata['field1'], true);    
-                $data['ueacID'] = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/310Aa11_ad', $data);
-                echo view('includes/Footer');
-                break;   
-            case '3.11':
-                $rdata          = $this->wpmodel->getvalues_s('c3','311',$code,$dc3tID,$dcID,$dwpID);
-                $data['arf']    = json_decode($rdata['field1'], true);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/311', $data);
-                echo view('includes/Footer');
-                break;   
-            case '3.12':
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/312', $data);
-                echo view('includes/Footer');
-                break;   
-            case '3.13 Ab1':
-                $data['ab1'] = $this->wpmodel->getvalues_m('c3','ab1',$code,$dc3tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/313Ab1', $data);
-                echo view('includes/Footer');
-                break;   
-            case '3.14 Ab3':
-                $rdata = $this->wpmodel->getvalues_s('c3','ab3',$code,$dc3tID,$dcID,$dwpID);
-                $data['ab3'] = json_decode($rdata['field1'], true);
-                $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/314Ab3', $data);
-                echo view('includes/Footer');
+            case 'AA9':
+                $rdata                  = $this->wpmodel->getvalues_c3('s','aa9',$code,$dmtID,$dcID,$dwpID);
+                $data['a9']             = json_decode($rdata['field1'], true);    
+                $data['mdID']           = $this->encr($rdata['mdID']);
+                $page = $code;
                 break; 
-            case '3.15 Ab4-checklist':
-            case '3.15 Ab4-section1':
-            case '3.15 Ab4-section2':
-            case '3.15 Ab4-section3':
-            case '3.15 Ab4-section4':
-            case '3.15 Ab4-section5':
-            case '3.15 Ab4-section6':
-            case '3.15 Ab4-section7':
-            case '3.15 Ab4-section8':
-            case '3.15 Ab4-section9':
+            case 'AA10':
+                $rdata                  = $this->wpmodel->getvalues_c3('s','aa10',$code,$dmtID,$dcID,$dwpID);
+                $data['a10']            = json_decode($rdata['field1'], true); 
+                $data['mdID']           = $this->encr($rdata['mdID']);   
+                $page = $code;
+                break; 
+            case 'AA11':
+                $data['a11'] = $this->wpmodel->getvalues_c3('m','aa11',$code,$dmtID,$dcID,$dwpID);
+                $page = $code;
+                break; 
+            case 'AA12':
+                $rdata                  = $this->wpmodel->getvalues_c3('s','aa12',$code,$dmtID,$dcID,$dwpID);
+                $data['a12']            = json_decode($rdata['field1'], true);   
+                $data['mdID']           = $this->encr($rdata['mdID']);
+                $page = $code;
+                break; 
+            case 'AA8-ad':
+                $s                      = explode('-', $code);
+                $data['sectiontitle']   = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";
+                $data['ad']             = $this->wpmodel->getvalues_c3('m','ad',$s[0],$dmtID,$dcID,$dwpID);
+                $rdata                  = $this->wpmodel->getvalues_c3('s','aa11uead',$s[0],$dmtID,$dcID,$dwpID);
+                $data['ue']             = json_decode($rdata['field1'], true);    
+                $data['ueacID']         = $this->encr($rdata['mdID']);
+                $page = $code;
+                break;   
+            case 'AB1':
+                $data['ab1'] = $this->wpmodel->getvalues_c3('m','ab1',$code,$dmtID,$dcID,$dwpID);
+                $page = $code;
+                break;   
+            case 'AB2':
+                $rdata = $this->wpmodel->getvalues_c3('s','ab3',$code,$dmtID ,$dcID,$dwpID);
+                $data['ab3']    = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
+                $page = $code;
+                break; 
+            case 'AB3-checklist':
+            case 'AB3-section1':
+            case 'AB3-section2':
+            case 'AB3-section3':
+            case 'AB3-section4':
+            case 'AB3-section5':
+            case 'AB3-section6':
+            case 'AB3-section7':
+            case 'AB3-section8':
+            case 'AB3-section9':
                 $s = explode('-', $code);
                 switch ($s[1]) {
-                    case 'checklist':$data['sectiontitle'] = 'CORPORATE DISCLOSURE CHECKLIST (IFRS)';break;
-                    case 'section1':$data['sectiontitle'] = 'Format of the Annual Report and Generic Information';break;
-                    case 'section2':$data['sectiontitle'] = 'Directors Report (Review of the Business) ~ Best Practice Disclosures';break;
-                    case 'section3':$data['sectiontitle'] = 'Directors Report ~ Best Practice Disclosures';break;
-                    case 'section4':$data['sectiontitle'] = 'Statement of Comprehensive Income (SCI) and Related Notes';break;
-                    case 'section5':$data['sectiontitle'] = 'Statement of Changes in Equity';break;
-                    case 'section6':$data['sectiontitle'] = 'Statement of Financial Position and Related Notes';break;
-                    case 'section7':$data['sectiontitle'] = 'Statement of Cash Flows';break;
-                    case 'section8':$data['sectiontitle'] = 'Accounting Policies and Estimation Techniques';break;
-                    case 'section9':$data['sectiontitle'] = 'Notes and Other Disclosures';break;
+                    case 'checklist':$data['sectiontitle']  = 'CORPORATE DISCLOSURE CHECKLIST (IFRS)';break;
+                    case 'section1':$data['sectiontitle']   = 'Format of the Annual Report and Generic Information';break;
+                    case 'section2':$data['sectiontitle']   = 'Statement of Comprehensive Income (SCI) and Related Notes';break;
+                    case 'section3':$data['sectiontitle']   = 'Statement of Changes in Equity';break;
+                    case 'section4':$data['sectiontitle']   = 'Statement of Financial Position and Related Notes';break;
+                    case 'section5':$data['sectiontitle']   = 'Statement of Cash Flows'; break;
+                    case 'section6':$data['sectiontitle']   = 'Accounting Policies and Estimation Techniques';break;
+                    case 'section7':$data['sectiontitle']   = 'Notes and Other Disclosures';break;
                 }
                 $data['title']      = $code. ' - Chapter 3 Management';
                 $data['section']    = $s[1];
-                $data['c3tID']      = $c3tID;
+                $data['mtID']       = $mtID;
                 $data['code']       = $code;
                 if($s[1] == "checklist"){
-                    $rdata          = $this->wpmodel->getvalues_s('c3',$s[1],$s[0],$dc3tID,$dcID,$dwpID);
+                    $rdata = $this->wpmodel->getvalues_c3('s',$s[1],$s[0],$dmtID,$dcID,$dwpID);
                     $data['sec']    = json_decode($rdata['field1'], true);
-                    $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
-                    echo view('includes/Header', $data);
-                    echo view('workpaper/chapter3/315Ab4_checklist', $data);
-                    echo view('includes/Footer');
+                    $data['mdID']   = $this->encr($rdata['mdID']);
+                    $page = $code;
                 }else{
-                    $data['sec'] = $this->wpmodel->getvalues_m('c3',$s[1],$s[0],$dc3tID,$dcID,$dwpID);
-                    echo view('includes/Header', $data);
-                    echo view('workpaper/chapter3/315Ab4_section', $data);
-                    echo view('includes/Footer');
+                    $data['sec'] = $this->wpmodel->getvalues_c3('m',$s[1],$s[0],$dmtID,$dcID,$dwpID);
+                    $page = 'AB3-section';
                 }
-                break; 
-            case '3.15.1 Ab4a':
-                $data['ab4a'] = $this->wpmodel->getvalues_m('c3','ab4a',$code,$dc3tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/3151Ab4a', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.2 Ab4b':
-                $data['ab4b'] = $this->wpmodel->getvalues_m('c3','ab4b',$code,$dc3tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/3152Ab4b', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.3 Ab4c':
-                $data['ab4c'] = $this->wpmodel->getvalues_m('c3','ab4c',$code,$dc3tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/3153Ab4c', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.4 Ab4d':
-                $data['ab4d'] = $this->wpmodel->getvalues_m('c3','ab4d',$code,$dc3tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/3154Ab4d', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.5 Ab4e':
-                $data['ab4e'] = $this->wpmodel->getvalues_m('c3','ab4e',$code,$dc3tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/3155Ab4e', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.6 Ab4f':
-                $data['ab4f'] = $this->wpmodel->getvalues_m('c3','ab4f',$code,$dc3tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/3156Ab4f', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.7 Ab4g':
-                $data['ab4g'] = $this->wpmodel->getvalues_m('c3','ab4g',$code,$dc3tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/3157Ab4g', $data);
-                echo view('includes/Footer');
-                break; 
-            case '3.15.8 Ab4h':
-                $data['ab4h'] = $this->wpmodel->getvalues_m('c3','ab4h',$code,$dc3tID,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/chapter3/3158Ab4h', $data);
-                echo view('includes/Footer');
-                break; 
-            default:
                 break;
+
         }
+
+        echo view('includes/Header', $data);
+        echo view('workpaper/chapter3/'.$page, $data);
+        echo view('includes/Footer');
+
+
+        //     case '3.1 Aa1':
+        //         $data['datapl'] = $this->wpmodel->getvalues_m('c3','planning',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['dataaf'] = $this->wpmodel->getvalues_m('c3','audit finalisation',$code,$dc3tID,$dcID,$dwpID);
+        //         $rdata          = $this->wpmodel->getvalues_s('c3','section3',$code, $dc3tID,$dcID,$dwpID);
+        //         $data['s3']     = json_decode($rdata['field1'], true);
+        //         $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
+        //         $rdata2         = $this->wpmodel->getvalues_s('c3','rc',$code, $dc3tID,$dcID,$dwpID);
+        //         $data['rc']     = json_decode($rdata2['field1'], true);
+        //         $data['acID2']  = $this->crypt->encrypt($rdata2['mtID']);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/31Aa1', $data);
+        //         echo view('includes/Footer');
+        //         break;
+        //     case '3.2 Aa2':
+        //         $rdata          = $this->wpmodel->getvalues_s('c3','aa2',$code, $dc3tID,$dcID,$dwpID);
+        //         $data['aa2']    = json_decode($rdata['field1'], true);
+        //         $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/32Aa2', $data);
+        //         echo view('includes/Footer');
+        //         break;
+        //     case '3.3 Aa3a':
+        //         $data['cr']     = $this->wpmodel->getvalues_m('c3','cr',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['dc']     = $this->wpmodel->getvalues_m('c3','dc',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['faf']    = $this->wpmodel->getvalues_m('c3','faf',$code,$dc3tID,$dcID,$dwpID);
+        //         $rdata          = $this->wpmodel->getvalues_s('c3','air',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['air']    = json_decode($rdata['field1'], true);
+        //         $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/33Aa3a', $data);
+        //         echo view('includes/Footer');
+        //         break;
+        //     case '3.4 Aa3b':
+        //         $data['bp1']    = $this->wpmodel->getvalues_m('c3','p1',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['bp2']    = $this->wpmodel->getvalues_m('c3','p2',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['bp3a']   = $this->wpmodel->getvalues_m('c3','p3a',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['bp3b']   = $this->wpmodel->getvalues_m('c3','p3b',$code,$dc3tID,$dcID,$dwpID);
+        //         $rdata          = $this->wpmodel->getvalues_s('c3','p4',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['bp4']    = json_decode($rdata['field1'], true);
+        //         $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/34Aa3b', $data);
+        //         echo view('includes/Footer');
+        //         break;
+        //     case '3.5 Aa4':
+        //         $rdata          = $this->wpmodel->getvalues_s('c3','aa4',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['aa4']    = json_decode($rdata['field1'], true);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/35Aa4', $data);
+        //         echo view('includes/Footer');
+        //         break;
+        //     case '3.6.1 Aa5a':
+
+        //         $rdata          = $this->wpmodel->getvalues_s('c3','aa5a',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['aa5a']    = json_decode($rdata['field1'], true);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/361Aa5a', $data);
+        //         echo view('includes/Footer');
+        //         break;
+        //     case '3.6.2 Aa5b':
+        //         $data['aa5b'] = $this->wpmodel->getvalues_m('c3','aa5b',$code,$dc3tID,$dcID,$dwpID);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/362Aa5b', $data);
+        //         echo view('includes/Footer');
+        //         break;  
+        //     case '3.7 Aa7':
+        //         $data['aa7']    = $this->wpmodel->getvalues_m('c3','isa315',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['cons']   = $this->wpmodel->getvalues_m('c3','consultation',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['inc']    = $this->wpmodel->getvalues_m('c3','inconsistencies',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['ref']    = $this->wpmodel->getvalues_m('c3','refusal',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['dep']    = $this->wpmodel->getvalues_m('c3','departures',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['oth']    = $this->wpmodel->getvalues_m('c3','other',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['aepapp'] = $this->wpmodel->getvalues_s('c3','aepapp',$code,$dc3tID,$dcID,$dwpID);
+        //         $rdata          = $this->wpmodel->getvalues_s('c3','aep',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['aep']    = json_decode($rdata['field1'], true);
+        //         $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/37Aa7', $data);
+        //         echo view('includes/Footer');
+        //         break;
+        //     case '3.8 Aa10':
+        //         $rdata = $this->wpmodel->getvalues_s('c3','aa10',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['aa10'] = json_decode($rdata['field1'], true);
+        //         $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/38Aa10', $data);
+        //         echo view('includes/Footer');
+        //         break;
+        //     case '3.9':
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/39', $data);
+        //         echo view('includes/Footer');
+        //         break;
+        //     case '3.10 Aa11-un':
+        //         $s = explode('-', $code);
+        //         $data['sectiontitle'] = "SUMMARY OF UNADJUSTED ERRORS";
+        //         $data['aef']    = $this->wpmodel->getvalues_m('c3','aef',$s[0],$dc3tID,$dcID,$dwpID);
+        //         $data['aej']    = $this->wpmodel->getvalues_m('c3','aej',$s[0],$dc3tID,$dcID,$dwpID);
+        //         $data['ee']     = $this->wpmodel->getvalues_m('c3','ee',$s[0],$dc3tID,$dcID,$dwpID);
+        //         $data['de']     = $this->wpmodel->getvalues_m('c3','de',$s[0],$dc3tID,$dcID,$dwpID);
+        //         $rdata          = $this->wpmodel->getvalues_s('c3','aa11ue',$s[0],$dc3tID,$dcID,$dwpID);
+        //         $data['ue']     = json_decode($rdata['field1'], true);    
+        //         $data['ueacID'] = $this->crypt->encrypt($rdata['mtID']);
+        //         $rdata2         = $this->wpmodel->getvalues_s('c3','con',$s[0],$dc3tID,$dcID,$dwpID);
+        //         $data['con']    = json_decode($rdata2['field1'], true);   
+        //         $data['conacID'] = $this->crypt->encrypt($rdata2['mtID']);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/310Aa11_un', $data); 
+        //         echo view('includes/Footer');
+        //         break;   
+        //     case '3.10 Aa11-ad':
+        //         $s = explode('-', $code);
+        //         $data['sectiontitle'] = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";
+        //         $data['ad'] = $this->wpmodel->getvalues_m('c3','ad',$s[0],$dc3tID,$dcID,$dwpID);
+        //         $rdata      = $this->wpmodel->getvalues_s('c3','aa11uead',$s[0],$dc3tID,$dcID,$dwpID);
+        //         $data['ue'] = json_decode($rdata['field1'], true);    
+        //         $data['ueacID'] = $this->crypt->encrypt($rdata['mtID']);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/310Aa11_ad', $data);
+        //         echo view('includes/Footer');
+        //         break;   
+        //     case '3.11':
+        //         $rdata          = $this->wpmodel->getvalues_s('c3','311',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['arf']    = json_decode($rdata['field1'], true);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/311', $data);
+        //         echo view('includes/Footer');
+        //         break;   
+        //     case '3.12':
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/312', $data);
+        //         echo view('includes/Footer');
+        //         break;   
+        //     case '3.13 Ab1':
+        //         $data['ab1'] = $this->wpmodel->getvalues_m('c3','ab1',$code,$dc3tID,$dcID,$dwpID);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/313Ab1', $data);
+        //         echo view('includes/Footer');
+        //         break;   
+        //     case '3.14 Ab3':
+        //         $rdata = $this->wpmodel->getvalues_s('c3','ab3',$code,$dc3tID,$dcID,$dwpID);
+        //         $data['ab3'] = json_decode($rdata['field1'], true);
+        //         $data['mtID'] = $this->crypt->encrypt($rdata['mtID']);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/314Ab3', $data);
+        //         echo view('includes/Footer');
+        //         break; 
+        //     case '3.15 Ab4-checklist':
+        //     case '3.15 Ab4-section1':
+        //     case '3.15 Ab4-section2':
+        //     case '3.15 Ab4-section3':
+        //     case '3.15 Ab4-section4':
+        //     case '3.15 Ab4-section5':
+        //     case '3.15 Ab4-section6':
+        //     case '3.15 Ab4-section7':
+        //     case '3.15 Ab4-section8':
+        //     case '3.15 Ab4-section9':
+        //         $s = explode('-', $code);
+        //         switch ($s[1]) {
+        //             case 'checklist':$data['sectiontitle'] = 'CORPORATE DISCLOSURE CHECKLIST (IFRS)';break;
+        //             case 'section1':$data['sectiontitle'] = 'Format of the Annual Report and Generic Information';break;
+        //             case 'section2':$data['sectiontitle'] = 'Directors Report (Review of the Business) ~ Best Practice Disclosures';break;
+        //             case 'section3':$data['sectiontitle'] = 'Directors Report ~ Best Practice Disclosures';break;
+        //             case 'section4':$data['sectiontitle'] = 'Statement of Comprehensive Income (SCI) and Related Notes';break;
+        //             case 'section5':$data['sectiontitle'] = 'Statement of Changes in Equity';break;
+        //             case 'section6':$data['sectiontitle'] = 'Statement of Financial Position and Related Notes';break;
+        //             case 'section7':$data['sectiontitle'] = 'Statement of Cash Flows';break;
+        //             case 'section8':$data['sectiontitle'] = 'Accounting Policies and Estimation Techniques';break;
+        //             case 'section9':$data['sectiontitle'] = 'Notes and Other Disclosures';break;
+        //         }
+        //         $data['title']      = $code. ' - Chapter 3 Management';
+        //         $data['section']    = $s[1];
+        //         $data['c3tID']      = $c3tID;
+        //         $data['code']       = $code;
+        //         if($s[1] == "checklist"){
+        //             $rdata          = $this->wpmodel->getvalues_s('c3',$s[1],$s[0],$dc3tID,$dcID,$dwpID);
+        //             $data['sec']    = json_decode($rdata['field1'], true);
+        //             $data['mtID']   = $this->crypt->encrypt($rdata['mtID']);
+        //             echo view('includes/Header', $data);
+        //             echo view('workpaper/chapter3/315Ab4_checklist', $data);
+        //             echo view('includes/Footer');
+        //         }else{
+        //             $data['sec'] = $this->wpmodel->getvalues_m('c3',$s[1],$s[0],$dc3tID,$dcID,$dwpID);
+        //             echo view('includes/Header', $data);
+        //             echo view('workpaper/chapter3/315Ab4_section', $data);
+        //             echo view('includes/Footer');
+        //         }
+        //         break; 
+        //     case '3.15.1 Ab4a':
+        //         $data['ab4a'] = $this->wpmodel->getvalues_m('c3','ab4a',$code,$dc3tID,$dcID,$dwpID);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/3151Ab4a', $data);
+        //         echo view('includes/Footer');
+        //         break; 
+        //     case '3.15.2 Ab4b':
+        //         $data['ab4b'] = $this->wpmodel->getvalues_m('c3','ab4b',$code,$dc3tID,$dcID,$dwpID);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/3152Ab4b', $data);
+        //         echo view('includes/Footer');
+        //         break; 
+        //     case '3.15.3 Ab4c':
+        //         $data['ab4c'] = $this->wpmodel->getvalues_m('c3','ab4c',$code,$dc3tID,$dcID,$dwpID);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/3153Ab4c', $data);
+        //         echo view('includes/Footer');
+        //         break; 
+        //     case '3.15.4 Ab4d':
+        //         $data['ab4d'] = $this->wpmodel->getvalues_m('c3','ab4d',$code,$dc3tID,$dcID,$dwpID);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/3154Ab4d', $data);
+        //         echo view('includes/Footer');
+        //         break; 
+        //     case '3.15.5 Ab4e':
+        //         $data['ab4e'] = $this->wpmodel->getvalues_m('c3','ab4e',$code,$dc3tID,$dcID,$dwpID);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/3155Ab4e', $data);
+        //         echo view('includes/Footer');
+        //         break; 
+        //     case '3.15.6 Ab4f':
+        //         $data['ab4f'] = $this->wpmodel->getvalues_m('c3','ab4f',$code,$dc3tID,$dcID,$dwpID);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/3156Ab4f', $data);
+        //         echo view('includes/Footer');
+        //         break; 
+        //     case '3.15.7 Ab4g':
+        //         $data['ab4g'] = $this->wpmodel->getvalues_m('c3','ab4g',$code,$dc3tID,$dcID,$dwpID);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/3157Ab4g', $data);
+        //         echo view('includes/Footer');
+        //         break; 
+        //     case '3.15.8 Ab4h':
+        //         $data['ab4h'] = $this->wpmodel->getvalues_m('c3','ab4h',$code,$dc3tID,$dcID,$dwpID);
+        //         echo view('includes/Header', $data);
+        //         echo view('workpaper/chapter3/3158Ab4h', $data);
+        //         echo view('includes/Footer');
+        //         break; 
+        //     default:
+        //         break;
+        // }
 
     }
 

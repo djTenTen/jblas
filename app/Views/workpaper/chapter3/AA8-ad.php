@@ -43,14 +43,14 @@
             <?php  }?>
             <div class="card-body">
                 <nav class="nav nav-borders">
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'AA8-un')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AA8-un/<?= $mtID?>/<?= $cID?>/<?= $name?>">Unadjusted Errors</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'AA8-ad')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AA8-ad/<?= $mtID?>/<?= $cID?>/<?= $name?>">Adjustments Made</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'AA8-un')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AA8-un/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Unadjusted Errors</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'AA8-ad')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AA8-ad/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Adjustments Made</a>
                 </nav>
                 <hr class="mt-0 mb-4" style="color: #7752FE;"/>
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <div class="m-5">
                     <h4><?= $sectiontitle?></h4>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa11ad/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa11ad/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -112,7 +112,7 @@
                         <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa11uead/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa11uead/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="aa11uead">
                         <input type="hidden" name="acid" value="<?= $ueacID?>">
                         <table class="table">

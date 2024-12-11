@@ -42,11 +42,11 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h1 class="text-center">SUGGESTED LETTER OF REPRESENTATION</h1>
-                    <form class="form-inline" action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa4/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form class="form-inline" action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa4/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="acid" value="<?= $mdID?>">
                         <div class="row justify-content-center">
                             <div class="col-2"></div>
@@ -153,7 +153,7 @@
                                         <label class="mb-1">14.	Other than those disclosed in the financial statements we are not aware of any material liabilities, provisions, contingent liabilities, contingent assets or contracted for capital commitments, that need to be provided for or disclosed in the financial statements.</label>
                                     </div>
                                 </div>
-                                <hr style="color: #7752FE;">about:blank#blocked
+                                <hr style="color: #7752FE;">
                                 <div class="col-md-12">
                                     <div class="mb-3">
                                         <label class="mb-1" for="num15">15. The company has satisfactory title to all assets and there are no liens or encumbrances on the company’s assets:</label>

@@ -47,7 +47,7 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>AUDITOR’S OBJECTIVE:</h4>
@@ -56,7 +56,7 @@
                         <li>) A matter, although appropriately presented or disclosed in the financial statements, that is of such importance that it is fundamental to users’ understanding of the financial statements; or </li>
                         <li>) As appropriate, any other matter that is relevant to users’ understanding of the audit, the auditor’s responsibilities or the auditor’s report. </li>
                     </ol>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa12/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa12/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="acid" value="<?= $mdID?>">
                         <table class="table table-bordered table-sm">
                             <thead>

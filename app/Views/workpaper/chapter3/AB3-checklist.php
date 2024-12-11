@@ -43,17 +43,17 @@
             <?php  }?>
             <div class="card-body">
                 <nav class="nav nav-borders">
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'checklist')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-checklist/<?= $mtID?>/<?= $cID?>/<?= $name?>">Checklist</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section1')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section1/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 1</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section2')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section2/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 2</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section3')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section3/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 3</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section4')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section4/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 4</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section5')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section5/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 5</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section6')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section6/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 6</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section7')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section7/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 7</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'checklist')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-checklist/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Checklist</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section1')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section1/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 1</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section2')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section2/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 2</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section3')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section3/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 3</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section4')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section4/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 4</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section5')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section5/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 5</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section6')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section6/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 6</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section7')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section7/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 7</a>
                 </nav>
                 <hr class="mt-0 mb-4" style="color: #7752FE;"/>
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?>AB3/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc3/')?>AB3/<?= $mtID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <div class="m-5">
                     <h4>CORPORATE DISCLOSURE CHECKLIST (IFRS)</h4>
                     <h6><u>Scope</u></h6>
@@ -64,7 +64,7 @@
                     <p>IFRS 16 <i>Leases</i> is mandatory for accounting periods commencing on or after 1 January 2019. This fundamentally alters the accounting treatment for lessees, with consequential disclosure amendments.</p>
                     <p><b>NB: To ensure that the Checklist is as efficient as possible, areas which are more specialised have been addressed by supplementary disclosure checklists. <u>These supplementary disclosure checklists should only be completed if the area is relevant.</u> </b></p>
                     <p>NB: The checklist does not cover the additional disclosures required by companies which enter into insurance contracts, where these are relevant considerations, then the disclosure requirements of IFRS 4 should be given.  It also does not cover the requirements of IAS 26, which are only relevant to clients who are themselves pension schemes, or IFRIC 2 which is relevant to cooperative entities.  The checklist also does not cover the disclosure requirements of companies with listed equity or debt.</p>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveab4checklist/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveab4checklist/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="<?= $section?>">
                         <input type="hidden" name="acid" value="<?= $mdID?>">
                         <table class="table table-sm table-bordered">

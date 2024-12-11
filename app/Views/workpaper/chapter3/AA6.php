@@ -47,7 +47,7 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>ISA COMPLIANCE CRITICAL ISSUES MEMORANDUM</h4>
@@ -58,7 +58,7 @@
                     <p>If the A.E.P. wishes, this form can be fully completed thus providing a comprehensive executive summary which (when read in conjunction with final analytical procedures) provides a critical review of financial and non-financial matters, notes outstanding work; key issues where the A.E.P.’s input is needed and key issues that require further client involvement.</p>
                     <p>This form should not be used to record routine review points or administrative points for the A.E.P.’s attention or to record outstanding work at interim stages of the assignment.</p>
                     <h6>Summary and Impact of Changes Made to Audit Planning After the Date of the A.E.P’s Approval:</h6>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa7aepapp/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa7aepapp/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="aepapp">
                         <input type="hidden" name="acid" value="<?= encr($aepapp['mdID'])?>">
                         <textarea class="form-control reference" id="reference" cols="30" rows="5" name="question"><?= $aepapp['field1']?></textarea>
@@ -69,7 +69,7 @@
                     <h6>I have considered the requirements of ISA 315 and specifically, the definition of a significant risk being, “an identified and assessed risk of material misstatement that, in the auditor’s judgment, requires special audit consideration”.</h6>
                     <h6>A summary of significant risks identified, the outcome from audit tests performed on those risks, and the conclusions reached (mandatory section):</h6>
                     <p><i>(Insert additional rows as required)</i></p>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa7isa/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa7isa/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="isa315">
                         <table class="table table-bordered">
                             <thead>
@@ -100,7 +100,7 @@
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
                     <h6>Areas where consultation has been undertaken </h6>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa7isa/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa7isa/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="consultation">
                         <table class="table table-bordered">
                             <thead>
@@ -135,7 +135,7 @@
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
                     <h6>Inconsistencies noted between information provided by the client and other findings of the audit team (mandatory section):</h6>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa7isa/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa7isa/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="inconsistencies">
                         <table class="table table-bordered">
                             <thead>
@@ -170,7 +170,7 @@
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
                     <h6>Areas where management refusal to allow the audit team to send a confirmation request has led to alternative procedures being performed (mandatory section):</h6>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa7isa/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa7isa/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="refusal">
                         <table class="table table-bordered">
                             <thead>
@@ -205,7 +205,7 @@
                     </form>
                     <br><br><br><hr style="color: #7752FE;">                
                     <h6>Departures from requirements of ISA, reasons for the departure and alternative audit procedures performed (mandatory section):</h6>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa7isa/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa7isa/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="departures">
                         <table class="table table-bordered">
                             <thead>
@@ -240,7 +240,7 @@
                     </form> 
                     <br><br><br><hr style="color: #7752FE;">
                     <h6>Other Issues (including any key outstanding audit matters):</h6>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa7isa/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa7isa/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="other">
                         <table class="table table-bordered">
                             <thead>
@@ -274,7 +274,7 @@
                         <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                     </form> 
                     <br><br><br><hr style="color: #7752FE;">
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa7aep/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa7aep/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="acid" value="<?= $mdID?>">
                         <h6>Changes to, or new accounting policies and estimation techniques in the period:</h6>
                         <table class="table table-bordered">

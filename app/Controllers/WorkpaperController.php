@@ -1452,15 +1452,13 @@ class WorkpaperController extends BaseController{
 
             case 'c3':
                 switch ($code) {
-                    case '3.1 Aa1':
+                    case 'AA1':
                         switch ($save) {
                             case 'saveplaf' :
                                 $req = [
                                     'extent'        => $this->request->getPost('extent'),
                                     'reference'     => $this->request->getPost('reference'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'c3tID'         => $param['ctID'],
-                                    'code'          => $param['code'],
                                 ];
                             break;
                             case 'saveaa1s3' :
@@ -1496,8 +1494,6 @@ class WorkpaperController extends BaseController{
                                 $req = [
                                     'question'  => json_encode($sec),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                             case 'saverceap' :
@@ -1526,15 +1522,13 @@ class WorkpaperController extends BaseController{
                                 $req = [
                                     'question'  => json_encode($rc),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
-                    case '3.2 Aa2':
+                    case 'AA2':
                         switch ($save) {
                             case 'saveaa2' :
                                 $aa2 = [
@@ -1549,22 +1543,18 @@ class WorkpaperController extends BaseController{
                                 $req = [
                                     'aa2'       => json_encode($aa2),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
-                    case '3.3 Aa3a':
+                    case 'AA3A':
                         switch ($save) {
                             case 'saveaa3a' :
                                 $req = [
                                     'comment'   => $this->request->getPost('comment'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                             case 'saveaa3afaf' :
@@ -1572,8 +1562,6 @@ class WorkpaperController extends BaseController{
                                     'extent'        => $this->request->getPost('extent'),
                                     'reference'     => $this->request->getPost('reference'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'c3tID'         => $param['ctID'],
-                                    'code'          => $param['code'],
                                 ];
                             break;
                             case 'saveaa3air' :
@@ -1587,123 +1575,111 @@ class WorkpaperController extends BaseController{
                                 $req = [
                                     'air'       => json_encode($air),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
-                    case '3.4 Aa3b':
+                    case 'AA3B':
                         switch ($save) {
                             case 'saveaa3b' :
                                 $req = [
                                     'reference'     => $this->request->getPost('reference'),
                                     'acid'          => $this->request->getPost('acid'),
-                                    'c3tID'         => $param['ctID'],
-                                    'code'          => $param['code'],
                                 ];
                             break;
                             case 'saveaa3bp4' :
                                 $p4 = [
-                                    'p41'   => $this->request->getPost('p41'),
-                                    'p42'   => $this->request->getPost('p42'),
-                                    'bwr1'   => $this->request->getPost('bwr1'),
-                                    'bwr2'   => $this->request->getPost('bwr2'),
-                                    'bwr2d'   => $this->request->getPost('bwr2d'),
-                                    'bwr3'   => $this->request->getPost('bwr3'),
-                                    'bwr3d'   => $this->request->getPost('bwr3d'),
-                                    'bwr4'   => $this->request->getPost('bwr4'),
-                                    'bwr4d'   => $this->request->getPost('bwr4d'),
-                                    'bwr5'   => $this->request->getPost('bwr5'),
-                                    'bwr5d'   => $this->request->getPost('bwr5d'),
+                                    'p41'       => $this->request->getPost('p41'),
+                                    'p42'       => $this->request->getPost('p42'),
+                                    'bwr1'      => $this->request->getPost('bwr1'),
+                                    'bwr2'      => $this->request->getPost('bwr2'),
+                                    'bwr2d'     => $this->request->getPost('bwr2d'),
+                                    'bwr3'      => $this->request->getPost('bwr3'),
+                                    'bwr3d'     => $this->request->getPost('bwr3d'),
+                                    'bwr4'      => $this->request->getPost('bwr4'),
+                                    'bwr4d'     => $this->request->getPost('bwr4d'),
+                                    'bwr5'      => $this->request->getPost('bwr5'),
+                                    'bwr5d'     => $this->request->getPost('bwr5d'),
                                 ];
                                 $req = [
                                     'p4'        => json_encode($p4),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
-                    case '3.5 Aa4':
+                    case 'AA4':
                         switch ($save) {
                             case 'saveaa4' :
                                 $aa4 = [
-                                    'leg1' => $this->request->getPost('leg1'),
-                                    'leg2' => $this->request->getPost('leg2'),
-                                    'isa' => $this->request->getPost('isa'),
-                                    'leg3' => $this->request->getPost('leg3'),
-                                    'num7' => $this->request->getPost('num7'),
-                                    'num10yes' => $this->request->getPost('num10yes'),
-                                    'num11yes' => $this->request->getPost('num11yes'),
-                                    'num11' => $this->request->getPost('num11'),
-                                    'num12yes' => $this->request->getPost('num12yes'),
-                                    'num12' => $this->request->getPost('num12'),
-                                    'num15' => $this->request->getPost('num15'),
-                                    'num16' => $this->request->getPost('num16'),
-                                    'num17' => $this->request->getPost('num17'),
-                                    'imp' => $this->request->getPost('imp'),
+                                    'leg1'      => $this->request->getPost('leg1'),
+                                    'leg2'      => $this->request->getPost('leg2'),
+                                    'isa'       => $this->request->getPost('isa'),
+                                    'leg3'      => $this->request->getPost('leg3'),
+                                    'num7'      => $this->request->getPost('num7'),
+                                    'num10yes'  => $this->request->getPost('num10yes'),
+                                    'num11yes'  => $this->request->getPost('num11yes'),
+                                    'num11'     => $this->request->getPost('num11'),
+                                    'num12yes'  => $this->request->getPost('num12yes'),
+                                    'num12'     => $this->request->getPost('num12'),
+                                    'num15'     => $this->request->getPost('num15'),
+                                    'num16'     => $this->request->getPost('num16'),
+                                    'num17'     => $this->request->getPost('num17'),
+                                    'imp'       => $this->request->getPost('imp'),
                                     'num22yes1' => $this->request->getPost('num22yes1'),
-                                    'num221' => $this->request->getPost('num221'),
+                                    'num221'    => $this->request->getPost('num221'),
                                     'num22yes2' => $this->request->getPost('num22yes2'),
-                                    'num222' => $this->request->getPost('num222'),
-                                    'num223' => $this->request->getPost('num223'),
-                                    'num224' => $this->request->getPost('num224'),
+                                    'num222'    => $this->request->getPost('num222'),
+                                    'num223'    => $this->request->getPost('num223'),
+                                    'num224'    => $this->request->getPost('num224'),
                                     'num23yes1' => $this->request->getPost('num23yes1'),
-                                    'num23d1' => $this->request->getPost('num23d1'),
-                                    'num23d2' => $this->request->getPost('num23d2'),
+                                    'num23d1'   => $this->request->getPost('num23d1'),
+                                    'num23d2'   => $this->request->getPost('num23d2'),
                                     'num23yes2' => $this->request->getPost('num23yes2'),
-                                    'num23d' => $this->request->getPost('num23d'),
+                                    'num23d'    => $this->request->getPost('num23d'),
                                 ];
                                 $req = [
                                     'aa4'       => json_encode($aa4),
-                                    'code'      => $code,
-                                    'part'      => 'aa4',
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
+                                    'acid'      =>  $this->request->getPost('acid'),
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
-                    case '3.6.1 Aa5a':
+                    case 'AA5A':
                         switch ($save) {
                             case 'saveaa5a' :
                                 $aa5 = [
-                                    'aa51d' => $this->request->getPost('aa51d'),
-                                    'ml1' => $this->request->getPost('ml1'),
-                                    'ml1d' => $this->request->getPost('ml1d'),
-                                    'ml2' => $this->request->getPost('ml2'),
-                                    'ml3' => $this->request->getPost('ml3'),
-                                    'ml4' => $this->request->getPost('ml4'),
-                                    'ml4d' => $this->request->getPost('ml4d'),
-                                    'ml5' => $this->request->getPost('ml5'),
-                                    'ml5d' => $this->request->getPost('ml5d'),
-                                    'ml6' => $this->request->getPost('ml6'),
-                                    'ml6d' => $this->request->getPost('ml6d'),
-                                    'ml7' => $this->request->getPost('ml7'),
-                                    'ml7d' => $this->request->getPost('ml7d'),
-                                    'ml8' => $this->request->getPost('ml8'),
+                                    'aa51d'     => $this->request->getPost('aa51d'),
+                                    'ml1'       => $this->request->getPost('ml1'),
+                                    'ml1d'      => $this->request->getPost('ml1d'),
+                                    'ml2'       => $this->request->getPost('ml2'),
+                                    'ml3'       => $this->request->getPost('ml3'),
+                                    'ml4'       => $this->request->getPost('ml4'),
+                                    'ml4d'      => $this->request->getPost('ml4d'),
+                                    'ml5'       => $this->request->getPost('ml5'),
+                                    'ml5d'      => $this->request->getPost('ml5d'),
+                                    'ml6'       => $this->request->getPost('ml6'),
+                                    'ml6d'      => $this->request->getPost('ml6d'),
+                                    'ml7'       => $this->request->getPost('ml7'),
+                                    'ml7d'      => $this->request->getPost('ml7d'),
+                                    'ml8'       => $this->request->getPost('ml8'),
                                 ];
                                 $req = [
                                     'aa5a'       => json_encode($aa5),
-                                    'code'      => $code,
-                                    'part'      => 'aa5a',
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
+                                    'acid'      =>  $this->request->getPost('acid'),
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
-                    case '3.6.2 Aa5b':
+                    case 'AA5B':
                         switch ($save) {
                             case 'saveaa5b' :
                                 $validationRules = [
@@ -1711,7 +1687,7 @@ class WorkpaperController extends BaseController{
                                 ];
                                 if (!$this->validate($validationRules)) {
                                     session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-                                    return $this->resultpage($chapter,false,$code,$ctID,$cID,$wpID,$name);
+                                    return $this->resultpage($chapter,false,$code,$mtID,$cID,$name);
                                 }
                                 $req = [
                                     'reference'             => $this->request->getPost('reference'),
@@ -1720,17 +1696,14 @@ class WorkpaperController extends BaseController{
                                     'recommendation'        => $this->request->getPost('recommendation'),
                                     'yesno'                 => $this->request->getPost('yesno'),
                                     'result'                => $this->request->getPost('result'),
-                                    'code'                  => $code,
                                     'part'                  => $this->request->getPost('part'),
-                                    'c3tID'                 => $param['ctID'],
-                                    'code'                  => $param['code'],
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
-                    case '3.7 Aa7':
+                    case 'AA6':
                         switch ($save) {
                             case 'saveaa7isa' :
                                 $validationRules = [
@@ -1738,7 +1711,7 @@ class WorkpaperController extends BaseController{
                                 ];
                                 if (!$this->validate($validationRules)) {
                                     session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-                                    return $this->resultpage($chapter,false,$code,$ctID,$cID,$wpID,$name);
+                                    return $this->resultpage($chapter,false,$code,$mtID,$cID,$name);
                                 }
                                 $req = [
                                     'reference'         => $this->request->getPost('reference'),
@@ -1746,18 +1719,13 @@ class WorkpaperController extends BaseController{
                                     'comment'           => $this->request->getPost('comment'),
                                     'recommendation'    => $this->request->getPost('recommendation'),
                                     'result'            => $this->request->getPost('result'),
-                                    'code'              => $code,
                                     'part'              => $this->request->getPost('part'),
-                                    'c3tID'             => $param['ctID'],
-                                    'code'              => $param['code'],
                                 ];
                             break;
                             case 'saveaa7aepapp' :
                                 $req = [
                                     'aep'       => $this->request->getPost('question'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                             case 'saveaa7aep' :
@@ -1774,15 +1742,13 @@ class WorkpaperController extends BaseController{
                                 $req = [
                                     'aep'       => json_encode($aep),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
-                    case '3.8 Aa10':
+                    case 'AA7':
                         switch ($save) {
                             case 'saveaa10' :
                                 $aa10 = [
@@ -1793,16 +1759,14 @@ class WorkpaperController extends BaseController{
                                 $req = [
                                     'aa10'      => json_encode($aa10),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
-                    case '3.10 Aa11-un':
-                    case '3.10 Aa11-ad':
+                    case 'AA8-un':
+                    case 'AA8-ad':
                         $s = explode('-', $code);
                         switch ($save) {
                             case 'saveaa11un' :
@@ -1816,7 +1780,6 @@ class WorkpaperController extends BaseController{
                                     'yesno'         => $this->request->getPost('yesno'),
                                     'code'          => $s[0],
                                     'part'          => $this->request->getPost('part'),
-                                    'c3tID'         => $param['ctID'],
                                 ];
                             break;
                             case 'saveaa11ad' :
@@ -1829,7 +1792,6 @@ class WorkpaperController extends BaseController{
                                     'crfp'          => $this->request->getPost('crfp'),
                                     'code'          => $s[0],
                                     'part'          => 'ad',
-                                    'c3tID'         => $param['ctID'],
                                 ];
                             break;
                             case 'saveaa11ue' :
@@ -1841,8 +1803,6 @@ class WorkpaperController extends BaseController{
                                 $req = [
                                     'aa11'      => json_encode($aa11),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $s[0],
                                 ];
                             break;
                             case 'saveaa11con' :
@@ -1907,8 +1867,6 @@ class WorkpaperController extends BaseController{
                                 $req = [
                                     'aa11'      => json_encode($aa11con),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $s[0],
                                 ];
                             break;
                             case 'saveaa11uead' :
@@ -1920,72 +1878,110 @@ class WorkpaperController extends BaseController{
                                 $req = [
                                     'aa11'      => json_encode($aa11),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $s[0],
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
-                    case '3.11':
+                    case 'AA9':
                         switch ($save) {
-                            case 'save311' :
-                                $arf = [
-                                    'uqo'    => $this->request->getPost('uqo'),
-                                    'tops'    => $this->request->getPost('tops'),
-                                    'afsd'   => $this->request->getPost('afsd'),
-                                    'cf'   => $this->request->getPost('cf'),
-                                    'leg1'   => $this->request->getPost('leg1'),
-                                    'leg2'   => $this->request->getPost('leg2'),
-                                    'jurleg'   => $this->request->getPost('jurleg'),
-                                    'leg3'   => $this->request->getPost('leg3'),
-                                    'op1'   => $this->request->getPost('op1'),
-                                    'op2'   => $this->request->getPost('op2'),
+                            case 'saveaa9' :
+                                $aa9 = [
+                                    'wpref1'    => $this->request->getPost('wpref1'),
+                                    'doneby1'   => $this->request->getPost('doneby1'),
+                                    'wpref2'    => $this->request->getPost('wpref2'),
+                                    'doneby2'   => $this->request->getPost('doneby2'),
+                                    'wpref3'    => $this->request->getPost('wpref3'),
+                                    'doneby3'   => $this->request->getPost('doneby3'),
+                                    'wpref4'    => $this->request->getPost('wpref4'),
+                                    'doneby4'   => $this->request->getPost('doneby4'),
+                                    'wpref5'    => $this->request->getPost('wpref5'),
+                                    'doneby5'   => $this->request->getPost('doneby5'),
+                                    'wpref6'    => $this->request->getPost('wpref6'),
+                                    'doneby6'   => $this->request->getPost('doneby6')
                                 ];
                                 $req = [
-                                    'arf'  => json_encode($arf),
-                                    'code'  => $code,
-                                    'part'  => '311',
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
+                                    'aa9'       => json_encode($aa9),
+                                    'acid'      => $this->request->getPost('acid'),
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
-                    break;
-                    case '3.13 Ab1':
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
+                    break; 
+                    case 'AA10':
+                        switch ($save) {
+                            case 'saveaa10' :
+                                $aa10 = [
+                                    'wpref1'    => $this->request->getPost('wpref1'),
+                                    'doneby1'   => $this->request->getPost('doneby1'),
+                                    'wpref2'    => $this->request->getPost('wpref2'),
+                                    'doneby2'   => $this->request->getPost('doneby2'),
+                                    'wpref3'    => $this->request->getPost('wpref3'),
+                                    'doneby3'   => $this->request->getPost('doneby3'),
+                                    'wpref4'    => $this->request->getPost('wpref4'),
+                                    'doneby4'   => $this->request->getPost('doneby4'),
+                                ];
+                                $req = [
+                                    'aa10'      => json_encode($aa10),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                        }
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
+                    break; 
+                    case 'AA11':
+                        switch ($save) {
+                            case 'saveaa11' :
+                                $req = [
+                                    'matter'     => $this->request->getPost('matter'),
+                                    'notperv'    => $this->request->getPost('notperv'),
+                                    'perv'       => $this->request->getPost('perv'),
+                                    'part'       => $this->request->getPost('part'),
+                                ];
+                            break;
+                        }
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
+                    break; 
+                    case 'AA12':
+                        switch ($save) {
+                            case 'saveaa12' :
+                                $aa12 = [
+                                    'wpref1'    => $this->request->getPost('wpref1'),
+                                    'doneby1'   => $this->request->getPost('doneby1'),
+                                    'wpref2'    => $this->request->getPost('wpref2'),
+                                    'doneby2'   => $this->request->getPost('doneby2'),
+                                    'wpref3'    => $this->request->getPost('wpref3'),
+                                    'doneby3'   => $this->request->getPost('doneby3'),
+                                    'wpref4'    => $this->request->getPost('wpref4'),
+                                    'doneby4'   => $this->request->getPost('doneby4'),
+                                ];
+                                $req = [
+                                    'aa12'      => json_encode($aa12),
+                                    'acid'      => $this->request->getPost('acid'),
+                                ];
+                            break;
+                        }
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
+                    break; 
+                    case 'AB1':
                         switch ($save) {
                             case 'saveab1' :
                                 $req = [
                                     'yesno'     => $this->request->getPost('yesno'),
                                     'comment'   => $this->request->getPost('comment'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
-                    case '3.13 Ab1':
-                        switch ($save) {
-                            case 'saveab1' :
-                                $req = [
-                                    'yesno'     => $this->request->getPost('yesno'),
-                                    'comment'   => $this->request->getPost('comment'),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
-                                ];
-                            break;
-                        }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
-                    break;
-                    case '3.14 Ab3':
+                    case 'AB2':
                         switch ($save) {
                             case 'saveab3' :
                                 $ab3 = [
@@ -2007,32 +2003,28 @@ class WorkpaperController extends BaseController{
                                 $req = [
                                     'question'  => json_encode($ab3),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
-                    case '3.15 Ab4-checklist':
-                    case '3.15 Ab4-section1':
-                    case '3.15 Ab4-section2':
-                    case '3.15 Ab4-section3':
-                    case '3.15 Ab4-section4':
-                    case '3.15 Ab4-section5':
-                    case '3.15 Ab4-section6':
-                    case '3.15 Ab4-section7':
-                    case '3.15 Ab4-section8':
-                    case '3.15 Ab4-section9':
+                    case 'AB3-checklist':
+                    case 'AB3-section1':
+                    case 'AB3-section2':
+                    case 'AB3-section3':
+                    case 'AB3-section4':
+                    case 'AB3-section5':
+                    case 'AB3-section6':
+                    case 'AB3-section7':
+                    case 'AB3-section8':
+                    case 'AB3-section9':
                         switch ($save) {
                             case 'saveab4' :
                                 $req = [
                                     'yesno'     => $this->request->getPost('yesno'),
                                     'comment'   => $this->request->getPost('comment'),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                             case 'saveab4checklist' :
@@ -2057,35 +2049,11 @@ class WorkpaperController extends BaseController{
                                 $req = [
                                     'chlst'     => json_encode($chlst),
                                     'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
                                 ];
                             break;
                         }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
-                    break;
-                    case '3.15.1 Ab4a':
-                    case '3.15.2 Ab4b':
-                    case '3.15.3 Ab4c':
-                    case '3.15.4 Ab4d':
-                    case '3.15.5 Ab4e':
-                    case '3.15.6 Ab4f':
-                    case '3.15.7 Ab4g':
-                    case '3.15.8 Ab4h':
-                        switch ($save) {
-                            case 'saveab4a' :
-                                $req = [
-                                    'yesno'     => $this->request->getPost('yesno'),
-                                    'comment'   => $this->request->getPost('comment'),
-                                    'acid'      => $this->request->getPost('acid'),
-                                    'c3tID'     => $param['ctID'],
-                                    'code'      => $param['code'],
-                                ];
-                            break;
-                        }
-                        $res =  $this->wpmodel->savevalues($param,$req);
-                        return $this->resultpage($chapter,$res,$code,$ctID,$cID,$wpID,$name);
+                        $res = $this->wpmodel->savevalues($param,$req);
+                        return $this->resultpage($chapter,$res,$code,$mtID,$cID,$wpID,$name);
                     break;
                 }
             break;
@@ -2542,168 +2510,142 @@ class WorkpaperController extends BaseController{
         THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
         * @return view
     */
-    public function viewpdfc3($code,$c3tID,$cID,$wpID){
+    public function viewpdfc3($code,$mtID,$cID,$wpID){
 
         $data['title']  = $code;
-        $data['c3tID']  = $c3tID;
+        $data['mtID']   = $mtID;
         $data['code']   = $code;
-        $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $dwpID          = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
-        $dc3tID         = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$c3tID));
+        $dcID           = $this->decr($cID);
+        $dwpID          = $this->decr($wpID);
+        $dmtID          = $this->decr($mtID);
         $data['cl']     = $this->wpmodel->getclientinfo($dwpID,$dcID);
-        $data['fl']     = $this->wpmodel->getfileinfoc3($dwpID,$dcID,$dc3tID);
+        $data['fl']     = $this->wpmodel->getfileinfoc3($dwpID,$dcID,$dmtID);
         $data['firm']   = session()->get('firm');
         switch ($code) {
-            case '3.1 Aa1':
-                $data['datapl']     = $this->wpmodel->getvalues_m('c3','planning',$code,$dc3tID,$dcID,$dwpID);
-                $data['dataaf']     = $this->wpmodel->getvalues_m('c3','audit finalisation',$code,$dc3tID,$dcID,$dwpID);
-                $rdata              = $this->wpmodel->getvalues_s('c3','section3',$code, $dc3tID,$dcID,$dwpID);
-                $data['s3']         = json_decode($rdata['question'], true);
-                $rdata2         = $this->wpmodel->getvalues_s('c3','rc',$code, $dc3tID,$dcID,$dwpID);
-                $data['rc']     = json_decode($rdata2['question'], true);
-                echo view('workpaper/pdfc3/AA1', $data);
+            case 'AA1':
+                $data['datapl'] = $this->wpmodel->getvalues_c3('m','planning',$code,$dmtID,$dcID,$dwpID);
+                $data['dataaf'] = $this->wpmodel->getvalues_c3('m','audit finalisation',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_c3('s','section3',$code, $dmtID,$dcID,$dwpID);
+                $data['s3']     = json_decode($rdata['field1'], true);
+                $rdata2         = $this->wpmodel->getvalues_c3('s','rc',$code,$dmtID,$dcID,$dwpID);
+                $data['rc']     = json_decode($rdata2['field1'], true);
+                $page = $code;
                 break;
-            case '3.2 Aa2':
-                $rdata          = $this->wpmodel->getvalues_s('c3','aa2',$code, $dc3tID,$dcID,$dwpID);
-                $data['aa2']    = json_decode($rdata['question'], true);
-                echo view('workpaper/pdfc3/AA2', $data);
+            case 'AA2':
+                $rdata          = $this->wpmodel->getvalues_c3('s','aa2',$code, $dmtID,$dcID,$dwpID);
+                $data['aa2']    = json_decode($rdata['field1'], true);
+                $page = $code;
                 break;
-            case '3.3 Aa3a':
-                $data['cr']     = $this->wpmodel->getvalues_m('c3','cr',$code,$dc3tID,$dcID,$dwpID);
-                $data['dc']     = $this->wpmodel->getvalues_m('c3','dc',$code,$dc3tID,$dcID,$dwpID);
-                $data['faf']    = $this->wpmodel->getvalues_m('c3','faf',$code,$dc3tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c3','air',$code,$dc3tID,$dcID,$dwpID);
-                $data['air']    = json_decode($rdata['question'], true);
-                echo view('workpaper/pdfc3/AA3A', $data);
+            case 'AA3A':
+                $data['cr']     = $this->wpmodel->getvalues_c3('m','cr',$code,$dmtID,$dcID,$dwpID);
+                $data['dc']     = $this->wpmodel->getvalues_c3('m','dc',$code,$dmtID,$dcID,$dwpID);
+                $data['faf']    = $this->wpmodel->getvalues_c3('m','faf',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_c3('s','air',$code,$dmtID,$dcID,$dwpID);
+                $data['air']    = json_decode($rdata['field1'], true);
+                $page = $code;
                 break;
-            case '3.4 Aa3b':
-                $data['bp1']    = $this->wpmodel->getvalues_m('c3','p1',$code,$dc3tID,$dcID,$dwpID);
-                $data['bp2']    = $this->wpmodel->getvalues_m('c3','p2',$code,$dc3tID,$dcID,$dwpID);
-                $data['bp3a']   = $this->wpmodel->getvalues_m('c3','p3a',$code,$dc3tID,$dcID,$dwpID);
-                $data['bp3b']   = $this->wpmodel->getvalues_m('c3','p3b',$code,$dc3tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c3','p4',$code,$dc3tID,$dcID,$dwpID);
-                $data['bp4']    = json_decode($rdata['question'], true);
-                echo view('workpaper/pdfc3/AA3B', $data);
+            case 'AA3B':
+                $data['bp1']    = $this->wpmodel->getvalues_c3('m','p1',$code,$dmtID,$dcID,$dwpID);
+                $data['bp2']    = $this->wpmodel->getvalues_c3('m','p2',$code,$dmtID,$dcID,$dwpID);
+                $data['bp3a']   = $this->wpmodel->getvalues_c3('m','p3a',$code,$dmtID,$dcID,$dwpID);
+                $data['bp3b']   = $this->wpmodel->getvalues_c3('m','p3b',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_c3('s','p4',$code,$dmtID,$dcID,$dwpID);
+                $data['bp4']    = json_decode($rdata['field1'], true);
+                $page = $code;
                 break;
-            case '3.5 Aa4':
-                $rdata          = $this->wpmodel->getvalues_s('c3','aa4',$code,$dc3tID,$dcID,$dwpID);
-                $data['aa4']    = json_decode($rdata['question'], true);
-                echo view('workpaper/pdfc3/AA4', $data);
+            case 'AA4':
+                $rdata          = $this->wpmodel->getvalues_c3('s','aa4',$code,$dmtID,$dcID,$dwpID);
+                $data['aa4']    = json_decode($rdata['field1'], true);
+                $page = $code;
                 break;
-            case '3.6.1 Aa5a':
-                $rdata          = $this->wpmodel->getvalues_s('c3','aa5a',$code,$dc3tID,$dcID,$dwpID);
-                $data['aa5a']   = json_decode($rdata['question'], true);
-                echo view('workpaper/pdfc3/AA5A', $data);
+            case 'AA5A':
+                $rdata          = $this->wpmodel->getvalues_c3('s','aa5a',$code,$dmtID,$dcID,$dwpID);
+                $data['aa5a']   = json_decode($rdata['field1'], true);
+                $page = $code;
                 break;
-            case '3.6.2 Aa5b':
-                $data['aa5b'] = $this->wpmodel->getvalues_m('c3','aa5b',$code,$dc3tID,$dcID,$dwpID);
-                echo view('workpaper/pdfc3/AA5B', $data);
+            case 'AA5B':
+                $data['aa5b']   = $this->wpmodel->getvalues_c3('m','aa5b',$code,$dmtID,$dcID,$dwpID);
+                $page = $code;
                 break;  
-            case '3.7 Aa7':
-                $data['aa7']    = $this->wpmodel->getvalues_m('c3','isa315',$code,$dc3tID,$dcID,$dwpID);
-                $data['cons']   = $this->wpmodel->getvalues_m('c3','consultation',$code,$dc3tID,$dcID,$dwpID);
-                $data['inc']    = $this->wpmodel->getvalues_m('c3','inconsistencies',$code,$dc3tID,$dcID,$dwpID);
-                $data['ref']    = $this->wpmodel->getvalues_m('c3','refusal',$code,$dc3tID,$dcID,$dwpID);
-                $data['dep']    = $this->wpmodel->getvalues_m('c3','departures',$code,$dc3tID,$dcID,$dwpID);
-                $data['oth']    = $this->wpmodel->getvalues_m('c3','other',$code,$dc3tID,$dcID,$dwpID);
-                $data['aepapp'] = $this->wpmodel->getvalues_s('c3','aepapp',$code,$dc3tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c3','aep',$code,$dc3tID,$dcID,$dwpID);
-                $data['aep']    = json_decode($rdata['question'], true);
-                echo view('workpaper/pdfc3/AA7', $data);
+            case 'AA6':
+                $data['aa7']    = $this->wpmodel->getvalues_c3('m','isa315',$code,$dmtID,$dcID,$dwpID);
+                $data['cons']   = $this->wpmodel->getvalues_c3('m','consultation',$code,$dmtID,$dcID,$dwpID);
+                $data['inc']    = $this->wpmodel->getvalues_c3('m','inconsistencies',$code,$dmtID,$dcID,$dwpID);
+                $data['ref']    = $this->wpmodel->getvalues_c3('m','refusal',$code,$dmtID,$dcID,$dwpID);
+                $data['dep']    = $this->wpmodel->getvalues_c3('m','departures',$code,$dmtID,$dcID,$dwpID);
+                $data['oth']    = $this->wpmodel->getvalues_c3('m','other',$code,$dmtID,$dcID,$dwpID);
+                $data['aepapp'] = $this->wpmodel->getvalues_c3('s','aepapp',$code,$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_c3('s','aep',$code,$dmtID,$dcID,$dwpID);
+                $data['aep']    = json_decode($rdata['field1'], true);
+                $page = $code;
                 break;
-            case '3.8 Aa10':
-                $rdata = $this->wpmodel->getvalues_s('c3','aa10',$code,$dc3tID,$dcID,$dwpID);
-                $data['aa10'] = json_decode($rdata['question'], true);
-                echo view('workpaper/pdfc3/AA10', $data);
+            case 'AA7':
+                $rdata          = $this->wpmodel->getvalues_c3('s','aa10',$code,$dmtID,$dcID,$dwpID);
+                $data['aa10']   = json_decode($rdata['field1'], true);
+                $page = $code;
                 break;
-            case '3.9':
-                echo view('workpaper/pdfc3/39', $data);
+            case 'AA8-un':
+                $s = explode('-', $code);
+                $data['aef']    = $this->wpmodel->getvalues_c3('m','aef',$s[0],$dmtID,$dcID,$dwpID);
+                $data['aej']    = $this->wpmodel->getvalues_c3('m','aej',$s[0],$dmtID,$dcID,$dwpID);
+                $data['ee']     = $this->wpmodel->getvalues_c3('m','ee',$s[0],$dmtID,$dcID,$dwpID);
+                $data['de']     = $this->wpmodel->getvalues_c3('m','de',$s[0],$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_c3('s','aa11ue',$s[0],$dmtID,$dcID,$dwpID);
+                $data['ue']     = json_decode($rdata['field1'], true);
+                $rdata2         = $this->wpmodel->getvalues_c3('s','con',$s[0],$dmtID,$dcID,$dwpID);
+                $data['con']    = json_decode($rdata2['field1'], true);  
+                $page = $code;
                 break;
-            case '3.10 Aa11-un':
+            case 'AA8-ad':
                 $s              = explode('-', $code);
-                $data['aef']    = $this->wpmodel->getvalues_m('c3','aef',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['aej']    = $this->wpmodel->getvalues_m('c3','aej',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['ee']     = $this->wpmodel->getvalues_m('c3','ee',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['de']     = $this->wpmodel->getvalues_m('c3','de',$s[0],$dc3tID,$dcID,$dwpID);
-                $rdata          = $this->wpmodel->getvalues_s('c3','aa11ue',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['ue']     = json_decode($rdata['question'], true);
-                $rdata2         = $this->wpmodel->getvalues_s('c3','con',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['con']    = json_decode($rdata2['question'], true);    
-                echo view('workpaper/pdfc3/AA11-un', $data);
-            case '3.10 Aa11-ad':
-                $s = explode('-', $code);
-                $data['ad'] = $this->wpmodel->getvalues_m('c3','ad',$s[0],$dc3tID,$dcID,$dwpID);
-                $rdata = $this->wpmodel->getvalues_s('c3','aa11uead',$s[0],$dc3tID,$dcID,$dwpID);
-                $data['ue'] = json_decode($rdata['question'], true);   
-                $s = explode('-', $code);
-                echo view('workpaper/pdfc3/AA11-ad', $data);
+                $data['ad']     = $this->wpmodel->getvalues_c3('m','ad',$s[0],$dmtID,$dcID,$dwpID);
+                $rdata          = $this->wpmodel->getvalues_c3('s','aa11uead',$s[0],$dmtID,$dcID,$dwpID);
+                $data['ue']     = json_decode($rdata['field1'], true);   
+                $page = $code;
+                break; 
+            case 'AA9':
+                $rdata              = $this->wpmodel->getvalues_c3('s','aa9',$code,$dmtID,$dcID,$dwpID);
+                $data['a9']         = json_decode($rdata['field1'], true);    
+                $page = $code;
+                break; 
+            case 'AA10':
+                $rdata              = $this->wpmodel->getvalues_c3('s','aa10',$code,$dmtID,$dcID,$dwpID);
+                $data['a10']        = json_decode($rdata['field1'], true); 
+                $page = $code;
+                break; 
+            case 'AA11':
+                $data['a11'] = $this->wpmodel->getvalues_c3('m','aa11',$code,$dmtID,$dcID,$dwpID);
+                $page = $code;
+                break; 
+            case 'AA12':
+                $rdata               = $this->wpmodel->getvalues_c3('s','aa12',$code,$dmtID,$dcID,$dwpID);
+                $data['a12']         = json_decode($rdata['field1'], true);   
+                $page = $code;
                 break;   
-            case '3.11':
-                $rdata          = $this->wpmodel->getvalues_s('c3','311',$code,$dc3tID,$dcID,$dwpID);
-                $data['arf']    = json_decode($rdata['question'], true);
-                echo view('workpaper/pdfc3/311', $data);
+            case 'AB1':
+                $data['ab1']    = $this->wpmodel->getvalues_c3('m','ab1',$code,$dmtID,$dcID,$dwpID);
+                $page = $code;
                 break;   
-            case '3.12':
-                echo view('workpaper/pdfc3/312', $data);
-                break;   
-            case '3.13 Ab1':
-                $data['ab1'] = $this->wpmodel->getvalues_m('c3','ab1',$code,$dc3tID,$dcID,$dwpID);
-                echo view('workpaper/pdfc3/AB1', $data);
-                break;   
-            case '3.14 Ab3':
-                $rdata = $this->wpmodel->getvalues_s('c3','ab3',$code,$dc3tID,$dcID,$dwpID);
-                $data['ab3'] = json_decode($rdata['question'], true);
-                echo view('workpaper/pdfc3/AB3', $data);
+            case 'AB2':
+                $rdata = $this->wpmodel->getvalues_c3('s','ab3',$code,$dmtID,$dcID,$dwpID);
+                $data['ab3']    = json_decode($rdata['field1'], true);
+                $page = $code;
                 break; 
-            case '3.15 Ab4':
-                $rdata = $this->wpmodel->getvalues_s('c3','checklist',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec']    = json_decode($rdata['question'], true);
-                $data['sec1']   = $this->wpmodel->getvalues_m('c3','section1',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec2']   = $this->wpmodel->getvalues_m('c3','section2',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec3']   = $this->wpmodel->getvalues_m('c3','section3',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec4']   = $this->wpmodel->getvalues_m('c3','section4',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec5']   = $this->wpmodel->getvalues_m('c3','section5',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec6']   = $this->wpmodel->getvalues_m('c3','section6',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec7']   = $this->wpmodel->getvalues_m('c3','section7',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec8']   = $this->wpmodel->getvalues_m('c3','section8',$code,$dc3tID,$dcID,$dwpID);
-                $data['sec9']   = $this->wpmodel->getvalues_m('c3','section9',$code,$dc3tID,$dcID,$dwpID);
-                echo view('workpaper/pdfc3/AB4', $data);
+            case 'AB3':
+                $rdata = $this->wpmodel->getvalues_c3('s','checklist',$code,$dmtID,$dcID,$dwpID);
+                $data['sec']  = json_decode($rdata['field1'], true);
+                $data['sec1'] = $this->wpmodel->getvalues_c3('m','section1',$code,$dmtID,$dcID,$dwpID);
+                $data['sec2'] = $this->wpmodel->getvalues_c3('m','section2',$code,$dmtID,$dcID,$dwpID);
+                $data['sec3'] = $this->wpmodel->getvalues_c3('m','section3',$code,$dmtID,$dcID,$dwpID);
+                $data['sec4'] = $this->wpmodel->getvalues_c3('m','section4',$code,$dmtID,$dcID,$dwpID);
+                $data['sec5'] = $this->wpmodel->getvalues_c3('m','section5',$code,$dmtID,$dcID,$dwpID);
+                $data['sec6'] = $this->wpmodel->getvalues_c3('m','section6',$code,$dmtID,$dcID,$dwpID);
+                $data['sec7'] = $this->wpmodel->getvalues_c3('m','section7',$code,$dmtID,$dcID,$dwpID);
+                $page = $code;
                 break; 
-            case '3.15.1 Ab4a':
-                $data['ab4a'] = $this->wpmodel->getvalues_m('c3','ab4a',$code,$dc3tID,$dcID,$dwpID);
-                echo view('workpaper/pdfc3/AB4A', $data);
-                break; 
-            case '3.15.2 Ab4b':
-                $data['ab4b'] = $this->wpmodel->getvalues_m('c3','ab4b',$code,$dc3tID,$dcID,$dwpID);
-                echo view('workpaper/pdfc3/AB4B', $data);
-                break; 
-            case '3.15.3 Ab4c':
-                $data['ab4c'] = $this->wpmodel->getvalues_m('c3','ab4c',$code,$dc3tID,$dcID,$dwpID);
-                echo view('workpaper/pdfc3/AB4C', $data);
-                break; 
-            case '3.15.4 Ab4d':
-                $data['ab4d'] = $this->wpmodel->getvalues_m('c3','ab4d',$code,$dc3tID,$dcID,$dwpID);
-                echo view('workpaper/pdfc3/AB4D', $data);
-                break; 
-            case '3.15.5 Ab4e':
-                $data['ab4e'] = $this->wpmodel->getvalues_m('c3','ab4e',$code,$dc3tID,$dcID,$dwpID);
-                echo view('workpaper/pdfc3/AB4E', $data);
-                break; 
-            case '3.15.6 Ab4f':
-                $data['ab4f'] = $this->wpmodel->getvalues_m('c3','ab4f',$code,$dc3tID,$dcID,$dwpID);
-                echo view('workpaper/pdfc3/AB4F', $data);
-                break; 
-            case '3.15.7 Ab4g':
-                $data['ab4g'] = $this->wpmodel->getvalues_m('c3','ab4g',$code,$dc3tID,$dcID,$dwpID);
-                echo view('workpaper/pdfc3/AB4G', $data);
-                break; 
-            case '3.15.8 Ab4h':
-                $data['ab4h'] = $this->wpmodel->getvalues_m('c3','ab4h',$code,$dc3tID,$dcID,$dwpID);
-                echo view('workpaper/pdfc3/AB4H', $data);
-                break; 
-            default:
-                break;
         }
+
+        echo view('pdfc3/'.$page, $data);
 
     }
 

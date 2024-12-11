@@ -47,7 +47,7 @@
                 </div>
             <?php  }?>
             <div class="card-body">
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?><?= $code?>/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+            <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc3/')?><?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <hr style="color: #7752FE;" class="m-5">
                 <div class="m-5">
                     <h4>SUBSEQUENT EVENTS REVIEW</h4>
@@ -55,7 +55,7 @@
                     <p>To determine whether any material adjustment or disclosure is required to the financial statements as a result of events occurring between the end of the accounting period and the date of signing the audit report and to ensure the requirements of ISA 560 regarding subsequent events are met.</p>
                     <h6>NB: An adjusting event is an event that provides evidence of a condition that existed at the reporting date.  A non-adjusting event is an event that arose solely after the reporting date, however, its disclosure is necessary to give a true and fair view.</h6>
                     <h6>Review of Clients Records</h6>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa3a/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa3a/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" value="cr" name="part">
                         <table class="table table-hover table-sm table-bordered">
                             <thead>
@@ -77,7 +77,7 @@
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
                     <h6>Discussion with Client</h6>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa3a/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa3a/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" value="dc" name="part">
                         <table class="table table-hover table-sm table-bordered">
                             <thead>
@@ -100,7 +100,7 @@
                     <br><br><br><hr style="color: #7752FE;">
                     <h6>Finalisation of the Audit File</h6>
                     <p>This section should also detail any other work done on subsequent events not covered by the questions below.</p>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa3afaf/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa3afaf/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" value="faf" name="part">
                         <table class="table table-hover table-sm table-bordered">
                             <thead>
@@ -124,7 +124,7 @@
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
                     <h4>Initial Conclusion:</h4>
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveaa3air/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveaa3air/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <p>Having completed the above procedures:</p>
                         <p>There were no significant events. </p>
                         <input type="hidden" name="acid" value="<?= $mdID?>">

@@ -926,7 +926,13 @@ class ChapterValuesModel extends Model{
                     case 'AA11':
                         switch ($param['save']) {
                             case 'saveaa11' :
-                                $this->db->table($this->tblc3d)->where(array('type' => $req['part'], 'code' => $param['code'], 'mtID' => $param['mtID']))->delete();
+                                $where = [
+                                    'type'     => $req['part'],
+                                    'code'     => $req['code'],
+                                    'mtID'     => $param['mtID'],
+                                    'cID'      => $param['cID'],
+                                ];
+                                $this->db->table($this->tblc3d)->where($where)->delete();
                                 foreach ($req['matter'] as $i => $val){
                                     $data = [
                                         'field1'        => $req['matter'][$i],

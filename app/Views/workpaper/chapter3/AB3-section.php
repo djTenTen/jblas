@@ -48,19 +48,19 @@
             <?php  }?>
             <div class="card-body">
                 <nav class="nav nav-borders">
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'checklist')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-checklist/<?= $mtID?>/<?= $cID?>/<?= $name?>">Checklist</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section1')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section1/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 1</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section2')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section2/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 2</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section3')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section3/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 3</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section4')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section4/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 4</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section5')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section5/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 5</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section6')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section6/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 6</a>
-                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section7')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/client/chapter3/setvalues/AB3-section7/<?= $mtID?>/<?= $cID?>/<?= $name?>">Section 7</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'checklist')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-checklist/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Checklist</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section1')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section1/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 1</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section2')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section2/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 2</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section3')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section3/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 3</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section4')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section4/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 4</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section5')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section5/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 5</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section6')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section6/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 6</a>
+                    <a class="nav-link ms-0 <?php if(str_contains(uri_string(), 'section7')){echo 'active ';} ?>" href="<?= base_url()?>auditsystem/wp/chapter3/setvalues/AB3-section7/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>">Section 7</a>
                 </nav>
                 <hr class="mt-0 mb-4" style="color: #7752FE;"/>
-                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/client/chapter3/view/')?>AB3/<?= $mtID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
+                <a class="btn btn-primary btn-sm float-end mb-2" href="<?= base_url('auditsystem/wp/viewpdfc3/')?>AB3/<?= $mtID?>/<?= $cID?>/<?= $wpID?>" target="_blank" title="View"><i class="fas fa-eye"></i> View Document</a>
                 <div class="m-5">
-                    <form action="<?= base_url()?>auditsystem/client/savevalues/c3/saveab4/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $name?>" method="post">
+                    <form action="<?= base_url()?>auditsystem/wp/savevalues/c3/saveab4/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
                         <input type="hidden" name="part" value="<?= $section?>">
                         <table class="table table-bordered">
                             <thead>
