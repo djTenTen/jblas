@@ -408,10 +408,10 @@ class WorkpaperController extends BaseController{
         $req = [
             'pdf'       => $this->request->getFile('pdffile'),
             'remarks'   => $this->request->getPost('remarks'),
-            'cfiID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID)),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
-            'index'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index)),
+            'cfiID'     => $this->decr($cfiID),
+            'cID'       => $this->decr($cID),
+            'wpID'      => $this->decr($wpID),
+            'index'     => $this->decr($index),
             'fID'       => $this->crypt->decrypt(session()->get('firmID')),
         ];
         $res = $this->wpmodel->uploadtbfiles($req);
@@ -2096,21 +2096,15 @@ class WorkpaperController extends BaseController{
         $data['index']  = $index;
         $data['desc']   = $desc;
         $data['name']   = $name;  
-        $dcID       = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $dcfiID     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID));
-        $dwpID      = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
-        $dindex     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index));
-        $fID        = $this->crypt->decrypt(session()->get('firmID'));
-        $data['fID'] = $fID;
-        $data['title'] = $name;
-        $data['subt']  = $desc;
+        $dcID           = $this->decr($cID);
+        $dcfiID         = $this->decr($cfiID);
+        $dwpID          = $this->decr($wpID);
+        $dindex         = $this->decr($index);
+        $fID            = $this->crypt->decrypt(session()->get('firmID'));
+        $data['fID']    = $fID;
+        $data['title']  = $name;
+        $data['subt']   = $desc;
         switch ($code) {
-            case '-':
-                $data['aa']     = $this->wpmodel->getcfsvalues($dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/CFS', $data);
-                echo view('includes/Footer');
-            break;
             case 'FSTR':
                 $data['q1e']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'1st','EWT');
                 $data['q1v']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'1st','VAT');
@@ -2128,170 +2122,43 @@ class WorkpaperController extends BaseController{
                 $data['q4v']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'4th','VAT');
                 $data['q46']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'4th','1601C');
                 $data['q47']     = $this->wpmodel->getfstax($dcID,$dwpID,$fID,'4th','1701/1702');
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/FSTR', $data);
-                echo view('includes/Footer');
+                $page = $code;
             break;
-            case 'Aa':
-                $data['aa']     = $this->wpmodel->getabc3values($code,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/Aa', $data);
-                echo view('includes/Footer');
-            break;
-            case 'Ab':
-                $data['ab']     = $this->wpmodel->getabc3values($code,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/Ab', $data);
-                echo view('includes/Footer');
-            break;
-            case 'Ac':
-                $data['ac']     = $this->wpmodel->getacc1values($code,$dcID,$dwpID);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/Ac', $data);
-                echo view('includes/Footer');
-            break;
-            case 'Acd':
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/Ad', $data);
-                echo view('includes/Footer');
-            break;
-            case 'B':
+            case 'EXP':
                 $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
                 $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/B', $data);
-                echo view('includes/Footer');
+                $page = 'M48';
             break;
-            case 'C':
+            case 'PPE':
                 $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
                 $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/C', $data);
-                echo view('includes/Footer');
+                $page = 'M48';
             break;
-            case 'DG':
+            case 'INV':
                 $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
                 $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/DG', $data);
-                echo view('includes/Footer');
+                $page = 'M48';
             break;
-            case 'E':
+            case 'AR':
                 $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
                 $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/E', $data);
-                echo view('includes/Footer');
+                $page = 'M48';
             break;
-            case 'F':
+            case 'CB':
                 $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
                 $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/F', $data);
-                echo view('includes/Footer');
+                $page = 'M48';
             break;
-            case 'H':
+            case 'REV':
                 $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
                 $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/H', $data);
-                echo view('includes/Footer');
-            break;
-            case 'I':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/I', $data);
-                echo view('includes/Footer');
-            break;
-            case 'J':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/J', $data);
-                echo view('includes/Footer');
-            break;
-            case 'K':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/K', $data);
-                echo view('includes/Footer');
-            break;
-            case 'L':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/L', $data);
-                echo view('includes/Footer');
-            break;
-            case 'M':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/M', $data);
-                echo view('includes/Footer');
-            break;
-            case 'N':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/N', $data);
-                echo view('includes/Footer');
-            break;
-            case 'O':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/O', $data);
-                echo view('includes/Footer');
-            break;
-            case 'P':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/P', $data);
-                echo view('includes/Footer');
-            break;
-            case 'Q':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/Q', $data);
-                echo view('includes/Footer');
-            break;
-            case 'R':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/R', $data);
-                echo view('includes/Footer');
-            break;
-            case 'S':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/S', $data);
-                echo view('includes/Footer');
-            break;
-            case 'T':
-
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/T', $data);
-                echo view('includes/Footer');
-            break;
-            case 'U':
-
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/U', $data);
-                echo view('includes/Footer');
-            break;
-            case 'V':
-                echo view('includes/Header', $data);
-                echo view('workpaper/index/V', $data);
-                echo view('includes/Footer');
+                $page = 'M48';
             break;
         }
+
+        echo view('includes/Header', $data);
+        echo view('workpaper/index/'.$page, $data);
+        echo view('includes/Footer');
 
     }
 

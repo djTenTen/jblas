@@ -964,7 +964,7 @@ class ChapterController extends BaseController{
     */
     public function c3setworkpaper($code,$mtID,$cID,$wpID,$name){
 
-        $data['title']  = $code. ' - Chapter 3 Management';
+        $data['title']  = $code. ' - Concluding the Audit';
         $data['name']   = $name;
         $data['cID']    = $cID;
         $data['wpID']   = $wpID;

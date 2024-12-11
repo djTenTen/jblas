@@ -515,8 +515,8 @@ class WorkpaperModel extends  Model {
         $query = $this->db->query("select * 
         from {$this->tbltb} as tb
         where tb.index = {$index}
-        and tb.workpaper = {$wpID}
-        and tb.client = {$cID}");
+        and tb.wpID = {$wpID}
+        and tb.cID = {$cID}");
         return $query->getResultArray();
 
     }
@@ -585,7 +585,6 @@ class WorkpaperModel extends  Model {
         foreach($req['tbID'] as $i => $val){
             $dtbID = $this->crypt->decrypt($req['tbID'][$i]);
             $data = [
-                'supp_bal'      => $req['sb'][$i],
                 'supp_bal'      => $req['sb'][$i],
                 'updated_on'    => $this->date.' '.$this->time,
                 'updated_by'    => $req['uID'],
@@ -667,15 +666,21 @@ class WorkpaperModel extends  Model {
     public function uploadtbfiles($req){
 
         $filename = $req['pdf']->getClientName();
-        //$pdfname = $req['cfiID'].$req['cID'].$req['wpID'].$req['index'].'.pdf';
+
+        $res = $this->db->table($this->tblcfi)->where('cfiID', $req['cfiID'])->get()->getRowArray();
+    
         if($req['pdf'] != ''){
             $pdfPath = ROOTPATH .'/public/uploads/pdf/wp/'.$req['fID'].'/'.$req['wpID'].'/';
             if (!is_dir($pdfPath)) {
                 mkdir($pdfPath, 0755, true);
             }
-            $pdffile = $pdfPath.$filename; 
-            if (file_exists($pdffile)) {
-                unlink($pdffile);
+            $pdfonfile  = $pdfPath.$filename; 
+            if (file_exists($pdfonfile)) {
+                unlink($pdfonfile);
+            }
+            $pdfondb    = $pdfPath.$res['file']; 
+            if (file_exists($pdfondb)) {
+                unlink($pdfondb);
             }
             $req['pdf']->move($pdfPath);
         }
@@ -724,7 +729,6 @@ class WorkpaperModel extends  Model {
                 $cal = ['field1' => $balcu['field1'] + $req['ytd'][$i]];
                 $this->db->table($this->tblc2)->where($refaut)->update($cal);
             }
-            
             $this->db->table($this->tblcfi)->where(array('cID' => $req['cID'], 'fID' => $req['fID'], 'wpID' => $req['wpID'], 'index' => $index))->update(array('acquired' => 'Yes'));
             $data = [
                 'cID'           => $req['cID'],
