@@ -246,12 +246,17 @@
                         <?php }?>
                         <div class="sidenav-menu-heading">System </div>
                         <?php if(session()->get('allowed')->dash == "Yes"){?>
-                        <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/logs')){echo 'active';}?>" href="<?= base_url('auditsystem/logs')?>">
-                            <div class="nav-link-icon"><i data-feather="edit-3"></i></div>
-                            Logs
-                        </a>
+                            <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/logs')){echo 'active';}?>" href="<?= base_url('auditsystem/logs')?>">
+                                <div class="nav-link-icon"><i data-feather="edit-3"></i></div>
+                                Logs
+                            </a>
                         <?php }?>
-
+                        <?php if(session()->get('allowed')->audmanager == "Yes"){?>
+                            <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/soqm')){echo 'active';}?>" href="<?= base_url('auditsystem/soqm')?>">
+                                <div class="nav-link-icon"><i data-feather="layers"></i></div>
+                                SOQM Manual
+                            </a>
+                        <?php }?>
                     </div>
                 </div>
                 <!-- Sidenav Footer-->

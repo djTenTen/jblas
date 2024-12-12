@@ -58,6 +58,104 @@ class SystemController extends BaseController{
     }
 
 
+    public function viewsoqm(){
+
+        $data['title'] = 'System of Quality Management Manual';
+        $data['soqm'] = $this->sm->getfirmsoqm();
+        $data['sd'] = json_decode($data['soqm']['soqm_data'], true);
+
+        echo view('includes/Header', $data);
+        echo view('system/soqm', $data);
+        echo view('includes/Footer');
+
+    }
+
+
+    public function viewsoqmpdf(){
+
+        $data['title'] = 'System of Quality Management Manual';
+        $soqm = $this->sm->getsoqm();
+        $data['sd'] = json_decode($soqm['data'], true);
+        echo view('system/soqmpdf', $data);
+
+    }
+
+
+    public function viewmysoqmpdf(){
+
+        $data['title'] = 'System of Quality Management Manual';
+        $soqm = $this->sm->getfirmsoqm();
+        $data['sd'] = json_decode($soqm['soqm_data'], true);
+        echo view('system/mysoqmpdf', $data);
+
+    }
+
+    public function uploadsoqm(){
+
+        $req = [
+            'file' => $this->request->getFile('soqmfile'),
+        ];
+        $res = $this->sm->uploadsoqm($req);
+        if($res){
+            session()->setFlashdata('success','You have successfully uploaded your System of Quality Management Manual');
+        }else{
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+        }
+        return redirect()->to(site_url('auditsystem/soqm'));
+
+    }
+
+    public function usesoqm(){
+
+        $res = $this->sm->usesoqm();
+        if($res){
+            session()->setFlashdata('success','You are now using the System\'s System of Quality Management Manual');
+        }else{
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+        }
+        return redirect()->to(site_url('auditsystem/soqm'));
+
+    }
+
+
+    public function savesoqm(){
+
+        $soqm = [
+            'prac'  => $this->request->getPost('prac'),
+            'bg'    => $this->request->getPost('bg'),
+            'cs'    => $this->request->getPost('cs'),
+            'cq'    => $this->request->getPost('cq'),
+            'cp'    => $this->request->getPost('cp'),
+            'phil'  => $this->request->getPost('phil'),
+            'miss'  => $this->request->getPost('miss'),
+            'viss'  => $this->request->getPost('viss'),
+            'fg'    => $this->request->getPost('fg'),
+            'rwt'   => $this->request->getPost('rwt'),
+            'appr'  => $this->request->getPost('appr'),
+            'fs'    => $this->request->getPost('fs'),
+            'cr'    => $this->request->getPost('cr'),
+            'csa'   => $this->request->getPost('csa'),
+            'gd'    => $this->request->getPost('gd'),
+        ];
+
+        $req = [
+            'soqm' => json_encode($soqm),
+        ];
+
+        $res = $this->sm->savesoqm($req);
+        if($res){
+            session()->setFlashdata('success','You Information has been successfully saved');
+        }else{
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+        }
+        return redirect()->to(site_url('auditsystem/soqm'));
+
+
+    }
+
+
+    
+
     
     
 

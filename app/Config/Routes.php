@@ -53,6 +53,18 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
     $auth->post('notif/rem/(:any)', 'SystemController::removenotif/$1');
     /**
         ----------------------------------------------------------
+        SOQM MANAGEMENT
+        ----------------------------------------------------------
+    */
+    $auth->get('soqm', 'SystemController::viewsoqm');
+    $auth->get('soqmpdf', 'SystemController::viewsoqmpdf');
+    $auth->get('mysoqmpdf', 'SystemController::viewmysoqmpdf');
+    $auth->post('soqm/use', 'SystemController::usesoqm');
+    $auth->post('soqm/save', 'SystemController::savesoqm');
+    $auth->post('soqm/upload', 'SystemController::uploadsoqm');
+    
+    /**
+        ----------------------------------------------------------
         WORK PAPER MANAGEMENT
         ----------------------------------------------------------
     */
