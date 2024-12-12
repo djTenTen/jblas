@@ -541,12 +541,11 @@ class WorkpaperModel extends  Model {
     public function getfstax($dcID,$dwpID,$fID,$qtr,$type){
 
         $where = [
-            'client' => $dcID,
-            'workpaper' => $dwpID,
-            'firm' => $fID,
-            'client' => $dcID,
-            'quarter' => $qtr,
-            'type' => $type,
+            'cID'       => $dcID,
+            'wpID'      => $dwpID,
+            'fID'       => $fID,
+            'quarter'   => $qtr,
+            'type'      => $type,
         ];
         $query = $this->db->table($this->tblfst)->where($where)->get();
         return $query->getRowArray();
@@ -601,16 +600,16 @@ class WorkpaperModel extends  Model {
 
         $filename = $req['fstax']->getClientName();
 
-        $pdfPath = ROOTPATH .'/public/uploads/pdf/wp/'.$req['fID'].'/'.$req['wpID'].'/';
+        $pdfPath = ROOTPATH .'/public/uploads/pdf/fstax/'.$req['fID'].'/'.$req['wpID'].'/';
         if (!is_dir($pdfPath)) {
             mkdir($pdfPath, 0755, true);
         }
 
         if($req['fstax'] != ''){
             $where = [
-                'client'        => $req['cID'],
-                'workpaper'     => $req['wpID'],
-                'firm'          => $req['fID'],
+                'cID'           => $req['cID'],
+                'wpID'          => $req['wpID'],
+                'fID'           => $req['fID'],
                 'index'         => $req['index'],
                 'quarter'       => $req['quarter'],
                 'type'          => $req['part'],
@@ -619,7 +618,7 @@ class WorkpaperModel extends  Model {
             if($res->getNumRows() >= 1){
                 $f = $res->getRowArray();
 
-                $ce = $this->db->table($this->tblfst)->where(array('client' => $req['cID'],'workpaper' => $req['wpID'],'firm' => $req['fID'],'quarter' => $req['quarter']))->get()->getRowArray();
+                $ce = $this->db->table($this->tblfst)->where(array('cID' => $req['cID'],'wpID' => $req['wpID'],'fID' => $req['fID'],'quarter' => $req['quarter']))->get()->getRowArray();
                 if($filename == $ce['file']){
                     return 'file_exist';
                 }
@@ -633,9 +632,9 @@ class WorkpaperModel extends  Model {
                 return 'uploaded';
             }else{
                 $data = [
-                    'client'        => $req['cID'],
-                    'workpaper'     => $req['wpID'],
-                    'firm'          => $req['fID'],
+                    'cID'        => $req['cID'],
+                    'wpID'     => $req['wpID'],
+                    'fID'          => $req['fID'],
                     'index'         => $req['index'],
                     'quarter'       => $req['quarter'],
                     'type'          => $req['part'],

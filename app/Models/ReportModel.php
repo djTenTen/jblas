@@ -23,13 +23,14 @@ class ReportModel extends  Model {
     protected $tblc1t   = "tbl_c1_titles";
     protected $tblc2t   = "tbl_c2_titles";
     protected $tblc3t   = "tbl_c3_titles";
-    protected $tblc1    = "tbl_client_files_c1";
-    protected $tblc2    = "tbl_client_files_c2";
-    protected $tblc3    = "tbl_client_files_c3";
+    protected $tblc1    = "tbl_client_c1";
+    protected $tblc2    = "tbl_client_c2";
+    protected $tblc3    = "tbl_client_c3";
     protected $tblfi    = "tbl_file_index";
     protected $tblcfi   = "tbl_client_file_index";
     protected $tbltb    = "tbl_client_trial_balance";
     protected $tblfst   = "tbl_client_fstax";
+    protected $tblf     = "tbl_firm";
     protected $logs;
     protected $db;
     protected $time,$date;
@@ -49,12 +50,20 @@ class ReportModel extends  Model {
     }
 
 
+    public function getsoqm($fID){
+
+        $query = $this->db->table($this->tblf)->where('firmID',$fID)->get();
+        return $query->getRowArray();
+        
+    }
+
+
     public function getfstax($dcID,$dwpID,$fID,$qtr,$type){
 
         $where = [
-            'client' => $dcID,
-            'workpaper' => $dwpID,
-            'firm' => $fID,
+            'cID' => $dcID,
+            'wpID' => $dwpID,
+            'fID' => $fID,
             'quarter' => $qtr,
             'type' => $type,
         ];
@@ -66,9 +75,9 @@ class ReportModel extends  Model {
     public function getfstaxgen($dcID,$dwpID,$fID){
 
         $where = [
-            'client' => $dcID,
-            'workpaper' => $dwpID,
-            'firm' => $fID,
+            'cID' => $dcID,
+            'wpID' => $dwpID,
+            'fID' => $fID,
         ];
         $query = $this->db->table($this->tblfst)->where($where)->get();
         return $query->getResultArray();
@@ -79,22 +88,22 @@ class ReportModel extends  Model {
         * @method getfileinfo() get the clients file chapter 1
         * @param wpID workpaper id
         * @param cID client id
-        * @param ctID chapter title id
+        * @param mtID chapter title id
         * @var query contains database result query
         * @return row-array
     */
-    public function getfileinfo($c,$wpID,$cID,$ctID){
+    public function getfileinfo($c,$wpID,$cID,$mtID){
 
         switch ($c) {
-            case 'c1': $table = $this->tblc1; $cid = 'c1tID'; break;
-            case 'c2': $table = $this->tblc2; $cid = 'c2tID'; break;
-            case 'c3': $table = $this->tblc3; $cid = 'c3tID'; break;
+            case 'c1': $table = $this->tblc1;  break;
+            case 'c2': $table = $this->tblc2;  break;
+            case 'c3': $table = $this->tblc3;  break;
         }
         $query = $this->db->query("select distinct prepared_on,reviewed_on,approved_on
         from {$table} as cc 
-        where cc.workpaper = {$wpID}
-        and cc.clientID = {$cID}
-        and cc.{$cid} = {$ctID} limit 1");
+        where cc.wpID = {$wpID}
+        and cc.cID = {$cID}
+        and cc.mtID = {$mtID} limit 1");
         return $query->getRowArray();
 
     }
@@ -110,12 +119,12 @@ class ReportModel extends  Model {
     */
     public function getc1values($cID,$wpID){
 
-        $query = $this->db->query("select DISTINCT title,c1t.code,c1titleID,c1tID,c1.remarks,c1.status
+        $query = $this->db->query("select DISTINCT title,c1t.code,c1t.mtID,c1.remarks,c1.status
         from {$this->tblc1t} as c1t, {$this->tblc1} as c1
-        where c1t.c1titleID = c1.c1tID
-        and c1.clientID = {$cID}
-        and c1.workpaper = {$wpID}
-        order by c1titleID asc");
+        where c1t.mtID = c1.mtID
+        and c1.cID = {$cID}
+        and c1.wpID = {$wpID}
+        order by mtID asc");
         return $query->getResultArray();
 
     }
@@ -131,12 +140,12 @@ class ReportModel extends  Model {
     */
     public function getc2values($cID,$wpID){
 
-        $query = $this->db->query("select DISTINCT title,c2t.code,c2titleID,c2tID,c2.remarks,c2.status
+        $query = $this->db->query("select DISTINCT title,c2t.code,c2t.mtID,c2.remarks,c2.status
         from {$this->tblc2t} as c2t, {$this->tblc2} as c2
-        where c2t.c2titleID = c2.c2tID
-        and c2.clientID = {$cID}
-        and c2.workpaper = {$wpID}
-        order by c2titleID asc");
+        where c2t.mtID = c2.mtID
+        and c2.cID = {$cID}
+        and c2.wpID = {$wpID}
+        order by mtID asc");
         return $query->getResultArray();
 
     }
@@ -152,12 +161,12 @@ class ReportModel extends  Model {
     */
     public function getc3values($cID,$wpID){
 
-        $query = $this->db->query("select DISTINCT title,c3t.code,c3titleID,c3tID,c3.remarks,c3.status
+        $query = $this->db->query("select DISTINCT title,c3t.code,c3t.mtID,c3.remarks,c3.status
         from {$this->tblc3t} as c3t, {$this->tblc3} as c3
-        where c3t.c3titleID = c3.c3tID
-        and c3.clientID = {$cID}
-        and c3.workpaper = '{$wpID}'
-        order by c3titleID asc");
+        where c3t.mtID = c3.mtID
+        and c3.cID = {$cID}
+        and c3.wpID = '{$wpID}'
+        order by mtID asc");
         return $query->getResultArray();
 
     }
@@ -176,8 +185,8 @@ class ReportModel extends  Model {
         $query = $this->db->query("select *
         from {$this->tblcfi} as cfi, {$this->tblfi} as fi
         where cfi.index = fi.fiID
-        and cfi.workpaper = {$wpID}
-        and cfi.clientID = {$cID}
+        and cfi.wpID = {$wpID}
+        and cfi.cID = {$cID}
         and acquired = 'Yes'");
         return $query->getResultArray();
 
@@ -196,8 +205,8 @@ class ReportModel extends  Model {
         $query = $this->db->query("select DISTINCT cfi.added_on,cfi.added_by,tu.name
         from {$this->tblu} as tu, {$this->tbltb} as cfi
         where tu.userID = cfi.added_by
-        and cfi.workpaper = {$wpID}
-        and cfi.client = {$cID}");
+        and cfi.wpID = {$wpID}
+        and cfi.cID = {$cID}");
         return $query->getRowArray();
 
     }
@@ -214,8 +223,8 @@ class ReportModel extends  Model {
         $query = $this->db->query("select *
         from {$this->tbltb} as cfi, {$this->tblfi} as fi
         where cfi.index = fi.fiID
-        and cfi.workpaper = {$wpID}
-        and cfi.client = {$cID}");
+        and cfi.wpID = {$wpID}
+        and cfi.cID = {$cID}");
         return $query->getResultArray();
 
     }
@@ -281,8 +290,8 @@ class ReportModel extends  Model {
         $query = $this->db->query("select * 
         from {$this->tbltb} as tb
         where tb.index = {$index}
-        and tb.workpaper = {$wpID}
-        and tb.client = {$cID}");
+        and tb.wpID = {$wpID}
+        and tb.cID = {$cID}");
         return $query->getResultArray();
 
     }
@@ -295,38 +304,38 @@ class ReportModel extends  Model {
         CHAPTER GET FUNCTIONS
         ----------------------------------------------------------
     */
-    public function getvalues_m($c,$type,$code,$ctID,$cID,$wpID){
+    public function getvalues_m($c,$type,$code,$mtID,$cID,$wpID){
 
         switch ($c) {
-            case 'c1': $table = $this->tblc1; $cd = 'c1tID'; break;
-            case 'c2': $table = $this->tblc2; $cd = 'c2tID'; break;
-            case 'c3': $table = $this->tblc3; $cd = 'c3tID'; break;
+            case 'c1': $table = $this->tblc1; break;
+            case 'c2': $table = $this->tblc2; break;
+            case 'c3': $table = $this->tblc3; break;
         }
         $where = [
-            'code'          => $code, 
-            'type'          => $type,
-            $cd             => $ctID,
-            'clientID'      => $cID,
-            'workpaper'     => $wpID,
+            'code'     => $code, 
+            'type'     => $type,
+            'mtID'     => $mtID,
+            'cID'      => $cID,
+            'wpID'     => $wpID,
         ];
         $query =  $this->db->table($table)->where($where)->get();
         return $query->getResultArray();
 
     }
 
-    public function getvalues_s($c,$type,$code,$ctID,$cID,$wpID){
+    public function getvalues_s($c,$type,$code,$mtID,$cID,$wpID){
 
         switch ($c) {
-            case 'c1': $table = $this->tblc1; $cd = 'c1tID'; break;
-            case 'c2': $table = $this->tblc2; $cd = 'c2tID'; break;
-            case 'c3': $table = $this->tblc3; $cd = 'c3tID'; break;
+            case 'c1': $table = $this->tblc1; break;
+            case 'c2': $table = $this->tblc2; break;
+            case 'c3': $table = $this->tblc3; break;
         }
         $where = [
-            'code'          => $code, 
-            'type'          => $type,
-            $cd             => $ctID,
-            'clientID'      => $cID,
-            'workpaper'     => $wpID,
+            'code'     => $code, 
+            'type'     => $type,
+            'mtID'     => $mtID,
+            'cID'      => $cID,
+            'wpID'     => $wpID,
         ];
         $query =  $this->db->table($table)->where($where)->get();
         return $query->getrowArray();
@@ -343,7 +352,7 @@ class ReportModel extends  Model {
 
     /**
         * @method getdatacount() get the ac10 information
-        * @param c1tID chapter 1 title id
+        * @param mtID chapter 1 title id
         * @param part specifies the part of the file
         * @param dcID decrypted client id
         * @param dwpID worpaper id
@@ -351,23 +360,23 @@ class ReportModel extends  Model {
         * @var query result from database
         * @return integer
     */
-    public function getdatacount($c1tID,$part,$dcID,$dwpID){
+    public function getdatacount($mtID,$part,$dcID,$dwpID){
 
         $where = [
-            'type'          => $part, 
-            'code'          => 'ac10', 
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-            'workpaper'     => $dwpID,
+            'type'     => $part, 
+            'code'     => 'ac10', 
+            'mtID'     => $mtID,
+            'cID'      => $dcID,
+            'wpID'     => $dwpID,
         ];
-        $query = $this->db->table($this->tblc1)->where($where);
+        $query = $this->db->table($this->tblc2)->where($where);
         return $query->countAllResults();
 
     }
 
     /**
         * @method getsumation() get the ac10 information
-        * @param c1tID chapter 1 title id
+        * @param mtID chapter 1 title id
         * @param part specifies the part of the file
         * @param dcID decrypted client id
         * @param dwpID worpaper id
@@ -375,31 +384,31 @@ class ReportModel extends  Model {
         * @var query result from database
         * @return integer
     */
-    public function getsumation($c1tID,$part,$dcID,$dwpID){
+    public function getsumation($mtID,$part,$dcID,$dwpID){
 
         $where1 = [
-            'type'          => $part, 
-            'code'          => 'ac10', 
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-            'workpaper'     => $dwpID,
+            'type'     => $part, 
+            'code'     => 'ac10', 
+            'mtID'     => $mtID,
+            'cID'      => $dcID,
+            'wpID'     => $dwpID,
         ];
         $where2 = [
-            'type'          => $part.'cu', 
-            'code'          => 'ac10', 
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-            'workpaper'     => $dwpID,
+            'type'     => $part.'cu',  
+            'code'     => 'ac10', 
+            'mtID'     => $mtID,
+            'cID'      => $dcID,
+            'wpID'     => $dwpID,
         ];
-        $total = $this->db->table($this->tblc1)->selectSum('balance')->where($where1)->get()->getRowArray();
-        $cu = $this->db->table($this->tblc1)->where($where2)->get()->getRowArray();
-        return $cu['question'] - $total['balance'];
+        $total = $this->db->table($this->tblc2)->selectSum('field2')->where($where1)->get()->getRowArray();
+        $cu = $this->db->table($this->tblc2)->where($where2)->get()->getRowArray();
+        return $cu['field1'] - $total['field2'];
 
     }
 
     /**
         * @method getsummarydata() get the ac10 information
-        * @param c1tID chapter 1 title id
+        * @param mtID chapter 1 title id
         * @param part specifies the part of the file
         * @param dcID decrypted client id
         * @param dwpID worpaper id
@@ -407,16 +416,16 @@ class ReportModel extends  Model {
         * @var query result from database
         * @return row-array
     */
-    public function getsummarydata($c1tID,$part,$dcID,$dwpID){
+    public function getsummarydata($mtID,$part,$dcID,$dwpID){
 
         $where2 = [
             'type'          => $part.'data', 
-            'code'          => 'ac10', 
-            'c1tID'         => $c1tID,
-            'clientID'      => $dcID,
-            'workpaper'     => $dwpID,
+            'code'     => 'ac10', 
+            'mtID'     => $mtID,
+            'cID'      => $dcID,
+            'wpID'     => $dwpID,
         ];
-        $query = $this->db->table($this->tblc1)->where($where2)->get();
+        $query = $this->db->table($this->tblc2)->where($where2)->get();
         return $query->getRowArray();
 
     }

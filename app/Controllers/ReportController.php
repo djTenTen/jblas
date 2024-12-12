@@ -50,6 +50,8 @@ class ReportController extends BaseController{
         $data['wpID']   = $dwpID;
         $data['cID']    = $dcID;
         $data['fID']    = $fID;
+        $data['soqm']   = $this->rpmodel->getsoqm($fID);
+        $data['sd']     = json_decode($data['soqm']['soqm_data'], true);
         $data['c1']     = $this->rpmodel->getc1values($dcID,$dwpID);
         $data['c2']     = $this->rpmodel->getc2values($dcID,$dwpID);
         $data['c3']     = $this->rpmodel->getc3values($dcID,$dwpID);

@@ -96,7 +96,6 @@ $html .= '
     </table>
 ';
 $pdf->writeHTML($html, true, false,false, false, '');
-
 $pdf->AddPage();
 $html = '';
 $html .= $style;
