@@ -66,22 +66,22 @@ $html =  "
 $html .= '
 <table>
     <tr>
-        <td style="width: 60%;">
+        <td style="width: 55%;">
             <table>
-                <tr><td class="bb">Client:</td></tr>
+                <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                 <tr><td></td></tr>
-                <tr><td class="bb">Period:</td></tr>
+                <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
             </table>
         </td>
-        <td style="width: 40%;">
+        <td style="width: 45%;">
             <table border="1">
                 <tr>
-                    <td>Prepared by: <br></td>
-                    <td>Date: <br></td>
+                    <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                    <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                 </tr>
                 <tr>
-                    <td>Reviewed by: <br></td>
-                    <td>Date: <br></td>
+                    <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                    <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                 </tr>
             </table>
         </td>

@@ -80,22 +80,22 @@ $html =  "
 $html .= '
 <table>
     <tr>
-        <td style="width: 60%;">
+        <td style="width: 55%;">
             <table>
-                <tr><td class="bb">Client:</td></tr>
+                <tr><td class="bb">Client: <b>'.$cl['clientname'].'</b></td></tr>
                 <tr><td></td></tr>
-                <tr><td class="bb">Period:</td></tr>
+                <tr><td class="bb">Period: <b>FY-'.$cl['financial_year'].'</b></td></tr>
             </table>
         </td>
-        <td style="width: 40%;">
+        <td style="width: 45%;">
             <table border="1">
                 <tr>
-                    <td>Prepared by: <br></td>
-                    <td>Date: <br></td>
+                    <td>Prepared by: <br><b>'.$cl['aud'].'</b></td>
+                    <td>Date: <br><b>'; if(!empty($fl['prepared_on'])){$html .= date('F d, Y', strtotime($fl['prepared_on']));}else{$html .= '';} $html .='</b></td>
                 </tr>
                 <tr>
-                    <td>Reviewed by: <br></td>
-                    <td>Date: <br></td>
+                    <td>Reviewed by: <br><b>'.$cl['sup'].'</b></td>
+                    <td>Date: <br><b>'; if(!empty($fl['reviewed_on'])){$html .= date('F d, Y', strtotime($fl['reviewed_on']));}else{$html .= '';} $html .='</b></td>
                 </tr>
             </table>
         </td>
@@ -283,51 +283,12 @@ $html .= '
     <table>
         <tbody>
             <tr>
-                <td style="width: 50%;"><p>Signature:</p></td>
+                <td style="width: 50%;">Signature:<b> '.$cl['aud'].'</b></td>
                 <td style="width: 50%;">(A.E.P.)</td>
             </tr>
             <tr>
-                <td style="width: 50%;"><p>Date:</p></td>
+                <td style="width: 50%;"><p>Date: '.date('F d, Y', strtotime($fl['prepared_on'])).'</p></td>
                 <td style="width: 50%;" class="cent"></td>
-            </tr>
-        </tbody>
-    </table>
-    <p><i>* Delete as appropriate</i></p>
-    <p><b>Notes:</b></p>
-    <ol>
-        <i><li>The audit firm can set their own criteria, but non-audit fees greater than three times the audit fee are likely to create a self-interest threat, which needs to be mitigated.</li></i>
-        <i><li>Although the audit firm can set its own criteria, in circumstances where the audit fee is more significant to the firm, non-audit fees which represent a lower multiple of the audit fee are likely to be considered ‘substantial’.</li></i>
-    </ol>
-    <p><b>Definitions:</b></p>
-    <table class="st" border="1">
-        <tbody>
-            <tr>
-                <td style="width: 30%;"><p><b>Audit related non-audit services:</b></p></td>
-                <td style="width: 70%;"><p>The following are generally treated as being audit related non-audit services:</p>
-                    <ul>
-                        <li>Reporting required by law or regulation to be provided by the auditor;</li>
-                        <li>Reviews of interim financial information;</li>
-                        <li>Reporting on regulatory returns;</li>
-                        <li>Reporting to a regulator on client assets;</li>
-                        <li>Reporting on government grants;</li>
-                        <li>Reporting on internal financial controls when required by law or regulation; and</li>
-                        <li>Extended audit work that is authorized by those charged with governance performed on financial information and / or financial controls where this work is integrated with the audit work and is performed on the same principal terms and conditions.</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 30%;"><p><b>“Informed management”:</b></p></td>
-                <td style="width: 70%;"><p>Member of management (or senior employee), of the audited entity who has the authority and capability to make independent management judgments and decisions in relation to non-audit services on the basis of information provided by the audit firm.</p></td>
-            </tr>
-            <tr>
-                <td style="width: 30%;"><p><b>Safeguards:</b></p></td>
-                <td style="width: 70%;"><p>Safeguards include:</p>
-                    <ul>
-                        <li>Non-audit services provided by the firm are performed by partners and staff who have no involvement in the external audit of the financial statements; or</li>
-                        <li>The non-audit services are reviewed by a partner or other senior staff member with appropriate expertise who is not a member of the audit team; or</li>
-                        <li>An engagement quality control review is performed.</li>
-                    </ul>
-                </td>
             </tr>
         </tbody>
     </table>

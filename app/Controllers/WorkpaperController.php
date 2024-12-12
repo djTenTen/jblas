@@ -2512,7 +2512,7 @@ class WorkpaperController extends BaseController{
                 break; 
         }
 
-        echo view('pdfc3/'.$page, $data);
+        echo view('workpaper/pdfc3/'.$page, $data);
 
     }
 

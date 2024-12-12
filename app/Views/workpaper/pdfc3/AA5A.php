@@ -70,21 +70,20 @@ $html .= '
         <td>The Directors</td>
     </tr>
     <tr>
-        <td>[Name of Client]<br></td>
+        <td>'.$cl['clientname'].'</td>
     </tr>
     <tr>
-        <td>[Address]<br></td>
+        <td>'.$cl['clientaddress'].'</td>
     </tr>
     <tr>
-        <td>Date: '.$aa5a['aa51d'].'<br></td>
+        <td>'.date('F d, Y', strtotime($aa5a['aa51d'])).'<br></td>
     </tr>
 </table>
 <p>Dear Sirs</p>
-<h3 class="cent">Management Letter <br> Financial statements for the [year/period] ending [date]</h3>
+<h3 class="cent">Management Letter <br> Financial statements for the '.$cl['financial_year'].' ending '.date('F d', strtotime($cl['financial_year'].'-'.$cl['end_financial_year'])).'</h3>
 <p><b>Introduction</b></p>
-<p>Following our recent '.$aa5a['ml1'].' audit in connection with the financial statements of [client name] for the [year/period] ending '.date('F d, Y', strtotime($aa5a['ml1d'])).', we are writing to bring to your attention certain matters that arose during the course of our work, together with suggestions for improvements of controls and procedures operated by the company.  We hope you will find our comments helpful and constructive.</p>
-<p>Our work during the audit included an examination of some of the company’s transactions, procedures and controls with a view to expressing an opinion on the financial statements for the [year/period].  This work was not directed primarily towards discovering deficiencies in, or the operating effectiveness of your internal controls other than those that would affect our audit opinion or towards the detection of fraud.  We have included in this letter only matters that have come to our attention as a result of our normal audit procedures and consequently our comments should not be regarded as a comprehensive record of all deficiencies in internal control that may exist, of all improvements that might be made, or of the operating effectiveness of your internal controls.</p>';
-
+<p>Following our recent '.$aa5a['ml1'].' audit in connection with the financial statements of '.$cl['clientname'].' for the '.$cl['financial_year'].' ending '.date('F d, Y', strtotime($aa5a['ml1d'])).', we are writing to bring to your attention certain matters that arose during the course of our work, together with suggestions for improvements of controls and procedures operated by the company.  We hope you will find our comments helpful and constructive.</p>
+<p>Our work during the audit included an examination of some of the company’s transactions, procedures and controls with a view to expressing an opinion on the financial statements for the '.$cl['financial_year'].'.  This work was not directed primarily towards discovering deficiencies in, or the operating effectiveness of your internal controls other than those that would affect our audit opinion or towards the detection of fraud.  We have included in this letter only matters that have come to our attention as a result of our normal audit procedures and consequently our comments should not be regarded as a comprehensive record of all deficiencies in internal control that may exist, of all improvements that might be made, or of the operating effectiveness of your internal controls.</p>';
 if($aa5a['ml2'] != ''){
     $html .= '<p>'.$aa5a['ml2'].'</p>';
 }
@@ -92,7 +91,8 @@ if($aa5a['ml2'] != ''){
 $html .='
 <p>Our work also included a review of the adequacy of disclosures in the financial statements and consideration of the appropriateness of the accounting policies and estimation techniques adopted by the company. This review identified no significant matters, which we believe are necessary to draw to your attention.</p>
 <p><b>Summary</b></p>
-<p>The important matters that arose as a result of our work are set out in detail in the attached memorandum.</p>';
+<p>The important matters that arose as a result of our work are set out in detail in the attached memorandum.</p>
+';
 
 if($aa5a['ml3'] != ''){
     $html .= '<p>'.$aa5a['ml3'].'</p>';
