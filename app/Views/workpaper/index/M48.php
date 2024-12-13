@@ -99,7 +99,18 @@
                     <button type="button" id="uploadpdf" data-urlsubmit="<?= base_url()?>auditsystem/wp/index/tb/upload/<?= $code?>/<?= $cfiID?>/<?= $cID?>/<?= $wpID?>/<?= $index?>/<?= $desc?>/<?= $name?>" class="btn btn-secondary m-1 btn-sm float-end" data-bs-toggle="modal" data-bs-target="#tosend" title="Upload Supporting Documents" ><i class="fas fa-file-pdf m-1"></i>Upload Documents</button>
 
                 </form>
-                
+                <br><br><br> 
+
+                <div class="col-12">
+                    <label for="pasteArea">Paste your data here from excel:</label>
+                    <textarea id="pasteArea" placeholder="Paste here" rows="3" cols="30" class="form-control"></textarea>
+
+                    <form action="/auditsystem/wp/index/recon/update/<?= $code?>/<?= $cfiID?>/<?= $cID?>/<?= $wpID?>/<?= $index?>/<?= $desc?>/<?= $name?>" method="post">
+                        <div id="tableContainer"></div>
+
+                        <button id="btntc" type="submit" class="btn btn-success m-1 btn-sm float-end" hidden><i class="fas fa-file-alt m-1"></i>Save</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -162,9 +173,71 @@
             $(this).closest('tr').find('.vp').html(Math.round((nb / b) * 100));
             $("#tvp").html(Math.round((tva / tb) * 100));
         });
-        
-    });
-    </script>
+
+        $("#pasteArea").on("paste", function (event) {
+            // Get clipboard data
+            const clipboardData = event.originalEvent.clipboardData.getData("text");
+            // Split the data into rows and columns
+            const rows = clipboardData.split("\n").filter(row => row.trim() !== "");
+            const tableContainer = $("#tableContainer");
+            tableContainer.empty(); // Clear previous table
+
+            // Create a table dynamically
+            const table = $(`<table class="table table-hover table-bordered table-sm"></table>`);
+            let lastColumnIndex = 0; // Track the index of the last column
+
+            rows.forEach((row) => {
+                const cols = row.split("\t"); // Tab-separated columns
+                const tr = $("<tr></tr>");
+                cols.slice(0, 6).forEach((col, index) => { // Limit columns to 6
+                    const value = (col || "").trim().replace(/,/g, ""); // Ensure value is a string and remove commas
+                    const td = $("<td></td>");
+                    const input = $(`<input class="form-control" type="text" name="col${index}[]">`)
+                        .val(value)
+                        .on("input", function () { // Handle updates to numeric inputs
+                            if (index === lastColumnIndex) {
+                                updateSum();
+                            }
+                        });
+                    td.append(input);
+                    tr.append(td);
+                });
+
+                lastColumnIndex = Math.min(cols.length - 1, 5); // Update last column index (max 5)
+                table.append(tr);
+            });
+
+            // Add a row for the total sum
+            const totalRow = $("<tr></tr>");
+            for (let i = 0; i < lastColumnIndex; i++) {
+                totalRow.append("<td></td>"); // Empty cells for all columns except the last
+            }
+            const sumCell = $("<td></td>").addClass("text-center font-weight-bold").text("Total: 0.00");
+            totalRow.append(sumCell);
+            table.append(totalRow);
+
+            tableContainer.append(table);
+            $("#pasteArea").hide();
+            $("#btntc").removeAttr("hidden");
+
+            // Function to update the sum of the last column
+            function updateSum() {
+                let sum = 0;
+                table.find("tr").each(function () {
+                    const input = $(this).find(`td:eq(${lastColumnIndex}) input`);
+                    const value = parseFloat((input.val() || "").replace(/,/g, "")); // Ensure value is a string and parse
+                    if (!isNaN(value)) {
+                        sum += value;
+                    }
+                });
+                sumCell.text("Total: " + sum.toLocaleString("en-PH", { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+            }
+            // Calculate initial sum after paste
+            updateSum();
+        });
+
+     });
+</script>
 
     
     

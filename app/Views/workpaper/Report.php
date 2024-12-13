@@ -8701,7 +8701,7 @@ $html = '';
                 foreach($fst as $r){
                     if($r['file'] != ''){
                         // Set the source PDF file 
-                        $pageCount = $pdf->setSourceFile(ROOTPATH.'public/uploads/pdf/wp/'.$fID.'/'.$wpID.'/'.$r['file']);
+                        $pageCount = $pdf->setSourceFile(ROOTPATH.'public/uploads/pdf/fstax/'.$fID.'/'.$wpID.'/'.$r['file']);
                         // Iterate through all pages and import them
                         for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
                             $templateId = $pdf->importPage($pageNo);

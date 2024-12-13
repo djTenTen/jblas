@@ -391,6 +391,28 @@ class WorkpaperController extends BaseController{
     }
 
 
+    public function recontbfiles($code,$cfiID,$cID,$wpID,$index,$desc,$name){
+
+        $req = [
+            'col1'      => $this->request->getPost('col1'),
+            'col2'      => $this->request->getPost('col2'),
+            'col3'      => $this->request->getPost('col3'),
+            'col4'      => $this->request->getPost('col4'),
+            'col5'      => $this->request->getPost('col5'),
+            'col6'      => $this->request->getPost('col6'),
+            'cfiID'     => $this->decr($cfiID),
+            'cID'       => $this->decr($cID),
+            'wpID'      => $this->decr($wpID),
+            'index'     => $this->decr($index),
+            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+        ];
+
+        
+
+        return print_r($req);
+
+    }
+
     /**
         * @method uploadtbfiles() uploading trial balance 
         * @param code file name code

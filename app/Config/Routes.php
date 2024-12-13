@@ -110,6 +110,7 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
         $workp->get('index/setvalues/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::viewindexfiles/$1/$2/$3/$4/$5/$6');
         $workp->post('index/tb/update/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::updatetb/$1/$2/$3/$4/$5/$6/$7');
         $workp->post('index/tb/upload/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::uploadtbfiles/$1/$2/$3/$4/$5/$6/$7');
+        $workp->post('index/recon/update/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::recontbfiles/$1/$2/$3/$4/$5/$6/$7');
         $workp->get('downloadexcel/(:any)', 'WorkpaperController::downloadexcel/$1');
         $workp->post('index/cfs/upload/(:any)/(:any)/(:any)', 'WorkpaperController::uploadcfsfiles/$1/$2/$3');
         $workp->post('index/fstax/upload/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'WorkpaperController::uploadfstax/$1/$2/$3/$4/$5/$6/$7');
