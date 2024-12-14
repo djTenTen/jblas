@@ -254,16 +254,8 @@
                                 </thead>
                                 <tbody>
                                     <?php foreach($c1 as $r){
-                                        $p = round(($r['y'] / $r['x']), 2) * 70;
-                                        $pcnt = 0;
-                                        switch ($r['status']) {
-                                            case 'Preparing': $pcnt = 0; break;
-                                            case 'Reviewing': $pcnt = 10; break;
-                                            case 'Checking' : $pcnt = 20; break;
-                                            case 'Approved' : $pcnt = 30; break;
-                                        }
-
-                                        ?>
+                                        $p = round(($r['y'] / $r['x']), 2) * 100;
+                                    ?>
                                         <tr>
                                             <td class="text-center"><?= $r['code']?></td>
                                             <td><?= $r['title']?></td>
@@ -280,7 +272,7 @@
                                             </td>
                                             <td>
                                                 <div class="progress mt-1">
-                                                    <span class="progress-bar bg-success" style="width:<?= $p + $pcnt?>%"><?= $p + $pcnt?>%</span>
+                                                    <span class="progress-bar bg-success" style="width:<?= $p?>%"><?= $p?>%</span>
                                                 </div>
                                             </td>
                                             <td class="row justify-content-center">
@@ -303,7 +295,7 @@
                                                         <button class="btn btn-success btn-icon btn-sm approve" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprove/c1/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
                                                     <?php }?>
                                                     <?php if($r['status'] == 'Preparing'){?>
-                                                        <?php if($p == 70){?>
+                                                        <?php if($p == 100){?>
                                                             <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c1/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                                         <?php }?>
                                                     <?php }?>
@@ -339,15 +331,8 @@
                                 </thead>
                                 <tbody>
                                     <?php foreach($c2 as $r){
-                                        $p = round(($r['y'] / $r['x']), 2) * 70;
-                                        $pcnt = 0;
-                                        switch ($r['status']) {
-                                            case 'Preparing': $pcnt = 0; break;
-                                            case 'Reviewing': $pcnt = 10; break;
-                                            case 'Checking' : $pcnt = 20; break;
-                                            case 'Approved' : $pcnt = 30; break;
-                                        }
-                                        ?>
+                                        $p = round(($r['y'] / $r['x']), 2) * 100;
+                                    ?>
                                         <tr>
                                             <td class="text-center"><?= $r['code']?></td>
                                             <td><?= $r['title']?></td>
@@ -364,7 +349,7 @@
                                             </td>
                                             <td>
                                                 <div class="progress mt-1">
-                                                    <span class="progress-bar bg-success" style="width:<?= $p + $pcnt?>%"><?= $p + $pcnt?>%</span>
+                                                    <span class="progress-bar bg-success" style="width:<?= $p?>%"><?= $p?>%</span>
                                                 </div>
                                             </td>
                                             <td class="row justify-content-center">
@@ -386,7 +371,7 @@
                                                     <?php }else{?>
                                                         <a class="btn btn-primary btn-icon btn-sm" href="<?= base_url('auditsystem/wp/chapter2/setvalues/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }?>
-                                                    <?php if($p == 70){?>
+                                                    <?php if($p == 100){?>
                                                         <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c2/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                                     <?php }?>
                                                 <?php }?>
@@ -401,7 +386,7 @@
                                                         <button class="btn btn-success btn-icon btn-sm approve" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprove/c2/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
                                                     <?php }?>
                                                     <?php if($r['status'] == 'Preparing'){?>
-                                                        <?php if($p == 70){?>
+                                                        <?php if($p == 100){?>
                                                             <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c2/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                                         <?php }?>
                                                     <?php }?>
@@ -438,15 +423,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="tbody">
-                                    <?php foreach($fi as $r){
-                                        $pcnt = 0;
-                                        switch ($r['status']) {
-                                            case 'Preparing': $pcnt = 0; break;
-                                            case 'Reviewing': $pcnt = 50; break;
-                                            case 'Checking' : $pcnt = 75; break;
-                                            case 'Approved' : $pcnt = 100; break;
-                                        }
-                                        ?>
+                                    <?php foreach($fi as $r){?>
                                         <tr>
                                             <td class="text-center"><input class="form-check-input ficheck" id="add" type="checkbox" name="c1[]" value="<?= encr($r['cfiID'])?>" data-url="<?= base_url()?>auditsystem/wp/updateindex/<?=encr($r['cfiID'])?>" <?php if($r['acquired'] == 'Yes'){echo 'checked';} ?>/></td>
                                             <td class="text-center"><?= $r['section']?></td>
@@ -467,7 +444,7 @@
                                             <td>
                                                 <?php if($r['acquired'] == 'Yes'){?>
                                                     <div class="progress mt-1">
-                                                        <span class="progress-bar bg-success" style="width:<?= $pcnt?>%"><?= $pcnt?>%</span>
+                                                        <span class="progress-bar bg-success" style="width:<?= $r['prog']?>%"><?= $r['prog']?>%</span>
                                                     </div>
                                                 <?php }?>
                                             </td>
@@ -482,7 +459,9 @@
                                                 <?php }?>
                                                 <?php if($type == 'Preparer' and $r['status'] == 'Preparing'){?>
                                                     <a href="<?= base_url()?>auditsystem/wp/index/setvalues/<?= $r['section']?>/<?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?=encr($r['index'])?>/<?= $r['desc']?>/<?= $name?>" class="btn btn-icon btn-sm btn-primary cfi" target="_blank" title="Set Values" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?> ><i class="fas fa-tools"></i></a>
-                                                    <button class="btn btn-success btn-icon btn-sm sendtoreviewer sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
+                                                    <?php if($r['prog'] == 100){?>
+                                                        <button class="btn btn-success btn-icon btn-sm sendtoreviewer sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
+                                                    <?php }?>
                                                 <?php }?>
                                                 <?php if($type == 'Auditing Firm' or $type == 'Audit Manager' or $type == 'Admin'){?>
                                                     <a href="<?= base_url()?>auditsystem/wp/index/setvalues/<?= $r['section']?>/<?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?=encr($r['index'])?>/<?= $r['desc']?>/<?= $name?>" class="btn btn-icon btn-sm btn-primary cfi" target="_blank" title="Set Values" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?> ><i class="fas fa-tools"></i></a>
@@ -491,7 +470,9 @@
                                                         <button class="btn btn-success btn-icon btn-sm approve sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprove/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-thumbs-up"></i></button>
                                                     <?php }?>
                                                     <?php if($r['status'] == 'Preparing'){?>
-                                                        <button class="btn btn-success btn-icon btn-sm sendtoreviewer sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
+                                                        <?php if($r['prog'] == 100){?>
+                                                            <button class="btn btn-success btn-icon btn-sm sendtoreviewer sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-paper-plane"></i></button>
+                                                        <?php }?>
                                                     <?php }?>
                                                     <?php if($r['status'] == 'Reviewing'){?>
                                                         <button class="btn btn-warning btn-icon btn-sm sendtoauditor sendto" type="button" data-file="<?= $r['section'].'-'.$r['desc']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoauditor/index/')?><?=encr($r['cfiID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor" <?php if($r['acquired'] == 'No'){echo 'hidden';} ?>><i class="fas fa-undo"></i></button>
@@ -523,15 +504,8 @@
                                 </thead>
                                 <tbody>
                                     <?php foreach($c3 as $r){
-                                        $p = round(($r['y'] / $r['x']), 2) * 70;
-                                        $pcnt = 0;
-                                        switch ($r['status']) {
-                                            case 'Preparing': $pcnt = 0; break;
-                                            case 'Reviewing': $pcnt = 10; break;
-                                            case 'Checking' : $pcnt = 20; break;
-                                            case 'Approved' : $pcnt = 30; break;
-                                        }
-                                        ?>
+                                        $p = round(($r['y'] / $r['x']), 2) * 100;
+                                    ?>
                                         <tr>
                                             <td class="text-center"><?= $r['code']?></td>
                                             <td><?= $r['title']?></td>
@@ -548,7 +522,7 @@
                                             </td>
                                             <td>
                                                 <div class="progress mt-1">
-                                                    <span class="progress-bar bg-success" style="width:<?= $p + $pcnt?>%"><?= $p + $pcnt?>%</span>
+                                                    <span class="progress-bar bg-success" style="width:<?= $p?>%"><?= $p?>%</span>
                                                 </div>
                                             </td>
                                             <td class="row justify-content-center">
@@ -575,7 +549,7 @@
                                                     <?php }else{?>
                                                         <a class="btn btn-primary btn-icon btn-sm" data-file="<?= $r['code']?>" href="<?= base_url('auditsystem/wp/chapter3/setvalues/')?><?= $r['code']?>/<?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" target="_blank" title="Set Values"><i class="fas fa-tools"></i></a>
                                                     <?php }?>
-                                                    <?php if($p == 70){?>
+                                                    <?php if($p == 100){?>
                                                         <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c3/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                                     <?php }?>
                                                 <?php }?>
@@ -592,7 +566,7 @@
                                                         <button class="btn btn-success btn-icon btn-sm approve" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprove/c3/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
                                                     <?php }?>
                                                     <?php if($r['status'] == 'Preparing'){?>
-                                                        <?php if($p == 70){?>
+                                                        <?php if($p == 100){?>
                                                             <button class="btn btn-success btn-icon btn-sm sendtoreviewer" type="button" data-file="<?= $r['code'].'-'.$r['title']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreview/c3/')?><?=encr($r['mtID'])?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                                         <?php }?>
                                                     <?php }?>

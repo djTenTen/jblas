@@ -90,7 +90,7 @@
                                 <th>₱ <span id="tb" data-totalb="<?= $b?>"><?= number_format($b,2)?></span></th>
                                 <th>₱ <span id="tsb"><?= number_format($sv,2)?></span></th>
                                 <th>₱ <span id="tva"><?= number_format($va,2)?></span></th>
-                                <th>% <span id="tvp"><?php if($b == 0 or $va == 0 ){echo 0;}else{round(($va / $b) * 100);}?></span></th>
+                                <th>% <span id="tvp"><?php echo round((($b - $sv) / $b) * 100);?></span></th>
                             </tr>
                         </tfoot>
                     </table>

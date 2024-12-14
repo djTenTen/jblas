@@ -214,7 +214,8 @@ class WorkpaperModel extends  Model {
     */
     public function getfileindex($cID,$wpID,$status){
 
-        $query = $this->db->query("select *
+        $query = $this->db->query("select * , 
+        (select 100 - round(((SUM(ytd) - SUM(supp_bal)) / SUM(ytd)) * 100) from {$this->tbltb} as tb where tb.cID = {$cID} and tb.wpID = {$wpID} and cfi.index = tb.index) as prog
         from {$this->tblcfi} as cfi, {$this->tblfi} as fi
         where cfi.index = fi.fiID
         and cfi.wpID = {$wpID}
@@ -632,15 +633,15 @@ class WorkpaperModel extends  Model {
                 return 'uploaded';
             }else{
                 $data = [
-                    'cID'        => $req['cID'],
-                    'wpID'     => $req['wpID'],
-                    'fID'          => $req['fID'],
+                    'cID'           => $req['cID'],
+                    'wpID'          => $req['wpID'],
+                    'fID'           => $req['fID'],
                     'index'         => $req['index'],
                     'quarter'       => $req['quarter'],
                     'type'          => $req['part'],
                     'file'          => $filename,
-                    'uploaded_on'    => $this->date.' '.$this->time,
-                    'uploaded_by'    => $req['uID'],
+                    'uploaded_on'   => $this->date.' '.$this->time,
+                    'uploaded_by'   => $req['uID'],
                 ];
                 $this->db->table($this->tblfst)->insert($data);
                 $req['fstax']->move($pdfPath);
@@ -959,15 +960,15 @@ class WorkpaperModel extends  Model {
     public function sendtoreview($req){
 
         switch ($req['c']) {
-            case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
-            case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
-            case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
+            case 'c1': $table       = $this->tblc1;  $ctID = 'mtID';break;
+            case 'c2': $table       = $this->tblc2;  $ctID = 'mtID';break;
+            case 'c3': $table       = $this->tblc3;  $ctID = 'mtID';break;
             case 'index': $table    = $this->tblcfi; $ctID = 'cfiID';break;
         }
         $where = [
-            'clientID'      => $req['cID'],
-            'workpaper'     => $req['wpID'],
-            $ctID           => $req['ctID'],
+            'cID'      => $req['cID'],
+            'wpID'     => $req['wpID'],
+            $ctID      => $req['ctID'],
         ];
         $data = [
             'remarks'       => $req['remarks'],
@@ -996,15 +997,15 @@ class WorkpaperModel extends  Model {
     public function sendtoauditor($req){
 
         switch ($req['c']) {
-            case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
-            case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
-            case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
+            case 'c1': $table       = $this->tblc1;  $ctID = 'mtID';break;
+            case 'c2': $table       = $this->tblc2;  $ctID = 'mtID';break;
+            case 'c3': $table       = $this->tblc3;  $ctID = 'mtID';break;
             case 'index': $table    = $this->tblcfi; $ctID = 'cfiID';break;
         }
         $where = [
-            'clientID'      => $req['cID'],
-            'workpaper'     => $req['wpID'],
-            $ctID           => $req['ctID'],
+            'cID'      => $req['cID'],
+            'wpID'     => $req['wpID'],
+            $ctID      => $req['ctID'],
         ];
         $data = [
             'remarks'   => $req['remarks'],
@@ -1032,15 +1033,15 @@ class WorkpaperModel extends  Model {
     public function sendtomanager($req){
 
         switch ($req['c']) {
-            case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
-            case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
-            case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
+            case 'c1': $table       = $this->tblc1;  $ctID = 'mtID';break;
+            case 'c2': $table       = $this->tblc2;  $ctID = 'mtID';break;
+            case 'c3': $table       = $this->tblc3;  $ctID = 'mtID';break;
             case 'index': $table    = $this->tblcfi; $ctID = 'cfiID';break;
         }
         $where = [
-            'clientID'      => $req['cID'],
-            'workpaper'     => $req['wpID'],
-            $ctID           => $req['ctID'],
+            'cID'      => $req['cID'],
+            'wpID'     => $req['wpID'],
+            $ctID      => $req['ctID'],
         ];
         $data = [
             'remarks'       => $req['remarks'],
@@ -1069,15 +1070,15 @@ class WorkpaperModel extends  Model {
     public function sendtoapprove($req){
 
         switch ($req['c']) {
-            case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
-            case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
-            case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
+            case 'c1': $table       = $this->tblc1;  $ctID = 'mtID';break;
+            case 'c2': $table       = $this->tblc2;  $ctID = 'mtID';break;
+            case 'c3': $table       = $this->tblc3;  $ctID = 'mtID';break;
             case 'index': $table    = $this->tblcfi; $ctID = 'cfiID';break;
         }
         $where = [
-            'clientID'      => $req['cID'],
-            'workpaper'     => $req['wpID'],
-            $ctID           => $req['ctID'],
+            'cID'      => $req['cID'],
+            'wpID'     => $req['wpID'],
+            $ctID      => $req['ctID'],
         ];
         $data = [
             'remarks'       => $req['remarks'],
@@ -1185,17 +1186,16 @@ class WorkpaperModel extends  Model {
     public function deletefiles($req){
 
         switch ($req['c']) {
-            case 'c1': $table       = $this->tblc1;  $ctID = 'c1tID';break;
-            case 'c2': $table       = $this->tblc2;  $ctID = 'c2tID';break;
-            case 'c3': $table       = $this->tblc3;  $ctID = 'c3tID';break;
+            case 'c1': $table       = $this->tblc1;  $ctID = 'mtID';break;
+            case 'c2': $table       = $this->tblc2;  $ctID = 'mtID';break;
+            case 'c3': $table       = $this->tblc3;  $ctID = 'mtID';break;
             case 'index': $table    = $this->tblcfi; $ctID = 'cfiID';break;
         }
         $where = [
-            'clientID'      => $req['cID'],
-            'workpaper'     => $req['wpID'],
-            $ctID           => $req['ctID'],
+            'cID'      => $req['cID'],
+            'wpID'     => $req['wpID'],
+            $ctID      => $req['ctID'],
         ];
-
         if($this->db->table($table)->where($where)->delete()){
             $this->logs->log(session()->get('name'). " deleted a file from {$req['c']}");
             return "deleted";
