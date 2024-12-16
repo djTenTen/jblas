@@ -1,0 +1,615 @@
+ERROR - 2024-12-16 08:40:37 --> mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:40:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:40:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:40:37 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:40:42 --> mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:40:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:40:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:40:42 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:40:45 --> mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:40:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:40:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:40:45 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:40:49 --> mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:40:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:40:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:40:49 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:41:05 --> mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:41:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:41:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:41:05 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:41:43 --> mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:41:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:41:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:41:43 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:41:46 --> mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:41:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:41:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:41:46 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:45:35 --> mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:45:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:45:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:45:35 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:45:38 --> mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:45:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:45:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:45:38 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:45:41 --> mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:45:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:45:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:45:41 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:45:46 --> mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:45:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:45:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:45:46 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.workpaper' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:46:58 --> mysqli_sql_exception: Unknown column 'tc1.wp' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:46:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.wp' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:46:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.wp' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:46:58 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.wp' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:47:01 --> mysqli_sql_exception: Unknown column 'tc1.wp' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:47:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.wp' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:47:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.wp' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:47:01 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.wp' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:47:10 --> mysqli_sql_exception: Unknown column 'tc1.wp' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:47:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.wp' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:47:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.wp' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:47:10 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.wp' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-16 08:47:14 --> mysqli_sql_exception: Unknown column 'tc1.wp' in 'WHERE' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-12-16 08:47:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.wp' in 'WHERE'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:47:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tc1.wp' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-16 08:47:14 --> [Caused by] mysqli_sql_exception: Unknown column 'tc1.wp' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 APPPATH/Models/DashModel.php(158): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/DashController.php(48): App\Models\DashModel->getwpp()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\DashController->getwpp()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
