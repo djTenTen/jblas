@@ -39,6 +39,16 @@ class SystemModel extends  Model {
 
     }
 
+
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
+
     public function crontask(){
         
         $firm = $this->db->table($this->tblf)->get()->getResultArray();
@@ -74,7 +84,7 @@ class SystemModel extends  Model {
 
     public function getnotif(){
 
-        $fID = $this->crypt->decrypt(session()->get('firmID'));
+        $fID = $this->decr(session()->get('firmID'));
         $where = [
             'firm' => $fID,
             'isread' => 'No',
@@ -86,7 +96,7 @@ class SystemModel extends  Model {
 
     public function countnotif(){
 
-        $fID = $this->crypt->decrypt(session()->get('firmID'));
+        $fID = $this->decr(session()->get('firmID'));
         $where = [
             'firm' => $fID,
         ];
@@ -112,7 +122,7 @@ class SystemModel extends  Model {
 
     public function getfirmsoqm(){
 
-        $fID = $this->crypt->decrypt(session()->get('firmID'));
+        $fID = $this->decr(session()->get('firmID'));
         $query = $this->db->table($this->tblf)->where('firmID',$fID)->get();
         return $query->getRowArray();
 
@@ -120,7 +130,7 @@ class SystemModel extends  Model {
 
     public function uploadsoqm($req){
 
-        $fID = $this->crypt->decrypt(session()->get('firmID'));
+        $fID = $this->decr(session()->get('firmID'));
         $res = $this->db->table($this->tblf)->where('firmID',$fID)->get()->getRowArray();
         $filename = $req['file']->getClientName();
         if($req['file'] != ''){
@@ -151,7 +161,7 @@ class SystemModel extends  Model {
 
     public function usesoqm(){
 
-        $fID = $this->crypt->decrypt(session()->get('firmID'));
+        $fID = $this->decr(session()->get('firmID'));
         $soqm = $this->db->table($this->tbls)->where('soqmID',1)->get()->getRowArray();
         $data = [
             'soqm'      => 'Using', 
@@ -167,7 +177,7 @@ class SystemModel extends  Model {
 
     public function savesoqm($req){
 
-        $fID = $this->crypt->decrypt(session()->get('firmID'));
+        $fID = $this->decr(session()->get('firmID'));
         if($this->db->table($this->tblf)->where('firmID',$fID)->update(array('soqm_data' => $req))){
             return true;
         }else{

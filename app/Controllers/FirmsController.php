@@ -31,6 +31,14 @@ class FirmsController extends BaseController{
     }
 
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
     /**
         * @method viewfirms() view the firms registered
         * @param name name of the client
@@ -57,7 +65,7 @@ class FirmsController extends BaseController{
     */
     public function verifyfirm($euID){
 
-        $uID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$euID));
+        $uID = $this->decr($euID);
         $res = $this->fmodel->verifyfirm($uID);
         if($res){
             session()->setFlashdata('verified','verified');

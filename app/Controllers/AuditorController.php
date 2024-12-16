@@ -30,6 +30,13 @@ class AuditorController extends BaseController{
 
     }
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
 
     /**
         * @method editauditor() used to load the data of auditor for editing
@@ -39,7 +46,7 @@ class AuditorController extends BaseController{
     */
     public function editauditor($uID){
 
-        $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
+        $duID = $this->decr($uID);
         return $this->audmodel->editauditor($duID);
         
     }
@@ -51,8 +58,8 @@ class AuditorController extends BaseController{
     */
     public function viewauditor(){
 
-        $fID = $this->crypt->decrypt(session()->get('firmID'));
-        $uID = $this->crypt->decrypt(session()->get('userID'));
+        $fID = $this->decr(session()->get('firmID'));
+        $uID = $this->decr(session()->get('userID'));
         $data['title']  = 'Auditor Management';
         $data['aud']    = $this->audmodel->getauditor($fID,$uID);
         echo view('includes/Header', $data);
@@ -93,10 +100,10 @@ class AuditorController extends BaseController{
             'email'     => $this->request->getPost('email'),
             'address'   => $this->request->getPost('address'),
             'contact'   => $this->request->getPost('contact'),
-            'pass'      => $this->crypt->encrypt($genpass), //Should be generated and emailed to the user
+            'pass'      => $this->encr($genpass), //Should be generated and emailed to the user
             'genpass'   => $genpass,
             'type'      => $this->request->getPost('type'),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+            'fID'       => $this->encr(session()->get('firmID')),
             'firm'      => session()->get('firm'),
             'signature' => $this->request->getFile('signature'),
             'pos'       => $pos,
@@ -127,7 +134,7 @@ class AuditorController extends BaseController{
     */
     public function updateauditor($uID){
 
-        $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
+        $duID = $this->decr($uID);
         $validationRules = [
             'name'  => 'required',
             'email' => 'required',
@@ -172,7 +179,7 @@ class AuditorController extends BaseController{
     */
     public function acin($uID){
 
-        $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
+        $duID = $this->decr($uID);
         $res  = $this->audmodel->acin($duID);
         if($res){
             session()->setFlashdata('updated','updated');

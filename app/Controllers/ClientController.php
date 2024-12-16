@@ -35,7 +35,7 @@ class ClientController extends BaseController{
     }
 
     public function encr($ecr){
-        return str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ecr));
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
     
 
@@ -124,7 +124,7 @@ class ClientController extends BaseController{
     */
     public function viewclient(){
 
-        $fID            = $this->crypt->decrypt(session()->get('firmID'));
+        $fID            = $this->decr(session()->get('firmID'));
         $data['title']  = 'Client Management';
         $data['client'] = $this->cmodel->getclients($fID);
         echo view('includes/Header', $data);
@@ -142,7 +142,7 @@ class ClientController extends BaseController{
     */
     public function viewclientset(){
 
-        $fID            = $this->crypt->decrypt(session()->get('firmID'));
+        $fID            = $this->decr(session()->get('firmID'));
         $data['title']  = 'Client Management Set Defaults';
         $data['client'] = $this->cmodel->getclients($fID);
         echo view('includes/Header', $data);
@@ -178,7 +178,7 @@ class ClientController extends BaseController{
             'address'   => $this->request->getPost('address'),
             'orgtype'   => $this->request->getPost('orgtype'),
             'industry'  => $this->request->getPost('industry'),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+            'fID'       => $this->decr(session()->get('firmID')),
         ];
         $res = $this->cmodel->saveclient($req);
         if($res == 'exist'){
@@ -225,7 +225,7 @@ class ClientController extends BaseController{
             'orgtype'   => $this->request->getPost('orgtype'),
             'industry'  => $this->request->getPost('industry'),
             'cID'       =>  $dcID,
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+            'fID'       => $this->decr(session()->get('firmID')),
         ];
         $res = $this->cmodel->updateclient($req);
         if($res == "updated"){
@@ -254,7 +254,7 @@ class ClientController extends BaseController{
             'cval'      => $this->request->getPost('checked'),
             'cID'       => $this->decr($cID),
             'mtID'      => $this->decr($mtID),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+            'fID'       => $this->decr(session()->get('firmID')),
         ];
         $res = $this->cmodel->setfiles($req);
         return $this->response->setJSON(['message' => $res]);
@@ -276,7 +276,7 @@ class ClientController extends BaseController{
             'cval'      => $this->request->getPost('checked'),
             'cID'       => $this->decr($cID),
             'mtID'      => $this->decr($mtID),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+            'fID'       => $this->decr(session()->get('firmID')),
         ];
         $res = $this->cmodel->removefiles($req);
         return $this->response->setJSON(['message' => $res]);

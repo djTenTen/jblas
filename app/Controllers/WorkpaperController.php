@@ -59,7 +59,7 @@ class WorkpaperController extends BaseController{
         $data['title']  = "Work Paper";
         $data['subt']   = "Initiate your work paper";
         $data['type']   = session()->get('type');
-        $fID            = $this->crypt->decrypt(session()->get('firmID'));
+        $fID            = $this->decr(session()->get('firmID'));
         $data['aud']    = $this->wpmodel->getauditors($fID,'Preparer');
         $data['sup']    = $this->wpmodel->getauditors($fID,'Reviewer');
         $data['mgr']    = $this->wpmodel->getauditors($fID,'Audit Manager');
@@ -83,8 +83,8 @@ class WorkpaperController extends BaseController{
 
         $data['title']  = "Prepare Work Paper";
         $data['subt']   = "Prepare your work paper";
-        $fID            = $this->crypt->decrypt(session()->get('firmID'));
-        $uID            = $this->crypt->decrypt(session()->get('userID'));
+        $fID            = $this->decr(session()->get('firmID'));
+        $uID            = $this->decr(session()->get('userID'));
         $data['wp']     = $this->wpmodel->getworkpaperspe('auditor',$fID,$uID,'Preparing');
         echo view('includes/Header', $data);
         echo view('workpaper/Prepare', $data);    
@@ -104,8 +104,8 @@ class WorkpaperController extends BaseController{
 
         $data['title']  = "Review Work Paper";
         $data['subt']   = "Review your work paper";
-        $fID            = $this->crypt->decrypt(session()->get('firmID'));
-        $uID            = $this->crypt->decrypt(session()->get('userID'));
+        $fID            = $this->decr(session()->get('firmID'));
+        $uID            = $this->decr(session()->get('userID'));
         $data['wp']     = $this->wpmodel->getworkpaperspe('supervisor',$fID,$uID,'Reviewing');
         echo view('includes/Header', $data);
         echo view('workpaper/Review', $data);    
@@ -124,7 +124,7 @@ class WorkpaperController extends BaseController{
 
         $data['title']  = "Approved Work paper";
         $data['subt']   = "Archive and export your work paper";
-        $fID            = $this->crypt->decrypt(session()->get('firmID'));
+        $fID            = $this->decr(session()->get('firmID'));
         $data['wp']     = $this->wpmodel->getapprovedwp($fID,'');
         echo view('includes/Header', $data);
         echo view('workpaper/Approved', $data);    
@@ -147,8 +147,8 @@ class WorkpaperController extends BaseController{
     */
     public function getfiles($cID,$wpID,$name){
 
-        $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $dwpID          = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
+        $dcID           = $this->decr($cID);
+        $dwpID          = $this->decr($wpID);
         $type           = session()->get('type');
         switch ($type) {
             case 'Auditing Firm':
@@ -194,8 +194,8 @@ class WorkpaperController extends BaseController{
     */
     public function saveworkpaper(){
 
-        $fID                = $this->crypt->decrypt(session()->get('firmID'));
-        $uID                = $this->crypt->decrypt(session()->get('userID'));
+        $fID                = $this->decr(session()->get('firmID'));
+        $uID                = $this->decr(session()->get('userID'));
         $validationRules    = [
             'client'        => 'required',
             'fy'            => 'required',
@@ -210,13 +210,13 @@ class WorkpaperController extends BaseController{
             return redirect()->to(site_url('auditsystem/wp/initiate'));
         }
         $req = [
-            'client'        => $this->crypt->decrypt($this->request->getPost('client')),
+            'client'        => $this->decr($this->request->getPost('client')),
             'fy'            => $this->request->getPost('fy'),
             'efy'           => $this->request->getPost('efy'),
             'jobdur'        => $this->request->getPost('jobdur'),
-            'auditor'       => $this->crypt->decrypt($this->request->getPost('auditor')),
-            'reviewer'      => $this->crypt->decrypt($this->request->getPost('reviewer')),
-            'audmanager'    => $this->crypt->decrypt($this->request->getPost('audmanager')),
+            'auditor'       => $this->decr($this->request->getPost('auditor')),
+            'reviewer'      => $this->decr($this->request->getPost('reviewer')),
+            'audmanager'    => $this->decr($this->request->getPost('audmanager')),
             'firm'          => $fID,
             'uID'           => $uID,
         ];
@@ -270,8 +270,8 @@ class WorkpaperController extends BaseController{
 
         $dcID               = $this->decr($cID);
         $dwpID              = $this->decr($wpID);
-        $fID                = $this->crypt->decrypt(session()->get('firmID'));
-        $uID                = $this->crypt->decrypt(session()->get('userID'));
+        $fID                = $this->decr(session()->get('firmID'));
+        $uID                = $this->decr(session()->get('userID'));
         $validationRules    = [
             'fileindex'     => 'required',
         ];
@@ -316,15 +316,15 @@ class WorkpaperController extends BaseController{
     */
     public function uploadcfsfiles($cID,$wpID,$name){
 
-        $dcID    = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $dwpID   = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
-        $fID     = $this->crypt->decrypt(session()->get('firmID'));
+        $dcID    = $this->decr($cID);
+        $dwpID   = $this->decr($wpID);
+        $fID     = $this->decr(session()->get('firmID'));
         $req = [
             'cID'   => $dcID,
             'wpID'  => $dwpID,
             'fID'   => $fID,
             'file'  => $this->request->getFile('pdf'),
-            'fID'   => $this->crypt->decrypt(session()->get('firmID')),
+            'fID'   => $this->decr(session()->get('firmID')),
         ];
         $res = $this->wpmodel->uploadcfsfiles($req);
         if($res == "uploaded"){
@@ -348,7 +348,7 @@ class WorkpaperController extends BaseController{
     */
     public function updateindex($cfiID){
 
-        $dcfiID     = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID));
+        $dcfiID     = $this->decr($cfiID);
         $yn         = $this->request->getPost('checked');
         $req        = [
             'cfiID'     => $dcfiID,
@@ -377,7 +377,7 @@ class WorkpaperController extends BaseController{
         $req = [
             'tbID'  => $this->request->getPost('tbID'),
             'sb'    => $this->request->getPost('sb'),
-            'uID'   => $this->crypt->decrypt(session()->get('userID')),
+            'uID'   => $this->decr(session()->get('userID')),
         ];
         $res = $this->wpmodel->updatetb($req);
         if($res == "updated"){
@@ -404,7 +404,7 @@ class WorkpaperController extends BaseController{
             'cID'       => $this->decr($cID),
             'wpID'      => $this->decr($wpID),
             'index'     => $this->decr($index),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+            'fID'       => $this->decr(session()->get('firmID')),
         ];
 
         
@@ -434,7 +434,7 @@ class WorkpaperController extends BaseController{
             'cID'       => $this->decr($cID),
             'wpID'      => $this->decr($wpID),
             'index'     => $this->decr($index),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+            'fID'       => $this->decr(session()->get('firmID')),
         ];
         $res = $this->wpmodel->uploadtbfiles($req);
         if($res == "uploaded"){
@@ -466,12 +466,12 @@ class WorkpaperController extends BaseController{
             'fstax'     => $this->request->getFile('fstax'),
             'part'      => $this->request->getPost('part'),
             'quarter'   => $this->request->getPost('quarter'),
-            'cfiID'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cfiID)),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
-            'index'     => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$index)),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
+            'cfiID'     => $this->decr($cfiID),
+            'cID'       => $this->decr($cID),
+            'wpID'      => $this->decr($wpID),
+            'index'     => $this->decr($index),
+            'fID'       => $this->decr(session()->get('firmID')),
+            'uID'       => $this->decr(session()->get('userID')),
         ];
 
         $res = $this->wpmodel->uploadfstax($req);
@@ -503,9 +503,9 @@ class WorkpaperController extends BaseController{
     public function sendtoreview($c,$ctID,$cID,$wpID,$name){
 
         $req = [
-            'ctID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'ctID'      => $this->decr($ctID),
+            'cID'       => $this->decr($cID),
+            'wpID'      => $this->decr($wpID),
             'remarks'   => $this->request->getPost('remarks'),
             'c'         => $c,
         ];
@@ -535,9 +535,9 @@ class WorkpaperController extends BaseController{
     public function sendtoauditor($c,$ctID,$cID,$wpID,$name){
 
         $req = [
-            'ctID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'ctID'      => $this->decr($ctID),
+            'cID'       => $this->decr($cID),
+            'wpID'      => $this->decr($wpID),
             'remarks'   => $this->request->getPost('remarks'),
             'c'         => $c,
         ];
@@ -567,9 +567,9 @@ class WorkpaperController extends BaseController{
     public function sendtomanager($c,$ctID,$cID,$wpID,$name){
 
         $req = [
-            'ctID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'ctID'      => $this->decr($ctID),
+            'cID'       => $this->decr($cID),
+            'wpID'      => $this->decr($wpID),
             'remarks'   => $this->request->getPost('remarks'),
             'c'         => $c,
         ];
@@ -599,9 +599,9 @@ class WorkpaperController extends BaseController{
     public function sendtoapprove($c,$ctID,$cID,$wpID,$name){
 
         $req = [
-            'ctID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
-            'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'ctID'      => $this->decr($ctID),
+            'cID'       => $this->decr($cID),
+            'wpID'      => $this->decr($wpID),
             'remarks'   => $this->request->getPost('remarks'),
             'c'         => $c,
         ];
@@ -627,7 +627,7 @@ class WorkpaperController extends BaseController{
     public function sendtoreviewer($wpID){
 
         $req = [
-            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'wpID'      => $this->decr($wpID),
             'remarks'   => $this->request->getPost('remarks'),
         ];
         $res = $this->wpmodel->sendtoreviewer($req);
@@ -652,7 +652,7 @@ class WorkpaperController extends BaseController{
     public function sendtopreparer($wpID){
 
         $req = [
-            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'wpID'      => $this->decr($wpID),
             'remarks'   => $this->request->getPost('remarks'),
         ];
         $res = $this->wpmodel->sendtopreparer($req);
@@ -677,7 +677,7 @@ class WorkpaperController extends BaseController{
     public function sendtoapprover($wpID){
 
         $req = [
-            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'wpID'      => $this->decr($wpID),
             'remarks'   => $this->request->getPost('remarks'),
         ];
         $res = $this->wpmodel->sendtoapprover($req);
@@ -702,7 +702,7 @@ class WorkpaperController extends BaseController{
     public function sendbacktoreviewer($wpID){
 
         $req = [
-            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'wpID'      => $this->decr($wpID),
             'remarks'   => $this->request->getPost('remarks'),
         ];
         $res = $this->wpmodel->sendtoreviewer($req);
@@ -727,7 +727,7 @@ class WorkpaperController extends BaseController{
     public function approvewp($wpID){
         
         $req = [
-            'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+            'wpID'      => $this->decr($wpID),
             'remarks'   => $this->request->getPost('remarks'),
         ];
         $res = $this->wpmodel->approvewp($req);
@@ -743,13 +743,13 @@ class WorkpaperController extends BaseController{
 
 
     public function deletefiles($c,$ctID,$cID,$wpID,$name){
-        $yp = $this->crypt->decrypt(session()->get('pass'));
+        $yp = $this->decr(session()->get('pass'));
         $cpass = $this->request->getPost('cpass');
         if($yp == $cpass){
             $req = [
-                'ctID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ctID)),
-                'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-                'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+                'ctID'      => $this->decr($ctID),
+                'cID'       => $this->decr($cID),
+                'wpID'      => $this->decr($wpID),
                 'cpass'     => $this->request->getPost('cpass'),
                 'c'         => $c,
             ];
@@ -773,12 +773,12 @@ class WorkpaperController extends BaseController{
 
     public function deleteworkpaper($cID,$wpID){
 
-        $yp = $this->crypt->decrypt(session()->get('pass'));
+        $yp = $this->decr(session()->get('pass'));
         $cpass = $this->request->getPost('cpass');
         if($yp == $cpass){
             $req = [
-                'cID'       => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID)),
-                'wpID'      => $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID)),
+                'cID'       => $this->decr($cID),
+                'wpID'      => $this->decr($wpID),
                 'cpass'     => $this->request->getPost('cpass'),
             ];
             $res = $this->wpmodel->deleteworkpaper($req);
@@ -838,8 +838,8 @@ class WorkpaperController extends BaseController{
             'cID'       => $this->decr($cID),
             'wpID'      => $this->decr($wpID),
             'mtID'      => $this->decr($mtID),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+            'uID'       => $this->decr(session()->get('userID')),
+            'fID'       => $this->decr(session()->get('firmID')),
         ];
 
         switch ($chapter) {
@@ -2122,7 +2122,7 @@ class WorkpaperController extends BaseController{
         $dcfiID         = $this->decr($cfiID);
         $dwpID          = $this->decr($wpID);
         $dindex         = $this->decr($index);
-        $fID            = $this->crypt->decrypt(session()->get('firmID'));
+        $fID            = $this->decr(session()->get('firmID'));
         $data['fID']    = $fID;
         $data['title']  = $name;
         $data['subt']   = $desc;
@@ -2214,7 +2214,7 @@ class WorkpaperController extends BaseController{
         $dmtID              = $this->decr($mtID);
         $data['cl']         = $this->wpmodel->getclientinfo($dwpID,$dcID);
         $data['firm']       = session()->get('firm');
-        $data['fID']        = $this->crypt->decrypt(session()->get('firmID'));
+        $data['fID']        = $this->decr(session()->get('firmID'));
         $data['fl']         = $this->wpmodel->getfileinfoc1($dwpID,$dcID,$dmtID);
         switch ($code) {
             case 'AC1':

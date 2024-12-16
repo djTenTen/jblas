@@ -35,6 +35,14 @@ class AuthController extends BaseController{
 
     }
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
 
     /**
         * @method auth() used to authenticate the user on the system
@@ -66,18 +74,18 @@ class AuthController extends BaseController{
             if(!empty($res)){
                 $user_data = [
                     'authentication'    => true,
-                    'userID'            => $this->crypt->encrypt($res['userID']),
+                    'userID'            => $this->encr($res['userID']),
                     'name'              => $res['name'],
                     'email'             => $res['email'],
                     'pass'              => $res['pass'],
                     'firm'              => $res['firm'],
-                    'firmID'            => $this->crypt->encrypt($res['firmID']),
+                    'firmID'            => $this->encr($res['firmID']),
                     'pos'               => $res['pos'],
                     'type'              => $res['type'],
                     'photo'             => $res['photo'],
                     'signature'         => $res['signature'],
                     'logo'              => $res['logo'],
-                    'posID'             => $this->crypt->encrypt($res['posID']),
+                    'posID'             => $this->encr($res['posID']),
                     'allowed'           => $res['allowed'],
                 ];
                 session()->set($user_data);

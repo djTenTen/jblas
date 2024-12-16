@@ -35,6 +35,15 @@ class PositionModel extends  Model {
 
     }
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
+
 
     /**
         * @method editposition() edit the position information

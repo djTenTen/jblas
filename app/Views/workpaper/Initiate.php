@@ -1,6 +1,4 @@
-<?php  
-    $crypt = \Config\Services::encrypter();
-?>
+
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -149,14 +147,14 @@
                                     <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button>
                                 <?php }?>
                                 <?php if(session()->get('allowed')->edit == "Yes"){?>
-                                    <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>/<?= $r['cli'].' - '.$r['org']?>"><i class="fas fa-highlighter"></i></a>
+                                    <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= encr($r['client'])?>/<?= encr($r['wpID'])?>/<?= $r['cli'].' - '.$r['org']?>"><i class="fas fa-highlighter"></i></a>
                                 <?php }?>
                                 <?php if($r['status'] == 'Checking'){?>
-                                    <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendbacktoreviewer/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
-                                    <button class="btn btn-success btn-icon btn-sm approved" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/approved/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
+                                    <button class="btn btn-warning btn-icon btn-sm sendbacktoreviewer" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendbacktoreviewer/')?><?= encr($r['wpID'])?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Send back to Auditor"><i class="fas fa-undo"></i></button>
+                                    <button class="btn btn-success btn-icon btn-sm approved" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/approved/')?><?= encr($r['wpID'])?>" data-bs-toggle="modal" data-bs-target="#tosend" title="Approve"><i class="fas fa-thumbs-up"></i></button>
                                 <?php }?>
                                 <?php if($type == 'Auditing Firm' or $type == 'Audit Manager' or $type == 'Admin'){?>
-                                    <button class="btn btn-danger btn-icon btn-sm todelete" type="button" data-file="<?= $r['cli'].'-'.$r['org']?>" data-urlsubmit="<?= base_url('auditsystem/wp/delete/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#todelete" title="Delete File"><i class="fas fa-trash"></i></button>
+                                    <button class="btn btn-danger btn-icon btn-sm todelete" type="button" data-file="<?= $r['cli'].'-'.$r['org']?>" data-urlsubmit="<?= base_url('auditsystem/wp/delete/')?><?= encr($r['client'])?>/<?= encr($r['wpID'])?>" data-bs-toggle="modal" data-bs-target="#todelete" title="Delete File"><i class="fas fa-trash"></i></button>
                                 <?php }?>
                             </td>
                         </tr>
@@ -204,7 +202,7 @@
                             <select name="client" id="client" class="form-select" required>
                                 <option value="" selected>Select Client</option>
                                 <?php foreach($cl as $c){?>
-                                    <option value="<?= $crypt->encrypt($c['cID']) ?>"><?= $c['name'].' - '.$c['org']?></option>
+                                    <option value="<?= encr($c['cID']) ?>"><?= $c['name'].' - '.$c['org']?></option>
                                 <?php }?>
                             </select>
                         </div>
@@ -280,7 +278,7 @@
                             <select name="auditor" id="auditor" class="form-select" required>
                                 <option value="" selected>Select Auditor</option>
                                 <?php foreach($aud as $a){?>
-                                    <option value="<?= $crypt->encrypt($a['userID'])?>"><?= $a['name']?></option>
+                                    <option value="<?= encr($a['userID'])?>"><?= $a['name']?></option>
                                 <?php }?>
                             </select>
                         </div>
@@ -291,7 +289,7 @@
                             <select name="reviewer" id="reviewer" class="form-select" required>
                                 <option value="" selected>Select Reviewer</option>
                                 <?php foreach($sup as $s){?>
-                                    <option value="<?= $crypt->encrypt($s['userID'])?>"><?= $s['name']?></option>
+                                    <option value="<?= encr($s['userID'])?>"><?= $s['name']?></option>
                                 <?php }?>
                             </select>
                         </div>
@@ -302,7 +300,7 @@
                             <select name="audmanager" id="audmanager" class="form-select" required>
                                 <option value="" selected>Select Reviewer</option>
                                 <?php foreach($mgr as $m){?>
-                                    <option value="<?= $crypt->encrypt($m['userID'])?>"><?= $m['name']?></option>
+                                    <option value="<?= encr($m['userID'])?>"><?= $m['name']?></option>
                                 <?php }?>
                             </select>
                         </div>

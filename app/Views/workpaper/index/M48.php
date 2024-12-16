@@ -1,6 +1,4 @@
-<?php  
-    $crypt = \Config\Services::encrypter();
-?>
+
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -76,7 +74,7 @@
                                     $sv += $r['supp_bal'];
                             ?>
                                 <tr>
-                                    <td><input type="hidden" name="tbID[]" value="<?= $crypt->encrypt($r['tbID'])?>"> <?= $r['account_code'].' - '.$r['account']?></td>
+                                    <td><input type="hidden" name="tbID[]" value="<?= encr($r['tbID'])?>"> <?= $r['account_code'].' - '.$r['account']?></td>
                                     <td>₱ <span class="b" data-balance="<?= $r['ytd']?>"><?= number_format($r['ytd'], 2)?></span></td>
                                     <td><input type="number" name="sb[]" id="" class="form-control sb" value="<?= $r['supp_bal']?>"></td>
                                     <td>₱ <span class="va" data-variance="<?= $r['ytd']?>"><?= number_format($r['ytd'] - $r['supp_bal'], 2)?></span></td>
@@ -133,7 +131,7 @@
                             Remarks:
                             <textarea name="remarks" id="rem" class="form-control" cols="100" rows="10"></textarea>
                         </label>
-                        <object data="<?= base_url()?>uploads/pdf/<?= $crypt->decrypt(session()->get('firmID'))?>/wp/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $if['file']?>" type="application/pdf" frameborder="0" width="100%" height="1000"> </object>
+                        <object data="<?= base_url()?>uploads/pdf/<?= decr(session()->get('firmID'))?>/wp/<?= decr($wpID)?>/<?= $if['file']?>" type="application/pdf" frameborder="0" width="100%" height="1000"> </object>
                 </div>
                 <div class="modal-footer">
                         <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>

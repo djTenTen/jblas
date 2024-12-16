@@ -1,4 +1,4 @@
-<?php  $crypt = \Config\Services::encrypter();?>
+
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -34,7 +34,7 @@
             <?php  }?>
             <div class="card-body">
                 <hr>
-                <form id="uploadForm" action="<?= base_url('auditsystem/myaccount/update')?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($u['userID']))?>" method="post" enctype="multipart/form-data">
+                <form id="uploadForm" action="<?= base_url('auditsystem/myaccount/update')?>/<?= encr($u['userID'])?>" method="post" enctype="multipart/form-data">
                     <div class="row" id="editform">
                         <div class="col-xl-4">
                             <!-- Logo card-->
@@ -46,7 +46,7 @@
                                     <?php if($u['logo'] == '' or empty($u['logo'])){?>
                                         <img class="img-account-profile mb-2" src="<?= base_url()?>assets/img/illustrations/profiles/profile-1.png" alt="" />
                                     <?php }else{?>
-                                        <img class="img-account-profile rounded-circle mb-2 logo" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/logo/<?= $u['logo']?>" alt="" />
+                                        <img class="img-account-profile rounded-circle mb-2 logo" src="<?= base_url()?>uploads/img/<?= decr(session()->get('firmID'))?>/logo/<?= $u['logo']?>" alt="" />
                                     <?php }?>
                                     <!-- <img class="img-account-profile rounded-circle mb-2" src="assets/img/illustrations/profiles/profile-1.png" alt="" /> -->
                                     <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB and 2x2 or square size image</div>
@@ -62,7 +62,7 @@
                                     <?php if($u['photo'] == '' or empty($u['photo'])){?>
                                         <img class="img-account-profile mb-2" src="<?= base_url()?>assets/img/illustrations/profiles/profile-1.png" alt="" />
                                     <?php }else{?>
-                                        <img class="img-account-profile rounded-circle mb-2 photo" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/photo/<?= $u['photo']?>" alt="" />
+                                        <img class="img-account-profile rounded-circle mb-2 photo" src="<?= base_url()?>uploads/img/<?= decr(session()->get('firmID'))?>/photo/<?= $u['photo']?>" alt="" />
                                     <?php }?>
                                     <!-- <img class="img-account-profile rounded-circle mb-2" src="assets/img/illustrations/profiles/profile-1.png" alt="" /> -->
                                     <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB and 2x2 or square size image</div>
@@ -85,7 +85,7 @@
                                     <?php if($u['signature'] == '' or empty($u['signature'])){?>
                                         <img class="img-account-profile mb-2" src="<?= base_url()?>assets/img/illustrations/profiles/profile-1.png" alt="" />
                                     <?php }else{?>
-                                        <img class="img-account-profile mb-2" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/signature/<?= $u['signature']?>" alt="" />
+                                        <img class="img-account-profile mb-2" src="<?= base_url()?>uploads/img/<?= decr(session()->get('firmID'))?>/signature/<?= $u['signature']?>" alt="" />
                                     <?php }?>
                                     <!-- <img class="img-account-profile rounded-circle mb-2" src="assetss/img/illustrations/profiles/profile-1.png" alt="" /> -->
                                     <div class="small font-italic text-muted mb-4">PNG no larger than 5 MB</div>

@@ -33,6 +33,15 @@ class UserController extends BaseController{
     }
 
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
+
     /**
         * @method register() to view the registration page
         * @var array-data consist of data and display it on the page
@@ -40,7 +49,7 @@ class UserController extends BaseController{
     */
     public function register(){
 
-        $data['token'] = $this->crypt->encrypt($this->token);
+        $data['token'] = $this->encr($this->token);
         $data['title'] = 'Sign-up';
         echo view('users/Signup', $data);
 
@@ -69,7 +78,7 @@ class UserController extends BaseController{
     */
     public function viewusers(){
 
-        $uID            = $this->crypt->decrypt(session()->get('userID'));
+        $uID            = $this->decr(session()->get('userID'));
         $data['title']  = 'User Management';
         $data['usr']    = $this->usermodel->getusers($uID);
         $data['pos']    = $this->usermodel->getposition();
@@ -89,7 +98,7 @@ class UserController extends BaseController{
     */
     public function myaccount(){
 
-        $uID = $this->crypt->decrypt(session()->get('userID'));
+        $uID = $this->decr(session()->get('userID'));
         $data['title'] = 'My Account';
         $data['u'] = $this->usermodel->getmyinfo($uID);
         echo view('includes/Header', $data);
@@ -107,7 +116,7 @@ class UserController extends BaseController{
     */
     public function edituser($uID){
 
-        $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
+        $duID = $this->decr($uID);
         return $this->usermodel->edituser($duID);
 
     }
@@ -123,7 +132,7 @@ class UserController extends BaseController{
     */
     public function signup(){
 
-        if( $this->crypt->decrypt($this->request->getpost('token')) != $this->token){
+        if( $this->decr($this->request->getpost('token')) != $this->token){
             session()->setFlashdata('error','There is something wrong with your request, Please try again.');
             return redirect()->to(site_url('register'));
         }
@@ -147,7 +156,7 @@ class UserController extends BaseController{
             'noclient'      => $this->request->getPost('noclient'),
             'email'         => $this->request->getPost('email'),
             'logo'          => $this->request->getFile('logo'),
-            'pass'          => $this->crypt->encrypt($pss)
+            'pass'          => $this->encr($pss)
         ];
         if($this->request->getPost('pass') == $this->request->getPost('cpass')){
             $res = $this->usermodel->signin($req);
@@ -225,10 +234,10 @@ class UserController extends BaseController{
         $req = [
             'name'      => $this->request->getPost('name'),
             'email'     => $this->request->getPost('email'),
-            'pass'      => $this->crypt->encrypt('password'),
-            'firm'      => $this->crypt->decrypt($this->request->getPost('firm')),
+            'pass'      => $this->encr('password'),
+            'firm'      => $this->decr($this->request->getPost('firm')),
             'type'      => $this->request->getPost('type'),
-            'pos'       => $this->crypt->decrypt($this->request->getPost('pos'))
+            'pos'       => $this->decr($this->request->getPost('pos'))
         ];
         $res = $this->usermodel->adduser($req);
         if($res == 'exist'){
@@ -256,7 +265,7 @@ class UserController extends BaseController{
     */
     public function udpateuser($uID){
 
-        $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
+        $duID = $this->decr($uID);
         $validationRules = [
             'name'      => 'required',
             'email'     => 'required',
@@ -271,7 +280,7 @@ class UserController extends BaseController{
             'name'      => $this->request->getPost('name'),
             'email'     => $this->request->getPost('email'),
             'type'      => $this->request->getPost('type'),
-            'pos'       => $this->crypt->decrypt($this->request->getPost('pos')),
+            'pos'       => $this->decr($this->request->getPost('pos')),
             'uID'       => $duID,
         ];
         $res = $this->usermodel->udpateuser($req);
@@ -297,11 +306,11 @@ class UserController extends BaseController{
     */
     public function updatemyinfo($uID){
 
-        $duID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
-        $fID  = $this->crypt->decrypt(session()->get('firmID'));
+        $duID = $this->decr($uID);
+        $fID  = $this->decr(session()->get('firmID'));
         $npss = '';
         if(!empty($this->request->getPost('pass'))){
-            $npss = $this->crypt->encrypt($this->request->getPost('pass'));
+            $npss = $this->encr($this->request->getPost('pass'));
         }else{
             $npss = session()->get('pass');
         }
@@ -341,7 +350,7 @@ class UserController extends BaseController{
     */
     public function acin($uID){
 
-        $duID   = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$uID));
+        $duID   = $this->decr($uID);
         $res    = $this->usermodel->acin($duID);
         if($res){
             session()->setFlashdata('updated','updated');

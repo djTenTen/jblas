@@ -43,6 +43,15 @@ class UserModel extends  Model {
     }
 
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
+
     /**
         * @method edituser() edit the user information
         * @param duID decrypted user id
@@ -230,7 +239,7 @@ class UserModel extends  Model {
         $count = $this->db->table($this->tblu)->where($where)->get();
         if($count->getNumRows() >= 1){
             $d = $count->getRowArray();
-            if($req['password'] == $this->crypt->decrypt($d['pass'])){
+            if($req['password'] == $this->decr($d['pass'])){
                 if($d['verified'] == 'No'){
                     $data = [
                         'verified' => 'Yes',

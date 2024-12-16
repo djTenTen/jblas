@@ -32,6 +32,15 @@ class HomeController extends BaseController{
     }
 
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
+
     /**
         * @method homepage() view page of login/home page
         * @var res a return response from the home model
@@ -132,7 +141,7 @@ class HomeController extends BaseController{
         $req = [
             'email'     => $email,
             'otp'       => $this->request->getPost('otp'),
-            'password'  => $this->crypt->encrypt($this->request->getPost('password')),
+            'password'  => $this->encr($this->request->getPost('password')),
         ];
         $res = $this->homeModel->savepass($req);
         if($res){

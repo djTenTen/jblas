@@ -2,7 +2,14 @@
     use \App\Models\SystemModel;
     $sm = new SystemModel;
     $cnf = $sm->countnotif();
-    $crypt = \Config\Services::encrypter();
+    function encr($ecr){
+        $crypt = \Config\Services::encrypter();
+        return str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ecr));
+    }
+    function decr($ecr){
+        $crypt = \Config\Services::encrypter();
+        return $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,9 +81,9 @@
             <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
                 <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <?php if(!empty(session()->get('photo'))){ ?>
-                        <img class="img-fluid" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/photo/<?= session()->get('photo')?>" />
+                        <img class="img-fluid" src="<?= base_url()?>uploads/img/<?= decr(session()->get('firmID'))?>/photo/<?= session()->get('photo')?>" />
                     <?php }elseif(!empty(session()->get('logo'))){ ?>
-                         <img class="img-fluid" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/logo/<?= session()->get('logo')?>" />
+                         <img class="img-fluid" src="<?= base_url()?>uploads/img/<?= decr(session()->get('firmID'))?>/logo/<?= session()->get('logo')?>" />
                     <?php }elseif(empty(session()->get('photo')) and empty(session()->get('logo'))){ ?>
                         <img class="img-fluid" src="<?= base_url()?>img/bg/APPLAUD1.png" />
                     <?php }?>
@@ -84,9 +91,9 @@
                 <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                     <h6 class="dropdown-header d-flex align-items-center">
                     <?php if(!empty(session()->get('photo'))){ ?>
-                        <img class="dropdown-user-img" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/photo/<?= session()->get('photo')?>" />
+                        <img class="dropdown-user-img" src="<?= base_url()?>uploads/img/<?= decr(session()->get('firmID'))?>/photo/<?= session()->get('photo')?>" />
                     <?php }elseif(!empty(session()->get('logo'))){ ?>
-                        <img class="dropdown-user-img" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/logo/<?= session()->get('logo')?>" />
+                        <img class="dropdown-user-img" src="<?= base_url()?>uploads/img/<?= decr(session()->get('firmID'))?>/logo/<?= session()->get('logo')?>" />
                     <?php }elseif(empty(session()->get('photo')) and empty(session()->get('logo'))){ ?>
                         <img class="dropdown-user-img" src="<?= base_url()?>img/bg/APPLAUD1.png" />
                     <?php }?>
@@ -141,7 +148,7 @@
                     <div class="nav accordion" id="accordionSidenav">
                         <div class="mt-3 container row justify-content-center">
                         <?php if(!empty(session()->get('logo'))){ ?>
-                            <img class="" src="<?= base_url()?>uploads/img/<?= $crypt->decrypt(session()->get('firmID'))?>/logo/<?= session()->get('logo')?>" alt="Firm Logo" style="width: 60%;" >
+                            <img class="" src="<?= base_url()?>uploads/img/<?= decr(session()->get('firmID'))?>/logo/<?= session()->get('logo')?>" alt="Firm Logo" style="width: 60%;" >
                         <?php }else{ ?>
                             <img class="" src="<?= base_url()?>img/bg/APPLAUD1.png" alt="Firm Logo" style="width: 60%;" >
                         <?php }?>

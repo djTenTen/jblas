@@ -31,6 +31,15 @@ class PositionController extends BaseController{
     }
 
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
+
     /**
         * @method editposition() used to load the data of position for editing
         * @param pID encrypted data of position id
@@ -39,7 +48,7 @@ class PositionController extends BaseController{
     */
     public function editposition($pID){
 
-        $dpID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$pID));
+        $dpID = $this->decr($pID);
         return $this->pmodel->editposition($dpID);
 
     }
@@ -127,7 +136,7 @@ class PositionController extends BaseController{
     */
     public function updateposition($pID){
 
-        $dpID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$pID));
+        $dpID = $this->decr($pID);
         $validationRules = [
             'pos' => 'required'
         ];
@@ -181,7 +190,7 @@ class PositionController extends BaseController{
     */
     public function acin($pID){
 
-        $dpID   = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$pID));
+        $dpID   = $this->decr($pID);
         $res    = $this->pmodel->acin($dpID);
         if($res){
             session()->setFlashdata('updated','updated');

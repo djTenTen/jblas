@@ -1,9 +1,4 @@
-<?php  
-    function encr($ecr){
-        $crypt = \Config\Services::encrypter();
-        return str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ecr));
-    }
-?>
+
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">

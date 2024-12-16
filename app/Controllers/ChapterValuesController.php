@@ -78,8 +78,8 @@ class ChapterValuesController extends BaseController{
             'code'      => $code,
             'cID'       => $this->decr($cID),
             'mtID'      => $this->decr($mtID),
-            'uID'       => $this->crypt->decrypt(session()->get('userID')),
-            'fID'       => $this->crypt->decrypt(session()->get('firmID')),
+            'uID'       => $this->decr(session()->get('userID')),
+            'fID'       => $this->decr(session()->get('firmID')),
         ];
 
         switch ($chapter) {

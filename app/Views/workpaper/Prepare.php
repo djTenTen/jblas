@@ -1,6 +1,4 @@
-<?php  
-    $crypt = \Config\Services::encrypter();
-?>
+
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -92,12 +90,12 @@
                                 <?php }?>
                                 <?php if($r['status'] == 'Preparing'){?>
                                     <?php if(session()->get('allowed')->edit == "Yes"){?>
-                                    <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>/<?= $r['cli'].' - '.$r['org']?>"><i class="fas fa-highlighter"></i></a>
+                                    <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= encr($r['client'])?>/<?= encr($r['wpID'])?>/<?= $r['cli'].' - '.$r['org']?>"><i class="fas fa-highlighter"></i></a>
                                     <?php }?>
                                 <?php }?>
                                 <?php if($p == 70){?>
                                     <?php if($r['status'] == 'Preparing'){?>
-                                    <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewer/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
+                                    <button class="btn btn-success btn-icon btn-sm senddata" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoreviewer/')?><?= encr($r['wpID'])?>" data-bs-toggle="modal" data-bs-target="#sendtoreview" title="Send to Reviewer"><i class="fas fa-paper-plane"></i></button>
                                     <?php }?>
                                 <?php }?>
                             </td>

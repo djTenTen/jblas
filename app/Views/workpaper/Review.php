@@ -1,6 +1,4 @@
-<?php  
-    $crypt = \Config\Services::encrypter();
-?>
+
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -100,11 +98,11 @@
                                     <button class="btn btn-danger btn-icon btn-sm rem" data-bs-toggle="modal" data-remarks="<?= $r['remarks']?>" data-bs-target="#remarks" title="View Remarks"><i class="fas fa-flag"></i></button>
                                 <?php }?>
                                 <?php if(session()->get('allowed')->edit == "Yes"){?>
-                                    <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['client']))?>/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>/<?= $r['cli'].' - '.$r['org']?>"><i class="fas fa-highlighter"></i></a>
+                                    <a class="btn btn-secondary btn-icon btn-sm get-data" title="Set values" type="button" href="<?= base_url('auditsystem/wp/getfiles/')?><?= encr($r['client'])?>/<?= encr($r['wpID'])?>/<?= $r['cli'].' - '.$r['org']?>"><i class="fas fa-highlighter"></i></a>
                                 <?php }?>
                                 <?php if($r['status'] == 'Reviewing'){?>
-                                    <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtopreparer/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send to Auditor"><i class="fas fa-undo"></i></button>
-                                    <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprover/')?><?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($r['wpID']))?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
+                                    <button class="btn btn-warning btn-icon btn-sm sendtoauditor" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtopreparer/')?><?= encr($r['wpID'])?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send to Auditor"><i class="fas fa-undo"></i></button>
+                                    <button class="btn btn-success btn-icon btn-sm sendtomanager" type="button" data-file="<?= 'FY-'.$r['financial_year'].': '.$r['cli']?>" data-urlsubmit="<?= base_url('auditsystem/wp/sendtoapprover/')?><?= encr($r['wpID'])?>" data-bs-toggle="modal" data-bs-target="#sendtoauditor" title="Send to Manager"><i class="fas fa-paper-plane"></i></button>
                                 <?php }?>
                             </td>
                         </tr>

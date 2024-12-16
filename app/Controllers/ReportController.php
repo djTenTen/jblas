@@ -31,11 +31,21 @@ class ReportController extends BaseController{
     }
 
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
+
+
     public function generatepdf($cID,$wpID,$cname,$aud,$sup,$audm,$fy,$efy){
 
-        $dwpID          = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID));
-        $dcID           = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$cID));
-        $fID            = $this->crypt->decrypt(session()->get('firmID'));
+        $dwpID          = $this->decr($wpID);
+        $dcID           = $this->decr($cID);
+        $fID            = $this->decr(session()->get('firmID'));
         $a              = explode('-', $aud);
         $s              = explode('-', $sup);
         $am             = explode('-', $audm);

@@ -1,4 +1,4 @@
-<?php  $crypt = \Config\Services::encrypter();?>
+
 <main>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -37,7 +37,7 @@
         
                 <?php foreach($not as $ntf){?>
                     <div class="alert alert-<?= $ntf['intensity']?> alert-icon" role="alert">
-                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close" data-url="<?= base_url()?>auditsystem/notif/rem/<?= str_ireplace(['/','+'],['~','$'],$crypt->encrypt($ntf['notifID']))?>" title="remove"></button>
+                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close" data-url="<?= base_url()?>auditsystem/notif/rem/<?= encr($ntf['notifID'])?>" title="remove"></button>
                         <div class="alert-icon-content">
                             <h6 class="alert-heading"><?= date('F d, Y ', strtotime($ntf['added_on']))?></h6>
                             <?= $ntf['msg']?>

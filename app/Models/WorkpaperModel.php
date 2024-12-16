@@ -583,7 +583,7 @@ class WorkpaperModel extends  Model {
     public function updatetb($req){
 
         foreach($req['tbID'] as $i => $val){
-            $dtbID = $this->crypt->decrypt($req['tbID'][$i]);
+            $dtbID = $this->decr($req['tbID'][$i]);
             $data = [
                 'supp_bal'      => $req['sb'][$i],
                 'updated_on'    => $this->date.' '.$this->time,

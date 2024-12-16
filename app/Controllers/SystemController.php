@@ -30,6 +30,15 @@ class SystemController extends BaseController{
 
     }
 
+
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
     
     public function crontask(){
 
@@ -51,7 +60,7 @@ class SystemController extends BaseController{
 
     public function removenotif($nID){
 
-        $dnID = $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$nID));
+        $dnID = $this->decr($nID);
         $res = $this->sm->removenotif($dnID);
         return $res;
 

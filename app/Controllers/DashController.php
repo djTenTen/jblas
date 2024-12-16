@@ -34,6 +34,14 @@ class DashController extends BaseController{
 
     }
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
 
     /**
         * @method getwpp() get the work paper progress
@@ -44,7 +52,7 @@ class DashController extends BaseController{
     */
     public function getwpp($year){
 
-        $fID = $this->crypt->decrypt(session()->get('firmID'));
+        $fID = $this->decr(session()->get('firmID'));
         $res = $this->dmodel->getwpp($year,$fID);
         return $res;
 
@@ -64,7 +72,7 @@ class DashController extends BaseController{
     */
     public function getnumwpp($year){
 
-        $fID    = $this->crypt->decrypt(session()->get('firmID'));
+        $fID    = $this->decr(session()->get('firmID'));
         $prep   = $this->dmodel->getnumwpp($fID,'Preparing',$year);
         $rev    = $this->dmodel->getnumwpp($fID,'Reviewing',$year);
         $done   = $this->dmodel->getnumwpp($fID,'Done',$year);
@@ -107,7 +115,7 @@ class DashController extends BaseController{
     public function auditsystem(){
 
         $data['title']      = session()->get('firm'). ' - Dashboard';
-        $fID                = $this->crypt->decrypt(session()->get('firmID'));
+        $fID                = $this->decr(session()->get('firmID'));
         $data['numcli']     = $this->dmodel->getnumclients($fID);
         $data['prep']       = $this->dmodel->getnumwp($fID,'Preparing');
         $data['rev']        = $this->dmodel->getnumwp($fID,'Reviewing');

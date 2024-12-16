@@ -29,6 +29,17 @@ class LogsController extends BaseController{
 
     }
 
+
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
+
+
     public function logs(){
 
         $data['title'] = session()->get('firm'). ' - Logs';
@@ -53,7 +64,7 @@ class LogsController extends BaseController{
     */
     public function viewlogs($lines = 0){
     
-        $fID = $this->crypt->decrypt(session()->get('firmID'));
+        $fID = $this->decr(session()->get('firmID'));
         $logFile = WRITEPATH . 'applaudlogs/'. $fID.'-systems-log.log';
         if (!file_exists($logFile)) {
             return 'no logs';

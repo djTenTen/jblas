@@ -35,6 +35,14 @@ class AuthModel extends  Model {
 
     }
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
 
     /**
         * @method authenticate() login the user
@@ -60,7 +68,7 @@ class AuthModel extends  Model {
         $user = $this->db->query($q, $email);
         if($user->getNumRows() == 1){
             $ud = $user->getRowArray();
-            $dpss = $this->crypt->decrypt($ud['pass']);
+            $dpss = $this->decr($ud['pass']);
             if($ud['verified'] == "Yes"){
                 if($ud['status'] == "Active"){
                     if($ud['logattempts'] < 5 or $ud['status'] == 'Locked'){
@@ -115,7 +123,7 @@ class AuthModel extends  Model {
      */
     public function getUserAccess(){
 
-        $posID = $this->crypt->decrypt(session()->get('posID'));
+        $posID = $this->decr(session()->get('posID'));
         $query = $this->db->table($this->tblpos)->where('posID', $posID)->get()->getRowArray();
         session()->set('allowed', json_decode($query['allowed']));
 
