@@ -125,7 +125,6 @@
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    
                     <form id="toupload" action="" method="post" enctype="multipart/form-data">
                         <div class="col-3">
                             <input type="file" name="pdffile" accept=".pdf" class="form form-control btn btn-secondary">
@@ -134,9 +133,7 @@
                             Remarks:
                             <textarea name="remarks" id="rem" class="form-control" cols="100" rows="10"></textarea>
                         </label>
-
-                        <object data="<?= base_url()?>uploads/pdf/wp/<?= $crypt->decrypt(session()->get('firmID'))?>/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $if['file']?>" type="application/pdf" frameborder="0" width="100%" height="1000"> </object>
-                        
+                        <object data="<?= base_url()?>uploads/pdf/<?= $crypt->decrypt(session()->get('firmID'))?>/wp/<?= $crypt->decrypt(str_ireplace(['~','$'],['/','+'],$wpID))?>/<?= $if['file']?>" type="application/pdf" frameborder="0" width="100%" height="1000"> </object>
                 </div>
                 <div class="modal-footer">
                         <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Cancel</button>

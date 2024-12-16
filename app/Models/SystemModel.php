@@ -124,7 +124,7 @@ class SystemModel extends  Model {
         $res = $this->db->table($this->tblf)->where('firmID',$fID)->get()->getRowArray();
         $filename = $req['file']->getClientName();
         if($req['file'] != ''){
-            $pdfPath = ROOTPATH .'/public/uploads/pdf/soqm/'.$fID.'/';
+            $pdfPath = ROOTPATH .'/public/uploads/pdf/'.$fID.'/soqm/';
             if (!is_dir($pdfPath)) {
                 mkdir($pdfPath, 0755, true);
             }

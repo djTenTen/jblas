@@ -331,7 +331,6 @@ class UserModel extends  Model {
             'email'         => $req['email'],
         ];
         $res = $this->db->table($this->tblu)->where('userID', $req['uID'])->get();
-
         if($req['logo'] != ''){
             $f = $this->db->table($this->tblf)->where('firmID', $req['fID'])->get()->getRowArray();
             $logopath = ROOTPATH .'/public/uploads/img/'.$req['fID'].'/logo/';

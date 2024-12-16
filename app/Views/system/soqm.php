@@ -151,7 +151,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary m-1 btn-sm"><i class="fas fa-file-pdf m-1"></i>Upload</button>
                         </form>
-                        <object data="<?= base_url()?>uploads/pdf/soqm/<?= $crypt->decrypt(session()->get('firmID'))?>/<?= $soqm['soqm_data']?>" type="application/pdf" frameborder="0" width="100%" height="1000"> </object>
+                        <object data="<?= base_url()?>uploads/pdf/<?= $crypt->decrypt(session()->get('firmID'))?>/soqm/<?= $soqm['soqm_data']?>" type="application/pdf" frameborder="0" width="100%" height="1000"> </object>
                     <?php }?>
                 </div>
                 <br><br><br><hr style="color: #7752FE;" class="m-3">
