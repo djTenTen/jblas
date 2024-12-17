@@ -89,7 +89,7 @@ class HomeModel extends  Model {
             $email->setFrom('applaud@buildappminds.com', 'ApplAud Systems');
             $email->setTo($res['email']);
             $email->setSubject('Reset Password');
-            $msg = "Hi {$res['name']},\n\nWe've received your request to Applaud account password. \n Here's your One-Time-Password: {$otp}\n\nPlease Disregard this email if you did not request any reset password on your account. \n\nThank you so much,\nApplAud Systems";
+            $msg = "Hi {$res['name']},\n\nWe've received your request to ApplAud account password. \n Here's your One-Time-Password: {$otp}\n\nPlease Disregard this email if you did not request any reset password on your account. \n\nThank you so much,\nApplAud Systems";
             $email->setMessage($msg);
             $email->send();
             return true;

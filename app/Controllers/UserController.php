@@ -156,7 +156,7 @@ class UserController extends BaseController{
             'noclient'      => $this->request->getPost('noclient'),
             'email'         => $this->request->getPost('email'),
             'logo'          => $this->request->getFile('logo'),
-            'pass'          => $this->encr($pss)
+            'pass'          => password_hash($pss,PASSWORD_DEFAULT)
         ];
         if($this->request->getPost('pass') == $this->request->getPost('cpass')){
             $res = $this->usermodel->signin($req);
@@ -310,7 +310,7 @@ class UserController extends BaseController{
         $fID  = $this->decr(session()->get('firmID'));
         $npss = '';
         if(!empty($this->request->getPost('pass'))){
-            $npss = $this->encr($this->request->getPost('pass'));
+            $npss = password_hash($this->request->getPost('pass'),PASSWORD_DEFAULT);
         }else{
             $npss = session()->get('pass');
         }

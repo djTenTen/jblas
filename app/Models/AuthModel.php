@@ -60,57 +60,49 @@ class AuthModel extends  Model {
 
         $email = $req['email'];
         $pass = $req['password'];
-        $q = "select * , tf.firm as firmname, tp.position as pos
+        $q = "select * , tf.firm as firmname, tp.position as pos, tu.status as stat
         from {$this->tbluser} as tu,{$this->tblfirm} as tf, {$this->tblpos} as tp
         where BINARY email = ? 
         and tu.firm = tf.firmID
         and tu.position = tp.posID"; 
         $user = $this->db->query($q, $email);
-        if($user->getNumRows() == 1){
-            $ud = $user->getRowArray();
-            $dpss = $this->decr($ud['pass']);
-            if($ud['verified'] == "Yes"){
-                if($ud['status'] == "Active"){
-                    if($ud['logattempts'] < 5 or $ud['status'] == 'Locked'){
-                        if($pass == $dpss){
-                            $arr = [
-                                'userID'        => $ud['userID'],
-                                'name'          => $ud['name'],
-                                'email'         => $ud['email'],
-                                'pass'          => $ud['pass'],
-                                'firm'          => $ud['firmname'],
-                                'firmID'        => $ud['firmID'],
-                                'pos'           => $ud['pos'],
-                                'posID'         => $ud['posID'],
-                                'type'          => $ud['type'],
-                                'photo'         => $ud['photo'],
-                                'signature'     => $ud['signature'],
-                                'logo'          => $ud['logo'],
-                                'allowed'       => json_decode($ud['allowed']),
-                            ];
-                            $this->db->table($this->tbluser)->where(array('userID' => $ud['userID']))->update(array('logattempts' => 0));
-                            return $arr;
-                        }else{
-                            $cnt = $ud['logattempts'] + 1;
-                            $this->db->table($this->tbluser)->where(array('userID' => $ud['userID']))->update(array('logattempts' => $cnt));
-                            $this->logs->authlog("userid:".$ud['userID']." has ".$cnt." failed login attemps");
-                            return false;
-                        }
-                    }else{
-                        $cnt = $ud['logattempts'] + 1;
-                        $this->db->table($this->tbluser)->where(array('userID' => $ud['userID']))->update(array('logattempts' => $cnt, 'status' => 'Locked'));
-                        $this->logs->authlog("userid:".$ud['userID']." has been Locked");
-                        return 'Locked';
-                    }
-                }else{
-                    return false;
-                }
-            }else{
-                return false;
-            }
-        }else{
+
+        if($user->getNumRows() !== 1){
+            return false; // Email not found
+        }
+        $ud = $user->getRowArray();
+        if($ud['verified'] !== 'Yes' or $ud['stat'] !== 'Active'){
+            return false; // Account not verified and active
+        }
+        if($ud['logattempts'] > 5 or $ud['status'] == 'Locked'){
+            $cnt = $ud['logattempts'] + 1; // Increment attempts
+            $this->db->table($this->tbluser)->where(array('userID' => $ud['userID']))->update(array('logattempts' => $cnt));
+            $this->logs->authlog("userid:".$ud['userID']." has ".$cnt." failed login attemps");
+            return 'Locked'; // Account locked
+        }
+        if(!password_verify($pass, $ud['pass'])){
+            $cnt = $ud['logattempts'] + 1;
+            $this->db->table($this->tbluser)->where(array('userID' => $ud['userID']))->update(array('logattempts' => $cnt));
+            $this->logs->authlog("userid:".$ud['userID']." has ".$cnt." failed login attemps");
             return false;
         }
+        $arr = [
+            'userID'        => $ud['userID'],
+            'name'          => $ud['name'],
+            'email'         => $ud['email'],
+            'pass'          => $ud['pass'],
+            'firm'          => $ud['firmname'],
+            'firmID'        => $ud['firmID'],
+            'pos'           => $ud['pos'],
+            'posID'         => $ud['posID'],
+            'type'          => $ud['type'],
+            'photo'         => $ud['photo'],
+            'signature'     => $ud['signature'],
+            'logo'          => $ud['logo'],
+            'allowed'       => json_decode($ud['allowed']),
+        ];
+        $this->db->table($this->tbluser)->where(array('userID' => $ud['userID']))->update(array('logattempts' => 0));
+        return $arr;
 
     }
 

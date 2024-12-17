@@ -141,7 +141,7 @@ class HomeController extends BaseController{
         $req = [
             'email'     => $email,
             'otp'       => $this->request->getPost('otp'),
-            'password'  => $this->encr($this->request->getPost('password')),
+            'password'  => password_hash($this->request->getPost('password'),PASSWORD_DEFAULT),
         ];
         $res = $this->homeModel->savepass($req);
         if($res){

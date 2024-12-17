@@ -66,36 +66,38 @@ class AuthController extends BaseController{
             'email'     => $this->request->getPost('email'),
             'password'  => $this->request->getPost('password')
         ];
+
         $res = $this->authModel->authenticate($req);
-        if($res == "Locked"){
+
+        if($res === "Locked"){
             session()->setFlashdata('Locked','Locked');
             return redirect()->to(site_url());
-        }else{
-            if(!empty($res)){
-                $user_data = [
-                    'authentication'    => true,
-                    'userID'            => $this->encr($res['userID']),
-                    'name'              => $res['name'],
-                    'email'             => $res['email'],
-                    'pass'              => $res['pass'],
-                    'firm'              => $res['firm'],
-                    'firmID'            => $this->encr($res['firmID']),
-                    'pos'               => $res['pos'],
-                    'type'              => $res['type'],
-                    'photo'             => $res['photo'],
-                    'signature'         => $res['signature'],
-                    'logo'              => $res['logo'],
-                    'posID'             => $this->encr($res['posID']),
-                    'allowed'           => $res['allowed'],
-                ];
-                session()->set($user_data);
-                $this->logs->log($user_data['name']. " has just Logged-in");
-                return redirect()->to(site_url('/auditsystem/dashboard'));
-            }else{
-                session()->setFlashdata('access_denied','access_denied');
-                return redirect()->to(site_url());
-            }
         }
+        if(!$res) {
+            session()->setFlashdata('access_denied','access_denied');
+            return redirect()->to(site_url());
+        }else{
+            $user_data = [
+                'authentication'    => true,
+                'userID'            => $this->encr($res['userID']),
+                'name'              => $res['name'],
+                'email'             => $res['email'],
+                'pass'              => $res['pass'],
+                'firm'              => $res['firm'],
+                'firmID'            => $this->encr($res['firmID']),
+                'pos'               => $res['pos'],
+                'type'              => $res['type'],
+                'photo'             => $res['photo'],
+                'signature'         => $res['signature'],
+                'logo'              => $res['logo'],
+                'posID'             => $this->encr($res['posID']),
+                'allowed'           => $res['allowed'],
+            ];
+            session()->set($user_data);
+            $this->logs->log($user_data['name']. " has just Logged-in");
+            return redirect()->to(site_url('/auditsystem/dashboard'));
+        }
+
         
 
     }

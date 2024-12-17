@@ -743,9 +743,9 @@ class WorkpaperController extends BaseController{
 
 
     public function deletefiles($c,$ctID,$cID,$wpID,$name){
-        $yp = $this->decr(session()->get('pass'));
+        $yp = session()->get('pass');
         $cpass = $this->request->getPost('cpass');
-        if($yp == $cpass){
+        if(password_verify($cpass, $yp)){
             $req = [
                 'ctID'      => $this->decr($ctID),
                 'cID'       => $this->decr($cID),
@@ -773,9 +773,9 @@ class WorkpaperController extends BaseController{
 
     public function deleteworkpaper($cID,$wpID){
 
-        $yp = $this->decr(session()->get('pass'));
-        $cpass = $this->request->getPost('cpass');
-        if($yp == $cpass){
+        $yp     = session()->get('pass');
+        $cpass  = $this->request->getPost('cpass');
+        if(password_verify($cpass, $yp)){
             $req = [
                 'cID'       => $this->decr($cID),
                 'wpID'      => $this->decr($wpID),

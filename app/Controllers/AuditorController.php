@@ -100,7 +100,7 @@ class AuditorController extends BaseController{
             'email'     => $this->request->getPost('email'),
             'address'   => $this->request->getPost('address'),
             'contact'   => $this->request->getPost('contact'),
-            'pass'      => $this->encr($genpass), //Should be generated and emailed to the user
+            'pass'      => password_hash($genpass,PASSWORD_DEFAULT),
             'genpass'   => $genpass,
             'type'      => $this->request->getPost('type'),
             'fID'       => $this->encr(session()->get('firmID')),

@@ -17,11 +17,19 @@ class Logs{
 
     }
 
+    public function decr($ecr){
+        return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
+    }
+
+    public function encr($ecr){
+        return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
+    }
+
     public function log($msg){
 
         $logPath = WRITEPATH . 'applaudlogs/';
         if(!empty(session()->get('firmID'))){
-            $logFile = $logPath. $this->crypt->decrypt(session()->get('firmID')).'-systems-log.log';
+            $logFile = $logPath. $this->decr(session()->get('firmID')).'-systems-log.log';
         }
         if (!is_dir($logPath)) {
             mkdir($logPath, 0755, true);
