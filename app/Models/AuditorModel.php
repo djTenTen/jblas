@@ -99,8 +99,19 @@ class AuditorModel extends Model{
         if($res1 >= 1){
             return 'exist';
         }else{
-            $sign = $req['signature']->getRandomName();
-            $req['signature']->move(ROOTPATH .'public/uploads/signature', $sign);
+            $sign = '';
+            if($req['signature'] != ''){
+                $sign = $req['signature']->getClientName();
+                $signPath = ROOTPATH .'public/uploads/img/'.$req['fID'].'/signature/';
+                if (!is_dir($signPath)) {
+                    mkdir($signPath, 0755, true);
+                }
+                $uploadpath = $signPath.$sign; 
+                if (file_exists($uploadpath)) {
+                    unlink($uploadpath);
+                }
+                $req['signature']->move($signPath, $sign);
+            }
             $data = [
                 'name'      => ucfirst($req['name']),
                 'email'     => $req['email'],

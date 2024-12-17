@@ -486,3 +486,54 @@ INFO - 2024-12-17 10:45:59 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-12-17 10:46:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-12-17 10:46:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-12-17 10:46:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-17 11:07:51 --> ErrorException: unlink(/home/q05wyrnxw9oo/testapplaud.buildappminds.com//public/uploads/img/1/signature/): Is a directory
+in APPPATH/Models/AuditorModel.php on line 110.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/AuditorModel.php(110): unlink()
+ 3 APPPATH/Controllers/AuditorController.php(111): App\Models\AuditorModel->saveauditor()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\AuditorController->addauditor()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-17 11:09:44 --> ErrorException: unlink(/home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/uploads/img/1/signature/): Is a directory
+in APPPATH/Models/AuditorModel.php on line 110.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/AuditorModel.php(110): unlink()
+ 3 APPPATH/Controllers/AuditorController.php(111): App\Models\AuditorModel->saveauditor()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\AuditorController->addauditor()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-17 11:12:08 --> ErrorException: Undefined variable $sign
+in APPPATH/Models/AuditorModel.php on line 124.
+ 1 APPPATH/Models/AuditorModel.php(124): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/AuditorController.php(111): App\Models\AuditorModel->saveauditor()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\AuditorController->addauditor()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-17 11:12:52 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-12-17 11:12:52 --> 220-sg2plmcpnl480577.prod.sin2.secureserver.net ESMTP Exim 4.96.2 #2 Mon, 16 Dec 2024 20:12:44 -0700 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-sg2plmcpnl480577.prod.sin2.secureserver.net Hello testapplaud.buildappminds.com [184.168.116.161]
+250-SIZE 52428800
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 250 OK
+
+to: 250 Accepted
+
+data: 354 Enter message, ending with "." on a line by itself
+
+
+quit: 250 OK id=1tNO0q-00BMRR-1m
+
+The following SMTP error was encountered: 250 OK id=1tNO0q-00BMRR-1m
+
+The following SMTP error was encountered: 

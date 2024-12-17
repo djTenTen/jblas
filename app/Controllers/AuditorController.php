@@ -103,7 +103,7 @@ class AuditorController extends BaseController{
             'pass'      => password_hash($genpass,PASSWORD_DEFAULT),
             'genpass'   => $genpass,
             'type'      => $this->request->getPost('type'),
-            'fID'       => $this->encr(session()->get('firmID')),
+            'fID'       => $this->decr(session()->get('firmID')),
             'firm'      => session()->get('firm'),
             'signature' => $this->request->getFile('signature'),
             'pos'       => $pos,

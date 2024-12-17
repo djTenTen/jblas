@@ -601,7 +601,7 @@ class WorkpaperModel extends  Model {
 
         $filename = $req['fstax']->getClientName();
 
-        $pdfPath = ROOTPATH .'/public/uploads/pdf/'.$req['fID'].'/fstax/'.$req['wpID'].'/';
+        $pdfPath = ROOTPATH .'public/uploads/pdf/'.$req['fID'].'/fstax/'.$req['wpID'].'/';
         if (!is_dir($pdfPath)) {
             mkdir($pdfPath, 0755, true);
         }
@@ -670,7 +670,7 @@ class WorkpaperModel extends  Model {
         $res = $this->db->table($this->tblcfi)->where('cfiID', $req['cfiID'])->get()->getRowArray();
     
         if($req['pdf'] != ''){
-            $pdfPath = ROOTPATH .'/public/uploads/pdf/'.$req['fID'].'/wp/'.$req['wpID'].'/';
+            $pdfPath = ROOTPATH .'public/uploads/pdf/'.$req['fID'].'/wp/'.$req['wpID'].'/';
             if (!is_dir($pdfPath)) {
                 mkdir($pdfPath, 0755, true);
             }
@@ -763,7 +763,7 @@ class WorkpaperModel extends  Model {
         $filename = $req['file']->getClientName();
 
         if($req['file'] != ''){
-            $pdfPath = ROOTPATH .'/public/uploads/pdf/wp/'.$req['fID'].'/'.$req['wpID'].'/';
+            $pdfPath = ROOTPATH .'public/uploads/pdf/wp/'.$req['fID'].'/'.$req['wpID'].'/';
             if (!is_dir($pdfPath)) {
                 mkdir($pdfPath, 0755, true);
             }
