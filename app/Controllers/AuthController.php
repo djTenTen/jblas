@@ -10,22 +10,12 @@ use App\Libraries\Logs;
 class AuthController extends BaseController{
 
 
-    /**
-        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL //
-        THIS FILE IS USED FOR AUTHENTICATION
-        Properties being used on this file
-        * @property authModel to include the file authentication model
-        * @property crypt to load the encryption file
-        * @property logs to load the logs files
-    */
+    // Properties
     protected $authModel;
     protected $crypt;
     protected $logs;
 
-
-    /**
-        * @method __construct() to assign and load the method on the @property
-    */
+    // Load the method on the properties
     public function __construct(){
 
         \Config\Services::session();
@@ -35,25 +25,21 @@ class AuthController extends BaseController{
 
     }
 
+    // Decrypting a Data
     public function decr($ecr){
+        // return replace back the character that been changed and decrypt to its original form
         return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
     }
 
+    // Encrypting a Data
     public function encr($ecr){
+        // return encrypt the data and replaced some characters
         return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
 
-
-    /**
-        * @method auth() used to authenticate the user on the system
-        * @var validationRules set to validate the data before searching to the database
-        * @var array-req consist login information
-        * @var res a return response from the authentication model if it succeeded
-        * @var user_data contains the user information and setting-up the user information through out the system.
-        * @return redirect-to-page
-    */
+    // User Authentitcation 
     public function auth(){
-
+        // Validation rules
         $validationRules = [
             'email'     => 'required|valid_email',
             'password'  => 'required|min_length[8]'
@@ -62,21 +48,24 @@ class AuthController extends BaseController{
             session()->setFlashdata('access_denied','access_denied');
             return redirect()->to(site_url());
         }
+        // user input credentials
         $req = [
             'email'     => $this->request->getPost('email'),
             'password'  => $this->request->getPost('password')
         ];
-
+        //result from the model
         $res = $this->authModel->authenticate($req);
-
+        // check if the account was locked
         if($res === "Locked"){
             session()->setFlashdata('Locked','Locked');
             return redirect()->to(site_url());
         }
+        // check if the result from the model was false
         if(!$res) {
             session()->setFlashdata('access_denied','access_denied');
             return redirect()->to(site_url());
         }else{
+            // user data
             $user_data = [
                 'authentication'    => true,
                 'userID'            => $this->encr($res['userID']),
@@ -93,25 +82,21 @@ class AuthController extends BaseController{
                 'posID'             => $this->encr($res['posID']),
                 'allowed'           => $res['allowed'],
             ];
+            // set the user session
             session()->set($user_data);
+            // log the action
             $this->logs->log($user_data['name']. " has just Logged-in");
+            // redirect to the dashboard
             return redirect()->to(site_url('/auditsystem/dashboard'));
         }
-
-        
-
     }
 
-
-    /**
-        * @method logout() used to log out from the system and destroy all the session used by the user
-        * @return redirect-to-page
-    */
+    // User Logout
     public function logout(){
-
+        // destroy all sessions
         session_destroy();
+        // return to login page
         return redirect()->to(site_url());
-
     }
 
 
