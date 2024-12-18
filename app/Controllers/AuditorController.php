@@ -7,21 +7,11 @@ use \App\Models\AuditorModel;
 
 class AuditorController extends BaseController{
 
-
-    /**
-        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL //
-        THIS FILE IS USED TO AUDITOR MANAGEMENT
-        Properties being used on this file
-        * @property audmodel to include the file auditor model
-        * @property crypt to load the encryption file
-    */
+    // Properties
     protected $audmodel;
     protected $crypt;
 
-
-    /**
-        * @method __construct() to assign and load the method on the @property
-    */
+    // Load the method on the properties
     public function __construct(){
 
         \Config\Services::session();
@@ -30,126 +20,126 @@ class AuditorController extends BaseController{
 
     }
 
+    // Dynamic result page for Auditor Management
+    public function resultpage($res){
+
+        // setFlashdata are used for result notification
+        if($res == 'exist'){
+            session()->setFlashdata('failed','Auditor already exist.');
+        }elseif($res == 'updated'){
+            session()->setFlashdata('success','Auditor has been successfully Updated.');
+        }elseif($res){
+            session()->setFlashdata('success','Auditor has been successfully registered');
+        }else{
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+        }
+        // return to it's original page;
+        return redirect()->to(site_url('auditsystem/auditor'));
+
+    }
+
+    // Decrypting a Data
     public function decr($ecr){
+        // return replace back the character that been changed and decrypt to its original form
         return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
     }
 
+    // Encrypting a Data
     public function encr($ecr){
+        // return encrypt the data and replaced some characters
         return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
 
-    /**
-        * @method editauditor() used to load the data of auditor for editing
-        * @param uID encrypted data of user id
-        * @var duID decrypted data of user id
-        * @return json
-    */
+    // Getting and editing the information of auditor based on id
     public function editauditor($uID){
-
+        // Decrypted userID
         $duID = $this->decr($uID);
+        // Return result from editauditor()
         return $this->audmodel->editauditor($duID);
-        
     }
 
-
-    /**
-        * @method viewauditor() used to display the auditor page
-        * @return view
-    */
+    // view Auditor Management Page
     public function viewauditor(){
 
+        // Decrypted firmID
         $fID = $this->decr(session()->get('firmID'));
+        // Decrypted userID
         $uID = $this->decr(session()->get('userID'));
+        // all array inside the $data will be called as variable on the views ex: $title
         $data['title']  = 'Auditor Management';
+        // result from method getauditor()
         $data['aud']    = $this->audmodel->getauditor($fID,$uID);
+        //views
         echo view('includes/Header', $data);
         echo view('auditor/Auditor', $data);
         echo view('includes/Footer');
     
     }
 
-
-    /**
-        * @method addauditor() used to add or register a auditor
-        * @var validationRules set to validate the data before submitting to the database
-        * @var genpass consist of generated password given to the auditor
-        * @var array-req array data that consist the auditor information
-        * @var res a return response from the auditor model if it succeeded
-        * @return redirect-to-page
-    */
+    // Registering Auditors information
     public function addauditor(){
 
+        // validation rules
         $validationRules = [
             'name'  => 'required',
             'email' => 'required',
             'type'  => 'required'
         ];
         if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/auditor'));
+            return $this->resultpage(false);
         }
+        // determine which type the auditor should fall on and it corresponds positions
         switch ($this->request->getPost('type')) {
             case 'Preparer'     : $pos = 2; break;
             case 'Reviewer'     : $pos = 4; break;
             case 'Audit Manager': $pos = 5; break;
             default             : $pos = 2;break;
         }
+        // generate a password for auditor
         $genpass = substr(bin2hex(random_bytes(10)), 0, 10);
+        // data container of auditor
         $req = [
             'name'      => $this->request->getPost('name'),
             'email'     => $this->request->getPost('email'),
             'address'   => $this->request->getPost('address'),
             'contact'   => $this->request->getPost('contact'),
-            'pass'      => password_hash($genpass,PASSWORD_DEFAULT),
+            'pass'      => password_hash($genpass,PASSWORD_DEFAULT), //password encryption
             'genpass'   => $genpass,
             'type'      => $this->request->getPost('type'),
-            'fID'       => $this->decr(session()->get('firmID')),
+            'fID'       => $this->decr(session()->get('firmID')), // decryption of firmID
             'firm'      => session()->get('firm'),
             'signature' => $this->request->getFile('signature'),
             'pos'       => $pos,
         ];
+        // result from the model
         $res = $this->audmodel->saveauditor($req);
-        if($res == 'exist'){
-            session()->setFlashdata('exist','exist');
-            return redirect()->to(site_url('auditsystem/auditor'));
-        }else if($res == "registered"){
-            session()->setFlashdata('added','added');
-            return redirect()->to(site_url('auditsystem/auditor'));
-        }else{
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/auditor'));
-        }
+        // return result
+        return $this->resultpage($res);
 
     }
 
-
-    /**
-        * @method updateauditor() used to update the information of auditor
-        * @param uID consist the encrypted id of auditor
-        * @var duID consist the decrypted id of auditor
-        * @var validationRules set to validate the data before submitting to the database
-        * @var array-req array data that consist the auditor information
-        * @var res a return response from the auditor model if it succeeded
-        * @return redirect-to-page
-    */
+    // Update Auditors Information
     public function updateauditor($uID){
 
+        // decypted userID
         $duID = $this->decr($uID);
+        // validation rules
         $validationRules = [
             'name'  => 'required',
             'email' => 'required',
             'type'  => 'required'
         ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/auditor'));
+        if(!$this->validate($validationRules)) {
+            return $this->resultpage(false);
         }
+        // determine which type the auditor should fall on and it corresponds positions
         switch ($this->request->getPost('type')) {
             case 'Preparer'     : $pos = 2; break;
             case 'Reviewer'     : $pos = 4; break;
             case 'Audit Manager': $pos = 5; break;
             default             : $pos = 2;break;
         }
+        // data container of auditor
         $req = [
             'name'  => $this->request->getPost('name'),
             'email' => $this->request->getPost('email'),
@@ -157,37 +147,22 @@ class AuditorController extends BaseController{
             'pos'   => $pos,
             'uID'   => $duID,
         ];
+        // result from the model
         $res = $this->audmodel->updateauditor($req);
-        if($res == "updated"){
-            session()->setFlashdata('updated','updated');
-            return redirect()->to(site_url('auditsystem/auditor'));
-        }else{
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/auditor'));
-        }
+        // return result
+        return $this->resultpage($res);
 
     }
 
-
-    /**
-        * @method acin() used to set inactive and active the information of auditor
-        * @param uID consist the encrypted id of auditor
-        * @var duID consist the decrypted id of auditor
-        * @var array-req array data that consist the auditor information
-        * @var res a return response from the auditor model if it succeeded
-        * @return redirect-to-page
-    */
+    // Set to active & Inactive the Auditor's information
     public function acin($uID){
 
+        // decypted userID
         $duID = $this->decr($uID);
+        // result from the model
         $res  = $this->audmodel->acin($duID);
-        if($res){
-            session()->setFlashdata('updated','updated');
-            return redirect()->to(site_url('auditsystem/auditor'));
-        }else{
-            session()->setFlashdata('failed','failed');
-            return redirect()->to(site_url('auditsystem/auditor'));
-        }
+        // return result
+        return $this->resultpage($res);
 
     }
 

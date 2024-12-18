@@ -1,0 +1,25 @@
+ERROR - 2024-12-18 08:36:22 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-12-18 08:36:22 --> 220-sg2plmcpnl480577.prod.sin2.secureserver.net ESMTP Exim 4.96.2 #2 Tue, 17 Dec 2024 17:36:14 -0700 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-sg2plmcpnl480577.prod.sin2.secureserver.net Hello testapplaud.buildappminds.com [184.168.116.161]
+250-SIZE 52428800
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 250 OK
+
+to: 250 Accepted
+
+data: 354 Enter message, ending with "." on a line by itself
+
+
+quit: 250 OK id=1tNi2w-006G67-2D
+
+The following SMTP error was encountered: 250 OK id=1tNi2w-006G67-2D
+
+The following SMTP error was encountered: 
