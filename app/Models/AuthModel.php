@@ -60,7 +60,7 @@ class AuthModel extends  Model {
             return false; // Account not verified and active
         }
         // check if the unsuccessfull login attempts is exceeded to 5
-        if($ud['logattempts'] > 5 or $ud['status'] == 'Locked'){
+        if($ud['logattempts'] > 5 or $ud['stat'] == 'Locked'){
             $cnt = $ud['logattempts'] + 1; // Increment attempts
             $this->db->table($this->tbluser)->where(array('userID' => $ud['userID']))->update(array('logattempts' => $cnt));
             $this->logs->authlog("userid:".$ud['userID']." has ".$cnt." failed login attemps");
