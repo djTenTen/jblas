@@ -9,18 +9,14 @@ class ReportController extends BaseController{
 
 
     /**
-        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL // 
-        THIS FILE IS USED FOR REPORT GENERATION
-        Properties being used on this file
-        * @property pmodel to include the file position model
-        * @property crypt to load the encryption file
+        * @property
     */
     protected $rpmodel;
     protected $crypt;
 
 
     /**
-        * @method __construct() to assign and load the method on the @property
+        * Load the methods on the @property
     */
     public function __construct(){
 
@@ -31,16 +27,31 @@ class ReportController extends BaseController{
     }
 
 
+    /**
+        * Replacing characters then Decrypting a Data @param ecr
+    */
     public function decr($ecr){
         return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
     }
 
+
+    /**
+        * Encypting a Data @param ecr then Replacing the characters
+    */
     public function encr($ecr){
         return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
 
 
-
+    /** 
+        --------------------------------------------------------------------------------------------------------------------
+        GENERATE THE FINAL PDF REPORT
+        --------------------------------------------------------------------------------------------------------------------
+        * @param clientID,workpaperID,clientname,auditor,supervisor,auditmanager,financialyear,endoffinancialyear
+        * it will generate all the files included and attached the document uploaded during the audit
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as pdf
+    */
     public function generatepdf($cID,$wpID,$cname,$aud,$sup,$audm,$fy,$efy){
 
         $dwpID          = $this->decr($wpID);

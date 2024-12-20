@@ -23,44 +23,24 @@
 
     <div class="container-xl px-4 mt-n10">
         <div class="card">
-            <?php if (session()->get('invalid_input')) { ?>
-                <div class="alert alert-danger alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Invalid Input</h6>
-                        Something wrong with your data inputd, please try again.
-                    </div>
-                </div>
-            <?php  }?>
-            <?php if (session()->get('exist')) { ?>
-                <div class="alert alert-danger alert-icon" role="alert">
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <div class="alert-icon-content">
-                        <h6 class="alert-heading">Data already Exist</h6>
-                        Client already exist.
-                    </div>
-                </div>
-            <?php  }?>
-            <?php if (session()->get('added')) { ?>
+            <?php if (session()->get('success')) { ?>
                 <div class="alert alert-success alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
-                        <h6 class="alert-heading">Success Registration</h6>
-                        Client has been successfully registered
+                        <h6 class="alert-heading">Success!</h6>
+                        <?= session()->get('success')?>
                     </div>
                 </div>
             <?php  }?>
-            <?php if (session()->get('updated')) { ?>
-                <div class="alert alert-success alert-icon" role="alert">
+            <?php if (session()->get('failed')) { ?>
+                <div class="alert alert-danger alert-icon" role="alert">
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     <div class="alert-icon-content">
-                        <h6 class="alert-heading">Update Success</h6>
-                        Client has been successfully updated
+                        <h6 class="alert-heading">Error!</h6>
+                        <?= session()->get('failed')?>
                     </div>
                 </div>
             <?php  }?>
-           
-
             <div class="card-body">
                 <?php if(session()->get('allowed')->add == "Yes"){?>
                 <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addclient">Add Client</button>

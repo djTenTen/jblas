@@ -9,18 +9,14 @@ class SystemController extends BaseController{
     
 
     /**
-        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL // 
-        THIS FILE IS USED FOR POSITION MANAGEMENT
-        Properties being used on this file
-        * @property sm to include the file system model
-        * @property crypt to load the encryption file
+        * @property
     */
     protected $sm;
     protected $crypt;
 
 
     /**
-        * @method __construct() to assign and load the method on the @property
+        * Load the methods on the @property
     */
     public function __construct(){
 
@@ -31,15 +27,27 @@ class SystemController extends BaseController{
     }
 
 
+    /**
+        * Replacing characters then Decrypting a Data @param ecr
+    */
     public function decr($ecr){
         return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
     }
 
+
+    /**
+        * Encypting a Data @param ecr then Replacing the characters
+    */
     public function encr($ecr){
         return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
 
     
+    /**
+        * Cron Task of the system
+        * This is Being executed on the settings of the CPANEL
+        * @return json
+    */
     public function crontask(){
 
         $res = $this->sm->crontask();
@@ -47,6 +55,14 @@ class SystemController extends BaseController{
 
     }
 
+
+    /**
+        --------------------------------------------------------------------------------------------------------------------
+        NOTIFICATION MANAGEMENT
+        --------------------------------------------------------------------------------------------------------------------
+        * View the notifications
+        * @return view
+    */
     public function notif(){
         
         $data['not'] = $this->sm->getnotif();
@@ -57,7 +73,11 @@ class SystemController extends BaseController{
 
     }
 
-
+    /**
+        * Removes the notifications
+        * View the notification
+        * @return json
+    */
     public function removenotif($nID){
 
         $dnID = $this->decr($nID);
@@ -67,19 +87,31 @@ class SystemController extends BaseController{
     }
 
 
+
+    /**
+        --------------------------------------------------------------------------------------------------------------------
+        SYSTEM OF QUALITY MANAGEMENT MANUAL
+        --------------------------------------------------------------------------------------------------------------------
+        * view the soqm manual
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        * @return view
+    */
     public function viewsoqm(){
 
         $data['title'] = 'System of Quality Management Manual';
         $data['soqm'] = $this->sm->getfirmsoqm();
         $data['sd'] = json_decode($data['soqm']['soqm_data'], true);
-
         echo view('includes/Header', $data);
         echo view('system/soqm', $data);
         echo view('includes/Footer');
 
     }
 
-
+    /**
+        * view the sample pdf soqm manual
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        * @return pdf-view
+    */
     public function viewsoqmpdf(){
 
         $data['title'] = 'System of Quality Management Manual';
@@ -89,7 +121,11 @@ class SystemController extends BaseController{
 
     }
 
-
+    /**
+        * view the firm's pdf soqm manual if the firm's uses the default system's soqm
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        * @return pdf-view
+    */
     public function viewmysoqmpdf(){
 
         $data['title'] = 'System of Quality Management Manual';
@@ -99,6 +135,11 @@ class SystemController extends BaseController{
 
     }
 
+
+    /**
+        * upload firm's own soqm manual
+        * @return result-page
+    */
     public function uploadsoqm(){
 
         $req = [
@@ -114,6 +155,10 @@ class SystemController extends BaseController{
 
     }
 
+    /**
+        * firm's using the default SQOM Manual
+        * @return result-page
+    */
     public function usesoqm(){
 
         $res = $this->sm->usesoqm();
@@ -126,7 +171,10 @@ class SystemController extends BaseController{
 
     }
 
-
+    /**
+        * Filling up the firm's information for the SOQM Manual
+        * @return result-page
+    */
     public function savesoqm(){
 
         $soqm = [
@@ -146,11 +194,9 @@ class SystemController extends BaseController{
             'csa'   => $this->request->getPost('csa'),
             'gd'    => $this->request->getPost('gd'),
         ];
-
         $req = [
             'soqm' => json_encode($soqm),
         ];
-
         $res = $this->sm->savesoqm($req);
         if($res){
             session()->setFlashdata('success','You Information has been successfully saved');

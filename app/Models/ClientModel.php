@@ -303,9 +303,9 @@ class ClientModel extends Model{
                     $this->db->table($this->tblc3d)->insert($datac3);
                 }
                 $this->logs->log(session()->get('name'). " added a client ".$req['name'].'-'.$req['org']);
-                return 'registered';
+                return true;
             }else{
-                return 'failed';
+                return false;
             }
         }
 
@@ -333,7 +333,7 @@ class ClientModel extends Model{
             $this->logs->log(session()->get('name'). " updated the client ".$req['name'].'-'.$req['org']." information");
             return 'updated';
         }else{
-            return 'failed';
+            return false;
         }
 
     }
@@ -509,7 +509,7 @@ class ClientModel extends Model{
         ];
         if($this->db->table($this->tblc)->where('cID', $dcID)->update($data)){
             $this->logs->log(session()->get('name'). " Set the information of ".$r['name']." to ".$stat);
-            return true;
+            return 'updated';
         }else{
             return false;
         }

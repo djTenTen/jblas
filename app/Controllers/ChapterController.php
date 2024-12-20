@@ -14,16 +14,7 @@ class ChapterController extends BaseController{
 
 
     /**
-        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL //
-        THIS FILE IS USED TO VIEW OF ALL THE CHAPTER FILES
-        Properties being used on this file
-        * @property chapterModel to include the file chapter model
-        * @property c1model to include the file chapter 1 model
-        * @property c2model to include the file chapter 2 model
-        * @property c3model to include the file chapter 3 model
-        * @property cvmodel to include the file chapter values model
-        * @property wpmodel to include the file work paper model
-        * @property crypt to load the encryption file
+        * @property
     */
     protected $chapterModel;
     protected $c1model;
@@ -33,9 +24,8 @@ class ChapterController extends BaseController{
     protected $wpmodel;
     protected $crypt;
 
-
     /**
-        * @method __construct() to assign and load the method on the @property
+        * Load the methods on the @property
     */
     public function __construct(){
 
@@ -51,19 +41,32 @@ class ChapterController extends BaseController{
     }
 
 
+    /**
+        * Replacing characters then Decrypting a Data @param ecr
+    */
     public function decr($ecr){
         return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
     }
 
+
+    /**
+        * Encypting a Data @param ecr then Replacing the characters
+    */
     public function encr($ecr){
         return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
 
 
+
     /** 
-        ----------------------------------------------------------
-        CHAPTER 1 VALUES
-        ----------------------------------------------------------
+        --------------------------------------------------------------------------------------------------------------------
+        SET DEFAULT MANAGEMENT CHAPTER 1
+        --------------------------------------------------------------------------------------------------------------------
+        * Dynamic page render based on @param code
+        * Dynamic data fetch on @method getvalues_c1 based on @param type,part,code,moduletitleID,clientID
+        * @param type contains 'm' for multiple row data and 's' for single row data
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function c1setvalues($code,$mtID,$cID,$name){
 
@@ -82,8 +85,8 @@ class ChapterController extends BaseController{
                 $data['mdID']   = $this->encr($rdata['mdID']);
             break;
             case 'AC2':
-                $data['ac2'] = $this->cvmodel->getvalues_c1('m','pans',$code,$dmtID,$dcID);
-                $data['aep'] = $this->cvmodel->getvalues_c1('s','ac2aep',$code,$dmtID,$dcID);
+                $data['ac2']    = $this->cvmodel->getvalues_c1('m','pans',$code,$dmtID,$dcID);
+                $data['aep']    = $this->cvmodel->getvalues_c1('s','ac2aep',$code,$dmtID,$dcID);
             break;
         }
         echo view('includes/Header', $data);
@@ -91,11 +94,14 @@ class ChapterController extends BaseController{
         echo view('includes/Footer');
 
     }
-
     /** 
-        ----------------------------------------------------------
-        PDF VIEW CHAPTER 1
-        ----------------------------------------------------------
+        --------------------------------------------------------------------------------------------------------------------
+        PDF VIEWS CHAPTER 1
+        --------------------------------------------------------------------------------------------------------------------
+        * Dynamic page render based on @param code
+        * Dynamic data fetch on @method getvalues_m based on @param part,code,moduletitleID
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function viewc1pdf($code,$mtID){
 
@@ -105,13 +111,13 @@ class ChapterController extends BaseController{
         $dmtID = $this->decr($mtID);
         switch ($code) {
             case 'AC1':
-                $data['ac1']  = $this->c1model->getvalues_m('cacf',$code,$dmtID);
-                $rdata        = $this->c1model->getvalues_s('eqr',$code,$dmtID);
-                $data['eqr']  = json_decode($rdata['field1'], true);
+                $data['ac1']    = $this->c1model->getvalues_m('cacf',$code,$dmtID);
+                $rdata          = $this->c1model->getvalues_s('eqr',$code,$dmtID);
+                $data['eqr']    = json_decode($rdata['field1'], true);
             break;
             case 'AC2':
-                $data['ac2'] = $this->c1model->getvalues_m('pans',$code,$dmtID);
-                $data['aep'] = $this->c1model->getvalues_s('ac2aep',$code,$dmtID);
+                $data['ac2']    = $this->c1model->getvalues_m('pans',$code,$dmtID);
+                $data['aep']    = $this->c1model->getvalues_s('ac2aep',$code,$dmtID);
             break;
         }
         echo view('pdfc1/'.$code, $data);
@@ -120,20 +126,15 @@ class ChapterController extends BaseController{
 
 
 
-
-
-
-
-
-
-
-
-
-
     /** 
-        ----------------------------------------------------------
-        CHAPTER 2 VALUES
-        ----------------------------------------------------------
+        --------------------------------------------------------------------------------------------------------------------
+        SET DEFAULT MANAGEMENT CHAPTER 2
+        --------------------------------------------------------------------------------------------------------------------
+        * Dynamic page render based on @param code
+        * Dynamic data fetch on @method getvalues_c2 based on @param type,part,code,moduletitleID,clientID
+        * @param type contains 'm' for multiple row data and 's' for single row data
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function c2setvalues($code,$mtID,$cID,$name){
 
@@ -153,7 +154,7 @@ class ChapterController extends BaseController{
                 $page = $code;
             break;
             case 'AB4A':
-                $data['ab4a']      = $this->cvmodel->getvalues_c2('m','rd',$code,$dmtID,$dcID);
+                $data['ab4a']   = $this->cvmodel->getvalues_c2('m','rd',$code,$dmtID,$dcID);
                 $page = $code;
             break;
             case 'AC3':
@@ -278,11 +279,14 @@ class ChapterController extends BaseController{
         echo view('includes/Footer');
 
     }
-
     /** 
-        ----------------------------------------------------------
-        PDF VIEW CHAPTER 2
-        ----------------------------------------------------------
+        --------------------------------------------------------------------------------------------------------------------
+        PDF VIEWS CHAPTER 2
+        --------------------------------------------------------------------------------------------------------------------
+        * Dynamic page render based on @param code
+        * Dynamic data fetch on @method getvalues_m based on @param part,code,moduletitleID
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function viewc2pdf($code,$mtID){
 
@@ -298,7 +302,7 @@ class ChapterController extends BaseController{
                 $data['ac3accsys']      = $this->c2model->getvalues_m('accsys',$code,$dmtID);
                 break;
             case 'AB4A':
-                $data['rd']      = $this->c2model->getvalues_m('rd',$code,$dmtID);
+                $data['rd']   = $this->c2model->getvalues_m('rd',$code,$dmtID);
                 break;
             case 'AC3':
                 $data['ac4']  = $this->c2model->getvalues_m('ac4sod',$code,$dmtID);
@@ -411,18 +415,15 @@ class ChapterController extends BaseController{
 
 
 
-
-
-
-
-
-
-
-
     /** 
-        ----------------------------------------------------------
-        CHAPTER 3 VALUES
-        ----------------------------------------------------------
+        --------------------------------------------------------------------------------------------------------------------
+        SET DEDAULT MANAGEMENT CHAPTER 3
+        --------------------------------------------------------------------------------------------------------------------
+        * Dynamic page render based on @param code
+        * Dynamic data fetch on @method getvalues_c3 based on @param type,part,code,moduletitleID,clientID
+        * @param type contains 'm' for multiple row data and 's' for single row data
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function c3setvalues($code,$mtID,$cID,$name){
 
@@ -521,38 +522,38 @@ class ChapterController extends BaseController{
                 $page = $code;
                 break;
             case 'AA9':
-                $rdata                  = $this->cvmodel->getvalues_c3('s','aa9',$code,$dmtID,$dcID);
-                $data['a9']             = json_decode($rdata['field1'], true);    
-                $data['mdID']           = $this->encr($rdata['mdID']);
+                $rdata          = $this->cvmodel->getvalues_c3('s','aa9',$code,$dmtID,$dcID);
+                $data['a9']     = json_decode($rdata['field1'], true);    
+                $data['mdID']   = $this->encr($rdata['mdID']);
                 $page = $code;
                 break; 
             case 'AA10':
-                $rdata                  = $this->cvmodel->getvalues_c3('s','aa10',$code,$dmtID,$dcID);
-                $data['a10']            = json_decode($rdata['field1'], true); 
-                $data['mdID']           = $this->encr($rdata['mdID']);   
+                $rdata          = $this->cvmodel->getvalues_c3('s','aa10',$code,$dmtID,$dcID);
+                $data['a10']    = json_decode($rdata['field1'], true); 
+                $data['mdID']   = $this->encr($rdata['mdID']);   
                 $page = $code;
                 break; 
             case 'AA11':
-                $data['a11'] = $this->cvmodel->getvalues_c3('m','aa11',$code,$dmtID,$dcID);
+                $data['a11']    = $this->cvmodel->getvalues_c3('m','aa11',$code,$dmtID,$dcID);
                 $page = $code;
                 break; 
             case 'AA12':
-                $rdata                  = $this->cvmodel->getvalues_c3('s','aa12',$code,$dmtID,$dcID);
-                $data['a12']            = json_decode($rdata['field1'], true);   
-                $data['mdID']           = $this->encr($rdata['mdID']);
+                $rdata          = $this->cvmodel->getvalues_c3('s','aa12',$code,$dmtID,$dcID);
+                $data['a12']    = json_decode($rdata['field1'], true);   
+                $data['mdID']   = $this->encr($rdata['mdID']);
                 $page = $code;
                 break; 
             case 'AA8-ad':
                 $s                      = explode('-', $code);
                 $data['sectiontitle']   = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";
-                $data['ad']             = $this->cvmodel->getvalues_c3('m','ad',$s[0],$dmtID,$dcID);
-                $rdata                  = $this->cvmodel->getvalues_c3('s','aa11uead',$s[0],$dmtID,$dcID);
-                $data['ue']             = json_decode($rdata['field1'], true);    
-                $data['ueacID']         = $this->encr($rdata['mdID']);
+                $data['ad']     = $this->cvmodel->getvalues_c3('m','ad',$s[0],$dmtID,$dcID);
+                $rdata          = $this->cvmodel->getvalues_c3('s','aa11uead',$s[0],$dmtID,$dcID);
+                $data['ue']     = json_decode($rdata['field1'], true);    
+                $data['ueacID'] = $this->encr($rdata['mdID']);
                 $page = $code;
                 break;   
             case 'AB1':
-                $data['ab1'] = $this->cvmodel->getvalues_c3('m','ab1',$code,$dmtID,$dcID);
+                $data['ab1']    = $this->cvmodel->getvalues_c3('m','ab1',$code,$dmtID,$dcID);
                 $page = $code;
                 break;   
             case 'AB2':
@@ -604,20 +605,21 @@ class ChapterController extends BaseController{
         echo view('includes/Footer');
 
     }
-
-
-
     /** 
-        ----------------------------------------------------------
-        PDF VIEW CHAPTER 3
-        ----------------------------------------------------------
+        --------------------------------------------------------------------------------------------------------------------
+        PDF VIEWS CHAPTER 3
+        --------------------------------------------------------------------------------------------------------------------
+        * Dynamic page render based on @param code
+        * Dynamic data fetch on @method getvalues_m based on @param part,code,moduletitleID
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function viewc3pdf($code,$mtID){
 
         $data['title']  = $code;
-        $data['mtID']  = $mtID;
+        $data['mtID']   = $mtID;
         $data['code']   = $code;
-        $dmtID         = $this->decr($mtID);
+        $dmtID          = $this->decr($mtID);
         switch ($code) {
             case 'AA1':
                 $data['datapl'] = $this->c3model->getvalues_m('planning',$code,$dmtID);
@@ -701,22 +703,22 @@ class ChapterController extends BaseController{
                 $page = $code;
                 break; 
             case 'AA9':
-                $rdata              = $this->c3model->getvalues_s('aa9',$code,$dmtID);
-                $data['a9']         = json_decode($rdata['field1'], true);    
+                $rdata          = $this->c3model->getvalues_s('aa9',$code,$dmtID);
+                $data['a9']     = json_decode($rdata['field1'], true);    
                 $page = $code;
                 break; 
             case 'AA10':
-                $rdata              = $this->c3model->getvalues_s('aa10',$code,$dmtID);
-                $data['a10']        = json_decode($rdata['field1'], true); 
+                $rdata          = $this->c3model->getvalues_s('aa10',$code,$dmtID);
+                $data['a10']    = json_decode($rdata['field1'], true); 
                 $page = $code;
                 break; 
             case 'AA11':
-                $data['a11'] = $this->c3model->getvalues_m('aa11',$code,$dmtID);
+                $data['a11']    = $this->c3model->getvalues_m('aa11',$code,$dmtID);
                 $page = $code;
                 break; 
             case 'AA12':
-                $rdata               = $this->c3model->getvalues_s('aa12',$code,$dmtID);
-                $data['a12']         = json_decode($rdata['field1'], true);   
+                $rdata          = $this->c3model->getvalues_s('aa12',$code,$dmtID);
+                $data['a12']    = json_decode($rdata['field1'], true);   
                 $page = $code;
                 break;   
             case 'AB1':
@@ -730,14 +732,14 @@ class ChapterController extends BaseController{
                 break; 
             case 'AB3':
                 $rdata = $this->c3model->getvalues_s('checklist',$code,$dmtID);
-                $data['sec']  = json_decode($rdata['field1'], true);
-                $data['sec1'] = $this->c3model->getvalues_m('section1',$code,$dmtID);
-                $data['sec2'] = $this->c3model->getvalues_m('section2',$code,$dmtID);
-                $data['sec3'] = $this->c3model->getvalues_m('section3',$code,$dmtID);
-                $data['sec4'] = $this->c3model->getvalues_m('section4',$code,$dmtID);
-                $data['sec5'] = $this->c3model->getvalues_m('section5',$code,$dmtID);
-                $data['sec6'] = $this->c3model->getvalues_m('section6',$code,$dmtID);
-                $data['sec7'] = $this->c3model->getvalues_m('section7',$code,$dmtID);
+                $data['sec']    = json_decode($rdata['field1'], true);
+                $data['sec1']   = $this->c3model->getvalues_m('section1',$code,$dmtID);
+                $data['sec2']   = $this->c3model->getvalues_m('section2',$code,$dmtID);
+                $data['sec3']   = $this->c3model->getvalues_m('section3',$code,$dmtID);
+                $data['sec4']   = $this->c3model->getvalues_m('section4',$code,$dmtID);
+                $data['sec5']   = $this->c3model->getvalues_m('section5',$code,$dmtID);
+                $data['sec6']   = $this->c3model->getvalues_m('section6',$code,$dmtID);
+                $data['sec7']   = $this->c3model->getvalues_m('section7',$code,$dmtID);
                 $page = $code;
                 break; 
         }
@@ -747,19 +749,16 @@ class ChapterController extends BaseController{
     }
 
 
-    
-
-
-    
-
-
-    
-
 
     /** 
-        ----------------------------------------------------------
-        WORK PAPER CHAPTER 1 VALUES
-        ----------------------------------------------------------
+        --------------------------------------------------------------------------------------------------------------------
+        WORPAPER MANAGEMENT CHAPTER 1
+        --------------------------------------------------------------------------------------------------------------------
+        * Dynamic page render based on @param code
+        * Dynamic data fetch on @method getvalues_c1 based on @param type,part,code,moduletitleID,clientID,workpaperID
+        * @param type contains 'm' for multiple row data and 's' for single row data
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function c1setworkpaper($code,$mtID,$cID,$wpID,$name){
 
@@ -772,7 +771,6 @@ class ChapterController extends BaseController{
         $dcID           = $this->decr($cID);
         $dwpID          = $this->decr($wpID);
         $dmtID          = $this->decr($mtID);
-        
         switch ($code) {
             case 'AC1':
                 $data['ac1']    = $this->wpmodel->getvalues_c1('m','cacf',$code,$dmtID,$dcID,$dwpID);
@@ -781,8 +779,8 @@ class ChapterController extends BaseController{
                 $data['mdID']   = $this->encr($rdata['mdID']);
             break;
             case 'AC2':
-                $data['ac2'] = $this->wpmodel->getvalues_c1('m','pans',$code,$dmtID,$dcID,$dwpID);
-                $data['aep'] = $this->wpmodel->getvalues_c1('s','ac2aep',$code,$dmtID,$dcID,$dwpID);
+                $data['ac2']    = $this->wpmodel->getvalues_c1('m','pans',$code,$dmtID,$dcID,$dwpID);
+                $data['aep']    = $this->wpmodel->getvalues_c1('s','ac2aep',$code,$dmtID,$dcID,$dwpID);
             break;
         }
         echo view('includes/Header', $data);
@@ -792,10 +790,16 @@ class ChapterController extends BaseController{
     }
 
 
+    
     /** 
-        ----------------------------------------------------------
-        WORK PAPER CHAPTER 2 VALUES
-        ----------------------------------------------------------
+        --------------------------------------------------------------------------------------------------------------------
+        WORPAPER MANAGEMENT CHAPTER 2
+        --------------------------------------------------------------------------------------------------------------------
+        * Dynamic page render based on @param code
+        * Dynamic data fetch on @method getvalues_c2 based on @param type,part,code,moduletitleID,clientID,workpaperID
+        * @param type contains 'm' for multiple row data and 's' for single row data
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function c2setworkpaper($code,$mtID,$cID,$wpID,$name){
 
@@ -817,7 +821,7 @@ class ChapterController extends BaseController{
                 $page = $code;
             break;
             case 'AB4A':
-                $data['ab4a']      = $this->wpmodel->getvalues_c2('m','rd',$code,$dmtID,$dcID,$dwpID);
+                $data['ab4a']   = $this->wpmodel->getvalues_c2('m','rd',$code,$dmtID,$dcID,$dwpID);
                 $page = $code;
             break;
             case 'AC3':
@@ -943,24 +947,17 @@ class ChapterController extends BaseController{
 
     }
 
+
     
     /** 
-        ----------------------------------------------------------
-        WORK PAPER CHAPTER 3 VALUES
-        ----------------------------------------------------------
-        * @method c3setworkpaper() used view the workpaper values file of Chapter 3
-        * @param code consists of file code
-        * @param c3tID encrypted of title id
-        * @param cID encrypted of client id
-        * @param wpID encrypted of work paper id
-        * @param name client name
-        * @var dc3tID decrypted id of @param c3tID
-        * @var dcID decrypted id of @param cID
-        * @var dwpID decrypted id of @param wpID
-        * @var rdata contains raw json data from database
-        * @param array-data consist the data from database to display on the page
-          THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
-        * @return view
+        --------------------------------------------------------------------------------------------------------------------
+        WORPAPER MANAGEMENT CHAPTER 3
+        --------------------------------------------------------------------------------------------------------------------
+        * Dynamic page render based on @param code
+        * Dynamic data fetch on @method getvalues_c3 based on @param type,part,code,moduletitleID,clientID,workpaperID
+        * @param type contains 'm' for multiple row data and 's' for single row data
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function c3setworkpaper($code,$mtID,$cID,$wpID,$name){
 
@@ -1048,57 +1045,57 @@ class ChapterController extends BaseController{
             case 'AA8-un':
                 $s                      = explode('-', $code);
                 $data['sectiontitle']   = "SUMMARY OF UNADJUSTED ERRORS";
-                $data['aef']            = $this->wpmodel->getvalues_c3('m','aef',$s[0],$dmtID,$dcID,$dwpID);
-                $data['aej']            = $this->wpmodel->getvalues_c3('m','aej',$s[0],$dmtID,$dcID,$dwpID);
-                $data['ee']             = $this->wpmodel->getvalues_c3('m','ee',$s[0],$dmtID,$dcID,$dwpID);
-                $data['de']             = $this->wpmodel->getvalues_c3('m','de',$s[0],$dmtID,$dcID,$dwpID);
-                $rdata                  = $this->wpmodel->getvalues_c3('s','aa11ue',$s[0],$dmtID,$dcID,$dwpID);
-                $data['ue']             = json_decode($rdata['field1'], true);    
-                $data['ueacID']         = $this->encr($rdata['mdID']);
-                $rdata2                 = $this->wpmodel->getvalues_c3('s','con',$s[0],$dmtID,$dcID,$dwpID);
-                $data['con']            = json_decode($rdata2['field1'], true);   
-                $data['conacID']        = $this->encr($rdata2['mdID']);
+                $data['aef']     = $this->wpmodel->getvalues_c3('m','aef',$s[0],$dmtID,$dcID,$dwpID);
+                $data['aej']     = $this->wpmodel->getvalues_c3('m','aej',$s[0],$dmtID,$dcID,$dwpID);
+                $data['ee']      = $this->wpmodel->getvalues_c3('m','ee',$s[0],$dmtID,$dcID,$dwpID);
+                $data['de']      = $this->wpmodel->getvalues_c3('m','de',$s[0],$dmtID,$dcID,$dwpID);
+                $rdata           = $this->wpmodel->getvalues_c3('s','aa11ue',$s[0],$dmtID,$dcID,$dwpID);
+                $data['ue']      = json_decode($rdata['field1'], true);    
+                $data['ueacID']  = $this->encr($rdata['mdID']);
+                $rdata2          = $this->wpmodel->getvalues_c3('s','con',$s[0],$dmtID,$dcID,$dwpID);
+                $data['con']     = json_decode($rdata2['field1'], true);   
+                $data['conacID'] = $this->encr($rdata2['mdID']);
                 $page = $code;
                 break;
             case 'AA9':
-                $rdata                  = $this->wpmodel->getvalues_c3('s','aa9',$code,$dmtID,$dcID,$dwpID);
-                $data['a9']             = json_decode($rdata['field1'], true);    
-                $data['mdID']           = $this->encr($rdata['mdID']);
+                $rdata           = $this->wpmodel->getvalues_c3('s','aa9',$code,$dmtID,$dcID,$dwpID);
+                $data['a9']      = json_decode($rdata['field1'], true);    
+                $data['mdID']    = $this->encr($rdata['mdID']);
                 $page = $code;
                 break; 
             case 'AA10':
-                $rdata                  = $this->wpmodel->getvalues_c3('s','aa10',$code,$dmtID,$dcID,$dwpID);
-                $data['a10']            = json_decode($rdata['field1'], true); 
-                $data['mdID']           = $this->encr($rdata['mdID']);   
+                $rdata           = $this->wpmodel->getvalues_c3('s','aa10',$code,$dmtID,$dcID,$dwpID);
+                $data['a10']     = json_decode($rdata['field1'], true); 
+                $data['mdID']    = $this->encr($rdata['mdID']);   
                 $page = $code;
                 break; 
             case 'AA11':
-                $data['a11'] = $this->wpmodel->getvalues_c3('m','aa11',$code,$dmtID,$dcID,$dwpID);
+                $data['a11']     = $this->wpmodel->getvalues_c3('m','aa11',$code,$dmtID,$dcID,$dwpID);
                 $page = $code;
                 break; 
             case 'AA12':
-                $rdata                  = $this->wpmodel->getvalues_c3('s','aa12',$code,$dmtID,$dcID,$dwpID);
-                $data['a12']            = json_decode($rdata['field1'], true);   
-                $data['mdID']           = $this->encr($rdata['mdID']);
+                $rdata           = $this->wpmodel->getvalues_c3('s','aa12',$code,$dmtID,$dcID,$dwpID);
+                $data['a12']     = json_decode($rdata['field1'], true);   
+                $data['mdID']    = $this->encr($rdata['mdID']);
                 $page = $code;
                 break; 
             case 'AA8-ad':
                 $s                      = explode('-', $code);
                 $data['sectiontitle']   = "SUMMARY OF ADJUSTMENTS MADE TO THE CLIENT'S FINANCIAL STATEMENTS";
-                $data['ad']             = $this->wpmodel->getvalues_c3('m','ad',$s[0],$dmtID,$dcID,$dwpID);
-                $rdata                  = $this->wpmodel->getvalues_c3('s','aa11uead',$s[0],$dmtID,$dcID,$dwpID);
-                $data['ue']             = json_decode($rdata['field1'], true);    
-                $data['ueacID']         = $this->encr($rdata['mdID']);
+                $data['ad']      = $this->wpmodel->getvalues_c3('m','ad',$s[0],$dmtID,$dcID,$dwpID);
+                $rdata           = $this->wpmodel->getvalues_c3('s','aa11uead',$s[0],$dmtID,$dcID,$dwpID);
+                $data['ue']      = json_decode($rdata['field1'], true);    
+                $data['ueacID']  = $this->encr($rdata['mdID']);
                 $page = $code;
                 break;   
             case 'AB1':
-                $data['ab1'] = $this->wpmodel->getvalues_c3('m','ab1',$code,$dmtID,$dcID,$dwpID);
+                $data['ab1']     = $this->wpmodel->getvalues_c3('m','ab1',$code,$dmtID,$dcID,$dwpID);
                 $page = $code;
                 break;   
             case 'AB2':
                 $rdata = $this->wpmodel->getvalues_c3('s','ab3',$code,$dmtID ,$dcID,$dwpID);
-                $data['ab3']    = json_decode($rdata['field1'], true);
-                $data['mdID']   = $this->encr($rdata['mdID']);
+                $data['ab3']     = json_decode($rdata['field1'], true);
+                $data['mdID']    = $this->encr($rdata['mdID']);
                 $page = $code;
                 break; 
             case 'AB3-checklist':
@@ -1127,12 +1124,12 @@ class ChapterController extends BaseController{
                 $data['mtID']       = $mtID;
                 $data['code']       = $code;
                 if($s[1] == "checklist"){
-                    $rdata = $this->wpmodel->getvalues_c3('s',$s[1],$s[0],$dmtID,$dcID,$dwpID);
+                    $rdata          = $this->wpmodel->getvalues_c3('s',$s[1],$s[0],$dmtID,$dcID,$dwpID);
                     $data['sec']    = json_decode($rdata['field1'], true);
                     $data['mdID']   = $this->encr($rdata['mdID']);
                     $page = $code;
                 }else{
-                    $data['sec'] = $this->wpmodel->getvalues_c3('m',$s[1],$s[0],$dmtID,$dcID,$dwpID);
+                    $data['sec']    = $this->wpmodel->getvalues_c3('m',$s[1],$s[0],$dmtID,$dcID,$dwpID);
                     $page = 'AB3-section';
                 }
                 break;

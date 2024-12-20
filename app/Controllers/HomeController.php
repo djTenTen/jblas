@@ -10,18 +10,14 @@ class HomeController extends BaseController{
 
 
     /**
-        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES// 
-        THIS FILE IS USED FOR FIRM MANAGEMENT
-        Properties being used on this file
-        * @property homeModel to include the Home model
-        * @property crypt to load the encryption file
+        * @property
     */
     protected $homeModel;
     protected $crypt;
 
 
     /**
-        * @method __construct() to assign and load the method on the @property
+        * Load the methods on the @property
     */
     public function __construct(){
 
@@ -32,20 +28,26 @@ class HomeController extends BaseController{
     }
 
 
+    /**
+        * Replacing characters then Decrypting a Data @param ecr
+    */
     public function decr($ecr){
         return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
     }
 
+
+    /**
+        * Encypting a Data @param ecr then Replacing the characters
+    */
     public function encr($ecr){
         return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
 
-
+    
     /**
-        * @method homepage() view page of login/home page
-        * @var res a return response from the home model
-        * @var array-data consist of data and display it on the page
-        * @return view if success @return redirect-to-error if false
+        * view the home page or login page
+        * it check if the db exist
+        * @return redirect page
     */
     public function homepage(){
 
@@ -65,9 +67,8 @@ class HomeController extends BaseController{
 
 
     /**
-        * @method forgotpass() view page forgot password
-        * @var array-data consist of data and display it on the page
-        * @return view 
+        * forgot password page
+        * @return view
     */
     public function forgotpass(){
 
@@ -78,10 +79,9 @@ class HomeController extends BaseController{
 
 
     /**
-        * @method setpass() set new password page
-        * @param email consist of email of user for reset password
-        * @var array-data consist of data and display it on the page
-        * @return view 
+        * @param email
+        * set new password page
+        * @return view
     */
     public function setpass($email){
 
@@ -94,11 +94,8 @@ class HomeController extends BaseController{
 
 
     /**
-        * @method resetpass() reset the password
-        * @var validationRules set to validate the data before saving to database
-        * @var email contains email
-        * @var res a return response from the home model
-        * @return redirect-to-page
+        * validate the email for reset password
+        * @return redirection
     */
     public function resetpass(){
 
@@ -122,11 +119,8 @@ class HomeController extends BaseController{
 
 
     /**
-        * @method savepass() save the new password
-        * @var validationRules set to validate the data before saving to database
-        * @var req contains the user new password information and otp
-        * @var res a return response from the home model
-        * @return redirect-to-page
+        * save the new password
+        * @return redirection
     */
     public function savepass($email){
 

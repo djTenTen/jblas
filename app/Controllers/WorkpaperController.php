@@ -8,23 +8,17 @@ use \App\Models\WorkpaperModel;
 use \App\Models\ClientModel;
 
 class WorkpaperController extends BaseController{
-    
+
 
     /**
-        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL // 
-        THIS FILE IS USED FOR WORK PAPER MANAGEMENT
-        Properties being used on this file
-        * @property wpmodel to include the file work paper model
-        * @property cmodel to include the file client model
-        * @property crypt to load the encryption file
+        * @property
     */
     protected $wpmodel;
     protected $cmodel;
     protected $crypt;
 
-
     /**
-        * @method __construct() to assign and load the method on the @property
+        * Load the methods on the @property
     */
     public function __construct(){
 
@@ -35,24 +29,28 @@ class WorkpaperController extends BaseController{
 
     }
 
-
+    /**
+        * Replacing characters then Decrypting a Data @param ecr
+    */
     public function decr($ecr){
         return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
     }
 
+    /**
+        * Encypting a Data @param ecr then Replacing the characters
+    */
     public function encr($ecr){
         return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
 
-
-    
-
-
-    /**
-        * @method initiate() work paper initiation page
-        * @var array-data consist of data and display it on the page
-        * @var fID consist of decrypted firm id
-        * @return view
+    /** 
+        --------------------------------------------------------------------------------------------------------------------
+        WORKPAPER MANAGEMENT
+        --------------------------------------------------------------------------------------------------------------------
+        * Workpaper initiation page 
+        * Access by audit firm or audit manager
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function initiate(){
 
@@ -71,13 +69,11 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method prepare() work paper prepare page
-        * @var array-data consist of data and display it on the page
-        * @var fID consist of decrypted firm id
-        * @var uID consist of decrypted user id
-        * @return view
+        * Workpaper preparation page
+        * Access by a preparer or auditor
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function prepare(){
 
@@ -92,13 +88,11 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method review() work paper review page
-        * @var array-data consist of data and display it on the page
-        * @var fID consist of decrypted firm id
-        * @var uID consist of decrypted user id
-        * @return view
+        * Workpaper review page
+        * Access by a reviewer or supervisor
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function review(){
 
@@ -113,12 +107,11 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method approved() work paper review page
-        * @var array-data consist of data and display it on the page
-        * @var fID consist of decrypted firm id
-        * @return view
+        * All complete workpaper page
+        * Access by a audit firm or audit manager
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function approved(){
 
@@ -133,46 +126,26 @@ class WorkpaperController extends BaseController{
     }
 
     /**
-        * @method getfiles() get the hat files assigned
-        * @param cID encrypted client id
-        * @param wpID encrypted work paper id
-        * @param name name of the client
-        * @var dcID decrypted client id
-        * @var dwpID decrypted work paper id
-        * @var type user type
-        * @var array-data consist of data and display it on the page
-        * @var fID consist of decrypted firm id
-        * @var uID consist of decrypted user id
-        * @return view
+        * @param clientID,workpaperID,name
+        * get all the files of the client
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function getfiles($cID,$wpID,$name){
 
         $dcID           = $this->decr($cID);
         $dwpID          = $this->decr($wpID);
         $type           = session()->get('type');
-        switch ($type) {
-            case 'Auditing Firm':
-            case 'Audit Manager':
-            case 'Admin':
-                $status = 'All';
-            break;
-            case 'Preparer':
-                $status = 'Preparing';
-            break;
-            case 'Reviewer':
-                $status = 'Reviewing';
-            break;
-        }
         $data['type']   = $type;
         $data['title']  = 'Work Paper';
         $data['subt']   = 'Work paper file of '. $name;
         $data['cID']    = $cID;
         $data['wpID']   = $wpID;
         $data['name']   = $name;  
-        $data['c1']     = $this->wpmodel->getc1values($dcID,$dwpID,$status);
-        $data['c2']     = $this->wpmodel->getc2values($dcID,$dwpID,$status);
-        $data['c3']     = $this->wpmodel->getc3values($dcID,$dwpID,$status);
-        $data['fi']     = $this->wpmodel->getfileindex($dcID,$dwpID,$status);
+        $data['c1']     = $this->wpmodel->getc1values($dcID,$dwpID);
+        $data['c2']     = $this->wpmodel->getc2values($dcID,$dwpID);
+        $data['c3']     = $this->wpmodel->getc3values($dcID,$dwpID);
+        $data['fi']     = $this->wpmodel->getfileindex($dcID,$dwpID);
         $data['cfi']    = $this->wpmodel->getlatestupload($dcID,$dwpID);
         $data['tb']     = $this->wpmodel->gettrialbalance($dcID,$dwpID);
         $data['if']     = $this->wpmodel->getindexfile();
@@ -184,13 +157,9 @@ class WorkpaperController extends BaseController{
 
 
     /**
-        * @method saveworkpaper() save the workpaper
-        * @var fID decrypted firm id
-        * @var uID decrypted user id id
-        * @var validationRules set to validate the data before saving to database
-        * @var array-req consist of work paper information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * Save the initiated workpaper
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as resultpage
     */
     public function saveworkpaper(){
 
@@ -234,12 +203,11 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method downloadexcel() download the trial balance format
-        * @param file the file name
-        * @var filePath file path
-        * @return download
+        * @param file
+        * Download the trial balance template
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as download
     */
     public function downloadexcel($file){
 
@@ -251,20 +219,11 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method importtb() import the trial balance
-        * @param cID encrypted client id
-        * @param wpID encrypted work paper id
-        * @param name client name
-        * @var dcID decrypted client id
-        * @var dwpID decrypted work paper id
-        * @var fID decrypted firm id
-        * @var uID decrypted user id
-        * @var validationRules set to validate the data before saving to database
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * @param clientID,workpaperID,name
+        * import trial balance
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as resultpage
     */
     public function importtb($cID,$wpID,$name){
 
@@ -302,49 +261,10 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method uploadcfsfiles() upload supporting files 
-        * @param cID encrypted client id
-        * @param wpID encrypted work paper id
-        * @param name client name
-        * @var dcID decrypted client id
-        * @var dwpID decrypted work paper id
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
-    */
-    public function uploadcfsfiles($cID,$wpID,$name){
-
-        $dcID    = $this->decr($cID);
-        $dwpID   = $this->decr($wpID);
-        $fID     = $this->decr(session()->get('firmID'));
-        $req = [
-            'cID'   => $dcID,
-            'wpID'  => $dwpID,
-            'fID'   => $fID,
-            'file'  => $this->request->getFile('pdf'),
-            'fID'   => $this->decr(session()->get('firmID')),
-        ];
-        $res = $this->wpmodel->uploadcfsfiles($req);
-        if($res == "uploaded"){
-            session()->setFlashdata('cfs_upload','cfs_upload');
-            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
-        }else{
-            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
-            return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
-        }
-
-    }
-
-
-    /**
-        * @method updateindex() selecting work paper to be used 
-        * @param cfiID encrypted client file index id
-        * @var dcfiID decrypted client file index id
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return json-response
+        * @param clientfileindexID
+        * acquiring the index files on workpaper
+        return as json
     */
     public function updateindex($cfiID){
 
@@ -359,18 +279,10 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method updatetb() updating trial balance 
-        * @param code file name code
-        * @param cfiID encrypted client file index id
-        * @param cID encrypted client id
-        * @param wpID encrypted work paper id
-        * @param index encrypted index work paper id
-        * @param desc file descryption
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * @param code,clientfileindexID,clientID,workpaperid,indexID,description,name
+        * updating trial balance
+        return as resultpage
     */
     public function updatetb($code,$cfiID,$cID,$wpID,$index,$desc,$name){
 
@@ -390,7 +302,11 @@ class WorkpaperController extends BaseController{
 
     }
 
-
+    /**
+        * @param code,clientfileindexID,clientID,workpaperid,indexID,description,name
+        * still pending
+        return as debug
+    */
     public function recontbfiles($code,$cfiID,$cID,$wpID,$index,$desc,$name){
 
         $req = [
@@ -406,24 +322,14 @@ class WorkpaperController extends BaseController{
             'index'     => $this->decr($index),
             'fID'       => $this->decr(session()->get('firmID')),
         ];
-
-        
-
         return print_r($req);
 
     }
 
     /**
-        * @method uploadtbfiles() uploading trial balance 
-        * @param code file name code
-        * @param cfiID encrypted client file index id
-        * @param cID encrypted client id
-        * @param wpID encrypted work paper id
-        * @param index encrypted index work paper id
-        * @param desc file descryption
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * @param code,clientfileindexID,clientID,workpaperid,indexID,description,name
+        * uploading trial balance supporting documents
+        return as resultpage
     */
     public function uploadtbfiles($code,$cfiID,$cID,$wpID,$index,$desc,$name){
 
@@ -447,18 +353,10 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method uploadfstax() uploading financial statements
-        * @param code file name code
-        * @param cfiID encrypted client file index id
-        * @param cID encrypted client id
-        * @param wpID encrypted work paper id
-        * @param index encrypted index work paper id
-        * @param desc file descryption
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * @param code,clientfileindexID,clientID,workpaperid,indexID,description,name
+        * uploading financial statements and tax declarations
+        return as resultpage
     */
     public function uploadfstax($code,$cfiID,$cID,$wpID,$index,$desc,$name){
 
@@ -488,22 +386,15 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method sendtoreview() sending the work paper for review
-        * @param c chapter files
-        * @param ctID encrypted chapter title id
-        * @param cID encypted client id
-        * @param wpID encrypted work paper id
-        * @param index encrypted index work paper id
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * @param chapter,moduletitleID,clientID,workpaperID,name
+        * Send the file for review
+        return as resultpage
     */
-    public function sendtoreview($c,$ctID,$cID,$wpID,$name){
+    public function sendtoreview($c,$mtID,$cID,$wpID,$name){
 
         $req = [
-            'ctID'      => $this->decr($ctID),
+            'mtID'      => $this->decr($mtID),
             'cID'       => $this->decr($cID),
             'wpID'      => $this->decr($wpID),
             'remarks'   => $this->request->getPost('remarks'),
@@ -520,22 +411,15 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method sendtoauditor() sending the work paper for prepare
-        * @param c chapter files
-        * @param ctID encrypted chapter title id
-        * @param cID encypted client id
-        * @param wpID encrypted work paper id
-        * @param index encrypted index work paper id
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * @param chapter,moduletitleID,clientID,workpaperID,name
+        * Send the file for preparations
+        return as resultpage
     */
-    public function sendtoauditor($c,$ctID,$cID,$wpID,$name){
+    public function sendtoauditor($c,$mtID,$cID,$wpID,$name){
 
         $req = [
-            'ctID'      => $this->decr($ctID),
+            'mtID'      => $this->decr($mtID),
             'cID'       => $this->decr($cID),
             'wpID'      => $this->decr($wpID),
             'remarks'   => $this->request->getPost('remarks'),
@@ -552,17 +436,10 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method sendtomanager() sending the work paper for checking and approval
-        * @param c chapter files
-        * @param ctID encrypted chapter title id
-        * @param cID encypted client id
-        * @param wpID encrypted work paper id
-        * @param index encrypted index work paper id
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * @param chapter,moduletitleID,clientID,workpaperID,name
+        * Send the file for checking and approval
+        return as resultpage
     */
     public function sendtomanager($c,$ctID,$cID,$wpID,$name){
 
@@ -584,22 +461,15 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method sendtoapprove() sending the work paper for approval
-        * @param c chapter files
-        * @param ctID encrypted chapter title id
-        * @param cID encypted client id
-        * @param wpID encrypted work paper id
-        * @param index encrypted index work paper id
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * @param chapter,moduletitleID,clientID,workpaperID,name
+        * approve the file
+        return as resultpage
     */
-    public function sendtoapprove($c,$ctID,$cID,$wpID,$name){
+    public function sendtoapprove($c,$mtID,$cID,$wpID,$name){
 
         $req = [
-            'ctID'      => $this->decr($ctID),
+            'mtID'      => $this->decr($mtID),
             'cID'       => $this->decr($cID),
             'wpID'      => $this->decr($wpID),
             'remarks'   => $this->request->getPost('remarks'),
@@ -616,13 +486,10 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method sendtoreviewer() sending the whole work paper for review
-        * @param wpID encypted work paper id
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * @param workpaperID
+        * send the workpaper to reviewer
+        return as resultpage
     */
     public function sendtoreviewer($wpID){
 
@@ -641,13 +508,10 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method sendtopreparer() sending the whole work paper for prepare
-        * @param wpID encypted work paper id
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * @param workpaperID
+        * send the workpaper to preparer
+        return as resultpage
     */
     public function sendtopreparer($wpID){
 
@@ -666,13 +530,10 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method sendtopreparer() sending the whole work paper for checking and approval
-        * @param wpID encypted work paper id
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * @param workpaperID
+        * send the workpaper to audit manager for checking and approval
+        return as resultpage
     */
     public function sendtoapprover($wpID){
 
@@ -691,13 +552,10 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method sendbacktoreviewer() sending the whole work paper for sending back to reviewer
-        * @param wpID encypted work paper id
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * @param workpaperID
+        * send the workpaper back to reviewer
+        return as resultpage
     */
     public function sendbacktoreviewer($wpID){
 
@@ -716,13 +574,10 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        * @method approvewp() approve the whole work paper
-        * @param wpID encypted work paper id
-        * @var array-req consist of trial information
-        * @var res a return response from the work paper model
-        * @return redirect-to-page
+        * @param workpaperID
+        * approve the workpaper
+        return as resultpage
     */
     public function approvewp($wpID){
         
@@ -741,13 +596,18 @@ class WorkpaperController extends BaseController{
 
     }
 
+    /**
+        * @param chapter,moduletitleID,clientID,workpaperID,name
+        * remove a files from workpaper with password validation
+        return as resultpage
+    */
+    public function deletefiles($c,$mtID,$cID,$wpID,$name){
 
-    public function deletefiles($c,$ctID,$cID,$wpID,$name){
         $yp = session()->get('pass');
         $cpass = $this->request->getPost('cpass');
         if(password_verify($cpass, $yp)){
             $req = [
-                'ctID'      => $this->decr($ctID),
+                'mtID'      => $this->decr($mtID),
                 'cID'       => $this->decr($cID),
                 'wpID'      => $this->decr($wpID),
                 'cpass'     => $this->request->getPost('cpass'),
@@ -762,15 +622,17 @@ class WorkpaperController extends BaseController{
                 return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
             }
         }else{
-
             session()->setFlashdata('wrong_pass','wrong_pass');
             return redirect()->to(site_url('auditsystem/wp/getfiles/'.$cID.'/'.$wpID.'/'.$name));
-
         }
 
     }
 
-
+    /**
+        * @param chapter,moduletitleID,clientID,workpaperID,name
+        * remove a the workpaper with password validation
+        return as resultpage
+    */
     public function deleteworkpaper($cID,$wpID){
 
         $yp     = session()->get('pass');
@@ -796,8 +658,12 @@ class WorkpaperController extends BaseController{
 
     }
     
-
-    public function resultpage($c,$res,$code,$ctID,$cID,$wpID,$name){
+    /**
+        * @param chapter,result,code,moduletitleID,clientID,workpaperID,name
+        * result page redirection on chapters 1, 2, 3
+        return as resultpage
+    */
+    public function resultpage($c,$res,$code,$mtID,$cID,$wpID,$name){
 
         switch ($c) {
             case 'c1':
@@ -806,7 +672,7 @@ class WorkpaperController extends BaseController{
                 }else{
                     session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
                 }
-                return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'/'.$ctID.'/'.$cID.'/'.$wpID.'/'.$name));
+                return redirect()->to(site_url('auditsystem/wp/chapter1/setvalues/'.$code.'/'.$mtID.'/'.$cID.'/'.$wpID.'/'.$name));
             break;
             case 'c2':
                 if($res){
@@ -814,7 +680,7 @@ class WorkpaperController extends BaseController{
                 }else{
                     session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
                 }
-                return redirect()->to(site_url('auditsystem/wp/chapter2/setvalues/'.$code.'/'.$ctID.'/'.$cID.'/'.$wpID.'/'.$name));
+                return redirect()->to(site_url('auditsystem/wp/chapter2/setvalues/'.$code.'/'.$mtID.'/'.$cID.'/'.$wpID.'/'.$name));
             break;
             case 'c3':
                 if($res){
@@ -822,13 +688,21 @@ class WorkpaperController extends BaseController{
                 }else{
                     session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
                 }
-                return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$ctID.'/'.$cID.'/'.$wpID.'/'.$name));
+                return redirect()->to(site_url('auditsystem/wp/chapter3/setvalues/'.$code.'/'.$mtID.'/'.$cID.'/'.$wpID.'/'.$name));
             break;
         }
 
     }
 
 
+    /**
+        --------------------------------------------------------------------------------------------------------------------
+        WORKPAPER SAVING VALUES CHAPTERS
+        --------------------------------------------------------------------------------------------------------------------
+        * @param chapter,save,result,code,moduletitleID,clientID,workpaperID,name
+        * dynamic saving based on @param chapter,save
+        * saving reference stored on  @var array-$param
+    */
     public function savevalues($chapter,$save,$code,$mtID,$cID,$wpID,$name){
 
         $param = [
@@ -843,6 +717,11 @@ class WorkpaperController extends BaseController{
         ];
 
         switch ($chapter) {
+            /** 
+                --------------------------------------------------------------------------------------------------------------------
+                WORKPAPER SAVING VALUES CHAPTER 1
+                --------------------------------------------------------------------------------------------------------------------
+            */
             case 'c1': 
                 switch ($code) {
                     case 'AC1':
@@ -897,7 +776,11 @@ class WorkpaperController extends BaseController{
                     break;
                 }
             break;
-           
+            /** 
+                --------------------------------------------------------------------------------------------------------------------
+                WORKPAPER SAVING VALUES CHAPTER 2
+                --------------------------------------------------------------------------------------------------------------------
+            */
             case 'c2':
                 switch ($code) {
                     case 'AB4':
@@ -1471,7 +1354,11 @@ class WorkpaperController extends BaseController{
                     break;
                 }
             break;
-
+            /** 
+                --------------------------------------------------------------------------------------------------------------------
+                WORKPAPER SAVING VALUES CHAPTER 3
+                --------------------------------------------------------------------------------------------------------------------
+            */
             case 'c3':
                 switch ($code) {
                     case 'AA1':
@@ -2084,28 +1971,14 @@ class WorkpaperController extends BaseController{
 
     }
 
-
     /**
-        ----------------------------------------------------------
-        INDEX FILES
-        ----------------------------------------------------------
-        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
-        * @method viewindexfiles() used to view the index or work paper files
-        * @param code consist the code of the file name
-        * @param cfiID consist the encrypted client file index id
-        * @param cID consist the encrypted data of client id
-        * @param wpID consist the encrypted data of work paper id
-        * @param index consist the encrypted data of index id
-        * @param desc consist the file description
-        * @param name consist the name of the client 
-        * @var type constains the user type
-        * @var array-data consist of data and display it on the page
-        * @var dcID decrypted client id
-        * @var dcfiID decrypted client file index id
-        * @var dwpID decrypted work paper id
-        * @var dindex decrypted index id
-        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
-        * @return view
+        --------------------------------------------------------------------------------------------------------------------
+        WORKPAPER INDEX FILES
+        --------------------------------------------------------------------------------------------------------------------
+        * @param code,clientfileindexID,clientID,workpaperID,indexID,description,name
+        * dynamic view based on @param code
+        * Dynamic data fetch on @method gettbindex and getindexfiles based on @param clientId,workpaperID,indexID
+        return as views
     */
     public function viewindexfiles($code,$cfiID,$cID,$wpID,$index,$desc,$name){
 
@@ -2184,25 +2057,15 @@ class WorkpaperController extends BaseController{
 
     }
 
-
-    /**
-        ----------------------------------------------------------
-        PDF
-        CHAPTER 1 AREA
-        ----------------------------------------------------------
-        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
-        * @method viewpdfc1() used to view pdf result of chapter 1 file
-        * @param code consist the code of the file name
-        * @param cfiID consist the encrypted client file index id
-        * @param cID consist the encrypted data of client id
-        * @param wpID consist the encrypted data of work paper id
-        * @var array-data consist of data and display it on the page
-        * @var dcID decrypted client id
-        * @var dcfiID decrypted client file index id
-        * @var dwpID decrypted work paper id
-        * @var rdata contains raw json data from database
-        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
-        * @return view
+    /** 
+        --------------------------------------------------------------------------------------------------------------------
+        WORKPAPER PDF VIEWS CHAPTER 1
+        --------------------------------------------------------------------------------------------------------------------
+        * Dynamic page render based on @param code
+        * Dynamic data fetch on @method getvalues_c1 based on @param part,code,moduletitleID,clientID,workpaperID
+        * @method getvalues_c1 @param 1st contains 'm' for multiple row data and 's' for single row data
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as pdf views
     */
     public function viewpdfc1($code,$mtID,$cID,$wpID){
 
@@ -2231,24 +2094,15 @@ class WorkpaperController extends BaseController{
 
     }
 
-    
-    /**
-        ----------------------------------------------------------
-        PDF
-        CHAPTER 2 AREA
-        ----------------------------------------------------------
-        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
-        * @method viewpdfc2() used to view pdf result of chapter 2 file
-        * @param code consist the code of the file name
-        * @param c2tID consist the encrypted client file index id
-        * @param cID consist the encrypted data of client id
-        * @param wpID consist the encrypted data of work paper id
-        * @var array-data consist of data and display it on the page
-        * @var dcID decrypted client id
-        * @var dcfiID decrypted client file index id
-        * @var dwpID decrypted work paper id
-        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
-        * @return view
+    /** 
+        --------------------------------------------------------------------------------------------------------------------
+        WORKPAPER PDF VIEWS CHAPTER 2
+        --------------------------------------------------------------------------------------------------------------------
+        * Dynamic page render based on @param code
+        * Dynamic data fetch on @method getvalues_c2 based on @param part,code,moduletitleID,clientID,workpaperID
+        * @method getvalues_c2 @param 1st contains 'm' for multiple row data and 's' for single row data
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as pdf views
     */
     public function viewpdfc2($code,$mtID,$cID,$wpID){
 
@@ -2380,24 +2234,15 @@ class WorkpaperController extends BaseController{
     }
 
     
-    /**
-        ----------------------------------------------------------
-        PDF
-        CHAPTER 3 AREA
-        ----------------------------------------------------------
-        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
-        * @method viewpdfc3() used to view pdf result of chapter 3 file
-        * @param code consist the code of the file name
-        * @param c3tID consist the encrypted client file index id
-        * @param cID consist the encrypted data of client id
-        * @param wpID consist the encrypted data of work paper id
-        * @var array-data consist of data and display it on the page
-        * @var dcID decrypted client id
-        * @var dcfiID decrypted client file index id
-        * @var dwpID decrypted work paper id
-        * @var rdata contains raw json data from database
-        THE VIEWS ARE DYNAMICALLY DISPLAYED BASED ON THE @param code RESULT ON THE SWITCH CONDITION
-        * @return view
+    /** 
+        --------------------------------------------------------------------------------------------------------------------
+        WORKPAPER PDF VIEWS CHAPTER 3
+        --------------------------------------------------------------------------------------------------------------------
+        * Dynamic page render based on @param code
+        * Dynamic data fetch on @method getvalues_c3 based on @param part,code,moduletitleID,clientID,workpaperID
+        * @method getvalues_c3 @param 1st contains 'm' for multiple row data and 's' for single row data
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as pdf views
     */
     public function viewpdfc3($code,$mtID,$cID,$wpID){
 

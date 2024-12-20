@@ -10,12 +10,7 @@ class DashController extends BaseController{
 
 
     /**
-        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL // 
-        THIS FILE IS USED FOR DASHBOARD VIEWS
-        Properties being used on this file
-        * @property dmodel to include the file dashboard model
-        * @property crypt to load the encryption file
-        * @property lc to load the log controller
+        * @property
     */
     protected $dmodel;
     protected $crypt;
@@ -23,7 +18,7 @@ class DashController extends BaseController{
 
 
     /**
-        * @method __construct() to assign and load the method on the @property
+        * Load the methods on the @property
     */
     public function __construct(){
 
@@ -34,20 +29,25 @@ class DashController extends BaseController{
 
     }
 
+    /**
+        * Replacing characters then Decrypting a Data @param ecr
+    */
     public function decr($ecr){
         return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
     }
 
+
+    /**
+        * Encypting a Data @param ecr then Replacing the characters
+    */
     public function encr($ecr){
         return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
 
 
     /**
-        * @method getwpp() get the work paper progress
-        * @param year consist of year
-        * @var fID decrypted data of firm id
-        * @var res a return response from the dashboard model
+        * @param year
+        * get the workpaper information based on @param year and firmID
         * @return json
     */
     public function getwpp($year){
@@ -60,14 +60,8 @@ class DashController extends BaseController{
 
 
     /**
-        * @method getnumwpp() get the number of work paper progress
-        * @param year consist of year
-        * @var fID decrypted data of firm id
-        * @var prep returns number of preparing workpaper
-        * @var rev returns number of reviewing workpaper
-        * @var done returns number of done workpaper
-        * @var check returns number of checking workpaper
-        * @var array-data consist of all data needed to display on the page
+        * @param year
+        * get the count of the work paper progress based on @param year and firmID
         * @return json
     */
     public function getnumwpp($year){
@@ -84,18 +78,9 @@ class DashController extends BaseController{
 
 
     /**
-        * @method dashboard() view the dashboard
-        * @var array-data consist of all data needed to display on the page
+        * View the System Documentation 
         * @return view
     */
-    public function dashboard(){
-
-        $data['title'] = 'Dashboard';
-        echo view('dashboard/Dashboard', $data);
-    
-    }
-
-
     public function documentation(){
 
         $data['title']  = 'Process - Documentation';
@@ -105,15 +90,15 @@ class DashController extends BaseController{
 
     }
 
+
     /**
-        * @method auditsystem() view the audit dashboard
-        * @var fID decrypted data of firm id
-        * @var logs contains system logs
-        * @var array-data consist of all data needed to display on the page
+        * View the audit system dashboard 
+        * All inside the @var array-$data will be called as variable on the views ex: $title, $name
         * @return view
     */
     public function auditsystem(){
 
+        
         $data['title']      = session()->get('firm'). ' - Dashboard';
         $fID                = $this->decr(session()->get('firmID'));
         $data['numcli']     = $this->dmodel->getnumclients($fID);

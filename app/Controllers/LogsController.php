@@ -11,16 +11,13 @@ class LogsController extends BaseController{
 
 
     /**
-        // THIS CONTROLLER ONLY ACCESSED ON THE MODEL// 
-        THIS FILE IS USED FOR FIRM MANAGEMENT
-        Properties being used on this file
-        * @property crypt to load the encryption file
+        * @property
     */
     protected $crypt;
 
 
     /**
-        * @method __construct() to assign and load the method on the @property
+        * Load the methods on the @property
     */
     public function __construct(){
 
@@ -30,16 +27,26 @@ class LogsController extends BaseController{
     }
 
 
+    /**
+        * Replacing characters then Decrypting a Data @param ecr
+    */
     public function decr($ecr){
         return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
     }
 
+
+    /**
+        * Encypting a Data @param ecr then Replacing the characters
+    */
     public function encr($ecr){
         return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
 
 
-
+    /**
+        * view the System Logs
+        * @return view
+    */
     public function logs(){
 
         $data['title'] = session()->get('firm'). ' - Logs';
@@ -55,12 +62,11 @@ class LogsController extends BaseController{
 
     }
 
+
     /**
-        * @method viewlogs() view the system logs
-        * @var fID decrypted data of firm id
-        * @var logFile path of the log file
-        * @var log contains log information
-        * @return @var logs
+        * @param lines
+        * get the Logs and display it based on the number of lines
+        * @return logs
     */
     public function viewlogs($lines = 0){
     

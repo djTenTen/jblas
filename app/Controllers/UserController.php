@@ -8,44 +8,31 @@ use \App\Models\UserModel;
 
 class UserController extends BaseController{
     
-
     /**
-        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL // 
-        THIS FILE IS USED FOR POSITION MANAGEMENT
-        Properties being used on this file
-        * @property usermodel to include the file user model
-        * @property crypt to load the encryption file
+        * @property
     */
     protected $usermodel;
     protected $crypt;
     protected $token = 'Anti-CSRF tokens';
 
-
     /**
-        * @method __construct() to assign and load the method on the @property
+        * Replacing characters then Decrypting a Data @param ecr
     */
-    public function __construct(){
-
-        \Config\Services::session();
-        $this->usermodel = new UserModel();
-        $this->crypt = \Config\Services::encrypter();
-
-    }
-
-
     public function decr($ecr){
         return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
     }
 
+    /**
+        * Encypting a Data @param ecr then Replacing the characters
+    */
     public function encr($ecr){
         return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
 
-
     /**
-        * @method register() to view the registration page
-        * @var array-data consist of data and display it on the page
-        * @return view
+        * view the registration page
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        * @return view-page
     */
     public function register(){
 
@@ -55,11 +42,9 @@ class UserController extends BaseController{
 
     }
 
-
     /**
-        * @method aud() to view the verification page
-        * @param email contains email
-        * @var array-data consist of data and display it on the page
+        * @param email
+        * email verification page
         * @return view
     */
     public function aud($email){
@@ -69,31 +54,9 @@ class UserController extends BaseController{
 
     }
 
-
     /**
-        * @method viewusers() to view the user management
-        * @var uID decrypted data of user id
-        * @var array-data consist of data and display it on the page
-        * @return view
-    */
-    public function viewusers(){
-
-        $uID            = $this->decr(session()->get('userID'));
-        $data['title']  = 'User Management';
-        $data['usr']    = $this->usermodel->getusers($uID);
-        $data['pos']    = $this->usermodel->getposition();
-        $data['firm']   = $this->usermodel->getfirm();
-        echo view('includes/Header', $data);
-        echo view('users/Users', $data);    
-        echo view('includes/Footer');
-
-    }
-
-
-    /**
-        * @method myaccount() to view account information of user
-        * @var uID decrypted data of user id
-        * @var array-data consist of data and display it on the page
+        * view the account information of the user
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
         * @return view
     */
     public function myaccount(){
@@ -107,28 +70,9 @@ class UserController extends BaseController{
 
     }
 
-
     /**
-        * @method edituser() edit the information of user
-        * @param uID encrypted data of user id
-        * @var duID decrypted data of user id
-        * @return json
-    */
-    public function edituser($uID){
-
-        $duID = $this->decr($uID);
-        return $this->usermodel->edituser($duID);
-
-    }
-
-
-    /**
-        * @method signup() used to register a firm
-        * @var validationRules set to validate the data before saving to database
-        * @var pss contains the password of the account\
-        * @var array-req contains user/firm information
-        * @var res a return response from the user model
-        * @return redirect-to-page
+        * firm's initial registration
+        * @return resultpage
     */
     public function signup(){
 
@@ -177,13 +121,10 @@ class UserController extends BaseController{
 
     }
 
-
     /**
-        * @method acceptaud() used to confirm auditor
-        * @var validationRules set to validate the data before saving to database
-        * @var array-req contains user reference confirmation
-        * @var res a return response from the user model
-        * @return redirect-to-page
+        * @param email
+        * accepts the firm's registration
+        * @return resultpage
     */
     public function acceptaud($email){
 
@@ -211,98 +152,10 @@ class UserController extends BaseController{
 
     }
 
-
     /**
-        * @method adduser() add a user on the system
-        * @var validationRules set to validate the data before saving to database
-        * @var array-req contains user information
-        * @var res a return response from the user model
-        * @return redirect-to-page
-    */
-    public function adduser(){
-
-        $validationRules = [
-            'name'      => 'required',
-            'email'     => 'required',
-            'type'      => 'required',
-            'pos'       => 'required',
-        ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/user'));
-        }
-        $req = [
-            'name'      => $this->request->getPost('name'),
-            'email'     => $this->request->getPost('email'),
-            'pass'      => $this->encr('password'),
-            'firm'      => $this->decr($this->request->getPost('firm')),
-            'type'      => $this->request->getPost('type'),
-            'pos'       => $this->decr($this->request->getPost('pos'))
-        ];
-        $res = $this->usermodel->adduser($req);
-        if($res == 'exist'){
-            session()->setFlashdata('exist','exist');
-            return redirect()->to(site_url('auditsystem/user'));
-        }else if($res == "added"){
-            session()->setFlashdata('added','added');
-            return redirect()->to(site_url('auditsystem/user'));
-        }else{
-            session()->setFlashdata('failed','failed');
-            return redirect()->to(site_url('auditsystem/user'));
-        }
-
-    }
-
-
-    /**
-        * @method adduser() add a user on the system
-        * @param uID encrypted data of user id
-        * @var duID decrypted data of user id
-        * @var validationRules set to validate the data before saving to database
-        * @var array-req contains user information
-        * @var res a return response from the user model
-        * @return redirect-to-page
-    */
-    public function udpateuser($uID){
-
-        $duID = $this->decr($uID);
-        $validationRules = [
-            'name'      => 'required',
-            'email'     => 'required',
-            'type'      => 'required',
-            'pos'       => 'required',
-        ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/user'));
-        }
-        $req = [
-            'name'      => $this->request->getPost('name'),
-            'email'     => $this->request->getPost('email'),
-            'type'      => $this->request->getPost('type'),
-            'pos'       => $this->decr($this->request->getPost('pos')),
-            'uID'       => $duID,
-        ];
-        $res = $this->usermodel->udpateuser($req);
-        if($res == "updated"){
-            session()->setFlashdata('updated','updated');
-            return redirect()->to(site_url('auditsystem/user'));
-        }else{
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/user'));
-        }
-        
-    }
-
-
-    /**
-        * @method adduser() add a user on the system
-        * @param uID encrypted data of user id
-        * @var duID decrypted data of user id
-        * @var npss new password
-        * @var array-req contains user information
-        * @var res a return response from the user model
-        * @return redirect-to-page
+        * @param userID
+        * updates the user information
+        * @return resultpage
     */
     public function updatemyinfo($uID){
 
@@ -339,28 +192,5 @@ class UserController extends BaseController{
         }
 
     }
-
-
-    /**
-        * @method acin() used to set inactive and active the user
-        * @param uID encrypted data of user id
-        * @var duID decrypted data of user id
-        * @var res a return response from the position model
-        * @return redirect-to-page
-    */
-    public function acin($uID){
-
-        $duID   = $this->decr($uID);
-        $res    = $this->usermodel->acin($duID);
-        if($res){
-            session()->setFlashdata('updated','updated');
-            return redirect()->to(site_url('auditsystem/user'));
-        }else{
-            session()->setFlashdata('failed','failed');
-            return redirect()->to(site_url('auditsystem/user'));
-        }
-
-    }
-
 
 }

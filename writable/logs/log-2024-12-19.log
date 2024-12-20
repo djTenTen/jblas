@@ -1,0 +1,146 @@
+CRITICAL - 2024-12-19 10:13:03 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(29): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Models/AuthModel.php(103): App\Models\AuthModel->decr()
+ 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before()
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-19 12:25:27 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH/Encryption/Handlers/OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH/Models/AuthModel.php(29): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt()
+ 3 APPPATH/Models/AuthModel.php(103): App\Models\AuthModel->decr()
+ 4 APPPATH/Filters/Client_cl.php(23): App\Models\AuthModel->getUserAccess()
+ 5 SYSTEMPATH/Filters/Filters.php(182): App\Filters\Client_cl->before()
+ 6 SYSTEMPATH/CodeIgniter.php(474): CodeIgniter\Filters\Filters->run()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-19 12:45:41 --> mysqli_sql_exception: Unknown column 'two_factor_secret' in 'SET' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/HomeModel.php(87): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/HomeController.php(111): App\Models\HomeModel->resetpass()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\HomeController->resetpass()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-12-19 12:45:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'two_factor_secret' in 'SET'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/HomeModel.php(87): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/HomeController.php(111): App\Models\HomeModel->resetpass()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\HomeController->resetpass()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-19 12:45:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'two_factor_secret' in 'SET'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/HomeModel.php(87): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/HomeController.php(111): App\Models\HomeModel->resetpass()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\HomeController->resetpass()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-19 12:45:41 --> [Caused by] mysqli_sql_exception: Unknown column 'two_factor_secret' in 'SET'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/HomeModel.php(87): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/HomeController.php(111): App\Models\HomeModel->resetpass()
+ 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\HomeController->resetpass()
+ 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-19 12:46:34 --> mysqli_sql_exception: Unknown column 'two_factor_secret' in 'SET' in /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+#4 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Models/HomeModel.php(87): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Controllers/HomeController.php(111): App\Models\HomeModel->resetpass()
+#6 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(941): App\Controllers\HomeController->resetpass()
+#7 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#8 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/index.php(84): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-12-19 12:46:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'two_factor_secret' in 'SET'
+in SYSTEMPATH/Database/BaseConnection.php on line 647.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/HomeModel.php(87): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH/Controllers/HomeController.php(111): App\Models\HomeModel->resetpass()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\HomeController->resetpass()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-19 12:46:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'two_factor_secret' in 'SET'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 311.
+ 1 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/HomeModel.php(87): CodeIgniter\Database\BaseBuilder->update()
+ 5 APPPATH/Controllers/HomeController.php(111): App\Models\HomeModel->resetpass()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\HomeController->resetpass()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-19 12:46:34 --> [Caused by] mysqli_sql_exception: Unknown column 'two_factor_secret' in 'SET'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 306.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(306): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/HomeModel.php(87): CodeIgniter\Database\BaseBuilder->update()
+ 6 APPPATH/Controllers/HomeController.php(111): App\Models\HomeModel->resetpass()
+ 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\HomeController->resetpass()
+ 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-12-19 12:49:07 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-12-19 12:49:07 --> 220-sg2plmcpnl480577.prod.sin2.secureserver.net ESMTP Exim 4.96.2 #2 Wed, 18 Dec 2024 21:48:59 -0700 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+hello: 250-sg2plmcpnl480577.prod.sin2.secureserver.net Hello testapplaud.buildappminds.com [184.168.116.161]
+250-SIZE 52428800
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250-STARTTLS
+250 HELP
+
+starttls: 220 TLS go ahead
+
+hello: 250-sg2plmcpnl480577.prod.sin2.secureserver.net Hello testapplaud.buildappminds.com [184.168.116.161]
+250-SIZE 52428800
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+from: 250 OK
+
+to: 250 Accepted
+
+data: 354 Enter message, ending with "." on a line by itself
+
+
+quit: 250 OK id=1tO8T5-005Tlq-2x
+
+The following SMTP error was encountered: 250 OK id=1tO8T5-005Tlq-2x
+
+The following SMTP error was encountered: 

@@ -9,18 +9,14 @@ class ClientController extends BaseController{
 
 
     /**
-        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL // 
-        THIS FILE IS USED FOR CLIENT MANAGMENT
-        Properties being used on this file
-        * @property cmodel to include the file client model
-        * @property crypt to load the encryption file
+        * @property
     */
     protected $cmodel;
     protected $crypt;
 
 
     /**
-        * @method __construct() to assign and load the method on the @property
+        * Load the methods on the @property
     */
     public function __construct(){
 
@@ -30,19 +26,44 @@ class ClientController extends BaseController{
 
     }
 
+
+    /**
+        * @param result
+        * dynamic resultpage for Client Management
+        return as redirect
+    */
+    public function resultpage($res){
+
+        if($res === 'exist'){
+            session()->setFlashdata('failed','Client already exist.');
+        }elseif($res === 'updated'){
+            session()->setFlashdata('success','Client has been successfully Updated.');
+        }elseif($res){
+            session()->setFlashdata('success','Client has been successfully registered');
+        }else{
+            session()->setFlashdata('failed','There\'s something wrong with your input, Please try again');
+        }
+        return redirect()->to(site_url('auditsystem/client'));
+
+    }
+
+    /**
+        * Replacing characters then Decrypting a Data @param ecr
+    */
     public function decr($ecr){
         return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
     }
 
+    /**
+        * Encypting a Data @param ecr then Replacing the characters
+    */
     public function encr($ecr){
         return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
     
-
     /**
-        * @method editclient() used to load the data of client for editing
-        * @param cID encrypted data of client id
-        * @var dcID decrypted data of client id
+        * fetch and edit the client information
+        * fetch reference based on @param clientID
         * @return json
     */
     public function editclient($cID){
@@ -52,11 +73,9 @@ class ClientController extends BaseController{
 
     }
 
-
     /**
-        * @method getdefaultfiles() used to load the data of default files assigned to the client
-        * @param cID encrypted data of client id
-        * @var dcID decrypted data of client id
+        * fetch the client files information
+        * fetch reference based on @param clientID
         * @return json
     */
     public function getdefaultfiles($cID){
@@ -66,14 +85,14 @@ class ClientController extends BaseController{
 
     }
 
-
-    /**
-        * @method viewfiles() view the HAT files to be assign to client
-        * @param cID encrypted data of client id
-        * @param name name of the client
-        * @var dcID decrypted data of client id
-        * @var array-data consist of data and display it on the page
-        * @return view
+    /** 
+        --------------------------------------------------------------------------------------------------------------------
+        VIEW AND SELECT FILES FROM CHAPTER 1,2,3
+        --------------------------------------------------------------------------------------------------------------------
+        * @param clientID,name
+        * view and select default files for client from chapter 1, 2, and 3
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function viewfiles($cID,$name){
 
@@ -92,12 +111,15 @@ class ClientController extends BaseController{
     }
 
 
+
     /**
-        * @method getfiles() get the files assigned to the client
-        * @param cID encrypted data of client id
-        * @param name name of the client
-        * @var array-data consist of data and display it on the page
-        * @return view
+        --------------------------------------------------------------------------------------------------------------------
+        VIEW AND SET DEFAULT FILES FROM CHAPTER 1,2,3
+        --------------------------------------------------------------------------------------------------------------------
+        * @param cliendID,name
+        * view and set values the assigned files for the client from chapter 1,2, and 3
+        * All inside the @var array.$data will be called as variable on the views ex: $title, $name
+        return as views
     */
     public function getfiles($cID,$name){
 
@@ -114,142 +136,11 @@ class ClientController extends BaseController{
         echo view('includes/Footer');
 
     }
-
-
     /**
-        * @method viewclient() view the client information
-        * @var fID decrypted data of firm id
-        * @var array-data consist of data and display it on the page
-        * @return view
-    */
-    public function viewclient(){
-
-        $fID            = $this->decr(session()->get('firmID'));
-        $data['title']  = 'Client Management';
-        $data['client'] = $this->cmodel->getclients($fID);
-        echo view('includes/Header', $data);
-        echo view('client/Client', $data);
-        echo view('includes/Footer');
-    
-    }
-
-
-    /**
-        * @method viewclientset() view the client default values
-        * @var fID decrypted data of firm id
-        * @var array-data consist of data and display it on the page
-        * @return view
-    */
-    public function viewclientset(){
-
-        $fID            = $this->decr(session()->get('firmID'));
-        $data['title']  = 'Client Management Set Defaults';
-        $data['client'] = $this->cmodel->getclients($fID);
-        echo view('includes/Header', $data);
-        echo view('client/ClientDefaults', $data);
-        echo view('includes/Footer');
-
-    }
-
-
-    /**
-        * @method addclient() add the client information to the database
-        * @var validationRules set to validate the data before saving to database
-        * @var array-req consist the client information
-        * @var res a return response from the client model
-        * @return redirect-to-page
-    */
-    public function addclient(){
-
-        $validationRules = [
-            'name'      => 'required',
-            'org'       => 'required',
-            'email'     => 'required'
-        ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/client'));
-        }
-        $req = [
-            'name'      => $this->request->getPost('name'),
-            'org'       => $this->request->getPost('org'),
-            'email'     => $this->request->getPost('email'),
-            'contact'   => $this->request->getPost('contact'),
-            'address'   => $this->request->getPost('address'),
-            'orgtype'   => $this->request->getPost('orgtype'),
-            'industry'  => $this->request->getPost('industry'),
-            'fID'       => $this->decr(session()->get('firmID')),
-        ];
-        $res = $this->cmodel->saveclient($req);
-        if($res == 'exist'){
-            session()->setFlashdata('exist','exist');
-            return redirect()->to(site_url('auditsystem/client'));
-        }else if($res == "registered"){
-            session()->setFlashdata('added','added');
-            return redirect()->to(site_url('auditsystem/client'));
-        }else{
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/client'));
-        }
-
-    }
-
-
-    /**
-        * @method updateclient() update the client information to the database
-        * @param cID encrypted data of client id
-        * @var dcID decrypted data of client id
-        * @var validationRules set to validate the data before saving to database
-        * @var array-req consist the client information
-        * @var res a return response from the client model
-        * @return redirect-to-page
-    */
-    public function updateclient($cID){
-
-        $dcID = $this->decr($cID);
-        $validationRules = [
-            'name'      => 'required',
-            'org'       => 'required',
-            'email'     => 'required'
-        ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/client'));
-        }
-        $req = [
-            'name'      => $this->request->getPost('name'),
-            'org'       => $this->request->getPost('org'),
-            'email'     => $this->request->getPost('email'),
-            'contact'   => $this->request->getPost('contact'),
-            'address'   => $this->request->getPost('address'),
-            'orgtype'   => $this->request->getPost('orgtype'),
-            'industry'  => $this->request->getPost('industry'),
-            'cID'       =>  $dcID,
-            'fID'       => $this->decr(session()->get('firmID')),
-        ];
-        $res = $this->cmodel->updateclient($req);
-        if($res == "updated"){
-            session()->setFlashdata('updated','updated');
-            return redirect()->to(site_url('auditsystem/client'));
-        }else{
-            session()->setFlashdata('invalid_input','invalid_input');
-            return redirect()->to(site_url('auditsystem/client'));
-        }
-
-    }
-
-
-    /**
-        * @method setfiles() set default files to the client
-        * @param cID encrypted data of client id
-        * @param cID encrypted data of chapter title id
-        * @var dcID decrypted data of client id
-        * @var array-req consist the client information
-        * @var res a return response from the client model
-        * @return json-response
+        * @param clientID,moduletitleID
+        * add files to the client
     */
     public function setfiles($cID,$mtID){
-
         $req = [
             'cval'      => $this->request->getPost('checked'),
             'cID'       => $this->decr($cID),
@@ -258,17 +149,10 @@ class ClientController extends BaseController{
         ];
         $res = $this->cmodel->setfiles($req);
         return $this->response->setJSON(['message' => $res]);
-        
     }
-
     /**
-        * @method removefiles() remove the file from the client
-        * @param cID encrypted data of client id
-        * @param cID encrypted data of chapter title id
-        * @var dcID decrypted data of client id
-        * @var array-req consist the client information
-        * @var res a return response from the client model
-        * @return json-response
+        * @param clientID,moduletitleID
+        * remove files to the client
     */
     public function removefiles($cID,$mtID){
 
@@ -283,24 +167,110 @@ class ClientController extends BaseController{
         
     }
 
+
+
     /**
-        * @method acin() used to set active/inactive the client
-        * @param cID encrypted data of client id
-        * @var dcID decrypted data of client id
-        * @var res a return response from the chapter 3 model
+        --------------------------------------------------------------------------------------------------------------------
+        CLIENT MANAGEMENT
+        --------------------------------------------------------------------------------------------------------------------
+        * view the firm's client information
+        return as views
+    */
+    public function viewclient(){
+
+        $fID            = $this->decr(session()->get('firmID'));
+        $data['title']  = 'Client Management';
+        $data['client'] = $this->cmodel->getclients($fID);
+        echo view('includes/Header', $data);
+        echo view('client/Client', $data);
+        echo view('includes/Footer');
+    
+    }
+    /**
+        * view and select the client for files set defaults
+        return as views
+    */
+    public function viewclientset(){
+
+        $fID            = $this->decr(session()->get('firmID'));
+        $data['title']  = 'Client Management Set Defaults';
+        $data['client'] = $this->cmodel->getclients($fID);
+        echo view('includes/Header', $data);
+        echo view('client/ClientDefaults', $data);
+        echo view('includes/Footer');
+
+    }
+    /**
+        * Client Registration
+        return as resultpage
+    */
+    public function addclient(){
+
+        $validationRules = [
+            'name'      => 'required',
+            'org'       => 'required',
+            'email'     => 'required'
+        ];
+        if (!$this->validate($validationRules)) {
+            return $this->resultpage(false);
+        }
+        $req = [
+            'name'      => $this->request->getPost('name'),
+            'org'       => $this->request->getPost('org'),
+            'email'     => $this->request->getPost('email'),
+            'contact'   => $this->request->getPost('contact'),
+            'address'   => $this->request->getPost('address'),
+            'orgtype'   => $this->request->getPost('orgtype'),
+            'industry'  => $this->request->getPost('industry'),
+            'fID'       => $this->decr(session()->get('firmID')),
+        ];
+        $res = $this->cmodel->saveclient($req);
+        return $this->resultpage($res);
+
+    }
+    /**
+        * @param clientID
+        * Update Client Information
+        return as resultpage
+    */
+    public function updateclient($cID){
+
+        $dcID = $this->decr($cID);
+        $validationRules = [
+            'name'      => 'required',
+            'org'       => 'required',
+            'email'     => 'required'
+        ];
+        if (!$this->validate($validationRules)) {
+            return $this->resultpage(false);
+        }
+        $req = [
+            'name'      => $this->request->getPost('name'),
+            'org'       => $this->request->getPost('org'),
+            'email'     => $this->request->getPost('email'),
+            'contact'   => $this->request->getPost('contact'),
+            'address'   => $this->request->getPost('address'),
+            'orgtype'   => $this->request->getPost('orgtype'),
+            'industry'  => $this->request->getPost('industry'),
+            'cID'       =>  $dcID,
+            'fID'       => $this->decr(session()->get('firmID')),
+        ];
+        $res = $this->cmodel->updateclient($req);
+        return $this->resultpage($res);
+
+    }
+
+
+    /**
+        * @param clientID
+        * Set to active & Inactive the Auditor's information
         * @return redirect-to-page
     */
     public function acin($cID){
 
         $dcID  = $this->decr($cID);
         $res   = $this->cmodel->acin($dcID);
-        if($res){
-            session()->setFlashdata('updated','updated');
-            return redirect()->to(site_url('auditsystem/client'));
-        }else{
-            session()->setFlashdata('failed','failed');
-            return redirect()->to(site_url('auditsystem/client'));
-        }
+        return $this->resultpage($res);
 
     }
 

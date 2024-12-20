@@ -11,7 +11,7 @@ class ErrorController extends BaseController{
     */
 
     /**
-        * @method error401() displays unauthorized error
+        * displays unauthorized error
     */
     public function error401(){
 
@@ -21,7 +21,7 @@ class ErrorController extends BaseController{
 
 
     /**
-        * @method error403() displays forbidden error
+        * displays forbidden error
     */
     public function error403(){
 
@@ -31,7 +31,7 @@ class ErrorController extends BaseController{
 
 
     /**
-        * @method error500() displays internal server error
+        * displays internal server error
     */
     public function error500(){
 

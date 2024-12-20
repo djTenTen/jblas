@@ -9,18 +9,13 @@ class ChapterValuesController extends BaseController{
 
 
     /**
-        // ALL CONTROLLERS ARE ACCESSED THROUGH ROUTES BEFORE GOING TO MODEL //
-        THIS FILE IS USED FOR SUBMITTION OF DATA TO THE DATABASE
-        Properties being used on this file
-        * @property cvmodel to include the file chapter values model
-        * @property crypt to load the encryption file
+        * @property
     */
     protected $cvmodel;
     protected $crypt;
 
-
     /**
-        * @method __construct() to assign and load the method on the @property
+        * Load the methods on the @property
     */
     public function __construct(){
 
@@ -30,15 +25,28 @@ class ChapterValuesController extends BaseController{
 
     }
 
+
+    /**
+        * Replacing characters then Decrypting a Data @param ecr
+    */
     public function decr($ecr){
         return $this->crypt->decrypt(str_ireplace(['~','$'],['/','+'],$ecr));
     }
 
+
+    /**
+        * Encypting a Data @param ecr then Replacing the characters
+    */
     public function encr($ecr){
         return str_ireplace(['/','+'],['~','$'],$this->crypt->encrypt($ecr));
     }
 
 
+    /**
+        * @param chapter,result,code,moduletitleID,clientID,name
+        * dynamic resultpage based on the @param c,res
+        * dynamic redirection based on @param code,moduletitleID,clientID,name
+    */
     public function resultpage($c,$res,$code,$mtID,$cID,$name){
 
         switch ($c) {
@@ -70,6 +78,12 @@ class ChapterValuesController extends BaseController{
 
     }
 
+
+    /**
+        * @param chapter,save,code,moduletitleID,clientID,name
+        * dynamic saving based on @param chapter,save
+        * saving reference stored on  @var array-$param
+    */
     public function savevalues($chapter,$save,$code,$mtID,$cID,$name){
 
         $param = [
@@ -81,8 +95,12 @@ class ChapterValuesController extends BaseController{
             'uID'       => $this->decr(session()->get('userID')),
             'fID'       => $this->decr(session()->get('firmID')),
         ];
-
         switch ($chapter) {
+            /** 
+                --------------------------------------------------------------------------------------------------------------------
+                SAVING VALUES CHAPTER 1
+                --------------------------------------------------------------------------------------------------------------------
+            */
             case 'c1': 
                 switch ($code) {
                     case 'AC1':
@@ -135,10 +153,13 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
-                    
                 }
             break;
-           
+            /** 
+                --------------------------------------------------------------------------------------------------------------------
+                SAVING VALUES CHAPTER 2
+                --------------------------------------------------------------------------------------------------------------------
+            */
             case 'c2':
                 switch ($code) {
                     case 'AB4':
@@ -712,7 +733,11 @@ class ChapterValuesController extends BaseController{
                     break;
                 }
             break;
-
+            /** 
+                --------------------------------------------------------------------------------------------------------------------
+                SAVING VALUES CHAPTER 3
+                --------------------------------------------------------------------------------------------------------------------
+            */
             case 'c3':
                 switch ($code) {
                     case 'AA1':
@@ -1318,27 +1343,6 @@ class ChapterValuesController extends BaseController{
                         $res = $this->cvmodel->savevalues($param,$req);
                         return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
                     break;
-                    // case '3.15.1 Ab4a':
-                    // case '3.15.2 Ab4b':
-                    // case '3.15.3 Ab4c':
-                    // case '3.15.4 Ab4d':
-                    // case '3.15.5 Ab4e':
-                    // case '3.15.6 Ab4f':
-                    // case '3.15.7 Ab4g':
-                    // case '3.15.8 Ab4h':
-                    //     switch ($save) {
-                    //         case 'saveab4a' :
-                    //             $req = [
-                    //                 'yesno'     => $this->request->getPost('yesno'),
-                    //                 'comment'   => $this->request->getPost('comment'),
-                    //                 'acid'      => $this->request->getPost('acid'),
-                    //                 'c3tID'     => $param['mtID'],
-                    //             ];
-                    //         break;
-                    //     }
-                    //     $res = $this->cvmodel->savevalues($param,$req);
-                    //     return $this->resultpage($chapter,$res,$code,$mtID,$cID,$name);
-                    // break;
                 }
             break;
             

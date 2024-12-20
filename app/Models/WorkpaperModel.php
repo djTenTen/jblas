@@ -212,7 +212,7 @@ class WorkpaperModel extends  Model {
         * @var query contains database result query
         * @return result-array
     */
-    public function getfileindex($cID,$wpID,$status){
+    public function getfileindex($cID,$wpID){
 
         $query = $this->db->query("select * , 
         (select 100 - round(((SUM(ytd) - SUM(supp_bal)) / SUM(ytd)) * 100) from {$this->tbltb} as tb where tb.cID = {$cID} and tb.wpID = {$wpID} and cfi.index = tb.index) as prog
@@ -233,7 +233,7 @@ class WorkpaperModel extends  Model {
         * @var query contains database result query
         * @return result-array
     */
-    public function getc1values($cID,$wpID,$status){
+    public function getc1values($cID,$wpID){
 
         $query = $this->db->query("select DISTINCT title,c1t.code,c1t.mtID,c1.remarks,c1.status,
         (select COUNT(*) from {$this->tblc1} WHERE {$this->tblc1}.mtID = c1.mtID and {$this->tblc1}.wpID = {$wpID} and {$this->tblc1}.cID = {$cID}) as x , 
@@ -280,7 +280,7 @@ class WorkpaperModel extends  Model {
         * @var query contains database result query
         * @return result-array
     */
-    public function getc2values($cID,$wpID,$status){
+    public function getc2values($cID,$wpID){
 
         
         $query = $this->db->query("select DISTINCT title,c1t.code,c1t.mtID,c1.remarks,c1.status,
@@ -304,7 +304,7 @@ class WorkpaperModel extends  Model {
         * @var query contains database result query
         * @return result-array
     */
-    public function getc3values($cID,$wpID,$status){
+    public function getc3values($cID,$wpID){
 
         
         $query = $this->db->query("select DISTINCT title,c1t.code,c1t.mtID,c1.remarks,c1.status,
@@ -750,47 +750,6 @@ class WorkpaperModel extends  Model {
 
     }
 
-
-    /**
-        * @method uploadcfsfiles() upload client supporting files
-        * @param req trial file data
-        * @var fn file name
-        * @var pdfpath path of the file uploaded
-        * @return updated-false
-    */
-    public function uploadcfsfiles($req){
-
-        $filename = $req['file']->getClientName();
-
-        if($req['file'] != ''){
-            $pdfPath = ROOTPATH .'public/uploads/pdf/wp/'.$req['fID'].'/'.$req['wpID'].'/';
-            if (!is_dir($pdfPath)) {
-                mkdir($pdfPath, 0755, true);
-            }
-        
-            $pdffile = $pdfPath.$filename; 
-            if(file_exists($pdffile) && is_file($pdffile)) {
-                unlink($pdffile);
-            }
-            $req['file']->move($pdfPath);
-            $where = [
-                'clientID'  => $req['cID'],
-                'firm'      => $req['fID'],
-                'workpaper' => $req['wpID'],
-                'index'     => 1,
-            ];
-            $data = ['file' =>  $filename];
-            if($this->db->table($this->tblcfi)->where($where)->update($data)){
-                $this->logs->log(session()->get('name'). " has uploaded a copy signed financial statement on workpaper");
-                return 'uploaded';
-            }
-        }else{
-            return false;
-        }
-
-    }
-
-
     /**
         * @method saveworkpaper() saving the work paper
         * @param req work paper data
@@ -968,7 +927,7 @@ class WorkpaperModel extends  Model {
         $where = [
             'cID'      => $req['cID'],
             'wpID'     => $req['wpID'],
-            $ctID      => $req['ctID'],
+            $ctID      => $req['mtID'],
         ];
         $data = [
             'remarks'       => $req['remarks'],
@@ -1005,7 +964,7 @@ class WorkpaperModel extends  Model {
         $where = [
             'cID'      => $req['cID'],
             'wpID'     => $req['wpID'],
-            $ctID      => $req['ctID'],
+            $ctID      => $req['mtID'],
         ];
         $data = [
             'remarks'   => $req['remarks'],
@@ -1078,7 +1037,7 @@ class WorkpaperModel extends  Model {
         $where = [
             'cID'      => $req['cID'],
             'wpID'     => $req['wpID'],
-            $ctID      => $req['ctID'],
+            $ctID      => $req['mtID'],
         ];
         $data = [
             'remarks'       => $req['remarks'],
@@ -1194,7 +1153,7 @@ class WorkpaperModel extends  Model {
         $where = [
             'cID'      => $req['cID'],
             'wpID'     => $req['wpID'],
-            $ctID      => $req['ctID'],
+            $ctID      => $req['mtID'],
         ];
         if($this->db->table($table)->where($where)->delete()){
             $this->logs->log(session()->get('name'). " deleted a file from {$req['c']}");
