@@ -104,7 +104,7 @@
                         foreach($wp as $r){
                             $x = $r['x1'] + $r['x2'] + $r['x3'];
                             $y = $r['y1'] + $r['y2'] + $r['y3'];
-                            if($x == 0 or $y == 0){
+                            if($x == 0 or $y == 0 or $r['ir'] == 0 or $r['ic'] == 0 or $r['ia'] == 0){
                                 $p = 1;
                             }else{
                                 $ir = ($r['ir'] * 50) /  $r['ti'];
