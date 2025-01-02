@@ -17,6 +17,7 @@ class SystemModel extends  Model {
         
     */
     protected $tblf = "tbl_firm";
+    protected $tblu = "tbl_users";
     protected $tbln = "tbl_notification";
     protected $tbls = "tbl_soqm";
     protected $logs;
@@ -62,6 +63,7 @@ class SystemModel extends  Model {
                 if($days <= 0){
                     $intensity = 'danger';
                     $msg = 'Your subscription has been expired, please re-new.';
+                    $this->db->table($this->tblf)->where(array('firmID' => $f['firmID']))->update(array('status' => 'Expired'));
                 }else{
                     $intensity = 'warning';
                     $msg = 'Your subscription will expire in '.$days. ' days';

@@ -73,6 +73,7 @@ class AuthController extends BaseController{
                 'email'             => $res['email'],
                 'pass'              => $res['pass'],
                 'firm'              => $res['firm'],
+                'fstat'             => $res['fstat'],
                 'firmID'            => $this->encr($res['firmID']),
                 'pos'               => $res['pos'],
                 'type'              => $res['type'],

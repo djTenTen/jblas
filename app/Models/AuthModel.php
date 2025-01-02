@@ -42,7 +42,7 @@ class AuthModel extends  Model {
         $email = $req['email']; // user email
         $pass = $req['password']; // user password
         // parameterized query
-        $q = "select * , tf.firm as firmname, tp.position as pos, tu.status as stat
+        $q = "select * , tf.firm as firmname, tp.position as pos, tu.status as stat, tf.status as tfstat
         from {$this->tbluser} as tu,{$this->tblfirm} as tf, {$this->tblpos} as tp
         where BINARY email = ? 
         and tu.firm = tf.firmID
@@ -80,6 +80,7 @@ class AuthModel extends  Model {
             'email'         => $ud['email'],
             'pass'          => $ud['pass'],
             'firm'          => $ud['firmname'],
+            'fstat'         => $ud['tfstat'],
             'firmID'        => $ud['firmID'],
             'pos'           => $ud['pos'],
             'posID'         => $ud['posID'],

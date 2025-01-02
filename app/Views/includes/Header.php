@@ -143,7 +143,7 @@
 
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            <nav class="sidenav shadow-right sidenav-light">
+            <nav class="sidenav shadow-right sidenav-light bg-white">
                 <div class="sidenav-menu">
                     <div class="nav accordion" id="accordionSidenav">
                         <div class="mt-3 container row justify-content-center">
@@ -154,6 +154,14 @@
                         <?php }?>
                             <h6 class="text-center m-1"><?= session()->get('firm')?></h6>
                         </div>
+                        <?php if(session()->get('fstat') == 'Expired'){?>
+                            <div class="alert alert-danger alert-icon" role="alert">
+                                <div class="alert-icon-content">
+                                    <h6 class="alert-heading">Expired</h6>
+                                    <?= session()->get('firm')."'s subcription is expired."?>
+                                </div>
+                            </div>
+                        <?php }?>
                         <!-- Sidenav Menu Heading (Core)-->
                         <div class="sidenav-menu-heading">Core</div>
                         <!-- Sidenav Accordion (Dashboard)-->
@@ -168,26 +176,27 @@
                         <?php 
                             $carr = ['auditsystem/client/set','auditsystem/client/files','auditsystem/client/getfiles','auditsystem/client/chapter1/setvalues','auditsystem/client/chapter2/setvalues','auditsystem/client/chapter3/setvalues'];
                         ?>
-                        <?php if(session()->get('allowed')->clm == "Yes"){?>
-                            <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/client')){echo 'active collapse';}else{echo 'collapsed';} ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseClient" aria-expanded="false" aria-controls="collapseClient">
-                            <div class="nav-link-icon"><i data-feather="table"></i></div>
-                                Client Management 
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse <?php if(str_contains(uri_string(),'auditsystem/client')){echo 'show';}?>" id="collapseClient" data-bs-parent="#accordionSidenav">
-                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                <?php if(session()->get('allowed')->cl == "Yes"){?>
-                                    <a class="nav-link <?php foreach($carr as $str){if(str_contains(uri_string(),$str)){$res = true;}else{$res = false;continue;}}if($res == true){echo 'active';}?>" href="<?= base_url()?>auditsystem/client">
-                                    <div class="nav-link-icon"><i data-feather="users"></i></div>Clients</a>
-                                <?php }?>
-                                <?php if(session()->get('allowed')->sd == "Yes"){?>
-                                    <a class="nav-link <?php foreach($carr as $str){if(str_contains(uri_string(),$str)){echo 'active';}}?>" href="<?= base_url()?>auditsystem/client/set">
-                                    <div class="nav-link-icon"><i data-feather="tool"></i></div>Set Defaults</a>
-                                <?php }?>
-                                </nav>
-                            </div>
+                        <?php if(session()->get('fstat') != 'Expired'){?>
+                            <?php if(session()->get('allowed')->clm == "Yes"){?>
+                                <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/client')){echo 'active collapse';}else{echo 'collapsed';} ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseClient" aria-expanded="false" aria-controls="collapseClient">
+                                <div class="nav-link-icon"><i data-feather="table"></i></div>
+                                    Client Management 
+                                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse <?php if(str_contains(uri_string(),'auditsystem/client')){echo 'show';}?>" id="collapseClient" data-bs-parent="#accordionSidenav">
+                                    <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                                    <?php if(session()->get('allowed')->cl == "Yes"){?>
+                                        <a class="nav-link <?php foreach($carr as $str){if(str_contains(uri_string(),$str)){$res = true;}else{$res = false;continue;}}if($res == true){echo 'active';}?>" href="<?= base_url()?>auditsystem/client">
+                                        <div class="nav-link-icon"><i data-feather="users"></i></div>Clients</a>
+                                    <?php }?>
+                                    <?php if(session()->get('allowed')->sd == "Yes"){?>
+                                        <a class="nav-link <?php foreach($carr as $str){if(str_contains(uri_string(),$str)){echo 'active';}}?>" href="<?= base_url()?>auditsystem/client/set">
+                                        <div class="nav-link-icon"><i data-feather="tool"></i></div>Set Defaults</a>
+                                    <?php }?>
+                                    </nav>
+                                </div>
+                            <?php }?>
                         <?php }?>
-                       
                         <?php if(session()->get('allowed')->audm == "Yes"){?>
                             <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/auditor')){echo 'active collapse';}else{echo 'collapsed';} ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseAuditor" aria-expanded="false" aria-controls="collapseAuditor">
                                 <div class="nav-link-icon"><i data-feather="sliders"></i></div>
@@ -203,52 +212,53 @@
                             </div>
                             <?php }?>
                         <?php }?>
-                            
-                        <?php if(session()->get('allowed')->workp == "Yes"){?>
-                                <div class="sidenav-menu-heading">Work Paper</div>
-                            <?php if(session()->get('allowed')->preparer == "Yes"){?>
-                                <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/')){echo 'active collapse';}else{echo 'collapsed';} ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePrepare" aria-expanded="false" aria-controls="collapsePrepare">
-                                    <div class="nav-link-icon"><i data-feather="edit"></i></div>
-                                    Prepare
+                        <?php if(session()->get('fstat') != 'Expired'){?>
+                            <?php if(session()->get('allowed')->workp == "Yes"){?>
+                                    <div class="sidenav-menu-heading">Work Paper</div>
+                                <?php if(session()->get('allowed')->preparer == "Yes"){?>
+                                    <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/')){echo 'active collapse';}else{echo 'collapsed';} ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePrepare" aria-expanded="false" aria-controls="collapsePrepare">
+                                        <div class="nav-link-icon"><i data-feather="edit"></i></div>
+                                        Prepare
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse <?php if(str_contains(uri_string(),'auditsystem/wp/prepare')){echo 'show';}?>" id="collapsePrepare" data-bs-parent="#accordionSidenav">
+                                        <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                                            <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/prepare')){echo 'active';}?>" href="<?= base_url()?>auditsystem/wp/prepare">
+                                            <div class="nav-link-icon"><i data-feather="edit-3"></i></div>Prepare Work Paper</a>
+                                        </nav>
+                                    </div>
+                                <?php }?>
+                                <?php if(session()->get('allowed')->reviewer == "Yes"){?>
+                                    <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/')){echo 'active collapse';}else{echo 'collapsed';} ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseReview" aria-expanded="false" aria-controls="collapseReview">
+                                        <div class="nav-link-icon"><i data-feather="eye"></i></div>
+                                        Review
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse <?php if(str_contains(uri_string(),'auditsystem/wp/review')){echo 'show';}?>" id="collapseReview" data-bs-parent="#accordionSidenav">
+                                        <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                                            <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/review')){echo 'active';}?>" href="<?= base_url()?>auditsystem/wp/review">
+                                            <div class="nav-link-icon"><i data-feather="check-square"></i></div>Check Work Paper</a>
+                                        </nav>
+                                    </div>
+                                <?php }?>
+                                <?php 
+                                    $audarr = ['auditsystem/wp/initiate','auditsystem/wp/approved'];
+                                ?>
+                                <?php if(session()->get('allowed')->audmanager == "Yes"){?>
+                                <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/')){echo 'active collapse';}else{echo 'collapsed';} ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseAudManager" aria-expanded="false" aria-controls="collapseAudManager">
+                                    <div class="nav-link-icon"><i data-feather="users"></i></div>
+                                    Audit Manager
                                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                 </a>
-                                <div class="collapse <?php if(str_contains(uri_string(),'auditsystem/wp/prepare')){echo 'show';}?>" id="collapsePrepare" data-bs-parent="#accordionSidenav">
+                                <div class="collapse <?php foreach($audarr as $aud){if(str_contains(uri_string(),$aud)){echo 'show';}} ?>" id="collapseAudManager" data-bs-parent="#accordionSidenav">
                                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                        <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/prepare')){echo 'active';}?>" href="<?= base_url()?>auditsystem/wp/prepare">
-                                        <div class="nav-link-icon"><i data-feather="edit-3"></i></div>Prepare Work Paper</a>
+                                        <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/initiate')){echo 'active';}?>" href="<?= base_url()?>auditsystem/wp/initiate">
+                                        <div class="nav-link-icon"><i data-feather="file-plus"></i></div>Initiate</a>
+                                        <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/approved')){echo 'active';}?>" href="<?= base_url()?>auditsystem/wp/approved">
+                                        <div class="nav-link-icon"><i data-feather="check-square"></i></div>Approved</a>
                                     </nav>
                                 </div>
-                            <?php }?>
-                            <?php if(session()->get('allowed')->reviewer == "Yes"){?>
-                                <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/')){echo 'active collapse';}else{echo 'collapsed';} ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseReview" aria-expanded="false" aria-controls="collapseReview">
-                                    <div class="nav-link-icon"><i data-feather="eye"></i></div>
-                                    Review
-                                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse <?php if(str_contains(uri_string(),'auditsystem/wp/review')){echo 'show';}?>" id="collapseReview" data-bs-parent="#accordionSidenav">
-                                    <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                        <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/review')){echo 'active';}?>" href="<?= base_url()?>auditsystem/wp/review">
-                                        <div class="nav-link-icon"><i data-feather="check-square"></i></div>Check Work Paper</a>
-                                    </nav>
-                                </div>
-                            <?php }?>
-                            <?php 
-                                $audarr = ['auditsystem/wp/initiate','auditsystem/wp/approved'];
-                            ?>
-                            <?php if(session()->get('allowed')->audmanager == "Yes"){?>
-                            <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/')){echo 'active collapse';}else{echo 'collapsed';} ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseAudManager" aria-expanded="false" aria-controls="collapseAudManager">
-                                <div class="nav-link-icon"><i data-feather="users"></i></div>
-                                Audit Manager
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse <?php foreach($audarr as $aud){if(str_contains(uri_string(),$aud)){echo 'show';}} ?>" id="collapseAudManager" data-bs-parent="#accordionSidenav">
-                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                    <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/initiate')){echo 'active';}?>" href="<?= base_url()?>auditsystem/wp/initiate">
-                                    <div class="nav-link-icon"><i data-feather="file-plus"></i></div>Initiate</a>
-                                    <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/wp/approved')){echo 'active';}?>" href="<?= base_url()?>auditsystem/wp/approved">
-                                    <div class="nav-link-icon"><i data-feather="check-square"></i></div>Approved</a>
-                                </nav>
-                            </div>
+                                <?php }?>
                             <?php }?>
                         <?php }?>
                         <div class="sidenav-menu-heading">System </div>

@@ -22,7 +22,7 @@ class Client_cl implements FilterInterface{
         \Config\Services::session();
         $this->authmodel->getUserAccess();
         if(!empty(session()->get('allowed'))){
-            if (session()->get('allowed')->clm != 'Yes') {
+            if (session()->get('allowed')->clm != 'Yes' or session()->get('fstat') == 'Expired') {
                 return redirect()->to(site_url('403'));
             }else{
                 if (session()->get('allowed')->cl != "Yes") {

@@ -21,7 +21,7 @@ class WorkPaper implements FilterInterface{
         // Check session validation here
         \Config\Services::session();
         if(!empty(session()->get('allowed'))){
-            if (session()->get('allowed')->workp != 'Yes') {
+            if (session()->get('allowed')->workp != 'Yes' or session()->get('fstat') == 'Expired') {
                 return redirect()->to(site_url('403'));
             }
         }else{
