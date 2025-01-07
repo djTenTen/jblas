@@ -907,9 +907,70 @@ class WorkpaperController extends BaseController{
                     case 'AC6':
                         switch ($save) {
                             case 'saveac8':
+                                $om = [
+                                    'revp'      => $this->request->getPost('revp'),
+                                    'revf'      => $this->request->getPost('revf'),
+                                    'prop'      => $this->request->getPost('prop'),
+                                    'prof'      => $this->request->getPost('prof'),
+                                    'grop'      => $this->request->getPost('grop'),
+                                    'grof'      => $this->request->getPost('grof'),
+                                    'revpr'     => $this->request->getPost('revpr'),
+                                    'revfr'     => $this->request->getPost('revfr'),
+                                    'propr'     => $this->request->getPost('propr'),
+                                    'profr'     => $this->request->getPost('profr'),
+                                    'gropr'     => $this->request->getPost('gropr'),
+                                    'grofr'     => $this->request->getPost('grofr'),
+                                    'pcu'       => $this->request->getPost('pcu'),
+                                    'fcu'       => $this->request->getPost('fcu'),
+                                    'adjap'     => $this->request->getPost('adjap'),
+                                    'adjbp'     => $this->request->getPost('adjbp'),
+                                    'adjcp'     => $this->request->getPost('adjcp'),
+                                    'adjaf'     => $this->request->getPost('adjaf'),
+                                    'adjbf'     => $this->request->getPost('adjbf'),
+                                    'adjcf'     => $this->request->getPost('adjcf'),
+                                    'aomp'      => $this->request->getPost('aomp'),
+                                    'aomf'      => $this->request->getPost('aomf'),
+                                    'justn45'   => $this->request->getPost('justn45'),
+                                    'pcur'      => $this->request->getPost('pcur'),
+                                    'fcur'      => $this->request->getPost('fcur'),
+                                    'mlpinfo'   => $this->request->getPost('mlpinfo'),
+                                    'conplst'   => $this->request->getPost('conplst'),
+                                    'confnst'   => $this->request->getPost('confnst'),
+                                    'oirp'      => $this->request->getPost('oirp'),
+                                    'oirf'      => $this->request->getPost('oirf'),
+                                    'pmpp'      => $this->request->getPost('pmpp'),
+                                    'pmpf'      => $this->request->getPost('pmpf'),
+                                    'apmp'      => $this->request->getPost('apmp'),
+                                    'apmf'      => $this->request->getPost('apmf'),
+                                    'rsp'       => $this->request->getPost('rsp'),
+                                    'conplst2'  => $this->request->getPost('conplst2'),
+                                    'confnst2'  => $this->request->getPost('confnst2'),
+                                    'ctp'       => $this->request->getPost('ctp'),
+                                    'ctf'       => $this->request->getPost('ctf'),
+                                    'aest'      => $this->request->getPost('aest'),
+                                    'aestp'     => $this->request->getPost('aestp'),
+                                    'aestf'     => $this->request->getPost('aestf'),
+                                    'rptp'      => $this->request->getPost('rptp'),
+                                    'rptf'      => $this->request->getPost('rptf'),
+                                    'itbd1'     => $this->request->getPost('itbd1'),
+                                    'itbd1p'    => $this->request->getPost('itbd1p'),
+                                    'itbd1f'    => $this->request->getPost('itbd1f'),
+                                    'itbd2'     => $this->request->getPost('itbd2'),
+                                    'itbd2p'    => $this->request->getPost('itbd2p'),
+                                    'itbd2f'    => $this->request->getPost('itbd2f'),
+                                    'itbd3'     => $this->request->getPost('itbd3'),
+                                    'itbd3p'    => $this->request->getPost('itbd3p'),
+                                    'itbd3f'    => $this->request->getPost('itbd3f'),
+                                    'adja'      => $this->request->getPost('adja'),
+                                    'adjb'      => $this->request->getPost('adjb'),
+                                    'adjc'      => $this->request->getPost('adjc'),
+                                    'itbdae1'   => $this->request->getPost('itbdae1'),
+                                    'itbdae2'   => $this->request->getPost('itbdae2'),
+                                    'itbdae3'   => $this->request->getPost('itbdae3'),
+                                ];
                                 $req = [
-                                    'question'      => $this->request->getPost('question'),
-                                    'acid'          => $this->request->getPost('acid'),
+                                    'om'        => json_encode($om),
+                                    'acid'      => $this->request->getPost('acid'),
                                 ];
                             break;
                         }
@@ -2138,15 +2199,8 @@ class WorkpaperController extends BaseController{
                 $data['td']  = json_decode($rdata['field1'], true);
                 break;
             case 'AC6':
-                $rowdata = [
-                    'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
-                    'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
-                    'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
-                    'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
-                ];
-                foreach($rowdata as $row){
-                    $data[$row] = $this->wpmodel->getvalues_c2('s',$row,$code,$dmtID,$dcID,$dwpID);
-                }
+                $rdata          = $this->wpmodel->getvalues_c2('s','revp',$code,$dmtID,$dcID,$dwpID);
+                $data['ac6']    = json_decode($rdata['field1'], true);
                 break;
             case 'AC7':
                 $data['ac6']   = $this->wpmodel->getvalues_c2('m','ac6ra',$code,$dmtID,$dcID,$dwpID);

@@ -60,7 +60,6 @@
                                     <th>Accountancy(including preparation of financial statements)</th>
                                     <th>Other (specify)</th>
                                     <th>Total CU</th>
-
                                 </tr>
                             </thead>
                             <tbody class="tbody">
@@ -93,7 +92,7 @@
                                 <option value="We will not provide other services as it is not possible to put sufficient safeguards in place and we wish to remain as auditor">We will not provide other services as it is not possible to put sufficient safeguards in place and we wish to remain as auditor</option>
                                 <option value="We will provide other services but because it is not possible to put sufficient safeguards in place, we will resign as auditor">We will provide other services but because it is not possible to put sufficient safeguards in place, we will resign as auditor</option>
                             </select>
-                            <button type="submit" class="btn btn-success m-1 btn-sm float-end"><i class="fas fa-file-alt m-1"></i>Save</button>
+                            <button type="submit" class="btn btn-success m-1 float-end btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                         </form>
                     </div>
                     <br><br><br><hr style="color: #7752FE;">

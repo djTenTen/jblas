@@ -177,15 +177,9 @@ class ChapterController extends BaseController{
                 $page = $code;
                 break;
             case 'AC6':
-                $rowdata = [
-                    'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
-                    'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
-                    'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
-                    'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
-                ];
-                foreach($rowdata as $row){
-                    $data[$row] = $this->cvmodel->getvalues_c2('s',$row,$code,$dmtID,$dcID);
-                }
+                $rdata          = $this->cvmodel->getvalues_c2('s','revp',$code,$dmtID,$dcID);
+                $data['ac6']    = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
                 $page = $code;
                 break;
             case 'AC7':
@@ -318,15 +312,8 @@ class ChapterController extends BaseController{
                 $data['td']  = json_decode($rdata['field1'], true);
                 break;
             case 'AC6':
-                $rowdata = [
-                    'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
-                    'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
-                    'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
-                    'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
-                ];
-                foreach($rowdata as $row){
-                    $data[$row] = $this->c2model->getvalues_s($row,$code,$dmtID);
-                }
+                $rdata          = $this->c2model->getvalues_s('revp',$code,$dmtID);
+                $data['ac6']    = json_decode($rdata['field1'], true);
                 break;
             case 'AC7':
                 $data['ac6']   = $this->c2model->getvalues_m('ac6ra',$code,$dmtID);
@@ -844,15 +831,9 @@ class ChapterController extends BaseController{
                 $page = $code;
                 break;
             case 'AC6':
-                $rowdata = [
-                    'revp','revf','prop','prof','grop','grof','revpr','revfr','propr','profr','gropr','grofr','pcu','fcu','adjap','adjbp','adjcp','adjaf','adjbf','adjcf',
-                    'aomp','aomf','justn45','pcur','fcur','mlpinfo','conplst','confnst','oirp','oirf','pmpp','pmpf','apmp','apmf','conplst2','confnst2',
-                    'rsp','confnst','ctp','ctf','aest','aestp','aestf','rptp','rptf',
-                    'itbd1','itbd1p','itbd1f','itbd2','itbd2p','itbd2f','itbd3','itbd3p','itbd3f','adja','adjb','adjc','itbdae1','itbdae2','itbdae3'
-                ];
-                foreach($rowdata as $row){
-                    $data[$row] = $this->wpmodel->getvalues_c2('s',$row,$code,$dmtID,$dcID,$dwpID);
-                }
+                $rdata          = $this->wpmodel->getvalues_c2('s','revp',$code,$dmtID,$dcID,$dwpID);
+                $data['ac6']    = json_decode($rdata['field1'], true);
+                $data['mdID']   = $this->encr($rdata['mdID']);
                 $page = $code;
                 break;
             case 'AC7':

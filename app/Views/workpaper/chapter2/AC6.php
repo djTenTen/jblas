@@ -49,6 +49,7 @@
                     <p>OBJECTIVE: To assess materiality for the financial statements as a whole, performance materiality and other quantitative benchmarks based on materiality, which will reduce the risk of material misstatements in the financial statements to an acceptable level.</p>
                     <h4>OVERALL MATERIALITY</h4>
                     <form action="<?= base_url()?>auditsystem/wp/savevalues/c2/saveac8/<?= $code?>/<?= $mtID?>/<?= $cID?>/<?= $wpID?>/<?= $name?>" method="post">
+                        <input type="hidden" name="acid" value="<?= $mdID?>">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -64,101 +65,74 @@
                                 <tr>
                                     <td>Revenue</td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($revp['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control revp" name="question[]" value="<?= $revp['field1']?>">
+                                        <input type="number" class="form-control revp" name="revp" value="<?= $ac6['revp']?>">
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($revf['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control revf" name="question[]" value="<?= $revf['field1']?>">
+                                        <input type="number" class="form-control revf" name="revf" value="<?= $ac6['revf']?>">
                                     </td>
                                     <td>1%</td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($revpr['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control revpr" name="question[]" value="<?= $revpr['field1']?>" readonly>
+                                        <input type="number" class="form-control revpr" name="revpr" value="<?= $ac6['revpr']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($revfr['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control revfr" name="question[]" value="<?= $revfr['field1']?>" readonly>
+                                        <input type="number" class="form-control revfr" name="revfr" value="<?= $ac6['revfr']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Profit Before Tax 2</td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($prop['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control prop" name="question[]" value="<?= $prop['field1']?>">
+                                        <input type="number" class="form-control prop" name="prop" value="<?= $ac6['prop']?>">
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($prof['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control prof" name="question[]" value="<?= $prof['field1']?>">
+                                        <input type="number" class="form-control prof" name="prof" value="<?= $ac6['prof']?>">
                                     </td>
                                     <td>10%</td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($propr['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control propr" name="question[]" value="<?= $propr['field1']?>" readonly>
+                                        <input type="number" class="form-control propr" name="propr" value="<?= $ac6['propr']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($profr['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control profr" name="question[]" value="<?= $profr['field1']?>" readonly>
+                                        <input type="number" class="form-control profr" name="profr" value="<?= $ac6['profr']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Gross Assets</td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($grop['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control grop" name="question[]" value="<?= $grop['field1']?>">
+                                        <input type="number" class="form-control grop" name="grop" value="<?= $ac6['grop']?>">
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($grof['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control grof" name="question[]" value="<?= $grof['field1']?>">
+            
+                                        <input type="number" class="form-control grof" name="grof" value="<?= $ac6['grof']?>">
                                     </td>
                                     <td>2%</td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($gropr['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control gropr" name="question[]" value="<?= $gropr['field1']?>" readonly>
+                
+                                        <input type="number" class="form-control gropr" name="gropr" value="<?= $ac6['gropr']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($grofr['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control grofr" name="question[]" value="<?= $grofr['field1']?>" readonly>
+                
+                                        <input type="number" class="form-control grofr" name="grofr" value="<?= $ac6['grofr']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="4">Select the most appropriate benchmark for this entity</td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($pcu['mdID'])?>" name="acid[]">
-                                        <select name="question[]" id="" class="form-control form-select pcu">
-                                            <option value="<?= $pcu['field1']?>" selected>
-                                            <?php
-                                                switch ($pcu['field1']) {
-                                                    case 'r':echo 'Revenue';break;
-                                                    case 'pbt':echo 'Profit Before Tax';break;
-                                                    case 'ga':echo 'Gross Assets';break;
-                                                    case 'se':echo 'Something Else';break;
-                                                    default:echo 'Select from Planning';break;
-                                                }
-                                            ?></option>
-                                            <option value="r">Revenue</option>
-                                            <option value="pbt">Profit Before Tax</option>
-                                            <option value="ga">Gross Assets</option>
-                                            <option value="se">Something Else</option>
+
+                                        <select name="pcu" id="" class="form-control form-select pcu">
+                                            <option value="<?= $ac6['pcu']?>" selected><?= $ac6['pcu']?></option>
+                                            <option value="Revenue">Revenue</option>
+                                            <option value="Profit Before Tax">Profit Before Tax</option>
+                                            <option value="Gross Assets">Gross Assets</option>
+                                            <option value="Something Else">Something Else</option>
                                         </select>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($fcu['mdID'])?>" name="acid[]">
-                                        <select name="question[]" id="" class="form-control form-select fcu">
-                                            <option value="<?= $fcu['field1']?>" selected>
-                                            <?php
-                                                switch ($fcu['field1']) {
-                                                    case 'r':echo 'Revenue';break;
-                                                    case 'pbt':echo 'Profit Before Tax';break;
-                                                    case 'ga':echo 'Gross Assets';break;
-                                                    case 'se':echo 'Something Else';break;
-                                                    default:echo 'Select from Planning';break;
-                                                }
-                                            ?></option>
-                                            <option value="r">Revenue</option>
-                                            <option value="pbt">Profit Before Tax</option>
-                                            <option value="ga">Gross Assets</option>
-                                            <option value="se">Something Else</option>
+
+                                        <select name="fcu" id="" class="form-control form-select fcu">
+                                            <option value="<?= $ac6['fcu']?>" selected><?= $ac6['fcu']?></option>
+                                            <option value="Revenue">Revenue</option>
+                                            <option value="Profit Before Tax">Profit Before Tax</option>
+                                            <option value="Gross Assets">Gross Assets</option>
+                                            <option value="Something Else">Something Else</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -168,20 +142,20 @@
                                 </tr>
                                 <tr>
                                     <td colspan="6"> 
-                                        <input type="hidden" value="<?= encr($justn45['mdID'])?>" name="acid[]">
-                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $justn45['field1']?></textarea>
+                        
+                                        <textarea class="form-control" cols="30" rows="5" name="justn45"><?= $ac6['justn45']?></textarea>
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td colspan="4"><h6>Initial suggested Materiality Level:</h6></td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($pcur['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control pcur" name="question[]" value="<?= $pcur['field1']?>" readonly>
+            
+                                        <input type="number" class="form-control pcur" name="pcur" value="<?= $ac6['pcur']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($fcur['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control fcur" name="question[]" value="<?= $fcur['field1']?>" readonly>
+            
+                                        <input type="number" class="form-control fcur" name="fcur" value="<?= $ac6['fcur']?>" readonly>
                                     </td>
                                 </tr>
 
@@ -192,45 +166,45 @@
                                 </tr>
                                 <tr>
                                     <td colspan="4">
-                                        <input type="hidden" value="<?= encr($adja['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control adja" name="question[]" value="<?= $adja['field1']?>" >
+            
+                                        <input type="text" class="form-control adja" name="adja" value="<?= $ac6['adja']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($adjap['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control adjap" name="question[]" value="<?= $adjap['field1']?>" >
+                
+                                        <input type="number" class="form-control adjap" name="adjap" value="<?= $ac6['adjap']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($adjaf['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control adjaf" name="question[]" value="<?= $adjaf['field1']?>" >
+                
+                                        <input type="number" class="form-control adjaf" name="adjaf" value="<?= $ac6['adjaf']?>" >
                                     </td>
                                     
                                 </tr>
                                 <tr>
                                     <td colspan="4">
-                                        <input type="hidden" value="<?= encr($adjb['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control adjb" name="question[]" value="<?= $adjb['field1']?>" >
+            
+                                        <input type="text" class="form-control adjb" name="adjb" value="<?= $ac6['adjb']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($adjbp['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control adjbp" name="question[]" value="<?= $adjbp['field1']?>" >
+                
+                                        <input type="number" class="form-control adjbp" name="adjbp" value="<?= $ac6['adjbp']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($adjbf['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control adjbf" name="question[]" value="<?= $adjbf['field1']?>" >
+                
+                                        <input type="number" class="form-control adjbf" name="adjbf" value="<?= $ac6['adjbf']?>" >
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="4">
-                                        <input type="hidden" value="<?= encr($adjc['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control adjc" name="question[]" value="<?= $adjc['field1']?>" >
+            
+                                        <input type="text" class="form-control adjc" name="adjc" value="<?= $ac6['adjc']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($adjcp['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control adjcp" name="question[]" value="<?= $adjcp['field1']?>" >
+                
+                                        <input type="number" class="form-control adjcp" name="adjcp" value="<?= $ac6['adjcp']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($adjcf['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control adjcf" name="question[]" value="<?= $adjcf['field1']?>" >
+                
+                                        <input type="number" class="form-control adjcf" name="adjcf" value="<?= $ac6['adjcf']?>" >
                                     </td>
                                 </tr>
                                 <tr>
@@ -239,19 +213,19 @@
                                 <tr>
                                     <td colspan="4"><h6>Assessed Overall Materiality</h6></td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($aomp['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control aomp" name="question[]" value="<?= $aomp['field1']?>" readonly>
+            
+                                        <input type="number" class="form-control aomp" name="aomp" value="<?= $ac6['aomp']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($aomf['mdID'])?>" name="acid[]">
-                                        <input type="number" class="form-control aomf" name="question[]" value="<?= $aomf['field1']?>" readonly>
+            
+                                        <input type="number" class="form-control aomf" name="aomf" value="<?= $ac6['aomf']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="4"><p>Materiality Level for previous period (for information only):</p></td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($mlpinfo['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control mlpinfo" name="question[]" value="<?= $mlpinfo['field1']?>" >
+                        
+                                        <input type="text" class="form-control mlpinfo" name="mlpinfo" value="<?= $ac6['mlpinfo']?>" >
                                     </td>
                                     <td></td> 
                                 </tr>
@@ -264,8 +238,8 @@
                                 </tr>
                                 <tr>
                                     <td colspan="6"> 
-                                        <input type="hidden" value="<?= encr($conplst['mdID'])?>" name="acid[]">
-                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $conplst['field1']?></textarea>
+                        
+                                        <textarea class="form-control" cols="30" rows="5" name="conplst"><?= $ac6['conplst']?></textarea>
                                     </td>
                                 </tr>
 
@@ -273,8 +247,8 @@
                                     <td colspan="6">
                                         <h6>Conclusion at finalisation stage</h6>
                                         <p>Document reasons for any revision to the materiality assessed at planning stage and the impact on the audit procedures undertaken:</p>
-                                        <input type="hidden" value="<?= encr($confnst['mdID'])?>" name="acid[]">
-                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $confnst['field1']?></textarea>
+                        
+                                        <textarea class="form-control" cols="30" rows="5" name="confnst"><?= $ac6['confnst']?></textarea>
                                     </td>
                                 </tr>
                                 <tr>
@@ -284,18 +258,18 @@
                                 <tr>
                                     <td colspan="4">Select Overall Inherent Risk (Low / Medium / High):</td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($oirp['mdID'])?>" name="acid[]">
-                                        <select name="question[]" id="" class="form-control form-select oirp">
-                                            <option value="<?= $oirp['field1']?>" selected><?= $oirp['field1']?></option>
+            
+                                        <select name="oirp" id="" class="form-control form-select oirp">
+                                            <option value="<?= $ac6['oirp']?>" selected><?= $ac6['oirp']?></option>
                                             <option value="Low">Low</option>
                                             <option value="Medium">Medium</option>
                                             <option value="High">High</option>
                                         </select>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($oirf['mdID'])?>" name="acid[]">
-                                        <select name="question[]" id="" class="form-control form-select oirf">
-                                            <option value="<?= $oirf['field1']?>" selected><?= $oirf['field1']?></option>
+            
+                                        <select name="oirf" id="" class="form-control form-select oirf">
+                                            <option value="<?= $ac6['oirf']?>" selected><?= $ac6['oirf']?></option>
                                             <option value="Low">Low</option>
                                             <option value="Medium">Medium</option>
                                             <option value="High">High</option>
@@ -305,24 +279,24 @@
                                 <tr>
                                     <td colspan="4">Performance Materiality Percentage (Note 7):</td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($pmpp['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control pmpp" name="question[]" value="<?= $pmpp['field1']?>" readonly>
+            
+                                        <input type="text" class="form-control pmpp" name="pmpp" value="<?= $ac6['pmpp']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($pmpf['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control pmpf" name="question[]" value="<?= $pmpf['field1']?>" readonly>
+            
+                                        <input type="text" class="form-control pmpf" name="pmpf" value="<?= $ac6['pmpf']?>" readonly>
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td colspan="4">Assessed Performance Materiality</td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($apmp['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control apmp" name="question[]" value="<?= $apmp['field1']?>" readonly>
+            
+                                        <input type="text" class="form-control apmp" name="apmp" value="<?= $ac6['apmp']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($apmf['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control apmf" name="question[]" value="<?= $apmf['field1']?>" readonly>
+            
+                                        <input type="text" class="form-control apmf" name="apmf" value="<?= $ac6['apmf']?>" readonly>
                                     </td>
                                 </tr>
 
@@ -330,8 +304,8 @@
                                     <td colspan="6">
                                         <h6>Conclusion at planning stage</h6>
                                         <p>The performance materiality level calculated above is deemed to be appropriate because:</p>
-                                        <input type="hidden" value="<?= encr($conplst2['mdID'])?>" name="acid[]">
-                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $conplst2['field1']?></textarea>
+                            
+                                        <textarea class="form-control" cols="30" rows="5" name="conplst2"><?= $ac6['conplst2']?></textarea>
                                     </td>
                                 </tr>
 
@@ -339,8 +313,8 @@
                                     <td colspan="6">
                                         <h6>Conclusion at finalisation stage</h6>
                                         <p>Document reasons for any revision to the perfomance materiality assessed at planning stage and the impact on the audit procedures undertaken:</p>
-                                        <input type="hidden" value="<?= encr($confnst2['mdID'])?>" name="acid[]">
-                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $confnst2['field1']?></textarea>
+                            
+                                        <textarea class="form-control" cols="30" rows="5" name="confnst2"><?= $ac6['confnst2']?></textarea>
                                     </td>
                                 </tr>
 
@@ -351,20 +325,20 @@
                                     <td colspan="3">Level at which errors are considered trivial (Note 8)</td>
                                     <td>1%</td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($ctp['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control ctp" name="question[]" value="<?= $ctp['field1']?>" readonly>
+
+                                        <input type="text" class="form-control ctp" name="ctp" value="<?= $ac6['ctp']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($ctf['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control ctf" name="question[]" value="<?= $ctf['field1']?>" readonly>
+
+                                        <input type="text" class="form-control ctf" name="ctf" value="<?= $ac6['ctf']?>" readonly>
                                     </td>
                                 </tr>rsp
 
                                 <tr>
                                     <td colspan="6">
                                         <h6>Document reasons for any revision to the suggested percentage </h6>
-                                        <input type="hidden" value="<?= encr($rsp['mdID'])?>" name="acid[]">
-                                        <textarea class="form-control" cols="30" rows="5" name="question[]"><?= $rsp['field1']?></textarea>
+
+                                        <textarea class="form-control" cols="30" rows="5" name="rsp"><?= $ac6['rsp']?></textarea>
                             
                                     </td>
                                 </tr>
@@ -393,81 +367,81 @@
                                     <td colspan="3">Related party transactions and Remuneration of key management</td>
                                     <td>5%</td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($rptp['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control rptp" name="question[]" value="<?= $rptp['field1']?>" readonly>
+            
+                                        <input type="text" class="form-control rptp" name="rptp" value="<?= $ac6['rptp']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($rptf['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control rptf" name="question[]" value="<?= $rptf['field1']?>" readonly>
+            
+                                        <input type="text" class="form-control rptf" name="rptf" value="<?= $ac6['rptf']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="3">Accounting estimates</td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($aest['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control aest" name="question[]" value="<?= $aest['field1']?>" readonly>
+            
+                                        <input type="text" class="form-control aest" name="aest" value="<?= $ac6['aest']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($aestp['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control aestp" name="question[]" value="<?= $aestp['field1']?>" readonly>
+                
+                                        <input type="text" class="form-control aestp" name="aestp" value="<?= $ac6['aestp']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($aestf['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control aestf" name="question[]" value="<?= $aestf['field1']?>" readonly>
+                
+                                        <input type="text" class="form-control aestf" name="aestf" value="<?= $ac6['aestf']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="3">
-                                        <input type="hidden" value="<?= encr($itbdae1['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control" name="question[]" value="<?= $itbdae1['field1']?>">
+                        
+                                        <input type="text" class="form-control" name="itbdae1" value="<?= $ac6['itbdae1']?>">
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($itbd1['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd1" name="question[]" value="<?= $itbd1['field1']?>" >
+                
+                                        <input type="text" class="form-control itbd1" name="itbd1" value="<?= $ac6['itbd1']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($itbd1p['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd1p" name="question[]" value="<?= $itbd1p['field1']?>" readonly>
+                    
+                                        <input type="text" class="form-control itbd1p" name="itbd1p" value="<?= $ac6['itbd1p']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($itbd1f['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd1f" name="question[]" value="<?= $itbd1f['field1']?>" readonly>
+                    
+                                        <input type="text" class="form-control itbd1f" name="itbd1f" value="<?= $ac6['itbd1f']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="3">
-                                        <input type="hidden" value="<?= encr($itbdae2['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control" name="question[]" value="<?= $itbdae2['field1']?>">
+                        
+                                        <input type="text" class="form-control" name="itbdae2" value="<?= $ac6['itbdae2']?>">
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($itbd2['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd2" name="question[]" value="<?= $itbd2['field1']?>" >
+                
+                                        <input type="text" class="form-control itbd2" name="itbd2" value="<?= $ac6['itbd2']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($itbd2p['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd2p" name="question[]" value="<?= $itbd2p['field1']?>" readonly>
+                    
+                                        <input type="text" class="form-control itbd2p" name="itbd2p" value="<?= $ac6['itbd2p']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($itbd2f['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd2f" name="question[]" value="<?= $itbd2f['field1']?>" readonly>
+                    
+                                        <input type="text" class="form-control itbd2f" name="itbd2f" value="<?= $ac6['itbd2f']?>" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="3">
-                                        <input type="hidden" value="<?= encr($itbdae3['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control" name="question[]" value="<?= $itbdae3['field1']?>">
+                        
+                                        <input type="text" class="form-control" name="itbdae3" value="<?= $ac6['itbdae3']?>">
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($itbd3['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd3" name="question[]" value="<?= $itbd3['field1']?>" >
+                
+                                        <input type="text" class="form-control itbd3" name="itbd3" value="<?= $ac6['itbd3']?>" >
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($itbd3p['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd3p" name="question[]" value="<?= $itbd3p['field1']?>" readonly>
+                    
+                                        <input type="text" class="form-control itbd3p" name="itbd3p" value="<?= $ac6['itbd3p']?>" readonly>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<?= encr($itbd3f['mdID'])?>" name="acid[]">
-                                        <input type="text" class="form-control itbd3f" name="question[]" value="<?= $itbd3f['field1']?>" readonly>
+                    
+                                        <input type="text" class="form-control itbd3f" name="itbd3f" value="<?= $ac6['itbd3f']?>" readonly>
                                     </td>
                                 </tr>
 
@@ -500,7 +474,7 @@
                                 
                                 
                             </tbody>
-                        </table>
+                        </table>    
                         <button type="submit" class="btn btn-success m-1 float-end  btn-sm"><i class="fas fa-file-alt m-1"></i>Save</button>
                     </form>
                     <br><br><br><hr style="color: #7752FE;">
@@ -542,37 +516,34 @@
         });
 
         $(".pcu").on("change", function() {
-
             var pcu = $(".pcu").val();
             var adjap = $(".adjap").val();
             var adjbp = $(".adjbp").val();
             var adjcp = $(".adjcp").val();   
-
-            if(pcu == 'r'){
+            if(pcu == 'Revenue'){
                 var revpr = $(".revpr").val();  
                 $('.pcur').attr('value',  revpr);
                 $('.aomp').attr('value', parseInt(revpr) + parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
                 var aomp = $(".aomp").val();
                 $('.ctp').attr('value',  Math.round(aomp * .01));
-            }else if(pcu == 'pbt'){
+            }else if(pcu == 'Profit Before Tax'){
                 var propr = $(".propr").val();  
                 $('.pcur').attr('value',  propr); 
                 $('.aomp').attr('value', parseInt(propr) + parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
                 var aomp = $(".aomp").val();
                 $('.ctp').attr('value',  Math.round(aomp * .01));
-            }else if(pcu == 'ga'){
+            }else if(pcu == 'Gross Assets'){
                 var gropr = $(".gropr").val();  
                 $('.pcur').attr('value',  gropr); 
                 $('.aomp').attr('value', parseInt(gropr) + parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
                 var aomp = $(".aomp").val();
                 $('.ctp').attr('value',  Math.round(aomp * .01));
-            }else if(pcu == 'se'){
+            }else if(pcu == 'Something Else'){
                 $('.pcur').attr('value',  0); 
                 $('.aomp').attr('value', parseInt(adjap) + parseInt(adjbp) + parseInt(adjcp));
                 var aomp = $(".aomp").val();
                 $('.ctp').attr('value',  Math.round(aomp * .01));
             }
-
         });
 
 
@@ -581,31 +552,28 @@
             var adjaf = $(".adjaf").val();
             var adjbf = $(".adjbf").val();
             var adjcf = $(".adjcf").val();   
-
-            if(fcu == 'r'){
+            if(fcu == 'Revenue'){
                 var revfr = $(".revfr").val();  
                 $('.fcur').attr('value',  revfr);
                 $('.aomf').attr('value', parseInt(revfr) + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
                 var aomf = $(".aomf").val();
                 $('.ctf').attr('value',  Math.round(aomf * .01));
-                
-            }else if(fcu == 'pbt'){
+            }else if(fcu == 'Profit Before Tax'){
                 var profr = $(".profr").val();  
                 $('.fcur').attr('value',  profr); 
                 $('.aomf').attr('value', parseInt(profr) + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
                 var aomf = $(".aomf").val();
-            }else if(fcu == 'ga'){
+            }else if(fcu == 'Gross Assets'){
                 var grofr = $(".grofr").val();  
                 $('.fcur').attr('value',  grofr); 
                 $('.aomf').attr('value', parseInt(grofr) + parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
                 var aomf = $(".aomf").val();
                 $('.ctf').attr('value',  Math.round(aomf * .01));
-            }else if(fcu == 'se'){
+            }else if(fcu == 'Something Else'){
                 $('.fcur').attr('value',  0); 
                 $('.aomf').attr('value', parseInt(adjaf) + parseInt(adjbf) + parseInt(adjcf));
                 var aomf = $(".aomf").val();
             }
-
         });
 
 

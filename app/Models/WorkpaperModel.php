@@ -842,7 +842,7 @@ class WorkpaperModel extends  Model {
                 'fID'   => $req['firm'],
                 'cID'   => $req['client'],
             ];
-            $c2df = $this->db->table($this->tblc2)->where($wherec2)->get();
+            $c2df = $this->db->table($this->tblc2d)->where($wherec2)->get();
             if($c2df->getNumRows() >= 1){
                 foreach($c2df->getResultArray() as $r){
                     $datac2 = [
@@ -1502,15 +1502,13 @@ class WorkpaperModel extends  Model {
                     case 'AC6':
                         switch ($param['save']) {
                             case 'saveac8':
-                                foreach($req['question'] as $i => $val){
-                                    $dacid = $this->decr($req['acid'][$i]);
-                                    $data = [
-                                        'field1'        => $req['question'][$i],
-                                        'updated_on'    => $this->date.' '.$this->time,
-                                        'updated_by'    => $param['uID'],
-                                    ];
-                                    $this->db->table($this->tblc2)->where('mdID', $dacid)->update($data);
-                                }
+                                $dacid = $this->decr($req['acid']);
+                                $data = [
+                                    'field1'        => $req['om'],
+                                    'updated_on'    => $this->date.' '.$this->time,
+                                    'updated_by'    => $param['uID'],
+                                ];
+                                $this->db->table($this->tblc2)->where('mdID', $dacid)->update($data);
                             break;
                         }
                         $this->logs->log(session()->get('name'). " save a file {$param['code']} Audit Planning on work paper");

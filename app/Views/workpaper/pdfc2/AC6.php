@@ -95,24 +95,6 @@ $html .= '
 $space = $pdf->Ln(10);
 $html .= '<h3>ASSESSMENT OF MATERIALITY (INCLUDING PERFORMANCE MATERIALITY)</h3>';
 $html .= '
-<p><b>OBJECTIVE: </b> To assess materiality for the financial statements as a whole, performance materiality and other quantitative benchmarks based on materiality, which will reduce the risk of material misstatements in the financial statements to an acceptable level.</p> 
-<p><b>OVERALL MATERIALITY</b></p>
-';
-switch ($pcu['field1']) {
-    case 'r'    :   $pcupp = 'Revenue';break;
-    case 'pbt'  :   $pcupp = 'Profit Before Tax';break;
-    case 'ga'   :   $pcupp = 'Gross Assets';break;
-    case 'se'   :   $pcupp = 'Something Else';break;
-    default     :   $pcupp = 'Select from Planning';break;
-}
-switch ($fcu['field1']) {
-    case 'r'    :   $fcuff = 'Revenue';break;
-    case 'pbt'  :   $fcuff = 'Profit Before Tax';break;
-    case 'ga'   :   $fcuff = 'Gross Assets';break;
-    case 'se'   :   $fcuff = 'Something Else';break;
-    default     :   $fcuff = 'Select from Planning';break;
-}
-$html .= '
 <table>
     <thead>
         <tr>
@@ -130,33 +112,33 @@ $html .= '
         </tr>
         <tr>
             <td style="width: 25%;">Revenue</td>
-            <td class="bo cent">'.$revp['field1'].'</td>
-            <td class="bo cent">'.$revf['field1'].'</td>
+            <td class="bo cent">'.$ac6['revp'].'</td>
+            <td class="bo cent">'.$ac6['revf'].'</td>
             <td class="cent" style="width: 8%;">1%</td>
-            <td class="bo cent">'.$revpr['field1'].'</td>
-            <td class="bo cent">'.$revfr['field1'].'</td>
+            <td class="bo cent">'.$ac6['revpr'].'</td>
+            <td class="bo cent">'.$ac6['revfr'].'</td>
         </tr>
         <tr>
             <td colspan="5"></td>
         </tr>
         <tr>
             <td style="width: 25%;">Profit Before Tax 2</td>
-            <td class="bo cent">'.$prop['field1'].'</td>
-            <td class="bo cent">'.$prof['field1'].'</td>
+            <td class="bo cent">'.$ac6['prop'].'</td>
+            <td class="bo cent">'.$ac6['prof'].'</td>
             <td class="cent" style="width: 8%;">10%</td>
-            <td class="bo cent">'.$propr['field1'].'</td>
-            <td class="bo cent">'.$profr['field1'].'</td>
+            <td class="bo cent">'.$ac6['propr'].'</td>
+            <td class="bo cent">'.$ac6['profr'].'</td>
         </tr>
         <tr>
             <td colspan="5"></td>
         </tr>
         <tr>
             <td style="width: 25%;">Gross Assets</td>
-            <td class="bo cent">'.$grop['field1'].'</td>
-            <td class="bo cent">'.$grof['field1'].'</td>
+            <td class="bo cent">'.$ac6['grop'].'</td>
+            <td class="bo cent">'.$ac6['grof'].'</td>
             <td class="cent" style="width: 8%;">2%</td>
-            <td class="bo cent">'.$gropr['field1'].'</td>
-            <td class="bo cent">'.$grofr['field1'].'</td>
+            <td class="bo cent">'.$ac6['gropr'].'</td>
+            <td class="bo cent">'.$ac6['grofr'].'</td>
         </tr>
     </tbody>
 </table>
@@ -166,8 +148,8 @@ $html .= '
         <tr>
             <td style="width: 58.5%;"><p><b>Select the most appropriate benchmark for this entity</b></p></td>
             <td style="width: 8%;"></td>
-            <td class="bo cent" style="width: 16.75%;">'.$pcupp.'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$fcuff.'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['pcu'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['fcu'].'</td>
         </tr>
     </tbody>
 </table>
@@ -178,7 +160,7 @@ $html .= '
             <td><p><b>JUSTIFY THE USE OF THE BENCHMARK SELECTED ABOVE (Notes 4 and 5) </b></p></td>
         </tr>
         <tr>
-            <td class="bo"><br><br> '.$justn45['field1'].' <br><br></td>
+            <td class="bo"><br><br> '.$ac6['justn45'].' <br><br></td>
         </tr>
     </tbody>
 </table>
@@ -188,8 +170,8 @@ $html .= '
         <tr>
             <td style="width: 58.5%;"><p><b>Initial suggested Materiality Level:</b></p></td>
             <td style="width: 8%;"></td>
-            <td class="cent" style="width: 16.75%;">'.$pcur['field1'].'</td>
-            <td class="cent" style="width: 16.75%;">'.$fcur['field1'].'</td>
+            <td class="cent" style="width: 16.75%;">'.$ac6['pcur'].'</td>
+            <td class="cent" style="width: 16.75%;">'.$ac6['fcur'].'</td>
         </tr>
     </tbody>
 </table>
@@ -199,22 +181,22 @@ $html .= '
             <td colspan="3"><p>If any adjustments are required to initial materiality level, detail these here (Note 6) :</p></td>
         </tr>
         <tr>
-            <td style="width: 58.5%;">a) '.$adja['field1'].'</td>
+            <td style="width: 58.5%;">a) '.$ac6['adja'].'</td>
             <td style="width: 8%;"></td>
-            <td class="bo cent" style="width: 16.75%;">'.$adjap['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$adjaf['field1'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['adjap'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['adjaf'].'</td>
         </tr>
         <tr>
-            <td style="width: 58.5%;">b) '.$adjb['field1'].'</td>
+            <td style="width: 58.5%;">b) '.$ac6['adjb'].'</td>
             <td style="width: 8%;"></td>
-            <td class="bo cent" style="width: 16.75%;">'.$adjbp['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$adjbf['field1'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['adjbp'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['adjbf'].'</td>
         </tr>
         <tr>
-            <td style="width: 58.5%;">c) '.$adjc['field1'].'</td>
+            <td style="width: 58.5%;">c) '.$ac6['adjc'].'</td>
             <td style="width: 8%;"></td>
-            <td class="bo cent" style="width: 16.75%;">'.$adjcp['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$adjcf['field1'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['adjcp'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['adjcf'].'</td>
         </tr>
         <tr>
             <td colspan="3"><p><i>NB: adjustments need to be mutiplied by the appropriate benchmark percentage</i></p></td>
@@ -227,8 +209,8 @@ $html .= '
         <tr>
             <td style="width: 58.5%;"><p><b>Assessed Overall Materiality</b></p></td>
             <td style="width: 8%;"></td>
-            <td class="bo cent" style="width: 16.75%;">'.$aomp['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$aomf['field1'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['aomp'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['aomf'].'</td>
         </tr>
     </tbody>
 </table>
@@ -238,7 +220,7 @@ $html .= '
         <tr>
             <td style="width: 58.5%;"><p>Materiality Level for previous period (for information only):</p></td>
             <td style="width: 8%;"></td>
-            <td class="bo cent" style="width: 33.5%;">'.$mlpinfo['field1'].'</td>
+            <td class="bo cent" style="width: 33.5%;">'.$ac6['mlpinfo'].'</td>
         </tr>
     </tbody>
 </table>
@@ -248,7 +230,7 @@ $html .= '
             <td><p><b>Conclusion at planning stage</b> <br>The overall materiality level calculated above is deemed to be appropriate because:</p></td>
         </tr>
         <tr>
-            <td class="bo"><br><br> '.$conplst['field1'].' <br><br></td>
+            <td class="bo"><br><br> '.$ac6['conplst'].' <br><br></td>
         </tr>
     </tbody>
 </table>
@@ -258,7 +240,7 @@ $html .= '
             <td><p><b>Conclusion at finalisation stage</b><br>Document reasons for any revision to the materiality assessed at planning stage and the impact on the audit procedures undertaken:</p></td>
         </tr>
         <tr>
-            <td class="bo"><br><br> '.$confnst['field1'].'</td>
+            <td class="bo"><br><br> '.$ac6['confnst'].'</td>
         </tr>
     </tbody>
 </table>
@@ -268,8 +250,8 @@ $html .= '
         <tr>
             <td style="width: 58.5%;"><p><b>Select Overall Inherent Risk (Low / Medium / High):</b></p></td>
             <td style="width: 8%;"></td>
-            <td class="bo cent" style="width: 16.75%;">'.$oirp['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$oirf['field1'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['oirp'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['oirf'].'</td>
         </tr>
     </tbody>
 </table>
@@ -278,8 +260,8 @@ $html .= '
         <tr>
             <td style="width: 58.5%;">Performance Materiality Percentage (Note 7):</td>
             <td style="width: 8%;"></td>
-            <td class="bo cent" style="width: 16.75%;">'.$pmpp['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$pmpf['field1'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['pmpp'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['pmpf'].'</td>
         </tr>
     </tbody>
 </table>   
@@ -289,8 +271,8 @@ $html .= '
         <tr>
             <td style="width: 58.5%;"><p><b>Assessed Performance Materiality</b></p></td>
             <td style="width: 8%;"></td>
-            <td class="bo cent" style="width: 16.75%;">'.$apmp['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$apmf['field1'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['apmp'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['apmf'].'</td>
         </tr>
     </tbody>
 </table>  
@@ -300,7 +282,7 @@ $html .= '
             <td><p><b>Conclusion at planning stage</b><br>The performance materiality level calculated above is deemed to be appropriate because:</p></td>
         </tr>
         <tr>
-            <td class="bo"><br><br> '.$conplst2['field1'].' <br><br></td>
+            <td class="bo"><br><br> '.$ac6['conplst2'].' <br><br></td>
         </tr>
     </tbody>
 </table>
@@ -310,7 +292,7 @@ $html .= '
             <td><p><b>Conclusion at finalisation stage</b><br>Document reasons for any revision to the perfomance materiality assessed at planning stage and the impact on the audit procedures undertaken:</p></td>
         </tr>
         <tr>
-            <td class="bo"><br><br> '.$confnst2['field1'].' <br><br></td>
+            <td class="bo"><br><br> '.$ac6['confnst2'].' <br><br></td>
         </tr>
     </tbody>
 </table>
@@ -328,8 +310,8 @@ $html .= '
         <tr>
             <td style="width: 58.5%;">Level at which errors are considered trivial (Note 8)</td>
             <td style="width: 8%;">1%</td>
-            <td class="bo cent" style="width: 16.75%;">'.$ctp['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$ctf['field1'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['ctp'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['ctf'].'</td>
         </tr>
     </tbody>
 </table>
@@ -339,7 +321,7 @@ $html .= '
             <td><p><b>Document reasons for any revision to the suggested percentage</b></p></td>
         </tr>
         <tr>
-            <td class="bo"><br><br> '.$rsp['field1'].' <br><br></td>
+            <td class="bo"><br><br> '.$ac6['rsp'].' <br><br></td>
         </tr>
     </tbody>
 </table>
@@ -365,32 +347,32 @@ $html .= '
         <tr>
             <td style="width: 58.5%;">Related party transactions and Remuneration of key management</td>
             <td style="width: 8%;">5%</td>
-            <td class="bo cent" style="width: 16.75%;">'.$rptp['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$rptf['field1'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['rptp'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['rptf'].'</td>
         </tr>
         <tr>
             <td style="width: 58.5%;">Accounting estimates</td>
-            <td style="width: 8%;">'.$aest['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$aestp['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$aestf['field1'].'</td>
+            <td style="width: 8%;">'.$ac6['aest'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['aestp'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['aestf'].'</td>
         </tr>
         <tr>
-            <td style="width: 58.5%;">'.$itbdae1['field1'].'</td>
-            <td style="width: 8%;">'.$itbd1['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$itbd1p['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$itbd1f['field1'].'</td>
+            <td style="width: 58.5%;">'.$ac6['itbdae1'].'</td>
+            <td style="width: 8%;">'.$ac6['itbd1'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['itbd1p'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['itbd1f'].'</td>
         </tr>
         <tr>
-            <td style="width: 58.5%;">'.$itbdae2['field1'].'</td>
-            <td style="width: 8%;">'.$itbd2['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$itbd2p['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$itbd2f['field1'].'</td>
+            <td style="width: 58.5%;">'.$ac6['itbdae2'].'</td>
+            <td style="width: 8%;">'.$ac6['itbd2'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['itbd2p'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['itbd2f'].'</td>
         </tr>
         <tr>
-            <td style="width: 58.5%;">'.$itbdae3['field1'].'</td>
-            <td style="width: 8%;">'.$itbd3['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$itbd3p['field1'].'</td>
-            <td class="bo cent" style="width: 16.75%;">'.$itbd3f['field1'].'</td>
+            <td style="width: 58.5%;">'.$ac6['itbdae3'].'</td>
+            <td style="width: 8%;">'.$ac6['itbd3'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['itbd3p'].'</td>
+            <td class="bo cent" style="width: 16.75%;">'.$ac6['itbd3f'].'</td>
         </tr>
     </tbody>
 </table>
