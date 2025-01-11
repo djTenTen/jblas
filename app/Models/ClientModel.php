@@ -278,7 +278,7 @@ class ClientModel extends Model{
                     ];
                     $this->db->table($this->tblc2d)->insert($datac2);
                 }
-                $c3 = $this->db->table($this->tblc2)->get();
+                $c3 = $this->db->table($this->tblc3)->get();
                 foreach($c3->getResultArray() as $r){
                     $datac3 = [
                         'fID'       => $req['fID'],
