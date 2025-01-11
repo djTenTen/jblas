@@ -15,6 +15,15 @@ class UserController extends BaseController{
     protected $crypt;
     protected $token = 'Anti-CSRF tokens';
 
+
+
+    public function __construct(){
+
+        \Config\Services::session();
+        $this->usermodel    = new UserModel();
+        $this->crypt = \Config\Services::encrypter();
+
+    }
     /**
         * Replacing characters then Decrypting a Data @param ecr
     */
@@ -36,7 +45,7 @@ class UserController extends BaseController{
     */
     public function register(){
 
-        $data['token'] = $this->encr($this->token);
+        $data['token'] = 1;
         $data['title'] = 'Sign-up';
         echo view('users/Signup', $data);
 
@@ -76,20 +85,20 @@ class UserController extends BaseController{
     */
     public function signup(){
 
-        if( $this->decr($this->request->getpost('token')) != $this->token){
-            session()->setFlashdata('error','There is something wrong with your request, Please try again.');
-            return redirect()->to(site_url('register'));
-        }
-        $validationRules = [
-            'fname'     => 'required|string|max:255',
-            'firm'      => 'required|string|max:255',
-            'email'     => 'required',
-            'pass'      => 'required',
-        ];
-        if (!$this->validate($validationRules)) {
-            session()->setFlashdata('error','There is something wrong with your request, Please try again.');
-            return redirect()->to(site_url('register'));
-        }
+        // if( $this->decr($this->request->getpost('token')) != $this->token){
+        //     session()->setFlashdata('error','There is something wrong with your request, Please try again.');
+        //     return redirect()->to(site_url('register'));
+        // }
+        // $validationRules = [
+        //     'fname'     => 'required|string|max:255',
+        //     'firm'      => 'required|string|max:255',
+        //     'email'     => 'required',
+        //     'pass'      => 'required',
+        // ];
+        // if (!$this->validate($validationRules)) {
+        //     session()->setFlashdata('error','There is something wrong with your request, Please try again.');
+        //     return redirect()->to(site_url('register'));
+        // }
         $pss = $this->request->getPost('pass');
         $req = [
             'fname'         => $this->request->getPost('fname'),
