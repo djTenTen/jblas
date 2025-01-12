@@ -24,9 +24,9 @@ class AuditorController extends BaseController{
     public function resultpage($res){
 
         // setFlashdata are used for result notification
-        if($res == 'exist'){
+        if($res === 'exist'){
             session()->setFlashdata('failed','Auditor already exist.');
-        }elseif($res == 'updated'){
+        }elseif($res === 'updated'){
             session()->setFlashdata('success','Auditor has been successfully Updated.');
         }elseif($res){
             session()->setFlashdata('success','Auditor has been successfully registered');

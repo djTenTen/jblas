@@ -134,7 +134,7 @@ class ClientModel extends Model{
     */
     public function getc1($cID){
 
-        $query = $this->db->query("select *, if((select count(DISTINCT mtID) from {$this->tblc1d} as dc where dc.cID = 2 and c1t.mtID = dc.mtID) > 0, 'Yes', 'No') as yn from {$this->tblc1t} as c1t where c1t.status = 'Active'");
+        $query = $this->db->query("select *, if((select count(DISTINCT mtID) from {$this->tblc1d} as dc where dc.cID = {$cID} and c1t.mtID = dc.mtID) > 0, 'Yes', 'No') as yn from {$this->tblc1t} as c1t where c1t.status = 'Active'");
         return $query->getResultArray();
 
     }
@@ -147,7 +147,7 @@ class ClientModel extends Model{
     */
     public function getc2($cID){
 
-        $query = $this->db->query("select *, if((select count(DISTINCT mtID) from {$this->tblc2d} as dc where dc.cID = 2 and c1t.mtID = dc.mtID) > 0, 'Yes', 'No') as yn from {$this->tblc2t} as c1t where c1t.status = 'Active'");
+        $query = $this->db->query("select *, if((select count(DISTINCT mtID) from {$this->tblc2d} as dc where dc.cID = {$cID} and c1t.mtID = dc.mtID) > 0, 'Yes', 'No') as yn from {$this->tblc2t} as c1t where c1t.status = 'Active'");
         return $query->getResultArray();
 
     }
@@ -160,7 +160,7 @@ class ClientModel extends Model{
     */
     public function getc3($cID){
 
-        $query = $this->db->query("select *, if((select count(DISTINCT mtID) from {$this->tblc3d} as dc where dc.cID = 2 and c1t.mtID = dc.mtID) > 0, 'Yes', 'No') as yn from {$this->tblc3t} as c1t where c1t.status = 'Active'");
+        $query = $this->db->query("select *, if((select count(DISTINCT mtID) from {$this->tblc3d} as dc where dc.cID = {$cID} and c1t.mtID = dc.mtID) > 0, 'Yes', 'No') as yn from {$this->tblc3t} as c1t where c1t.status = 'Active'");
         return $query->getResultArray();
 
     }
