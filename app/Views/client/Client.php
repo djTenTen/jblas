@@ -130,6 +130,19 @@
                         <input class="form-control" id="address" type="text" name="address" placeholder="Enter Address" required/>
                     </div>
                     <div class="row gx-3">
+                    
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="small mb-1" for="cluster">Cluster:</label>
+                                <select name="cluster" id="cluster" class="form-control form-select" required>
+                                    <option value="" selected>Select Cluster</option>
+                                    <?php foreach($cluster as $r){?>
+                                        <option value="<?= encr($r['clusterID'])?>"><?= $r['cluster']?></option>
+                                    <?php }?>
+                                    <option value="Default">Default</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="small mb-1" for="industry">Industry:</label>

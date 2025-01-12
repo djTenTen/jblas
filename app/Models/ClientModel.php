@@ -37,6 +37,10 @@ class ClientModel extends Model{
     protected $tblc1d   = "tbl_dclient_c1";
     protected $tblc2d   = "tbl_dclient_c2";
     protected $tblc3d   = "tbl_dclient_c3";
+    protected $tblcl    = "tbl_cluster";
+    protected $tblcc1   = 'tbl_cluster_c1';
+    protected $tblcc2   = 'tbl_cluster_c2';
+    protected $tblcc3   = 'tbl_cluster_c3';
 
     protected $time,$date;
     protected $db;
@@ -122,6 +126,13 @@ class ClientModel extends Model{
         from {$this->tblc} as tc, {$this->tblf} as tf
         where tc.fID = tf.firmID
         and tc.fID = {$fID}");
+        return $query->getResultArray();
+
+    }
+
+    public function getcluster($fID){
+
+        $query = $this->db->table($this->tblcl)->where(array('fID' => $fID))->get();
         return $query->getResultArray();
 
     }
@@ -228,79 +239,160 @@ class ClientModel extends Model{
                 'status'        => 'Active',
                 'added_on'      => $this->date.' '.$this->time,
             ];
+
             if($this->db->table($this->tblc)->insert($data)){
                 $clID = $this->db->insertID();
-                $c1 = $this->db->table($this->tblc1)->get();
-                foreach($c1->getResultArray() as $r){
-                    $datac1 = [
-                        'fID'       => $req['fID'],
-                        'cID'       => $clID,
-                        'mtID'      => $r['mtID'],
-                        'code'      => $r['code'],
-                        'type'      => $r['type'],
-                        'field1'    => $r['field1'],
-                        'field2'    => $r['field2'],
-                        'field3'    => $r['field3'],
-                        'field4'    => $r['field4'],
-                        'field5'    => $r['field5'],
-                        'field6'    => $r['field6'],
-                        'field7'    => $r['field7'],
-                        'field8'    => $r['field8'],
-                        'field9'    => $r['field9'],
-                        'field10'   => $r['field10'],
-                        'status'    => $r['status'],
-                        'remarks'   => $r['remarks'],
-                        'added_on'  => $this->date.' '.$this->time
+                if($req['cluster'] == 'Default'){
+                    $c1 = $this->db->table($this->tblc1)->get();
+                    foreach($c1->getResultArray() as $r){
+                        $datac1 = [
+                            'fID'       => $req['fID'],
+                            'cID'       => $clID,
+                            'mtID'      => $r['mtID'],
+                            'code'      => $r['code'],
+                            'type'      => $r['type'],
+                            'field1'    => $r['field1'],
+                            'field2'    => $r['field2'],
+                            'field3'    => $r['field3'],
+                            'field4'    => $r['field4'],
+                            'field5'    => $r['field5'],
+                            'field6'    => $r['field6'],
+                            'field7'    => $r['field7'],
+                            'field8'    => $r['field8'],
+                            'field9'    => $r['field9'],
+                            'field10'   => $r['field10'],
+                            'status'    => $r['status'],
+                            'remarks'   => $r['remarks'],
+                            'added_on'  => $this->date.' '.$this->time
+                        ];
+                        $this->db->table($this->tblc1d)->insert($datac1);
+                    }
+                    $c2 = $this->db->table($this->tblc2)->get();
+                    foreach($c2->getResultArray() as $r){
+                        $datac2 = [
+                            'fID'       => $req['fID'],
+                            'cID'       => $clID,
+                            'mtID'      => $r['mtID'],
+                            'code'      => $r['code'],
+                            'type'      => $r['type'],
+                            'field1'    => $r['field1'],
+                            'field2'    => $r['field2'],
+                            'field3'    => $r['field3'],
+                            'field4'    => $r['field4'],
+                            'field5'    => $r['field5'],
+                            'field6'    => $r['field6'],
+                            'field7'    => $r['field7'],
+                            'field8'    => $r['field8'],
+                            'field9'    => $r['field9'],
+                            'field10'   => $r['field10'],
+                            'status'    => $r['status'],
+                            'remarks'   => $r['remarks'],
+                            'added_on'  => $this->date.' '.$this->time
+                        ];
+                        $this->db->table($this->tblc2d)->insert($datac2);
+                    }
+                    $c3 = $this->db->table($this->tblc3)->get();
+                    foreach($c3->getResultArray() as $r){
+                        $datac3 = [
+                            'fID'       => $req['fID'],
+                            'cID'       => $clID,
+                            'mtID'      => $r['mtID'],
+                            'code'      => $r['code'],
+                            'type'      => $r['type'],
+                            'field1'    => $r['field1'],
+                            'field2'    => $r['field2'],
+                            'field3'    => $r['field3'],
+                            'field4'    => $r['field4'],
+                            'field5'    => $r['field5'],
+                            'field6'    => $r['field6'],
+                            'field7'    => $r['field7'],
+                            'field8'    => $r['field8'],
+                            'field9'    => $r['field9'],
+                            'field10'   => $r['field10'],
+                            'status'    => $r['status'],
+                            'remarks'   => $r['remarks'],
+                            'added_on'          => $this->date.' '.$this->time
+                        ];
+                        $this->db->table($this->tblc3d)->insert($datac3);
+                    }
+                }else{
+                    $where = [
+                        'clID'  => $this->decr($req['cluster']),
+                        'fID'   => $req['fID']
                     ];
-                    $this->db->table($this->tblc1d)->insert($datac1);
-                }
-                $c2 = $this->db->table($this->tblc2)->get();
-                foreach($c2->getResultArray() as $r){
-                    $datac2 = [
-                        'fID'       => $req['fID'],
-                        'cID'       => $clID,
-                        'mtID'      => $r['mtID'],
-                        'code'      => $r['code'],
-                        'type'      => $r['type'],
-                        'field1'    => $r['field1'],
-                        'field2'    => $r['field2'],
-                        'field3'    => $r['field3'],
-                        'field4'    => $r['field4'],
-                        'field5'    => $r['field5'],
-                        'field6'    => $r['field6'],
-                        'field7'    => $r['field7'],
-                        'field8'    => $r['field8'],
-                        'field9'    => $r['field9'],
-                        'field10'   => $r['field10'],
-                        'status'    => $r['status'],
-                        'remarks'   => $r['remarks'],
-                        'added_on'  => $this->date.' '.$this->time
-                    ];
-                    $this->db->table($this->tblc2d)->insert($datac2);
-                }
-                $c3 = $this->db->table($this->tblc3)->get();
-                foreach($c3->getResultArray() as $r){
-                    $datac3 = [
-                        'fID'       => $req['fID'],
-                        'cID'       => $clID,
-                        'mtID'      => $r['mtID'],
-                        'code'      => $r['code'],
-                        'type'      => $r['type'],
-                        'field1'    => $r['field1'],
-                        'field2'    => $r['field2'],
-                        'field3'    => $r['field3'],
-                        'field4'    => $r['field4'],
-                        'field5'    => $r['field5'],
-                        'field6'    => $r['field6'],
-                        'field7'    => $r['field7'],
-                        'field8'    => $r['field8'],
-                        'field9'    => $r['field9'],
-                        'field10'   => $r['field10'],
-                        'status'    => $r['status'],
-                        'remarks'   => $r['remarks'],
-                        'added_on'          => $this->date.' '.$this->time
-                    ];
-                    $this->db->table($this->tblc3d)->insert($datac3);
+                    $c1 = $this->db->table($this->tblcc1)->where($where)->get();
+                    foreach($c1->getResultArray() as $r){
+                        $datac1 = [
+                            'fID'       => $req['fID'],
+                            'cID'       => $clID,
+                            'mtID'      => $r['mtID'],
+                            'code'      => $r['code'],
+                            'type'      => $r['type'],
+                            'field1'    => $r['field1'],
+                            'field2'    => $r['field2'],
+                            'field3'    => $r['field3'],
+                            'field4'    => $r['field4'],
+                            'field5'    => $r['field5'],
+                            'field6'    => $r['field6'],
+                            'field7'    => $r['field7'],
+                            'field8'    => $r['field8'],
+                            'field9'    => $r['field9'],
+                            'field10'   => $r['field10'],
+                            'status'    => $r['status'],
+                            'remarks'   => $r['remarks'],
+                            'added_on'  => $this->date.' '.$this->time
+                        ];
+                        $this->db->table($this->tblc1d)->insert($datac1);
+                    }
+                    $c2 = $this->db->table($this->tblcc2)->where($where)->get();
+                    foreach($c2->getResultArray() as $r){
+                        $datac2 = [
+                            'fID'       => $req['fID'],
+                            'cID'       => $clID,
+                            'mtID'      => $r['mtID'],
+                            'code'      => $r['code'],
+                            'type'      => $r['type'],
+                            'field1'    => $r['field1'],
+                            'field2'    => $r['field2'],
+                            'field3'    => $r['field3'],
+                            'field4'    => $r['field4'],
+                            'field5'    => $r['field5'],
+                            'field6'    => $r['field6'],
+                            'field7'    => $r['field7'],
+                            'field8'    => $r['field8'],
+                            'field9'    => $r['field9'],
+                            'field10'   => $r['field10'],
+                            'status'    => $r['status'],
+                            'remarks'   => $r['remarks'],
+                            'added_on'  => $this->date.' '.$this->time
+                        ];
+                        $this->db->table($this->tblc2d)->insert($datac2);
+                    }
+                    $c3 = $this->db->table($this->tblcc3)->where($where)->get();
+                    foreach($c3->getResultArray() as $r){
+                        $datac3 = [
+                            'fID'       => $req['fID'],
+                            'cID'       => $clID,
+                            'mtID'      => $r['mtID'],
+                            'code'      => $r['code'],
+                            'type'      => $r['type'],
+                            'field1'    => $r['field1'],
+                            'field2'    => $r['field2'],
+                            'field3'    => $r['field3'],
+                            'field4'    => $r['field4'],
+                            'field5'    => $r['field5'],
+                            'field6'    => $r['field6'],
+                            'field7'    => $r['field7'],
+                            'field8'    => $r['field8'],
+                            'field9'    => $r['field9'],
+                            'field10'   => $r['field10'],
+                            'status'    => $r['status'],
+                            'remarks'   => $r['remarks'],
+                            'added_on'  => $this->date.' '.$this->time
+                        ];
+                        $this->db->table($this->tblc3d)->insert($datac3);
+                    }
+
                 }
                 $this->logs->log(session()->get('name'). " added a client ".$req['name'].'-'.$req['org']);
                 return true;

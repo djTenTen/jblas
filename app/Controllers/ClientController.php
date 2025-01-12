@@ -181,6 +181,7 @@ class ClientController extends BaseController{
         $fID            = $this->decr(session()->get('firmID'));
         $data['title']  = 'Client Management';
         $data['client'] = $this->cmodel->getclients($fID);
+        $data['cluster'] = $this->cmodel->getcluster($fID);
         echo view('includes/Header', $data);
         echo view('client/Client', $data);
         echo view('includes/Footer');
@@ -220,6 +221,7 @@ class ClientController extends BaseController{
             'email'     => $this->request->getPost('email'),
             'contact'   => $this->request->getPost('contact'),
             'address'   => $this->request->getPost('address'),
+            'cluster'   => $this->request->getPost('cluster'),
             'orgtype'   => $this->request->getPost('orgtype'),
             'industry'  => $this->request->getPost('industry'),
             'fID'       => $this->decr(session()->get('firmID')),
