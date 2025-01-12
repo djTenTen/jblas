@@ -212,6 +212,20 @@
                             </div>
                             <?php }?>
                         <?php }?>
+
+                            <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/cluster')){echo 'active collapse';}else{echo 'collapsed';} ?>" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseCluster" aria-expanded="false" aria-controls="collapseCluster">
+                                <div class="nav-link-icon"><i data-feather="file-text"></i></div>
+                                File Management
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse <?php if(str_contains(uri_string(),'auditsystem/cluster')){echo 'show';}?>" id="collapseCluster" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                                    <a class="nav-link <?php if(str_contains(uri_string(),'auditsystem/cluster')){echo 'active';}?>" href="<?= base_url()?>auditsystem/cluster">
+                                    <div class="nav-link-icon"><i data-feather="columns"></i></div>Cluster</a>
+                                </nav>
+                            </div>
+
+
                         <?php if(session()->get('fstat') != 'Expired'){?>
                             <?php if(session()->get('allowed')->workp == "Yes"){?>
                                     <div class="sidenav-menu-heading">Work Paper</div>

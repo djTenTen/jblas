@@ -192,6 +192,31 @@ $routes->group('auditsystem', ['filter' => 'auth'], function ($auth) {
             $audm->post('auditor/acin/(:any)', 'AuditorController::acin/$1');
         });
     });
+    /**
+        ----------------------------------------------------------
+        CLUSTER MANGEMENT
+        ----------------------------------------------------------
+    */
+    $auth->group('', function ($cluster) {
+
+        $cluster->group('cluster', function ($cl) {
+            $cl->get('', 'ClusterController::viewcluster');
+            $cl->post('save', 'ClusterController::addcluster');
+            $cl->get('files/(:any)/(:any)', 'ClusterController::getclusterfiles/$1/$2');
+            $cl->post('setfiles/(:any)/(:any)', 'ClusterController::setfiles/$1/$2');
+            $cl->post('removefiles/(:any)/(:any)', 'ClusterController::removefiles/$1/$2');
+            $cl->get('setvalues/c1/(:any)/(:any)/(:any)/(:any)', 'ClusterController::c1setvalues/$1/$2/$3/$4');
+            $cl->get('setvalues/c2/(:any)/(:any)/(:any)/(:any)', 'ClusterController::c2setvalues/$1/$2/$3/$4');
+            $cl->get('setvalues/c3/(:any)/(:any)/(:any)/(:any)', 'ClusterController::c3setvalues/$1/$2/$3/$4');
+            $cl->post('savevalues/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)', 'ClusterController::savevalues/$1/$2/$3/$4/$5/$6');
+
+            // $audm->get('auditor/edit/(:any)', 'AuditorController::editauditor/$1');
+            // $audm->post('auditor/update/(:any)', 'AuditorController::updateauditor/$1');
+            // $audm->post('auditor/acin/(:any)', 'AuditorController::acin/$1');
+        });
+
+    });
+
 
     
 });
