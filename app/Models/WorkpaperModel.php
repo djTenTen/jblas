@@ -678,9 +678,11 @@ class WorkpaperModel extends  Model {
             if (file_exists($pdfonfile)) {
                 unlink($pdfonfile);
             }
-            $pdfondb    = $pdfPath.$res['file']; 
-            if (file_exists($pdfondb)) {
-                unlink($pdfondb);
+            if($res['file'] != ''){
+                $pdfondb    = $pdfPath.$res['file']; 
+                if (file_exists($pdfondb)) {
+                    unlink($pdfondb);
+                }
             }
             $req['pdf']->move($pdfPath);
         }
