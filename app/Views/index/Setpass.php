@@ -97,7 +97,7 @@
                 <footer class="footer-admin mt-auto footer-dark">
                     <div class="container-xl px-4">
                         <div class="row text-secondary">
-                            <div class="col-md-6 small">Copyright &copy; Applaud 2021 <span>||</span> Powered by: Build App Minds Solutions Corp.</div>
+                            <div class="col-md-6 small">Copyright &copy; Applaud 2024 <span>||</span> Powered by: Build App Minds Solutions Corp.</div>
                             <div class="col-md-6 text-md-end small">
                                 <a href="#!" type="button"  data-bs-toggle="modal" data-bs-target="#privacy">Privacy Policy</a>
                                 &middot;
