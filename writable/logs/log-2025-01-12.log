@@ -224,3 +224,83 @@ in APPPATH/Views/workpaper/Report.php on line 173.
  7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
  8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-12 09:53:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 09:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 09:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 09:55:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 09:55:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 09:55:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-12 09:55:53 --> ErrorException: fopen(/home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/uploads/pdf/fstax/10/1/1730348913534.pdf): Failed to open stream: No such file or directory
+in VENDORPATH/setasign/fpdi/src/PdfParser/StreamReader.php on line 42.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 VENDORPATH/setasign/fpdi/src/PdfParser/StreamReader.php(42): fopen()
+ 3 VENDORPATH/setasign/fpdi/src/FpdiTrait.php(177): setasign\Fpdi\PdfParser\StreamReader::createByFile()
+ 4 VENDORPATH/setasign/fpdi/src/FpdiTrait.php(233): setasign\Fpdi\Tcpdf\Fpdi->getPdfReaderId()
+ 5 VENDORPATH/setasign/fpdi/src/FpdiTrait.php(216): setasign\Fpdi\Tcpdf\Fpdi->setSourceFileWithParserParams()
+ 6 APPPATH/Views/workpaper/Report.php(8684): setasign\Fpdi\Tcpdf\Fpdi->setSourceFile()
+ 7 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 8 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+10 APPPATH/Controllers/ReportController.php(126): view()
+11 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf()
+12 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+13 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+14 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-12 09:58:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-12 09:58:49 --> ErrorException: fopen(/home/q05wyrnxw9oo/testapplaud.buildappminds.com/public/uploads/pdf/wp/10/1/1730348913164.pdf): Failed to open stream: No such file or directory
+in VENDORPATH/setasign/fpdi/src/PdfParser/StreamReader.php on line 42.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 VENDORPATH/setasign/fpdi/src/PdfParser/StreamReader.php(42): fopen()
+ 3 VENDORPATH/setasign/fpdi/src/FpdiTrait.php(177): setasign\Fpdi\PdfParser\StreamReader::createByFile()
+ 4 VENDORPATH/setasign/fpdi/src/FpdiTrait.php(233): setasign\Fpdi\Tcpdf\Fpdi->getPdfReaderId()
+ 5 VENDORPATH/setasign/fpdi/src/FpdiTrait.php(216): setasign\Fpdi\Tcpdf\Fpdi->setSourceFileWithParserParams()
+ 6 APPPATH/Views/workpaper/Report.php(8710): setasign\Fpdi\Tcpdf\Fpdi->setSourceFile()
+ 7 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 8 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+10 APPPATH/Controllers/ReportController.php(126): view()
+11 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf()
+12 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+13 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+14 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-12 09:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 09:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 09:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-12 10:00:05 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH/Views/workpaper/Report.php on line 173.
+ 1 APPPATH/Views/workpaper/Report.php(173): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ReportController.php(126): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-12 10:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-12 10:03:38 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH/Views/workpaper/Report.php on line 173.
+ 1 APPPATH/Views/workpaper/Report.php(173): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/q05wyrnxw9oo/testapplaud.buildappminds.com/app/Views/workpaper/Report.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/ReportController.php(126): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\ReportController->generatepdf()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(84): CodeIgniter\CodeIgniter->run()
+INFO - 2025-01-12 10:05:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:15:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:15:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:16:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:16:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:16:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:17:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:18:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:18:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:18:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-12 10:18:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -170,9 +170,9 @@ $html = '';
     $pdf->writeHTML($html, true, false,false, false, '');
     $html = '';
     if($soqm['soqm'] == 'Uploaded'){
-        if($sd['soqm_data'] != ''){
+        if($soqm['soqm_data'] != ''){
             // Set the source PDF file 
-            $pageCount = $pdf->setSourceFile(ROOTPATH.'public/uploads/pdf/soqm/'.$fID.'/'.$sd['soqm_data']);
+            $pageCount = $pdf->setSourceFile(ROOTPATH.'public/uploads/pdf/'.$fID.'/soqm/'.$soqm['soqm_data']);
             // Iterate through all pages and import them
             for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
                 $templateId = $pdf->importPage($pageNo);
@@ -184,8 +184,7 @@ $html = '';
                 $pdf->useTemplate($templateId, 0, 20);
             }
         }
-    }
-    if($soqm['soqm'] == 'Using'){
+    }elseif($soqm['soqm'] == 'Using'){
         $html .= $style2;
         $html .= '
             <table>
@@ -8681,7 +8680,7 @@ $html = '';
                 foreach($fst as $r){
                     if($r['file'] != ''){
                         // Set the source PDF file 
-                        $pageCount = $pdf->setSourceFile(ROOTPATH.'public/uploads/pdf/fstax/'.$fID.'/'.$wpID.'/'.$r['file']);
+                        $pageCount = $pdf->setSourceFile(ROOTPATH.'public/uploads/pdf/'.$fID.'/fstax/'.$wpID.'/'.$r['file']);
                         // Iterate through all pages and import them
                         for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
                             $templateId = $pdf->importPage($pageNo);
@@ -8707,7 +8706,7 @@ $html = '';
                     $html .= '<hr style="color:blue;">';
                     $html .= '<h2 style="color:#7752FE;">'.$f['section'].': '.$f['desc'].'</h2>';
                     // Set the source PDF file 
-                    $pageCount = $pdf->setSourceFile(ROOTPATH.'public/uploads/pdf/wp/'.$fID.'/'.$wpID.'/'.$f['file']);
+                    $pageCount = $pdf->setSourceFile(ROOTPATH.'public/uploads/pdf/'.$fID.'/wp/'.$wpID.'/'.$f['file']);
                     // Iterate through all pages and import them
                     for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
                         $templateId = $pdf->importPage($pageNo);
