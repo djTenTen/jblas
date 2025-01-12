@@ -8587,7 +8587,7 @@ $html = '';
                 $html = '';
             break;
 
-            case 'EXP': case 'PPE': case 'INV': case 'AR': case 'CB': case 'REV':
+            case 'EXP': case 'PPE': case 'INV': case 'AR': case 'CB': case 'REV':case 'CA': case 'OCA': case 'DC': case 'OC': case 'OE': case 'CL': case 'NCL': case 'OR': case 'OPR': case 'EQ':
                 $pdf->AddPage('P');
                 $pdf->Bookmark($f['section'].' : '.$f['desc'],1,1);
                 $html .= $style2;

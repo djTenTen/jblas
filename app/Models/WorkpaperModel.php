@@ -533,7 +533,7 @@ class WorkpaperModel extends  Model {
         $query = $this->db->query("select * 
         from {$this->tblfi} as fi
         where fi.fiID >= 2
-        and fi.fiID <= 7");
+        and fi.fiID <= 17");
         return $query->getResultArray();
 
     }

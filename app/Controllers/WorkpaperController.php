@@ -2081,31 +2081,21 @@ class WorkpaperController extends BaseController{
                 $page = $code;
             break;
             case 'EXP':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                $page = 'M48';
-            break;
             case 'PPE':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                $page = 'M48';
-            break;
             case 'INV':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                $page = 'M48';
-            break;
             case 'AR':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                $page = 'M48';
-            break;
             case 'CB':
-                $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
-                $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
-                $page = 'M48';
-            break;
             case 'REV':
+            case 'CA':
+            case 'OCA':
+            case 'DC':
+            case 'OC':
+            case 'OE':
+            case 'CL':
+            case 'NCL':
+            case 'OR':
+            case 'OPR':
+            case 'EQ':
                 $data['ind'] = $this->wpmodel->gettbindex($dcID,$dwpID,$dindex);
                 $data['if']  = $this->wpmodel->getindexfiles($dcID,$dwpID,$dindex);
                 $page = 'M48';
