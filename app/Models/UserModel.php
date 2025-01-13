@@ -239,14 +239,13 @@ class UserModel extends  Model {
         $count = $this->db->table($this->tblu)->where($where)->get();
         if($count->getNumRows() >= 1){
             $d = $count->getRowArray();
-            if($req['password'] == $this->decr($d['pass'])){
+            if(password_verify($req['password'], $d['pass'])){
                 if($d['verified'] == 'No'){
                     $data = [
                         'verified' => 'Yes',
                         'email_verify_at' => $this->date.' '.$this->time,
                     ];
                     $this->db->table($this->tblu)->where(array('userID' => $d['userID']))->update($data);
-                    $this->logs->log($req['email']. " has been confirmed his/her email ");
                     return 'confirmed';
                 }else{
                     return 'confirmed';

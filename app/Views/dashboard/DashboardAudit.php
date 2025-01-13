@@ -193,21 +193,10 @@
                                     <div class="d-flex align-items-center justify-content-between mb-4">
                                         <div class="d-flex align-items-center flex-shrink-0 me-3">
                                             <div class="avatar avatar-xl me-3 bg-gray-200">
-
-                                            <?php if(empty($r['photo'])){
-                                                    $path = base_url().'uploads/logo/'.session()->get('logo');
-                                                    if(file_exists($path) && is_file($path)) { ?>
-                                                        <img class="avatar-img img-fluid" src="<?= base_url()?>uploads/logo/<?= session()->get('logo')?>" />
-                                                    <?php }else{?>
-                                                        <img class="avatar-img img-fluid" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
-                                                    <?php }?>
-                                            <?php }else{
-                                                    $path = base_url().'uploads/photo/'.$r['photo'];
-                                                    if(file_exists($path) && is_file($path)) { ?>
-                                                        <img class="avatar-img img-fluid" src="<?= base_url()?>uploads/photo/<?= $r['photo']?>" />
-                                                    <?php }else{?>
-                                                        <img class="avatar-img img-fluid" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
-                                                    <?php }?>
+                                            <?php if(empty($r['photo']) or $r['photo'] == ''){ ?>
+                                                <img class="avatar-img img-fluid" src="<?= base_url()?>assets/img/illustrations/profiles/profile-5.png" />
+                                            <?php }else{ ?>
+                                                <img class="avatar-img img-fluid" src="<?= base_url()?>uploads/img/<?= decr(session()->get('firmID'))?>/photo/<?= $r['photo']?>" />
                                             <?php }?>
                                             </div>
                                             <div class="d-flex flex-column fw-bold">
@@ -215,7 +204,6 @@
                                                 <div class="small text-muted line-height-normal"><?= $r['position'].' - '.$r['type']?></div>
                                             </div>
                                         </div>
-                                        
                                     </div>
                                 <?php }?>
                             </div>
