@@ -143,6 +143,12 @@ class WorkpaperModel extends  Model {
 
     }
 
+    public function getclients($fID){
+
+        $query = $this->db->table($this->tblc)->where(array('status' => 'Active', 'fID' => $fID))->get();
+        return $query->getResultArray();
+
+    }
 
     /**
         * @method getfileinfoc1() get the clients file chapter 1

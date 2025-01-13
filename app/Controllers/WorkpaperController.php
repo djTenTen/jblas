@@ -61,7 +61,7 @@ class WorkpaperController extends BaseController{
         $data['aud']    = $this->wpmodel->getauditors($fID,'Preparer');
         $data['sup']    = $this->wpmodel->getauditors($fID,'Reviewer');
         $data['mgr']    = $this->wpmodel->getauditors($fID,'Audit Manager');
-        $data['cl']     = $this->cmodel->getclients($fID);
+        $data['cl']     = $this->wpmodel->getclients($fID);
         $data['wp']     = $this->wpmodel->getworkpaper($fID,'');
         echo view('includes/Header', $data);
         echo view('workpaper/Initiate', $data);    
